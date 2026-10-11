@@ -51,6 +51,13 @@ Each C promotion must retain complete-executable equality and meaningful
 types and control flow. Do not use copied instruction blobs or padding to
 raise a coverage number.
 
+The [sprite scaling audit](UI_SCALE.md) checks 203,472 original and candidate
+fixtures each, with zero stubs. Preserve the post-X-store Y denominator read
+and skipped-division register behavior in further C attempts. The full C
+candidate still has 12 byte differences; 108 additional helper trials did not
+produce an exact match. UI drawing, natural caller reachability and PS1 timing
+remain separate acceptance work.
+
 ## Original behavior and content
 
 - Resolve asset/command inventory gaps and runtime reachability.

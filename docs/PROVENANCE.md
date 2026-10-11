@@ -136,3 +136,17 @@ preserved separately. The successful proof's hashes and 106 additional source
 trials are pinned in [render-matching-checks.json](render-matching-checks.json).
 Original inputs, raw reports and C candidates remain private. C, feature,
 NPC, developer-capability and optional-mod counts are unchanged.
+
+## Original sprite scaling supplement
+
+The [sprite scaling audit](UI_SCALE.md) executes 203,472 original cases and the
+same number of nonmatching C-candidate cases, with zero stubs. It checks ordered
+halfword access and store readback, guarded buffers and the unused stack. Four
+wrong controls alter checked outputs; 32 overlap fixtures expose the fresh Y
+denominator read after X's store.
+
+The failed global memory-hook method is preserved with an eight-run diagnostic
+and producer hash. The successful verifier and private-output tests are public;
+game inputs, candidate images and raw reports remain private. The full candidate
+retains 12 byte differences and is not promoted. Metadata and historical count
+preservation are recorded in [ui-scale-checks.json](ui-scale-checks.json).

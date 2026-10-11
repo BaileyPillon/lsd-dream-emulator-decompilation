@@ -161,3 +161,11 @@ checks, this yields 11 of 107 callbacks and 6,784 cases. It does not change the
 Asset/command records, virtual-call closure, rare state/RNG/save/error branches, hardware timing and audio coverage remain to audit. [features.json](features.json) preserves requirements, dependencies, immutable before statuses, current source hashes and runtime evidence. Five inventory gaps remain open; U006 records the user's resolved separation of original behavior from AI tooling.
 
 A core-C count is based on actual configured definitions and live assembly inclusions. Shared support follows explicit dependencies and does not claim exhaustive call-graph closure. Optional gameplay mods have their own outputs and do not count toward original parity.
+
+The [sprite scaling supplement](UI_SCALE.md) adds 203,472 original native cases
+and the same number of candidate runs, with zero stubs and four detected
+output controls. It preserves the Y denominator read after X's store and
+incoming-register behavior for skipped divisions. The full C candidate still
+differs in 12 executable bytes; 108 additional source trials found no exact
+match. This extends bounded UI evidence without changing C, original feature,
+NPC, developer-capability, optional-mod or whole-feature acceptance counts.

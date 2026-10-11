@@ -18182,6 +18182,328 @@
       "original_game_behavior_modified": false,
       "model_api_calls": 0,
       "private_inputs_or_native_output_bytes_included": false
+    },
+    "ui_scale_native_20261011": {
+      "recorded_utc": "2026-10-11T11:10:32.896462+00:00",
+      "documentation": "docs/UI_SCALE.md",
+      "repository_code_base_commit": "74fce3f60b5f3acddec8aa30cd581d1729502431",
+      "scope": "Bounded original UI scale arithmetic, ordered memory operations and alias behavior, plus an unaccepted full C candidate and eliminated source hypotheses. No original gameplay changes or C/whole-feature acceptance.",
+      "metadata": "docs/ui-scale-checks.json",
+      "metadata_sha256": "e0cc65bfedfd46aca75d0079d0b1c79bffe90ec0344af78e06fef847946b4e60",
+      "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+      "matching_executable_preserved": true,
+      "source_functions_promoted": 0,
+      "game_sdk_classification_changes": 0,
+      "original_native_validation": {
+        "report": ".decomp-lab/ui-scale-native-proof-third.json",
+        "sha256": "68070e7c7e227a61ec666023f38c38a5cd33e68d63af014c3b9bfbed061487d0",
+        "status": "passed_bounded_original_ui_scale",
+        "native_cases": 203472,
+        "case_groups": {
+          "complete_numerator_word_sweep": 131072,
+          "complete_denominator_word_sweep": 65536,
+          "signed_edges_and_incoming_registers": 4560,
+          "overlapping_inputs_and_segment_aliases": 2304
+        },
+        "decision_paths": {
+          "increment_sum": 177365,
+          "replace_ratio": 197573,
+          "increment_upper_clamp": 18720,
+          "replace_upper_clamp": 6035,
+          "increment_negative_fallback": 5099,
+          "replace_zero_denominator": 2152
+        },
+        "native_functions": [
+          {
+            "function": "func_8004441C",
+            "address": "0x8004441C",
+            "bytes": 560,
+            "sha256": "da711212afcc5d37cc0dc8f15ad0493cbfee5bda9f6fd5d3deffe3b6c6db729c"
+          }
+        ],
+        "executed_native_entry_counts": {
+          "func_8004441C": 203472
+        },
+        "explicit_stubs": 0,
+        "observation_method": "Decode executed LH/SH instructions; check each SH by readback at the next instruction. No Unicorn memory-write hook.",
+        "overlapping_cases_changed_by_caching_y_denominator": 32,
+        "overlapping_denominator_witness": {
+          "fixture": {
+            "old": [
+              -32768,
+              30000
+            ],
+            "mode": 1,
+            "fractions": [
+              1,
+              1,
+              7,
+              0
+            ],
+            "incoming": [
+              2147483647,
+              2147483648
+            ],
+            "seed": 0,
+            "segment": 0,
+            "alias_offset": 90
+          },
+          "original_scales": [
+            4096,
+            0
+          ],
+          "snapshot_scales": [
+            4096,
+            4096
+          ]
+        },
+        "producer_dependencies": [
+          {
+            "path": "tools/verify_native_ai.py",
+            "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+          },
+          {
+            "path": "tools/inventory_vtables.py",
+            "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+          },
+          {
+            "path": "tools/progress.py",
+            "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+          },
+          {
+            "path": "configure.py",
+            "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+          },
+          {
+            "path": "requirements-analysis.txt",
+            "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+          },
+          {
+            "path": "build/SLPS01556.map",
+            "sha256": "bb181d0799122a8cac3c4a8af74c8dbbe5c0e3708e4299aeb2f6d836d15fb04c"
+          },
+          {
+            "path": "build/undefined_funcs_auto.txt",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "path": "build/undefined_syms_auto.txt",
+            "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+          },
+          {
+            "path": "src/scene/entity.c",
+            "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+          },
+          {
+            "path": "src/scene/entity.h",
+            "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+          },
+          {
+            "path": "src/dream/dream_sys.c",
+            "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+          },
+          {
+            "path": "src/dream/dream_sys.h",
+            "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+          },
+          {
+            "path": "src/scene/actor.c",
+            "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+          },
+          {
+            "path": "src/base/transform.c",
+            "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+          },
+          {
+            "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+            "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+          },
+          {
+            "path": "tools/verify_ui_scale.py",
+            "sha256": "1c0fa5b9a23c2bf34745307e843b9ebc14a9b670c64a844e54d975a9ad5b1e34"
+          },
+          {
+            "path": "src/menu/ui_sprite.c",
+            "sha256": "2241eed19864e16042d63cab0cb43fc4b9248ef78f062ea3de0858897dd85a94"
+          },
+          {
+            "path": "src/menu/ui_sprite.h",
+            "sha256": "2dd8bfb9688e0773d8f415642e28a55e4a2a1e5866cf2d53cee1601d5a18ff8b"
+          },
+          {
+            "path": "config/symbols.txt",
+            "sha256": "9558bb5e4309d4f4cb3e2843cce14ad4af75205b43eef23ed527b200164bf1a8"
+          },
+          {
+            "path": "asm/nonmatchings/menu/ui_sprite/func_8004441C.s",
+            "sha256": "cbe3d09eedce055361e498646f5da16dffead27dc20511c8d121a13c322dfb0c"
+          }
+        ],
+        "scope": "Complete 16-bit numerator sweeps for both axes in both modes; complete denominator words with one mode per word; signed edges, incoming T1/T2 values for skipped divisions, overlapping inputs and KSEG0 aliases. Compare ordered halfword reads/stores, complete guarded buffers, unused stack, GP, RA and saved registers. No stubs. This is a MIPS32 functional audit, not PS1 load-delay, bus, interrupt, GPU or whole-menu acceptance.",
+        "negative_controls_detected": 4
+      },
+      "nonmatching_candidate_validation": {
+        "report": ".decomp-lab/ui-scale-candidate-behavior-first.json",
+        "sha256": "0c2144a0fe324326da24da6f99209abb3c3828f26c94be8d6d448e78f910713c",
+        "status": "passed_bounded_nonmatching_ui_candidate",
+        "cases_compared_against_original_verified_model": 203472,
+        "case_groups": {
+          "complete_numerator_word_sweep": 131072,
+          "complete_denominator_word_sweep": 65536,
+          "signed_edges_and_incoming_registers": 4560,
+          "overlapping_inputs_and_segment_aliases": 2304
+        },
+        "different_function_words": [
+          484,
+          492,
+          496,
+          540
+        ],
+        "explicit_stubs": 0,
+        "candidate_executable_sha1": "eccb9244687d546e8fe7f490a31f4c26f5a04221",
+        "candidate_function_sha256": "9a28591790da1cc3cc7158618e233593cb99c42fa4ee00fed0815068e0110a14",
+        "producer_dependencies": [
+          {
+            "path": "tools/verify_ui_scale.py",
+            "sha256": "1c0fa5b9a23c2bf34745307e843b9ebc14a9b670c64a844e54d975a9ad5b1e34"
+          },
+          {
+            "path": "tools/verify_native_ai.py",
+            "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+          },
+          {
+            "path": ".decomp-lab/ui-scale-full-unit-first.c",
+            "sha256": "bd8e10d41fc9b0958237d7a1fd7b4b16782a8d857fe04614741974738c87ff3f"
+          },
+          {
+            "path": ".decomp-lab/ui-scale-full-build-first/candidate.exe",
+            "sha256": "4da5c0e0c3efaf90d2059cd77fd88a786d7adc1596e312fafd6fde7c50d78441"
+          },
+          {
+            "path": ".decomp-lab/ui-scale-full-build-first/comparison.json",
+            "sha256": "2428d6855fe83a20b16d499a28432c42a16e55336874b35e374f5f45a06fa455"
+          },
+          {
+            "path": ".decomp-lab/ui-scale-native-proof-third.json",
+            "sha256": "68070e7c7e227a61ec666023f38c38a5cd33e68d63af014c3b9bfbed061487d0"
+          },
+          {
+            "path": ".decomp-lab/verify_ui_candidate_first.py",
+            "sha256": "60b8e7e7a775055f6b8eb2ad3eb7419b48e7be00c6e1a50f7fd4b10ceb5fe3c5"
+          },
+          {
+            "path": "rom/SLPS_015.56",
+            "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+          },
+          {
+            "path": "build/SLPS015.56",
+            "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+          }
+        ],
+        "scope": "Original verified functional model, ordered LH/SH operations and immediate store readback on the same guarded fixtures. Instruction scheduling and complete-image identity still differ; no PS1 timing or C acceptance."
+      },
+      "nonmatching_complete_executable": {
+        "report": ".decomp-lab/ui-scale-full-build-first/comparison.json",
+        "sha256": "2428d6855fe83a20b16d499a28432c42a16e55336874b35e374f5f45a06fa455",
+        "exact_match": false,
+        "expected_bytes": 505856,
+        "actual_bytes": 505856,
+        "changed_bytes_in_common_range": 12,
+        "length_difference": 0,
+        "first_changed_offsets": [
+          216578,
+          216579,
+          216584,
+          216585,
+          216586,
+          216587,
+          216588,
+          216589,
+          216590,
+          216591,
+          216634,
+          216635
+        ],
+        "expected_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+        "actual_sha1": "eccb9244687d546e8fe7f490a31f4c26f5a04221",
+        "candidate_sha256": "bd8e10d41fc9b0958237d7a1fd7b4b16782a8d857fe04614741974738c87ff3f",
+        "gameplay_tested": false
+      },
+      "source_experiments": {
+        "report": ".decomp-lab/ui-axis-helpers-first/results.json",
+        "sha256": "ecbf279be2ea9adc5cbedd31a89b5b30c4b00645e46f0c313ca4cb0a5e08c4d0",
+        "hypothesis": "Separate typed helpers can explain different X and Y instruction scheduling without artificial padding or physical register bindings.",
+        "compiler_attempts": 109,
+        "new_source_trials": 108,
+        "baseline_reproductions": 1,
+        "compile_errors": 0,
+        "minimum_byte_difference": 12,
+        "exact_matches": 0,
+        "canonical_flags_changed": false,
+        "source_promoted": false
+      },
+      "observation_method_diagnostic": {
+        "report": ".decomp-lab/ui-scale-memory-hook-diagnostic-first.json",
+        "sha256": "b9d65d9769fc6ebea195b920d23b2886120759cc8dd688b0218022b11b3ffaab",
+        "runs": 8,
+        "unhooked_and_read_only_runs_passed": 4,
+        "memory_write_hook_failures": 2,
+        "write_hook_increment_mode_passes": 2,
+        "failure": "The stack-restoration instruction runs twice after a SH in a jump delay slot when the global memory-write hook is installed.",
+        "successful_observation": "Decode executed LH/SH instructions; check each SH by readback at the next instruction. No Unicorn memory-write hook.",
+        "failed_method_was_not_accepted": true,
+        "initial_failed_log": {
+          "report": ".decomp-lab/ui-scale-native-proof-first.log",
+          "sha256": "5ff721d8a7892709c126a539d8e6f5ec3f83ae5df5e768370225aa2f8bf7e73e"
+        },
+        "diagnostic_failed_log": {
+          "report": ".decomp-lab/ui-scale-native-proof-second.log",
+          "sha256": "57d530f296a90847dd440e5c61fb41d890970aff4edfeb398b8b108c0431ad97"
+        },
+        "failed_producer": {
+          "report": ".decomp-lab/ui-scale-memory-hook-producer-first.py",
+          "sha256": "c5d79c677951012b2352b08fdeb841fa00f19ac5fb2bc98ef2ca52602d3c6211"
+        }
+      },
+      "current_turn_before_after": {
+        "before_source_commit": "74fce3f60b5f3acddec8aa30cd581d1729502431",
+        "before": {
+          "c_bytes": 194284,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 7,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "after": {
+          "c_bytes": 194284,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 7,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "new_original_native_fixtures": 203472,
+        "original_and_candidate_native_runs": 406944,
+        "new_source_trials": 108,
+        "source_promotions": 0,
+        "game_sdk_classification_changes": 0
+      },
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0,
+      "private_inputs_or_native_output_bytes_included": false
     }
   }
 }

@@ -51,6 +51,9 @@ byte differences in two stores.
 The [grid and streaming composition](docs/RENDER_STREAM.md) checks 45,408 cases
 through the original builder, row splitter and object selector; three position
 and GTE contracts remain.
+The [sprite scaling audit](docs/UI_SCALE.md) checks 203,472 native cases,
+including overlapping inputs and incoming-register quirks. Its full C
+candidate still differs in 12 executable bytes and remains unaccepted.
 
 ## Three separate workflows
 

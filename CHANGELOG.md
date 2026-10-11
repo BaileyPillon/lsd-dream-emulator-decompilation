@@ -1,5 +1,16 @@
 # Changelog
 
+## Original sprite scaling verification - 2026-10-11
+
+- Check 203,472 original and 203,472 candidate native runs with zero stubs,
+  ordered halfword access observation and four detected output controls.
+- Recover the post-X-store Y denominator read, including 32 overlapping-input
+  cases changed by caching it, and preserve skipped-division register behavior.
+- Retain the full C candidate's 12 byte differences. Eliminate 108 additional
+  helper trials without padding, register binding or compiler flag changes.
+- Preserve the failed memory-hook diagnostic separately, add private-output
+  tests and keep the canonical executable and feature/C/NPC/tool/mod counts.
+
 ## Rendering ordered-store evidence and C matching - 2026-10-11
 
 - Observe actual dimension stores and immediate readback in 224,496 native
