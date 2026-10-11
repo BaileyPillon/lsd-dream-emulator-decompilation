@@ -52,6 +52,11 @@ Native report: `.decomp-lab/render-bounds-native-proof-first.json`, SHA-256
 `be8b114bec3312f41a8de9394eac23f0d2803a3e9e465076bd6891de2b0b0f45`.
 Metadata is appended to [features.json](features.json).
 
+[render-bounds-checks.json](render-bounds-checks.json) pins the committed
+verifier, experiment and native-report hashes. The current complete 305-object
+build still matches the canonical executable; game sources and compiler
+configuration are unchanged. All 145 tooling tests passed on Windows and Linux.
+
 After a current matching build, install the optional backend and choose a new
 private output filename:
 
@@ -84,12 +89,13 @@ map. Its two reviewed SDK prototypes and the bounds prototype use Ghidra's
 MIPS default convention, named `__stdcall` in `mips32le.cspec`. Their parameter
 storage was checked against the native register contracts: bounds/point use
 `a0/a1`, the volume getter uses `a0/a1/a2`, and automatic volume uses
-`a0/a1/a2/a3`. This is Ghidra's MIPS convention name. Unknown-convention
-warnings are cleared; the project was saved and the original native bytes
+`a0/a1/a2/a3`. Automatic volume's three remaining argument roles are still
+unverified and retain neutral names. Unknown-convention warnings are cleared;
+the project was saved and the original native bytes
 remain unchanged.
 
-Ghidra record: `.decomp-lab/ghidra-reviewed-api-abi-reconciled-first.json`, SHA-256
-`1c0c6432c286c5b516fa1f07046687846d6d0fda1a26d1b7cc369f64dc8b4d33`.
+Ghidra record: `.decomp-lab/ghidra-reviewed-api-abi-reconciled-second.json`, SHA-256
+`90d96dfa13327042d1ad158f0bf5b627ca60561e1b2f0703f32142243cad639c`.
 
 ## Remaining scope
 

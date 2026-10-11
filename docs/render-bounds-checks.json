@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-10-11T07:42:02.800646+00:00",
+  "scope": "Current complete matching build, bounded native original/C-candidate checks, private Ghidra metadata and synthetic tooling tests. No game source or compiler configuration changed.",
+  "source_commit": "0028d123269a0294bf8dcd21cef414e4ce96e701",
+  "matching_game_source_base_commit": "cc29d178bc7c53b0493791534d2aa5a2d0d73f97",
+  "game_sources_and_compiler_configuration_unchanged_from_base": true,
+  "matching_build": {
+    "objects_expected": 305,
+    "objects_found": 305,
+    "build_current": true,
+    "progress_report": ".decomp-lab/render-bounds-current-progress-first.json",
+    "progress_report_sha256": "8968dca871b3cf35c04786dcdb4a226ef3a05b463c28bcba48937b6b7edbdbc2",
+    "canonical_executable_bytes": 505856,
+    "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "whole_executable_equal": true
+  },
+  "matching_c": {
+    "c_bytes": 194284,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 97.18476129496979,
+    "sdk_text_bytes": 147880,
+    "handwritten_text_bytes": 188
+  },
+  "known_remaining_game_assembly_functions": 7,
+  "source_promotions": 0,
+  "game_sdk_classification_changes": 0,
+  "original_bounds_native": {
+    "report": ".decomp-lab/render-bounds-native-proof-first.json",
+    "sha256": "be8b114bec3312f41a8de9394eac23f0d2803a3e9e465076bd6891de2b0b0f45",
+    "native_cases": 4648,
+    "case_groups": {
+      "complete_x_byte_sweep": 2048,
+      "complete_y_byte_sweep": 2040,
+      "cross_axis_edges": 314,
+      "aliased_input_fields": 144,
+      "unaligned_and_segment_alias": 98,
+      "null_bounds_unmapped_point": 4
+    },
+    "decision_paths": {
+      "inside": 1557,
+      "below_min_x": 1307,
+      "below_min_y": 545,
+      "above_max_x": 992,
+      "above_max_y": 243,
+      "null_bounds": 4
+    },
+    "explicit_stubs": 0,
+    "negative_controls_detected": 4
+  },
+  "nonmatching_c_candidate": {
+    "report": ".decomp-lab/cd38-narrow-candidate-behavior-first.json",
+    "sha256": "94c67259b0946575b845c2c2170d24950a0f99048640206b5eab4988ecb8e10b",
+    "cases_compared_against_original_and_model": 4648,
+    "candidate_bytes": 108,
+    "candidate_byte_differences": 38,
+    "exact_native_code_match": false,
+    "source_promotions": 0
+  },
+  "source_experiments": [
+    {
+      "results_report": ".decomp-lab/cd38-narrow-parameter-first/results.json",
+      "sha256": "afa21f836c00b144c0c880218ea09384e5707393bb3ccf166daa9e19955eb3e4",
+      "attempts": 48,
+      "minimum_byte_difference": 38,
+      "exact_matches": 0,
+      "canonical_compiler_flags_changed": false,
+      "forced_physical_registers": false,
+      "synthetic_register_interference": false,
+      "copied_opcode_c": false
+    },
+    {
+      "results_report": ".decomp-lab/cd38-minimum-reuse-first/results.json",
+      "sha256": "9a12af1d234977f16d91d44055ab4c9358352d5ea87cebda95a1face05c8c417",
+      "attempts": 24,
+      "minimum_byte_difference": 38,
+      "exact_matches": 0,
+      "hypothesis": "Separate minimum-argument reuse from coordinate promotion and combine only the two X conditions to explain native register lifetimes.",
+      "canonical_compiler_flags_changed": false,
+      "forced_physical_registers": false,
+      "synthetic_register_interference": false,
+      "copied_opcode_c": false
+    }
+  ],
+  "ghidra_reconciliation": {
+    "tool_repository": "https://github.com/bethington/ghidra-mcp",
+    "tool_version": "7.0.0-headless",
+    "sdk_names_reviewed": 6,
+    "typed_prototypes": 3,
+    "mips_default_convention": "__stdcall",
+    "parameter_storage_verified": true,
+    "unknown_calling_convention_warnings_cleared": 3,
+    "program_saved": true,
+    "native_bytes_in_reviewed_regions_unchanged": true,
+    "record": ".decomp-lab/ghidra-reviewed-api-abi-reconciled-second.json",
+    "sha256": "90d96dfa13327042d1ad158f0bf5b627ca60561e1b2f0703f32142243cad639c",
+    "automatic_volume_unverified_argument_roles_use_neutral_names": true
+  },
+  "tooling_tests": {
+    "cases_per_platform": 145,
+    "platforms": [
+      "Windows / Python 3.14",
+      "Linux WSL / Python 3.13"
+    ],
+    "result": "passed",
+    "game_inputs_required": false
+  },
+  "native_source_dependencies_current": true,
+  "bounded_npc_callbacks": 11,
+  "original_npc_callback_denominator": 107,
+  "bounded_npc_cases": 6784,
+  "whole_feature_groups_accepted": 0,
+  "provisional_feature_group_denominator": 40,
+  "listed_core_c_feature_groups": 35,
+  "developer_capabilities": 10,
+  "model_api_calls": 0,
+  "original_game_behavior_modified": false,
+  "end_to_end_parity": "unfinished",
+  "private_inputs_or_native_output_bytes_included": false
+}

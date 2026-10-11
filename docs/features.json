@@ -16347,8 +16347,8 @@
             "address": "80031ee8"
           }
         ],
-        "abi_report": ".decomp-lab/ghidra-reviewed-api-abi-reconciled-first.json",
-        "abi_report_sha256": "1c0c6432c286c5b516fa1f07046687846d6d0fda1a26d1b7cc369f64dc8b4d33",
+        "abi_report": ".decomp-lab/ghidra-reviewed-api-abi-reconciled-second.json",
+        "abi_report_sha256": "90d96dfa13327042d1ad158f0bf5b627ca60561e1b2f0703f32142243cad639c",
         "mips_compiler_spec": "mips32le.cspec",
         "mips_compiler_spec_sha256": "ece4dd9c15895fb7cdb845ee82ca6072a0d4814dadf3e6c4f8fe31cec1620954",
         "mips_default_convention": "__stdcall",
@@ -16376,7 +16376,7 @@
           {
             "function": "SsUtAutoVol",
             "address": "80031e94",
-            "signature": "short SsUtAutoVol(short voice, short start, short end, short time)",
+            "signature": "short SsUtAutoVol(short voice, short arg1, short arg2, short arg3)",
             "parameters": [
               {
                 "type": "short",
@@ -16427,7 +16427,8 @@
           }
         ],
         "byte_write_endpoints_used": false,
-        "program_saved": true
+        "program_saved": true,
+        "automatic_volume_unverified_argument_roles_use_neutral_names": true
       },
       "current_matching_build": {
         "report": ".decomp-lab/render-bounds-current-progress-first.json",
