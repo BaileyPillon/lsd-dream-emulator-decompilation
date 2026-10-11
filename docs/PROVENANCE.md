@@ -66,3 +66,13 @@ bounded native save-title fixtures verify the new source. The three public NPC
 verifiers were rerun against the current build and passed their existing 6,784
 cases. Hashes and scope are appended to [features.json](features.json). Original
 inputs and reports remain private; public CI still tests synthetic fixtures.
+
+## SDK signature and volume-API supplement
+
+The [SDK audit](SDK_SIGNATURE_AUDIT.md) uses a pinned external catalogue to
+check the ordered six-function volume region. It corrects the getter/automatic
+volume names and declarations while retaining original executable equality.
+The native getter passed 384 cases and three controls without stubs. Raw SDK
+object and function-sized signature matches retain their different evidence
+scopes and ambiguities. Historical reports remain preserved; current producer
+hashes and callback rechecks are appended separately to the feature inventory.

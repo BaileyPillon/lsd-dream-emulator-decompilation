@@ -68,6 +68,12 @@ metadata and producer hashes are appended to [features.json](features.json).
 The existing Lion, Gray Man and nine scripted callback checks were rerun against
 this build: all 6,784 cases and 14 negative controls passed.
 
+The subsequent [SDK/API correction](SDK_SIGNATURE_AUDIT.md) rechecked the
+formatter and existing NPC fixtures against the newer source/build pins. The
+formatter report is `.decomp-lab/sound-api-save-label-proof-first.json`, SHA-256
+`220989c0b2afcc3b5d2f9ea4edd52ab91a4a53595d5044fb6ace29e3542e37bf`.
+Earlier reports remain preserved; the SDK/API supplement records the rechecks.
+
 After a canonical matching build, reproduce with a new private output filename:
 
 ```bash

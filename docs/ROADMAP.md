@@ -14,6 +14,8 @@ These seven also remain after the [save-title recovery](SAVE_LABEL.md). That
 additional game-support helper was discovered in a segment classified as SDK;
 it had not been included in this list. Continue auditing raw SDK-labelled
 segments for mixed game support as well as checking the known inclusions.
+The [SDK signature audit](SDK_SIGNATURE_AUDIT.md) records candidate provenance
+and a sound-API correction; unmatched functions still need further analysis.
 
 | Function | Source |
 | --- | --- |

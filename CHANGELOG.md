@@ -1,5 +1,16 @@
 # Changelog
 
+## SDK provenance and sound API audit - 2026-10-11
+
+- Correct the call at `0x80031E94` to `SsUtAutoVol` and locate the pointer-based
+  getter at `0x80031C98` using a pinned six-function SDK context.
+- Add signature auditing for 72 raw SDK-labelled functions, with complete
+  object/span comparisons and retained ambiguities.
+- Verify the original getter in 384 native cases with zero stubs and three
+  detected controls; add five synthetic catalogue/context checks.
+- Preserve the executable, game C coverage and whole-feature acceptance. Add
+  SDK provenance/ABI analysis as separate developer capability A010.
+
 ## Save-title recovery - 2026-10-11
 
 - Recover the original 240-byte save-title formatter in matching C and give

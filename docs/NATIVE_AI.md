@@ -156,6 +156,11 @@ and it does not increase the two public callback counts or runtime acceptance.
 
 ## Developer additions
 
+The [SDK/API correction](SDK_SIGNATURE_AUDIT.md) subsequently rechecked the same
+11 callbacks and 6,784 cases against current source/build inputs. Its separate
+SDK getter check adds no NPC callback or original gameplay feature. Current
+report hashes are appended to the SDK/API feature-inventory supplement.
+
 The Lion, Gray Man and scripted checks were rerun after the
 [save-title source split](SAVE_LABEL.md), retaining 11 of 107 bounded callbacks,
 6,784 cases and 14 detected negative controls. The save-title supplement in

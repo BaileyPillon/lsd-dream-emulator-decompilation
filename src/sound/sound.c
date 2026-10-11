@@ -27,7 +27,6 @@ void build_data_path(char *, char *, char *, char *);
 extern char *strcpy(char *, char *);
 extern s32 strlen(char *);
 s16 func_80030E90(s16, s16, s16, s16, s32, s32, s32);
-s16 SsUtGetDetVVol(s16, s16, s16, s16);
 extern s16 SsUtGetVabHdr(s16, void *);
 extern s16 SsUtGetProgAtr(s16, s16, u8 *);
 extern s16 SsUtGetVagAtr(s16, s16, s16, u8 *);
@@ -229,7 +228,7 @@ s16 sound_play_note(sound_t *This, s32 arg1, s16 arg2, s16 arg3) {
         voice = func_80030E90(This->unk21_1, (s16) vab, (s16) (arg1 - (vab << 4)), (s16) (entry[4] + (u16) This->unk24),
                               entry[5], arg2, arg2);
         if (voice >= 0) {
-            SsUtGetDetVVol(voice, arg2, arg3, 2);
+            SsUtAutoVol(voice, arg2, arg3, 2);
             return voice;
         }
     }

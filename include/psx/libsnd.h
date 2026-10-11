@@ -15,4 +15,7 @@ extern void SsSeqStop(short);
 extern void SsSeqPlay(short, char, short);
 extern void SsSeqPause(short);
 
+extern short SsUtGetDetVVol(short, short *, short *);
+extern short SsUtAutoVol(short, short, short, short);
+
 #endif

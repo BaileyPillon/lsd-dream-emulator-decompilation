@@ -37,6 +37,8 @@ Their scope and remaining gaps are documented in the
 [feature inventory](docs/FEATURE_INVENTORY.md) and [roadmap](docs/ROADMAP.md).
 The [save-title recovery](docs/SAVE_LABEL.md) documents the latest matching C
 promotion, its native checks and the correction to SDK/game classification.
+The [SDK and sound API audit](docs/SDK_SIGNATURE_AUDIT.md) documents corrected
+volume-function names and an external signature workflow with explicit ambiguity.
 
 ## Three separate workflows
 

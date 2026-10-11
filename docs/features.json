@@ -15383,6 +15383,771 @@
       "model_api_calls": 0,
       "original_behavior_modified": false,
       "private_inputs_or_native_output_bytes_included": false
+    },
+    "sdk_volume_api_20261011": {
+      "recorded_utc": "2026-10-11T06:56:37.694050+00:00",
+      "documentation": "docs/SDK_SIGNATURE_AUDIT.md",
+      "scope": "Source/ABI correction in matching sound code, external SDK provenance candidates and bounded native getter execution. Frozen earlier records retained.",
+      "source_functions_promoted": 0,
+      "game_sdk_classification_changes": 0,
+      "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+      "matching_executable_preserved": true,
+      "corrected_sdk_volume_context": {
+        "status": "passed_pinned_six_function_context",
+        "object": "VMANAGER.OBJ",
+        "address": "0x80031c98",
+        "bytes": 676,
+        "fixed_bytes": 608,
+        "native_sha256": "8573aa478c97c2ea3cbd6dfe85f4040097d1abdcb65767f5693596ecfce33a0a",
+        "functions": [
+          {
+            "function": "SsUtGetDetVVol",
+            "address": "0x80031c98",
+            "bytes": 88
+          },
+          {
+            "function": "SsUtSetDetVVol",
+            "address": "0x80031cf0",
+            "bytes": 124
+          },
+          {
+            "function": "SsUtGetVVol",
+            "address": "0x80031d6c",
+            "bytes": 140
+          },
+          {
+            "function": "SsUtSetVVol",
+            "address": "0x80031df8",
+            "bytes": 156
+          },
+          {
+            "function": "SsUtAutoVol",
+            "address": "0x80031e94",
+            "bytes": 84
+          },
+          {
+            "function": "SsUtAutoPan",
+            "address": "0x80031ee8",
+            "bytes": 84
+          }
+        ]
+      },
+      "previous_mislabel": {
+        "address": "0x80031E94",
+        "label": "SsUtGetDetVVol",
+        "corrected_label": "SsUtAutoVol",
+        "game_call": "sound_play_note",
+        "actual_getter_address": "0x80031C98"
+      },
+      "external_catalogue": {
+        "repository": "https://github.com/lab313ru/psx_psyq_signatures",
+        "commit": "e9e46e7e133ef275a79bfce650924f98edb086bc",
+        "version_directory": "330",
+        "input_files": [
+          {
+            "file": "LIBGS.LIB.json",
+            "sha256": "ed9b7272f1548e791a69ca4884fe0094737126bdd48acb3739df52ee05214b6d",
+            "objects": 109
+          },
+          {
+            "file": "LIBSND.LIB.json",
+            "sha256": "cd35240249e36ec25ad1e3ae944fe7737db436a9ad1c37b3b3deacb61fe84248",
+            "objects": 64
+          }
+        ],
+        "catalogue_data_published": false
+      },
+      "sdk_audit": {
+        "report": ".decomp-lab/sdk-audit-public-proof-first.json",
+        "sha256": "275ecf5cfde6c69da5489fec14ee043d7cbde6857f7c6bc45d67f5f281b3ba84",
+        "raw_sdk_labelled_functions": 72,
+        "raw_sdk_labelled_bytes": 28944,
+        "complete_matching_library_objects": 0,
+        "function_sized_candidate_spans": 51,
+        "distinct_functions_with_candidate_spans": 19,
+        "one_candidate_label_functions": [
+          {
+            "function": "func_8002DF7C",
+            "address": "0x8002DF7C",
+            "bytes": 188,
+            "candidate_label": "note2pitch",
+            "native_sha256": "9b4f177d042d3f10da97fee39374aa1bc44c6acf7fc2c03c4e204f73cf4f02d7",
+            "whole_library_object_identity_proven": false
+          },
+          {
+            "function": "func_8002E038",
+            "address": "0x8002E038",
+            "bytes": 256,
+            "candidate_label": "note2pitch2",
+            "native_sha256": "e1832c86dbd39e062078fd626923872f59eacb7a25cf42d2c5758d65e32c9090",
+            "whole_library_object_identity_proven": false
+          },
+          {
+            "function": "func_8002F20C",
+            "address": "0x8002F20C",
+            "bytes": 152,
+            "candidate_label": "SpuVmNoiseOnWithAdsr",
+            "native_sha256": "f90e489b8d830b39395220cad546013c75afb1ce274ff29575a715aef5d0683e",
+            "whole_library_object_identity_proven": false
+          },
+          {
+            "function": "func_8002F368",
+            "address": "0x8002F368",
+            "bytes": 128,
+            "candidate_label": "SpuVmNoiseOn",
+            "native_sha256": "eb02b5c3ba9d3327ad9ee53976dc5823491e25d88ee7e1dbdbd504118ff8f134",
+            "whole_library_object_identity_proven": false
+          },
+          {
+            "function": "func_8002F610",
+            "address": "0x8002F610",
+            "bytes": 240,
+            "candidate_label": "SpuVmPitchBend",
+            "native_sha256": "bd30ba48de8fee8f307cdc130c74fcf03f88239b65c505d22a0d33322e9e646a",
+            "whole_library_object_identity_proven": false
+          },
+          {
+            "function": "func_800302DC",
+            "address": "0x800302DC",
+            "bytes": 236,
+            "candidate_label": "SpuVmSeKeyOn",
+            "native_sha256": "a159e4590225be06974631f25d11d6e05ed0f11947a52b4887a59a070a694ba4",
+            "whole_library_object_identity_proven": false
+          },
+          {
+            "function": "func_800303C8",
+            "address": "0x800303C8",
+            "bytes": 52,
+            "candidate_label": "SpuVmSeKeyOff",
+            "native_sha256": "ff7c6b8ba365141afb81738923329db958e01c467ad7c757d1dddaa559682d55",
+            "whole_library_object_identity_proven": false
+          },
+          {
+            "function": "func_80030584",
+            "address": "0x80030584",
+            "bytes": 112,
+            "candidate_label": "SpuVmGetSeqVol",
+            "native_sha256": "3ec9f88ce3e43b0ed13ada06f29778d12b6b5ef48ebc2453345d3dd1e10a16b2",
+            "whole_library_object_identity_proven": false
+          },
+          {
+            "function": "func_800305F4",
+            "address": "0x800305F4",
+            "bytes": 84,
+            "candidate_label": "SpuVmGetSeqLVol",
+            "native_sha256": "3df59f0357b8d7095c1d17f3e25c965a8bace2dce95d18a86b667ba13d20389b",
+            "whole_library_object_identity_proven": false
+          },
+          {
+            "function": "func_80030648",
+            "address": "0x80030648",
+            "bytes": 84,
+            "candidate_label": "SpuVmGetSeqRVol",
+            "native_sha256": "a7de62f52e05f93626801451a92ae2b653799316f35a4c54536464910d9e6f1d",
+            "whole_library_object_identity_proven": false
+          },
+          {
+            "function": "SsUtGetDetVVol",
+            "address": "0x80031C98",
+            "bytes": 88,
+            "candidate_label": "SsUtGetDetVVol",
+            "native_sha256": "83424bcc8015302705d84878cb4b3bbc566bb28968c1ec6db82878ad0926f132",
+            "whole_library_object_identity_proven": false
+          },
+          {
+            "function": "SsUtSetDetVVol",
+            "address": "0x80031CF0",
+            "bytes": 124,
+            "candidate_label": "SsUtSetDetVVol",
+            "native_sha256": "e99614a515613e7a02bd4db49c481126fc2a3a20d0fe6e9e0e47fe2ee27b48e1",
+            "whole_library_object_identity_proven": false
+          },
+          {
+            "function": "SsUtGetVVol",
+            "address": "0x80031D6C",
+            "bytes": 140,
+            "candidate_label": "SsUtGetVVol",
+            "native_sha256": "7e65f5e0af2e7da1450892d51c4ba61aea8c8e12e0ad0bb18d917f3dd8a19041",
+            "whole_library_object_identity_proven": false
+          },
+          {
+            "function": "SsUtSetVVol",
+            "address": "0x80031DF8",
+            "bytes": 156,
+            "candidate_label": "SsUtSetVVol",
+            "native_sha256": "73cb218cb7b9e157f4f337eebd4cc234aaf475ffa962d98b5c0829f90e1c804e",
+            "whole_library_object_identity_proven": false
+          }
+        ],
+        "scope": "Configured raw SDK-labelled segments only; absent matches do not prove game ownership. Whole-object matches and complete function-sized candidate spans are separate. Wildcard targets are not resolved by a byte-pattern match; repeated/ambiguous names remain candidates.",
+        "source_dependencies_at_execution": [
+          {
+            "path": "rom/SLPS_015.56",
+            "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+          },
+          {
+            "path": "build/SLPS015.56",
+            "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+          },
+          {
+            "path": "config/symbols.txt",
+            "sha256": "9558bb5e4309d4f4cb3e2843cce14ad4af75205b43eef23ed527b200164bf1a8"
+          },
+          {
+            "path": "build/SLPS01556.map",
+            "sha256": "bb181d0799122a8cac3c4a8af74c8dbbe5c0e3708e4299aeb2f6d836d15fb04c"
+          },
+          {
+            "path": "configure.py",
+            "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+          },
+          {
+            "path": "src/sound/sound.c",
+            "sha256": "c3174cf04aeb55867cd70fa681edc6146121551a27d9e7ca9ad5b4dd1697dc10"
+          },
+          {
+            "path": "include/psx/libsnd.h",
+            "sha256": "dc434707ad791b311e2243d60ccef5d8561a999b65add0f74e563550b908108e"
+          },
+          {
+            "path": "tools/audit_sdk_signatures.py",
+            "sha256": "64a152927488834cc38383513bca05c857c1ede6fd354af9e9c35f4b4c88504e"
+          },
+          {
+            "path": "tools/decomp_workbench.py",
+            "sha256": "2e4526743618266839340dc9f69ff82a2bbe1af2f6a6f7fd0e1e244c360c91fb"
+          },
+          {
+            "path": "tools/progress.py",
+            "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+          },
+          {
+            "path": "asm/psyq_unk2.s",
+            "sha256": "570f0bb1e7be580e06ae6347ec9e36a3691b4f3b5a69536f1b6f0ee6e17fec4c"
+          },
+          {
+            "path": "asm/psyq_unk3.s",
+            "sha256": "302a797711c7afdd581e59356ffbf0d0b2893962efc3e50bf91bf8646d912a87"
+          },
+          {
+            "path": "asm/21180.s",
+            "sha256": "beffbfa1afe8d09b147ff20cb21d811b6dc67138f245bb132c8c15842d774f19"
+          },
+          {
+            "path": "asm/22244.s",
+            "sha256": "6697e6fbcc11935c9042f4ce28ebce1309c60b1655717433b965fa82b51253e1"
+          }
+        ]
+      },
+      "native_voice_volume_validation": {
+        "report": ".decomp-lab/sound-volume-native-proof-first.json",
+        "sha256": "56573700b1c2ba7e8c199ae80aca42aaf7d98c52a1b20bdcd4904086044a9364",
+        "native_cases": 384,
+        "explicit_stubs": 0,
+        "native_functions": [
+          {
+            "function": "SsUtGetDetVVol",
+            "address": "0x80031C98",
+            "bytes": 88,
+            "sha256": "83424bcc8015302705d84878cb4b3bbc566bb28968c1ec6db82878ad0926f132"
+          }
+        ],
+        "executed_native_entry_counts": {
+          "SsUtGetDetVVol": 384
+        },
+        "negative_controls_detected": [
+          {
+            "name": "wrong_voice_bound",
+            "address": "0x80031c9c",
+            "expected_word": "0x2c420018",
+            "changed_word": "0x2c420019",
+            "fixture": {
+              "voice": 24,
+              "seed": 0,
+              "alias": false,
+              "left_alignment": 0,
+              "right_alignment": 0
+            },
+            "detected": true,
+            "scope": "Private Unicorn memory only."
+          },
+          {
+            "name": "wrong_voice_stride",
+            "address": "0x80031cb8",
+            "expected_word": "0x31b03",
+            "changed_word": "0x31b43",
+            "fixture": {
+              "voice": 7,
+              "seed": 0,
+              "alias": false,
+              "left_alignment": 0,
+              "right_alignment": 0
+            },
+            "detected": true,
+            "scope": "Private Unicorn memory only."
+          },
+          {
+            "name": "wrong_right_channel",
+            "address": "0x80031cdc",
+            "expected_word": "0x94630002",
+            "changed_word": "0x94630004",
+            "fixture": {
+              "voice": 7,
+              "seed": 0,
+              "alias": false,
+              "left_alignment": 0,
+              "right_alignment": 0
+            },
+            "detected": true,
+            "scope": "Private Unicorn memory only."
+          }
+        ],
+        "scope": "The actual SDK getter compares 32 voice inputs (all 24 valid voices, invalid bounds and 16-bit truncation), two opaque channel contents and six aligned pointer/alias layouts: whole guarded buffers, return status, source data/global pointer, GP, stack and saved registers. No stubs. This does not establish automatic volume/pan ramps, natural voice allocation, audible playback, SPU timing or entire sound-group acceptance.",
+        "source_dependencies_at_execution": [
+          {
+            "path": "tools/verify_native_ai.py",
+            "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+          },
+          {
+            "path": "tools/inventory_vtables.py",
+            "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+          },
+          {
+            "path": "tools/progress.py",
+            "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+          },
+          {
+            "path": "configure.py",
+            "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+          },
+          {
+            "path": "requirements-analysis.txt",
+            "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+          },
+          {
+            "path": "build/SLPS01556.map",
+            "sha256": "bb181d0799122a8cac3c4a8af74c8dbbe5c0e3708e4299aeb2f6d836d15fb04c"
+          },
+          {
+            "path": "build/undefined_funcs_auto.txt",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "path": "build/undefined_syms_auto.txt",
+            "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+          },
+          {
+            "path": "src/scene/entity.c",
+            "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+          },
+          {
+            "path": "src/scene/entity.h",
+            "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+          },
+          {
+            "path": "src/dream/dream_sys.c",
+            "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+          },
+          {
+            "path": "src/dream/dream_sys.h",
+            "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+          },
+          {
+            "path": "src/scene/actor.c",
+            "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+          },
+          {
+            "path": "src/base/transform.c",
+            "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+          },
+          {
+            "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+            "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+          },
+          {
+            "path": "tools/verify_sound_volume.py",
+            "sha256": "edc42a69453bd4d05505ee846532092708d507cacfb6711ae0bd5d5cdcf083f3"
+          },
+          {
+            "path": "src/sound/sound.c",
+            "sha256": "c3174cf04aeb55867cd70fa681edc6146121551a27d9e7ca9ad5b4dd1697dc10"
+          },
+          {
+            "path": "include/psx/libsnd.h",
+            "sha256": "dc434707ad791b311e2243d60ccef5d8561a999b65add0f74e563550b908108e"
+          },
+          {
+            "path": "config/symbols.txt",
+            "sha256": "9558bb5e4309d4f4cb3e2843cce14ad4af75205b43eef23ed527b200164bf1a8"
+          },
+          {
+            "path": "asm/22244.s",
+            "sha256": "6697e6fbcc11935c9042f4ce28ebce1309c60b1655717433b965fa82b51253e1"
+          }
+        ]
+      },
+      "retained_native_checks_reverified": [
+        {
+          "report": ".decomp-lab/sound-api-save-label-proof-first.json",
+          "sha256": "220989c0b2afcc3b5d2f9ea4edd52ab91a4a53595d5044fb6ace29e3542e37bf",
+          "native_cases": 1952,
+          "controls_detected": 3,
+          "source_dependencies_at_execution": [
+            {
+              "path": "tools/verify_native_ai.py",
+              "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+            },
+            {
+              "path": "tools/inventory_vtables.py",
+              "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+            },
+            {
+              "path": "tools/progress.py",
+              "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+            },
+            {
+              "path": "configure.py",
+              "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+            },
+            {
+              "path": "requirements-analysis.txt",
+              "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+            },
+            {
+              "path": "build/SLPS01556.map",
+              "sha256": "bb181d0799122a8cac3c4a8af74c8dbbe5c0e3708e4299aeb2f6d836d15fb04c"
+            },
+            {
+              "path": "build/undefined_funcs_auto.txt",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "path": "build/undefined_syms_auto.txt",
+              "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+            },
+            {
+              "path": "src/scene/entity.c",
+              "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+            },
+            {
+              "path": "src/scene/entity.h",
+              "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+            },
+            {
+              "path": "src/dream/dream_sys.c",
+              "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+            },
+            {
+              "path": "src/dream/dream_sys.h",
+              "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+            },
+            {
+              "path": "src/scene/actor.c",
+              "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+            },
+            {
+              "path": "src/base/transform.c",
+              "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+            },
+            {
+              "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+              "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+            },
+            {
+              "path": "tools/verify_save_label.py",
+              "sha256": "9094714eace891633f055321ab3440856e2326f59c4ddd8f07dab2f493496675"
+            },
+            {
+              "path": "src/menu/card/save_label.c",
+              "sha256": "090ac357a85e19788256a7bfbd8ce35cf6565beaae4c840194b6e84410ad5766"
+            },
+            {
+              "path": "src/menu/card/save_label.h",
+              "sha256": "a994195b3324135400cef8d53fa3ba7aabdf40d29a76188e3df508d96c40c0a5"
+            },
+            {
+              "path": "src/menu/card/memory_card.c",
+              "sha256": "18070a5f159e9ea9adef076776d258d9c4fcb32fd8786ae6bf6f48695ee8732f"
+            },
+            {
+              "path": "src/psyq/card/file_io.c",
+              "sha256": "07c7261a6687e2d3f33ba1cda7eaeb879421d054748b949a3d1b47b5c721b2b2"
+            },
+            {
+              "path": "config/SLPS01556.yaml",
+              "sha256": "2a73ca93564e9b87d9284088b79edfe45d614b6943650a14a5e7fb506d9326d1"
+            },
+            {
+              "path": "src/psyq/libc/atoi.c",
+              "sha256": "bcd648ec07b911ebc874bb1be80e99c01bd39e1fe432bf5aee41eab897b54f14"
+            },
+            {
+              "path": "src/psyq/libc/todigit.c",
+              "sha256": "efdf1f520a1ad2667eb22a35dc52119e43eb4e1802f5c00361649b20b1b8279b"
+            },
+            {
+              "path": "asm/nonmatchings/psyq/libc/atoi/atoi.s",
+              "sha256": "3d156bf74c60c907c5f649441284c6d9e5147e5ec1607320ce012b3c4356eb4c"
+            },
+            {
+              "path": "asm/nonmatchings/psyq/libc/todigit/todigit.s",
+              "sha256": "a327eae0d39ee6e90cea5fa9e49d9dbec77cbf0a7e358658ad1665436c6aaad5"
+            }
+          ]
+        },
+        {
+          "report": ".decomp-lab/sound-api-lion-proof-first.json",
+          "sha256": "b612471420d5f92c42dc7bc690a17f207c3e53b49842a5f0df526033cc667793",
+          "native_cases": 1608,
+          "controls_detected": 3,
+          "source_dependencies_at_execution": [
+            {
+              "path": "tools/verify_native_ai.py",
+              "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+            },
+            {
+              "path": "tools/inventory_vtables.py",
+              "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+            },
+            {
+              "path": "tools/progress.py",
+              "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+            },
+            {
+              "path": "configure.py",
+              "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+            },
+            {
+              "path": "requirements-analysis.txt",
+              "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+            },
+            {
+              "path": "build/SLPS01556.map",
+              "sha256": "bb181d0799122a8cac3c4a8af74c8dbbe5c0e3708e4299aeb2f6d836d15fb04c"
+            },
+            {
+              "path": "build/undefined_funcs_auto.txt",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "path": "build/undefined_syms_auto.txt",
+              "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+            },
+            {
+              "path": "src/scene/entity.c",
+              "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+            },
+            {
+              "path": "src/scene/entity.h",
+              "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+            },
+            {
+              "path": "src/dream/dream_sys.c",
+              "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+            },
+            {
+              "path": "src/dream/dream_sys.h",
+              "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+            },
+            {
+              "path": "src/scene/actor.c",
+              "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+            },
+            {
+              "path": "src/base/transform.c",
+              "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+            },
+            {
+              "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+              "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+            }
+          ]
+        },
+        {
+          "report": ".decomp-lab/sound-api-gray-man-proof-first.json",
+          "sha256": "2afd17ce69bb7c06e409fd84ecc2e0ddb9bcd0571064d8a3b70eebd5ce39dfb9",
+          "native_cases": 768,
+          "controls_detected": 2,
+          "source_dependencies_at_execution": [
+            {
+              "path": "tools/verify_native_ai.py",
+              "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+            },
+            {
+              "path": "tools/inventory_vtables.py",
+              "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+            },
+            {
+              "path": "tools/progress.py",
+              "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+            },
+            {
+              "path": "configure.py",
+              "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+            },
+            {
+              "path": "requirements-analysis.txt",
+              "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+            },
+            {
+              "path": "build/SLPS01556.map",
+              "sha256": "bb181d0799122a8cac3c4a8af74c8dbbe5c0e3708e4299aeb2f6d836d15fb04c"
+            },
+            {
+              "path": "build/undefined_funcs_auto.txt",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "path": "build/undefined_syms_auto.txt",
+              "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+            },
+            {
+              "path": "src/scene/entity.c",
+              "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+            },
+            {
+              "path": "src/scene/entity.h",
+              "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+            },
+            {
+              "path": "src/dream/dream_sys.c",
+              "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+            },
+            {
+              "path": "src/dream/dream_sys.h",
+              "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+            },
+            {
+              "path": "src/scene/actor.c",
+              "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+            },
+            {
+              "path": "src/base/transform.c",
+              "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+            },
+            {
+              "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+              "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+            },
+            {
+              "path": "tools/verify_gray_man.py",
+              "sha256": "c306f2b8408ad86c10394d962438d9b5787da4f841ab4fe4734d1ed4c31bc756"
+            },
+            {
+              "path": "src/graphics/effect.c",
+              "sha256": "d9b2dd6bceb64b1b9fc631d833c4e77278006c62b9969799ecfc6748166bd805"
+            },
+            {
+              "path": "src/graphics/effect.h",
+              "sha256": "767085b6d185b949592ca0d2adab6092efce6d518311ed2ba14ebad3194a08be"
+            }
+          ]
+        },
+        {
+          "report": ".decomp-lab/sound-api-scripted-proof-first.json",
+          "sha256": "c78424c703fa8468514bdc95838829f6c0e76070ca313d7617ca66ef0ee67c8b",
+          "native_cases": 4408,
+          "controls_detected": 9,
+          "source_dependencies_at_execution": [
+            {
+              "path": "tools/verify_native_ai.py",
+              "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+            },
+            {
+              "path": "tools/inventory_vtables.py",
+              "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+            },
+            {
+              "path": "tools/progress.py",
+              "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+            },
+            {
+              "path": "configure.py",
+              "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+            },
+            {
+              "path": "requirements-analysis.txt",
+              "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+            },
+            {
+              "path": "build/SLPS01556.map",
+              "sha256": "bb181d0799122a8cac3c4a8af74c8dbbe5c0e3708e4299aeb2f6d836d15fb04c"
+            },
+            {
+              "path": "build/undefined_funcs_auto.txt",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "path": "build/undefined_syms_auto.txt",
+              "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+            },
+            {
+              "path": "src/scene/entity.c",
+              "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+            },
+            {
+              "path": "src/scene/entity.h",
+              "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+            },
+            {
+              "path": "src/dream/dream_sys.c",
+              "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+            },
+            {
+              "path": "src/dream/dream_sys.h",
+              "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+            },
+            {
+              "path": "src/scene/actor.c",
+              "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+            },
+            {
+              "path": "src/base/transform.c",
+              "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+            },
+            {
+              "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+              "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+            },
+            {
+              "path": "tools/verify_scripted_ai.py",
+              "sha256": "1410c8d72f570b0f3a404efcbbf7f73c1b76ba1b3a0897e1c59447670e7e0565"
+            }
+          ]
+        }
+      ],
+      "current_matching_build": {
+        "objects_expected": 305,
+        "objects_found": 305,
+        "build_current": true,
+        "c_bytes": 194284,
+        "game_text_bytes": 199912,
+        "c_coverage_percent": 97.18476129496979,
+        "sdk_text_bytes": 147880,
+        "handwritten_text_bytes": 188,
+        "binary_match": "verified",
+        "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+      },
+      "known_remaining_game_assembly_functions": 7,
+      "original_feature_counts": {
+        "provisional_groups": 40,
+        "groups_with_listed_core_functions_in_c": 35,
+        "whole_feature_groups_runtime_accepted": 0,
+        "new_original_gameplay_features": 0,
+        "related_group": "F031"
+      },
+      "developer_capability": {
+        "id": "A010",
+        "name": "External SDK signature provenance and API audit",
+        "entry": "tools/audit_sdk_signatures.py",
+        "native_abi_entry": "tools/verify_sound_volume.py",
+        "count_before_supplement": 9,
+        "count_after_supplement": 10,
+        "count_before_original_prompt": 0
+      },
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0,
+      "private_inputs_or_native_output_bytes_included": false
     }
   }
 }

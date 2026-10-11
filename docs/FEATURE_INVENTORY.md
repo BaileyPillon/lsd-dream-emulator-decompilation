@@ -95,6 +95,14 @@ The same audit bounded 418 of 418 LBD files, 167,200 grid cells and 270 addition
 
 ## Remaining scope
 
+The [SDK and sound API supplement](SDK_SIGNATURE_AUDIT.md) corrects a misleading
+volume label using a matching 676-byte SDK context. The actual getter passes
+384 native cases and three controls with no stubs. The 72 raw SDK-labelled
+functions remain a scoped inventory with ambiguous signature matches. Game C
+coverage and the 40-group denominator are unchanged. Developer capability A010
+brings the current count from the frozen nine to ten, with zero model API calls.
+This adds evidence for F031 without accepting its entire group.
+
 The [save-title supplement](SAVE_LABEL.md) recovers one additional 240-byte
 game-support function formerly hidden inside a raw SDK-labelled segment.
 Current matching C bytes are **194,284 / 199,912 (97.18%)**, with 305 build

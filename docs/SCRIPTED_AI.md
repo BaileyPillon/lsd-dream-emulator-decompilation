@@ -51,15 +51,15 @@ current build, function addresses, native range hashes and source dependencies
 before and after execution. It also checks each original callback binding in
 `g_ENTITY_TABLE` rather than relying on a source label alone.
 
-The latest exercised report is `.decomp-lab/save-label-scripted-verification-first.json`;
+The latest exercised report is `.decomp-lab/sound-api-scripted-proof-first.json`;
 its SHA-256 is
-`19731a2dce4c836ad6f572acb62574ca7673d4623b75e7a11181b0a8cb29f0bb`.
+`c78424c703fa8468514bdc95838829f6c0e76070ca313d7617ca66ef0ee67c8b`.
 The report and original inputs stay private. A metadata supplement in
 [features.json](features.json) records the measured counts and source hashes.
 Earlier reports remain preserved. This report rechecks the current build after
-the [save-title source split](SAVE_LABEL.md). The Lion and Gray Man reports were
+the [sound API correction](SDK_SIGNATURE_AUDIT.md). The Lion and Gray Man reports were
 also rerun against this snapshot, passing 1,608 and 768 cases and detecting
-three and two controls respectively. The save-title supplement records their
+three and two controls respectively. The SDK/API supplement records their
 hashes and source dependencies separately from the initial publication.
 
 ## Acceptance limits

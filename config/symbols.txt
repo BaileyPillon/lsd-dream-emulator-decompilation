@@ -178,7 +178,12 @@ SsSeqPause = 0x8003AF38;
 SsSepPause = 0x8003AF60;
 SpuClearReverbWorkArea = 0x80038B28;
 SsUtPitchBend = 0x800319B4;
-SsUtGetDetVVol = 0x80031E94;
+SsUtGetDetVVol = 0x80031C98;
+SsUtSetDetVVol = 0x80031CF0;
+SsUtGetVVol = 0x80031D6C;
+SsUtSetVVol = 0x80031DF8;
+SsUtAutoVol = 0x80031E94;
+SsUtAutoPan = 0x80031EE8;
 
 
 _SsVmSetProgVol = 0x800307F0;
