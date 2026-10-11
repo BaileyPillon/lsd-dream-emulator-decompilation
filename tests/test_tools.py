@@ -54,6 +54,44 @@ def iso_fixture(payload, sector_size=2048, data_offset=0):
     return bytes(iso)
 
 
+class RawDiscPreservationTests(unittest.TestCase):
+    @staticmethod
+    def sector(form2=True):
+        data = bytearray(2352)
+        data[:12] = b"\x00" + b"\xff" * 10 + b"\x00"
+        data[15] = 2
+        data[16:20] = data[20:24] = bytes((1, 0, 0x64 if form2 else 0x44, 0))
+        data[24:2348] = b"\xa7" * (2348 - 24)
+        data[-4:] = b"\x01\x02\x03\x04"
+        return data
+
+    def test_only_unchanged_valid_form2_bodies_retain_source_edc(self):
+        originals = [self.sector(), self.sector(), self.sector(False), self.sector()]
+        originals[3][20] ^= 1  # The duplicate XA subheader is inconsistent.
+        candidates = [bytearray(data) for data in originals]
+        for data in candidates:
+            data[-4:] = b"\x10\x20\x30\x40"
+        candidates[1][100] ^= 1  # Changed payload must keep its regenerated checksum.
+        with tempfile.TemporaryDirectory() as directory:
+            source, rebuilt = Path(directory) / "source.bin", Path(directory) / "rebuilt.bin"
+            original_bytes = b"".join(originals)
+            source.write_bytes(original_bytes)
+            rebuilt.write_bytes(b"".join(candidates))
+            retained = package_disc.preserve_unchanged_form2_edc(source, rebuilt)
+            self.assertEqual([row["lba"] for row in retained], [0])
+            self.assertEqual(rebuilt.read_bytes(), bytes(originals[0]) + b"".join(candidates[1:]))
+            self.assertEqual(source.read_bytes(), original_bytes)
+
+    def test_reference_image_cannot_be_its_own_checksum_destination(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "source.bin"
+            original = bytes(self.sector())
+            source.write_bytes(original)
+            with self.assertRaisesRegex(ValueError, "separate rebuilt"):
+                package_disc.preserve_unchanged_form2_edc(source, source)
+            self.assertEqual(source.read_bytes(), original)
+
+
 class BuildToolsTests(unittest.TestCase):
     def test_import_has_no_filesystem_side_effect(self):
         graph = ROOT / "build.ninja"

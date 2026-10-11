@@ -29,9 +29,13 @@ count toward original parity.
   [docs/features.json](docs/features.json) for both measurements. Five recorded
   inventory gaps remain; U006 records the user's resolved distinction between
   original NPC behavior and separate AI-assisted development tools.
-- The local disc is labelled `LSD - Dream Emulator (English v1)`. Its executable
+- The initial local disc is labelled `LSD - Dream Emulator (English v1)`. Its executable
   matches the canonical hash; its translated assets are a separate edition
   boundary. Runtime comparisons must use identical disc assets and BIOS.
+- A later [Japanese disc verification](docs/JAPANESE_EDITION.md) records a
+  separate Japanese-labelled source, complete disc byte identity, an edition
+  comparison and bounded replay evidence. It preserves the earlier English
+  records and leaves exhaustive content and cold-boot state acceptance open.
 
 ## Completion requirements
 

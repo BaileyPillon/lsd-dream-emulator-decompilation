@@ -9,9 +9,10 @@ import re
 import sys
 
 
-EMULATOR_FILES = ("EmuHawk.exe", "EmuHawk.exe.config",
-                  "dll/BizHawk.Emulation.Cores.dll",
-                  "dll/BizHawk.Emulation.Common.dll", "dll/octoshock.dll")
+LEGACY_EMULATOR_FILES = ("EmuHawk.exe", "EmuHawk.exe.config",
+                         "dll/BizHawk.Emulation.Cores.dll",
+                         "dll/BizHawk.Emulation.Common.dll", "dll/octoshock.dll")
+EMULATOR_FILES = (*LEGACY_EMULATOR_FILES, "dll/shock.wbx.zst", "dll/waterboxhost.dll")
 BIOS_FILES = {"J": "scph5500.bin", "U": "scph5501.BIN", "E": "scph5502.BIN"}
 
 
@@ -62,8 +63,12 @@ def pin_inputs(cue, bios_root, emulator_root, configuration, script,
                scenario, frames, load_state=None, capture_audio=False):
     if scenario not in ("boot", "play") or not 1 <= frames <= 30000:
         raise ValueError("Unsupported QA scenario or frame count.")
+    settings = json.loads(Path(configuration).read_text(encoding="utf-8-sig"))
+    if settings.get("PreferredCores", {}).get("PSX") != "Nymashock":
+        raise ValueError("QA configuration must explicitly select Nymashock for PSX.")
     emulator_root, bios_root = Path(emulator_root), Path(bios_root)
-    return {"schema_version": 1, "created_at": datetime.now(timezone.utc).isoformat(),
+    return {"schema_version": 2, "created_at": datetime.now(timezone.utc).isoformat(),
+            "selected_core": "Nymashock",
             "scenario": scenario, "frames": frames,
             "disc": disc_inputs(cue),
             "emulator_files": {name: record_file(emulator_root / name) for name in EMULATOR_FILES},
@@ -89,10 +94,17 @@ def load_verified_manifest(folder):
     if not path.exists():
         return None
     manifest = json.loads(path.read_text(encoding="utf-8-sig"))
-    if manifest.get("schema_version") != 1:
+    version = manifest.get("schema_version")
+    if version not in (1, 2):
         raise ValueError("Unsupported runtime input manifest schema.")
-    if set(manifest["emulator_files"]) != set(EMULATOR_FILES) or set(manifest["bios"]) != set(BIOS_FILES):
+    files = LEGACY_EMULATOR_FILES if version == 1 else EMULATOR_FILES
+    if set(manifest["emulator_files"]) != set(files) or set(manifest["bios"]) != set(BIOS_FILES):
         raise ValueError("Runtime input manifest omits an emulator or BIOS identity.")
+    if version == 2:
+        settings = json.loads(Path(manifest["configuration"]["path"]).read_text(encoding="utf-8-sig"))
+        if (manifest.get("selected_core") != "Nymashock"
+                or settings.get("PreferredCores", {}).get("PSX") != "Nymashock"):
+            raise ValueError("Runtime core selection is inconsistent with its configuration.")
     if not manifest["disc"]["tracks"] or not manifest["disc"]["layout"]:
         raise ValueError("Runtime input manifest omits disc track identities or layout.")
     if manifest["start_kind"] != ("saved_state" if manifest["start_state"] else "cold_boot"):
@@ -121,7 +133,9 @@ def configuration_identity(record):
 
 
 def parity_identity(manifest):
-    return {"scenario": manifest["scenario"], "frames": manifest["frames"],
+    return {"schema_version": manifest["schema_version"],
+            "selected_core": manifest.get("selected_core"),
+            "scenario": manifest["scenario"], "frames": manifest["frames"],
             "disc_layout": manifest["disc"]["layout"],
             "disc_tracks": [content_identity(record) for record in manifest["disc"]["tracks"]],
             "emulator_files": {name: content_identity(record) for name, record in manifest["emulator_files"].items()},
@@ -146,7 +160,11 @@ def compare_inputs(original, rebuilt, scenario, frames):
         raise ValueError("Runtime launch inputs differ: " + ", ".join(changed))
     if identities[0]["scenario"] != scenario or identities[0]["frames"] != frames:
         raise ValueError("Pinned inputs disagree with the completed runtime scenario.")
-    return {"status": "pinned_inputs_identical", "inputs_verified": True,
+    complete_core_identity = identities[0]["schema_version"] == 2
+    return {"status": "pinned_inputs_identical" if complete_core_identity else "legacy_core_identity_incomplete",
+            "inputs_verified": complete_core_identity,
+            "declared_inputs_identical": True,
+            "core_binary_identity_complete": complete_core_identity,
             "identity": identities[0],
             "manifests": [record_file(Path(folder) / "inputs.json") for folder in (original, rebuilt)]}
 

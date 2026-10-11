@@ -26,7 +26,7 @@ def fixture(folder, title="original", track=b"same disc bytes", state=b"same sta
     for name in runtime_inputs.BIOS_FILES.values():
         (bios / name).write_bytes(("fixture " + name).encode())
     config, script, start = folder / "configuration.json", folder / "input.lua", folder / "start.State"
-    config.write_text('{"fixture": true}')
+    config.write_text('{"fixture": true, "PreferredCores": {"PSX": "Nymashock"}}')
     script.write_text("emu.frameadvance()")
     start.write_bytes(state)
     manifest = runtime_inputs.pin_inputs(cue, bios, emulator, config, script, "play", 6000, start)
@@ -48,8 +48,8 @@ class RuntimeInputTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             original, rebuilt = Path(temporary) / "original", Path(temporary) / "rebuilt"
             first, second = fixture(original), fixture(rebuilt)
-            for folder, manifest, text in ((original, first, '{"a": 1, "b": false}'),
-                                           (rebuilt, second, '{"b": false, "a": 1}')):
+            for folder, manifest, text in ((original, first, '{"a": 1, "b": false, "PreferredCores": {"PSX": "Nymashock"}}'),
+                                           (rebuilt, second, '{"PreferredCores": {"PSX": "Nymashock"}, "b": false, "a": 1}')):
                 Path(manifest['configuration']['path']).write_text(text)
                 manifest['configuration'] = runtime_inputs.record_file(manifest['configuration']['path'])
                 (folder / 'inputs.json').write_text(json.dumps(manifest))
@@ -60,7 +60,7 @@ class RuntimeInputTests(unittest.TestCase):
             original, rebuilt = Path(temporary) / "original", Path(temporary) / "rebuilt"
             fixture(original)
             manifest = fixture(rebuilt)
-            Path(manifest['configuration']['path']).write_text('{"fixture": false}')
+            Path(manifest['configuration']['path']).write_text('{"fixture": false, "PreferredCores": {"PSX": "Nymashock"}}')
             manifest['configuration'] = runtime_inputs.record_file(manifest['configuration']['path'])
             (rebuilt / 'inputs.json').write_text(json.dumps(manifest))
             with self.assertRaisesRegex(ValueError, 'configuration'):
@@ -89,6 +89,51 @@ class RuntimeInputTests(unittest.TestCase):
             Path(manifest["bios"]["J"]["path"]).write_bytes(b"changed BIOS")
             with self.assertRaisesRegex(ValueError, "pinned runtime input changed"):
                 runtime_inputs.load_verified_manifest(folder)
+
+    def test_changed_actual_core_after_launch_is_rejected(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            folder = Path(temporary) / "run"
+            manifest = fixture(folder)
+            Path(manifest["emulator_files"]["dll/shock.wbx.zst"]["path"]).write_bytes(b"changed actual core")
+            with self.assertRaisesRegex(ValueError, "pinned runtime input changed"):
+                runtime_inputs.load_verified_manifest(folder)
+
+    def test_missing_waterbox_host_cannot_claim_core_identity(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            folder = Path(temporary) / "run"
+            manifest = fixture(folder)
+            del manifest["emulator_files"]["dll/waterboxhost.dll"]
+            (folder / "inputs.json").write_text(json.dumps(manifest))
+            with self.assertRaisesRegex(ValueError, "omits an emulator"):
+                runtime_inputs.load_verified_manifest(folder)
+
+    def test_implicit_or_other_core_is_rejected_before_launch(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            folder = Path(temporary) / "run"
+            manifest = fixture(folder)
+            config = Path(manifest["configuration"]["path"])
+            for settings in ({}, {"PreferredCores": {"PSX": "Octoshock"}}):
+                config.write_text(json.dumps(settings))
+                with self.assertRaisesRegex(ValueError, "explicitly select Nymashock"):
+                    runtime_inputs.pin_inputs(manifest["disc"]["cue"]["path"], folder / "bios",
+                                              folder / "emulator", config, manifest["script"]["path"],
+                                              "play", 6000, manifest["start_state"]["path"])
+
+    def test_schema_one_keeps_incomplete_actual_core_identity(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            original, rebuilt = Path(temporary) / "original", Path(temporary) / "rebuilt"
+            for folder in (original, rebuilt):
+                manifest = fixture(folder)
+                manifest["schema_version"] = 1
+                del manifest["selected_core"]
+                for name in ("dll/shock.wbx.zst", "dll/waterboxhost.dll"):
+                    del manifest["emulator_files"][name]
+                (folder / "inputs.json").write_text(json.dumps(manifest))
+            report = runtime_inputs.compare_inputs(original, rebuilt, "play", 6000)
+            self.assertTrue(report["declared_inputs_identical"])
+            self.assertFalse(report["inputs_verified"])
+            self.assertFalse(report["core_binary_identity_complete"])
+            self.assertEqual(report["status"], "legacy_core_identity_incomplete")
 
     def test_manifest_layout_must_agree_with_real_cue(self):
         with tempfile.TemporaryDirectory() as temporary:

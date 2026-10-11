@@ -1,10 +1,15 @@
 # Original disc assets
 
-The local reference is labelled **English v1**. Its executable is the canonical
+The initial local reference is labelled **English v1**. Its executable is the canonical
 Japanese executable; translated assets define the edition used for comparison.
 The original and rebuilt raw BIN files both have SHA-1
 `C30299AFCB9CF3373A22F1292847266655E20686`, covering the entire 648,088,896-byte
 disc image. This establishes byte identity for the reference edition.
+
+The later [Japanese edition supplement](JAPANESE_EDITION.md) independently
+hashes both extractions, finds 614 identical and 69 different file payloads,
+and reproduces the separate Japanese-labelled raw disc byte for byte. This
+original English inventory and its evidence remain preserved.
 
 An isolated dumpsxiso extraction contains **683 filesystem files**:
 
@@ -47,7 +52,7 @@ pixels. The inspector records both extents and preserves the original bytes.
 ## Repeatable inspection
 
 ```powershell
-python tools/inventory_disc.py --layout D:\private-extraction\disc.xml --output .decomp-lab\assets-new.json
+python tools/inventory_disc.py --layout D:\private-extraction\disc.xml --edition-label "My verified disc edition" --output .decomp-lab\assets-new.json
 ```
 
 The tool reads files, checks paths remain within the extraction, streams
@@ -56,3 +61,5 @@ to replace an existing report. Current private evidence is
 `.decomp-lab/disc-asset-inventory-current.json`; copyrighted files stay outside
 tracked deliverables. LBD/MOM structures, model commands, audio/movie decoding
 and content-to-runtime coverage still need semantic auditing.
+The edition label is caller-supplied and defaults to `unspecified`; executable
+identity alone does not establish the asset edition.

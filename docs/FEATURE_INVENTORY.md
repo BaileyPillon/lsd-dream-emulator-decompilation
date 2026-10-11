@@ -186,3 +186,11 @@ Fresh anchor evaluation retains 35 / 40 core-C groups and zero whole-feature
 acceptances. NPC, developer-capability and optional-mod counts remain unchanged.
 Its supplement is appended to [features.json](features.json), preserving all
 earlier snapshots and the fixed provisional denominator.
+
+The [Japanese edition supplement](JAPANESE_EDITION.md) compares 683 files per
+edition, preserves two original sector checksum words and reproduces the
+complete Japanese-labelled disc byte for byte. It records a repeated bounded
+replay with the actual Nymashock core pinned and retains the unresolved
+eight-byte cold-boot state difference. Further C experiments promote no
+function; all C, original feature, NPC, developer-capability and optional-mod
+counts remain unchanged. The appended metadata preserves the earlier records.

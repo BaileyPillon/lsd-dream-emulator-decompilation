@@ -1,10 +1,12 @@
 """Native asset bounds and preservation checks without game data."""
 
+import hashlib
 from pathlib import Path
 import struct
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -16,6 +18,36 @@ def texture_fixture():
 
 
 class DiscInventoryTests(unittest.TestCase):
+    def inspect_fixture(self, directory, edition_label=None):
+        root = Path(directory)
+        executable = b"synthetic executable for inventory provenance"
+        (root / "SLPS_015.56").write_bytes(executable)
+        (root / "disc.xml").write_text(
+            '<iso_project><track><directory_tree>'
+            '<file name="SLPS_015.56" source="SLPS_015.56" type="data" offs="24"/>'
+            '</directory_tree></track></iso_project>', encoding="utf-8")
+        with patch.object(inventory_disc, "ORIGINAL_SHA1", hashlib.sha1(executable).hexdigest()):
+            if edition_label is None:
+                return inventory_disc.inspect_layout(root / "disc.xml")
+            return inventory_disc.inspect_layout(root / "disc.xml", edition_label)
+
+    def test_default_edition_does_not_infer_a_translation_from_the_executable(self):
+        with tempfile.TemporaryDirectory() as directory:
+            report = self.inspect_fixture(directory)
+            self.assertEqual(report["edition_label"], "unspecified")
+            self.assertNotIn("English", report["scope"])
+            self.assertTrue(report["files"][0]["format_analysis"]["canonical_match"])
+
+    def test_edition_provenance_does_not_change_content_or_hashes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            first = self.inspect_fixture(directory, "English v1")
+            second = self.inspect_fixture(directory, "Japanese source")
+            self.assertEqual(first["files"], second["files"])
+            self.assertEqual(first["extensions"], second["extensions"])
+            self.assertEqual(second["edition_label"], "Japanese source")
+            self.assertEqual(Path(directory, "SLPS_015.56").read_bytes(),
+                             b"synthetic executable for inventory provenance")
+
     def test_tim_structure_preserves_word_units_and_padding(self):
         result = inventory_disc.tim_info(texture_fixture() + b"padding")
         self.assertEqual(result["image"]["width_words"], 2)

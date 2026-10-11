@@ -58,6 +58,10 @@ The [level-model loader audit](docs/LBD_PIPELINE.md) checks 418 local level
 files through native construction and destruction, including repeated loads.
 The later [matching loader recovery](docs/LBD_RECOVERY.md) promotes its 600-byte
 function to C, with complete standard and clean builds matching the original.
+The [Japanese disc verification](docs/JAPANESE_EDITION.md) compares both asset
+editions and corrects two checksum words to reproduce the complete Japanese
+disc byte for byte. Its replay evidence and unresolved cold-boot state
+difference are recorded separately.
 
 ## Three separate workflows
 

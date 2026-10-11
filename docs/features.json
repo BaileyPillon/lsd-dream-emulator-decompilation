@@ -18682,6 +18682,64 @@
       "model_api_calls": 0,
       "private_inputs_or_native_output_bytes_included": false,
       "whole_original_feature_groups_accepted": 0
+    },
+    "japanese_edition_verification_20261011": {
+      "recorded_utc": "2026-10-11T13:38:31.363192+00:00",
+      "documentation": "docs/JAPANESE_EDITION.md",
+      "metadata": "docs/japanese-edition-checks.json",
+      "metadata_sha256": "57324ee362bd36f96af4ce955c905e6eb013886f9db8054d42b709a1b8d3f393",
+      "repository_code_base_commit": "23de1433613ad9aa00d45c4a4763d717c6c95960",
+      "entire_japanese_raw_image_byte_equal": true,
+      "japanese_raw_image_bytes_compared": 648088896,
+      "edition_files_compared": 683,
+      "identical_edition_file_payloads": 614,
+      "different_edition_file_payloads": 69,
+      "source_functions_promoted": 0,
+      "canonical_executable_preserved": true,
+      "schema_two_shared_state_play_equal": true,
+      "schema_two_original_rebuilt_cold_equal": true,
+      "same_original_cold_repeat_decoded_state_difference_bytes": 8,
+      "earlier_actual_core_pin_limitation_preserved": true,
+      "state_bytes_masked": 0,
+      "current_turn_before_after": {
+        "before_source_commit": "23de1433613ad9aa00d45c4a4763d717c6c95960",
+        "before": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "after": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "new_matching_c_functions": 0,
+        "new_original_feature_groups_accepted": 0,
+        "new_sprite_compiler_comparisons": 1190,
+        "new_bounds_compiler_comparisons": 96
+      },
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0,
+      "private_inputs_or_native_output_bytes_included": false,
+      "whole_original_feature_groups_accepted": 0
     }
   }
 }

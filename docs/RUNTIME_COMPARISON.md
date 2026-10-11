@@ -84,9 +84,11 @@ It also records identical 4,422,823 stereo sample frames at 44,100 Hz, with
 The complete WAV files are byte-identical too. The input manifests verified
 the original and rebuilt track contents and the remaining launch identities.
 
-The disc assets are the user's English v1 translation with the canonical
-Japanese executable. This does not establish parity for an untested Japanese
-asset edition, every scene/NPC/state/RNG branch, every sound/movie event,
+That earlier comparison uses English v1 assets with the canonical Japanese
+executable. Its historical reports remain preserved. Their schema-one launch
+manifests omitted the actual Nymashock core and Waterbox host binary hashes;
+the current comparator labels that identity incomplete. This replay does not
+establish every scene/NPC/state/RNG branch, every sound/movie event,
 memory-card error, or original hardware timing. The feature inventory keeps
 entire feature-group acceptance separate from this successful replay.
 
@@ -99,3 +101,22 @@ looking, left/right movement states and tapped inputs are observed in stage 3;
 this does not cover every stage, surface, NPC, control mode or movement branch.
 The first diagnostic probe's mislabeled scale-as-position columns are preserved
 in its private outputs and are not used as position evidence.
+
+## Japanese edition and actual core identity
+
+The [Japanese edition supplement](JAPANESE_EDITION.md) records a separate
+6,000-frame replay with Japanese assets and the original Japanese starting
+state. The current launcher explicitly selects Nymashock, whose native core
+is `dll/shock.wbx.zst`, and hashes it and `dll/waterboxhost.dll` before launch.
+Schema-two manifests require both binary identities and the explicit core
+selection. Older schema-one manifests remain readable, with an explicit
+`legacy_core_identity_incomplete` status and `inputs_verified: false`.
+
+No comparison masks decoded state bytes. The initial Japanese cold-boot pair
+has eight differing bytes in each decoded Waterbox snapshot despite equal
+visual, GPU, trace and audio outputs. The repeated schema-two original/rebuild
+cold pair agrees, but a further same-original cold boot has the eight decoded
+differences again. Its field and cause remain unresolved. The schema-two
+6,000-frame shared-state pair agrees at every recorded checkpoint and across
+all 4,422,823 stereo PCM sample frames. Report hashes and these separate
+results are in [japanese-edition-checks.json](japanese-edition-checks.json).

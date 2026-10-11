@@ -34,6 +34,7 @@ $config = [ordered]@{
     SoundEnabled = $false
     SoundEnabledNormal = $false
     SoundEnabledRWFF = $false
+    PreferredCores = [ordered]@{ PSX = 'Nymashock' }
     FirmwareUserSpecifications = [ordered]@{
         'PSX+J' = (Join-Path $BiosRoot 'scph5500.bin')
         'PSX+U' = (Join-Path $BiosRoot 'scph5501.BIN')

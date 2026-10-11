@@ -1,0 +1,626 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-11T13:38:31.363192+00:00",
+  "repository_code_base_commit": "23de1433613ad9aa00d45c4a4763d717c6c95960",
+  "documentation": "docs/JAPANESE_EDITION.md",
+  "documentation_sha256": "ac994c8fe8bc1a99692d8b443981ce0c7d3470259040bbdfc827c9b483ce7aa5",
+  "producer": {
+    "path": "C:/Users/Administrator/Documents/AI Research/lsd-recovered/.decomp-lab/publish_japanese_edition_first.py",
+    "sha256": "490dc33ecbe0b960f79d21e93a22536769a7ecbecc615ece7cb490675e035aac"
+  },
+  "source_edition": {
+    "label": "Japanese disc; archive.org/lsddreamemulatorjapan",
+    "metadata_url": "https://archive.org/metadata/lsddreamemulatorjapan",
+    "raw_image": {
+      "bytes": 648088896,
+      "sha1": "cd518b9de51e552dac0b952420bc493dcf5cfe43",
+      "sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61"
+    },
+    "archive_size_sha1_md5_verified": true,
+    "official_pressing_independently_authenticated": false,
+    "original_cue_preserved": true,
+    "working_cue_changes_only_bin_filename": true,
+    "canonical_executable_bytes": 505856,
+    "canonical_executable_lba": 24,
+    "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+  },
+  "edition_comparison": {
+    "files_per_edition": 683,
+    "shared_paths": 683,
+    "identical_file_payloads": 614,
+    "changed_file_payloads": 69,
+    "changed_by_extension": {
+      ".STR": 2,
+      ".TIM": 67
+    },
+    "identical_by_extension": {
+      ".56": 1,
+      ".CNF": 1,
+      ".LBD": 418,
+      ".MOM": 2,
+      ".SEQ": 70,
+      ".STR": 38,
+      ".TIM": 8,
+      ".TIX": 56,
+      ".TMD": 2,
+      ".VB": 9,
+      ".VH": 9
+    },
+    "relocated_paths": 0,
+    "storage_type_changes": 0,
+    "stage_directories_per_edition": 14,
+    "bank_tim_records_per_edition": 445,
+    "unresolved_texture_files_per_edition": 0,
+    "earlier_english_corpus_preserved": true,
+    "content_counts_are_feature_counts": false
+  },
+  "disc_reconstruction": {
+    "report": ".decomp-lab/japanese-disc-roundtrip-second.json",
+    "sha256": "9eb3ad4d13881ca78359d2b5bc84fea5266c596d2bf99b2a4bacb2c5f4e86d8f",
+    "full_raw_image_bytes_compared": 648088896,
+    "different_bytes": 0,
+    "entire_raw_image_byte_equal": true,
+    "initial_reconstruction_different_bytes": 8,
+    "unchanged_form2_edc_preserved": [
+      {
+        "lba": 112583,
+        "source_edc": "2de0d6c4",
+        "regenerated_edc": "7711263e"
+      },
+      {
+        "lba": 181199,
+        "source_edc": "7d7bd80e",
+        "regenerated_edc": "26783ab4"
+      }
+    ],
+    "original_inputs_modified": false,
+    "changed_sector_bodies_overridden": false,
+    "form1_ecc_overridden": false
+  },
+  "runtime_scenarios": {
+    "shared_state_play": {
+      "report": ".decomp-lab/japanese-play-comparison-second.json",
+      "sha256": "3bcdb067946a72b9b4dff657525f2fa6a888fb1cccfdaf134db8e17b6c36ea0d",
+      "status": "exact_for_recorded_scenario",
+      "equal_recorded_outputs": true,
+      "emulator": {
+        "BizHawk": "2.11.1",
+        "System": "PSX",
+        "Scenario": "play"
+      },
+      "frames": 6000,
+      "checkpoints": 13,
+      "trace_samples": 100,
+      "input_status": "pinned_inputs_identical",
+      "input_identity": {
+        "schema_version": 2,
+        "selected_core": "Nymashock",
+        "scenario": "play",
+        "frames": 6000,
+        "disc_layout": [
+          "FILE <track-1> BINARY",
+          "TRACK 01 MODE2/2352",
+          "INDEX 01 00:00:00"
+        ],
+        "disc_tracks": [
+          {
+            "bytes": 648088896,
+            "sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61"
+          }
+        ],
+        "emulator_files": {
+          "EmuHawk.exe": {
+            "bytes": 5376512,
+            "sha256": "f8cdb93551a544f680bf3876d9d8d72643859e7a44a23b04e1a25b92e48f80cd"
+          },
+          "EmuHawk.exe.config": {
+            "bytes": 3266,
+            "sha256": "00146088ad19747e601d09dee0ead7bf75b27fccf23e3cf7809a5e7dede129cf"
+          },
+          "dll/BizHawk.Emulation.Cores.dll": {
+            "bytes": 10832896,
+            "sha256": "444bc157418e9b5df5d07e987fc7ad1d2d1c6993676f5b864368027cb4f054d5"
+          },
+          "dll/BizHawk.Emulation.Common.dll": {
+            "bytes": 413184,
+            "sha256": "f557d94912b12bde18413b60d25b3e61332b7bbfc7184349d1289d6ba9f350ee"
+          },
+          "dll/octoshock.dll": {
+            "bytes": 1259008,
+            "sha256": "466a6a1f9d958a4d365b10fcf9b4bde5aeb80cc9c4d4fd00da9ad05930569b41"
+          },
+          "dll/shock.wbx.zst": {
+            "bytes": 705813,
+            "sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126"
+          },
+          "dll/waterboxhost.dll": {
+            "bytes": 406016,
+            "sha256": "e8e47426941a710c7ceea98fb0833b8387de1952f54ca0fa40001cd494507cee"
+          }
+        },
+        "bios": {
+          "J": {
+            "bytes": 524288,
+            "sha256": "9c0421858e217805f4abe18698afea8d5aa36ff0727eb8484944e00eb5e7eadb"
+          },
+          "U": {
+            "bytes": 524288,
+            "sha256": "11052b6499e466bbf0a709b1f9cb6834a9418e66680387912451e971cf8a1fef"
+          },
+          "E": {
+            "bytes": 524288,
+            "sha256": "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+          }
+        },
+        "configuration": {
+          "normalized_json_sha256": "8c523e33f6cdbc55c0814e5f0719e0a4243bd63715a41c498cf289c41d6c675d"
+        },
+        "script": {
+          "bytes": 3389,
+          "sha256": "c3e7bd872616ce84ad1c61625987e7ea611139d3c4ff29dd7df852f3423b5eef"
+        },
+        "start_kind": "saved_state",
+        "start_state": {
+          "bytes": 362915,
+          "sha256": "a6fcdce4df9c66ae99ec9e9d077a6d68a45a1c41ea0964083aab97c332ad3949"
+        },
+        "audio_output_requested": true,
+        "audio_writer": "wave"
+      },
+      "input_manifest_sha256": [
+        "a347c81f25fb18ac809b52f18c9c1463a9a1ff3917ba211e9e21d39d7597cb82",
+        "1cc1ccfb770d05783387d469dfd3df648ae4a610ccdbc9965f689d3c05174944"
+      ],
+      "all_visual_gpu_trace_outputs_equal": true,
+      "all_save_state_member_payloads_equal": true,
+      "audio": {
+        "status": "pcm_output_compared",
+        "equal_pcm_output": true,
+        "original": {
+          "channels": 2,
+          "sample_rate": 44100,
+          "sample_width": 2,
+          "sample_frames": 4422823,
+          "nonzero_channel_samples": 7732157,
+          "pcm_sha256": "3f0be58b4438905cbdff7327c270461dca571eb30f67dc1fbddf45a56617edbe"
+        },
+        "wav_file_bytes": {
+          "equal": true,
+          "original_bytes": 17691336,
+          "rebuilt_bytes": 17691336,
+          "original_sha256": "34af819a381bfd6bf5a8f2519c7abe89b4ec35824c7166da428d026b9b9c2081",
+          "rebuilt_sha256": "34af819a381bfd6bf5a8f2519c7abe89b4ec35824c7166da428d026b9b9c2081"
+        }
+      },
+      "native_observations": "native_state_not_captured",
+      "whole_feature_groups_accepted": 0
+    },
+    "cold_original_rebuilt": {
+      "report": ".decomp-lab/japanese-boot-comparison-second.json",
+      "sha256": "57383c0f432bfacfb2e78f5f5bf5b976bd088a2abd28fcf7acc1cc7b1d3168de",
+      "status": "exact_for_recorded_scenario",
+      "equal_recorded_outputs": true,
+      "emulator": {
+        "BizHawk": "2.11.1",
+        "System": "PSX",
+        "Scenario": "boot"
+      },
+      "frames": 1800,
+      "checkpoints": 6,
+      "trace_samples": 30,
+      "input_status": "pinned_inputs_identical",
+      "input_identity": {
+        "schema_version": 2,
+        "selected_core": "Nymashock",
+        "scenario": "boot",
+        "frames": 1800,
+        "disc_layout": [
+          "FILE <track-1> BINARY",
+          "TRACK 01 MODE2/2352",
+          "INDEX 01 00:00:00"
+        ],
+        "disc_tracks": [
+          {
+            "bytes": 648088896,
+            "sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61"
+          }
+        ],
+        "emulator_files": {
+          "EmuHawk.exe": {
+            "bytes": 5376512,
+            "sha256": "f8cdb93551a544f680bf3876d9d8d72643859e7a44a23b04e1a25b92e48f80cd"
+          },
+          "EmuHawk.exe.config": {
+            "bytes": 3266,
+            "sha256": "00146088ad19747e601d09dee0ead7bf75b27fccf23e3cf7809a5e7dede129cf"
+          },
+          "dll/BizHawk.Emulation.Cores.dll": {
+            "bytes": 10832896,
+            "sha256": "444bc157418e9b5df5d07e987fc7ad1d2d1c6993676f5b864368027cb4f054d5"
+          },
+          "dll/BizHawk.Emulation.Common.dll": {
+            "bytes": 413184,
+            "sha256": "f557d94912b12bde18413b60d25b3e61332b7bbfc7184349d1289d6ba9f350ee"
+          },
+          "dll/octoshock.dll": {
+            "bytes": 1259008,
+            "sha256": "466a6a1f9d958a4d365b10fcf9b4bde5aeb80cc9c4d4fd00da9ad05930569b41"
+          },
+          "dll/shock.wbx.zst": {
+            "bytes": 705813,
+            "sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126"
+          },
+          "dll/waterboxhost.dll": {
+            "bytes": 406016,
+            "sha256": "e8e47426941a710c7ceea98fb0833b8387de1952f54ca0fa40001cd494507cee"
+          }
+        },
+        "bios": {
+          "J": {
+            "bytes": 524288,
+            "sha256": "9c0421858e217805f4abe18698afea8d5aa36ff0727eb8484944e00eb5e7eadb"
+          },
+          "U": {
+            "bytes": 524288,
+            "sha256": "11052b6499e466bbf0a709b1f9cb6834a9418e66680387912451e971cf8a1fef"
+          },
+          "E": {
+            "bytes": 524288,
+            "sha256": "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+          }
+        },
+        "configuration": {
+          "normalized_json_sha256": "8c523e33f6cdbc55c0814e5f0719e0a4243bd63715a41c498cf289c41d6c675d"
+        },
+        "script": {
+          "bytes": 3389,
+          "sha256": "c3e7bd872616ce84ad1c61625987e7ea611139d3c4ff29dd7df852f3423b5eef"
+        },
+        "start_kind": "cold_boot",
+        "start_state": null,
+        "audio_output_requested": true,
+        "audio_writer": "wave"
+      },
+      "input_manifest_sha256": [
+        "bd589d8c249d0578292dd488719e5ae851ca6288b6d0ab5fd259096e282b79e9",
+        "33789fe03c03179776ec28d4004db8e34d11a3bd1a0aedbaf9ca8a6f35dc9387"
+      ],
+      "all_visual_gpu_trace_outputs_equal": true,
+      "all_save_state_member_payloads_equal": true,
+      "audio": {
+        "status": "pcm_output_compared",
+        "equal_pcm_output": true,
+        "original": {
+          "channels": 2,
+          "sample_rate": 44100,
+          "sample_width": 2,
+          "sample_frames": 1326289,
+          "nonzero_channel_samples": 1343926,
+          "pcm_sha256": "c07f986b98f6439fefce47216a79723ddd9250d7049ae5ecfdd98d7fddd721b9"
+        },
+        "wav_file_bytes": {
+          "equal": true,
+          "original_bytes": 5305200,
+          "rebuilt_bytes": 5305200,
+          "original_sha256": "10c9262647adf62c169f9426421e4ed13a56c0cbeeb0fed635e6c9b0b1810e82",
+          "rebuilt_sha256": "10c9262647adf62c169f9426421e4ed13a56c0cbeeb0fed635e6c9b0b1810e82"
+        }
+      },
+      "native_observations": "native_state_not_captured",
+      "whole_feature_groups_accepted": 0
+    },
+    "cold_same_original_repeat": {
+      "report": ".decomp-lab/japanese-original-cold-repeat-first.json",
+      "sha256": "4004456249a9e44de09a8566760db8c0d698c063e63030139e6bfd721526fe30",
+      "status": "recorded_outputs_differ",
+      "equal_recorded_outputs": false,
+      "emulator": {
+        "BizHawk": "2.11.1",
+        "System": "PSX",
+        "Scenario": "boot"
+      },
+      "frames": 1800,
+      "checkpoints": 6,
+      "trace_samples": 30,
+      "input_status": "pinned_inputs_identical",
+      "input_identity": {
+        "schema_version": 2,
+        "selected_core": "Nymashock",
+        "scenario": "boot",
+        "frames": 1800,
+        "disc_layout": [
+          "FILE <track-1> BINARY",
+          "TRACK 01 MODE2/2352",
+          "INDEX 01 00:00:00"
+        ],
+        "disc_tracks": [
+          {
+            "bytes": 648088896,
+            "sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61"
+          }
+        ],
+        "emulator_files": {
+          "EmuHawk.exe": {
+            "bytes": 5376512,
+            "sha256": "f8cdb93551a544f680bf3876d9d8d72643859e7a44a23b04e1a25b92e48f80cd"
+          },
+          "EmuHawk.exe.config": {
+            "bytes": 3266,
+            "sha256": "00146088ad19747e601d09dee0ead7bf75b27fccf23e3cf7809a5e7dede129cf"
+          },
+          "dll/BizHawk.Emulation.Cores.dll": {
+            "bytes": 10832896,
+            "sha256": "444bc157418e9b5df5d07e987fc7ad1d2d1c6993676f5b864368027cb4f054d5"
+          },
+          "dll/BizHawk.Emulation.Common.dll": {
+            "bytes": 413184,
+            "sha256": "f557d94912b12bde18413b60d25b3e61332b7bbfc7184349d1289d6ba9f350ee"
+          },
+          "dll/octoshock.dll": {
+            "bytes": 1259008,
+            "sha256": "466a6a1f9d958a4d365b10fcf9b4bde5aeb80cc9c4d4fd00da9ad05930569b41"
+          },
+          "dll/shock.wbx.zst": {
+            "bytes": 705813,
+            "sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126"
+          },
+          "dll/waterboxhost.dll": {
+            "bytes": 406016,
+            "sha256": "e8e47426941a710c7ceea98fb0833b8387de1952f54ca0fa40001cd494507cee"
+          }
+        },
+        "bios": {
+          "J": {
+            "bytes": 524288,
+            "sha256": "9c0421858e217805f4abe18698afea8d5aa36ff0727eb8484944e00eb5e7eadb"
+          },
+          "U": {
+            "bytes": 524288,
+            "sha256": "11052b6499e466bbf0a709b1f9cb6834a9418e66680387912451e971cf8a1fef"
+          },
+          "E": {
+            "bytes": 524288,
+            "sha256": "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+          }
+        },
+        "configuration": {
+          "normalized_json_sha256": "8c523e33f6cdbc55c0814e5f0719e0a4243bd63715a41c498cf289c41d6c675d"
+        },
+        "script": {
+          "bytes": 3389,
+          "sha256": "c3e7bd872616ce84ad1c61625987e7ea611139d3c4ff29dd7df852f3423b5eef"
+        },
+        "start_kind": "cold_boot",
+        "start_state": null,
+        "audio_output_requested": true,
+        "audio_writer": "wave"
+      },
+      "input_manifest_sha256": [
+        "bd589d8c249d0578292dd488719e5ae851ca6288b6d0ab5fd259096e282b79e9",
+        "e0a2f8cf2186161e6a395af2f2671a0338e563f362c9af39b19606e869986f73"
+      ],
+      "all_visual_gpu_trace_outputs_equal": true,
+      "all_save_state_member_payloads_equal": false,
+      "audio": {
+        "status": "pcm_output_compared",
+        "equal_pcm_output": true,
+        "original": {
+          "channels": 2,
+          "sample_rate": 44100,
+          "sample_width": 2,
+          "sample_frames": 1326289,
+          "nonzero_channel_samples": 1343926,
+          "pcm_sha256": "c07f986b98f6439fefce47216a79723ddd9250d7049ae5ecfdd98d7fddd721b9"
+        },
+        "wav_file_bytes": {
+          "equal": true,
+          "original_bytes": 5305200,
+          "rebuilt_bytes": 5305200,
+          "original_sha256": "10c9262647adf62c169f9426421e4ed13a56c0cbeeb0fed635e6c9b0b1810e82",
+          "rebuilt_sha256": "10c9262647adf62c169f9426421e4ed13a56c0cbeeb0fed635e6c9b0b1810e82"
+        }
+      },
+      "native_observations": "native_state_not_captured",
+      "whole_feature_groups_accepted": 0
+    }
+  },
+  "cold_reproducibility": {
+    "report": ".decomp-lab/japanese-cold-reproducibility-second.json",
+    "sha256": "347ac786fc70b1b41cdfe02b2810b7a03b21684d380fb28cf3742c1d532c3968",
+    "same_original_disc_repeat_decoded_differences_per_checkpoint": 8,
+    "checkpoints": 6,
+    "visual_gpu_trace_and_pcm_equal": true,
+    "decoded_state_bytes_masked": 0,
+    "field_and_cause": "unresolved",
+    "earlier_schema_one_actual_core_identity_complete": false,
+    "latest_original_rebuild_cold_pair_equal": true,
+    "cold_boot_reproducibility_fully_accepted": false
+  },
+  "canonical_build": {
+    "report": ".decomp-lab/japanese-edition-current-progress-first.json",
+    "sha256": "342d61ad0cb642867cacccb4c2f6b00ef31591969e82710401b8a99b3f1e723c",
+    "objects_expected": 305,
+    "objects_found": 305,
+    "build_current": true,
+    "c_bytes": 194884,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 97.48489335307535,
+    "sdk_text_bytes": 147880,
+    "handwritten_text_bytes": 188,
+    "binary_match": "verified",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+  },
+  "additional_source_experiments": [
+    {
+      "name": "sprite_helper_argument_order",
+      "report": ".decomp-lab/ui-argument-order-first/results.json",
+      "sha256": "c2ca62e211adcfb5d91a72ded64215e129160a39eb7ef8234c3f512fed8fa6a6",
+      "compiler_comparisons": 37,
+      "errors": 0,
+      "exact_function_matches": 0,
+      "minimum_different_bytes": 12,
+      "source_promoted": false,
+      "canonical_flags_changed": false
+    },
+    {
+      "name": "sprite_narrow_accumulation",
+      "report": ".decomp-lab/ui-narrow-accumulation-first/results.json",
+      "sha256": "7aa271a421034aab38fd2ba26b2f1f8d063295d55d26c8cf034cf0af4e4b9ccf",
+      "compiler_comparisons": 720,
+      "errors": 0,
+      "exact_function_matches": 0,
+      "minimum_different_bytes": 12,
+      "source_promoted": false,
+      "canonical_flags_changed": false
+    },
+    {
+      "name": "sprite_output_helper",
+      "report": ".decomp-lab/ui-output-helper-first/results.json",
+      "sha256": "718398ae04fd5ee63b129c0e6791930b42d612743c84d073dc3c5344220838f8",
+      "compiler_comparisons": 433,
+      "errors": 0,
+      "exact_function_matches": 0,
+      "minimum_different_bytes": 12,
+      "source_promoted": false,
+      "canonical_flags_changed": false
+    },
+    {
+      "name": "bounds_return_lifetime",
+      "report": ".decomp-lab/cd38-return-lifetime-first/results.json",
+      "sha256": "4bd4ef5c69edff4c1637473c769bf44c64d66029c41063ce34422f87601b3cb3",
+      "compiler_comparisons": 96,
+      "errors": 0,
+      "exact_function_matches": 0,
+      "minimum_different_bytes": 83,
+      "source_promoted": false,
+      "canonical_flags_changed": false
+    }
+  ],
+  "source_comparison_count_scope": "Compiler comparisons, including separately retained baselines; not asserted globally unique forms.",
+  "current_turn_before_after": {
+    "before_source_commit": "23de1433613ad9aa00d45c4a4763d717c6c95960",
+    "before": {
+      "c_bytes": 194884,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 6,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "after": {
+      "c_bytes": 194884,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 6,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "new_matching_c_functions": 0,
+    "new_original_feature_groups_accepted": 0,
+    "new_sprite_compiler_comparisons": 1190,
+    "new_bounds_compiler_comparisons": 96
+  },
+  "local_tests": [
+    {
+      "host": "Windows",
+      "python": "3.14",
+      "tests": 163,
+      "result": "passed",
+      "report": ".decomp-lab/japanese-edition-windows-tests-third.log",
+      "sha256": "d800b5c418cbc6834b8c035eba5d81ccc629074830ce00f5f1ea59b23950de7c"
+    },
+    {
+      "host": "Linux WSL",
+      "python": "3.13",
+      "tests": 163,
+      "result": "passed",
+      "report": ".decomp-lab/japanese-edition-linux-tests-third.log",
+      "sha256": "fca9e235dce45b48f4955c5c828c1a0ae6ab1bd9d81f1393ceac34268eadfb6a"
+    }
+  ],
+  "public_source_sha256": {
+    "tools/inventory_disc.py": "71319a4c51b50885753998fe9afb7a00b71acf0fa03167b9a63c48651e36aebf",
+    "tools/package_disc.py": "063fc13cf3258de489867068bd34dcfd8dd814d296e331fb2a711d58fafe1cfc",
+    "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+    "tools/runtime_inputs.py": "a1e0865b13801414bfad30f31ce00ffd13840b2a836dbc527e138d89d6d877e4",
+    "tools/start_runtime_qa.ps1": "d5e64381e9776d5057e3d113fef6879dbf44b5680b11555f6c750df406ed44f5",
+    "tools/runtime_smoke.lua": "c3e7bd872616ce84ad1c61625987e7ea611139d3c4ff29dd7df852f3423b5eef",
+    "tools/compare_runtime.py": "3fd2893a7f3971627e429462106ead9ded0bf5778ef34bc6bd2035e1564c2348",
+    "tests/test_disc_inventory.py": "2fe7a6b3c91e211b298802cba50d8bfd557875002305ada8cd3a3d0230bd695e",
+    "tests/test_tools.py": "a721dda6e766dc0df5474ebd167b388ef73d00fe4c6925386f9c9324f43bf1ab",
+    "tests/test_runtime_inputs.py": "c3580e969f9c57e3a6f27511de31f717f10ec39dfcd004c1883cad2b196e2215",
+    "src/scene/render_context.c": "5b8d25142af3ac22388076a93789f0d351fdfb6d09d7333ac0d17bf79aaf0325",
+    "src/menu/ui_sprite.c": "2241eed19864e16042d63cab0cb43fc4b9248ef78f062ea3de0858897dd85a94"
+  },
+  "private_evidence": [
+    {
+      "report": ".decomp-lab/japanese-disc-source-search-first.json",
+      "sha256": "9e0fc3cf93d15b3b59db44241cf1796d5cea218e7e83e7314510445ddc23a7a5"
+    },
+    {
+      "report": ".decomp-lab/japanese-disc-download-first.json",
+      "sha256": "4c89ca59d9c57fb3227c71e63d2d6f690effe31ebee78afb340c662d3fe99e3f"
+    },
+    {
+      "report": ".decomp-lab/japanese-disc-inventory-first.json",
+      "sha256": "986e7bad2d9173eb57e3e0f8ce72b0c3b74a7beab93f219d179c1c65b4b036d0"
+    },
+    {
+      "report": ".decomp-lab/english-disc-inventory-rechecked-first.json",
+      "sha256": "a36e43989e488e0ae812734d70771037fc646e5790c8bb41a86ca25fe2a27231"
+    },
+    {
+      "report": ".decomp-lab/japanese-english-asset-comparison-first.json",
+      "sha256": "6bb8318516bd66903ce9fc15eadecea4645902512335f4e48953fb0749855670"
+    },
+    {
+      "report": ".decomp-lab/japanese-disc-roundtrip-first.json",
+      "sha256": "9c04673a79e4db540dfb00ab5943b2bf0a0ce27e24445a8e2467fe9d0b81ec66"
+    },
+    {
+      "report": ".decomp-lab/japanese-disc-roundtrip-diagnostic-first.json",
+      "sha256": "cf29439766b2019e6202816528f715d84f14de403b98db880dc2e0bb117b6f32"
+    },
+    {
+      "report": ".decomp-lab/japanese-disc-roundtrip-second.json",
+      "sha256": "9eb3ad4d13881ca78359d2b5bc84fea5266c596d2bf99b2a4bacb2c5f4e86d8f"
+    },
+    {
+      "report": ".decomp-lab/japanese-play-comparison-first.json",
+      "sha256": "72370a19e97ea99d4b73530a87341f33c871b32e9979fb5857c6b9083bcff591"
+    },
+    {
+      "report": ".decomp-lab/japanese-boot-comparison-first.json",
+      "sha256": "6eb4a4f27aa578041fc89db96fa70ecc0abb9d9b34af77535708992083f9af0b"
+    },
+    {
+      "report": ".decomp-lab/japanese-boot-core-decompression-first.json",
+      "sha256": "6b48e214cc2860c1f3391b1369e04d9e21c49c25557f2d2ad01ad43c066542ba"
+    },
+    {
+      "report": ".decomp-lab/japanese-cold-reproducibility-second.json",
+      "sha256": "347ac786fc70b1b41cdfe02b2810b7a03b21684d380fb28cf3742c1d532c3968"
+    },
+    {
+      "report": ".decomp-lab/japanese-edition-current-progress-first.json",
+      "sha256": "342d61ad0cb642867cacccb4c2f6b00ef31591969e82710401b8a99b3f1e723c"
+    }
+  ],
+  "original_game_behavior_modified": false,
+  "model_api_calls": 0,
+  "official_exhaustive_feature_total": null,
+  "private_inputs_or_asset_capture_bytes_included": false,
+  "scope": "Japanese-source whole-disc byte identity, edition classification and bounded runtime comparisons. Six C recoveries, exhaustive inventory, whole-feature acceptance and unexplained cold-state variation remain open."
+}

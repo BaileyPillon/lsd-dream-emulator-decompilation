@@ -1,5 +1,19 @@
 # Changelog
 
+## Japanese disc reconstruction and runtime identity - 2026-10-11
+
+- Preserve original EDC words for identical valid XA Form2 sector bodies;
+  reproduce the entire 648,088,896-byte Japanese-labelled disc byte for byte.
+- Compare 683 files per edition: 614 identical payloads, 67 changed TIMs and
+  two changed STRs, with unchanged paths, LBAs and storage classifications.
+- Use neutral, caller-supplied edition labels in the disc inventory tool.
+- Explicitly select Nymashock and pin its actual core and Waterbox host before
+  runtime QA; retain older manifests with an incomplete core-identity status.
+- Pass the Japanese 6,000-frame shared-state and 1,800-frame cold comparisons;
+  retain a same-original cold repeat's eight unresolved decoded state bytes.
+  No game function or feature is added.
+- Pass 163 local tooling tests on Windows Python 3.14 and Linux Python 3.13.
+
 ## Matching level-model loader recovery - 2026-10-11
 
 - Recover `func_8004BE54` as 600 bytes of matching C; complete candidate,

@@ -11,9 +11,9 @@ import tempfile
 import xml.etree.ElementTree as ET
 
 try:
-    from .psx_image import EXECUTABLE_NAME, ORIGINAL_SHA1, read_root_file
+    from .psx_image import EXECUTABLE_NAME, ORIGINAL_SHA1, data_image, read_root_file
 except ImportError:
-    from psx_image import EXECUTABLE_NAME, ORIGINAL_SHA1, read_root_file
+    from psx_image import EXECUTABLE_NAME, ORIGINAL_SHA1, data_image, read_root_file
 
 
 def find_tool(name, directory=None):
@@ -27,6 +27,41 @@ def find_tool(name, directory=None):
     if not path:
         raise ValueError(f"Install MKPSXISO (mkpsxiso and dumpsxiso), or use --tool-dir.")
     return path
+
+
+def preserve_unchanged_form2_edc(disc, image):
+    """Retain source checksums for byte-identical XA Form2 sector bodies.
+
+    MKPSXISO regenerates these words, even if the source used a different
+    value. Preserve that input behavior without overriding changed payloads,
+    Form1 ECC, or the source image itself.
+    """
+    source, image = data_image(disc), Path(image).resolve()
+    if source.samefile(image):
+        raise ValueError("Checksum preservation requires a separate rebuilt image.")
+    if source.stat().st_size % 2352 or image.stat().st_size % 2352:
+        return []
+    sync = b"\x00" + b"\xff" * 10 + b"\x00"
+    retained = []
+    with source.open("rb") as reference, image.open("r+b") as rebuilt:
+        if reference.read(12) != sync or rebuilt.read(12) != sync:
+            return []
+        reference.seek(0)
+        rebuilt.seek(0)
+        sector = 0
+        while True:
+            before, after = reference.read(2352), rebuilt.read(2352)
+            if len(before) != 2352 or len(after) != 2352:
+                break
+            if (before[-4:] != after[-4:] and before[:2348] == after[:2348]
+                    and before[:12] == sync and before[15] == 2
+                    and before[16:20] == before[20:24] and before[18] & 0x20):
+                rebuilt.seek(sector * 2352 + 2348)
+                rebuilt.write(before[-4:])
+                retained.append({"lba": sector, "source_edc": before[-4:].hex(),
+                                 "regenerated_edc": after[-4:].hex()})
+            sector += 1
+    return retained
 
 
 def package(disc, executable, output, tool_dir=None):
@@ -76,6 +111,7 @@ def package(disc, executable, output, tool_dir=None):
         extracted.write_bytes(replacement)
         subprocess.run([mkpsxiso, "-q", "-o", "image.bin", "-c", "image.cue", "disc.xml"],
                        cwd=workspace, check=True)
+        retained_edc = preserve_unchanged_form2_edc(disc, workspace / "image.bin")
         packed, packed_lba = read_root_file(workspace / "image.bin")
         if packed != replacement or packed_lba != original_lba:
             raise ValueError("Packed executable or its disc LBA failed read-back verification.")
@@ -92,7 +128,8 @@ def package(disc, executable, output, tool_dir=None):
         report = {"source_disc": str(disc), "executable": str(executable),
                   "executable_sha1": hashlib.sha1(final).hexdigest(), "executable_lba": final_lba,
                   "image_bytes": binary.stat().st_size, "disc_layout": "original LBA offsets requested",
-                  "executable_verified": True, "gameplay_tested": False}
+                  "executable_verified": True, "gameplay_tested": False,
+                  "unchanged_form2_edc_preserved": retained_edc}
         with report_path.open("x", encoding="utf-8") as stream:
             json.dump(report, stream, indent=2)
             stream.write("\n")

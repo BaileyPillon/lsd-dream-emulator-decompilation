@@ -80,12 +80,13 @@ and 191 initial source trials found no exact match. The subsequent
 - Compare natural animation construction, lifetime and actor/render behavior.
 - Review every feature's recorded scenarios, including rare RNG, save/card
   error, audio and hardware-timing branches.
-- Measure complete Japanese-asset coverage separately from the local translated
-  asset edition used in the existing comparisons.
+- Extend [Japanese asset and replay evidence](JAPANESE_EDITION.md) beyond the
+  recorded 6,000-frame scenario, resolve the eight decoded cold-boot state
+  bytes, and review exhaustive content coverage separately from English v1.
 
 The catalogue currently has 40 provisional groups. None has been accepted for
 all required runtime scenarios. The [inventory](FEATURE_INVENTORY.md) lists the
-remaining scenario for each group; 97.18% describes game C bytes only.
+remaining scenario for each group; 97.48% describes game C bytes only.
 
 ## Developer tools and optional mods
 

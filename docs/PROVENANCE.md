@@ -183,3 +183,22 @@ remain unchanged. The new source moves C coverage to 97.48% and six remaining
 assembly functions; it does not imply new original features or whole-feature
 acceptance. Pins and before/after measurements are in
 [lbd-recovery-checks.json](lbd-recovery-checks.json).
+
+## Japanese edition and reconstruction supplement
+
+The [Japanese edition verification](JAPANESE_EDITION.md) retains source metadata
+and hashes for a separately acquired Japanese-labelled disc. Both editions'
+683 extracted files were freshly hashed; all paths, LBAs and storage types
+agree, with 69 changed payloads. Original CUE and failed reconstruction evidence
+are preserved. A separate working CUE resolves the supplied filename mismatch.
+The corrected packager preserves two EDC words only for identical valid Form2
+sector bodies and reproduces the complete 648,088,896-byte source image.
+
+Earlier runtime manifests did not pin the actual Nymashock binary. This
+limitation remains explicit; fresh repeated runs use core selection and
+schema-two identity checks. The new original/rebuild cold and shared-state
+pairs agree, while an additional same-original cold boot still has eight
+decoded state differences. These are retained without masking. Metadata in
+[japanese-edition-checks.json](japanese-edition-checks.json) pins private evidence
+and the public tooling changes without publishing disc, BIOS, asset or capture
+bytes. Original feature and C-recovery counts remain unchanged.

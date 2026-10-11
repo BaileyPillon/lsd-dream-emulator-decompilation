@@ -105,7 +105,10 @@ def digest_file(path):
     return sha256.hexdigest(), sha1.hexdigest()
 
 
-def inspect_layout(layout):
+def inspect_layout(layout, edition_label="unspecified"):
+    edition_label = edition_label.strip()
+    if not edition_label:
+        raise ValueError("Edition label must not be empty.")
     layout = Path(layout).resolve()
     xml = ET.parse(layout).getroot()
     tree = xml.find("./track/directory_tree")
@@ -162,7 +165,8 @@ def inspect_layout(layout):
     texture_banks = [record for record in records if record["extension"] == ".TIX"]
     return {"schema_version": 1, "created_at": datetime.now(timezone.utc).isoformat(),
         "layout": str(layout), "layout_sha256": hashlib.sha256(layout.read_bytes()).hexdigest(),
-        "scope": "Owned English v1 disc extraction; file identity and selected native structures. Content counts are not feature counts.",
+        "edition_label": edition_label,
+        "scope": "Disc extraction; file identity and selected native structures. The edition label is caller-supplied; content counts are not feature counts.",
         "input_modified": False, "official_feature_total": None,
         "file_count": len(records), "extensions": dict(sorted(Counter(r["extension"] for r in records).items())),
         "storage_types": dict(Counter(r["storage_type"] for r in records)),
@@ -182,11 +186,13 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--layout", required=True)
     parser.add_argument("--output", required=True)
+    parser.add_argument("--edition-label", default="unspecified",
+                        help="Caller-supplied edition provenance; not inferred from the executable hash.")
     args = parser.parse_args(argv)
     try:
         if Path(args.output).exists():
             raise ValueError("Choose a new output file; existing inventories are preserved.")
-        report = inspect_layout(args.layout)
+        report = inspect_layout(args.layout, args.edition_label)
         with Path(args.output).open("x", encoding="utf-8") as stream:
             json.dump(report, stream, indent=2)
             stream.write("\n")
