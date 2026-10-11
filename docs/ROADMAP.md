@@ -30,7 +30,8 @@ raise a coverage number.
 
 - Resolve asset/command inventory gaps and runtime reachability.
 - Close virtual-call dependencies and verify semantic callback signatures.
-- Extend native fixtures beyond the currently bounded Lion and Gray Man cases.
+- Extend native fixtures beyond the 11 currently checked callbacks and their
+  documented contracts; see the [scripted callback checks](SCRIPTED_AI.md).
 - Compare natural animation construction, lifetime and actor/render behavior.
 - Review every feature's recorded scenarios, including rare RNG, save/card
   error, audio and hardware-timing branches.
