@@ -42,6 +42,9 @@ volume-function names and an external signature workflow with explicit ambiguity
 The [render-context bounds checks](docs/RENDER_BOUNDS.md) recover the smallest
 remaining assembly function's bounded behavior; its C candidate still needs
 an exact code match.
+The [save workflow checks](docs/CARD_SAVE.md) exercise the original writer,
+retry wrapper and native string helpers; physical card I/O and the writer's
+exact C recovery remain open.
 
 ## Three separate workflows
 

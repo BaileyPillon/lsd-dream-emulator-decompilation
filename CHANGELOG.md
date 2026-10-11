@@ -1,5 +1,19 @@
 # Changelog
 
+## Original save workflow verification - 2026-10-11
+
+- Check 13,152 original save-workflow cases using nine native functions and
+  seven explicit I/O, allocation and diagnostic contracts; detect seven
+  deliberately wrong instructions.
+- Recover the 11-attempt retry limit, slot-title cleanup, header/payload byte
+  rules and ignored write errors without altering original behavior.
+- Compare a full C translation unit against the canonical executable; retain
+  its eight byte differences and the original assembly writer.
+- Save three reviewed MIPS prototypes in the private Ghidra project with
+  native bytes preserved. Add a reusable verifier and report-preservation tests.
+- Preserve C/feature/NPC counts and the ten developer capabilities. Physical
+  card I/O, whole-feature acceptance and full game parity remain open.
+
 ## Original render-context bounds verification - 2026-10-11
 
 - Recover signed bounds fields and short-circuit data-read behavior in 4,648

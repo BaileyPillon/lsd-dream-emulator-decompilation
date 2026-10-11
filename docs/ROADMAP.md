@@ -19,6 +19,9 @@ and a sound-API correction; unmatched functions still need further analysis.
 The [bounds-predicate audit](RENDER_BOUNDS.md) verifies the original
 `func_8004CD38` contract and a research candidate on bounded fixtures. Its 38
 byte differences remain to resolve before accepting C.
+The [save workflow audit](CARD_SAVE.md) verifies the wrapper, writer and native
+helpers in 13,152 bounded cases. Its full C candidate agrees on those fixtures
+but still differs in eight executable bytes; the writer remains in assembly.
 
 | Function | Source |
 | --- | --- |

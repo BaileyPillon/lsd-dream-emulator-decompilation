@@ -47,6 +47,13 @@ The feature catalogue records C recovery, inherited C-plus-assembly behavior,
 bounded native checks and whole-feature runtime acceptance separately. It does
 not claim a developer-official feature total or completed end-to-end parity.
 
+The [save workflow supplement](CARD_SAVE.md) extends native evidence through
+the original retry wrapper and actual SDK string/label helpers. Seven explicit
+contracts cover file I/O, allocation and diagnostic output. Its independent
+model, full-executable C comparison and private Ghidra metadata remain separate
+from whole-feature and hardware acceptance. [card-save-checks.json](card-save-checks.json)
+records the publication's source and evidence pins without game bytes.
+
 ## Save-title classification correction
 
 The [save-title supplement](SAVE_LABEL.md) recovers `func_800507F8` in matching

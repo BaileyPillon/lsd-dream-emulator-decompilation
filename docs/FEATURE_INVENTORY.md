@@ -95,6 +95,14 @@ The same audit bounded 418 of 418 LBD files, 167,200 grid cells and 270 addition
 
 ## Remaining scope
 
+The [save workflow supplement](CARD_SAVE.md) checks the original retry wrapper,
+writer, path builder, title formatter and SDK string/conversion routines in
+13,152 bounded cases. Seven I/O/allocation/diagnostic contracts remain explicit.
+This extends evidence for F037/F039; it adds no original feature, C promotion,
+whole-feature acceptance or developer capability. The writer's full C candidate
+still differs in eight bytes. Physical card I/O and complete save round trips
+remain open.
+
 The [render-context bounds supplement](RENDER_BOUNDS.md) adds 4,648 original
 native cases and four detected controls with zero stubs. A C candidate agrees
 on those fixtures but still has 38 byte differences and remains private.

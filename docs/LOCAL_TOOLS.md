@@ -17,6 +17,21 @@ Pass its exact name, for example:
 The helper uses the repository's `.venv`, or the optional prepared environment
 `/opt/lsd-decomp-venv`, if present.
 
+## Native save workflow
+
+After building the canonical executable, install the optional analysis
+dependencies in that Linux/WSL Python environment:
+
+```bash
+python -m pip install -r requirements-analysis.txt
+python tools/verify_card_save.py --output .decomp-lab/card-save-native-new.json
+```
+
+The [save workflow audit](CARD_SAVE.md) explains the fixtures, seven explicit
+file/allocation/diagnostic contracts and remaining physical-card gates.
+Reports require a new private path. This analysis tool does not modify the
+game or call a model API.
+
 ## Ghidra MCP
 
 Import the verified analysis ELF into a Ghidra project named `lsd-original`
