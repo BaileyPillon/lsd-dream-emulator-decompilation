@@ -76,3 +76,17 @@ The native getter passed 384 cases and three controls without stubs. Raw SDK
 object and function-sized signature matches retain their different evidence
 scopes and ambiguities. Historical reports remain preserved; current producer
 hashes and callback rechecks are appended separately to the feature inventory.
+
+## Render-context bounds supplement
+
+The [bounds audit](RENDER_BOUNDS.md) verifies the original assembly function
+in 4,648 native cases, including signed fields, inclusive boundaries and exact
+short-circuit data-read traces. Four changed instructions are detected without
+stubs. A compiled C candidate agrees on the bounded fixtures but differs at 38
+byte positions and is not promoted. C coverage, NPC counts and whole-feature
+acceptance are unchanged.
+
+The private Ghidra project now reflects the reviewed SDK volume names and
+three explicitly typed MIPS prototypes. Parameter storage and unchanged native
+bytes were checked before saving. The project database, binary exports and C
+candidate remain private; the public supplement contains metadata only.

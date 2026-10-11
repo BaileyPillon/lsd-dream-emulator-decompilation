@@ -16,6 +16,9 @@ it had not been included in this list. Continue auditing raw SDK-labelled
 segments for mixed game support as well as checking the known inclusions.
 The [SDK signature audit](SDK_SIGNATURE_AUDIT.md) records candidate provenance
 and a sound-API correction; unmatched functions still need further analysis.
+The [bounds-predicate audit](RENDER_BOUNDS.md) verifies the original
+`func_8004CD38` contract and a research candidate on bounded fixtures. Its 38
+byte differences remain to resolve before accepting C.
 
 | Function | Source |
 | --- | --- |

@@ -1,5 +1,16 @@
 # Changelog
 
+## Original render-context bounds verification - 2026-10-11
+
+- Recover signed bounds fields and short-circuit data-read behavior in 4,648
+  native fixtures with zero stubs and four detected negative controls.
+- Compare a readable C candidate with the original across all fixtures; retain
+  its 38 byte differences and leave the matching build's assembly in place.
+- Reconcile six SDK names and three reviewed MIPS prototypes in the private
+  Ghidra project, preserving native bytes and checking parameter storage.
+- Preserve C coverage, NPC counts, whole-feature acceptance and the ten
+  developer capabilities; add reusable bounds verification and output checks.
+
 ## SDK provenance and sound API audit - 2026-10-11
 
 - Correct the call at `0x80031E94` to `SsUtAutoVol` and locate the pointer-based

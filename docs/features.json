@@ -16148,6 +16148,345 @@
       "original_game_behavior_modified": false,
       "model_api_calls": 0,
       "private_inputs_or_native_output_bytes_included": false
+    },
+    "render_bounds_native_20261011": {
+      "recorded_utc": "2026-10-11T07:34:39.495295+00:00",
+      "documentation": "docs/RENDER_BOUNDS.md",
+      "scope": "Bounded original render-context predicate, a nonmatching C research candidate, and reviewed private Ghidra metadata. No original feature is added or accepted.",
+      "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+      "matching_executable_preserved": true,
+      "source_functions_promoted": 0,
+      "game_sdk_classification_changes": 0,
+      "original_predicate_validation": {
+        "report": ".decomp-lab/render-bounds-native-proof-first.json",
+        "sha256": "be8b114bec3312f41a8de9394eac23f0d2803a3e9e465076bd6891de2b0b0f45",
+        "status": "passed_bounded_original_render_bounds",
+        "functions": [
+          {
+            "function": "func_8004CD38",
+            "address": "0x8004CD38",
+            "bytes": 108,
+            "sha256": "73713a1bd9a992c92c7a7fb6c5c88684a9224107fbc2b0d4d2f83b606e71d03a"
+          }
+        ],
+        "native_cases": 4648,
+        "case_groups": {
+          "complete_x_byte_sweep": 2048,
+          "complete_y_byte_sweep": 2040,
+          "cross_axis_edges": 314,
+          "aliased_input_fields": 144,
+          "unaligned_and_segment_alias": 98,
+          "null_bounds_unmapped_point": 4
+        },
+        "decision_paths": {
+          "inside": 1557,
+          "below_min_x": 1307,
+          "below_min_y": 545,
+          "above_max_x": 992,
+          "above_max_y": 243,
+          "null_bounds": 4
+        },
+        "explicit_stubs": 0,
+        "negative_controls_detected": 4,
+        "producer_dependencies": [
+          {
+            "path": "tools/verify_native_ai.py",
+            "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+          },
+          {
+            "path": "tools/inventory_vtables.py",
+            "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+          },
+          {
+            "path": "tools/progress.py",
+            "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+          },
+          {
+            "path": "configure.py",
+            "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+          },
+          {
+            "path": "requirements-analysis.txt",
+            "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+          },
+          {
+            "path": "build/SLPS01556.map",
+            "sha256": "bb181d0799122a8cac3c4a8af74c8dbbe5c0e3708e4299aeb2f6d836d15fb04c"
+          },
+          {
+            "path": "build/undefined_funcs_auto.txt",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "path": "build/undefined_syms_auto.txt",
+            "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+          },
+          {
+            "path": "src/scene/entity.c",
+            "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+          },
+          {
+            "path": "src/scene/entity.h",
+            "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+          },
+          {
+            "path": "src/dream/dream_sys.c",
+            "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+          },
+          {
+            "path": "src/dream/dream_sys.h",
+            "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+          },
+          {
+            "path": "src/scene/actor.c",
+            "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+          },
+          {
+            "path": "src/base/transform.c",
+            "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+          },
+          {
+            "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+            "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+          },
+          {
+            "path": "tools/verify_render_bounds.py",
+            "sha256": "67054d6c7db816816aec33d67080e2cfb0070454790dfa952e95b29d588c8397"
+          },
+          {
+            "path": "src/scene/render_context.c",
+            "sha256": "3bdfbd4247a84a160de9582b1e053e2afb69a0bb395c00c125af73d8460e9d3d"
+          },
+          {
+            "path": "src/scene/render_context.h",
+            "sha256": "c1063eef3d3f6aa56332ff34a8421edbcff4c0f3b5e1cea5935e687efa79944f"
+          },
+          {
+            "path": "config/symbols.txt",
+            "sha256": "9558bb5e4309d4f4cb3e2843cce14ad4af75205b43eef23ed527b200164bf1a8"
+          },
+          {
+            "path": "asm/nonmatchings/scene/render_context/func_8004CD38.s",
+            "sha256": "7928021a8c4a866473cf3bb2fb6b111ac1aac7270f86508e758e613b16c29913"
+          }
+        ],
+        "scope": "Both complete byte-coordinate sweeps across eight signed bound layouts, cross-axis edges, aliased record/coordinate inputs, unaligned byte pointers, cached-segment aliases and null bounds with an unmapped coordinate pointer. Compare return status, exact data-read order/widths, whole guarded input buffers, zero native writes, GP, stack and saved registers. No stubs. The original function remains assembly. No C candidate, renderer, stage, framebuffer or PS1 timing acceptance is claimed."
+      },
+      "source_experiment": {
+        "results_report": ".decomp-lab/cd38-narrow-parameter-first/results.json",
+        "sha256": "afa21f836c00b144c0c880218ea09384e5707393bb3ccf166daa9e19955eb3e4",
+        "attempts": 48,
+        "minimum_byte_difference": 38,
+        "exact_matches": 0,
+        "canonical_compiler_flags_changed": false,
+        "forced_physical_registers": false,
+        "synthetic_register_interference": false,
+        "copied_opcode_c": false
+      },
+      "nonmatching_candidate_validation": {
+        "report": ".decomp-lab/cd38-narrow-candidate-behavior-first.json",
+        "sha256": "94c67259b0946575b845c2c2170d24950a0f99048640206b5eab4988ecb8e10b",
+        "cases_compared_against_original_and_model": 4648,
+        "candidate_bytes": 108,
+        "candidate_byte_differences": 38,
+        "exact_native_code_match": false,
+        "source_promotions": 0,
+        "producer_dependencies": [
+          {
+            "path": ".decomp-lab/cd38-narrow-parameter-first/narrow_0.bin",
+            "sha256": "a36fc75621ceafb128f14d9bbf2d5ae1bc71b72880c0c6c94e9870620456d4d8"
+          },
+          {
+            "path": ".decomp-lab/cd38-narrow-parameter-first/narrow_0.c",
+            "sha256": "e5f3b8003fc16696f55ec59ab9196a84fdbc748dd423f9d6a4b0d985342154d4"
+          },
+          {
+            "path": ".decomp-lab/render-bounds-native-proof-first.json",
+            "sha256": "be8b114bec3312f41a8de9394eac23f0d2803a3e9e465076bd6891de2b0b0f45"
+          },
+          {
+            "path": "tools/verify_render_bounds.py",
+            "sha256": "67054d6c7db816816aec33d67080e2cfb0070454790dfa952e95b29d588c8397"
+          },
+          {
+            "path": ".decomp-lab/probe_cd38_candidate_behavior_first.py",
+            "sha256": "7c1145fd9b40e606efaedfb70020c5ee40d00ede561a698d1d0240d3fd57e477"
+          }
+        ],
+        "scope": "Original and compiled C agree on the 4648 original bounds fixtures, including data-read traces and ABI. The 108-byte candidate still differs at 38 byte positions and is not accepted into the matching build."
+      },
+      "private_ghidra_reconciliation": {
+        "tool_repository": "https://github.com/bethington/ghidra-mcp",
+        "tool_version": "7.0.0-headless",
+        "program": "original-symbols.elf",
+        "sdk_names_report": ".decomp-lab/ghidra-sdk-volume-reconciled-second.json",
+        "sdk_names_report_sha256": "8d964a143081d2259f1a514fe0060dce417ff5de8f90b8aeaa78a6147dfcec83",
+        "reviewed_sdk_names": [
+          {
+            "name": "SsUtGetDetVVol",
+            "address": "80031c98"
+          },
+          {
+            "name": "SsUtSetDetVVol",
+            "address": "80031cf0"
+          },
+          {
+            "name": "SsUtGetVVol",
+            "address": "80031d6c"
+          },
+          {
+            "name": "SsUtSetVVol",
+            "address": "80031df8"
+          },
+          {
+            "name": "SsUtAutoVol",
+            "address": "80031e94"
+          },
+          {
+            "name": "SsUtAutoPan",
+            "address": "80031ee8"
+          }
+        ],
+        "abi_report": ".decomp-lab/ghidra-reviewed-api-abi-reconciled-first.json",
+        "abi_report_sha256": "1c0c6432c286c5b516fa1f07046687846d6d0fda1a26d1b7cc369f64dc8b4d33",
+        "mips_compiler_spec": "mips32le.cspec",
+        "mips_compiler_spec_sha256": "ece4dd9c15895fb7cdb845ee82ca6072a0d4814dadf3e6c4f8fe31cec1620954",
+        "mips_default_convention": "__stdcall",
+        "typed_functions": [
+          {
+            "function": "SsUtGetDetVVol",
+            "address": "80031c98",
+            "signature": "short SsUtGetDetVVol(short voice, short * left, short * right)",
+            "parameters": [
+              {
+                "type": "short",
+                "storage": "a0:2"
+              },
+              {
+                "type": "short *",
+                "storage": "a1:4"
+              },
+              {
+                "type": "short *",
+                "storage": "a2:4"
+              }
+            ],
+            "unknown_calling_convention_warning": false
+          },
+          {
+            "function": "SsUtAutoVol",
+            "address": "80031e94",
+            "signature": "short SsUtAutoVol(short voice, short start, short end, short time)",
+            "parameters": [
+              {
+                "type": "short",
+                "storage": "a0:2"
+              },
+              {
+                "type": "short",
+                "storage": "a1:2"
+              },
+              {
+                "type": "short",
+                "storage": "a2:2"
+              },
+              {
+                "type": "short",
+                "storage": "a3:2"
+              }
+            ],
+            "unknown_calling_convention_warning": false
+          },
+          {
+            "function": "func_8004CD38",
+            "address": "8004cd38",
+            "signature": "int func_8004CD38(void * bounds, uchar * point)",
+            "parameters": [
+              {
+                "type": "void *",
+                "storage": "a0:4"
+              },
+              {
+                "type": "uchar *",
+                "storage": "a1:4"
+              }
+            ],
+            "unknown_calling_convention_warning": false
+          }
+        ],
+        "native_regions_verified_unchanged": [
+          {
+            "address": "0x80031C98",
+            "bytes": 676,
+            "sha256": "8573aa478c97c2ea3cbd6dfe85f4040097d1abdcb65767f5693596ecfce33a0a"
+          },
+          {
+            "address": "0x8004CD38",
+            "bytes": 108,
+            "sha256": "73713a1bd9a992c92c7a7fb6c5c88684a9224107fbc2b0d4d2f83b606e71d03a"
+          }
+        ],
+        "byte_write_endpoints_used": false,
+        "program_saved": true
+      },
+      "current_matching_build": {
+        "report": ".decomp-lab/render-bounds-current-progress-first.json",
+        "sha256": "8968dca871b3cf35c04786dcdb4a226ef3a05b463c28bcba48937b6b7edbdbc2",
+        "objects": 305,
+        "build_current": true,
+        "c_bytes": 194284,
+        "game_text_bytes": 199912,
+        "c_coverage_percent": 97.18476129496979,
+        "sdk_text_bytes": 147880,
+        "startup_text_bytes": 188,
+        "binary_match": "verified",
+        "sha256_executable": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+      },
+      "current_turn_before_after": {
+        "original_provisional_groups_before": 40,
+        "original_provisional_groups_after": 40,
+        "listed_core_c_groups_before": 35,
+        "listed_core_c_groups_after": 35,
+        "whole_feature_groups_accepted_before": 0,
+        "whole_feature_groups_accepted_after": 0,
+        "game_c_bytes_before": 194284,
+        "game_c_bytes_after": 194284,
+        "known_game_assembly_functions_before": 7,
+        "known_game_assembly_functions_after": 7,
+        "bounded_npc_callbacks_before": 11,
+        "bounded_npc_callbacks_after": 11,
+        "npc_callback_denominator": 107,
+        "bounded_npc_cases_before": 6784,
+        "bounded_npc_cases_after": 6784,
+        "developer_capabilities_before": 10,
+        "developer_capabilities_after": 10
+      },
+      "tooling_tests": {
+        "synthetic_cases_per_platform": 145,
+        "platforms": [
+          "Windows / Python 3.14",
+          "Linux WSL / Python 3.13"
+        ],
+        "result": "passed",
+        "game_inputs_required": false
+      },
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0,
+      "private_inputs_or_native_output_bytes_included": false,
+      "additional_source_experiments": [
+        {
+          "results_report": ".decomp-lab/cd38-minimum-reuse-first/results.json",
+          "sha256": "9a12af1d234977f16d91d44055ab4c9358352d5ea87cebda95a1face05c8c417",
+          "attempts": 24,
+          "minimum_byte_difference": 38,
+          "exact_matches": 0,
+          "hypothesis": "Separate minimum-argument reuse from coordinate promotion and combine only the two X conditions to explain native register lifetimes.",
+          "canonical_compiler_flags_changed": false,
+          "forced_physical_registers": false,
+          "synthetic_register_interference": false,
+          "copied_opcode_c": false
+        }
+      ]
     }
   }
 }

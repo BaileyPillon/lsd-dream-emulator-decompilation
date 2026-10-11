@@ -39,6 +39,9 @@ The [save-title recovery](docs/SAVE_LABEL.md) documents the latest matching C
 promotion, its native checks and the correction to SDK/game classification.
 The [SDK and sound API audit](docs/SDK_SIGNATURE_AUDIT.md) documents corrected
 volume-function names and an external signature workflow with explicit ambiguity.
+The [render-context bounds checks](docs/RENDER_BOUNDS.md) recover the smallest
+remaining assembly function's bounded behavior; its C candidate still needs
+an exact code match.
 
 ## Three separate workflows
 

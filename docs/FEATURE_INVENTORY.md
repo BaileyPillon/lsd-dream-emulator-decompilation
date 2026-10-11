@@ -95,6 +95,12 @@ The same audit bounded 418 of 418 LBD files, 167,200 grid cells and 270 addition
 
 ## Remaining scope
 
+The [render-context bounds supplement](RENDER_BOUNDS.md) adds 4,648 original
+native cases and four detected controls with zero stubs. A C candidate agrees
+on those fixtures but still has 38 byte differences and remains private.
+This adds bounded evidence for F033 without a C promotion or whole-feature
+acceptance. The original/NPC counts and ten developer capabilities are unchanged.
+
 The [SDK and sound API supplement](SDK_SIGNATURE_AUDIT.md) corrects a misleading
 volume label using a matching 676-byte SDK context. The actual getter passes
 384 native cases and three controls with no stubs. The 72 raw SDK-labelled

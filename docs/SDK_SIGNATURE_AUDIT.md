@@ -72,6 +72,11 @@ getter, save-label and retained NPC reports were checked against their source
 dependencies. [sdk-volume-checks.json](sdk-volume-checks.json) records the
 hashes and the limits of these checks.
 
+The private Ghidra project has since been reconciled with these six names and
+the two reviewed prototypes. Their MIPS parameter storage was checked and the
+unknown-convention warnings cleared, with native bytes preserved. The
+[render-context supplement](RENDER_BOUNDS.md) records this analysis update.
+
 After a current matching build, supply the external catalogue and choose new
 private output filenames:
 
