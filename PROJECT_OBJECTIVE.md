@@ -43,6 +43,9 @@ count toward original parity.
    instruction substitution, or embedded copies of their assembly to raise
    the count. Original SDK and hardware instructions remain explicitly
    accounted for.
+   The [source-quality audit](docs/SOURCE_QUALITY.md) identifies five already-C
+   functions with inherited dummy stack padding. Their source explanations
+   also require recovery; they are separate from the six assembly fallbacks.
 2. A clean complete build produces the canonical executable byte for byte.
    Each promoted source change retains a private comparison record.
 3. Asset/resource and command tables are classified, virtual-call dependencies

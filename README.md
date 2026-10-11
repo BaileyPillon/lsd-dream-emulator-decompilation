@@ -23,8 +23,9 @@ publication and subsequent evidence are retained separately.
 
 | Measure | Verified snapshot |
 | --- | ---: |
-| Game function bytes recovered in C | 194,884 / 199,912 (97.48%) |
+| Matching game-function bytes compiled from C | 194,884 / 199,912 (97.48%) |
 | Known remaining game assembly functions | 6 |
+| Known C functions with explicit dummy stack padding | 5 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 35 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
@@ -35,6 +36,10 @@ denominator. Bounded native and emulator comparisons have passed, including
 a 6,000-frame sequence with matching frame, GPU, state and PCM audio output.
 Their scope and remaining gaps are documented in the
 [feature inventory](docs/FEATURE_INVENTORY.md) and [roadmap](docs/ROADMAP.md).
+The [source-quality audit](docs/SOURCE_QUALITY.md) verifies five inherited
+padding constructs already present before this work. They remain cleanup
+requirements in addition to the six assembly functions; C-byte coverage does
+not certify their original source explanation.
 The [save-title recovery](docs/SAVE_LABEL.md) documents an earlier matching C
 promotion, its native checks and the correction to SDK/game classification.
 The [SDK and sound API audit](docs/SDK_SIGNATURE_AUDIT.md) documents corrected

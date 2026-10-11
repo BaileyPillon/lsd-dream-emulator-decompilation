@@ -349,3 +349,24 @@ absence of additional explicit writes, substitutions or forced results.
 Compiler observations execute no original game or model service. Earlier
 allocator evidence and every original feature record remain frozen. Private
 compiler logs, generated assembly and game inputs remain outside Git.
+
+## Existing source-padding audit
+
+The [source-quality audit](SOURCE_QUALITY.md) identifies five literal dummy
+stack declarations in matching C, with 56 declared local bytes. Git ancestry
+and the frozen pre-prompt commit show the constructs already existed before
+this prompt. The audit preserves their canonical source and earlier coverage
+records while making their unresolved source explanations explicit.
+
+[source-quality-checks.json](source-quality-checks.json) pins five complete
+private removal builds and independent comparisons. Each failure is confined
+to the selected function's SP-relative displacements. Mapped code spans total
+1,504 bytes; boundaries use the retained link map rather than an absent ELF
+symbol table. No proprietary image, generated assembly or captured game state
+is published. Ten additional collision source forms and one actual compiler
+allocation trace are recorded separately from original gameplay evidence.
+
+The complete canonical build still matches. No C promotion, new original
+gameplay coverage, whole-feature acceptance or count change is claimed.
+The six assembly functions and five known source workarounds remain distinct
+completion requirements; the audit does not certify every possible workaround.

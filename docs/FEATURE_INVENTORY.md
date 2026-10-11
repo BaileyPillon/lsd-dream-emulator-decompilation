@@ -262,3 +262,13 @@ verifies later reuse of a helper-owned slot. Sixty-nine additional source forms
 and ten guard tests add developer evidence without C promotion, native gameplay
 coverage or whole-feature acceptance. All accepted counts and earlier feature
 records remain intact; the closest primitive candidate still differs in 22 bytes.
+
+The subsequent [source-quality audit](SOURCE_QUALITY.md) verifies five C
+functions with inherited dummy stack padding, present both before the prompt
+and now. Five full-translation-unit removal builds fail exact matching, with
+every difference confined to SP-relative displacements in the selected
+function. Their source explanations remain an additional completion gate;
+the six-assembly-function count and C-byte compilation measure are unchanged.
+Ten by-value collision helper forms and an actual allocator trace rule out
+a 32-byte argument-area hypothesis for the native 16-byte region. No source
+function is promoted, no gameplay case is added and no feature is accepted.

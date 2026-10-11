@@ -19219,6 +19219,93 @@
       "original_game_behavior_modified": false,
       "model_api_calls": 0,
       "scope": "Actual compiler temporary-slot lifetime observations; matching C and whole-game parity remain incomplete."
+    },
+    "source_quality_audit_20261011": {
+      "document": "docs/SOURCE_QUALITY.md",
+      "metadata": {
+        "path": "docs/source-quality-checks.json",
+        "sha256": "3f60199c0c8d77eb97c9a21b8b6b23d8f25b70a3335284b79e1e9374eebfcd76"
+      },
+      "evidence": {
+        "known_explicit_padding_functions_before_prompt": 5,
+        "known_explicit_padding_functions_current": 5,
+        "declared_local_padding_bytes": 56,
+        "mapped_code_span_bytes": 1504,
+        "complete_private_removal_builds": 5,
+        "removal_byte_differences": [
+          18,
+          16,
+          8,
+          10,
+          12
+        ],
+        "all_changes_sp_relative": true,
+        "source_explanations_recovered": 0,
+        "collision_source_comparison_compilations": 10,
+        "collision_comparison_actual_minimum": 1631,
+        "collision_global_best_byte_differences": 22,
+        "compiler_trace_allocation_events": 48,
+        "complete_assembly_equal": true,
+        "observed_argument_area_bytes": 32,
+        "native_early_region_explained": false
+      },
+      "source_quality_before_after": {
+        "before_prompt": {
+          "known_explicit_padding_functions": 5,
+          "declared_local_padding_bytes": 56
+        },
+        "before_this_audit": {
+          "known_explicit_padding_functions": 5,
+          "declared_local_padding_bytes": 56
+        },
+        "after_this_audit": {
+          "known_explicit_padding_functions": 5,
+          "declared_local_padding_bytes": 56
+        },
+        "source_workarounds_removed": 0,
+        "additional_cases_quantified": 5,
+        "known_game_assembly_functions_remaining": 6,
+        "metric_limit": "Known literal dummy_stack_padding constructs only; no general absence-of-workarounds certificate."
+      },
+      "before_after": {
+        "before": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "after": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "source_functions_promoted": 0,
+        "whole_feature_groups_accepted": 0,
+        "new_original_gameplay_cases": 0,
+        "developer_workflow_extended": "Existing candidate analysis and evidence reporting; no additional top-level capability."
+      },
+      "source_functions_promoted": 0,
+      "whole_feature_groups_accepted": 0,
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0,
+      "scope": "Existing source workarounds quantified separately from C-compilation bytes, assembly fallbacks and original gameplay acceptance."
     }
   }
 }

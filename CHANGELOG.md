@@ -1,5 +1,17 @@
 # Changelog
 
+## Existing source-padding audit - 2026-10-11
+
+- Identify five already-C functions with explicit dummy stack padding, verified
+  in both pre-prompt history and the current source. Make their unresolved
+  source explanations visible alongside the six remaining assembly functions.
+- Compare five complete private removal builds; all fail exact matching and
+  differ only in the selected function's SP-relative displacements. Preserve
+  the canonical source, executable and all earlier progress records.
+- Compile ten by-value collision helper forms and measure their actual 32-byte
+  argument area. The best collision candidate remains 22 bytes different;
+  no source promotion, native gameplay case or feature acceptance is added.
+
 ## Collision compiler-lifetime diagnostic - 2026-10-11
 
 - Observe actual temporary-slot promotion, release and reuse in the exact

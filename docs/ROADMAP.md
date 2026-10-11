@@ -10,6 +10,13 @@ boundary of the published snapshot.
 
 Six game functions remain in assembly after the matching loader recovery:
 
+The [source-quality audit](SOURCE_QUALITY.md) additionally identifies five
+matching C functions with inherited explicit dummy stack padding. Removing
+each in a complete private build changes only SP-relative displacements, but
+none preserves the original image. Recover real storage or inline boundaries
+for these functions as part of the no-padding completion requirement. The
+known assembly count remains six; this is a separate source-quality backlog.
+
 The initial seven also remained after the [save-title recovery](SAVE_LABEL.md). That
 additional game-support helper was discovered in a segment classified as SDK;
 it had not been included in this list. Continue auditing raw SDK-labelled
