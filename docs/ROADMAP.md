@@ -8,9 +8,9 @@ boundary of the published snapshot.
 
 ## Matching C recovery
 
-Seven game functions remain in assembly in the initial publication:
+Six game functions remain in assembly after the matching loader recovery:
 
-These seven also remain after the [save-title recovery](SAVE_LABEL.md). That
+The initial seven also remained after the [save-title recovery](SAVE_LABEL.md). That
 additional game-support helper was discovered in a segment classified as SDK;
 it had not been included in this list. Continue auditing raw SDK-labelled
 segments for mixed game support as well as checking the known inclusions.
@@ -40,7 +40,6 @@ A corrected full candidate retains native store order but differs in 13 bytes;
 | `func_8001DDF4` | [`src/base/transform.c`](../src/base/transform.c) |
 | `func_8001F8B8` | [`src/file/tmd_prim_geom.c`](../src/file/tmd_prim_geom.c) |
 | `func_8004EF6C` | [`src/menu/card/memory_card.c`](../src/menu/card/memory_card.c) |
-| `func_8004BE54` | [`src/scene/render_context.c`](../src/scene/render_context.c) |
 | `func_8004C6A8` | [`src/scene/render_context.c`](../src/scene/render_context.c) |
 | `func_8004CD38` | [`src/scene/render_context.c`](../src/scene/render_context.c) |
 | `func_8004441C` | [`src/menu/ui_sprite.c`](../src/menu/ui_sprite.c) |
@@ -50,6 +49,11 @@ Confirm the live catalogue after building with
 Each C promotion must retain complete-executable equality and meaningful
 types and control flow. Do not use copied instruction blobs or padding to
 raise a coverage number.
+
+The [level-model loader recovery](LBD_RECOVERY.md) removes `func_8004BE54`
+from that list. It adds 600 bytes of matching C, preserves complete standard
+and clean-build equality, and rechecks the 418 local LBD files. The C-byte
+total is now 194,884 / 199,912 (97.48%); whole-feature acceptance remains open.
 
 The [sprite scaling audit](UI_SCALE.md) checks 203,472 original and candidate
 fixtures each, with zero stubs. Preserve the post-X-store Y denominator read
@@ -65,8 +69,9 @@ LBD files, including native destruction/reloading, with actual allocator,
 decoder, constructors and SDK routines. Two virtual-call declarations now
 match the observed default methods. This closes those calls for the recorded
 ready-CD fixture; pending I/O, cold hardware, caller ownership and rendering
-remain separate work. The full C loader candidate still differs in 118 bytes,
-and 191 new source trials found no exact match.
+remain separate work. Its initial full C loader candidate differed in 118 bytes,
+and 191 initial source trials found no exact match. The subsequent
+[matching recovery](LBD_RECOVERY.md) resolves it with 580 further source forms.
 
 - Resolve asset/command inventory gaps and runtime reachability.
 - Close virtual-call dependencies and verify semantic callback signatures.

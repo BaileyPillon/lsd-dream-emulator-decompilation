@@ -1,5 +1,18 @@
 # Changelog
 
+## Matching level-model loader recovery - 2026-10-11
+
+- Recover `func_8004BE54` as 600 bytes of matching C; complete candidate,
+  standard and clean builds preserve every byte of the canonical executable.
+- Resolve grid capture before the file-size reset, typed angle-store order,
+  descriptor assignment scope and continuation pointer-addition order.
+- Evaluate 580 source forms without changing compiler flags or adding
+  instruction patches, register bindings, volatile access or stack padding.
+- Recheck all 418 local level files through loading and native reloading;
+  detect five output faults and keep the explicit ready-CD boundary.
+- Advance C coverage to 194,884 / 199,912 (97.48%), with six assembly functions
+  remaining. Preserve provisional feature, NPC, tool and mod counts.
+
 ## Original level-model loader composition - 2026-10-11
 
 - Verify 418 local LBD files through original tile decoding, TMD construction,

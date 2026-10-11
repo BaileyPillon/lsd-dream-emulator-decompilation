@@ -1,5 +1,10 @@
 # Original level-model loader audit
 
+This page preserves the initial bounded audit and its nonmatching candidate.
+The loader has since been promoted to matching C in the
+[subsequent recovery](LBD_RECOVERY.md), with complete standard and clean builds
+matching the original. The earlier measurements below remain historical evidence.
+
 The original `func_8004BE54` and a private C candidate pass **418 local LBD
 files**, each loaded once and then reloaded through the native destructor.
 The **1,672 loader runs** use the original allocator, constructors, tile

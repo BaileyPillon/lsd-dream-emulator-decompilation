@@ -930,7 +930,125 @@ void func_8004BD14(render_context_t *This, s32 unused, s32 arg2) {
     }
 }
 
-INCLUDE_ASM("asm/nonmatchings/scene/render_context", func_8004BE54);
+#include "scene/render_context.h"
+#include "file/cd_stream.h"
+#include "file/file_object.h"
+#include "file/tmd_model.h"
+#include "file/tmd_prim.h"
+#include "scene/notify_node.h"
+#include "psx/libgs.h"
+typedef struct {
+    u8 m_Pad[0xC];
+    vec3d_t m_Position;
+    u16 m_Unk18;
+    u16 m_Heading;
+    u8 m_Pad1[0x10];
+    u16 m_Unk2C;
+    u16 m_Type;
+    s32 m_Special;
+    s32 m_Next;
+    s32 m_Model;
+    s32 m_Unk3C;
+} render_link_payload_t;
+typedef struct {
+    s32 m_Flag;
+    u8 m_Pad[0x14];
+    vec3d_t m_Position;
+    u8 m_Pad1[0x20];
+    u16 *m_Angles;
+} render_link_coords_t;
+typedef struct {
+    u16 m_Flag;
+    s16 m_Index;
+    cd_stream_t *m_Stream;
+    file_object_t *m_File;
+    notify_node_t *m_Node;
+    notify_node_t **m_Items;
+    s32 m_Unk14;
+    s32 m_Unk18;
+} render_link_slot_t;
+static inline tmd_model_t *render_link_model(cd_stream_t *stream) {
+    tmd_model_arg_t args;
+    s32 header = stream->m_Unk3;
+    args.m_Unk0 = header + *(s32 *)(header + 4) + *(s32 *)(header + 8);
+    return tmd_create(&args);
+}
+void func_8004BE54(render_context_t *unused, render_link_slot_t *slot) {
+    render_link_payload_t payload;
+    cd_stream_t *model;
+    file_object_t *object;
+    s32 header;
+    tmd_model_t *child;
+    tmd_prim_t *part;
+    notify_node_t **data;
+    s32 extra;
+    s32 index;
+    s32 offset;
+    s32 extra_offset;
+    notify_node_t **entry;
+    notify_node_t *item;
+    render_link_coords_t *coords;
+    u16 *angles;
+    u32 mask;
+    u32 flags;
+    model = slot->m_Stream;
+    object = slot->m_File;
+    header = model->m_Unk3;
+    child = (tmd_model_t *)object->m_Unk10;
+    /* Capture the grid before clearing the file size, as the native reader does. */
+    header += *(s32 *)(header + 4);
+    object->m_Unk4 = 0;
+    object->m_Unk3 = header;
+    if (child != NULL) {
+        child->vtable->Destroy((base_class_t *)child);
+    }
+    object->m_Unk10=(s32)render_link_model(model);
+    index = 0;
+    mask = 0x80000000;
+    offset = 0;
+    extra_offset = 0x640; /* Additional nodes follow the 400 fixed grid cells. */
+    payload.m_Next = 0;
+    while (1) {
+        part=(tmd_prim_t *)object->vtable->class_1C92C_unk29(object,(u8 *)&payload,index);
+        if (part == NULL) {
+            break;
+        }
+        if (part == (tmd_prim_t *)-1) {
+            entry = (notify_node_t **)((u8 *)slot->m_Items + offset);
+            flags = (*entry)->m_Unk3;
+            (*entry)->m_Unk3 = flags | mask;
+            (*entry)->m_Unk7 = 0;
+            (*entry)->m_Unk5 = 0;
+        } else {
+            extra=payload.m_Special;
+            data=slot->m_Items;
+            if(extra){entry=(notify_node_t **)((u8 *)data+extra_offset);extra_offset+=4;}
+            else entry=(notify_node_t **)((u8 *)data+offset);
+            (*entry)->m_Unk7 = (s32)part;
+            {
+                notify_node_t *bound = *entry;
+                bound->m_Unk5 = (s32)((tmd_prim_t *)bound->m_Unk7)->m_Unk3;
+            }
+            item = *entry;
+            GsLinkObject4(((tmd_prim_t *)item->m_Unk7)->m_Unk3, (u8 *)item + 0x10, 0);
+            coords = (render_link_coords_t *)(*entry)->m_Unk4;
+            coords->m_Position = payload.m_Position;
+            angles=((render_link_coords_t *)(*entry)->m_Unk4)->m_Angles;
+            angles[8]=0;angles[9]=payload.m_Heading;angles[10]=0;
+            (*entry)->m_Unk12_2 = payload.m_Type;
+            ((render_link_coords_t *)(*entry)->m_Unk4)->m_Flag = 0;
+            flags = (*entry)->m_Unk3;
+            (*entry)->m_Unk3 = flags | mask;
+        }
+        if (payload.m_Next != 0) {
+            (*entry)->m_Unk13 = (s32)*(notify_node_t **)(extra_offset+(s32)slot->m_Items);
+        } else {
+            offset += 4;
+            index++;
+            (*entry)->m_Unk13 = 0;
+        }
+    }
+}
 
 void func_8004C0AC(render_context_t *This, render_context_slot_t *slot) {
     render_context_slot_obj_t *obj;

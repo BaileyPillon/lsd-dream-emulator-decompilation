@@ -22,8 +22,9 @@ count toward original parity.
   separates a 240-byte game-support formatter from an SDK-labelled segment.
   The original baseline remains frozen. With the corrected denominator its
   unchanged C numerator is 169,540 / 199,912 (84.807315%), an arithmetic
-  restatement rather than a rerun. Current C recovery is 194,284 / 199,912;
-  the seven known remaining game assembly functions still require recovery.
+  restatement rather than a rerun. Current C recovery is 194,884 / 199,912;
+  six known remaining game assembly functions still require recovery after
+  the [level-model loader recovery](docs/LBD_RECOVERY.md).
 - Feature denominator: the same provisional 40 groups in
   [docs/features.json](docs/features.json) for both measurements. Five recorded
   inventory gaps remain; U006 records the user's resolved distinction between

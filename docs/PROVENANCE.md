@@ -167,3 +167,19 @@ public checker and metadata contain no disc bytes or candidate image. Inputs,
 raw results and failed harness preflights remain private and preserved.
 Source/evidence pins and unchanged counts are recorded in
 [lbd-pipeline-checks.json](lbd-pipeline-checks.json).
+
+## Matching level-model loader recovery
+
+The [subsequent loader recovery](LBD_RECOVERY.md) promotes `func_8004BE54` as
+600 bytes of C after a zero-difference comparison of the complete executable.
+The standard build and a fresh source/toolchain copy also reproduce the
+canonical executable. The clean copy contains no preexisting build objects.
+
+The original 576-form typed search and four grid-capture forms, complete
+candidate, source backup, native reports and clean-build inputs remain private
+with preserved hashes. The promoted build passes 1,672 bounded loader runs and
+five output controls. Earlier nonmatching candidates and publication records
+remain unchanged. The new source moves C coverage to 97.48% and six remaining
+assembly functions; it does not imply new original features or whole-feature
+acceptance. Pins and before/after measurements are in
+[lbd-recovery-checks.json](lbd-recovery-checks.json).

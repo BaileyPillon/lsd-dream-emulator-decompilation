@@ -23,8 +23,8 @@ publication and subsequent evidence are retained separately.
 
 | Measure | Verified snapshot |
 | --- | ---: |
-| Game function bytes recovered in C | 194,284 / 199,912 (97.18%) |
-| Known remaining game assembly functions | 7 |
+| Game function bytes recovered in C | 194,884 / 199,912 (97.48%) |
+| Known remaining game assembly functions | 6 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 35 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
@@ -35,7 +35,7 @@ denominator. Bounded native and emulator comparisons have passed, including
 a 6,000-frame sequence with matching frame, GPU, state and PCM audio output.
 Their scope and remaining gaps are documented in the
 [feature inventory](docs/FEATURE_INVENTORY.md) and [roadmap](docs/ROADMAP.md).
-The [save-title recovery](docs/SAVE_LABEL.md) documents the latest matching C
+The [save-title recovery](docs/SAVE_LABEL.md) documents an earlier matching C
 promotion, its native checks and the correction to SDK/game classification.
 The [SDK and sound API audit](docs/SDK_SIGNATURE_AUDIT.md) documents corrected
 volume-function names and an external signature workflow with explicit ambiguity.
@@ -56,7 +56,8 @@ including overlapping inputs and incoming-register quirks. Its full C
 candidate still differs in 12 executable bytes and remains unaccepted.
 The [level-model loader audit](docs/LBD_PIPELINE.md) checks 418 local level
 files through native construction and destruction, including repeated loads.
-Its C candidate agrees on checked outputs but still differs in 118 bytes.
+The later [matching loader recovery](docs/LBD_RECOVERY.md) promotes its 600-byte
+function to C, with complete standard and clean builds matching the original.
 
 ## Three separate workflows
 

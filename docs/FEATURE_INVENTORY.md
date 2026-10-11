@@ -177,3 +177,12 @@ with zero dependency stubs and an explicit ready-CD state. Two corrected
 virtual-call declarations preserve the canonical build. This extends evidence
 for F033; the full C candidate still differs in 118 bytes, and all feature,
 C, NPC, developer-capability and optional-mod counts remain unchanged.
+
+The subsequent [matching loader recovery](LBD_RECOVERY.md) promotes 600 game
+bytes to C, yielding **194,884 / 199,912 (97.48%)**, with six assembly functions
+remaining. Standard and clean builds reproduce the complete canonical
+executable; the same 418 level files pass native loading and reloading checks.
+Fresh anchor evaluation retains 35 / 40 core-C groups and zero whole-feature
+acceptances. NPC, developer-capability and optional-mod counts remain unchanged.
+Its supplement is appended to [features.json](features.json), preserving all
+earlier snapshots and the fixed provisional denominator.

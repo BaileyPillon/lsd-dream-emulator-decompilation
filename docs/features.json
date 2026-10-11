@@ -18603,6 +18603,85 @@
       "original_game_behavior_modified": false,
       "model_api_calls": 0,
       "private_inputs_or_native_output_bytes_included": false
+    },
+    "lbd_matching_recovery_20261011": {
+      "recorded_utc": "2026-10-11T12:29:59.507158+00:00",
+      "documentation": "docs/LBD_RECOVERY.md",
+      "metadata": "docs/lbd-recovery-checks.json",
+      "metadata_sha256": "4ff97540ae395d1140e7d368deb112415951c187bad31e10fd01c1507ff67bc0",
+      "repository_code_base_commit": "64e71d8bb0fadf5b53cf941108bbf83772eae74f",
+      "function": "func_8004BE54",
+      "source": "src/scene/render_context.c",
+      "source_sha256": "5b8d25142af3ac22388076a93789f0d351fdfb6d09d7333ac0d17bf79aaf0325",
+      "source_functions_promoted": 1,
+      "game_function_bytes_recovered": 600,
+      "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+      "matching_executable_preserved": true,
+      "complete_executable_comparison": {
+        "report": ".decomp-lab/be54-exact-full-compare-first/comparison.json",
+        "sha256": "e5ffff949c5c1e18aff8ce67202e69ba1e1d1a3716e913597016cf747ce23075",
+        "exact_match": true,
+        "expected_bytes": 505856,
+        "actual_bytes": 505856,
+        "changed_bytes_in_common_range": 0,
+        "length_difference": 0,
+        "expected_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+        "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+        "candidate_sha256": "5b8d25142af3ac22388076a93789f0d351fdfb6d09d7333ac0d17bf79aaf0325",
+        "gameplay_tested": false
+      },
+      "original_native_validation": {
+        "report": ".decomp-lab/be54-exact-native-pipeline-first.json",
+        "sha256": "600db78f4e5b512d387d38689df40414b97bd8a7af295720063f3aa5c2e8c023",
+        "levels": 418,
+        "cold_loader_runs": 418,
+        "reload_loader_runs": 418,
+        "original_and_candidate_native_runs": 1672,
+        "dependency_stubs": 0,
+        "input_state_contracts": 1,
+        "negative_controls_detected": 5
+      },
+      "current_turn_before_after": {
+        "before_source_commit": "64e71d8bb0fadf5b53cf941108bbf83772eae74f",
+        "before": {
+          "c_bytes": 194284,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 7,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "after": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "new_matching_c_bytes": 600,
+        "new_matching_c_functions": 1,
+        "new_source_forms": 580,
+        "new_original_loader_runs": 836,
+        "original_and_candidate_native_runs": 1672,
+        "game_sdk_classification_changes": 0
+      },
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0,
+      "private_inputs_or_native_output_bytes_included": false,
+      "whole_original_feature_groups_accepted": 0
     }
   }
 }

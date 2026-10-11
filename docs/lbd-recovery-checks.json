@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-11T12:29:59.507158+00:00",
+  "repository_code_base_commit": "64e71d8bb0fadf5b53cf941108bbf83772eae74f",
+  "function": "func_8004BE54",
+  "source": "src/scene/render_context.c",
+  "source_sha256": "5b8d25142af3ac22388076a93789f0d351fdfb6d09d7333ac0d17bf79aaf0325",
+  "game_function_bytes_recovered": 600,
+  "source_function_promoted": true,
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "original_behavior_modified": false,
+  "complete_executable_comparison": {
+    "report": ".decomp-lab/be54-exact-full-compare-first/comparison.json",
+    "sha256": "e5ffff949c5c1e18aff8ce67202e69ba1e1d1a3716e913597016cf747ce23075",
+    "exact_match": true,
+    "expected_bytes": 505856,
+    "actual_bytes": 505856,
+    "changed_bytes_in_common_range": 0,
+    "length_difference": 0,
+    "expected_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "candidate_sha256": "5b8d25142af3ac22388076a93789f0d351fdfb6d09d7333ac0d17bf79aaf0325",
+    "gameplay_tested": false
+  },
+  "standard_build": {
+    "report": ".decomp-lab/be54-exact-standard-build-first.log",
+    "sha256": "38f556501771e193658a3e7bd003ce12bbb28cc2aefa99c0e74b6ab9521c7d61",
+    "canonical_match": true
+  },
+  "matching_build": {
+    "report": ".decomp-lab/be54-exact-progress-first.json",
+    "sha256": "342d61ad0cb642867cacccb4c2f6b00ef31591969e82710401b8a99b3f1e723c",
+    "objects_expected": 305,
+    "objects_found": 305,
+    "build_current": true,
+    "c_bytes": 194884,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 97.48489335307535,
+    "sdk_text_bytes": 147880,
+    "handwritten_text_bytes": 188,
+    "binary_match": "verified",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+  },
+  "clean_build": {
+    "report": ".decomp-lab/be54-clean-build-second.log",
+    "sha256": "f28dc2aaa485806f5ef0e1168df2c5220210750a360dc1517d997ff1b77004b9",
+    "canonical_match": true,
+    "objects_built": 305,
+    "preexisting_build_objects": 0,
+    "source_copy": {
+      "report": ".decomp-lab/be54-clean-source-snapshot-first.json",
+      "sha256": "46be8aa5d12beebeef2f5117411d7bb899b89be9482a0aded1edfb24feb3b488"
+    },
+    "tool_dependency": {
+      "report": ".decomp-lab/be54-clean-tool-snapshot-first.json",
+      "sha256": "4ca834661d023fdf63cb2fdf1dcb67dc3ea4d0fe1795d8cfa08ebf5c2aa3bd7b"
+    },
+    "maspsx_revision": "e85ecb373828aabea96d7e6400974d4f91ce8c74",
+    "source_copy_files": 476,
+    "game_source_sha256": "5b8d25142af3ac22388076a93789f0d351fdfb6d09d7333ac0d17bf79aaf0325",
+    "executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+  },
+  "native_validation": {
+    "report": ".decomp-lab/be54-exact-native-pipeline-first.json",
+    "sha256": "600db78f4e5b512d387d38689df40414b97bd8a7af295720063f3aa5c2e8c023",
+    "status": "passed_bounded_native_lbd_pipeline",
+    "levels_checked": 418,
+    "original_loader_runs": 836,
+    "original_and_candidate_native_runs": 1672,
+    "totals": {
+      "linked_records": 95842,
+      "empty_records": 71628,
+      "allocated_extra_nodes": 270,
+      "tmd_objects": 13033,
+      "primitive_packets_walked": 281945,
+      "native_instructions": 66470497,
+      "candidate_native_instructions": 66470497
+    },
+    "dependency_stubs": 0,
+    "input_state_contracts": [
+      {
+        "global": "g_CdInitialized",
+        "value": 1,
+        "purpose": "CD hardware has completed initialization. Execute the native ready branch; cold CD initialization is outside scope."
+      }
+    ],
+    "negative_controls": [
+      {
+        "name": "missing_empty_flag",
+        "address": "0x8004bf40",
+        "path": "/CDI/STG00/M000.LBD",
+        "output_difference_detected": true,
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "name": "missing_continuation_link",
+        "address": "0x8004c068",
+        "path": "/CDI/STG00/M000.LBD",
+        "output_difference_detected": true,
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "name": "missing_mapping_flag",
+        "address": "0x80020560",
+        "path": "/CDI/STG00/M000.LBD",
+        "output_difference_detected": true,
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "name": "missing_packet_group_count",
+        "address": "0x8001f09c",
+        "path": "/CDI/STG00/M000.LBD",
+        "output_difference_detected": true,
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "name": "missing_old_model_destruction",
+        "address": "0x8004be88",
+        "path": "/CDI/STG00/M000.LBD",
+        "output_difference_detected": true,
+        "scope": "Private Unicorn memory only."
+      }
+    ],
+    "backend": "Unicorn 2.1.4",
+    "scope": "Local LBD tiles and TMD data through original loader, decoder, constructors, SDK map/link, allocator and virtual-table initialization. Independently compare complete guarded cold-load buffers and arena. Reload through native destruction and already-mapped TMD data; check complete caller buffers and defined heap fields, and compare full reload arenas if a candidate is supplied. Preinitialized CD state; no cold hardware, GPU drawing, caller node allocation/ownership, aliasing, PS1 bus/load-delay timing or whole-game acceptance.",
+    "original_executed_native_entry_counts": {
+      "memory_set_manager": 418,
+      "memory_setup_manager": 418,
+      "func_8004BE54": 836,
+      "tmd_create": 836,
+      "memory_allocate_mem": 27738,
+      "memory_set_lock": 83214,
+      "func_80043B78": 1672,
+      "func_800438B0": 836,
+      "get_file_driver": 2090,
+      "cd_file_driver_get_vtable": 2926,
+      "cd_file_driver_construct": 836,
+      "file_buf_get_vtable": 1672,
+      "file_buf_construct": 836,
+      "base_class_get_vtable": 54222,
+      "base_class_construct": 26902,
+      "cd_file_driver_init": 836,
+      "func_800439EC": 836,
+      "tmd_map": 836,
+      "GsMapModelingData": 836,
+      "class_FA50_create": 26066,
+      "class_FA50_get_vtable": 52132,
+      "class_FA50_construct": 26066,
+      "class_FA50_reset_flag": 26066,
+      "file_buf_set_flag": 836,
+      "class_1C92C_unk29": 335776,
+      "func_80043B58": 191684,
+      "GsLinkObject4": 191684,
+      "file_buf_destroy": 418,
+      "func_80043954": 418,
+      "base_class_destructor": 13033,
+      "base_class_cleanup": 13451,
+      "base_class_notify": 13451,
+      "linked_list_next": 26902,
+      "base_class_detach_all": 13451,
+      "base_class_clear_parents": 13451,
+      "linked_list_clear": 13451,
+      "memory_free_mem": 13869,
+      "cd_file_driver_cleanup": 418,
+      "cd_file_driver_unk28": 418,
+      "cd_file_driver_lock": 418,
+      "cd_file_driver_unlock": 418,
+      "file_buf_release": 418
+    },
+    "producer_dependencies": [
+      {
+        "path": "tools/verify_lbd_pipeline.py",
+        "sha256": "3cbec3fb62b4ee433693b01ada6d2ac1b40e3be10adb0080100ac9e59433817d"
+      },
+      {
+        "path": "tools/verify_native_ai.py",
+        "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+      },
+      {
+        "path": "tools/inventory_animations.py",
+        "sha256": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a"
+      },
+      {
+        "path": "tools/inventory_vtables.py",
+        "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+      },
+      {
+        "path": "tools/progress.py",
+        "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+      },
+      {
+        "path": "configure.py",
+        "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+      },
+      {
+        "path": "requirements-analysis.txt",
+        "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+      },
+      {
+        "path": "build/SLPS01556.map",
+        "sha256": "defbcc6c526852af600e5c92e648ff07cd0803aa13f3152d30687cecc445e542"
+      },
+      {
+        "path": "build/undefined_funcs_auto.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "build/undefined_syms_auto.txt",
+        "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+      },
+      {
+        "path": "src/file/file_object.c",
+        "sha256": "e393e4267c289f1190d2e2cb7ab52df34dc3a4f4ece7de200b62cb26c4320a2c"
+      },
+      {
+        "path": "src/file/file_object.h",
+        "sha256": "41368a0e71b9ecb0dec0dc7769714d13d33ddee46dc1adddc95d6b92eded63ce"
+      },
+      {
+        "path": "src/file/tmd_model.c",
+        "sha256": "2779130f4fef1ddca4c04b026c2d99073f52481a47c5a24e27afa3bea0bec800"
+      },
+      {
+        "path": "src/file/tmd_model.h",
+        "sha256": "711946954a00880537582cd8956412b21a863a2e3b40c60dc1366cabbdfa1020"
+      },
+      {
+        "path": "src/file/tmd_prim.c",
+        "sha256": "413959dcc32bbf0e2167e6b4fa4d38d5ef28968e749455e38ab62bf2abb731fa"
+      },
+      {
+        "path": "src/file/tmd_prim_geom.c",
+        "sha256": "ce5b1b5a908afd1bd322d4e13b79f90b11889c7d0122c41be15f5aa8a3e3005b"
+      },
+      {
+        "path": "src/base/base.c",
+        "sha256": "23f9ddac6d6e960eb2d0c40e6b8598d68aac401ea2d3031804d70c4309243722"
+      },
+      {
+        "path": "src/base/base.h",
+        "sha256": "aec74fef6d427a2242f2387894fd7374be4d092d313fed1fc02fa94578e6bfab"
+      },
+      {
+        "path": "src/file/file_buf.c",
+        "sha256": "25db4ce0bf60c99c7af66932d5e5b3ac809a8810f0bf72d313dcf0fa9d189b44"
+      },
+      {
+        "path": "src/file/cd_file_driver.c",
+        "sha256": "0fa0f405c81ca26c19fb4f04a232c1eddedf88b926a70ac4d608b9341afa2dff"
+      },
+      {
+        "path": "src/scene/render_context.c",
+        "sha256": "5b8d25142af3ac22388076a93789f0d351fdfb6d09d7333ac0d17bf79aaf0325"
+      },
+      {
+        "path": "asm/nonmatchings/scene/render_context/func_8004BE54.s",
+        "sha256": "f75cf14404b9f7de6db0d7cb3e3cadf2cda61047e33b333346f5f4cb0ad263f4"
+      },
+      {
+        "path": "asm/nonmatchings/psyq/gs/objt/GsLinkObject4.s",
+        "sha256": "9719f08e7ac922c3a5b6b35dfd58d9556e3d14cf23c20fbcccfcefcb7d1d89ae"
+      },
+      {
+        "path": "asm/nonmatchings/psyq/gs/GsMapModelingData/GsMapModelingData.s",
+        "sha256": "95a1719cedff1a62096628a363b3a68302507db4a6fa3c57a1858c8ac884e360"
+      }
+    ],
+    "matched_function_bytes": 600,
+    "byte_differences": 0,
+    "body_sha256": "51626654208f9939e89158fea39b66cfab5be53dacc4bf8cf9634e02e05f596f",
+    "verifier_scope": "Native verification does not promote source. The project promotion is established by the separate complete-executable comparison."
+  },
+  "remaining_assembly_catalog": {
+    "report": ".decomp-lab/be54-exact-catalog-first.json",
+    "sha256": "50431d5eec0b8237065dd720b8532becb528e05d397a9d38eed6518294fb3b6c",
+    "functions": [
+      "func_8004CD38",
+      "func_8004441C",
+      "func_8004C6A8",
+      "func_8001DDF4",
+      "func_8004EF6C",
+      "func_8001F8B8"
+    ]
+  },
+  "live_feature_anchors": {
+    "report": ".decomp-lab/be54-live-feature-anchors-first.json",
+    "sha256": "9e1f78e0cb905d05920d9f8e5db66283a7f99bc10aaf2e6dd0dd75fdc964bd66",
+    "provisional_feature_groups": 40,
+    "core_c_groups": 35,
+    "whole_feature_groups_accepted": 0
+  },
+  "source_experiments": {
+    "typed_api_search": {
+      "report": ".decomp-lab/be54-typed-api-first/results.json",
+      "sha256": "25218bc62c94b8b5af0b45edd20cf3416680e41f752e1c1d62705392ee24b676",
+      "unique_forms": 576,
+      "minimum_byte_differences": 8,
+      "exact_matches": 0,
+      "errors": 0
+    },
+    "grid_capture_search": {
+      "report": ".decomp-lab/be54-grid-capture-first/results.json",
+      "sha256": "f7be3ac39d01b816c7891ee8f22e7a02124b5a99f55d06d225e2bdd339c1ed1c",
+      "unique_forms": 4,
+      "minimum_byte_differences": 0,
+      "exact_matches": 1,
+      "errors": 0
+    },
+    "canonical_flags_changed": false,
+    "instruction_substitution": false,
+    "register_binding": false,
+    "volatile_access": false,
+    "artificial_stack_padding": false
+  },
+  "preserved_prior_source": {
+    "report": ".decomp-lab/pre-be54-exact-render-context-first.c",
+    "sha256": "3bdfbd4247a84a160de9582b1e053e2afb69a0bb395c00c125af73d8460e9d3d"
+  },
+  "current_turn_before_after": {
+    "before_source_commit": "64e71d8bb0fadf5b53cf941108bbf83772eae74f",
+    "before": {
+      "c_bytes": 194284,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 7,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "after": {
+      "c_bytes": 194884,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 6,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "new_matching_c_bytes": 600,
+    "new_matching_c_functions": 1,
+    "new_source_forms": 580,
+    "new_original_loader_runs": 836,
+    "original_and_candidate_native_runs": 1672,
+    "game_sdk_classification_changes": 0
+  },
+  "model_api_calls": 0,
+  "private_input_or_native_output_bytes_included": false,
+  "local_tests": {
+    "windows_python_3_14": 155,
+    "linux_python_3_13": 155
+  },
+  "scope": "Matching C recovery of one original 600-byte level-model loader; full executable identity and bounded local load/reload evidence. Original feature, NPC, tooling and mod denominators are preserved. Whole-game parity requirements remain incomplete."
+}
