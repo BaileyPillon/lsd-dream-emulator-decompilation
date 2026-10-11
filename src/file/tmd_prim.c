@@ -3,9 +3,9 @@
 
 #include <psx/libgs.h>
 
-void class_FA50_construct(void *, s32);
-void func_8001F314(void *);
-void func_8001F33C(void *);
+void class_FA50_construct(tmd_prim_t *This, void *Unk2);
+void func_8001F314(tmd_prim_t *This, tmd_prim_t *Unk2);
+void func_8001F33C(tmd_prim_t *This);
 s32 func_8001F360(tmd_prim_t *, s32);
 void func_8001F37C(void *);
 void class_FA50_reset_flag(tmd_prim_t *);
@@ -67,7 +67,7 @@ s32 func_8001F360(tmd_prim_t *This, s32 Unk2) {
     return temp + This->m_Unk2;
 }
 
-void func_8001F37C(void *) {
+void func_8001F37C(void * unused0) {
 }
 
 tmd_prim_vtable_t *class_FA50_get_vtable() {

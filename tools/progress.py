@@ -1,185 +1,219 @@
-import os
+"""Measure game C coverage from the current build, without optional packages."""
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
 import re
+import shutil
 import subprocess
+import sys
 
-import decomp_lib as dl
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+import configure
 
-from rich.console import Console
-from rich.progress import Progress, TextColumn, BarColumn
-from rich.table import Table
-from rich.text import Text
-
-BUILD_DIR = "build"
-NON_MATCHING_DIR = "asm/nonmatchings"
-BUILD_SRC_DIR = f"{BUILD_DIR}/src"
-
-OBJDUMP = dl.find_objdump()
-TEXT_SIZE_RE = re.compile(r"\.text\s+([0-9a-fA-F]{8})")
-FUNCTIONS_RE = re.compile(r"([0-9a-fA-F]{8})\s+<(.+)>:")
-
-CONSOLE = Console()
+TEXT_SIZE_RE = re.compile(r"^\s*\d+\s+\.text\s+([0-9a-fA-F]+)\s", re.MULTILINE)
+COMMENTS_RE = re.compile(r"/\*.*?\*/|//[^\n]*", re.DOTALL)
+INCLUDE_ASM_RE = re.compile(r'\bINCLUDE_ASM\s*\(\s*"[^"\n]+"\s*,\s*(\w+)\s*\)')
 
 
-def get_object_size(fp: str) -> int:
-    out = subprocess.check_output([OBJDUMP, "-h", fp], encoding="utf-8")
-    size = TEXT_SIZE_RE.search(out)
-    return int(size.group(1), 16)
+def fallback_functions(source):
+    """Use current source, so stale generated assembly cannot hide progress."""
+    return set(INCLUDE_ASM_RE.findall(COMMENTS_RE.sub("", source)))
 
 
-def parse_c_obj(fp: str):
-    out = subprocess.check_output([OBJDUMP, "-drwh", fp], encoding="utf-8")
-    total_size = int(TEXT_SIZE_RE.search(out).group(1), 16)
-    functions = FUNCTIONS_RE.findall(out)
-
-    decompiled_amount = 0
-
-    end_size = total_size
-    for start_size, name in functions[::-1]:
-        start_size = int(start_size, 16)
-        func_size = end_size - start_size
-        non_matching_path = os.path.join(
-            NON_MATCHING_DIR, os.path.relpath(fp, BUILD_SRC_DIR).replace(".c.o", "")
-        )
-
-        if not os.path.isfile(os.path.join(non_matching_path, name + ".s")):
-            decompiled_amount += func_size
-
-        end_size = start_size
-
-    return decompiled_amount, total_size
+def parse_text_size(output):
+    found = TEXT_SIZE_RE.search(output)
+    return int(found.group(1), 16) if found else 0
 
 
-def main():
-    total_size = 0
-    total_decompiled = 0
-    psyq_size = 0
-    file_stats = []
+def parse_c_coverage(output, fallbacks):
+    """Count function ranges from GNU objdump -h -t, excluding ASM fallbacks."""
+    total = parse_text_size(output)
+    functions = {}
+    for line in output.splitlines():
+        fields = line.split()
+        if ".text" not in fields:
+            continue
+        section = fields.index(".text")
+        if "F" not in fields[1:section] or len(fields) < section + 3:
+            continue
+        address = int(fields[0], 16)
+        size = int(fields[section + 1], 16)
+        name = fields[section + 2]
+        if address >= total:
+            if size:
+                raise ValueError(f"Function {name} lies outside .text.")
+            continue
+        functions.setdefault(address, []).append((name, size))
+    if total and not functions:
+        raise ValueError("No function symbols in a nonempty game C object.")
+    decompiled = 0
+    addresses = sorted(functions)
+    for index, address in enumerate(addresses):
+        boundary = addresses[index + 1] if index + 1 < len(addresses) else total
+        entries = functions[address]
+        size = max(size for _, size in entries) or boundary - address
+        if size > boundary - address:
+            raise ValueError("Overlapping function ranges in .text.")
+        if any(name in fallbacks or name.startswith("__maspsx_include_asm_hack_")
+               for name, _ in entries):
+            continue
+        decompiled += size
+    return decompiled, total
 
-    for root, _, files in os.walk(BUILD_DIR):
-        for file in files:
-            fp = os.path.join(root, file)
 
-            if file.endswith(".s.o"):
-                obj_size = get_object_size(fp)
-
-                if "src/" not in fp:
-                    # Skip default libs
-                    if file.startswith("psyq_"):
-                        psyq_size += obj_size
-                    else:
-                        file_stats.append(
-                            {
-                                "path": fp,
-                                "decompiled": 0,
-                                "total": obj_size,
-                                "type": "asm",
-                            }
-                        )
-                else:
-                    # Assume hasm is 100%
-                    file_stats.append(
-                        {
-                            "path": fp,
-                            "decompiled": obj_size,
-                            "total": obj_size,
-                            "type": "hasm",
-                        }
-                    )
-
-                total_size += obj_size
-            elif file.endswith(".c.o"):
-                # Psy-Q library C is vendored SDK code, not game decompilation:
-                # count it with the PSYQ size and exclude it from progress.
-                if os.path.relpath(fp, BUILD_DIR).replace("\\", "/").startswith(
-                    "src/psyq/"
-                ):
-                    psyq_size += obj_size
-                    total_size += obj_size
-                    continue
-
-                decompiled_size, obj_size = parse_c_obj(fp)
-                file_stats.append(
-                    {
-                        "path": fp,
-                        "decompiled": decompiled_size,
-                        "total": obj_size,
-                        "type": "C",
-                    }
-                )
-                total_size += obj_size
-                total_decompiled += decompiled_size
-            # else:
-            #     print("Skip", fp)
-
-    CONSOLE.print("\n[bold underline cyan]Progress Report[/]")
-
-    total_non_psyq = total_size - psyq_size
-    total_progress = (total_decompiled / total_non_psyq) * 100
-    color = (
-        "green" if total_progress > 75 else ("yellow" if total_progress > 25 else "red")
-    )
-
-    CONSOLE.print("\n[bold]Overall Progress:[/]")
-
-    with Progress(
-        TextColumn("[progress.description]{task.description}"),
-        BarColumn(),
-        TextColumn("[progress.percentage]{task.percentage:>3.1f}%"),
-        TextColumn(f"({total_decompiled:,} / {total_non_psyq:,} bytes)"),
-        console=CONSOLE,
-        transient=False,
-    ) as progress:
-        progress.add_task(
-            f"[{color}]Total Decompiled",
-            total=total_non_psyq,
-            completed=total_decompiled,
-        )
-
-    CONSOLE.print(
-        f"\n[default]PSYQ Size: {psyq_size}/{total_size} ({psyq_size / total_size * 100:.2f}%)"
-    )
-
-    CONSOLE.print("\n[bold]File Breakdown:[/]")
-    table = Table(show_header=True, header_style="bold magenta")
-    table.add_column("Source File", style="dim", width=60)
-    table.add_column("Type", justify="center")
-    table.add_column("Decompiled Bytes", justify="right")
-    table.add_column("Total Bytes", justify="right")
-    table.add_column("Percentage", justify="right")
-
-    def sort_key(item):
-        is_c = item["type"] == "C"
-        perc = (item["decompiled"] / item["total"] * 100) if item["total"] > 0 else 0
-        return not is_c, -perc
-
-    file_stats.sort(key=sort_key)
-
-    for stat in file_stats:
-        path = stat["path"]
-        decompiled = stat["decompiled"]
-        total = stat["total"]
-        file_type = stat["type"]
-
-        display_path = os.path.relpath(path, BUILD_SRC_DIR).rpartition(".o")[0]
-        percentage = (decompiled / total * 100) if total > 0 else 0.0
-
-        if file_type == "asm":
-            perc_text = Text("N/A", style="dim")
-        elif percentage == 100.0:
-            perc_text = Text(f"{percentage:.2f}%", style="bold green")
-        elif percentage > 50.0:
-            perc_text = Text(f"{percentage:.2f}%", style="green")
-        elif percentage > 0.0:
-            perc_text = Text(f"{percentage:.2f}%", style="yellow")
+def build_manifest():
+    """Classify only objects that belong to the current build configuration."""
+    manifest = []
+    for source in configure.asm_auto_targets + configure.asm_targets:
+        if source.startswith("src/psyq/") or source in configure.asm_psyq_targets:
+            kind = "sdk"
+        elif source in configure.hasm_targets:
+            kind = "handwritten"
+        elif source in configure.asm_data_targets + configure.asm_header_targets:
+            kind = "data"
         else:
-            perc_text = Text(f"{percentage:.2f}%", style="red")
+            kind = "asm"
+        manifest.append((source, kind))
+    for source in configure.c_psyq_targets + configure.c_game_targets + configure.cpp_targets:
+        manifest.append((source, "sdk" if source.startswith("src/psyq/") else "C"))
+    return manifest
 
-        table.add_row(
-            display_path, file_type, f"{decompiled:,}", f"{total:,}", perc_text
-        )
 
-    CONSOLE.print(table)
+def find_objdump(requested=None):
+    candidates = [requested] if requested else [
+        configure.CROSS + "objdump", "mips-linux-gnu-objdump", "mipsel-none-elf-objdump"
+    ]
+    for candidate in candidates:
+        found = shutil.which(candidate)
+        if found:
+            return found
+    raise ValueError("MIPS objdump is missing. Install binutils-mipsel-linux-gnu "
+                     "in Linux/WSL, or supply --objdump PATH.")
+
+
+def check_build_current(root):
+    if not (Path(root) / "build.ninja").is_file():
+        return None
+    # Use the Python environment's Ninja before a potentially older system
+    # version. Older Ninja can reset a newer build log even during a dry run.
+    ninja = shutil.which("ninja", path=str(Path(sys.executable).parent)) or shutil.which("ninja")
+    if not ninja:
+        return None
+    result = subprocess.run([ninja, "-n", "all"], cwd=root, text=True,
+                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    if result.returncode:
+        raise ValueError("Ninja could not inspect the build graph. Run configure.py and ninja check.")
+    return result.stdout.strip() == "ninja: no work to do."
+
+
+def collect_progress(root=PROJECT_ROOT, manifest=None, objdump=None, allow_partial=False):
+    root = Path(root)
+    manifest = build_manifest() if manifest is None else manifest
+    objects = [(source, kind, root / configure.BUILD_DIR / (source + ".o"))
+               for source, kind in manifest]
+    found = [entry for entry in objects if entry[2].is_file()]
+    missing = [source for source, _, path in objects if not path.is_file()]
+    if not found:
+        raise ValueError("No build objects found. Run ninja check in Linux/WSL first.")
+    if missing and not allow_partial:
+        raise ValueError(f"Incomplete build: {len(found)}/{len(objects)} objects present. "
+                         "Run ninja check, or use --allow-partial for an explicit snapshot.")
+    current = check_build_current(root)
+    if current is not True and not allow_partial:
+        raise ValueError("Build is out of date or freshness cannot be checked. Run configure.py "
+                         "and ninja check, or use --allow-partial for an explicit snapshot.")
+    objdump = find_objdump(objdump)
+    totals = {kind: 0 for kind in ("C", "asm", "sdk", "handwritten", "data")}
+    decompiled = 0
+    stats = []
+    for source, kind, path in found:
+        output = subprocess.check_output([objdump, "-h", "-t", str(path)],
+                                         text=True, stderr=subprocess.STDOUT)
+        total = parse_text_size(output)
+        covered = 0
+        if kind == "C":
+            content = (root / source).read_text(encoding="utf-8")
+            covered, total = parse_c_coverage(output, fallback_functions(content))
+            decompiled += covered
+        totals[kind] += total
+        if kind in ("C", "asm"):
+            stats.append({"source": source, "kind": kind, "c_bytes": covered,
+                          "text_bytes": total,
+                          "source_sha256": hashlib.sha256((root / source).read_bytes()).hexdigest()})
+    game_size = totals["C"] + totals["asm"]
+    expected = (root / configure.EXE_HASH).read_text(encoding="utf-8").split()[0]
+    executable = root / configure.EXE
+    actual = hashlib.sha1(executable.read_bytes()).hexdigest() if executable.is_file() else None
+    inputs = {root / source for source, _kind in manifest}
+    inputs.update(root / name for name in ("configure.py", configure.SPLAT_CONFIG, configure.SYMBOLS))
+    for folder in (root / "src", root / "include"):
+        if folder.is_dir():
+            inputs.update(folder.rglob("*.h"))
+            inputs.update(folder.rglob("*.inc"))
+    input_hashes = {path.relative_to(root).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
+                    for path in sorted(inputs) if path.is_file()}
+    current = check_build_current(root)
+    if current is not True and not allow_partial:
+        raise ValueError("Build changed during progress collection. Refresh and retry the snapshot.")
+    return {
+        "objects_expected": len(objects), "objects_found": len(found),
+        "complete_objects": not missing, "missing_objects": missing,
+        "build_current": current,
+        "c_bytes": decompiled, "game_text_bytes": game_size,
+        "c_coverage_percent": 100 * decompiled / game_size if game_size else None,
+        "sdk_text_bytes": totals["sdk"], "handwritten_text_bytes": totals["handwritten"],
+        "binary_match": "missing" if actual is None else ("verified" if actual == expected else "mismatch"),
+        "expected_sha1": expected, "actual_sha1": actual,
+        "build_input_sha256": input_hashes,
+        "files": sorted(stats, key=lambda item: item["source"]),
+    }
+
+
+def print_report(report):
+    print("Game C coverage (compiled function bytes)")
+    print(f"Build objects: {report['objects_found']}/{report['objects_expected']}")
+    print("Build freshness: " + {True: "current", False: "out of date", None: "unavailable"}[report["build_current"]])
+    if not report["complete_objects"] or report["build_current"] is not True:
+        print("PARTIAL SNAPSHOT: objects may be missing or stale; coverage is not a current-build result.")
+    percent = report["c_coverage_percent"]
+    if percent is None:
+        print("No game .text bytes to measure.")
+    else:
+        print(f"C: {report['c_bytes']:,}/{report['game_text_bytes']:,} bytes ({percent:.2f}%)")
+    print(f"Excluded SDK: {report['sdk_text_bytes']:,} bytes; "
+          f"handwritten startup: {report['handwritten_text_bytes']:,} bytes")
+    print(f"Original executable match: {report['binary_match']}")
+    if report["binary_match"] == "mismatch":
+        print(f"Observed SHA-1: {report['actual_sha1']}")
+    print("Coverage does not establish semantic understanding or independent validation.")
+    print()
+    for item in report["files"]:
+        size = item["text_bytes"]
+        percent = 100 * item["c_bytes"] / size if size else 0
+        print(f"{item['source']:48} {item['c_bytes']:7}/{size:<7} {percent:6.2f}%")
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--json", action="store_true", help="Emit machine-readable coverage.")
+    parser.add_argument("--objdump", help="Path to a GNU objdump supporting MIPS objects.")
+    parser.add_argument("--allow-partial", action="store_true", help="Report an incomplete or stale object snapshot.")
+    args = parser.parse_args(argv)
+    try:
+        report = collect_progress(objdump=args.objdump, allow_partial=args.allow_partial)
+        if args.json:
+            print(json.dumps(report, indent=2))
+        else:
+            print_report(report)
+        return 0
+    except (OSError, ValueError, subprocess.CalledProcessError) as error:
+        print(f"[!] {error}", file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

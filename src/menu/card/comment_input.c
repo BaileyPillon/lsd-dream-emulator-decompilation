@@ -228,64 +228,56 @@ void func_80051370(class_comment_input_t *This) {
     }
 }
 
-// Best attempt: all 147 target instructions reproduce exactly with the switch
-// below. The only blocker is data placement: the compiler emits
-// jtbl_80011628 into this unit's .rodata, but the 0x1E28 rodata subsegment is
-// currently assembled from asm/data/1E28.rodata.s and is shared with
-// select_menu (D_800116E4 "FONTICON"). Attributing 0x1E28 to menu/card/
-// comment_input in config/SLPS01556.yaml is required to link this C body.
-//
-// void func_800513D0(class_comment_input_t *This, s32 arg1, s32 arg2) {
-//     switch (arg2) {
-//     case 25:
-//         if (This->m_Unk2 == 1) {
-//             func_80041020((u8 *)This->m_Unk8, (u8 *)This->m_Unk9);
-//         } else {
-//             strcpy((char *)This->m_Unk8, (char *)This->m_Unk9);
-//         }
-//         ((void (*)(void *, s32))This->vtable->Unk23)(This, 0x10);
-//         ((void (*)(void *, s32))This->vtable->Unk20)(This, 2);
-//         break;
-//     case 23:
-//         ((void (*)(void *, s32))This->vtable->Unk23)(This, 0x10);
-//         ((void (*)(void *, s32))This->vtable->Unk20)(This, 3);
-//         break;
-//     case 32:
-//         This->vtable->Unk39(This);
-//         break;
-//     case 31:
-//         This->vtable->Unk38(This);
-//         break;
-//     case 28:
-//         This->vtable->Unk37(This);
-//         break;
-//     case 21:
-//         if (This->m_Unk7 == 0) This->vtable->Unk33(This);
-//         break;
-//     case 5:
-//         if (This->m_Unk7 != 0) This->vtable->Unk33(This);
-//         break;
-//     case 20:
-//         if (This->m_Unk7 == 0) This->vtable->Unk34(This);
-//         break;
-//     case 4:
-//         if (This->m_Unk7 != 0) This->vtable->Unk34(This);
-//         break;
-//     case 18:
-//         if (This->m_Unk7 == 0) This->vtable->Unk35(This);
-//         break;
-//     case 2:
-//         if (This->m_Unk7 != 0) This->vtable->Unk35(This);
-//         break;
-//     case 19:
-//         if (This->m_Unk7 == 0) This->vtable->Unk36(This);
-//         break;
-//     case 3:
-//         if (This->m_Unk7 != 0) This->vtable->Unk36(This);
-//         break;
-//     }
-// }
-INCLUDE_ASM("asm/nonmatchings/menu/card/comment_input", func_800513D0);
+void func_800513D0(class_comment_input_t *This, s32 arg1, s32 arg2) {
+    switch (arg2) {
+    case 25:
+        if (This->m_Unk2 == 1) {
+            func_80041020((u8 *)This->m_Unk8, (u8 *)This->m_Unk9);
+        } else {
+            strcpy((char *)This->m_Unk8, (char *)This->m_Unk9);
+        }
+        ((void (*)(void *, s32))This->vtable->Unk23)(This, 0x10);
+        ((void (*)(void *, s32))This->vtable->Unk20)(This, 2);
+        break;
+    case 23:
+        ((void (*)(void *, s32))This->vtable->Unk23)(This, 0x10);
+        ((void (*)(void *, s32))This->vtable->Unk20)(This, 3);
+        break;
+    case 32:
+        This->vtable->Unk39(This);
+        break;
+    case 31:
+        This->vtable->Unk38(This);
+        break;
+    case 28:
+        This->vtable->Unk37(This);
+        break;
+    case 21:
+        if (This->m_Unk7 == 0) This->vtable->Unk33(This);
+        break;
+    case 5:
+        if (This->m_Unk7 != 0) This->vtable->Unk33(This);
+        break;
+    case 20:
+        if (This->m_Unk7 == 0) This->vtable->Unk34(This);
+        break;
+    case 4:
+        if (This->m_Unk7 != 0) This->vtable->Unk34(This);
+        break;
+    case 18:
+        if (This->m_Unk7 == 0) This->vtable->Unk35(This);
+        break;
+    case 2:
+        if (This->m_Unk7 != 0) This->vtable->Unk35(This);
+        break;
+    case 19:
+        if (This->m_Unk7 == 0) This->vtable->Unk36(This);
+        break;
+    case 3:
+        if (This->m_Unk7 != 0) This->vtable->Unk36(This);
+        break;
+    }
+}
 
 void func_8005161C(class_comment_input_t *This, s32 Unk) {
     s32 m_Unk14; // $a0
@@ -384,59 +376,4 @@ void func_80051858(class_comment_input_t *This) {
         }
         This->vtable->Unk40(This, This->m_Unk5, 1);
     }
-}
-
-/*
- * Best-known C (41/41 insns, byte-identical) needs D_8008AADC declared as a
- * scalar (`extern s32 D_8008AADC;`) so gcc -G8 emits `lw %gp_rel(D_8008AADC)`.
- * This TU also contains func_80050F98, whose target passes the *address* of
- * D_8008AADC as `lui/addiu` (absolute) and therefore needs the array form
- * (`extern s8 D_8008AADC[];`). gcc 2.6.3 applies one declaration per symbol per
- * TU (a block-scope `extern` in either function leaks to the whole TU), so the
- * two cannot coexist here. Matched separately in the original build (different
- * TUs). Revisit only if comment_input is split into two units.
- *
- * extern s32 D_8008AAE0;
- *
- * void func_800518F4(class_comment_input_t *This, s32 arg1, s32 arg2) {
- *     class_glyph_t *icon;
- *     s32 sp10[2];
- *
- *     if (This->m_Unk17 != 0) {
- *         sp10[1] = D_8008AAE0;
- *         sp10[0] = arg1 * 7 + D_8008AADC;
- *         icon = (class_glyph_t *)This->m_Unk15;
- *         ((void (*)(void *, void *))icon->vtable->Unk46)(icon, sp10);
- *         This->m_Unk5 = arg1;
- *         if (arg2 != 0) {
- *             ((void (*)(void *, s32))This->vtable->Unk23)(This, 0);
- *         }
- *     }
- * }
- */
-INCLUDE_ASM("asm/nonmatchings/menu/card/comment_input", func_800518F4);
-
-#include "menu/card/comment_input.h"
-#include "menu/text_line.h"
-
-extern class_comment_input_vtable_t D_80086ED0;
-extern u8 *D_8008AAE4;
-
-void func_80051998(class_comment_input_t *This, s32 arg1, s32 arg2, s32 arg3) {
-    text_line_t *label;
-
-    if (This->m_Unk17 != 0) {
-        ((u8 *) This->m_Unk9)[arg1] = ((u8 *) D_8008AAE4)[arg2];
-        label = (text_line_t *) This->m_Unk16;
-        ((void (*)(void *, u8, s32)) label->vtable->Unk48)(label, ((u8 *) D_8008AAE4)[arg2], arg1);
-        This->m_Unk5 = arg1;
-        This->m_Unk6 = arg2;
-        if (arg3 != 0) {
-            ((void (*)(void *, s32)) This->vtable->Unk23)(This, 0);
-        }
-    }
-}
-
-class_comment_input_vtable_t *func_80051A4C(void) {
-    return &D_80086ED0;
 }

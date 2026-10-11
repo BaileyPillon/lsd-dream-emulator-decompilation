@@ -3,7 +3,7 @@
 #include "base/base.h"
 #include "base/transform.h"
 
-void func_8004D3DC(void *);
+void func_8004D3DC(notify_node_t *This);
 void func_8001CBA4(void *);
 void func_8001CC48(void *);
 void func_8001CCB4(void *);
@@ -32,15 +32,15 @@ void func_8001D600(void *);
 void func_8001D624(void *);
 void func_8001D6A4(void *);
 void func_8001D6AC(void *);
-void func_8004D434(void *);
+void func_8004D434(notify_node_t *This, void **Unk);
 void func_8001D714(void *);
 void func_8001D950(void *);
 void func_8001DA28(void *);
 void func_8001DDF4(void *);
 void func_8001E49C(void *);
 void func_8001E4A4(void *);
-void func_8004D47C(void *);
-void func_8004D500(void *);
+void func_8004D47C(notify_node_t *This, void **Unk2, s32 Unk3);
+notify_node_t *func_8004D500(notify_node_t *This);
 
 notify_node_vtable_t D_80086AA0 = {
     0x24,
@@ -112,7 +112,7 @@ void func_8004D3DC(notify_node_t *This) {
     This->m_Unk13 = 0;
 }
 
-void func_8004D42C(void *) {
+void func_8004D42C(void * unused0) {
 }
 
 void func_8004D434(notify_node_t *This, void **Unk) {

@@ -5,7 +5,7 @@
 #include "common.h"
 #include "graphics/effect.h"
 
-typedef struct dream_sys dream_sys_t;
+
 
 /* Notify codes raised by entity behaviours (base_class_notify). */
 typedef enum {
@@ -122,7 +122,7 @@ typedef struct entity_vtable {
     /* 0x180 80089c54 */ s32 (*entity_check_link_proximity)(const entity_t *);
 } entity_vtable_t;
 
-typedef struct entity {
+struct entity {
     /* 0x00 */ entity_vtable_t *vtable;
     /* 0x04 */ s32 m_Unk0;
     /* 0x08 */ s32 m_Unk1;
@@ -189,7 +189,7 @@ typedef struct entity {
     /* 0xFC */ s32 m_Tick;
     /* 0x100 */ effect_t *m_Effect;
     /* 0x104 */ base_class_t *m_Unk64;
-} entity_t;
+};
 
 typedef struct {
     /* 0x00 */ s8 mood_effect[2];

@@ -1,8 +1,18 @@
+import argparse
+import hashlib
+import importlib.util
 import os
+from pathlib import Path
+import re
 import shlex
+import shutil
+import stat
+import subprocess
 import sys
 
 from tools import ninja_syntax
+
+PROJECT_ROOT = Path(__file__).resolve().parent
 
 # To build a matching executable or not
 NON_MATCHING = False
@@ -32,8 +42,10 @@ UNDEF_SYMS = BUILD_DIR + "/undefined_syms_auto.txt"
 UNDEF_FUNCS = BUILD_DIR + "/undefined_funcs_auto.txt"
 SPLAT_CONFIG = CONFIG_DIR + "/" + GAME_ID + YAML_EXT
 EXE_HASH = CONFIG_DIR + "/" + GAME_ID + SHA_EXT
+ROM = "rom/SLPS_015.56"
+SYMBOLS = CONFIG_DIR + "/symbols.txt"
 
-GCC_DIR = TOOLS_DIR + "/GCC263"
+GCC_DIR = TOOLS_DIR + "/gcc263"
 
 # Tools
 CROSS = "mipsel-linux-gnu-"
@@ -41,16 +53,18 @@ AS = CROSS + "as -EL"
 LD = CROSS + "ld -EL"
 CPP = CROSS + "cpp"
 OBJCOPY = CROSS + "objcopy"
-CC = os.path.abspath(f"./{GCC_DIR}/cc1")
-CPP263 = os.path.abspath(f"./{GCC_DIR}/cpp")
-CPLUS = os.path.abspath(f"./{GCC_DIR}/cc1plus")
+CC = str(PROJECT_ROOT / GCC_DIR / "cc1")
+CPP263 = str(PROJECT_ROOT / GCC_DIR / "cpp")
+CPLUS = str(PROJECT_ROOT / GCC_DIR / "cc1plus")
 
 PYTHON = sys.executable
 MASPSX = TOOLS_DIR + "/maspsx/maspsx.py"
+MASPSX_REVISION = "e85ecb373828aabea96d7e6400974d4f91ce8c74"
 SPLAT = "-m splat split"
 
 # Tool Flags
 INCLUDE_FLAGS = ["-Iinclude/asm", "-Iinclude", "-Isrc"]
+ASM_INCLUDES = ["include/asm/macro.inc", "include/asm/gte.inc"]
 AS_FLAGS = INCLUDE_FLAGS + ["-march=r3000", "-mtune=r3000", "-no-pad-sections"]
 CPP_FLAGS = INCLUDE_FLAGS + ["-undef", "-Wall", "-lang-c", "-fno-builtin"]
 CPPPLUS_FLAGS = INCLUDE_FLAGS + ["-lang-c++"]
@@ -96,7 +110,7 @@ asm_data_targets = [
     "asm/data/1AA4.rodata.s",
     "asm/data/1D0C.rodata.s",
     "asm/data/1DD0.rodata.s",
-    "asm/data/1E28.rodata.s",
+    "asm/data/1EA4.rodata.s",
     "asm/data/206C.rodata.s",
     "asm/data/57040.data.s",
     "asm/data/5BDCC.data.s",
@@ -139,8 +153,10 @@ asm_data_targets = [
     "asm/data/7B4CC.sbss.s",
     "asm/data/800.rodata.s",
     "asm/data/ABC.rodata.s",
+    "asm/data/BD4.rodata.s",
     "asm/data/F28.rodata.s",
     "asm/data/FD8.rodata.s",
+    "asm/data/1040.rodata.s",
 ]
 
 asm_header_targets = [
@@ -333,6 +349,8 @@ c_game_targets = [
     "src/base/base.c",
     "src/utils/cd_paths.c",
     "src/menu/main_menu.c",
+    "src/menu/main_menu_entry.c",
+    "src/menu/main_menu_post.c",
     "src/menu/card/memory_card.c",
     "src/file/file_buf.c",
     "src/sound/bgm.c",
@@ -351,9 +369,12 @@ c_game_targets = [
     "src/file/tmd_prim_geom.c",
     "src/base/object_math.c",
     "src/dream/dream_generation.c",
+    "src/dream/dream_generation_palette.c",
+    "src/dream/dream_generation_post.c",
     "src/dream/dream_generation_sdata.c",
     "src/dream/generation_structure.c",
     "src/menu/card/comment_input.c",
+    "src/menu/card/comment_input_cursor.c",
     "src/scene/map_scene.c",
     "src/scene/link.c",
     "src/dream/generation_apply.c",
@@ -407,6 +428,17 @@ c_game_targets = [
     "src/psyq/snd/22D88.c",
 ]
 
+c_game_g0_targets = {
+    "src/dream/dream_generation_palette.c",
+    "src/menu/main_menu_entry.c",
+}
+
+
+def c_source_uses_g8(filename):
+    """Keep isolated comparisons and the standard build on identical flags."""
+    return filename in c_game_targets and filename not in c_game_g0_targets
+
+
 cpp_targets = []
 
 
@@ -414,228 +446,250 @@ def _find_c_sources(*roots):
     """All .c/.h files under the given roots, used by clang-format."""
     found = []
     for root in roots:
-        for dirpath, _dirnames, filenames in os.walk(root):
+        for dirpath, _dirnames, filenames in os.walk(PROJECT_ROOT / root):
             for name in filenames:
                 if name.endswith((".c", ".h")):
-                    found.append(os.path.join(dirpath, name))
+                    path = Path(dirpath) / name
+                    found.append(path.relative_to(PROJECT_ROOT).as_posix())
     return sorted(found)
 
 
 format_targets = _find_c_sources("src", "include")
 tidy_targets = sorted(set(c_psyq_targets + c_game_targets + cpp_targets))
 
-clean_files = [
-    UNDEF_SYMS,
-    UNDEF_FUNCS,
-    LD_SCRIPT,
-    MAP_FILE,
-    EXE,
-    ELF,
-] + asm_auto_targets
 
-# Create writer
-with open("build.ninja", "w", encoding="utf-8") as f:
-    n = ninja_syntax.Writer(f)
+def assembly_includes(filename):
+    """Track assembly included inside C, which CPP's header depfile cannot see."""
+    source = (PROJECT_ROOT / filename).read_text(encoding="utf-8")
+    source = re.sub(r"/\*.*?\*/|//[^\n]*", "", source, flags=re.DOTALL)
+    return sorted(set(
+        f"{folder}/{name}.s" for folder, name in re.findall(
+            r'\bINCLUDE_(?:ASM|RODATA)\s*\(\s*"([^"\n]+)"\s*,\s*(\w+)\s*\)', source)
+    ))
 
-    n.variable("ninja_required_version", "1.3")
-    n.newline()
 
-    n.variable("as", AS)
-    n.variable("ld", LD)
-    n.variable("cc", CC)
-    n.variable("cpp", CPP)
-    n.variable("cpp263", CPP263)
-    n.variable("cplus", CPLUS)
-    n.variable("objcopy", OBJCOPY)
-    n.variable("python", PYTHON)
-    n.variable("maspsx", MASPSX)
-    n.variable("splat", SPLAT)
+def generate_build(output_path=None):
+    """Write the build graph; importing this module never writes files."""
+    output_path = output_path or PROJECT_ROOT / "build.ninja"
+    with open(output_path, "w", encoding="utf-8", newline="\n") as f:
+        n = ninja_syntax.Writer(f)
 
-    n.variable("asflags", " ".join(AS_FLAGS))
-    n.variable("ldflags", " ".join(LD_FLAGS))
-    n.variable("cppflags", " ".join(CPP_FLAGS))
-    n.variable("cflags", " ".join(C_FLAGS))
-    n.variable("cflags_g8", " ".join(C_FLAGS_G8))
-    n.variable("cppplusflags", " ".join(CPPPLUS_FLAGS))
-    n.variable("cplusflags", " ".join(CPLUS_FLAGS))
-    n.variable("maspsxflags", " ".join(MASPSX_FLAGS))
-    n.variable("clang_format", CLANG_FORMAT)
-    n.variable("clang_tidy", CLANG_TIDY)
-    n.variable("formatfiles", " ".join(shlex.quote(f) for f in format_targets))
-    n.variable("tidyfiles", " ".join(shlex.quote(f) for f in tidy_targets))
-    n.variable("tidyflags", " ".join(TIDY_FLAGS))
+        n.variable("ninja_required_version", "1.3")
+        n.newline()
 
-    # Keep ninja_log out of working dir
-    n.variable("builddir", BUILD_DIR)
-    n.newline()
+        n.variable("as", AS)
+        n.variable("ld", LD)
+        n.variable("cc", ninja_syntax.escape(shlex.quote(CC)))
+        n.variable("cpp", CPP)
+        n.variable("cpp263", ninja_syntax.escape(shlex.quote(CPP263)))
+        n.variable("cplus", ninja_syntax.escape(shlex.quote(CPLUS)))
+        n.variable("objcopy", OBJCOPY)
+        n.variable("python", ninja_syntax.escape(shlex.quote(PYTHON)))
+        n.variable("maspsx", MASPSX)
+        n.variable("splat", SPLAT)
 
-    # Rule for .s files
-    n.rule("asm", command="$as $asflags -o $out $in", description="AS $out")
-    n.newline()
+        n.variable("asflags", " ".join(AS_FLAGS))
+        n.variable("ldflags", " ".join(LD_FLAGS))
+        n.variable("cppflags", " ".join(CPP_FLAGS))
+        n.variable("cflags", " ".join(C_FLAGS))
+        n.variable("cflags_g8", " ".join(C_FLAGS_G8))
+        n.variable("cppplusflags", " ".join(CPPPLUS_FLAGS))
+        n.variable("cplusflags", " ".join(CPLUS_FLAGS))
+        n.variable("maspsxflags", " ".join(MASPSX_FLAGS))
+        n.variable("clang_format", CLANG_FORMAT)
+        n.variable("clang_tidy", CLANG_TIDY)
+        n.variable("formatfiles", " ".join(shlex.quote(f) for f in format_targets))
+        n.variable("tidyfiles", " ".join(shlex.quote(f) for f in tidy_targets))
+        n.variable("tidyflags", " ".join(TIDY_FLAGS))
 
-    # Rule for .c files
-    n.rule(
-        "cc",
-        command="$cpp $cppflags $in | $cc $cflags | $python $maspsx $maspsxflags | $as $asflags -o $out",
-        description="CC $out",
-        depfile="$out.asmproc.d",
-    )
+        # Keep ninja_log out of working dir
+        n.variable("builddir", BUILD_DIR)
+        n.newline()
 
-    # G8 files
-    n.rule(
-        "cc_g8",
-        command="$cpp $cppflags -DCCG8 $in | $cc $cflags_g8 | $python $maspsx $maspsxflags | $as $asflags -o $out",
-        description="CC $out",
-        depfile="$out.asmproc.d",
-    )
-    n.newline()
+        # Rule for .s files
+        n.rule("asm", command="$as $asflags -o $out $in", description="AS $out")
+        n.newline()
 
-    # Rule for .cpp files
-    n.rule(
-        "cplus",
-        command="$cpp263 $cppplusflags $in | $cplus $cplusflags | $python $maspsx $maspsxflags | $as $asflags -o $out",
-        description="CXX $out",
-        depfile="$out.asmproc.d",
-    )
+        # Rule for .c files
+        n.rule(
+            "cc",
+            command="$python tools/compile_c.py --cpp $cpp -MMD -MF $out.d -MT $out $cppflags $in --cc $cc $cflags --maspsx $python $maspsx $maspsxflags --as $as $asflags -o $out",
+            description="CC $out",
+            depfile="$out.d",
+            deps="gcc",
+        )
 
-    n.rule(
-        "link",
-        command=f"$ld -o $out -Map {shlex.quote(MAP_FILE)} -T {shlex.quote(LD_SCRIPT)}"
-        f" -T {shlex.quote(UNDEF_SYMS)} -T {shlex.quote(UNDEF_FUNCS)} $ldflags $in",
-        description="LINK $out",
-    )
-    n.newline()
+        # G8 files
+        n.rule(
+            "cc_g8",
+            command="$python tools/compile_c.py --cpp $cpp -MMD -MF $out.d -MT $out $cppflags -DCCG8 $in --cc $cc $cflags_g8 --maspsx $python $maspsx $maspsxflags --as $as $asflags -o $out",
+            description="CC $out",
+            depfile="$out.d",
+            deps="gcc",
+        )
+        n.newline()
 
-    n.rule("objcopy", command="$objcopy -O binary $in $out", description="OBJCOPY $out")
-    n.newline()
+        # Rule for .cpp files
+        n.rule(
+            "cplus",
+            command="$python tools/compile_c.py --cpp $cpp263 $cppplusflags $in --cc $cplus $cplusflags --maspsx $python $maspsx $maspsxflags --as $as $asflags -o $out",
+            description="CXX $out",
+            depfile="$out.asmproc.d",
+        )
 
-    # TQDM_DISABLE=1 drops splat progress bars (token noise for agents / CI logs)
-    n.rule(
-        "splat",
-        command="env TQDM_DISABLE=1 $python $splat $in",
-        description="SPLAT $in",
-    )
-    n.newline()
+        n.rule(
+            "link",
+            command=f"$ld -o $out -Map {shlex.quote(MAP_FILE)} -T {shlex.quote(LD_SCRIPT)}"
+            f" -T {shlex.quote(UNDEF_SYMS)} -T {shlex.quote(UNDEF_FUNCS)} $ldflags $in",
+            description="LINK $out",
+        )
+        n.newline()
 
-    quoted_clean_files = " ".join([shlex.quote(f) for f in clean_files])
-    n.rule("clean_custom", command=f"rm -rf {quoted_clean_files}", description="CLEAN")
-    n.newline()
+        n.rule("objcopy", command="$objcopy -O binary $in $out", description="OBJCOPY $out")
+        n.newline()
 
-    # Full resplit: wipe generated asm/ then splat (use after symbol/map changes)
-    n.rule(
-        "resplit_custom",
-        command="rm -rf asm && env TQDM_DISABLE=1 $python $splat $in",
-        description="RESPLIT $in",
-    )
-    n.newline()
+        # TQDM_DISABLE=1 drops splat progress bars (token noise for agents / CI logs)
+        n.rule(
+            "splat",
+            command="env TQDM_DISABLE=1 $python $splat $in",
+            description="SPLAT $in",
+            restat=True,
+        )
+        n.newline()
 
-    n.rule("checksha", command="sha1sum --check $in", description="CHECK $in")
-    n.newline()
+        # Ninja cleans generated outputs, never tracked assembly source inputs.
+        n.rule("clean_custom", command="ninja -t clean", description="CLEAN")
+        n.newline()
 
-    n.rule("format", command="$clang_format -i $formatfiles", description="FORMAT")
-    n.newline()
-    n.rule(
-        "format_check",
-        command="$clang_format --dry-run --Werror $formatfiles",
-        description="FORMAT-CHECK",
-    )
-    n.newline()
-    n.rule("tidy", command="$clang_tidy $tidyfiles -- $tidyflags", description="TIDY")
-    n.newline()
+        # Full resplit: wipe generated asm/ then splat (use after symbol/map changes)
+        n.rule(
+            "resplit_custom",
+            command="rm -rf asm && env TQDM_DISABLE=1 $python $splat $in",
+            description="RESPLIT $in",
+        )
+        n.newline()
 
-    n.build([LD_SCRIPT, UNDEF_SYMS, UNDEF_FUNCS], "splat", SPLAT_CONFIG)
-    n.newline()
+        n.rule("checksha", command="sha1sum --check $in", description="CHECK $in")
+        n.newline()
 
-    obj_files = []
+        n.rule("format", command="$clang_format -i $formatfiles", description="FORMAT")
+        n.newline()
+        n.rule(
+            "format_check",
+            command="$clang_format --dry-run --Werror $formatfiles",
+            description="FORMAT-CHECK",
+        )
+        n.newline()
+        n.rule("tidy", command="$clang_tidy $tidyfiles -- $tidyflags", description="TIDY")
+        n.newline()
 
-    for filename in asm_auto_targets + asm_targets:
-        out_file = BUILD_DIR + "/" + filename + O_EXT
-        obj_files.append(out_file)
-        n.build(out_file, "asm", filename)
+        included_assembly = {
+            filename: assembly_includes(filename)
+            for filename in c_psyq_targets + c_game_targets + cpp_targets
+        }
+        split_outputs = list(dict.fromkeys(
+            [LD_SCRIPT, UNDEF_SYMS, UNDEF_FUNCS]
+            + asm_game_targets + asm_psyq_targets + asm_data_targets + asm_header_targets
+            + [path for paths in included_assembly.values() for path in paths]
+        ))
+        n.build(split_outputs, "splat", SPLAT_CONFIG, implicit=[ROM, SYMBOLS])
+        n.newline()
 
-    for filename in c_psyq_targets:
-        out_file = BUILD_DIR + "/" + filename + O_EXT
-        obj_files.append(out_file)
-        n.build(out_file, "cc", filename)
+        obj_files = []
 
-    for filename in c_game_targets:
-        out_file = BUILD_DIR + "/" + filename + O_EXT
-        obj_files.append(out_file)
-        n.build(out_file, "cc_g8", filename)
+        for filename in asm_auto_targets + asm_targets:
+            out_file = BUILD_DIR + "/" + filename + O_EXT
+            obj_files.append(out_file)
+            n.build(out_file, "asm", filename,
+                    implicit=ASM_INCLUDES)
 
-    for filename in cpp_targets:
-        out_file = BUILD_DIR + "/" + filename + O_EXT
-        obj_files.append(out_file)
-        n.build(out_file, "cplus", filename)
+        for filename in c_psyq_targets:
+            out_file = BUILD_DIR + "/" + filename + O_EXT
+            obj_files.append(out_file)
+            n.build(out_file, "cc", filename,
+                    implicit=[LD_SCRIPT, "tools/compile_c.py"] + ASM_INCLUDES + included_assembly[filename])
 
-    n.newline()
+        for filename in c_game_targets:
+            out_file = BUILD_DIR + "/" + filename + O_EXT
+            obj_files.append(out_file)
+            n.build(out_file, "cc_g8" if c_source_uses_g8(filename) else "cc", filename,
+                    implicit=[LD_SCRIPT, "tools/compile_c.py"] + ASM_INCLUDES + included_assembly[filename])
 
-    # Link binary to elf
-    n.build(
-        ELF,
-        rule="link",
-        inputs=obj_files,
-        implicit=[LD_SCRIPT, UNDEF_SYMS, UNDEF_FUNCS],
-    )
-    n.newline()
+        for filename in cpp_targets:
+            out_file = BUILD_DIR + "/" + filename + O_EXT
+            obj_files.append(out_file)
+            n.build(out_file, "cplus", filename,
+                    implicit=[LD_SCRIPT, "tools/compile_c.py"] + ASM_INCLUDES + included_assembly[filename])
 
-    # Build final exe
-    n.build(
-        EXE,
-        rule="objcopy",
-        inputs=ELF,
-    )
-    n.newline()
+        n.newline()
 
-    # Default rule
-    n.build("all", "phony", EXE)
-    n.default("all")
-    n.newline()
+        # Link binary to elf
+        n.build(
+            ELF,
+            rule="link",
+            inputs=obj_files,
+            implicit=[LD_SCRIPT, UNDEF_SYMS, UNDEF_FUNCS],
+        )
+        n.newline()
 
-    # Alias to all
-    n.build("build", "phony", "all")
-    n.newline()
+        # Build final exe
+        n.build(
+            EXE,
+            rule="objcopy",
+            inputs=ELF,
+        )
+        n.newline()
 
-    # Split rom
-    n.build("split", "splat", SPLAT_CONFIG)
-    n.newline()
+        # Default rule
+        n.build("all", "phony", EXE)
+        n.default("all")
+        n.newline()
 
-    # Wipe asm/ and split from scratch
-    n.build("resplit", "resplit_custom", SPLAT_CONFIG)
-    n.newline()
+        # Alias to all
+        n.build("build", "phony", "all")
+        n.newline()
 
-    # Clean helper
-    n.build("clean", "clean_custom")
-    n.newline()
+        # Split rom
+        n.build("split", "phony", split_outputs)
+        n.newline()
 
-    n.build("format", "format")
-    n.newline()
+        # Wipe asm/ and split from scratch
+        n.build("resplit", "resplit_custom", SPLAT_CONFIG)
+        n.newline()
 
-    n.build("format-check", "format_check")
-    n.newline()
+        # Clean helper
+        n.build("clean", "clean_custom")
+        n.newline()
 
-    n.build("tidy", "tidy")
-    n.newline()
+        n.build("format", "format")
+        n.newline()
 
-    # Check hash
-    n.build("check", "checksha", EXE_HASH, implicit=[EXE])
-    n.newline()
+        n.build("format-check", "format_check")
+        n.newline()
 
-    # n.build("test", "cplus", "tests/test.cpp")
-    # n.newline()
+        n.build("tidy", "tidy")
+        n.newline()
+
+        # Check hash
+        n.build("check", "checksha", EXE_HASH, implicit=[EXE])
+        n.newline()
+
+        # n.build("test", "cplus", "tests/test.cpp")
+        # n.newline()
 
 
 def setup():
     """Install any missing dependencies"""
-    import subprocess
+    req_file = PROJECT_ROOT / "requirements.txt"
+    print("Installing requirements...", flush=True)
+    subprocess.check_call([PYTHON, "-m", "pip", "install", "-r", str(req_file)])
 
-    req_file = os.path.join(TOOLS_DIR, "requirements.txt")
+    # Git stores these legacy Linux binaries without executable permissions.
+    for name in ("cc1", "cc1plus", "cpp", "gcc", "g++"):
+        path = PROJECT_ROOT / GCC_DIR / name
+        path.chmod(path.stat().st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
-    if os.path.exists(req_file):
-        print("Installing requirements...")
-        subprocess.check_call([PYTHON, "-m", "pip", "install", "-r", req_file])
-
-    maspsx_dir = os.path.dirname(MASPSX)
+    maspsx_dir = PROJECT_ROOT / TOOLS_DIR / "maspsx"
     if not os.path.isdir(maspsx_dir):
         print(f"Installing maspsx to {maspsx_dir}...")
 
@@ -645,35 +699,79 @@ def setup():
                 "clone",
                 "--recursive",
                 "https://github.com/mkst/maspsx",
-                maspsx_dir,
+                str(maspsx_dir),
             ]
         )
+        subprocess.check_call(["git", "-C", str(maspsx_dir), "checkout", "--detach", MASPSX_REVISION])
+
+
+def check_rom(path=None):
+    """Validate the original executable before generating build files."""
+    path = Path(path) if path is not None else PROJECT_ROOT / ROM
+    if not path.is_file():
+        return f"Missing original executable: {path}. Supply rom/SLPS_015.56."
+    expected = (PROJECT_ROOT / EXE_HASH).read_text(encoding="utf-8").split()[0]
+    digest = hashlib.sha1()
+    with path.open("rb") as source:
+        for chunk in iter(lambda: source.read(1024 * 1024), b""):
+            digest.update(chunk)
+    actual = digest.hexdigest()
+    if actual != expected:
+        return f"Wrong executable SHA-1: {actual}; expected {expected}."
+    return None
 
 
 def check_dependencies():
-    """Check for any missing dependencies"""
-    import shutil
+    """Return actionable errors without modifying the checkout."""
+    errors = []
+    if sys.platform != "linux":
+        errors.append("Builds require Linux or WSL. Run these commands in a Linux terminal.")
+    for name in (SPLAT_CONFIG, SYMBOLS, MASPSX):
+        if not (PROJECT_ROOT / name).is_file():
+            errors.append(f"Missing {name}; run python3 configure.py setup for tools.")
+    for path in (CC, CPP263, CPLUS):
+        if not Path(path).is_file():
+            errors.append(f"Missing compiler: {path}.")
+        elif sys.platform == "linux" and not os.access(path, os.X_OK):
+            errors.append(f"Compiler is not executable: {path}; run configure.py setup.")
+    for tool in (CROSS + "as", CROSS + "ld", CPP, OBJCOPY, "ninja"):
+        if not shutil.which(tool):
+            errors.append(f"Missing {tool}; install the MIPS toolchain and Ninja in Linux.")
+    if importlib.util.find_spec("splat") is None:
+        errors.append("Missing Python package splat; run python3 configure.py setup.")
+    rom_error = check_rom()
+    if rom_error:
+        errors.append(rom_error)
+    return errors
 
-    if not os.path.isfile(SPLAT_CONFIG):
-        print(
-            f'[!] Splat config file not found: {SPLAT_CONFIG}, run "configure.py setup"'
-        )
 
-    if not os.path.isfile(MASPSX):
-        print(f'[!] MASPSX is not found: {MASPSX}, run "configure.py setup"')
-
-    if not os.path.isfile(CC):
-        print(f'[!] CC is not found: {CC}, run "configure.py setup"')
-
-    if not shutil.which(CPP):
-        print(f'[!] CPP is not found: {CPP}, run "configure.py setup"')
-
-    if not shutil.which(OBJCOPY):
-        print(f"[!] OBJCOPY is not found: {OBJCOPY}")
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="Configure the LSD: Dream Emulator build.")
+    parser.add_argument("command", nargs="?", default="configure",
+                        choices=("configure", "setup", "doctor"))
+    args = parser.parse_args(argv)
+    os.chdir(PROJECT_ROOT)
+    try:
+        if args.command == "setup":
+            if sys.platform != "linux":
+                parser.exit(1, "Setup requires Linux or WSL. Open a Linux terminal first.\n")
+            setup()
+            return 0
+        errors = check_dependencies()
+        if errors:
+            for error in errors:
+                print(f"[!] {error}", file=sys.stderr)
+            return 1
+        if args.command == "doctor":
+            print("Build prerequisites and original executable are ready.")
+        else:
+            generate_build()
+            print("Generated build.ninja. Run ninja check to build and verify the executable.")
+        return 0
+    except (OSError, subprocess.CalledProcessError) as error:
+        print(f"[!] {error}", file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "setup":
-        setup()
-    else:
-        check_dependencies()
+    sys.exit(main())

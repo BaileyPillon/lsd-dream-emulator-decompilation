@@ -49,10 +49,9 @@ typedef struct tmd_model_vtable {
     /* 0x07C 8006f1b8 */ void (*Unk30)(void *);
     /* 0x080 8006f1bc */ void (*Unk31)(void *);
     /* 0x084 8006f1c0 */ void (*Unk32)(void *);
-    /* 0x088 8006f1c4 */ void (*Unk33)(void *);
 } tmd_model_vtable_t;
 
-typedef struct tmd_model {
+struct tmd_model {
     /* 0x00 */ tmd_model_vtable_t *vtable;
     /* 0x04 */ s32 m_Unk0;
     /* 0x08 */ s32 m_Unk1;
@@ -65,7 +64,7 @@ typedef struct tmd_model {
     /* 0x24 */ s32 m_Unk8;
     /* 0x28 */ s32 m_Unk9;
     /* 0x2C */ s32 m_Unk10;
-} tmd_model_t;
+};
 
 tmd_model_t *tmd_create(tmd_model_arg_t *Args);
 tmd_model_vtable_t *func_80043B78(void);

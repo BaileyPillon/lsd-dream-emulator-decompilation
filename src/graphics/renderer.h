@@ -52,7 +52,6 @@ typedef struct renderer_vtable {
     /* 0x0AC 8006e990 */ void (*Unk42)(void *);
     /* 0x0B0 8006e994 */ void (*Unk43)(void *);
     /* 0x0B4 8006e998 */ void (*Unk44)(void *);
-    /* 0x0B8 8006e99c */ void (*Unk45)(void *);
 } renderer_vtable_t;
 
 typedef struct renderer {

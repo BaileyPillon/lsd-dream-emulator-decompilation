@@ -34,14 +34,14 @@ void func_8001DDF4(void *);
 void func_8001E49C(void *);
 void func_8001E4A4(void *);
 
-void func_80041F88(void *, s32, s32, s32, s32, s32);
-void func_8004202C(void *, s32, s32, s32, s32, s32);
-void func_80042170(void *);
+void func_80041F88(sprite_t *This, s32 Unk2, s32 Unk3, s32 Unk4, s32 Unk5, s32 Unk6);
+void func_8004202C(sprite_t *This, s32 Unk2, s32 Unk3, s32 *Unk4);
+void func_80042170(sprite_t *This, s32 a2, u8 *a3);
 s32 func_8004220C(sprite_t *, s32);
-void func_8004223C(void *);
-void func_80042268(void *);
+void func_8004223C(sprite_t *This, s32 Unk);
+void func_80042268(sprite_t *This, s32 Unk);
 void func_80042294(void *);
-void func_8004229C(void *);
+void func_8004229C(sprite_t *This, s8 *Data);
 
 sprite_vtable_t D_8006EE1C = {
     0x44,
@@ -178,7 +178,7 @@ void func_80042268(sprite_t *This, s32 Unk) {
     func_8001EDAC(&This->m_Unk24, 28, 2, Unk);
 }
 
-void func_80042294(void *) {
+void func_80042294(void * unused0) {
 }
 
 void func_8004229C(sprite_t *This, s8 *Data) {

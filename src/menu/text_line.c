@@ -35,19 +35,19 @@ void func_8004223C(void *);
 void func_80042268(void *);
 void func_80042294(void *);
 
-void text_line_construct(void *, s32, s32, s32);
-void text_line_cleanup(base_class_t *);
-void func_80040A88(void *, s32);
-void func_80040AE8(void *, s32, void *);
-void func_80040C00(void *);
+void text_line_construct(text_line_t *This, s32 Unk1, s32 Unk2, s32 Unk3);
+void text_line_cleanup(text_line_t *This);
+void func_80040A88(text_line_t *This, s32 Unk);
+void func_80040AE8(text_line_t *This, s32 arg1, s32 *arg2);
+void func_80040C00(text_line_t *This);
 s32 func_80040CD0(text_line_t *, s32, s32);
-void func_80040D74(void *, char *);
-void func_80040E14(void *);
+void func_80040D74(text_line_t *This, s32 arg);
+void func_80040E14(text_line_t *This, s32 *arg1);
 s32 func_80040EDC(text_line_t *, u8, s32);
 void func_80040F20(void *);
-void text_line_set_string(void *, char *);
+void text_line_set_string(text_line_t *This, u8 *Str);
 void func_80040FA0(void *);
-void text_line_set_spacing(void *);
+void text_line_set_spacing(text_line_t *This, s32 Unk);
 s8 *itoa(s32);
 char *strcpy(char *, char *);
 s32 strlen(char *);
@@ -267,7 +267,7 @@ s32 func_80040EDC(text_line_t *This, u8 Unk2, s32 Unk3) {
     return (*(int (**)(s32, s32))(**((s32 **) This->m_Glyphs + Unk3) + 196))(*((s32 *) This->m_Glyphs + Unk3), Unk2);
 }
 
-void func_80040F20(void *) {
+void func_80040F20(void * unused0) {
 }
 
 void text_line_set_string(text_line_t *This, u8 *Str) {
@@ -284,7 +284,7 @@ void text_line_set_string(text_line_t *This, u8 *Str) {
     }
 }
 
-void func_80040FA0(void *) {
+void func_80040FA0(void * unused0) {
 }
 
 void text_line_set_spacing(text_line_t *This, s32 Unk) {
@@ -336,23 +336,17 @@ u8 *func_80041020(u8 *arg0, u8 *arg1) {
     return arg0;
 }
 
-/*
- * Best-known C (byte-identical except register allocation of buf/len):
- * target uses buf=$s3, pad=$s1, len=$s0; gcc 2.6.3 assigns buf=$s0,
- * pad=$s1, len=$s3 for every source ordering tried (declaration order,
- * nested strcpy, pointer aliases, named/nested len, VLA size via len).
- *
- * u8 *func_8004109C(u8 *arg0, s32 arg1, s32 arg2, s32 arg3) {
- *     s32 len;
- *     char buf[arg2 + 1];
- *     char pad[arg2 + 1];
- *
- *     len = arg2 - strlen(strcpy(buf, (char *)itoa(arg1)));
- *     if (arg3 == 0) {
- *         memset(pad, '0', arg2);
- *         strcpy(pad + len, buf);
- *     }
- *     return func_80041020(arg0, (u8 *)(arg3 == 0 ? pad : buf));
- * }
- */
-INCLUDE_ASM("asm/nonmatchings/menu/text_line", func_8004109C);
+u8 *func_8004109C(u8 *dest, s32 number, s32 width, s32 unpadded) {
+    s32 padding;
+    char number_text[width + 1];
+    char padded_text[width + 1];
+
+    padding = width - strlen(strcpy(number_text, (char *)itoa(number)));
+    if (unpadded == 0) {
+        /* Removing the padding recovers the original number length. */
+        s32 text_length = width - padding;
+        memset(padded_text, '0', padding + text_length);
+        strcpy(padded_text + padding, number_text);
+    }
+    return func_80041020(dest, (u8 *)(unpadded ? number_text : padded_text));
+}

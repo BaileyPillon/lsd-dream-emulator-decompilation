@@ -34,7 +34,6 @@ typedef struct mdec_movie_vtable {
     /* 0x064 8006f678 */ void (*Unk24)(void *);
     /* 0x068 8006f67c */ void (*Unk25)(void *);
     /* 0x06C 8006f680 */ void (*Unk26)(void *);
-    /* 0x070 8006f684 */ void (*Unk27)(void *);
 } mdec_movie_vtable_t;
 
 typedef struct mdec_movie {

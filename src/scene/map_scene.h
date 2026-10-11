@@ -5,7 +5,7 @@
 
 #include "base/base.h"
 
-typedef struct dream_sys dream_sys_t;
+
 
 typedef struct map_scene_vtable {
     /* 0x000 80087034 */ u32 type_id;

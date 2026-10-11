@@ -29,8 +29,8 @@ extern s32 strlen(char *);
 s16 func_80030E90(s16, s16, s16, s16, s32, s32, s32);
 s16 SsUtGetDetVVol(s16, s16, s16, s16);
 extern s16 SsUtGetVabHdr(s16, void *);
-extern s16 SsUtGetProgAtr(s16, s32, u8 *);
-extern s16 SsUtGetVagAtr(s16, s32, s16, s32);
+extern s16 SsUtGetProgAtr(s16, s16, u8 *);
+extern s16 SsUtGetVagAtr(s16, s16, s16, u8 *);
 extern void SsSetMVol(s16, s16);
 
 sound_t *sound_create(u32 Unk1) {
@@ -167,75 +167,55 @@ s32 sound_finish_vab_load(sound_t *This, s32 Unk) {
     return return_value;
 }
 
-/*
- * Near match (108/107 insns): frame, prologue, allocations, both loops and the
- * volume block all match. Three GCC 2.6.3 ties remain:
- *  - the entry guard is `blez` in the target (`0 < count` on a `for`/`while`
- *    form) but `beqz` here; while/for forms give `blez` but grow the frame to
- *    0x58 instead of 0x50.
- *  - target allocates outer=$s4 / innerOffset=$s5; gcc swaps them.
- *  - gcc duplicates the `lui v0,1` constant into the inner-entry `beqz` delay
- *    slot (target materialises it once at the shared tail).
- * Also needs short prototypes for the SsUtGet / SsSetMVol SDK calls (otherwise
- * implicit int returns skip the target's `sll/sra` sign-extension). The 0x20-byte
- * attr buffer reproduces the target's 0x50 frame (ProgAtr is 16 bytes).
- *
- * void sound_build_program_table(sound_t *This) {
- *     sound_prog_attr_t attr;
- *     u8 *cursor;
- *     u8 *table;
- *     u8 *prog;
- *     s32 outer;
- *     s32 inner;
- *     s32 offset;
- *     s32 innerOffset;
- *
- *     if (This->unk22_1 != 0) {
- *         This->vtable->file_buf_release(This);
- *         This->unk4 = g_VabHeaderPtr;
- *         if (SsUtGetVabHdr(This->unk21_1, (u8 *)This + 0x2C) != -1) {
- *             prog = (u8 *)memory_allocate_mem(*(u16 *)((u8 *)This + 0x40) << 5);
- *             This->unk19 = (s32)prog;
- *             if (prog != 0) {
- *                 table = (u8 *)memory_allocate_mem(*(u16 *)((u8 *)This + 0x3E) << 2);
- *                 This->unk20 = (s32)table;
- *                 if (table != 0) {
- *                     cursor = (u8 *)This->unk19;
- *                     outer = 0;
- *                     if (*(u16 *)((u8 *)This + 0x3E) > 0) {
- *                         offset = 0;
- *                         do {
- *                             *(u32 *)(This->unk20 + outer * 4) = (u32)cursor;
- *                             if (SsUtGetProgAtr(This->unk21_1, offset >> 16, &attr) == -1) {
- *                                 return;
- *                             }
- *                             if (attr.m_Attr > 0) {
- *                                 inner = 0;
- *                                 innerOffset = offset;
- *                                 do {
- *                                     if (SsUtGetVagAtr(This->unk21_1, innerOffset >> 16, (s16)inner, (s32)cursor) ==
- * -1) { return;
- *                                     }
- *                                     inner++;
- *                                     cursor += 0x20;
- *                                 } while (inner < (s32)attr.m_Attr);
- *                             }
- *                             offset += 0x10000;
- *                             outer++;
- *                         } while (outer < *(u16 *)((u8 *)This + 0x3E));
- *                     }
- *                     if (g_MasterVolumeSet == 0) {
- *                         func_80032998();
- *                         SsSetMVol(0x78, 0x78);
- *                         g_MasterVolumeSet = 1;
- *                     }
- *                 }
- *             }
- *         }
- *     }
- * }
- */
-INCLUDE_ASM("asm/nonmatchings/sound/sound", sound_build_program_table);
+void sound_build_program_table(sound_t *This) {
+    u8 attr[0x10];
+    u8 *cursor;
+    u8 *table;
+    u8 *prog;
+    s32 outer;
+    s32 inner;
+
+    if (This->unk22_1 != 0) {
+        This->vtable->file_buf_release(This);
+        This->unk4 = g_VabHeaderPtr;
+        if (SsUtGetVabHdr(This->unk21_1, (u8 *)This + 0x2C) != -1) {
+            prog = (u8 *)memory_allocate_mem(*(u16 *)((u8 *)This + 0x40) << 5);
+            This->unk19 = (s32)prog;
+            if (prog != 0) {
+                table = (u8 *)memory_allocate_mem(*(u16 *)((u8 *)This + 0x3E) << 2);
+                This->unk20 = (s32)table;
+                if (table != 0) {
+                    cursor = (u8 *)This->unk19;
+                    outer = 0;
+                    if (outer < (s32)*(u16 *)((u8 *)This + 0x3E)) {
+                        do {
+                            *(u32 *)(This->unk20 + outer * 4) = (u32)cursor;
+                            if (SsUtGetProgAtr(This->unk21_1, outer, attr) == -1) {
+                                return;
+                            }
+                            inner = 0;
+                            if (inner < (s32)attr[0]) {
+                                do {
+                                    if (SsUtGetVagAtr(This->unk21_1, outer, (s16)inner, cursor) == -1) {
+                                        return;
+                                    }
+                                    inner++;
+                                    cursor += 0x20;
+                                } while (inner < (s32)attr[0]);
+                            }
+                            outer++;
+                        } while (outer < *(u16 *)((u8 *)This + 0x3E));
+                    }
+                    if (g_MasterVolumeSet == 0) {
+                        func_80032998();
+                        SsSetMVol(0x78, 0x78);
+                        g_MasterVolumeSet = 1;
+                    }
+                }
+            }
+        }
+    }
+}
 
 s16 sound_play_note(sound_t *This, s32 arg1, s16 arg2, s16 arg3) {
     s32 vab;

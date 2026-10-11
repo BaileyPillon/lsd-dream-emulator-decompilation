@@ -23,8 +23,8 @@ typedef struct ui_sprite_vtable {
     /* 0x038 8006f2fc */ void (*OnNotify)(base_class_t *, base_class_t *, s32);
     /* 0x03C 8006f300 */ void (*Unk14)(void *);
     /* 0x040 8006f304 */ void (*Unk15)(void *, s32, s32);
-    /* 0x044 8006f308 */ void (*Unk16)(void *);
-    /* 0x048 8006f30c */ void (*Unk17)(void *);
+    /* 0x044 8006f308 */ void (*Unk16)(void *, s32, u8 *);
+    /* 0x048 8006f30c */ void (*Unk17)(void *, s32, s16 *);
     /* 0x04C 8006f310 */ void (*Unk18)(void *, s32, s32);
     /* 0x050 8006f314 */ void (*Unk19)(void *);
     /* 0x054 8006f318 */ void (*Unk20)(void *);

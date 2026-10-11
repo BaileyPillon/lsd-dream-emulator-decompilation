@@ -80,7 +80,6 @@ typedef struct graph_screen_vtable {
     /* 0x11C 80087bc8 */ void (*Unk70)(void *);
     /* 0x120 80087bcc */ void (*Unk71)(void *);
     /* 0x124 80087bd0 */ void (*Unk72)(void *);
-    /* 0x128 80087bd4 */ void (*Unk73)(void *);
 } graph_screen_vtable_t;
 
 typedef struct graph_screen {

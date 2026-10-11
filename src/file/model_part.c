@@ -37,42 +37,54 @@ u8 func_80043FB0(model_part_t *This, s32 Unk1, s32 Unk2) {
     return This->vtable->Unk30(This, Unk1, Unk2, This->m_Unk3 + 8);
 }
 
-// Best attempt: same record walk (u16 count at +2, records advance by sp1B*4),
-// same func_8004416C 6-arg call shape and same branch structure. Target frame
-// is 0x58 with s0-s7 saved from 0x30; GCC uses a 0x48 frame with the saves from
-// 0x20 (0x10 less local/outgoing space) and reschedules the arg copies.  Tried
-// out/src/pointer locals and a single search loop.
-// s32 func_80043FE4(s32 arg0, u8 *arg1, s32 *arg2, u8 *arg3) {
-//     u8 sp18, sp19, sp1A, sp1B;
-//     u16 count; u8 *out; u8 *src;
-//     s32 i, written, found, k, n;
-//     out = arg1; src = arg3;
-//     count = *(u16 *)(src + 2); src += 8;
-//     i = 0; written = 0; found = 0;
-//     if (count != 0) {
-//         do {
-//             func_8004416C((model_part_t *)arg0, (u32 *)src, &sp18, &sp19, &sp1A, &sp1B);
-//             if (sp19 == 8) {
-//                 if (sp1A == 0) { written++; if (out != NULL) { *out = sp18; out++; } }
-//             } else if (sp19 == 2) {
-//                 if (out == NULL) { if (arg2 != NULL) found++; }
-//                 else if (arg2 != NULL) {
-//                     if (*(u16 *)(src + 4) == *arg2) {
-//                         n = written & 0xFF; out -= n;
-//                         if (n > 0) { k = 0;
-//                             do { if (*out == sp18) { out++; found = k; break; } out++; k++; } while (k < n);
-//                         }
-//                     }
-//                 }
-//             }
-//             i++; src += sp1B * 4;
-//         } while (i < count);
-//     }
-//     if (arg2 != NULL) *arg2 = found;
-//     return written & 0xFF;
-// }
+u32 *func_8004416C(model_part_t *, u32 *, u8 *, u8 *, u8 *, u8 *);
 
-INCLUDE_ASM("asm/nonmatchings/file/model_part", func_80043FE4);
+u8 func_80043FE4(model_part_t *This, u8 *out, s32 *arg2, u8 *src) {
+    u8 type;
+    u8 kind;
+    u8 flag;
+    u8 words;
+    u16 count;
+    u32 i;
+    u8 written;
+    s32 found;
+    s32 k;
+
+    count = *(u16 *)(src + 2);
+    src += 8;
+    i = 0;
+    written = 0;
+    found = 0;
+    for (; i < count; i++) {
+        func_8004416C(This, (u32 *)src, &type, &kind, &flag, &words);
+        if (kind == 8 && flag == 0) {
+            written++;
+            if (out != NULL) {
+                *out++ = type;
+            }
+        } else if (kind == 2) {
+            if (out != NULL) {
+                if (arg2 != NULL && *(u16 *)(src + 4) == *arg2) {
+                    /* The native count wraps to a byte before both promotions. */
+                    out -= (u16)written;
+                    for (k = 0; k < (s16)written; k++) {
+                        if (*out++ == type) {
+                            found = k;
+                            break;
+                        }
+                    }
+                }
+            } else if (arg2 != NULL) {
+                found++;
+            }
+        }
+        src += words * 4;
+    }
+    if (arg2 != NULL) {
+        *arg2 = found;
+    }
+    return written;
+}
 
 u32 *func_8004416C(model_part_t *This, u32 *Src, u8 *dst1, u8 *dst2, u8 *dst3, u8 *dst4) {
     u32 val;

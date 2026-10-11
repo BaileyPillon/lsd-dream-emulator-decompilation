@@ -108,51 +108,55 @@ void func_80053984(map_scene_t *This, s32 Unk2, s32 Unk3) {
     }
 }
 
-/*
- * Best attempt (not matching: compiled body is 66 insns vs target 71; first
- * real difference is the delay slot after `bnez v0, B_B4`: target materialises
- * the 5th stack arg `1` into $v0, compiled schedules `var_a1 = 0` there. Target
- * also fills several delay slots with `addu $a0,$s0` (This) and keeps separate
- * `sw $v0,0x10($sp)` stores on both paths; gcc 2.6.3 merges them here. The
- * switch lowering and notify path otherwise match.)
- *
 void func_80053ACC(map_scene_t *This) {
-    s32 sp18;
-    s32 temp_v1;
-    s32 var_a1;
-    s32 var_a3;
+    s32 color;
+    s32 variant;
+    s32 selector;
+    s32 transition_delay;
     dream_sys_t *dream_sys;
 
     dream_sys = This->m_DreamSys;
     This->m_State = 4;
-    if (dream_sys->vtable->dream_sys_get_set_flashback(dream_sys, &sp18, -1) == 0) {
-        temp_v1 = (This->m_Tick + This->m_Location) & 3;
-        if (temp_v1 == 0) {
+    if (dream_sys->vtable->dream_sys_get_set_flashback(dream_sys, &color, -1) == 0) {
+        variant = (This->m_Tick + This->m_Location) & 3;
+        /* Keep the integer and byte views of the variant distinct. */
+        selector = (u8)variant;
+        if (variant == 0) {
             This->vtable->Notify(This, 4);
             return;
         }
-        var_a3 = 0xA;
-        switch (temp_v1) {
-        case 1:
-            sp18 = 0;
-            break;
-        case 2:
-            sp18 = 4;
-            break;
-        case 3:
-            sp18 = 7;
-            var_a3 = 5;
-            break;
+        transition_delay = 0xA;
+        if (variant == 2) {
+            goto variant_two;
         }
-        var_a1 = sp18;
+        if (variant >= 3) {
+            goto high_variant;
+        }
+        if (variant == 1) {
+            goto variant_one;
+        }
+        goto dispatch;
+high_variant:
+        if (selector == 3) {
+            goto variant_three;
+        }
+        goto dispatch;
+variant_one:
+        color = 0;
+        goto dispatch;
+variant_two:
+        color = 4;
+        goto dispatch;
+variant_three:
+        color = 7;
+        transition_delay = 5;
+dispatch:
+        func_80053EB4(This, color, 0, transition_delay, 1);
     } else {
-        var_a1 = 0;
-        var_a3 = 5;
+        func_80053EB4(This, 0, 0, 5, 1);
     }
-    func_80053EB4(This, var_a1, 0, var_a3, 1);
 }
-*/
-INCLUDE_ASM("asm/nonmatchings/scene/map_scene_post", func_80053ACC);
+
 
 void func_80053BE8(map_scene_t *This) {
     void (*callback)(void *);

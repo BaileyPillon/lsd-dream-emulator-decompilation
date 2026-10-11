@@ -62,46 +62,46 @@ s32 func_8002C3B8(void) {
     return 0;
 }
 
-void debug_file_driver_construct(void *) {
+void debug_file_driver_construct(void * unused0) {
 }
 
-void debug_file_driver_cleanup(void *) {
+void debug_file_driver_cleanup(void * unused0) {
 }
 
-void debug_file_driver_unk15(void *) {
+void debug_file_driver_unk15(void * unused0) {
     s8 pad[0x40];
 }
 
-void debug_file_driver_open(void *) {
+void debug_file_driver_open(void * unused0) {
     s8 pad[0x40];
 }
 
-void debug_file_driver_close(void *) {
+void debug_file_driver_close(void * unused0) {
 }
 
-void debug_file_driver_seek(void *) {
+void debug_file_driver_seek(void * unused0) {
 }
 
-void debug_file_driver_unk19(void *) {
+void debug_file_driver_unk19(void * unused0) {
 }
 
 s32 debug_file_driver_read(void) {
     return 0;
 }
 
-void debug_file_driver_unk21(void *) {
+void debug_file_driver_unk21(void * unused0) {
 }
 
-void debug_file_driver_unk25(void *) {
+void debug_file_driver_unk25(void * unused0) {
 }
 
-void debug_file_driver_unk26(void *) {
+void debug_file_driver_unk26(void * unused0) {
 }
 
-void debug_file_driver_unk27(void *) {
+void debug_file_driver_unk27(void * unused0) {
 }
 
-void debug_file_driver_unk28(void *) {
+void debug_file_driver_unk28(void * unused0) {
 }
 
 debug_file_driver_vtable_t *debug_file_driver_get_vtable(void) {

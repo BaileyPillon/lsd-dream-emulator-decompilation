@@ -24,6 +24,8 @@ options:
 
   o_as_suffix: False
   use_legacy_include_asm: False
+  # The checked-in macros preserve function order with GCC 2.6.3 / MASPSX.
+  generate_asm_macros_files: False
 
   asm_function_macro: glabel
   asm_jtbl_label_macro: jlabel
@@ -51,9 +53,13 @@ segments:
       - [0x800, rodata]
       - [0xA8C, .rodata, base/base]
       - [0xABC, rodata]
+      - [0xB54, .rodata, file/tmd_prim_geom] # primitive decoder jump table
+      - [0xBD4, rodata]
       - [0xF28, rodata]
       - [0xFA4, .rodata, game/game_flow]
-      - [0xFD8, rodata] # 179d8
+      - [0xFD8, rodata]
+      - [0x1010, .rodata, file/cd_file_driver] # request dispatch jump tables
+      - [0x1040, rodata]
       - [0x1764, rodata]
       - [0x17EC, .rodata, sound/bgm]
       - [0x1818, rodata]
@@ -68,12 +74,14 @@ segments:
       - [0x1D0C, rodata]
       - [0x1D7C, .rodata, menu/card/memory_card] # jtbl_8001157C (FBE4) + jtbl_80011594 (50034)
       - [0x1DD0, rodata] # D_800115D0 / D_80011610 / D_8001161C
-      - [0x1E28, rodata]
+      - [0x1E28, .rodata, menu/card/comment_input] # input dispatcher jump table
+      - [0x1EA4, rodata] # comment character set / FONTICON path
       - [0x1EF4, .rodata, menu/card/select_menu] # jtbl_800116F4 (func_800522DC)
       - [0x1F4C, .rodata, scene/map_scene_post] # jtbl_8001174C (func_80053984)
       - [0x1F6C, .rodata, menu/graph_screen]
       - [0x1F88, .rodata, dream/dream_sys] # jtbl_80011788 (set_move_from_pad) + jtbl_80011848
       - [0x206C, rodata] # greyman
+      - [0x208C, .rodata, scene/link] # link_check_object jump table
       - [0x20DC, c, main]
       - [0x219C, hasm, start]
       - [0x2258, c, psyq/malloc]
@@ -290,6 +298,8 @@ segments:
       - [0x3DA54, c, graphics/scene_renderer]
       - [0x3DB8C, c, scene/notify_node]
       - [0x3DD18, c, menu/main_menu]
+      - [0x3E464, c, menu/main_menu_entry]
+      - [0x3E4D0, c, menu/main_menu_post]
       - [0x3eae0, c, menu/card/memory_card]
       - [0x40FF8, asm]
       - [0x41148, c, psyq/libc/atoi]
@@ -303,10 +313,13 @@ segments:
       - [0x41388, c, psyq/card/c112]
       - [0x41398, c, psyq/card/a80]
       - [0x413A8, c, menu/card/comment_input]
+      - [0x420F4, c, menu/card/comment_input_cursor]
       - [0x4225C, c, menu/card/select_menu]
       - [0x43370, c, scene/map_scene]
       - [0x43EB0, c, scene/map_scene_post]
       - [0x44CE4, c, dream/dream_generation]
+      - [0x45A58, c, dream/dream_generation_palette]
+      - [0x45C10, c, dream/dream_generation_post]
       - [0x46B20, c, dream/generation_structure]
       - [0x4775C, c, dream/generation_apply]
       - [0x477E4, c, scene/scene_node]

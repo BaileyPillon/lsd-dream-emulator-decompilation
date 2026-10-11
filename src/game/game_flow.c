@@ -190,7 +190,7 @@ void play_special_reel(game_flow_t *This) {
     }
 }
 
-void game_flow_menu_unused(void *) {
+void game_flow_menu_unused(void * unused0) {
 }
 
 s32 game_flow_execute_dream(game_flow_t *This) {

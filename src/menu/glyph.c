@@ -44,9 +44,9 @@ void sprite_node_set_anchor(void *);
 
 void func_80041C4C(s8 *, s32);
 
-void glyph_construct(void *, s32, u8);
-void glyph_set_mode(void *, u8);
-void glyph_set_char(void *, u8);
+void glyph_construct(class_glyph_t *This, s32 Unk1, u8 Unk2);
+void glyph_set_mode(class_glyph_t *This, u8 Unk);
+void glyph_set_char(class_glyph_t *This, u8 Unk);
 u8 glyph_get_char(class_glyph_t *);
 
 class_glyph_vtable_t g_GLYPH_VTABLE = {

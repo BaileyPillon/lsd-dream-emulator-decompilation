@@ -6,31 +6,31 @@
 s32 *func_8003DFCC(void);
 s32 mdec_movie_create(s32, s32, s32);
 
-void movie_screen_construct(void *);
-void movie_screen_cleanup(void *);
+void movie_screen_construct(movie_screen_t *This, s32 Unk1, s32 Unk2, s32 Unk3, s32 *arg4);
+void movie_screen_cleanup(movie_screen_t *This);
 void timer_on_notify(void *);
-void func_8003BA38(void *);
-void func_8003BA58(void *);
+void func_8003BA38(movie_screen_t *This);
+void func_8003BA58(movie_screen_t *This, s32 Unk2, s32 Unk3, s32 Unk4, s32 Unk5);
 void func_8003E280(void *);
-void func_8003BAB4(void *);
+s32 func_8003BAB4(movie_screen_t *This);
 void func_8003C3D0(void *);
 void func_8003E418(void *);
 void func_8003C48C(void *);
-void func_8003BB5C(void *);
-void func_8003BC14(void *);
+void func_8003BB5C(movie_screen_t *This, s32 arg1, s32 arg2);
+void func_8003BC14(movie_screen_t *This, s32 arg1);
 void timer_begin_frame(void *);
 void timer_end_frame(void *);
-void func_8003BCF4(void *);
+void func_8003BCF4(movie_screen_t *This, s32 Unk);
 void func_8003C7B4(void *);
 void func_8003C7F4(void *);
-void func_8003BD10(void *);
+void func_8003BD10(movie_screen_t *This);
 void func_8003C8D0(void *);
-void func_8003BD74(void *);
-void func_8003BDAC(void *);
+void func_8003BD74(movie_screen_t *This);
+void func_8003BDAC(movie_screen_t *This);
 void func_8003BDE4(void *);
 void func_8003BDEC(void *);
 void func_8003CA1C(void *);
-void func_8003BDF4(void *);
+void func_8003BDF4(movie_screen_t *This);
 void func_8003CAEC(void *);
 void func_8003CAF8(void *);
 void func_8003CB30(void *);
@@ -60,11 +60,11 @@ void func_8003DDC8(void *);
 void func_8003DE30(void *);
 void func_8003DE9C(void *);
 void func_8003DFA0(void *);
-void func_8003BE5C(void *);
-void func_8003BE64(void *);
-void func_8003BE6C(void *);
-void func_8003BE74(void *);
-void func_8003BE7C(void *);
+void func_8003BE5C(movie_screen_t *This, s32 Value);
+void func_8003BE64(movie_screen_t *This, s32 Value);
+void func_8003BE6C(movie_screen_t *This, s32 Value);
+void func_8003BE74(movie_screen_t *This, s32 Value);
+void func_8003BE7C(movie_screen_t *This, s32 Value);
 
 movie_screen_vtable_t g_MOVIE_SCREEN_VTABLE = {
     0x1130,
@@ -276,10 +276,10 @@ void func_8003BDAC(movie_screen_t *This) {
     func_8003DFBC()->Unk32(This);
 }
 
-void func_8003BDE4(void *) {
+void func_8003BDE4(void * unused0) {
 }
 
-void func_8003BDEC(void *) {
+void func_8003BDEC(void * unused0) {
 }
 
 void func_8003BDF4(movie_screen_t *This) {

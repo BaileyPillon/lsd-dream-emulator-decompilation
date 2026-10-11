@@ -2,7 +2,7 @@
 #include "base/base.h"
 #include "graphics/renderer.h"
 
-void func_8004D2A4(void *);
+void func_8004D2A4(scene_renderer_t *This);
 void func_8003E6CC(void *);
 void func_8003E770(void *);
 void func_8003E7F4(void *);
@@ -31,7 +31,7 @@ void func_8003ECD0(void *);
 void func_8003EDF4(void *);
 void func_8003EE40(void *);
 void func_8003EE88(void *);
-void func_8004D300(void *);
+void func_8004D300(scene_renderer_t *This);
 void func_80012064(void *);
 void func_8003F04C(void *);
 void func_8003F1A8(void *);
@@ -113,7 +113,7 @@ void func_8004D2A4(scene_renderer_t *This) {
     This->vtable->Unk15(This);
 }
 
-void func_8004D2F8(void *) {
+void func_8004D2F8(void * unused0) {
 }
 
 void func_8004D300(scene_renderer_t *This) {
@@ -122,16 +122,16 @@ void func_8004D300(scene_renderer_t *This) {
     }
 }
 
-void func_8004D35C(void *) {
+void func_8004D35C(void * unused0) {
 }
 
-void func_8004D364(void *) {
+void func_8004D364(void * unused0) {
 }
 
-void func_8004D36C(void *) {
+void func_8004D36C(void * unused0) {
 }
 
-void func_8004D374(void *) {
+void func_8004D374(void * unused0) {
 }
 
 scene_renderer_vtable_t *func_8004D37C(void) {

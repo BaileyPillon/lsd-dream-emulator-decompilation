@@ -2,8 +2,8 @@
 #include "file/model_part.h"
 
 model_part_list_t *func_80045228(model_part_list_t *, s32 *);
-void func_800452AC(base_class_t *);
-s32 func_800452FC(void *);
+void func_800452AC(model_part_list_t *This);
+s32 func_800452FC(model_part_list_t *This);
 u8 func_800453DC(model_part_list_t *, s32, s32);
 s32 file_buf_destroy(void *);
 void file_buf_release(void *);

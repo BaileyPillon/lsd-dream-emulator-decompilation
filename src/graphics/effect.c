@@ -73,47 +73,34 @@ void effect_set_color_step(effect_t *This, s32 Value) {
     This->m_ColorStep = Value;
 }
 
-// Best attempt: all 35 instructions present and equal; only a scheduling
-// tie-break differs. Target sets arg1 (ori a1,1) right after the Unk54 call and
-// loads the D_8006EA90 lui/addiu after lw v0,0(s0); GCC 2.6.3 emits
-// sll/addu, lui/addiu a2, lw v0,0(s0), li a1,1 instead. Reconfirmed with
-// inline color, temp local, `one` local, vt local: none reorder the schedule.
-//
-// void effect_start(effect_t *This) {
-//     s32 temp;
-//     if (This->m_State == 0) {
-//         temp = This->vtable->Unk54(This);
-//         This->vtable->Unk45(This, 1, (s32 *)((u8 *)D_8006EA90 + (temp * 3)));
-//         This->m_State = 1;
-//         This->m_ColorStep = -This->m_ColorStep;
-//     }
-// }
-INCLUDE_ASM("asm/nonmatchings/graphics/effect", effect_start);
+/* The inherited activation callback receives parent, variant and mode.
+ * Retaining its full ABI also preserves the original delay-slot scheduling. */
+void effect_start(effect_t *This, base_class_t *Parent, s32 Variant, s32 Mode) {
+    s32 color_index;
 
-/*
- * Best attempt (not matching: target is 41 insns, compiled 40. The only real
- * difference is the dead parameter copy `addu t0,a2,zero` in the delay slot of
- * the first `bnez`; t0 is immediately overwritten with the Unk54 result. gcc
- * 2.6.3 removes the copy for s32 temp=Unk2 / temp=Unk2 / parameter-reassign
- * forms. Everything else matches: `This->m_State == 0` guard, Unk54 call,
- * m_Unk37 branch, m_Life-=1, and Unk45(This,1,&D_8006EAA8[temp*3]).)
- *
- * void effect_start_attached(effect_t *This, s32 Unk1, s32 Unk2) {
- *     s32 temp;
- *
- *     temp = Unk2;
- *     if (This->m_State == 0) {
- *         temp = ((s32 (*)(effect_t *))This->vtable->Unk54)(This);
- *         if (This->m_Unk37 != 0) {
- *             This->m_Life -= 1;
- *         } else {
- *             This->vtable->Unk45(This, 1, (s32 *)((u8 *)D_8006EAA8 + (temp * 3)));
- *         }
- *         This->m_State = 2;
- *     }
- * }
- */
-INCLUDE_ASM("asm/nonmatchings/graphics/effect", effect_start_attached);
+    if (This->m_State == 0) {
+        color_index = ((s32 (*)(effect_t *, base_class_t *, s32, s32))
+                       This->vtable->Unk54)(This, Parent, Variant, Mode);
+        This->vtable->Unk45(This, 1, (s32 *)((u8 *)D_8006EA90 + color_index * 3));
+        This->m_State = 1;
+        This->m_ColorStep = -This->m_ColorStep;
+    }
+}
+
+void effect_start_attached(effect_t *This, base_class_t *Parent, s32 Variant, s32 Mode) {
+    s32 color_index = Variant;
+
+    if (This->m_State == 0) {
+        color_index = ((s32 (*)(effect_t *, base_class_t *, s32, s32))
+                       This->vtable->Unk54)(This, Parent, color_index, Mode);
+        if (This->m_Unk37 != 0) {
+            This->m_Life -= 1;
+        } else {
+            This->vtable->Unk45(This, 1, (s32 *)((u8 *)D_8006EAA8 + color_index * 3));
+        }
+        This->m_State = 2;
+    }
+}
 
 s32 effect_activate(effect_t *This, base_class_t *arg1, s32 arg2, s32 arg3) {
     effect_vtable_t *vtable;

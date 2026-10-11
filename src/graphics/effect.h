@@ -10,7 +10,7 @@
  * (a coloured vertex primitive); m_Color/m_ColorStep/m_ColorChannels drive the
  * RGB cycle.  Slots/vtable entries still named Unk are not yet understood. */
 
-typedef struct entity entity_t;
+
 
 typedef struct effect_vtable {
     /* 0x000 8006e99c */ u32 type_id;

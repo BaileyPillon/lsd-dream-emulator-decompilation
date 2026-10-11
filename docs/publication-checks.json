@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-10-11T05:04:37.809181+00:00",
+  "scope": "Local clean build of the publication checkout; independent of public GitHub tooling CI.",
+  "upstream_commit": "16a3914b9bcb75bd94a6b983ed3a952234461625",
+  "canonical_executable": {
+    "bytes": 505856,
+    "sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "binary_match": "verified"
+  },
+  "matching_build": {
+    "objects_expected": 304,
+    "objects_found": 304,
+    "build_current": true,
+    "c_bytes": 194044,
+    "game_text_bytes": 199672,
+    "c_coverage_percent": 97.18137745903282,
+    "sdk_text_bytes": 148120,
+    "handwritten_text_bytes": 188
+  },
+  "tooling_tests": {
+    "cases": 134,
+    "result": "passed",
+    "platform": "Windows",
+    "python_version": "3.14",
+    "game_inputs_required": false
+  },
+  "powershell_helpers": {
+    "parse_result": "passed",
+    "machine_specific_defaults_removed": true
+  },
+  "publication_audit": {
+    "original_build_source_preserved": true,
+    "private_inputs_excluded": true,
+    "local_documentation_links_checked": 105
+  },
+  "runtime_acceptance": {
+    "whole_feature_groups_accepted": 0,
+    "provisional_group_denominator": 40,
+    "end_to_end_parity": "unfinished"
+  },
+  "private_artifacts_included": false
+}

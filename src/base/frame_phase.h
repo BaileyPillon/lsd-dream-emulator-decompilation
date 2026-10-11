@@ -33,7 +33,7 @@ typedef struct frame_phase_vtable {
     /* 0x058 8006efa8 */ void (*SetFinished)(frame_phase_t *);
 } frame_phase_vtable_t;
 
-typedef struct frame_phase {
+struct frame_phase {
     /* 0x00 */ frame_phase_vtable_t *vtable;
     /* 0x04 */ s32 m_Unk0;
     /* 0x08 */ void *m_Parents;
@@ -41,7 +41,7 @@ typedef struct frame_phase {
     /* 0x10 */ s32 m_Waiting;
     /* 0x14 */ s32 m_Finished;
     /* 0x18 */ void *m_NotifyCursor;
-} frame_phase_t;
+};
 
 frame_phase_t *frame_phase_create(void);
 void frame_phase_construct(frame_phase_t *This);

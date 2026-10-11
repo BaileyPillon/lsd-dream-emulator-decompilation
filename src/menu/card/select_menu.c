@@ -343,13 +343,12 @@ void func_800529FC(class_select_menu_t *This, s32 Unk1, s32 Unk2, s32 Unk3, s32 
 char *func_8005292C(class_select_menu_t *This, char *dest, s32 arg2, s32 arg3, char *base);
 text_line_t *text_line_create(s32 Unk1, s32 Unk2, s32 Unk3);
 
-extern s32 D_8008AB00[];
+extern s32 D_8008AB00[2];
 extern s32 D_8008AB04[];
 extern s32 D_8008AB0C[];
 
-/*
 void func_80052644(class_select_menu_t *This, s32 arg1, s32 arg2, s32 arg3, char *arg4,
-                    s32 arg5) {
+                   s32 arg5) {
     s32 count;
     s32 index;
     text_line_t **slot;
@@ -358,31 +357,24 @@ void func_80052644(class_select_menu_t *This, s32 arg1, s32 arg2, s32 arg3, char
     s32 coords[2];
 
     if (This->m_Unk19 != 0) {
-        coords[0] = D_8008AB00;
-        coords[1] = D_8008AB04;
+        __builtin_memcpy(coords, D_8008AB00, sizeof(coords));
         count = This->m_Unk3;
         slot = (text_line_t **)&This->m_Unk15;
         if (count >= 5) {
             count = 4;
         }
-        index = 0;
-        if (count > 0) {
-            do {
-                func_8005292C(This, text, index, arg3, arg4);
-                line = text_line_create(arg2, 0x1A, (s32)text);
-                *slot = line;
-                line->vtable->Unk18(line, arg1, coords);
-                slot[0]->vtable->Unk45(slot[0], (char *)&D_8008AB0C);
-                coords[1] += 0xA;
-                slot += 1;
-                index += 1;
-            } while (index < count);
+        for (index = 0; index < count; index++) {
+            func_8005292C(This, text, index, arg3, arg4);
+            line = text_line_create(arg2, 0x1A, (s32)text);
+            *slot = line;
+            line->vtable->Unk18(line, arg1, coords);
+            slot[0]->vtable->Unk45(slot[0], (char *)&D_8008AB0C);
+            coords[1] += 0xA;
+            slot += 1;
         }
         func_800529FC(This, arg3, (s32)arg4, arg5, 1);
     }
 }
-*/
-INCLUDE_ASM("asm/nonmatchings/menu/card/select_menu", func_80052644);
 
 void func_8005278C(class_select_menu_t *This) {
     s32 count;

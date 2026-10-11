@@ -3,9 +3,6 @@
 #include "base/base.h"
 #include "base/timer.h"
 
-void timer_on_notify(void *, void **, s32);
-void func_8003E418(void *, void *, s32);
-
 scene_vtable_t D_80086668 = {
     0x230,
     base_class_destructor,
@@ -88,7 +85,7 @@ void scene_stop(scene_t *This) {
     timer_get_vtable()->Unk17(This);
 }
 
-void scene_noop(void *) {
+void scene_noop(void * unused0) {
 }
 
 void scene_update(scene_t *This, void **Unk2, void *Unk3) {

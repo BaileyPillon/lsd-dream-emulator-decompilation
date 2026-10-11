@@ -7,9 +7,9 @@ s32 file_buf_destroy(void *);
 void nullsub13(void *);
 void file_buf_release(void *);
 
-void seq_file_construct(void *, s32);
-void seq_file_cleanup(base_class_t *);
-void seq_file_set_flag(void *);
+void seq_file_construct(seq_file_t *This, unsigned char *Str);
+void seq_file_cleanup(seq_file_t *This);
+void seq_file_set_flag(seq_file_t *This);
 
 seq_file_vtable_t g_SEQ_FILE_VTABLE = {
     0xB03,

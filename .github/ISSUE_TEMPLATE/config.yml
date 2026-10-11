@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Contribution workflow
+    url: https://github.com/BaileyPillon/lsd-recovered/blob/main/CONTRIBUTING.md
+    about: Read the matching-build requirements and evidence expectations.

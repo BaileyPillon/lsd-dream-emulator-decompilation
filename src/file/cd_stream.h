@@ -41,7 +41,6 @@ typedef struct cd_stream_vtable {
     /* 0x080 800819c0 */ void (*Unk31)(void *);
     /* 0x084 800819c4 */ void (*Unk32)(void *);
     /* 0x088 800819c8 */ void (*Unk33)(void *);
-    /* 0x08C 800819cc */ void (*Unk34)(void *);
 } cd_stream_vtable_t;
 
 typedef struct cd_stream {

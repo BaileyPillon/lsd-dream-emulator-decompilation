@@ -66,7 +66,6 @@ typedef struct generation_structure_vtable {
     /* 0x0E4 800877e0 */ void (*Unk56)(void *);
     /* 0x0E8 800877e4 */ void (*Unk57)(void *);
     /* 0x0EC 800877e8 */ void (*Unk58)(void *);
-    /* 0x0F0 800877ec */ void (*Unk59)(void *);
 } generation_structure_vtable_t;
 
 typedef struct generation_structure {

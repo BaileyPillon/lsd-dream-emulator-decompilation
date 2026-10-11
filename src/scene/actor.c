@@ -45,7 +45,7 @@ extern void func_80057C14();
 extern void func_80057C6C();
 extern void func_80057C74();
 extern void func_80057C7C();
-extern void func_800660BC();
+void func_800660BC(actor_t *This, u8 Unk2);
 extern void func_8006613C();
 extern void func_80066148();
 extern void func_80066150();
@@ -55,8 +55,8 @@ extern void func_800661D4();
 extern void func_80066214();
 extern void func_800662A8();
 extern void func_800662B4();
-extern void func_800662BC();
-extern void func_80066340();
+void *func_800662BC(actor_t *This, void *arg1, s32 arg2);
+extern void *func_80066340(actor_t *, void *, s32);
 extern void func_80066748();
 extern void func_800667B0();
 
@@ -171,7 +171,7 @@ actor_vtable_t g_ACTOR_VTABLE = {
     (void (*)(void *, s32)) func_80066214,
     (void (*)(void *)) func_800662A8,
     (void (*)(void *)) func_800662B4,
-    (void (*)(void *, s32, s32)) func_800662BC,
+    (void *(*)(void *, void *, s32)) func_800662BC,
     (void *(*) (void *, void *, s32)) func_80066340,
     (void (*)(void *, s32)) func_80066748,
     (void (*)(void *)) func_800667B0,
@@ -396,7 +396,8 @@ s32 func_80065DBC(actor_t *This) {
 
 void func_80065DEC(actor_t *This, s32 Unk2) {
     if (This->m_Unk27) {
-        func_80065F2C(This, Unk2);
+        /* The original caller passes an unused second argument. */
+        ((void (*)(actor_t *, s32)) func_80065F2C)(This, Unk2);
     }
 }
 
@@ -493,7 +494,7 @@ void func_80065FD8(actor_t *This) {
     }
     if (This->m_Unk35 != 0) {
         if (This->m_Unk31 >= 2) {
-            This->m_Unk33 = ((s32(*)(void *, s32, s32)) This->vtable->Unk76)(This, This->m_Unk33, 0);
+            This->m_Unk33 = (s32)This->vtable->Unk76(This, (void *)This->m_Unk33, 0);
             neu = This->m_Unk32 + 1;
             This->m_Unk32 = neu;
             if (neu >= This->m_Unk31) {
@@ -569,7 +570,7 @@ void func_800661D4(actor_t *This, s32 Unk2) {
 }
 
 void func_80066214(actor_t *this, s32 arg1) {
-    void (*pUnk76)(actor_t *, s32, s32);
+    void *(*pUnk76)(void *, void *, s32);
 
     this->m_Unk30 = arg1;
     this->m_Unk31 =
@@ -595,7 +596,7 @@ void func_80066214(actor_t *this, s32 arg1) {
     this->m_Unk32 = 0;
 
     pUnk76 = this->vtable->Unk76;
-    pUnk76(this, this->m_Unk33, 0);
+    pUnk76(this, (void *)this->m_Unk33, 0);
 }
 
 void func_800662A8(actor_t *This) {
@@ -620,7 +621,156 @@ void *func_800662BC(actor_t *This, void *arg1, s32 arg2) {
     return arg1;
 }
 
-INCLUDE_ASM("asm/nonmatchings/scene/actor", func_80066340);
+typedef struct actor_position_copy {
+    s32 x;
+    s32 y;
+    s32 z;
+} actor_position_copy_t;
+
+void *func_80066340(actor_t *This, void *script, s32 arg2) {
+    u8 type;
+    u8 kind;
+    u8 flags;
+    u8 words;
+    s32 *data;
+    s32 index;
+    scene_node_t *node;
+    u8 *transform;
+    s32 *state;
+    s32 i;
+    u16 selection;
+    void *model_part;
+
+    data = (*(s32 *(**)(void *, void *, u8 *, u8 *, u8 *, u8 *))
+                (*(u8 **)This->m_Unk22 + 0x84))
+        (This->m_Unk22, script, &type, &kind, &flags, &words);
+    index = func_80065D64(This, type);
+    if (index < 0) {
+        goto done;
+    }
+    node = This->m_Unk27[index];
+    transform = (u8 *)node->m_Unk4;
+    *(s32 *)transform = 0;
+    state = *(s32 **)(transform + 0x44);
+    switch (kind) {
+    case 0:
+        node->m_Unk3 = (node->m_Unk3 & data[0]) | data[1];
+        break;
+    case 1:
+        /* Bit 0 selects relative updates; bits 1, 2 and 3 select fields. */
+        if (flags & 1) {
+            if (flags & 2) {
+                u16 *angle_dest;
+
+                angle_dest = (u16 *)(state + 4);
+                i = 0;
+                do {
+                    *angle_dest += data[i] / 360;
+                    *angle_dest = (s16)*angle_dest % 4096;
+                    i++;
+                    angle_dest++;
+                } while (i < 3);
+                data += 3;
+            }
+            if (flags & 4) {
+                s32 *scale_dest;
+                s16 *scale_source;
+
+                scale_dest = state;
+                i = 0;
+                scale_source = (s16 *)data;
+                do {
+                    *scale_dest = (*scale_source++ * *scale_dest) / 4096;
+                    i++;
+                    scale_dest++;
+                } while (i < 3);
+                data += 2;
+            }
+            if (!(flags & 8)) {
+                goto done;
+            }
+            {
+                s32 *relative_dest;
+                s32 *relative_source;
+
+                relative_dest = state + 6;
+                i = 0;
+                relative_source = data;
+                do {
+                    *relative_dest += *relative_source++;
+                    i++;
+                    relative_dest++;
+                } while (i < 3);
+            }
+        } else {
+            if (flags & 2) {
+                u16 *angle_dest;
+
+                angle_dest = (u16 *)(state + 4);
+                i = 0;
+                do {
+                    *angle_dest = data[i] / 360;
+                    i++;
+                    angle_dest++;
+                } while (i < 3);
+                data += 3;
+            }
+            if (flags & 4) {
+                s32 *scale_dest;
+                s16 *scale_source;
+
+                scale_dest = state;
+                i = 0;
+                scale_source = (s16 *)data;
+                do {
+                    *scale_dest = *scale_source++;
+                    i++;
+                    scale_dest++;
+                } while (i < 3);
+                data += 2;
+            }
+            if (!(flags & 8)) {
+                goto done;
+            }
+            {
+                s32 *absolute_dest;
+                s32 *absolute_source;
+
+                absolute_dest = state + 6;
+                i = 0;
+                absolute_source = data;
+                do {
+                    *absolute_dest = *absolute_source++;
+                    i++;
+                    absolute_dest++;
+                } while (i < 3);
+            }
+        }
+        *(actor_position_copy_t *)((u8 *)node->m_Unk4 + 0x18) =
+            *(actor_position_copy_t *)(state + 6);
+        break;
+    case 2:
+        selection = *(u16 *)data;
+        if (selection && !node->m_Unk7) {
+            model_part = *(void **)((u8 *)This->m_Unk22 + 0x2C);
+            func_8001E770(node, (*(void *(**)(void *, s32))
+                (*(u8 **)model_part + 0x80))(model_part, selection - 1));
+        }
+        break;
+    case 3:
+        if (*data == 0 || *data == 0xFFFF) {
+            ((void (*)(void *, void *, s32))node->vtable->Unk18)(node, This, 0);
+        } else {
+            index = func_80065D64(This, *(u8 *)data);
+            ((void (*)(void *, void *, s32))node->vtable->Unk18)
+                (node, This->m_Unk27[index], 0);
+        }
+        break;
+    }
+done:
+    return (u8 *)script + words * 4;
+}
+
 
 void func_80066748(actor_t *This, s32 Unk2) {
     if (Unk2) {

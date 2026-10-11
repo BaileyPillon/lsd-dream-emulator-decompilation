@@ -5,10 +5,10 @@
 #include "base/base.h"
 #include "file/file_buf.h"
 
-void func_80044F90(void *, s32);
-void func_8004500C(base_class_t *);
-void func_80045060(void *);
-void func_800450B4(void *);
+void func_80044F90(sprite_atlas_t *This, s32 Unk);
+void func_8004500C(sprite_atlas_t *This);
+void func_80045060(sprite_atlas_t *This);
+void func_800450B4(sprite_atlas_t *This);
 s32 file_buf_destroy(void *);
 void file_buf_release(void *);
 void nullsub13(void *);

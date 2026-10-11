@@ -1,0 +1,2 @@
+# Optional local native NPC validation; separate from the matching build.
+unicorn==2.1.4

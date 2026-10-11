@@ -1,9 +1,9 @@
 #include "menu/tile_buffer.h"
 
-void func_80044D40(void *, s32, void *);
-void func_80044DC8(base_class_t *);
-void func_80044E10(void *);
-void func_80044E64(void *);
+void func_80044D40(tile_buffer_t *arg0, s32 arg1, s32 arg2);
+void func_80044DC8(tile_buffer_t *This);
+void func_80044E10(tile_buffer_t *This);
+void func_80044E64(tile_buffer_t *This);
 s32 file_buf_destroy(void *);
 void file_buf_release(void *);
 void nullsub13(void *);

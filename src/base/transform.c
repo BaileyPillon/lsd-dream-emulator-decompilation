@@ -354,89 +354,61 @@ void func_8001D6B4(transform_t *This, s32 Unk1, s32 Unk2) {
     }
 }
 
-/*
- * Best attempt (not matching: target 143 insns, compiled 131).  Every
- * operation, relocation, call sequence and struct layout matches; the only
- * residual is the GCC 2.6.3 codegen of the three |delta| >= 0x4001 guards.
- * Target emits `bltz a1,NEG; slti a1,C; beqz END; j SKIP; NEG: nor/addiu;
- * slti; beqz END` with an out-of-line negate block, while gcc always keeps the
- * negate block inline and orders the sign test after the positive compare
- * (`bgez`).  Also target reserves 0x24 extra stack bytes (frame 0xA0 vs 0x88)
- * and keeps the value/buffer locals in a different order.  Tried: separate
- * if/else, else-if, positive-first, negative-first, and a reused abs temp; the
- * block order and duplicated `beqz` never both match at once.  `~delta.x + 1`
- * is required to reproduce the target's nor/addiu instead of negu.
- *
- * void func_8001D714(transform_t *This, transform_t *arg1) {
- *     s32 *src;
- *     s32 *dst;
- *     fixed_vec3_t delta;
- *     u16 pos[3];
- *     u8 buf[0x34];
- *     s32 value;
- *
- *     if (This->m_Unk7 == 0) {
- *         return;
- *     }
- *     if (class_FA50_is_active(This->m_Unk7) == 0) {
- *         return;
- *     }
- *
- *     src = NULL;
- *     if (arg1->m_Unk2 != 0) {
- *         src = (s32 *)(arg1->m_Unk4 + 0x38);
- *     }
- *     delta.x = src[0];
- *     delta.y = src[1];
- *     delta.z = src[2];
- *
- *     dst = NULL;
- *     if (This->m_Unk2 != 0) {
- *         dst = (s32 *)(This->m_Unk4 + 0x38);
- *     }
- *     delta.x -= dst[0];
- *     delta.y -= dst[1];
- *     delta.z -= dst[2];
- *
- *     if (delta.x >= 0x4001) {
- *         return;
- *     }
- *     if (delta.x < 0) {
- *         if (~delta.x + 1 >= 0x4001) {
- *             return;
- *         }
- *     }
- *     if (delta.y >= 0x4001) {
- *         return;
- *     }
- *     if (delta.y < 0) {
- *         if (~delta.y + 1 >= 0x4001) {
- *             return;
- *         }
- *     }
- *     if (delta.z >= 0x4001) {
- *         return;
- *     }
- *     if (delta.z < 0) {
- *         if (~delta.z + 1 >= 0x4001) {
- *             return;
- *         }
- *     }
- *
- *     pos[0] = (u16)delta.x;
- *     pos[1] = (u16)delta.y;
- *     pos[2] = (u16)delta.z;
- *     value = *(s32 *)arg1->m_Unk11;
- *     This->vtable->Unk40(This, pos, buf, (s32 *)arg1->m_Unk11 + 1, value * 8);
- *     if (This->vtable->Unk41(This, &value, pos) != 0) {
- *         if (This->vtable->Unk42(This, &arg1->m_Unk10, pos, &value) != 0) {
- *             This->m_Unk9 = (s32)arg1;
- *             arg1->vtable->OnNotify((base_class_t *)arg1, (base_class_t *)This, 4);
- *         }
- *     }
- * }
- */
-INCLUDE_ASM("asm/nonmatchings/base/transform", func_8001D714);
+typedef struct {
+    s32 x, y, z;
+} transform_delta_t;
+
+/* Test another transform in the local collision range and notify a hit.
+ * pos retains the original 0x28-byte callback workspace. */
+void func_8001D714(transform_t *This, transform_t *arg1) {
+    s32 *src;
+    s32 *dst;
+    s32 *vertices;
+    transform_delta_t delta;
+    u16 pos[20];
+    struct {
+        s32 value;
+        u8 buf[0x34];
+    } state;
+
+    if (This->m_Unk7 == 0) {
+        return;
+    }
+    if (class_FA50_is_active(This->m_Unk7) == 0) {
+        return;
+    }
+
+    src = NULL;
+    if (arg1->m_Unk2 != 0) {
+        src = (s32 *)((u8 *)arg1->m_Unk4 + 0x38);
+    }
+    delta = *(transform_delta_t *) src;
+
+    dst = NULL;
+    if (This->m_Unk2 != 0) {
+        dst = (s32 *)((u8 *)This->m_Unk4 + 0x38);
+    }
+    delta.x -= dst[0];
+    delta.y -= dst[1];
+    delta.z -= dst[2];
+
+    if ((delta.x >= 0 ? delta.x < 0x4001 : ~delta.x + 1 < 0x4001) &&
+        (delta.y >= 0 ? delta.y < 0x4001 : ~delta.y + 1 < 0x4001) &&
+        (delta.z >= 0 ? delta.z < 0x4001 : ~delta.z + 1 < 0x4001)) {
+        pos[0] = (u16)delta.x;
+        pos[1] = (u16)delta.y;
+        pos[2] = (u16)delta.z;
+        state.value = *(s32 *)arg1->m_Unk11;
+        vertices = (s32 *)arg1->m_Unk11;
+        This->vtable->Unk40(This, pos, state.buf, vertices + 1, state.value * 8);
+        if (This->vtable->Unk41(This, &state.value, pos) != 0) {
+            if (This->vtable->Unk42(This, &arg1->m_Unk10, pos, &state.value) != 0) {
+                This->m_Unk9 = (s32)arg1;
+                arg1->vtable->OnNotify((base_class_t *)arg1, (base_class_t *)This, 4);
+            }
+        }
+    }
+}
 
 void func_8001D950(transform_t *This, void *arg1, void *arg2, void *arg3, s32 arg4) {
     u8 child_mtx[0x20];
@@ -456,7 +428,69 @@ void func_8001D950(transform_t *This, void *arg1, void *arg2, void *arg3, s32 ar
     }
 }
 
-INCLUDE_ASM("asm/nonmatchings/base/transform", func_8001DA28);
+/* Translate the collision cloud and test its aggregate bounds against the model. */
+extern void refresh_source_vertices(s32);
+extern void *get_source_vertices(s32,s32);
+extern s32 class_FA50_is_active(s32);
+typedef struct {s32 count;vec3d_16_t points[1];} bounds_cloud_t;
+s32 func_8001DA28(transform_t *This,bounds_cloud_t *cloud,vec3d_16_t *offset) {
+    box3d_16_t bounds;
+    box3d_16_t model_bounds;
+    box3d_16_t *bounds_ptr=&bounds;
+    vec3d_16_t *point=cloud->points;
+    vec3d_16_t *end;
+    box3d_16_t *source;
+    box3d_16_t *source_end;
+    s32 count;
+    s32 result;
+    point->x+=offset->x;
+    point->y+=offset->y;
+    end=(vec3d_16_t *)((u8 *)point+cloud->count*48);
+    point->z+=offset->z;
+    bounds_ptr->min=*point;
+    bounds_ptr->max=*point;
+    point++;
+    while(point<end) {
+        point->x+=offset->x;
+        point->y+=offset->y;
+        point->z+=offset->z;
+        bounds_ptr->min.x=bounds_ptr->min.x<point->x?bounds_ptr->min.x:point->x;
+        bounds_ptr->min.y=bounds_ptr->min.y<point->y?bounds_ptr->min.y:point->y;
+        bounds_ptr->min.z=bounds_ptr->min.z<point->z?bounds_ptr->min.z:point->z;
+        bounds_ptr->max.x=bounds_ptr->max.x<point->x?point->x:bounds_ptr->max.x;
+        bounds_ptr->max.y=bounds_ptr->max.y<point->y?point->y:bounds_ptr->max.y;
+        bounds_ptr->max.z=bounds_ptr->max.z<point->z?point->z:bounds_ptr->max.z;
+        point++;
+    }
+    refresh_source_vertices(This->m_Unk7);
+    source=get_source_vertices(This->m_Unk7,0);
+    count=class_FA50_is_active(This->m_Unk7);
+    model_bounds=*source;
+    source_end=source+count;
+    source++;
+    while(source<source_end) {
+        model_bounds.min.x=model_bounds.min.x<source->min.x?model_bounds.min.x:source->min.x;
+        model_bounds.min.y=model_bounds.min.y<source->min.y?model_bounds.min.y:source->min.y;
+        model_bounds.min.z=model_bounds.min.z<source->min.z?model_bounds.min.z:source->min.z;
+        model_bounds.max.x=model_bounds.max.x<source->max.x?source->max.x:model_bounds.max.x;
+        model_bounds.max.y=model_bounds.max.y<source->max.y?source->max.y:model_bounds.max.y;
+        model_bounds.max.z=model_bounds.max.z<source->max.z?source->max.z:model_bounds.max.z;
+        source++;
+    }
+    result=0;
+    if(bounds.min.z<=model_bounds.max.z) {
+        if(bounds.max.z>=model_bounds.min.z) {
+            if(bounds.min.x<=model_bounds.max.x) {
+                if(bounds.max.x>=model_bounds.min.x) {
+                    if(bounds.min.y<=model_bounds.max.y) {
+                        result=bounds.max.y>=model_bounds.min.y;
+                    }
+                }
+            }
+        }
+    }
+    return result;
+}
 
 INCLUDE_ASM("asm/nonmatchings/base/transform", func_8001DDF4);
 

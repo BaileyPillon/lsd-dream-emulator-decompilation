@@ -41,11 +41,11 @@ void func_8001E49C(void *);
 void func_8001E4A4(void *);
 void func_8004229C(void *);
 
-void sprite_node_run(void *, void *, void *);
-void sprite_node_set_offset(void *);
-void sprite_node_set_anchor(void *);
+void sprite_node_run(sprite_node_t *This, s32 Unk1, s32 Unk2);
+void sprite_node_set_offset(sprite_node_t *This, s32 *Unk);
+void sprite_node_set_anchor(sprite_node_t *This, u32 Unk);
 
-void sprite_node_construct(void *, s32, s32, s32);
+void sprite_node_construct(sprite_node_t *This, s32 Unk1, s32 Unk2, s32 Unk3);
 void sprite_node_cleanup(void *);
 
 sprite_node_vtable_t g_SPRITE_NODE_VTABLE = {
@@ -117,7 +117,7 @@ void sprite_node_construct(sprite_node_t *This, s32 Unk1, s32 Unk2, s32 Unk3) {
     This->vtable->Unk15(This);
 }
 
-void sprite_node_cleanup(void *) {
+void sprite_node_cleanup(void * unused0) {
 }
 
 void sprite_node_run(sprite_node_t *This, s32 Unk1, s32 Unk2) {

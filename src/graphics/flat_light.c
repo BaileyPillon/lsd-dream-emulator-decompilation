@@ -3,10 +3,10 @@
 
 #include <psx/libgs.h>
 
-void func_8004297C(void *, s32);
-void func_800429E0(void *, s32);
-void func_800429E8(void *);
-void func_80042A2C(void *);
+void func_8004297C(class_flat_light_t *This, s32 Unk);
+void func_800429E0(class_flat_light_t *This, s32 Unk);
+void func_800429E8(class_flat_light_t *This, s32 Unk1, s8 *Unk2);
+void func_80042A2C(class_flat_light_t *This, s32 Unk2, s16 *Unk3);
 
 class_flat_light_vtable_t D_8006F06C = {
     0x6,

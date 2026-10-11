@@ -39,7 +39,6 @@ typedef struct model_part_vtable {
     /* 0x078 8006f2b8 */ void (*Unk29)(void *);
     /* 0x07C 8006f2bc */ u8 (*Unk30)(void *, s32, s32, s32);
     /* 0x080 8006f2c0 */ void (*Unk31)(void *);
-    /* 0x084 8006f2c4 */ void (*Unk32)(void *);
 } model_part_vtable_t;
 
 typedef struct model_part {

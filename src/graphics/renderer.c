@@ -104,17 +104,7 @@ typedef struct {
     s32 h;
 } renderer_wh_t;
 
-#if 0
-/* Best match (39/41 insns): insns 1-19 are byte-identical to the stub.  The
- * residual is GCC 2.6.3 scheduling/regalloc, not source shape:
- *   - target keeps `sw zero,0x54` before `sw v0,0x60` and before the
- *     D_8008A8F8 address materialization; gcc sinks the zero store past both.
- *   - target re-materializes the D_8008A8F8 base into $a2 for each 3-byte copy
- *     (two `lui/addiu` pairs); gcc keeps a single base in $v0.
- * The u8 pointer form and the 2-word struct copy are required to stop gcc
- * hoisting the %gp_rel scalar loads above the leading stores and to keep the
- * byte copies as signed `lb`.  renderer.c was moved to -G8 for this stub's
- * %gp_rel loads of D_8008A8FC/D_8008A900. */
+static inline void renderer_copy_color(s8 *dst,s8 *src) {__builtin_memcpy(dst,src,3);}
 void func_8003E968(renderer_t *This) {
     u8 *p;
 
@@ -130,14 +120,11 @@ void func_8003E968(renderer_t *This) {
     *(s32 *)(p + 0x50) = 0x10000;
     *(s32 *)(p + 0x54) = 0;
     *(s32 *)(p + 0x60) = 0x4E20;
-    __builtin_memcpy(p + 0x5B, D_8008A8F8, 3);
-    __builtin_memcpy(p + 0x58, D_8008A8F8, 3);
+    renderer_copy_color((s8 *)p + 0x5B, D_8008A8F8);
+    renderer_copy_color((s8 *)p + 0x58, D_8008A8F8);
     *(s32 *)(p + 0xB4) = 0;
     *(s32 *)(p + 0xB8) = 1;
 }
-#endif
-
-INCLUDE_ASM("asm/nonmatchings/graphics/renderer", func_8003E968);
 
 void func_8003EA0C(renderer_t *This, s32 *Unk) {
     __builtin_memcpy(This->m_Unk12, Unk, 8);

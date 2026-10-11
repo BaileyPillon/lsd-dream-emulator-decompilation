@@ -12,7 +12,7 @@ void *g_LinkSceneData = NULL;
 void transform_local_to_world(void *arg0, void *arg1, void *arg2, s32 arg3);
 
 void func_8001EACC(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4);
-s8 *link_find_teleport(s16 *arg0);
+s32 link_find_teleport(s16 *arg0);
 s32 link_check_teleport_condition(s32 arg0, s8 *arg1);
 s32 link_spawn_object_group(s32 arg0, s8 *arg1, s32 arg2);
 s32 link_spawn_object(s32 arg0, s32 arg1, u8 *arg2, class_object_model_list_t *arg3);
@@ -280,62 +280,81 @@ s32 link_spawn_object(s32 arg0, s32 arg1, u8 *arg2, class_object_model_list_t *a
     return 0;
 }
 
-/*
- * Best-known C (95/100 insns; switch/jump table, all case bodies, offsets and
- * relocations correct). Only difference is register allocation: target keeps
- * arg0 in $a2 and loads arg1[1] into $a0 (extra `addu a2,a0,zero` + `addu
- * a1,a0,zero`), gcc 2.6.3 coalesces arg0 into $a0 and loads into $a1 for every
- * ordering tried (named arg0 local before/after the load, direct parameter,
- * swapped declaration order, s32/s8 forms). Switch table grouping confirmed
- * from jtbl_8001188C: 2-4 day-offset, 5/6 mod3, 7 dream_generation_type_is_even, 8/9 mod3==v6-7,
- * 10-19 default, 20/21 parity.
- *
- * s32 link_check_object(s32 arg0, s8 *arg1) {
- *     s32 v6;
- *     s32 v5;
- *     s32 v7;
- *
- *     v6 = arg1[1];
- *     v5 = arg0;
- *     if (v6 == 1) goto success;
- *     if (v6 < 0) {
- *         if (arg1[0] != 0) return 0;
- *         v6 = ~v6 + 1;
- *     }
- *     switch (v6) {
- *     case 2: case 3: case 4:
- *         v7 = link_check_day_offset(v5, v6 - 1);
- *         break;
- *     case 5:
- *         if (v5 % 3 != 0) return 0;
- *         goto success;
- *     case 6:
- *         if (v5 % 3 == 0) return 0;
- *         goto success;
- *     case 7:
- *         v7 = dream_generation_type_is_even();
- *         break;
- *     case 8: case 9:
- *         if (v5 % 3 != v6 - 7) return 0;
- *         goto success;
- *     case 20:
- *         if ((v5 & 1) != 0) return 0;
- *         goto success;
- *     case 21:
- *         v7 = v5 & 1;
- *         break;
- *     default:
- *         if (v6 < 10) goto success;
- *         v7 = link_is_special_color(v6);
- *         break;
- *     }
- *     if (v7 == 0) return 0;
- * success:
- *     arg1[0] = 1;
- *     return 1;
- * }
- */
-INCLUDE_ASM("asm/nonmatchings/scene/link", link_check_object);
+s32 link_check_day_offset(s32, s32);
+s32 link_is_special_color(s32);
+s32 dream_generation_type_is_even(void);
+
+s32 link_check_object(s32 arg0, void *arg1) {
+    s32 code;
+    s32 day;
+    s32 result;
+    s8 *entry;
+
+    day = arg0;
+    entry = arg1;
+    arg0 = entry[1];
+    if (arg0 == 1) {
+        goto success;
+    }
+    if (arg0 < 0) {
+        if (entry[0] == 0) {
+            goto negate;
+        }
+        return 0;
+    } else {
+        code = arg0;
+        goto dispatch;
+    }
+negate:
+    code = ~arg0 + 1;
+dispatch:
+    switch (code) {
+        case 2:
+        case 3:
+        case 4:
+            result = link_check_day_offset(day, code - 1);
+            break;
+        case 5:
+            if (day % 3 != 0) {
+                return 0;
+            }
+            goto success;
+        case 6:
+            if (day % 3 == 0) {
+                return 0;
+            }
+            goto success;
+        case 7:
+            result = dream_generation_type_is_even();
+            break;
+        case 8:
+        case 9:
+            if (day % 3 != code - 7) {
+                return 0;
+            }
+            goto success;
+        case 20:
+            if ((day & 1) != 0) {
+                return 0;
+            }
+            goto success;
+        case 21:
+            result = day & 1;
+            break;
+        default:
+            if (code < 10) {
+                goto success;
+            }
+            result = link_is_special_color(code);
+            break;
+    }
+    if (result == 0) {
+        return 0;
+    }
+success:
+    entry[0] = 1;
+    return 1;
+}
 
 extern s16 SPECIAL_DAYS[];
 

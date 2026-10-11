@@ -4,6 +4,7 @@
 #include "base/base.h"
 #include "scene/scene_node.h"
 #include "scene/stage_grid.h"
+#include "sound/sound.h"
 
 extern dream_sys_vtable_t g_DREAM_SYS_VTABLE;
 
@@ -63,7 +64,7 @@ s32 get_static_spawn(void *dst, s16 *key, s32 chunk, s32 *counts, s32 *records, 
 s32 execute_link(dream_sys_t *This, s32 Unk1, s32 Unk2, s32 Unk3);
 s32 test_4_tunnel_links(void *Unk0, s32 Unk1, s32 Unk2);
 void object_get_rotation_360(void *This, void *out);
-s32 get_tunnel_link(void *a, void *b, void *c);
+s32 get_tunnel_link(void **arg0, void **arg1, s16 *arg2);
 s32 dream_sys_translate_toward(dream_sys_t *This, s16 *a, s16 *b);
 s32 is_facing_angle(s16 *arg0, s32 arg1);
 s32 get_random_spawn_from_stage(void *dst, s32 chunk, s32 tick);
@@ -835,9 +836,9 @@ typedef struct link_actor_vtable {
     /* 0x10C */ s32 (*get_spawn_key)(link_actor_t *, s32, s32);
 } link_actor_vtable_t;
 
-typedef struct link_actor {
+struct link_actor {
     /* 0x00 */ link_actor_vtable_t *vtable;
-} link_actor_t;
+};
 
 typedef struct link_actor_transform {
     /* 0x00 */ s32 cleared;
@@ -1171,7 +1172,39 @@ s32 dream_sys_random_spawn_link(dream_sys_t *This, s32 arg1) {
     return 1;
 }
 
-INCLUDE_ASM("asm/nonmatchings/dream/dream_sys", dream_sys_teleport_link);
+s32 test_4_instant_teleporters(s32, s32, s32);
+s32 get_teleport_time_bonus(void);
+
+s32 dream_sys_teleport_link(dream_sys_t *This, s32 arg1) {
+    s32 transform[4];
+    s32 index;
+    s32 bonus;
+    dream_sys_spawn_t *spawn;
+    void *actor;
+
+    spawn = &This->m_SpawnCoordinates;
+    index = test_4_instant_teleporters((s32)spawn, arg1, This->m_NextMap);
+    if (index >= 0) {
+        bonus = get_teleport_time_bonus();
+        if (execute_link(This, index, 0x11, 0) != 0) {
+            This->m_LinkState = 0;
+            actor = (void *)This->m_AttachedActor;
+            (*(void (**)(void *, void *, void *))(*(s32 *)actor + 0xE8))(actor, transform, spawn);
+            This->vtable->Unk45(This, (s32)transform);
+            if (bonus != 0) {
+                if (This->m_IsFlashbackSession == 0) {
+                    This->vtable->dream_sys_get_set_dream_time_limit(This,
+                        This->vtable->dream_sys_get_elapsed_seconds(This) + bonus);
+                }
+                return 1;
+            }
+            return 1;
+        }
+        return 1;
+    }
+    return 0;
+}
+
 
 s32 execute_link(dream_sys_t *This, s32 arg1, s32 arg2, s32 arg3) {
     void *temp_a0;
@@ -1192,7 +1225,43 @@ s32 execute_link(dream_sys_t *This, s32 arg1, s32 arg2, s32 arg3) {
     return 1;
 }
 
-INCLUDE_ASM("asm/nonmatchings/dream/dream_sys", dream_sys_staircase_link);
+s32 test_4_staircase_nodes(s32, s32, s32);
+s32 get_staircase_link(void **, void **, s16 *);
+s32 get_staircase_spawn_index(void);
+
+s32 dream_sys_staircase_link(dream_sys_t *This, dream_sys_spawn_t *arg1) {
+    s32 rotation[4];
+
+    if (This->m_LinkState == 0) {
+        if (This->m_AutoMoveCallback != 0) {
+            if (((s32 (*)(dream_sys_t *))This->m_AutoMoveCallback)(This) != 0) {
+                This->m_AutoMoveLocked = 0;
+                This->m_AutoMoveCallback = 0;
+                This->m_AutoMoveActive = 0;
+                if (This->m_MoveDirection == 4) {
+                    ((void (*)(dream_sys_t *))This->vtable->dream_sys_restore_move_direction)(This);
+                }
+            }
+        } else {
+            if (test_4_staircase_nodes((s32)&This->m_SpawnCoordinates, (s32)arg1, This->m_NextMap) >= 0) {
+                object_get_rotation_360(This, rotation);
+                if (get_staircase_link((void **)&This->m_TargetLinkTransform, (void **)&This->m_SourceLinkTransform,
+                                       (s16 *)rotation) != 0) {
+                    if (This->m_IsForward != 0) {
+                        This->m_AutoMoveTarget = *arg1;
+                        This->m_AutoMoveLocked = 1;
+                        This->m_AutoMoveActive = 1;
+                        This->m_AutoMoveStep = 0;
+                        This->m_AutoMoveCallback = g_AutoMoveTable[get_staircase_spawn_index()];
+                        This->vtable->Unk16(This, 1, (s32 *)This->m_SourceLinkTransform);
+                        ((s32 (*)(dream_sys_t *))This->m_AutoMoveCallback)(This);
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
 
 s32 dream_sys_auto_move_0(dream_sys_t *This) {
     s32 v;
@@ -1343,48 +1412,45 @@ void dream_sys_process_chunk_change(dream_sys_t *This, void *arg1, s32 arg2) {
     }
 }
 
-/*
- * Best-known C (109/110 insns; jump table, all five case bodies, offsets and
- * relocations correct). Only differences are a register/schedule tie:
- * target computes switch index into $v1 and preserves $a2 (`addiu v1,a2,-4`),
- * gcc 2.6.3 propagates the value back into $a2 (`addiu a2,a2,-4`) even with a
- * separate index variable/initializer; and in case 4 the target sets the call
- * this-pointer `addu a0,s1` before loading the method, gcc loads from $s1 first.
- *
- * s32 temp;
- * if (This->m_LinkState == 0) {
- *     switch (arg2) {
- *     case 4:
- *         (*(void (**)(void **, s32))(*(u32 *)arg1 + 0x38))(arg1, (s32)This);
- *         break;
- *     case 9:
- *         if (This->m_IsFlashbackSession == 0) {
- *             This->vtable->dream_sys_log_instance_mood(This,
- *                 (dream_sys_mood_graph_point_t *)(*(s32 (**)(void **))(*(u32 *)arg1 + 0x14C))(arg1));
- *             This->m_InstanceScore += (*(s32 (**)(void **))(*(u32 *)arg1 + 0x150))(arg1);
- *             This->vtable->dream_sys_flashback_saving(This, 0, 0x10);
- *         }
- *         break;
- *     case 10:
- *         temp = This->m_NextMap;
- *         This->m_NextMap = -(*(s32 (**)(void **))(*(u32 *)arg1 + 0x154))(arg1);
- *         This->vtable->dream_sys_dynamic_link(This);
- *         if (This->m_NextMap < 0) This->m_NextMap = temp;
- *         break;
- *     case 11:
- *         if (This->m_IsFlashbackSession == 0) {
- *             *(s16 *)((u8 *)This + 0x168) = -1;
- *             This->m_DreamTimer = This->m_DreamTimeLimit;
- *             *(s16 *)((u8 *)This + 0x16A) = (*(s32 (**)(void **))(*(u32 *)arg1 + 0x158))(arg1);
- *         }
- *         break;
- *     case 12:
- *         if (This->m_IsFlashbackSession == 0) This->m_DreamTimer = This->m_DreamTimeLimit;
- *         break;
- *     }
- * }
- */
-INCLUDE_ASM("asm/nonmatchings/dream/dream_sys", dream_sys_instance_effects_on_journal);
+void dream_sys_instance_effects_on_journal(dream_sys_t *This, void **arg1, s32 arg2) {
+    s32 temp;
+    if (This->m_LinkState == 0) {
+        switch (arg2) {
+            case 4:
+                /* Forward the journal event id as the third OnNotify argument. */
+                ((base_class_t *)arg1)->vtable->OnNotify((base_class_t *)arg1, (base_class_t *)This, arg2);
+                break;
+            case 9:
+                if (This->m_IsFlashbackSession == 0) {
+                    This->vtable->dream_sys_log_instance_mood(This,
+                        (dream_sys_mood_graph_point_t *)(*(s32 (**)(void **))(*(u32 *)arg1 + 0x14C))(arg1));
+                    This->m_InstanceScore += (*(s32 (**)(void **))(*(u32 *)arg1 + 0x150))(arg1);
+                    This->vtable->dream_sys_flashback_saving(This, 0, 0x10);
+                }
+                break;
+            case 10:
+                temp = This->m_NextMap;
+                This->m_NextMap = -(*(s32 (**)(void **))(*(u32 *)arg1 + 0x154))(arg1);
+                This->vtable->dream_sys_dynamic_link(This);
+                if (This->m_NextMap < 0) {
+                    This->m_NextMap = temp;
+                }
+                break;
+            case 11:
+                if (This->m_IsFlashbackSession == 0) {
+                    *(s16 *)((u8 *)This + 0x168) = -1;
+                    This->m_DreamTimer = This->m_DreamTimeLimit;
+                    *(s16 *)((u8 *)This + 0x16A) = (*(s32 (**)(void **))(*(u32 *)arg1 + 0x158))(arg1);
+                }
+                break;
+            case 12:
+                if (This->m_IsFlashbackSession == 0) {
+                    This->m_DreamTimer = This->m_DreamTimeLimit;
+                }
+                break;
+        }
+    }
+}
 
 void dream_sys_get_previous_day_mood(dream_sys_t *This, s8 *out, s32 mode) {
     s32 t0;
@@ -1876,7 +1942,7 @@ s32 get_staircase_link(void **arg0, void **arg1, s16 *arg2) {
     return 0;
 }
 
-s8 get_staircase_spawn_index(void) {
+s32 get_staircase_spawn_index(void) {
     return ((s8 *) g_StaircaseLinkSpawns[g_LinkTargetStage])[g_LinkTargetIndex * 6 + 5];
 }
 

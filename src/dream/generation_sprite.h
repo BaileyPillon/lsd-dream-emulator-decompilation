@@ -56,7 +56,6 @@ typedef struct generation_sprite_vtable {
     /* 0x0BC 80087a80 */ void (*Unk46)(void *);
     /* 0x0C0 80087a84 */ void (*Unk47)(void *);
     /* 0x0C4 80087a88 */ void (*Unk48)(void *);
-    /* 0x0C8 80087a8c */ void (*Unk49)(void *);
 } generation_sprite_vtable_t;
 
 typedef struct generation_sprite {

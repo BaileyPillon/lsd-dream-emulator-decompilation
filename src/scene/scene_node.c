@@ -6,9 +6,11 @@ extern scene_node_vtable_t D_800878D4;
 extern s32 D_8008ABA4[];
 extern s32 D_8008ABA8[];
 
+typedef struct scene_node_dir scene_node_dir_t;
+
 void func_800573CC(scene_node_t *This, s32 set, void *Unk);
 scene_node_t *func_80057B54(scene_node_t *This, s32 Unk1, s16 *Unk2);
-s32 func_80057784(scene_node_t *This, void *a, void *b, void *c, s32 d);
+s32 func_80057784(scene_node_t *This, scene_node_dir_t *arg1, void **arg2, u8 *arg3, s32 arg4);
 s32 func_80057954(scene_node_t *This, void *a, s32 b, s32 c, void *d, void *e);
 s32 func_80057A18(scene_node_t *This, void *a, void *b, void *c, void *d);
 
@@ -238,12 +240,12 @@ s32 func_80057668(scene_node_t *This) {
     return 0;
 }
 
-typedef struct scene_node_dir {
+struct scene_node_dir {
     s16 m_Unk0;
     s16 m_Unk2;
     s32 m_Unk4;
     s32 m_Unk8;
-} scene_node_dir_t;
+};
 
 s32 func_80057784(scene_node_t *This, scene_node_dir_t *arg1, void **arg2, u8 *arg3, s32 arg4) {
     s32 x;

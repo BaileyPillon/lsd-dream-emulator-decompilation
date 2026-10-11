@@ -1,0 +1,36 @@
+name: Bug report
+description: Report a build, tooling or original-behavior problem.
+title: "[Bug] "
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Build or setup
+        - Original game behavior
+        - Analysis or verification tools
+        - Optional gameplay mod
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and revision
+      description: Commit, OS/WSL distribution, Python version and relevant tool versions.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps and expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result and relevant log excerpt
+      description: Redact personal paths and credentials. Do not attach game executables, disc images, BIOS files or extracted assets.
+    validations:
+      required: true

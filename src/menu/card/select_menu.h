@@ -46,7 +46,6 @@ typedef struct class_select_menu_vtable {
     /* 0x094 8008701c */ void (*Unk36)(void *, s32, s32, s32, s32);
     /* 0x098 80087020 */ void (*Unk37)(void *, s32, s32);
     /* 0x09C 80087024 */ void (*Unk38)(void *);
-    /* 0x0A0 80087028 */ void (*Unk39)(void *);
 } class_select_menu_vtable_t;
 
 typedef struct class_select_menu {

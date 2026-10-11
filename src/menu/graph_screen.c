@@ -116,9 +116,9 @@ typedef struct graph_screen_event_slot_vtable {
     /* 0xC4 */ void (*Unk48)(graph_screen_event_slot_t *, s32, s32 *, s32);
 } graph_screen_event_slot_vtable_t;
 
-typedef struct graph_screen_event_slot {
+struct graph_screen_event_slot {
     /* 0x00 */ graph_screen_event_slot_vtable_t *vtable;
-} graph_screen_event_slot_t;
+};
 
 typedef struct graph_screen_event_rec {
     /* 0x00 */ s32 unk0;

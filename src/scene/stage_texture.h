@@ -39,7 +39,6 @@ typedef struct class_stage_texture_vtable {
     /* 0x078 8006f130 */ void (*Unk29)(void *);
     /* 0x07C 8006f134 */ void (*Unk30)(void *);
     /* 0x080 8006f138 */ void (*Unk31)(void *);
-    /* 0x084 8006f13c */ void (*Unk32)(void *);
 } class_stage_texture_vtable_t;
 
 typedef struct class_stage_texture_slot {

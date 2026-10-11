@@ -5,15 +5,15 @@
 #include "base/transform.h"
 #include "graphics/flat_light.h"
 
-extern class_light_vtable_t **D_8006EFAC;
+extern class_light_vtable_t D_8006EFAC;
 class_flat_light_t *func_8004291C(s32 Unk1);
 
-void func_800426E4(void *);
-void func_80042790(void *);
-void func_80042814(void *);
-void func_80042820(void *);
+void func_800426E4(class_light_t *This);
+void func_80042790(class_light_t *This);
+void func_80042814(class_light_t *This);
+void func_80042820(void);
 s32 func_80042828(class_light_t *, int);
-void func_8004283C(void *);
+void func_8004283C(class_light_t *This, s8 *RGB, s32 Swap);
 void func_8001CC48(void *, void *);
 void func_8001CCB4(void *);
 void func_8001CD20(void *);

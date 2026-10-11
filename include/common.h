@@ -4,6 +4,7 @@
 #include "game.h"
 #include "include_asm.h"
 #include "types.h"
+#include "forward.h"
 
 #define UNUSED UNUSED(x)(void)(x)
 

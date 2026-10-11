@@ -41,7 +41,6 @@ typedef struct class_object_model_list_vtable {
     /* 0x080 8006f48c */ void (*Unk31)(void *);
     /* 0x084 8006f490 */ void (*Unk32)(void *);
     /* 0x088 8006f494 */ s32 (*Unk33)(void *, s32);
-    /* 0x08C 8006f498 */ void (*Unk34)(void *);
 } class_object_model_list_vtable_t;
 
 typedef struct class_object_model_list {

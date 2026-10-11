@@ -2602,106 +2602,102 @@ void entity_bear_apartment(entity_t *This, s32 *arg1) {
     }
 }
 
-INCLUDE_ASM("asm/nonmatchings/scene/entity", entity_paper_sumo);
-
-/*
-Best typed attempt; kept commented out pending a matching source promotion.
-
-s32 D_8008ACCC;
+extern s32 D_8008ACCC;
 
 void entity_paper_sumo(entity_t *This, s32 *arg1) {
-    s32 *var_a2_2;
-    s32 temp_a0;
-    s32 temp_a0_2;
-    s32 temp_a1;
-    s32 temp_a2;
-    s32 temp_s1;
-    s32 temp_v0;
-    s32 var_s1;
-    u32 temp_v1;
-    u32 var_a2;
-    s32 var_a1;
+    /* Preserve the original compiler's shared temporary lifetimes. */
+    union {
+        s32 quarter;
+        s32 *scale;
+    } phase;
+    union {
+        s32 half;
+        void *actor;
+        s32 context_tick;
+    } scratch;
+    s32 tick;
+    s32 movement;
+    s32 previous_state;
+    u32 duration;
+    u32 adjusted;
 
     if (arg1[1] == 0) {
         D_8008ACCC = 0;
-        temp_s1 = rand() % 3;
-        if (temp_s1 == 1) {
-            This->m_State = 0xB;
+        movement = rand() % 3;
+        if (movement == 1) {
+            This->m_State = 11;
         }
-        if (temp_s1 == 2) {
-            This->m_State = 0xC;
+        if (movement == 2) {
+            This->m_State = 12;
         }
     }
     arg1[4] = This->vtable->entity_get_trigger_ratio(This);
-    if ((This->m_AnimPlaying != 0) && !(arg1[1] & 3)) {
-        arg1[7] = 0x1C;
+    if (This->m_AnimPlaying != 0 && !(arg1[1] & 3)) {
+        arg1[7] = 28;
     }
-    temp_v1 = This->m_Duration;
-    temp_a1 = This->m_Tick;
-    var_a2 = temp_v1;
-    if (temp_a1 == (temp_v1 - 1)) {
+    duration = This->m_Duration;
+    tick = This->m_Tick;
+    adjusted = duration;
+    if (tick == duration - 1) {
         This->m_Tick = -1;
     } else {
-        temp_a0 = (s32) (temp_v1 + (temp_v1 >> 0x1F)) >> 1;
-        if ((s32) temp_v1 < 0) {
-            var_a2 = temp_v1 + 3;
+        scratch.half = (s32) (duration + (duration >> 31)) >> 1;
+        if ((s32) duration < 0) {
+            adjusted = duration + 3;
         }
-        temp_a2 = (s32) var_a2 >> 2;
-        if (temp_a1 < (temp_a0 + temp_a2)) {
-            if (temp_a1 < temp_a0) {
-                if (temp_a1 < temp_a2) {
-                    goto end_movement;
-                }
-                This->vtable->Unk75(This);
-                var_a1 = -0x6E;
-                goto call_movement;
-            }
-            if (temp_a1 == temp_a0) {
-                arg1[7] = 0x10;
-            }
-            var_a1 = 0x6E;
-            goto call_movement;
-        } else {
+        phase.quarter = (s32) adjusted >> 2;
+        if (tick >= scratch.half + phase.quarter) {
             This->vtable->Unk74(This);
+        } else {
+            if (tick >= scratch.half) {
+                if (tick == scratch.half) {
+                    arg1[7] = 16;
+                }
+                scratch.actor = This;
+                This->vtable->Unk48(scratch.actor, 110, 0);
+                goto end_movement;
+            }
+            if (tick >= phase.quarter) {
+                This->vtable->Unk75(This);
+                scratch.actor = This;
+                This->vtable->Unk48(scratch.actor, -110, 0);
+            }
         }
     }
-
-call_movement:
-    This->vtable->Unk48(This, var_a1, 0);
-
 end_movement:
-    if ((This->m_State == 0xB) && (arg1[1] == 0x1FE)) {
-        This->vtable->Unk50(This, -0x17C, 0);
-        This->vtable->Unk16(This, 0, &g_RotatePitchNinety);
+    if (This->m_State == 11 && arg1[1] == 510) {
+        This->vtable->Unk50(This, -380, 0);
+        This->vtable->Unk16(This, 0, (s32 *) &g_RotatePitchNinety);
         This->vtable->entity_stop_behaviour(This);
         This->m_State = 1;
         D_8008ACCC = 1;
-    } else if (This->m_State >= 0xC) {
-        temp_a0_2 = arg1[1];
-        if ((temp_a0_2 >= 0x14A) && (((temp_a0_2 / 60) * 0x3C) == (temp_a0_2 - 0x1E))) {
-            var_s1 = 0;
+    } else if (This->m_State >= 12) {
+        scratch.context_tick = arg1[1];
+        if (scratch.context_tick >= 330 && arg1[1] / 60 * 60 == scratch.context_tick - 30) {
+            movement = 0;
             if (rand() & 1) {
-                var_a2_2 = &g_OffsetOneTwoOne;
-                temp_v0 = This->m_State;
-                This->m_State = 0xD;
-                var_s1 = -(temp_v0 == 0xC) & 0x190;
+                phase.scale = (s32 *) &g_OffsetOneTwoOne;
+                previous_state = This->m_State;
+                This->m_State = 13;
+                movement = -(previous_state == 12) & 400;
             } else {
-                var_a2_2 = &g_OffsetOne;
-                if (This->m_State == 0xD) {
-                    var_s1 = -0x190;
+                phase.scale = (s32 *) &g_OffsetOne;
+                duration = This->m_State;
+                if (duration == 13) {
+                    movement = -400;
                 }
-                This->m_State = 0xC;
+                This->m_State = 12;
             }
-            This->vtable->Unk17(This, 1, var_a2_2);
-            This->vtable->Unk50(This, var_s1, 0);
+            This->vtable->Unk17(This, 1, phase.scale);
+            This->vtable->Unk50(This, movement, 0);
         }
     }
-    if ((arg1[1] == 0x208) && (D_8008ACCC != 0)) {
+    if (arg1[1] == 520 && D_8008ACCC != 0) {
         This->vtable->entity_stop_behaviour(This);
         This->m_State = 1;
     }
 }
-*/
+
 
 void entity_orrery(entity_t *This, s32 *arg1) {
     s32 temp;
@@ -2734,7 +2730,81 @@ void entity_face(entity_t *This, s32 *arg1) {
     func_8001EACC(This, This->m_DreamSys, 1, 0, 0);
 }
 
-INCLUDE_ASM("asm/nonmatchings/scene/entity", entity_lion);
+void entity_lion(entity_t *This, s32 *arg1) {
+    s32 movement;
+    s32 state;
+    s32 distance;
+    dream_sys_t *dream;
+
+    if (This->m_Tick == 0 && (rand() & 1)) {
+        This->m_State = rand() % 3;
+    }
+    if (This->m_State != 0 && This->m_Triggered != 0) {
+        if (arg1[1] >= 61) {
+            arg1[1] = 0;
+        }
+        if ((arg1[1] % 20) == 0) {
+            arg1[4] = 0;
+            arg1[7] = 23;
+            arg1[8] = -1;
+            arg1[12] = 23;
+            arg1[13] = -1;
+            arg1[17] = 23;
+            arg1[18] = -2;
+        } else if ((arg1[1] % 20) == 14) {
+            arg1[7] = -2;
+            arg1[12] = -2;
+            arg1[17] = -2;
+        }
+        func_8001EACC(This, This->m_DreamSys, 1, 0, 0);
+        state = This->m_State;
+        switch (state) {
+        case 1:
+            This->vtable->Unk17(This, 0, (s32 *) &g_OffsetEightSevenths);
+            movement = -374;
+            if (This->vtable->entity_get_distance(This, This->m_DreamSys) < 512) {
+                This->vtable->entity_disable_link(This);
+                This->m_State = state;
+            }
+            break;
+        default:
+            dream = This->m_DreamSys;
+            dream->vtable->dream_sys_clear_callbacks(dream, 1);
+            func_8001EACC(This->m_DreamSys, This, 1, 1, 0);
+            if (This->m_State == 2) {
+                distance = This->vtable->entity_get_distance(This, This->m_DreamSys);
+                if (distance < 2400) {
+                    movement = -96;
+                    This->m_State = 11;
+                    This->vtable->Notify(This, 12);
+                }
+                movement = -96;
+            } else {
+                movement = 0;
+            }
+            break;
+        }
+    } else {
+        arg1[4] = This->vtable->entity_get_trigger_ratio(This);
+        if (arg1[1] == (arg1[1] / 22) * 22) {
+            arg1[7] = 28;
+        }
+        if (This->m_Tick >= 501) {
+            func_8001EACC(This, This->m_DreamSys, 1, 0, 0);
+        }
+        distance = This->vtable->entity_get_distance(This, This->m_DreamSys);
+        if (distance < 2048) {
+            movement = -20;
+            dream = This->m_DreamSys;
+            dream->vtable->Unk48(dream, -2048, 0);
+        }
+        movement = -20;
+    }
+    This->vtable->Unk51(This, movement, 1);
+    if (This->m_FrameOffsetX != 0) {
+        This->vtable->Unk50(This, -200, 0);
+    }
+}
 
 void entity_dress_woman(entity_t *This, s32 *arg1) {
     s32 state;

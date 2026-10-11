@@ -5,10 +5,10 @@
 #include "file/file_buf.h"
 #include "file/tim_image.h"
 
-void func_80043BE8(void *, s32);
-void func_80043C60(void *);
-void func_80043CB8(void *);
-void func_80043DFC(void *);
+void func_80043BE8(tim_list_t *This, s32 Unk1);
+void func_80043C60(tim_list_t *This);
+void func_80043CB8(tim_list_t *This);
+void func_80043DFC(tim_list_t *This);
 s32 file_buf_destroy(void *);
 void file_buf_release(void *);
 void nullsub13(void *);

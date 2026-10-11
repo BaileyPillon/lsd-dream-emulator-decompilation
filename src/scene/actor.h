@@ -91,7 +91,7 @@ typedef struct actor_vtable {
     /* 0x128 8008a7ec */ void (*Unk73)(void *, s32);
     /* 0x12C 8008a7f0 */ void (*Unk74)(void *);
     /* 0x130 8008a7f4 */ void (*Unk75)(void *);
-    /* 0x134 8008a7f8 */ void (*Unk76)(void *, s32, s32);
+    /* 0x134 8008a7f8 */ void *(*Unk76)(void *, void *, s32);
     /* 0x138 8008a7fc */ void *(*Unk77)(void *, void *, s32);
     /* 0x13C 8008a800 */ void (*Unk78)(void *, s32);
     /* 0x140 8008a804 */ void (*Unk79)(void *);

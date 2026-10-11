@@ -1,6 +1,14 @@
 #include "scene/render_context.h"
 #include "base/transform.h"
 #include "graphics/light.h"
+#include "file/cd_stream.h"
+#include "file/file_object.h"
+#include "scene/notify_node.h"
+
+cd_stream_t *func_80048894(void);
+notify_node_t *func_8004D38C(void);
+file_object_t *class_1C92C_create(u32);
+extern vec3d_t D_8008682C;
 
 extern render_context_vtable_t D_800866E8;
 
@@ -16,6 +24,10 @@ extern s32 D_800869A8[3];
 extern s32 D_800869B4[3];
 extern s32 D_800869C0[3];
 extern s32 D_8008A980;
+
+extern vec3d_t D_80086838[];
+s32 func_8004B930(render_context_t *, s32, s32);
+s32 func_8004BA40(render_context_t *, s32 *, s32, s32, s32, s32, s32);
 
 s32 func_8004BCE0(render_context_t *This);
 void func_8004D0D0(render_context_t *This, s32 *Unk);
@@ -83,7 +95,90 @@ render_context_t *render_context_create(u32 Unk1, u32 Unk2) {
     return NULL;
 }
 
-INCLUDE_ASM("asm/nonmatchings/scene/render_context", func_8004A534);
+typedef struct {
+    u16 m_Flag;
+    s16 m_Index;
+    cd_stream_t *m_Stream;
+    file_object_t *m_File;
+    notify_node_t *m_Node;
+    notify_node_t **m_Items;
+    s32 m_Unk14;
+    s32 m_Unk18;
+} render_context_construct_slot_t;
+
+/* Construct seven stream slots and their notification grid. */
+void func_8004A534(render_context_t *This, vec3d_t *origin, s32 arg2) {
+    vec3d_t pos;
+    s32 index;
+    render_context_construct_slot_t *slot;
+    cd_stream_t *object;
+    cd_stream_t *created;
+    notify_node_t *node;
+    notify_node_t **cursor;
+    notify_node_t **end;
+    u32 flags;
+    s32 initial_x;
+
+    func_800428E4()->Construct(This);
+    This->vtable = func_8004D244();
+    if (origin != NULL) {
+        *(vec3d_t *) &This->m_Unk20 = *origin;
+    } else {
+        *(vec3d_t *) &This->m_Unk20 = D_8008682C;
+    }
+    index = 0;
+    initial_x = 0x400;
+    This->m_Unk107 = 0;
+    *(u16 *) &This->m_Unk108 = 0;
+    This->m_Unk109 = 0;
+    This->m_Unk27 = 0;
+    This->m_Unk26 = 0;
+    This->m_Unk57 = 0;
+    This->m_Unk119 = 0;
+    do {
+        slot = (render_context_construct_slot_t *) ((u8 *) This + 0xEC + index * 0x1C);
+        created = func_80048894();
+        slot->m_Stream = created;
+        *(u16 *) &created->m_Unk7 = created->m_Unk3 != 0;
+        slot->m_Stream->m_Unk11_2 = index;
+        object = slot->m_Stream;
+        ((void (*)(void *, s32)) object->vtable->Unk33)(object, arg2);
+        slot->m_Unk14 = 0;
+        slot->m_Unk18 = 0;
+        slot->m_Index = index;
+        slot->m_Flag = 0;
+        slot->m_File = class_1C92C_create(0);
+        node = func_8004D38C();
+        slot->m_Node = node;
+        ((void (*)(void *, void *, void *)) node->vtable->Unk18)(node, This, &This->m_Unk20);
+        slot->m_Items = memory_allocate_mem(0x668);
+        if (slot->m_Items == NULL) {
+            return;
+        }
+        pos.x = initial_x;
+        pos.y = 0;
+        pos.z = initial_x;
+        end = (notify_node_t **) ((u8 *) slot->m_Items + 0x668);
+        for (cursor = slot->m_Items; cursor < end; cursor++) {
+            node = func_8004D38C();
+            *cursor = node;
+            ((void (*)(void *, void *, void *)) node->vtable->Unk18)(node, slot->m_Node, &pos);
+            pos.x += 0x800;
+            if (pos.x > 0xA400) {
+                pos.x = initial_x;
+                pos.z += 0x800;
+            }
+            node = *cursor;
+            ((void (*)(void *, s32)) node->vtable->Unk27)(node, 1);
+            node = *cursor;
+            flags = node->m_Unk3;
+            node->m_Unk3 = flags | 0x80000000;
+        }
+        index++;
+    } while (index < 7);
+    This->vtable->Attach((base_class_t *) This, (base_class_t *) get_display());
+    This->vtable->Unk15(This);
+}
 
 void func_8004A7C0(render_context_t *This) {
     render_context_slot_t *slot;
@@ -403,7 +498,7 @@ void func_8004B100(render_context_t *This, aea4_arg_t *arg1, s32 arg2) {
 
 void func_8004B2D4(render_context_t *This, aea4_arg_t *arg1, s32 arg2) {
     if (This && (This->m_Unk12_2 & 0x80) != 0) {
-        This->vtable->OnNotify(This);
+        ((void (*)(render_context_t *)) This->vtable->OnNotify)(This);
     }
 }
 
@@ -463,60 +558,51 @@ typedef struct {
     /* 0x8 */ s16 m_Unk8;
 } func_8004B44C_info_t;
 
-INCLUDE_ASM("asm/nonmatchings/scene/render_context", func_8004B44C);
+static inline s32 render_context_world_axis(s32 cell, s32 base, s32 local) {
+    s32 position = (cell << 11) + base;
+    s32 adjusted = local + 0x400;
 
-/*
- * Near match (semantics exact, 73/73 insns, 4 residual insns). Best C below.
- * Residual: the target schedules the src->y load one slot later (after the
- * outB->z add) and therefore keeps y in $v1 across the outB->x load, forcing
- * $a0 for outB->x/outB->z; gcc keeps y in $v1 only until its store and reloads
- * outB->x into $v1. This also makes gcc fold the `+0x400` into the accumulator
- * (addiu v0,v0,0x400) instead of into the info[4] operand
- * (addiu v1,v1,0x400). Tried: y/bx/zbase temporaries, all 24 permutations of
- * the (y, bx, outB->z, outB->y) statements, direct vs cached outB->x, and three
- * groupings of the +0x400 sum; all yield the same 73-insn schedule.
- *
- * s32 func_8004B44C(void *arg0, void *arg1, s32 arg2, void *arg3, void *arg4) {
- *     s32 t4;
- *     s32 t1;
- *     s32 t0;
- *     s32 tmp;
- *     s32 zbase;
- *     s32 y;
- *     s32 bx;
- *
- *     if (((func_8004B44C_grid_t *)arg2)->m_Mode == 0) {
- *         t0 = ((func_8004B44C_info_t *)arg4)->m_Unk1;
- *         t1 = ((func_8004B44C_grid_t *)arg2)->m_Height;
- *         t4 = ((func_8004B44C_info_t *)arg4)->m_Unk0 +
- *              (((func_8004B44C_grid_t *)arg2)->m_Width * t0);
- *     } else {
- *         t1 = 1;
- *         t0 = 0;
- *         t4 = 0;
- *     }
- *     tmp = (((vec3d_t *)arg3)->x - (((func_8004B44C_grid_t *)arg2)->m_Width * 0x5000)) +
- *           (((func_8004B44C_info_t *)arg4)->m_Unk0 * 0xA000);
- *     zbase = ((vec3d_t *)arg3)->z - (t1 * 0x5000);
- *     ((vec3d_t *)arg1)->x = tmp;
- *     if (t0 & 1) {
- *         ((vec3d_t *)arg1)->x = tmp - 0x5000;
- *     }
- *     y = ((vec3d_t *)arg3)->y;
- *     bx = ((vec3d_t *)arg1)->x;
- *     ((vec3d_t *)arg1)->z = zbase + (t0 * 0xA000);
- *     ((vec3d_t *)arg1)->y = y;
- *     ((vec3d_t *)arg0)->x = (((func_8004B44C_info_t *)arg4)->m_Unk2 << 11) + bx +
- *                            (((func_8004B44C_info_t *)arg4)->m_Unk4 + 0x400);
- *     ((vec3d_t *)arg0)->y = ((func_8004B44C_info_t *)arg4)->m_Unk6 + ((vec3d_t *)arg1)->y;
- *     ((vec3d_t *)arg0)->z = (((func_8004B44C_info_t *)arg4)->m_Unk3 << 11) +
- *                            ((vec3d_t *)arg1)->z +
- *                            (((func_8004B44C_info_t *)arg4)->m_Unk8 + 0x400);
- *     ((vec3d_t *)arg1)->x += 0x5000;
- *     ((vec3d_t *)arg1)->z += 0x5000;
- *     return t4;
- * }
- */
+    return position + adjusted;
+}
+
+/* Compute a streamed grid cell's origin and the position within that cell. */
+s32 func_8004B44C(void *arg0, void *arg1, s32 arg2, void *arg3, void *arg4) {
+    s32 index;
+    s32 height;
+    s32 row;
+    s32 origin_x;
+    s32 origin_z;
+    s32 y;
+    s32 base_x;
+
+    if (((func_8004B44C_grid_t *)arg2)->m_Mode == 0) {
+        row = ((func_8004B44C_info_t *)arg4)->m_Unk1;
+        height = ((func_8004B44C_grid_t *)arg2)->m_Height;
+        index = ((func_8004B44C_info_t *)arg4)->m_Unk0 +
+             (((func_8004B44C_grid_t *)arg2)->m_Width * row);
+    } else {
+        height = 1;
+        row = 0;
+        index = 0;
+    }
+    origin_x = (((vec3d_t *)arg3)->x - (((func_8004B44C_grid_t *)arg2)->m_Width * 0x5000)) +
+          (((func_8004B44C_info_t *)arg4)->m_Unk0 * 0xA000);
+    origin_z = ((vec3d_t *)arg3)->z - (height * 0x5000);
+    ((vec3d_t *)arg1)->x = origin_x;
+    if (row & 1) {
+        ((vec3d_t *)arg1)->x = origin_x - 0x5000;
+    }
+    y = ((vec3d_t *)arg3)->y;
+    base_x = ((vec3d_t *)arg1)->x;
+    ((vec3d_t *)arg1)->z = origin_z + (row * 0xA000);
+    ((vec3d_t *)arg1)->y = y;
+    ((vec3d_t *)arg0)->x = render_context_world_axis(((func_8004B44C_info_t *)arg4)->m_Unk2, base_x, ((func_8004B44C_info_t *)arg4)->m_Unk4);
+    ((vec3d_t *)arg0)->y = ((func_8004B44C_info_t *)arg4)->m_Unk6 + ((vec3d_t *)arg1)->y;
+    ((vec3d_t *)arg0)->z = render_context_world_axis(((func_8004B44C_info_t *)arg4)->m_Unk3, ((vec3d_t *)arg1)->z, ((func_8004B44C_info_t *)arg4)->m_Unk8);
+    ((vec3d_t *)arg1)->x += 0x5000;
+    ((vec3d_t *)arg1)->z += 0x5000;
+    return index;
+}
 
 void func_8004B570(render_context_t *This) {
     This->m_Unk27 = 1;
@@ -567,89 +653,153 @@ s32 func_8004B5BC(render_context_t *This) {
     return kind;
 }
 
-INCLUDE_ASM("asm/nonmatchings/scene/render_context", func_8004B700);
+typedef struct {
+    u16 m_Flag;
+    u16 m_Index;
+    cd_stream_t *m_Stream;
+    void *m_File;
+    notify_node_t *m_Node;
+    notify_node_t **m_Items;
+    s32 m_Unk14;
+    s32 m_Unk18;
+} render_context_grid_slot_t;
+typedef struct {
+    s32 m_Flag;
+    u8 m_Pad[0x14];
+    vec3d_t m_Pos;
+} render_context_grid_coords_t;
+/* Position active stream slots and submit their grid rows. */
+void func_8004B700(render_context_t *This, s32 index, vec3d_t *origin, u8 *selected) {
+    s32 rows[7][3];
+    s32 mask;
+    s32 width;
+    render_context_grid_coords_t *coords;
+    s32 parity;
+    s32 i;
+    s32 row_offset;
+    s32 count;
+    vec3d_t *delta;
+    s32 *row;
+    render_context_grid_slot_t *slot;
+    if (selected != NULL) {
+        width = *(s16 *) This->m_Unk25;
+        count = 0;
+        i = 0;
+        row_offset = 0;
+        parity = (index / width) & 1;
+        mask = func_8004B930(This, index, parity);
+        do {
+            slot = This->vtable->Unk69(This, i);
+            slot->m_Index = selected[0];
+            if (selected[1] != 0) {
+                delta = &D_80086838[selected[0]];
+                coords = (render_context_grid_coords_t *) slot->m_Node->m_Unk4;
+                if (*(s32 *) (This->m_Unk25 + 4) == 0) {
+                    coords->m_Pos.x = origin->x + delta->x;
+                    coords->m_Pos.y = origin->y;
+                    coords->m_Pos.z = origin->z + delta->z;
+                } else {
+                    coords->m_Pos.x = origin->x - 0x5000;
+                    coords->m_Pos.y = origin->y + delta->y;
+                    coords->m_Pos.z = origin->z - 0x5000;
+                }
+                row = (s32 *) ((u8 *) rows + row_offset);
+                ((render_context_grid_coords_t *) slot->m_Node->m_Unk4)->m_Flag = 0;
+                func_8004BA40(This, row, width, parity, index, mask, selected[0]);
+                row_offset += 0xC;
+                count++;
+            }
+            i++;
+            selected += 2;
+        } while (i < 7);
+        i = 0;
+        do {
+            slot = (render_context_grid_slot_t *) ((u8 *) This + 0xEC + i * 0x1C);
+            i++;
+            slot->m_Stream->m_Unk11_2 = slot->m_Index;
+        } while (i < 7);
+        ((void (*)(render_context_t *, void *, s32)) This->vtable->Unk62)(This, rows, count);
+    }
+}
 
-INCLUDE_ASM("asm/nonmatchings/scene/render_context", func_8004B930);
+/* Build the horizontal or vertical grid boundary mask. */
+s32 func_8004B930(render_context_t *This, s32 index, s32 parity) {
+    s32 width = *(s16 *)(This->m_Unk25 + 0);
+    s32 mode = *(s32 *)(This->m_Unk25 + 4);
+    s32 height = *(s16 *)(This->m_Unk25 + 2);
+    s32 result;
 
-/*
- * Near match (semantics exact, 65/68 insns): only the target's unused 8-byte
- * stack frame (addiu sp,sp,-8 in the mode-test delay slot, addiu sp,sp,8 before
- * jr) and one duplicated `nor v0,zero,a0` in the second modulo branch delay are
- * missing. No source-level scalar/array/struct/union/alloca/address-taken-local
- * construct reproduced a frame without also emitting sp-relative lw/sw; the
- * frame has no sp operand anywhere in the target, so it is not a normal local.
- *
- * s32 func_8004B930(render_context_t *This, s32 index, s32 parity) {
- *     s32 width = *(s16 *)(This->m_Unk25 + 0);
- *     s32 mode = *(s32 *)(This->m_Unk25 + 4);
- *     s32 height = *(s16 *)(This->m_Unk25 + 2);
- *     s32 result;
- *
- *     if (mode == 0) {
- *         result = 0;
- *         if (index < width) result |= 3;
- *         if (index >= width * (height - 1)) result |= 0x60;
- *         if (index % width == 0) {
- *             if (parity != 0) result |= 0x25; else result |= 4;
- *         }
- *         if ((index + 1) % width == 0) {
- *             if (parity != 0) result |= 0x10; else result |= 0x52;
- *         }
- *     } else {
- *         result = -1;
- *         if (height > 0) {
- *             s32 i = 0;
- *             do { i++; result <<= 1; } while (i < height);
- *         }
- *     }
- *     return ~result;
- * }
- */
+    if (mode == 0) {
+        result = 0;
+        if (index < width) result |= 3;
+        if (index >= width * (height - 1)) result |= 0x60;
+        if (index % width == 0) {
+            if (parity != 0) result |= 0x25; else result |= 4;
+        }
+        if ((index + 1) % width == 0) {
+            if (parity != 0) result |= 0x10; else result |= 0x52;
+        }
+    } else {
+        s32 i;
 
-INCLUDE_ASM("asm/nonmatchings/scene/render_context", func_8004BA40);
+        result = -1;
+        for (i = 0; i < height; i++) {
+            result <<= 1;
+        }
+    }
+    return ~result;
+}
 
-/*
- * Near match (semantics exact, 63/63 insns). Residual: target allocates the
- * 5th arg (base) to $a1 and result/v to $v0, and saves $s1 before $s0; gcc
- * allocates base to $t0 and result/v to $a1 (and saves $s0 first). Tried
- * if/else vs early-return, inlined out[1] writes, `v` before/after result,
- * declaration order, and a base copy; all give base in $t0. This is a
- * local-alloc priority tie, not a semantics/type issue.
- *
- * s32 func_8004BA40(render_context_t *This, s32 *out, s32 col, s32 parity, s32 base, s32 mask, s32 dir) {
- *     s32 result;
- *     s32 v;
- *     s32 *tbl;
- *     s32 t0;
- *     s32 prod;
- *
- *     result = 0;
- *     if (mask & D_8008688C[dir]) {
- *         v = base + dir;
- *         if (*(s32 *)(This->m_Unk25 + 4) == 0) {
- *             tbl = &D_800868A8[dir * 3];
- *             t0 = tbl[0];
- *             if (t0 == 0) {
- *                 v = base + tbl[1];
- *             } else {
- *                 prod = col * t0;
- *                 if (parity != 0) {
- *                     v = base + (prod + tbl[1]);
- *                 } else {
- *                     v = base + (prod + tbl[2]);
- *                 }
- *             }
- *         }
- *         out[1] = v;
- *         out[0] = ((s32(*)(s32, s32, s32, s32))This->m_Unk23)(This->m_Unk24, out[1], 0, 0);
- *         result = 1;
- *     } else {
- *         out[0] = 0;
- *     }
- *     out[2] = dir;
- *     return result;
- * }
- */
+/* Write the permitted neighbor's linear index before querying its stage path. */
+static inline void render_context_write_grid_index(render_context_t *This, s32 *out,
+                                                   s32 columns, s32 parity, s32 index,
+                                                   s32 direction) {
+    s32 stride;
+    s32 offset;
+    s32 *table;
+
+    if (*(s32 *)(This->m_Unk25 + 4) != 0) {
+        ((volatile s32 *)out)[1] = index + direction;
+        return;
+    }
+    {
+        table = &D_800868A8[direction * 3];
+        stride = table[0];
+        if (stride == 0) {
+            stride = table[1];
+            ((volatile s32 *)out)[1] = index + stride;
+            return;
+        } else {
+            offset = columns * stride;
+            if (parity != 0) {
+                offset += table[1];
+            } else {
+                offset += table[2];
+            }
+            ((volatile s32 *)out)[1] = index + offset;
+            return;
+        }
+    }
+}
+
+typedef const char *(*render_context_stage_path_fn)(void *, s32, s32, s32);
+
+/* Output words contain the path address, linear index and direction. */
+s32 func_8004BA40(render_context_t *This, s32 *out, s32 columns, s32 parity,
+                  s32 index, s32 mask, s32 direction) {
+    if (mask & D_8008688C[direction]) {
+        render_context_write_grid_index(This, out, columns, parity, index, direction);
+        out[0] = (s32)((render_context_stage_path_fn)This->m_Unk23)(
+            (void *)This->m_Unk24, out[1], 0, 0);
+        out[2] = direction;
+        return 1;
+    } else {
+        out[0] = 0;
+    }
+    out[2] = direction;
+    return 0;
+}
+
 
 typedef struct func_8004BB3C_inner func_8004BB3C_inner_t;
 
@@ -659,14 +809,14 @@ typedef struct func_8004BB3C_inner_vtable {
     /* 0x78 */ void (*Unk29)(func_8004BB3C_inner_t *, s32);
 } func_8004BB3C_inner_vtable_t;
 
-typedef struct func_8004BB3C_inner {
+struct func_8004BB3C_inner {
     /* 0x00 */ func_8004BB3C_inner_vtable_t *vtable;
     /* 0x04 */ u8 pad[0x26];
     /* 0x2A */ u16 field_2a;
     /* 0x2C */ s16 field_2c;
     /* 0x2E */ u16 pad_2e;
     /* 0x30 */ u16 field_30;
-} func_8004BB3C_inner_t;
+};
 
 typedef struct func_8004BB3C_slot {
     /* 0x00 */ s16 flag;
@@ -731,56 +881,54 @@ loop:
     return count;
 }
 
-/*
- * Near match (semantics exact, 81/80 insns). The target keeps the byte offset
- * in $s4 (`ori s4,zero,0xEC`, `addiu s4,s4,0x1C` in the loop-back delay) and
- * recomputes the slot address at the loop head (`addu s0,s1,s4`). With the
- * natural offset increment at the loop bottom gcc 2.6.3 strength-reduces the
- * slot pointer into `addiu s0,s0,0x1C` (77 insns). Moving the increment into the
- * loop body keeps $s4 but makes gcc peel a copy of the address computation into
- * the preheader (81 insns vs target 80), so the first instruction difference is
- * the missing/extra head `addu`. Also needs the widened vtable Unk64. Best C:
- *
- * void func_8004BD14(render_context_t *This, s32 unused, s32 arg2) {
- *     s32 offset;
- *     s32 i;
- *     s32 state;
- *     u16 count;
- *
- *     if (arg2 == 2) {
- *         i = 0;
- *         offset = 0xEC;
- *         do {
- *             fast_slot_t *slot = (fast_slot_t *)((u8 *)This + offset);
- *             if (slot->m_Obj->m_Unk2E != 0) {
- *                 slot->m_Obj->m_Unk2E = 0;
- *                 This->vtable->Unk33(This, 7, slot, i);
- *             }
- *             state = This->m_Unk107;
- *             offset += 0x1C;
- *             if (state == 1 && slot->m_Flag != 0) {
- *                 if (slot->m_Obj->m_Unk2C != 0) {
- *                     This->vtable->Unk64(This, slot);
- *                     slot->m_Obj->m_Unk2C = 2;
- *                     slot->m_Flag = 0;
- *                     count = *(u16 *)&This->m_Unk108 - 1;
- *                     *(u16 *)&This->m_Unk108 = count;
- *                     if (count == 0) {
- *                         *(u16 *)&This->m_Unk108 = 0;
- *                         This->m_Unk107 = 0;
- *                         This->m_Unk109 = state;
- *                     }
- *                 } else if (slot->m_Obj->m_Unk2A == 0) {
- *                     slot->m_Flag = 0;
- *                 }
- *             }
- *             i += 1;
- *         } while (i < 7);
- *     }
- * }
- */
+typedef struct {
+    u8 m_Pad[0x2A];
+    u16 m_Unk2A;
+    s16 m_Unk2C;
+    s16 m_Unk2E;
+} render_context_stream_state_t;
 
-INCLUDE_ASM("asm/nonmatchings/scene/render_context", func_8004BD14);
+typedef struct {
+    u16 m_Flag;
+    u16 m_Pad;
+    render_context_stream_state_t *m_Obj;
+} render_context_update_slot_t;
+
+void func_8004BD14(render_context_t *This, s32 unused, s32 arg2) {
+    s32 i;
+    s32 state;
+    u16 count;
+    render_context_update_slot_t *slot;
+
+    if (arg2 == 2) {
+        i = 0;
+        do {
+            slot = (render_context_update_slot_t *) ((u8 *) This + 0xEC + i * 0x1C);
+            if (slot->m_Obj->m_Unk2E != 0) {
+                slot->m_Obj->m_Unk2E = 0;
+                This->vtable->Unk33(This, 7, slot, i);
+            }
+            state = This->m_Unk107;
+            if (state == 1 && slot->m_Flag != 0) {
+                if (slot->m_Obj->m_Unk2C != 0) {
+                    This->vtable->Unk64(This, slot);
+                    slot->m_Obj->m_Unk2C = 2;
+                    slot->m_Flag = 0;
+                    count = *(u16 *) &This->m_Unk108 - 1;
+                    *(u16 *) &This->m_Unk108 = count;
+                    if (count == 0) {
+                        *(u16 *) &This->m_Unk108 = 0;
+                        This->m_Unk107 = 0;
+                        This->m_Unk109 = state;
+                    }
+                } else if (slot->m_Obj->m_Unk2A == 0) {
+                    slot->m_Flag = 0;
+                }
+            }
+            i++;
+        } while (i < 7);
+    }
+}
 
 INCLUDE_ASM("asm/nonmatchings/scene/render_context", func_8004BE54);
 
@@ -821,67 +969,66 @@ void *func_8004C158(render_context_t *This, s32 arg1, s32 *arg2) {
     return var_v0;
 }
 
-INCLUDE_ASM("asm/nonmatchings/scene/render_context", func_8004C1C0);
-// Best match: 106/106 insns, same length. Residual: (1) GCC local_alloc
-// keeps the second coord pointer in $a3 where the target uses $a1;
-// (2) GCC cse-hoists the -0x400 constant into $a2 (li a2,0xfc00) and emits
-// addu instead of the target's addiu; (3) tail scheduling of out->y/out->obj
-// differs. All operand shapes and the lb/sll<->lbu/sll24/sra13 shift form match.
-// typedef struct func_8004C1C0_out {
-//     /* 0x00 */ s8 b0;
-//     /* 0x01 */ s8 b1;
-//     /* 0x02 */ s8 dx;
-//     /* 0x03 */ s8 dz;
-//     /* 0x04 */ s16 x;
-//     /* 0x06 */ u16 y;
-//     /* 0x08 */ s16 z;
-//     /* 0x0C */ s32 vx;
-//     /* 0x10 */ s32 vy;
-//     /* 0x14 */ s32 vz;
-//     /* 0x18 */ s32 rx;
-//     /* 0x1C */ s32 ry;
-//     /* 0x20 */ s32 rz;
-//     /* 0x24 */ void *obj;
-//     /* 0x28 */ s32 divisor;
-// } func_8004C1C0_out_t;
-//
-// typedef struct func_8004C1C0_pos {
-//     /* 0x00 */ s32 x;
-//     /* 0x04 */ s32 y;
-//     /* 0x08 */ s32 z;
-// } func_8004C1C0_pos_t;
-//
-// s32 func_8004C1C0(render_context_t *This, func_8004C1C0_out_t *out, func_8004C1C0_pos_t *pos) {
-//     void *obj;
-//     s32 *coordB;
-//     s32 *coordA;
-//     s16 val;
-//
-//     obj = This->vtable->Unk70(This, pos);
-//     if (obj != NULL) {
-//         val = *(s16 *)((u8 *)(*(s32 **)((u8 *)obj + 4)) + 0x30);
-//         out->divisor = val;
-//         func_8004C368(This, (s8 *)out, val);
-//         coordA = *(s32 **)((u8 *)(*(s32 **)((u8 *)This->vtable->Unk69(
-//                      This, *(s16 *)((u8 *)(*(s32 **)((u8 *)obj + 4)) + 0x32)) + 0xC)) + 0x14);
-//         out->vx = coordA[0x18 / 4] + 0x5000;
-//         out->vy = coordA[0x1C / 4];
-//         out->vz = coordA[0x20 / 4] + 0x5000;
-//         coordB = *(s32 **)((u8 *)(*(s32 **)((u8 *)obj + 0xC)) + 0x14);
-//         out->rx = pos->x - out->vx;
-//         out->ry = pos->y;
-//         out->rz = pos->z - out->vz;
-//         out->dx = (pos->x - coordB[0x18 / 4]) / 2048;
-//         out->dz = (pos->z - coordB[0x20 / 4]) / 2048;
-//         out->x = ((u16)pos->x - 0x400) - ((u16)coordB[0x18 / 4] + (out->dx * 2048));
-//         out->y = (u16)pos->y;
-//         out->obj = obj;
-//         out->z = ((u16)pos->z - 0x400) - ((u16)coordB[0x20 / 4] + (out->dz * 2048));
-//         return 0;
-//     }
-//     return 1;
-// }
-//
+s16 func_8004C368(render_context_t *, s8 *, s32);
+typedef struct func_8004C1C0_out {
+    /* 0x00 */ s8 b0;
+    /* 0x01 */ s8 b1;
+    /* 0x02 */ s8 dx;
+    /* 0x03 */ s8 dz;
+    /* 0x04 */ s16 x;
+    /* 0x06 */ u16 y;
+    /* 0x08 */ s16 z;
+    /* 0x0C */ s32 vx;
+    /* 0x10 */ s32 vy;
+    /* 0x14 */ s32 vz;
+    /* 0x18 */ s32 rx;
+    /* 0x1C */ s32 ry;
+    /* 0x20 */ s32 rz;
+    /* 0x24 */ void *obj;
+    /* 0x28 */ s32 divisor;
+} func_8004C1C0_out_t;
+
+typedef struct func_8004C1C0_pos {
+    /* 0x00 */ s32 x;
+    /* 0x04 */ s32 y;
+    /* 0x08 */ s32 z;
+} func_8004C1C0_pos_t;
+
+/* Resolve world coordinates into the active stream slot and local grid cell. */
+s32 func_8004C1C0(render_context_t *This, func_8004C1C0_out_t *out, func_8004C1C0_pos_t *pos) {
+    void *obj;
+    s32 *coordB;
+    s32 *coordA;
+    s16 val;
+    u16 x;
+    u16 z;
+
+    obj = This->vtable->Unk70(This, pos);
+    if (obj != NULL) {
+        val = *(s16 *) ((u8 *) (*(s32 **) ((u8 *) obj + 4)) + 0x30);
+        out->divisor = val;
+        func_8004C368(This, (s8 *) out, val);
+        coordA = *(s32 **) ((u8 *) (*(s32 **) ((u8 *) This->vtable->Unk69(
+                     This, *(s16 *) ((u8 *) (*(s32 **) ((u8 *) obj + 4)) + 0x32)) + 0xC)) + 0x14);
+        out->vx = coordA[0x18 / 4] + 0x5000;
+        out->vy = coordA[0x1C / 4];
+        out->vz = coordA[0x20 / 4] + 0x5000;
+        coordB = *(s32 **) ((u8 *) (*(s32 **) ((u8 *) obj + 0xC)) + 0x14);
+        out->rx = pos->x - out->vx;
+        out->ry = pos->y;
+        out->rz = pos->z - out->vz;
+        out->dx = (pos->x - coordB[0x18 / 4]) / 2048;
+        out->dz = (pos->z - coordB[0x20 / 4]) / 2048;
+        x = pos->x - 0x400;
+        out->x = x - ((u16) coordB[0x18 / 4] + (out->dx * 2048));
+        out->y = (u16) pos->y;
+        z = pos->z - 0x400;
+        out->z = z - ((u16) coordB[0x20 / 4] + (out->dz * 2048));
+        out->obj = obj;
+        return 0;
+    }
+    return 1;
+}
 
 s16 func_8004C368(render_context_t *This, s8 *out, s32 val) {
     s16 d;
@@ -994,7 +1141,7 @@ s32 func_8004C5D0(render_context_t *This, s32 Unk) {
     return -1;
 }
 
-void func_8004C6A8(render_context_t *, s32, s16);
+void func_8004C6A8(render_context_t *, s32, s32);
 void func_8004CC74(render_context_t *);
 void func_8004CE24(render_context_t *, s32);
 
@@ -1015,7 +1162,15 @@ void func_8004C620(render_context_t *This) {
 
 INCLUDE_ASM("asm/nonmatchings/scene/render_context", func_8004C6A8);
 
-s32 func_8004CAF0(render_context_t *, void *, s32, s32, s32, s32, s32, s32);
+typedef struct {
+    s32 index;
+    s16 x;
+    s16 y;
+    s16 width;
+    s16 height;
+} render_context_line_t;
+
+s32 func_8004CAF0(render_context_t *, render_context_line_t *, s32, s32, s32, s32, s32, s32);
 
 void func_8004C93C(render_context_t *This) {
     s32 x;
@@ -1069,7 +1224,7 @@ void func_8004C93C(render_context_t *This) {
     if (total >= 0x15) {
         wrapped = total - 0x14;
         This->m_Unk36_1 = z - wrapped;
-        count = func_8004CAF0(This, rec, 0, mode, x, y, z, w) + 1;
+        count = func_8004CAF0(This, (render_context_line_t *) rec, 0, mode, x, y, z, w) + 1;
         rec = (u8 *) This + (count * 0xC + 0x8C);
         *(s32 *) rec = This->vtable->Unk71(This, mode + 1);
         *(s16 *) (rec + 4) = 0;
@@ -1078,56 +1233,66 @@ void func_8004C93C(render_context_t *This) {
         *(u16 *) (rec + 0xA) = This->m_Unk36_2;
     } else {
         This->m_Unk36_1 = z;
-        count = func_8004CAF0(This, rec, 0, mode, x, y, z, w);
+        count = func_8004CAF0(This, (render_context_line_t *) rec, 0, mode, x, y, z, w);
     }
     count++;
     This->m_Unk33 = count;
 }
 
-/*
- * Near match (semantics exact, 91/97 insns, same opcode stream). The target
- * keeps This in $s1 and the line record in $s0 (reused as $s0=entry after the
- * wrap), with the entry base `count*12 + 0x8C` folded into one addu; gcc 2.6.3
- * here assigns This to $s4 and defers +0x8C into the first access
- * (`addu s1,s4,v0` / `addiu s0,s1,0x8C`), and leaves the line record in $a1.
- * Needs widened vtable Unk71 (s32 (*)(void*, s32), called with 2 args and the
- * result stored). Best C (8-arg wrap-to-12-byte-record formatter):
- *
- * s32 func_8004CAF0(render_context_t *arg0, line_t *arg1, s32 arg2, s32 arg3,
- *                   s32 arg4, s32 arg5, s32 arg6, s32 arg7) {
- *     entry_t *entry;
- *     s32 count = arg2;
- *     s32 wrapped, start, total, next;
- *
- *     if (arg5 + arg7 >= 0x15) {
- *         wrapped = arg5 + arg7 - 0x14;
- *         arg1->m_UnkA = arg7 - wrapped;
- *         count += 1;
- *         entry = (entry_t *)((u8 *)arg0 + count * 0xC + 0x8C);
- *         if (arg4 < 0xA) { start = arg3 + 2; entry->m_Unk0 = Unk71(arg0, start); total = arg4 + 0xA; }
- *         else            { start = arg3 + 3; entry->m_Unk0 = Unk71(arg0, start); total = arg4 - 0xA; }
- *         entry->m_Unk4 = total;
- *         entry->m_UnkA = wrapped;
- *         next = entry->m_Unk4 + arg6;
- *         entry->m_Unk6 = 0;
- *         if (next >= 0x15) {
- *             count += 1;
- *             entry->m_Unk8 = (arg6 + 0x14) - next;
- *             entry = (entry_t *)((u8 *)arg0 + count * 0xC + 0x8C);
- *             entry->m_Unk0 = Unk71(arg0, start + 1);
- *             entry->m_Unk4 = 0; entry->m_Unk6 = 0;
- *             entry->m_Unk8 = next - 0x14; entry->m_UnkA = wrapped;
- *         } else {
- *             entry->m_Unk8 = arg6;
- *         }
- *     } else {
- *         arg1->m_UnkA = arg7;
- *     }
- *     return count;
- * }
- */
+static inline s16 render_context_line_remaining(s32 width, s32 next) {
+    s32 remaining = width + 0x14;
 
-INCLUDE_ASM("asm/nonmatchings/scene/render_context", func_8004CAF0);
+    return remaining - next;
+}
+
+static inline void render_context_line_initialize(render_context_t *This,
+                                                   render_context_line_t *line,
+                                                   s32 mode, s32 x, s32 delta) {
+    line->index = This->vtable->Unk71(This, mode);
+    line->x = x + delta;
+}
+
+/* Split a wrapped row into the adjacent streamed grid cells. */
+s32 func_8004CAF0(render_context_t *This, render_context_line_t *line, s32 count, s32 mode,
+                 s32 x, s32 y, s32 width, s32 height) {
+    s32 wrapped;
+    s32 total;
+    s32 next_mode;
+
+    if (y + height >= 0x15) {
+        wrapped = y + height - 0x14;
+        line->height = height - wrapped;
+        count += 1;
+        line = (render_context_line_t *) ((u8 *) This + (count * 0xC + 0x8C));
+        total = wrapped;
+        if (x < 0xA) {
+            next_mode = mode + 2;
+            render_context_line_initialize(This, line, next_mode, x, 10);
+            line->height = total;
+        } else {
+            next_mode = mode + 3;
+            render_context_line_initialize(This, line, next_mode, x, -10);
+            line->height = total;
+        }
+        total = line->x + width;
+        line->y = 0;
+        if (total >= 0x15) {
+            count += 1;
+            line->width = render_context_line_remaining(width, total);
+            line = (render_context_line_t *) ((u8 *) This + (count * 0xC + 0x8C));
+            line->index = This->vtable->Unk71(This, next_mode + 1);
+            line->x = 0;
+            line->y = 0;
+            line->width = total - 0x14;
+            line->height = wrapped;
+        } else {
+            line->width = width;
+        }
+    } else {
+        line->height = height;
+    }
+    return count;
+}
 
 typedef struct {
     /* 0x00 */ u8 pad[0x28];

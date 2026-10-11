@@ -58,7 +58,6 @@ typedef struct effect_base_vtable {
     /* 0x0C4 8006eb84 */ void (*Unk48)(void *);
     /* 0x0C8 8006eb88 */ void (*Unk49)(void *);
     /* 0x0CC 8006eb8c */ void (*Unk50)(void *, s32);
-    /* 0x0D0 8006eb90 */ void (*Unk51)(void *);
 } effect_base_vtable_t;
 
 typedef struct effect_base {

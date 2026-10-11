@@ -7,8 +7,8 @@
 static s32 g_CD_INIT = 0;
 extern s32 g_ScreenSize[];
 
-void system_construct(void *, s32);
-void func_8003B02C(void *, s32 *, s32);
+void system_construct(system_t *This, s32 Unk);
+void func_8003B02C(system_t *This, const s32 *src, s32 val);
 
 system_vtable_t g_SYSTEM_VTABLE = {
     0x60,
@@ -78,7 +78,7 @@ void game_flow_init_graphics(game_flow_t *This, display_t *Display, pad_t *Pad, 
     }
 }
 
-void game_flow_pre_execute(void *) {
+void game_flow_pre_execute(void * unused0) {
 }
 
 // The main game loop

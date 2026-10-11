@@ -46,7 +46,7 @@ s32 func_8004E890(memory_card_t *, s32 *, s32 *);
 s32 memory_card_read_file_impl(memory_card_t *, char *, char *);
 s32 memory_card_read_data_impl(memory_card_t *, char *, void *, s32);
 s32 memory_card_delete_file_impl(memory_card_t *, s32, s32);
-s32 memory_card_call_event(memory_card_t *, long (*)(long), s32);
+s32 memory_card_call_event(memory_card_t *This, long (*fn)(unsigned long), s32 critical);
 
 memory_card_t *memory_card_create(u32 Unk1, u32 Unk2) {
     memory_card_t *allocated = ALLOCATE_STRUCT(memory_card_t);

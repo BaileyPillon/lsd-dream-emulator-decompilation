@@ -13,7 +13,7 @@ extern s32 g_GenerationSubMode;
 extern s32 g_GenerationType;
 extern s32 g_GenerationEntitySlot1[];
 
-s32 dream_generation_load();
+u8 *dream_generation_load(void);
 
 s32 dream_generation_start(void *a0, s32 a1, s32 *a2, s32 a3, s32 a4) {
     s32 *p;
@@ -133,121 +133,94 @@ s8 *dream_generation_pick_entry(void) {
     return entry;
 }
 
-extern s32 g_GenerationEffectX;
+/* Each coordinate/size pair occupies two consecutive words in the original data. */
+extern s32 g_GenerationEffectX[2];
 extern s32 g_GenerationEffectY;
-extern s32 g_GenerationEffectW;
+extern s32 g_GenerationEffectW[2];
 extern s32 g_GenerationEffectH;
 extern effect_base_t *g_GenerationEffects[];
 
 effect_base_t *effect_base_create(u32, u32, u32);
 
-/*
- * Near match (83/86 insns): only three instructions differ, all GCC 2.6.3
- * register allocation. Target reloads g_GenerationFlags for the ==2 test (the
- * value in $v0 was clobbered by the g_GenerationEffectX load) and keeps g_GenerationEffectY in
- * $v1, so it must reload coords[1] from the stack before +0x1E; here gcc keeps
- * g_GenerationEffectY in $a0 and adds directly. Target also computes &g_GenerationEffects into
- * $v1 then copies to $s3 (extra `addu`); gcc materialises $s3 directly. Tried
- * plain and volatile re-reads, local flags copy, &g_GenerationEffects/&g_GenerationEffects[0],
- * and both base[0]/g_GenerationEffects[0] epilogue forms.
- *
- * void dream_generation_create_effects(void) {
- *     s32 coords[4];
- *     s32 i;
- *     s32 offset;
- *     effect_base_t **base;
- *     effect_base_t **cursor;
- *     effect_base_t *obj;
- *     void **ctx;
- *     s32 result;
- *
- *     if (g_GenerationFlags != 0) {
- *         coords[0] = g_GenerationEffectX;
- *         coords[1] = g_GenerationEffectY;
- *         if (*(volatile s32 *)&g_GenerationFlags == 2) {
- *             coords[1] += 0x1E;
- *         }
- *         coords[2] = g_GenerationEffectW;
- *         coords[3] = g_GenerationEffectH;
- *         i = 1;
- *         offset = 3;
- *         base = &g_GenerationEffects[0];
- *         cursor = &g_GenerationEffects[1];
- *         base[0] = effect_base_create((u32)&coords[2], g_GenerationTablePtr, 0x1FFF);
- *         do {
- *             i++;
- *             obj = effect_base_create((u32)&coords[2], offset + g_GenerationTablePtr, 0x1FFF);
- *             *cursor = obj;
- *             cursor++;
- *             obj->vtable->attach_to(obj, (s32)base[0], coords);
- *             offset += 3;
- *             coords[1] += 3;
- *             coords[3] -= 7;
- *         } while (i < 0x12);
- *         ctx = *(void ***)((u8 *)g_GenerationEntityContext + 0xC);
- *         result = (*(s32 (**)(void *))((u8 *)*ctx + 0xAC))(ctx);
- *         g_GenerationEffects[0]->vtable->attach_to(g_GenerationEffects[0], result, coords);
- *     }
- * }
- */
-INCLUDE_ASM("asm/nonmatchings/dream/dream_generation", dream_generation_create_effects);
+void dream_generation_create_effects(void) {
+    s32 coords[4];
+    s32 i;
+    s32 offset;
+    effect_base_t **base;
+    effect_base_t **cursor;
+    void **ctx;
+    s32 result;
+
+    if (g_GenerationFlags != 0) {
+        __builtin_memcpy(coords, g_GenerationEffectX, 8);
+        if (g_GenerationFlags == 2) {
+            coords[1] += 0x1E;
+        }
+        __builtin_memcpy(coords + 2, g_GenerationEffectW, 8);
+        g_GenerationEffects[0] = effect_base_create((u32)&coords[2], g_GenerationTablePtr, 0x1FFF);
+        i = 1;
+        offset = 3;
+        base = g_GenerationEffects;
+        cursor = base + 1;
+        do {
+            *cursor = effect_base_create((u32)&coords[2], offset + g_GenerationTablePtr, 0x1FFF);
+            i++;
+            (*cursor)->vtable->attach_to(*cursor, (s32)base[0], coords);
+            cursor++;
+            offset += 3;
+            coords[1] += 3;
+            coords[3] -= 7;
+        } while (i < 0x12);
+        ctx = *(void ***)((u8 *)g_GenerationEntityContext + 0xC);
+        result = (*(s32 (**)(void *))((u8 *)*ctx + 0xAC))(ctx);
+        g_GenerationEffects[0]->vtable->attach_to(g_GenerationEffects[0], result, coords);
+    }
+}
+
 
 void dream_generation_shift_color(u8 *, u8 *, s32);
 
-/*
- * Near match (91/93 insns): the divide-by-600, the two allocations of
- * g_GenerationEffectX/g_GenerationEffectY, the 18-iteration loop and both vtable calls are exact.
- * The only difference is the same GCC 2.6.3 register tie as dream_generation_create_effects:
- * target stores g_GenerationEffectY to the stack, reloads g_GenerationFlags into $v1
- * (clobbering it) and must reload g_GenerationEffectY before +0x1E; gcc keeps g_GenerationEffectY
- * in $a0 and adds directly, and places s2=0 differently in the bne delay.
- * data[2] must be an address-taken array or gcc keeps the +0x1C word in a
- * register. `volatile` on the second g_GenerationFlags read reproduces the
- * target's double load but not the g_GenerationEffectY reload.
- *
- * void dream_generation_update_effects(void) {
- *     u8 color[8];
- *     s32 data[2];
- *     s32 temp;
- *     s32 step;
- *     s32 i;
- *     s32 offset;
- *     effect_base_t **obj;
- *     effect_base_t *item;
- *     void *ctx;
- *
- *     if (g_GenerationFlags != 0) {
- *         ctx = *(void **)((u8 *)g_GenerationEntityContext + 0xC);
- *         temp = (*(s32 *)((u8 *)ctx + 0x18) - *(s32 *)((u8 *)ctx + 0x24)) / 600;
- *         step = temp * 3;
- *         if (step > 0) {
- *             data[0] = g_GenerationEffectX;
- *             data[1] = g_GenerationEffectY;
- *             if (*(volatile s32 *)&g_GenerationFlags == 2) {
- *                 data[1] += 0x1E;
- *             }
- *             i = 0;
- *             offset = 0;
- *             obj = g_GenerationEffects;
- *             data[1] += step * 3;
- *             do {
- *                 dream_generation_shift_color(color, offset + g_GenerationTablePtr, step);
- *                 item = *obj;
- *                 item->vtable->set_color(item, 1, color);
- *                 item = *obj;
- *                 i++;
- *                 offset += 3;
- *                 item->vtable->set_offset(item, (s32)data);
- *                 data[1] += 3;
- *                 obj++;
- *             } while (i < 0x12);
- *             dream_generation_shift_color(color, g_GenerationDataPtr, step);
- *             (*(void (**)(void *, void *))((u8 *)*(void **)ctx + 0x64))(ctx, color);
- *         }
- *     }
- * }
- */
-INCLUDE_ASM("asm/nonmatchings/dream/dream_generation", dream_generation_update_effects);
+void dream_generation_update_effects(void) {
+    u8 color[8];
+    s32 data[2];
+    s32 temp;
+    s32 step;
+    s32 i;
+    s32 offset;
+    effect_base_t **obj;
+    effect_base_t *item;
+    void *ctx;
+
+    if (g_GenerationFlags != 0) {
+        ctx = *(void **)((u8 *)g_GenerationEntityContext + 0xC);
+        temp = (*(s32 *)((u8 *)ctx + 0x18) - *(s32 *)((u8 *)ctx + 0x24)) / 600;
+        step = temp * 3;
+        if (step > 0) {
+            __builtin_memcpy(data, g_GenerationEffectX, sizeof(data));
+            i = 0;
+            if (g_GenerationFlags == 2) {
+                data[1] += 0x1E;
+            }
+            obj = g_GenerationEffects;
+            offset = 0;
+            data[1] += step * 3;
+            do {
+                dream_generation_shift_color(color, (u8 *)(offset + g_GenerationTablePtr), step);
+                item = *obj;
+                item->vtable->set_color(item, 1, color);
+                item = *obj;
+                i++;
+                offset += 3;
+                item->vtable->set_offset(item, (s32)data);
+                data[1] += 3;
+                obj++;
+            } while (i < 0x12);
+            dream_generation_shift_color(color, (u8 *)g_GenerationDataPtr, step);
+            (*(void (**)(void *, void *))((u8 *)*(void **)ctx + 0x64))(ctx, color);
+        }
+    }
+}
+
 
 void dream_generation_shift_color(u8 *arg0, u8 *arg1, s32 arg2) {
     arg0[0] = arg1[0] - arg2;
@@ -256,7 +229,7 @@ void dream_generation_shift_color(u8 *arg0, u8 *arg1, s32 arg2) {
 }
 
 extern s32 g_GenerationFlags;
-extern base_class_t *g_GenerationEffects[];
+extern effect_base_t *g_GenerationEffects[];
 
 void dream_generation_destroy_effects(void) {
     if (g_GenerationFlags != 0) {
@@ -265,61 +238,59 @@ void dream_generation_destroy_effects(void) {
     }
 }
 
-/*
- * Near match (semantics exact, 59/60 insns, same opcode stream). Only residual:
- * gcc 2.6.3 CSEs the two `g_GenerationType == 2` constants into one pseudolive across
- * the calls, keeping 2 in $s2 and saving/restoring it; the target rematerializes
- * `ori a0,zero,2` / `ori v0,zero,2` at each test and so has no $s2 save. Tried
- * if/else, else-if, switch, do{break;}while, `!= 2u`, 2/0x2 spellings, inverted
- * comparisons: gcc always hoists 2 into $s2 (59 or 61 insns). Best C:
- *
- * void dream_generation_build_entities(s32 arg0) {
- *     s32 byte, pad, temp_v0;
- *     if (g_GenerationType >= 0) {
- *         generation_apply_context(g_GenerationType, (void *)g_GenerationEntityContext[1],
- * g_GenerationEntityContext[2], g_GenerationEntityContext[3]); byte = ((s8 *)g_GenerationHeightTable)[0x18 + (rand() &
- * 3)]; pad = 0; if (g_GenerationType == 2) { pad = 0x10 - byte; } g_GenerationStructureCount = byte + pad; temp_v0 =
- * (s32)dream_generation_create_structures_type1((s32
- * *)dream_generation_create_structures_random(g_GenerationStructures, byte, arg0), pad, arg0); if (g_GenerationType ==
- * 0) { dream_generation_create_structures_type0(temp_v0, arg0); } else if (g_GenerationType != 2) { return; } else {
- *             dream_generation_create_structures_type2(temp_v0, arg0);
- *         }
- *         g_GenerationStructureCount += 1;
- *     }
- * }
- */
+extern s32 g_GenerationStructureCount;
+extern base_class_t *g_GenerationStructures[];
+void generation_apply_context(s32, void *, s32, s32);
+s32 *dream_generation_create_structures_random(s32 *, s32, s32);
+s32 *dream_generation_create_structures_type1(s32 *, s32, s32);
+s32 *dream_generation_create_structures_type0(s32 *, s32);
+s32 *dream_generation_create_structures_type2(s32 *, s32);
+void dream_generation_build_entities(void *arg0) {
+    s32 count;
+    s32 extra;
+    s32 *next;
+    if (g_GenerationType >= 0) {
+        generation_apply_context(g_GenerationType, (void *)g_GenerationEntityContext[1],
+                                 g_GenerationEntityContext[2], g_GenerationEntityContext[3]);
+        count = ((s8 *)g_GenerationHeightTable)[0x18 + (rand() & 3)];
+        extra = g_GenerationType == 2 ? 16-count : 0;
+        g_GenerationStructureCount = count + extra;
+        next = dream_generation_create_structures_random((s32 *)g_GenerationStructures, count, (s32)arg0);
+        next = dream_generation_create_structures_type1(next, extra, (s32)arg0);
+        if (g_GenerationType == 0) {
+            dream_generation_create_structures_type0(next, (s32)arg0);
+        } else if (g_GenerationType != 2) {
+            return;
+        } else {
+            dream_generation_create_structures_type2(next, (s32)arg0);
+        }
+        g_GenerationStructureCount += 1;
+    }
+}
 
-INCLUDE_ASM("asm/nonmatchings/dream/dream_generation", dream_generation_build_entities);
+extern s32 g_GenerationStructureCount;
+extern base_class_t *g_GenerationStructures[];
 
-#if 0
-/* Best match: 34/34 insns, identical loop/call shape.  Residual is GCC 2.6.3
- * frame/regalloc: target frame is 0x28 and keeps the loop index in $s0 / the
- * cursor in $s1; gcc emits a 0x20 frame with index in $s1 / cursor in $s0.
- * (The earlier "empty function" was a real bug in the attempt: g_GenerationStructureCount and
- * g_GenerationStructures are declared below this function, so the first drafts used
- * implicit declarations.)  Tried void**/u8*/base_class_t** cursor forms,
- * declaration order, named obj/vtable temps. */
 void dream_generation_update_structure_entities(s32 arg0) {
     s32 i;
-    base_class_t **p;
+    base_class_t **cursor;
+    /* Retain the original stack layout with GCC 2.6.3. */
+    s32 pad[2];
 
     if (g_GenerationType >= 0) {
-        i = 0;
         if (g_GenerationStructureCount > 0) {
-            p = g_GenerationStructures;
+            cursor = g_GenerationStructures;
+            i = 0;
             do {
-                base_class_t *obj = *p;
+                base_class_t *obj = *cursor;
 
                 ((void (*)(base_class_t *, s32))(*(u32 *)((u8 *)obj->vtable + 0xEC)))(obj, arg0);
-                p++;
+                cursor++;
                 i++;
             } while (i < g_GenerationStructureCount);
         }
     }
 }
-#endif
-
-INCLUDE_ASM("asm/nonmatchings/dream/dream_generation", dream_generation_update_structure_entities);
 
 extern s32 g_GenerationType;
 extern s32 g_GenerationStructureCount;
@@ -400,13 +371,6 @@ s32 *dream_generation_create_structures_type1(s32 *arg0, s32 arg1, s32 arg2) {
     return arg0;
 }
 
-/*
- * Best attempt (not matching): 81 target insns, and 81 compiled. The entire
- * body matches instruction-for-instruction; the only difference is GCC 2.6.3
- * callee-saved allocation: target arg0->s0 / arg1->s1, compiled always
- * arg0->s1 / arg1->s0 (the second long-lived parameter wins the lower
- * register). Reproduced in isolation and stable across gcc257/260/263/272.
- *
 extern s32 g_GenerationSpawnParams[];
 extern s32 g_GenerationSpawnSample[];
 extern s32 g_GenerationSpawnRoll[];
@@ -431,558 +395,46 @@ s32 *dream_generation_create_structures_type0(s32 *arg0, s32 arg1) {
         g_GenerationSpawnColor[0] = (s32)g_GenerationEntityColorsA + ((u32)rand() % 3) * 3;
     }
     g_GenerationSpawnParams[3] = (s32)g_GenerationSpriteData;
-    *arg0 = generation_structure_create(3, g_GenerationSpawnParams, g_GenerationOwner, arg1);
-    return arg0 + 1;
+    *arg0++ = generation_structure_create(3, g_GenerationSpawnParams, g_GenerationOwner, arg1);
+    return arg0;
 }
-*/
-INCLUDE_ASM("asm/nonmatchings/dream/dream_generation", dream_generation_create_structures_type0);
 
-/*
- * Best attempt (not matching): 79 target insns. Structure, absolute
- * g_GenerationEntityParamsAlt load, base a2 with `addiu a2,a2,4` in the beq delay, and the
- * `j` merge layout all match. Two residual GCC 2.6.3 ties:
- *   1. target arg0->s1 / arg1->s2; compiled always arg0->s2 / arg1->s1.
- *   2. target keeps a single store at the merge (`j .L; nop`); our delay-slot
- *      filler duplicates the store into the `j` delay and the zero block.
- *
+extern s32 g_GenerationSpawnColor[];
+extern u8 g_GenerationEntityColorsB[];
+extern s32 g_GenerationEntityParamsAlt[];
+extern u8 g_GenerationSpriteData[];
 s32 *dream_generation_create_structures_type2(s32 *arg0, s32 arg1) {
     s32 temp;
+    s32 day;
     s32 *p;
 
-    temp = ((u32)rand() % 3) * 3;
+    temp = rand();
+    day = g_CurrentDay;
     p = g_GenerationSpawnColor;
-    *p++ = (s32)g_GenerationEntityColorsB + temp;
-    *p = (g_CurrentDay != (g_CurrentDay / 20) * 20) ? g_GenerationEntityParamsAlt[0] : 0;
+    *p++ = (s32)g_GenerationEntityColorsB + ((u32)temp % 3) * 3;
+    *p++ = (day != (day / 20) * 20) ? g_GenerationEntityParamsAlt[0] : 0;
     dream_generation_seed_palette_random(arg1, g_GenerationSampleOffsets[2]);
     g_GenerationSpawnParams[3] = (s32)g_GenerationSpriteData;
     g_GenerationSpawnRandom[0] = rand() % 6;
-    *arg0 = generation_structure_create(2, g_GenerationSpawnParams, g_GenerationOwner, arg1);
-    return arg0 + 1;
-}
-*/
-INCLUDE_ASM("asm/nonmatchings/dream/dream_generation", dream_generation_create_structures_type2);
-
-/*
- * Best attempt (not matching: target 110 insns, compiled 108). Structure,
- * signed /23 magic 0xB21642C9, unsigned /7, rand()-based table pick and the
- * negate-if-odd pattern all match. Sole blocker: GCC 2.6.3 CSEs the absolute
- * address of g_GenerationSpawnParams/g_GenerationSpawnRoll across the intervening rand() call and
- * keeps it in a callee-saved register (adds sw s0/sw s1 and a lui/addiu),
- * whereas the target recomputes `lui`/`lw` + `lui`/`sw` each time. Reproduced
- * standalone: `A[0]=1; if(g()&1) A[0]=-A[0];` keeps &A in s0 across g()
- * regardless of volatile. This is a compiler revision difference, not source.
- *
- * void dream_generation_seed_palette_random(s32 unused, s32 arg1) {
- *     if (arg1 == 0) {
- *         arg1 = g_GenerationSampleOffsets[rand() & 3];
- *     }
- *     g_GenerationSpawnSample[0] = arg1;
- *     g_GenerationSpawnParams[0] = (rand() % 23) << 11;
- *     if (rand() & 1) {
- *         g_GenerationSpawnParams[0] = -g_GenerationSpawnParams[0];
- *     }
- *     g_GenerationSpawnRoll[0] = (rand() % 23) << 11;
- *     if (rand() & 1) {
- *         g_GenerationSpawnRoll[0] = -g_GenerationSpawnRoll[0];
- *     }
- *     g_GenerationSpawnSprite[0] = ((u32)rand() % 7) * 12 + (s32)g_GenerationSpriteData;
- *     g_GenerationSpawnIndex[0] = rand() % 5;
- * }
- */
-INCLUDE_ASM("asm/nonmatchings/dream/dream_generation", dream_generation_seed_palette_random);
-
-extern s32 g_GenerationSpawnParams[];
-extern s32 g_GenerationSpawnSample[];
-extern s32 g_GenerationSpawnRoll[];
-extern s32 g_GenerationSpawnSprite[];
-extern u8 g_GenerationSpriteData[];
-extern s32 g_GenerationSpawnIndex[];
-
-void dream_generation_seed_palette_daily(void) {
-    s32 d;
-
-    rand();
-    g_GenerationSpawnSample[0] = g_GenerationSampleOffsets[1];
-    g_GenerationSpawnParams[0] = (rand() % 20) << 11;
-    g_GenerationSpawnParams[2] = 0xA000;
-    d = g_CurrentDay % 3;
-    if (d == 1) {
-        g_GenerationSpawnRoll[0] = 0xFFFF6000;
-    } else if (d == 2) {
-        g_GenerationSpawnRoll[0] = 0x800;
-    }
-    g_GenerationSpawnSprite[0] = ((u32) rand() % 7) * 12 + (s32) g_GenerationSpriteData;
-    g_GenerationSpawnIndex[0] = rand() % 5;
+    *arg0++ = generation_structure_create(2, g_GenerationSpawnParams, g_GenerationOwner, arg1);
+    return arg0;
 }
 
-extern s32 *g_GenerationEntityContext;
-extern s32 g_GenerationEntityEffects[];
 
-void *dream_generation_find_entry(s32 *, s32 *, s32);
-void sound_entity_init(s32, s32 *, s32, s32, s32);
-
-s32 *dream_generation_spawn_entity(s32 *arg0, s32 *arg1, s32 arg2) {
-    s32 *temp_v0;
-    u8 *temp_v1;
-    s8 temp_a2;
-    s8 temp_v2;
-
-    temp_v0 = dream_generation_find_entry(arg0 + 1, arg0 + 4, arg2);
-    if (temp_v0 != NULL) {
-        arg0[0] = (s32) temp_v0;
-        temp_a2 = *(s8 *) ((u8 *) temp_v0 + 6);
-        sound_entity_init(*g_GenerationEntityContext, arg0 + 5, temp_a2, (s32) arg0,
-                          g_GenerationEntityEffects[temp_a2]);
-        temp_v2 = *(s8 *) ((u8 *) temp_v0 + 6);
-        if (temp_v2 == *arg1) {
-            *arg1 = -temp_v2;
-        }
-        temp_v1 = (u8 *) temp_v0;
-        temp_v1[6] = -temp_v1[6];
-        return arg0;
-    }
-    return NULL;
-}
-
-/*
- * Best attempt (not matching: 106/111 insns; prologue/epilogue and body shape
- * correct, residual gcc 2.6.3 register allocation. Target: arg0=$s3,
- * arg1=$s6, arg2=$s4, effect_base=$s7 (hoisted), range base recomputed with
- * $at. gcc: arg0=$s6, arg1=$s7, arg2=$s4, range base hoisted into $s8,
- * diff kept in $s3; frame 0x48 vs 0x50. The entry pointer must be u8* so the
- * two 4-byte copies use lwl/lwr/swl/swr; effect_base explicit hoist did not
- * change the remaining allocation.)
- *
- * extern s32 *g_GenerationStageEntries[];
- * extern s8 g_GenerationStageEntryCounts[];
- * extern s32 g_GenerationEntryIndex;
- * extern s32 g_GenerationEntityRange[];
- * extern s32 g_GenerationEntityEffects[];
- * typedef struct { s32 m_Unk0; s32 m_Unk1; s16 m_Unk2; } generation_entry_out_t;
- *
- * void *dream_generation_find_entry(s32 *arg0, s32 *arg1, s32 arg2) {
- *     generation_entry_out_t out;
- *     s32 count, remaining, i, diff, temp, dist;
- *     u8 *entry, *effect, *effect_base;
- *
- *     if (arg2 == 0) return NULL;
- *     i = 0;
- *     count = *(u8 *)&g_GenerationStageEntryCounts[g_GenerationLocation];
- *     remaining = count - g_GenerationEntryIndex;
- *     entry = (u8 *)g_GenerationStageEntries[g_GenerationLocation] + g_GenerationEntryIndex * 8;
- *     effect_base = (u8 *)g_GenerationEntityEffects + 0x3C;
- *     if (remaining > 0) {
- *         do {
- *             g_GenerationEntryIndex += 1;
- *             if (*(s8 *)(entry + 6) > 0) {
- *                 __builtin_memcpy(&out.m_Unk0, entry, 4);
- *                 effect = effect_base + *(u8 *)(entry + 4) * 6;
- *                 __builtin_memcpy(&out.m_Unk1, effect, 4);
- *                 out.m_Unk2 = *(s16 *)(effect + 4);
- *                 (*(void (**)(s32, s32 *, generation_entry_out_t *))(*(u32 *)g_GenerationOwner +
- * 0xE8))(g_GenerationOwner, arg0, &out); diff = arg0[0] - arg2[0]; if (diff < 0) diff = ~diff + 1; temp = arg0[2] -
- * arg2[2]; if (temp < 0) dist = diff - temp; else dist = diff + temp; *arg1 = dist; i += 1; if (dist <
- * g_GenerationEntityRange[*(s8 *)(entry + 6)]) return entry; } else { i += 1;
- *             }
- *             entry = entry + 8;
- *         } while (i < remaining);
- *     }
- *     return NULL;
- * }
- */
-INCLUDE_ASM("asm/nonmatchings/dream/dream_generation", dream_generation_find_entry);
-
-extern s32 *g_GenerationEntityContext;
-
-void sound_entity_stop(s32, s32 *);
-
-s32 dream_generation_stop_entity(s32 *arg0) {
-    u8 *temp_v1;
-
-    sound_entity_stop(*g_GenerationEntityContext, (s32 *) arg0 + 5);
-    temp_v1 = (u8 *) *arg0;
-    temp_v1[6] = -temp_v1[6];
-    return 0;
-}
-
-void sound_entity_update(s32, s32 *);
-s32 dream_generation_entity_in_range();
-
-s32 dream_generation_update_entity(s32 arg0) {
-    if (dream_generation_entity_in_range() != 0) {
-        sound_entity_update(*g_GenerationEntityContext, (s32 *) (arg0 + 0x14));
-        return 1;
-    }
-
-    return 0;
-}
-
-extern s32 g_GenerationEntityRange[];
-
-s32 dream_generation_entity_in_range(s32 *arg0, s32 *arg1) {
-    s32 diff;
-    s32 temp;
-    s32 dist;
-    s32 result = 0;
-    if (arg1 != NULL) {
-        diff = arg0[1] - arg1[0];
-        if (diff < 0) {
-            diff = ~diff + 1;
-        }
-        temp = arg0[3] - arg1[2];
-        if (temp < 0) {
-            dist = diff - temp;
-        } else {
-            dist = diff + temp;
-        }
-        arg0[4] = dist;
-        if (dist < g_GenerationEntityRange[-((s8 *) *arg0)[6]]) {
-            result = 1;
-            return result;
-        }
-    }
-    return result;
-}
-
-/*
- * Best-known C (77/77 insns; frame, calls, loop, offsets, relocations all
- * correct). Only difference is register allocation of the saved locals: target
- * gives var_s3=$s3, var_s2=$s2, var_s1=$s1, var_s0=$s0, gcc 2.6.3 gives
- * var_s3=$s1, var_s2=$s3, var_s1=$s2, var_s0=$s0 for every declaration order,
- * type (s32 pointer / void pointer / s32), initializer form and temp set tried.
- *
- * s32 dream_generation_update(s32 arg0, s32 arg1, s32 arg2) {
- *     s32 sp10[4];
- *     s32 *var_s3 = NULL;
- *     s32 **var_s0;
- *     s32 temp_a0;
- *     s32 temp_v1;
- *     s32 var_s1;
- *     s32 var_s2;
- *
- *     if (arg0 != 0) {
- *         var_s3 = &sp10;
- *         (*(void (**)(s32, s32 *, s32))(*(u32 *)g_GenerationOwner + 0xE8))(
- *             g_GenerationOwner, var_s3, arg0);
- *     }
- *     temp_v1 = g_LocationTimer;
- *     g_LocationTimer = temp_v1 + 1;
- *     if (temp_v1 == 0) {
- *         dream_generation_create_effect();
- *         dream_generation_create_effects();
- *         dream_generation_build_entities(var_s3);
- *     }
- *     var_s2 = 0;
- *     dream_generation_update_effects();
- *     dream_generation_update_structure_entities(var_s3);
- *     var_s1 = 0;
- *     dream_generation_update_border();
- *     g_GenerationEntryIndex = 0;
- *     var_s0 = g_GenerationEntities;
- *     do {
- *         temp_a0 = *var_s0;
- *         if (temp_a0 != 0) {
- *             if (dream_generation_update_entity(temp_a0, var_s3, arg1) == 0) {
- *                 *var_s0 = (s32 *)dream_generation_stop_entity(*var_s0);
- *             }
- *         } else {
- *             *var_s0 = (s32 *)dream_generation_spawn_entity(
- *                 (s32 *)(var_s1 + (s32)g_GenerationEntitySlotData), &arg2, (s32)var_s3, arg1);
- *         }
- *         var_s1 += 0x68;
- *         var_s2 += 1;
- *         var_s0 += 1;
- *     } while (var_s2 < 2);
- *     return arg2;
- * }
- */
-INCLUDE_ASM("asm/nonmatchings/dream/dream_generation", dream_generation_update);
-
-extern s32 g_GenerationBorderRect0[];
-extern s32 g_GenerationBorderRect1[];
-extern s32 g_GenerationBorderRect2[];
-extern s32 g_GenerationBorderRect3[];
-extern s32 g_GenerationLocation;
-
-void display_draw_border(void *, s32, void *);
-
-void dream_generation_update_border(void) {
-    if (g_GenerationLocation == 2) {
-        display_draw_border(&g_GenerationBorderRect0, 1, &g_GenerationBorderRect1);
-    } else if ((u32) (g_GenerationLocation - 3) < 3) {
-        display_draw_border(&g_GenerationBorderRect2, 1, &g_GenerationBorderRect3);
-    }
-}
-
-/*
- * The 14 callbacks below are g_GenerationEntityEffects[1..14] (0x800874B0),
- * installed as the sound_entity_init effect driver for a spawned generation
- * entry.  arg1 is the entity_context_t (see entity.h) reached as s32 slots:
- *   [0] state  [1] tick  [2] owner  [3] callback  [4] motion  [5] divisor
- *   slots[0] [6..10] and slots[1] [11..15] and slots[2] [16..20], each
- *   { handle, id, param, period, counter }.
- * Each handler records generation_entity_get_motion() in [4] and then writes
- * effect ids/params into the three slots according to the entity's tick.
- */
-void generation_entity_effect_01(void *arg0, s32 *arg1) {
-    s32 value;
-
-    arg1[4] = generation_entity_get_motion();
-    value = arg1[1];
-    if (value == 0) {
-        arg1[7] = 7;
-        arg1[8] = 0;
-        return;
-    }
-    if (value == 2) {
-        arg1[12] = 7;
-        arg1[13] = 0;
-        return;
-    }
-    if (value == 5) {
-        arg1[17] = 7;
-        arg1[18] = 0;
-        return;
-    }
-    if (value >= 8) {
-        arg1[1] = -1;
-    }
-}
-
-s32 generation_entity_get_motion();
-
-void generation_entity_effect_02(void *arg0, s32 *arg1) {
-    arg1[4] = generation_entity_get_motion();
-    if (arg1[1] == 0) {
-        arg1[7] = 0x18;
-        arg1[8] = -2;
-        return;
-    }
-    if (arg1[1] >= 0x401) {
-        arg1[1] = -1;
-    }
-}
-
-void generation_entity_effect_03(void *arg0, s32 *arg1) {
-    arg1[4] = generation_entity_get_motion();
-    if (arg1[1] == 0) {
-        arg1[7] = 0xC;
-        arg1[8] = 2;
-        return;
-    }
-    if (arg1[1] >= 5) {
-        arg1[1] = -1;
-    }
-}
-
-void generation_entity_effect_04(void *arg0, s32 *arg1) {
-    arg1[4] = generation_entity_get_motion();
-    if (arg1[1] % 20 == 0) {
-        arg1[7] = 0x1E;
-        arg1[9] = 0x20;
-        arg1[8] = 0;
-        arg1[10] = 0xA;
-    }
-    if (arg1[1] % 400 == 0) {
-        arg1[12] = 0x1E;
-        arg1[13] = 0;
-    }
-    arg1[17] = 6;
-    arg1[19] = 0x20;
-    arg1[18] = 0;
-    arg1[20] = 0xA;
-}
-
-void generation_entity_effect_05(void *arg0, s32 *arg1) {
-    arg1[4] = generation_entity_get_motion();
-    if (arg1[1] % 3 == 0) {
-        arg1[7] = 0x1E;
-        arg1[8] = 0;
-    }
-    if (arg1[1] % 5 == 0) {
-        arg1[12] = 0x1E;
-        arg1[13] = 0;
-        arg1[14] = 0x18;
-        arg1[15] = 0x18;
-    }
-    if (arg1[1] % 7 == 0) {
-        arg1[7] = 0x1E;
-        arg1[8] = 0;
-    }
-    arg1[17] = 6;
-    arg1[18] = 1;
-    arg1[19] = 0x2A;
-    arg1[20] = 0xA;
-}
-
-void generation_entity_effect_06(void *arg0, s32 *arg1) {
-    s32 temp;
-    s32 v;
-
-    arg1[4] = generation_entity_get_motion();
-    temp = arg1[1];
-    if (temp == 0) {
-        arg1[7] = 0x1E;
-        arg1[8] = -1;
-        return;
-    }
-    if (temp < 0x32 && (temp / 5) * 5 == temp - 4) {
-        arg1[12] = 0x1E;
-        arg1[13] = 0;
-        v = arg1[14] - arg1[1] * 2;
-        arg1[14] = v;
-        arg1[15] = v;
-        return;
-    }
-    v = arg1[1];
-    if ((u32) (v - 0x65) < 9U) {
-        arg1[17] = 0xD;
-        arg1[18] = 1;
-        return;
-    }
-    if (v >= 0xC9) {
-        arg1[1] = -1;
-    }
-}
-
-void generation_entity_effect_07(void *arg0, s32 *arg1) {
-    arg1[4] = generation_entity_get_motion();
-    if (arg1[1] == 0) {
-        arg1[7] = 7;
-        arg1[8] = 2;
-        return;
-    }
-    if (arg1[1] >= 0x1B) {
-        arg1[1] = -1;
-    }
-}
-
-void generation_entity_effect_08(void *arg0, s32 *arg1) {
-    s32 temp;
-
-    arg1[4] = generation_entity_get_motion();
-    temp = arg1[1];
-    if (temp == 0) {
-        arg1[7] = 0x14;
-        arg1[8] = 1;
-        return;
-    }
-    if (temp == 3) {
-        arg1[8] = 2;
-        arg1[9] = 0x18;
-        arg1[7] = temp;
-        arg1[10] = 0x14;
-        return;
-    }
-    if (temp >= 0x33) {
-        arg1[1] = -1;
-    }
-}
-
-void generation_entity_effect_09(void *arg0, s32 *arg1) {
-    arg1[4] = generation_entity_get_motion();
-    if (arg1[1] % 20 == 0) {
-        arg1[7] = 9;
-        arg1[8] = 0;
-        arg1[9] = 0x40;
-        arg1[10] = 0x40;
-    }
-}
-
-void generation_entity_effect_10(void *arg0, s32 *arg1) {
-    arg1[4] = generation_entity_get_motion();
-    if (arg1[1] % 20 == 0) {
-        arg1[7] = 9;
-        arg1[8] = -2;
-    }
-}
-
-void generation_entity_effect_11(void *arg0, s32 *arg1) {
-    s32 temp;
-
-    arg1[4] = generation_entity_get_motion();
-    temp = arg1[1] % 20;
-    if (temp == 1) {
-        arg1[7] = 9;
-        arg1[8] = -2;
-        return;
-    }
-    if (temp == 0x10) {
-        arg1[12] = 9;
-        arg1[13] = -2;
-    }
-}
-
-void generation_entity_effect_12(void *arg0, s32 *arg1) {
-    s32 temp;
-
-    generation_entity_effect_11();
-    temp = arg1[1] % 70;
-    if (temp == 0x32) {
-        arg1[17] = 0x14;
-        arg1[18] = 1;
-    } else if ((u32) (temp - 0x36) < 5U) {
-        arg1[17] = 0xD;
-        arg1[18] = 1;
-    } else if (temp == 0x3D) {
-        arg1[17] = 9;
-        arg1[18] = -1;
-    }
-}
-
-void generation_entity_effect_13(void *arg0, s32 *arg1) {
-    s32 temp;
-
-    arg1[4] = generation_entity_get_motion();
-    temp = arg1[1];
-    if (temp == 0) {
-        arg1[7] = 0x14;
-        arg1[8] = -2;
-        arg1[12] = 0x14;
-        arg1[13] = -2;
-        return;
-    }
-    if (temp == 4) {
-        arg1[12] = 0x14;
-        arg1[13] = -2;
-        return;
-    }
-    if (temp == 0x14) {
-        arg1[7] = 0x10;
-        arg1[8] = -2;
-        arg1[12] = 0x12;
-        arg1[13] = -2;
-        return;
-    }
-    if (temp >= 0xC9) {
-        arg1[1] = -1;
-    }
-}
-
-void generation_entity_effect_14(void *arg0, void *arg1) {
-    s32 *p = (s32 *) arg1;
-
-    p[4] = generation_entity_get_motion();
-    if (p[1] == 0) {
-        p[7] = 0x18;
-        p[8] = 0;
-    }
-}
-
-s32 generation_entity_get_motion(void *arg0) {
-    s32 value;
-    s32 divisor;
-
-    value = g_GenerationEntityRange[-(*(s8 **) arg0)[6]];
-    divisor = value / *(s32 *) ((u8 *) arg0 + 0x28);
-    return *(s32 *) ((u8 *) arg0 + 0x10) / divisor;
-}
-
-extern s32 g_GenerationType;
-
-s32 dream_generation_type_is_even(void) {
-    return (g_GenerationType & 1) ^ 1;
-}
+void generation_entity_effect_01(void *arg0, s32 *arg1);
+void generation_entity_effect_02(void *arg0, s32 *arg1);
+void generation_entity_effect_03(void *arg0, s32 *arg1);
+void generation_entity_effect_04(void *arg0, s32 *arg1);
+void generation_entity_effect_05(void *arg0, s32 *arg1);
+void generation_entity_effect_06(void *arg0, s32 *arg1);
+void generation_entity_effect_07(void *arg0, s32 *arg1);
+void generation_entity_effect_08(void *arg0, s32 *arg1);
+void generation_entity_effect_09(void *arg0, s32 *arg1);
+void generation_entity_effect_10(void *arg0, s32 *arg1);
+void generation_entity_effect_11(void *arg0, s32 *arg1);
+void generation_entity_effect_12(void *arg0, s32 *arg1);
+void generation_entity_effect_13(void *arg0, s32 *arg1);
+void generation_entity_effect_14(void *arg0, void *arg1);
 
 /* .sdata companions (defined in dream_generation_sdata.c). */
 extern u8 g_GenerationInfoColor[];

@@ -1,0 +1,2 @@
+# Preserve the bundled compiler binaries without text conversion.
+tools/gcc263/* binary

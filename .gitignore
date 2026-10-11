@@ -1,20 +1,61 @@
-# IDE
-.vscode
-.idea
+# Editors and machine-local settings
+.vscode/
+.idea/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
 
-# Build
+# Generated build and Python outputs
 asm/
 build/
 build.ninja
-
-# Python
-__pycache__
-
-# Extra
-rom/SLPS_015.56
+.ninja_deps
+.ninja_log
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
 ctx.c
-tools/m2c
-tools/maspsx
+tools/m2c/
+tools/maspsx/
 
-# Per-function agent experiments. Reusable tooling belongs in tools/ and tests/.
+# Original game inputs, generated discs and firmware
+rom/*
+!rom/.gitkeep
+assets/
+bios/
+firmware/
+*.bin
+*.BIN
+*.cue
+*.CUE
+*.iso
+*.ISO
+*.img
+*.IMG
+*.chd
+*.CHD
+SLPS_015.56
+*.exe
+*.elf
+*.o
+*.map
+
+# Private experiments, analysis projects and emulator captures
 .decomp-lab/
+.local/
+*.gpr
+*.rep/
+*.gzf
+*.i64
+*.idb
+*.State
+*.state
+*.sav
+*.mcr
+*.wav
+*.log

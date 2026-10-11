@@ -4,12 +4,12 @@
 #include "file/debug_file_driver.h"
 
 s32 file_buf_destroy(file_buf_t *);
-void file_buf_construct(void *);
-void file_buf_cleanup(void *);
-void file_buf_load(void *);
-void file_buf_release(void *);
+void file_buf_construct(file_buf_t *This);
+void file_buf_cleanup(file_buf_t *This);
+void file_buf_load(file_buf_t *This, s32 Unk);
+void file_buf_release(file_buf_t *This);
 void nullsub13(void *);
-void file_buf_set_flag(void *);
+void file_buf_set_flag(file_buf_t *This);
 
 void *class_1C92C_get_vtable(void);
 void *tim_image_get_vtable(void);
@@ -79,7 +79,7 @@ s32 debug_file_driver_frame_setup(s32, s32);
 
 s32 file_buf_destroy(file_buf_t *This) {
     This->m_NoFree = 0;
-    This->vtable->Cleanup();
+    This->vtable->Cleanup((base_class_t *) This);
     base_class_get_vtable()->Cleanup(This);
     memory_free_mem(This);
     return 0;
@@ -138,7 +138,7 @@ void file_buf_release(file_buf_t *This) {
     }
 }
 
-void nullsub13(void *) {
+void nullsub13(void * unused0) {
 }
 
 void file_buf_set_flag(file_buf_t *This) {

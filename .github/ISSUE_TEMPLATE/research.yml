@@ -1,0 +1,24 @@
+name: Research finding
+description: Propose a matching C recovery or an executable-grounded finding.
+title: "[Research] "
+body:
+  - type: textarea
+    id: target
+    attributes:
+      label: Target and scope
+      description: Function address, source file, feature ID or asset structure. Identify original behavior, developer tooling or an optional mod.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and reproduction
+      description: State what was observed, the input identity, comparison method and negative controls. Share source or summaries, not proprietary inputs.
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: Open questions and verification limits
+    validations:
+      required: true
