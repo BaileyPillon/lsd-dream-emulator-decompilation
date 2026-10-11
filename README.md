@@ -55,6 +55,10 @@ The later [world-position composition](docs/RENDER_POSITION.md) executes the
 original lookup chain with zero stubs and integrates it into nine-function
 grid/stream checks. Two GTE contracts remain; scene and timing acceptance are
 still open.
+The later [original SDK rotation audit](docs/RENDER_ROTATION.md) executes
+`RotMatrix` with its canonical table, reducing the ten-function composition
+to one `ApplyMatrixLV` hardware contract. Actual GTE and scene acceptance
+remain open.
 The [sprite scaling audit](docs/UI_SCALE.md) checks 203,472 native cases,
 including overlapping inputs and incoming-register quirks. Its full C
 candidate still differs in 12 executable bytes and remains unaccepted.

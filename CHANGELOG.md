@@ -1,5 +1,18 @@
 # Changelog
 
+## Original SDK rotation and streaming composition - 2026-10-11
+
+- Execute inherited `RotMatrix` without stubs in 203,259 runs over 203,257
+  distinct fixtures, including complete individual halfword domains and
+  guarded input/output overlaps.
+- Verify its canonical packed table and staged fixed-point rounding; detect
+  four deliberate instruction/table faults without changing original inputs.
+- Execute the ten-function world-to-stream chain in 5,670 distinct cases,
+  retaining only the `ApplyMatrixLV` hardware contract.
+- Pass 201 local tooling tests on Windows Python 3.14 and Linux Python 3.13.
+- Preserve game/SDK sources, canonical executable and all original/NPC/tool/
+  mod counts; full GTE, scene, timing and feature acceptance remain open.
+
 ## Original world-position and streaming composition - 2026-10-11
 
 - Execute five original position functions in 6,141 runs over 5,919 distinct

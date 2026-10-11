@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-11T15:28:42.788603+00:00",
+  "repository_code_base_commit": "b58b97a676d946639805104511865be37794bb4d",
+  "documentation": "docs/RENDER_ROTATION.md",
+  "documentation_sha256": "7e5ea4e731230758fc0faea097efffa113daf9b98eeda273aa06f04ab604a4a4",
+  "producer": {
+    "path": ".decomp-lab/publish_render_rotation_first.py",
+    "sha256": "ffabded7a3382c13fd12d93de5cb6be635c4567f64ea3d14e0bb6f39e21983bf"
+  },
+  "native_proof": {
+    "path": ".decomp-lab/render-rotation-native-proof-first.json",
+    "sha256": "a81d33c868ee2d08545215d13495b6fe56038f79a8f876c13360b69d4e9575f1"
+  },
+  "prior_position_metadata": {
+    "path": "docs/render-position-checks.json",
+    "sha256": "3ea3ff7ef01648ee79b9587f51892a60e2aabe6b14e9bb63cb8b500913d0d6fd"
+  },
+  "rotation": {
+    "native_function": {
+      "function": "RotMatrix",
+      "address": "0x800160B0",
+      "bytes": 652,
+      "sha256": "cab8838ded03b3b2a50a32cc279811d7fb6a1ee23cfe640c1ac4d7c1d9eee443"
+    },
+    "packed_trigonometric_table": {
+      "symbol": "D_80066BE0",
+      "address": "0x80066BE0",
+      "bytes": 16384,
+      "records": 4096,
+      "record_bytes": 4,
+      "sha256": "b106234165685d79392c926192d1b2f9e30125307abde6040747e401a35d0e87"
+    },
+    "native_cases": 203257,
+    "native_runs": 203259,
+    "repeated_input_runs": 2,
+    "case_groups": {
+      "axis_0_complete_word_sweep": 65536,
+      "axis_1_complete_word_sweep": 65536,
+      "axis_2_complete_word_sweep": 65536,
+      "mixed_sign_and_period_edges": 6591,
+      "overlapping_input_output": 60
+    },
+    "case_group_count_scope": "Native invocations; distinct inputs counted separately.",
+    "executed_rotation_entries": 203259,
+    "explicit_stubs": 0,
+    "complete_axis_word_domains_checked": 3,
+    "complete_three_angle_cartesian_domain_checked": false,
+    "table_cosine_quarter_shift_mismatches": 0,
+    "table_odd_sine_reflection_mismatches": 3888
+  },
+  "input_count_audit": {
+    "path": ".decomp-lab/render-rotation-input-count-audit-first.json",
+    "sha256": "9951bf0d57eefeba8f420c009213e42f786d7a808672b733587a9a6983100864"
+  },
+  "independent_model_uses_canonical_table_as_shared_data_input": true,
+  "composition": {
+    "native_cases": 5670,
+    "native_functions": [
+      {
+        "function": "func_8004C158",
+        "address": "0x8004C158",
+        "bytes": 104,
+        "sha256": "ed0e88573bebaabe7193558da0ca5155fc928339b799e7ac05147d79ab2ec3ea"
+      },
+      {
+        "function": "func_8004C1C0",
+        "address": "0x8004C1C0",
+        "bytes": 424,
+        "sha256": "d82d26562f1a91a9ae77988cfedcf3e0e41b69c558344850c56a6a1d8712933c"
+      },
+      {
+        "function": "func_8004C368",
+        "address": "0x8004C368",
+        "bytes": 136,
+        "sha256": "fde21abc879fe53caac48f67490e480a5b4f00661f006583abfdd99a5b9bf25a"
+      },
+      {
+        "function": "func_8004C434",
+        "address": "0x8004C434",
+        "bytes": 60,
+        "sha256": "20dc014764c03db33c736936d39697ca0578fea09351941f97b1eaf2cce96596"
+      },
+      {
+        "function": "func_8004C470",
+        "address": "0x8004C470",
+        "bytes": 280,
+        "sha256": "1e8050abf24ead47a7e6009565ee0db7086026203b62b555771812c7343a368a"
+      },
+      {
+        "function": "func_8004C6A8",
+        "address": "0x8004C6A8",
+        "bytes": 660,
+        "sha256": "a50855f634d69c3ce7a04cc5db9fafd9a2d88edfeab167f9e351c7791bdb46d9"
+      },
+      {
+        "function": "func_8004C93C",
+        "address": "0x8004C93C",
+        "bytes": 436,
+        "sha256": "b2ae8adf614d7d9cbbc54f0c421116d413b0d1ec83b589ef627f68bf496807e9"
+      },
+      {
+        "function": "func_8004CAF0",
+        "address": "0x8004CAF0",
+        "bytes": 388,
+        "sha256": "db0aef3b0fd26e35a931cc0a7becce405b0e7cf3269a275448f8f39b4bdc5497"
+      },
+      {
+        "function": "func_8004C588",
+        "address": "0x8004C588",
+        "bytes": 72,
+        "sha256": "e180bd8b0901df8378e5dd68e131ebae4d12ce6693f3ff82923f4a4b9d8fbdac"
+      },
+      {
+        "function": "RotMatrix",
+        "address": "0x800160B0",
+        "bytes": 652,
+        "sha256": "cab8838ded03b3b2a50a32cc279811d7fb6a1ee23cfe640c1ac4d7c1d9eee443"
+      }
+    ],
+    "executed_native_entry_counts": {
+      "func_8004C6A8": 5670,
+      "func_8004C158": 5670,
+      "func_8004C1C0": 5670,
+      "func_8004C470": 5670,
+      "func_8004C434": 28350,
+      "func_8004C368": 5670,
+      "RotMatrix": 5670,
+      "func_8004C93C": 5670,
+      "func_8004C588": 11382,
+      "func_8004CAF0": 5670
+    },
+    "decision_axes": {
+      "longitudinal": 3402,
+      "transverse": 2268
+    },
+    "emitted_rectangle_counts": {
+      "2": 2772,
+      "3": 1470,
+      "1": 1428
+    },
+    "explicit_stubs": 1,
+    "stub_contracts": [
+      "ApplyMatrixLV"
+    ]
+  },
+  "composition_native_bytes": 3212,
+  "composition_game_functions": 9,
+  "composition_sdk_functions": 1,
+  "negative_controls": [
+    {
+      "name": "wrong_fractional_shift",
+      "address": "0x80016220",
+      "detected": true,
+      "scope": "Private Unicorn memory only."
+    },
+    {
+      "name": "skip_negative_pitch_reflection",
+      "address": "0x800160e8",
+      "detected": true,
+      "scope": "Private Unicorn memory only."
+    },
+    {
+      "name": "packed_sine_table_bit",
+      "address": "0x80066be4",
+      "detected": true,
+      "scope": "Private Unicorn memory only; canonical input remains unchanged."
+    },
+    {
+      "name": "composed_negative_pitch_reflection",
+      "address": "0x800160e8",
+      "detected": true,
+      "scope": "Private Unicorn memory only."
+    }
+  ],
+  "preserved_preliminary_diagnostics": [
+    {
+      "report": {
+        "path": ".decomp-lab/render-rotation-smoke-first.log",
+        "sha256": "ef990bba059920701adb14beb5d6de65dcfea4ad2a98f3096108d137bfaeb510"
+      },
+      "limitation": "Private smoke script initially lacked the repository import path. It did not execute native checks and is not acceptance evidence."
+    },
+    {
+      "report": {
+        "path": ".decomp-lab/render-rotation-smoke-second.json",
+        "sha256": "7b374e9434a5ad02d041461363eef02245c80659124bb9c2e651cc47606d094f"
+      },
+      "limitation": "Successful 24-case standalone and 7-label composed smoke plus four controls predates the final composition-yaw invariant. The complete proof pins the final source."
+    }
+  ],
+  "canonical_build": {
+    "progress": {
+      "path": ".decomp-lab/render-rotation-progress-first.json",
+      "sha256": "342d61ad0cb642867cacccb4c2f6b00ef31591969e82710401b8a99b3f1e723c"
+    },
+    "build_current": true,
+    "objects_expected": 305,
+    "objects_present": 305,
+    "executable_bytes": 505856,
+    "entire_executable_equal": true,
+    "executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "game_and_sdk_source_and_compiler_flags_unchanged": true
+  },
+  "current_turn_before_after": {
+    "before_source_commit": "b58b97a676d946639805104511865be37794bb4d",
+    "before": {
+      "c_bytes": 194884,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 6,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "after": {
+      "c_bytes": 194884,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 6,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "new_matching_c_functions": 0,
+    "new_original_feature_groups_accepted": 0,
+    "new_tooling_tests": 13,
+    "rotation_native_runs": 203259,
+    "rotation_distinct_inputs": 203257,
+    "rotation_repeated_input_runs": 2,
+    "composed_native_distinct_inputs": 5670,
+    "composition_contracts_before": 2,
+    "composition_contracts_after": 1
+  },
+  "local_tests": {
+    "windows_python314": {
+      "passed": true,
+      "tests": 201,
+      "log": {
+        "path": ".decomp-lab/render-rotation-tests-windows-first.log",
+        "sha256": "f354463828b70ce7fe0ff036ab9eb0f3aa0e69c9314bfc23d0f7fe335c503098"
+      }
+    },
+    "linux_python313": {
+      "passed": true,
+      "tests": 201,
+      "log": {
+        "path": ".decomp-lab/render-rotation-tests-linux-first.log",
+        "sha256": "1cb042979f07a910be401bbfa67f47a80509264e10f877d79e30e4f3195081f1"
+      }
+    }
+  },
+  "public_source_sha256": {
+    "tools/verify_render_rotation.py": "2ce32389c8e158692dff7663a9fb0aa700b7e3bb7204254d402b0ae45f956e8f",
+    "tests/test_render_rotation.py": "275dfb99f8524941dc7407ff2c2403462f2db6f0c1a33caf6e74b85be14d404d",
+    "tools/verify_render_grid.py": "1386a440b320822d3abe61f29b556b5f81d3c304d0fab79627b377d31b8f5066",
+    "tools/verify_render_stream.py": "f45be47d0d34672154156dc8b8ccdf521cf077dcd7f7cbe824ef7225055c8a8a",
+    "tools/verify_render_position.py": "8dfee07cb4be1b31e75feb025e22c75cbce3620f1fd975748a652ffe1b9139bf",
+    "tools/verify_native_ai.py": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+  },
+  "private_evidence": [
+    {
+      "path": ".decomp-lab/render-rotation-native-proof-first.json",
+      "sha256": "a81d33c868ee2d08545215d13495b6fe56038f79a8f876c13360b69d4e9575f1"
+    },
+    {
+      "path": ".decomp-lab/render-rotation-native-proof-first.log",
+      "sha256": "9e1f390ea5f919faadf506c866ce53e009d1008eb722df697658ea561c4d2550"
+    },
+    {
+      "path": ".decomp-lab/audit_render_rotation_input_counts_first.py",
+      "sha256": "58317a716555c468009bd3b75e428986c25fb676ef0d1ab8413fef7dca5458a4"
+    },
+    {
+      "path": ".decomp-lab/render-rotation-input-count-audit-first.json",
+      "sha256": "9951bf0d57eefeba8f420c009213e42f786d7a808672b733587a9a6983100864"
+    },
+    {
+      "path": ".decomp-lab/render-rotation-progress-first.json",
+      "sha256": "342d61ad0cb642867cacccb4c2f6b00ef31591969e82710401b8a99b3f1e723c"
+    },
+    {
+      "path": ".decomp-lab/diagnose_render_rotation_first.py",
+      "sha256": "9037828a090739154ffe6a84a37fc8ac22a7f15f7ac807ad66a850688719ebf6"
+    },
+    {
+      "path": ".decomp-lab/render-rotation-smoke-first.log",
+      "sha256": "ef990bba059920701adb14beb5d6de65dcfea4ad2a98f3096108d137bfaeb510"
+    },
+    {
+      "path": ".decomp-lab/diagnose_render_rotation_second.py",
+      "sha256": "9540a0fd9451d3465e94423a04ce593929530f868b63da23c6f52870786aad6e"
+    },
+    {
+      "path": ".decomp-lab/render-rotation-smoke-second.json",
+      "sha256": "7b374e9434a5ad02d041461363eef02245c80659124bb9c2e651cc47606d094f"
+    },
+    {
+      "path": ".decomp-lab/render-rotation-smoke-second.log",
+      "sha256": "0a57a0d023528e7bb168b981467de30562a2936c8d5488bd261631142439887c"
+    }
+  ],
+  "publication_line_endings": "LF",
+  "original_game_behavior_modified": false,
+  "model_api_calls": 0,
+  "official_exhaustive_feature_total": "unknown",
+  "whole_original_feature_groups_accepted": 0,
+  "private_game_table_emulator_bios_asset_or_capture_bytes_included": false,
+  "scope": "The original 652-byte SDK RotMatrix and its canonical packed table execute without stubs. Individual complete signed-halfword domains, mixed sign/period edges, buffer overlaps and aliases are checked against independent staged Euler products. This is not the full three-angle domain. Ten original game/SDK functions compose real lookup, rotation, grid generation and streaming with only ApplyMatrixLV under its existing argument/output contract. Actual GTE, natural graph ownership, scenes, framebuffer and PS1 load-delay/cycle timing remain separate."
+}

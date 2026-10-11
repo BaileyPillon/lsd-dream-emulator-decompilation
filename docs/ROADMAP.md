@@ -32,6 +32,9 @@ contracts to position lookup and the two GTE helpers; the same full C candidate
 still differs in four bytes. The later [world-position composition](RENDER_POSITION.md)
 executes the lookup chain and reduces that composition to two GTE contracts.
 Scene ownership, framebuffer and timing acceptance remain open.
+The later [rotation composition](RENDER_ROTATION.md) executes the original
+SDK `RotMatrix` and packed table. Only `ApplyMatrixLV` remains contracted;
+actual hardware operations and natural scene ownership still need evidence.
 The [ordered-store audit](RENDER_MATCHING.md) shows why final-output agreement
 is insufficient: that candidate reverses two stores in 68,306 scalar fixtures.
 A corrected full candidate retains native store order but differs in 13 bytes;

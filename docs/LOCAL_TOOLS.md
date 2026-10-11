@@ -131,3 +131,20 @@ without stubs and the complete grid/stream composition with two GTE contracts.
 It checks guarded buffers, native call traces, deliberate faults and zero-
 divisor exceptions. Reports require a new private path. Changes are confined
 to the tool's own Unicorn memory; it does not modify the game or call a model API.
+
+## Original SDK rotation and streaming composition
+
+After a canonical build and installation of `requirements-analysis.txt` in
+your Linux/WSL environment:
+
+```bash
+python tools/verify_render_rotation.py \
+  --output .decomp-lab/render-rotation-native-new.json
+```
+
+The [rotation audit](RENDER_ROTATION.md) executes the original `RotMatrix`
+without stubs and composes it with lookup, grid generation and streaming.
+Only the `ApplyMatrixLV` hardware contract remains. The tool verifies the
+canonical table locally, checks guarded overlaps and reports distinct inputs
+separately from runs. It changes only its own Unicorn memory and requires a
+new private report path; it makes no model API calls.

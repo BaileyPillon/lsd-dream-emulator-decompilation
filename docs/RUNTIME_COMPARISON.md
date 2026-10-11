@@ -134,3 +134,8 @@ The separate [native world-position composition](RENDER_POSITION.md) executes
 the original lookup chain with grid generation and streaming under two GTE
 contracts. It strengthens bounded native behavior evidence; it does not
 replace paired emulator runs, scene coverage or original-hardware timing.
+
+The later [rotation composition](RENDER_ROTATION.md) executes the original
+SDK helper with the canonical table, leaving one `ApplyMatrixLV` hardware
+contract. Its native fixtures strengthen rotation/streaming evidence while
+paired emulator scenes and actual GTE/timing acceptance remain separate.

@@ -234,3 +234,19 @@ private proof and code, preserves preliminary diagnostic failures separately,
 and records 360 further nonmatching C comparisons. No game source, compiler
 flags or canonical executable bytes change. The fixtures and metadata contain
 no distributed game, BIOS, emulator, asset or captured state bytes.
+
+## Original SDK rotation supplement
+
+The [rotation audit](RENDER_ROTATION.md) executes 652 bytes of inherited
+SDK `RotMatrix` against independent staged Euler products, using the verified
+canonical packed table as a shared local data input. It records 203,259
+executions over 203,257 distinct guarded fixtures and 5,670 ten-function
+composition inputs with only `ApplyMatrixLV` contracted. The individual
+axis sweeps do not exhaust the full three-angle Cartesian domain.
+
+[render-rotation-checks.json](render-rotation-checks.json) pins the native
+proof, input-count audit, four detected faults and local tooling checks.
+The preliminary import failure is preserved separately. No game/SDK source,
+compiler flags or canonical executable bytes change. The public metadata
+and synthetic tests contain no original table, game, BIOS, emulator, asset
+or captured state bytes.

@@ -210,3 +210,12 @@ rendering/streaming without a C promotion or
 whole-feature acceptance. All source, original-feature, NPC, developer-tool
 and optional-mod counts remain unchanged; the new supplement preserves the
 earlier feature records.
+
+The [rotation supplement](RENDER_ROTATION.md) executes the inherited SDK
+helper with its actual packed table. It adds 203,257 distinct standalone
+fixtures in 203,259 runs and a ten-function composition over 5,670 distinct
+inputs with one `ApplyMatrixLV` contract. This further extends bounded
+rendering/streaming evidence and classifies the helper's local table without
+a C promotion or whole-feature acceptance. Original/NPC/developer/mod counts
+and earlier feature records remain unchanged; individual axis sweeps do not
+establish the full three-angle domain or actual GTE/scene/timing parity.

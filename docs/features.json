@@ -18855,6 +18855,68 @@
       "model_api_calls": 0,
       "whole_original_feature_groups_accepted": 0,
       "private_inputs_or_native_output_bytes_included": false
+    },
+    "render_rotation_native_20261011": {
+      "recorded_utc": "2026-10-11T15:28:42.788603+00:00",
+      "documentation": "docs/RENDER_ROTATION.md",
+      "metadata": "docs/render-rotation-checks.json",
+      "metadata_sha256": "b44d4beb5fc1198e4931233f399cc3e64cf6dc60c5e90ebea97fe269d913faf8",
+      "repository_code_base_commit": "b58b97a676d946639805104511865be37794bb4d",
+      "rotation_native_runs": 203259,
+      "rotation_distinct_inputs": 203257,
+      "rotation_repeated_input_runs": 2,
+      "rotation_explicit_stubs": 0,
+      "composed_native_cases": 5670,
+      "composed_native_game_functions": 9,
+      "composed_native_sdk_functions": 1,
+      "composed_explicit_stubs": 1,
+      "negative_controls_detected": 4,
+      "source_functions_promoted": 0,
+      "canonical_executable_preserved": true,
+      "current_turn_before_after": {
+        "before_source_commit": "b58b97a676d946639805104511865be37794bb4d",
+        "before": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "after": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "new_matching_c_functions": 0,
+        "new_original_feature_groups_accepted": 0,
+        "new_tooling_tests": 13,
+        "rotation_native_runs": 203259,
+        "rotation_distinct_inputs": 203257,
+        "rotation_repeated_input_runs": 2,
+        "composed_native_distinct_inputs": 5670,
+        "composition_contracts_before": 2,
+        "composition_contracts_after": 1
+      },
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0,
+      "whole_original_feature_groups_accepted": 0,
+      "private_inputs_table_or_native_output_bytes_included": false
     }
   }
 }
