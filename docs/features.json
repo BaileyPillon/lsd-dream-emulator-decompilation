@@ -16488,6 +16488,501 @@
           "copied_opcode_c": false
         }
       ]
+    },
+    "card_save_workflow_20261011": {
+      "recorded_utc": "2026-10-11T08:39:06.234582+00:00",
+      "documentation": "docs/CARD_SAVE.md",
+      "scope": "Bounded original save workflow, a nonmatching C candidate and reviewed private Ghidra API metadata. No original feature is added or accepted. Physical card I/O and whole-game parity remain open.",
+      "source_commit": "2682de8d471f26e2d62d134da3df2a581ccd3f68",
+      "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+      "matching_executable_preserved": true,
+      "source_functions_promoted": 0,
+      "game_sdk_classification_changes": 0,
+      "original_save_workflow_validation": {
+        "report": ".decomp-lab/card-save-native-proof-first.json",
+        "sha256": "dc5853f4e9aa1fbdaf04398e0799806577ce7969e8b911f835e80f1fda701fc5",
+        "status": "passed_bounded_original_save_workflow",
+        "functions": [
+          {
+            "function": "memory_card_write_file",
+            "address": "0x8004EEA0",
+            "bytes": 204,
+            "sha256": "4f275a5b9579eabc43e95de70bc41214ae0734de5ed7ea5c273b819ac791a313"
+          },
+          {
+            "function": "func_8004EF6C",
+            "address": "0x8004EF6C",
+            "bytes": 960,
+            "sha256": "a24ccbb37789695a86a6bf46e624aea68a667ed5cac934704edf7e6677349092"
+          },
+          {
+            "function": "memory_card_build_path",
+            "address": "0x8004F32C",
+            "bytes": 104,
+            "sha256": "004e28b1c8b5fa55f4d5c2a1754dca403787deada36d63b701e30d9790e0027b"
+          },
+          {
+            "function": "func_800507F8",
+            "address": "0x800507F8",
+            "bytes": 240,
+            "sha256": "6366aabaf1ea68aa189955760ed29e676f237ce8bbebead10131cdb91d15a5cd"
+          },
+          {
+            "function": "atoi",
+            "address": "0x80050948",
+            "bytes": 316,
+            "sha256": "a823b16bda0e8cac5381286349138b63812eba1890372f86ecd43b4cb2e7fa28"
+          },
+          {
+            "function": "todigit",
+            "address": "0x80050AA4",
+            "bytes": 100,
+            "sha256": "220af54c96c04ac31fdc7b66008b2d898427b0929719514df3023ca8a5f4ace4"
+          },
+          {
+            "function": "strcpy",
+            "address": "0x80028B78",
+            "bytes": 68,
+            "sha256": "83f1261096a02f2dc5770b577c92ace41c327074183dfadcb9fbd23ab14c3a89"
+          },
+          {
+            "function": "strcat",
+            "address": "0x80027130",
+            "bytes": 168,
+            "sha256": "fab4183efed2bac3c1324c0331f603fc24f453b862bc47b08b8b318684673662"
+          },
+          {
+            "function": "strlen",
+            "address": "0x80013348",
+            "bytes": 48,
+            "sha256": "687b44978ea1acc29ad6ef4a72daa81c0db610cf13febf8030f3203e01478b3e"
+          }
+        ],
+        "native_cases": 13152,
+        "case_groups": {
+          "successful_saves": 11520,
+          "retry_and_cleanup": 1152,
+          "ignored_io_results": 96,
+          "segment_aliases": 48,
+          "wrapper_icon_byte": 256,
+          "additional_block_boundary": 72,
+          "individual_write_results": 8
+        },
+        "case_results": {
+          "success": 12832,
+          "failure": 320
+        },
+        "attempt_counts": {
+          "1": 11872,
+          "2": 96,
+          "3": 96,
+          "4": 96,
+          "5": 96,
+          "6": 96,
+          "7": 96,
+          "8": 96,
+          "9": 96,
+          "10": 96,
+          "11": 416
+        },
+        "executed_native_entry_counts": {
+          "memory_card_write_file": 13152,
+          "func_800507F8": 13472,
+          "atoi": 13152,
+          "todigit": 31320,
+          "func_8004EF6C": 21632,
+          "memory_card_build_path": 21632,
+          "strcat": 21632,
+          "strlen": 43264,
+          "strcpy": 12832
+        },
+        "explicit_stub_count": 7,
+        "explicit_stubs": [
+          "delete",
+          "open",
+          "close",
+          "write",
+          "printf",
+          "memory_allocate_mem",
+          "memory_free_mem"
+        ],
+        "negative_controls_detected": 7,
+        "negative_controls": [
+          {
+            "name": "shortened_retry_limit",
+            "address": "0x8004EEC8",
+            "detected": true
+          },
+          {
+            "name": "incorrect_create_flags",
+            "address": "0x8004EFE0",
+            "detected": true
+          },
+          {
+            "name": "incorrect_header_write_length",
+            "address": "0x8004F2C8",
+            "detected": true
+          },
+          {
+            "name": "incorrect_payload_padding",
+            "address": "0x8004F2DC",
+            "detected": true
+          },
+          {
+            "name": "wrong_icon_argument_width",
+            "address": "0x8004EF00",
+            "detected": true
+          },
+          {
+            "name": "incorrect_palette_source",
+            "address": "0x8004F070",
+            "detected": true
+          },
+          {
+            "name": "missing_failure_label_reset",
+            "address": "0x8004EF2C",
+            "detected": true
+          }
+        ],
+        "producer_dependencies": [
+          {
+            "path": "tools/verify_native_ai.py",
+            "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+          },
+          {
+            "path": "tools/inventory_vtables.py",
+            "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+          },
+          {
+            "path": "tools/progress.py",
+            "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+          },
+          {
+            "path": "configure.py",
+            "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+          },
+          {
+            "path": "requirements-analysis.txt",
+            "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+          },
+          {
+            "path": "build/SLPS01556.map",
+            "sha256": "bb181d0799122a8cac3c4a8af74c8dbbe5c0e3708e4299aeb2f6d836d15fb04c"
+          },
+          {
+            "path": "build/undefined_funcs_auto.txt",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "path": "build/undefined_syms_auto.txt",
+            "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+          },
+          {
+            "path": "src/scene/entity.c",
+            "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+          },
+          {
+            "path": "src/scene/entity.h",
+            "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+          },
+          {
+            "path": "src/dream/dream_sys.c",
+            "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+          },
+          {
+            "path": "src/dream/dream_sys.h",
+            "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+          },
+          {
+            "path": "src/scene/actor.c",
+            "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+          },
+          {
+            "path": "src/base/transform.c",
+            "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+          },
+          {
+            "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+            "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+          },
+          {
+            "path": "tools/verify_card_save.py",
+            "sha256": "62736ffd3b62b4827c3c1f6eccf19c900d0938ab40a37022d6f974c3b89a5df3"
+          },
+          {
+            "path": "src/menu/card/memory_card.c",
+            "sha256": "18070a5f159e9ea9adef076776d258d9c4fcb32fd8786ae6bf6f48695ee8732f"
+          },
+          {
+            "path": "src/menu/card/memory_card.h",
+            "sha256": "c0e2b99a8ba2e53d0d87e37bb6329fe672e69f820faa40b0ab246670baf874af"
+          },
+          {
+            "path": "src/menu/card/save_label.c",
+            "sha256": "090ac357a85e19788256a7bfbd8ce35cf6565beaae4c840194b6e84410ad5766"
+          },
+          {
+            "path": "src/menu/card/save_label.h",
+            "sha256": "a994195b3324135400cef8d53fa3ba7aabdf40d29a76188e3df508d96c40c0a5"
+          },
+          {
+            "path": "config/SLPS01556.yaml",
+            "sha256": "2a73ca93564e9b87d9284088b79edfe45d614b6943650a14a5e7fb506d9326d1"
+          },
+          {
+            "path": "asm/nonmatchings/menu/card/memory_card/func_8004EF6C.s",
+            "sha256": "3649401fecd986cf64156b3445519f6de23e0850bfc5b64e06347eadef31e6b9"
+          },
+          {
+            "path": "src/psyq/libc/strcpy.c",
+            "sha256": "f9e63c828fd123ef145f2defdb008b664902d3b547d83a1399636687d481c22c"
+          },
+          {
+            "path": "src/psyq/libc/strcat.c",
+            "sha256": "25cb343ae0ca52f011c0d1e404929fe963ad69358b0521ae18e68c1b89759133"
+          },
+          {
+            "path": "src/psyq/libc/strlen.c",
+            "sha256": "c5d691d0618c5a4fec1e5a3fed6122ecd4f24a7788ade2805ee543dd0f02d75e"
+          },
+          {
+            "path": "src/psyq/libc/atoi.c",
+            "sha256": "bcd648ec07b911ebc874bb1be80e99c01bd39e1fe432bf5aee41eab897b54f14"
+          },
+          {
+            "path": "src/psyq/libc/todigit.c",
+            "sha256": "efdf1f520a1ad2667eb22a35dc52119e43eb4e1802f5c00361649b20b1b8279b"
+          },
+          {
+            "path": "asm/nonmatchings/psyq/libc/strcpy/strcpy.s",
+            "sha256": "fd636bdd501cfd17029d05d974f547ab5166e6cdfa310a27248f3af4d8e658dd"
+          },
+          {
+            "path": "asm/nonmatchings/psyq/libc/strcat/strcat.s",
+            "sha256": "60daa2f44fa43524aad09af55f1f9073dc41d7b460cc1c24b2c0bb2d50c70970"
+          },
+          {
+            "path": "asm/nonmatchings/psyq/libc/strlen/strlen.s",
+            "sha256": "a84201c22eb7780b4bd668442ef76a8e2176d68b7ea82e8edca8cfe2ce966caf"
+          },
+          {
+            "path": "asm/nonmatchings/psyq/libc/atoi/atoi.s",
+            "sha256": "3d156bf74c60c907c5f649441284c6d9e5147e5ec1607320ce012b3c4356eb4c"
+          },
+          {
+            "path": "asm/nonmatchings/psyq/libc/todigit/todigit.s",
+            "sha256": "a327eae0d39ee6e90cea5fa9e49d9dbec77cbf0a7e358658ad1665436c6aaad5"
+          }
+        ],
+        "scope": "Original save wrapper, writer, path builder, title formatter and actual SDK atoi/todigit/strcpy/strcat/strlen versus independent guarded byte and I/O rules. Valid slots 1-15, aligned/unaligned nonoverlapping buffers, byte-masked icon argument, up to 11 attempts, create/reopen failures, reset after exhaustion, 128-byte padding, 8 KiB allocation boundaries, both device prefixes, segment aliases, ignored delete/close/write results, entire fixture buffers, call graph, global pointer, stack and saved registers. Seven explicit stubs cover file I/O, allocation and printf. Does not establish physical card I/O, allocator failure, invalid filenames, oversized icons, overlapping buffers, UI/error rendering, save persistence, complete dream-state round trips or PS1 timing."
+      },
+      "source_experiments": {
+        "new_file_creation_helper_variants": 24,
+        "new_error_flow_variants": 4,
+        "exact_matches": 0,
+        "minimum_byte_differences": 8,
+        "canonical_flags_changed": false,
+        "physical_register_binding": false,
+        "padding": false,
+        "compiler_dump_scope": "Before scheduling, title/texture live lengths are 48/31; after scheduling they are 33/52 and title is allocated first. Actual S5/S6 swap remains unresolved.",
+        "helper_report": ".decomp-lab/card-create-schedule-first/results.json",
+        "helper_report_sha256": "8381c239c1e4e8ef01624fbb3ed2dd545faa6acf0c8310409e0c3c72c0cbefe8",
+        "error_flow_report": ".decomp-lab/card-switch-errors-first/results.json",
+        "error_flow_report_sha256": "5287cda3d1e1b57f9acf9416f9388dc9c1aa7c3918c18713446df1c8684022f9"
+      },
+      "nonmatching_candidate_validation": {
+        "report": ".decomp-lab/card-save-candidate-behavior-second.json",
+        "sha256": "bcbe2de843aeec1739a2dd43a5197bab67e4c14934d55acb80794d008d5d152d",
+        "status": "passed_bounded_candidate_semantics_not_byte_matching",
+        "native_cases": 13152,
+        "original_and_candidate_match_independent_model": true,
+        "whole_executable_changed_byte_positions": 8,
+        "whole_executable_equal": false,
+        "source_promoted": false,
+        "candidate_executable_sha1": "7ee3eafe9f0a3b425aa0f8845cff889189acc54d",
+        "candidate_function_sha256": "6d5c07088ae2af6e27ea9804233af83c89f76296735b00d82e5fd3d8a0405cc1",
+        "full_comparison": ".decomp-lab/card-save-workflow-build-first/comparison.json",
+        "full_comparison_sha256": "7fd54e24c5ea74f0a0dffa903f248366b76fe209650902f0ec4fc7335a145c11",
+        "candidate_source_sha256": "7a07c2929b2e0ddb754e2539d1b864907044447add9031f8997cfc3d787a874b",
+        "producer_dependencies": [
+          {
+            "path": ".decomp-lab/verify_card_save_candidate_second.py",
+            "sha256": "6654b8c584cea35c2589f090334665f73cc67e1f0fbfc107165a89afaec07b16"
+          },
+          {
+            "path": "tools/verify_card_save.py",
+            "sha256": "62736ffd3b62b4827c3c1f6eccf19c900d0938ab40a37022d6f974c3b89a5df3"
+          }
+        ],
+        "scope": "Same guarded independent model and case set used for the canonical original save workflow; candidate changes only the 960-byte writer. Semantics and ABI agree in this bounded scope, but exact C acceptance fails in eight byte positions. Physical card I/O, allocation failure, full save round trips, hardware timing and whole-game parity remain unproven."
+      },
+      "private_ghidra_reconciliation": {
+        "report": ".decomp-lab/ghidra-card-save-api-reconciled-third.json",
+        "sha256": "b726cb4f5e1b51307db3771d6c64b0cf1912cd8c9f2e04165d7a7dfaac0fadd4",
+        "functions_reconciled": 3,
+        "calling_convention": "__stdcall",
+        "native_bytes_unchanged": true,
+        "native_region_start": "0x8004eea0",
+        "native_region_bytes": 1268,
+        "native_region_sha256": "ec00068466245425a89614693b3b3204f5452856a20018d17435ecdfb59034da",
+        "saved": true,
+        "reviewed_abi": [
+          {
+            "function": "memory_card_write_file",
+            "signature": "int memory_card_write_file(void * memory_card, char * filename, char * title, uchar icons, void * texture, void * payload, int payload_size)",
+            "parameters": [
+              {
+                "name": "memory_card",
+                "type": "void *",
+                "storage": "a0:4"
+              },
+              {
+                "name": "filename",
+                "type": "char *",
+                "storage": "a1:4"
+              },
+              {
+                "name": "title",
+                "type": "char *",
+                "storage": "a2:4"
+              },
+              {
+                "name": "icons",
+                "type": "uchar",
+                "storage": "a3:1"
+              },
+              {
+                "name": "texture",
+                "type": "void *",
+                "storage": "Stack[0x10]:4"
+              },
+              {
+                "name": "payload",
+                "type": "void *",
+                "storage": "Stack[0x14]:4"
+              },
+              {
+                "name": "payload_size",
+                "type": "int",
+                "storage": "Stack[0x18]:4"
+              }
+            ]
+          },
+          {
+            "function": "func_8004EF6C",
+            "signature": "int func_8004EF6C(void * memory_card, char * filename, char * title, int icons, void * texture, void * payload, int payload_size)",
+            "parameters": [
+              {
+                "name": "memory_card",
+                "type": "void *",
+                "storage": "a0:4"
+              },
+              {
+                "name": "filename",
+                "type": "char *",
+                "storage": "a1:4"
+              },
+              {
+                "name": "title",
+                "type": "char *",
+                "storage": "a2:4"
+              },
+              {
+                "name": "icons",
+                "type": "int",
+                "storage": "a3:4"
+              },
+              {
+                "name": "texture",
+                "type": "void *",
+                "storage": "Stack[0x10]:4"
+              },
+              {
+                "name": "payload",
+                "type": "void *",
+                "storage": "Stack[0x14]:4"
+              },
+              {
+                "name": "payload_size",
+                "type": "int",
+                "storage": "Stack[0x18]:4"
+              }
+            ]
+          },
+          {
+            "function": "memory_card_build_path",
+            "signature": "char * memory_card_build_path(char * destination, int port, char * suffix)",
+            "parameters": [
+              {
+                "name": "destination",
+                "type": "char *",
+                "storage": "a0:4"
+              },
+              {
+                "name": "port",
+                "type": "int",
+                "storage": "a1:4"
+              },
+              {
+                "name": "suffix",
+                "type": "char *",
+                "storage": "a2:4"
+              }
+            ]
+          }
+        ]
+      },
+      "current_matching_build": {
+        "report": ".decomp-lab/card-save-current-progress-first.json",
+        "sha256": "8968dca871b3cf35c04786dcdb4a226ef3a05b463c28bcba48937b6b7edbdbc2",
+        "objects_expected": 305,
+        "objects_found": 305,
+        "build_current": true,
+        "c_bytes": 194284,
+        "game_text_bytes": 199912,
+        "c_coverage_percent": 97.18476129496979,
+        "sdk_text_bytes": 147880,
+        "handwritten_text_bytes": 188,
+        "binary_match": "verified",
+        "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+        "sha256_executable": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+      },
+      "current_turn_before_after": {
+        "original_provisional_groups_before": 40,
+        "original_provisional_groups_after": 40,
+        "listed_core_c_groups_before": 35,
+        "listed_core_c_groups_after": 35,
+        "whole_feature_groups_accepted_before": 0,
+        "whole_feature_groups_accepted_after": 0,
+        "game_c_bytes_before": 194284,
+        "game_c_bytes_after": 194284,
+        "known_game_assembly_functions_before": 7,
+        "known_game_assembly_functions_after": 7,
+        "bounded_npc_callbacks_before": 11,
+        "bounded_npc_callbacks_after": 11,
+        "npc_callback_denominator": 107,
+        "bounded_npc_cases_before": 6784,
+        "bounded_npc_cases_after": 6784,
+        "developer_capabilities_before": 10,
+        "developer_capabilities_after": 10
+      },
+      "tooling_tests": {
+        "windows": {
+          "tests_passed": 147,
+          "python": "3.14",
+          "log": ".decomp-lab/card-save-tooling-tests-windows-first.log",
+          "log_sha256": "ceb39edd7978269bbbae7965575b2eca1d063737e2d8f94b05e862412128b20d"
+        },
+        "linux": {
+          "tests_passed": 147,
+          "python": "3.13",
+          "log": ".decomp-lab/card-save-tooling-tests-linux-first.log",
+          "log_sha256": "87ba491632b5ecdea761c9844c0e34ba3c17c1c3d4ba3d2c3b07915631c5d5f7"
+        }
+      },
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0,
+      "private_inputs_or_native_output_bytes_included": false
     }
   }
 }
