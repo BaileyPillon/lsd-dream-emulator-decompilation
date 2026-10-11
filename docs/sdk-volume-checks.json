@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-10-11T07:04:26.610638+00:00",
+  "scope": "Local clean clone build, reviewed SDK API context and bounded current native fixtures; separate from synthetic-only GitHub CI.",
+  "source_commit": "c272b40506748eedb18c69bdaf8c8e6b74e6b620",
+  "clean_build": {
+    "fresh_clone": true,
+    "build_objects_reused": false,
+    "objects_expected": 305,
+    "objects_found": 305,
+    "build_current": true,
+    "git_worktree_clean_after_build": true,
+    "progress_report": ".decomp-lab/sdk-volume-clean-clone-first-progress.json",
+    "progress_report_sha256": "e629c9936f5584f35e7b7627385d4b1283e81da048c1e297c90ff8305790c594"
+  },
+  "canonical_executable": {
+    "bytes": 505856,
+    "sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "whole_executable_equal": true
+  },
+  "corrected_matching_c": {
+    "c_bytes": 194284,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 97.18476129496979,
+    "sdk_text_bytes": 147880,
+    "handwritten_text_bytes": 188
+  },
+  "known_remaining_game_assembly_functions": 7,
+  "source_promotions": [],
+  "game_sdk_classification_changes": 0,
+  "sdk_audit": {
+    "report": ".decomp-lab/sdk-audit-public-proof-first.json",
+    "sha256": "275ecf5cfde6c69da5489fec14ee043d7cbde6857f7c6bc45d67f5f281b3ba84",
+    "current_source_dependencies_match": true,
+    "raw_sdk_labelled_functions": 72,
+    "raw_sdk_labelled_bytes": 28944,
+    "function_span_candidates": 51,
+    "functions_with_candidates": 19,
+    "functions_with_one_candidate_label": 14,
+    "whole_objects_covering_raw_functions": 0,
+    "reviewed_volume_api_context": {
+      "status": "passed_pinned_six_function_context",
+      "object": "VMANAGER.OBJ",
+      "address": "0x80031c98",
+      "bytes": 676,
+      "fixed_bytes": 608,
+      "native_sha256": "8573aa478c97c2ea3cbd6dfe85f4040097d1abdcb65767f5693596ecfce33a0a",
+      "functions": [
+        {
+          "function": "SsUtGetDetVVol",
+          "address": "0x80031c98",
+          "bytes": 88
+        },
+        {
+          "function": "SsUtSetDetVVol",
+          "address": "0x80031cf0",
+          "bytes": 124
+        },
+        {
+          "function": "SsUtGetVVol",
+          "address": "0x80031d6c",
+          "bytes": 140
+        },
+        {
+          "function": "SsUtSetVVol",
+          "address": "0x80031df8",
+          "bytes": 156
+        },
+        {
+          "function": "SsUtAutoVol",
+          "address": "0x80031e94",
+          "bytes": 84
+        },
+        {
+          "function": "SsUtAutoPan",
+          "address": "0x80031ee8",
+          "bytes": 84
+        }
+      ]
+    },
+    "names_automatically_changed": false
+  },
+  "tooling_tests": {
+    "cases_per_platform": 143,
+    "platforms": [
+      "Windows / Python 3.14",
+      "Linux WSL / Python 3.13"
+    ],
+    "result": "passed",
+    "game_inputs_required": false
+  },
+  "native_reports": [
+    {
+      "path": ".decomp-lab/sound-volume-native-proof-first.json",
+      "sha256": "56573700b1c2ba7e8c199ae80aca42aaf7d98c52a1b20bdcd4904086044a9364",
+      "status": "passed_bounded_original_sdk_voice_volume",
+      "native_cases": 384,
+      "negative_controls_detected": 3,
+      "current_source_dependencies_match": true
+    },
+    {
+      "path": ".decomp-lab/sound-api-save-label-proof-first.json",
+      "sha256": "220989c0b2afcc3b5d2f9ea4edd52ab91a4a53595d5044fb6ace29e3542e37bf",
+      "status": "passed_bounded_original_save_label",
+      "native_cases": 1952,
+      "negative_controls_detected": 3,
+      "current_source_dependencies_match": true
+    },
+    {
+      "path": ".decomp-lab/sound-api-lion-proof-first.json",
+      "sha256": "b612471420d5f92c42dc7bc690a17f207c3e53b49842a5f0df526033cc667793",
+      "status": "passed_bounded_original_npc_model",
+      "native_cases": 1608,
+      "negative_controls_detected": 3,
+      "current_source_dependencies_match": true
+    },
+    {
+      "path": ".decomp-lab/sound-api-gray-man-proof-first.json",
+      "sha256": "2afd17ce69bb7c06e409fd84ecc2e0ddb9bcd0571064d8a3b70eebd5ce39dfb9",
+      "status": "passed_bounded_original_npc_model",
+      "native_cases": 768,
+      "negative_controls_detected": 2,
+      "current_source_dependencies_match": true
+    },
+    {
+      "path": ".decomp-lab/sound-api-scripted-proof-first.json",
+      "sha256": "c78424c703fa8468514bdc95838829f6c0e76070ca313d7617ca66ef0ee67c8b",
+      "status": "passed_bounded_original_scripted_callbacks",
+      "native_cases": 4408,
+      "negative_controls_detected": 9,
+      "current_source_dependencies_match": true
+    }
+  ],
+  "sound_volume_explicit_stubs": 0,
+  "save_label_explicit_stubs": 0,
+  "bounded_npc_callbacks": 11,
+  "original_npc_callback_denominator": 107,
+  "bounded_npc_cases": 6784,
+  "whole_feature_groups_accepted": 0,
+  "provisional_feature_group_denominator": 40,
+  "developer_capabilities": 10,
+  "new_developer_capability": "A010: External SDK provenance and API audit",
+  "model_api_calls": 0,
+  "original_game_behavior_modified": false,
+  "end_to_end_parity": "unfinished",
+  "private_inputs_or_outputs_included": false
+}

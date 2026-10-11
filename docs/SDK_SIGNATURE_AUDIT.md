@@ -65,6 +65,13 @@ SDK report: `.decomp-lab/sdk-audit-public-proof-first.json`, SHA-256
 `275ecf5cfde6c69da5489fec14ee043d7cbde6857f7c6bc45d67f5f281b3ba84`.
 Metadata and producer dependencies are appended to [features.json](features.json).
 
+A fresh clone of source commit `c272b40506748eedb18c69bdaf8c8e6b74e6b620`
+built all 305 objects and reproduced the canonical executable without reusing
+build objects. All 143 tooling tests passed on Windows and Linux. The current
+getter, save-label and retained NPC reports were checked against their source
+dependencies. [sdk-volume-checks.json](sdk-volume-checks.json) records the
+hashes and the limits of these checks.
+
 After a current matching build, supply the external catalogue and choose new
 private output filenames:
 
