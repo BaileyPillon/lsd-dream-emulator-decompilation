@@ -1,9 +1,9 @@
 #include "common.h"
 #include "file/tmd_prim.h"
 
-/* Non-zero while at least one class_FA50 (TMD primitive/object) instance is
-   alive; see class_FA50_reset_flag / class_FA50_is_active. Address-only
-   symbol (D_8008AC4C), defined via undefined_syms_auto.txt. */
+/* Global enumeration value read by collision loops. Reset writes one;
+   the getter ignores its model argument. This is not an instance count.
+   Address-only symbol, defined via undefined_syms_auto.txt. */
 extern s32 D_8008AC4C;
 
 void class_FA50_reset_flag(void) {
@@ -63,8 +63,8 @@ void func_8001F3B0(s32 arg0, s16 *arg1) {
     }
 }
 
-/* Shared 24-vertex source buffer (D_8008B21C; address-only symbol, rename
-   pending a symbols.txt entry). */
+/* Shared bounds scratch storage. The refresher writes six signed halfwords
+   (minimum and maximum); the accessor ignores caller model/index arguments. */
 extern s16 D_8008B21C[];
 
 /* Copies the model geometry's bounding box into the shared vertex buffer. */
@@ -72,7 +72,7 @@ void refresh_source_vertices(s32 arg0) {
     func_8001F3B0(arg0, D_8008B21C);
 }
 
-/* Returns the shared 24-vertex source buffer. */
+/* Return the shared bounds storage, independent of the caller's index. */
 void *get_source_vertices(void) {
     return &D_8008B21C;
 }

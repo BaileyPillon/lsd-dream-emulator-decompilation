@@ -1,0 +1,369 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-11T17:22:56.299076+00:00",
+  "repository_code_base_commit": "951b7dc7b0ba1b1bb63ae5772bea729b6236f16b",
+  "feature_group": "F008",
+  "documentation": {
+    "path": "docs/COLLISION.md",
+    "sha256": "6a023ce98ce6f38fca50e413031f1dde592cd48db77404f0a6f90b9686c158b5"
+  },
+  "producer": {
+    "path": ".decomp-lab/publish_collision_first.py",
+    "sha256": "030a52cd39d2889b074d66138c8b68537b6a86c8c33134b57efe319a76dced46"
+  },
+  "native_proof": {
+    "path": ".decomp-lab/collision-native-third/native-proof-second.json",
+    "sha256": "b54295da62cc55efceca50495d7a31d668773480a6b3739320d1679c47cdcbeb"
+  },
+  "earlier_primitive_proof": {
+    "path": ".decomp-lab/collision-native-third/native-proof-first.json",
+    "sha256": "0011a78a0e6537cadbf3738f92c14783de8e12fcfcba0956b0709926504b83f2"
+  },
+  "preserved_earlier_producer": {
+    "path": ".decomp-lab/collision-native-third/native-verifier-first.py",
+    "sha256": "3166846960fac162a620f8dec5a0a4cf6e8cdc20b300979e923d10f5c5c24dc0"
+  },
+  "ordered_command_and_input_audit": {
+    "path": ".decomp-lab/collision-native-third/ordered-command-and-input-audit-first.json",
+    "sha256": "d3a2ced8d11977aa2720bd2e1c0936b68c95913d25198a552685a839bd9c123d"
+  },
+  "case_groups": {
+    "OuterProduct10": 4108,
+    "Square0": 1740,
+    "SquareRoot0": 6396,
+    "primitive_collision": 12696,
+    "composed_collision": 6912
+  },
+  "original_function_ranges": [
+    {
+      "function": "class_FA50_reset_flag",
+      "address": "0x8001f394",
+      "bytes": 16,
+      "sha256": "a57cb9efcd8f219d53c0616d6e374ebc25aa7538029b076a71eca31cc2539256"
+    },
+    {
+      "function": "class_FA50_is_active",
+      "address": "0x8001f3a4",
+      "bytes": 12,
+      "sha256": "1a4bb67a6e467146f4884650e603989a0a95394e10e71ce01c54c63f4f726199"
+    },
+    {
+      "function": "func_8001F3B0",
+      "address": "0x8001f3b0",
+      "bytes": 308,
+      "sha256": "6ac1cdbb58c9d23f95f664b3213f167f0cb397435688b4ce9e248be8d861c291"
+    },
+    {
+      "function": "refresh_source_vertices",
+      "address": "0x8001f4e4",
+      "bytes": 40,
+      "sha256": "53ac0118d566d634d6de5187c748fad0e7327e8a10270c907ae38f24cc3b37da"
+    },
+    {
+      "function": "get_source_vertices",
+      "address": "0x8001f50c",
+      "bytes": 16,
+      "sha256": "3960bf714c3d63c777cb90c0336714cf7599f0e575ed62e305a53527258c9ea5"
+    },
+    {
+      "function": "func_8001F51C",
+      "address": "0x8001f51c",
+      "bytes": 336,
+      "sha256": "2861d23ad37f4c8004c221d7b93f98285c4e2e792bb81ae8883f31e8a5a8f3fe"
+    },
+    {
+      "function": "func_8001F66C",
+      "address": "0x8001f66c",
+      "bytes": 588,
+      "sha256": "f0b0ff1121df8193c06a986047242bf5ed7068954634060b3f9e7557c01d56f5"
+    },
+    {
+      "function": "func_8001DDF4",
+      "address": "0x8001ddf4",
+      "bytes": 796,
+      "sha256": "e61be058229e5ecc97387ea9e246d7b578594f5d77495b56fc3f2900f2a6b193"
+    },
+    {
+      "function": "func_8001E110",
+      "address": "0x8001e110",
+      "bytes": 472,
+      "sha256": "c6bb20cf05899b90950c8aa14708812e200a46e305aa34d53489d0df78128530"
+    },
+    {
+      "function": "func_8001E2E8",
+      "address": "0x8001e2e8",
+      "bytes": 436,
+      "sha256": "a66812f7c4f3fc089fdc20ac4ea1b59c02d51fc6b771343779d03076568b8113"
+    },
+    {
+      "function": "func_8001ECFC",
+      "address": "0x8001ecfc",
+      "bytes": 176,
+      "sha256": "5070c8f9b60f3e51ea87f2d35887a3a097bc932f9f00a2c3e3449f10c66d8eda"
+    },
+    {
+      "function": "func_8001F8B8",
+      "address": "0x8001f8b8",
+      "bytes": 1944,
+      "sha256": "c23a87535a6a4949e414266f5a298b8d0409debb8be4ef6482e627fcc6269513"
+    },
+    {
+      "function": "func_80020050",
+      "address": "0x80020050",
+      "bytes": 1152,
+      "sha256": "d58160f9ae8a3adcc81dfda474988896476e823a614afd7f686896ec64677469"
+    },
+    {
+      "function": "OuterProduct10",
+      "address": "0x800179ac",
+      "bytes": 88,
+      "sha256": "b0df3db5528e30315b774c82d909799911f21a661fc9d23bf7ce2dbb33ef3f53"
+    },
+    {
+      "function": "Square0",
+      "address": "0x800178e8",
+      "bytes": 40,
+      "sha256": "99cb1c8d0c79529e8c6f1a56f640ebd7400c2eb0f57312cdc2e252c1e34f201b"
+    },
+    {
+      "function": "SquareRoot0",
+      "address": "0x800205c0",
+      "bytes": 132,
+      "sha256": "97c082d2d41751f9fccfc5cf37e8dd0b369fbc97fddd6d85c81c2fa2ca3feff7"
+    }
+  ],
+  "executed_native_entry_counts": {
+    "OuterProduct10": 21388,
+    "Square0": 25164,
+    "SquareRoot0": 29820,
+    "func_8001F8B8": 17232,
+    "func_80020050": 34512,
+    "class_FA50_is_active": 13824,
+    "refresh_source_vertices": 6912,
+    "func_8001F3B0": 13824,
+    "get_source_vertices": 36720,
+    "func_8001F51C": 6912,
+    "func_8001F66C": 6912,
+    "func_8001DDF4": 6912,
+    "class_FA50_reset_flag": 1728,
+    "func_8001E110": 48420,
+    "func_8001ECFC": 96840
+  },
+  "entered_native_functions": 15,
+  "curated_but_unentered_functions": [
+    "func_8001E2E8"
+  ],
+  "primitive_outcomes": {
+    "0": 6660,
+    "1": 6036
+  },
+  "composed_outcomes": {
+    "0,0,0": 5976,
+    "1,1,1": 468,
+    "1,3,1": 468
+  },
+  "incoming_first_decoder_cursors": {
+    "0xad010203": 12696,
+    "0x1": 3240,
+    "0x130a0a": 324,
+    "0x130a10": 324,
+    "0x80130a0a": 324,
+    "0x80130a10": 324
+  },
+  "native_gte": {
+    "compressed_core_sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126",
+    "bridge_source_sha256": "969e0af3b030e5b2eafedad032b68173ac76e41b089a28b4d4fc1084e33fedd9",
+    "compiled_bridge_sha256": "c36770c552a557c06d94c0902e88c34cfab8122073fec4455e3246a65ad23ca5",
+    "command_invocations": 46561,
+    "lzcs_invocations": 29826,
+    "ordered_responses": 76387,
+    "distinct_requests": 10669,
+    "commands": {
+      "0x4b70000c": 21391,
+      "0x4aa00428": 25170,
+      "0x0": 29826
+    },
+    "flags": {
+      "0": 5005,
+      "2172649472": 531,
+      "2168455168": 531,
+      "2160066560": 531,
+      "2176843776": 928,
+      "2155872256": 678,
+      "2164260864": 3654,
+      "4194304": 34703
+    },
+    "identity_self_checks": 1,
+    "main_suite_adapter_operations": {
+      "cfc2": 64164,
+      "ctc2": 128328,
+      "lwc2": 139656,
+      "command": 46552,
+      "swc2": 139656,
+      "mtc2_lzcs": 29820,
+      "mfc2_lzcr": 29820
+    },
+    "invocation_count_scope": "Includes repeated native requests and three fault controls; main-suite adapter counters exclude controls.",
+    "stdout_log_sha256": "1f4028e670d38d4389cdb54cd7b4ce0b234806a2fcb140844f6b8c4f331ddfe2",
+    "stderr_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "lookup_windows": [
+    {
+      "address": "0x8006bef0",
+      "bytes": 384,
+      "sha256": "45ca1b7b619b33961c03c82243b8baf59fc50c49b4d7eefc94b76edbd417a5c8"
+    },
+    {
+      "address": "0x8006bc70",
+      "bytes": 640,
+      "sha256": "aa2e659ca084c8914fa0d271f09896694659844caa36f9d187123c63225e8b0e"
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "wrong_contact_height",
+      "address": "0x80020014",
+      "detected": true,
+      "scope": "Private Unicorn instruction memory only."
+    },
+    {
+      "name": "wrong_expanded_bounds_edge",
+      "address": "0x8001ff44",
+      "detected": true,
+      "scope": "Private Unicorn instruction memory only."
+    },
+    {
+      "name": "wrong_height_threshold",
+      "address": "0x8001df48",
+      "detected": true,
+      "scope": "Private Unicorn instruction memory through the original composition."
+    }
+  ],
+  "distinct_primitive_inputs": 12696,
+  "distinct_composed_stage_graphs": 6912,
+  "distinct_transform_final_inputs": 5760,
+  "transform_repeated_inputs": 1152,
+  "repetition_reason": "With zero displacement, changing the face argument does not change the generated cuboid.",
+  "local_checks": {
+    "windows": {
+      "path": ".decomp-lab/collision-native-third/windows-tests-first.log",
+      "sha256": "04cf537a844e3ab6012946b79e77d11ea1ba332ea3569aff8f5cbc5f5d6b016d",
+      "tests": 234
+    },
+    "linux": {
+      "path": ".decomp-lab/collision-native-third/linux-tests-first.log",
+      "sha256": "6e8e22fd9cac645b1a1b2e238b6fbfd327ceaf8c976fd589217b1f083bea9cc0",
+      "tests": 234
+    },
+    "progress": {
+      "path": ".decomp-lab/collision-native-third/progress-first.json",
+      "sha256": "cfb6b31954b056cd4c2c9d3de8790d22c44cc6e528156f69b3710133be5ff56b"
+    },
+    "protected_input_audit": {
+      "path": ".decomp-lab/collision-native-third/protected-input-audit-first.json",
+      "sha256": "d60f906652a71bd55cc0949a207efa0e3f2cddae4645f20734488ba21d77506e"
+    },
+    "diagnostics": {
+      "path": ".decomp-lab/collision-native-third/preparation-and-unit-diagnostics-first.json",
+      "sha256": "31486e1df8f0a46e4ad0a09f08924d9826e4e90475d2bbc59d96bd8986b28ecd"
+    },
+    "bridge_build_log": {
+      "path": ".decomp-lab/collision-native-third/gte-bridge-first.build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "native_bridge_smoke": {
+      "path": ".decomp-lab/collision-native-third/bridge-smoke-first.json",
+      "sha256": "f3c00fc73219d782bbb4dc0b38f1b950e97a0c2fafef7471190dd2f78e4d1a0c"
+    }
+  },
+  "current_turn_before_after": {
+    "before_source_commit": "951b7dc7b0ba1b1bb63ae5772bea729b6236f16b",
+    "before": {
+      "c_bytes": 194884,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 6,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "after": {
+      "c_bytes": 194884,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 6,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "new_matching_c_functions": 0,
+    "new_original_feature_groups_accepted": 0,
+    "new_tooling_tests": 19,
+    "native_sdk_cases": 12244,
+    "primitive_native_distinct_inputs": 12696,
+    "composed_native_stage_graphs": 6912,
+    "transform_native_distinct_final_inputs": 5760,
+    "transform_repeated_final_inputs": 1152,
+    "native_gte_command_invocations": 46561,
+    "native_lzcs_invocations": 29826,
+    "native_distinct_requests": 10669,
+    "function_output_contracts_in_reviewed_paths_after": 0
+  },
+  "public_sources": [
+    {
+      "path": "tools/verify_collision.py",
+      "sha256": "bc1b5779be9ff60a70011d30263821bf17429c1f094b58528f1a930823e20bff"
+    },
+    {
+      "path": "tools/nymashock_gte_bridge.cs",
+      "sha256": "969e0af3b030e5b2eafedad032b68173ac76e41b089a28b4d4fc1084e33fedd9"
+    },
+    {
+      "path": "tests/test_collision.py",
+      "sha256": "75e4300851889bd1605dd322f3266dd0e9e06c7a2a4e51fb506a7006bce412d1"
+    },
+    {
+      "path": "docs/COLLISION.md",
+      "sha256": "6a023ce98ce6f38fca50e413031f1dde592cd48db77404f0a6f90b9686c158b5"
+    },
+    {
+      "path": "docs/collision-function-ranges.json",
+      "sha256": "9bfc8bdb864e7f1529adb7cde9c0be5313c5161b460e0ba31db51c59c58c3dd8"
+    }
+  ],
+  "source_comment_corrections": [
+    "Global enumeration value is not an instance count",
+    "Shared six-halfword bounds are not a 24-vertex buffer"
+  ],
+  "game_function_tokens_unchanged": true,
+  "canonical_executable_preserved": true,
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "explicit_function_output_stubs": 0,
+  "explicit_cop2_transfer_adapter": true,
+  "full_ps1_cpu_timing_checked": false,
+  "original_hardware_checked": false,
+  "whole_original_feature_groups_accepted": 0,
+  "source_functions_promoted": 0,
+  "model_api_calls": 0,
+  "original_game_behavior_modified": false,
+  "private_input_or_table_bytes_distributed": false,
+  "remaining_gates": [
+    "Six game functions require matching C",
+    "SDK/game-support classification closure",
+    "Five inventory scope gaps",
+    "Natural geometry and multi-cloud encounters",
+    "Unsupported primitive codes",
+    "Complete PS1 CPU load delays and cycle scheduling",
+    "Reviewed enumerated gameplay scenarios"
+  ]
+}

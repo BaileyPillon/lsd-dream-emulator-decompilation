@@ -40,6 +40,10 @@ with checked Nymashock MVMVA commands. Eleven original functions pass 13,230
 distinct composed cases with zero function-output stubs. Its reviewed COP2
 transfer adapter verifies the bounded arithmetic; full PS1 CPU timing,
 original hardware and natural scene acceptance remain open.
+The [collision composition](COLLISION.md) executes the remaining primitive and
+transform routines through actual bounds, decoder and native GTE dependencies.
+It adds bounded evidence for contact-height filtering and expanded-box behavior;
+both routines still require exact C recovery and natural collision scenarios.
 The [ordered-store audit](RENDER_MATCHING.md) shows why final-output agreement
 is insufficient: that candidate reverses two stores in 68,306 scalar fixtures.
 A corrected full candidate retains native store order but differs in 13 bytes;

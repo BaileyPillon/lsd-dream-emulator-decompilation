@@ -165,3 +165,14 @@ executing MVMVA. It mounts its own Waterbox host and needs no game or BIOS;
 the MIPS verifier requires a current matching game build. Detailed command
 logs and binaries remain private. This validates bounded native arithmetic
 and composition, with PS1 CPU timing and natural scene acceptance separate.
+
+## Original collision through native GTE dependencies
+
+The same checked bridge now supports the original OP/SQR command words and
+native LZCS writes used by the collision SDK helpers. The
+[collision audit](COLLISION.md) supplies `tools/verify_collision.py` and a
+metadata-only range manifest. It exercises the original primitive and transform
+paths, guarded buffers, contact-height filtering and shared bounds access.
+Use a new private report and a newly compiled bridge. Full PS1 CPU timing,
+unsupported primitive inputs, natural encounters and whole-feature acceptance
+remain separate requirements.

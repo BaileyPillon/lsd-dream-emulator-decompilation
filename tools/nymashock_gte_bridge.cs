@@ -37,6 +37,7 @@ public static class NymashockGteBridge {
         public uint command { get; set; }
         public uint[] cr { get; set; }
         public int[] ir { get; set; }
+        public uint? lzcs { get; set; }
     }
     public sealed class Result {
         public int id { get; set; }
@@ -63,13 +64,14 @@ public static class NymashockGteBridge {
         if (Hash(bytes) != expected) throw new Exception("Native function prefix differs: " + address.ToString("x"));
     }
     // CR writes and MAC reads were inlined by this build. Reproduce only the
-    // reviewed CR 0..4 mask/cache transfer; execute actual native WriteDR/MVMVA.
+    // reviewed CR 0..4 mask/cache transfer; execute native WriteDR and commands.
     // All supported commands overwrite MAC1..3 and IR1..3, use null translation,
     // and reset their flags, so reset-and-restore is equivalent for this subset.
     static Result Execute(Request request, Power power, WriteDr write, Instruction instruction) {
         if (request.cr == null || request.cr.Length != 5 || request.ir == null || request.ir.Length != 3 ||
-            (request.command != 0x4A41E012 && request.command != 0x4A49E012))
-            throw new Exception("Only reviewed rotation/IR/null-translation MVMVA commands are supported");
+            (request.command != 0x4A41E012 && request.command != 0x4A49E012 &&
+             request.command != 0x4B70000C && request.command != 0x4AA00428))
+            throw new Exception("Only reviewed MVMVA, OP and SQR commands are supported");
         foreach (int value in request.ir) if (value < -32768 || value > 32767) throw new Exception("IR input must be signed 16-bit");
         power();
         for (int i = 0; i < 5; i++) {
@@ -86,6 +88,15 @@ public static class NymashockGteBridge {
             result.ir[i] = Marshal.ReadInt16(new IntPtr(0x36F00299D20 + (i + 1) * 2));
         }
         return result;
+    }
+    // ReadDR was inlined; these two addresses are checked ELF symbols. WriteDR
+    // computes the actual native leading-sign-bit count, including negative inputs.
+    static object LeadingBits(Request request, Power power, WriteDr write) {
+        if (!request.lzcs.HasValue) throw new Exception("LZCS input is required for command zero");
+        power(); write(30, request.lzcs.Value);
+        return new { id = request.id,
+            lzcs = unchecked((uint)Marshal.ReadInt32(new IntPtr(0x36F00299D70))),
+            lzcr = unchecked((uint)Marshal.ReadInt32(new IntPtr(0x36F00299D74))) };
     }
     public static int Main(string[] args) {
         try {
@@ -121,7 +132,8 @@ public static class NymashockGteBridge {
                 while ((line = Console.ReadLine()) != null) {
                     var request = Json.Deserialize<Request>(line);
                     if (request == null || request.id <= 0) throw new Exception("Positive request id required");
-                    var result = Execute(request, power, write, instruction);
+                    var result = request.command == 0 ? LeadingBits(request, power, write) :
+                        (object)Execute(request, power, write, instruction);
                     Console.WriteLine("GTE_RESULT " + Json.Serialize(result)); Console.Out.Flush();
                 }
             } finally { host.Exit(); }

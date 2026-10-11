@@ -1,5 +1,19 @@
 # Changelog
 
+## Original collision through native GTE dependencies - 2026-10-11
+
+- Execute the original primitive routine in 12,696 distinct cases and the
+  transform composition in 6,912 stage-input graphs with zero output stubs.
+- Verify 12,244 original SDK cases and independently audit 76,387 ordered
+  native OP/SQR and leading-counter responses; classify repeated inputs.
+- Preserve contact-height filtering, expanded AABB acceptance, integer
+  square-root quirks and shared bounds access; detect three instruction faults.
+- Correct two misleading bounds/enumeration comments without changing game
+  function bodies. Preserve the complete canonical executable and all feature,
+  C, NPC, developer-capability and optional-mod counts.
+- Add 19 synthetic tooling checks. Full C recovery, PS1 CPU timing, natural
+  collision scenarios and whole-feature acceptance remain open.
+
 ## Original matrix application through native Nymashock GTE - 2026-10-11
 
 - Execute original `ApplyMatrixLV` in 109,501 distinct guarded cases with

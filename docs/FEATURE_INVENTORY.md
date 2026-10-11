@@ -229,3 +229,12 @@ transfer adapter, bounded matrices/vectors and one software GTE profile leave
 full PS1 CPU timing, natural scenes and whole-feature acceptance open. Four
 faults are detected. C, original-feature, NPC, developer-capability and mod
 counts remain unchanged, with all earlier feature records preserved.
+
+The subsequent [collision supplement](COLLISION.md) checks 12,244 original SDK
+fixtures, 12,696 distinct primitive inputs and 6,912 composed stage-input graphs
+through actual native GTE dependencies, with zero function-output stubs. It
+classifies 5,760 distinct final transform inputs and 1,152 repetitions, audits
+76,387 ordered native responses and detects three faults. This extends bounded
+F008 evidence and corrects two source comments; it promotes neither remaining
+collision function to C. Earlier records and all C, original-feature, NPC,
+developer-capability and optional-mod counts remain unchanged.

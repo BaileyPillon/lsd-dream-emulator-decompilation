@@ -63,6 +63,11 @@ executes the original matrix helper with checked Nymashock commands in 109,501
 distinct fixtures and composes eleven original functions in 13,230 cases
 without function-output stubs. Its explicit COP2 transfer adapter leaves
 full PS1 CPU timing, natural scenes and whole-feature acceptance open.
+The [collision audit](docs/COLLISION.md) executes the original primitive and
+transform routines through their actual dependencies, with 12,696 primitive
+cases and 6,912 composed graphs. It verifies native cross-product, square and
+square-root behavior, preserves contact-height and expanded-bounds quirks, and
+detects three faults. Both remaining collision functions still need matching C.
 The [sprite scaling audit](docs/UI_SCALE.md) checks 203,472 native cases,
 including overlapping inputs and incoming-register quirks. Its full C
 candidate still differs in 12 executable bytes and remains unaccepted.

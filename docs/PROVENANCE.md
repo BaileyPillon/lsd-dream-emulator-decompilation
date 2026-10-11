@@ -267,3 +267,19 @@ remain preserved. Reviewed inlined CR/MAC transfers are explicit; complete
 PS1 CPU execution, load delays, original hardware and scenes are unaccepted.
 No game/SDK sources or canonical executable bytes change. The public profile,
 code and synthetic tests distribute no emulator, game, BIOS or asset bytes.
+
+## Original collision supplement
+
+The [collision audit](COLLISION.md) executes original primitive and transform
+paths through their real bounds, decoder and SDK dependencies, with no output
+stubs. Its 12,244 SDK checks, 12,696 distinct primitive inputs and 6,912 stage
+graphs remain bounded evidence. The audit separates 1,152 repeated transform
+inputs and checks all 76,387 native command/counter responses independently.
+
+[collision-checks.json](collision-checks.json) pins the private proofs, sources,
+ordered log audit, range metadata, fault controls and local validation. Initial
+preparation diagnostics and the corrected clipping-test expectation are retained
+separately. Two misleading source comments change; game function bodies,
+compiler flags and canonical executable bytes are preserved. The public files
+contain no game, BIOS, emulator, lookup-table or captured-state bytes. Complete
+CPU timing, natural encounters and whole-feature acceptance remain open.
