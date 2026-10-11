@@ -202,3 +202,18 @@ decoded state differences. These are retained without masking. Metadata in
 [japanese-edition-checks.json](japanese-edition-checks.json) pins private evidence
 and the public tooling changes without publishing disc, BIOS, asset or capture
 bytes. Original feature and C-recovery counts remain unchanged.
+
+## Nymashock native-state supplement
+
+The [state diagnosis](NYMASHOCK_STATE.md) follows the actual loaded core's
+symbols, native pointer graph and short-string copy instructions. Across 44
+recorded checkpoint pairs, the 12 nonidentical decoded pairs each vary only in
+eight unused bytes of the native `"CD"` label. Windows and Linux decoders agree;
+input snapshots remain unchanged and no bytes are masked. These comparisons
+retain their whole-byte failures and do not create whole-feature acceptances.
+
+[nymashock-state-checks.json](nymashock-state-checks.json) pins private reports,
+native disassembly, primary source snapshots and the read-only diagnostic.
+The earlier Japanese report and metadata remain preserved at their published
+hashes. Synthetic tests and source experiments include no original game,
+emulator, BIOS, asset or captured state bytes in the public repository.

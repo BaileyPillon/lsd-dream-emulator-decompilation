@@ -190,7 +190,13 @@ earlier snapshots and the fixed provisional denominator.
 The [Japanese edition supplement](JAPANESE_EDITION.md) compares 683 files per
 edition, preserves two original sector checksum words and reproduces the
 complete Japanese-labelled disc byte for byte. It records a repeated bounded
-replay with the actual Nymashock core pinned and retains the unresolved
-eight-byte cold-boot state difference. Further C experiments promote no
-function; all C, original feature, NPC, developer-capability and optional-mod
+replay with the actual Nymashock core pinned and retains the eight-byte
+cold-boot state difference, unresolved at that checkpoint. Further C
+experiments promote no function; all C, original feature, NPC, developer-capability and optional-mod
 counts remain unchanged. The appended metadata preserves the earlier records.
+
+The subsequent [Nymashock state diagnosis](NYMASHOCK_STATE.md) locates those
+bytes in unused native media-label storage across 44 checkpoint pairs. It
+extends A004 without adding original features or developer-capability counts.
+All strict byte differences remain recorded, with no new whole-feature
+acceptance, C promotion or change to the fixed provisional denominator.

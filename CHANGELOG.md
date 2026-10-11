@@ -1,5 +1,18 @@
 # Changelog
 
+## Nymashock native-state diagnosis - 2026-10-11
+
+- Identify the eight varying cold-boot bytes as unused storage in the native
+  `"CD"` media-type label, using actual core symbols and copy instructions.
+- Add a read-only, binary-profile-checked diagnostic; retain full decoded
+  differences without masking, normalization or whole-feature acceptance.
+- Check 44 recorded checkpoint pairs from 82 distinct states and preserve the
+  earlier Japanese reports and metadata at their published hashes.
+- Pass 175 local tooling tests on Windows Python 3.14 and Linux Python 3.13;
+  verify both decoder paths on real private saved states.
+- Reject further bounds-predicate C forms after 168 successful comparisons
+  across 204 compiler invocations. No game function or feature is added.
+
 ## Japanese disc reconstruction and runtime identity - 2026-10-11
 
 - Preserve original EDC words for identical valid XA Form2 sector bodies;

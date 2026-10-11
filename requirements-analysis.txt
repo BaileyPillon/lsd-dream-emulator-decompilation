@@ -1,2 +1,3 @@
-# Optional local native NPC validation; separate from the matching build.
+# Optional native validation and state diagnosis; separate from the matching build.
 unicorn==2.1.4
+zstandard==0.25.0

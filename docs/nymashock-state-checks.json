@@ -1,0 +1,306 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-11T14:17:01.625044+00:00",
+  "repository_code_base_commit": "09120363a1142a3ac2304a16b2b0ec166654b1f6",
+  "documentation": "docs/NYMASHOCK_STATE.md",
+  "documentation_sha256": "27d514bedd5d0cef8a3157b97a06e20cd17930ad34b213195fccf7940f672aea",
+  "producer": {
+    "path": ".decomp-lab/publish_nymashock_state_second.py",
+    "sha256": "eebfebcc1af7c90c82acaca303361a21158a917f78920d86b476badd6c1ce18f"
+  },
+  "profile": {
+    "name": "BizHawk 2.11.1 Windows Nymashock",
+    "compressed_core_sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126",
+    "uncompressed_elf_sha256": "71f62393c291a16f1f181b18755bf12868432c6e87140b1c0980a51b36ee95bc"
+  },
+  "native_object": {
+    "symbolic_path": "Mednafen::MDFNGameInfo -> MDFNGI.RMD -> RMD_Layout.MediaTypes[0].Name",
+    "game_info_pointer": "0x36f0029a9f0",
+    "game_info": "0x36f0029a850",
+    "rmd_layout": "0x36f0080f980",
+    "media_type_name": "0x36f0080fc00",
+    "string_object_bytes": 24,
+    "name": "CD",
+    "name_length": 2,
+    "initialized_label_object_offsets": [
+      0,
+      3
+    ],
+    "unused_storage_object_offsets": [
+      4,
+      23
+    ],
+    "observed_different_object_offsets": [
+      16,
+      23
+    ],
+    "observed_different_virtual_addresses": [
+      "0x36f0080fc10",
+      "0x36f0080fc17"
+    ],
+    "native_initcd_address": "0x36f00067f40",
+    "native_slow_vector_append_address": "0x36f00256310",
+    "field_and_native_storage_copy_identified": true,
+    "prior_contents_of_unused_temporary_bytes_traced": false
+  },
+  "recorded_state_diagnosis": {
+    "checkpoint_pairs": 44,
+    "distinct_saved_states": 82,
+    "nonidentical_decoded_pairs": 12,
+    "different_bytes_per_nonidentical_pair": 8,
+    "all_observed_differences_in_unused_label_storage": true,
+    "unclassified_observed_difference_bytes": 0,
+    "role_summary": {
+      "legacy_cold": {
+        "checkpoint_pairs": 6,
+        "nonidentical_decoded_pairs": 6
+      },
+      "current_cold": {
+        "checkpoint_pairs": 6,
+        "nonidentical_decoded_pairs": 0
+      },
+      "same_original_cold_repeat": {
+        "checkpoint_pairs": 6,
+        "nonidentical_decoded_pairs": 6
+      },
+      "legacy_saved_state_play": {
+        "checkpoint_pairs": 13,
+        "nonidentical_decoded_pairs": 0
+      },
+      "current_saved_state_play": {
+        "checkpoint_pairs": 13,
+        "nonidentical_decoded_pairs": 0
+      }
+    },
+    "input_snapshots_modified": false,
+    "whole_byte_failures_preserved": true,
+    "state_bytes_masked": 0,
+    "state_normalization_used": false
+  },
+  "decoder_backend_check": {
+    "windows_python314_standard_zstd": true,
+    "linux_python313_zstandard_version": "0.25.0",
+    "same_saved_pair_decoded_hashes_and_diagnosis_agree": true
+  },
+  "earlier_japanese_documentation": {
+    "published_commit": "09120363a1142a3ac2304a16b2b0ec166654b1f6",
+    "documentation": {
+      "path": "docs/JAPANESE_EDITION.md",
+      "sha256": "ac994c8fe8bc1a99692d8b443981ce0c7d3470259040bbdfc827c9b483ce7aa5"
+    },
+    "metadata": {
+      "path": "docs/japanese-edition-checks.json",
+      "sha256": "57324ee362bd36f96af4ce955c905e6eb013886f9db8054d42b709a1b8d3f393"
+    },
+    "published_bytes_preserved": true
+  },
+  "canonical_build": {
+    "progress": {
+      "path": ".decomp-lab/nymashock-state-progress-first.json",
+      "sha256": "342d61ad0cb642867cacccb4c2f6b00ef31591969e82710401b8a99b3f1e723c"
+    },
+    "build_current": true,
+    "complete_objects": true,
+    "executable_bytes": 505856,
+    "entire_executable_equal": true,
+    "executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "game_source_and_compiler_flags_unchanged": true
+  },
+  "additional_source_experiments": [
+    {
+      "report": {
+        "path": ".decomp-lab/cd38-result-regions-first/results.json",
+        "sha256": "83ff1ff8eb4e3ec63f08901dcd6594e22964f3dbdd0093fc3d54fa79ebb8cc20"
+      },
+      "attempted_forms": 168,
+      "compiled_forms": 132,
+      "compile_errors": 36,
+      "matching_forms": 0,
+      "best_different_bytes": 38
+    },
+    {
+      "report": {
+        "path": ".decomp-lab/cd38-result-regions-repair-first/results.json",
+        "sha256": "7691cf88c7168d4bcbbb5472117be892b9ae605cf2e3e6432c9c61aec20f63ab"
+      },
+      "attempted_forms": 36,
+      "compiled_forms": 36,
+      "compile_errors": 0,
+      "matching_forms": 0,
+      "best_different_bytes": 91
+    }
+  ],
+  "source_comparison_count_scope": "168 initial forms: 132 compiled, 36 C89 declaration errors. A separate batch repaired and compiled those 36 forms. Total 204 invocations, 168 successful comparisons; zero matches. Earlier best bounded candidate remains 38 different bytes.",
+  "current_turn_before_after": {
+    "before_source_commit": "09120363a1142a3ac2304a16b2b0ec166654b1f6",
+    "before": {
+      "c_bytes": 194884,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 6,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "after": {
+      "c_bytes": 194884,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 6,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "new_matching_c_functions": 0,
+    "new_original_feature_groups_accepted": 0,
+    "new_tooling_tests": 12,
+    "new_bounds_compiler_invocations": 204,
+    "new_bounds_successful_compiler_comparisons": 168
+  },
+  "local_tests": {
+    "windows_python314": {
+      "passed": true,
+      "tests": 175,
+      "log": {
+        "path": ".decomp-lab/nymashock-state-windows-tests-first.log",
+        "sha256": "cfe7520379c0926d81659bae8cdbf56a00c21a91c14a7013b5374eacfae53652"
+      }
+    },
+    "linux_python313": {
+      "passed": true,
+      "tests": 175,
+      "log": {
+        "path": ".decomp-lab/nymashock-state-linux-tests-first.log",
+        "sha256": "17b9b0338989358ed036ec35e1ffa805a23322658700fe625e2a0c37d47273ea"
+      }
+    }
+  },
+  "public_source_sha256": {
+    "tools/inspect_nymashock_state.py": "5a60484ca76054220ec82770b3a7bdce445b0a0e20b6d4b6d11a5e8bd4e67e48",
+    "tests/test_nymashock_state.py": "6a999a4cb5cbf5e38a8210d272d056b2ffa3333b4aac70d7b1f0a40949e37f2a",
+    "requirements-analysis.txt": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911",
+    "tools/compare_runtime.py": "3fd2893a7f3971627e429462106ead9ded0bf5778ef34bc6bd2035e1564c2348"
+  },
+  "primary_source_snapshots": [
+    {
+      "url": "https://raw.githubusercontent.com/TASEmulators/BizHawk/2.11.1/waterbox/waterboxhost/src/lib.rs",
+      "sha256": "9f88f40794cea6382bbdce3b2698968de22c279a2c6c46cb84f5016bfe10472c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TASEmulators/BizHawk/2.11.1/waterbox/waterboxhost/src/elf.rs",
+      "sha256": "3b3db0d3c119cf6c460cbe563d4183e15624d460436af4ad959f0a1996dc88e8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TASEmulators/BizHawk/2.11.1/waterbox/waterboxhost/src/cinterface.rs",
+      "sha256": "6f1160baab1ba2f429e746e9fed8af081925d076c245f08354152e3cff8c6711"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TASEmulators/BizHawk/2.11.1/waterbox/waterboxhost/src/bin.rs",
+      "sha256": "30f3f3c0bdd514fa1117cb4f5f34a3c0576b36205214420b499f0161a031332b"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TASEmulators/BizHawk/2.11.1/waterbox/nyma/cdrom.cpp",
+      "sha256": "d47e109d5d33558a5cf5f55b5b07886289b61268e45d329f5f8537fd62617268"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TASEmulators/BizHawk/2.11.1/src/BizHawk.Emulation.Cores/Waterbox/NymaCore.cs",
+      "sha256": "d33047cdf2a3ca7d33ce0bd7759ae4a0a011f38976eb810cbf4b7acc60d8ae87"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TASEmulators/mednafen/382ff1b8d293c9a862497706808cbb79b2cecbfb/src/git.h",
+      "sha256": "6592614739fcfe77029886f279f3393104f992ed1082736de6affc12c2155acb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TASEmulators/mednafen/382ff1b8d293c9a862497706808cbb79b2cecbfb/src/mednafen.h",
+      "sha256": "de51c710487a64c9c154cc84be54fece7e32300cbffa9456b44b7612e805c3a1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TASEmulators/BizHawk/2.11.1/waterbox/waterboxhost/src/memory_block/mod.rs",
+      "sha256": "9d5280f5cc8bf9f22f9c7da6bf4f2c8e4c8c359ee8dc36fb933a5f7c8a58d853"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TASEmulators/BizHawk/2.11.1/waterbox/waterboxhost/src/memory_block/pageblock.rs",
+      "sha256": "ab1a768896449bce120c5cbe612301738b67c809b08f0f6096c1cbf1fbeef18c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TASEmulators/BizHawk/2.11.1/waterbox/waterboxhost/src/host.rs",
+      "sha256": "c3c74b5a340a7ccf2950034fcda5a78e32208688e80b858ed4939ce6640d8dfe"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TASEmulators/BizHawk/2.11.1/src/BizHawk.Emulation.Cores/Waterbox/WaterboxCore.cs",
+      "sha256": "4e66e1e6f5c98903b4199c1bea2c23c36b1583ddf043eb41bf78bce2e1d5fe6c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-18.1.8/libcxx/include/string",
+      "sha256": "32bca140aadc0dd8b1c9bda577e6fa2ca70231b49074d56d713ddd9f43fd0974"
+    }
+  ],
+  "private_evidence": [
+    {
+      "path": ".decomp-lab/nymashock-native-state-diagnosis-first.json",
+      "sha256": "6e3e1f852d756c41399eb4b61630c12d2a2ccceea85ef9df14b50dcc42a612f4"
+    },
+    {
+      "path": ".decomp-lab/verify_nymashock_state_first.py",
+      "sha256": "a3622414b12bcaa6a9e57bacf53102914319767335c48e4acda4dc3c8920f5d0"
+    },
+    {
+      "path": ".decomp-lab/nymashock-state-progress-first.json",
+      "sha256": "342d61ad0cb642867cacccb4c2f6b00ef31591969e82710401b8a99b3f1e723c"
+    },
+    {
+      "path": ".decomp-lab/nymashock-state-cli-windows-first.json",
+      "sha256": "f1c71dcafba82cade3475641f569a779b9ea2dc273eafd7349c56e7216394e21"
+    },
+    {
+      "path": ".decomp-lab/nymashock-state-cli-linux-first.json",
+      "sha256": "99bb0521bd619e072cf7afd9c8b3f994dd56d18ed877ebd92db20bd971239063"
+    },
+    {
+      "path": ".decomp-lab/nymashock-state-windows-tests-first.log",
+      "sha256": "cfe7520379c0926d81659bae8cdbf56a00c21a91c14a7013b5374eacfae53652"
+    },
+    {
+      "path": ".decomp-lab/nymashock-state-linux-tests-first.log",
+      "sha256": "17b9b0338989358ed036ec35e1ffa805a23322658700fe625e2a0c37d47273ea"
+    },
+    {
+      "path": ".decomp-lab/nymashock-initcd-complete-first.disasm",
+      "sha256": "59a5e00b7e7a5831ac2b57b84a0d155b762fb651bbc61f915c294768c4508626"
+    },
+    {
+      "path": ".decomp-lab/nymashock-media-vector-append-complete-first.disasm",
+      "sha256": "d4ee236ed82c90ed1602a215b5733c4f9e86aa4f7e17e59e1efd4a53efa70c2d"
+    },
+    {
+      "path": ".decomp-lab/shock-runtime-symbols-first.elf",
+      "sha256": "71f62393c291a16f1f181b18755bf12868432c6e87140b1c0980a51b36ee95bc"
+    },
+    {
+      "path": ".decomp-lab/probe_cd38_result_regions_first.py",
+      "sha256": "e0a300ca5f29622beda2902ce397116dfee88c87ea4953478db6f7f601a39b6b"
+    },
+    {
+      "path": ".decomp-lab/probe_cd38_result_regions_repair_first.py",
+      "sha256": "9e62d2c482ce467f8e16439165ef82ccf6497cdedfc6c1db40aa1a8ffebad11a"
+    }
+  ],
+  "developer_capability_extended": "A004",
+  "original_game_behavior_modified": false,
+  "model_api_calls": 0,
+  "official_exhaustive_feature_total": "unknown",
+  "whole_original_feature_groups_accepted": 0,
+  "private_game_emulator_bios_asset_or_capture_bytes_included": false,
+  "scope": "Profile-specific native host-field diagnosis, with complete decoded byte differences retained. No emulator/game patch, launch-identity repair, independent whole-feature acceptance or C promotion."
+}

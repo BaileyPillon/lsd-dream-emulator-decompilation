@@ -81,8 +81,10 @@ and 191 initial source trials found no exact match. The subsequent
 - Review every feature's recorded scenarios, including rare RNG, save/card
   error, audio and hardware-timing branches.
 - Extend [Japanese asset and replay evidence](JAPANESE_EDITION.md) beyond the
-  recorded 6,000-frame scenario, resolve the eight decoded cold-boot state
-  bytes, and review exhaustive content coverage separately from English v1.
+  recorded 6,000-frame scenario and review exhaustive content coverage
+  separately from English v1. The [state diagnosis](NYMASHOCK_STATE.md)
+  identifies the eight cold-boot bytes as unused Nymashock label storage;
+  strict byte comparisons retain those differences.
 
 The catalogue currently has 40 provisional groups. None has been accepted for
 all required runtime scenarios. The [inventory](FEATURE_INVENTORY.md) lists the

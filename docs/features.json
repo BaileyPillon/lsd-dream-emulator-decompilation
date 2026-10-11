@@ -18740,6 +18740,61 @@
       "model_api_calls": 0,
       "private_inputs_or_native_output_bytes_included": false,
       "whole_original_feature_groups_accepted": 0
+    },
+    "nymashock_state_diagnosis_20261011": {
+      "recorded_utc": "2026-10-11T14:17:01.625044+00:00",
+      "documentation": "docs/NYMASHOCK_STATE.md",
+      "metadata": "docs/nymashock-state-checks.json",
+      "metadata_sha256": "dd38f492cb6618bb36ee09585fc04f83ab21b5b093ed6a23d355827bec461337",
+      "repository_code_base_commit": "09120363a1142a3ac2304a16b2b0ec166654b1f6",
+      "observed_cold_state_field_identified": "unused RMD_MediaType.Name short-string storage",
+      "checkpoint_pairs_diagnosed": 44,
+      "distinct_saved_states": 82,
+      "nonidentical_whole_decoded_pairs_preserved": 12,
+      "state_bytes_masked": 0,
+      "source_functions_promoted": 0,
+      "canonical_executable_preserved": true,
+      "current_turn_before_after": {
+        "before_source_commit": "09120363a1142a3ac2304a16b2b0ec166654b1f6",
+        "before": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "after": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "new_matching_c_functions": 0,
+        "new_original_feature_groups_accepted": 0,
+        "new_tooling_tests": 12,
+        "new_bounds_compiler_invocations": 204,
+        "new_bounds_successful_compiler_comparisons": 168
+      },
+      "developer_capability_extended": "A004",
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0,
+      "whole_original_feature_groups_accepted": 0,
+      "private_inputs_or_native_output_bytes_included": false
     }
   }
 }

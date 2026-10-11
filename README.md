@@ -60,8 +60,10 @@ The later [matching loader recovery](docs/LBD_RECOVERY.md) promotes its 600-byte
 function to C, with complete standard and clean builds matching the original.
 The [Japanese disc verification](docs/JAPANESE_EDITION.md) compares both asset
 editions and corrects two checksum words to reproduce the complete Japanese
-disc byte for byte. Its replay evidence and unresolved cold-boot state
-difference are recorded separately.
+disc byte for byte. Its replay evidence is recorded separately. The later
+[Nymashock state diagnosis](docs/NYMASHOCK_STATE.md) identifies the eight varying
+cold-boot bytes as unused media-label storage, while retaining every strict
+byte difference and the remaining gameplay acceptance requirements.
 
 ## Three separate workflows
 

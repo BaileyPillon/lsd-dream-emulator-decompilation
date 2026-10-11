@@ -96,3 +96,22 @@ Supply BIOS files named `scph5500.bin`, `scph5501.BIN` and `scph5502.BIN`.
 Replay comparisons require the same assets, emulator/core, BIOS, settings,
 script and starting state on both sides. See [RUNTIME_COMPARISON.md](RUNTIME_COMPARISON.md)
 for paired runs and audio capture.
+
+## Nymashock saved-state diagnosis
+
+Use Python 3.14, or install `requirements-analysis.txt` for its Zstandard
+decoder on earlier supported Python versions. The diagnostic reads existing
+private states from the checked Windows BizHawk 2.11.1 Nymashock core:
+
+```bash
+python tools/inspect_nymashock_state.py \
+  --original /private/original/frame-1800.State \
+  --rebuilt /private/repeated/frame-1800.State \
+  --core /private/BizHawk/dll/shock.wbx.zst \
+  --output .decomp-lab/nymashock-state-new.json
+```
+
+The [native field diagnosis](NYMASHOCK_STATE.md) describes its fixed binary
+profile and limitations. Reports require a new output path and retain complete
+decoded differences alongside their classification. No state bytes are masked,
+and the tool does not modify inputs, launch an emulator or call a model API.

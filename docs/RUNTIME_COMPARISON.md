@@ -116,7 +116,16 @@ No comparison masks decoded state bytes. The initial Japanese cold-boot pair
 has eight differing bytes in each decoded Waterbox snapshot despite equal
 visual, GPU, trace and audio outputs. The repeated schema-two original/rebuild
 cold pair agrees, but a further same-original cold boot has the eight decoded
-differences again. Its field and cause remain unresolved. The schema-two
+differences again. The field was unresolved at that checkpoint. The schema-two
 6,000-frame shared-state pair agrees at every recorded checkpoint and across
 all 4,422,823 stereo PCM sample frames. Report hashes and these separate
 results are in [japanese-edition-checks.json](japanese-edition-checks.json).
+
+The later [Nymashock state diagnosis](NYMASHOCK_STATE.md) follows the actual
+native pointer graph and identifies all eight varying bytes as unused storage
+in the short `"CD"` media-type label. Its native insertion path copies those
+bytes with the full 24-byte object. The read-only tool checks 44 checkpoint
+pairs without masking, normalization or changes to this strict comparator.
+The 12 nonidentical decoded comparisons remain nonidentical. This explains
+the observed host field; it does not accept further gameplay scenarios or
+repair the older incomplete launch identities.
