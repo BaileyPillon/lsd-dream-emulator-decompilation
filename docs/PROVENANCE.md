@@ -97,3 +97,14 @@ The private Ghidra project now reflects the reviewed SDK volume names and
 three explicitly typed MIPS prototypes. Parameter storage and unchanged native
 bytes were checked before saving. The project database, binary exports and C
 candidate remain private; the public supplement contains metadata only.
+
+## Rendering grid-window supplement
+
+The [grid-window audit](RENDER_GRID.md) runs the original 660-byte helper in
+74,832 scalar cases, including all angle words, with four explicit contracts
+and eight detected controls. The private full C candidate gives the same
+bounded results but differs in four executable bytes across two stores.
+It is not promoted. Saved private Ghidra has reviewed caller/helper/builder
+prototypes; their 1,232 native bytes are unchanged. Current counts and hashes
+are appended separately to the inventory. Real GTE, downstream rendering
+and whole-feature parity remain open.

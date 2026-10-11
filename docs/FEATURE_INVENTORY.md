@@ -95,6 +95,12 @@ The same audit bounded 418 of 418 LBD files, 167,200 grid cells and 270 addition
 
 ## Remaining scope
 
+The [grid-window supplement](RENDER_GRID.md) verifies the original renderer
+helper in 74,832 bounded cases with eight detected controls and four explicit
+dependencies. The closest full C candidate agrees on those fixtures but has
+four differing bytes and remains private. This extends F033 evidence with
+unchanged game C, original/NPC, tool-capability and whole-feature counts.
+
 The [save workflow supplement](CARD_SAVE.md) checks the original retry wrapper,
 writer, path builder, title formatter and SDK string/conversion routines in
 13,152 bounded cases. Seven I/O/allocation/diagnostic contracts remain explicit.

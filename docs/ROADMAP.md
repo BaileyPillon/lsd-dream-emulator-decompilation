@@ -22,6 +22,10 @@ byte differences remain to resolve before accepting C.
 The [save workflow audit](CARD_SAVE.md) verifies the wrapper, writer and native
 helpers in 13,152 bounded cases. Its full C candidate agrees on those fixtures
 but still differs in eight executable bytes; the writer remains in assembly.
+The [grid-window audit](RENDER_GRID.md) verifies all 65,536 angle words within
+74,832 scalar fixtures. Its full C candidate agrees on those fixtures but
+reorders two stores, differing in four bytes. Real GTE transforms and the
+downstream builder remain external contracts.
 
 | Function | Source |
 | --- | --- |

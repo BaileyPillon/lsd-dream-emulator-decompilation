@@ -32,6 +32,19 @@ file/allocation/diagnostic contracts and remaining physical-card gates.
 Reports require a new private path. This analysis tool does not modify the
 game or call a model API.
 
+## Native rendering grid window
+
+After building the canonical executable and installing
+`requirements-analysis.txt` in the same Linux/WSL environment:
+
+```bash
+python tools/verify_render_grid.py --output .decomp-lab/render-grid-native-new.json
+```
+
+The [grid-window audit](RENDER_GRID.md) describes the scalar fixtures, four
+external contracts and exact C/renderer gates. Reports require a new private
+path. The tool does not modify the game or call a model API.
+
 ## Ghidra MCP
 
 Import the verified analysis ELF into a Ghidra project named `lsd-original`

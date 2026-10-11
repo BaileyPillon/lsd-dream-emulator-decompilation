@@ -45,6 +45,9 @@ an exact code match.
 The [save workflow checks](docs/CARD_SAVE.md) exercise the original writer,
 retry wrapper and native string helpers; physical card I/O and the writer's
 exact C recovery remain open.
+The [rendering grid-window checks](docs/RENDER_GRID.md) verify every angle word
+and bounded scalar grid/clamp rules; the closest C candidate still has four
+byte differences in two stores.
 
 ## Three separate workflows
 

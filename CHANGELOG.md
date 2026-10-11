@@ -1,5 +1,17 @@
 # Changelog
 
+## Original rendering grid-window verification - 2026-10-11
+
+- Check 74,832 original grid-window cases, including every 16-bit angle word,
+  using four explicit external contracts; detect eight wrong controls.
+- Recover dimension/origin, signed clamp, callback mutation and call-order
+  rules. Add a reusable verifier and private-report preservation tests.
+- Compare the full C translation unit and check its candidate against the
+  same fixtures; retain four differing bytes across two dimension stores.
+- Save three reviewed MIPS caller/helper/builder prototypes in private Ghidra
+  with native bytes preserved. Keep C/feature/NPC and tool-capability counts
+  unchanged; full rendering and whole-game parity remain open.
+
 ## Original save workflow verification - 2026-10-11
 
 - Check 13,152 original save-workflow cases using nine native functions and
