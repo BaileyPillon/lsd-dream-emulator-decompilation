@@ -54,6 +54,9 @@ and GTE contracts remain.
 The [sprite scaling audit](docs/UI_SCALE.md) checks 203,472 native cases,
 including overlapping inputs and incoming-register quirks. Its full C
 candidate still differs in 12 executable bytes and remains unaccepted.
+The [level-model loader audit](docs/LBD_PIPELINE.md) checks 418 local level
+files through native construction and destruction, including repeated loads.
+Its C candidate agrees on checked outputs but still differs in 118 bytes.
 
 ## Three separate workflows
 

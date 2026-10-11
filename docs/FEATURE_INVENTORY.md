@@ -169,3 +169,11 @@ incoming-register behavior for skipped divisions. The full C candidate still
 differs in 12 executable bytes; 108 additional source trials found no exact
 match. This extends bounded UI evidence without changing C, original feature,
 NPC, developer-capability, optional-mod or whole-feature acceptance counts.
+
+The [level-model loader supplement](LBD_PIPELINE.md) adds 418 cold-load and
+418 native-reload cases per implementation, for 1,672 loader runs. It executes
+the original decoder, constructors, allocator, destructor and SDK routines,
+with zero dependency stubs and an explicit ready-CD state. Two corrected
+virtual-call declarations preserve the canonical build. This extends evidence
+for F033; the full C candidate still differs in 118 bytes, and all feature,
+C, NPC, developer-capability and optional-mod counts remain unchanged.

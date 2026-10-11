@@ -60,6 +60,14 @@ remain separate acceptance work.
 
 ## Original behavior and content
 
+The [level-model loader audit](LBD_PIPELINE.md) checks all 418 inventoried local
+LBD files, including native destruction/reloading, with actual allocator,
+decoder, constructors and SDK routines. Two virtual-call declarations now
+match the observed default methods. This closes those calls for the recorded
+ready-CD fixture; pending I/O, cold hardware, caller ownership and rendering
+remain separate work. The full C loader candidate still differs in 118 bytes,
+and 191 new source trials found no exact match.
+
 - Resolve asset/command inventory gaps and runtime reachability.
 - Close virtual-call dependencies and verify semantic callback signatures.
 - Extend native fixtures beyond the 11 currently checked callbacks and their

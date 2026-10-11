@@ -47,7 +47,7 @@ typedef struct tmd_model_vtable {
     /* 0x074 8006f1b0 */ void (*Unk28)(void *);
     /* 0x078 8006f1b4 */ void (*tmd_map)(void *);
     /* 0x07C 8006f1b8 */ void (*Unk30)(void *);
-    /* 0x080 8006f1bc */ void (*Unk31)(void *);
+    /* 0x080 8006f1bc */ s32 (*Unk31)(tmd_model_t *, s32);
     /* 0x084 8006f1c0 */ void (*Unk32)(void *);
 } tmd_model_vtable_t;
 

@@ -18504,6 +18504,105 @@
       "original_game_behavior_modified": false,
       "model_api_calls": 0,
       "private_inputs_or_native_output_bytes_included": false
+    },
+    "lbd_pipeline_native_20261011": {
+      "recorded_utc": "2026-10-11T11:54:42.554534+00:00",
+      "documentation": "docs/LBD_PIPELINE.md",
+      "repository_code_base_commit": "0efb93e985b7544f6202a8a15994aab4f94cedf3",
+      "scope": "Bounded local LBD cold-load and native-reload composition, two header API corrections and an unaccepted C candidate. No original behavior modification or whole-feature acceptance.",
+      "metadata": "docs/lbd-pipeline-checks.json",
+      "metadata_sha256": "58d5506a9402555cc1aaf39ea50fc396f2f45ca2d8e903acd51f3fe88dc152b0",
+      "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+      "matching_executable_preserved": true,
+      "source_functions_promoted": 0,
+      "header_signature_corrections": 2,
+      "game_sdk_classification_changes": 0,
+      "original_native_validation": {
+        "report": ".decomp-lab/lbd-pipeline-native-cold-reload-second.json",
+        "sha256": "edb58d300a1013402766e01f635f0e78479f5480564c62ba983a9828ff979eb0",
+        "levels": 418,
+        "cold_loader_runs": 418,
+        "reload_loader_runs": 418,
+        "dependency_stubs": 0,
+        "input_state_contracts": 1,
+        "negative_controls_detected": 5
+      },
+      "nonmatching_candidate_validation": {
+        "report": ".decomp-lab/lbd-pipeline-native-cold-reload-second.json",
+        "sha256": "edb58d300a1013402766e01f635f0e78479f5480564c62ba983a9828ff979eb0",
+        "loader_runs": 836,
+        "outputs_equal": true,
+        "accepted_as_matching_c": false
+      },
+      "nonmatching_complete_executable": {
+        "report": ".decomp-lab/be54-pipeline-full-compare-first/comparison.json",
+        "sha256": "f6eefe159e72440638b3fccaaf3289723d36a6fbe8c83e1acc40c671add40303",
+        "exact_match": false,
+        "expected_bytes": 505856,
+        "actual_bytes": 505856,
+        "changed_bytes_in_common_range": 118,
+        "length_difference": 0,
+        "expected_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+        "actual_sha1": "0e8d622af36a866bdd7c27e35bd5736a83531218",
+        "candidate_sha256": "ee37c857f9693b00661aa46e13354be0506af25875213e6ddaafa8905f4fbf05",
+        "gameplay_tested": false,
+        "full_loader_body_equals_bounded_candidate": true,
+        "all_changed_bytes_within_600_byte_loader": true,
+        "full_candidate_source": ".decomp-lab/be54-pipeline-full-candidate-first.c",
+        "full_candidate_source_sha256": "ee37c857f9693b00661aa46e13354be0506af25875213e6ddaafa8905f4fbf05"
+      },
+      "source_experiments": {
+        "report": ".decomp-lab/primitive-field-access-first/results.json",
+        "sha256": "d6a9b63859d5846afd336c7946ef0145a27d0df6e1a759871b465b5f8241d5db",
+        "unique_trials": 191,
+        "duplicates_skipped": 1,
+        "errors": 0,
+        "exact_matches": 0,
+        "minimum_byte_differences": 118,
+        "canonical_compiler_flags_changed": false,
+        "hypothesis": "Pointer-based heading access, explicit tile flag capture and native metadata word access can recover the observed instruction ordering.",
+        "source_promotions": 0
+      },
+      "current_turn_before_after": {
+        "before_source_commit": "0efb93e985b7544f6202a8a15994aab4f94cedf3",
+        "before": {
+          "c_bytes": 194284,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 7,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "after": {
+          "c_bytes": 194284,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 7,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "new_original_loader_runs": 836,
+        "original_and_candidate_native_runs": 1672,
+        "new_unique_source_trials": 191,
+        "source_functions_promoted": 0,
+        "header_signature_corrections": 2,
+        "game_sdk_classification_changes": 0
+      },
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0,
+      "private_inputs_or_native_output_bytes_included": false
     }
   }
 }

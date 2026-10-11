@@ -1,5 +1,16 @@
 # Changelog
 
+## Original level-model loader composition - 2026-10-11
+
+- Verify 418 local LBD files through original tile decoding, TMD construction,
+  SDK map/link and native allocation, then reload through the real destructor.
+- Check 1,672 original/candidate loader runs with zero dependency stubs and
+  an explicit ready-CD state; detect five deliberate output faults.
+- Correct two virtual-call declarations while preserving the complete
+  canonical executable. Keep the C candidate's 118 byte differences private.
+- Eliminate 191 additional source trials, add reusable private verification,
+  and preserve matching C, feature, NPC, developer-capability and mod counts.
+
 ## Original sprite scaling verification - 2026-10-11
 
 - Check 203,472 original and 203,472 candidate native runs with zero stubs,

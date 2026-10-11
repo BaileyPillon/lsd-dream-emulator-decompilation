@@ -150,3 +150,20 @@ and producer hash. The successful verifier and private-output tests are public;
 game inputs, candidate images and raw reports remain private. The full candidate
 retains 12 byte differences and is not promoted. Metadata and historical count
 preservation are recorded in [ui-scale-checks.json](ui-scale-checks.json).
+
+## Original level-model loader supplement
+
+The [level-model loader audit](LBD_PIPELINE.md) uses all 418 previously
+inventoried local LBD files through both cold loading and native destruction
+and reloading. The actual allocator, constructors, decoder, SDK routines and
+driver-vtable initialization execute, with one ready-CD state contract and no
+dependency stubs. Cold outputs and heap layouts have an independent reference;
+reloads check defined fields and compare complete arenas between implementations.
+
+The full candidate's loader bytes equal those used in the 1,672 native runs,
+but its complete executable still differs in 118 bytes. Two header signature
+corrections preserve the canonical build; no C function is promoted. The
+public checker and metadata contain no disc bytes or candidate image. Inputs,
+raw results and failed harness preflights remain private and preserved.
+Source/evidence pins and unchanged counts are recorded in
+[lbd-pipeline-checks.json](lbd-pipeline-checks.json).

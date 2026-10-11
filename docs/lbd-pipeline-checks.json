@@ -1,0 +1,715 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-11T11:54:42.554534+00:00",
+  "repository_code_base_commit": "0efb93e985b7544f6202a8a15994aab4f94cedf3",
+  "scope": "Bounded local LBD cold-load and native-reload composition, two header API corrections and an unaccepted C candidate. No original behavior modification or whole-feature acceptance.",
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "canonical_build_preserved": true,
+  "header_signature_corrections": [
+    {
+      "path": "src/file/file_object.h",
+      "slot": "0x78",
+      "callee": "class_1C92C_unk29",
+      "callee_address": "0x8002C278",
+      "declaration": "s32 (*)(void *, u8 *, s32)",
+      "sha256": "41368a0e71b9ecb0dec0dc7769714d13d33ddee46dc1adddc95d6b92eded63ce"
+    },
+    {
+      "path": "src/file/tmd_model.h",
+      "slot": "0x80",
+      "callee": "func_80043B58",
+      "callee_address": "0x80043B58",
+      "declaration": "s32 (*)(tmd_model_t *, s32)",
+      "caller_supplies_four_register_arguments": true,
+      "default_callee_consumes_first_two": true,
+      "sha256": "711946954a00880537582cd8956412b21a863a2e3b40c60dc1366cabbdfa1020"
+    }
+  ],
+  "matching_build": {
+    "report": ".decomp-lab/lbd-pipeline-current-progress-first.json",
+    "sha256": "b5f0091bc9d1e615d0948e677466e8151431fbeb378c1bcdacaa8bbe5b3a76cb",
+    "objects_expected": 305,
+    "objects_found": 305,
+    "build_current": true,
+    "c_bytes": 194284,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 97.18476129496979,
+    "sdk_text_bytes": 147880,
+    "handwritten_text_bytes": 188,
+    "binary_match": "verified",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+  },
+  "original_native_validation": {
+    "report": ".decomp-lab/lbd-pipeline-native-cold-reload-second.json",
+    "sha256": "edb58d300a1013402766e01f635f0e78479f5480564c62ba983a9828ff979eb0",
+    "status": "passed_bounded_native_lbd_pipeline",
+    "levels_checked": 418,
+    "loader_invocations_per_level_and_implementation": 2,
+    "original_loader_runs": 836,
+    "original_and_candidate_native_runs": 1672,
+    "totals": {
+      "linked_records": 95842,
+      "empty_records": 71628,
+      "allocated_extra_nodes": 270,
+      "tmd_objects": 13033,
+      "primitive_packets_walked": 281945,
+      "native_instructions": 66470497,
+      "candidate_native_instructions": 66279353
+    },
+    "original_executed_native_entry_counts": {
+      "memory_set_manager": 418,
+      "memory_setup_manager": 418,
+      "func_8004BE54": 836,
+      "tmd_create": 836,
+      "memory_allocate_mem": 27738,
+      "memory_set_lock": 83214,
+      "func_80043B78": 1672,
+      "func_800438B0": 836,
+      "get_file_driver": 2090,
+      "cd_file_driver_get_vtable": 2926,
+      "cd_file_driver_construct": 836,
+      "file_buf_get_vtable": 1672,
+      "file_buf_construct": 836,
+      "base_class_get_vtable": 54222,
+      "base_class_construct": 26902,
+      "cd_file_driver_init": 836,
+      "func_800439EC": 836,
+      "tmd_map": 836,
+      "GsMapModelingData": 836,
+      "class_FA50_create": 26066,
+      "class_FA50_get_vtable": 52132,
+      "class_FA50_construct": 26066,
+      "class_FA50_reset_flag": 26066,
+      "file_buf_set_flag": 836,
+      "class_1C92C_unk29": 335776,
+      "func_80043B58": 191684,
+      "GsLinkObject4": 191684,
+      "file_buf_destroy": 418,
+      "func_80043954": 418,
+      "base_class_destructor": 13033,
+      "base_class_cleanup": 13451,
+      "base_class_notify": 13451,
+      "linked_list_next": 26902,
+      "base_class_detach_all": 13451,
+      "base_class_clear_parents": 13451,
+      "linked_list_clear": 13451,
+      "memory_free_mem": 13869,
+      "cd_file_driver_cleanup": 418,
+      "cd_file_driver_unk28": 418,
+      "cd_file_driver_lock": 418,
+      "cd_file_driver_unlock": 418,
+      "file_buf_release": 418
+    },
+    "dispatch_initialization_native_entry_counts": {
+      "file_driver_set_class": 1,
+      "cd_file_driver_get_vtable": 1,
+      "file_buf_get_vtable": 1,
+      "file_driver_copy_vtable_slots": 15,
+      "class_1C92C_get_vtable": 1,
+      "tim_image_get_vtable": 1,
+      "func_800451A8": 1,
+      "func_80044F20": 1,
+      "func_80043E74": 1,
+      "func_80043830": 1,
+      "func_80043B78": 1,
+      "sound_get_vtable": 1,
+      "seq_file_get_vtable": 1,
+      "func_80048CE0": 1,
+      "func_800441A4": 1,
+      "func_80045428": 1,
+      "func_800449FC": 1,
+      "func_80044CC4": 1
+    },
+    "native_function_ranges": [
+      {
+        "function": "memory_set_manager",
+        "address": "0x80017a9c",
+        "bytes": 12,
+        "sha256": "31e1fb7ee27c6d0a7e8bce6222ebe7d15d003b63a0bcdffc60e62cb98dc28ade"
+      },
+      {
+        "function": "memory_setup_manager",
+        "address": "0x80017ac8",
+        "bytes": 108,
+        "sha256": "22d9cb67eacb97f1f65887bec8fd406a6d25dd69511540ee811296e9445987ba"
+      },
+      {
+        "function": "memory_allocate_mem",
+        "address": "0x80017b34",
+        "bytes": 456,
+        "sha256": "a55ec79ff9c1252fd41968bf5abca2a74f3658b6c400df80289d51d943fc5ef9"
+      },
+      {
+        "function": "memory_free_mem",
+        "address": "0x80017cfc",
+        "bytes": 428,
+        "sha256": "590fb6e594883e9fcaa7105de18de7b9a9c0df2322e07feb5e081f66da15a052"
+      },
+      {
+        "function": "base_class_destructor",
+        "address": "0x80017eb0",
+        "bytes": 72,
+        "sha256": "fd5282c0412fa43d662ba2cba64b4f45ca230658938d657a58c04e0789bb86d6"
+      },
+      {
+        "function": "base_class_construct",
+        "address": "0x80017ef8",
+        "bytes": 52,
+        "sha256": "fae5807aa21be9790538a8efd442eae9fbfa4ea250f96d35c4b6167dac374859"
+      },
+      {
+        "function": "base_class_cleanup",
+        "address": "0x80017f2c",
+        "bytes": 108,
+        "sha256": "695f1acba66e5283acf2e48a87aba4488bf708d5c8e7eb3e86201114d4d505f0"
+      },
+      {
+        "function": "base_class_detach_all",
+        "address": "0x80018040",
+        "bytes": 124,
+        "sha256": "4b1882e2f4636abd2ff44e7eec0fea21fd58e025624e2814084a53b7df2a4cb0"
+      },
+      {
+        "function": "base_class_clear_parents",
+        "address": "0x8001813c",
+        "bytes": 48,
+        "sha256": "fcc64afbaf39b59df5d9965d226a1010d5d7485460d85af27d34451bb4361409"
+      },
+      {
+        "function": "linked_list_clear",
+        "address": "0x80018288",
+        "bytes": 68,
+        "sha256": "64c243c2c6cc5d0dc6cdf39344529897224e4bcb1b368bc9212be90db40368b4"
+      },
+      {
+        "function": "base_class_notify",
+        "address": "0x800182cc",
+        "bytes": 132,
+        "sha256": "93c69c638a65d12953fb79d42cf86d92b2017cafc03ed424e791a0ad697eab44"
+      },
+      {
+        "function": "base_class_get_vtable",
+        "address": "0x80018390",
+        "bytes": 16,
+        "sha256": "6f3e96c03b803dbf1321407c23ea13c5f2b782f40d0be26b977088b8a0b51196"
+      },
+      {
+        "function": "linked_list_next",
+        "address": "0x800183a0",
+        "bytes": 60,
+        "sha256": "034754e625b4fc389accea2200d19a117d17dadd5bb3401a406390d356fcbd73"
+      },
+      {
+        "function": "memory_set_lock",
+        "address": "0x8001844c",
+        "bytes": 12,
+        "sha256": "d8fd53b2b7699e2b6135872ecc381394dea73cd963daff560ff6aa8342f3e80e"
+      },
+      {
+        "function": "GsLinkObject4",
+        "address": "0x8001ef70",
+        "bytes": 344,
+        "sha256": "6fdd4c9c7f41b05ce3cb2afe03cce52971b77d7020b923a8dba730dc056fbb02"
+      },
+      {
+        "function": "class_FA50_create",
+        "address": "0x8001f250",
+        "bytes": 96,
+        "sha256": "3b17f655681a6ea4938ee74f206213419bb35b8cb58e317d46d7411e541b5ad7"
+      },
+      {
+        "function": "class_FA50_construct",
+        "address": "0x8001f2b0",
+        "bytes": 100,
+        "sha256": "d0467f4ffeded879a1f127a7016a2085b6ac4654cec658f003cb89a8ba9b9f70"
+      },
+      {
+        "function": "class_FA50_get_vtable",
+        "address": "0x8001f384",
+        "bytes": 16,
+        "sha256": "1ecb2b61a4136519621ba7085170f9121e1115b50fee112a9275f5d0802c2184"
+      },
+      {
+        "function": "class_FA50_reset_flag",
+        "address": "0x8001f394",
+        "bytes": 16,
+        "sha256": "a57cb9efcd8f219d53c0616d6e374ebc25aa7538029b076a71eca31cc2539256"
+      },
+      {
+        "function": "GsMapModelingData",
+        "address": "0x80020548",
+        "bytes": 120,
+        "sha256": "f2ebf166974181360c8d2ef9e5c2188a85a0c01d99a9be4959145a57a4809e41"
+      },
+      {
+        "function": "file_buf_destroy",
+        "address": "0x800269f0",
+        "bytes": 96,
+        "sha256": "a80ae629ccafae124ecabbc63aeaffe1903df3972d686d11be1436f325102685"
+      },
+      {
+        "function": "file_buf_construct",
+        "address": "0x80026a50",
+        "bytes": 100,
+        "sha256": "171ee11b6227d3dda49ebb27a20a4dbc8cecba9b1cb5cbb64599d65c66844624"
+      },
+      {
+        "function": "file_buf_release",
+        "address": "0x80026c20",
+        "bytes": 96,
+        "sha256": "8613b4e33420189dc58508a10c57f966f8ceda5386364744aecbe6f4ada76a18"
+      },
+      {
+        "function": "file_buf_set_flag",
+        "address": "0x80026c88",
+        "bytes": 20,
+        "sha256": "37a183968e3f4c7b3b51e07f5587f69504c26435874f530c66f8d6fdb98f744b"
+      },
+      {
+        "function": "file_buf_get_vtable",
+        "address": "0x80026c9c",
+        "bytes": 16,
+        "sha256": "2adbef8c9d4768e54ec192128ac4bf09ceaba9bc5e64df288b6c502c5ad663a1"
+      },
+      {
+        "function": "get_file_driver",
+        "address": "0x80026cac",
+        "bytes": 60,
+        "sha256": "2f9cc3c36ad569a41f85fe1549761f7499839958b5475515fce1c9678fc2b53d"
+      },
+      {
+        "function": "file_driver_set_class",
+        "address": "0x80026cfc",
+        "bytes": 140,
+        "sha256": "a349ce8ce5297bcf54f04cbd9b723f87bdf3d418b9a44153f0143ba5896a7ac3"
+      },
+      {
+        "function": "file_driver_copy_vtable_slots",
+        "address": "0x80026d88",
+        "bytes": 132,
+        "sha256": "2a95346ba68b44a16a9d0f2d5203247b835129775904cb6fd1d2c9e29fcea458"
+      },
+      {
+        "function": "cd_file_driver_construct",
+        "address": "0x80027228",
+        "bytes": 76,
+        "sha256": "2cef28fec0c0a6909f77c7ae658314ae556f0aa027988c29a480285b37a135a4"
+      },
+      {
+        "function": "cd_file_driver_cleanup",
+        "address": "0x80027274",
+        "bytes": 84,
+        "sha256": "41bd6a6da142992664df02af53274735bb4961e81dc4c8e86e3813b04a3a9b6e"
+      },
+      {
+        "function": "cd_file_driver_unk28",
+        "address": "0x80027d70",
+        "bytes": 248,
+        "sha256": "5c36c000fa9d884a040cdda9235b48039b93d610dd29d1f220fbe3dc8e81758b"
+      },
+      {
+        "function": "cd_file_driver_get_vtable",
+        "address": "0x80027e68",
+        "bytes": 16,
+        "sha256": "8cbca373f9a13410ab04721842d71a9fbbb61abc38de3af52cf80a213de8d135"
+      },
+      {
+        "function": "cd_file_driver_init",
+        "address": "0x80027e78",
+        "bytes": 80,
+        "sha256": "6a1658cb84c883be0fc3b7baa0cd4a50152fcab361d9b4d9c8e40d5101fbdec3"
+      },
+      {
+        "function": "cd_file_driver_lock",
+        "address": "0x800280d0",
+        "bytes": 16,
+        "sha256": "6ce6d06b7fd5d7e8817765906a0559950d6851ff65253b8fbde1dc9d37ae8da5"
+      },
+      {
+        "function": "cd_file_driver_unlock",
+        "address": "0x800280e0",
+        "bytes": 12,
+        "sha256": "a599122794c784b68272d3a0c173ef69373214a21e1ce14a9810f90a3292a315"
+      },
+      {
+        "function": "class_1C92C_unk29",
+        "address": "0x8002c278",
+        "bytes": 304,
+        "sha256": "e817208e1f6094ee52a48ee0bc57ef2e6a339e320139c731e4add62981be5ab1"
+      },
+      {
+        "function": "class_1C92C_get_vtable",
+        "address": "0x8002c3a8",
+        "bytes": 16,
+        "sha256": "f7b4ab590b0de0beadfb8bd82a3acf9d21012b705578d14dba30384fcd4d3262"
+      },
+      {
+        "function": "sound_get_vtable",
+        "address": "0x8002cc0c",
+        "bytes": 16,
+        "sha256": "faa11e7105c4c6dfa1585b33924ef65e3884fe0385165951c103db9062f5e5de"
+      },
+      {
+        "function": "tim_image_get_vtable",
+        "address": "0x8003b614",
+        "bytes": 16,
+        "sha256": "54dfe255f443374a0881ba9bc0cee9d93076aef187956c58acef8e0838482c52"
+      },
+      {
+        "function": "seq_file_get_vtable",
+        "address": "0x800423f0",
+        "bytes": 16,
+        "sha256": "65bca491964a85f35c4eb8e86d23a52e071218b407133ef02b82ab3ad415e33f"
+      },
+      {
+        "function": "func_80043830",
+        "address": "0x80043830",
+        "bytes": 16,
+        "sha256": "98da7b869653be689921c742bba263aef219f6003918ac40dbc80084fba32c3c"
+      },
+      {
+        "function": "tmd_create",
+        "address": "0x80043840",
+        "bytes": 112,
+        "sha256": "509ad4237ea0a3c267ff3701eacdffa2ee1ee2389d1ec5789b40d642a9745f44"
+      },
+      {
+        "function": "func_800438B0",
+        "address": "0x800438b0",
+        "bytes": 164,
+        "sha256": "5f30ce4e27be13b806c7c3ddcc4eb6e5457b52e48811e37cc67fd893767e966f"
+      },
+      {
+        "function": "func_80043954",
+        "address": "0x80043954",
+        "bytes": 152,
+        "sha256": "9b15c13df5311e2e74aae34f1521ded566f2c7b376d3ec42477f5e772b1102d3"
+      },
+      {
+        "function": "func_800439EC",
+        "address": "0x800439ec",
+        "bytes": 300,
+        "sha256": "00ab2a30c3bd4146d0fbac895a739ae06a6651043a6ea1527792069c1e952ffd"
+      },
+      {
+        "function": "tmd_map",
+        "address": "0x80043b18",
+        "bytes": 36,
+        "sha256": "c54ce16d0f7345d21b77020d8c5929eb1047939e4eeccdfa06b8430ac99b271d"
+      },
+      {
+        "function": "func_80043B58",
+        "address": "0x80043b58",
+        "bytes": 24,
+        "sha256": "100e086c36068f4177ffa6c57f8f6365a8d901e67f15092c8db78c0ce4251a78"
+      },
+      {
+        "function": "func_80043B78",
+        "address": "0x80043b78",
+        "bytes": 16,
+        "sha256": "a40edc86e61e23e9abb9afca53a68588f1788efe9f8e44b01a7a7e8544564b3d"
+      },
+      {
+        "function": "func_80043E74",
+        "address": "0x80043e74",
+        "bytes": 16,
+        "sha256": "f42522bc9372f4aebed95420f492d2a0690410d7af4c704513f061fcd95e0259"
+      },
+      {
+        "function": "func_800441A4",
+        "address": "0x800441a4",
+        "bytes": 16,
+        "sha256": "0957ef0e5f30031e06aaef7cbd9a50407fee93b411836c5a7602246b941e8f37"
+      },
+      {
+        "function": "func_800449FC",
+        "address": "0x800449fc",
+        "bytes": 16,
+        "sha256": "7b072141d40ac48fbfc3bac1c87af1ea87e1a5225471f2a85761e6a82119cf1c"
+      },
+      {
+        "function": "func_80044CC4",
+        "address": "0x80044cc4",
+        "bytes": 16,
+        "sha256": "9d1eb452358b769c7f5c97d1b754ab4060648636dbec94941eb2775b521b4d9e"
+      },
+      {
+        "function": "func_80044F20",
+        "address": "0x80044f20",
+        "bytes": 16,
+        "sha256": "4afc79169631e4becfd05b503e192a79e6134a0220b62d03af6be1c2001eb64e"
+      },
+      {
+        "function": "func_800451A8",
+        "address": "0x800451a8",
+        "bytes": 16,
+        "sha256": "967628b00a415fd3a91abbf58f50ef625f13ec59dd59bf5e6e3ef835739fda67"
+      },
+      {
+        "function": "func_80045428",
+        "address": "0x80045428",
+        "bytes": 16,
+        "sha256": "49466847d5c56c812a89104bfc436a99bc59e315443264f0932d8b95887f031c"
+      },
+      {
+        "function": "func_80048CE0",
+        "address": "0x80048ce0",
+        "bytes": 16,
+        "sha256": "20ba1c90b46c8725742b749d042dc06b4997f6d8cc7025877f4e1e47e8248799"
+      },
+      {
+        "function": "func_8004BE54",
+        "address": "0x8004be54",
+        "bytes": 600,
+        "sha256": "51626654208f9939e89158fea39b66cfab5be53dacc4bf8cf9634e02e05f596f"
+      }
+    ],
+    "dependency_stubs": 0,
+    "input_state_contracts": [
+      {
+        "global": "g_CdInitialized",
+        "value": 1,
+        "purpose": "CD hardware has completed initialization. Execute the native ready branch; cold CD initialization is outside scope."
+      }
+    ],
+    "negative_controls": [
+      {
+        "name": "missing_empty_flag",
+        "address": "0x8004bf40",
+        "path": "/CDI/STG00/M000.LBD",
+        "output_difference_detected": true,
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "name": "missing_continuation_link",
+        "address": "0x8004c068",
+        "path": "/CDI/STG00/M000.LBD",
+        "output_difference_detected": true,
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "name": "missing_mapping_flag",
+        "address": "0x80020560",
+        "path": "/CDI/STG00/M000.LBD",
+        "output_difference_detected": true,
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "name": "missing_packet_group_count",
+        "address": "0x8001f09c",
+        "path": "/CDI/STG00/M000.LBD",
+        "output_difference_detected": true,
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "name": "missing_old_model_destruction",
+        "address": "0x8004be88",
+        "path": "/CDI/STG00/M000.LBD",
+        "output_difference_detected": true,
+        "scope": "Private Unicorn memory only."
+      }
+    ],
+    "backend": "Unicorn 2.1.4",
+    "scope": "Local LBD tiles and TMD data through original loader, decoder, constructors, SDK map/link, allocator and virtual-table initialization. Independently compare complete guarded cold-load buffers and arena. Reload through native destruction and already-mapped TMD data; check complete caller buffers and defined heap fields, and compare full reload arenas if a candidate is supplied. Preinitialized CD state; no cold hardware, GPU drawing, caller node allocation/ownership, aliasing, PS1 bus/load-delay timing or whole-game acceptance.",
+    "producer_dependencies": [
+      {
+        "path": "tools/verify_lbd_pipeline.py",
+        "sha256": "5415ee2d5a133d4059a66e4304b3d1164b5cd1b4bd1167adf375cd8b244f2684"
+      },
+      {
+        "path": "tools/verify_native_ai.py",
+        "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+      },
+      {
+        "path": "tools/inventory_animations.py",
+        "sha256": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a"
+      },
+      {
+        "path": "tools/inventory_vtables.py",
+        "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+      },
+      {
+        "path": "tools/progress.py",
+        "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+      },
+      {
+        "path": "configure.py",
+        "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+      },
+      {
+        "path": "requirements-analysis.txt",
+        "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+      },
+      {
+        "path": "build/SLPS01556.map",
+        "sha256": "bb181d0799122a8cac3c4a8af74c8dbbe5c0e3708e4299aeb2f6d836d15fb04c"
+      },
+      {
+        "path": "build/undefined_funcs_auto.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "build/undefined_syms_auto.txt",
+        "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+      },
+      {
+        "path": "src/file/file_object.c",
+        "sha256": "e393e4267c289f1190d2e2cb7ab52df34dc3a4f4ece7de200b62cb26c4320a2c"
+      },
+      {
+        "path": "src/file/file_object.h",
+        "sha256": "41368a0e71b9ecb0dec0dc7769714d13d33ddee46dc1adddc95d6b92eded63ce"
+      },
+      {
+        "path": "src/file/tmd_model.c",
+        "sha256": "2779130f4fef1ddca4c04b026c2d99073f52481a47c5a24e27afa3bea0bec800"
+      },
+      {
+        "path": "src/file/tmd_model.h",
+        "sha256": "711946954a00880537582cd8956412b21a863a2e3b40c60dc1366cabbdfa1020"
+      },
+      {
+        "path": "src/file/tmd_prim.c",
+        "sha256": "413959dcc32bbf0e2167e6b4fa4d38d5ef28968e749455e38ab62bf2abb731fa"
+      },
+      {
+        "path": "src/file/tmd_prim_geom.c",
+        "sha256": "ce5b1b5a908afd1bd322d4e13b79f90b11889c7d0122c41be15f5aa8a3e3005b"
+      },
+      {
+        "path": "src/base/base.c",
+        "sha256": "23f9ddac6d6e960eb2d0c40e6b8598d68aac401ea2d3031804d70c4309243722"
+      },
+      {
+        "path": "src/base/base.h",
+        "sha256": "aec74fef6d427a2242f2387894fd7374be4d092d313fed1fc02fa94578e6bfab"
+      },
+      {
+        "path": "src/file/file_buf.c",
+        "sha256": "25db4ce0bf60c99c7af66932d5e5b3ac809a8810f0bf72d313dcf0fa9d189b44"
+      },
+      {
+        "path": "src/file/cd_file_driver.c",
+        "sha256": "0fa0f405c81ca26c19fb4f04a232c1eddedf88b926a70ac4d608b9341afa2dff"
+      },
+      {
+        "path": "src/scene/render_context.c",
+        "sha256": "3bdfbd4247a84a160de9582b1e053e2afb69a0bb395c00c125af73d8460e9d3d"
+      },
+      {
+        "path": "asm/nonmatchings/scene/render_context/func_8004BE54.s",
+        "sha256": "f75cf14404b9f7de6db0d7cb3e3cadf2cda61047e33b333346f5f4cb0ad263f4"
+      },
+      {
+        "path": "asm/nonmatchings/psyq/gs/objt/GsLinkObject4.s",
+        "sha256": "9719f08e7ac922c3a5b6b35dfd58d9556e3d14cf23c20fbcccfcefcb7d1d89ae"
+      },
+      {
+        "path": "asm/nonmatchings/psyq/gs/GsMapModelingData/GsMapModelingData.s",
+        "sha256": "95a1719cedff1a62096628a363b3a68302507db4a6fa3c57a1858c8ac884e360"
+      }
+    ],
+    "count_basis": "Tile, descriptor and packet totals describe one load per level; each implementation performs two loads."
+  },
+  "candidate_native_validation": {
+    "report": ".decomp-lab/lbd-pipeline-native-cold-reload-second.json",
+    "sha256": "ec990079071e6a4a5a0495642509f062ce3788d8e92c51c7e9d327bbe647f4f5",
+    "bytes": 600,
+    "byte_differences": 118,
+    "matching_c_accepted": false,
+    "source_provenance": "Supplied private text bytes; full source/build comparison required separately.",
+    "loader_runs": 836,
+    "cold_load_and_reload_outputs_equal": true,
+    "full_reloaded_arenas_equal": true,
+    "whole_feature_acceptance": false
+  },
+  "nonmatching_complete_executable": {
+    "report": ".decomp-lab/be54-pipeline-full-compare-first/comparison.json",
+    "sha256": "f6eefe159e72440638b3fccaaf3289723d36a6fbe8c83e1acc40c671add40303",
+    "exact_match": false,
+    "expected_bytes": 505856,
+    "actual_bytes": 505856,
+    "changed_bytes_in_common_range": 118,
+    "length_difference": 0,
+    "expected_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "actual_sha1": "0e8d622af36a866bdd7c27e35bd5736a83531218",
+    "candidate_sha256": "ee37c857f9693b00661aa46e13354be0506af25875213e6ddaafa8905f4fbf05",
+    "gameplay_tested": false,
+    "full_loader_body_equals_bounded_candidate": true,
+    "all_changed_bytes_within_600_byte_loader": true,
+    "full_candidate_source": ".decomp-lab/be54-pipeline-full-candidate-first.c",
+    "full_candidate_source_sha256": "ee37c857f9693b00661aa46e13354be0506af25875213e6ddaafa8905f4fbf05"
+  },
+  "source_experiments": {
+    "report": ".decomp-lab/primitive-field-access-first/results.json",
+    "sha256": "d6a9b63859d5846afd336c7946ef0145a27d0df6e1a759871b465b5f8241d5db",
+    "unique_trials": 191,
+    "duplicates_skipped": 1,
+    "errors": 0,
+    "exact_matches": 0,
+    "minimum_byte_differences": 118,
+    "canonical_compiler_flags_changed": false,
+    "hypothesis": "Pointer-based heading access, explicit tile flag capture and native metadata word access can recover the observed instruction ordering.",
+    "source_promotions": 0
+  },
+  "prior_cold_only_proof": {
+    "report": ".decomp-lab/native-lbd-pipeline-proof-first.json",
+    "sha256": "b4931977c3f831b268aaba172dd36e23083ccd94237de0e31f43d88ec2f59b00",
+    "levels": 418,
+    "loader_runs": 836,
+    "negative_controls": 4
+  },
+  "current_turn_before_after": {
+    "before_source_commit": "0efb93e985b7544f6202a8a15994aab4f94cedf3",
+    "before": {
+      "c_bytes": 194284,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 7,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "after": {
+      "c_bytes": 194284,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 7,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "new_original_loader_runs": 836,
+    "original_and_candidate_native_runs": 1672,
+    "new_unique_source_trials": 191,
+    "source_functions_promoted": 0,
+    "header_signature_corrections": 2,
+    "game_sdk_classification_changes": 0
+  },
+  "source_promotions": 0,
+  "original_behavior_modified": false,
+  "private_inputs_or_native_output_bytes_included": false,
+  "model_api_calls": 0,
+  "validation": {
+    "windows_python_3_14_tests": 155,
+    "linux_python_3_13_tests": 155
+  },
+  "publication_source_normalization": {
+    "change": "Remove one blank line at EOF for git diff --check; executable Python AST is unchanged.",
+    "verified_producer_archive": ".decomp-lab/verify_lbd_pipeline_verified_producer_first.py",
+    "verified_producer_sha256": "5415ee2d5a133d4059a66e4304b3d1164b5cd1b4bd1167adf375cd8b244f2684",
+    "published_verifier_sha256": "3cbec3fb62b4ee433693b01ada6d2ac1b40e3be10adb0080100ac9e59433817d",
+    "python_ast_equal": true
+  }
+}

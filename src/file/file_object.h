@@ -33,7 +33,7 @@ typedef struct file_object_vtable {
     /* 0x06C 8006d9ac */ void (*Unk26)(void *, s32);
     /* 0x070 8006d9b0 */ void (*Unk27)(void *);
     /* 0x074 8006d9b4 */ void (*Unk28)(void *);
-    /* 0x078 8006d9b8 */ void (*class_1C92C_unk29)(void *);
+    /* 0x078 8006d9b8 */ s32 (*class_1C92C_unk29)(void *, u8 *, s32);
 } file_object_vtable_t;
 
 typedef struct file_object {
