@@ -68,6 +68,10 @@ transform routines through their actual dependencies, with 12,696 primitive
 cases and 6,912 composed graphs. It verifies native cross-product, square and
 square-root behavior, preserves contact-height and expanded-bounds quirks, and
 detects three faults. Both remaining collision functions still need matching C.
+The later [collision recovery research](research/collision/README.md) publishes
+an unaccepted primitive C fragment whose complete build differs in 22 bytes,
+down from 103. Paired native checks and non-NULL midpoint checks pass; those
+results add bounded evidence without accepting either remaining C function.
 The [sprite scaling audit](docs/UI_SCALE.md) checks 203,472 native cases,
 including overlapping inputs and incoming-register quirks. Its full C
 candidate still differs in 12 executable bytes and remains unaccepted.

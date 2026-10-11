@@ -44,6 +44,12 @@ The [collision composition](COLLISION.md) executes the remaining primitive and
 transform routines through actual bounds, decoder and native GTE dependencies.
 It adds bounded evidence for contact-height filtering and expanded-box behavior;
 both routines still require exact C recovery and natural collision scenarios.
+The later [collision C candidate](../research/collision/README.md) reduces the
+primitive's whole-executable mismatch from 103 to 22 stack-displacement bytes.
+Its SDK arithmetic and distance storage match; recover the original late
+bounds-storage lifetime without padding. The paired checker covers 1,566
+additional caller overlaps, while 5,400 non-NULL clipping fixtures now execute
+the midpoint helper. These remain bounded checks and an unaccepted candidate.
 The [ordered-store audit](RENDER_MATCHING.md) shows why final-output agreement
 is insufficient: that candidate reverses two stores in 68,306 scalar fixtures.
 A corrected full candidate retains native store order but differs in 13 bytes;

@@ -238,3 +238,12 @@ classifies 5,760 distinct final transform inputs and 1,152 repetitions, audits
 F008 evidence and corrects two source comments; it promotes neither remaining
 collision function to C. Earlier records and all C, original-feature, NPC,
 developer-capability and optional-mod counts remain unchanged.
+
+The subsequent [collision C research](../research/collision/README.md) publishes
+an unaccepted primitive candidate with 22 complete-executable differences, all
+bounding-box stack displacements, improving the preceding 103-byte mismatch.
+Original/candidate pairs agree in 12,696 primitive fixtures, 1,566 caller-buffer
+overlap fixtures and 6,912 stage graphs. A separate 5,400-fixture original
+clipping audit now executes the non-NULL midpoint helper. Both fault controls
+are detected. Earlier feature records and every accepted C, original-feature,
+NPC, developer-capability and optional-mod count remain unchanged.

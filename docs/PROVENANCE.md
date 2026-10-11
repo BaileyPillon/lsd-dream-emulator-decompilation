@@ -283,3 +283,26 @@ separately. Two misleading source comments change; game function bodies,
 compiler flags and canonical executable bytes are preserved. The public files
 contain no game, BIOS, emulator, lookup-table or captured-state bytes. Complete
 CPU timing, natural encounters and whole-feature acceptance remain open.
+
+## Primitive C candidate and non-NULL midpoint supplement
+
+The [collision research fragment](../research/collision/README.md) is separate
+from the canonical build. Its full private executable differs in 22 bytes,
+all in the primitive's later bounds-stack displacements; it is unaccepted C.
+The SDK workspace, instruction sequence, registers and distance storage match.
+The original executable and game source remain unchanged.
+
+[collision-recovery-checks.json](collision-recovery-checks.json) pins private
+full-build comparisons, 251 compiled source trials, the public fragment,
+paired comparison proofs and ordered native-log audits. It distinguishes
+12,696 primitive pairs, 1,566 caller overlap pairs and 6,912 stage graphs from
+repeated original/candidate executions. The 5,400-fixture midpoint audit
+checks original clipping with caller overlaps and a deliberate broken shift.
+Initial bridge-path and synthetic test-fixture failures are retained separately.
+One report field changes after the paired run; its comparison-engine AST and
+the current candidate's reported value are verified unchanged.
+
+The public files contain reconstructed C, synthetic fixtures, addresses,
+offsets and hashes, without proprietary executable, asset, BIOS or runtime
+bytes. No C promotion or original-feature acceptance is claimed. Complete
+CPU timing, natural scenes and multi-cloud encounters remain open.

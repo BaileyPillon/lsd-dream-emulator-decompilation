@@ -1,0 +1,337 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-11T18:25:19.985167+00:00",
+  "status": "bounded_collision_recovery_candidate_unaccepted",
+  "source_commit_before": "960180ac9700bd3792f1c5712afd139de2897d01",
+  "feature_group": "F008",
+  "current_turn_before_after": {
+    "before_source_commit": "960180ac9700bd3792f1c5712afd139de2897d01",
+    "before": {
+      "c_bytes": 194884,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 6,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "after": {
+      "c_bytes": 194884,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 6,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "new_matching_c_functions": 0,
+    "new_original_feature_groups_accepted": 0,
+    "new_tooling_tests": 5,
+    "prior_primitive_candidate_byte_differences": 103,
+    "current_primitive_candidate_byte_differences": 22,
+    "primitive_pairs": 12696,
+    "caller_alias_pairs": 1566,
+    "composed_stage_graphs": 6912,
+    "transform_distinct_final_inputs": 5760,
+    "transform_repeated_final_inputs": 1152,
+    "original_midpoint_distinct_inputs": 5400,
+    "compiled_source_forms_including_baseline_refreshes": 251,
+    "ordered_native_responses": 138358,
+    "distinct_native_requests": 84
+  },
+  "candidate": {
+    "function": "func_8001F8B8",
+    "original_bytes": 1944,
+    "frame_bytes": 352,
+    "prior_byte_differences": 103,
+    "byte_differences": 22,
+    "instruction_words_different": 22,
+    "differences_only_bounds_stack_displacements": true,
+    "original_bounds_base": 240,
+    "candidate_bounds_base": 96,
+    "original_square_result_base": 240,
+    "candidate_square_result_base": 240,
+    "contact_distance_base": 256,
+    "original_function_sha256": "c23a87535a6a4949e414266f5a298b8d0409debb8be4ef6482e627fcc6269513",
+    "candidate_function_sha256": "4cf4a11bb0cc642f51b68bb5c01daa5f8403daece73946e6ccc84f4942cdf785",
+    "full_executable_bytes": 505856,
+    "full_executable_sha1": "729f0d86098eca285c436a35d01374574cc8abf4",
+    "full_executable_exact_match": false,
+    "accepted_in_canonical_build": false,
+    "changed_offsets": [
+      67104,
+      67108,
+      67112,
+      67116,
+      67120,
+      67124,
+      67128,
+      67132,
+      67136,
+      67144,
+      67148,
+      67152,
+      67156,
+      67160,
+      67180,
+      67388,
+      67412,
+      67436,
+      67460,
+      67484,
+      67508,
+      67596
+    ]
+  },
+  "transform_candidate": {
+    "function": "func_8001DDF4",
+    "original_bytes": 796,
+    "best_byte_differences": 123,
+    "accepted": false
+  },
+  "compiled_source_trials": [
+    {
+      "batch": "contact-inline-values-first",
+      "compiled": 57,
+      "duplicates": 0,
+      "failed": 0,
+      "minimum_byte_differences": 103,
+      "evidence": {
+        "path": ".decomp-lab/collision-matching-first/contact-inline-values-first/report.json",
+        "sha256": "cf648bda92d9a22779aeb1379bff8abadb20311d2e59c394642b83efc779327f"
+      }
+    },
+    {
+      "batch": "bounds-return-first",
+      "compiled": 35,
+      "duplicates": 13,
+      "failed": 0,
+      "minimum_byte_differences": 22,
+      "evidence": {
+        "path": ".decomp-lab/collision-matching-first/bounds-return-first/report.json",
+        "sha256": "fe0f71d0690e3b14a240bfd7d28ab35fa06620c0e78055d0867d660d652d6c74"
+      }
+    },
+    {
+      "batch": "inline-pointer-homes-first",
+      "compiled": 26,
+      "duplicates": 0,
+      "failed": 0,
+      "minimum_byte_differences": 50,
+      "evidence": {
+        "path": ".decomp-lab/collision-matching-first/inline-pointer-homes-first/report.json",
+        "sha256": "a3eadb1e32980989834ec2c564166e71a41f2139723723a0621a9323edb7c7df"
+      }
+    },
+    {
+      "batch": "vector-pipeline-first",
+      "compiled": 36,
+      "duplicates": 0,
+      "failed": 0,
+      "minimum_byte_differences": 689,
+      "evidence": {
+        "path": ".decomp-lab/collision-matching-first/vector-pipeline-first/report.json",
+        "sha256": "f8fd55b9b3540ff92afc1c13081564bab53cf4caccdd27008c242336d4c80145"
+      }
+    },
+    {
+      "batch": "ddf4-register-lifetimes-first",
+      "compiled": 97,
+      "duplicates": 0,
+      "failed": 0,
+      "minimum_byte_differences": 123,
+      "evidence": {
+        "path": ".decomp-lab/collision-matching-first/ddf4-register-lifetimes-first/report.json",
+        "sha256": "89d91265f42b1cba9190e31df574f1f8e95bc6dcf4fe18bca4204c95ec490666"
+      }
+    }
+  ],
+  "paired_checks": {
+    "primitive": 12696,
+    "caller_alias": 1566,
+    "composition": 6912,
+    "original_and_candidate_executions_are_repetitions_of_each_fixture": true,
+    "matching_return_buffers_gte_state_and_ordered_commands": true,
+    "explicit_function_output_stubs": 0,
+    "native_op_sqr_invocations": 88026,
+    "native_lzcs_invocations": 50332,
+    "independently_audited_native_responses": 138358,
+    "distinct_native_requests": 84,
+    "repeated_native_requests": 138274,
+    "pair_outputs_sha256": "093b889f8de88ca6c89737d7d5616faa9b1e02dbc5fa15ed404cdf06dc3fb0fe",
+    "ordered_native_events_sha256": "985628ff187ff218a9644ba3b4709700f7b3138d4a2884a4465fcf0bae07a6ef",
+    "negative_controls": [
+      {
+        "address": "0x8001ff44",
+        "native_word": "0x2442ffe8",
+        "mutated_word": "0x2442ffe9",
+        "detected": true
+      }
+    ]
+  },
+  "original_midpoint_checks": {
+    "distinct_inputs": 5400,
+    "results": {
+      "1": 252,
+      "2": 828,
+      "3": 1332,
+      "0": 2988
+    },
+    "native_helper": "func_8001E2E8",
+    "primary_helper_entries": 2160,
+    "additional_original_fault_control_entry": 1,
+    "executed_original_entries_including_fault_control": {
+      "func_8001E110": 12511,
+      "func_8001ECFC": 25022,
+      "func_8001E2E8": 2161
+    },
+    "zero_gte_operations": true,
+    "explicit_function_output_stubs": 0,
+    "negative_control": {
+      "address": "0x8001e304",
+      "original_word": "0x21043",
+      "mutated_word": "0x21083",
+      "detected": true
+    }
+  },
+  "executed_producer_source": {
+    "path": ".decomp-lab/collision-matching-first/executed-public-compare-first.py",
+    "sha256": "24c8505446657f5e520280fd953eccc7bc0bef3ea2c152fa22f7e6f90db4844f"
+  },
+  "post_execution_report_field_audit": {
+    "path": ".decomp-lab/collision-matching-first/report-field-audit-first.json",
+    "sha256": "e29426a98369dcba1a231d0127df5367b2488cd6a768ff10e9ffdba725ab160e"
+  },
+  "public_files": [
+    {
+      "path": "research/collision/primitive_candidate.c",
+      "sha256": "778ac71bebfbf56cf2b8cd4d268130d97c2d76920d2c7a746c9c19edd2cc4d82"
+    },
+    {
+      "path": "research/collision/compare_candidate.py",
+      "sha256": "fa6dd6a7083e9482b9df8c91673e6365c2eeaa17a0b73dc05b94301fdd1f8778"
+    },
+    {
+      "path": "research/collision/verify_midpoint.py",
+      "sha256": "3cd167d407e8f9e6867f9a20932cfb7a0cb69283bb95bf3c8e0dd9e454e15aa4"
+    },
+    {
+      "path": "research/collision/README.md",
+      "sha256": "9761b1253da1c3fa81e9cc3e96e2e6212b5bd690dba6316985a8bc5497dedd98"
+    },
+    {
+      "path": "tests/test_collision_research.py",
+      "sha256": "78c0663b15c99bcf097365a9e0713037b958ae61aef57482bfa326eb56a370a0"
+    }
+  ],
+  "private_evidence": [
+    {
+      "path": ".decomp-lab/collision-matching-first/archive-rank-and-baseline.json",
+      "sha256": "363355ccee4be2067859face21e6efafad2b76405a0c00746fc6eeb39c1fdfc3"
+    },
+    {
+      "path": ".decomp-lab/collision-matching-first/public-fragment-first/identity.json",
+      "sha256": "4caa072f133995fa61353fdcc8dcf025133f6100d3c468188ae8a6b18b7187d3"
+    },
+    {
+      "path": ".decomp-lab/collision-matching-first/public-fragment-check-first/comparison.json",
+      "sha256": "baca41ff16926c3255ec069f63679645b5b38549a839a8004ea0e8e550171f99"
+    },
+    {
+      "path": ".decomp-lab/collision-matching-first/public-pairs-first/report.json",
+      "sha256": "b54e76349bf0c5de5d8efc181ab836e4a04d110efbac15d9d9e8efab4f87d614"
+    },
+    {
+      "path": ".decomp-lab/collision-matching-first/public-pairs-first/bridge.log",
+      "sha256": "805d839776973bcbd6abeb2c425db3f8f2c293c8a6290f7c9634a40f60353525"
+    },
+    {
+      "path": ".decomp-lab/collision-matching-first/public-midpoint-first/report.json",
+      "sha256": "25f596cf60553d2b1e82fa414f2e2ef989dc60c29599f18932a67a61ad1852ec"
+    },
+    {
+      "path": ".decomp-lab/collision-matching-first/ordered-log-and-layout-audit-first.json",
+      "sha256": "e32298b6b8aef8c43144c9c23d2f21fb3a7c7f0ebb48ad4edf86a2235968b942"
+    },
+    {
+      "path": ".decomp-lab/collision-matching-first/report-field-audit-first.json",
+      "sha256": "e29426a98369dcba1a231d0127df5367b2488cd6a768ff10e9ffdba725ab160e"
+    },
+    {
+      "path": ".decomp-lab/collision-matching-first/executed-public-compare-first.py",
+      "sha256": "24c8505446657f5e520280fd953eccc7bc0bef3ea2c152fa22f7e6f90db4844f"
+    },
+    {
+      "path": ".decomp-lab/collision-matching-first/native-pairs-second/report.json",
+      "sha256": "a2df56b4243ab19e91e6e5109194322267f2a05b39fb512caa652dd348202942"
+    },
+    {
+      "path": ".decomp-lab/collision-matching-first/midpoint-first/report.json",
+      "sha256": "25f596cf60553d2b1e82fa414f2e2ef989dc60c29599f18932a67a61ad1852ec"
+    },
+    {
+      "path": ".decomp-lab/collision-matching-first/native-pairs-first/bridge-stderr.log",
+      "sha256": "af5977fc68c6b1b9e77a1ea477b657f2cdf0203d5bdb4f23694b641fc208492f"
+    },
+    {
+      "path": ".decomp-lab/collision-matching-first/progress-first.json",
+      "sha256": "cfb6b31954b056cd4c2c9d3de8790d22c44cc6e528156f69b3710133be5ff56b"
+    },
+    {
+      "path": ".decomp-lab/collision-matching-first/canonical-check-first.log",
+      "sha256": "5c7a395f9de6fe8a15a3fdd7ef8138d2d539ef029ba91b1495caee27a268e8bf"
+    }
+  ],
+  "canonical_game_sources_unchanged": true,
+  "canonical_executable_preserved": true,
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "original_game_behavior_modified": false,
+  "source_functions_promoted": 0,
+  "whole_original_feature_groups_accepted": 0,
+  "model_api_calls": 0,
+  "private_game_asset_bios_or_runtime_bytes_distributed": false,
+  "validation_scope": "Native engine ran complete paired fixtures; one report boolean later corrected with comparison-engine AST unchanged. Five CLI guard checks are synthetic.",
+  "remaining_gates": [
+    "Six game functions require matching C",
+    "Original bounds-storage lifetime in primitive candidate",
+    "SDK/game-support classification closure",
+    "Five inventory scope gaps",
+    "Natural geometry and multi-cloud encounters",
+    "Unsupported primitive modes",
+    "Full PS1 CPU load delays and cycle scheduling",
+    "Reviewed enumerated gameplay scenarios"
+  ],
+  "validation": {
+    "local_tooling": [
+      {
+        "platform": "Windows Python 3.14",
+        "path": ".decomp-lab/collision-matching-first/windows-tests-final.log",
+        "tests": 239,
+        "status": "passed",
+        "sha256": "9d4934db6e33c1cbcfaf929bb3896668bf8066f5bb75e8b02b5b0f542e150a58"
+      },
+      {
+        "platform": "WSL Python 3.13",
+        "path": ".decomp-lab/collision-matching-first/linux-tests-final.log",
+        "tests": 239,
+        "status": "passed",
+        "sha256": "156ea1ec6f10a20d755c55ada5c9eadc9317bcdbb663ca3edfb87e20b50d99dc"
+      }
+    ],
+    "canonical_build_complete": true,
+    "canonical_objects": 305,
+    "canonical_build_check": "ninja check: passed",
+    "canonical_build_byte_equal": true,
+    "five_new_tests_scope": "Private-output guards, preservation, help without proprietary inputs and candidate-image scope rejection."
+  }
+}

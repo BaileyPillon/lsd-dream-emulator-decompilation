@@ -1,5 +1,18 @@
 # Changelog
 
+## Primitive C recovery candidate and midpoint checks - 2026-10-11
+
+- Reduce the primitive candidate's complete-executable mismatch from 103 to
+  22 bytes, all bounding-box stack displacements; publish the unaccepted C
+  fragment and a reproducible private-build recipe.
+- Compare 12,696 original/candidate primitive pairs, 1,566 caller-buffer
+  overlap pairs and 6,912 composed graphs, including ordered native GTE events.
+- Execute the previously unentered original midpoint helper in 5,400 clipping
+  fixtures with output and partial-buffer overlaps; detect a broken shift.
+- Add five research CLI guard tests; 239 tooling tests pass on Windows and
+  Linux. Keep the canonical executable, accepted C and all feature/NPC/tool/mod
+  counts unchanged. Six game functions and whole-feature acceptance remain open.
+
 ## Original collision through native GTE dependencies - 2026-10-11
 
 - Execute the original primitive routine in 12,696 distinct cases and the
