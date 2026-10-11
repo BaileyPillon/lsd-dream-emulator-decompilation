@@ -95,6 +95,12 @@ The same audit bounded 418 of 418 LBD files, 167,200 grid cells and 270 addition
 
 ## Remaining scope
 
+The [ordered-store audit](RENDER_MATCHING.md) executes three variants over the
+same 74,832 scalar fixtures. It rejects the four-byte candidate's internal
+write order in 68,306 cases; the corrected candidate preserves that order but
+differs in 13 executable bytes. This refines F033 evidence without a C promotion
+or change to original/NPC, tool-capability or whole-feature counts.
+
 The [grid and streaming composition](RENDER_STREAM.md) checks 45,408 bounded
 cases through four original functions, with four detected controls and three
 position/GTE contracts. The actual builder, row splitter and object selector

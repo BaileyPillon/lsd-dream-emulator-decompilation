@@ -1,5 +1,17 @@
 # Changelog
 
+## Rendering ordered-store evidence and C matching - 2026-10-11
+
+- Observe actual dimension stores and immediate readback in 224,496 native
+  runs over 74,832 scalar fixtures and three variants.
+- Distinguish the four-byte candidate's final-output agreement from its
+  reversed store order in 68,306 cases. Verify a corrected candidate's order
+  while retaining its 13 complete-executable differences.
+- Eliminate 106 additional input-view, coordinate-storage and bounds-accessor
+  source trials without changing canonical flags or promoting a near match.
+- Preserve original game behavior and C/feature/NPC/tool/mod counts; physical
+  rendering and whole-feature acceptance remain open.
+
 ## Original rendering grid and streaming composition - 2026-10-11
 
 - Check 45,408 bounded cases through four original native functions; replace

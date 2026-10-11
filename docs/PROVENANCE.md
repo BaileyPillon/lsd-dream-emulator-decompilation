@@ -122,3 +122,17 @@ Two reviewed private Ghidra prototypes retain 460 native bytes unchanged;
 parameter storage and successful saving were checked. Source/evidence pins in
 [render-stream-checks.json](render-stream-checks.json) extend the publication
 record without changing original feature, NPC, C or developer-capability counts.
+
+## Rendering matching and ordered-store supplement
+
+The [ordered-store audit](RENDER_MATCHING.md) adds executed-store observation
+with immediate readback to the same 74,832 scalar fixtures. All three native
+variants preserve checked final outputs. The four-byte C candidate changes
+store order in 68,306 cases; a corrected full C candidate preserves it but
+retains 13 executable differences. Neither is promoted.
+
+The initial unsuccessful memory-hook method and controlled diagnostic are
+preserved separately. The successful proof's hashes and 106 additional source
+trials are pinned in [render-matching-checks.json](render-matching-checks.json).
+Original inputs, raw reports and C candidates remain private. C, feature,
+NPC, developer-capability and optional-mod counts are unchanged.

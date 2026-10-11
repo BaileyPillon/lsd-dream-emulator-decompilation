@@ -95,6 +95,13 @@ candidate SHA-1 `cad22662267d1d719f2fa0195cb0d55c4e2bf145` rather than canonical
 `76322eeade5ebb22dca57fdeac7d68c30f06308d`. Its matching fixture results do not
 meet the zero-difference C acceptance gate.
 
+The later [ordered-store audit](RENDER_MATCHING.md) checks executed stores and
+immediate readback as well as these final outputs. The four-byte candidate
+changes store order in 68,306 of the same 74,832 fixtures. A corrected full C
+candidate preserves the order in all fixtures but differs in 13 executable
+bytes. Both remain unaccepted; the original observations above retain their
+bounded final-output scope.
+
 Correcting the stores changes width's post-scheduling lifetime from 53 to 52
 instructions. Its four references then tie cell-z's five references over 65
 instructions under the priority rule in the archived

@@ -94,6 +94,12 @@ behavior evidence without satisfying the exact C acceptance gate. The three
 downstream functions were already in matching C; their native execution here
 does not increase C coverage.
 
+The later [scalar ordered-store audit](RENDER_MATCHING.md) separates final-output
+agreement from the dimension-write sequence. The four-byte candidate changes
+that sequence in the other orientation; a corrected candidate preserves it
+but still differs in 13 bytes. This composition's final-output results remain
+scoped evidence, and neither C candidate is accepted.
+
 Private Ghidra now has reviewed prototypes for the selector and eight-argument
 row helper. Parameters use `a0:4`/`a1:4` for the selector; the row helper uses
 `a0:4` through `a3:4`, then four 4-byte stack arguments at `0x10` through `0x1C`.

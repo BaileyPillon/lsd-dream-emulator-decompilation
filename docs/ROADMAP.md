@@ -30,6 +30,10 @@ The later [streaming composition audit](RENDER_STREAM.md) executes that builder,
 its row splitter and slot selector in 45,408 cases. This reduces the remaining
 contracts to position lookup and the two GTE helpers; the same full C candidate
 still differs in four bytes. Scene/framebuffer/timing acceptance remains open.
+The [ordered-store audit](RENDER_MATCHING.md) shows why final-output agreement
+is insufficient: that candidate reverses two stores in 68,306 scalar fixtures.
+A corrected full candidate retains native store order but differs in 13 bytes;
+106 additional source trials did not produce an exact match.
 
 | Function | Source |
 | --- | --- |
