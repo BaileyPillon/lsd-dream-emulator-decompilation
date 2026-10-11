@@ -1,5 +1,10 @@
 # Source and evidence provenance
 
+The current project title is **LSD: Dream Emulator Decompilation**, published at
+[LSD: Dream Emulator Decompilation](https://github.com/BaileyPillon/lsd-dream-emulator-decompilation). The repository retains its original
+GitHub identity, fork ancestry and Git history. Earlier frozen evidence
+records retain their publication URLs and local paths.
+
 ## Repository ancestry
 
 - Upstream: [cawfee/lsd_decompiled](https://github.com/cawfee/lsd_decompiled).

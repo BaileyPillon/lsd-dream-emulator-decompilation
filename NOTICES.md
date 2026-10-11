@@ -2,7 +2,7 @@
 
 ## Upstream decompilation
 
-LSD Recovered continues [cawfee/lsd_decompiled](https://github.com/cawfee/lsd_decompiled).
+LSD: Dream Emulator Decompilation continues [cawfee/lsd_decompiled](https://github.com/cawfee/lsd_decompiled).
 The initial publication retains upstream Git history through commit
 `16a3914b9bcb75bd94a6b983ed3a952234461625` and adds the matching C recovery,
 build fixes, verification tools and documentation developed in this project.

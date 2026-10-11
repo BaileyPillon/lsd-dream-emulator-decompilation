@@ -1,10 +1,10 @@
-# LSD Recovered
+# LSD: Dream Emulator Decompilation
 
 **A matching decompilation of LSD: Dream Emulator for the original PlayStation.**
 
-[![Tooling tests](https://github.com/BaileyPillon/lsd-recovered/actions/workflows/tools.yml/badge.svg)](https://github.com/BaileyPillon/lsd-recovered/actions/workflows/tools.yml)
+[![Tooling tests](https://github.com/BaileyPillon/lsd-dream-emulator-decompilation/actions/workflows/tools.yml/badge.svg)](https://github.com/BaileyPillon/lsd-dream-emulator-decompilation/actions/workflows/tools.yml)
 
-LSD Recovered reconstructs the 1998 game's native MIPS code in readable C,
+This project reconstructs the 1998 game's native MIPS code in readable C,
 with a reproducible build and tools for studying its dream systems, assets
 and scripted NPCs. It continues [cawfee/lsd_decompiled](https://github.com/cawfee/lsd_decompiled)
 and preserves that project's Git history and contributor attribution.
@@ -125,8 +125,8 @@ Use x86-64 Linux or WSL2, Python 3.10 or newer, and Git. The bundled legacy
 compiler requires Linux's 32-bit compatibility libraries. On Ubuntu/Debian:
 
 ```bash
-git clone https://github.com/BaileyPillon/lsd-recovered.git
-cd lsd-recovered
+git clone https://github.com/BaileyPillon/lsd-dream-emulator-decompilation.git
+cd lsd-dream-emulator-decompilation
 
 sudo apt update
 sudo apt install python3 python3-venv python3-pip git build-essential \

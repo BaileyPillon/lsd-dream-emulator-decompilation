@@ -19498,6 +19498,53 @@
       "remaining_assembly_functions": 5,
       "known_source_padding_functions": 5,
       "scope": "One matching C recovery with byte-identical complete standard/clean builds and reverified bounded save workflow; whole-card runtime acceptance remains open."
+    },
+    "project_identity_rename_20261011": {
+      "recorded_utc": "2026-10-11T23:34:07.216251+00:00",
+      "display_name": "LSD: Dream Emulator Decompilation",
+      "repository": "https://github.com/BaileyPillon/lsd-dream-emulator-decompilation",
+      "repository_id": 1413945971,
+      "previous_display_name": "LSD Recovered",
+      "previous_repository": "https://github.com/BaileyPillon/lsd-recovered",
+      "provenance": "docs/PROVENANCE.md",
+      "git_history_preserved": true,
+      "original_game_behavior_modified": false,
+      "source_functions_promoted": 0,
+      "whole_feature_groups_accepted": 0,
+      "before_after": {
+        "before": {
+          "c_bytes": 195844,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 5,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 37,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 5
+        },
+        "after": {
+          "c_bytes": 195844,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 5,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 37,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 5
+        },
+        "source_functions_promoted": 0,
+        "whole_feature_groups_accepted": 0
+      }
     }
   }
 }
