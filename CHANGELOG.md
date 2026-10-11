@@ -1,5 +1,14 @@
 # Changelog
 
+## Native behavior verification extension - 2026-10-11
+
+- Add bounded native/reference checks for nine original timed and input-driven
+  callbacks, including the Dog's action/RNG state changes.
+- Pass 4,408 cases and detect nine deliberately wrong instructions; extend
+  combined bounded coverage to 11 of 107 callbacks and 6,784 fixture cases.
+- Preserve original behavior, matching C coverage and whole-feature acceptance
+  status. Motion, animation-selection and sound contracts remain explicit.
+
 ## Initial publication - 2026-10-11
 
 - Continue the upstream decompilation with its full existing Git history.

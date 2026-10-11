@@ -130,6 +130,15 @@ callbacks. Duplicate callbacks, incorrect Gray Man entry counts, a changed
 effect source, omitted allocation-failure cases and unsupported controls fail
 the evidence check.
 
+The [scripted callback verifier](SCRIPTED_AI.md) adds Bird, Rocket, Horse, UFO,
+Dog, Can, Car in water, Walking fetus and Jumping fetus. Their 4,408 native
+cases and nine detected instruction controls extend bounded coverage to eleven
+of the 107 callbacks and 6,784 cases. Original action reads, RNG and behavior
+stop helpers execute; movement, animation selection and sound retain explicit
+contracts. The previously published inventory snapshot is preserved, with
+these new counts recorded in its publication supplement. Whole-callback and
+whole-feature acceptance remain zero.
+
 A separate private extension passed 1,728 Gray Man object-graph fixtures.
 It exercises the original nonnull-parent detach, both linked-list removals,
 coordinate-parent reset and visibility-bit changes for zero, one or two

@@ -1,4 +1,4 @@
-"""Check bounded original Lion or Gray Man behavior using optional local Unicorn.
+"""Check bounded original Lion, Gray Man or scripted behavior using local Unicorn.
 
 Actual RNG, link-disable and callback-clear code executes with explicit
 geometry, notification, sound and movement contracts. This developer tool
@@ -384,7 +384,7 @@ def verify(destination):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',required=True,help='New JSON report inside .decomp-lab; existing evidence is preserved.')
-    parser.add_argument('--callback', choices=('lion', 'gray_man'), default='lion',
+    parser.add_argument('--callback', choices=('lion', 'gray_man', 'scripted'), default='lion',
                         help='Original callback to check; analysis remains outside the game.')
     args=parser.parse_args(argv)
     try:
@@ -399,7 +399,10 @@ def main(argv=None):
         destination.parent.mkdir(parents=True,exist_ok=True)
         import os
         os.chdir(ROOT)
-        if args.callback == 'gray_man':
+        if args.callback == 'scripted':
+            from tools.verify_scripted_ai import verify as verify_scripted_ai
+            verify_scripted_ai(destination)
+        elif args.callback == 'gray_man':
             from tools.verify_gray_man import verify as verify_gray_man
             verify_gray_man(destination)
         else:

@@ -14599,5 +14599,297 @@
     "private_artifacts_distributed": false,
     "absolute_evidence_paths_replaced": true,
     "scope_document": "docs/PROVENANCE.md"
+  },
+  "publication_supplements": {
+    "scripted_callbacks_20261011": {
+      "recorded_utc": "2026-10-11T05:27:11.888822+00:00",
+      "scope": "Additional bounded original callback verification after the frozen publication snapshot.",
+      "report": ".decomp-lab/scripted-ai-native-proof-second.json",
+      "report_sha256": "9204a3662c37ad0351f2aec9a8926cd51355176ccb2e7b2c5f6d85ccfd097927",
+      "source_functions_promoted": 0,
+      "callbacks_before_supplement": 2,
+      "callbacks_after_supplement": 11,
+      "distinct_original_callback_denominator": 107,
+      "native_fixture_cases_before_supplement": 2376,
+      "native_fixture_cases_after_supplement": 6784,
+      "cases_by_callback": {
+        "entity_bird": 42,
+        "entity_rocket": 140,
+        "entity_horse": 504,
+        "entity_ufo": 140,
+        "entity_dog": 2880,
+        "entity_can": 240,
+        "entity_car_water": 84,
+        "entity_fetus_walk": 48,
+        "entity_fetus_jump": 330
+      },
+      "native_property_record_bindings": {
+        "entity_bird": [
+          24
+        ],
+        "entity_rocket": [
+          25
+        ],
+        "entity_horse": [
+          26
+        ],
+        "entity_ufo": [
+          27
+        ],
+        "entity_dog": [
+          68
+        ],
+        "entity_can": [
+          83
+        ],
+        "entity_car_water": [
+          84
+        ],
+        "entity_fetus_walk": [
+          95
+        ],
+        "entity_fetus_jump": [
+          96
+        ]
+      },
+      "executed_native_entry_counts": {
+        "entity_bird": 42,
+        "entity_rocket": 140,
+        "entity_horse": 504,
+        "entity_ufo": 140,
+        "entity_dog": 2880,
+        "dream_sys_get_action_pressed": 1080,
+        "rand": 530,
+        "entity_stop_behaviour": 86,
+        "func_800662B4": 86,
+        "func_80066148": 86,
+        "entity_can": 240,
+        "entity_car_water": 84,
+        "entity_fetus_walk": 48,
+        "entity_fetus_jump": 330
+      },
+      "negative_controls_detected": 9,
+      "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+      "model_api_calls": 0,
+      "original_callback_and_feature_acceptance": 0,
+      "analysis_capability_count_unchanged": true,
+      "source_dependencies_at_execution": [
+        {
+          "path": "tools/verify_native_ai.py",
+          "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+        },
+        {
+          "path": "tools/inventory_vtables.py",
+          "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+        },
+        {
+          "path": "tools/progress.py",
+          "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+        },
+        {
+          "path": "configure.py",
+          "sha256": "ecec22aa519fdf50f99069d6a4d99ee1a3cececf57fd05e032c5452fcc3e879e"
+        },
+        {
+          "path": "requirements-analysis.txt",
+          "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+        },
+        {
+          "path": "build/SLPS01556.map",
+          "sha256": "57a16f8663b941b35c1806555c1f05e290523c91918f293e00d588103ef3d610"
+        },
+        {
+          "path": "build/undefined_funcs_auto.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "build/undefined_syms_auto.txt",
+          "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+        },
+        {
+          "path": "src/scene/entity.c",
+          "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+        },
+        {
+          "path": "src/scene/entity.h",
+          "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+        },
+        {
+          "path": "src/dream/dream_sys.c",
+          "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+        },
+        {
+          "path": "src/dream/dream_sys.h",
+          "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+        },
+        {
+          "path": "src/scene/actor.c",
+          "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+        },
+        {
+          "path": "src/base/transform.c",
+          "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+        },
+        {
+          "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+          "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+        },
+        {
+          "path": "tools/verify_scripted_ai.py",
+          "sha256": "1410c8d72f570b0f3a404efcbbf7f73c1b76ba1b3a0897e1c59447670e7e0565"
+        }
+      ],
+      "documentation": "docs/SCRIPTED_AI.md",
+      "retained_callbacks_reverified": [
+        {
+          "report": ".decomp-lab/publication-lion-verification-first.json",
+          "sha256": "31ddc5109ca809961f68265ef652c7399a6378b65d07fd5e28d64859ab778e08",
+          "cases": 1608,
+          "controls_detected": 3,
+          "source_dependencies_at_execution": [
+            {
+              "path": "tools/verify_native_ai.py",
+              "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+            },
+            {
+              "path": "tools/inventory_vtables.py",
+              "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+            },
+            {
+              "path": "tools/progress.py",
+              "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+            },
+            {
+              "path": "configure.py",
+              "sha256": "ecec22aa519fdf50f99069d6a4d99ee1a3cececf57fd05e032c5452fcc3e879e"
+            },
+            {
+              "path": "requirements-analysis.txt",
+              "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+            },
+            {
+              "path": "build/SLPS01556.map",
+              "sha256": "57a16f8663b941b35c1806555c1f05e290523c91918f293e00d588103ef3d610"
+            },
+            {
+              "path": "build/undefined_funcs_auto.txt",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "path": "build/undefined_syms_auto.txt",
+              "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+            },
+            {
+              "path": "src/scene/entity.c",
+              "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+            },
+            {
+              "path": "src/scene/entity.h",
+              "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+            },
+            {
+              "path": "src/dream/dream_sys.c",
+              "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+            },
+            {
+              "path": "src/dream/dream_sys.h",
+              "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+            },
+            {
+              "path": "src/scene/actor.c",
+              "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+            },
+            {
+              "path": "src/base/transform.c",
+              "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+            },
+            {
+              "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+              "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+            }
+          ]
+        },
+        {
+          "report": ".decomp-lab/publication-gray-man-verification-first.json",
+          "sha256": "eadad5d8e97581ce670a569dbb71f9866ef207f22d9e8042670d4a528721c532",
+          "cases": 768,
+          "controls_detected": 2,
+          "source_dependencies_at_execution": [
+            {
+              "path": "tools/verify_native_ai.py",
+              "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+            },
+            {
+              "path": "tools/inventory_vtables.py",
+              "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+            },
+            {
+              "path": "tools/progress.py",
+              "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+            },
+            {
+              "path": "configure.py",
+              "sha256": "ecec22aa519fdf50f99069d6a4d99ee1a3cececf57fd05e032c5452fcc3e879e"
+            },
+            {
+              "path": "requirements-analysis.txt",
+              "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+            },
+            {
+              "path": "build/SLPS01556.map",
+              "sha256": "57a16f8663b941b35c1806555c1f05e290523c91918f293e00d588103ef3d610"
+            },
+            {
+              "path": "build/undefined_funcs_auto.txt",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "path": "build/undefined_syms_auto.txt",
+              "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+            },
+            {
+              "path": "src/scene/entity.c",
+              "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+            },
+            {
+              "path": "src/scene/entity.h",
+              "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+            },
+            {
+              "path": "src/dream/dream_sys.c",
+              "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+            },
+            {
+              "path": "src/dream/dream_sys.h",
+              "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+            },
+            {
+              "path": "src/scene/actor.c",
+              "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+            },
+            {
+              "path": "src/base/transform.c",
+              "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+            },
+            {
+              "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+              "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+            },
+            {
+              "path": "tools/verify_gray_man.py",
+              "sha256": "c306f2b8408ad86c10394d962438d9b5787da4f841ab4fe4734d1ed4c31bc756"
+            },
+            {
+              "path": "src/graphics/effect.c",
+              "sha256": "d9b2dd6bceb64b1b9fc631d833c4e77278006c62b9969799ecfc6748166bd805"
+            },
+            {
+              "path": "src/graphics/effect.h",
+              "sha256": "767085b6d185b949592ca0d2adab6092efce6d518311ed2ba14ebad3194a08be"
+            }
+          ]
+        }
+      ]
+    }
   }
 }

@@ -95,6 +95,12 @@ The same audit bounded 418 of 418 LBD files, 167,200 grid cells and 270 addition
 
 ## Remaining scope
 
+The [scripted callback supplement](SCRIPTED_AI.md), recorded after the frozen
+publication snapshot, adds nine original callbacks with 4,408 bounded native
+cases and nine detected controls. Together with the existing Lion and Gray Man
+checks, this yields 11 of 107 callbacks and 6,784 cases. It does not change the
+40-group denominator, C-recovery counts or zero whole-feature acceptance.
+
 Asset/command records, virtual-call closure, rare state/RNG/save/error branches, hardware timing and audio coverage remain to audit. [features.json](features.json) preserves requirements, dependencies, immutable before statuses, current source hashes and runtime evidence. Five inventory gaps remain open; U006 records the user's resolved separation of original behavior from AI tooling.
 
 A core-C count is based on actual configured definitions and live assembly inclusions. Shared support follows explicit dependencies and does not claim exhaustive call-graph closure. Optional gameplay mods have their own outputs and do not count toward original parity.
