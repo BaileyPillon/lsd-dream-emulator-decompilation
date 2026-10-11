@@ -1,0 +1,463 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-10-11T09:35:10.499416+00:00",
+  "source_commit": "cdbccf109899a506191630c0306291e028c67656",
+  "matching_game_source_base_commit": "cc29d178bc7c53b0493791534d2aa5a2d0d73f97",
+  "game_sources_and_compiler_configuration_unchanged_from_base": true,
+  "scope": "Original rendering grid-window scalar evidence with four explicit contracts, a nonmatching full C candidate and reviewed private Ghidra metadata. No C promotion, original feature addition or whole-feature acceptance.",
+  "matching_build": {
+    "report": ".decomp-lab/render-grid-current-progress-first.json",
+    "sha256": "8968dca871b3cf35c04786dcdb4a226ef3a05b463c28bcba48937b6b7edbdbc2",
+    "objects_expected": 305,
+    "objects_found": 305,
+    "build_current": true,
+    "c_bytes": 194284,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 97.18476129496979,
+    "sdk_text_bytes": 147880,
+    "handwritten_text_bytes": 188,
+    "binary_match": "verified",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "sha256_executable": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+  },
+  "original_render_grid_native": {
+    "report": ".decomp-lab/render-grid-native-proof-first.json",
+    "sha256": "36c4e6ce26a9c17cfb8366e0dc1e4f9ca5960a825eb7a635683877af7b40a1d9",
+    "status": "passed_bounded_original_render_grid",
+    "native_cases": 74832,
+    "case_groups": {
+      "complete_angle_word_sweep": 65536,
+      "projection_clamp_boundaries": 896,
+      "coordinate_and_dimension_edges": 8232,
+      "callback_mutation_order": 72,
+      "segment_aliases_and_template_contents": 96
+    },
+    "decision_axes": {
+      "longitudinal": 68306,
+      "transverse": 6526
+    },
+    "native_functions": [
+      {
+        "function": "func_8004C6A8",
+        "address": "0x8004C6A8",
+        "bytes": 660,
+        "sha256": "a50855f634d69c3ce7a04cc5db9fafd9a2d88edfeab167f9e351c7791bdb46d9"
+      }
+    ],
+    "executed_native_entry_counts": {
+      "func_8004C6A8": 74832
+    },
+    "explicit_stubs": 4,
+    "stub_contracts": [
+      "position lookup",
+      "RotMatrix",
+      "ApplyMatrixLV",
+      "grid builder"
+    ],
+    "negative_controls_detected": [
+      {
+        "name": "first_angle_interval_width",
+        "address": "0x8004c79c",
+        "fixture": {
+          "angle": 1535,
+          "x": -32,
+          "z": 40,
+          "radius": 4,
+          "width": 8,
+          "height": 6,
+          "distance": 12345,
+          "projected_x": -4096,
+          "projected_y": -3456,
+          "projected_z": -4096
+        },
+        "detected": true,
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "name": "unsigned_grid_z",
+        "address": "0x8004c704",
+        "fixture": {
+          "angle": 512,
+          "x": -32,
+          "z": -1,
+          "radius": 4,
+          "width": 8,
+          "height": 6,
+          "distance": 12345,
+          "projected_x": -4096,
+          "projected_y": -3456,
+          "projected_z": -4096
+        },
+        "detected": true,
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "name": "wrong_row_extent",
+        "address": "0x8004c83c",
+        "fixture": {
+          "angle": 1536,
+          "x": -32,
+          "z": 40,
+          "radius": 4,
+          "width": 8,
+          "height": 6,
+          "distance": 12345,
+          "projected_x": -4096,
+          "projected_y": -3456,
+          "projected_z": -4096
+        },
+        "detected": true,
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "name": "negative_origin_boundary",
+        "address": "0x8004c7d8",
+        "fixture": {
+          "angle": 512,
+          "x": -32,
+          "z": 40,
+          "radius": 4,
+          "width": 8,
+          "height": 6,
+          "distance": 12345,
+          "projected_x": -4096,
+          "projected_y": -3456,
+          "projected_z": -4096
+        },
+        "detected": true,
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "name": "unsigned_radius_read",
+        "address": "0x8004c8a0",
+        "fixture": {
+          "angle": 512,
+          "x": -32,
+          "z": 40,
+          "radius": -1,
+          "width": 8,
+          "height": 6,
+          "distance": 12345,
+          "projected_x": -4096,
+          "projected_y": -3456,
+          "projected_z": -4096
+        },
+        "detected": true,
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "name": "logical_projection_shift",
+        "address": "0x8004c8a4",
+        "fixture": {
+          "angle": 512,
+          "x": -32,
+          "z": 40,
+          "radius": 4,
+          "width": 8,
+          "height": 6,
+          "distance": 12345,
+          "projected_x": -4096,
+          "projected_y": -3456,
+          "projected_z": -4096
+        },
+        "detected": true,
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "name": "unsigned_upper_clamp",
+        "address": "0x8004c8a8",
+        "fixture": {
+          "angle": 512,
+          "x": -32,
+          "z": 40,
+          "radius": 4,
+          "width": 8,
+          "height": 6,
+          "distance": 12345,
+          "projected_x": -4096,
+          "projected_y": -3456,
+          "projected_z": -4096
+        },
+        "detected": true,
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "name": "wrong_correction_axis",
+        "address": "0x8004c898",
+        "fixture": {
+          "angle": 1536,
+          "x": -32,
+          "z": 40,
+          "radius": 4,
+          "width": 8,
+          "height": 6,
+          "distance": 12345,
+          "projected_x": -4096,
+          "projected_y": -3456,
+          "projected_z": -4096
+        },
+        "detected": true,
+        "scope": "Private Unicorn memory only."
+      }
+    ],
+    "producer_dependencies": [
+      {
+        "path": "tools/verify_native_ai.py",
+        "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+      },
+      {
+        "path": "tools/inventory_vtables.py",
+        "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+      },
+      {
+        "path": "tools/progress.py",
+        "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+      },
+      {
+        "path": "configure.py",
+        "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+      },
+      {
+        "path": "requirements-analysis.txt",
+        "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+      },
+      {
+        "path": "build/SLPS01556.map",
+        "sha256": "bb181d0799122a8cac3c4a8af74c8dbbe5c0e3708e4299aeb2f6d836d15fb04c"
+      },
+      {
+        "path": "build/undefined_funcs_auto.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "build/undefined_syms_auto.txt",
+        "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+      },
+      {
+        "path": "src/scene/entity.c",
+        "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+      },
+      {
+        "path": "src/scene/entity.h",
+        "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+      },
+      {
+        "path": "src/dream/dream_sys.c",
+        "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+      },
+      {
+        "path": "src/dream/dream_sys.h",
+        "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+      },
+      {
+        "path": "src/scene/actor.c",
+        "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+      },
+      {
+        "path": "src/base/transform.c",
+        "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+      },
+      {
+        "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+        "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+      },
+      {
+        "path": "tools/verify_render_grid.py",
+        "sha256": "1386a440b320822d3abe61f29b556b5f81d3c304d0fab79627b377d31b8f5066"
+      },
+      {
+        "path": "src/scene/render_context.c",
+        "sha256": "3bdfbd4247a84a160de9582b1e053e2afb69a0bb395c00c125af73d8460e9d3d"
+      },
+      {
+        "path": "src/scene/render_context.h",
+        "sha256": "c1063eef3d3f6aa56332ff34a8421edbcff4c0f3b5e1cea5935e687efa79944f"
+      },
+      {
+        "path": "config/symbols.txt",
+        "sha256": "9558bb5e4309d4f4cb3e2843cce14ad4af75205b43eef23ed527b200164bf1a8"
+      },
+      {
+        "path": "asm/nonmatchings/scene/render_context/func_8004C6A8.s",
+        "sha256": "825e7ed18af2f48c08e43eb2666a879849797393a518e614f8f81d3391e699aa"
+      }
+    ],
+    "scope": "All 65536 input angle words plus scalar clamp, signed coordinate, dimension, callback mutation, segment alias and template fixtures. Compare whole guarded objects, exact call order/arguments, rotation inputs, intermediate matrices, final grid fields, matrix/info buffers, stack guards, GP, RA and saved registers. The four explicit contracts do not execute GTE transforms, position resolution or the downstream grid builder. The original function remains assembly; full rendering, natural scene lifetime and PS1 timing remain unaccepted."
+  },
+  "nonmatching_c_candidate": {
+    "report": ".decomp-lab/render-grid-candidate-behavior-first.json",
+    "sha256": "5308dd0e57c7a665f392a65653ad619e6004bf04e82522989046d43989771275",
+    "status": "passed_bounded_private_grid_candidate",
+    "native_cases": 74832,
+    "case_groups": {
+      "complete_angle_word_sweep": 65536,
+      "projection_clamp_boundaries": 896,
+      "coordinate_and_dimension_edges": 8232,
+      "callback_mutation_order": 72,
+      "segment_aliases_and_template_contents": 96
+    },
+    "decision_axes": {
+      "longitudinal": 68306,
+      "transverse": 6526
+    },
+    "explicit_stubs": 4,
+    "full_executable_changed_bytes": 4,
+    "candidate_executable_sha1": "cad22662267d1d719f2fa0195cb0d55c4e2bf145",
+    "candidate_range_sha256": "954644ba5ab686df2c8352cd026111634557b29dd0d2ba477b198847e666e126",
+    "candidate_source_sha256": "aeebadbd3221bcae92740706c6f44bfe351ec6fd5d32931199d8d4613e850e2e",
+    "scope": "Same 74832 independently modelled scalar fixtures as the original function, with four explicit dependency contracts. Two dimension stores are reordered in the full nonmatching candidate. No exact C, GTE, full renderer or feature acceptance.",
+    "complete_executable_comparison": {
+      "report": ".decomp-lab/render-grid-full-build-first/comparison.json",
+      "sha256": "524f6d3e3363653ab287071b1270d9a2e1f1942994a20cfbde586b4cfe2ac643"
+    }
+  },
+  "private_ghidra_reconciliation": {
+    "report": ".decomp-lab/ghidra-render-grid-api-reconciled-first.json",
+    "sha256": "9d515496ac32386b139af620f33dc4b1ffb5fbebcd9f910d28eaa3ce950d109c",
+    "program": "original-symbols.elf",
+    "native_bytes_unchanged": true,
+    "saved": true,
+    "calling_convention": "__stdcall",
+    "reviewed_prototypes": 3,
+    "native_bytes": 1232,
+    "functions": [
+      {
+        "address": "0x8004C620",
+        "bytes": 136,
+        "sha256": "7dfdde1634eb2b0cafb1bcd7a022f510f7c030d6d7eb913af09b15f2584d1c8e",
+        "signature": "void func_8004C620(void * render_context)",
+        "parameters": [
+          {
+            "name": "render_context",
+            "type": "void *",
+            "storage": "a0:4"
+          }
+        ]
+      },
+      {
+        "address": "0x8004C6A8",
+        "bytes": 660,
+        "sha256": "a50855f634d69c3ce7a04cc5db9fafd9a2d88edfeab167f9e351c7791bdb46d9",
+        "signature": "void func_8004C6A8(void * render_context, int width, int height)",
+        "parameters": [
+          {
+            "name": "render_context",
+            "type": "void *",
+            "storage": "a0:4"
+          },
+          {
+            "name": "width",
+            "type": "int",
+            "storage": "a1:4"
+          },
+          {
+            "name": "height",
+            "type": "int",
+            "storage": "a2:4"
+          }
+        ]
+      },
+      {
+        "address": "0x8004C93C",
+        "bytes": 436,
+        "sha256": "b2ae8adf614d7d9cbbc54f0c421116d413b0d1ec83b589ef627f68bf496807e9",
+        "signature": "void func_8004C93C(void * render_context)",
+        "parameters": [
+          {
+            "name": "render_context",
+            "type": "void *",
+            "storage": "a0:4"
+          }
+        ]
+      }
+    ],
+    "decompilation_record": {
+      "report": ".decomp-lab/ghidra-render-grid-decompiled-first.json",
+      "sha256": "b9094481ed6462b28d73c390872ef768dd5dcac9ce5397c65a1bb034a5adb947"
+    }
+  },
+  "source_experiments": [
+    {
+      "report": ".decomp-lab/grid-edge-arithmetic-first/results.json",
+      "sha256": "29a54c95ed5c2ca23a1fed913162970981d4d9c9d4a2184b17b67a95ab8c6cdd",
+      "attempts": 117,
+      "compile_errors": 0,
+      "minimum_byte_difference": 13,
+      "exact_matches": 0
+    },
+    {
+      "report": ".decomp-lab/grid-cached-extents-first/results.json",
+      "sha256": "2bfc6c42bd54faf19c0c3484d3fcd00255460b20698125511484def0c67f6a4a",
+      "attempts": 50,
+      "compile_errors": 6,
+      "minimum_byte_difference": 4,
+      "exact_matches": 0
+    },
+    {
+      "report": ".decomp-lab/grid-sdk-returns-first/results.json",
+      "sha256": "334d3781e4a999144e439e1ea621bdf4962bd1dd8700773a01f37d19293083d0",
+      "attempts": 8,
+      "compile_errors": 0,
+      "minimum_byte_difference": 13,
+      "exact_matches": 0
+    }
+  ],
+  "historical_compiler_source": {
+    "report": ".decomp-lab/gcc263-source-first/provenance.json",
+    "sha256": "337ad5efe3c65e34ca773fbc114eccaa43b42b16bfb784d64a05c7acd0ae0b1d"
+  },
+  "current_turn_before_after": {
+    "before_source_commit": "c2a9f97bf38ea6183accf299df61dfb9388e9c3a",
+    "before": {
+      "c_bytes": 194284,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 7,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "after": {
+      "c_bytes": 194284,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 7,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "published_grid_native_cases_before": 0,
+    "published_grid_native_cases_after": 74832,
+    "source_promotions": 0,
+    "game_sdk_classification_changes": 0
+  },
+  "tooling_tests": {
+    "windows": {
+      "report": ".decomp-lab/render-grid-tests-windows-first.log",
+      "sha256": "7c6a47d3c2aeca4ca327e3f156441fd4304537e77bd5a1d4a7414fd355a22dc1",
+      "tests": 149,
+      "passed": true,
+      "python": "3.14"
+    },
+    "linux": {
+      "report": ".decomp-lab/render-grid-tests-linux-first.log",
+      "sha256": "5abfb88ff57b6821e941bf8721991ef2e3653f6872a452d82c1369e3f78ff6f8",
+      "tests": 149,
+      "passed": true,
+      "python": "3.13"
+    }
+  },
+  "model_api_calls": 0,
+  "original_game_behavior_modified": false,
+  "private_inputs_or_native_output_bytes_included": false
+}
