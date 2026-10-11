@@ -1,5 +1,20 @@
 # Changelog
 
+## Original matrix application through native Nymashock GTE - 2026-10-11
+
+- Execute original `ApplyMatrixLV` in 109,501 distinct guarded cases with
+  actual checked native GTE commands, retaining signed-long split quirks,
+  MAC narrowing, IR saturation and overlapping buffers.
+- Execute eleven original functions in 13,230 distinct world-to-stream
+  cases with zero function-output stubs and an explicit COP2 transfer adapter.
+- Independently audit all 245,470 ordered command responses; record command
+  repetitions separately and detect four original-instruction faults.
+- Add a reproducible private bridge build; pass 215 tooling tests on Windows
+  Python 3.14 and Linux Python 3.13, with the canonical build preserved.
+- Preserve C, original-feature, NPC, developer-capability and mod counts;
+  full PS1 CPU timing, original hardware, scenes and feature acceptance remain
+  open. No model API calls or added game behavior are introduced.
+
 ## Original SDK rotation and streaming composition - 2026-10-11
 
 - Execute inherited `RotMatrix` without stubs in 203,259 runs over 203,257

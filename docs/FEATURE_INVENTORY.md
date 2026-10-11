@@ -219,3 +219,13 @@ rendering/streaming evidence and classifies the helper's local table without
 a C promotion or whole-feature acceptance. Original/NPC/developer/mod counts
 and earlier feature records remain unchanged; individual axis sweeps do not
 establish the full three-angle domain or actual GTE/scene/timing parity.
+
+The subsequent [native GTE supplement](RENDER_GTE.md) executes original
+`ApplyMatrixLV` in 109,501 distinct guarded fixtures and eleven original
+functions in 13,230 composed cases without function-output stubs. The checked
+Nymashock core executes 245,470 commands plus its identity self-check; all
+logged MAC/IR/flag results pass a separate integer audit. The explicit COP2
+transfer adapter, bounded matrices/vectors and one software GTE profile leave
+full PS1 CPU timing, natural scenes and whole-feature acceptance open. Four
+faults are detected. C, original-feature, NPC, developer-capability and mod
+counts remain unchanged, with all earlier feature records preserved.

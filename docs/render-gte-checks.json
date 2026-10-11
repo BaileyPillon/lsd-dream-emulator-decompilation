@@ -1,0 +1,415 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-11T16:21:42.272284+00:00",
+  "repository_code_base_commit": "4b864ccfcb9d4b32ff5bee2fe5d27c54fc29008c",
+  "documentation": "docs/RENDER_GTE.md",
+  "documentation_sha256": "f1b392ab368d8cb568438bee2b2e46b7548077355932c87626ae9e72f44d67a2",
+  "producer": {
+    "path": ".decomp-lab/publish_render_gte_first.py",
+    "sha256": "4fae7f059e31c2bfd5dc9500d73a269a93f26c3c5a04238930e8d674b08f297e"
+  },
+  "native_proof": {
+    "path": ".decomp-lab/render-gte-native-proof-first.json",
+    "sha256": "2d7de70c289f8b73bf86353c7213667a83c75d6253d4f832d40f275086d30d1b"
+  },
+  "ordered_command_log_audit": {
+    "path": ".decomp-lab/render-gte-native-log-audit-first.json",
+    "sha256": "73717b4d253329c178b87e483ff0c90a05625df87fef28bb5f048b063569c93d"
+  },
+  "prior_rotation_metadata": {
+    "path": "docs/render-rotation-checks.json",
+    "sha256": "b44d4beb5fc1198e4931233f399cc3e64cf6dc60c5e90ebea97fe269d913faf8"
+  },
+  "matrix_application": {
+    "native_function": {
+      "function": "ApplyMatrixLV",
+      "address": "0x80015618",
+      "bytes": 352,
+      "sha256": "b5cca44ff50bf0ca0e5996e8f5cf1b954740710e6773d57827b764a47fee082e"
+    },
+    "native_cases": 109501,
+    "native_runs": 109501,
+    "case_groups": {
+      "signed_long_split_and_matrix_edges": 109375,
+      "overlapping_inputs_outputs_and_aliases": 126
+    },
+    "executed_apply_entries": 109501,
+    "explicit_function_stubs": 0,
+    "cop2_operations_executed": {
+      "ctc2": 547505,
+      "mtc2": 657006,
+      "command": 219002,
+      "mfc2": 657006
+    },
+    "native_command_flag_counts": {
+      "0": 132151,
+      "4194304": 4864,
+      "2155872256": 4702,
+      "2160066560": 2049,
+      "2164260864": 5195,
+      "2168455168": 11796,
+      "2172649472": 1627,
+      "2176843776": 56618
+    }
+  },
+  "native_gte": {
+    "implementation": "BizHawk 2.11.1 Nymashock, checked local native Waterbox core",
+    "compressed_core_sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126",
+    "bridge_source_sha256": "67bd4fa8341a511e4675931b72e6ffe6f14c93f239f5d7677d90d74b0efd92d1",
+    "compiled_bridge_sha256": "32e0f165f635db98c81624e0e04d3087319c3e594de902fde94061ad89b209db",
+    "command_invocations_excluding_identity_self_check": 245470,
+    "identity_self_check": {
+      "id": 0,
+      "mac": [
+        0,
+        0,
+        12345
+      ],
+      "ir": [
+        0,
+        0,
+        12345
+      ],
+      "flags": 0,
+      "command_cycles_minus_one": 7
+    },
+    "command_words": [
+      "0x4a41e012",
+      "0x4a49e012"
+    ],
+    "inlined_transfer_adapter_registers": "CR0..4, IR1..3, MAC1..3",
+    "stdout_log_sha256": "2bdb31d8297e893c515115889d7165675443b930dbb432afde7fb26da3592ce7",
+    "stderr_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full_psx_cpu_timing_checked": false
+  },
+  "composition": {
+    "native_cases": 13230,
+    "native_functions": [
+      {
+        "function": "func_8004C158",
+        "address": "0x8004C158",
+        "bytes": 104,
+        "sha256": "ed0e88573bebaabe7193558da0ca5155fc928339b799e7ac05147d79ab2ec3ea"
+      },
+      {
+        "function": "func_8004C1C0",
+        "address": "0x8004C1C0",
+        "bytes": 424,
+        "sha256": "d82d26562f1a91a9ae77988cfedcf3e0e41b69c558344850c56a6a1d8712933c"
+      },
+      {
+        "function": "func_8004C368",
+        "address": "0x8004C368",
+        "bytes": 136,
+        "sha256": "fde21abc879fe53caac48f67490e480a5b4f00661f006583abfdd99a5b9bf25a"
+      },
+      {
+        "function": "func_8004C434",
+        "address": "0x8004C434",
+        "bytes": 60,
+        "sha256": "20dc014764c03db33c736936d39697ca0578fea09351941f97b1eaf2cce96596"
+      },
+      {
+        "function": "func_8004C470",
+        "address": "0x8004C470",
+        "bytes": 280,
+        "sha256": "1e8050abf24ead47a7e6009565ee0db7086026203b62b555771812c7343a368a"
+      },
+      {
+        "function": "func_8004C6A8",
+        "address": "0x8004C6A8",
+        "bytes": 660,
+        "sha256": "a50855f634d69c3ce7a04cc5db9fafd9a2d88edfeab167f9e351c7791bdb46d9"
+      },
+      {
+        "function": "func_8004C93C",
+        "address": "0x8004C93C",
+        "bytes": 436,
+        "sha256": "b2ae8adf614d7d9cbbc54f0c421116d413b0d1ec83b589ef627f68bf496807e9"
+      },
+      {
+        "function": "func_8004CAF0",
+        "address": "0x8004CAF0",
+        "bytes": 388,
+        "sha256": "db0aef3b0fd26e35a931cc0a7becce405b0e7cf3269a275448f8f39b4bdc5497"
+      },
+      {
+        "function": "func_8004C588",
+        "address": "0x8004C588",
+        "bytes": 72,
+        "sha256": "e180bd8b0901df8378e5dd68e131ebae4d12ce6693f3ff82923f4a4b9d8fbdac"
+      },
+      {
+        "function": "RotMatrix",
+        "address": "0x800160B0",
+        "bytes": 652,
+        "sha256": "cab8838ded03b3b2a50a32cc279811d7fb6a1ee23cfe640c1ac4d7c1d9eee443"
+      },
+      {
+        "function": "ApplyMatrixLV",
+        "address": "0x80015618",
+        "bytes": 352,
+        "sha256": "b5cca44ff50bf0ca0e5996e8f5cf1b954740710e6773d57827b764a47fee082e"
+      }
+    ],
+    "native_function_bytes": 3564,
+    "executed_native_entry_counts": {
+      "func_8004C6A8": 13230,
+      "func_8004C158": 13230,
+      "func_8004C1C0": 13230,
+      "func_8004C470": 13230,
+      "func_8004C434": 66150,
+      "func_8004C368": 13230,
+      "RotMatrix": 13230,
+      "ApplyMatrixLV": 13230,
+      "func_8004C93C": 13230,
+      "func_8004C588": 26418,
+      "func_8004CAF0": 13230
+    },
+    "explicit_function_stubs": 0,
+    "cop2_operations_executed": {
+      "ctc2": 66150,
+      "mtc2": 79380,
+      "command": 26460,
+      "mfc2": 79380
+    },
+    "decision_axes": {
+      "longitudinal": 7938,
+      "transverse": 5292
+    },
+    "emitted_rectangle_counts": {
+      "3": 3318,
+      "2": 6552,
+      "1": 3360
+    },
+    "canonical_virtual_bindings": [
+      {
+        "slot_offset": "0x10c",
+        "target": "0x8004c158",
+        "slot_sha256": "9cc6d440b905655e897bb599255e8972a5c9988ba84d329c000b0494301841bf"
+      },
+      {
+        "slot_offset": "0x110",
+        "target": "0x8004c1c0",
+        "slot_sha256": "7fce90c20714f4c6703934050ac97b542b51699e3deaa525c9f93fcf10a4437f"
+      },
+      {
+        "slot_offset": "0x118",
+        "target": "0x8004c434",
+        "slot_sha256": "4fbc5e702c590de3942bb5234c65337fc8d5c688c7eeb1620a3647402b18b592"
+      },
+      {
+        "slot_offset": "0x11c",
+        "target": "0x8004c470",
+        "slot_sha256": "54e3c0007b3edee688e94f4fe036b84d4b2a743a418cc8b963c266befd2bce5e"
+      },
+      {
+        "slot_offset": "0x120",
+        "target": "0x8004c588",
+        "slot_sha256": "dcd9d948b421a39e2aef05842bf713453ee05e3cb61e75c0de231420c70ad730"
+      }
+    ]
+  },
+  "native_command_invocation_count_scope": "Includes repeated commands and four fault controls; identity self-check counted separately.",
+  "distinct_native_command_inputs": 8982,
+  "distinct_fixture_count_scope": "Complete initialized guarded buffers and actual argument pointers; excludes fault controls.",
+  "complete_matrix_vector_cartesian_domain_checked": false,
+  "register_transfer_adapter_is_explicit": true,
+  "all_original_function_output_contracts_removed_from_reviewed_composition": true,
+  "native_core_is_software_emulation": true,
+  "full_psx_cpu_timing_checked": false,
+  "original_hardware_checked": false,
+  "whole_scene_or_feature_acceptance": false,
+  "negative_controls_detected": [
+    {
+      "name": "wrong_high_part_scale",
+      "address": "0x80015710",
+      "detected": true,
+      "scope": "Private Unicorn memory only."
+    },
+    {
+      "name": "skip_negative_high_reflection",
+      "address": "0x80015660",
+      "detected": true,
+      "scope": "Private Unicorn memory only."
+    },
+    {
+      "name": "wrong_low_part_mvmva_shift",
+      "address": "0x800156f4",
+      "detected": true,
+      "scope": "Private Unicorn command word; checked native core is unchanged."
+    },
+    {
+      "name": "composed_wrong_high_z_scale",
+      "address": "0x80015748",
+      "detected": true,
+      "scope": "Private Unicorn memory through eleven original functions."
+    }
+  ],
+  "local_checks": {
+    "windows_tests": {
+      "path": ".decomp-lab/render-gte-windows-tests-first.log",
+      "sha256": "58d60680b31a23120e992c65055c3ede008d1ec58e8685ea8905740442598c4b",
+      "tests": 215,
+      "passed": true
+    },
+    "linux_tests": {
+      "path": ".decomp-lab/render-gte-linux-tests-first.log",
+      "sha256": "9541ddfd4147733c382dbbbefa2889789ffd1d34428aa69592775cf3a8f62a8b",
+      "tests": 215,
+      "passed": true
+    },
+    "progress": {
+      "path": ".decomp-lab/render-gte-progress-first.json",
+      "sha256": "342d61ad0cb642867cacccb4c2f6b00ef31591969e82710401b8a99b3f1e723c"
+    },
+    "protected_before": {
+      "path": ".decomp-lab/render-gte-protected-before-first.json",
+      "sha256": "bc4943d2a78ce7f5f76da98c7204bfdb1c8219bed8d347292aedf46624d4955d"
+    },
+    "protected_input_files_preserved": 396,
+    "bridge_build_manifest": {
+      "path": ".decomp-lab/nymashock-gte-bridge-first-build.json",
+      "sha256": "704f4fc84e0e92c36c39539a8d295c3740726879950396cc3d1e7a0a223d561b"
+    },
+    "build_script_native_selfcheck": {
+      "path": ".decomp-lab/nymashock-gte-bridge-second-selfcheck.log",
+      "sha256": "51fc432f77b0cbff72d6b475315cf310629059dff397d3484f32e94477546fa2"
+    }
+  },
+  "native_bridge_build_inputs": {
+    "compiler_sha256": "46809206887326d2d24db1eff1f3064de972c3451abe766b49111450a5e08e00",
+    "netstandard_facade_sha256": "bbc58e1e5b1976b8093116007dbc428b09495c7c810a1350d4a379b87716c4bb",
+    "runtime_files": [
+      {
+        "file": "shock.wbx.zst",
+        "bytes": 705813,
+        "sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126"
+      },
+      {
+        "file": "BizHawk.Common.dll",
+        "bytes": 406016,
+        "sha256": "15ebdf860bc1d8d9efcaabefe1df69de0b24f31d431b558621df353882f386b9"
+      },
+      {
+        "file": "BizHawk.BizInvoke.dll",
+        "bytes": 183296,
+        "sha256": "36784436af64e6547a1e6155071eab104ca09d9b2d5fe1d73c7282cee500bffb"
+      },
+      {
+        "file": "BizHawk.Emulation.Common.dll",
+        "bytes": 413184,
+        "sha256": "f557d94912b12bde18413b60d25b3e61332b7bbfc7184349d1289d6ba9f350ee"
+      },
+      {
+        "file": "BizHawk.Emulation.Cores.dll",
+        "bytes": 10832896,
+        "sha256": "444bc157418e9b5df5d07e987fc7ad1d2d1c6993676f5b864368027cb4f054d5"
+      },
+      {
+        "file": "waterboxhost.dll",
+        "bytes": 406016,
+        "sha256": "e8e47426941a710c7ceea98fb0833b8387de1952f54ca0fa40001cd494507cee"
+      }
+    ]
+  },
+  "preserved_diagnostics": [
+    {
+      "path": ".decomp-lab/gte-host-smoke-first-build.log",
+      "sha256": "b39012bdeb8b304eb5eda58622cdbf092505851f1fdab1dedb8ed010d10bf1b7"
+    },
+    {
+      "path": ".decomp-lab/gte-host-smoke-third-run.log",
+      "sha256": "3317d80ca82555cd9c5ab7a7e343b84679b75bb6a95b45c070411169c677fea7"
+    },
+    {
+      "path": ".decomp-lab/gte-host-smoke-fourth-run.log",
+      "sha256": "cb7efc98ecb060a411c11cf051aee5c4d036dcde2e868471a3f27d7ae7484cb9"
+    }
+  ],
+  "primary_source_snapshots": [
+    {
+      "path": ".decomp-lab/mednafen-gte-source-first/sources.json",
+      "sha256": "18165b9df059a9b0152c57844bb58a8853c2bf3fb40fe4dee62d052a7e6141d3"
+    },
+    {
+      "path": ".decomp-lab/bizhawk-gte-host-source-first/sources.json",
+      "sha256": "74fdc893eb19442caf0db3d2b333219b9f1aa104ad50397e758bd0e5d7197429"
+    }
+  ],
+  "public_tool_sources": [
+    {
+      "path": "tools/verify_render_gte.py",
+      "sha256": "624a607b167be932702501fb6e07a04595992773bacc8d4344b2200a8c2784b0"
+    },
+    {
+      "path": "tools/nymashock_gte_bridge.cs",
+      "sha256": "67bd4fa8341a511e4675931b72e6ffe6f14c93f239f5d7677d90d74b0efd92d1"
+    },
+    {
+      "path": "tools/build_nymashock_gte_bridge.ps1",
+      "sha256": "c7d4b2b60eb3d62a254df19b4cea66dd6ac035a7070de8cd7636c34862c3644b"
+    },
+    {
+      "path": "tests/test_render_gte.py",
+      "sha256": "1637ed7fe7a4247f7a2cfb48cf30d3a2d556365d2e73f59fda4f28895641cd66"
+    }
+  ],
+  "source_functions_promoted": 0,
+  "current_turn_before_after": {
+    "before_source_commit": "4b864ccfcb9d4b32ff5bee2fe5d27c54fc29008c",
+    "before": {
+      "c_bytes": 194884,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 6,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "after": {
+      "c_bytes": 194884,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 6,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3
+    },
+    "new_matching_c_functions": 0,
+    "new_original_feature_groups_accepted": 0,
+    "new_tooling_tests": 14,
+    "matrix_native_runs": 109501,
+    "matrix_distinct_inputs": 109501,
+    "composed_native_distinct_inputs": 13230,
+    "native_gte_command_invocations": 245470,
+    "native_gte_distinct_command_inputs": 8982,
+    "composition_function_contracts_before": 1,
+    "composition_function_contracts_after": 0
+  },
+  "canonical_executable_preserved": true,
+  "game_and_sdk_sources_and_compiler_flags_preserved": true,
+  "original_game_behavior_modified": false,
+  "model_api_calls": 0,
+  "whole_original_feature_groups_accepted": 0,
+  "private_inputs_table_core_or_captured_output_bytes_included": false,
+  "remaining_gates": [
+    "Six known game functions still in assembly",
+    "SDK/game-support classification closure",
+    "Asset and command scope gaps",
+    "Natural level/actor ownership and encounter reachability",
+    "Full PS1 CPU load delays and cycle scheduling",
+    "Original hardware and paired natural scenes",
+    "Reviewed scenarios for all 40 provisional groups; no exhaustive feature total yet"
+  ]
+}

@@ -139,3 +139,10 @@ The later [rotation composition](RENDER_ROTATION.md) executes the original
 SDK helper with the canonical table, leaving one `ApplyMatrixLV` hardware
 contract. Its native fixtures strengthen rotation/streaming evidence while
 paired emulator scenes and actual GTE/timing acceptance remain separate.
+
+The subsequent [native GTE composition](RENDER_GTE.md) executes original
+`ApplyMatrixLV` using the checked Nymashock command routines and an explicit
+COP2 transfer adapter. The eleven-function chain now has zero function-output
+stubs across its 13,230 distinct fixtures. Bounded MAC, IR and flag arithmetic
+is verified on that core; complete PS1 CPU scheduling, original hardware and
+paired natural-scene comparisons remain separate gates.

@@ -250,3 +250,20 @@ The preliminary import failure is preserved separately. No game/SDK source,
 compiler flags or canonical executable bytes change. The public metadata
 and synthetic tests contain no original table, game, BIOS, emulator, asset
 or captured state bytes.
+
+## Original matrix application and native GTE supplement
+
+The [native GTE audit](RENDER_GTE.md) executes the original SDK helper over
+109,501 distinct guarded fixtures and eleven original functions over 13,230
+distinct composed inputs, with zero function-output stubs. A checked native
+Nymashock core handles 245,470 commands plus one identity self-check. A
+separate audit verifies every logged request/response and records 8,982
+distinct command inputs; command repetitions remain explicit.
+
+[render-gte-checks.json](render-gte-checks.json) pins private proofs, ordered
+logs, compiler/runtime inputs, primary source snapshots, four detected faults
+and tooling checks. Initial compiler-reference and cycle-assertion failures
+remain preserved. Reviewed inlined CR/MAC transfers are explicit; complete
+PS1 CPU execution, load delays, original hardware and scenes are unaccepted.
+No game/SDK sources or canonical executable bytes change. The public profile,
+code and synthetic tests distribute no emulator, game, BIOS or asset bytes.

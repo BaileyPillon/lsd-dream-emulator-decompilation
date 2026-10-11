@@ -35,6 +35,11 @@ Scene ownership, framebuffer and timing acceptance remain open.
 The later [rotation composition](RENDER_ROTATION.md) executes the original
 SDK `RotMatrix` and packed table. Only `ApplyMatrixLV` remains contracted;
 actual hardware operations and natural scene ownership still need evidence.
+The subsequent [native GTE composition](RENDER_GTE.md) executes that helper
+with checked Nymashock MVMVA commands. Eleven original functions pass 13,230
+distinct composed cases with zero function-output stubs. Its reviewed COP2
+transfer adapter verifies the bounded arithmetic; full PS1 CPU timing,
+original hardware and natural scene acceptance remain open.
 The [ordered-store audit](RENDER_MATCHING.md) shows why final-output agreement
 is insufficient: that candidate reverses two stores in 68,306 scalar fixtures.
 A corrected full candidate retains native store order but differs in 13 bytes;

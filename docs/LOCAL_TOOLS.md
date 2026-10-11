@@ -148,3 +148,20 @@ Only the `ApplyMatrixLV` hardware contract remains. The tool verifies the
 canonical table locally, checks guarded overlaps and reports distinct inputs
 separately from runs. It changes only its own Unicorn memory and requires a
 new private report path; it makes no model API calls.
+
+## Original matrix application through native Nymashock GTE
+
+The [native GTE audit](RENDER_GTE.md) supplies a headless C# bridge, an explicit
+COP2 transfer adapter and a verifier for original `ApplyMatrixLV` and the
+eleven-function world-to-stream chain. Compile the bridge with
+`tools/build_nymashock_gte_bridge.ps1`, supplying your local BizHawk 2.11.1
+directory, installed `netstandard.dll` reference facade and a new private
+output. Then run `tools/verify_render_gte.py` in WSL with the bridge path,
+Windows runtime path and a new private report path. The audit document gives
+the complete commands and exact supported binary profile.
+
+The bridge checks core/library hashes and native function mappings before
+executing MVMVA. It mounts its own Waterbox host and needs no game or BIOS;
+the MIPS verifier requires a current matching game build. Detailed command
+logs and binaries remain private. This validates bounded native arithmetic
+and composition, with PS1 CPU timing and natural scene acceptance separate.

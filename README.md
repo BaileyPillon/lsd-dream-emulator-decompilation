@@ -58,7 +58,11 @@ still open.
 The later [original SDK rotation audit](docs/RENDER_ROTATION.md) executes
 `RotMatrix` with its canonical table, reducing the ten-function composition
 to one `ApplyMatrixLV` hardware contract. Actual GTE and scene acceptance
-remain open.
+remained open at that checkpoint. The subsequent [native GTE audit](docs/RENDER_GTE.md)
+executes the original matrix helper with checked Nymashock commands in 109,501
+distinct fixtures and composes eleven original functions in 13,230 cases
+without function-output stubs. Its explicit COP2 transfer adapter leaves
+full PS1 CPU timing, natural scenes and whole-feature acceptance open.
 The [sprite scaling audit](docs/UI_SCALE.md) checks 203,472 native cases,
 including overlapping inputs and incoming-register quirks. Its full C
 candidate still differs in 12 executable bytes and remains unaccepted.
