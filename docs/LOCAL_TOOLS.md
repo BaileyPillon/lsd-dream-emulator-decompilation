@@ -45,6 +45,19 @@ The [grid-window audit](RENDER_GRID.md) describes the scalar fixtures, four
 external contracts and exact C/renderer gates. Reports require a new private
 path. The tool does not modify the game or call a model API.
 
+## Native rendering grid and streaming composition
+
+After the same canonical build and analysis dependency setup:
+
+```bash
+python tools/verify_render_stream.py --output .decomp-lab/render-stream-native-new.json
+```
+
+The [streaming composition audit](RENDER_STREAM.md) executes the original grid
+builder, row splitter and slot selector alongside the window helper. Three
+position/GTE contracts remain. Reports require a new private path; the tool
+does not modify the game or call a model API.
+
 ## Ghidra MCP
 
 Import the verified analysis ELF into a Ghidra project named `lsd-original`

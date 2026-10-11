@@ -108,3 +108,17 @@ It is not promoted. Saved private Ghidra has reviewed caller/helper/builder
 prototypes; their 1,232 native bytes are unchanged. Current counts and hashes
 are appended separately to the inventory. Real GTE, downstream rendering
 and whole-feature parity remain open.
+
+## Rendering grid and streaming composition supplement
+
+The [streaming composition audit](RENDER_STREAM.md) extends native execution
+through the original builder, row splitter and seven-object slot selector.
+It passes 45,408 bounded cases and detects four controls with three remaining
+position/GTE contracts. The original table's slot binding is verified before
+synthetic vtable execution. The nonmatching full C candidate passes the same
+fixtures but retains four byte differences and is not promoted.
+
+Two reviewed private Ghidra prototypes retain 460 native bytes unchanged;
+parameter storage and successful saving were checked. Source/evidence pins in
+[render-stream-checks.json](render-stream-checks.json) extend the publication
+record without changing original feature, NPC, C or developer-capability counts.

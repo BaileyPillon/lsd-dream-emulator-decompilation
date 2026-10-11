@@ -95,6 +95,13 @@ The same audit bounded 418 of 418 LBD files, 167,200 grid cells and 270 addition
 
 ## Remaining scope
 
+The [grid and streaming composition](RENDER_STREAM.md) checks 45,408 bounded
+cases through four original functions, with four detected controls and three
+position/GTE contracts. The actual builder, row splitter and object selector
+now execute; the same full C candidate still differs in four bytes. This
+extends F033 evidence without changing game C, original/NPC, tool-capability
+or whole-feature counts.
+
 The [grid-window supplement](RENDER_GRID.md) verifies the original renderer
 helper in 74,832 bounded cases with eight detected controls and four explicit
 dependencies. The closest full C candidate agrees on those fixtures but has

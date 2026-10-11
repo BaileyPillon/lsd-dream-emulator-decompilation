@@ -26,6 +26,10 @@ The [grid-window audit](RENDER_GRID.md) verifies all 65,536 angle words within
 74,832 scalar fixtures. Its full C candidate agrees on those fixtures but
 reorders two stores, differing in four bytes. Real GTE transforms and the
 downstream builder remain external contracts.
+The later [streaming composition audit](RENDER_STREAM.md) executes that builder,
+its row splitter and slot selector in 45,408 cases. This reduces the remaining
+contracts to position lookup and the two GTE helpers; the same full C candidate
+still differs in four bytes. Scene/framebuffer/timing acceptance remains open.
 
 | Function | Source |
 | --- | --- |

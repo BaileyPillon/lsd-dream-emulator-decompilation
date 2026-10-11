@@ -1,5 +1,16 @@
 # Changelog
 
+## Original rendering grid and streaming composition - 2026-10-11
+
+- Check 45,408 bounded cases through four original native functions; replace
+  the grid-builder contract with actual builder, row-splitter and slot execution.
+- Verify the original vtable binding and rectangle order/count/layout, detect
+  four wrong controls and retain three explicit position/GTE contracts.
+- Check the full C candidate through the same composition; keep its four byte
+  differences private and leave original assembly in the canonical build.
+- Save two reviewed MIPS prototypes with native bytes preserved. Add reusable
+  verification and private-output tests; preserve C/feature/NPC/tool counts.
+
 ## Original rendering grid-window verification - 2026-10-11
 
 - Check 74,832 original grid-window cases, including every 16-bit angle word,
