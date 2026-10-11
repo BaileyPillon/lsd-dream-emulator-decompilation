@@ -254,3 +254,11 @@ equal to untraced runs. It adds eight guard tests and records 55 source-form
 comparisons without a C promotion or native gameplay run. The best primitive
 candidate remains 22 bytes different; all accepted counts and earlier feature
 records are preserved. The diagnostic extends existing candidate-analysis tools.
+
+The subsequent [compiler-lifetime investigation](COMPILER_LIFETIMES.md) retains
+1,336 observed lifetime calls across five compiler runs with unchanged complete
+assembly. It measures why an address-taken local survives an inner block and
+verifies later reuse of a helper-owned slot. Sixty-nine additional source forms
+and ten guard tests add developer evidence without C promotion, native gameplay
+coverage or whole-feature acceptance. All accepted counts and earlier feature
+records remain intact; the closest primitive candidate still differs in 22 bytes.

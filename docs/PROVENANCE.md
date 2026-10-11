@@ -329,3 +329,23 @@ or emulator is executed by the tracer, and no native gameplay coverage is added.
 Private assembly and compiler logs remain outside Git. Earlier feature evidence
 and every accepted C, original-feature, NPC, developer-capability and optional-mod
 count are preserved; the full parity objective remains unfinished.
+
+## Collision compiler-lifetime supplement
+
+The [lifetime diagnostic](COMPILER_LIFETIMES.md) decodes the exact bundled
+compiler's 32-byte temporary-slot records after checking its SHA-256. The
+layout is checked against retained actual compiler instructions. Five successful
+runs retain 1,336 calls, with complete assembly equal to normal compilation;
+a separate absent-function control is rejected.
+
+[compiler-lifetime-checks.json](compiler-lifetime-checks.json) pins producer,
+backend, helper, compiler, source and private-output identities. It records raw
+slot promotion, release and reuse, and independently scores 69 compiled source
+forms. The measured helper boundary leaves the native early region unexplained;
+no exact C implementation or original runtime feature is accepted.
+
+Normal GDB breakpoint instrumentation is acknowledged separately from the
+absence of additional explicit writes, substitutions or forced results.
+Compiler observations execute no original game or model service. Earlier
+allocator evidence and every original feature record remain frozen. Private
+compiler logs, generated assembly and game inputs remain outside Git.

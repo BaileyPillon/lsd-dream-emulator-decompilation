@@ -53,6 +53,10 @@ the midpoint helper. These remain bounded checks and an unaccepted candidate.
 The [compiler-layout diagnostic](COMPILER_LAYOUT.md) now traces actual allocator
 calls with unchanged assembly output. Fifty-five further source compilations
 find no exact match; the primitive's 22-byte storage mismatch remains open.
+The later [compiler-lifetime diagnostic](COMPILER_LIFETIMES.md) measures outward
+promotion of an address-taken local and reuse after an inline helper returns.
+Sixty-nine additional compiled forms find no exact match. Explain the native
+early 16-byte region with real source boundaries before accepting a candidate.
 The [ordered-store audit](RENDER_MATCHING.md) shows why final-output agreement
 is insufficient: that candidate reverses two stores in 68,306 scalar fixtures.
 A corrected full candidate retains native store order but differs in 13 bytes;

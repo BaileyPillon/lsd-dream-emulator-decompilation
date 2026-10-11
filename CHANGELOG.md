@@ -1,5 +1,17 @@
 # Changelog
 
+## Collision compiler-lifetime diagnostic - 2026-10-11
+
+- Observe actual temporary-slot promotion, release and reuse in the exact
+  bundled compiler; preserve complete assembly and all observed input hashes.
+- Verify five compilation runs and 1,336 lifetime calls. Independently score
+  69 source forms, with no exact match and the global best unchanged at 22 bytes.
+- Add ten guard tests and retain an absent-function rejection control. No C
+  promotion, native gameplay coverage or whole-feature acceptance is claimed;
+  earlier evidence and all accepted progress counts remain unchanged.
+  All 257 tooling tests pass locally on Windows and Linux, and the current
+  complete canonical executable retains byte equality with the original.
+
 ## Collision compiler-layout diagnostic - 2026-10-11
 
 - Trace the actual bundled compiler's stack allocator with GDB; require its

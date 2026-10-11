@@ -19157,6 +19157,68 @@
       "original_game_behavior_modified": false,
       "model_api_calls": 0,
       "scope": "Actual compiler allocator traces; matching C and runtime parity remain unaccepted."
+    },
+    "compiler_lifetime_diagnostic_20261011": {
+      "document": "docs/COMPILER_LIFETIMES.md",
+      "metadata": {
+        "path": "docs/compiler-lifetime-checks.json",
+        "sha256": "35577e9146a31e4bd9578a52370cd426119a6c0724d354ddcdb4a01a80e81163"
+      },
+      "evidence": {
+        "diagnostic_compilation_runs": 5,
+        "observed_lifetime_calls": 1336,
+        "all_complete_assembly_equal": true,
+        "source_comparison_compilations": 69,
+        "actual_comparison_minima": [
+          50,
+          22,
+          1619,
+          22
+        ],
+        "primitive_candidate_byte_differences": 22,
+        "new_tooling_tests": 10,
+        "slot_reuse_measured": true,
+        "absent_function_control_rejected": true
+      },
+      "before_after": {
+        "before": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "after": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "source_functions_promoted": 0,
+        "whole_feature_groups_accepted": 0,
+        "new_original_gameplay_cases": 0,
+        "developer_workflow_extended": "Existing matching-C candidate analysis; no additional top-level capability."
+      },
+      "source_functions_promoted": 0,
+      "whole_feature_groups_accepted": 0,
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0,
+      "scope": "Actual compiler temporary-slot lifetime observations; matching C and whole-game parity remain incomplete."
     }
   }
 }

@@ -117,3 +117,17 @@ python research/collision/trace_compiler_stack.py \
   --source .decomp-lab/collision-candidate-new/tmd_prim_geom.c \
   --output .decomp-lab/collision-stack-new
 ```
+
+The later [lifetime investigation](../../docs/COMPILER_LIFETIMES.md) observes
+actual temporary-slot promotion, release and reuse in a selected function.
+It requires the exact compiler hash and identical complete assembly output:
+
+```bash
+python research/collision/trace_compiler_lifetimes.py \
+  --source .decomp-lab/collision-candidate-new/tmd_prim_geom.c \
+  --function func_8001F8B8 \
+  --output .decomp-lab/collision-lifetimes-new
+```
+
+The observed helper boundary permits reuse, but the source remains nonmatching.
+This diagnostic adds compiler evidence without accepting original gameplay.

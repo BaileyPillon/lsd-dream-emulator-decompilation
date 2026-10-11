@@ -75,6 +75,10 @@ results add bounded evidence without accepting either remaining C function.
 The [compiler-layout diagnostic](docs/COMPILER_LAYOUT.md) observes actual GCC
 allocator calls and verifies that tracing preserves complete assembly output;
 the primitive's bounds-storage lifetime still needs recovery.
+The later [compiler-lifetime investigation](docs/COMPILER_LIFETIMES.md) measures
+why an address-taken local survives a nested block and verifies reuse after an
+inline helper returns. The native early storage region remains unexplained;
+69 additional source forms produce no exact match.
 The [sprite scaling audit](docs/UI_SCALE.md) checks 203,472 native cases,
 including overlapping inputs and incoming-register quirks. Its full C
 candidate still differs in 12 executable bytes and remains unaccepted.
