@@ -386,3 +386,25 @@ source-quality and compiler metadata remains frozen. No original image,
 generated assembly, raw memory capture or game input is published. The current
 complete build still matches; no C source, feature or padding-removal promotion
 is claimed. Original game behavior and optional mods remain unchanged.
+
+## Native card heap supplement
+
+The [heap composition](CARD_HEAP.md) adds a separate valid-ownership profile
+that executes cleanup through the original pool allocator and lock helpers,
+without function-output stubs. The earlier allocator-contract profile and
+its broader adversarial inputs remain frozen rather than being relabelled
+as native heap behavior.
+
+[card-heap-checks.json](card-heap-checks.json) pins the final native producer
+report, all seven original ranges, three fault controls, isolated backend
+library/bindings and failed stock/current-source backend diagnostics. It
+retains 96 component sequences and 180 cleanup fixture layouts per image,
+with a second cleanup call per layout. Complete guarded buffers, native
+global/lock transitions, release order, stack and saved registers are checked.
+The original and candidate nested cleanup graphs run uninterrupted; entire
+RAM images are preserved between separate host-issued calls.
+
+The private executable, native reports, backend binaries and logs are excluded
+from publication. No original game or disc input is distributed. The current
+canonical build still matches; accepted source/feature/NPC/mod counts and the
+six assembly plus five source-workaround requirements remain unchanged.

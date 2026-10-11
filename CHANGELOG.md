@@ -1,5 +1,17 @@
 # Changelog
 
+## Native card heap composition - 2026-10-11
+
+- Execute seven original cleanup/allocator/lock functions without output
+  stubs. Check 96 allocator sequences and 180 cleanup layouts per image,
+  including fragmentation, allocation failures and repeated cleanup.
+- Detect three private heap faults and fingerprint the qualified, isolated
+  Unicorn 2.1.2 backend. Retain failed newer-backend diagnostics and preserve
+  the existing analysis environment.
+- Add 26 synthetic model, profile and custody tests; all 294 tooling tests
+  pass locally on Windows and Linux. The eight-byte cleanup candidate mismatch,
+  six assembly functions, five source workarounds and accepted counts remain.
+
 ## Card cleanup contract and source-layout checks - 2026-10-11
 
 - Verify the original cleanup routine and its private padding-removal

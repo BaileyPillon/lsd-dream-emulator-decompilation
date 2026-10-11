@@ -1,0 +1,472 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-11T22:01:24.441181+00:00",
+  "source_commit_before": "f30d3450f5b7d69a03555934a9a8a77ef76de096",
+  "scope": "Bounded original cleanup with actual allocator/lock code and complete heap buffers; no C or source-quality promotion.",
+  "public_files": {
+    "docs/CARD_HEAP.md": "07fc964b0d48d6da2220c799d305492630cb8182061564d4d1aaab8d51faf35b",
+    "tools/heap_model.py": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e",
+    "tools/verify_card_heap.py": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5",
+    "requirements-card-heap.txt": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212",
+    "tests/test_heap_model.py": "be9f03d28cb9ecf1cb547882a6809a273378550e040b7b674acda1f59cfb818e",
+    "tests/test_card_heap.py": "bea4010075395cde00068e8777995432890ff50eba5e45ef95ddc155e9b60c12",
+    "README.md": "6198662278bb16ac95abbc8b443478fa4c6ec129d6ae37cf23436806c00a237d",
+    "CHANGELOG.md": "f474b4719fd7f30ac51eae8ff3ae05cf6164586437d0a37df7b903dc66dc9cb5",
+    "docs/FEATURE_INVENTORY.md": "d8ba4e26adcd0a860f18ec9afc988ba084f8d4553d46392338bbb34873cfbf46",
+    "docs/PROVENANCE.md": "4384b67357ee9bbb0d83f3c7b0aa33331979658f087da5b31c1410847c18fdb9"
+  },
+  "native_proof": {
+    "path": ".decomp-lab/card-heap-first/native-composition-second.json",
+    "sha256": "9edbad87018b68046faa24d80e15e646ba7365428ac0a7173579759b02134d4a"
+  },
+  "prior_proof": {
+    "path": ".decomp-lab/card-heap-first/native-composition-first.json",
+    "sha256": "a1edeeabc233feb474516198604e556728a0ff51f01f6a014c5b45b5cf6fb77b"
+  },
+  "native_functions": [
+    {
+      "function": "memory_set_manager",
+      "address": "0x80017A9C",
+      "bytes": 12,
+      "sha256": "31e1fb7ee27c6d0a7e8bce6222ebe7d15d003b63a0bcdffc60e62cb98dc28ade"
+    },
+    {
+      "function": "memory_setup_manager",
+      "address": "0x80017AC8",
+      "bytes": 108,
+      "sha256": "22d9cb67eacb97f1f65887bec8fd406a6d25dd69511540ee811296e9445987ba"
+    },
+    {
+      "function": "memory_allocate_mem",
+      "address": "0x80017B34",
+      "bytes": 456,
+      "sha256": "a55ec79ff9c1252fd41968bf5abca2a74f3658b6c400df80289d51d943fc5ef9"
+    },
+    {
+      "function": "memory_free_mem",
+      "address": "0x80017CFC",
+      "bytes": 428,
+      "sha256": "590fb6e594883e9fcaa7105de18de7b9a9c0df2322e07feb5e081f66da15a052"
+    },
+    {
+      "function": "memory_set_lock",
+      "address": "0x8001844C",
+      "bytes": 12,
+      "sha256": "d8fd53b2b7699e2b6135872ecc381394dea73cd963daff560ff6aa8342f3e80e"
+    },
+    {
+      "function": "memory_is_locked",
+      "address": "0x80018458",
+      "bytes": 12,
+      "sha256": "ccd77ee20801e94fafaa175ed036e3b88a7735f444013a5945fa78cd06106f7e"
+    },
+    {
+      "function": "func_8004F810",
+      "address": "0x8004F810",
+      "bytes": 148,
+      "sha256": "32814b4159a6e0b553ca1dfc0b665501ddcd75f5dd8c1f3de0dee675ec3c79e0"
+    }
+  ],
+  "component_cases": 96,
+  "component_case_groups": {
+    "alignment_capacity_and_coalescing": 48,
+    "split_threshold": 18,
+    "fragmented_first_fit": 6,
+    "generated_owned_sequences": 24
+  },
+  "cleanup_fixture_cases_per_image": 180,
+  "cleanup_case_groups": {
+    "signed_count_and_table_guard": 72,
+    "owned_null_patterns_and_object_locations": 48,
+    "fragmented_cleanup": 36,
+    "bounded_allocation_failures": 24
+  },
+  "cleanup_executions_per_image": 360,
+  "images_checked": 2,
+  "executed_native_entry_counts": {
+    "memory_set_manager": 456,
+    "memory_set_lock": 12456,
+    "memory_setup_manager": 456,
+    "memory_allocate_mem": 2976,
+    "memory_is_locked": 4572,
+    "memory_free_mem": 3024,
+    "func_8004F810": 720
+  },
+  "host_calls": 10872,
+  "guarded_data_access_counts": {
+    "write": 78666,
+    "read": 85416
+  },
+  "explicit_stub_count": 0,
+  "explicit_stubs": [],
+  "backend": {
+    "package_version": "2.1.2",
+    "library_api": [
+      2,
+      1,
+      33620735
+    ],
+    "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+    "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+    "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+    "binding_source_count": 21,
+    "execution_hook": "UC_HOOK_CODE",
+    "fresh_cpu_per_host_call": true,
+    "all_emulated_ram_preserved_between_host_calls": true,
+    "uninterrupted_cpu_within_guest_cleanup_graph": true
+  },
+  "backend_diagnostics": {
+    "path": ".decomp-lab/card-heap-first/backend-diagnostics-first.json",
+    "sha256": "9d3ab9159cc70f682fe3a65c1c9b2355d727995ef49ed4808dd99bfe2c73d97c"
+  },
+  "backend_failure_profiles": [
+    {
+      "name": "stock_2_1_4",
+      "backend": {
+        "package_version": "2.1.4",
+        "library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c"
+      },
+      "exit_code": 1,
+      "failure": {
+        "function": "memory_allocate_mem",
+        "arguments": [
+          1,
+          0
+        ],
+        "exception": "Unhandled CPU exception (UC_ERR_EXCEPTION)",
+        "pc": "0x0",
+        "sp": "0x1dffe0",
+        "ra": "0x17b58",
+        "instructions": [
+          "0x17b34",
+          "0x17b38",
+          "0x17b3c",
+          "0x17b40",
+          "0x17b44",
+          "0x17b48",
+          "0x17b4c",
+          "0x17b50",
+          "0x17b54",
+          "0x1844c",
+          "0x1844c",
+          "0x18450",
+          "0x18454",
+          "0x17b58",
+          "0x17b5c",
+          "0x17b60",
+          "0x17b64",
+          "0x17b6c",
+          "0x17b70",
+          "0x17b74",
+          "0x17b78",
+          "0x17b7c",
+          "0x17b80",
+          "0x17b84",
+          "0x17b88",
+          "0x17b8c",
+          "0x17b90",
+          "0x17b94",
+          "0x17b98",
+          "0x17b9c",
+          "0x17ba0",
+          "0x17ba4",
+          "0x17ba8",
+          "0x17bac",
+          "0x17bb0",
+          "0x17bb4",
+          "0x17bb8",
+          "0x17bbc",
+          "0x17bc0",
+          "0x17bc4",
+          "0x17bc8",
+          "0x17bcc",
+          "0x17bd0",
+          "0x17bd4",
+          "0x17bd8",
+          "0x17c34",
+          "0x17c38",
+          "0x17c3c",
+          "0x17c40",
+          "0x17c44",
+          "0x17c48",
+          "0x17c4c",
+          "0x17c50",
+          "0x17c54",
+          "0x17c58",
+          "0x17c5c",
+          "0x17c60",
+          "0x17c64",
+          "0x17c68",
+          "0x17c6c",
+          "0x17c70",
+          "0x17c74",
+          "0x17c78",
+          "0x17c7c",
+          "0x17c80",
+          "0x17c8c",
+          "0x17c90",
+          "0x17c94",
+          "0x17c98",
+          "0x17c9c",
+          "0x17ca8",
+          "0x17cac",
+          "0x17cb0",
+          "0x17cb4",
+          "0x17cb8",
+          "0x17cbc",
+          "0x17cc0",
+          "0x17cd4"
+        ]
+      },
+      "log": {
+        "path": ".decomp-lab/card-heap-first/stock_2_1_4-probe-first.log",
+        "sha256": "bfab4333227a7e2f1a1d9a00d3902620be133d9a5e6257ed9a9567e19ac30a30"
+      }
+    },
+    {
+      "name": "source_7c5db941",
+      "backend": {
+        "package_version": "2.1.4",
+        "library_sha256": "51773460c3de36baf99540d1c3fb74cedbaae70ae941cff9fb79744e1864d784"
+      },
+      "exit_code": 1,
+      "failure": {
+        "function": "memory_allocate_mem",
+        "arguments": [
+          1,
+          0
+        ],
+        "exception": "Unhandled CPU exception (UC_ERR_EXCEPTION)",
+        "pc": "0x0",
+        "sp": "0x1dffe0",
+        "ra": "0x17b58",
+        "instructions": [
+          "0x17b34",
+          "0x17b38",
+          "0x17b3c",
+          "0x17b40",
+          "0x17b44",
+          "0x17b48",
+          "0x17b4c",
+          "0x17b50",
+          "0x17b54",
+          "0x1844c",
+          "0x1844c",
+          "0x18450",
+          "0x18454",
+          "0x17b58",
+          "0x17b5c",
+          "0x17b60",
+          "0x17b64",
+          "0x17b6c",
+          "0x17b70",
+          "0x17b74",
+          "0x17b78",
+          "0x17b7c",
+          "0x17b80",
+          "0x17b84",
+          "0x17b88",
+          "0x17b8c",
+          "0x17b90",
+          "0x17b94",
+          "0x17b98",
+          "0x17b9c",
+          "0x17ba0",
+          "0x17ba4",
+          "0x17ba8",
+          "0x17bac",
+          "0x17bb0",
+          "0x17bb4",
+          "0x17bb8",
+          "0x17bbc",
+          "0x17bc0",
+          "0x17bc4",
+          "0x17bc8",
+          "0x17bcc",
+          "0x17bd0",
+          "0x17bd4",
+          "0x17bd8",
+          "0x17c34",
+          "0x17c38",
+          "0x17c3c",
+          "0x17c40",
+          "0x17c44",
+          "0x17c48",
+          "0x17c4c",
+          "0x17c50",
+          "0x17c54",
+          "0x17c58",
+          "0x17c5c",
+          "0x17c60",
+          "0x17c64",
+          "0x17c68",
+          "0x17c6c",
+          "0x17c70",
+          "0x17c74",
+          "0x17c78",
+          "0x17c7c",
+          "0x17c80",
+          "0x17c8c",
+          "0x17c90",
+          "0x17c94",
+          "0x17c98",
+          "0x17c9c",
+          "0x17ca8",
+          "0x17cac",
+          "0x17cb0",
+          "0x17cb4",
+          "0x17cb8",
+          "0x17cbc",
+          "0x17cc0",
+          "0x17cd4"
+        ]
+      },
+      "log": {
+        "path": ".decomp-lab/card-heap-first/source_7c5db941-probe-first.log",
+        "sha256": "42a129e6078f82a16b22f82d6b8f9b1984bfaad16f18605a5ab18ca92845ae60"
+      }
+    }
+  ],
+  "backend_source_commit": "7c5db94191defc1e04a4f66f4eb1220903cba837",
+  "backend_root_cause_established": false,
+  "supplemental_driver_failures": [
+    {
+      "path": ".decomp-lab/card-heap-first/probe-canonical-pc-failure-first.json",
+      "sha256": "d6a7b4f7aa83980198d77ff5f66a8dbd3d312e9cf6634a1fab5951b0f1d63820"
+    },
+    {
+      "path": ".decomp-lab/card-heap-first/probe-manual-budget-failure-first.json",
+      "sha256": "0267d5208bd1b5ff5bb9a610017816457fe8aca8eb33aa17b619126d0cb44c93"
+    },
+    {
+      "path": ".decomp-lab/card-heap-first/probe-block-hooks-failure-first.json",
+      "sha256": "df5b07039b1a73c86100f0d47476fe95989bb008f490ff88b1a4d6da2f36fb9a"
+    }
+  ],
+  "upstream_mips_only_build_tests": {
+    "test_mips": "passed",
+    "test_mem": "failed",
+    "test_ctl": "failed"
+  },
+  "upstream_test_log": {
+    "path": ".decomp-lab/card-heap-first/upstream-ctest-first.log",
+    "sha256": "2886223d2506a191c54a4d2a0c62b5546935fe1dccb15a47c77c5f0a646c4a52"
+  },
+  "default_analysis_environment_changed": false,
+  "candidate": {
+    "path": ".decomp-lab/collision-inline-first/padding-removal-second/func_8004F810/build/candidate.exe",
+    "executable_sha256": "cceb6bfa6a4be8679e83870b11ae4ccdfa3001c7c7306a162681b9cb2b83ace2",
+    "function_sha256": "1447c4a34b4d5417b9fbbeeee70bcafd4989da9131161ce041b4f35595fa5168",
+    "whole_executable_byte_differences": 8,
+    "complete_executable_equal": false,
+    "source_promoted": false
+  },
+  "candidate_diff_word_offsets": [
+    0,
+    4,
+    12,
+    16,
+    124,
+    128,
+    132,
+    136
+  ],
+  "cleanup_outcomes_sha256": "d7a27d2b0df4bfe96732a85c52a1108eb62884198fdcdf83f503de5b777791c8",
+  "remaining_live_after_cleanup": {
+    "0": 102,
+    "1": 72,
+    "3": 3,
+    "5": 3
+  },
+  "negative_controls_detected": [
+    {
+      "name": "wrong_minimum_payload",
+      "function": "memory_allocate_mem",
+      "function_offset": 88,
+      "detected": true,
+      "detection": "allocate 1 complete-buffer mismatch in manager at offsets [72, 76]",
+      "private_copy_only": true
+    },
+    {
+      "name": "missing_free_header_flag",
+      "function": "memory_free_mem",
+      "function_offset": 364,
+      "detected": true,
+      "detection": "free 0x110044 complete-buffer mismatch in pool at offsets [67]",
+      "private_copy_only": true
+    },
+    {
+      "name": "omitted_table_release",
+      "function": "func_8004F810",
+      "function_offset": 112,
+      "detected": true,
+      "detection": "composed cleanup complete-buffer mismatch in manager at offsets [72, 76]",
+      "private_copy_only": true
+    }
+  ],
+  "native_scope": "Seven original functions: supplied-manager setup, global preference and explicit fallback for direct component calls, first-fit allocation, alignment, minimum and split thresholds, valid-owned free/coalescing, NULL and failed allocations, lock stores/getter, complete guarded buffers and globals, three consistent pointer aliases, signed cleanup counts, original release order, external and pooled owners, fragmented pools, repeated cleanup, o32 saved registers, stack and red zones. The entire native cleanup/free/lock graph runs uninterrupted without output stubs. The caller teardown is separate. Invalid/duplicate frees, overflowing requests, OS allocator failure, concurrent execution, physical cards, natural error-path reachability, PS1 timing, padding-source recovery and whole-feature parity are not established.",
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "current_complete_build_equal": true,
+  "canonical_build_check": {
+    "path": ".decomp-lab/card-heap-first/canonical-build-check-first.log",
+    "sha256": "87a4b575babc477052efb3be89ae4c9ace3fba485c554f808af96f75356b5fa6"
+  },
+  "progress": {
+    "path": ".decomp-lab/card-heap-first/progress-current-first.json",
+    "sha256": "cfb6b31954b056cd4c2c9d3de8790d22c44cc6e528156f69b3710133be5ff56b"
+  },
+  "before_after": {
+    "before": {
+      "c_bytes": 194884,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 6,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 5
+    },
+    "after": {
+      "c_bytes": 194884,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 6,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 5
+    },
+    "source_functions_promoted": 0,
+    "whole_feature_groups_accepted": 0,
+    "new_native_component_sequences": 96,
+    "new_original_cleanup_layouts": 180,
+    "candidate_cleanup_layouts": 180,
+    "repeated_cleanup_executions_per_image": 180,
+    "developer_workflow_extended": "Existing native analysis/candidate checks with actual heap dependencies; no additional top-level capability."
+  },
+  "new_synthetic_tests": 26,
+  "local_tooling_tests": {
+    "windows": 294,
+    "linux": 294
+  },
+  "source_functions_promoted": 0,
+  "source_workarounds_removed": 0,
+  "whole_feature_groups_accepted": 0,
+  "original_game_behavior_modified": false,
+  "model_api_calls": 0,
+  "preserved_prior_feature_file_sha256": "72892eec70dccadd54dfc5b6dc0eb827320b1ec84425761858e1d6b5f6602b9f",
+  "preserved_prior_metadata": {
+    "path": "docs/card-cleanup-checks.json",
+    "sha256": "5021a5cb0eaeada811afde5c3ae54464c620f3cf9ddc4a69ce201ecd1f578bdb"
+  }
+}

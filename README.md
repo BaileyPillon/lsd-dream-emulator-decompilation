@@ -53,6 +53,9 @@ exact C recovery remain open.
 The [card cleanup audit](docs/CARD_CLEANUP.md) checks 501 original/candidate
 fixture pairs with an explicit allocator stub. It verifies dynamic reloads
 and release order while retaining the eight-byte source-layout mismatch.
+The later [native heap composition](docs/CARD_HEAP.md) runs the real allocator
+and lock helpers with zero output stubs, checking 96 allocator sequences and
+180 cleanup layouts per image. The source-layout mismatch remains unresolved.
 The [rendering grid-window checks](docs/RENDER_GRID.md) verify every angle word
 and bounded scalar grid/clamp rules; the closest C candidate still has four
 byte differences in two stores.

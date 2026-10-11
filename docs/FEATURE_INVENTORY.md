@@ -281,3 +281,13 @@ faults are detected. Thirty-six source forms and four compiler traces explain
 why frame equality alone cannot recover the original source. These are bounded
 function checks; C, NPC, feature, developer-capability and mod counts remain
 unchanged, and no source workaround is removed.
+
+The subsequent [native card heap composition](CARD_HEAP.md) executes seven
+original cleanup/allocator/lock routines without output stubs. Ninety-six
+allocator sequences and 180 original/candidate cleanup layouts per image
+check complete heap/object buffers, fragmentation, valid ownership, NULL and
+failed allocation, repeated cleanup and guarded ABI state. Three heap faults
+are detected. The qualified backend is isolated; failed newer-backend probes
+are retained. This complements the earlier allocator-contract profile and
+does not promote the eight-byte cleanup candidate or remove its source padding.
+C, NPC, whole-feature, developer-capability and mod counts remain unchanged.

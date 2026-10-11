@@ -1,0 +1,3 @@
+# Isolated backend qualified for verify_card_heap.py; use a separate environment.
+# The newer analysis backend fails this native graph in the recorded probes.
+unicorn==2.1.2
