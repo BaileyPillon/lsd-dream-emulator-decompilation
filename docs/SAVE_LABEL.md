@@ -42,6 +42,10 @@ suffix. No compiler flags or original runtime behavior were changed.
 The configured complete build reproduces all 505,856 original executable
 bytes. An isolated candidate comparison also reports zero changed bytes and
 the canonical SHA-1 `76322eeade5ebb22dca57fdeac7d68c30f06308d`.
+A fresh clone of source commit `89a789f7d4ed5c8f58c5f92551647490984e31a1`
+rebuilt all 305 objects, reproduced that same executable and remained clean in
+Git. [save-label-checks.json](save-label-checks.json) records this check and the
+136 passing synthetic tooling tests on both Windows and Linux.
 The formatter's native 240-byte SHA-256 is
 `6366aabaf1ea68aa189955760ed29e676f237ce8bbebead10131cdb91d15a5cd`.
 

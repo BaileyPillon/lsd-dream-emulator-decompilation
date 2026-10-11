@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-10-11T06:25:51.553148+00:00",
+  "scope": "Local clean clone build and current native fixtures; separate from synthetic-only GitHub CI.",
+  "source_commit": "89a789f7d4ed5c8f58c5f92551647490984e31a1",
+  "clean_build": {
+    "fresh_clone": true,
+    "build_objects_reused": false,
+    "objects_expected": 305,
+    "objects_found": 305,
+    "build_current": true,
+    "git_worktree_clean_after_build": true,
+    "progress_report": ".decomp-lab/save-label-clean-clone-first-progress.json",
+    "progress_report_sha256": "8ec7fc464fe1691eb6fcc35b1154dbe9d949fa9d2bdb095ec63aba2c460fffdf"
+  },
+  "canonical_executable": {
+    "bytes": 505856,
+    "sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "whole_executable_equal": true
+  },
+  "corrected_matching_c": {
+    "c_bytes": 194284,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 97.18476129496979,
+    "sdk_text_bytes": 147880,
+    "handwritten_text_bytes": 188
+  },
+  "known_remaining_game_assembly_functions": 7,
+  "source_promotions": [
+    {
+      "function": "func_800507F8",
+      "bytes": 240,
+      "source": "src/menu/card/save_label.c",
+      "native_sha256": "6366aabaf1ea68aa189955760ed29e676f237ce8bbebead10131cdb91d15a5cd"
+    }
+  ],
+  "tooling_tests": {
+    "cases_per_platform": 136,
+    "platforms": [
+      "Windows / Python 3.14",
+      "Linux WSL / Python 3.13"
+    ],
+    "result": "passed",
+    "game_inputs_required": false
+  },
+  "native_reports": [
+    {
+      "path": ".decomp-lab/save-label-native-proof-first.json",
+      "sha256": "4bc06d3a294d54fd48525a335ba8ebc7850bb059141db696d76644b75b448f48",
+      "cases": 1952,
+      "negative_controls_detected": 3
+    },
+    {
+      "path": ".decomp-lab/save-label-lion-verification-first.json",
+      "sha256": "e232f1baf26aa7c26f4adf64e8101072302edbecb2f87fa752a4842cce518dde",
+      "cases": 1608,
+      "negative_controls_detected": 3
+    },
+    {
+      "path": ".decomp-lab/save-label-gray-man-verification-first.json",
+      "sha256": "a2b3fbf60d019cf8f9c0460a6eb405450c18b414fd5ef036b38a6d3afa66d855",
+      "cases": 768,
+      "negative_controls_detected": 2
+    },
+    {
+      "path": ".decomp-lab/save-label-scripted-verification-first.json",
+      "sha256": "19731a2dce4c836ad6f572acb62574ca7673d4623b75e7a11181b0a8cb29f0bb",
+      "cases": 4408,
+      "negative_controls_detected": 9
+    }
+  ],
+  "save_label_explicit_stubs": 0,
+  "bounded_npc_callbacks": 11,
+  "original_npc_callback_denominator": 107,
+  "bounded_npc_cases": 6784,
+  "whole_feature_groups_accepted": 0,
+  "provisional_feature_group_denominator": 40,
+  "end_to_end_parity": "unfinished",
+  "private_inputs_or_outputs_included": false
+}
