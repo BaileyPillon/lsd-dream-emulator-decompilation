@@ -103,3 +103,17 @@ explicit COP2 adapter. Natural geometry, multi-cloud encounters, unsupported
 primitive codes, complete CPU timing and whole-feature acceptance remain open.
 Neither research candidate nor midpoint checks increase the accepted C-byte,
 original-feature, NPC, developer-capability or optional-mod counts.
+
+## Compiler allocation traces
+
+The [compiler-layout investigation](../../docs/COMPILER_LAYOUT.md) provides a
+GDB diagnostic for the complete candidate translation unit. It observes the
+actual bundled compiler's allocation calls and requires its complete assembly
+to equal a normal compilation. This helps investigate the remaining bounds
+storage mismatch; it does not accept the candidate or modify the matching game.
+
+```bash
+python research/collision/trace_compiler_stack.py \
+  --source .decomp-lab/collision-candidate-new/tmd_prim_geom.c \
+  --output .decomp-lab/collision-stack-new
+```

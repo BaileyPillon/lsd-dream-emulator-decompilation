@@ -72,6 +72,9 @@ The later [collision recovery research](research/collision/README.md) publishes
 an unaccepted primitive C fragment whose complete build differs in 22 bytes,
 down from 103. Paired native checks and non-NULL midpoint checks pass; those
 results add bounded evidence without accepting either remaining C function.
+The [compiler-layout diagnostic](docs/COMPILER_LAYOUT.md) observes actual GCC
+allocator calls and verifies that tracing preserves complete assembly output;
+the primitive's bounds-storage lifetime still needs recovery.
 The [sprite scaling audit](docs/UI_SCALE.md) checks 203,472 native cases,
 including overlapping inputs and incoming-register quirks. Its full C
 candidate still differs in 12 executable bytes and remains unaccepted.

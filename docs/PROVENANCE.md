@@ -306,3 +306,26 @@ The public files contain reconstructed C, synthetic fixtures, addresses,
 offsets and hashes, without proprietary executable, asset, BIOS or runtime
 bytes. No C promotion or original-feature acceptance is claimed. Complete
 CPU timing, natural scenes and multi-cloud encounters remain open.
+
+## Collision compiler-layout supplement
+
+The [compiler-layout diagnostic](COMPILER_LAYOUT.md) observes the actual bundled
+GCC allocator rather than inferring allocation solely from published FSF source.
+Its six final compilation runs retain 199 nested allocator calls and require
+complete assembly equality against untraced compilation. Compiler, source,
+producer, backend and configuration identities are checked before and after.
+
+[compiler-layout-checks.json](compiler-layout-checks.json) pins the final public
+producer and reports, 55 compiled source-form comparisons, retained RTL dumps
+and earlier private allocator traces. Actual row minima are 22, 1,411 and 103;
+the private lab's initialized threshold is recorded separately. A synthetic-leaf
+calibration failure is retained: GCC makes a zero-byte call even when no stack
+area is needed. Corrected G0/G8 controls verify no area growth.
+
+The existing complete 22-byte candidate image is revalidated rather than rebuilt
+or promoted. The canonical 305-object build and its original image retain byte
+equality; 247 tooling tests pass locally on Windows and Linux. No original game
+or emulator is executed by the tracer, and no native gameplay coverage is added.
+Private assembly and compiler logs remain outside Git. Earlier feature evidence
+and every accepted C, original-feature, NPC, developer-capability and optional-mod
+count are preserved; the full parity objective remains unfinished.

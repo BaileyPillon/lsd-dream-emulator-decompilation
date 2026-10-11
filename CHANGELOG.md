@@ -1,5 +1,16 @@
 # Changelog
 
+## Collision compiler-layout diagnostic - 2026-10-11
+
+- Trace the actual bundled compiler's stack allocator with GDB; require its
+  complete assembly to equal normal compilation and preserve all input hashes.
+- Verify six compilation runs and 199 allocator calls, retain 55 source-form
+  comparisons and distinguish actual minima from the private lab threshold.
+- Add eight guard tests, including changed-debugger-output rejection. The
+  22-byte candidate, accepted C and original feature counts remain unchanged.
+  All 247 tooling tests pass locally on Windows and Linux; the canonical
+  complete build retains byte equality.
+
 ## Primitive C recovery candidate and midpoint checks - 2026-10-11
 
 - Reduce the primitive candidate's complete-executable mismatch from 103 to

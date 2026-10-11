@@ -247,3 +247,10 @@ overlap fixtures and 6,912 stage graphs. A separate 5,400-fixture original
 clipping audit now executes the non-NULL midpoint helper. Both fault controls
 are detected. Earlier feature records and every accepted C, original-feature,
 NPC, developer-capability and optional-mod count remain unchanged.
+
+The subsequent [compiler-layout investigation](COMPILER_LAYOUT.md) observes
+199 allocator calls across six actual compiler runs, with complete assembly
+equal to untraced runs. It adds eight guard tests and records 55 source-form
+comparisons without a C promotion or native gameplay run. The best primitive
+candidate remains 22 bytes different; all accepted counts and earlier feature
+records are preserved. The diagnostic extends existing candidate-analysis tools.

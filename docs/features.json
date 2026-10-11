@@ -19103,6 +19103,60 @@
       "original_game_behavior_modified": false,
       "model_api_calls": 0,
       "scope": "Unaccepted 22-byte primitive C candidate, bounded native pairs and non-NULL original midpoint outputs."
+    },
+    "compiler_layout_diagnostic_20261011": {
+      "document": "docs/COMPILER_LAYOUT.md",
+      "metadata": {
+        "path": "docs/compiler-layout-checks.json",
+        "sha256": "2c08951d6246538b6302f15a85b76456a55e9f39519331d2546902cfbf096ddf"
+      },
+      "evidence": {
+        "diagnostic_compilation_runs": 6,
+        "observed_allocator_calls": 199,
+        "all_complete_assembly_equal": true,
+        "source_comparison_compilations": 55,
+        "current_primitive_candidate_byte_differences": 22,
+        "new_tooling_tests": 8
+      },
+      "before_after": {
+        "before": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "after": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "source_functions_promoted": 0,
+        "whole_feature_groups_accepted": 0,
+        "new_original_gameplay_cases": 0,
+        "developer_workflow_extended": "Existing matching-C candidate analysis; no additional top-level capability."
+      },
+      "source_functions_promoted": 0,
+      "whole_feature_groups_accepted": 0,
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0,
+      "scope": "Actual compiler allocator traces; matching C and runtime parity remain unaccepted."
     }
   }
 }

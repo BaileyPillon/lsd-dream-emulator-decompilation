@@ -50,6 +50,9 @@ Its SDK arithmetic and distance storage match; recover the original late
 bounds-storage lifetime without padding. The paired checker covers 1,566
 additional caller overlaps, while 5,400 non-NULL clipping fixtures now execute
 the midpoint helper. These remain bounded checks and an unaccepted candidate.
+The [compiler-layout diagnostic](COMPILER_LAYOUT.md) now traces actual allocator
+calls with unchanged assembly output. Fifty-five further source compilations
+find no exact match; the primitive's 22-byte storage mismatch remains open.
 The [ordered-store audit](RENDER_MATCHING.md) shows why final-output agreement
 is insufficient: that candidate reverses two stores in 68,306 scalar fixtures.
 A corrected full candidate retains native store order but differs in 13 bytes;
