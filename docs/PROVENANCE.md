@@ -370,3 +370,19 @@ The complete canonical build still matches. No C promotion, new original
 gameplay coverage, whole-feature acceptance or count change is claimed.
 The six assembly functions and five known source workarounds remain distinct
 completion requirements; the audit does not certify every possible workaround.
+
+## Card cleanup supplement
+
+The [cleanup audit](CARD_CLEANUP.md) adds a reusable original-machine-code
+verifier and eleven synthetic contract/custody tests. Original and private
+padding-removal images pass the same 501 bounded inputs; three faults are
+detected. One allocator stub poisons volatile registers and performs declared
+adversarial writes. Real allocator behavior and physical card I/O are not
+accepted by this proof.
+
+[card-cleanup-checks.json](card-cleanup-checks.json) pins those runs, 36 rejected
+source forms, two controls and four unchanged-output compiler traces. Earlier
+source-quality and compiler metadata remains frozen. No original image,
+generated assembly, raw memory capture or game input is published. The current
+complete build still matches; no C source, feature or padding-removal promotion
+is claimed. Original game behavior and optional mods remain unchanged.

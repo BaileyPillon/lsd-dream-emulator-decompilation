@@ -272,3 +272,12 @@ the six-assembly-function count and C-byte compilation measure are unchanged.
 Ten by-value collision helper forms and an actual allocator trace rule out
 a 32-byte argument-area hypothesis for the native 16-byte region. No source
 function is promoted, no gameplay case is added and no feature is accepted.
+
+The subsequent [card cleanup audit](CARD_CLEANUP.md) executes the original
+148-byte function and its private padding-removal candidate in 501 fixtures
+each. One explicit allocator stub exercises release order, signed counts,
+dynamic table/count/entry reads, final clearing and guarded ABI state. Three
+faults are detected. Thirty-six source forms and four compiler traces explain
+why frame equality alone cannot recover the original source. These are bounded
+function checks; C, NPC, feature, developer-capability and mod counts remain
+unchanged, and no source workaround is removed.

@@ -1,5 +1,14 @@
 # Changelog
 
+## Card cleanup contract and source-layout checks - 2026-10-11
+
+- Verify the original cleanup routine and its private padding-removal
+  candidate in 501 fixtures each. Detect three faults with one explicit
+  allocator stub, guarded buffers, dynamic field reloads and ABI checks.
+- Reject 36 used cursor/inline source forms and measure four compiler traces.
+  No source function is promoted; the six assembly functions and five inherited
+  source workarounds remain. Add eleven synthetic contract and custody tests.
+
 ## Existing source-padding audit - 2026-10-11
 
 - Identify five already-C functions with explicit dummy stack padding, verified

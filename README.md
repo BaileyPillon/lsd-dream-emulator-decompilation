@@ -50,6 +50,9 @@ an exact code match.
 The [save workflow checks](docs/CARD_SAVE.md) exercise the original writer,
 retry wrapper and native string helpers; physical card I/O and the writer's
 exact C recovery remain open.
+The [card cleanup audit](docs/CARD_CLEANUP.md) checks 501 original/candidate
+fixture pairs with an explicit allocator stub. It verifies dynamic reloads
+and release order while retaining the eight-byte source-layout mismatch.
 The [rendering grid-window checks](docs/RENDER_GRID.md) verify every angle word
 and bounded scalar grid/clamp rules; the closest C candidate still has four
 byte differences in two stores.

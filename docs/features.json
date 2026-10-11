@@ -19306,6 +19306,67 @@
       "original_game_behavior_modified": false,
       "model_api_calls": 0,
       "scope": "Existing source workarounds quantified separately from C-compilation bytes, assembly fallbacks and original gameplay acceptance."
+    },
+    "card_cleanup_audit_20261011": {
+      "document": "docs/CARD_CLEANUP.md",
+      "metadata": {
+        "path": "docs/card-cleanup-checks.json",
+        "sha256": "5021a5cb0eaeada811afde5c3ae54464c620f3cf9ddc4a69ce201ecd1f578bdb"
+      },
+      "evidence": {
+        "original_cleanup_fixtures": 501,
+        "candidate_cleanup_fixtures": 501,
+        "negative_controls_detected": 3,
+        "explicit_allocator_stubs": 1,
+        "complete_candidate_executable_byte_differences": 8,
+        "new_used_source_forms_tested": 36,
+        "control_forms": 2,
+        "compiler_traces": 4,
+        "complete_unit_allocator_events": 304,
+        "complete_compiler_assembly_equal": true,
+        "new_synthetic_tests": 11
+      },
+      "before_after": {
+        "before": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "after": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "source_functions_promoted": 0,
+        "whole_feature_groups_accepted": 0,
+        "new_original_function_fixture_cases": 501,
+        "candidate_function_fixture_cases": 501,
+        "developer_workflow_extended": "Existing native analysis and candidate comparison; no additional top-level capability."
+      },
+      "source_functions_promoted": 0,
+      "source_workarounds_removed": 0,
+      "whole_feature_groups_accepted": 0,
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0,
+      "scope": "Original machine-code cleanup checks under one explicit allocator contract; exact source layout and whole-game parity remain incomplete."
     }
   }
 }
