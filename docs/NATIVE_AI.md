@@ -156,6 +156,12 @@ and it does not increase the two public callback counts or runtime acceptance.
 
 ## Developer additions
 
+The Lion, Gray Man and scripted checks were rerun after the
+[save-title source split](SAVE_LABEL.md), retaining 11 of 107 bounded callbacks,
+6,784 cases and 14 detected negative controls. The save-title supplement in
+[features.json](features.json) records these current-build report hashes and
+producer dependencies while preserving the historical reports.
+
 [Context export and the matching workbench](TOOL_ASSESSMENT.md) prepare
 byte-verified assembly, Ghidra evidence, headers and source for an AI assistant
 or a human. Isolated candidate compilation checks the entire executable.

@@ -18,6 +18,12 @@ count toward original parity.
   this snapshot also preserves the prior local source changes.
 - Verified pre-prompt build: 297 objects, 169,540 of 199,672 game text bytes in
   C (84.909251%), with 63 game functions retained in assembly.
+- Later classification correction: [docs/SAVE_LABEL.md](docs/SAVE_LABEL.md)
+  separates a 240-byte game-support formatter from an SDK-labelled segment.
+  The original baseline remains frozen. With the corrected denominator its
+  unchanged C numerator is 169,540 / 199,912 (84.807315%), an arithmetic
+  restatement rather than a rerun. Current C recovery is 194,284 / 199,912;
+  the seven known remaining game assembly functions still require recovery.
 - Feature denominator: the same provisional 40 groups in
   [docs/features.json](docs/features.json) for both measurements. Five recorded
   inventory gaps remain; U006 records the user's resolved distinction between

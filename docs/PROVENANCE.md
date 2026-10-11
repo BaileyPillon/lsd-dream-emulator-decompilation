@@ -46,3 +46,23 @@ not game input or output bytes.
 The feature catalogue records C recovery, inherited C-plus-assembly behavior,
 bounded native checks and whole-feature runtime acceptance separately. It does
 not claim a developer-official feature total or completed end-to-end parity.
+
+## Save-title classification correction
+
+The [save-title supplement](SAVE_LABEL.md) recovers `func_800507F8` in matching
+C. The old 336-byte `asm/40FF8.s` segment combined this 240-byte game-support
+formatter with six BIOS wrappers and their padding, totalling 96 bytes. The
+whole segment had been classified as SDK. The new split counts the formatter
+as game support while keeping the BIOS wrappers under `src/psyq/`.
+
+Current game C coverage is 194,284 of 199,912 bytes, with 147,880 SDK bytes and
+188 startup bytes excluded. Both the C numerator and game denominator increase
+by 240 bytes; this is one recovered function and a classification correction.
+The seven previously listed game assembly functions remain. The frozen initial
+publication and pre-prompt reports retain their original measurements.
+
+A matching complete build, isolated whole-executable comparison and 1,952
+bounded native save-title fixtures verify the new source. The three public NPC
+verifiers were rerun against the current build and passed their existing 6,784
+cases. Hashes and scope are appended to [features.json](features.json). Original
+inputs and reports remain private; public CI still tests synthetic fixtures.

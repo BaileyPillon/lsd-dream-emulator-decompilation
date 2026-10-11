@@ -51,15 +51,16 @@ current build, function addresses, native range hashes and source dependencies
 before and after execution. It also checks each original callback binding in
 `g_ENTITY_TABLE` rather than relying on a source label alone.
 
-The exercised report is `.decomp-lab/scripted-ai-native-proof-second.json`;
+The latest exercised report is `.decomp-lab/save-label-scripted-verification-first.json`;
 its SHA-256 is
-`9204a3662c37ad0351f2aec9a8926cd51355176ccb2e7b2c5f6d85ccfd097927`.
+`19731a2dce4c836ad6f572acb62574ca7673d4623b75e7a11181b0a8cb29f0bb`.
 The report and original inputs stay private. A metadata supplement in
 [features.json](features.json) records the measured counts and source hashes.
-The first report remains preserved. The second report rechecks the final
-published verifier sources. The Lion and Gray Man reports were also rerun
-against that source snapshot, passing 1,608 and 768 cases and detecting three
-and two controls respectively.
+Earlier reports remain preserved. This report rechecks the current build after
+the [save-title source split](SAVE_LABEL.md). The Lion and Gray Man reports were
+also rerun against this snapshot, passing 1,608 and 768 cases and detecting
+three and two controls respectively. The save-title supplement records their
+hashes and source dependencies separately from the initial publication.
 
 ## Acceptance limits
 
@@ -72,7 +73,9 @@ division traps, devices or PlayStation instruction/cycle timing.
 
 Adding these nine callbacks to the Lion and Gray Man checks increases bounded
 coverage from 2 to 11 of 107 callbacks and from 2,376 to 6,784 fixture cases.
-The seven remaining game assembly functions and 97.18% C-byte snapshot are
-unchanged. Whole-callback acceptance and whole-feature acceptance remain zero.
+The callback extension leaves C recovery unchanged. The subsequent save-title
+split corrects the game-byte classification as documented separately; the seven
+known remaining game assembly functions still remain. Whole-callback acceptance
+and whole-feature acceptance remain zero.
 This extends an existing analysis capability; it adds no original-game or
 optional gameplay feature.

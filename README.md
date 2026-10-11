@@ -17,13 +17,14 @@ distributed here.
 
 ## Current status
 
-The initial publication records the verified source snapshot of October 11,
-2026. These are separate measures, not a whole-game completion percentage.
+The current verified source snapshot is dated October 11, 2026. These are
+separate measures, not a whole-game completion percentage. The initial
+publication and subsequent evidence are retained separately.
 
 | Measure | Verified snapshot |
 | --- | ---: |
-| Game function bytes recovered in C | 194,044 / 199,672 (97.18%) |
-| Remaining game assembly functions | 7 |
+| Game function bytes recovered in C | 194,284 / 199,912 (97.18%) |
+| Known remaining game assembly functions | 7 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 35 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
@@ -34,6 +35,8 @@ denominator. Bounded native and emulator comparisons have passed, including
 a 6,000-frame sequence with matching frame, GPU, state and PCM audio output.
 Their scope and remaining gaps are documented in the
 [feature inventory](docs/FEATURE_INVENTORY.md) and [roadmap](docs/ROADMAP.md).
+The [save-title recovery](docs/SAVE_LABEL.md) documents the latest matching C
+promotion, its native checks and the correction to SDK/game classification.
 
 ## Three separate workflows
 

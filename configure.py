@@ -99,7 +99,6 @@ asm_psyq_targets = [
     "asm/psyq_unk3.s",
     "asm/21180.s",
     "asm/22244.s",
-    "asm/40FF8.s",
 ]
 
 asm_data_targets = [
@@ -340,6 +339,7 @@ c_psyq_targets = [
     "src/psyq/card/a75.c",
     "src/psyq/card/c112.c",
     "src/psyq/card/a80.c",
+    "src/psyq/card/file_io.c",
 ]
 
 # Game units, compiled with -G8.
@@ -352,6 +352,7 @@ c_game_targets = [
     "src/menu/main_menu_entry.c",
     "src/menu/main_menu_post.c",
     "src/menu/card/memory_card.c",
+    "src/menu/card/save_label.c",
     "src/file/file_buf.c",
     "src/sound/bgm.c",
     "src/sound/sound.c",

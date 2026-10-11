@@ -14890,6 +14890,499 @@
           ]
         }
       ]
+    },
+    "save_label_20261011": {
+      "recorded_utc": "2026-10-11T06:21:07.333656+00:00",
+      "scope": "One matching C save-title promotion, corrected mixed SDK/game classification and current-build native checks. Earlier snapshots are retained.",
+      "documentation": "docs/SAVE_LABEL.md",
+      "source_function_promoted": {
+        "function": "func_800507F8",
+        "address": "0x800507F8",
+        "bytes": 240,
+        "source": "src/menu/card/save_label.c",
+        "source_sha256": "090ac357a85e19788256a7bfbd8ce35cf6565beaae4c840194b6e84410ad5766",
+        "native_sha256": "6366aabaf1ea68aa189955760ed29e676f237ce8bbebead10131cdb91d15a5cd"
+      },
+      "segment_classification": {
+        "old_segment": "asm/40FF8.s",
+        "old_classification": "All 336 bytes SDK",
+        "corrected_game_support_bytes": 240,
+        "retained_bios_wrapper_and_padding_bytes": 96,
+        "bios_wrapper_source": "src/psyq/card/file_io.c",
+        "bios_wrappers": [
+          "lseek",
+          "close",
+          "delete",
+          "format",
+          "read",
+          "open"
+        ],
+        "compiler_flags_changed": false
+      },
+      "current_matching_build": {
+        "objects_expected": 305,
+        "objects_found": 305,
+        "build_current": true,
+        "c_bytes": 194284,
+        "game_text_bytes": 199912,
+        "c_coverage_percent": 97.18476129496979,
+        "sdk_text_bytes": 147880,
+        "handwritten_text_bytes": 188,
+        "binary_match": "verified",
+        "expected_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+        "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+      },
+      "progress_report": {
+        "path": ".decomp-lab/save-label-progress-first.json",
+        "sha256": "afdabf3a2374466db7c627b13b0b8aa9c3bb82faa53b57e73458d58140b3e773"
+      },
+      "corrected_pre_prompt_arithmetic": {
+        "c_bytes": 169540,
+        "game_text_bytes": 199912,
+        "c_coverage_percent": 84.80731521869622,
+        "baseline_rerun": false,
+        "original_baseline_report_preserved": true
+      },
+      "known_remaining_game_assembly_functions": 7,
+      "initial_catalogue_excluded_this_raw_sdk_labelled_helper": true,
+      "complete_candidate_comparison": {
+        "report": ".decomp-lab/save-label-public-full-check-first/comparison.json",
+        "sha256": "fd60a11bfc3d70f1d16aa62c3becb7e3d3038281f89b1550f89f7e5ed0def9f4",
+        "exact_match": true,
+        "expected_bytes": 505856,
+        "actual_bytes": 505856,
+        "changed_bytes": 0,
+        "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+        "gameplay_tested": false
+      },
+      "native_save_label_validation": {
+        "report": ".decomp-lab/save-label-native-proof-first.json",
+        "sha256": "4bc06d3a294d54fd48525a335ba8ebc7850bb059141db696d76644b75b448f48",
+        "native_cases": 1952,
+        "slot_cases": 1920,
+        "reset_cases": 32,
+        "explicit_stubs": 0,
+        "executed_native_entry_counts": {
+          "func_800507F8": 1952,
+          "atoi": 1920,
+          "todigit": 4608
+        },
+        "negative_controls_detected": [
+          {
+            "name": "wrong_8_9_conversion_offset",
+            "address": "0x80050828",
+            "expected_word": "0x3408000e",
+            "changed_word": "0x3408000d",
+            "fixture": {
+              "slot": 8,
+              "title_alignment": 0,
+              "name_alignment": 0,
+              "template_alignment": 0,
+              "seed": 0,
+              "clear": false
+            },
+            "detected": true,
+            "scope": "Private Unicorn memory only."
+          },
+          {
+            "name": "wrong_slot_index",
+            "address": "0x80050884",
+            "expected_word": "0x2442ffff",
+            "changed_word": "0x2442fffe",
+            "fixture": {
+              "slot": 1,
+              "title_alignment": 0,
+              "name_alignment": 0,
+              "template_alignment": 0,
+              "seed": 0,
+              "clear": false
+            },
+            "detected": true,
+            "scope": "Private Unicorn memory only."
+          },
+          {
+            "name": "wrong_reset_copy_destination",
+            "address": "0x800508c4",
+            "expected_word": "0xaa030009",
+            "changed_word": "0xaa03000b",
+            "fixture": {
+              "slot": 1,
+              "title_alignment": 0,
+              "name_alignment": 0,
+              "template_alignment": 0,
+              "seed": 0,
+              "clear": true
+            },
+            "detected": true,
+            "scope": "Private Unicorn memory only."
+          }
+        ],
+        "native_functions": [
+          {
+            "function": "func_800507F8",
+            "address": "0x800507F8",
+            "bytes": 240,
+            "sha256": "6366aabaf1ea68aa189955760ed29e676f237ce8bbebead10131cdb91d15a5cd"
+          },
+          {
+            "function": "atoi",
+            "address": "0x80050948",
+            "bytes": 316,
+            "sha256": "a823b16bda0e8cac5381286349138b63812eba1890372f86ecd43b4cb2e7fa28"
+          },
+          {
+            "function": "todigit",
+            "address": "0x80050AA4",
+            "bytes": 100,
+            "sha256": "220af54c96c04ac31fdc7b66008b2d898427b0929719514df3023ca8a5f4ace4"
+          }
+        ],
+        "source_dependencies_at_execution": [
+          {
+            "path": "tools/verify_native_ai.py",
+            "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+          },
+          {
+            "path": "tools/inventory_vtables.py",
+            "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+          },
+          {
+            "path": "tools/progress.py",
+            "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+          },
+          {
+            "path": "configure.py",
+            "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+          },
+          {
+            "path": "requirements-analysis.txt",
+            "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+          },
+          {
+            "path": "build/SLPS01556.map",
+            "sha256": "6886107b82950588186b1d1cc9a73ddc1d62fcee3ff269e6e8b871fe47f95fd2"
+          },
+          {
+            "path": "build/undefined_funcs_auto.txt",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "path": "build/undefined_syms_auto.txt",
+            "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+          },
+          {
+            "path": "src/scene/entity.c",
+            "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+          },
+          {
+            "path": "src/scene/entity.h",
+            "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+          },
+          {
+            "path": "src/dream/dream_sys.c",
+            "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+          },
+          {
+            "path": "src/dream/dream_sys.h",
+            "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+          },
+          {
+            "path": "src/scene/actor.c",
+            "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+          },
+          {
+            "path": "src/base/transform.c",
+            "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+          },
+          {
+            "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+            "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+          },
+          {
+            "path": "tools/verify_save_label.py",
+            "sha256": "9094714eace891633f055321ab3440856e2326f59c4ddd8f07dab2f493496675"
+          },
+          {
+            "path": "src/menu/card/save_label.c",
+            "sha256": "090ac357a85e19788256a7bfbd8ce35cf6565beaae4c840194b6e84410ad5766"
+          },
+          {
+            "path": "src/menu/card/save_label.h",
+            "sha256": "a994195b3324135400cef8d53fa3ba7aabdf40d29a76188e3df508d96c40c0a5"
+          },
+          {
+            "path": "src/menu/card/memory_card.c",
+            "sha256": "18070a5f159e9ea9adef076776d258d9c4fcb32fd8786ae6bf6f48695ee8732f"
+          },
+          {
+            "path": "src/psyq/card/file_io.c",
+            "sha256": "07c7261a6687e2d3f33ba1cda7eaeb879421d054748b949a3d1b47b5c721b2b2"
+          },
+          {
+            "path": "config/SLPS01556.yaml",
+            "sha256": "2a73ca93564e9b87d9284088b79edfe45d614b6943650a14a5e7fb506d9326d1"
+          },
+          {
+            "path": "src/psyq/libc/atoi.c",
+            "sha256": "bcd648ec07b911ebc874bb1be80e99c01bd39e1fe432bf5aee41eab897b54f14"
+          },
+          {
+            "path": "src/psyq/libc/todigit.c",
+            "sha256": "efdf1f520a1ad2667eb22a35dc52119e43eb4e1802f5c00361649b20b1b8279b"
+          },
+          {
+            "path": "asm/nonmatchings/psyq/libc/atoi/atoi.s",
+            "sha256": "3d156bf74c60c907c5f649441284c6d9e5147e5ec1607320ce012b3c4356eb4c"
+          },
+          {
+            "path": "asm/nonmatchings/psyq/libc/todigit/todigit.s",
+            "sha256": "a327eae0d39ee6e90cea5fa9e49d9dbec77cbf0a7e358658ad1665436c6aaad5"
+          }
+        ],
+        "scope": "Original save-title formatter and actual SDK atoi/todigit versus independent slot/template byte rules. All valid slots 1-15, null-filename reset, all four input/output/template alignments, two template contents, entire guarded buffers, global pointer, return, GP, stack and saved registers. Synthetic independent nonoverlapping buffers; does not establish natural template construction, malformed filenames, overlapping inputs, physical card I/O, retry/error screens, title rendering, save persistence or PS1 instruction/cycle timing."
+      },
+      "retained_callbacks_reverified": [
+        {
+          "callback": "lion",
+          "report": ".decomp-lab/save-label-lion-verification-first.json",
+          "sha256": "e232f1baf26aa7c26f4adf64e8101072302edbecb2f87fa752a4842cce518dde",
+          "native_cases": 1608,
+          "controls_detected": 3,
+          "source_dependencies_at_execution": [
+            {
+              "path": "tools/verify_native_ai.py",
+              "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+            },
+            {
+              "path": "tools/inventory_vtables.py",
+              "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+            },
+            {
+              "path": "tools/progress.py",
+              "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+            },
+            {
+              "path": "configure.py",
+              "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+            },
+            {
+              "path": "requirements-analysis.txt",
+              "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+            },
+            {
+              "path": "build/SLPS01556.map",
+              "sha256": "6886107b82950588186b1d1cc9a73ddc1d62fcee3ff269e6e8b871fe47f95fd2"
+            },
+            {
+              "path": "build/undefined_funcs_auto.txt",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "path": "build/undefined_syms_auto.txt",
+              "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+            },
+            {
+              "path": "src/scene/entity.c",
+              "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+            },
+            {
+              "path": "src/scene/entity.h",
+              "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+            },
+            {
+              "path": "src/dream/dream_sys.c",
+              "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+            },
+            {
+              "path": "src/dream/dream_sys.h",
+              "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+            },
+            {
+              "path": "src/scene/actor.c",
+              "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+            },
+            {
+              "path": "src/base/transform.c",
+              "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+            },
+            {
+              "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+              "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+            }
+          ]
+        },
+        {
+          "callback": "gray_man",
+          "report": ".decomp-lab/save-label-gray-man-verification-first.json",
+          "sha256": "a2b3fbf60d019cf8f9c0460a6eb405450c18b414fd5ef036b38a6d3afa66d855",
+          "native_cases": 768,
+          "controls_detected": 2,
+          "source_dependencies_at_execution": [
+            {
+              "path": "tools/verify_native_ai.py",
+              "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+            },
+            {
+              "path": "tools/inventory_vtables.py",
+              "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+            },
+            {
+              "path": "tools/progress.py",
+              "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+            },
+            {
+              "path": "configure.py",
+              "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+            },
+            {
+              "path": "requirements-analysis.txt",
+              "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+            },
+            {
+              "path": "build/SLPS01556.map",
+              "sha256": "6886107b82950588186b1d1cc9a73ddc1d62fcee3ff269e6e8b871fe47f95fd2"
+            },
+            {
+              "path": "build/undefined_funcs_auto.txt",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "path": "build/undefined_syms_auto.txt",
+              "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+            },
+            {
+              "path": "src/scene/entity.c",
+              "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+            },
+            {
+              "path": "src/scene/entity.h",
+              "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+            },
+            {
+              "path": "src/dream/dream_sys.c",
+              "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+            },
+            {
+              "path": "src/dream/dream_sys.h",
+              "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+            },
+            {
+              "path": "src/scene/actor.c",
+              "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+            },
+            {
+              "path": "src/base/transform.c",
+              "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+            },
+            {
+              "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+              "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+            },
+            {
+              "path": "tools/verify_gray_man.py",
+              "sha256": "c306f2b8408ad86c10394d962438d9b5787da4f841ab4fe4734d1ed4c31bc756"
+            },
+            {
+              "path": "src/graphics/effect.c",
+              "sha256": "d9b2dd6bceb64b1b9fc631d833c4e77278006c62b9969799ecfc6748166bd805"
+            },
+            {
+              "path": "src/graphics/effect.h",
+              "sha256": "767085b6d185b949592ca0d2adab6092efce6d518311ed2ba14ebad3194a08be"
+            }
+          ]
+        },
+        {
+          "callback": "scripted",
+          "report": ".decomp-lab/save-label-scripted-verification-first.json",
+          "sha256": "19731a2dce4c836ad6f572acb62574ca7673d4623b75e7a11181b0a8cb29f0bb",
+          "native_cases": 4408,
+          "controls_detected": 9,
+          "source_dependencies_at_execution": [
+            {
+              "path": "tools/verify_native_ai.py",
+              "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+            },
+            {
+              "path": "tools/inventory_vtables.py",
+              "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+            },
+            {
+              "path": "tools/progress.py",
+              "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+            },
+            {
+              "path": "configure.py",
+              "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+            },
+            {
+              "path": "requirements-analysis.txt",
+              "sha256": "25d4556bf6c7c7b74febd30ce536ce78dde19b47c339b4118f594e069f70668d"
+            },
+            {
+              "path": "build/SLPS01556.map",
+              "sha256": "6886107b82950588186b1d1cc9a73ddc1d62fcee3ff269e6e8b871fe47f95fd2"
+            },
+            {
+              "path": "build/undefined_funcs_auto.txt",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "path": "build/undefined_syms_auto.txt",
+              "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+            },
+            {
+              "path": "src/scene/entity.c",
+              "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+            },
+            {
+              "path": "src/scene/entity.h",
+              "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+            },
+            {
+              "path": "src/dream/dream_sys.c",
+              "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+            },
+            {
+              "path": "src/dream/dream_sys.h",
+              "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+            },
+            {
+              "path": "src/scene/actor.c",
+              "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+            },
+            {
+              "path": "src/base/transform.c",
+              "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+            },
+            {
+              "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+              "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+            },
+            {
+              "path": "tools/verify_scripted_ai.py",
+              "sha256": "1410c8d72f570b0f3a404efcbbf7f73c1b76ba1b3a0897e1c59447670e7e0565"
+            }
+          ]
+        }
+      ],
+      "bounded_npc_callbacks": 11,
+      "distinct_original_callback_denominator": 107,
+      "bounded_npc_fixture_cases": 6784,
+      "feature_counts": {
+        "provisional_groups": 40,
+        "groups_with_listed_core_functions_in_c": 35,
+        "whole_feature_groups_runtime_accepted": 0,
+        "new_original_gameplay_features": 0,
+        "related_groups": [
+          "F037",
+          "F039"
+        ],
+        "feature_denominator_changed": false
+      },
+      "model_api_calls": 0,
+      "original_behavior_modified": false,
+      "private_inputs_or_native_output_bytes_included": false
     }
   }
 }

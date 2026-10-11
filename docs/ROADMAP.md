@@ -10,6 +10,11 @@ boundary of the published snapshot.
 
 Seven game functions remain in assembly in the initial publication:
 
+These seven also remain after the [save-title recovery](SAVE_LABEL.md). That
+additional game-support helper was discovered in a segment classified as SDK;
+it had not been included in this list. Continue auditing raw SDK-labelled
+segments for mixed game support as well as checking the known inclusions.
+
 | Function | Source |
 | --- | --- |
 | `func_8001DDF4` | [`src/base/transform.c`](../src/base/transform.c) |

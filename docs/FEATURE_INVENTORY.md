@@ -95,6 +95,22 @@ The same audit bounded 418 of 418 LBD files, 167,200 grid cells and 270 addition
 
 ## Remaining scope
 
+The [save-title supplement](SAVE_LABEL.md) recovers one additional 240-byte
+game-support function formerly hidden inside a raw SDK-labelled segment.
+Current matching C bytes are **194,284 / 199,912 (97.18%)**, with 305 build
+objects. The same corrected denominator applied to the preserved pre-prompt C
+numerator gives 169,540 / 199,912 (84.81%); this is an arithmetic restatement,
+not a rerun of the baseline. The frozen table above retains its original scope.
+The seven previously counted assembly functions remain.
+
+The formatter passed 1,952 bounded native cases and three negative controls
+using the actual SDK conversion code, with no stubs. This is additional evidence
+for save-title support in F037/F039, not acceptance of those entire groups.
+The 40 provisional groups, 35 groups with listed core functions in C and zero
+whole-feature acceptances remain unchanged. The current build also passed fresh
+runs of the existing 6,784 bounded NPC fixtures. Metadata is appended to
+[features.json](features.json), preserving the earlier records.
+
 The [scripted callback supplement](SCRIPTED_AI.md), recorded after the frozen
 publication snapshot, adds nine original callbacks with 4,408 bounded native
 cases and nine detected controls. Together with the existing Lion and Gray Man

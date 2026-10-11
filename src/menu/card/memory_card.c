@@ -5,6 +5,7 @@
 
 #include "base/base.h"
 #include "menu/card/memory_card.h"
+#include "menu/card/save_label.h"
 
 extern memory_card_vtable_t g_MEMORY_CARD_VTABLE;
 extern s32 D_80086E78[4];
@@ -403,19 +404,18 @@ end:
 }
 
 s32 func_8004EF6C(memory_card_t *, char *, void *, s32, s32, s32, s32);
-void func_800507F8(void *, void *);
 
 s32 memory_card_write_file(memory_card_t *This, char *name, void *buf, u8 a3, s32 a4, s32 a5, s32 a6) {
     s32 retries;
     s32 result;
 
     retries = 0xA;
-    func_800507F8(buf, name);
+    func_800507F8((s8 *) buf, (const u8 *) name);
     do {
         result = func_8004EF6C(This, name, buf, a3, a4, a5, a6);
     } while (result == 0 && retries--);
     if (result == 0) {
-        func_800507F8(buf, NULL);
+        func_800507F8((s8 *) buf, NULL);
     }
     return result;
 }

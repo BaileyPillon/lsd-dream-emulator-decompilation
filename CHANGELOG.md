@@ -1,5 +1,18 @@
 # Changelog
 
+## Save-title recovery - 2026-10-11
+
+- Recover the original 240-byte save-title formatter in matching C and give
+  its callers a shared typed declaration.
+- Separate the formatter from six BIOS file wrappers. Correct the game/SDK
+  classification to 194,284 of 199,912 game bytes in C; preserve the original
+  publication measurements. The seven known game assembly functions remain.
+- Verify the complete canonical executable and 1,952 native formatter cases
+  using the actual SDK conversion routines, with zero stubs and three detected
+  negative controls. Recheck all 6,784 existing bounded NPC fixtures.
+- Add a reusable local save-title verifier with evidence-preserving output
+  checks. Full save/card and whole-feature runtime acceptance remain open.
+
 ## Native behavior verification extension - 2026-10-11
 
 - Add bounded native/reference checks for nine original timed and input-driven
