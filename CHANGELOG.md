@@ -1,5 +1,18 @@
 # Changelog
 
+## Original world-position and streaming composition - 2026-10-11
+
+- Execute five original position functions in 6,141 runs over 5,919 distinct
+  inputs with zero stubs, including cached/missing paths, slot bounds, height
+  layers and wrapping.
+- Execute the nine-function world-to-stream chain in 5,670 further cases;
+  retain two explicit GTE contracts and separate scene/timing acceptance.
+- Detect six deliberate instruction faults and observe the original zero-
+  divisor `BREAK` in three cases, preserving the initial PC-zero diagnostic.
+- Pass 188 local tooling tests on Windows Python 3.14 and Linux Python 3.13.
+- Reject 360 further grid C forms; preserve the canonical executable, six
+  remaining assembly functions and all original-feature/NPC/tool/mod counts.
+
 ## Nymashock native-state diagnosis - 2026-10-11
 
 - Identify the eight varying cold-boot bytes as unused storage in the native

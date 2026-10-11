@@ -129,3 +129,8 @@ pairs without masking, normalization or changes to this strict comparator.
 The 12 nonidentical decoded comparisons remain nonidentical. This explains
 the observed host field; it does not accept further gameplay scenarios or
 repair the older incomplete launch identities.
+
+The separate [native world-position composition](RENDER_POSITION.md) executes
+the original lookup chain with grid generation and streaming under two GTE
+contracts. It strengthens bounded native behavior evidence; it does not
+replace paired emulator runs, scene coverage or original-hardware timing.

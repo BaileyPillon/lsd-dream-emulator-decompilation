@@ -18795,6 +18795,66 @@
       "model_api_calls": 0,
       "whole_original_feature_groups_accepted": 0,
       "private_inputs_or_native_output_bytes_included": false
+    },
+    "render_position_native_20261011": {
+      "recorded_utc": "2026-10-11T15:01:39.793023+00:00",
+      "documentation": "docs/RENDER_POSITION.md",
+      "metadata": "docs/render-position-checks.json",
+      "metadata_sha256": "3ea3ff7ef01648ee79b9587f51892a60e2aabe6b14e9bb63cb8b500913d0d6fd",
+      "repository_code_base_commit": "eea99b5a16bc6609a4ccf48324df75bfd381b273",
+      "position_native_runs": 6141,
+      "position_distinct_inputs": 5919,
+      "position_repeated_input_runs": 222,
+      "position_explicit_stubs": 0,
+      "composed_native_cases": 5670,
+      "composed_native_functions": 9,
+      "composed_explicit_stubs": 2,
+      "negative_controls_detected": 6,
+      "original_division_by_zero_traps_observed": 3,
+      "source_functions_promoted": 0,
+      "canonical_executable_preserved": true,
+      "current_turn_before_after": {
+        "before_source_commit": "eea99b5a16bc6609a4ccf48324df75bfd381b273",
+        "before": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "after": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3
+        },
+        "new_matching_c_functions": 0,
+        "new_original_feature_groups_accepted": 0,
+        "new_tooling_tests": 13,
+        "new_grid_compiler_comparisons": 360,
+        "position_native_runs": 6141,
+        "position_distinct_inputs": 5919,
+        "composed_native_distinct_inputs": 5670
+      },
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0,
+      "whole_original_feature_groups_accepted": 0,
+      "private_inputs_or_native_output_bytes_included": false
     }
   }
 }

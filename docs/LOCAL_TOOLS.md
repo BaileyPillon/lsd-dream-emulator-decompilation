@@ -115,3 +115,19 @@ The [native field diagnosis](NYMASHOCK_STATE.md) describes its fixed binary
 profile and limitations. Reports require a new output path and retain complete
 decoded differences alongside their classification. No state bytes are masked,
 and the tool does not modify inputs, launch an emulator or call a model API.
+
+## Native world-position and streaming composition
+
+After a canonical build and installation of `requirements-analysis.txt` in
+your Linux/WSL environment:
+
+```bash
+python tools/verify_render_position.py \
+  --output .decomp-lab/render-position-native-new.json
+```
+
+The [position audit](RENDER_POSITION.md) executes original lookup functions
+without stubs and the complete grid/stream composition with two GTE contracts.
+It checks guarded buffers, native call traces, deliberate faults and zero-
+divisor exceptions. Reports require a new private path. Changes are confined
+to the tool's own Unicorn memory; it does not modify the game or call a model API.

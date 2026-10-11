@@ -200,3 +200,13 @@ bytes in unused native media-label storage across 44 checkpoint pairs. It
 extends A004 without adding original features or developer-capability counts.
 All strict byte differences remain recorded, with no new whole-feature
 acceptance, C promotion or change to the fixed provisional denominator.
+
+The [world-position supplement](RENDER_POSITION.md) checks five original
+lookup functions without stubs and nine functions in the complete native
+world-to-stream composition, retaining two GTE contracts. It adds 6,141
+position executions over 5,919 distinct inputs, 5,670 distinct composed
+fixtures and six detected faults. This extends bounded evidence for
+rendering/streaming without a C promotion or
+whole-feature acceptance. All source, original-feature, NPC, developer-tool
+and optional-mod counts remain unchanged; the new supplement preserves the
+earlier feature records.

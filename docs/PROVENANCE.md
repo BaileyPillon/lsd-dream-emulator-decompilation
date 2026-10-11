@@ -217,3 +217,20 @@ native disassembly, primary source snapshots and the read-only diagnostic.
 The earlier Japanese report and metadata remain preserved at their published
 hashes. Synthetic tests and source experiments include no original game,
 emulator, BIOS, asset or captured state bytes in the public repository.
+
+## Original position and streaming supplement
+
+The [world-position audit](RENDER_POSITION.md) executes the actual wrapper,
+resolver, world-slot selector, marker partition and record lookup. It verifies
+their canonical virtual bindings and 1,004 native bytes. Five functions run
+without stubs in 6,141 executions over 5,919 distinct inputs; nine original
+functions run through the complete world-to-stream chain in another 5,670
+cases with two GTE contracts. Six
+deliberate faults are detected, and three original zero-divisor exceptions
+are tied to the executed `BREAK` rather than Unicorn's subsequent PC-zero report.
+
+[render-position-checks.json](render-position-checks.json) pins the complete
+private proof and code, preserves preliminary diagnostic failures separately,
+and records 360 further nonmatching C comparisons. No game source, compiler
+flags or canonical executable bytes change. The fixtures and metadata contain
+no distributed game, BIOS, emulator, asset or captured state bytes.
