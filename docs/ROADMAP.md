@@ -8,14 +8,14 @@ boundary of the published snapshot.
 
 ## Matching C recovery
 
-Six game functions remain in assembly after the matching loader recovery:
+Five game functions remain in assembly after the matching writer recovery:
 
 The [source-quality audit](SOURCE_QUALITY.md) additionally identifies five
 matching C functions with inherited explicit dummy stack padding. Removing
 each in a complete private build changes only SP-relative displacements, but
 none preserves the original image. Recover real storage or inline boundaries
 for these functions as part of the no-padding completion requirement. The
-known assembly count remains six; this is a separate source-quality backlog.
+known assembly count is five; this is a separate source-quality backlog.
 
 The initial seven also remained after the [save-title recovery](SAVE_LABEL.md). That
 additional game-support helper was discovered in a segment classified as SDK;
@@ -28,7 +28,10 @@ The [bounds-predicate audit](RENDER_BOUNDS.md) verifies the original
 byte differences remain to resolve before accepting C.
 The [save workflow audit](CARD_SAVE.md) verifies the wrapper, writer and native
 helpers in 13,152 bounded cases. Its full C candidate agrees on those fixtures
-but still differs in eight executable bytes; the writer remains in assembly.
+and retained an eight-byte mismatch at that checkpoint. The later
+[matching writer recovery](CARD_WRITER_RECOVERY.md) resolves the argument
+layout and promotes its 960-byte function to C. Standard and clean builds
+remain exact; physical cards and natural error/cancel scenarios remain open.
 The [grid-window audit](RENDER_GRID.md) verifies all 65,536 angle words within
 74,832 scalar fixtures. Its full C candidate agrees on those fixtures but
 reorders two stores, differing in four bytes. Real GTE transforms and the
@@ -73,7 +76,6 @@ A corrected full candidate retains native store order but differs in 13 bytes;
 | --- | --- |
 | `func_8001DDF4` | [`src/base/transform.c`](../src/base/transform.c) |
 | `func_8001F8B8` | [`src/file/tmd_prim_geom.c`](../src/file/tmd_prim_geom.c) |
-| `func_8004EF6C` | [`src/menu/card/memory_card.c`](../src/menu/card/memory_card.c) |
 | `func_8004C6A8` | [`src/scene/render_context.c`](../src/scene/render_context.c) |
 | `func_8004CD38` | [`src/scene/render_context.c`](../src/scene/render_context.c) |
 | `func_8004441C` | [`src/menu/ui_sprite.c`](../src/menu/ui_sprite.c) |
@@ -87,7 +89,7 @@ raise a coverage number.
 The [level-model loader recovery](LBD_RECOVERY.md) removes `func_8004BE54`
 from that list. It adds 600 bytes of matching C, preserves complete standard
 and clean-build equality, and rechecks the 418 local LBD files. The C-byte
-total is now 194,884 / 199,912 (97.48%); whole-feature acceptance remains open.
+total at that checkpoint was 194,884 / 199,912 (97.48%); whole-feature acceptance remains open.
 
 The [sprite scaling audit](UI_SCALE.md) checks 203,472 original and candidate
 fixtures each, with zero stubs. Preserve the post-X-store Y denominator read
@@ -122,7 +124,7 @@ and 191 initial source trials found no exact match. The subsequent
 
 The catalogue currently has 40 provisional groups. None has been accepted for
 all required runtime scenarios. The [inventory](FEATURE_INVENTORY.md) lists the
-remaining scenario for each group; 97.48% describes game C bytes only.
+remaining scenario for each group; 97.97% describes current game C bytes only.
 
 ## Developer tools and optional mods
 
@@ -131,3 +133,7 @@ remaining scenario for each group; 97.48% describes game C bytes only.
 - Retain explicit input hashes, dependencies and negative controls in reports.
 - Extend emulator checks for duration multipliers and passive Gray Man.
 - Keep all optional patched executables and discs outside the canonical build.
+
+The latest writer recovery brings matching C to 195,844 / 199,912 (97.97%),
+with 37 / 40 groups having all listed core functions in C. These overlapping
+source groups retain zero whole-feature acceptances.

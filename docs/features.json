@@ -19433,6 +19433,71 @@
       "original_game_behavior_modified": false,
       "model_api_calls": 0,
       "scope": "Original native allocator/cleanup/lock composition under valid ownership; original source layout, physical card/runtime scenarios and whole-game parity remain incomplete."
+    },
+    "card_writer_recovery_20261011": {
+      "document": "docs/CARD_WRITER_RECOVERY.md",
+      "metadata": {
+        "path": "docs/card-writer-recovery-checks.json",
+        "sha256": "54412dc2d2f7ede4e9eff7461327de5343a64f6b9d533b8db362f84d765f006f"
+      },
+      "before_after": {
+        "before": {
+          "c_bytes": 194884,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 6,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 5
+        },
+        "after": {
+          "c_bytes": 195844,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 5,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 37,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 5
+        },
+        "source_functions_promoted": 1,
+        "original_feature_groups_accepted": 0,
+        "new_gameplay_features": 0,
+        "new_native_fixture_cases": 0,
+        "native_fixture_cases_reverified": 13152
+      },
+      "core_source_overrides": [
+        {
+          "group": "F037",
+          "function": "func_8004EF6C",
+          "after": "recovered_c",
+          "listed_core_complete": true,
+          "whole_feature_accepted": false
+        },
+        {
+          "group": "F038",
+          "function": "func_8004EF6C",
+          "after": "recovered_c",
+          "listed_core_complete": true,
+          "whole_feature_accepted": false
+        }
+      ],
+      "canonical_executable_equal": true,
+      "clean_build_equal": true,
+      "remaining_assembly_functions": 5,
+      "known_source_padding_functions": 5,
+      "scope": "One matching C recovery with byte-identical complete standard/clean builds and reverified bounded save workflow; whole-card runtime acceptance remains open."
     }
   }
 }

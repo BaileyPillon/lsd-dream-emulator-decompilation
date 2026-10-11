@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-11T23:19:40.397673+00:00",
+  "source_commit_before": "6d98e0310ed1c5e1f558f46762d15b7f00407bec",
+  "scope": "One matching C recovery with byte-identical complete standard/clean builds and reverified bounded save workflow; whole-card runtime acceptance remains open.",
+  "source": {
+    "path": "src/menu/card/memory_card.c",
+    "git_lf_sha256": "43f2e549a55bf8035608d0e2bc9d0a9737a2f38340e06459cbf6e367da8b85cf",
+    "local_crlf_sha256": "d0dec2b74c39fccca6a828842cf5502394ca2283ea2bc9fa0b611128a3f4bf85",
+    "newline_convention": "Legacy local CRLF retained; committed source uses the existing Git LF convention."
+  },
+  "function": {
+    "name": "func_8004EF6C",
+    "address": "0x8004EF6C",
+    "bytes": 960,
+    "sha256": "a24ccbb37789695a86a6bf46e624aea68a667ed5cac934704edf7e6677349092",
+    "original_source_type_identity_proved": false,
+    "argument_layout": "Four register arguments followed by three s32 stack words: TIM object, payload address, payload size.",
+    "reconstructed_interface": "Historical GNU MIPS va_alist cursor; readable ANSI declaration, unchanged native caller ABI."
+  },
+  "canonical_executable": {
+    "bytes": 505856,
+    "sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "complete_standard_build_equal": true,
+    "complete_clean_build_equal": true,
+    "objects_expected": 305,
+    "objects_found": 305,
+    "old_objects_used_for_clean_build": false
+  },
+  "canonical_build": {
+    "path": ".decomp-lab/card-writer-promotion-first/ninja-check.stdout",
+    "sha256": "5232f43861ef49eb71e2060d7f23999de71da8ba620ff4510ea9d8bed1415695"
+  },
+  "clean_build": {
+    "path": ".decomp-lab/card-writer-promotion-first/clean-build.json",
+    "sha256": "66565ada0155f9a1d2b451cbd864471b6261197133fb525420bc77fc226fb473"
+  },
+  "progress": {
+    "path": ".decomp-lab/card-writer-promotion-first/progress.stdout",
+    "sha256": "f059a2d5e422fb9a3b731f61aa235c18693bf8d6a5bff2476174f94d26e84756"
+  },
+  "clean_progress": {
+    "path": ".decomp-lab/card-writer-promotion-first/clean-progress.stdout",
+    "sha256": "f059a2d5e422fb9a3b731f61aa235c18693bf8d6a5bff2476174f94d26e84756"
+  },
+  "complete_candidate_comparisons": [
+    {
+      "path": ".decomp-lab/card-writer-legacy-unit-build-third/comparison.json",
+      "sha256": "17db1ad97d7d288c0f15ba4e6af60175a865f467017025f878f7a77c22b9c91a"
+    },
+    {
+      "path": ".decomp-lab/card-writer-ansi-unit-build-third/comparison.json",
+      "sha256": "591e67cf498b63cfb0044043e8e7560de48e5f9264727559903174aadb2bee11"
+    },
+    {
+      "path": ".decomp-lab/card-writer-readable-build-first/comparison.json",
+      "sha256": "d0b31a0df63a945e24b21281b2994fa366f0ec07bb68aaf726586a725dec9876"
+    }
+  ],
+  "compiler_traces": [
+    {
+      "role": "fixed-argument near match",
+      "report": {
+        "path": ".decomp-lab/card-register-equiv-unit-first/report.json",
+        "sha256": "e2a0f6b37f8024958fe57fda60e8f164af36231aa7d39d4e08b8f3cd7cf37a78"
+      },
+      "allocation_events": 23,
+      "comparison_events": 70,
+      "scheduled_blocks": 24,
+      "equivalence_updates": 1,
+      "complete_compiler_assembly_equal": true,
+      "assembly_sha256": "e5a7113d0b2aaa022f0c6679c4935b1759a920803060601af69fffbfbad1c5aa",
+      "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+      "backend_sha256": "aac889ca834dd2100f3dcf5b73fc4d8bf567841b921e349f2cfc3cfcd40adb69"
+    },
+    {
+      "role": "matching recovered source",
+      "report": {
+        "path": ".decomp-lab/card-writer-match-trace-first/report.json",
+        "sha256": "e53c4fcb03c3458e2ea3a15ded794d1c0cc363a43c74c8515d01388c3915b74a"
+      },
+      "allocation_events": 23,
+      "comparison_events": 70,
+      "scheduled_blocks": 24,
+      "equivalence_updates": 1,
+      "complete_compiler_assembly_equal": true,
+      "assembly_sha256": "4277df973b0002c43ccb6305cdcde94b70df853383828b1f5f8f21b6916d776a",
+      "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+      "backend_sha256": "aac889ca834dd2100f3dcf5b73fc4d8bf567841b921e349f2cfc3cfcd40adb69"
+    }
+  ],
+  "compiler_flags_changed": false,
+  "padding_or_register_bindings_added": false,
+  "instruction_substitution_added": false,
+  "known_source_padding_functions": 5,
+  "source_forms": {
+    "new_attempts": 34,
+    "well_typed_forms": 30,
+    "rejected_pointer_type_warning_forms": 4,
+    "exact_function_forms": 2,
+    "selected_source_promotions": 1,
+    "records": [
+      {
+        "path": ".decomp-lab/card-image-slot-first/results.json",
+        "sha256": "12951e99d5ca5296211283f9906ece993026d758ed043968eaa91daa42b37176"
+      },
+      {
+        "path": ".decomp-lab/card-image-slot-second/results.json",
+        "sha256": "8db62785180c07cdfc0b9700dfb9a844638668175244e6a4d40bf648768adcc0"
+      },
+      {
+        "path": ".decomp-lab/card-address-types-first/results.json",
+        "sha256": "5c616dfda09447e2c0fb7b3dd45d4bc8726b485c8444f8891b9ec1fba9542be4"
+      },
+      {
+        "path": ".decomp-lab/card-tail-arguments-first/results.json",
+        "sha256": "192665ace5a7ac53b748797f0af19207fca4c7b43321f0212c2987367ddb195c"
+      },
+      {
+        "path": ".decomp-lab/card-traditional-tail-first/results.json",
+        "sha256": "d6d450487e4c6e942db621288be3146a31a8cd55a475b15f8ff5d367ad2722d1"
+      }
+    ]
+  },
+  "native_save_workflow": {
+    "report": {
+      "path": ".decomp-lab/card-writer-promotion-first/native-save.json",
+      "sha256": "797a0533e64d4e0526f620f90d5d195a42ab73541de866048b357a23bbc3206d"
+    },
+    "original_functions": 9,
+    "cases_reverified": 13152,
+    "new_cases": 0,
+    "explicit_stub_count": 7,
+    "negative_controls_detected": 7,
+    "backend": "Unicorn 2.1.4",
+    "scope": "Original save wrapper, writer, path builder, title formatter and actual SDK atoi/todigit/strcpy/strcat/strlen versus independent guarded byte and I/O rules. Valid slots 1-15, aligned/unaligned nonoverlapping buffers, byte-masked icon argument, up to 11 attempts, create/reopen failures, reset after exhaustion, 128-byte padding, 8 KiB allocation boundaries, both device prefixes, segment aliases, ignored delete/close/write results, entire fixture buffers, call graph, global pointer, stack and saved registers. Seven explicit stubs cover file I/O, allocation and printf. Does not establish physical card I/O, allocator failure, invalid filenames, oversized icons, overlapping buffers, UI/error rendering, save persistence, complete dream-state round trips or PS1 timing."
+  },
+  "local_tooling_tests": {
+    "count": 294,
+    "environment": "WSL Python 3.13",
+    "log": {
+      "path": ".decomp-lab/card-writer-promotion-first/tooling-tests.stderr",
+      "sha256": "0a7f714549afd1b28d5c9c99300c2e3e9faec3c338fd5b4d8035e4b1e4b40351"
+    }
+  },
+  "before_after": {
+    "before": {
+      "c_bytes": 194884,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 6,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 5
+    },
+    "after": {
+      "c_bytes": 195844,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 5,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 37,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 5
+    },
+    "source_functions_promoted": 1,
+    "original_feature_groups_accepted": 0,
+    "new_gameplay_features": 0,
+    "new_native_fixture_cases": 0,
+    "native_fixture_cases_reverified": 13152
+  },
+  "core_complete_group_ids": [
+    "F001",
+    "F002",
+    "F003",
+    "F004",
+    "F005",
+    "F006",
+    "F007",
+    "F009",
+    "F010",
+    "F011",
+    "F012",
+    "F013",
+    "F014",
+    "F015",
+    "F016",
+    "F017",
+    "F018",
+    "F019",
+    "F020",
+    "F021",
+    "F022",
+    "F023",
+    "F024",
+    "F025",
+    "F026",
+    "F027",
+    "F028",
+    "F029",
+    "F030",
+    "F031",
+    "F032",
+    "F034",
+    "F036",
+    "F037",
+    "F038",
+    "F039",
+    "F040"
+  ],
+  "groups_newly_with_every_listed_core_function_in_c": [
+    "F037",
+    "F038"
+  ],
+  "remaining_assembly": [
+    {
+      "function": "func_8004CD38",
+      "source": "src/scene/render_context.c",
+      "address": "0x8004CD38",
+      "bytes": 108,
+      "sha256": "73713a1bd9a992c92c7a7fb6c5c88684a9224107fbc2b0d4d2f83b606e71d03a"
+    },
+    {
+      "function": "func_8004441C",
+      "source": "src/menu/ui_sprite.c",
+      "address": "0x8004441C",
+      "bytes": 560,
+      "sha256": "da711212afcc5d37cc0dc8f15ad0493cbfee5bda9f6fd5d3deffe3b6c6db729c"
+    },
+    {
+      "function": "func_8004C6A8",
+      "source": "src/scene/render_context.c",
+      "address": "0x8004C6A8",
+      "bytes": 660,
+      "sha256": "a50855f634d69c3ce7a04cc5db9fafd9a2d88edfeab167f9e351c7791bdb46d9"
+    },
+    {
+      "function": "func_8001DDF4",
+      "source": "src/base/transform.c",
+      "address": "0x8001DDF4",
+      "bytes": 796,
+      "sha256": "e61be058229e5ecc97387ea9e246d7b578594f5d77495b56fc3f2900f2a6b193"
+    },
+    {
+      "function": "func_8001F8B8",
+      "source": "src/file/tmd_prim_geom.c",
+      "address": "0x8001F8B8",
+      "bytes": 1944,
+      "sha256": "c23a87535a6a4949e414266f5a298b8d0409debb8be4ef6482e627fcc6269513"
+    }
+  ],
+  "preserved_prior_feature_file_sha256": "526977c1aca5cf6db83a3b15f2c50ac0d9ddcbf3efa8cdaf2626f50a89e96aa0",
+  "source_functions_promoted": 1,
+  "source_workarounds_removed": 0,
+  "whole_feature_groups_accepted": 0,
+  "original_game_behavior_modified": false,
+  "model_api_calls": 0,
+  "remaining_scope": "Five assembly functions, five inherited padding functions, five unresolved inventory gaps U001-U005, physical I/O, natural scenarios and independently reviewed whole-feature parity. U006 remains resolved scope clarification."
+}

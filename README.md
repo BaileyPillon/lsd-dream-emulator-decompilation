@@ -23,11 +23,11 @@ publication and subsequent evidence are retained separately.
 
 | Measure | Verified snapshot |
 | --- | ---: |
-| Matching game-function bytes compiled from C | 194,884 / 199,912 (97.48%) |
-| Known remaining game assembly functions | 6 |
+| Matching game-function bytes compiled from C | 195,844 / 199,912 (97.97%) |
+| Known remaining game assembly functions | 5 |
 | Known C functions with explicit dummy stack padding | 5 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
-| Provisional behavior/system groups with listed core functions in C | 35 / 40 |
+| Provisional behavior/system groups with listed core functions in C | 37 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
 
 The feature inventory has 40 provisional groups; an official exhaustive
@@ -49,7 +49,11 @@ remaining assembly function's bounded behavior; its C candidate still needs
 an exact code match.
 The [save workflow checks](docs/CARD_SAVE.md) exercise the original writer,
 retry wrapper and native string helpers; physical card I/O and the writer's
-exact C recovery remain open.
+exact C recovery remained open at that checkpoint.
+The later [matching writer recovery](docs/CARD_WRITER_RECOVERY.md) promotes
+the complete 960-byte writer to C, with standard and clean builds matching
+the original. Both card groups now have every listed core function in C;
+physical I/O and whole-feature acceptance remain open.
 The [card cleanup audit](docs/CARD_CLEANUP.md) checks 501 original/candidate
 fixture pairs with an explicit allocator stub. It verifies dynamic reloads
 and release order while retaining the eight-byte source-layout mismatch.

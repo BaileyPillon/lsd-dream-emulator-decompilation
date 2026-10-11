@@ -408,3 +408,15 @@ The private executable, native reports, backend binaries and logs are excluded
 from publication. No original game or disc input is distributed. The current
 canonical build still matches; accepted source/feature/NPC/mod counts and the
 six assembly plus five source-workaround requirements remain unchanged.
+
+## Matching writer recovery
+
+The [writer supplement](CARD_WRITER_RECOVERY.md) promotes one 960-byte game
+function, preserving byte identity in both standard and fresh clean complete
+builds. [card-writer-recovery-checks.json](card-writer-recovery-checks.json)
+records the LF Git source and retained CRLF local-source hashes separately.
+The historical GNU varargs interface is a matching reconstruction; original
+author declarations remain unknown. Existing feature records are preserved
+verbatim before the new supplement, whose overrides mark F037 and F038
+listed-core C completion. It accepts no whole feature and distributes no
+original inputs, compiler traces or native execution buffers.

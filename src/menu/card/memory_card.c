@@ -28,6 +28,10 @@ extern long _card_clear(long);
 extern long _card_load(long);
 extern char *strcat(char *, char *);
 extern char *strcpy(char *, char *);
+extern char D_80011530[];
+extern long write(long, void *, long);
+extern int printf(const char *, ...);
+char *memory_card_build_path(char *, s32, char *);
 extern void *func_80050BA8(s32, s32);
 extern void *func_80051A5C(s32, s32);
 extern char *D_80086E80[];
@@ -403,7 +407,7 @@ end:
     return result;
 }
 
-s32 func_8004EF6C(memory_card_t *, char *, void *, s32, s32, s32, s32);
+s32 func_8004EF6C(memory_card_t *, char *, void *, s32, s32, ...);
 
 s32 memory_card_write_file(memory_card_t *This, char *name, void *buf, u8 a3, s32 a4, s32 a5, s32 a6) {
     s32 retries;
@@ -420,7 +424,61 @@ s32 memory_card_write_file(memory_card_t *This, char *name, void *buf, u8 a3, s3
     return result;
 }
 
-INCLUDE_ASM("asm/nonmatchings/menu/card/memory_card", func_8004EF6C);
+/*
+ * GCC 2.6's MIPS varargs cursor starts at the first stack argument.
+ * This entry consumes three s32 words: TIM object, payload address and size.
+ * The GNU va_alist marker preserves that layout with four register arguments.
+ */
+s32 func_8004EF6C(memory_card_t *This, char *name, void *title, s32 icons,
+                 s32 __builtin_va_alist, ...) {
+    s32 *arguments;
+    s32 texture;
+    char buf[32];
+    char *path;
+    s32 fd;
+    u8 *header, *tim;
+    s32 save_size;
+    void *payload;
+    u8 frames;
+
+    arguments = &__builtin_va_alist;
+    texture = *arguments++;
+    payload = (void *) *arguments++;
+    save_size = *arguments++;
+
+    path = memory_card_build_path(buf, This->m_Unk2, name);
+    delete(path);
+    fd = open(path, (((u32) (save_size + 0x21FF) >> 13) << 16) | 0x200);
+    frames = icons;
+    if (fd == -1) {
+        printf(D_80011530);
+        return 0;
+    }
+    close(fd);
+    fd = open(path, 2);
+    if (fd == -1) {
+        return 0;
+    }
+
+    tim = *(u8 **) (texture + 0x10);
+    header = memory_allocate_mem(0x200);
+    header[0] = 'S';
+    header[1] = 'C';
+    header[2] = icons + 0x10;
+    header[3] = (u32) (save_size + 0x1FFF) >> 13;
+    strcpy((char *) header + 4, title);
+    __builtin_memcpy(header + 0x60, tim + 0x14, 32);
+    __builtin_memcpy(header + 0x80, tim + 0x40, 128);
+    __builtin_memcpy(header + 0x100, tim + 0xC0, 128);
+    __builtin_memcpy(header + 0x180, tim + 0x140, 128);
+
+    write(fd, header, (frames << 7) + 0x80);
+    memory_free_mem(header);
+    write(fd, payload, (((u32) (save_size + 0x7F)) >> 7) << 7);
+    close(fd);
+    return 1;
+}
+
 
 char *memory_card_build_path(char *dst, s32 port, char *suffix) {
     char *prefix;

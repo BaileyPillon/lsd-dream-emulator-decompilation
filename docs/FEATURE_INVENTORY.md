@@ -291,3 +291,22 @@ are detected. The qualified backend is isolated; failed newer-backend probes
 are retained. This complements the earlier allocator-contract profile and
 does not promote the eight-byte cleanup candidate or remove its source padding.
 C, NPC, whole-feature, developer-capability and mod counts remain unchanged.
+
+## Matching writer recovery
+
+The [writer recovery](CARD_WRITER_RECOVERY.md) promotes `func_8004EF6C` and
+adds 960 bytes of matching C. Complete standard and clean builds remain exact
+with 305 objects. Current recovery is **195,844 / 199,912 (97.97%)**, with five
+game assembly functions and five inherited source-padding functions left.
+The shared writer completes the listed core C sets of F037 and F038, bringing
+that overlapping-group count from 35 to **37 / 40**. Whole-feature runtime
+acceptance remains **0 / 40**, and an official exhaustive feature total is
+unknown. NPC callbacks stay 107 / 107; developer capabilities and optional
+mods stay 10 and 3 respectively. The earlier reports remain frozen.
+
+The existing 13,152-case, nine-function save audit was reverified with seven
+explicit I/O/allocation/diagnostic contracts and seven detected faults. Two
+complete-unit compiler traces preserve their full assembly output. The
+source uses the pinned GNU MIPS varargs ABI; original-author source types are
+not uniquely established by the exact match. Physical I/O and natural
+scenarios still require evidence.

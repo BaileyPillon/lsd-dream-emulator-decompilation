@@ -1,5 +1,17 @@
 # Changelog
 
+## Matching memory-card writer recovery - 2026-10-11
+
+- Recover the complete 960-byte save writer in C through the pinned GNU MIPS
+  varargs ABI. Preserve the caller and complete standard/clean executable.
+- Raise matching game C to 195,844 / 199,912 (97.97%); five assembly functions
+  and five inherited source-padding explanations remain. Both card groups
+  F037/F038 now have all listed core functions in C: 37 / 40 groups overall.
+- Reverify 13,152 bounded save-workflow cases and seven fault controls with
+  seven explicit contracts. All 294 tooling tests pass; whole-feature
+  acceptance stays 0 / 40. Preserve earlier evidence and separate AI tooling
+  and optional mods from unchanged original gameplay.
+
 ## Native card heap composition - 2026-10-11
 
 - Execute seven original cleanup/allocator/lock functions without output

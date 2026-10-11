@@ -22,8 +22,8 @@ count toward original parity.
   separates a 240-byte game-support formatter from an SDK-labelled segment.
   The original baseline remains frozen. With the corrected denominator its
   unchanged C numerator is 169,540 / 199,912 (84.807315%), an arithmetic
-  restatement rather than a rerun. Current C recovery is 194,884 / 199,912;
-  six known remaining game assembly functions still require recovery after
+  restatement rather than a rerun. Current C recovery is 195,844 / 199,912;
+  five known remaining game assembly functions still require recovery after
   the [level-model loader recovery](docs/LBD_RECOVERY.md).
 - Feature denominator: the same provisional 40 groups in
   [docs/features.json](docs/features.json) for both measurements. Five recorded
@@ -69,3 +69,9 @@ BIOS, source baseline and unrelated analysis services intact.
 Current evidence and source progress are recorded in `docs/features.json`,
 `.decomp-lab` comparison reports and build logs. This objective is unfinished
 until every completion requirement is met.
+
+The [matching writer recovery](docs/CARD_WRITER_RECOVERY.md) adds 960 C bytes
+and preserves standard and clean-build equality. Groups F037 and F038 now
+have all listed core functions in C; the provisional core-source count is
+37 / 40. Five inherited source-padding explanations and whole-feature runtime
+acceptance still require recovery.
