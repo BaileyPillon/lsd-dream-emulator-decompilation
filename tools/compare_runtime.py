@@ -79,6 +79,7 @@ MOVEMENT_FIELDS = (
     'link_interval', 'time_limit', 'map', 'year', 'day', 'flashback_count',
     'auto_move_locked', 'auto_move_active', 'coordinate', 'pose', 'x', 'y', 'z',
     'scale_x', 'scale_y', 'scale_z', 'pitch', 'yaw', 'roll')
+PAD_FIELDS = ('pad', 'pad_buttons', 'pad_released', 'pad_pressed')
 
 
 def compare_native_observations(original, rebuilt, frames):
@@ -88,11 +89,12 @@ def compare_native_observations(original, rebuilt, frames):
         return {'status': 'native_state_not_captured', 'output_compared': False}
     if not all(path.is_file() for path in paths):
         raise ValueError('Both runs must contain the native movement observations.')
-    runs = []
+    runs, headers = [], []
     for path in paths:
         with path.open(encoding='utf-8', newline='') as stream:
             reader = csv.DictReader(stream, delimiter='\t')
-            if tuple(reader.fieldnames or ()) != MOVEMENT_FIELDS:
+            header = tuple(reader.fieldnames or ())
+            if header not in (MOVEMENT_FIELDS, MOVEMENT_FIELDS + PAD_FIELDS):
                 raise ValueError('Native movement observation header is unsupported.')
             rows = list(reader)
         if (len(rows) != frames or any(None in row or None in row.values() for row in rows)
@@ -101,15 +103,55 @@ def compare_native_observations(original, rebuilt, frames):
         core_frames = [int(row['core_frame']) for row in rows]
         if core_frames != list(range(core_frames[0], core_frames[0] + frames)):
             raise ValueError('Native observation core frames are not consecutive.')
+        if header == MOVEMENT_FIELDS + PAD_FIELDS:
+            for row in rows:
+                if (not re.fullmatch(r'[0-9a-f]{8}', row['pad'])
+                        or not 0 < int(row['pad'], 16) <= 0x1fffe0
+                        or int(row['pad'], 16) % 4):
+                    raise ValueError('Native pad pointer is outside aligned MainRAM storage.')
+                for field in PAD_FIELDS[1:]:
+                    if not 0 <= int(row[field]) <= 0xffffffff:
+                        raise ValueError('Native pad masks must be unsigned 32-bit values.')
+        headers.append(header)
         runs.append(rows)
+    if headers[0] != headers[1]:
+        raise ValueError('Native movement observation headers must agree between runs.')
     comparison = byte_comparison(paths[0].read_bytes(), paths[1].read_bytes())
     phases = {}
     observed = ('timer', 'link_state', 'paused', 'input_locked', 'action_pressed', 'map',
                 'move_state', 'move_direction', 'move_step', 'floor_type', 'look_position',
-                'turn_offset', 'x', 'y', 'z', 'pitch', 'yaw', 'roll')
+                'turn_offset', 'auto_move_locked', 'auto_move_active',
+                'x', 'y', 'z', 'pitch', 'yaw', 'roll')
+    has_pad = headers[0] == MOVEMENT_FIELDS + PAD_FIELDS
     for row in runs[0]:
-        phase = phases.setdefault(row['input_phase'], {'frames': 0, 'value_ranges': {}})
+        phase = phases.setdefault(row['input_phase'], {
+            'frames': 0, 'requested_input_frames': 0, 'unlocked_frames': 0,
+            'requested_input_while_unlocked_frames': 0, 'value_ranges': {}})
         phase['frames'] += 1
+        requested = bool(row['input_buttons'])
+        unlocked = all(int(row[field]) == 0
+                       for field in ('paused', 'input_locked', 'auto_move_locked'))
+        phase['requested_input_frames'] += int(requested)
+        phase['unlocked_frames'] += int(unlocked)
+        phase['requested_input_while_unlocked_frames'] += int(requested and unlocked)
+        if has_pad:
+            pad = phase.setdefault('native_pad', {
+                'held_masks': [], 'pressed_masks': [], 'released_masks': [],
+                'active_while_unlocked_frames': 0,
+                'held_without_edge_while_unlocked_frames': 0,
+                'pressed_nonzero_frames': 0, 'released_nonzero_frames': 0})
+            for field, key in (('pad_buttons', 'held_masks'), ('pad_pressed', 'pressed_masks'),
+                               ('pad_released', 'released_masks')):
+                value = int(row[field])
+                if value not in pad[key]:
+                    pad[key].append(value)
+                    pad[key].sort()
+            pad['active_while_unlocked_frames'] += int(bool(int(row['pad_buttons'])) and unlocked)
+            pad['held_without_edge_while_unlocked_frames'] += int(
+                bool(int(row['pad_buttons'])) and not int(row['pad_pressed'])
+                and not int(row['pad_released']) and unlocked)
+            pad['pressed_nonzero_frames'] += int(bool(int(row['pad_pressed'])))
+            pad['released_nonzero_frames'] += int(bool(int(row['pad_released'])))
         for name in observed:
             if row[name] == '':
                 continue
@@ -118,9 +160,12 @@ def compare_native_observations(original, rebuilt, frames):
             bounds[0], bounds[1] = min(bounds[0], value), max(bounds[1], value)
     return {'status': 'native_state_compared', 'output_compared': True,
             'equal_native_state': comparison['equal'], 'byte_output': comparison,
-            'frame_observations_per_run': frames, 'fields_per_observation': len(MOVEMENT_FIELDS),
+            'frame_observations_per_run': frames, 'fields_per_observation': len(headers[0]),
+            'native_pad_captured': has_pad,
             'phases': phases,
             'scope': 'Read-only native fields and recorded input phases at each emulator frame. '
+                     'Unlocked counts use all three original input guards. Native pad edge counts are sampled '
+                     'frames, not distinct events; the game polls less often than the emulator advances. '
                      'Phase names describe requested inputs; observed ranges establish only the exercised state, '
                      'not exhaustive movement, collision, encounter or feature acceptance.'}
 

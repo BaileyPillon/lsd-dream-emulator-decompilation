@@ -115,6 +115,11 @@ disc byte for byte. Its replay evidence is recorded separately. The later
 cold-boot bytes as unused media-label storage, while retaining every strict
 byte difference and the remaining gameplay acceptance requirements.
 
+The [Japanese movement and controller-poll evidence](docs/MOVEMENT_PARITY.md)
+adds 9,000 paired emulator frames, with observed original controls and native
+pad press/hold/release fields. It corrects the replay's running binding and
+tap duration while preserving the canonical game and whole-feature gates.
+
 ## Three separate workflows
 
 | Workflow | Purpose | Entry points |

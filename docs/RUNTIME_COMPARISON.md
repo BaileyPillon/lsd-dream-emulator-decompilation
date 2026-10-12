@@ -65,14 +65,21 @@ a separate read-only native-state probe. Pass an absolute script path when
 launching outside the repository. The helper freezes and hashes the selected
 script just like the default script. The probe validates the original game-flow
 and dream-system virtual tables before following their pointers and records
-43 fields on every frame, including inputs, timer, locks, movement, floor,
-position, scale and angles. It writes no game memory.
+47 fields on every frame, including inputs, timer, locks, movement, floor,
+position, scale, angles and the original pad's held/pressed/released masks.
+It also validates the original pad virtual table. It writes no game memory.
 
 When `movement.tsv` is present, the comparator requires it in both runs, with
 every scheduled frame and every field, and compares its complete bytes. Equal
 screenshots cannot hide a changed position or an incomplete native-state trace.
 Phase names describe the requested controls; the recorded state establishes
-which behavior actually occurred.
+which behavior actually occurred. Historical complete 43-field captures are
+still supported; both sides must use the same complete header. Phase summaries
+separate requested controls, the three original input guards, and native pad
+observations. Repeated edge samples are counted as frames, not distinct events.
+The current probe uses twelve-frame pulses every twenty emulator frames; see
+the [controller-poll evidence](MOVEMENT_PARITY.md) for the measured shorter
+pulses that missed native polls or never reached a held-input command.
 
 ## Current evidence and limits
 
@@ -120,6 +127,12 @@ differences again. The field was unresolved at that checkpoint. The schema-two
 6,000-frame shared-state pair agrees at every recorded checkpoint and across
 all 4,422,823 stereo PCM sample frames. Report hashes and these separate
 results are in [japanese-edition-checks.json](japanese-edition-checks.json).
+
+The later [Japanese movement supplement](MOVEMENT_PARITY.md) adds four
+shared-state pairs, totaling 9,000 emulator frames and 27 checkpoints per side.
+Original native pad fields distinguish missed one-frame pulses, pressed-only
+eight-frame pulses and effective twelve-frame pulses. All recorded native,
+image, GPU, state and PCM outputs agree; whole-feature acceptance remains open.
 
 The later [Nymashock state diagnosis](NYMASHOCK_STATE.md) follows the actual
 native pointer graph and identifies all eight varying bytes as unused storage

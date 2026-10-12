@@ -310,3 +310,16 @@ complete-unit compiler traces preserve their full assembly output. The
 source uses the pinned GNU MIPS varargs ABI; original-author source types are
 not uniquely established by the exact match. Physical I/O and natural
 scenarios still require evidence.
+## Japanese input and movement supplement
+
+The [Japanese movement replay](MOVEMENT_PARITY.md) adds four original/rebuilt
+shared-state pairs with 9,000 native frame records and 27 output checkpoints
+per side. All recorded native, image, GPU, state and PCM outputs agree. The
+original pad object and three input guards distinguish requested inputs from
+effective controls, including missed short pulses, pressed-only Up events,
+held movement and Circle action flags. These records strengthen bounded
+F006 input/movement and F005 session-lifecycle evidence, and retain one
+unclassified F010-related link transition.
+All accepted counts remain unchanged: 37 / 40 groups have their listed core
+functions in C, and 0 / 40 whole groups are independently accepted. Earlier
+feature records are preserved before the new publication supplement.

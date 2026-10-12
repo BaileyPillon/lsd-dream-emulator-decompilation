@@ -129,6 +129,10 @@ and 191 initial source trials found no exact match. The subsequent
   separately from English v1. The [state diagnosis](NYMASHOCK_STATE.md)
   identifies the eight cold-boot bytes as unused Nymashock label storage;
   strict byte comparisons retain those differences.
+- Extend the [Japanese controller and movement replay](MOVEMENT_PARITY.md)
+  beyond its stage-3 floor-type-7 controls and one earlier link transition.
+  Use native pad samples and all three input guards to distinguish requested
+  controls from effective behavior, including pressed versus held commands.
 
 The catalogue currently has 40 provisional groups. None has been accepted for
 all required runtime scenarios. The [inventory](FEATURE_INVENTORY.md) lists the

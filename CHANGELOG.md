@@ -1,5 +1,18 @@
 # Changelog
 
+## Japanese movement and controller-poll evidence - 2026-10-11
+
+- Compare four original/rebuilt shared-state replays: 9,000 emulator frames,
+  27 image/GPU/state checkpoints and 6,634,234 stereo PCM sample frames per
+  side. All recorded outputs agree; no whole feature is accepted.
+- Record the original pad object's held, pressed and released masks, preserve
+  legacy captures and report the original three input guards separately.
+- Correct the running binding to Up + Cross and measure one-, eight- and
+  twelve-frame pulses. Publish the twelve-frame probe that reaches held
+  commands; retain the missed and pressed-only diagnostic results.
+- Add seven synthetic comparison guards. All 314 tooling tests pass on Windows
+  and Linux; the canonical executable and original gameplay remain unchanged.
+
 ## Grid source-recovery fragment and spill qualification - 2026-10-11
 
 - Publish a reproducible complete-unit research recipe. The store-correct

@@ -1,0 +1,3065 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-12T01:57:28.705172+00:00",
+  "repository_code_before": "1f1b81ce76a907b52b580fc1e75a11e43e2e519a",
+  "scope": "Original Japanese shared-state input/movement replay, controller-poll qualification and strict paired recorded outputs.",
+  "public_files": {
+    "tools/runtime_movement_probe.lua": "2d4dc17be9243501a4c2de9784c25983e7b422eef0e955f86d6e0625f8a6f7d6",
+    "tools/compare_runtime.py": "0e33d75acf5f416096164bdee57572c82975ca68ccd2de7f3b2a07a6a19880f3",
+    "tests/test_runtime_comparison.py": "1945cd353c818ac1b3da4da987844347942fd18055544c408503bd4213ad1a8b",
+    "docs/MOVEMENT_PARITY.md": "58fc79daf34df47b7cc09d3bb6428c720f6ccf83c63108d7054aa69fcaba0302",
+    "docs/RUNTIME_COMPARISON.md": "8bbe6176852b81bf9e22296ad0cbffad8d1d8908b4a35d3a929bdaf0392738ab",
+    "docs/FEATURE_INVENTORY.md": "177ead6af4be42fc642810f94eb20e43f030337a97c4dd53ebb32b6360ad55b0",
+    "docs/PROVENANCE.md": "029e5337869dc705b8e7cac04f0b748ae0979c93919665618d630a9a30bb00ef",
+    "docs/ROADMAP.md": "e362e1539c42858a259dbb2fc567d07f8515791671b19b2558e03b7dbf09ddeb",
+    "README.md": "f933bb4f6f99131fc062f12073a61587fe173a505fa828f272d7f341513bda2f",
+    "CHANGELOG.md": "fa4aa837925cabddfbe6bee992253629f94945824c49c783a2542a3774ba52d8"
+  },
+  "private_replay_reports": [
+    {
+      "name": "japanese-movement-first",
+      "comparison": {
+        "path": ".decomp-lab/japanese-movement-comparison-first.json",
+        "sha256": "b07d1bb48c92a3df2c4ddc270c30ec46e8a9d7090508200eaa836c335f60b1bb"
+      },
+      "frames_per_side": 1800,
+      "checkpoints_per_side": 6,
+      "trace_samples_per_side": 30,
+      "native_fields_per_frame": 43,
+      "native_state_byte_output": {
+        "equal": true,
+        "original_bytes": 300171,
+        "rebuilt_bytes": 300171,
+        "original_sha256": "6e2ebfa134379ca6bad4037588c7088b6a08d1f45a34c408a93acd692ed5c3a2",
+        "rebuilt_sha256": "6e2ebfa134379ca6bad4037588c7088b6a08d1f45a34c408a93acd692ed5c3a2"
+      },
+      "audio": {
+        "channels": 2,
+        "sample_rate": 44100,
+        "sample_width": 2,
+        "sample_frames": 1326847,
+        "nonzero_channel_samples": 2635843,
+        "pcm_sha256": "e62c05d819f976b48d537fa55090ee8655be4e1863c2ede8b46d5ee01f2126ad"
+      },
+      "tap_pulse_emulator_frames": 1,
+      "inputs_verified": true,
+      "actual_core_identity_complete": true,
+      "disc_track_identity": {
+        "bytes": 648088896,
+        "sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61"
+      },
+      "frozen_script_identity": {
+        "bytes": 6872,
+        "sha256": "7a23f239da4d18fc3a23ea312d4689cc2a29e687ba0045aeab4cbc0adf7a66eb"
+      },
+      "starting_state_identity": {
+        "bytes": 1344534,
+        "sha256": "a5262b210afbfb2952bae10b7f00ef6874c33cdc909742d70368e0b45c07da6d"
+      },
+      "core_identity": {
+        "bytes": 705813,
+        "sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126"
+      },
+      "waterbox_host_identity": {
+        "bytes": 406016,
+        "sha256": "e8e47426941a710c7ceea98fb0833b8387de1952f54ca0fa40001cd494507cee"
+      },
+      "strict_state_member_payloads_equal": true,
+      "all_recorded_outputs_equal": true
+    },
+    {
+      "name": "japanese-movement-second",
+      "comparison": {
+        "path": ".decomp-lab/japanese-movement-comparison-second.json",
+        "sha256": "076a70c4dd155514731aa1a99e0a7529f06bd2341a7f35f9dd9a0d9bbd4d2723"
+      },
+      "frames_per_side": 2400,
+      "checkpoints_per_side": 7,
+      "trace_samples_per_side": 40,
+      "native_fields_per_frame": 47,
+      "native_state_byte_output": {
+        "equal": true,
+        "original_bytes": 430388,
+        "rebuilt_bytes": 430388,
+        "original_sha256": "06cac064723b31657c68b66d8c3ecd89cf2814ff7b597f53c3b2d8e0263943f7",
+        "rebuilt_sha256": "06cac064723b31657c68b66d8c3ecd89cf2814ff7b597f53c3b2d8e0263943f7"
+      },
+      "audio": {
+        "channels": 2,
+        "sample_rate": 44100,
+        "sample_width": 2,
+        "sample_frames": 1769129,
+        "nonzero_channel_samples": 3535210,
+        "pcm_sha256": "22dc92411ed6f0830655cf158921f82bd1250f0a9062cdeb9b7a9586343c164d"
+      },
+      "tap_pulse_emulator_frames": 1,
+      "inputs_verified": true,
+      "actual_core_identity_complete": true,
+      "disc_track_identity": {
+        "bytes": 648088896,
+        "sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61"
+      },
+      "frozen_script_identity": {
+        "bytes": 7867,
+        "sha256": "b507846e4b160f45b78bdded6bdaf1a3a3e5f132a4d8a401e011cfb2dbb118bb"
+      },
+      "starting_state_identity": {
+        "bytes": 1313739,
+        "sha256": "3772ea1398e9d68bd4f5d10ed7dd61bafa1411ce1db6649b1ae078f053763879"
+      },
+      "core_identity": {
+        "bytes": 705813,
+        "sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126"
+      },
+      "waterbox_host_identity": {
+        "bytes": 406016,
+        "sha256": "e8e47426941a710c7ceea98fb0833b8387de1952f54ca0fa40001cd494507cee"
+      },
+      "strict_state_member_payloads_equal": true,
+      "all_recorded_outputs_equal": true
+    },
+    {
+      "name": "japanese-movement-third",
+      "comparison": {
+        "path": ".decomp-lab/japanese-movement-comparison-third.json",
+        "sha256": "3bab65f9cafe36d9019b60286c7d6eb791596901161ec0d76f7c84796a8a1399"
+      },
+      "frames_per_side": 2400,
+      "checkpoints_per_side": 7,
+      "trace_samples_per_side": 40,
+      "native_fields_per_frame": 47,
+      "native_state_byte_output": {
+        "equal": true,
+        "original_bytes": 430925,
+        "rebuilt_bytes": 430925,
+        "original_sha256": "5b6916ef2368557688e671b1c121891d05fa451c76c9bd0a6c074f883b7d5a80",
+        "rebuilt_sha256": "5b6916ef2368557688e671b1c121891d05fa451c76c9bd0a6c074f883b7d5a80"
+      },
+      "audio": {
+        "channels": 2,
+        "sample_rate": 44100,
+        "sample_width": 2,
+        "sample_frames": 1769129,
+        "nonzero_channel_samples": 3535210,
+        "pcm_sha256": "055a3610be954eda626641a654fcc9fa66aaff52a09d5d5048378fef0861256c"
+      },
+      "tap_pulse_emulator_frames": 8,
+      "inputs_verified": true,
+      "actual_core_identity_complete": true,
+      "disc_track_identity": {
+        "bytes": 648088896,
+        "sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61"
+      },
+      "frozen_script_identity": {
+        "bytes": 8034,
+        "sha256": "574b393c8a21c787245d69f57ff4031ffd917b911fc717024d6d94dd2b9db468"
+      },
+      "starting_state_identity": {
+        "bytes": 1313739,
+        "sha256": "3772ea1398e9d68bd4f5d10ed7dd61bafa1411ce1db6649b1ae078f053763879"
+      },
+      "core_identity": {
+        "bytes": 705813,
+        "sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126"
+      },
+      "waterbox_host_identity": {
+        "bytes": 406016,
+        "sha256": "e8e47426941a710c7ceea98fb0833b8387de1952f54ca0fa40001cd494507cee"
+      },
+      "strict_state_member_payloads_equal": true,
+      "all_recorded_outputs_equal": true
+    },
+    {
+      "name": "japanese-movement-fourth",
+      "comparison": {
+        "path": ".decomp-lab/japanese-movement-comparison-fourth.json",
+        "sha256": "fd00f4185b11fcb49baf302ccdf13c8bb07fb5a9c761bb12baa156079f837038"
+      },
+      "frames_per_side": 2400,
+      "checkpoints_per_side": 7,
+      "trace_samples_per_side": 40,
+      "native_fields_per_frame": 47,
+      "native_state_byte_output": {
+        "equal": true,
+        "original_bytes": 431189,
+        "rebuilt_bytes": 431189,
+        "original_sha256": "ca90e43f517cf4dd2a9c4251b44e7f9e44055e2bb87af2d6f4655e081ede1753",
+        "rebuilt_sha256": "ca90e43f517cf4dd2a9c4251b44e7f9e44055e2bb87af2d6f4655e081ede1753"
+      },
+      "audio": {
+        "channels": 2,
+        "sample_rate": 44100,
+        "sample_width": 2,
+        "sample_frames": 1769129,
+        "nonzero_channel_samples": 3535235,
+        "pcm_sha256": "0480e1613512b9c5fb212e07ad8a0e2a32022b51369416f34cb35b0a196eaeea"
+      },
+      "tap_pulse_emulator_frames": 12,
+      "inputs_verified": true,
+      "actual_core_identity_complete": true,
+      "disc_track_identity": {
+        "bytes": 648088896,
+        "sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61"
+      },
+      "frozen_script_identity": {
+        "bytes": 8032,
+        "sha256": "2d4dc17be9243501a4c2de9784c25983e7b422eef0e955f86d6e0625f8a6f7d6"
+      },
+      "starting_state_identity": {
+        "bytes": 1313739,
+        "sha256": "3772ea1398e9d68bd4f5d10ed7dd61bafa1411ce1db6649b1ae078f053763879"
+      },
+      "core_identity": {
+        "bytes": 705813,
+        "sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126"
+      },
+      "waterbox_host_identity": {
+        "bytes": 406016,
+        "sha256": "e8e47426941a710c7ceea98fb0833b8387de1952f54ca0fa40001cd494507cee"
+      },
+      "strict_state_member_payloads_equal": true,
+      "all_recorded_outputs_equal": true
+    }
+  ],
+  "first_replay_input_guard_audit": {
+    "path": ".decomp-lab/movement-publication-second/first-phase-guards.json",
+    "sha256": "bd745386bdbf66340c9ddfd90082fad3b3ca8a8d7d342c5c70e67c414a211e0b"
+  },
+  "canonical_pad_table": {
+    "table": "D_80010764",
+    "address": "0x80010764",
+    "file_offset": 3940,
+    "bytes": 64,
+    "sha256": "9fed49d8a4b27cbc2d6a0e4e471593038fdb54c88dac122608087856ec588e57",
+    "masks": [
+      4096,
+      16384,
+      32768,
+      8192,
+      16,
+      64,
+      128,
+      32,
+      512,
+      1024,
+      256,
+      8,
+      2,
+      4,
+      1,
+      2048
+    ],
+    "canonical_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+  },
+  "final_replay_phases": {
+    "neutral": {
+      "frames": 60,
+      "requested_input_frames": 0,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 0,
+      "value_ranges": {
+        "timer": [
+          1016,
+          1028
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          0
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          0
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          2048,
+          2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0
+        ],
+        "pressed_masks": [
+          0
+        ],
+        "released_masks": [
+          0
+        ],
+        "active_while_unlocked_frames": 0,
+        "held_without_edge_while_unlocked_frames": 0,
+        "pressed_nonzero_frames": 0,
+        "released_nonzero_frames": 0
+      }
+    },
+    "look_triangle": {
+      "frames": 90,
+      "requested_input_frames": 90,
+      "unlocked_frames": 90,
+      "requested_input_while_unlocked_frames": 90,
+      "value_ranges": {
+        "timer": [
+          1028,
+          1046
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          0
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          0
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          -8400,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          2048,
+          2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          16
+        ],
+        "pressed_masks": [
+          0,
+          16
+        ],
+        "released_masks": [
+          0
+        ],
+        "active_while_unlocked_frames": 86,
+        "held_without_edge_while_unlocked_frames": 81,
+        "pressed_nonzero_frames": 5,
+        "released_nonzero_frames": 0
+      }
+    },
+    "release_triangle": {
+      "frames": 60,
+      "requested_input_frames": 0,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 0,
+      "value_ranges": {
+        "timer": [
+          1046,
+          1058
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          0
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          0
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          -8400,
+          -1800
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          2048,
+          2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          16
+        ],
+        "pressed_masks": [
+          0
+        ],
+        "released_masks": [
+          0,
+          16
+        ],
+        "active_while_unlocked_frames": 4,
+        "held_without_edge_while_unlocked_frames": 4,
+        "pressed_nonzero_frames": 0,
+        "released_nonzero_frames": 5
+      }
+    },
+    "look_square": {
+      "frames": 90,
+      "requested_input_frames": 90,
+      "unlocked_frames": 90,
+      "requested_input_while_unlocked_frames": 90,
+      "value_ranges": {
+        "timer": [
+          1058,
+          1076
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          0
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          0
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          -1800,
+          8400
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          2048,
+          2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          128
+        ],
+        "pressed_masks": [
+          0,
+          128
+        ],
+        "released_masks": [
+          0
+        ],
+        "active_while_unlocked_frames": 86,
+        "held_without_edge_while_unlocked_frames": 81,
+        "pressed_nonzero_frames": 5,
+        "released_nonzero_frames": 0
+      }
+    },
+    "release_square": {
+      "frames": 60,
+      "requested_input_frames": 0,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 0,
+      "value_ranges": {
+        "timer": [
+          1076,
+          1088
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          0
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          0
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          1800,
+          8400
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          2048,
+          2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          128
+        ],
+        "pressed_masks": [
+          0
+        ],
+        "released_masks": [
+          0,
+          128
+        ],
+        "active_while_unlocked_frames": 4,
+        "held_without_edge_while_unlocked_frames": 4,
+        "pressed_nonzero_frames": 0,
+        "released_nonzero_frames": 5
+      }
+    },
+    "turn_left": {
+      "frames": 60,
+      "requested_input_frames": 60,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 60,
+      "value_ranges": {
+        "timer": [
+          1088,
+          1100
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          0
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          0
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          1800
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          1368,
+          2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          32768
+        ],
+        "pressed_masks": [
+          0,
+          32768
+        ],
+        "released_masks": [
+          0
+        ],
+        "active_while_unlocked_frames": 56,
+        "held_without_edge_while_unlocked_frames": 51,
+        "pressed_nonzero_frames": 5,
+        "released_nonzero_frames": 0
+      }
+    },
+    "release_left": {
+      "frames": 60,
+      "requested_input_frames": 0,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 0,
+      "value_ranges": {
+        "timer": [
+          1100,
+          1112
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          0
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          0
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          1300,
+          1368
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          32768
+        ],
+        "pressed_masks": [
+          0
+        ],
+        "released_masks": [
+          0,
+          32768
+        ],
+        "active_while_unlocked_frames": 4,
+        "held_without_edge_while_unlocked_frames": 4,
+        "pressed_nonzero_frames": 0,
+        "released_nonzero_frames": 5
+      }
+    },
+    "turn_right": {
+      "frames": 60,
+      "requested_input_frames": 60,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 60,
+      "value_ranges": {
+        "timer": [
+          1112,
+          1124
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          0
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          0
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          1300,
+          1980
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          8192
+        ],
+        "pressed_masks": [
+          0,
+          8192
+        ],
+        "released_masks": [
+          0
+        ],
+        "active_while_unlocked_frames": 56,
+        "held_without_edge_while_unlocked_frames": 51,
+        "pressed_nonzero_frames": 5,
+        "released_nonzero_frames": 0
+      }
+    },
+    "release_right": {
+      "frames": 60,
+      "requested_input_frames": 0,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 0,
+      "value_ranges": {
+        "timer": [
+          1124,
+          1136
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          0
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          0
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          1980,
+          2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          8192
+        ],
+        "pressed_masks": [
+          0
+        ],
+        "released_masks": [
+          0,
+          8192
+        ],
+        "active_while_unlocked_frames": 4,
+        "held_without_edge_while_unlocked_frames": 4,
+        "pressed_nonzero_frames": 0,
+        "released_nonzero_frames": 5
+      }
+    },
+    "left_shoulder_one": {
+      "frames": 60,
+      "requested_input_frames": 60,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 60,
+      "value_ranges": {
+        "timer": [
+          1136,
+          1148
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          0
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          0
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          -180,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          0,
+          2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          4
+        ],
+        "pressed_masks": [
+          0,
+          4
+        ],
+        "released_masks": [
+          0
+        ],
+        "active_while_unlocked_frames": 56,
+        "held_without_edge_while_unlocked_frames": 51,
+        "pressed_nonzero_frames": 5,
+        "released_nonzero_frames": 0
+      }
+    },
+    "release_l1": {
+      "frames": 60,
+      "requested_input_frames": 0,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 0,
+      "value_ranges": {
+        "timer": [
+          1148,
+          1160
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          0
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          0
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          -180,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          0,
+          2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          4
+        ],
+        "pressed_masks": [
+          0
+        ],
+        "released_masks": [
+          0,
+          4
+        ],
+        "active_while_unlocked_frames": 4,
+        "held_without_edge_while_unlocked_frames": 4,
+        "pressed_nonzero_frames": 0,
+        "released_nonzero_frames": 5
+      }
+    },
+    "right_shoulder_one": {
+      "frames": 60,
+      "requested_input_frames": 60,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 60,
+      "value_ranges": {
+        "timer": [
+          1160,
+          1172
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          0
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          0
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          180
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          0,
+          3584
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          8
+        ],
+        "pressed_masks": [
+          0,
+          8
+        ],
+        "released_masks": [
+          0
+        ],
+        "active_while_unlocked_frames": 56,
+        "held_without_edge_while_unlocked_frames": 51,
+        "pressed_nonzero_frames": 5,
+        "released_nonzero_frames": 0
+      }
+    },
+    "release_r1": {
+      "frames": 60,
+      "requested_input_frames": 0,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 0,
+      "value_ranges": {
+        "timer": [
+          1172,
+          1184
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          0
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          0
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          180
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          -2048,
+          0
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          8
+        ],
+        "pressed_masks": [
+          0
+        ],
+        "released_masks": [
+          0,
+          8
+        ],
+        "active_while_unlocked_frames": 4,
+        "held_without_edge_while_unlocked_frames": 4,
+        "pressed_nonzero_frames": 0,
+        "released_nonzero_frames": 5
+      }
+    },
+    "left_shoulder_two": {
+      "frames": 60,
+      "requested_input_frames": 60,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 60,
+      "value_ranges": {
+        "timer": [
+          1184,
+          1196
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          3
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          3
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -69031
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          -2048,
+          -2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          1
+        ],
+        "pressed_masks": [
+          0,
+          1
+        ],
+        "released_masks": [
+          0
+        ],
+        "active_while_unlocked_frames": 56,
+        "held_without_edge_while_unlocked_frames": 51,
+        "pressed_nonzero_frames": 5,
+        "released_nonzero_frames": 0
+      }
+    },
+    "release_l2": {
+      "frames": 60,
+      "requested_input_frames": 0,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 0,
+      "value_ranges": {
+        "timer": [
+          1196,
+          1208
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          3
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          3
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -69031,
+          -68775
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          -2048,
+          -2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          1
+        ],
+        "pressed_masks": [
+          0
+        ],
+        "released_masks": [
+          0,
+          1
+        ],
+        "active_while_unlocked_frames": 4,
+        "held_without_edge_while_unlocked_frames": 4,
+        "pressed_nonzero_frames": 0,
+        "released_nonzero_frames": 5
+      }
+    },
+    "right_shoulder_two": {
+      "frames": 60,
+      "requested_input_frames": 60,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 60,
+      "value_ranges": {
+        "timer": [
+          1208,
+          1220
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          4
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          3
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70055,
+          -68775
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          -2048,
+          -2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          2
+        ],
+        "pressed_masks": [
+          0,
+          2
+        ],
+        "released_masks": [
+          0
+        ],
+        "active_while_unlocked_frames": 56,
+        "held_without_edge_while_unlocked_frames": 51,
+        "pressed_nonzero_frames": 5,
+        "released_nonzero_frames": 0
+      }
+    },
+    "release_r2": {
+      "frames": 60,
+      "requested_input_frames": 0,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 0,
+      "value_ranges": {
+        "timer": [
+          1220,
+          1232
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          4
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          3
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70055
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          -2048,
+          -2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          2
+        ],
+        "pressed_masks": [
+          0
+        ],
+        "released_masks": [
+          0,
+          2
+        ],
+        "active_while_unlocked_frames": 4,
+        "held_without_edge_while_unlocked_frames": 4,
+        "pressed_nonzero_frames": 0,
+        "released_nonzero_frames": 5
+      }
+    },
+    "walk_backwards": {
+      "frames": 60,
+      "requested_input_frames": 60,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 60,
+      "value_ranges": {
+        "timer": [
+          1232,
+          1244
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          2
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          3
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          176932
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          -2048,
+          -2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          16384
+        ],
+        "pressed_masks": [
+          0,
+          16384
+        ],
+        "released_masks": [
+          0
+        ],
+        "active_while_unlocked_frames": 56,
+        "held_without_edge_while_unlocked_frames": 51,
+        "pressed_nonzero_frames": 5,
+        "released_nonzero_frames": 0
+      }
+    },
+    "release_down": {
+      "frames": 60,
+      "requested_input_frames": 0,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 0,
+      "value_ranges": {
+        "timer": [
+          1244,
+          1256
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          2
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          3
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          176932,
+          177188
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          -2048,
+          -2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          16384
+        ],
+        "pressed_masks": [
+          0
+        ],
+        "released_masks": [
+          0,
+          16384
+        ],
+        "active_while_unlocked_frames": 4,
+        "held_without_edge_while_unlocked_frames": 4,
+        "pressed_nonzero_frames": 0,
+        "released_nonzero_frames": 5
+      }
+    },
+    "walk_forward": {
+      "frames": 60,
+      "requested_input_frames": 60,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 60,
+      "value_ranges": {
+        "timer": [
+          1256,
+          1268
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          1
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          3
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175908,
+          177188
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          -2048,
+          -2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          4096
+        ],
+        "pressed_masks": [
+          0,
+          4096
+        ],
+        "released_masks": [
+          0
+        ],
+        "active_while_unlocked_frames": 56,
+        "held_without_edge_while_unlocked_frames": 51,
+        "pressed_nonzero_frames": 5,
+        "released_nonzero_frames": 0
+      }
+    },
+    "release_up": {
+      "frames": 60,
+      "requested_input_frames": 0,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 0,
+      "value_ranges": {
+        "timer": [
+          1268,
+          1280
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          1
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          3
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          175652,
+          175908
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          -2048,
+          -2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          4096
+        ],
+        "pressed_masks": [
+          0
+        ],
+        "released_masks": [
+          0,
+          4096
+        ],
+        "active_while_unlocked_frames": 4,
+        "held_without_edge_while_unlocked_frames": 4,
+        "pressed_nonzero_frames": 0,
+        "released_nonzero_frames": 5
+      }
+    },
+    "forward_cross": {
+      "frames": 60,
+      "requested_input_frames": 60,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 60,
+      "value_ranges": {
+        "timer": [
+          1280,
+          1292
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          1
+        ],
+        "move_direction": [
+          3,
+          4
+        ],
+        "move_step": [
+          0,
+          3
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          172068,
+          175652
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          -2048,
+          -2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          4160
+        ],
+        "pressed_masks": [
+          0,
+          4160
+        ],
+        "released_masks": [
+          0
+        ],
+        "active_while_unlocked_frames": 56,
+        "held_without_edge_while_unlocked_frames": 51,
+        "pressed_nonzero_frames": 5,
+        "released_nonzero_frames": 0
+      }
+    },
+    "release_run": {
+      "frames": 60,
+      "requested_input_frames": 0,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 0,
+      "value_ranges": {
+        "timer": [
+          1292,
+          1304
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          1
+        ],
+        "move_direction": [
+          3,
+          4
+        ],
+        "move_step": [
+          0,
+          3
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          171556,
+          172068
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          -2048,
+          -2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          4160
+        ],
+        "pressed_masks": [
+          0
+        ],
+        "released_masks": [
+          0,
+          4160
+        ],
+        "active_while_unlocked_frames": 4,
+        "held_without_edge_while_unlocked_frames": 4,
+        "pressed_nonzero_frames": 0,
+        "released_nonzero_frames": 5
+      }
+    },
+    "circle_taps": {
+      "frames": 60,
+      "requested_input_frames": 36,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 36,
+      "value_ranges": {
+        "timer": [
+          1304,
+          1316
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          1
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          0
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          0
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          171556,
+          171556
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          -2048,
+          -2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          32
+        ],
+        "pressed_masks": [
+          0,
+          32
+        ],
+        "released_masks": [
+          0,
+          32
+        ],
+        "active_while_unlocked_frames": 30,
+        "held_without_edge_while_unlocked_frames": 15,
+        "pressed_nonzero_frames": 15,
+        "released_nonzero_frames": 15
+      }
+    },
+    "up_taps": {
+      "frames": 60,
+      "requested_input_frames": 36,
+      "unlocked_frames": 60,
+      "requested_input_while_unlocked_frames": 36,
+      "value_ranges": {
+        "timer": [
+          1316,
+          1328
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          1
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          3
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          170276,
+          171556
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          -2048,
+          -2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0,
+          4096
+        ],
+        "pressed_masks": [
+          0,
+          4096
+        ],
+        "released_masks": [
+          0,
+          4096
+        ],
+        "active_while_unlocked_frames": 30,
+        "held_without_edge_while_unlocked_frames": 15,
+        "pressed_nonzero_frames": 15,
+        "released_nonzero_frames": 15
+      }
+    },
+    "neutral_tail": {
+      "frames": 840,
+      "requested_input_frames": 0,
+      "unlocked_frames": 840,
+      "requested_input_while_unlocked_frames": 0,
+      "value_ranges": {
+        "timer": [
+          1328,
+          1496
+        ],
+        "link_state": [
+          0,
+          0
+        ],
+        "paused": [
+          0,
+          0
+        ],
+        "input_locked": [
+          0,
+          0
+        ],
+        "action_pressed": [
+          0,
+          0
+        ],
+        "map": [
+          3,
+          3
+        ],
+        "move_state": [
+          0,
+          1
+        ],
+        "move_direction": [
+          3,
+          3
+        ],
+        "move_step": [
+          0,
+          3
+        ],
+        "floor_type": [
+          7,
+          7
+        ],
+        "look_position": [
+          0,
+          0
+        ],
+        "turn_offset": [
+          0,
+          0
+        ],
+        "auto_move_locked": [
+          0,
+          0
+        ],
+        "auto_move_active": [
+          0,
+          0
+        ],
+        "x": [
+          -70311,
+          -70311
+        ],
+        "y": [
+          0,
+          0
+        ],
+        "z": [
+          170020,
+          170276
+        ],
+        "pitch": [
+          0,
+          0
+        ],
+        "yaw": [
+          -2048,
+          -2048
+        ],
+        "roll": [
+          0,
+          0
+        ]
+      },
+      "native_pad": {
+        "held_masks": [
+          0
+        ],
+        "pressed_masks": [
+          0
+        ],
+        "released_masks": [
+          0
+        ],
+        "active_while_unlocked_frames": 0,
+        "held_without_edge_while_unlocked_frames": 0,
+        "pressed_nonzero_frames": 0,
+        "released_nonzero_frames": 0
+      }
+    }
+  },
+  "recorded_frames_per_side": 9000,
+  "recorded_checkpoints_per_side": 27,
+  "recorded_pcm_stereo_sample_frames_per_side": 6634234,
+  "test_verifications": [
+    {
+      "platform": "windows",
+      "tests": 314,
+      "passed": true,
+      "log": {
+        "path": ".decomp-lab/movement-publication-second/tooling-tests-final-windows.log",
+        "sha256": "0f2d066ef9dbb8cc66cd96cc72575e159a3d6b8acd02e8e33798917a34b0ee35"
+      }
+    },
+    {
+      "platform": "linux",
+      "tests": 314,
+      "passed": true,
+      "log": {
+        "path": ".decomp-lab/movement-publication-second/tooling-tests-final-linux.log",
+        "sha256": "5bd52921b2ec96a975b68eb0a996fa75238b07d5a4f2b2b4aa945b6d04b0ec07"
+      }
+    }
+  ],
+  "new_comparison_guard_tests": 7,
+  "current_matching_build": {
+    "path": ".decomp-lab/movement-publication-second/progress.json",
+    "sha256": "f059a2d5e422fb9a3b731f61aa235c18693bf8d6a5bff2476174f94d26e84756"
+  },
+  "last_clean_matching_build": {
+    "path": ".decomp-lab/card-writer-promotion-first/clean-build.json",
+    "sha256": "66565ada0155f9a1d2b451cbd864471b6261197133fb525420bc77fc226fb473"
+  },
+  "canonical_source_and_configuration_unchanged_since_clean_build": true,
+  "before_after": {
+    "before": {
+      "c_bytes": 195844,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 5,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 37,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 5
+    },
+    "after": {
+      "c_bytes": 195844,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 5,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 37,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 5
+    },
+    "source_functions_promoted": 0,
+    "source_workarounds_removed": 0,
+    "new_recorded_replay_pairs": 4,
+    "new_frame_observations_per_side": 9000,
+    "whole_feature_groups_accepted": 0,
+    "developer_workflow_extended": "Existing emulator comparison and input analysis; capability count remains ten."
+  },
+  "original_game_behavior_modified": false,
+  "model_api_calls": 0,
+  "feature_groups_accepted": 0,
+  "remaining_scope": [
+    "Other stages and surfaces",
+    "Other input modes and poll cadences",
+    "Complete action targets and link destination/eligibility branches",
+    "NPC, rare-state, save/card and full video/audio coverage",
+    "Reviewed whole-feature acceptance and original hardware timing"
+  ]
+}

@@ -425,3 +425,16 @@ author declarations remain unknown. Existing feature records are preserved
 verbatim before the new supplement, whose overrides mark F037 and F038
 listed-core C completion. It accepts no whole feature and distributes no
 original inputs, compiler traces or native execution buffers.
+## Japanese movement and controller-poll supplement
+
+The [movement supplement](MOVEMENT_PARITY.md) retains four strict shared-state
+original/rebuild comparisons. [movement-parity-checks.json](movement-parity-checks.json)
+pins private reports, the original pad-table identity, script/start-state/core
+identities, public producer hashes and both local test logs. No decoded field,
+pad mask or state member is normalized. All 9,000 emulator-frame records, 27
+image/GPU/state checkpoints and 6,634,234 stereo PCM sample frames per side
+agree. Historical 43-field records remain distinct from current 47-field ones.
+Private short-pulse diagnostics remain preserved rather than being relabelled
+as effective inputs. Original game images, BIOS, captures and raw state buffers
+remain excluded. No game C function or whole feature is promoted; original
+NPC behavior, AI-assisted tooling and optional mods retain separate counts.

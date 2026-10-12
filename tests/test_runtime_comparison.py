@@ -23,18 +23,123 @@ def run_fixture(folder, stamp, core=b"same emulated state"):
         state.writestr(zipfile.ZipInfo("Core.bin.zst", stamp), core)
 
 
-def movement_fixture(folder, x=100, include_frame=True):
+def movement_fixture(folder, x=100, include_frame=True, pad=None, **updates):
     values = {field: '0' for field in compare_runtime.MOVEMENT_FIELDS}
     values.update(relative_frame='1', core_frame='20', input_phase='walk_forward',
                   input_buttons='P1 D-Pad Up', game_flow='00090c90', dream_sys='00091530',
                   coordinate='00091e5c', pose='00091eb0', x=str(x))
-    text = '\t'.join(compare_runtime.MOVEMENT_FIELDS) + '\n'
+    fields = compare_runtime.MOVEMENT_FIELDS
+    if pad is not None:
+        fields += compare_runtime.PAD_FIELDS
+        values.update(pad='00091f34', pad_buttons='4096', pad_released='0', pad_pressed='4096')
+        values.update(pad)
+    values.update(updates)
+    text = '\t'.join(fields) + '\n'
     if include_frame:
-        text += '\t'.join(values[field] for field in compare_runtime.MOVEMENT_FIELDS) + '\n'
+        text += '\t'.join(values[field] for field in fields) + '\n'
     (folder / 'movement.tsv').write_text(text)
 
 
 class RuntimeComparisonTests(unittest.TestCase):
+    def test_native_pad_difference_fails_despite_equal_images_and_positions(self):
+        with tempfile.TemporaryDirectory() as folder:
+            original, rebuilt = Path(folder) / 'original', Path(folder) / 'rebuilt'
+            for path in (original, rebuilt):
+                run_fixture(path, (2026, 10, 10, 1, 0, 0))
+                movement_fixture(path, pad={})
+            report = compare_runtime.compare_runs(original, rebuilt)
+            self.assertTrue(report['equal_recorded_outputs'])
+            self.assertEqual(report['native_observations']['fields_per_observation'], 47)
+            movement_fixture(rebuilt, pad={'pad_pressed': '0'})
+            report = compare_runtime.compare_runs(original, rebuilt)
+            self.assertFalse(report['equal_recorded_outputs'])
+            self.assertTrue(report['byte_outputs']['frame-1.png']['equal'])
+            self.assertTrue(report['save_states']['frame-1.State']['member_contents_equal'])
+
+    def test_requested_input_does_not_claim_unlocked_behavior_under_any_input_guard(self):
+        with tempfile.TemporaryDirectory() as folder:
+            original, rebuilt = Path(folder) / 'original', Path(folder) / 'rebuilt'
+            for path in (original, rebuilt):
+                path.mkdir()
+            for guard in ('paused', 'input_locked', 'auto_move_locked'):
+                with self.subTest(guard=guard):
+                    for path in (original, rebuilt):
+                        movement_fixture(path, pad={}, **{guard: '1'})
+                    report = compare_runtime.compare_native_observations(original, rebuilt, 1)
+                    phase = report['phases']['walk_forward']
+                    self.assertEqual(phase['requested_input_frames'], 1)
+                    self.assertEqual(phase['unlocked_frames'], 0)
+                    self.assertEqual(phase['requested_input_while_unlocked_frames'], 0)
+                    self.assertEqual(phase['native_pad']['active_while_unlocked_frames'], 0)
+                    self.assertTrue(report['equal_native_state'])
+
+    def test_persistent_native_edge_is_counted_as_sampled_frames(self):
+        with tempfile.TemporaryDirectory() as folder:
+            original, rebuilt = Path(folder) / 'original', Path(folder) / 'rebuilt'
+            for path in (original, rebuilt):
+                path.mkdir()
+                movement_fixture(path, pad={})
+                lines = (path / 'movement.tsv').read_text().splitlines()
+                lines.append(lines[1].replace('1\t20\t', '2\t21\t', 1))
+                (path / 'movement.tsv').write_text('\n'.join(lines) + '\n')
+            report = compare_runtime.compare_native_observations(original, rebuilt, 2)
+            pad = report['phases']['walk_forward']['native_pad']
+            self.assertEqual(pad['pressed_nonzero_frames'], 2)
+            self.assertEqual(pad['pressed_masks'], [4096])
+            self.assertEqual(pad['held_without_edge_while_unlocked_frames'], 0)
+            self.assertIn('not distinct events', report['scope'])
+            for path in (original, rebuilt):
+                movement_fixture(path, pad={'pad_pressed': '0'})
+            held = compare_runtime.compare_native_observations(original, rebuilt, 1)
+            self.assertEqual(held['phases']['walk_forward']['native_pad']
+                             ['held_without_edge_while_unlocked_frames'], 1)
+
+    def test_native_pad_headers_cannot_be_partial(self):
+        with tempfile.TemporaryDirectory() as folder:
+            original, rebuilt = Path(folder) / 'original', Path(folder) / 'rebuilt'
+            for path in (original, rebuilt):
+                path.mkdir()
+                movement_fixture(path, pad={})
+                lines = (path / 'movement.tsv').read_text().splitlines()
+                (path / 'movement.tsv').write_text('\n'.join(line.rsplit('\t', 1)[0] for line in lines) + '\n')
+            with self.assertRaisesRegex(ValueError, 'header is unsupported'):
+                compare_runtime.compare_native_observations(original, rebuilt, 1)
+
+    def test_native_pad_capture_cannot_be_dropped_from_one_run(self):
+        with tempfile.TemporaryDirectory() as folder:
+            original, rebuilt = Path(folder) / 'original', Path(folder) / 'rebuilt'
+            for path in (original, rebuilt):
+                path.mkdir()
+            movement_fixture(original, pad={})
+            movement_fixture(rebuilt)
+            with self.assertRaisesRegex(ValueError, 'headers must agree'):
+                compare_runtime.compare_native_observations(original, rebuilt, 1)
+
+    def test_native_pad_pointer_must_identify_an_aligned_whole_object(self):
+        with tempfile.TemporaryDirectory() as folder:
+            original, rebuilt = Path(folder) / 'original', Path(folder) / 'rebuilt'
+            for path in (original, rebuilt):
+                path.mkdir()
+            for invalid in ('00000000', '00091f35', '001fffe4', '80091f34'):
+                with self.subTest(pointer=invalid):
+                    for path in (original, rebuilt):
+                        movement_fixture(path, pad={'pad': invalid})
+                    with self.assertRaisesRegex(ValueError, 'pad pointer'):
+                        compare_runtime.compare_native_observations(original, rebuilt, 1)
+
+    def test_native_pad_masks_cannot_be_negative_or_overflow(self):
+        with tempfile.TemporaryDirectory() as folder:
+            original, rebuilt = Path(folder) / 'original', Path(folder) / 'rebuilt'
+            for path in (original, rebuilt):
+                path.mkdir()
+            for field in compare_runtime.PAD_FIELDS[1:]:
+                for invalid in ('-1', '4294967296'):
+                    with self.subTest(field=field, mask=invalid):
+                        for path in (original, rebuilt):
+                            movement_fixture(path, pad={field: invalid})
+                        with self.assertRaisesRegex(ValueError, 'unsigned 32-bit'):
+                            compare_runtime.compare_native_observations(original, rebuilt, 1)
+
     def test_changed_native_position_fails_with_equal_checkpoint_payloads(self):
         with tempfile.TemporaryDirectory() as folder:
             original, rebuilt = Path(folder) / 'original', Path(folder) / 'rebuilt'

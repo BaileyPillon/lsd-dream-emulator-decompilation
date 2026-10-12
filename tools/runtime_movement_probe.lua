@@ -24,7 +24,8 @@ local fields = {
 }
 state:write("relative_frame\tcore_frame\tinput_phase\tinput_buttons\tgame_flow\tdream_sys")
 for _, field in ipairs(fields) do state:write("\t", field[1]) end
-state:write("\tcoordinate\tpose\tx\ty\tz\tscale_x\tscale_y\tscale_z\tpitch\tyaw\troll\n")
+state:write("\tcoordinate\tpose\tx\ty\tz\tscale_x\tscale_y\tscale_z\tpitch\tyaw\troll")
+state:write("\tpad\tpad_buttons\tpad_released\tpad_pressed\n")
 local metadata = assert(io.open(output .. "/emulator.txt", "w"))
 metadata:write("BizHawk ", client.getversion(), "\nSystem ", emu.getsystemid(), "\n")
 metadata:write("Scenario ", scenario, "\nMain domain ", mainmemory.getname(), "\n")
@@ -35,21 +36,34 @@ for name, value in pairs(joypad.get()) do
     neutral[name] = type(value) == "boolean" and false or value
 end
 metadata:close()
+-- Bindings follow the canonical pad table and set_move_from_pad, rather than
+-- inferred button names. Neutral gaps expose release and view-return behavior.
+-- Start from an unlocked in-dream state; a requested phase can still be locked.
 local phases = {
     {60, "neutral", {}},
-    {120, "walk_forward", {"P1 D-Pad Up"}},
-    {120, "walk_backwards", {"P1 D-Pad Down"}},
-    {90, "turn_left", {"P1 D-Pad Left"}},
-    {90, "turn_right", {"P1 D-Pad Right"}},
-    {60, "look_triangle", {"P1 △"}},
-    {60, "look_cross", {"P1 X"}},
-    {120, "forward_circle", {"P1 D-Pad Up", "P1 ○"}},
-    {90, "right_shoulder_one", {"P1 R1"}},
-    {90, "right_shoulder_two", {"P1 R2"}},
-    {90, "left_shoulder_one", {"P1 L1"}},
-    {90, "left_shoulder_two", {"P1 L2"}},
-    {60, "square_taps", {"P1 □"}, true},
-    {120, "forward_right_shoulder", {"P1 D-Pad Up", "P1 R2"}},
+    {90, "look_triangle", {"P1 △"}},
+    {60, "release_triangle", {}},
+    {90, "look_square", {"P1 □"}},
+    {60, "release_square", {}},
+    {60, "turn_left", {"P1 D-Pad Left"}},
+    {60, "release_left", {}},
+    {60, "turn_right", {"P1 D-Pad Right"}},
+    {60, "release_right", {}},
+    {60, "left_shoulder_one", {"P1 L1"}},
+    {60, "release_l1", {}},
+    {60, "right_shoulder_one", {"P1 R1"}},
+    {60, "release_r1", {}},
+    {60, "left_shoulder_two", {"P1 L2"}},
+    {60, "release_l2", {}},
+    {60, "right_shoulder_two", {"P1 R2"}},
+    {60, "release_r2", {}},
+    {60, "walk_backwards", {"P1 D-Pad Down"}},
+    {60, "release_down", {}},
+    {60, "walk_forward", {"P1 D-Pad Up"}},
+    {60, "release_up", {}},
+    {60, "forward_cross", {"P1 D-Pad Up", "P1 X"}},
+    {60, "release_run", {}},
+    {60, "circle_taps", {"P1 ○"}, true},
     {60, "up_taps", {"P1 D-Pad Up"}, true},
 }
 for _, phase in ipairs(phases) do
@@ -88,6 +102,12 @@ local function inspect(frame, label, buttons)
     for _, offset in ipairs({0x10, 0x12, 0x14}) do
         state:write("\t", pose and mainmemory.read_s16_le(pose + offset) or "")
     end
+    -- game_graphics_ctx_t stores the original pad object at +0x04.
+    local graphics = assert(pointer(u32(flow + 0x1c), 0x14), "Invalid graphics context")
+    local pad = assert(pointer(u32(graphics + 0x04), 0x20), "Invalid pad pointer")
+    assert(u32(pad) == 0x8006d370, "Unexpected pad vtable")
+    state:write("\t", string.format("%08x", pad), "\t", u32(pad + 0x10),
+                "\t", u32(pad + 0x14), "\t", u32(pad + 0x18))
     state:write("\n")
     if frame % 60 == 0 then state:flush() end
 end
@@ -109,7 +129,9 @@ for frame = 1, frames do
     for _, phase in ipairs(phases) do
         if remaining <= phase[1] then
             label = phase[2]
-            if not phase[4] or remaining % 20 == 1 then buttons = phase[3] end
+            -- Twelve emulator frames reach both pressed and held native polls
+            -- in the recorded scenario. Shorter pulses can miss held commands.
+            if not phase[4] or (remaining - 1) % 20 < 12 then buttons = phase[3] end
             break
         end
         remaining = remaining - phase[1]

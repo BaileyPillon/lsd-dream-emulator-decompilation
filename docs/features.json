@@ -19661,6 +19661,61 @@
       },
       "original_game_behavior_modified": false,
       "model_api_calls": 0
+    },
+    "japanese_movement_parity_20261011": {
+      "recorded_utc": "2026-10-12T01:57:28.705172+00:00",
+      "document": "docs/MOVEMENT_PARITY.md",
+      "metadata": "docs/movement-parity-checks.json",
+      "metadata_sha256": "6b2ea71a7d80037fc268d6391edf2f2c7c230f80de39b15f6ad9ae1f4098f296",
+      "recorded_replay_pairs": 4,
+      "recorded_frames_per_side": 9000,
+      "recorded_checkpoints_per_side": 27,
+      "recorded_pcm_stereo_sample_frames_per_side": 6634234,
+      "final_native_fields_per_frame": 47,
+      "all_recorded_outputs_equal": true,
+      "native_input_guard_and_pad_observations": true,
+      "new_comparison_guard_tests": 7,
+      "tooling_tests_each_platform": 314,
+      "before_after": {
+        "before": {
+          "c_bytes": 195844,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 5,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 37,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 5
+        },
+        "after": {
+          "c_bytes": 195844,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 5,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 37,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 5
+        },
+        "source_functions_promoted": 0,
+        "source_workarounds_removed": 0,
+        "new_recorded_replay_pairs": 4,
+        "new_frame_observations_per_side": 9000,
+        "whole_feature_groups_accepted": 0,
+        "developer_workflow_extended": "Existing emulator comparison and input analysis; capability count remains ten."
+      },
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0
     }
   }
 }
