@@ -38,7 +38,7 @@ Their scope and remaining gaps are documented in the
 [feature inventory](docs/FEATURE_INVENTORY.md) and [roadmap](docs/ROADMAP.md).
 The [source-quality audit](docs/SOURCE_QUALITY.md) verifies five inherited
 padding constructs already present before this work. They remain cleanup
-requirements in addition to the six assembly functions; C-byte coverage does
+requirements in addition to the five remaining assembly functions; C-byte coverage does
 not certify their original source explanation.
 The [save-title recovery](docs/SAVE_LABEL.md) documents an earlier matching C
 promotion, its native checks and the correction to SDK/game classification.
@@ -94,6 +94,10 @@ The later [compiler-lifetime investigation](docs/COMPILER_LIFETIMES.md) measures
 why an address-taken local survives a nested block and verifies reuse after an
 inline helper returns. The native early storage region remains unexplained;
 69 additional source forms produce no exact match.
+The [register-allocation tracer](docs/COMPILER_ALLOCATION.md) records actual
+local/global compiler decisions, verifies priority comparisons and preserves
+complete assembly output. It extends candidate analysis without accepting a
+nonmatching source form or changing original gameplay.
 The [sprite scaling audit](docs/UI_SCALE.md) checks 203,472 native cases,
 including overlapping inputs and incoming-register quirks. Its full C
 candidate still differs in 12 executable bytes and remains unaccepted.

@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-12T00:01:03.883502+00:00",
+  "source_commit_before": "6f64f67111fc0ccd36d9bd785b55f59278cc2e35",
+  "scope": "Compiler observations and rejected source forms; no game-source promotion or gameplay execution.",
+  "compiler_identity": {
+    "sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+    "profile": "bundled-gcc263-i386-allocation-v1",
+    "integer_bytes": 4,
+    "reg_n_sets_bytes": 2,
+    "reg_renumber_bytes": 2,
+    "first_pseudo_register": 71,
+    "observer_caller_argument_abi": "cdecl"
+  },
+  "public_files": {
+    "research/compiler/trace_allocation.py": "344b835f9843378da2056bc576d86690ab5dd9113b25953c71133f9f656c490d",
+    "research/compiler/allocation_gdb.py": "6001bdd488b56cfc0424a0372981324d3da124b3cc8a592c1d4de401371e5201",
+    "tests/test_compiler_allocation_trace.py": "f4a629923637f957c930903b1916496afa43461f50aacb404bea64b9ae15b93f",
+    "docs/COMPILER_ALLOCATION.md": "88ad99c4f968de51c75a0a64d1a69de1113da0d6be37b0850af341d35c1540df",
+    "README.md": "d64457756cbdb05f861aed4c9f2bba01017ce56fa6ec8513a75d3accdb32d8a1",
+    "docs/ROADMAP.md": "c8430e236135cd2e43ad58649587a00caa7d31671591aae05a352ef6c6385072",
+    "PROJECT_OBJECTIVE.md": "182ff092ca09a494e059cf1d3aede40d2855b4ca571ffd4e32712bdf13f1b1e8",
+    "CHANGELOG.md": "81503187ad66dfac74f580145a2092276a1c266eba109693aa1c90a5b6343a43"
+  },
+  "qualified_runs": [
+    {
+      "name": "bounds-public-allocation-first",
+      "function": "func_8004CD38",
+      "compiler_mode": "g8",
+      "source_sha256": "e5f3b8003fc16696f55ec59ab9196a84fdbc748dd423f9d6a4b0d985342154d4",
+      "qualification": {
+        "local_allocations": 1,
+        "equivalence_updates": 1,
+        "global_allocations": 6,
+        "priority_comparisons": 10,
+        "complete_assembly_equal": true,
+        "register_dispositions_agree": true,
+        "reference_priority_comparisons_agree": true,
+        "diagnostic_option_comment_changes": [
+          "-  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -o",
+          "+  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -da",
+          "+  # -dumpbase -o"
+        ]
+      },
+      "report": {
+        "path": ".decomp-lab/bounds-public-allocation-first/report.json",
+        "sha256": "f810ac3e2892c62dcdda882b704df459cee0fed549a5d68bafbccf1cfa65b09c"
+      },
+      "raw_observation": {
+        "path": ".decomp-lab/bounds-public-allocation-first/allocations.json",
+        "sha256": "a5d323f5cf579f8e10cf78d089c61513d5e8f8bbd0c130461516ff737a07d6d8"
+      }
+    },
+    {
+      "name": "bounds-public-control-first",
+      "function": "func_8004CD38",
+      "compiler_mode": "g8",
+      "source_sha256": "fc67409ce931beb3ced0408e85c2526b61245fb3878d649b518f1cc3721296c7",
+      "qualification": {
+        "local_allocations": 1,
+        "equivalence_updates": 1,
+        "global_allocations": 5,
+        "priority_comparisons": 8,
+        "complete_assembly_equal": true,
+        "register_dispositions_agree": true,
+        "reference_priority_comparisons_agree": true,
+        "diagnostic_option_comment_changes": [
+          "-  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -o",
+          "+  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -da",
+          "+  # -dumpbase -o"
+        ]
+      },
+      "report": {
+        "path": ".decomp-lab/bounds-public-control-first/report.json",
+        "sha256": "f26c216fb6d83bab54417e0082f78bd8d66926ca3cd2e63f1b01e614540d8238"
+      },
+      "raw_observation": {
+        "path": ".decomp-lab/bounds-public-control-first/allocations.json",
+        "sha256": "4b18132408eaecb13cfd600bd8c0bcfd587fdb525f089994afe2c5bc61c5a116"
+      }
+    },
+    {
+      "name": "writer-public-allocation-first",
+      "function": "func_8004EF6C",
+      "compiler_mode": "g8",
+      "source_sha256": "d0dec2b74c39fccca6a828842cf5502394ca2283ea2bc9fa0b611128a3f4bf85",
+      "qualification": {
+        "local_allocations": 1,
+        "equivalence_updates": 1,
+        "global_allocations": 23,
+        "priority_comparisons": 70,
+        "complete_assembly_equal": true,
+        "register_dispositions_agree": true,
+        "reference_priority_comparisons_agree": true,
+        "diagnostic_option_comment_changes": [
+          "-  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -o",
+          "+  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -da",
+          "+  # -dumpbase -o"
+        ]
+      },
+      "report": {
+        "path": ".decomp-lab/writer-public-allocation-first/report.json",
+        "sha256": "dfca46941a697fc0da8f5d4b8a660aac28d4b3a6f4229137ecc06d991f116f0f"
+      },
+      "raw_observation": {
+        "path": ".decomp-lab/writer-public-allocation-first/allocations.json",
+        "sha256": "8ee29cd1db391d9fc13595183ae16ea0a06b0ae40518b7a1a3d440e910732fa2"
+      }
+    },
+    {
+      "name": "allocation-public-leaf-g0-first",
+      "function": "allocation_trace_leaf",
+      "compiler_mode": "g0",
+      "source_sha256": "a7c22cb302b20361c8ed8527a4d5cb90694f06a37ab7231ca76301ab603f4726",
+      "qualification": {
+        "local_allocations": 1,
+        "equivalence_updates": 1,
+        "global_allocations": 0,
+        "priority_comparisons": 0,
+        "complete_assembly_equal": true,
+        "register_dispositions_agree": true,
+        "reference_priority_comparisons_agree": true,
+        "diagnostic_option_comment_changes": [
+          "-  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -G0 -O2 -o",
+          "+  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -G0 -O2 -da",
+          "+  # -dumpbase -o"
+        ]
+      },
+      "report": {
+        "path": ".decomp-lab/allocation-public-leaf-g0-first/report.json",
+        "sha256": "a9fe6a5cd6377ffae47649a200ff5d8dd87156544f057b105f95f2a7b2fcfac1"
+      },
+      "raw_observation": {
+        "path": ".decomp-lab/allocation-public-leaf-g0-first/allocations.json",
+        "sha256": "0b6c05631f31b6fa5831466eed787ff11d827df793e58bae882ccc086fc0cb1b"
+      }
+    },
+    {
+      "name": "allocation-public-leaf-g8-first",
+      "function": "allocation_trace_leaf",
+      "compiler_mode": "g8",
+      "source_sha256": "a7c22cb302b20361c8ed8527a4d5cb90694f06a37ab7231ca76301ab603f4726",
+      "qualification": {
+        "local_allocations": 1,
+        "equivalence_updates": 1,
+        "global_allocations": 0,
+        "priority_comparisons": 0,
+        "complete_assembly_equal": true,
+        "register_dispositions_agree": true,
+        "reference_priority_comparisons_agree": true,
+        "diagnostic_option_comment_changes": [
+          "-  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -o",
+          "+  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -da",
+          "+  # -dumpbase -o"
+        ]
+      },
+      "report": {
+        "path": ".decomp-lab/allocation-public-leaf-g8-first/report.json",
+        "sha256": "9410f4984fb65868d85f617c4f7dbf6a5b985d46841a183eac4017a76ac74c4b"
+      },
+      "raw_observation": {
+        "path": ".decomp-lab/allocation-public-leaf-g8-first/allocations.json",
+        "sha256": "0b6c05631f31b6fa5831466eed787ff11d827df793e58bae882ccc086fc0cb1b"
+      }
+    }
+  ],
+  "total_global_allocation_calls": 34,
+  "total_priority_comparisons": 88,
+  "actual_negative_control": {
+    "case": "absent selected function",
+    "exit_code": 1,
+    "passed_report_created": false,
+    "raw_observation": {
+      "path": ".decomp-lab/allocation-public-missing-target-first/allocations.json",
+      "sha256": "98336bb41f066fb7dff14d6c39dc118dad5b775a20a57982e07f6f821342cfec"
+    },
+    "record": {
+      "path": ".decomp-lab/compiler-allocation-publication-first/missing-target.json",
+      "sha256": "05e7c4f2af8e2f63578a61a249b2419d1592bf2c93637f60b80fe6ac5a441b6d"
+    }
+  },
+  "source_comparisons": {
+    "compilations": 68,
+    "exact_matches": 0,
+    "audit": {
+      "path": ".decomp-lab/compiler-allocation-publication-first/source-comparison-audit.json",
+      "sha256": "ee5bab438f2610a0c56dbd42cec9ca721dd664f56de7ece53b63b0ab84644fb5"
+    },
+    "experiments": [
+      {
+        "path": ".decomp-lab/bounds-result-parameter-first/results.json",
+        "sha256": "1d6bfd4adf61c1ded3f42d8071bb04e4b1970eace80811d2f4090f4d359b011f"
+      },
+      {
+        "path": ".decomp-lab/bounds-return-paths-first/results.json",
+        "sha256": "2873cd03ea909ee9d83cdb7202bf0f5ae699d6b95c3439f789846de45e0b7347"
+      },
+      {
+        "path": ".decomp-lab/bounds-whole-inline-first/results.json",
+        "sha256": "59c07d7819c25542ee3db8d32ee834449377019637e62b42cd668c9b1263ba3b"
+      }
+    ],
+    "previous_best_difference": 38,
+    "best_difference_after": 38,
+    "physical_register_bindings": false,
+    "synthetic_register_interference": false,
+    "canonical_flags_changed": false
+  },
+  "canonical_bounds": {
+    "function": "func_8004CD38",
+    "address": "0x8004CD38",
+    "bytes": 108,
+    "sha256": "73713a1bd9a992c92c7a7fb6c5c88684a9224107fbc2b0d4d2f83b606e71d03a"
+  },
+  "canonical_build": {
+    "objects_expected": 305,
+    "objects_found": 305,
+    "build_current": true,
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 97.96510464604425,
+    "sdk_text_bytes": 147880,
+    "handwritten_text_bytes": 188,
+    "binary_match": "verified",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+  },
+  "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "new_clean_build_performed": false,
+  "game_sources_and_compiler_configuration_unchanged": true,
+  "tests": {
+    "new_guard_tests": 12,
+    "total_tests_each_platform": 306,
+    "windows": {
+      "path": ".decomp-lab/compiler-allocation-publication-first/tests-windows.json",
+      "sha256": "8888cc458730be94d3a75320ba49468c9fd383d485153f420b56bbca1581ecac"
+    },
+    "linux": {
+      "path": ".decomp-lab/compiler-allocation-publication-first/tests-linux.json",
+      "sha256": "a6b952f559eb65974cf819dfb2aa7c8bc1dc8787be197a9c0a7b0d3809820f1b"
+    }
+  },
+  "before_after": {
+    "before": {
+      "c_bytes": 195844,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 5,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 37,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 5
+    },
+    "after": {
+      "c_bytes": 195844,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 5,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 37,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 5
+    },
+    "source_functions_promoted": 0,
+    "source_workarounds_removed": 0,
+    "original_game_cases_added": 0,
+    "whole_feature_groups_accepted": 0,
+    "developer_workflow_extended": "Existing AI-assisted candidate analysis; capability count remains ten."
+  },
+  "original_game_behavior_modified": false,
+  "model_api_calls": 0
+}

@@ -26,6 +26,10 @@ and a sound-API correction; unmatched functions still need further analysis.
 The [bounds-predicate audit](RENDER_BOUNDS.md) verifies the original
 `func_8004CD38` contract and a research candidate on bounded fixtures. Its 38
 byte differences remain to resolve before accepting C.
+The [register-allocation diagnostic](COMPILER_ALLOCATION.md) now measures why
+the candidate's result and scratch registers differ. Sixty-eight source
+compilations retain no exact match; the 38-byte research candidate remains.
+Use actual local/global allocation evidence to guide the next source boundary.
 The [save workflow audit](CARD_SAVE.md) verifies the wrapper, writer and native
 helpers in 13,152 bounded cases. Its full C candidate agrees on those fixtures
 and retained an eight-byte mismatch at that checkpoint. The later

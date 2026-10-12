@@ -19545,6 +19545,62 @@
         "source_functions_promoted": 0,
         "whole_feature_groups_accepted": 0
       }
+    },
+    "compiler_allocation_diagnostic_20261011": {
+      "recorded_utc": "2026-10-12T00:01:03.883502+00:00",
+      "document": "docs/COMPILER_ALLOCATION.md",
+      "metadata": "docs/compiler-allocation-checks.json",
+      "metadata_sha256": "48a3977457466aaa5a9c7889e3a4eea20cc15d54b4d5be2db3636b9b6387e5d4",
+      "qualified_compiler_runs": 5,
+      "local_allocation_calls": 5,
+      "equivalence_update_calls": 5,
+      "global_allocation_calls": 34,
+      "priority_comparisons": 88,
+      "actual_missing_function_control_rejected": true,
+      "bounds_source_compilations_measured": 68,
+      "bounds_best_difference_before": 38,
+      "bounds_best_difference_after": 38,
+      "new_guard_tests": 12,
+      "tooling_tests_each_platform": 306,
+      "before_after": {
+        "before": {
+          "c_bytes": 195844,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 5,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 37,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 5
+        },
+        "after": {
+          "c_bytes": 195844,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 5,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 37,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 5
+        },
+        "source_functions_promoted": 0,
+        "source_workarounds_removed": 0,
+        "original_game_cases_added": 0,
+        "whole_feature_groups_accepted": 0,
+        "developer_workflow_extended": "Existing AI-assisted candidate analysis; capability count remains ten."
+      },
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0
     }
   }
 }

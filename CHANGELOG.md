@@ -1,5 +1,17 @@
 # Changelog
 
+## Original compiler register-allocation diagnostic - 2026-10-11
+
+- Publish a compiler-pinned local/global allocation tracer that checks actual
+  priority returns and register dispositions while preserving complete assembly.
+- Qualify five runs with 34 global allocations and 88 priority comparisons;
+  reject an actual missing-function control. Add twelve custody/qualification
+  tests; all 306 tooling tests pass locally on Windows and Linux.
+- Check 68 bounds source compilations without finding an exact match. Game C
+  remains 195,844 / 199,912, with five assembly functions, five inherited source
+  workarounds and 0 / 40 independently accepted whole groups. Preserve original
+  gameplay, earlier evidence and the separation of tools and optional mods.
+
 ## Matching memory-card writer recovery - 2026-10-11
 
 - Recover the complete 960-byte save writer in C through the pinned GNU MIPS
