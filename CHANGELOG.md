@@ -1,5 +1,16 @@
 # Changelog
 
+## Unpadded overlap source and native pairs - 2026-10-12
+
+- Recover the actual twelve-byte midpoint object and publish a typed C research
+  candidate with private preparation and complete-image isolation guards.
+- Compare 6,912 original/candidate collision graphs through fifteen actual
+  routines and checked native OP/SQR/leading-bit operations. Full caller buffers,
+  ABI checks and ordered native events agree; an executed height fault is caught.
+- Qualify 27 source forms and actual stack/register allocation observations.
+  The complete candidate remains 170 bytes different with a 152-byte frame;
+  no source or whole feature is promoted. All 360 tooling tests pass locally.
+
 ## Original generation entry selection and packet lifetimes - 2026-10-12
 
 - Check all 56 original records in fourteen stage tables through the native

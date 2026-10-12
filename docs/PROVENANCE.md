@@ -503,3 +503,14 @@ arithmetic reproduce their recorded complete candidate images. Original game
 inputs, generated assembly, raw buffers and faulted code stay private. Earlier
 inventory and source measurements remain frozen; no source or whole feature is
 promoted by bounded matching behavior.
+
+## Unpadded overlap source supplement
+
+[overlap-recovery-checks.json](overlap-recovery-checks.json) pins the two-point
+fragment, complete-image isolation, 27 qualified source forms, actual compiler
+allocation observations and 6,912 paired native graphs. The failed older-bridge
+attempt is retained separately from the successful current-bridge run. The height
+fault has a measured coarse-path execution; its second patched location is not
+claimed executed. Raw game images, generated assembly, caller buffers and faulted
+code stay private. Earlier feature records remain frozen and reconstruct after
+removing only the new supplement. Neither source nor whole feature is promoted.

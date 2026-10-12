@@ -55,6 +55,11 @@ The [generation entry checks](docs/GENERATION_ENTRIES.md) recover the actual
 ten-byte transform packet and check all 56 original entry records through the
 scanner and real coordinate conversion in 4,116 fixtures per image. The
 readable C candidate agrees on those fixtures but retains its source gate.
+The [overlap source recovery](docs/OVERLAP_RECOVERY.md) checks a two-point,
+twelve-byte collision candidate in 6,912 native graph pairs with matching caller
+buffers and ordered GTE results. Its frame and 170 code differences still need
+recovery; the canonical game retains assembly and the completion counts remain
+unchanged.
 The [save-title recovery](docs/SAVE_LABEL.md) documents an earlier matching C
 promotion, its native checks and the correction to SDK/game classification.
 The [SDK and sound API audit](docs/SDK_SIGNATURE_AUDIT.md) documents corrected

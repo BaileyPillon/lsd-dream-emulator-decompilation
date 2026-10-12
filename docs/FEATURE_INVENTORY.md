@@ -377,3 +377,13 @@ Natural spawning, per-map parameter provenance and complete lifetimes remain
 open. F025 still retains assembly; current C, the 40 provisional groups,
 16 / 107 bounded NPC count, ten developer capabilities and three mods remain
 unchanged. No whole-feature or whole-NPC acceptance is added.
+
+## Unpadded overlap source and native pairs
+
+The [overlap profile](OVERLAP_RECOVERY.md) adds F008 evidence for the actual
+twelve-byte midpoint object, source/path masks and strict contact-height rule.
+Original and candidate agree in 6,912 graph pairs through fifteen actual routines
+and native GTE operations. The candidate's 170 byte differences retain the source
+gate; natural scene/history and full timing acceptance remain open. Current C,
+nine assembly functions, 24 inherited layouts and the 40 provisional groups are
+unchanged. No whole feature, NPC callback, developer capability or mod is added.

@@ -38,6 +38,12 @@ remaining scalar lifetime; returned-style storage reaches the original frame
 but adds instructions, and by-value style copying emits a separate helper.
 Continue through natural parameter selection and sound/entity spawning.
 
+For F008, [overlap source recovery](OVERLAP_RECOVERY.md) removes an unexplained
+private buffer tail and checks the twelve-byte midpoint candidate in 6,912 paired
+native graphs. Twenty-seven source forms and actual compiler traces retain no
+exact match. Recover the remaining frame/register lifetime without artificial
+storage; natural geometry, histories and hardware timing also remain open.
+
 The initial seven also remained after the [save-title recovery](SAVE_LABEL.md). That
 additional game-support helper was discovered in a segment classified as SDK;
 it had not been included in this list. Continue auditing raw SDK-labelled
@@ -157,7 +163,7 @@ and 191 initial source trials found no exact match. The subsequent
 
 The catalogue currently has 40 provisional groups. None has been accepted for
 all required runtime scenarios. The [inventory](FEATURE_INVENTORY.md) lists the
-remaining scenario for each group; 97.97% describes current game C bytes only.
+remaining scenario for each group; 97.15% describes current game C bytes only.
 
 ## Developer tools and optional mods
 

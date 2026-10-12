@@ -131,3 +131,20 @@ python research/collision/trace_compiler_lifetimes.py \
 
 The observed helper boundary permits reuse, but the source remains nonmatching.
 This diagnostic adds compiler evidence without accepting original gameplay.
+
+## Unpadded overlap candidate
+
+The [overlap recovery](../../docs/OVERLAP_RECOVERY.md) publishes a two-point,
+twelve-byte candidate for `func_8001DDF4`. It removes the unexplained tail of an
+older private candidate and passes 6,912 paired native collision graphs. Its
+152-byte frame and 170 complete-image byte differences remain unaccepted.
+
+Use `prepare_overlap_candidate.py` to move the existing point/bounds declarations
+into a private complete translation unit. `compare_overlap_candidate.py` accepts
+only a complete image that differs within the original 796-byte overlap span.
+It compares full caller buffers, ABI state and ordered OP/SQR/leading-bit results,
+with an executed height-boundary fault. The canonical game still uses assembly.
+
+Twenty-seven source forms and actual compiler allocation observations retain
+their negative matching results. Natural geometry and timing acceptance remain
+open; no source, original feature or NPC count increases.

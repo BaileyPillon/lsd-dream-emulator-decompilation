@@ -104,3 +104,9 @@ stage records through actual world-coordinate conversion. Its ten-byte packet,
 strict range/index semantics and native word arithmetic are verified on bounded
 fixtures; twenty source-layout differences and natural spawn/lifetime paths
 still require recovery.
+
+The [overlap source profile](docs/OVERLAP_RECOVERY.md) checks an unpadded two-point
+candidate through original collision/SDK routines and native GTE commands in
+6,912 graph pairs. It retains 170 code differences and the unexplained original
+frame lifetime. Bounded behavior agreement preserves the original source and
+whole-feature gates; natural scenes, content and timing remain required.

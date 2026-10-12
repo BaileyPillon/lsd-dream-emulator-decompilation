@@ -1,0 +1,918 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-12T06:47:52.767548+00:00",
+  "repository_before": "d2dab458fb1241964d55dff7772010ef46fe604b",
+  "scope": "Unpadded overlap source, actual compiler observations and bounded original/candidate native collision/GTE pairs. Exact source and whole-feature acceptance remain incomplete.",
+  "public_files": {
+    "README.md": "98ea261c4508ea59929809b9a16b0fa24c204955a196e7d8c690766195492505",
+    "CHANGELOG.md": "93c36f75fef3a55164a83666de8900a08531ce5e874be3bd434a83cb1f0e1236",
+    "PROJECT_OBJECTIVE.md": "cad3fe2fda46b2ed3aef2d39c9e21f9dd7c01d604c3b115ebd6e9f0868bf9d16",
+    "docs/OVERLAP_RECOVERY.md": "76b6c971dc228e7a3a51ed8880fc8012cafbd08a58bf0b4b58bd402102dbeae4",
+    "docs/FEATURE_INVENTORY.md": "cf656c33d5ad271e62649335d9325abc35b7cf9c03e0a69a7060f7ed85f4d845",
+    "docs/ROADMAP.md": "837947958c35ecde82f07f75ee9ec5fb7797df689e956414b447fcbf27d703c1",
+    "docs/PROVENANCE.md": "b295864bca0eab05355ab1cb7567d3e10567821cad838c926e2a30ea30afcbb1",
+    "research/collision/README.md": "098b3ef2ace71d00e0fdd62b1ab6b597a41fa094339a14b3d773e55ba65cb459",
+    "research/collision/overlap_candidate.c": "efb85ed12e7ab0d7799ffdec997bc7bef4285c6088948f8b2de8f522137e48ca",
+    "research/collision/prepare_overlap_candidate.py": "826df97f3099e51061160d040f97c5e3bec3f723147cb25f5cdb34685b5962d3",
+    "research/collision/compare_overlap_candidate.py": "b452f0d52c6544ea4d0bd84bba498d0898d54f9bbf89558a34aff7091ff6ee09",
+    "tests/test_overlap_candidate.py": "a27bf258803f343b28643c76cd3a1e24a92bbfe017f00ba8929c2bfc09985612"
+  },
+  "features_before_sha256": "df5ff99cfce14f79ad98a13324a80fff501e462f4d3c1e24f195fe25e813f6fd",
+  "source_quality_snapshot": {
+    "path": "docs/source-layout-expanded-checks.json",
+    "sha256": "0fe3f5d77e25c3cfda234f86a685f24aff25fa241997b272557afddb56d34213"
+  },
+  "source_research": {
+    "function": "func_8001DDF4",
+    "address": "0x8001DDF4",
+    "function_bytes": 796,
+    "observed_midpoint_bytes": 12,
+    "midpoint_points": 2,
+    "point_bytes": 6,
+    "qualified_source_forms": 27,
+    "qualified_exact_source_forms": 0,
+    "reports": [
+      {
+        "path": ".decomp-lab/ddf4-midpoint-streams-first/report.json",
+        "sha256": "3cf682ca2c589923c25ce89d64c50cb222010aa45c575ee061760c49c21d59a0"
+      },
+      {
+        "path": ".decomp-lab/ddf4-typed-points-first/report.json",
+        "sha256": "be0083a1cfa0e9ad1116525bf6b64d5be0d14c951ea92c1b178c84818d22d77c"
+      }
+    ],
+    "qualified_cases": [
+      {
+        "case": "minimal-baseline",
+        "bytes": 796,
+        "changed_bytes": 170,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "deceb6bc68c2e4c5607805b46c220df128412f9576336b9de23368cf7a03c769",
+        "emitted_sha256": "3e7fabadaef372bde0120dabc0f20903cec52bbc159d3f797efd5539273ba3d8",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "function-o0-before-struct",
+        "bytes": 792,
+        "changed_bytes": 528,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "0f93c68c956611667a4dbb2d3214ba74de734e1d16d1411d4f151a99f6aadff9",
+        "emitted_sha256": "6edc9b7b586fbfb59b5cbb51a8c1611cc88df8bc7d4ee70d0f9eec3010fe1008",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "function-o0-before-half",
+        "bytes": 792,
+        "changed_bytes": 528,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "0387926839d3806f15d326251af8c57df0f1eb4033640cd4677e09f78734ec95",
+        "emitted_sha256": "6edc9b7b586fbfb59b5cbb51a8c1611cc88df8bc7d4ee70d0f9eec3010fe1008",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "function-o0-after-guard-struct",
+        "bytes": 792,
+        "changed_bytes": 484,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "8184d156a6036d9dd5fff18204130d1c49f5759c679b6e9d01bf8f01141ea11e",
+        "emitted_sha256": "649e08cc3dca0b043acdeb3c1bb40fc9bebb24cc0e9b633f02a04e8c85b1d633",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "function-o0-after-guard-half",
+        "bytes": 792,
+        "changed_bytes": 484,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "301c95adc86c1548cdb3055111d4ea470e8110178172c704a05586a2cb60e256",
+        "emitted_sha256": "649e08cc3dca0b043acdeb3c1bb40fc9bebb24cc0e9b633f02a04e8c85b1d633",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "function-o1-before-struct",
+        "bytes": 792,
+        "changed_bytes": 530,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "19ca0d113c165d7fc3dba48ea1daa7ebf259bf3c00cb0dc65b657facc372a16a",
+        "emitted_sha256": "b35769626c6ddb79571b73756fd94341b9ee6906f1fb651c66cefd4486edae98",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "function-o1-before-half",
+        "bytes": 792,
+        "changed_bytes": 530,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "5d2aa8abf53fc51d4b3cce9e9bba05b231e45932383dce55b336b06c0f829de1",
+        "emitted_sha256": "b35769626c6ddb79571b73756fd94341b9ee6906f1fb651c66cefd4486edae98",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "function-o1-after-guard-struct",
+        "bytes": 796,
+        "changed_bytes": 172,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "b19477d6fa3ecbd47206bcaf04e6ca7c0220c265a23339ab310ddf3a8b0c184f",
+        "emitted_sha256": "39bca2487aa6c39c8a7fae8dd1ae547dba56188521f8f72ad4333fd1b4f6c942",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "function-o1-after-guard-half",
+        "bytes": 796,
+        "changed_bytes": 172,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "9c652876f53dfefd43fcba9fe669461b9909a1f70af3798539a4a15838fa368c",
+        "emitted_sha256": "39bca2487aa6c39c8a7fae8dd1ae547dba56188521f8f72ad4333fd1b4f6c942",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "function-o2-before-struct",
+        "bytes": 792,
+        "changed_bytes": 527,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "9915a1d30e3e1aaea0f38a72c7bc1b3a21c60c45598912989e3cde79e3f11848",
+        "emitted_sha256": "26b83e70b8b5ee8a7a59e48ab709984f1cf6c03caeaa2a213f7fb61dab4f5915",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "function-o2-before-half",
+        "bytes": 792,
+        "changed_bytes": 527,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "fffa1d9a710aaf43e62180add9d5f18728fca901712b853f780eb13ee9f19d98",
+        "emitted_sha256": "26b83e70b8b5ee8a7a59e48ab709984f1cf6c03caeaa2a213f7fb61dab4f5915",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "function-o2-after-guard-struct",
+        "bytes": 796,
+        "changed_bytes": 173,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "bcc79cd407259787fc146ae81aadac351daf32d5522a212494b5ef21d4bd5742",
+        "emitted_sha256": "633abf7d74b2c1f48f1e477d13936725d43511d611d18fba34f5da04a717a779",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "function-o2-after-guard-half",
+        "bytes": 796,
+        "changed_bytes": 173,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "ef08b9911d317ccf2cc2b94accea78324d58f608569ebafc191679ca4b3b1c29",
+        "emitted_sha256": "633abf7d74b2c1f48f1e477d13936725d43511d611d18fba34f5da04a717a779",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "block-o0-before-struct",
+        "bytes": 792,
+        "changed_bytes": 528,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "cbbdda897a1d1f19d66ccde32ee4a8352681a2a4fd6286ff0ee0a19a536fc30d",
+        "emitted_sha256": "6edc9b7b586fbfb59b5cbb51a8c1611cc88df8bc7d4ee70d0f9eec3010fe1008",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "block-o0-before-half",
+        "bytes": 792,
+        "changed_bytes": 528,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "ef37c11c1982efbd85f4ffc9834b11c0a5bd1c68fa60d09e25c2472d17b79e58",
+        "emitted_sha256": "6edc9b7b586fbfb59b5cbb51a8c1611cc88df8bc7d4ee70d0f9eec3010fe1008",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "block-o0-after-guard-struct",
+        "bytes": 792,
+        "changed_bytes": 484,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "fe1e5b7537c3ae086d788d34e3e8bd08e0a8d71741cc19c62a57fd2b6b90765f",
+        "emitted_sha256": "649e08cc3dca0b043acdeb3c1bb40fc9bebb24cc0e9b633f02a04e8c85b1d633",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "block-o0-after-guard-half",
+        "bytes": 792,
+        "changed_bytes": 484,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "51c744f06aba2af36f53c3243d9fde437081e547c7dad908cf3b6cd15fd8abb9",
+        "emitted_sha256": "649e08cc3dca0b043acdeb3c1bb40fc9bebb24cc0e9b633f02a04e8c85b1d633",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "block-o1-before-struct",
+        "bytes": 792,
+        "changed_bytes": 530,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "8ae09fdf13da7d74fa4a130fe1e01a75ef22eaa0d09b1dc481c9485e04ed5059",
+        "emitted_sha256": "b35769626c6ddb79571b73756fd94341b9ee6906f1fb651c66cefd4486edae98",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "block-o1-before-half",
+        "bytes": 792,
+        "changed_bytes": 530,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "b8166538e3ae5f36a393fc3e987231343698224aa18ef608dd2f129ce4e8bf29",
+        "emitted_sha256": "b35769626c6ddb79571b73756fd94341b9ee6906f1fb651c66cefd4486edae98",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "block-o1-after-guard-struct",
+        "bytes": 796,
+        "changed_bytes": 172,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "c04f890dc656add267905e66dbc29eb32847272b813e32716686174c9e47dd4f",
+        "emitted_sha256": "39bca2487aa6c39c8a7fae8dd1ae547dba56188521f8f72ad4333fd1b4f6c942",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "block-o1-after-guard-half",
+        "bytes": 796,
+        "changed_bytes": 172,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "86da848e45d86f6a7b1a5f3f1895ad830fd12cff73b75d004c5716a50a03183a",
+        "emitted_sha256": "39bca2487aa6c39c8a7fae8dd1ae547dba56188521f8f72ad4333fd1b4f6c942",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "block-o2-before-struct",
+        "bytes": 792,
+        "changed_bytes": 527,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "08b263140660d5ce9aac2d50274d849c81d4d4da4f78197e668c3f1750a261ea",
+        "emitted_sha256": "26b83e70b8b5ee8a7a59e48ab709984f1cf6c03caeaa2a213f7fb61dab4f5915",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "block-o2-before-half",
+        "bytes": 792,
+        "changed_bytes": 527,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "7c54f52b778808257466aba2fd84e2145465102622c0c146ad6df464160b873b",
+        "emitted_sha256": "26b83e70b8b5ee8a7a59e48ab709984f1cf6c03caeaa2a213f7fb61dab4f5915",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "block-o2-after-guard-struct",
+        "bytes": 796,
+        "changed_bytes": 173,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "0f1b106bb88578b3ae71de36e2a3ac631122b00ba96baefd23758b7303dab959",
+        "emitted_sha256": "633abf7d74b2c1f48f1e477d13936725d43511d611d18fba34f5da04a717a779",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "block-o2-after-guard-half",
+        "bytes": 796,
+        "changed_bytes": 173,
+        "frame_bytes": 152,
+        "midpoint_storage_bytes": 12,
+        "source_sha256": "d0114cc691a279a9c5e63028e6d44afb8fc99b0488172e278bd50f54329792b8",
+        "emitted_sha256": "633abf7d74b2c1f48f1e477d13936725d43511d611d18fba34f5da04a717a779",
+        "source_directory": ".decomp-lab/ddf4-midpoint-streams-first",
+        "exact_match": false
+      },
+      {
+        "case": "typed-points",
+        "bytes": 796,
+        "changed_bytes": 170,
+        "frame_bytes": 152,
+        "source_sha256": "416a41a665b6ece6cde1bb7dd6d4d3268207e180ad33d37f0b21ec525325cb76",
+        "emitted_sha256": "3e7fabadaef372bde0120dabc0f20903cec52bbc159d3f797efd5539273ba3d8",
+        "midpoint_storage_bytes": 12,
+        "source_directory": ".decomp-lab/ddf4-typed-points-first",
+        "exact_match": false
+      },
+      {
+        "case": "typed-points-unsigned-bit",
+        "bytes": 796,
+        "changed_bytes": 170,
+        "frame_bytes": 152,
+        "source_sha256": "224145e8cf3a9c5c97793bf82d854b6c7f4a9a66bffc2255752c4de1ee326063",
+        "emitted_sha256": "3e7fabadaef372bde0120dabc0f20903cec52bbc159d3f797efd5539273ba3d8",
+        "midpoint_storage_bytes": 12,
+        "source_directory": ".decomp-lab/ddf4-typed-points-first",
+        "exact_match": false
+      }
+    ],
+    "older_unaccepted_private_candidate": {
+      "path": ".decomp-lab/collision-matching-first/ddf4-register-lifetimes-first/best.c",
+      "sha256": "435d37115cd8fa0a8e94dcda6044226067ae9783f2cab965ed81b6e62515339d",
+      "declared_midpoint_storage_bytes": 40,
+      "consumed_bytes": 12,
+      "unexplained_tail_bytes": 28,
+      "original_frame_bytes": 176,
+      "scope": "Historical private workaround only; excluded from qualified unpadded forms and canonical C coverage.",
+      "changed_selected_function_bytes": 123,
+      "selected_function_report": {
+        "path": ".decomp-lab/collision-matching-first/ddf4-register-lifetimes-first/report.json",
+        "sha256": "89d91265f42b1cba9190e31df574f1f8e95bc6dcf4fe18bca4204c95ec490666"
+      }
+    },
+    "earlier_complete_checks": [
+      {
+        "path": ".decomp-lab/ddf4-complete-first/minimal-baseline/comparison.json",
+        "sha256": "4852bb8763cd2c402f6adb07a54a5dface31189eeaff20f72b2e28ba56ae95d5"
+      },
+      {
+        "path": ".decomp-lab/ddf4-complete-first/function-o1-after-guard-struct/comparison.json",
+        "sha256": "f8de38e81961ce30bc90e456030d468b179640ce811c9a6617f148e1e64b790f"
+      },
+      {
+        "path": ".decomp-lab/ddf4-complete-first/function-o0-after-guard-struct/comparison.json",
+        "sha256": "c9e58b4e862ded8d95ae28ad9b3d7603ea4d98d0c977e003e6718fa18aab683e"
+      }
+    ],
+    "published_fragment_complete_check": {
+      "path": ".decomp-lab/ddf4-published-complete-first/build/comparison.json",
+      "sha256": "11865e5d736a52ff40dd75984e123fb01601a1c1328216d901e645d863b82ac3",
+      "expected_bytes": 505856,
+      "actual_bytes": 505856,
+      "changed_bytes": 170,
+      "length_difference": 0,
+      "only_changed_function": "func_8001DDF4",
+      "original_frame_bytes": 176,
+      "candidate_frame_bytes": 152,
+      "exact_match": false,
+      "prepared": {
+        "path": ".decomp-lab/ddf4-published-complete-first/prepared.json",
+        "sha256": "e7d21df7833d7fbeed663240e07536fac31d447bd3052b6001e89c13ab5942e9"
+      },
+      "candidate_executable": {
+        "path": ".decomp-lab/ddf4-published-complete-first/build/candidate.exe",
+        "sha256": "e2222ed1d93e18f9794f4344643c8a05897ac5863863d88652995ac8003bb6e7"
+      }
+    }
+  },
+  "actual_compiler_checks": {
+    "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+    "stack_trace": {
+      "path": ".decomp-lab/ddf4-minimal-stack-first/report.json",
+      "sha256": "46f7e9654e58b05d3a6a47403c7f7acd78dc3345170e3731f1b64e8e016d38f4",
+      "whole_translation_unit_allocation_calls": 106,
+      "selected_function_events": [
+        {
+          "sequence": 80,
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_temp",
+          "mode_number": 26,
+          "size": 12,
+          "align_or_keep": 1,
+          "frame_offset_before": 0,
+          "temp_slot_level": 1,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ],
+          "frame_offset_after": 16,
+          "returned_rtx": "0x830fff4"
+        },
+        {
+          "sequence": 81,
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "mode_number": 26,
+          "size": 12,
+          "align_or_keep": -1,
+          "frame_offset_before": 0,
+          "temp_slot_level": 1,
+          "call_stack": [
+            "assign_stack_local",
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ],
+          "frame_offset_after": 16,
+          "returned_rtx": "0x830fff4"
+        },
+        {
+          "sequence": 82,
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "mode_number": 4,
+          "size": 4,
+          "align_or_keep": 0,
+          "frame_offset_before": 16,
+          "temp_slot_level": 2,
+          "call_stack": [
+            "assign_stack_local",
+            "put_reg_into_stack",
+            "put_var_into_stack",
+            "mark_addressable",
+            "build_unary_op",
+            "yyparse",
+            "compile_file"
+          ],
+          "frame_offset_after": 20,
+          "returned_rtx": "0x831ab98"
+        },
+        {
+          "sequence": 83,
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "mode_number": 4,
+          "size": 4,
+          "align_or_keep": 0,
+          "frame_offset_before": 20,
+          "temp_slot_level": 2,
+          "call_stack": [
+            "assign_stack_local",
+            "put_reg_into_stack",
+            "put_var_into_stack",
+            "mark_addressable",
+            "build_unary_op",
+            "yyparse",
+            "compile_file"
+          ],
+          "frame_offset_after": 24,
+          "returned_rtx": "0x831ac2c"
+        },
+        {
+          "sequence": 84,
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "mode_number": 4,
+          "size": 4,
+          "align_or_keep": -1,
+          "frame_offset_before": 24,
+          "temp_slot_level": 0,
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ],
+          "frame_offset_after": 32,
+          "returned_rtx": "0x83258ec"
+        },
+        {
+          "sequence": 85,
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "mode_number": 4,
+          "size": 4,
+          "align_or_keep": -1,
+          "frame_offset_before": 32,
+          "temp_slot_level": 0,
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ],
+          "frame_offset_after": 40,
+          "returned_rtx": "0x832590c"
+        },
+        {
+          "sequence": 86,
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "mode_number": 4,
+          "size": 4,
+          "align_or_keep": -1,
+          "frame_offset_before": 40,
+          "temp_slot_level": 0,
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ],
+          "frame_offset_after": 48,
+          "returned_rtx": "0x832592c"
+        },
+        {
+          "sequence": 87,
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "mode_number": 4,
+          "size": 4,
+          "align_or_keep": -1,
+          "frame_offset_before": 48,
+          "temp_slot_level": 0,
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ],
+          "frame_offset_after": 56,
+          "returned_rtx": "0x8325954"
+        },
+        {
+          "sequence": 88,
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "mode_number": 4,
+          "size": 4,
+          "align_or_keep": -1,
+          "frame_offset_before": 56,
+          "temp_slot_level": 0,
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ],
+          "frame_offset_after": 64,
+          "returned_rtx": "0x832597c"
+        },
+        {
+          "sequence": 89,
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "mode_number": 4,
+          "size": 4,
+          "align_or_keep": -1,
+          "frame_offset_before": 64,
+          "temp_slot_level": 0,
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ],
+          "frame_offset_after": 72,
+          "returned_rtx": "0x83259a4"
+        },
+        {
+          "sequence": 90,
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "mode_number": 4,
+          "size": 4,
+          "align_or_keep": -1,
+          "frame_offset_before": 72,
+          "temp_slot_level": 0,
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ],
+          "frame_offset_after": 80,
+          "returned_rtx": "0x83259cc"
+        },
+        {
+          "sequence": 91,
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "mode_number": 4,
+          "size": 4,
+          "align_or_keep": -1,
+          "frame_offset_before": 80,
+          "temp_slot_level": 0,
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ],
+          "frame_offset_after": 88,
+          "returned_rtx": "0x83259f4"
+        },
+        {
+          "sequence": 92,
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "mode_number": 26,
+          "size": 0,
+          "align_or_keep": 0,
+          "frame_offset_before": 88,
+          "temp_slot_level": 0,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ],
+          "frame_offset_after": 88,
+          "returned_rtx": "0x8325a1c"
+        }
+      ],
+      "selected_virtual_frame_bytes": 88,
+      "outgoing_argument_bytes": 24,
+      "saved_register_bytes": 40,
+      "complete_frame_bytes": 152,
+      "temporary_and_underlying_local_request_are_one_allocation": true,
+      "complete_assembly_equal": true,
+      "source_compiler_and_backend_preserved": true
+    },
+    "register_allocation": {
+      "path": ".decomp-lab/ddf4-minimal-allocation-first/report.json",
+      "sha256": "74ebb27dc8d540b1509df87457075ed7e6d4cdb62e6c4c5e6c7361bd6f2db968",
+      "qualification": {
+        "local_allocations": 1,
+        "equivalence_updates": 1,
+        "global_allocations": 26,
+        "priority_comparisons": 91,
+        "complete_assembly_equal": true,
+        "register_dispositions_agree": true,
+        "reference_priority_comparisons_agree": true,
+        "diagnostic_option_comment_changes": [
+          "-  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -o",
+          "+  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -da",
+          "+  # -dumpbase -o"
+        ]
+      }
+    }
+  },
+  "native_comparison": {
+    "path": ".decomp-lab/ddf4-native-pairs-second/report.json",
+    "sha256": "1f9eabc6ad9d2081a060e6100aa0a0f3c4f9ab1ac91b6da43924d2d9d72cde59",
+    "composition_pairs": 6912,
+    "distinct_final_input_graphs": 5760,
+    "repeated_final_input_graphs": 1152,
+    "actual_native_routines_entered_each_image": 15,
+    "original_native_entries": {
+      "class_FA50_is_active": 13824,
+      "refresh_source_vertices": 6912,
+      "func_8001F3B0": 13824,
+      "get_source_vertices": 36720,
+      "func_8001F51C": 6912,
+      "func_8001F66C": 6912,
+      "func_8001DDF4": 6912,
+      "class_FA50_reset_flag": 1728,
+      "func_8001E110": 48420,
+      "func_8001ECFC": 96840,
+      "func_8001F8B8": 4536,
+      "func_80020050": 9072,
+      "OuterProduct10": 4536,
+      "Square0": 6480,
+      "SquareRoot0": 6480
+    },
+    "candidate_native_entries": {
+      "class_FA50_is_active": 13824,
+      "refresh_source_vertices": 6912,
+      "func_8001F3B0": 13824,
+      "get_source_vertices": 36720,
+      "func_8001F51C": 6912,
+      "func_8001F66C": 6912,
+      "func_8001DDF4": 6912,
+      "class_FA50_reset_flag": 1728,
+      "func_8001E110": 48420,
+      "func_8001ECFC": 96840,
+      "func_8001F8B8": 4536,
+      "func_80020050": 9072,
+      "OuterProduct10": 4536,
+      "Square0": 6480,
+      "SquareRoot0": 6480
+    },
+    "caller_buffer_bytes": 6144,
+    "dependency_output_stubs": 0,
+    "native_gte_commands_both_images_before_controls": 22032,
+    "native_leading_requests_both_images_before_controls": 12960,
+    "control_gte_commands": 3,
+    "control_leading_requests": 2,
+    "pair_outputs_sha256": "76cae3d17791cdd1684a232a7f9ab5b3cb762f35730814a916e776431e1f7a53",
+    "ordered_native_events_sha256": "58022004567f0b29e84ac299efb998d5f4637abed2cdc6c6238c33d3a572d737",
+    "negative_controls_detected": [
+      {
+        "kind": "wrong_candidate_height_boundary",
+        "function": "func_8001DDF4",
+        "function_offsets": [
+          340,
+          620
+        ],
+        "expected_word": "0x28420201",
+        "changed_word": "0x28420200",
+        "changed_instruction_executions": {
+          "340": 1
+        },
+        "fixture": {
+          "polygons": [
+            [
+              [
+                -1024,
+                -512,
+                0
+              ],
+              [
+                1024,
+                -512,
+                0
+              ],
+              [
+                -1024,
+                1536,
+                0
+              ]
+            ]
+          ],
+          "query_bounds": [
+            [
+              -128,
+              0,
+              -1024
+            ],
+            [
+              128,
+              0,
+              1024
+            ]
+          ],
+          "mode": 1,
+          "count": 1,
+          "flip": 0,
+          "face": 0,
+          "amount": 0,
+          "segment": 0
+        },
+        "scope": "Private compiled-candidate emulator memory only."
+      }
+    ],
+    "backend_identity": {
+      "package_version": "2.1.4",
+      "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+      "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+    },
+    "native_compressed_core_sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126",
+    "successful_bridge": {
+      "path": ".decomp-lab/ddf4-gte-bridge-first.exe",
+      "sha256": "4daac5674808410751b9b776659c832f2cd742582faf529154f214a3695d88c3"
+    },
+    "successful_bridge_build_log": {
+      "path": ".decomp-lab/ddf4-gte-bridge-first.build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "bridge_source": {
+      "path": "tools/nymashock_gte_bridge.cs",
+      "sha256": "969e0af3b030e5b2eafedad032b68173ac76e41b089a28b4d4fc1084e33fedd9"
+    },
+    "initial_rejected_attempt": {
+      "bridge": {
+        "path": ".decomp-lab/nymashock-gte-bridge-second.exe",
+        "sha256": "95c318b5b0d0b69f7808d20cc77b5312e69ce2c9e355a986550d4471b42a79ef"
+      },
+      "stderr": {
+        "path": ".decomp-lab/ddf4-native-pairs-first/bridge-stderr.log",
+        "sha256": "72fdd5f3de5efe33efe8bb8c0dd6f69401f4977bc1d283e528017cde137eb228"
+      },
+      "protocol_log": {
+        "path": ".decomp-lab/ddf4-native-pairs-first/bridge.log",
+        "sha256": "8b813273105fc09ab8fc11de4dd5991ef7dd204e449841bf9678292dc7c9e274"
+      },
+      "reason": "Older MVMVA-only bridge rejected OP; no successful parity claim from this attempt."
+    },
+    "scope": "Unpadded complete overlap candidate versus original over manual stage/query graphs. Full caller buffers, returns, saved registers/stack guards and exact ordered native GTE/leading events. Original shared bounds, clipping, primitive decoding and SDK routines execute without output stubs. Excludes natural model/scene histories, exhaustive geometry/alias combinations and complete PS1 CPU/timing acceptance."
+  },
+  "canonical_build": {
+    "executable_bytes": 505856,
+    "executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "game_sources_and_configuration_changed": false,
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "known_source_padding_functions": 24,
+    "current_build_progress": {
+      "path": ".decomp-lab/ddf4-current-progress-first.json",
+      "sha256": "86a2896642e77b03e0f360a9f4d9441e9023c4ecb527b5659cf604955ef04b80"
+    },
+    "objects_expected": 305,
+    "objects_found": 305,
+    "build_current": true,
+    "prior_fresh_clean_build": {
+      "path": ".decomp-lab/source-promotion-correction-first/clean-build.json",
+      "sha256": "979d439694c1f6dcdc13df294a83112506fefb2966d4581689520be93a941466"
+    },
+    "prior_clean_inputs_verified_equal": 363
+  },
+  "tooling_tests": [
+    {
+      "path": ".decomp-lab/ddf4-host-tests-second.log",
+      "sha256": "8d61c4dfb01779b262de14a83e3947c6f36011d994d5943a92703f328d9a7cb9",
+      "platform": "host",
+      "tests": 360,
+      "passed": true
+    },
+    {
+      "path": ".decomp-lab/ddf4-wsl-tests-second.log",
+      "sha256": "3fe56664180d90600b35ad49da63435776069521b86927aeef1a5886aea59b22",
+      "platform": "wsl",
+      "tests": 360,
+      "passed": true
+    }
+  ],
+  "before_after": {
+    "before": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 16,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "after": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 16,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "source_functions_promoted": 0,
+    "original_game_feature_groups_accepted": 0,
+    "bounded_npc_callback_count_unchanged": 16,
+    "developer_capabilities_unchanged": 10,
+    "optional_mods_unchanged": 3
+  },
+  "source_functions_promoted": 0,
+  "whole_feature_groups_accepted": 0,
+  "original_game_behavior_modified": false,
+  "model_api_calls": 0,
+  "game_inputs_raw_state_and_altered_code_published": false
+}
