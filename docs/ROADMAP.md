@@ -75,6 +75,10 @@ The [ordered-store audit](RENDER_MATCHING.md) shows why final-output agreement
 is insufficient: that candidate reverses two stores in 68,306 scalar fixtures.
 A corrected full candidate retains native store order but differs in 13 bytes;
 106 additional source trials did not produce an exact match.
+The later [grid source recovery](GRID_RECOVERY.md) publishes a reproducible
+candidate whose body and store order match, with eleven differences confined
+to three prologue instructions. Recover the incoming-height capture boundary
+before accepting its 660 bytes; the canonical game still uses assembly.
 
 | Function | Source |
 | --- | --- |

@@ -98,6 +98,16 @@ class AllocationQualificationTests(unittest.TestCase):
         report = self.qualify(observation)
         self.assertEqual((report['global_allocations'], report['priority_comparisons']), (0, 0))
 
+    def test_spilled_register_is_omitted_but_an_assigned_register_cannot_be(self):
+        observation = copy.deepcopy(self.observation)
+        observation['allocation_events'][0]['hard_register_after'] = -1
+        no_assignment = self.dump.replace(' 72 in 5', '')
+        self.qualify(observation, dump=no_assignment)
+        with self.assertRaisesRegex(ValueError, 'Global allocation disagrees'):
+            self.qualify(dump=no_assignment)
+        with self.assertRaisesRegex(ValueError, 'Global allocation disagrees'):
+            self.qualify(observation)
+
 
 class AllocationCustodyTests(unittest.TestCase):
     def test_compiler_identity_must_match_before_decoding(self):

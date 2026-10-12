@@ -86,7 +86,7 @@ def validate_observation(trace, normal, traced, diagnostic, dump, function):
         if 'hard_register_after' not in item:
             raise ValueError('A global allocation never returned.')
         if (not item['alternate_class'] and not item['retrying'] and
-                dispositions.get(item['pseudo']) != item['hard_register_after']):
+                dispositions.get(item['pseudo'], -1) != item['hard_register_after']):
             raise ValueError('Global allocation disagrees with the final compiler dump.')
     comparisons = trace.get('comparison_events', [])
     for event in comparisons:

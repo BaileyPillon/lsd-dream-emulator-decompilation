@@ -98,6 +98,9 @@ The [register-allocation tracer](docs/COMPILER_ALLOCATION.md) records actual
 local/global compiler decisions, verifies priority comparisons and preserves
 complete assembly output. It extends candidate analysis without accepting a
 nonmatching source form or changing original gameplay.
+The [grid source-recovery fragment](research/render_grid/README.md) now retains
+the native body and store order, with eleven differences in three prologue
+instructions. Its complete candidate remains outside the matching game.
 The [sprite scaling audit](docs/UI_SCALE.md) checks 203,472 native cases,
 including overlapping inputs and incoming-register quirks. Its full C
 candidate still differs in 12 executable bytes and remains unaccepted.

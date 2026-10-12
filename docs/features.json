@@ -19601,6 +19601,66 @@
       },
       "original_game_behavior_modified": false,
       "model_api_calls": 0
+    },
+    "grid_body_recovery_20261011": {
+      "recorded_utc": "2026-10-12T01:03:40.449797+00:00",
+      "document": "docs/GRID_RECOVERY.md",
+      "research_recipe": "research/render_grid/README.md",
+      "metadata": "docs/grid-recovery-checks.json",
+      "metadata_sha256": "932af4b5fd3abf5317015711de9d9e3c68dbcf8ffdd00d7b998cbd3bc4a68cd0",
+      "candidate_status": "unaccepted: complete image differs at eleven byte positions in three prologue instructions",
+      "complete_candidate_changed_bytes": 11,
+      "changed_instruction_words": 3,
+      "matched_function_instruction_words": 162,
+      "function_instruction_words": 165,
+      "qualified_compiler_runs": 4,
+      "global_allocator_calls": 56,
+      "priority_comparisons": 153,
+      "native_existing_fixtures_reverified_each_variant": 74832,
+      "native_variant_runs": 224496,
+      "control_order_failures": 68306,
+      "source_compilations_rechecked": 203,
+      "new_regression_tests": 1,
+      "tooling_tests_each_platform": 307,
+      "before_after": {
+        "before": {
+          "c_bytes": 195844,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 5,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 37,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 5
+        },
+        "after": {
+          "c_bytes": 195844,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 5,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 37,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 11,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 5
+        },
+        "source_functions_promoted": 0,
+        "source_workarounds_removed": 0,
+        "new_original_game_distinct_cases": 0,
+        "whole_feature_groups_accepted": 0,
+        "developer_workflow_extended": "Existing candidate analysis/contribution; capability count remains ten."
+      },
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0
     }
   }
 }

@@ -1,0 +1,438 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-12T01:03:40.449797+00:00",
+  "repository_code_before": "2b94eac9a5a24fe62f5e0a15dd398c8fcf15f863",
+  "scope": "Unaccepted grid C body recovery, complete-image comparisons, reverified existing scalar fixtures and actual compiler observations.",
+  "public_files": {
+    "research/compiler/trace_allocation.py": "f86a3266fab3771738662b35c74690957cb7aeabc8725cf152db2ead6e7e9c6b",
+    "tests/test_compiler_allocation_trace.py": "b2305326d3b43749fe5f4090f9a6ede65281c893951811b53ffbfbe60a168510",
+    "research/render_grid/c6a8_candidate.c": "fdcc50098c741c98a488307efa2b73d0ed8a04e0afd8dc62d727624fa06466b7",
+    "research/render_grid/prepare_candidate.py": "ea948897160052be362627ceb44fc60e17059876461ebce71d377405826c9350",
+    "research/render_grid/README.md": "37cb8ddeeee8bc7a200f3aeaa6b9aba70be4bb4945dd32eafbe383d08bdc45fb",
+    "docs/GRID_RECOVERY.md": "69c0f0e14103a062365007a7c71a09f8dff177b683b0f91dbb18d687ce5af540",
+    "README.md": "e0cf7c69b20743da3b0ceb11caa9ab9ae2af614e62b7712e959b22eb0e340bc6",
+    "docs/ROADMAP.md": "6f36848577ef6f2037ca29445f90c85a9d7683ab048511915f8aa8625350396f",
+    "CHANGELOG.md": "697708e20abcd8f4ce549158541e279aa2892cc2305650ad425437ce6df418ec"
+  },
+  "canonical_function": {
+    "name": "func_8004C6A8",
+    "address": "0x8004C6A8",
+    "bytes": 660,
+    "sha256": "a50855f634d69c3ce7a04cc5db9fafd9a2d88edfeab167f9e351c7791bdb46d9"
+  },
+  "candidate_status": "unaccepted: complete image differs at eleven byte positions in three prologue instructions",
+  "complete_candidate_comparisons": [
+    {
+      "comparison": {
+        "path": ".decomp-lab/grid-local-dimensions-full-build-first/comparison.json",
+        "sha256": "b0b38aeec834e4cf793ee1fd05e517a2bf29d7af2a5ad1d530545f5429fff2df"
+      },
+      "candidate_sha1": "b92b6f3868ca6362de2a6b160a67adbdbf56949b",
+      "source_sha256": "17e732b3c64ed9eda8f0368d380a94b1e0c9a8519d2d84ef882cc84d72df0a1d",
+      "complete_image_bytes": 505856,
+      "changed_bytes": 11,
+      "changed_function_instruction_offsets": [
+        20,
+        24,
+        28
+      ],
+      "matching_instruction_words": 162,
+      "all_other_executable_bytes_equal": true,
+      "canonical_source_promoted": false
+    },
+    {
+      "comparison": {
+        "path": ".decomp-lab/grid-published-full-build-first/comparison.json",
+        "sha256": "1bcf9126f3567218b939b0c739e7eea287b5ad6fddab60c45376297cb29b6a11"
+      },
+      "candidate_sha1": "b92b6f3868ca6362de2a6b160a67adbdbf56949b",
+      "source_sha256": "616bde3c1f7acb56ed8e3bde36b9233b13e65217efcf682274520fb2b67e5a00",
+      "complete_image_bytes": 505856,
+      "changed_bytes": 11,
+      "changed_function_instruction_offsets": [
+        20,
+        24,
+        28
+      ],
+      "matching_instruction_words": 162,
+      "all_other_executable_bytes_equal": true,
+      "canonical_source_promoted": false
+    }
+  ],
+  "preparation": {
+    "path": ".decomp-lab/grid-published-candidate-first/preparation.json",
+    "sha256": "95a86b9c39c17b55b4a0b816bb7f6613a60f0a5c2c17a32e98cba49843617305"
+  },
+  "compiler_observations": [
+    {
+      "name": "grid-actual-allocation-unordered-second",
+      "function": "func_8004C6A8",
+      "qualification": {
+        "local_allocations": 1,
+        "equivalence_updates": 1,
+        "global_allocations": 14,
+        "priority_comparisons": 38,
+        "complete_assembly_equal": true,
+        "register_dispositions_agree": true,
+        "reference_priority_comparisons_agree": true,
+        "diagnostic_option_comment_changes": [
+          "-  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -o",
+          "+  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -da",
+          "+  # -dumpbase -o"
+        ]
+      },
+      "unassigned_returns": 2,
+      "report": {
+        "path": ".decomp-lab/grid-actual-allocation-unordered-second/report.json",
+        "sha256": "46e214d4881c8f1417278e9a617f1aa501d061d93cc874e48f4e07b14af1b0e9"
+      },
+      "raw_observation": {
+        "path": ".decomp-lab/grid-actual-allocation-unordered-second/allocations.json",
+        "sha256": "661e154f29e4d55fdb582285ef52da321e48c2a8da5ed77b5ddb546b1198139e"
+      }
+    },
+    {
+      "name": "grid-actual-allocation-ordered-second",
+      "function": "func_8004C6A8",
+      "qualification": {
+        "local_allocations": 1,
+        "equivalence_updates": 1,
+        "global_allocations": 14,
+        "priority_comparisons": 39,
+        "complete_assembly_equal": true,
+        "register_dispositions_agree": true,
+        "reference_priority_comparisons_agree": true,
+        "diagnostic_option_comment_changes": [
+          "-  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -o",
+          "+  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -da",
+          "+  # -dumpbase -o"
+        ]
+      },
+      "unassigned_returns": 2,
+      "report": {
+        "path": ".decomp-lab/grid-actual-allocation-ordered-second/report.json",
+        "sha256": "7a185126cf3b48070dadb1a7e931ef731ada4f5179611d272e2e416a4addd508"
+      },
+      "raw_observation": {
+        "path": ".decomp-lab/grid-actual-allocation-ordered-second/allocations.json",
+        "sha256": "3e821a9a7094427b3db73564cd5dbce69938faf7b046b90c518f28094e712014"
+      }
+    },
+    {
+      "name": "grid-actual-allocation-local-dimensions-first",
+      "function": "func_8004C6A8",
+      "qualification": {
+        "local_allocations": 1,
+        "equivalence_updates": 1,
+        "global_allocations": 14,
+        "priority_comparisons": 38,
+        "complete_assembly_equal": true,
+        "register_dispositions_agree": true,
+        "reference_priority_comparisons_agree": true,
+        "diagnostic_option_comment_changes": [
+          "-  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -o",
+          "+  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -da",
+          "+  # -dumpbase -o"
+        ]
+      },
+      "unassigned_returns": 2,
+      "report": {
+        "path": ".decomp-lab/grid-actual-allocation-local-dimensions-first/report.json",
+        "sha256": "9f9261e01fde75485bbc8ab4d70ace449911517f98951bb9adbf7d3cf073b021"
+      },
+      "raw_observation": {
+        "path": ".decomp-lab/grid-actual-allocation-local-dimensions-first/allocations.json",
+        "sha256": "7629034ace4d3d068e97cb5b1c63b524998661d1c75201d5e39bf4c4254f415e"
+      }
+    },
+    {
+      "name": "grid-actual-allocation-full-unit-first",
+      "function": "func_8004C6A8",
+      "qualification": {
+        "local_allocations": 1,
+        "equivalence_updates": 1,
+        "global_allocations": 14,
+        "priority_comparisons": 38,
+        "complete_assembly_equal": true,
+        "register_dispositions_agree": true,
+        "reference_priority_comparisons_agree": true,
+        "diagnostic_option_comment_changes": [
+          "-  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -o",
+          "+  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -da",
+          "+  # -dumpbase -o"
+        ]
+      },
+      "unassigned_returns": 2,
+      "report": {
+        "path": ".decomp-lab/grid-actual-allocation-full-unit-first/report.json",
+        "sha256": "b978dcba2d619aedc609aa706b86072cd33dfb2c942dd1162b9fd9cc788b272b"
+      },
+      "raw_observation": {
+        "path": ".decomp-lab/grid-actual-allocation-full-unit-first/allocations.json",
+        "sha256": "7629034ace4d3d068e97cb5b1c63b524998661d1c75201d5e39bf4c4254f415e"
+      }
+    }
+  ],
+  "global_allocator_calls": 56,
+  "priority_comparisons": 153,
+  "spill_qualification": {
+    "omitted_pseudo_and_actual_return_minus_one_agree": true,
+    "assigned_pseudo_cannot_be_omitted": true,
+    "spilled_pseudo_cannot_be_reported_assigned": true,
+    "regression_tests_added": 1,
+    "initial_conservative_rejections_retained": [
+      {
+        "path": ".decomp-lab/grid-actual-allocation-unordered-first/allocations.json",
+        "sha256": "661e154f29e4d55fdb582285ef52da321e48c2a8da5ed77b5ddb546b1198139e"
+      },
+      {
+        "path": ".decomp-lab/grid-actual-allocation-ordered-first/allocations.json",
+        "sha256": "3e821a9a7094427b3db73564cd5dbce69938faf7b046b90c518f28094e712014"
+      }
+    ]
+  },
+  "ordered_scalar_proof": {
+    "path": ".decomp-lab/grid-recovery-ordered-writes-first.json",
+    "sha256": "72182b572d611fd50b8298a759336e40fe231565af3ba3787e40868a9b25aa3c",
+    "status": "passed_bounded_original_and_ordered_candidate_write_audit",
+    "cases_each_variant": 74832,
+    "variant_runs": 224496,
+    "case_groups": {
+      "complete_angle_word_sweep": 65536,
+      "projection_clamp_boundaries": 896,
+      "coordinate_and_dimension_edges": 8232,
+      "callback_mutation_order": 72,
+      "segment_aliases_and_template_contents": 96
+    },
+    "original_and_new_candidate_output_and_store_order_pass": 74832,
+    "four_byte_control_order_failures": 68306,
+    "explicit_stubs": 4,
+    "producer_dependencies": [
+      {
+        "path": "tools/verify_native_ai.py",
+        "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+      },
+      {
+        "path": "tools/inventory_vtables.py",
+        "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+      },
+      {
+        "path": "tools/progress.py",
+        "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+      },
+      {
+        "path": "configure.py",
+        "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+      },
+      {
+        "path": "requirements-analysis.txt",
+        "sha256": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911"
+      },
+      {
+        "path": "build/SLPS01556.map",
+        "sha256": "453aac4104240b2be6df7e3cc88d0646e91daf28c42dc904dd8fdc121577e4f8"
+      },
+      {
+        "path": "build/undefined_funcs_auto.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "build/undefined_syms_auto.txt",
+        "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+      },
+      {
+        "path": "src/scene/entity.c",
+        "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+      },
+      {
+        "path": "src/scene/entity.h",
+        "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+      },
+      {
+        "path": "src/dream/dream_sys.c",
+        "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+      },
+      {
+        "path": "src/dream/dream_sys.h",
+        "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+      },
+      {
+        "path": "src/scene/actor.c",
+        "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+      },
+      {
+        "path": "src/base/transform.c",
+        "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+      },
+      {
+        "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+        "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+      },
+      {
+        "path": "tools/verify_render_grid.py",
+        "sha256": "1386a440b320822d3abe61f29b556b5f81d3c304d0fab79627b377d31b8f5066"
+      },
+      {
+        "path": "src/scene/render_context.c",
+        "sha256": "5b8d25142af3ac22388076a93789f0d351fdfb6d09d7333ac0d17bf79aaf0325"
+      },
+      {
+        "path": "src/scene/render_context.h",
+        "sha256": "c1063eef3d3f6aa56332ff34a8421edbcff4c0f3b5e1cea5935e687efa79944f"
+      },
+      {
+        "path": "config/symbols.txt",
+        "sha256": "9558bb5e4309d4f4cb3e2843cce14ad4af75205b43eef23ed527b200164bf1a8"
+      },
+      {
+        "path": "asm/nonmatchings/scene/render_context/func_8004C6A8.s",
+        "sha256": "825e7ed18af2f48c08e43eb2666a879849797393a518e614f8f81d3391e699aa"
+      },
+      {
+        "path": ".decomp-lab/verify_grid_ordered_writes_third.py",
+        "sha256": "f09f202f6ef10ff97bc66a13cdeefc58550873a2f75aaa2536315152fa98d76b"
+      },
+      {
+        "path": ".decomp-lab/render-grid-full-unit-first.c",
+        "sha256": "aeebadbd3221bcae92740706c6f44bfe351ec6fd5d32931199d8d4613e850e2e"
+      },
+      {
+        "path": ".decomp-lab/grid-published-candidate-first/render_context.c",
+        "sha256": "616bde3c1f7acb56ed8e3bde36b9233b13e65217efcf682274520fb2b67e5a00"
+      }
+    ],
+    "candidate_identities": {
+      "four_byte_candidate": {
+        "comparison": ".decomp-lab/render-grid-full-build-first/comparison.json",
+        "comparison_sha256": "524f6d3e3363653ab287071b1270d9a2e1f1942994a20cfbde586b4cfe2ac643",
+        "candidate_executable_sha1": "cad22662267d1d719f2fa0195cb0d55c4e2bf145",
+        "full_executable_changed_bytes": 4,
+        "candidate_range_sha256": "954644ba5ab686df2c8352cd026111634557b29dd0d2ba477b198847e666e126"
+      },
+      "ordered_eleven_byte_candidate": {
+        "comparison": ".decomp-lab/grid-published-full-build-first/comparison.json",
+        "comparison_sha256": "1bcf9126f3567218b939b0c739e7eea287b5ad6fddab60c45376297cb29b6a11",
+        "candidate_executable_sha1": "b92b6f3868ca6362de2a6b160a67adbdbf56949b",
+        "full_executable_changed_bytes": 11,
+        "candidate_range_sha256": "8c29da844550f22cebd785a512971bb5bcac56016d84e9b3253d1d8364fa5381"
+      }
+    },
+    "new_original_distinct_fixtures": 0,
+    "whole_feature_groups_accepted": 0,
+    "retained_cli_summary_label_note": "The raw stdout summary retains the legacy key ordered_thirteen_byte_passes; structured candidate identity and the complete comparison establish eleven differences.",
+    "scope": "Repeated existing scalar model, guards, ABI, executed dimension SW order and immediate readback. Four explicit lookup/rotation/matrix/builder contracts; no scene, IRQ/DMA observer or full timing acceptance."
+  },
+  "source_compilation_comparisons": {
+    "successful_compilations_including_controls": 203,
+    "exact_matches": 0,
+    "audit": {
+      "path": ".decomp-lab/grid-recovery-publication-first/source-comparison-audit.json",
+      "sha256": "f8a57a307f87a6a007b380299095354b989da80a9da37170a2b6b06a7686a3fb"
+    },
+    "experiments": [
+      {
+        "path": ".decomp-lab/grid-parameter-reuse-second/results.json",
+        "sha256": "b4a9a4d534c3005d4276dadbfe9d69ca41d23528b4f6263a7d01f2f2717ca706"
+      },
+      {
+        "path": ".decomp-lab/grid-local-dimensions-first/results.json",
+        "sha256": "a42351bb6e06bf8463fa5ba13d4dfa1fc224c0c2eb6fcbb578668c3a78c110f6"
+      },
+      {
+        "path": ".decomp-lab/grid-extent-roles-first/results.json",
+        "sha256": "98ba39781e31d1d2acbca9a68a662ccb4969f097ddb2a349999acb9324c9ff1a"
+      },
+      {
+        "path": ".decomp-lab/grid-origin-widths-second/results.json",
+        "sha256": "1bf05b6b59b8e282d927ac93f0292c8e6422a497aef5525f2d05dc055a0c01c6"
+      },
+      {
+        "path": ".decomp-lab/grid-coordinate-getters-second/results.json",
+        "sha256": "41866890e9638dab5310cb8de8827a39983e6743230dfdc5adcbb909ec7983b7"
+      },
+      {
+        "path": ".decomp-lab/grid-capture-declarations-first/results.json",
+        "sha256": "b0814b51b0c3fa5d5ccbab7b6a5f343c53c943115de5898a7c7dbb2cfd5ee883"
+      },
+      {
+        "path": ".decomp-lab/grid-installed-dimensions-first/results.json",
+        "sha256": "9eb9236e32ab3e54ec0d226d1ec761a15cb41eebe91219f80af6ec474ce1fc9d"
+      }
+    ],
+    "rejected_malformed_getter_log": {
+      "path": ".decomp-lab/grid-coordinate-getters-driver-first/stderr.log",
+      "sha256": "6d47cee4be95d83956971bbb811d848fafd9459cda8392dfe82fa431be256ea4"
+    },
+    "previous_store_correct_candidate_difference": 13,
+    "new_store_correct_candidate_difference": 11,
+    "canonical_compiler_flags_changed": false,
+    "physical_register_bindings": false,
+    "dummy_storage_added": false
+  },
+  "canonical_build": {
+    "objects_expected": 305,
+    "objects_found": 305,
+    "build_current": true,
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 97.96510464604425,
+    "sdk_text_bytes": 147880,
+    "handwritten_text_bytes": 188,
+    "binary_match": "verified",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+  },
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "game_sources_and_configuration_unchanged": true,
+  "new_clean_build_performed": false,
+  "tests": {
+    "new_regression_tests": 1,
+    "total_tooling_tests_each_platform": 307,
+    "windows": {
+      "path": ".decomp-lab/grid-recovery-publication-first/tests-windows.json",
+      "sha256": "7c838386a5fa05f991a9a25d7aceb80e734687a9d0668a18e85ad2561bf95909"
+    },
+    "linux": {
+      "path": ".decomp-lab/grid-recovery-publication-first/tests-linux.json",
+      "sha256": "652c7889fb79781c9b983c8fe4533198eb891a09bb6e0ea4b8e4ae901f5ec9e0"
+    }
+  },
+  "before_after": {
+    "before": {
+      "c_bytes": 195844,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 5,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 37,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 5
+    },
+    "after": {
+      "c_bytes": 195844,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 5,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 37,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 11,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 5
+    },
+    "source_functions_promoted": 0,
+    "source_workarounds_removed": 0,
+    "new_original_game_distinct_cases": 0,
+    "whole_feature_groups_accepted": 0,
+    "developer_workflow_extended": "Existing candidate analysis/contribution; capability count remains ten."
+  },
+  "original_game_behavior_modified": false,
+  "model_api_calls": 0
+}

@@ -1,5 +1,17 @@
 # Changelog
 
+## Grid source-recovery fragment and spill qualification - 2026-10-11
+
+- Publish a reproducible complete-unit research recipe. The store-correct
+  grid candidate improves from thirteen to eleven differing bytes, confined
+  to three prologue instructions; no source function is promoted.
+- Qualify four actual compiler observations with 56 global allocator calls
+  and 153 priority comparisons. Correct conservative rejection of legitimate
+  unassigned-register returns and add one regression test.
+- Recheck 203 source compilations and 74,832 native fixtures per variant.
+  Original and new-candidate store order passes; the old control retains
+  68,306 failures. Preserve original inputs and all earlier evidence.
+
 ## Original compiler register-allocation diagnostic - 2026-10-11
 
 - Publish a compiler-pinned local/global allocation tracer that checks actual
