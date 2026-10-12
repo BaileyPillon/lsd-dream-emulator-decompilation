@@ -1,5 +1,19 @@
 # Changelog
 
+## Source-layout correction and original NPC spatial composition - 2026-10-12
+
+- Expand source-quality review from five selected functions to 28 unused-storage
+  functions. Restore assembly for four padded promotions and retain their
+  padding-free research candidates. Current C is 194,212 / 199,912 (97.15%),
+  with nine assembly functions and 24 inherited source explanations.
+- Verify standard and fresh clean canonical builds. Correct listed-core C
+  groups to 35 / 40; preserve earlier snapshots and whole-feature gates.
+- Check seven callbacks through original transform/SDK/GTE dependencies in
+  26,194 composition fixtures, with 149,580 native commands, 22 actual routines,
+  one ratio contract and four detected private faults. Add eight synthetic
+  checks; all 332 tooling tests pass. Original gameplay and optional mods stay
+  unchanged, with zero model API calls.
+
 ## Additional original NPC callback checks - 2026-10-11
 
 - Verify Elephant, Small Elephant, Fish, Giant Fish and Airship native callbacks,

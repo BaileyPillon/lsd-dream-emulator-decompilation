@@ -333,3 +333,17 @@ check 16 / 107 callbacks and 31,358 fixtures; whole-callback and whole-feature
 acceptance remain zero. Earlier feature and execution records are preserved.
 Original C bodies, C-byte recovery, 40 provisional groups, ten developer
 capabilities and three optional mods retain their existing counts.
+## Expanded source quality and NPC spatial composition
+
+The [source-layout correction](SOURCE_LAYOUT_EXPANDED.md) identifies 28 unused
+local-storage functions. Four post-baseline padded promotions return to assembly,
+leaving 24 inherited source explanations and nine assembly functions. Current
+compiled C is 194,212 / 199,912 (97.15%); listed-core C completion is 35 / 40.
+F024/F025 again retain core assembly and F035 retains two additional functions.
+Earlier inventory bytes and the original baseline measurements are preserved.
+
+The [spatial composition](NPC_SPATIAL.md) checks seven already-catalogued
+callbacks in 26,194 separate fixtures, executing original transform/SDK/GTE
+dependencies with one trigger-ratio contract. Bounded callback coverage stays
+16 / 107; source/feature/AI-tool/mod measures stay separate. Whole-callback and
+whole-feature acceptance remain zero; the official exhaustive total is unknown.

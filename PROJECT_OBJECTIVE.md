@@ -75,3 +75,14 @@ and preserves standard and clean-build equality. Groups F037 and F038 now
 have all listed core functions in C; the provisional core-source count is
 37 / 40. Five inherited source-padding explanations and whole-feature runtime
 acceptance still require recovery.
+## Source-layout correction and current gates
+
+The [expanded audit](docs/SOURCE_LAYOUT_EXPANDED.md) supersedes the earlier
+selected five-function source-workaround count. Four padded promotions are
+withdrawn and retained as unaccepted research. Current compiled C is
+194,212 / 199,912 (97.15%), with nine game assembly functions, 24 inherited
+unused-storage explanations and 35 / 40 listed-core C groups. Standard and
+fresh clean builds remain canonical. No completion requirement is relaxed.
+The [spatial composition](docs/NPC_SPATIAL.md) adds original transform/SDK/GTE
+execution for seven callbacks; whole-feature and whole-callback acceptance
+remain zero.

@@ -1,0 +1,677 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-12T04:09:22.746928+00:00",
+  "repository_before": "3bb762699ac2ecde8e7e0f79a29a03be26663fee",
+  "scope": "Expanded source-local unused-storage review, 28 complete-unit removal builds and withdrawal of four padding-based promotions.",
+  "public_files": {
+    "CHANGELOG.md": "cd37fa34a1564302389be4293f00546a3df440a7100291d1ada70071341ec922",
+    "PROJECT_OBJECTIVE.md": "1520b8d0aa66306e1952787f5d5ffbba1dbef27288abdb766d7d4910a43f718e",
+    "README.md": "e96629ce1d1a8d4985aeb820f5ca02909be67a5a9211791080df8c7866a570fa",
+    "docs/FEATURE_INVENTORY.md": "15f7dcff52dfe4cef677aa2d9ee7d37e056b87bb239f0e34d699711d844b7f47",
+    "docs/PROVENANCE.md": "00e7fde6012636c61b1ab4a9aade3192aeb20cd0a07d1897191106bc4a1946dc",
+    "docs/ROADMAP.md": "7bb04d7265b89c17959f81640f134d6df3033f1cead2cbb114357b365670bb95",
+    "docs/SOURCE_QUALITY.md": "8f4ab8b1e897573873e6e9f1b1236c80812497d3382680cb5c4f440a9699ed22",
+    "docs/SOURCE_LAYOUT_EXPANDED.md": "bf6af180f5130de395cfe1ad16f9159f1e139a4aa4ee9bb85dc81b5b29fdf8b8",
+    "docs/NPC_SPATIAL.md": "f86fb44f8e69ab2b74ce07e0e36f1532cc33273b7ee8345d6586b7abf4ac1ab3",
+    "tools/verify_npc_spatial.py": "e25422dddcbcd445bdaabacf200ba0e418336e0a161648403ae08084d006983f",
+    "tests/test_npc_spatial.py": "60d38eed3f268102945dc9d7341eb00b4101c0bb8a249ac4525c00f44192e60b",
+    "research/source_layout/README.md": "60eac826f26cba1d637085462a41efb02f1180f7b186e93d0755163afa756316",
+    "research/source_layout/dream_generation_find_entry.c": "8c018775190ecba26b1c3df46e62db5cd6d519fbcfb49c52b3f483a41d4a012f",
+    "research/source_layout/dream_generation_update_structure_entities.c": "24676a5409eabb96f553503b97da6941062396d087b20cb3855d9c6a57af709b",
+    "research/source_layout/func_8003D73C.c": "1d572b91374868b1b7434f06592bc0a325ff216d931963fd324a6b6c8ceedd4a",
+    "research/source_layout/func_8003DAD4.c": "60c8e70f69a88bfa8947e3ea6a7ba29919a2b6e6c7fe233f00306a98ec9e9830"
+  },
+  "source_working_tree_sha256": {
+    "src/base/object_math.c": "75a0faa7a51c8b53cc88c1100f8ab64dcb1b9838a1f2266051b4a57ea0d4b7af",
+    "src/dream/dream_generation.c": "a9864fc467e7e039ca6da058a47355158c7be470fb88c0fe7d69aa2d3e7cf8c7",
+    "src/dream/dream_generation_post.c": "2f62da6498b97c4f5180eed2e709db6095524d056a1b827b119262a348d3a490",
+    "src/dream/dream_sys.c": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c",
+    "src/file/debug_file_driver.c": "ebdca0fea6bb3f83936b56c28638e24e751d7562e6b43cdac6a989d84ad08f15",
+    "src/menu/card/memory_card.c": "d0dec2b74c39fccca6a828842cf5502394ca2283ea2bc9fa0b611128a3f4bf85",
+    "src/menu/card/select_menu.c": "bbd8d295cb88e3ab9d7b01a50deafda580c3cd648ef4a975d0aaef4f961ee512",
+    "src/menu/glyph.c": "5a8a1decdef63de957996a0aa326d5d067575ad091c34a2681c00f4cd2b48486",
+    "src/menu/graph_screen.c": "01b49f49f28c468e9d11f1a430416d03fcacc125c3c90f048ba3776d08f8352f",
+    "src/menu/mdec_movie.c": "f4e223502c8e01855f540bcc6a40e1cbaef6e7d8d335d6992ee24b182d5102ce",
+    "src/menu/sprite_atlas.c": "48ab22a375a56c1e9fb9479fa6bc393cff209f0273b9b138824dc27fd48cbdde",
+    "src/menu/tile_buffer.c": "15fec284373159ae31863e14174f293707a93582671d1b12d7ec22cef1a319c9",
+    "src/menu/ui_screen.c": "b690176eff29e488f7290ee26b927e4979c7eb0175dfa651308d5b8d56a10f90",
+    "src/scene/actor.c": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514",
+    "src/scene/render_context.c": "5b8d25142af3ac22388076a93789f0d351fdfb6d09d7333ac0d17bf79aaf0325"
+  },
+  "expanded_private_report": {
+    "path": ".decomp-lab/source-padding-expanded-first/report.json",
+    "sha256": "7c36a84b218b4e9b04fae3c67de99a286b1e6a9dce38ec21e6f0c455f8cb5770"
+  },
+  "unused_storage_function_candidates": 28,
+  "declared_local_bytes_before": 446,
+  "unused_storage_function_explanations_remaining": 24,
+  "declared_local_bytes_remaining": 406,
+  "affected_compiled_function_bytes_before": 6720,
+  "affected_compiled_function_bytes_remaining": 5088,
+  "c_bytes_outside_current_identified_function_spans": 189124,
+  "entries": [
+    {
+      "function": "func_8001EDAC",
+      "source": "src/base/object_math.c",
+      "declaration_line": 199,
+      "variable": "pad",
+      "declared_local_bytes": 8,
+      "references": 2,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "0a32c955e912a848274162b1c8d95d75ce3912680080f6ce37dae6242ed7a61d",
+      "exact_match": false,
+      "changed_bytes": 342798,
+      "length_difference": -12,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_8001EDAC/build/comparison.json",
+        "sha256": "671aaf4f0da537a7cc3b7a63c83099d779d01a54a37d8eee628f245aa2d5375c"
+      }
+    },
+    {
+      "function": "func_8001EE98",
+      "source": "src/base/object_math.c",
+      "declaration_line": 234,
+      "variable": "pad",
+      "declared_local_bytes": 8,
+      "references": 2,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "70368c4c10b9a452988f80b7b05204f03ee232b68e93eadc7cd0165f00122ffa",
+      "exact_match": false,
+      "changed_bytes": 12,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_8001EE98/build/comparison.json",
+        "sha256": "35ce5c7351ff346e93a3901b847f7d268c961f692af3b7825fd6a46384b6a3e1"
+      }
+    },
+    {
+      "function": "dream_generation_update_structure_entities",
+      "source": "src/dream/dream_generation.c",
+      "declaration_line": 278,
+      "variable": "pad",
+      "declared_local_bytes": 8,
+      "references": 1,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "e780c87652b24ea21c8b3af7787bb6b2ad2aa6dc2d1938ff89d7a77d36af339d",
+      "exact_match": false,
+      "changed_bytes": 10,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": false,
+      "withdrawn_from_c": true,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/dream_generation_update_structure_entities/build/comparison.json",
+        "sha256": "2c18f51524cbbe3aad661320242f0770d4e9665fc476a59e2bbb0e0d1678387f"
+      }
+    },
+    {
+      "function": "dream_generation_find_entry",
+      "source": "src/dream/dream_generation_post.c",
+      "declaration_line": 82,
+      "variable": "padding",
+      "declared_local_bytes": 8,
+      "references": 1,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "6bb134b5f84f9dbb9a901d0c702bc54368098810a3f72346619995bf38c413e1",
+      "exact_match": false,
+      "changed_bytes": 20,
+      "length_difference": 0,
+      "in_upstream_baseline_function": false,
+      "declaration_present_in_upstream_baseline": false,
+      "withdrawn_from_c": true,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/dream_generation_find_entry/build/comparison.json",
+        "sha256": "2e41ab6847ded03cb946fb96af0451dd15e599d6f04f94c253257de9143fe52a"
+      }
+    },
+    {
+      "function": "generate_initial_spawn",
+      "source": "src/dream/dream_sys.c",
+      "declaration_line": 1988,
+      "variable": "pad",
+      "declared_local_bytes": 14,
+      "references": 1,
+      "category": "scalar-key record tail; requires actual output-width review",
+      "candidate_source_sha256": "240fcab751ee5d6481afc89faeb13bbca6f594246a4f2fcf91f26cf95f476a95",
+      "exact_match": false,
+      "changed_bytes": 10,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/generate_initial_spawn/build/comparison.json",
+        "sha256": "63971db942efbbb9b49fc6ef30b3df287022e545e361143587f8418c7e6b78c0"
+      }
+    },
+    {
+      "function": "debug_file_driver_unk15",
+      "source": "src/file/debug_file_driver.c",
+      "declaration_line": 72,
+      "variable": "pad",
+      "declared_local_bytes": 64,
+      "references": 1,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "041229417d4f50c7242fc8d24059126809fce516bc5553dfe68420dc0883971e",
+      "exact_match": false,
+      "changed_bytes": 237231,
+      "length_difference": -8,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/debug_file_driver_unk15/build/comparison.json",
+        "sha256": "fa5dd5689b926a7dcaf624fb47420fdd006b65bbf305eca42849168b249f6ed8"
+      }
+    },
+    {
+      "function": "debug_file_driver_open",
+      "source": "src/file/debug_file_driver.c",
+      "declaration_line": 76,
+      "variable": "pad",
+      "declared_local_bytes": 64,
+      "references": 1,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "a91b6d0e385b5947da2a4e96f3502388a474c12d04d504174abffd088d9ac5f3",
+      "exact_match": false,
+      "changed_bytes": 237217,
+      "length_difference": -8,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/debug_file_driver_open/build/comparison.json",
+        "sha256": "50d23b935d52596e5718b3798e10c8a9e57cc3ab3409a7953704a086c1b320a0"
+      }
+    },
+    {
+      "function": "memory_card_wait_event",
+      "source": "src/menu/card/memory_card.c",
+      "declaration_line": 536,
+      "variable": "dummy_stack_padding",
+      "declared_local_bytes": 8,
+      "references": 3,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "2d63849f51eba5fb8cc7501ca4dad4d50d25cd494489ccf825b3458acc97f645",
+      "exact_match": false,
+      "changed_bytes": 16,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/memory_card_wait_event/build/comparison.json",
+        "sha256": "e5b3b61f547aa29d48e7555baa28284e746146194643c0bb4e4e0d8ae1e28a47"
+      }
+    },
+    {
+      "function": "func_8004F810",
+      "source": "src/menu/card/memory_card.c",
+      "declaration_line": 644,
+      "variable": "dummy_stack_padding",
+      "declared_local_bytes": 8,
+      "references": 3,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "9fa37ab3c4260daf7d7bf517aed8f91d931b7c9aebccc39e869cf1f1de932522",
+      "exact_match": false,
+      "changed_bytes": 8,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_8004F810/build/comparison.json",
+        "sha256": "92720a8d431450c3fb630265fd2183a1d741e5d43e3d04944566baa740664544"
+      }
+    },
+    {
+      "function": "func_8004FBE4",
+      "source": "src/menu/card/memory_card.c",
+      "declaration_line": 776,
+      "variable": "dummy_stack_padding",
+      "declared_local_bytes": 8,
+      "references": 3,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "c249c03d85584b53eaf7cde4ddeac95b44b500140f6b5a2d85dc496212034f00",
+      "exact_match": false,
+      "changed_bytes": 10,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_8004FBE4/build/comparison.json",
+        "sha256": "100a3dead1ecc38f13616079091f2eb962375ea01d1c75050b5a5dac372f443c"
+      }
+    },
+    {
+      "function": "func_80051AC8",
+      "source": "src/menu/card/select_menu.c",
+      "declaration_line": 24,
+      "variable": "dummy_stack_padding",
+      "declared_local_bytes": 8,
+      "references": 3,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "97a8ad63039c1b7f642f0a3f556051ca8b9eae19eb4d54046bde57f0d2adbced",
+      "exact_match": false,
+      "changed_bytes": 18,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_80051AC8/build/comparison.json",
+        "sha256": "471e3c9ec5ed6520afbb926a51e9e93c156b6d09d2ced41b7bb8edc495d0e336"
+      }
+    },
+    {
+      "function": "func_80051C84",
+      "source": "src/menu/card/select_menu.c",
+      "declaration_line": 73,
+      "variable": "pad",
+      "declared_local_bytes": 8,
+      "references": 1,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "f18f1238af330ecdaff4ec6181460ccfe884534c835f6e83aee1cf6cab6d424f",
+      "exact_match": false,
+      "changed_bytes": 8,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_80051C84/build/comparison.json",
+        "sha256": "e054e1b12ad96de967e7534e4a97ebebe4f7a8ebe24a26df513e28028edd6d27"
+      }
+    },
+    {
+      "function": "func_8005278C",
+      "source": "src/menu/card/select_menu.c",
+      "declaration_line": 383,
+      "variable": "pad",
+      "declared_local_bytes": 8,
+      "references": 1,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "9976b0726a8daee01017a171d13638bd297a2c005303cf365d64b532b4d1bdda",
+      "exact_match": false,
+      "changed_bytes": 10,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_8005278C/build/comparison.json",
+        "sha256": "e95db20404e3577aceadb5be9b6766e696d372207584f81a7482e05b7c629dc0"
+      }
+    },
+    {
+      "function": "glyph_get_char",
+      "source": "src/menu/glyph.c",
+      "declaration_line": 140,
+      "variable": "pad",
+      "declared_local_bytes": 16,
+      "references": 1,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "a76d98b1470922d808a893ab28a97343f1ea600ad1135138e6d57e517c73d7f6",
+      "exact_match": false,
+      "changed_bytes": 167154,
+      "length_difference": -8,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/glyph_get_char/build/comparison.json",
+        "sha256": "a1294afe387f6a68f511903940cee0d5eb0b396f28f58594031a09f560afc43c"
+      }
+    },
+    {
+      "function": "graph_screen_update_event",
+      "source": "src/menu/graph_screen.c",
+      "declaration_line": 146,
+      "variable": "pad",
+      "declared_local_bytes": 8,
+      "references": 3,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "824d8779dcb0ad3b60bea81c9b2ee1b7d592ec47ff7e82e117bf04b71ab591d5",
+      "exact_match": false,
+      "changed_bytes": 20,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/graph_screen_update_event/build/comparison.json",
+        "sha256": "3b4354705ae1a3b691ea48cf85bb45b41d7a4e8a8580fa17a2cb3bcdfb45b199"
+      }
+    },
+    {
+      "function": "graph_screen_setup_video_event",
+      "source": "src/menu/graph_screen.c",
+      "declaration_line": 195,
+      "variable": "dummy",
+      "declared_local_bytes": 8,
+      "references": 3,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "ba745cfa32eaebf783e5024170e05bf45b20555262a0b73dcfbd0f6b4a9d8aac",
+      "exact_match": false,
+      "changed_bytes": 143809,
+      "length_difference": -4,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/graph_screen_setup_video_event/build/comparison.json",
+        "sha256": "6829bd4fe30369c2836b403c2d7ebb97690a34b454ff4b09e4a97a1bcd1d0970"
+      }
+    },
+    {
+      "function": "func_8004564C",
+      "source": "src/menu/mdec_movie.c",
+      "declaration_line": 87,
+      "variable": "pad",
+      "declared_local_bytes": 8,
+      "references": 3,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "ca8224d35a3e265fec654031230b76dc799d031cbea4c4d34469c661aa767356",
+      "exact_match": false,
+      "changed_bytes": 10,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_8004564C/build/comparison.json",
+        "sha256": "14f2614c21fd3f25cf7622e56253fd494befd466be00e6db5c9c751301501532"
+      }
+    },
+    {
+      "function": "func_80044F90",
+      "source": "src/menu/sprite_atlas.c",
+      "declaration_line": 63,
+      "variable": "pad",
+      "declared_local_bytes": 32,
+      "references": 1,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "c586ffb63833e72770dcab55b832e6109fd1f9f144bcfcb51a7a3e3d4689d4e5",
+      "exact_match": false,
+      "changed_bytes": 8,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_80044F90/build/comparison.json",
+        "sha256": "a98d23ba116ea95d717bc0c1957b09d5b7f5b0e9fa0cb563d70097fbd692e4d8"
+      }
+    },
+    {
+      "function": "func_80045060",
+      "source": "src/menu/sprite_atlas.c",
+      "declaration_line": 84,
+      "variable": "pad",
+      "declared_local_bytes": 32,
+      "references": 1,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "aa37f7b5e457f3a3f3d5d36098e1070fd6e015746e1fa3b30254cbbd4850c23a",
+      "exact_match": false,
+      "changed_bytes": 6,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_80045060/build/comparison.json",
+        "sha256": "88dce51a40c11d081f2b932f7d441adc527f3816aff604abaf7a5ddf5f313e22"
+      }
+    },
+    {
+      "function": "func_80044D40",
+      "source": "src/menu/tile_buffer.c",
+      "declaration_line": 57,
+      "variable": "pad",
+      "declared_local_bytes": 32,
+      "references": 1,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "1fed4d40d1c0a946721ecd335b81cc20b235dd9d74893f9bd66a0c53145bb693",
+      "exact_match": false,
+      "changed_bytes": 10,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_80044D40/build/comparison.json",
+        "sha256": "71cce3b36779fb53a6fe99616d35182abb374b07534464a10fffac62cf9f4491"
+      }
+    },
+    {
+      "function": "func_80044E64",
+      "source": "src/menu/tile_buffer.c",
+      "declaration_line": 86,
+      "variable": "pad",
+      "declared_local_bytes": 8,
+      "references": 1,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "588501b379aa12e9dfab766f443fa9ea2c52b357c7b698b24d98f25cb5bf019e",
+      "exact_match": false,
+      "changed_bytes": 8,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_80044E64/build/comparison.json",
+        "sha256": "5910752cf04cf29bb9a462c407f424a566cb51cca0ebfd18c62d62fd199e1d7c"
+      }
+    },
+    {
+      "function": "func_8003D050",
+      "source": "src/menu/ui_screen.c",
+      "declaration_line": 592,
+      "variable": "unused_stack_padding",
+      "declared_local_bytes": 8,
+      "references": 2,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "1ec3c24d256129cf8c857c52d6ac86c970ca2c4c0289c4e00c7a7eea4c5ae342",
+      "exact_match": false,
+      "changed_bytes": 10,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_8003D050/build/comparison.json",
+        "sha256": "e63b4731fa226625bf8bd174125bd80eef1bd36f4605f40a9ac5e1f5a4bb378f"
+      }
+    },
+    {
+      "function": "func_8003D194",
+      "source": "src/menu/ui_screen.c",
+      "declaration_line": 635,
+      "variable": "dummy_stack_padding",
+      "declared_local_bytes": 8,
+      "references": 3,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "d1dec53124d9dfe765c3f336863e19511dc3b1f11e8bf797aabbea775b7e8ddf",
+      "exact_match": false,
+      "changed_bytes": 16,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_8003D194/build/comparison.json",
+        "sha256": "b087005131158753a6c5cf41b194d487bc0a7a6bd0fe754fa6a9eca0bb75f4fa"
+      }
+    },
+    {
+      "function": "func_8003D2CC",
+      "source": "src/menu/ui_screen.c",
+      "declaration_line": 698,
+      "variable": "pad",
+      "declared_local_bytes": 4,
+      "references": 2,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "926795c19e54407d84b4c5401f0ad947d9c5781011aee0441b50e239ec9be4db",
+      "exact_match": false,
+      "changed_bytes": 14,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_8003D2CC/build/comparison.json",
+        "sha256": "49282bad9251432d9349a9165e5838eb521a9f88efe8bb1e39a4d5adeac5df6a"
+      }
+    },
+    {
+      "function": "func_8003D73C",
+      "source": "src/menu/ui_screen.c",
+      "declaration_line": 845,
+      "variable": "pad",
+      "declared_local_bytes": 16,
+      "references": 2,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "5544b332f5611f30cce3eb5a191cc43160be07b01dfbb4fdea348a1e4f6b50df",
+      "exact_match": false,
+      "changed_bytes": 20,
+      "length_difference": 0,
+      "in_upstream_baseline_function": false,
+      "declaration_present_in_upstream_baseline": false,
+      "withdrawn_from_c": true,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_8003D73C/build/comparison.json",
+        "sha256": "92ab49bc7d5a9c15660a24ac072896fe08ad662282350ad81fc5d3c9cc321d9b"
+      }
+    },
+    {
+      "function": "func_8003DAD4",
+      "source": "src/menu/ui_screen.c",
+      "declaration_line": 936,
+      "variable": "pad",
+      "declared_local_bytes": 8,
+      "references": 2,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "146317cd5330d4e6d08848d541b0736b54ea953d8fe28c61d9d036a1b4d6aea3",
+      "exact_match": false,
+      "changed_bytes": 16,
+      "length_difference": 0,
+      "in_upstream_baseline_function": false,
+      "declaration_present_in_upstream_baseline": false,
+      "withdrawn_from_c": true,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_8003DAD4/build/comparison.json",
+        "sha256": "a505fc7f420a493adf4835cc2976f37a8d309ae12a779c473bbc3008afb98b3f"
+      }
+    },
+    {
+      "function": "func_80065E1C",
+      "source": "src/scene/actor.c",
+      "declaration_line": 409,
+      "variable": "dummy",
+      "declared_local_bytes": 12,
+      "references": 3,
+      "category": "index record unused tail and empty address comparison",
+      "candidate_source_sha256": "a6085670372d0c73d9adab9166f92d550e5c8a4e030555ce0cf42c72154ce938",
+      "exact_match": false,
+      "changed_bytes": 12,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_80065E1C/build/comparison.json",
+        "sha256": "9387dc75197838708af6ee6e8e3d9d79eb4023830a92fdf76712b4a953e33320"
+      }
+    },
+    {
+      "function": "func_8004ADD8",
+      "source": "src/scene/render_context.c",
+      "declaration_line": 347,
+      "variable": "dummy_stack_padding",
+      "declared_local_bytes": 24,
+      "references": 3,
+      "category": "unused standalone local array",
+      "candidate_source_sha256": "40c8eac9b69d4843bd21d2b69ed1f209ae83c185c302d3eaeb8ff4c982ca692a",
+      "exact_match": false,
+      "changed_bytes": 12,
+      "length_difference": 0,
+      "in_upstream_baseline_function": true,
+      "declaration_present_in_upstream_baseline": true,
+      "withdrawn_from_c": false,
+      "removal_comparison": {
+        "path": ".decomp-lab/source-padding-expanded-first/func_8004ADD8/build/comparison.json",
+        "sha256": "57949f69f37ce5aea91e5363cb3d9a5b40b8feda6027a3b6ce8635f0508a3c6c"
+      }
+    }
+  ],
+  "withdrawal": {
+    "path": ".decomp-lab/source-promotion-correction-first/withdrawal.json",
+    "sha256": "2891f2da2903dd4bdf2fcb1eb24cc903802c945d5ec9287e64eb82319e53ca00"
+  },
+  "functions_withdrawn": [
+    "dream_generation_find_entry",
+    "dream_generation_update_structure_entities",
+    "func_8003D73C",
+    "func_8003DAD4"
+  ],
+  "standard_build": {
+    "path": ".decomp-lab/source-promotion-correction-first/current-progress.json",
+    "sha256": "86a2896642e77b03e0f360a9f4d9441e9023c4ecb527b5659cf604955ef04b80"
+  },
+  "clean_build": {
+    "path": ".decomp-lab/source-promotion-correction-first/clean-build.json",
+    "sha256": "979d439694c1f6dcdc13df294a83112506fefb2966d4581689520be93a941466"
+  },
+  "before_after": {
+    "before": {
+      "c_bytes": 195844,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 5,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 37,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 16,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 5
+    },
+    "after": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 16,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "source_functions_promoted": 0,
+    "padded_source_promotions_withdrawn": 4,
+    "padded_promotion_bytes_withdrawn": 1632,
+    "source_workarounds_removed_by_withdrawal": 4,
+    "inherited_source_explanations_remaining": 24,
+    "original_game_feature_groups_accepted": 0,
+    "callback_count_unchanged": 16,
+    "developer_capabilities_unchanged": 10,
+    "optional_mods_unchanged": 3
+  },
+  "original_game_behavior_modified": false,
+  "model_api_calls": 0,
+  "whole_feature_groups_accepted": 0,
+  "scope_limit": "These declared unused arrays/tails are reviewed, not a certificate that no other source workaround exists. Necessary representation padding is preserved."
+}

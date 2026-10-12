@@ -8,14 +8,15 @@ boundary of the published snapshot.
 
 ## Matching C recovery
 
-Five game functions remain in assembly after the matching writer recovery:
+Nine game functions remain in assembly after the
+[source-layout correction](SOURCE_LAYOUT_EXPANDED.md):
 
-The [source-quality audit](SOURCE_QUALITY.md) additionally identifies five
-matching C functions with inherited explicit dummy stack padding. Removing
-each in a complete private build changes only SP-relative displacements, but
-none preserves the original image. Recover real storage or inline boundaries
-for these functions as part of the no-padding completion requirement. The
-known assembly count is five; this is a separate source-quality backlog.
+The expanded audit identifies 28 unused-storage functions and withdraws four
+padded promotions. Twenty-four inherited source explanations remain in C;
+the corrected count is 194,212 / 199,912 (97.15%). Recover real storage and
+helper lifetimes for those functions and the four retained
+[source-layout candidates](../research/source_layout/README.md). Full source
+quality and runtime acceptance remain separate gates.
 
 The initial seven also remained after the [save-title recovery](SAVE_LABEL.md). That
 additional game-support helper was discovered in a segment classified as SDK;
@@ -146,6 +147,8 @@ remaining scenario for each group; 97.97% describes current game C bytes only.
 - Extend emulator checks for duration multipliers and passive Gray Man.
 - Keep all optional patched executables and discs outside the canonical build.
 
-The latest writer recovery brings matching C to 195,844 / 199,912 (97.97%),
-with 37 / 40 groups having all listed core functions in C. These overlapping
+After the source-layout correction, 35 / 40 groups have all listed core
+functions in C. The [NPC spatial composition](NPC_SPATIAL.md) checks seven
+callbacks through actual transform/SDK/GTE dependencies in 26,194 fixtures;
+natural histories, encounters and timing remain open. These overlapping
 source groups retain zero whole-feature acceptances.

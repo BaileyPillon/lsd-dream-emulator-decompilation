@@ -82,3 +82,11 @@ The remaining work is six assembly functions, five known source workarounds,
 the broader source/SDK audit and the existing asset, dispatch and reviewed
 runtime requirements. Actual source or inline boundaries must explain the
 original storage before a replacement can be accepted.
+## Wider audit and corrected current status
+
+This five-function report is a historical selected-name audit. The later
+[expanded review](SOURCE_LAYOUT_EXPANDED.md) checks 28 unused-storage functions,
+withdraws four padded C promotions and retains 24 inherited source explanations.
+Current source is 194,212 / 199,912 C bytes with nine assembly functions.
+The earlier comparison results stay frozen; their limited search boundary does
+not establish the total number of source workarounds.

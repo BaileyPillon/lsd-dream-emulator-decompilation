@@ -19777,6 +19777,99 @@
       "whole_feature_acceptances": 0,
       "original_game_behavior_modified": false,
       "model_api_calls": 0
+    },
+    "source_layout_correction_and_npc_spatial_20261012": {
+      "recorded_utc": "2026-10-12T04:09:22.746928+00:00",
+      "documents": [
+        "docs/SOURCE_LAYOUT_EXPANDED.md",
+        "docs/NPC_SPATIAL.md"
+      ],
+      "source_layout_metadata": {
+        "path": "docs/source-layout-expanded-checks.json",
+        "sha256": "0fe3f5d77e25c3cfda234f86a685f24aff25fa241997b272557afddb56d34213"
+      },
+      "npc_spatial_metadata": {
+        "path": "docs/npc-spatial-checks.json",
+        "sha256": "0dcd3cc3849278633f8cf17031834fb85cf22b61ed86e7231239aacff5647e61"
+      },
+      "before_after": {
+        "before": {
+          "c_bytes": 195844,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 5,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 37,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 16,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 5
+        },
+        "after": {
+          "c_bytes": 194212,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 9,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 16,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 24
+        },
+        "source_functions_promoted": 0,
+        "padded_source_promotions_withdrawn": 4,
+        "padded_promotion_bytes_withdrawn": 1632,
+        "source_workarounds_removed_by_withdrawal": 4,
+        "inherited_source_explanations_remaining": 24,
+        "original_game_feature_groups_accepted": 0,
+        "callback_count_unchanged": 16,
+        "developer_capabilities_unchanged": 10,
+        "optional_mods_unchanged": 3
+      },
+      "core_source_overrides": {
+        "F024": {
+          "core_complete": false,
+          "retained_assembly_functions": [
+            "dream_generation_update_structure_entities"
+          ]
+        },
+        "F025": {
+          "core_complete": false,
+          "retained_assembly_functions": [
+            "dream_generation_find_entry"
+          ]
+        },
+        "F035": {
+          "core_complete": false,
+          "additional_retained_assembly_functions": [
+            "func_8003D73C",
+            "func_8003DAD4"
+          ]
+        }
+      },
+      "function_status_overrides": {
+        "dream_generation_find_entry": "retained_assembly; padding-free source candidate unaccepted",
+        "dream_generation_update_structure_entities": "retained_assembly; padding-free source candidate unaccepted",
+        "func_8003D73C": "retained_assembly; padding-free source candidate unaccepted",
+        "func_8003DAD4": "retained_assembly; padding-free source candidate unaccepted"
+      },
+      "spatial_composition_cases": 26194,
+      "spatial_composition_callbacks": 7,
+      "native_spatial_routines_entered": 22,
+      "native_gte_commands": 149580,
+      "spatial_dependency_contracts": 1,
+      "negative_controls_detected": 4,
+      "tooling_tests_each_platform": 332,
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0,
+      "whole_feature_groups_accepted": 0
     }
   }
 }

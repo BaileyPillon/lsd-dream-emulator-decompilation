@@ -271,26 +271,7 @@ void dream_generation_build_entities(void *arg0) {
 extern s32 g_GenerationStructureCount;
 extern base_class_t *g_GenerationStructures[];
 
-void dream_generation_update_structure_entities(s32 arg0) {
-    s32 i;
-    base_class_t **cursor;
-    /* Retain the original stack layout with GCC 2.6.3. */
-    s32 pad[2];
-
-    if (g_GenerationType >= 0) {
-        if (g_GenerationStructureCount > 0) {
-            cursor = g_GenerationStructures;
-            i = 0;
-            do {
-                base_class_t *obj = *cursor;
-
-                ((void (*)(base_class_t *, s32))(*(u32 *)((u8 *)obj->vtable + 0xEC)))(obj, arg0);
-                cursor++;
-                i++;
-            } while (i < g_GenerationStructureCount);
-        }
-    }
-}
+INCLUDE_ASM("asm/nonmatchings/dream/dream_generation", dream_generation_update_structure_entities);
 
 extern s32 g_GenerationType;
 extern s32 g_GenerationStructureCount;

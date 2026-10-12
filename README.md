@@ -17,18 +17,18 @@ distributed here.
 
 ## Current status
 
-The current verified source snapshot is dated October 11, 2026. These are
+The current verified source snapshot is dated October 12, 2026. These are
 separate measures, not a whole-game completion percentage. The initial
 publication and subsequent evidence are retained separately.
 
 | Measure | Verified snapshot |
 | --- | ---: |
-| Matching game-function bytes compiled from C | 195,844 / 199,912 (97.97%) |
-| Known remaining game assembly functions | 5 |
-| Known C functions with explicit dummy stack padding | 5 |
+| Matching game-function bytes compiled from C | 194,212 / 199,912 (97.15%) |
+| Known remaining game assembly functions | 9 |
+| Known C functions with unresolved unused local storage | 24 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
 | Original callbacks with bounded native comparisons | 16 / 107 |
-| Provisional behavior/system groups with listed core functions in C | 37 / 40 |
+| Provisional behavior/system groups with listed core functions in C | 35 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
 
 The feature inventory has 40 provisional groups; an official exhaustive
@@ -37,10 +37,11 @@ denominator. Bounded native and emulator comparisons have passed, including
 a 6,000-frame sequence with matching frame, GPU, state and PCM audio output.
 Their scope and remaining gaps are documented in the
 [feature inventory](docs/FEATURE_INVENTORY.md) and [roadmap](docs/ROADMAP.md).
-The [source-quality audit](docs/SOURCE_QUALITY.md) verifies five inherited
-padding constructs already present before this work. They remain cleanup
-requirements in addition to the five remaining assembly functions; C-byte coverage does
-not certify their original source explanation.
+The [expanded source-layout audit](docs/SOURCE_LAYOUT_EXPANDED.md) corrects the
+earlier selected five-function scan. It identifies 28 unused-storage functions
+and withdraws four promotions that added padding. Their readable padding-free
+candidates remain research; 24 inherited source explanations and nine assembly
+functions remain. C-byte coverage does not certify original source quality.
 The [save-title recovery](docs/SAVE_LABEL.md) documents an earlier matching C
 promotion, its native checks and the correction to SDK/game classification.
 The [SDK and sound API audit](docs/SDK_SIGNATURE_AUDIT.md) documents corrected
@@ -136,6 +137,9 @@ The [additional original NPC checks](docs/SCRIPTED_EXTENSION.md) cover the
 fish's full 24,000-tick joint command cycle, elephant scale requests and
 airship RNG/link/child decisions. Current bounded comparisons cover 16 of
 107 callbacks; natural encounters and whole-feature acceptance remain open.
+The [spatial composition](docs/NPC_SPATIAL.md) executes original transform,
+axis/world, SDK rotation and GTE dependencies for seven of those callbacks in
+26,194 additional composition fixtures. It retains one trigger-ratio contract.
 
 ## Build the matching executable
 

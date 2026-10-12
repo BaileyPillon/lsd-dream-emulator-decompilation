@@ -831,68 +831,7 @@ void func_8003D6D4(ui_screen_t *This) {
     memory_free_mem((void *) This->m_Unk24[This->m_Unk21]);
 }
 
-void func_8003D73C(ui_screen_t *This, s32 Unk2, s32 Unk3) {
-    s32 idx;
-    s32 count;
-    s32 v9;
-    s32 i;
-    text_line_t **row;
-    text_line_t *obj;
-    s32 *entry;
-    s32 pos[2];
-    s32 tmp[2];
-    effect_base_t *sound;
-    char pad[16];
-
-    (void) pad;
-
-    idx = This->m_Unk21;
-    row = (text_line_t **) This->m_Unk24[idx];
-    v9 = ((s32 *) ((func_8003CE98_arg_t *) This->m_Unk18)->table[idx])[1];
-    count = This->m_Unk22[idx];
-
-    i = 0;
-    if (count > 0) {
-        do {
-            obj = *row++;
-            obj->vtable->Unk19(obj);
-            i++;
-        } while (i < count);
-    }
-
-    entry = (s32 *) ((func_8003CE98_arg_t *) This->m_Unk18)->table[idx];
-    __builtin_memcpy(pos, entry + 4, sizeof(pos));
-    pos[1] -= v9 * 10;
-
-    if (Unk3) {
-        sound = (effect_base_t *) This->m_Unk25;
-        sound->vtable->attach_to(sound, This->m_Unk4, pos);
-        i = 0;
-        tmp[0] = 0x28;
-        tmp[1] = count * 12;
-        sound = (effect_base_t *) This->m_Unk25;
-        sound->vtable->Unk47(sound, tmp);
-    } else {
-        sound = (effect_base_t *) This->m_Unk25;
-        sound->vtable->Unk19(sound);
-        i = 0;
-    }
-
-    row = (text_line_t **) This->m_Unk24[idx];
-    if (count > 0) {
-        do {
-            (*row)->vtable->Unk18(*row, Unk2, pos);
-            i++;
-            (*row)->vtable->Unk23(*row, Unk3);
-            pos[1] += 10;
-            row++;
-        } while (i < count);
-    }
-
-    row = (text_line_t **) This->m_Unk24[idx];
-    obj = row[v9];
-    obj->vtable->Unk23(obj, 1);
-}
+INCLUDE_ASM("asm/nonmatchings/menu/ui_screen", func_8003D73C);
 
 void func_8003D980(ui_screen_t *This, char *arg1) {
     s32 count;
@@ -924,53 +863,7 @@ void func_8003DA10(ui_screen_t *This) {
     }
 }
 
-void func_8003DAD4(ui_screen_t *This) {
-    s32 idx;
-    s32 sel;
-    s32 count;
-    s32 i;
-    text_line_t **row;
-    s32 pos[2];
-    s32 *entry;
-    effect_base_t *sound;
-    char pad[8];
-
-    (void) pad;
-
-    if (This->m_HasIdleTimeout != 2) {
-        return;
-    }
-
-    idx = This->m_Unk21;
-    sel = This->m_Unk23[idx];
-    entry = (s32 *) ((func_8003CE98_arg_t *) This->m_Unk18)->table[idx];
-    __builtin_memcpy(pos, entry + 4, sizeof(pos));
-    pos[1] -= sel * 10;
-
-    row = (text_line_t **) This->m_Unk24[idx];
-    count = This->m_Unk22[idx];
-    if (count > 0) {
-        i = 0;
-        do {
-            (*row)->vtable->Unk23(*row, 0);
-            i++;
-            ((void (*)(void *, void *)) (*row)->vtable->Unk46)(*row, pos);
-            pos[1] += 10;
-            row++;
-        } while (i < count);
-    }
-
-    {
-        text_line_t *obj = ((text_line_t **) This->m_Unk24[idx])[sel];
-        obj->vtable->Unk23(obj, 1);
-        obj->vtable->Unk45(obj, (char *)This->m_Unk18 + 0x10);
-    }
-    ((s32 *) ((func_8003CE98_arg_t *) This->m_Unk18)->table[idx])[1] = sel;
-    sound = (effect_base_t *)This->m_Unk25;
-    sound->vtable->Unk19(sound);
-    This->m_HasIdleTimeout = 1;
-    This->vtable->Unk23(This, 0x10);
-}
+INCLUDE_ASM("asm/nonmatchings/menu/ui_screen", func_8003DAD4);
 
 void func_8003DCAC(ui_screen_t *This) {
     s32 idx;

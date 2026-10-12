@@ -451,3 +451,17 @@ The new publication supplement raises bounded callback coverage from 11 to 16
 without altering earlier inventory bytes or accepting a whole encounter or
 feature group. Developer analysis and optional mods stay separate from original
 scripted NPC behavior; no model API call or new gameplay behavior is added.
+## Expanded layout correction and spatial composition
+
+[source-layout-expanded-checks.json](source-layout-expanded-checks.json) pins
+the wider 28-function source review, full-unit removal builds, upstream lineage,
+four withdrawals and current standard/clean canonical builds. The unaccepted
+padding-free fragments preserve readable work in research. No game input or
+generated assembly is published. Earlier C measurements are retained as dated
+compiled-source snapshots; they do not waive the no-padding source criterion.
+
+[npc-spatial-checks.json](npc-spatial-checks.json) pins seven-callback spatial
+composition, actual routine/GTE entry counts, bridge/backend identities, four
+detected faults and source/tests. The earlier abstract profile remains frozen.
+Valid synthetic object graphs and one trigger-ratio contract leave natural
+construction, histories, visible/audio behavior and full hardware timing open.
