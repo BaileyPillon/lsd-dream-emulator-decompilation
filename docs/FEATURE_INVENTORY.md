@@ -397,3 +397,17 @@ match. This is compiler research and adds no native gameplay cases. Current C,
 the nine assembly functions, 24 inherited layouts, 40 provisional groups,
 16 / 107 bounded NPC count, ten developer capabilities and three mods are
 unchanged. Source recovery and whole-feature acceptance remain incomplete.
+
+## Menu layout, glyphs and acceptance supplement
+
+The [menu profile](MENU_LAYOUT.md) adds F035/F036 evidence through 39 original
+methods and independent object rules in 864 constructed histories per original
+and three candidate images. It checks glyph windows and gaps, selection, effect
+dimensions, parent lists, allocator state and timer changes. Three executed
+faults are detected. These are repeated image comparisons of the same histories.
+Two callback declarations now reflect actual methods and preserve canonical
+standard and fresh clean builds. Both menu callers retain assembly, and 62
+source trials have no exact match. Natural screens, constructors, rendering and
+full input reachability remain open. C recovery, the 40 provisional groups,
+16 / 107 bounded NPC count, ten developer capabilities, three mods and zero
+whole-feature acceptances remain unchanged.

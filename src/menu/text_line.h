@@ -53,7 +53,7 @@ typedef struct text_line_vtable {
     /* 0x0B0 8006ec40 */ void (*Unk43)(void *);
     /* 0x0B4 8006ec44 */ void (*Unk44)(void *);
     /* 0x0B8 8006ec48 */ void (*Unk45)(void *, char *);
-    /* 0x0BC 8006ec4c */ void (*Unk46)(void *);
+    /* 0x0BC 8006ec4c */ void (*Unk46)(void *, s32 *);
     /* 0x0C0 8006ec50 */ void (*Unk47)(void *);
     /* 0x0C4 8006ec54 */ void (*Unk48)(void *);
     /* 0x0C8 8006ec58 */ void (*Unk49)(void *);

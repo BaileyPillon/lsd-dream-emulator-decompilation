@@ -8,7 +8,7 @@ void func_8003DAD4(ui_screen_t *This) {
     text_line_t **row;
     s32 pos[2];
     s32 *entry;
-    effect_base_t *sound;
+    effect_base_t *effect;
 
     if (This->m_HasIdleTimeout != 2) {
         return;
@@ -27,7 +27,7 @@ void func_8003DAD4(ui_screen_t *This) {
         do {
             (*row)->vtable->Unk23(*row, 0);
             i++;
-            ((void (*)(void *, void *)) (*row)->vtable->Unk46)(*row, pos);
+            (*row)->vtable->Unk46(*row, pos);
             pos[1] += 10;
             row++;
         } while (i < count);
@@ -39,8 +39,8 @@ void func_8003DAD4(ui_screen_t *This) {
         obj->vtable->Unk45(obj, (char *)This->m_Unk18 + 0x10);
     }
     ((s32 *) ((func_8003CE98_arg_t *) This->m_Unk18)->table[idx])[1] = sel;
-    sound = (effect_base_t *)This->m_Unk25;
-    sound->vtable->Unk19(sound);
+    effect = (effect_base_t *)This->m_Unk25;
+    effect->vtable->Unk19(effect);
     This->m_HasIdleTimeout = 1;
     This->vtable->Unk23(This, 0x10);
 }

@@ -72,6 +72,13 @@ frame but adds a copy; passing the style by value emits a separate helper.
 The closest candidate retains twenty stack-layout differences, so the original
 assembly and current source-quality counts remain intact.
 
+The [menu investigation](MENU_LAYOUT.md) confirms eight consumed XY bytes and
+two callback declarations through 39 original glyph, graphics, list and heap
+methods. Sixty-two source forms have no exact match. Real returned values can
+produce the original frame size but add copies; by-value accessors can emit
+separate helpers. Complete candidates retain 20 and 16 differences, so both
+callers remain in assembly and unused storage is not reintroduced.
+
 ## Build and continuation gates
 
 The corrected 305-object standard build and a separate fresh clean build both

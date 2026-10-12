@@ -525,3 +525,22 @@ function-begin note relocation is distinguished from earlier source boundaries.
 Original code, generated assembly and candidate executables remain private.
 Earlier feature and source measurements remain frozen. No source or whole
 feature is promoted, and no new gameplay execution is claimed.
+
+## Original menu layout and acceptance supplement
+
+[menu-layout-checks.json](menu-layout-checks.json) pins 62 independently
+rechecked source trials, three nonmatching complete images and 864 constructed
+histories replayed through 39 original methods per image. The successful proof
+checks complete caller/heap/global buffers, independent semantic rules, three
+executed faults and preservation of 27 dependencies. Its qualified isolated
+Unicorn 2.1.2 backend remains separate from the main analysis environment.
+
+Two callback declaration corrections are verified by standard and fresh clean
+builds. The new clean copy starts without build objects and pins 363 build
+inputs; only those two declarations differ from the previous clean inputs.
+Older source-trial headers remain verified against the retained earlier copy.
+The initial stripped-ELF, stale-object and wrong-backend attempts remain
+diagnostics, separate from the successful active-object range proof. Public
+code and metadata contain no original game images, generated assembly, raw
+buffers, BIOS, assets or faulted native code. Earlier feature records reconstruct
+after removing only the new supplement; no source or whole feature is promoted.

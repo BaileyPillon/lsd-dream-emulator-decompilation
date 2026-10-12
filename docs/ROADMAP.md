@@ -138,6 +138,10 @@ remain separate acceptance work.
 
 ## Original behavior and content
 
+- Extend the [menu profile](MENU_LAYOUT.md) from constructed ownership graphs
+  to natural constructors, screen assets, rendered glyphs/effects and complete
+  controller reachability. Its 864 histories and 39 native methods are bounded
+  F035/F036 evidence; the two caller frames still need matching C.
 The [level-model loader audit](LBD_PIPELINE.md) checks all 418 inventoried local
 LBD files, including native destruction/reloading, with actual allocator,
 decoder, constructors and SDK routines. Two virtual-call declarations now

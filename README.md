@@ -125,6 +125,11 @@ The [grid phase comparison](docs/GRID_PHASES.md) locates the height-copy order
 change in the first scheduling pass, rechecks two complete builds and rules out
 133 further source forms. Its reusable phase reader retains the exact source
 gate and adds no whole-feature acceptance.
+The [menu layout checks](docs/MENU_LAYOUT.md) compare 864 constructed histories
+per original and three candidate images through 39 original methods, including
+glyphs, graphics effects, parent lists and the allocator. Two callback declaration
+corrections preserve standard and fresh clean builds; both menu callers still
+need matching C and natural screen/input/render evidence.
 The [sprite scaling audit](docs/UI_SCALE.md) checks 203,472 native cases,
 including overlapping inputs and incoming-register quirks. Its full C
 candidate still differs in 12 executable bytes and remains unaccepted.

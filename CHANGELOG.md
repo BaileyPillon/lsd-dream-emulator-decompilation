@@ -1,5 +1,18 @@
 # Changelog
 
+## Original menu layout and acceptance - 2026-10-12
+
+- Compare 864 constructed histories per original and three complete candidate
+  images through 39 original methods, with no dependency output stubs. Detect
+  three deliberate faults with measured changed-instruction execution.
+- Recover glyph-window, gap, selection, graphics-effect and timer behavior.
+  Correct two callback declarations while standard and fresh clean builds
+  retain the canonical executable.
+- Qualify 62 source trials without an exact match. Both menu callers retain
+  assembly; completion counts and whole-feature gates remain unchanged.
+- Add a reusable native checker and six synthetic guards. All 371 tooling tests
+  pass locally on Windows and WSL.
+
 ## Grid source boundaries and compiler phases - 2026-10-12
 
 - Qualify 133 additional helper, extent-type and rotation-capture source forms.

@@ -1,0 +1,3146 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-12T19:23:04.382875+00:00",
+  "repository_before": "2a2c3d4239a38c315615fee4c3bc8cbd3d6599ce",
+  "scope": "Manual valid object/ownership graphs with original menu, glyph, graphics, list and heap methods. Independent XY/visibility/color/selection/timer rules plus complete original/candidate caller/heap/global buffers. Excludes natural constructors/assets, rendered output, full input/menu reachability and PS1 hardware timing.",
+  "public_files": {
+    "README.md": "286d3e9b90bfcf7194ce3d4c2efc9c165c4406ad92aad6813408fce450dd5ea1",
+    "CHANGELOG.md": "06484329fc97e0064e9ea4df32e1c744cce697d6543453bbc6c492844cfa3f0a",
+    "PROJECT_OBJECTIVE.md": "5d483180178799f1aed2ba8fe1d9ed8f28c85cc1213e6c26f3250a94b737ea5d",
+    "docs/MENU_LAYOUT.md": "eb7c0d7ff61b4dd2a99b98b40d12d3b7db2ca3324adf0cffff1363ec009ae704",
+    "docs/FEATURE_INVENTORY.md": "4ceb0022cc29584ca7c81b59260f5801a5fdf44210b1d12db475bf8bef3cdf35",
+    "docs/PROVENANCE.md": "2c574c27f32a733a3ad2e5bcf49cb64007d2e8b42a1f9445fd969309e98def91",
+    "docs/ROADMAP.md": "ef3515ff4d9c5a0606927cf0d5f7fa4a093f289a591fcc3abf894878c6b1e546",
+    "docs/SOURCE_LAYOUT_EXPANDED.md": "367d8b2562f99058581876d0a396b909b40999d577b469f07b348b43c0231b4c",
+    "docs/menu-function-ranges.json": "0fb5d2ab4ce5729d6b59455d1591074b54ca991633c471d101fb93b3bf658215",
+    "research/source_layout/README.md": "4b5c16de89df5fa3fdf2657d2b8e784d388f211885bed7ac166dba490a8c6f15",
+    "research/source_layout/func_8003D73C.c": "1d2cff89e7d2e3a1713c3676b2cf2c5652c7e8ce4e7f6b6f5ebb28992e4fc10e",
+    "research/source_layout/func_8003DAD4.c": "178fc70a0144c1db7864a2d53acda7df7f079903b9d28a6b93e7e6ff6bed5937",
+    "src/graphics/effect_base.h": "2717c72f84db53913493b47087ee174c06d8d1bfbc2b75b2eb66869c8e975faa",
+    "src/menu/text_line.h": "ed646794d26202e1f0f2e5fe216e2d7fd4d38ab8a29cfe1ade3f861a9fc26f16",
+    "tools/verify_menu_layout.py": "50564f0f71303185b5d907d113786443b351d89aa9331267b479b1cfe3b73747",
+    "tests/test_menu_layout.py": "06a001fedcdc4d1732fc4a1aa771ce744ddc8513f7c394697e110a20e391c019"
+  },
+  "public_file_hash_scope": "Git blob bytes. Two preexisting CRLF game headers are staged as LF; experiment raw-input hashes are recorded separately.",
+  "raw_working_tree_header_sha256": {
+    "src/graphics/effect_base.h": "f9ad5d9902a15989bee17905ff815a1990881d144a510ca0adb961bf02a04161",
+    "src/menu/text_line.h": "9779ee4ec562266e207f7969949ee90135ff693eb97610a1c6ff035b9f87d46f"
+  },
+  "features_before_sha256": "466ad3989b11beed7594d2fd7ac6c22dcece0e4669ddf142160e481d5660c04c",
+  "source_quality_snapshot": {
+    "path": "docs/source-layout-expanded-checks.json",
+    "sha256": "0fe3f5d77e25c3cfda234f86a685f24aff25fa241997b272557afddb56d34213"
+  },
+  "original_function_ranges": {
+    "path": "docs/menu-function-ranges.json",
+    "sha256": "0fb5d2ab4ce5729d6b59455d1591074b54ca991633c471d101fb93b3bf658215"
+  },
+  "corrected_callback_declarations": [
+    {
+      "field": "text_line_vtable_t.Unk46",
+      "slot_address": "0x8006ec4c",
+      "original_method": "func_80040E14",
+      "method_address": "0x80040e14",
+      "binding_verified_from_original_table": true
+    },
+    {
+      "field": "effect_base_vtable_t.Unk47",
+      "slot_address": "0x8006eb80",
+      "original_method": "func_80040824",
+      "method_address": "0x80040824",
+      "binding_verified_from_original_table": true
+    }
+  ],
+  "native_proof": {
+    "path": ".decomp-lab/menu-histories-native-second/report.json",
+    "sha256": "c80912737ff804725443a769bd350b86c576f70ed305e0cbc37071ad997381cf",
+    "histories_each_image": 864,
+    "images_compared": 4,
+    "same_parameter_histories_replayed_in_each_image": true,
+    "native_methods_each_image": 39,
+    "actual_native_entries": {
+      "original": {
+        "memory_set_manager": 864,
+        "memory_setup_manager": 864,
+        "func_8003D73C": 1296,
+        "func_80040C00": 3600,
+        "func_8001D1A4": 3648,
+        "func_80040AE8": 3600,
+        "glyph_get_vtable": 9000,
+        "sprite_node_run": 9000,
+        "func_800422BC": 9000,
+        "func_8001D0EC": 9576,
+        "base_class_attach": 9576,
+        "linked_list_prepend": 19152,
+        "memory_allocate_mem": 19152,
+        "memory_set_lock": 50880,
+        "base_class_add_parent": 9576,
+        "func_80040E14": 4200,
+        "sprite_node_set_offset": 20100,
+        "func_80040CD0": 5712,
+        "func_8003DAD4": 864,
+        "base_class_detach": 3144,
+        "linked_list_remove": 6288,
+        "memory_free_mem": 6288,
+        "base_class_remove_parent": 3144,
+        "func_8001CC48": 5400,
+        "base_class_get_vtable": 7200,
+        "func_8004220C": 8568,
+        "func_8001EDAC": 8568,
+        "func_8001CCB4": 1800,
+        "func_80040664": 864,
+        "func_8001E57C": 576,
+        "func_800407F8": 576,
+        "func_80040824": 864,
+        "func_80040D74": 216,
+        "func_8003C63C": 216,
+        "timer_get_vtable": 216,
+        "func_8003E4B8": 216,
+        "base_class_notify": 216,
+        "linked_list_next": 216,
+        "func_8004229C": 324
+      },
+      "candidate_1": {
+        "memory_set_manager": 864,
+        "memory_setup_manager": 864,
+        "func_8003D73C": 1296,
+        "func_80040C00": 3600,
+        "func_8001D1A4": 3648,
+        "func_80040AE8": 3600,
+        "glyph_get_vtable": 9000,
+        "sprite_node_run": 9000,
+        "func_800422BC": 9000,
+        "func_8001D0EC": 9576,
+        "base_class_attach": 9576,
+        "linked_list_prepend": 19152,
+        "memory_allocate_mem": 19152,
+        "memory_set_lock": 50880,
+        "base_class_add_parent": 9576,
+        "func_80040E14": 4200,
+        "sprite_node_set_offset": 20100,
+        "func_80040CD0": 5712,
+        "func_8003DAD4": 864,
+        "base_class_detach": 3144,
+        "linked_list_remove": 6288,
+        "memory_free_mem": 6288,
+        "base_class_remove_parent": 3144,
+        "func_8001CC48": 5400,
+        "base_class_get_vtable": 7200,
+        "func_8004220C": 8568,
+        "func_8001EDAC": 8568,
+        "func_8001CCB4": 1800,
+        "func_80040664": 864,
+        "func_8001E57C": 576,
+        "func_800407F8": 576,
+        "func_80040824": 864,
+        "func_80040D74": 216,
+        "func_8003C63C": 216,
+        "timer_get_vtable": 216,
+        "func_8003E4B8": 216,
+        "base_class_notify": 216,
+        "linked_list_next": 216,
+        "func_8004229C": 324
+      },
+      "candidate_2": {
+        "memory_set_manager": 864,
+        "memory_setup_manager": 864,
+        "func_8003D73C": 1296,
+        "func_80040C00": 3600,
+        "func_8001D1A4": 3648,
+        "func_80040AE8": 3600,
+        "glyph_get_vtable": 9000,
+        "sprite_node_run": 9000,
+        "func_800422BC": 9000,
+        "func_8001D0EC": 9576,
+        "base_class_attach": 9576,
+        "linked_list_prepend": 19152,
+        "memory_allocate_mem": 19152,
+        "memory_set_lock": 50880,
+        "base_class_add_parent": 9576,
+        "func_80040E14": 4200,
+        "sprite_node_set_offset": 20100,
+        "func_80040CD0": 5712,
+        "func_8003DAD4": 864,
+        "base_class_detach": 3144,
+        "linked_list_remove": 6288,
+        "memory_free_mem": 6288,
+        "base_class_remove_parent": 3144,
+        "func_8001CC48": 5400,
+        "base_class_get_vtable": 7200,
+        "func_8004220C": 8568,
+        "func_8001EDAC": 8568,
+        "func_8001CCB4": 1800,
+        "func_80040664": 864,
+        "func_8001E57C": 576,
+        "func_800407F8": 576,
+        "func_80040824": 864,
+        "func_80040D74": 216,
+        "func_8003C63C": 216,
+        "timer_get_vtable": 216,
+        "func_8003E4B8": 216,
+        "base_class_notify": 216,
+        "linked_list_next": 216,
+        "func_8004229C": 324
+      },
+      "candidate_3": {
+        "memory_set_manager": 864,
+        "memory_setup_manager": 864,
+        "func_8003D73C": 1296,
+        "func_80040C00": 3600,
+        "func_8001D1A4": 3648,
+        "func_80040AE8": 3600,
+        "glyph_get_vtable": 9000,
+        "sprite_node_run": 9000,
+        "func_800422BC": 9000,
+        "func_8001D0EC": 9576,
+        "base_class_attach": 9576,
+        "linked_list_prepend": 19152,
+        "memory_allocate_mem": 19152,
+        "memory_set_lock": 50880,
+        "base_class_add_parent": 9576,
+        "func_80040E14": 4200,
+        "sprite_node_set_offset": 20100,
+        "func_80040CD0": 5712,
+        "func_8003DAD4": 864,
+        "base_class_detach": 3144,
+        "linked_list_remove": 6288,
+        "memory_free_mem": 6288,
+        "base_class_remove_parent": 3144,
+        "func_8001CC48": 5400,
+        "base_class_get_vtable": 7200,
+        "func_8004220C": 8568,
+        "func_8001EDAC": 8568,
+        "func_8001CCB4": 1800,
+        "func_80040664": 864,
+        "func_8001E57C": 576,
+        "func_800407F8": 576,
+        "func_80040824": 864,
+        "func_80040D74": 216,
+        "func_8003C63C": 216,
+        "timer_get_vtable": 216,
+        "func_8003E4B8": 216,
+        "base_class_notify": 216,
+        "linked_list_next": 216,
+        "func_8004229C": 324
+      }
+    },
+    "full_snapshot_bytes_each_phase": 98316,
+    "original_snapshots_sha256": "ccd7a4ad0615bd61a0c258be91196106b9666a282991c47846d355186ad428d5",
+    "dependency_output_stubs": 0,
+    "backend_identity": {
+      "package_version": "2.1.2",
+      "library_api": [
+        2,
+        1,
+        33620735
+      ],
+      "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+      "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+      "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+      "binding_source_count": 21,
+      "execution_hook": "UC_HOOK_CODE",
+      "fresh_cpu_per_host_call": true,
+      "all_emulated_ram_preserved_between_host_calls": true,
+      "uninterrupted_cpu_within_guest_cleanup_graph": true
+    },
+    "negative_controls_detected": [
+      {
+        "kind": "layout_row_spacing",
+        "function": "func_8003D73C",
+        "function_offset": 456,
+        "expected_word": "0x2442000a",
+        "changed_word": "0x24420009",
+        "changed_instruction_executions": 2,
+        "scope": "Private original-function emulator memory; game inputs unchanged."
+      },
+      {
+        "kind": "accept_row_spacing",
+        "function": "func_8003DAD4",
+        "function_offset": 232,
+        "expected_word": "0x2442000a",
+        "changed_word": "0x24420009",
+        "changed_instruction_executions": 2,
+        "scope": "Private original-function emulator memory; game inputs unchanged."
+      },
+      {
+        "kind": "persist_wrong_selection",
+        "function": "func_8003DAD4",
+        "function_offset": 364,
+        "expected_word": "0xac540004",
+        "changed_word": "0xac400004",
+        "changed_instruction_executions": 1,
+        "scope": "Private original-function emulator memory; game inputs unchanged."
+      }
+    ],
+    "preserved_dependencies": [
+      {
+        "path": "tools/verify_menu_layout.py",
+        "sha256": "50564f0f71303185b5d907d113786443b351d89aa9331267b479b1cfe3b73747"
+      },
+      {
+        "path": "docs/menu-function-ranges.json",
+        "sha256": "0fb5d2ab4ce5729d6b59455d1591074b54ca991633c471d101fb93b3bf658215"
+      },
+      {
+        "path": "tools/verify_native_ai.py",
+        "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+      },
+      {
+        "path": "tools/verify_card_heap.py",
+        "sha256": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5"
+      },
+      {
+        "path": "tools/progress.py",
+        "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+      },
+      {
+        "path": "configure.py",
+        "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+      },
+      {
+        "path": "src/menu/ui_screen.c",
+        "sha256": "b690176eff29e488f7290ee26b927e4979c7eb0175dfa651308d5b8d56a10f90"
+      },
+      {
+        "path": "src/menu/ui_screen.h",
+        "sha256": "28040541fd2e4d1d701d2e474b5eed661c697a0fd5244295c4f18aa5daddb145"
+      },
+      {
+        "path": "src/menu/text_line.c",
+        "sha256": "f276526740b26d0e356c2446a72469889a90b7f3fc4447ce7ef7f2302e0fe550"
+      },
+      {
+        "path": "src/menu/text_line.h",
+        "sha256": "9779ee4ec562266e207f7969949ee90135ff693eb97610a1c6ff035b9f87d46f"
+      },
+      {
+        "path": "src/menu/sprite_node.c",
+        "sha256": "74c5d3d3d6fa2729c848e37b54707d91479191e717622e4859380ac3fce22803"
+      },
+      {
+        "path": "src/menu/sprite_node.h",
+        "sha256": "31a3707e89c32fc6b92f2c49f27aa582bc3a523364db9523d25d765b66ce8ae7"
+      },
+      {
+        "path": "src/menu/sprite.c",
+        "sha256": "0973193945ceb627c7169f6a44031ddd35ba41d101ff48e1248d0a9166987303"
+      },
+      {
+        "path": "src/menu/sprite.h",
+        "sha256": "e79dcbc7df72a0c28072ae60d302dd280063adb4e1a993ae358c3765d79398f2"
+      },
+      {
+        "path": "src/menu/glyph.c",
+        "sha256": "5a8a1decdef63de957996a0aa326d5d067575ad091c34a2681c00f4cd2b48486"
+      },
+      {
+        "path": "src/menu/glyph.h",
+        "sha256": "3d35f7547c64429dd62f6c905392d172434b82c7871ccb4e8b50db3aaabdc0de"
+      },
+      {
+        "path": "src/graphics/effect_base.c",
+        "sha256": "0239e7c0da74d2640ec2610d9c2f2a90b5a3994585a84f78a75d59d15a562289"
+      },
+      {
+        "path": "src/graphics/effect_base.h",
+        "sha256": "f9ad5d9902a15989bee17905ff815a1990881d144a510ca0adb961bf02a04161"
+      },
+      {
+        "path": "src/base/base.c",
+        "sha256": "23f9ddac6d6e960eb2d0c40e6b8598d68aac401ea2d3031804d70c4309243722"
+      },
+      {
+        "path": "src/base/base.h",
+        "sha256": "aec74fef6d427a2242f2387894fd7374be4d092d313fed1fc02fa94578e6bfab"
+      },
+      {
+        "path": "src/base/transform.c",
+        "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+      },
+      {
+        "path": "src/base/timer.c",
+        "sha256": "e3e3f8d614de9fc8f56e0bd10dc12d42c0a1aa2fdfb5e18e1a94d272fd2f28f6"
+      },
+      {
+        "path": "rom/SLPS_015.56",
+        "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+      },
+      {
+        "path": "build/SLPS015.56",
+        "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+      },
+      {
+        "path": ".decomp-lab/menu-complete-candidates-first/layout/build/candidate.exe",
+        "sha256": "801e1e5881ffbe8c67b91fb56edaec97b4f274384cff1338fdf5fcbfa98d20bd"
+      },
+      {
+        "path": ".decomp-lab/menu-complete-candidates-first/accept/build/candidate.exe",
+        "sha256": "9e868e642acbbb8dd0574f92eb457b768bcb07084898c63ca8fdef0558670cdf"
+      },
+      {
+        "path": ".decomp-lab/menu-complete-candidates-first/combined/build/candidate.exe",
+        "sha256": "ffc4fb16645fae0ece25cca61dcaaf782bb7e24e6859f52ac8a340e5811e64cf"
+      }
+    ],
+    "independent_object_rules_checked": true,
+    "native_xy": [
+      31,
+      51
+    ],
+    "word_wrap_test_scope": "Synthetic object-rule tests only; not additional native histories."
+  },
+  "complete_candidate_comparisons": [
+    {
+      "variant": "layout",
+      "comparison": {
+        "path": ".decomp-lab/menu-complete-candidates-first/layout/build/comparison.json",
+        "sha256": "d359b2136db36fd85146c726adb581be4d0eaed4518d6c06ca8abbeb7883d4e6"
+      },
+      "source": {
+        "path": ".decomp-lab/menu-complete-candidates-first/layout/ui_screen.c",
+        "sha256": "c6ea74dc37c8972f025a1c8071b433a3846b28c73f40796e84c68f39616c1aa5"
+      },
+      "candidate_executable": {
+        "path": ".decomp-lab/menu-complete-candidates-first/layout/build/candidate.exe",
+        "sha256": "801e1e5881ffbe8c67b91fb56edaec97b4f274384cff1338fdf5fcbfa98d20bd"
+      },
+      "complete_image_bytes": 505856,
+      "changed_bytes": 20,
+      "only_changed_function_spans": [
+        {
+          "function": "func_8003D73C",
+          "bytes": 580,
+          "original_frame_bytes": 88,
+          "candidate_frame_bytes": 72,
+          "changed_bytes": 20
+        }
+      ],
+      "exact_match": false
+    },
+    {
+      "variant": "accept",
+      "comparison": {
+        "path": ".decomp-lab/menu-complete-candidates-first/accept/build/comparison.json",
+        "sha256": "7b313c9613efb82ea47440db97a9e53dbc6f2bdfa56ebd4053197fdbeb4da897"
+      },
+      "source": {
+        "path": ".decomp-lab/menu-complete-candidates-first/accept/ui_screen.c",
+        "sha256": "4f4d020e199af88d298d2fc352220fe1f92f4a8aef618aab1e8e5fc11f842e37"
+      },
+      "candidate_executable": {
+        "path": ".decomp-lab/menu-complete-candidates-first/accept/build/candidate.exe",
+        "sha256": "9e868e642acbbb8dd0574f92eb457b768bcb07084898c63ca8fdef0558670cdf"
+      },
+      "complete_image_bytes": 505856,
+      "changed_bytes": 16,
+      "only_changed_function_spans": [
+        {
+          "function": "func_8003DAD4",
+          "bytes": 472,
+          "original_frame_bytes": 64,
+          "candidate_frame_bytes": 56,
+          "changed_bytes": 16
+        }
+      ],
+      "exact_match": false
+    },
+    {
+      "variant": "combined",
+      "comparison": {
+        "path": ".decomp-lab/menu-complete-candidates-first/combined/build/comparison.json",
+        "sha256": "8b7d3866db73a23dcf8416e85d326f46afcae8b382238d91a2e92880301d2460"
+      },
+      "source": {
+        "path": ".decomp-lab/menu-complete-candidates-first/combined/ui_screen.c",
+        "sha256": "b32df508b681d873ace7e28781ad92d5c9781128904fe0a1e6711a4fee6f701d"
+      },
+      "candidate_executable": {
+        "path": ".decomp-lab/menu-complete-candidates-first/combined/build/candidate.exe",
+        "sha256": "ffc4fb16645fae0ece25cca61dcaaf782bb7e24e6859f52ac8a340e5811e64cf"
+      },
+      "complete_image_bytes": 505856,
+      "changed_bytes": 36,
+      "only_changed_function_spans": [
+        {
+          "function": "func_8003D73C",
+          "bytes": 580,
+          "original_frame_bytes": 88,
+          "candidate_frame_bytes": 72,
+          "changed_bytes": 20
+        },
+        {
+          "function": "func_8003DAD4",
+          "bytes": 472,
+          "original_frame_bytes": 64,
+          "candidate_frame_bytes": 56,
+          "changed_bytes": 16
+        }
+      ],
+      "exact_match": false
+    }
+  ],
+  "source_research": {
+    "path": ".decomp-lab/menu-source-qualified-first.json",
+    "sha256": "205847e3b208dec1763e398aa969ffc134c6b84cced5b11109f94180fee09996",
+    "qualified_source_cases": 62,
+    "qualified_groups": [
+      {
+        "directory": ".decomp-lab/menu-position-returns-first",
+        "report": {
+          "path": ".decomp-lab/menu-position-returns-first/report.json",
+          "sha256": "9d75eeed5d159e5b39fa5351328968c29f5bb3a3f0087f622e484808e86d17f6"
+        },
+        "producer": {
+          "path": ".decomp-lab/probe_menu_position_returns_first.py",
+          "sha256": "16fde803723f0188afbac4b53d7bdbfb5265dcb093a506dd784e1df1ebee8e23"
+        },
+        "cases": 38,
+        "protected_inputs": [
+          {
+            "trial_input": "src/menu/ui_screen.c",
+            "path": "src/menu/ui_screen.c",
+            "sha256": "b690176eff29e488f7290ee26b927e4979c7eb0175dfa651308d5b8d56a10f90",
+            "historical_before_callback_correction": false
+          },
+          {
+            "trial_input": "src/menu/ui_screen.h",
+            "path": "src/menu/ui_screen.h",
+            "sha256": "28040541fd2e4d1d701d2e474b5eed661c697a0fd5244295c4f18aa5daddb145",
+            "historical_before_callback_correction": false
+          },
+          {
+            "trial_input": "src/menu/text_line.c",
+            "path": "src/menu/text_line.c",
+            "sha256": "f276526740b26d0e356c2446a72469889a90b7f3fc4447ce7ef7f2302e0fe550",
+            "historical_before_callback_correction": false
+          },
+          {
+            "trial_input": "src/menu/text_line.h",
+            "path": ".decomp-lab/source-withdraw-clean-first/src/menu/text_line.h",
+            "sha256": "10a7a51cac9056b0e19c1d43d5397491d6a880a20a13490b8901022310517f1e",
+            "historical_before_callback_correction": true
+          },
+          {
+            "trial_input": "src/graphics/effect_base.c",
+            "path": "src/graphics/effect_base.c",
+            "sha256": "0239e7c0da74d2640ec2610d9c2f2a90b5a3994585a84f78a75d59d15a562289",
+            "historical_before_callback_correction": false
+          },
+          {
+            "trial_input": "src/graphics/effect_base.h",
+            "path": ".decomp-lab/source-withdraw-clean-first/src/graphics/effect_base.h",
+            "sha256": "0a1356f4612452961eb28fa1bc698d7df4b8323a55fcf7ac7340f364ffc27da2",
+            "historical_before_callback_correction": true
+          },
+          {
+            "trial_input": "src/menu/sprite_node.c",
+            "path": "src/menu/sprite_node.c",
+            "sha256": "74c5d3d3d6fa2729c848e37b54707d91479191e717622e4859380ac3fce22803",
+            "historical_before_callback_correction": false
+          },
+          {
+            "trial_input": "configure.py",
+            "path": "configure.py",
+            "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af",
+            "historical_before_callback_correction": false
+          },
+          {
+            "trial_input": "rom/SLPS_015.56",
+            "path": "rom/SLPS_015.56",
+            "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+            "historical_before_callback_correction": false
+          },
+          {
+            "trial_input": "build/SLPS015.56",
+            "path": "build/SLPS015.56",
+            "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+            "historical_before_callback_correction": false
+          },
+          {
+            "trial_input": "docs/features.json",
+            "path": "docs/features.json",
+            "sha256": "466ad3989b11beed7594d2fd7ac6c22dcece0e4669ddf142160e481d5660c04c",
+            "historical_before_callback_correction": false
+          },
+          {
+            "trial_input": ".decomp-lab/render-work/harness.py",
+            "path": ".decomp-lab/render-work/harness.py",
+            "sha256": "0519c515ce9864690be06b6a5537246306241d406464cb476feb456b99cc27f4",
+            "historical_before_callback_correction": false
+          }
+        ]
+      },
+      {
+        "directory": ".decomp-lab/menu-point-accessors-first",
+        "report": {
+          "path": ".decomp-lab/menu-point-accessors-first/report.json",
+          "sha256": "dc1958389b62c7f52c7183f8268d2af674a99994ae249309595229189b914abd"
+        },
+        "producer": {
+          "path": ".decomp-lab/probe_menu_point_accessors_first.py",
+          "sha256": "0e64e9c177ca7ca169d7f7ee2fb1bdd2ce77e199ea5779e674ea2b4b6d090166"
+        },
+        "cases": 24,
+        "protected_inputs": [
+          {
+            "trial_input": "src/menu/ui_screen.c",
+            "path": "src/menu/ui_screen.c",
+            "sha256": "b690176eff29e488f7290ee26b927e4979c7eb0175dfa651308d5b8d56a10f90",
+            "historical_before_callback_correction": false
+          },
+          {
+            "trial_input": "src/menu/ui_screen.h",
+            "path": "src/menu/ui_screen.h",
+            "sha256": "28040541fd2e4d1d701d2e474b5eed661c697a0fd5244295c4f18aa5daddb145",
+            "historical_before_callback_correction": false
+          },
+          {
+            "trial_input": "src/menu/text_line.h",
+            "path": ".decomp-lab/source-withdraw-clean-first/src/menu/text_line.h",
+            "sha256": "10a7a51cac9056b0e19c1d43d5397491d6a880a20a13490b8901022310517f1e",
+            "historical_before_callback_correction": true
+          },
+          {
+            "trial_input": "src/graphics/effect_base.h",
+            "path": ".decomp-lab/source-withdraw-clean-first/src/graphics/effect_base.h",
+            "sha256": "0a1356f4612452961eb28fa1bc698d7df4b8323a55fcf7ac7340f364ffc27da2",
+            "historical_before_callback_correction": true
+          },
+          {
+            "trial_input": "configure.py",
+            "path": "configure.py",
+            "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af",
+            "historical_before_callback_correction": false
+          },
+          {
+            "trial_input": "rom/SLPS_015.56",
+            "path": "rom/SLPS_015.56",
+            "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+            "historical_before_callback_correction": false
+          },
+          {
+            "trial_input": "build/SLPS015.56",
+            "path": "build/SLPS015.56",
+            "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+            "historical_before_callback_correction": false
+          },
+          {
+            "trial_input": "docs/features.json",
+            "path": "docs/features.json",
+            "sha256": "466ad3989b11beed7594d2fd7ac6c22dcece0e4669ddf142160e481d5660c04c",
+            "historical_before_callback_correction": false
+          },
+          {
+            "trial_input": ".decomp-lab/render-work/harness.py",
+            "path": ".decomp-lab/render-work/harness.py",
+            "sha256": "0519c515ce9864690be06b6a5537246306241d406464cb476feb456b99cc27f4",
+            "historical_before_callback_correction": false
+          }
+        ]
+      }
+    ],
+    "qualified_cases": [
+      {
+        "case": "func_8003D73C_baseline",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_baseline.c",
+          "sha256": "7669be6758947459329c035053af417251dcb815d9420358c761a9b42db9c2f3"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_baseline.bin",
+          "sha256": "6db51da370b770af22ea80febe40ff1358821e4964cfb1184f8b86c43eb96860"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_baseline.o",
+          "sha256": "19885184e4d78e71b8f7b63254cd5250bef354e52ba3ff977bdc277fb207b66a"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_baseline.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 580,
+        "selected_function_bytes": 580,
+        "selected_frame_bytes": 72,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 20,
+        "changed_selected_function_bytes": 20,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 580
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_fields_array_caller_entry_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_array_caller_entry_first.c",
+          "sha256": "9531fbd4351e468bf1b741942676fc5cb99f315ee03c570ce58733b48df9c005"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_array_caller_entry_first.bin",
+          "sha256": "979dae9ad065448af807aed30967997f545b0f0f11cb07c65d00e76b558310ef"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_array_caller_entry_first.o",
+          "sha256": "797329e38166f7dc7db599ddf383d447449a8f178b4129b7bf6aa23dc457def0"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_array_caller_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 616,
+        "selected_function_bytes": 616,
+        "selected_frame_bytes": 88,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 354,
+        "changed_selected_function_bytes": 354,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 616
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_fields_array_helper_entry_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_array_helper_entry_first.c",
+          "sha256": "263069c9e4fcaf3abc66ee90cc46f0db9e5eacfaad141bd10357c71b5bd39536"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_array_helper_entry_first.bin",
+          "sha256": "9eb93236231b15f5889133cc090344641b70163bc521507716c1a4c26bc2c571"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_array_helper_entry_first.o",
+          "sha256": "659be67ac2d4fc983c6dc2fbffa73c33a173d9ed69d58b439ff823eb6cb57faa"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_array_helper_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 608,
+        "selected_function_bytes": 608,
+        "selected_frame_bytes": 88,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 333,
+        "changed_selected_function_bytes": 333,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 608
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_fields_array_helper_selection_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_array_helper_selection_first.c",
+          "sha256": "e37d937ee63d3518dc8ae8e412487a64519a3f71342fe7108ac3821c97060ae5"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_array_helper_selection_first.bin",
+          "sha256": "9eb93236231b15f5889133cc090344641b70163bc521507716c1a4c26bc2c571"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_array_helper_selection_first.o",
+          "sha256": "d9e9c79fcd875df678b4d1bb352d4c3d059bdec65f4e490581911ce6d2e22f03"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_array_helper_selection_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 608,
+        "selected_function_bytes": 608,
+        "selected_frame_bytes": 88,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 333,
+        "changed_selected_function_bytes": 333,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 608
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_fields_record_caller_entry_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_record_caller_entry_first.c",
+          "sha256": "99142684896649a70b0e2f524dc6820ff2659ef7e53c492b6029a63f7d262954"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_record_caller_entry_first.bin",
+          "sha256": "14455a89d9a3dd5649c40dd078811cc8d33fe875115d975e041c1ba7207dea86"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_record_caller_entry_first.o",
+          "sha256": "4d0665e6d48b8b96901448ef470302bff0e03bfd501d2b2d3bfb87e3610f1cdb"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_record_caller_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 600,
+        "selected_function_bytes": 600,
+        "selected_frame_bytes": 80,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 338,
+        "changed_selected_function_bytes": 338,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 600
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_fields_record_helper_entry_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_record_helper_entry_first.c",
+          "sha256": "34a6936bba6ad98745fd75508f7812dc06d04e9046bc6c5ffeff4d87dbb36519"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_record_helper_entry_first.bin",
+          "sha256": "2c3e513a2c881fd0dbe3a3b5f7adbbbc96e94a85cbf9ab65a709e3890db0eb64"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_record_helper_entry_first.o",
+          "sha256": "fe8173cecf931e9a58e428cf57873ba54be8a47241c9e49e7f6557fea7a24b3c"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_record_helper_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 592,
+        "selected_function_bytes": 592,
+        "selected_frame_bytes": 80,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 311,
+        "changed_selected_function_bytes": 311,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 592
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_fields_record_helper_selection_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_record_helper_selection_first.c",
+          "sha256": "0d1c4280d648f16ffd47045915ba747ad587a7ff7a1c29dfb85b030cfe0fe7c5"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_record_helper_selection_first.bin",
+          "sha256": "2c3e513a2c881fd0dbe3a3b5f7adbbbc96e94a85cbf9ab65a709e3890db0eb64"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_record_helper_selection_first.o",
+          "sha256": "fdc3c7f886b710fc436d83e4caebdd872d8edffd8b59f70aba0f6354682a3c1d"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_fields_record_helper_selection_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 592,
+        "selected_function_bytes": 592,
+        "selected_frame_bytes": 80,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 311,
+        "changed_selected_function_bytes": 311,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 592
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_copy_array_caller_entry_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_array_caller_entry_first.c",
+          "sha256": "dded7221a1292a2f77018fe99daa587d726af46cb2ad2e1d4daed7b01bc20f50"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_array_caller_entry_first.bin",
+          "sha256": "54b6e39f11cc54f60ddf7eef90912b79c48bb390c2b2b950dc09bbb0a5b7560a"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_array_caller_entry_first.o",
+          "sha256": "4f23b796153195c10b20c07927d3745c8dae77c4891e3ffb7e56166447cb8386"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_array_caller_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 612,
+        "selected_function_bytes": 612,
+        "selected_frame_bytes": 88,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 310,
+        "changed_selected_function_bytes": 310,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 612
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_copy_array_helper_entry_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_array_helper_entry_first.c",
+          "sha256": "2cdca8c4aa49a143a8453ab9788291de7ecc821e6a4b3ce40a0416fd8af4fe6d"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_array_helper_entry_first.bin",
+          "sha256": "98ba1697e573fe460d5ab9b59951fbd63c39bff4bb3bb3870eb167543a359423"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_array_helper_entry_first.o",
+          "sha256": "e1cc12f51d4addf50e0248671cdf59d8a809f26aa59d551f3b66c05a4677dfe4"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_array_helper_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 616,
+        "selected_function_bytes": 616,
+        "selected_frame_bytes": 88,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 331,
+        "changed_selected_function_bytes": 331,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 616
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_copy_array_helper_selection_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_array_helper_selection_first.c",
+          "sha256": "8f65c5ef3e0713a1911835d6ec6974387081ffbef9622eda0f33a1df80b6d69d"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_array_helper_selection_first.bin",
+          "sha256": "98ba1697e573fe460d5ab9b59951fbd63c39bff4bb3bb3870eb167543a359423"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_array_helper_selection_first.o",
+          "sha256": "8c53d3966fa4c5f97d9cf6764d33fc54d51204ffddfeaaea7fb8a8089ba8782d"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_array_helper_selection_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 616,
+        "selected_function_bytes": 616,
+        "selected_frame_bytes": 88,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 331,
+        "changed_selected_function_bytes": 331,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 616
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_copy_record_caller_entry_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_record_caller_entry_first.c",
+          "sha256": "fd0b8d452e8a999cdd00b075c54c956ec9582053451e525fc969db1a70c85db4"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_record_caller_entry_first.bin",
+          "sha256": "9ceab3c79ff06ce1e6c184dcae92c0875679801e9353d1325c19c62efae62f13"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_record_caller_entry_first.o",
+          "sha256": "cd38bfe5dbe6689032f43fe1394851d9ec206fff7f3d1945ca934e5e13ce1999"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_record_caller_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 592,
+        "selected_function_bytes": 592,
+        "selected_frame_bytes": 80,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 309,
+        "changed_selected_function_bytes": 309,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 592
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_copy_record_helper_entry_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_record_helper_entry_first.c",
+          "sha256": "c9d5399bb8c270529e74d9588c1d1e25c080688522e12cb05a9a2553d4a5e226"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_record_helper_entry_first.bin",
+          "sha256": "94e5560743af5fe341d5ac61beafe4e2e24fce1b7fd82bd9cf02f87cdad23ec4"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_record_helper_entry_first.o",
+          "sha256": "a37eac95be92091795b2394c02482db3fd1d2467f915c45808cfcb38a42784ea"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_record_helper_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 596,
+        "selected_function_bytes": 596,
+        "selected_frame_bytes": 80,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 294,
+        "changed_selected_function_bytes": 294,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 596
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_copy_record_helper_selection_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_record_helper_selection_first.c",
+          "sha256": "9472edcd3b7fa14a445ce063dc030cf61f81c04e72be37dc95c225f75789e2f3"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_record_helper_selection_first.bin",
+          "sha256": "94e5560743af5fe341d5ac61beafe4e2e24fce1b7fd82bd9cf02f87cdad23ec4"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_record_helper_selection_first.o",
+          "sha256": "ffc44980d783b5251802f8d1b06d8b6cafc83e6c24ccd94a282a53ebfcba5893"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_copy_record_helper_selection_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 596,
+        "selected_function_bytes": 596,
+        "selected_frame_bytes": 80,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 294,
+        "changed_selected_function_bytes": 294,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 596
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_typed_array_caller_entry_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_array_caller_entry_first.c",
+          "sha256": "2de1e7afce17bf7d73f68e406952987eafd38ad4aaa22f6ebdd6843ff9cfe70b"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_array_caller_entry_first.bin",
+          "sha256": "eb96b0618c35c49210ac8730cd99c4f98449325eb1cae9db6dd11fc72ea71e37"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_array_caller_entry_first.o",
+          "sha256": "87c3ac58039c60d3da49d37859a1e0400335eb1b159b43571e5a58f62a905c0a"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_array_caller_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 596,
+        "selected_function_bytes": 596,
+        "selected_frame_bytes": 80,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 294,
+        "changed_selected_function_bytes": 294,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 596
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_typed_array_helper_entry_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_array_helper_entry_first.c",
+          "sha256": "befbbcb578fb1c29bb56942f2d885ed87da093075b437e644667045faa50b6a9"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_array_helper_entry_first.bin",
+          "sha256": "98ba1697e573fe460d5ab9b59951fbd63c39bff4bb3bb3870eb167543a359423"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_array_helper_entry_first.o",
+          "sha256": "2a43c0395fa73c94233bfe25760e2526accf4204405235c64a812d7cc1b5ea5c"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_array_helper_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 616,
+        "selected_function_bytes": 616,
+        "selected_frame_bytes": 88,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 331,
+        "changed_selected_function_bytes": 331,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 616
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_typed_array_helper_selection_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_array_helper_selection_first.c",
+          "sha256": "03ae1423ee37772b81442bea40efdbb33f2fd0021772d9c9a4028f7c4f9d5d2d"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_array_helper_selection_first.bin",
+          "sha256": "98ba1697e573fe460d5ab9b59951fbd63c39bff4bb3bb3870eb167543a359423"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_array_helper_selection_first.o",
+          "sha256": "6eb81e76a41b49481c41ca19c185f726d67b30a81d015883931f94cf6a579543"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_array_helper_selection_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 616,
+        "selected_function_bytes": 616,
+        "selected_frame_bytes": 88,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 331,
+        "changed_selected_function_bytes": 331,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 616
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_typed_record_caller_entry_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_record_caller_entry_first.c",
+          "sha256": "38e39e908f026e5d61a42130fd7a23b38e4b59138ca195139329ec4e06466ffc"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_record_caller_entry_first.bin",
+          "sha256": "4288fd7daac49d8b5b6039db582302575763e9b2e26296806f4dc3b4939a332b"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_record_caller_entry_first.o",
+          "sha256": "fa0417a67ecbfc0202cef38a58fef38e6a86d32ef0972cc85679d8c6351ef49b"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_record_caller_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 576,
+        "selected_function_bytes": 576,
+        "selected_frame_bytes": 72,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 295,
+        "changed_selected_function_bytes": 295,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 576
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_typed_record_helper_entry_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_record_helper_entry_first.c",
+          "sha256": "dbd5bf7e5897bd1db3953f0a080b81dc140cc366163c32da1d44e2fa3e66dd26"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_record_helper_entry_first.bin",
+          "sha256": "94e5560743af5fe341d5ac61beafe4e2e24fce1b7fd82bd9cf02f87cdad23ec4"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_record_helper_entry_first.o",
+          "sha256": "eb4cc21f94262ac274a006691a51fa713248f24cc6004f34f2a031619df2a072"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_record_helper_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 596,
+        "selected_function_bytes": 596,
+        "selected_frame_bytes": 80,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 294,
+        "changed_selected_function_bytes": 294,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 596
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_typed_record_helper_selection_first",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_record_helper_selection_first.c",
+          "sha256": "2dbd385d0814fd5c5826c559f5c37d2093129ab9d26f27b7ef39570fe0a4d199"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_record_helper_selection_first.bin",
+          "sha256": "94e5560743af5fe341d5ac61beafe4e2e24fce1b7fd82bd9cf02f87cdad23ec4"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_record_helper_selection_first.o",
+          "sha256": "e551bde2c194912f90c03098968ad6c2b84fe80205163c69456f26acd1492c5c"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003D73C_typed_record_helper_selection_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 596,
+        "selected_function_bytes": 596,
+        "selected_frame_bytes": 80,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 294,
+        "changed_selected_function_bytes": 294,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 596
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_baseline",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_baseline.c",
+          "sha256": "f3e7cd5fef75e774c0ab35d74f70f28a030085b33f31402340ee9665e5f68846"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_baseline.bin",
+          "sha256": "0955d7be4c709df9e32fa81d6d8818d4c0cc7cf2b1c2a82299dded4c6fdf5924"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_baseline.o",
+          "sha256": "153dcdb2fa9f366ced94c819df9ea927281c022f3c0fe2a21dce0ccd1aaf113d"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_baseline.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 472,
+        "selected_function_bytes": 472,
+        "selected_frame_bytes": 56,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 16,
+        "changed_selected_function_bytes": 16,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 472
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_fields_array_caller_entry_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_array_caller_entry_first.c",
+          "sha256": "9296c1ae62681e8f0bca755d10ba7dd51ef3749c0bf6379ba038eb7e49b61f40"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_array_caller_entry_first.bin",
+          "sha256": "dc57f5e6585bc79ffa8a964ecc0d4dc3a3670587ec765d832d3cebf4d6d08dfb"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_array_caller_entry_first.o",
+          "sha256": "bc4b6d0cc807eaf033974e4ea0971c7faf750bb6c550f076d909b80cb8f6152c"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_array_caller_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 512,
+        "selected_function_bytes": 512,
+        "selected_frame_bytes": 72,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 345,
+        "changed_selected_function_bytes": 345,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 512
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_fields_array_helper_entry_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_array_helper_entry_first.c",
+          "sha256": "93346dea0327d61a3457b4460412e3369316a0528b94c52e103f93753ae971f4"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_array_helper_entry_first.bin",
+          "sha256": "2a7510a2d4a73f09e4b9aa93d2770539016ace2f604e61cb935c108fca323bc2"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_array_helper_entry_first.o",
+          "sha256": "84435f81333f79a4acc6c44e06413e4fcf7d94d567e3e02fe2954596cf11264c"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_array_helper_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 500,
+        "selected_function_bytes": 500,
+        "selected_frame_bytes": 72,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 325,
+        "changed_selected_function_bytes": 325,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 500
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_fields_array_helper_selection_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_array_helper_selection_first.c",
+          "sha256": "8a50bf8da203c4cc4b6e80a5b349f06a5a498862e657926b0637296f6d9e8812"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_array_helper_selection_first.bin",
+          "sha256": "2a7510a2d4a73f09e4b9aa93d2770539016ace2f604e61cb935c108fca323bc2"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_array_helper_selection_first.o",
+          "sha256": "270d76ce4642731e478b45c577a56349c529ff0d4969e33b376db68730abe425"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_array_helper_selection_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 500,
+        "selected_function_bytes": 500,
+        "selected_frame_bytes": 72,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 325,
+        "changed_selected_function_bytes": 325,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 500
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_fields_record_caller_entry_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_record_caller_entry_first.c",
+          "sha256": "daf22a59c21afadf15688776c46c5884c1a488e7d169b3f54d33fe8d75a2db2a"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_record_caller_entry_first.bin",
+          "sha256": "76b2897e949e64f0555bdc6f04104ac5603fbbfc77ea51ea7466ce0ea1510290"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_record_caller_entry_first.o",
+          "sha256": "9306c81fc28797ecd0457261054c776aa372d72d1f6d08782aa86b5a4d0b6e62"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_record_caller_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 496,
+        "selected_function_bytes": 496,
+        "selected_frame_bytes": 64,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 312,
+        "changed_selected_function_bytes": 312,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 496
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_fields_record_helper_entry_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_record_helper_entry_first.c",
+          "sha256": "9494ea50a87a151d56a12efe1047382bbcade4f8d1e1673fad1037f9fa183b71"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_record_helper_entry_first.bin",
+          "sha256": "d1f58108144c88db0e53496add91d751e7f023aacc1509ce13af8ffaf0f984b8"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_record_helper_entry_first.o",
+          "sha256": "a2b340af1b30dcaa098305d273d27fac22bb1ac1fc7a48a6e2680ed4e32ac1d9"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_record_helper_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 484,
+        "selected_function_bytes": 484,
+        "selected_frame_bytes": 64,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 308,
+        "changed_selected_function_bytes": 308,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 484
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_fields_record_helper_selection_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_record_helper_selection_first.c",
+          "sha256": "4b08fdf3e235d73012c2a8c8500ba2dae2f2ed38b2f0235fbf024bc7692d378a"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_record_helper_selection_first.bin",
+          "sha256": "d1f58108144c88db0e53496add91d751e7f023aacc1509ce13af8ffaf0f984b8"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_record_helper_selection_first.o",
+          "sha256": "059ac41250e2fbf5296825bfaafa1915de02b3907a27bcb1a99b25cd0b155dee"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_fields_record_helper_selection_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 484,
+        "selected_function_bytes": 484,
+        "selected_frame_bytes": 64,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 308,
+        "changed_selected_function_bytes": 308,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 484
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_copy_array_caller_entry_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_array_caller_entry_first.c",
+          "sha256": "73d14ae3e394f07e40f6abe5557271b76eb9a23eb07a2f722f45d4fef38076f1"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_array_caller_entry_first.bin",
+          "sha256": "741fef48cc87f5c503e885eebe88dbd9b181edf9b095fa5a1c854ed9598a42ef"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_array_caller_entry_first.o",
+          "sha256": "15404472247cecb1bb0f40a2f7ab66f12cad318b7b3893fe4090b8b14ecf6e27"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_array_caller_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 504,
+        "selected_function_bytes": 504,
+        "selected_frame_bytes": 72,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 294,
+        "changed_selected_function_bytes": 294,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 504
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_copy_array_helper_entry_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_array_helper_entry_first.c",
+          "sha256": "3089dd48428b0cfd21f22be886f7fcb2040a2bdbcf5d59a9e85110901fab8f14"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_array_helper_entry_first.bin",
+          "sha256": "bde1212dbc17571425b1cd3fb801cbe40aed385577ab068d2709700f132c8f6e"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_array_helper_entry_first.o",
+          "sha256": "e1e75239099facac2b203ef70461e465fe986ffb9f8cecaddb5a0b87c2576331"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_array_helper_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 504,
+        "selected_function_bytes": 504,
+        "selected_frame_bytes": 72,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 277,
+        "changed_selected_function_bytes": 277,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 504
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_copy_array_helper_selection_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_array_helper_selection_first.c",
+          "sha256": "ace322a6594e2fa7732475dc42366a372745faefd7d0d4393f867075c2a6f1e2"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_array_helper_selection_first.bin",
+          "sha256": "bde1212dbc17571425b1cd3fb801cbe40aed385577ab068d2709700f132c8f6e"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_array_helper_selection_first.o",
+          "sha256": "6f362e2f45dfd857c250194a723d47df0d47d4b9ccd86f9a12bc83dc0d236f86"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_array_helper_selection_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 504,
+        "selected_function_bytes": 504,
+        "selected_frame_bytes": 72,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 277,
+        "changed_selected_function_bytes": 277,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 504
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_copy_record_caller_entry_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_record_caller_entry_first.c",
+          "sha256": "212e35ffb0f1b801da56d183c35bed3774038c9942200de695e99b0bc539742d"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_record_caller_entry_first.bin",
+          "sha256": "71b46c5d178cad4a4ee74deded471f26e0519e74c3cfdd4f89a0fa0475e0ef4d"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_record_caller_entry_first.o",
+          "sha256": "61b44e6550d1f79cfd9e091a9d99b67f61ddd85b4c619746d384b68417e63907"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_record_caller_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 488,
+        "selected_function_bytes": 488,
+        "selected_frame_bytes": 64,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 289,
+        "changed_selected_function_bytes": 289,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 488
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_copy_record_helper_entry_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_record_helper_entry_first.c",
+          "sha256": "50c73c15fc9b3696c93498ac2fbe5d50df05cbc38e651db0a8fe0a41487474d0"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_record_helper_entry_first.bin",
+          "sha256": "b541f62eb25a370a842fa4a6096bb848315b76a4da729e1570ba3081ab546404"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_record_helper_entry_first.o",
+          "sha256": "5c1e2ec291d33d47a94e929a7bb704836b2c9becd6372b7822d9e72587ea721e"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_record_helper_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 488,
+        "selected_function_bytes": 488,
+        "selected_frame_bytes": 64,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 269,
+        "changed_selected_function_bytes": 269,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 488
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_copy_record_helper_selection_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_record_helper_selection_first.c",
+          "sha256": "2d98a862fd5f73a9209af626e4ed8771ab52b1593d6b5040f8c36a9e940d6d87"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_record_helper_selection_first.bin",
+          "sha256": "b541f62eb25a370a842fa4a6096bb848315b76a4da729e1570ba3081ab546404"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_record_helper_selection_first.o",
+          "sha256": "c7f71026506f0105088bc990fe0f480beeb8c33c06c6cc86246bff402d160905"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_copy_record_helper_selection_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 488,
+        "selected_function_bytes": 488,
+        "selected_frame_bytes": 64,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 269,
+        "changed_selected_function_bytes": 269,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 488
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_typed_array_caller_entry_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_array_caller_entry_first.c",
+          "sha256": "6538467f723f8aa26d6b903c823ac9840a5cf4b358cfc871496b7ea581dc2f23"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_array_caller_entry_first.bin",
+          "sha256": "71b46c5d178cad4a4ee74deded471f26e0519e74c3cfdd4f89a0fa0475e0ef4d"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_array_caller_entry_first.o",
+          "sha256": "ec8ee0776805a61e9735597e0f7e522306ba7eed975d51ed371147292ccab68c"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_array_caller_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 488,
+        "selected_function_bytes": 488,
+        "selected_frame_bytes": 64,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 289,
+        "changed_selected_function_bytes": 289,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 488
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_typed_array_helper_entry_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_array_helper_entry_first.c",
+          "sha256": "b9e2b0baf89aed7c84041b9f7b18bb80cc779c49be24d7ee25cd94ffec8cc9b5"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_array_helper_entry_first.bin",
+          "sha256": "bde1212dbc17571425b1cd3fb801cbe40aed385577ab068d2709700f132c8f6e"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_array_helper_entry_first.o",
+          "sha256": "5ef273b54d7182da77322e645204d17c2d0138c2b277996c51039c4018c53f48"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_array_helper_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 504,
+        "selected_function_bytes": 504,
+        "selected_frame_bytes": 72,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 277,
+        "changed_selected_function_bytes": 277,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 504
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_typed_array_helper_selection_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_array_helper_selection_first.c",
+          "sha256": "ef66fc6f57baf73deca7d30411b80b0d11b814d778efa2b36a865e41eaaf1aed"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_array_helper_selection_first.bin",
+          "sha256": "bde1212dbc17571425b1cd3fb801cbe40aed385577ab068d2709700f132c8f6e"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_array_helper_selection_first.o",
+          "sha256": "2abbc69573de76d8106239227876938114091bf4ead1236f46a312685a4ed40c"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_array_helper_selection_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 504,
+        "selected_function_bytes": 504,
+        "selected_frame_bytes": 72,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 277,
+        "changed_selected_function_bytes": 277,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 504
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_typed_record_caller_entry_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_record_caller_entry_first.c",
+          "sha256": "561708f234141c32301e575b18b25a736b142a36f17386179922961a0ef26fa6"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_record_caller_entry_first.bin",
+          "sha256": "0955d7be4c709df9e32fa81d6d8818d4c0cc7cf2b1c2a82299dded4c6fdf5924"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_record_caller_entry_first.o",
+          "sha256": "acf3431b16e54a57ae8680b5a3e2233383ad3bb5b61d7d6e8761751402270c6c"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_record_caller_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 472,
+        "selected_function_bytes": 472,
+        "selected_frame_bytes": 56,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 16,
+        "changed_selected_function_bytes": 16,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 472
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_typed_record_helper_entry_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_record_helper_entry_first.c",
+          "sha256": "ec6359f5fba5433d07ec90482d2d3632947118bb4b43ab964b52a52902bf92ed"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_record_helper_entry_first.bin",
+          "sha256": "b541f62eb25a370a842fa4a6096bb848315b76a4da729e1570ba3081ab546404"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_record_helper_entry_first.o",
+          "sha256": "57add8490ea9b01e3d627de2cdab4911c94a06a17a8ea0237f8a6765a7118188"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_record_helper_entry_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 488,
+        "selected_function_bytes": 488,
+        "selected_frame_bytes": 64,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 269,
+        "changed_selected_function_bytes": 269,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 488
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_typed_record_helper_selection_first",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_record_helper_selection_first.c",
+          "sha256": "368e1508a2e210bead23ac6c0b054dd1e151ad893580bdbe33e49a6a6b1dc47a"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_record_helper_selection_first.bin",
+          "sha256": "b541f62eb25a370a842fa4a6096bb848315b76a4da729e1570ba3081ab546404"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_record_helper_selection_first.o",
+          "sha256": "b862c577aaf880a7b85f7df836e308f5b079686fa8f855b07f0015372a68338f"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-position-returns-first/func_8003DAD4_typed_record_helper_selection_first.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 488,
+        "selected_function_bytes": 488,
+        "selected_frame_bytes": 64,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 269,
+        "changed_selected_function_bytes": 269,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 488
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_point_1_stores",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_1_stores.c",
+          "sha256": "f15c1d22a74f71a266fc0b3bf3c6a292d3e110d8f8a36051abd67a07d58d93ae"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_1_stores.bin",
+          "sha256": "2f3b8339b3f6896e3ffe750374a1c32f5faa81a63d38d06e3e6afc436aa6aeaa"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_1_stores.o",
+          "sha256": "95d555b554586e832e10fb5753c4b6aeaa68cce9c471322a4a5100f29ff7e9a0"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_1_stores.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 596,
+        "selected_function_bytes": 580,
+        "selected_frame_bytes": 72,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 68,
+        "changed_selected_function_bytes": 52,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 580
+          },
+          {
+            "function": "menu_x",
+            "offset": 580,
+            "bytes": 16
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_point_1_paired_copy",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_1_paired_copy.c",
+          "sha256": "836ab41e97ecb8e900195cba19e48b894c73725f421f8a60570b1ec4e6951c64"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_1_paired_copy.bin",
+          "sha256": "cd419925dda17aa40abf6a40cd2157f951beb5e3ebb00348f44f4d8a94b0f701"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_1_paired_copy.o",
+          "sha256": "cf8cdfaaccdd0cde4f4475059d6e23522473d5e09b81ca400ebea9631aeaf6dc"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_1_paired_copy.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 624,
+        "selected_function_bytes": 608,
+        "selected_frame_bytes": 80,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 366,
+        "changed_selected_function_bytes": 350,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 608
+          },
+          {
+            "function": "menu_x",
+            "offset": 608,
+            "bytes": 16
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_point_2_stores",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_2_stores.c",
+          "sha256": "8480c070c5039cc9c87762e12c854347f00eb1014f1c7b0298456e572ace978b"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_2_stores.bin",
+          "sha256": "936a4a75015d4fbd97358d8fd81d74ff2b6eef610909b7a3bb4d11160c114986"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_2_stores.o",
+          "sha256": "e501339338d56c8330791a43a69ab114def90d9839efd2f578cb197c174c7d88"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_2_stores.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 600,
+        "selected_function_bytes": 584,
+        "selected_frame_bytes": 72,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 323,
+        "changed_selected_function_bytes": 307,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 584
+          },
+          {
+            "function": "menu_y",
+            "offset": 584,
+            "bytes": 16
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_point_2_paired_copy",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_2_paired_copy.c",
+          "sha256": "ab34fa88335f58f7376c30855786ea0ef74e31401046106f12d0981dc3aac1b5"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_2_paired_copy.bin",
+          "sha256": "8d2b30ea9efadcfab9e41e967ef2eb911ef7d3bee1d2499da96db0d82cf28331"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_2_paired_copy.o",
+          "sha256": "b09adf09cececf29bdb59b7f6e5c5303383987397f99634abecd942d16e8a34c"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_2_paired_copy.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 628,
+        "selected_function_bytes": 612,
+        "selected_frame_bytes": 80,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 341,
+        "changed_selected_function_bytes": 325,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 612
+          },
+          {
+            "function": "menu_y",
+            "offset": 612,
+            "bytes": 16
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_point_3_stores",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_3_stores.c",
+          "sha256": "cfe90a95e4c7404c31f04171fcf6491a45c231704320a004903bcaa4718deec2"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_3_stores.bin",
+          "sha256": "b5f6f6e68c7d5772266db7a111a0daad6d3ae92955394896d4db725e68f2ff98"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_3_stores.o",
+          "sha256": "76b4f13dcce1b6852671dc89d7ec5fdfd0782ddc2c30e3ca13f7d0666b34f1fe"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_3_stores.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 624,
+        "selected_function_bytes": 592,
+        "selected_frame_bytes": 72,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 353,
+        "changed_selected_function_bytes": 321,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 592
+          },
+          {
+            "function": "menu_x",
+            "offset": 592,
+            "bytes": 16
+          },
+          {
+            "function": "menu_y",
+            "offset": 608,
+            "bytes": 16
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_point_3_paired_copy",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_3_paired_copy.c",
+          "sha256": "d3ce9ddb87a2d987177d990eef22c06859d7a8b4998801509ac8f3af459dec70"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_3_paired_copy.bin",
+          "sha256": "bcb74a442c4023d3f9d832ae8dbb1e45103838d1dfc8d8efd755472ca575716c"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_3_paired_copy.o",
+          "sha256": "40f6f4ab610621799f7d67b7a0b60fbb43a783976282447b65937cbf7050a599"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_point_3_paired_copy.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 652,
+        "selected_function_bytes": 620,
+        "selected_frame_bytes": 80,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 377,
+        "changed_selected_function_bytes": 345,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 620
+          },
+          {
+            "function": "menu_x",
+            "offset": 620,
+            "bytes": 16
+          },
+          {
+            "function": "menu_y",
+            "offset": 636,
+            "bytes": 16
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_coordinate_1_stores",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_1_stores.c",
+          "sha256": "ba0fdba22fe2d433c29d24372b55543e04f27675e0008bfb775855f128fde110"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_1_stores.bin",
+          "sha256": "a07dad65b52ae2c5a440c8fbdb42381400f70480067be39216b68555b41d916c"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_1_stores.o",
+          "sha256": "ae74187549cfc961aee28fe6e7669c5b95ca1d3d683e157c52ea0b0499707b73"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_1_stores.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 572,
+        "selected_function_bytes": 572,
+        "selected_frame_bytes": 72,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 299,
+        "changed_selected_function_bytes": 299,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 572
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_coordinate_1_paired_copy",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_1_paired_copy.c",
+          "sha256": "c521a8747e9b879479d71a6e82834e0237de4eea3076e49eb8be2251e576f00e"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_1_paired_copy.bin",
+          "sha256": "62f80860bf2fba4eb88a7477046c65e72ca39ca526e878d9c03a699c1f81783d"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_1_paired_copy.o",
+          "sha256": "f6ad52538aa7a800cd1346111f4b4a9d5c80dce9a1750eedf33fdcb605061bb5"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_1_paired_copy.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 600,
+        "selected_function_bytes": 600,
+        "selected_frame_bytes": 80,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 338,
+        "changed_selected_function_bytes": 338,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 600
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_coordinate_2_stores",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_2_stores.c",
+          "sha256": "2ac9df605a2f7dd5eea63166d6b5fc5f63ed78d8b1944e03820a631d7bc7911d"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_2_stores.bin",
+          "sha256": "a07dad65b52ae2c5a440c8fbdb42381400f70480067be39216b68555b41d916c"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_2_stores.o",
+          "sha256": "ad7c2d1ae424616189ff84637115a0748870fc1d4cbd1300edc204bf0688ae72"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_2_stores.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 572,
+        "selected_function_bytes": 572,
+        "selected_frame_bytes": 72,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 299,
+        "changed_selected_function_bytes": 299,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 572
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_coordinate_2_paired_copy",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_2_paired_copy.c",
+          "sha256": "63c78d5ebbc7801fddd2aece58d61ae47d455319ecf64551374ab234626b81e5"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_2_paired_copy.bin",
+          "sha256": "62f80860bf2fba4eb88a7477046c65e72ca39ca526e878d9c03a699c1f81783d"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_2_paired_copy.o",
+          "sha256": "c7fb78c7662afcbebf5fec5b755f68847627a869f35212e805b2a4b161ca54a3"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_2_paired_copy.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 600,
+        "selected_function_bytes": 600,
+        "selected_frame_bytes": 80,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 338,
+        "changed_selected_function_bytes": 338,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 600
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_coordinate_3_stores",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_3_stores.c",
+          "sha256": "5de2092ddcee287ba25f55c533d331b539a380a4ddf26d8aa120aec14abb79ca"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_3_stores.bin",
+          "sha256": "a07dad65b52ae2c5a440c8fbdb42381400f70480067be39216b68555b41d916c"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_3_stores.o",
+          "sha256": "5f7a14803bb6de6c5ebab87bf63e443d76a2d056ec25b3d4d08bbc2f9066068a"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_3_stores.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 572,
+        "selected_function_bytes": 572,
+        "selected_frame_bytes": 72,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 299,
+        "changed_selected_function_bytes": 299,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 572
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003D73C_coordinate_3_paired_copy",
+        "function": "func_8003D73C",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_3_paired_copy.c",
+          "sha256": "4ff046d075e05b190196ddb4fbd66b843dabb2244a07486615755b19ccc14b3b"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_3_paired_copy.bin",
+          "sha256": "62f80860bf2fba4eb88a7477046c65e72ca39ca526e878d9c03a699c1f81783d"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_3_paired_copy.o",
+          "sha256": "100e7acd13c8ec01ab72cbf9e62be0bdde654bb5aea11ecb0a5cb18f35906e8f"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003D73C_coordinate_3_paired_copy.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 600,
+        "selected_function_bytes": 600,
+        "selected_frame_bytes": 80,
+        "original_frame_bytes": 88,
+        "changed_standalone_text_bytes": 338,
+        "changed_selected_function_bytes": 338,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003D73C",
+            "offset": 0,
+            "bytes": 600
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_point_1_stores",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_1_stores.c",
+          "sha256": "b7e91756a40108ce6eae65e76f98648c58453170ed9cb4325b2ab732bdafd636"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_1_stores.bin",
+          "sha256": "d9f9133a1f12d4702d47dfc0d92ed113233bf9d46dac65179f0181afed0f367c"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_1_stores.o",
+          "sha256": "f8448ba94abd670e0159475a5ca833908744b473de63f771e61c6b7075ba125f"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_1_stores.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 496,
+        "selected_function_bytes": 480,
+        "selected_frame_bytes": 56,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 338,
+        "changed_selected_function_bytes": 322,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 480
+          },
+          {
+            "function": "menu_x",
+            "offset": 480,
+            "bytes": 16
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_point_1_paired_copy",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_1_paired_copy.c",
+          "sha256": "8b651528141627068bda69cc5c4ab71a8fb7bc75278bc25c3f0fc2f1297db07a"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_1_paired_copy.bin",
+          "sha256": "9b8be71a065326beb338e685f605f9870908fd54ad5a127a41ccbffc5a846362"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_1_paired_copy.o",
+          "sha256": "cb4dc72cf90da9f4d1258c29ad4bb5104a14e777de83e48953ebfa8043cb39ec"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_1_paired_copy.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 524,
+        "selected_function_bytes": 508,
+        "selected_frame_bytes": 64,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 385,
+        "changed_selected_function_bytes": 369,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 508
+          },
+          {
+            "function": "menu_x",
+            "offset": 508,
+            "bytes": 16
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_point_2_stores",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_2_stores.c",
+          "sha256": "9061277d58d5ee362aea57618ff6ff90172bd9d2a343ab99946d68e5ff626e8c"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_2_stores.bin",
+          "sha256": "efdaeed0373a68b89d1e0cb85d877539c40c036f9418505101a615299bd495f3"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_2_stores.o",
+          "sha256": "db1e10992f30e0950e8eb1b0cb3fda388db914667df7fe5f9adfc1bc164abcbf"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_2_stores.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 496,
+        "selected_function_bytes": 480,
+        "selected_frame_bytes": 56,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 317,
+        "changed_selected_function_bytes": 301,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 480
+          },
+          {
+            "function": "menu_y",
+            "offset": 480,
+            "bytes": 16
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_point_2_paired_copy",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_2_paired_copy.c",
+          "sha256": "f4f24b1e6ebdb0edfa7b9f419a3b15681d8d22fd9800a01a4ddf0456b367fb0a"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_2_paired_copy.bin",
+          "sha256": "ffbb42df97fdeef83f92f66d4e9de7d1372d26f8f09c65793b18320f2bdec1a6"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_2_paired_copy.o",
+          "sha256": "ecb4fa6f3a1d2ee4ed1919d71903f3006c5afc77907b0135f3a544309da13a6e"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_2_paired_copy.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 520,
+        "selected_function_bytes": 504,
+        "selected_frame_bytes": 64,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 321,
+        "changed_selected_function_bytes": 305,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 504
+          },
+          {
+            "function": "menu_y",
+            "offset": 504,
+            "bytes": 16
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_point_3_stores",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_3_stores.c",
+          "sha256": "406d3455f2b6b6d5469f14f8835d478a14072d57ab54b68a5e802cbbf05361d5"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_3_stores.bin",
+          "sha256": "3a0865f2e24c2e265d2fdb57de7c9b24de312530517fc3a4aa4cb3807fe6c016"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_3_stores.o",
+          "sha256": "62f82b986781a622d098f0ac1975be764b3e5d6c14deebb61438f3a070a92a82"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_3_stores.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 524,
+        "selected_function_bytes": 492,
+        "selected_frame_bytes": 56,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 379,
+        "changed_selected_function_bytes": 347,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 492
+          },
+          {
+            "function": "menu_x",
+            "offset": 492,
+            "bytes": 16
+          },
+          {
+            "function": "menu_y",
+            "offset": 508,
+            "bytes": 16
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_point_3_paired_copy",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_3_paired_copy.c",
+          "sha256": "91ddf2f7ab6584123398ffe3c9a7f5f24c35e59df8254d39bbb6d79bf536af2c"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_3_paired_copy.bin",
+          "sha256": "7e1bced29921884c5498c3c29eabdbaec388cca5cf420be6a315f2aefcadd54b"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_3_paired_copy.o",
+          "sha256": "14c51894a522f413b0105dba2ce3203f11ebf1167b7d1533aa90572611ef5b05"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_point_3_paired_copy.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 548,
+        "selected_function_bytes": 516,
+        "selected_frame_bytes": 64,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 402,
+        "changed_selected_function_bytes": 370,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 516
+          },
+          {
+            "function": "menu_x",
+            "offset": 516,
+            "bytes": 16
+          },
+          {
+            "function": "menu_y",
+            "offset": 532,
+            "bytes": 16
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_coordinate_1_stores",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_1_stores.c",
+          "sha256": "bcc51a78221f9031fff32279c951132b60445b3337fc140c46c28c493c6e6af0"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_1_stores.bin",
+          "sha256": "41105724cf966c127244de1efafab005e7b644ac860acc1a63aa979b6fbf94b3"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_1_stores.o",
+          "sha256": "a267dc508b62ebf9631b188a347d47a073c6334a91566e116be888f525251de8"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_1_stores.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 468,
+        "selected_function_bytes": 468,
+        "selected_frame_bytes": 56,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 299,
+        "changed_selected_function_bytes": 299,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 468
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_coordinate_1_paired_copy",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_1_paired_copy.c",
+          "sha256": "5ea8c342a2770bf11245bd72aa87d19f7a4580da97c6312edf32a72a99984b3d"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_1_paired_copy.bin",
+          "sha256": "76b2897e949e64f0555bdc6f04104ac5603fbbfc77ea51ea7466ce0ea1510290"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_1_paired_copy.o",
+          "sha256": "d262c92e12b5c7f75b1e65e36688b7988fd1374c8b73d5295eebfb2a114e2c92"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_1_paired_copy.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 496,
+        "selected_function_bytes": 496,
+        "selected_frame_bytes": 64,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 312,
+        "changed_selected_function_bytes": 312,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 496
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_coordinate_2_stores",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_2_stores.c",
+          "sha256": "ab1e02ce1187ec09b7dd01f405ae7a0208c0f73d8812cba5f6d2a505e79bd1ef"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_2_stores.bin",
+          "sha256": "41105724cf966c127244de1efafab005e7b644ac860acc1a63aa979b6fbf94b3"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_2_stores.o",
+          "sha256": "57a25aef3ec1b0313166814d1f54dafacfaab7c2758afe339fd8d716b8a10b5c"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_2_stores.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 468,
+        "selected_function_bytes": 468,
+        "selected_frame_bytes": 56,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 299,
+        "changed_selected_function_bytes": 299,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 468
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_coordinate_2_paired_copy",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_2_paired_copy.c",
+          "sha256": "b4f724b803a6dfee42512215d61105ba6df66aef3c24c3dfd43053d16419377b"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_2_paired_copy.bin",
+          "sha256": "76b2897e949e64f0555bdc6f04104ac5603fbbfc77ea51ea7466ce0ea1510290"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_2_paired_copy.o",
+          "sha256": "473696762dd823f010e906e48459e2c8fbcd93ab7f8112e19d02c747703cbd25"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_2_paired_copy.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 496,
+        "selected_function_bytes": 496,
+        "selected_frame_bytes": 64,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 312,
+        "changed_selected_function_bytes": 312,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 496
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_coordinate_3_stores",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_3_stores.c",
+          "sha256": "868a06caccd2097acf757a491eb91377ab0c4a019df62255e0d4ca931a4d6b68"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_3_stores.bin",
+          "sha256": "41105724cf966c127244de1efafab005e7b644ac860acc1a63aa979b6fbf94b3"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_3_stores.o",
+          "sha256": "7cc4e86ce5f3a1531ff17523789485fd697c9a42edf24f8c8d2223796968eb40"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_3_stores.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 468,
+        "selected_function_bytes": 468,
+        "selected_frame_bytes": 56,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 299,
+        "changed_selected_function_bytes": 299,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 468
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      },
+      {
+        "case": "func_8003DAD4_coordinate_3_paired_copy",
+        "function": "func_8003DAD4",
+        "source": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_3_paired_copy.c",
+          "sha256": "25a00d9404b4402595f508d00d470661e28e22f1a239df3319068657fc5f36e3"
+        },
+        "binary": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_3_paired_copy.bin",
+          "sha256": "76b2897e949e64f0555bdc6f04104ac5603fbbfc77ea51ea7466ce0ea1510290"
+        },
+        "object": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_3_paired_copy.o",
+          "sha256": "7a424f0fe1b0328364a67185139dd625b030d5ed941ab8893272ed82466c7078"
+        },
+        "diagnostics": {
+          "path": ".decomp-lab/menu-point-accessors-first/func_8003DAD4_coordinate_3_paired_copy.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "standalone_text_bytes": 496,
+        "selected_function_bytes": 496,
+        "selected_frame_bytes": 64,
+        "original_frame_bytes": 64,
+        "changed_standalone_text_bytes": 312,
+        "changed_selected_function_bytes": 312,
+        "emitted_function_symbols": [
+          {
+            "function": "func_8003DAD4",
+            "offset": 0,
+            "bytes": 496
+          }
+        ],
+        "complete_text_exact": false,
+        "selected_function_exact": false,
+        "position_payload_bytes": 8,
+        "added_unused_storage_bytes": 0
+      }
+    ],
+    "exact_selected_functions": 0,
+    "complete_exact_texts": 0,
+    "cases_reaching_original_frame": [
+      "func_8003D73C_fields_array_caller_entry_first",
+      "func_8003D73C_fields_array_helper_entry_first",
+      "func_8003D73C_fields_array_helper_selection_first",
+      "func_8003D73C_copy_array_caller_entry_first",
+      "func_8003D73C_copy_array_helper_entry_first",
+      "func_8003D73C_copy_array_helper_selection_first",
+      "func_8003D73C_typed_array_helper_entry_first",
+      "func_8003D73C_typed_array_helper_selection_first",
+      "func_8003DAD4_fields_record_caller_entry_first",
+      "func_8003DAD4_fields_record_helper_entry_first",
+      "func_8003DAD4_fields_record_helper_selection_first",
+      "func_8003DAD4_copy_record_caller_entry_first",
+      "func_8003DAD4_copy_record_helper_entry_first",
+      "func_8003DAD4_copy_record_helper_selection_first",
+      "func_8003DAD4_typed_array_caller_entry_first",
+      "func_8003DAD4_typed_record_helper_entry_first",
+      "func_8003DAD4_typed_record_helper_selection_first",
+      "func_8003DAD4_point_1_paired_copy",
+      "func_8003DAD4_point_2_paired_copy",
+      "func_8003DAD4_point_3_paired_copy",
+      "func_8003DAD4_coordinate_1_paired_copy",
+      "func_8003DAD4_coordinate_2_paired_copy",
+      "func_8003DAD4_coordinate_3_paired_copy"
+    ],
+    "zero_size_compiler_marker_labels_excluded": true,
+    "historical_headers_verified_against_retained_prior_clean_copy": true
+  },
+  "canonical_build": {
+    "executable_bytes": 505856,
+    "executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "current_build_progress": {
+      "path": ".decomp-lab/menu-current-progress-first.json",
+      "sha256": "3ce9778c09f4d0f027f8be19c80129e6572270243a083a8badb1af96f3600fc8"
+    },
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "known_inherited_source_explanations": 24,
+    "objects_expected": 305,
+    "objects_found": 305,
+    "fresh_clean_build": {
+      "path": ".decomp-lab/menu-signature-clean-build-first.json",
+      "sha256": "0ba6daf88ad4b233ed4085d857bae06a52f89bc2569f47518318d1c497a893f0"
+    },
+    "fresh_clean_build_inputs_verified_equal": 363,
+    "fresh_copy_tracked_file_count": 584,
+    "changed_build_inputs_from_prior_clean": [
+      "src/graphics/effect_base.h",
+      "src/menu/text_line.h"
+    ]
+  },
+  "tooling_tests": [
+    {
+      "path": ".decomp-lab/menu-host-tests-first.log",
+      "sha256": "14a4f909fb7c3307083063546e4d500489b56022648fc8a4fcf82b5363f06534",
+      "platform": "host",
+      "tests": 371,
+      "passed": true
+    },
+    {
+      "path": ".decomp-lab/menu-wsl-tests-first.log",
+      "sha256": "dfdfb95d6c9da1e2152bd275c1645460b9bf92727d60b7c0fadab4a263732b2a",
+      "platform": "wsl",
+      "tests": 371,
+      "passed": true
+    }
+  ],
+  "before_after": {
+    "before": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 16,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "after": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 16,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "source_functions_promoted": 0,
+    "original_game_feature_groups_accepted": 0,
+    "bounded_npc_callback_count_unchanged": 16,
+    "developer_capabilities_unchanged": 10,
+    "optional_mods_unchanged": 3
+  },
+  "retained_setup_diagnostics": [
+    {
+      "directory": ".decomp-lab/menu-native-graph-probe-first",
+      "cause": "Stripped final ELF did not expose the method symbols."
+    },
+    {
+      "directory": ".decomp-lab/menu-native-graph-probe-second",
+      "cause": "Unfiltered build object list included inactive stale objects."
+    },
+    {
+      "directory": ".decomp-lab/menu-native-graph-probe-third",
+      "cause": "Source-built backend was not the qualified isolated 2.1.2 package."
+    }
+  ],
+  "source_functions_promoted": 0,
+  "whole_feature_groups_accepted": 0,
+  "new_original_game_distinct_parameter_histories": 864,
+  "original_game_behavior_modified": false,
+  "model_api_calls": 0,
+  "game_images_generated_assembly_raw_buffers_and_faulted_code_published": false
+}

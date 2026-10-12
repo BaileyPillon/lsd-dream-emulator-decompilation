@@ -22,9 +22,9 @@ count toward original parity.
   separates a 240-byte game-support formatter from an SDK-labelled segment.
   The original baseline remains frozen. With the corrected denominator its
   unchanged C numerator is 169,540 / 199,912 (84.807315%), an arithmetic
-  restatement rather than a rerun. Current C recovery is 195,844 / 199,912;
-  five known remaining game assembly functions still require recovery after
-  the [level-model loader recovery](docs/LBD_RECOVERY.md).
+  restatement rather than a rerun. Current C recovery is 194,212 / 199,912;
+  nine known remaining game assembly functions require recovery after the
+  [expanded source-layout correction](docs/SOURCE_LAYOUT_EXPANDED.md).
 - Feature denominator: the same provisional 40 groups in
   [docs/features.json](docs/features.json) for both measurements. Five recorded
   inventory gaps remain; U006 records the user's resolved distinction between
@@ -43,9 +43,9 @@ count toward original parity.
    instruction substitution, or embedded copies of their assembly to raise
    the count. Original SDK and hardware instructions remain explicitly
    accounted for.
-   The [source-quality audit](docs/SOURCE_QUALITY.md) identifies five already-C
-   functions with inherited dummy stack padding. Their source explanations
-   also require recovery; they are separate from the five assembly fallbacks.
+   The [expanded source-layout audit](docs/SOURCE_LAYOUT_EXPANDED.md) identifies
+   24 inherited unused-storage functions still in C. Their source explanations
+   also require recovery; they are separate from the nine assembly fallbacks.
 2. A clean complete build produces the canonical executable byte for byte.
    Each promoted source change retains a private comparison record.
 3. Asset/resource and command tables are classified, virtual-call dependencies
@@ -71,10 +71,10 @@ Current evidence and source progress are recorded in `docs/features.json`,
 until every completion requirement is met.
 
 The [matching writer recovery](docs/CARD_WRITER_RECOVERY.md) adds 960 C bytes
-and preserves standard and clean-build equality. Groups F037 and F038 now
-have all listed core functions in C; the provisional core-source count is
-37 / 40. Five inherited source-padding explanations and whole-feature runtime
-acceptance still require recovery.
+and preserves standard and clean-build equality. At that checkpoint, groups
+F037 and F038 had all listed core functions in C and the provisional core-source
+count was 37 / 40. The later source-layout correction below supersedes those
+source counts; whole-feature runtime acceptance remains required.
 ## Source-layout correction and current gates
 
 The [expanded audit](docs/SOURCE_LAYOUT_EXPANDED.md) supersedes the earlier
@@ -116,3 +116,9 @@ pass's height-copy change and preserves the formal/local allocation tradeoff.
 Two complete builds and 133 further source forms still fail the exact source
 gate. This extends analysis without accepting original gameplay or relaxing any
 completion requirement.
+
+The [menu profile](docs/MENU_LAYOUT.md) compares layout and acceptance through
+39 actual methods in 864 constructed histories per original and three candidate
+images. Two corrected callback declarations preserve a fresh canonical build.
+The callers retain 20 and 16 byte differences; natural menu construction,
+rendering, controller reachability and full source recovery remain required.

@@ -1,5 +1,11 @@
 # Unaccepted source-layout candidates
 
+The [menu investigation](../../docs/MENU_LAYOUT.md) checks both retained menu
+callers through actual glyph, graphics, list and allocator dependencies. Corrected
+callback types and effect naming preserve the original executable; complete
+candidates retain 20 and 16 differences. Sixty-two source forms have no exact
+match, including returned XY values and emitted accessors.
+
 The four primary C fragments in this directory retain the readable behavior of earlier
 promotions while removing their added unused stack arrays. They remain outside
 the canonical build because their complete executable comparisons differ.

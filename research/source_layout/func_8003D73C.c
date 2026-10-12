@@ -10,7 +10,7 @@ void func_8003D73C(ui_screen_t *This, s32 Unk2, s32 Unk3) {
     s32 *entry;
     s32 pos[2];
     s32 tmp[2];
-    effect_base_t *sound;
+    effect_base_t *effect;
 
     idx = This->m_Unk21;
     row = (text_line_t **) This->m_Unk24[idx];
@@ -31,16 +31,16 @@ void func_8003D73C(ui_screen_t *This, s32 Unk2, s32 Unk3) {
     pos[1] -= v9 * 10;
 
     if (Unk3) {
-        sound = (effect_base_t *) This->m_Unk25;
-        sound->vtable->attach_to(sound, This->m_Unk4, pos);
+        effect = (effect_base_t *) This->m_Unk25;
+        effect->vtable->attach_to(effect, This->m_Unk4, pos);
         i = 0;
         tmp[0] = 0x28;
         tmp[1] = count * 12;
-        sound = (effect_base_t *) This->m_Unk25;
-        sound->vtable->Unk47(sound, tmp);
+        effect = (effect_base_t *) This->m_Unk25;
+        effect->vtable->Unk47(effect, (s16 *) tmp);
     } else {
-        sound = (effect_base_t *) This->m_Unk25;
-        sound->vtable->Unk19(sound);
+        effect = (effect_base_t *) This->m_Unk25;
+        effect->vtable->Unk19(effect);
         i = 0;
     }
 
