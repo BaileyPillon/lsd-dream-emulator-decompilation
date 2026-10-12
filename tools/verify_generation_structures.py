@@ -1,7 +1,7 @@
 """Check bounded generation structure dispatch with original native routines.
 
-Modes 1, 2 and 3 execute their actual update paths. Mode 0 is restricted to
-disabled child work or its first three zero-rate variants. These valid manual
+All four modes execute their actual update paths, including mode 0's eight
+rate variants and four active child layouts. These valid manual
 object graphs do not establish construction, rendering, lifetime or encounter
 acceptance. This analysis tool changes no original behavior and calls no model.
 """
@@ -21,6 +21,8 @@ from tools.verify_scripted_ai import backend_identity
 
 OBJECTS, COORDS, SPRITES, PLAYER, WORLD = 0x100000, 0x110000, 0x120000, 0x130000, 0x131000
 COUNT = 17
+POSES, CHILD_NODES, CHILD_COORDS, CHILD_POSES, SIZE_KEYS = 0x140000, 0x150000, 0x160000, 0x170000, 0x180000
+RATE_WORDS = (0, 0, 0, -1, -2, -4, -16, -256)
 FUNCTIONS = [
     {
         "function": "dream_generation_update_structure_entities",
@@ -87,6 +89,30 @@ FUNCTIONS = [
         "address": "0x80049480",
         "bytes": 40,
         "sha256": "4c54a1210ed147afe9b02657c9b12bdec5bb62c5584a2a9fef212567d0e04c0c"
+    },
+    {
+        "function": "func_8001CEB4",
+        "address": "0x8001CEB4",
+        "bytes": 340,
+        "sha256": "722d79cf1f8c109300d4a56aa1d421442a2b5c424a7f3f1e16ad27d281432217"
+    },
+    {
+        "function": "func_8001EC84",
+        "address": "0x8001EC84",
+        "bytes": 120,
+        "sha256": "7c14d23868ee93933886ecd2477e4e60c6200bef1982963f671e2d76e6d7caaf"
+    },
+    {
+        "function": "func_80056858",
+        "address": "0x80056858",
+        "bytes": 336,
+        "sha256": "7a884633b9d0163a2987efdc1a6545f4ddf0ccbc0af3968291f154532bd2aed8"
+    },
+    {
+        "function": "func_800573A8",
+        "address": "0x800573A8",
+        "bytes": 36,
+        "sha256": "cb98f20f55e4915c70de0cd5ec85346bad6f0c06c72aa4c2ff968b5327149cda"
     }
 ]
 
@@ -114,8 +140,39 @@ TABLES = [
         "address": "0x8008780C",
         "bytes": 32,
         "sha256": "ab02dcd6068e498f46dc68c6b5e37f373cdb2fb8a80a4e3225d348fa882e7080"
+    },
+    {
+        "symbol": "D_800878D4",
+        "address": "0x800878D4",
+        "bytes": 240,
+        "sha256": "74ba4f812269d36e971368efa639a6cb725213972f6958caed2bdf3c42a15388"
+    },
+    {
+        "symbol": "D_800877EC",
+        "address": "0x800877EC",
+        "bytes": 12,
+        "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+    },
+    {
+        "symbol": "D_800877F8",
+        "address": "0x800877F8",
+        "bytes": 20,
+        "sha256": "ce6e22474801b381f8536532d43fb6a13e69925d8bb54734161672d8bf826726"
+    },
+    {
+        "symbol": "D_8008782C",
+        "address": "0x8008782C",
+        "bytes": 12,
+        "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+    },
+    {
+        "symbol": "D_80087838",
+        "address": "0x80087838",
+        "bytes": 12,
+        "sha256": "204c385cce9a7336c400ab87845785f6ca52fe18047d8c29cd77f724c2cf57e0"
     }
 ]
+
 
 def validate_case(case):
     for name in ('type', 'count', 'mode', 'tick', 'enabled', 'variant', 'height',
@@ -124,7 +181,7 @@ def validate_case(case):
         if type(value) is not int or not -0x80000000 <= value <= 0x7FFFFFFF:
             raise ValueError('Expected a native signed word: ' + name)
     if (case['count'] > COUNT or case['mode'] not in (0, 1, 2, 3)
-            or case['enabled'] not in (0, 1) or case['variant'] not in (0, 1, 2)):
+            or case['enabled'] not in range(5) or case['variant'] not in range(8)):
         raise ValueError('Fixture lies outside the bounded generation object graph.')
     if type(case.get('seed')) is not int or not 0 <= case['seed'] <= 0xFFFFFFFF:
         raise ValueError('Expected an unsigned native RNG seed.')
@@ -133,6 +190,12 @@ def validate_case(case):
             or any(type(value) is not int or not -0x80000000 <= value <= 0x7FFFFFFF
                    for value in position)):
         raise ValueError('Expected three signed player position words.')
+    euler = case.get('euler', (0, 0, 0))
+    key = case.get('size_key', 1)
+    if (not isinstance(euler, (tuple, list)) or len(euler) != 3
+            or any(type(value) is not int or not -0x8000 <= value <= 0x7FFF for value in euler)
+            or type(key) is not int or not -0x8000 <= key <= 0x7FFF):
+        raise ValueError('Expected signed halfwords for Euler angles and size key.')
 
 
 def s32(value):
@@ -152,6 +215,11 @@ def fixtures(case):
     objects = bytearray([0x9D]) * (COUNT * 0x100)
     coords = bytearray([0xBE]) * (COUNT * 0x100)
     sprites = bytearray([0xA7]) * (COUNT * 4 * 0x100)
+    poses = bytearray([0xAF]) * (COUNT * 0x100)
+    child_nodes = bytearray([0xBD]) * (COUNT * 2 * 0x100)
+    child_coords = bytearray([0xCD]) * (COUNT * 2 * 0x100)
+    child_poses = bytearray([0xDA]) * (COUNT * 2 * 0x100)
+    keys = bytearray([0x9B]) * (COUNT * 0x10)
     player = struct.pack('<3i', *case['position'])
     world = bytearray([0xCB]) * 0x30
     n.word(world, 0x18, case['height'])
@@ -159,11 +227,25 @@ def fixtures(case):
         off = i * 0x100
         for offset, value in ((0, n.h.symbols['D_800876FC']), (0x14, COORDS + off),
                               (0x24, case['tick']), (0x54, case['mode']),
+                              (0x68, SIZE_KEYS + i * 0x10),
                               (0x6C, case['enabled']), (0x70, case['variant'])):
             n.word(objects, off + offset, value)
         for axis, value in enumerate((100 * i - 200, 30 - i, -50 * i)):
             n.word(objects, off + 0x58 + axis * 4, value)
         n.word(coords, off, 1)
+        n.word(coords, off + 0x44, POSES + off)
+        struct.pack_into('<3h', poses, off + 0x10, *case.get('euler', (0, 0, 0)))
+        struct.pack_into('<h', keys, i * 0x10, case.get('size_key', 1))
+        for child in range(2):
+            child_off = (i * 2 + child) * 0x100
+            n.word(objects, off + 0x7C + child * 4, CHILD_NODES + child_off)
+            n.word(child_nodes, child_off, n.h.symbols['D_800878D4'])
+            n.word(child_nodes, child_off + 0x14, CHILD_COORDS + child_off)
+            n.word(child_coords, child_off, 1)
+            n.word(child_coords, child_off + 0x44, CHILD_POSES + child_off)
+            for axis, value in enumerate((111 + child, 222 + i, 333 - child)):
+                n.word(child_coords, child_off + 0x18 + axis * 4, value)
+            struct.pack_into('<3h', child_poses, child_off + 0x10, *case.get('euler', (0, 0, 0)))
         for child in range(4):
             spoff = (i * 4 + child) * 0x100
             n.word(objects, off + 0x88 + child * 4, SPRITES + spoff)
@@ -172,16 +254,41 @@ def fixtures(case):
                 n.word(sprites, spoff + offset, value)
     listing = b''.join(struct.pack('<I', OBJECTS + i * 0x100) for i in range(COUNT))
     return dict(objects=objects, coordinates=coords, sprites=sprites,
-                player=player, world=world, listing=listing)
+                player=player, world=world, listing=listing, poses=poses,
+                child_nodes=child_nodes, child_coordinates=child_coords,
+                child_poses=child_poses, size_keys=keys)
 
 
-def model(case):
-    buffers, trace, seed = fixtures(case), [], n.u32(case['seed'])
+def rotate_model(buffers, name, offset, source, trace, obj):
+    data = n.h.target(source, 12)
+    delta = []
+    for numerator, denominator in struct.iter_unpack('<hh', data):
+        quotient = div(numerator, denominator)
+        fixed = (quotient << 12) + div((numerator - quotient * denominator) << 12, denominator)
+        delta.append(div(fixed, 360))
+    trace.append(['rotation', obj, 0, source])
+    for axis, value in enumerate(delta):
+        old = struct.unpack_from('<h', buffers[name], offset + 0x10 + axis * 2)[0]
+        value = old + value
+        value = value - div(value, 4096) * 4096
+        struct.pack_into('<h', buffers[name], offset + 0x10 + axis * 2, sh(value))
+
+
+def model(case, previous=None):
+    if previous is None:
+        buffers, trace, seed = fixtures(case), [], n.u32(case['seed'])
+    else:
+        validate_case(case)
+        buffers = {name: bytearray(data) for name, data in previous.items() if name not in ('trace', 'rng_seed')}
+        buffers['player'] = struct.pack('<3i', *case['position'])
+        n.word(buffers['world'], 0x18, case['height'])
+        trace, seed = [], previous['rng_seed']
     if case['type'] >= 0 and case['count'] > 0:
         for i in range(case['count']):
             off, obj = i * 0x100, OBJECTS + i * 0x100
             trace.append(['update', obj, PLAYER])
-            n.word(buffers['objects'], off + 0x24, case['tick'] + 1)
+            tick = n.u32(struct.unpack_from('<I', buffers['objects'], off + 0x24)[0] + 1)
+            n.word(buffers['objects'], off + 0x24, tick)
             result = [s32(case['position'][axis] + value)
                       for axis, value in enumerate((100 * i - 200, 30 - i, -50 * i))]
             result[1] = s32(result[1] + s32(case['height'] - case['baseline_height']))
@@ -189,7 +296,43 @@ def model(case):
             for axis, value in enumerate(result):
                 n.word(buffers['coordinates'], off + 0x18 + axis * 4, value)
             n.word(buffers['coordinates'], off, 0)
-            if case['mode'] == 3:
+            mode = struct.unpack_from('<i', buffers['objects'], off + 0x54)[0]
+            enabled = struct.unpack_from('<i', buffers['objects'], off + 0x6C)[0]
+            variant = struct.unpack_from('<i', buffers['objects'], off + 0x70)[0]
+            if mode == 0:
+                rate = struct.unpack('<i', n.h.target(n.h.symbols['D_8008780C'] + variant * 4, 4))[0]
+                if enabled and rate and tick >= 501:
+                    rotation = n.h.symbols['D_80087838']
+                    rotate_model(buffers, 'poses', off, rotation, trace, obj)
+                    base = list(struct.unpack('<3i', n.h.target(n.h.symbols['D_8008782C'], 12)))
+                    for child in range(2):
+                        child_off = (i * 2 + child) * 0x100
+                        child_obj = CHILD_NODES + child_off
+                        vector = list(base)
+                        vector[2] = s32(vector[2] + child * 3 + rate)
+                        trace.append(['position_add', child_obj, vector])
+                        for axis, value in enumerate(vector):
+                            offset = child_off + 0x18 + axis * 4
+                            old = struct.unpack_from('<i', buffers['child_coordinates'], offset)[0]
+                            n.word(buffers['child_coordinates'], offset, old + value)
+                        rotate_model(buffers, 'child_poses', child_off, rotation, trace, child_obj)
+                        n.word(buffers['child_coordinates'], child_off, 0)
+                    period = abs(div(0x5FB4, rate))
+                    if tick % period == 0:
+                        local = list(struct.unpack('<3i', n.h.target(n.h.symbols['D_800877EC'], 12)))
+                        scale = struct.unpack('<i', n.h.target(n.h.symbols['D_800877F8'] + enabled * 4, 4))[0]
+                        for child in range(2):
+                            child_off = (i * 2 + child) * 0x100
+                            if enabled < 3:
+                                key = struct.unpack_from('<h', buffers['size_keys'], i * 0x10)[0]
+                                local[0] = s32(local[0] + key * scale)
+                            else:
+                                local[1] = s32(local[1] + scale)
+                            trace.append(['position_set', CHILD_NODES + child_off, list(local)])
+                            for axis, value in enumerate(local):
+                                n.word(buffers['child_coordinates'], child_off + 0x18 + axis * 4, value)
+                            n.word(buffers['child_coordinates'], child_off, 0)
+            elif mode == 3:
                 for child in range(4):
                     spoff = (i * 4 + child) * 0x100
                     trace.append(['rand', seed])
@@ -221,9 +364,13 @@ class Machine:
             self.cpu.mem_write(address & n.MASK, data)
         self.entries = {int(row['address'], 16) & n.MASK: row['function'] for row in FUNCTIONS}
         self.counts = Counter()
+        self.control_address = None
+        self.control_hits = 0
         self.cpu.hook_add(n.UC_HOOK_CODE, self.hook)
 
     def hook(self, cpu, address, size, unused):
+        if (address & n.MASK) == self.control_address:
+            self.control_hits += 1
         name = self.entries.get(address & n.MASK)
         if name:
             self.counts[name] += 1
@@ -233,23 +380,32 @@ class Machine:
         elif name == 'func_80057384':
             vector = list(struct.unpack('<3i', cpu.mem_read(args[1] & n.MASK, 12)))
             self.trace.append(['position_set', args[0], vector])
+        elif name == 'func_800573A8':
+            vector = list(struct.unpack('<3i', cpu.mem_read(args[1] & n.MASK, 12)))
+            self.trace.append(['position_add', args[0], vector])
+        elif name == 'func_8001CEB4':
+            self.trace.append(['rotation', *args[:3]])
         elif name == 'rand':
             self.trace.append(['rand', int.from_bytes(cpu.mem_read(n.RNG, 4), 'little')])
         elif name == 'func_80057DF4':
             self.trace.append(['sprite_scale', *args[:3]])
 
-    def run(self, case):
+    def run(self, case, reset=True):
         self.trace = []
         buffers, cpu = fixtures(case), self.cpu
         addresses = {'objects': OBJECTS, 'coordinates': COORDS, 'sprites': SPRITES,
                      'player': PLAYER, 'world': WORLD,
-                     'listing': n.h.symbols['g_GenerationStructures'] & n.MASK}
+                     'listing': n.h.symbols['g_GenerationStructures'] & n.MASK,
+                     'poses': POSES, 'child_nodes': CHILD_NODES, 'child_coordinates': CHILD_COORDS,
+                     'child_poses': CHILD_POSES, 'size_keys': SIZE_KEYS}
         for name, data in buffers.items():
-            cpu.mem_write(addresses[name], bytes(data))
+            if reset or name in ('player', 'world'):
+                cpu.mem_write(addresses[name], bytes(data))
         for name, value in (('g_GenerationType', case['type']), ('g_GenerationStructureCount', case['count']),
                             ('D_8008ACAC', WORLD), ('D_8008ACB0', case['baseline_height'])):
             cpu.mem_write(n.h.symbols[name] & n.MASK, struct.pack('<I', n.u32(value)))
-        cpu.mem_write(n.RNG, struct.pack('<I', n.u32(case['seed'])))
+        if reset:
+            cpu.mem_write(n.RNG, struct.pack('<I', n.u32(case['seed'])))
         cpu.mem_write(n.STACK - 0x400, bytes([0xCC]) * 0x800)
         saved = [n.u32(0xAB000000 + 0x10203 * i) for i in range(len(n.SAVED))]
         for register, value in zip(n.SAVED, saved):
@@ -287,6 +443,29 @@ def cases():
             (0, 1), (0, 1, 2), (499, 500, 501, -1, 0x7FFFFFFF), (1, 17)):
         yield 'mode_zero_zero_rate_variants', base_case(
             enabled=enabled, variant=variant, tick=tick, count=count)
+    for enabled, variant, tick, count in itertools.product(
+            range(5), range(8), (-1, 0, 499, 500, 501, 0x7FFFFFFE, 0x7FFFFFFF), (1, 17)):
+        yield 'all_mode_zero_variants', base_case(enabled=enabled, variant=variant, tick=tick, count=count)
+    for variant, enabled, count, key, euler in itertools.product(
+            range(3, 8), range(1, 5), (1, 2), (-32768, -1, 32767),
+            ((0, 0, 0), (-32768, -1, 32767))):
+        period = abs(div(24500, RATE_WORDS[variant]))
+        first = ((501 + period - 1) // period) * period
+        for tick in (499, 500, first - 2, first - 1, first, 2 * first - 1):
+            yield 'period_and_coordinate_reset', base_case(enabled=enabled, variant=variant,
+                tick=tick, count=count, size_key=key, euler=euler)
+
+
+def histories():
+    for enabled, variant in itertools.product(range(1, 5), range(3, 8)):
+        period = abs(div(24500, RATE_WORDS[variant]))
+        first = ((501 + period - 1) // period) * period
+        for kind, start_tick in (('late_activation', 498), ('first_period_reset', first - 3)):
+            sequence = [base_case(enabled=enabled, variant=variant, tick=start_tick, count=2,
+                size_key=-3, euler=(-32768, -1, 32767),
+                position=(1000 + 11 * step, 2000 - 17 * step, 3000 + step), height=400 + 13 * step)
+                for step in range(12)]
+            yield kind, sequence
 
 
 def qualify_tables(program):
@@ -295,10 +474,17 @@ def qualify_tables(program):
         if (program.symbols.get(record['symbol']) != address
                 or hashlib.sha256(program.target(address, record['bytes'])).hexdigest() != record['sha256']):
             raise ValueError('Canonical generation table changed: ' + record['symbol'])
+    if (struct.unpack('<8i', program.target(program.symbols['D_8008780C'], 32)) != RATE_WORDS
+            or program.symbols['g_GenerationEffects'] - program.symbols['g_GenerationStructures'] != COUNT * 4):
+        raise ValueError('Generation rate fixtures or structure array boundary changed.')
     bindings = [
         ('D_800876FC', 0xEC, 'func_800564F4'),
         ('D_800876FC', 0xB8, 'func_80057384'),
         ('D_800879C4', 0x48, 'func_80057DF4'),
+        ('D_800876FC', 0x44, 'func_8001CEB4'),
+        ('D_800878D4', 0x44, 'func_8001CEB4'),
+        ('D_800878D4', 0xB8, 'func_80057384'),
+        ('D_800878D4', 0xBC, 'func_800573A8'),
     ]
     for table, offset, function in bindings:
         slot = struct.unpack('<I', program.target(program.symbols[table] + offset, 4))[0]
@@ -336,6 +522,14 @@ def negative_controls():
          base_case(mode=3, seed=42)),
         ('wrong_rng_increment', 'rand', 20, 0x24423039, 0x2442303A,
          base_case(mode=3, seed=42)),
+        ('wrong_late_activation_tick', 'func_800569A8', 88, 0x2C4201F5, 0x2C4201F6,
+         base_case(enabled=1, variant=3, tick=500)),
+        ('wrong_second_child_offset', 'func_800569A8', 220, 0x26310003, 0x26310002,
+         base_case(enabled=1, variant=3, tick=500)),
+        ('wrong_reposition_period', 'func_800569A8', 288, 0x34025FB4, 0x34025FB5,
+         base_case(enabled=1, variant=3, tick=24499)),
+        ('wrong_rotation_axis_destination', 'func_8001CEB4', 280, 0xA4820000, 0xA4820002,
+         base_case(enabled=1, variant=3, tick=500)),
     ]
     detected = []
     for kind, function, offset, expected_word, changed_word, case in controls:
@@ -345,10 +539,13 @@ def negative_controls():
         if struct.unpack_from('<I', original, offset)[0] != expected_word:
             raise ValueError('Control does not identify its pinned original instruction: ' + kind)
         struct.pack_into('<I', original, offset, changed_word)
-        if Machine(patch={address: bytes(original)}).run(case) == model(case):
+        machine = Machine(patch={address: bytes(original)})
+        machine.control_address = (address + offset) & n.MASK
+        if machine.run(case) == model(case) or machine.control_hits == 0:
             raise ValueError('Control was not detected: ' + kind)
         detected.append({'kind': kind, 'function': function, 'function_offset': offset,
                          'expected_word': f'0x{expected_word:08X}', 'changed_word': f'0x{changed_word:08X}',
+                         'changed_instruction_executions': machine.control_hits,
                          'fixture': case, 'scope': 'Private Unicorn memory only.'})
     return detected
 
@@ -392,7 +589,23 @@ def verify(destination, candidate=None):
                                'actual': repr(actual), 'expected': repr(expected)}, handle, indent=2)
                 raise ValueError('Generation structure disagreement; private evidence: ' + str(failure))
             groups[group] += 1
+        history_groups, history_count = Counter(), 0
+        for kind, sequence in histories():
+            previous = None
+            history_count += 1
+            for step, case in enumerate(sequence):
+                actual, expected = machine.run(case, reset=step == 0), model(case, previous)
+                if actual != expected:
+                    failure = destination.with_name(destination.stem + '-history-failure-' + str(time.time_ns()) + '.json')
+                    with failure.open('x') as handle:
+                        json.dump({'profile': profile, 'history': kind, 'step': step, 'case': case,
+                                   'actual': repr(actual), 'expected': repr(expected)}, handle, indent=2)
+                    raise ValueError('Generation history disagreement; private evidence: ' + str(failure))
+                previous = expected
+                history_groups[kind] += 1
         observations[profile] = {'native_cases': sum(groups.values()), 'case_groups': dict(groups),
+                                 'consecutive_update_histories': history_count,
+                                 'history_frames': sum(history_groups.values()), 'history_frame_groups': dict(history_groups),
                                  'actual_native_entry_counts': dict(sorted(machine.counts.items()))}
         print(profile, sum(groups.values()), 'passed', flush=True)
     controls = negative_controls()
@@ -413,12 +626,12 @@ def verify(destination, candidate=None):
         'source_functions_promoted': 0, 'whole_feature_groups_accepted': 0,
         'producer_dependencies': [{'path': path.resolve().relative_to(n.ROOT).as_posix(), 'sha256': digest}
                                   for path, digest in before.items()],
-        'scope': 'Eleven original routines execute in manually assembled valid structure/coordinate/sprite graphs. '
+        'scope': 'Fifteen original routines execute in manually assembled valid structure/coordinate/sprite/child graphs. '
                  'Full graph buffers, player/world/list preservation, ordered updates/position sets/scales/RNG, '
-                 'native 32-bit arithmetic and ABI. Mode 0 child effects are disabled or use only the first '
-                 'three zero-rate variants; modes 1/2/3 use their actual update paths. '
-                 'Excludes construction, other mode-0 variants, dynamic list/count mutations during callbacks, '
-                 'null player vectors with live structures, rendering/audio, encounters/lifetimes and PS1 CPU timing.',
+                 'native 32-bit arithmetic and ABI. All four generation modes, all eight mode-0 rate variants, '
+                 'four active child layouts, late activation and periodic position reset with consecutive-update histories. '
+                 'Excludes construction, parameter-table selection provenance, dynamic list/count mutations during callbacks, '
+                 'null player vectors with live structures, rendering/audio, natural encounters/lifetimes and PS1 CPU timing.',
         'elapsed_seconds': round(time.monotonic() - started, 3),
     }
     with destination.open('x') as handle:

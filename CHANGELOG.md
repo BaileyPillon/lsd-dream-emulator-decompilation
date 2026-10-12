@@ -1,5 +1,18 @@
 # Changelog
 
+## Original mode 0 effects and consecutive updates - 2026-10-12
+
+- Execute all eight mode 0 rates and four active child layouts through actual
+  rotation, translation, fractional arithmetic and periodic-reset methods.
+  Fifteen original routines pass 3,116 standalone fixtures and 40 histories
+  of 480 update frames per original/candidate image. Nine faults are detected
+  with positive changed-instruction execution counts.
+- Qualify six further direct aggregate source forms; all emit the earlier
+  rejected pointer form. Forty qualified forms still retain no exact match.
+- Add six synthetic guards for activation, signed rotation, reset ordering,
+  layouts, periods and state continuity. All 346 tooling tests pass locally.
+  Canonical game source, feature/NPC counts and optional gameplay remain intact.
+
 ## Original generation structure checks and source lifetimes - 2026-10-12
 
 - Execute eleven original routines in 1,116 graph fixtures per original and

@@ -359,3 +359,10 @@ F024 retains assembly; no core-source or whole-feature status is promoted.
 These methods are outside the NPC catalogue, so its 16 / 107 bounded count
 stays unchanged. The 40 provisional groups, ten developer capabilities and
 three optional mods also retain their separate counts.
+
+The [mode 0 extension](GENERATION_EFFECTS.md) adds actual late rotations,
+additive child movement and periodic position resets across all eight rates
+and four active layouts. Current structure comparison is 3,116 standalone
+fixtures plus 40 histories of 480 update frames per original/candidate image,
+through fifteen original routines and nine detected faults. F024's source gate,
+the 16 / 107 bounded NPC count and all whole-feature gates remain unchanged.

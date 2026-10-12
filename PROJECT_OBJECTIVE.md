@@ -93,3 +93,8 @@ Actual dispatch, position replacement and mode 3 sprite RNG/scaling agree,
 but the scalar C candidate still has ten stack-layout differences. No original
 feature, C function or whole NPC is accepted; source and runtime gates remain
 separate.
+
+The [mode 0 extension](docs/GENERATION_EFFECTS.md) executes all eight rate
+variants and four active child layouts through fifteen original routines,
+including consecutive graph updates and periodic resets. Construction,
+natural histories and the exact C-frame explanation remain incomplete.

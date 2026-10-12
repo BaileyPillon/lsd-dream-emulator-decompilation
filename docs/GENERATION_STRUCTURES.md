@@ -81,3 +81,12 @@ remains 194,212 / 199,912 (97.15%), with nine assembly functions and 24 inherite
 source explanations. No whole feature is accepted or original behavior added.
 The developer analysis capability and optional mods remain separate from the
 original game; this checker makes zero model API calls.
+
+## Later mode 0 extension
+
+The [late-effect and history profile](GENERATION_EFFECTS.md) supersedes this
+checker's initial mode 0 restriction. It covers all eight rates and four active
+child layouts through fifteen original routines, 3,116 standalone fixtures and
+40 consecutive-update histories per original/candidate image. The initial
+metadata stays frozen. Exact C recovery and whole-feature acceptance remain
+open; the qualified source-form total later rises to 40 without a match.

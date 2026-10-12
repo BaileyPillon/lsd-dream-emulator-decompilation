@@ -24,6 +24,12 @@ without output contracts. Recover the scalar candidate's missing eight-byte
 source lifetime, then extend mode 0 child effects and natural object histories.
 The two tested live argument-pair helpers reserve extra storage but emit
 nonoriginal stores; their complete images remain rejected.
+The later [mode 0 extension](GENERATION_EFFECTS.md) now checks all eight rate
+variants and four active child layouts, including ordered periodic resets and
+consecutive graph updates. Recover actual construction/parameter selection and
+natural lifecycle histories next; fifteen-routine bounded composition alone
+does not establish those gates. Six direct aggregate forms retain the same
+rejected output, so they do not explain the scalar frame lifetime.
 
 The initial seven also remained after the [save-title recovery](SAVE_LABEL.md). That
 additional game-support helper was discovered in a segment classified as SDK;

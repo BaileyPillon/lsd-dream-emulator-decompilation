@@ -47,6 +47,10 @@ original routines and compare 1,116 fixtures per original/candidate image,
 including virtual dispatch, position updates and mode 3 sprite RNG/scaling.
 The padding-free candidate agrees on those fixtures but still fails the exact
 source gate. It adds no whole-feature acceptance or new NPC callback coverage.
+The later [generation effect checks](docs/GENERATION_EFFECTS.md) extend mode 0
+through all eight rate variants and four active child layouts, using fifteen
+original routines, 3,116 fixtures and 40 consecutive-update histories per image.
+Its nine faults are detected with measured changed-instruction execution.
 The [save-title recovery](docs/SAVE_LABEL.md) documents an earlier matching C
 promotion, its native checks and the correction to SDK/game classification.
 The [SDK and sound API audit](docs/SDK_SIGNATURE_AUDIT.md) documents corrected

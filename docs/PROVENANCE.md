@@ -479,3 +479,14 @@ are published. Complete game images, raw buffers and altered native code remain
 private. Earlier feature records are retained through an append-only supplement.
 Matching C remains unchanged; bounded execution does not waive the source gate
 or accept construction, encounters, lifecycle histories or a whole feature.
+
+## Mode 0 effects and consecutive graph supplement
+
+[generation-effects-checks.json](generation-effects-checks.json) pins the current
+checker, fifteen original methods, nine tables, full graph comparisons,
+consecutive histories and nine detected faults. Changed-instruction execution
+is measured; native method outputs are not replaced. Six private direct
+aggregate diagnostics emit the same rejected code as the earlier pointer
+hypothesis. Earlier source and inventory records remain frozen and reconstruct
+exactly after removing only the new supplement. Runtime inputs, raw buffers
+and faulted code remain private; no original behavior or whole feature is added.

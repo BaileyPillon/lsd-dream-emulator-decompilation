@@ -1,0 +1,758 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-12T05:05:15.321168+00:00",
+  "repository_before": "ebd883bcdb68cb442a13d21ea5f4c6e1a91bc32d",
+  "scope": "Original mode-zero late effects and consecutive graph updates, with rejected direct aggregate source diagnostics.",
+  "public_files": {
+    "README.md": "557fd609cdea8d96564a6253558768b5790857919842ebe66dc8c01075255340",
+    "CHANGELOG.md": "88d2b694b6c9e55b3bf63f1c29ca022699e8cf1c3fdeb0e3ea62154e5e39fd5d",
+    "PROJECT_OBJECTIVE.md": "d16431c3f6fffee77a5d8ca19ccc22178ad7bd5ec4b0c123731f35ca00a3115e",
+    "docs/GENERATION_EFFECTS.md": "c12ab9d9c6f957539bdd0f8d23f5783478becd93941c714b80d1174f2ba3d882",
+    "docs/GENERATION_STRUCTURES.md": "fa8c849a8f9f439c37e10c724516af0098413f745360bac057bc244ec5b7b3a6",
+    "docs/FEATURE_INVENTORY.md": "8dfdedd8064e27f3720f6c86fb93c895d6f3d2fc8a9ad73b255b7a8985564657",
+    "docs/PROVENANCE.md": "883d3977b73b77a98dc3e5ee9c01b4f70afb83d8ea5e30ad1a22e4073928e18b",
+    "docs/ROADMAP.md": "d50fc9a7a7cd1664453de93229f03e3d89a458c20024aa5537399c104cc8cdfe",
+    "tools/verify_generation_structures.py": "ffe63ad78eb382fe5edd577b16f5f23eef8d19e62e30a43ddce7211a4b4bb63a",
+    "tests/test_generation_structures.py": "3da0f751ade2e58c3ac1de78a8bdbc847ff66516d5e1c15188c041ab60ffcfe9"
+  },
+  "features_before_sha256": "5b66ddd2e9bc198cb92441b70844ec243ad435babdc46f77ca0f65dc02a55a43",
+  "prior_generation_snapshot": {
+    "path": "docs/generation-structure-checks.json",
+    "sha256": "c281c5fb6fb729ba0b59b3bccf7ddb00b57b2047bf18730755022e8fc8e09cae"
+  },
+  "native_comparison": {
+    "path": ".decomp-lab/generation-effects-native-first.json",
+    "sha256": "f75ec4399dae6eadefe335f139cd58da65faaa346b6fe64ce1a1888eb0a9f43a",
+    "status": "passed_bounded_original_generation_structure_composition",
+    "profiles": {
+      "original": {
+        "native_cases": 3116,
+        "case_groups": {
+          "guards_modes_and_ticks": 840,
+          "sprite_rng_and_word_width": 216,
+          "mode_zero_zero_rate_variants": 60,
+          "all_mode_zero_variants": 560,
+          "period_and_coordinate_reset": 1440
+        },
+        "consecutive_update_histories": 40,
+        "history_frames": 480,
+        "history_frame_groups": {
+          "late_activation": 240,
+          "first_period_reset": 240
+        },
+        "actual_native_entry_counts": {
+          "dream_generation_update_structure_entities": 3596,
+          "func_8001CEB4": 12360,
+          "func_8001EC84": 37080,
+          "func_800564F4": 12540,
+          "func_80056640": 12540,
+          "func_80056794": 12540,
+          "func_80056858": 760,
+          "func_800569A8": 9300,
+          "func_80056DF0": 600,
+          "func_80056E44": 2040,
+          "func_80057384": 14060,
+          "func_800573A8": 8240,
+          "func_800573CC": 22300,
+          "func_80057DF4": 8160,
+          "rand": 16320
+        }
+      },
+      "unaccepted_complete_c_candidate": {
+        "native_cases": 3116,
+        "case_groups": {
+          "guards_modes_and_ticks": 840,
+          "sprite_rng_and_word_width": 216,
+          "mode_zero_zero_rate_variants": 60,
+          "all_mode_zero_variants": 560,
+          "period_and_coordinate_reset": 1440
+        },
+        "consecutive_update_histories": 40,
+        "history_frames": 480,
+        "history_frame_groups": {
+          "late_activation": 240,
+          "first_period_reset": 240
+        },
+        "actual_native_entry_counts": {
+          "dream_generation_update_structure_entities": 3596,
+          "func_8001CEB4": 12360,
+          "func_8001EC84": 37080,
+          "func_800564F4": 12540,
+          "func_80056640": 12540,
+          "func_80056794": 12540,
+          "func_80056858": 760,
+          "func_800569A8": 9300,
+          "func_80056DF0": 600,
+          "func_80056E44": 2040,
+          "func_80057384": 14060,
+          "func_800573A8": 8240,
+          "func_800573CC": 22300,
+          "func_80057DF4": 8160,
+          "rand": 16320
+        }
+      }
+    },
+    "native_functions": [
+      {
+        "function": "dream_generation_update_structure_entities",
+        "address": "0x80054C74",
+        "bytes": 136,
+        "sha256": "8e76e15aa6bb2308176a4a72b32eb3b71f3adc0e5d2b88c3c229f2d6335e54a5"
+      },
+      {
+        "function": "func_800564F4",
+        "address": "0x800564F4",
+        "bytes": 44,
+        "sha256": "fab2c1f0323e006fa234e024d1b4fd571ea09e24ce4c3c7dbf9c9fe0f3ee11a3"
+      },
+      {
+        "function": "func_80056640",
+        "address": "0x80056640",
+        "bytes": 216,
+        "sha256": "3cc6def140e06a9bd9e7b2c106751e0124171436e49a4e6bbb86fcb414d31066"
+      },
+      {
+        "function": "func_80056794",
+        "address": "0x80056794",
+        "bytes": 64,
+        "sha256": "491f5cc3d82c61bde594eb5804a4ed3ab1588587adfeaeb3e393d3aa05fdf7e7"
+      },
+      {
+        "function": "func_800569A8",
+        "address": "0x800569A8",
+        "bytes": 484,
+        "sha256": "118a8fd70514047175034b75986589933f746cb62ed4c9378122177ff098e826"
+      },
+      {
+        "function": "func_80056DF0",
+        "address": "0x80056DF0",
+        "bytes": 8,
+        "sha256": "6d64edf91449c1b17746c1ef18afa2eb25c70bdf1322ab3df5a2630993b7e2f1"
+      },
+      {
+        "function": "func_80056E44",
+        "address": "0x80056E44",
+        "bytes": 228,
+        "sha256": "a66d08b7b2426dba486e08913830f6bd56cb3c1f01a512fb8739206bf0b05386"
+      },
+      {
+        "function": "func_80057384",
+        "address": "0x80057384",
+        "bytes": 36,
+        "sha256": "209c4d51b9f0747d871ce8d9e5dde8a14d4e0235eeed3191c3723dfa3c7e2bba"
+      },
+      {
+        "function": "func_800573CC",
+        "address": "0x800573CC",
+        "bytes": 120,
+        "sha256": "c1a99e64390fec4e8dcf12a0a17942c6c30f55d6703dc08a78cd5e1111b8ad19"
+      },
+      {
+        "function": "func_80057DF4",
+        "address": "0x80057DF4",
+        "bytes": 324,
+        "sha256": "399a7dc526a1823315f40f5be164b6635b61bb36bddfb31d737c0c3cbb8fc54e"
+      },
+      {
+        "function": "rand",
+        "address": "0x80049480",
+        "bytes": 40,
+        "sha256": "4c54a1210ed147afe9b02657c9b12bdec5bb62c5584a2a9fef212567d0e04c0c"
+      },
+      {
+        "function": "func_8001CEB4",
+        "address": "0x8001CEB4",
+        "bytes": 340,
+        "sha256": "722d79cf1f8c109300d4a56aa1d421442a2b5c424a7f3f1e16ad27d281432217"
+      },
+      {
+        "function": "func_8001EC84",
+        "address": "0x8001EC84",
+        "bytes": 120,
+        "sha256": "7c14d23868ee93933886ecd2477e4e60c6200bef1982963f671e2d76e6d7caaf"
+      },
+      {
+        "function": "func_80056858",
+        "address": "0x80056858",
+        "bytes": 336,
+        "sha256": "7a884633b9d0163a2987efdc1a6545f4ddf0ccbc0af3968291f154532bd2aed8"
+      },
+      {
+        "function": "func_800573A8",
+        "address": "0x800573A8",
+        "bytes": 36,
+        "sha256": "cb98f20f55e4915c70de0cd5ec85346bad6f0c06c72aa4c2ff968b5327149cda"
+      }
+    ],
+    "native_tables": [
+      {
+        "symbol": "D_800876FC",
+        "address": "0x800876FC",
+        "bytes": 240,
+        "sha256": "ea50c46e67e855f2a98796a6a7a490f146ed485761ececdc3555a834f28d3cc7"
+      },
+      {
+        "symbol": "D_800879C4",
+        "address": "0x800879C4",
+        "bytes": 200,
+        "sha256": "5b88043978c8bc3b061d49f9f28dd604e09d5d62d6b02c47ebc3e673cba381bc"
+      },
+      {
+        "symbol": "D_8008788C",
+        "address": "0x8008788C",
+        "bytes": 72,
+        "sha256": "403231f56003ebf51b01f5b53feaa6b94a001c57e31082bf27c6f65f7cd8e477"
+      },
+      {
+        "symbol": "D_8008780C",
+        "address": "0x8008780C",
+        "bytes": 32,
+        "sha256": "ab02dcd6068e498f46dc68c6b5e37f373cdb2fb8a80a4e3225d348fa882e7080"
+      },
+      {
+        "symbol": "D_800878D4",
+        "address": "0x800878D4",
+        "bytes": 240,
+        "sha256": "74ba4f812269d36e971368efa639a6cb725213972f6958caed2bdf3c42a15388"
+      },
+      {
+        "symbol": "D_800877EC",
+        "address": "0x800877EC",
+        "bytes": 12,
+        "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+      },
+      {
+        "symbol": "D_800877F8",
+        "address": "0x800877F8",
+        "bytes": 20,
+        "sha256": "ce6e22474801b381f8536532d43fb6a13e69925d8bb54734161672d8bf826726"
+      },
+      {
+        "symbol": "D_8008782C",
+        "address": "0x8008782C",
+        "bytes": 12,
+        "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+      },
+      {
+        "symbol": "D_80087838",
+        "address": "0x80087838",
+        "bytes": 12,
+        "sha256": "204c385cce9a7336c400ab87845785f6ca52fe18047d8c29cd77f724c2cf57e0"
+      }
+    ],
+    "virtual_method_bindings": [
+      {
+        "table": "D_800876FC",
+        "offset": 236,
+        "function": "func_800564F4"
+      },
+      {
+        "table": "D_800876FC",
+        "offset": 184,
+        "function": "func_80057384"
+      },
+      {
+        "table": "D_800879C4",
+        "offset": 72,
+        "function": "func_80057DF4"
+      },
+      {
+        "table": "D_800876FC",
+        "offset": 68,
+        "function": "func_8001CEB4"
+      },
+      {
+        "table": "D_800878D4",
+        "offset": 68,
+        "function": "func_8001CEB4"
+      },
+      {
+        "table": "D_800878D4",
+        "offset": 184,
+        "function": "func_80057384"
+      },
+      {
+        "table": "D_800878D4",
+        "offset": 188,
+        "function": "func_800573A8"
+      }
+    ],
+    "backend_identity": {
+      "package_version": "2.1.4",
+      "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+      "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+    },
+    "negative_controls_detected": [
+      {
+        "kind": "wrong_generation_guard",
+        "function": "dream_generation_update_structure_entities",
+        "function_offset": 24,
+        "expected_word": "0x04400014",
+        "changed_word": "0x04410014",
+        "changed_instruction_executions": 1,
+        "fixture": {
+          "type": -1,
+          "count": 1,
+          "mode": 0,
+          "tick": 0,
+          "enabled": 0,
+          "variant": 0,
+          "position": [
+            1000,
+            2000,
+            3000
+          ],
+          "height": 400,
+          "baseline_height": 200,
+          "seed": 0,
+          "scale_mode": 0,
+          "scale_value": 4096
+        },
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "kind": "repeated_structure_instead_of_next",
+        "function": "dream_generation_update_structure_entities",
+        "function_offset": 68,
+        "expected_word": "0x26310004",
+        "changed_word": "0x26310000",
+        "changed_instruction_executions": 2,
+        "fixture": {
+          "type": 0,
+          "count": 2,
+          "mode": 0,
+          "tick": 0,
+          "enabled": 0,
+          "variant": 0,
+          "position": [
+            1000,
+            2000,
+            3000
+          ],
+          "height": 400,
+          "baseline_height": 200,
+          "seed": 0,
+          "scale_mode": 0,
+          "scale_value": 4096
+        },
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "kind": "additive_instead_of_absolute_position",
+        "function": "func_80057384",
+        "function_offset": 16,
+        "expected_word": "0x34050001",
+        "changed_word": "0x34050000",
+        "changed_instruction_executions": 1,
+        "fixture": {
+          "type": 0,
+          "count": 1,
+          "mode": 0,
+          "tick": 0,
+          "enabled": 0,
+          "variant": 0,
+          "position": [
+            1000,
+            2000,
+            3000
+          ],
+          "height": 400,
+          "baseline_height": 200,
+          "seed": 0,
+          "scale_mode": 0,
+          "scale_value": 4096
+        },
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_sprite_scale_destination",
+        "function": "func_80057DF4",
+        "function_offset": 308,
+        "expected_word": "0xA5040080",
+        "changed_word": "0xA5040082",
+        "changed_instruction_executions": 4,
+        "fixture": {
+          "type": 0,
+          "count": 1,
+          "mode": 3,
+          "tick": 0,
+          "enabled": 0,
+          "variant": 0,
+          "position": [
+            1000,
+            2000,
+            3000
+          ],
+          "height": 400,
+          "baseline_height": 200,
+          "seed": 42,
+          "scale_mode": 0,
+          "scale_value": 4096
+        },
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_rng_increment",
+        "function": "rand",
+        "function_offset": 20,
+        "expected_word": "0x24423039",
+        "changed_word": "0x2442303A",
+        "changed_instruction_executions": 8,
+        "fixture": {
+          "type": 0,
+          "count": 1,
+          "mode": 3,
+          "tick": 0,
+          "enabled": 0,
+          "variant": 0,
+          "position": [
+            1000,
+            2000,
+            3000
+          ],
+          "height": 400,
+          "baseline_height": 200,
+          "seed": 42,
+          "scale_mode": 0,
+          "scale_value": 4096
+        },
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_late_activation_tick",
+        "function": "func_800569A8",
+        "function_offset": 88,
+        "expected_word": "0x2C4201F5",
+        "changed_word": "0x2C4201F6",
+        "changed_instruction_executions": 1,
+        "fixture": {
+          "type": 0,
+          "count": 1,
+          "mode": 0,
+          "tick": 500,
+          "enabled": 1,
+          "variant": 3,
+          "position": [
+            1000,
+            2000,
+            3000
+          ],
+          "height": 400,
+          "baseline_height": 200,
+          "seed": 0,
+          "scale_mode": 0,
+          "scale_value": 4096
+        },
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_second_child_offset",
+        "function": "func_800569A8",
+        "function_offset": 220,
+        "expected_word": "0x26310003",
+        "changed_word": "0x26310002",
+        "changed_instruction_executions": 2,
+        "fixture": {
+          "type": 0,
+          "count": 1,
+          "mode": 0,
+          "tick": 500,
+          "enabled": 1,
+          "variant": 3,
+          "position": [
+            1000,
+            2000,
+            3000
+          ],
+          "height": 400,
+          "baseline_height": 200,
+          "seed": 0,
+          "scale_mode": 0,
+          "scale_value": 4096
+        },
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_reposition_period",
+        "function": "func_800569A8",
+        "function_offset": 288,
+        "expected_word": "0x34025FB4",
+        "changed_word": "0x34025FB5",
+        "changed_instruction_executions": 1,
+        "fixture": {
+          "type": 0,
+          "count": 1,
+          "mode": 0,
+          "tick": 24499,
+          "enabled": 1,
+          "variant": 3,
+          "position": [
+            1000,
+            2000,
+            3000
+          ],
+          "height": 400,
+          "baseline_height": 200,
+          "seed": 0,
+          "scale_mode": 0,
+          "scale_value": 4096
+        },
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_rotation_axis_destination",
+        "function": "func_8001CEB4",
+        "function_offset": 280,
+        "expected_word": "0xA4820000",
+        "changed_word": "0xA4820002",
+        "changed_instruction_executions": 9,
+        "fixture": {
+          "type": 0,
+          "count": 1,
+          "mode": 0,
+          "tick": 500,
+          "enabled": 1,
+          "variant": 3,
+          "position": [
+            1000,
+            2000,
+            3000
+          ],
+          "height": 400,
+          "baseline_height": 200,
+          "seed": 0,
+          "scale_mode": 0,
+          "scale_value": 4096
+        },
+        "scope": "Private Unicorn memory only."
+      }
+    ],
+    "dependency_contracts": [],
+    "scope": "Fifteen original routines execute in manually assembled valid structure/coordinate/sprite/child graphs. Full graph buffers, player/world/list preservation, ordered updates/position sets/scales/RNG, native 32-bit arithmetic and ABI. All four generation modes, all eight mode-0 rate variants, four active child layouts, late activation and periodic position reset with consecutive-update histories. Excludes construction, parameter-table selection provenance, dynamic list/count mutations during callbacks, null player vectors with live structures, rendering/audio, natural encounters/lifetimes and PS1 CPU timing."
+  },
+  "unaccepted_complete_c_candidate": {
+    "path": ".decomp-lab/structure-dispatch-complete-first/position-pointer/candidate.exe",
+    "bytes": 505856,
+    "sha256": "d75b448252406b819555154b42b7239b1fa7c305123e345d6cadb625f6bb139a",
+    "function_sha256": "e7ec2f5f97d88635cf2550c4cd0b830418906998fcca85b4b37556afd2e5676e",
+    "complete_image_equal": false,
+    "changed_bytes": 10,
+    "function_bytes": 136,
+    "source_promoted": false
+  },
+  "mode_zero_rate_variants": 8,
+  "mode_zero_active_child_layouts": 4,
+  "native_rates": [
+    0,
+    0,
+    0,
+    -1,
+    -2,
+    -4,
+    -16,
+    -256
+  ],
+  "native_reset_periods": [
+    24500,
+    12250,
+    6125,
+    1531,
+    95
+  ],
+  "source_research": {
+    "new_source_diagnostics": 6,
+    "total_qualified_source_forms": 40,
+    "prior_qualified_forms": 34,
+    "new_exact_matches": 0,
+    "all_new_outputs_equal_prior_rejected_pointer_form": true,
+    "direct_diagnostic_report": {
+      "path": ".decomp-lab/generation-direct-pair-source-first/report.json",
+      "sha256": "808e071c0245456d5a12ae99c38a22ab0b54c14981a970c9260a135afa8d5578"
+    },
+    "direct_diagnostics": [
+      {
+        "case": "loop-automatic-assignments",
+        "bytes": 140,
+        "changed_bytes": 65,
+        "source_sha256": "78c6d6a683ba7ac66fa573e535ea3e251d0d7d9a380a96d3ee8567569094dfc2",
+        "emitted_sha256": "e215ab5e6dfd1c89f169a798cde784180eeee2ddaf4ab7cec24e8abfc2e59aab",
+        "source": {
+          "path": ".decomp-lab/generation-direct-pair-source-first/loop-automatic-assignments.c",
+          "sha256": "78c6d6a683ba7ac66fa573e535ea3e251d0d7d9a380a96d3ee8567569094dfc2"
+        },
+        "emitted": {
+          "path": ".decomp-lab/generation-direct-pair-source-first/loop-automatic-assignments.bin",
+          "sha256": "e215ab5e6dfd1c89f169a798cde784180eeee2ddaf4ab7cec24e8abfc2e59aab"
+        },
+        "exact_match": false,
+        "emitted_equal_to_prior_rejected_pointer_form": true
+      },
+      {
+        "case": "loop-automatic-initializer",
+        "bytes": 140,
+        "changed_bytes": 65,
+        "source_sha256": "f5765b084e8899f6d6fb97120db301d61d2a5e9151666c48054923ab3dbe8f55",
+        "emitted_sha256": "e215ab5e6dfd1c89f169a798cde784180eeee2ddaf4ab7cec24e8abfc2e59aab",
+        "source": {
+          "path": ".decomp-lab/generation-direct-pair-source-first/loop-automatic-initializer.c",
+          "sha256": "f5765b084e8899f6d6fb97120db301d61d2a5e9151666c48054923ab3dbe8f55"
+        },
+        "emitted": {
+          "path": ".decomp-lab/generation-direct-pair-source-first/loop-automatic-initializer.bin",
+          "sha256": "e215ab5e6dfd1c89f169a798cde784180eeee2ddaf4ab7cec24e8abfc2e59aab"
+        },
+        "exact_match": false,
+        "emitted_equal_to_prior_rejected_pointer_form": true
+      },
+      {
+        "case": "loop-register-assignments",
+        "bytes": 140,
+        "changed_bytes": 65,
+        "source_sha256": "34736d7b7e295c4b7f2cb0099867bf2856bab8ce9de116ab0c9cf1b482ef2f32",
+        "emitted_sha256": "e215ab5e6dfd1c89f169a798cde784180eeee2ddaf4ab7cec24e8abfc2e59aab",
+        "source": {
+          "path": ".decomp-lab/generation-direct-pair-source-first/loop-register-assignments.c",
+          "sha256": "34736d7b7e295c4b7f2cb0099867bf2856bab8ce9de116ab0c9cf1b482ef2f32"
+        },
+        "emitted": {
+          "path": ".decomp-lab/generation-direct-pair-source-first/loop-register-assignments.bin",
+          "sha256": "e215ab5e6dfd1c89f169a798cde784180eeee2ddaf4ab7cec24e8abfc2e59aab"
+        },
+        "exact_match": false,
+        "emitted_equal_to_prior_rejected_pointer_form": true
+      },
+      {
+        "case": "loop-register-initializer",
+        "bytes": 140,
+        "changed_bytes": 65,
+        "source_sha256": "6d5e74abed485b41eb24c170aea4bfd53279194480c255149278a4aee09d847c",
+        "emitted_sha256": "e215ab5e6dfd1c89f169a798cde784180eeee2ddaf4ab7cec24e8abfc2e59aab",
+        "source": {
+          "path": ".decomp-lab/generation-direct-pair-source-first/loop-register-initializer.c",
+          "sha256": "6d5e74abed485b41eb24c170aea4bfd53279194480c255149278a4aee09d847c"
+        },
+        "emitted": {
+          "path": ".decomp-lab/generation-direct-pair-source-first/loop-register-initializer.bin",
+          "sha256": "e215ab5e6dfd1c89f169a798cde784180eeee2ddaf4ab7cec24e8abfc2e59aab"
+        },
+        "exact_match": false,
+        "emitted_equal_to_prior_rejected_pointer_form": true
+      },
+      {
+        "case": "function-automatic-assignments",
+        "bytes": 140,
+        "changed_bytes": 65,
+        "source_sha256": "c61b6a49333ca1f526970deb4be95dd87973d9ed8817ff3aca3841a4239c3a10",
+        "emitted_sha256": "e215ab5e6dfd1c89f169a798cde784180eeee2ddaf4ab7cec24e8abfc2e59aab",
+        "source": {
+          "path": ".decomp-lab/generation-direct-pair-source-first/function-automatic-assignments.c",
+          "sha256": "c61b6a49333ca1f526970deb4be95dd87973d9ed8817ff3aca3841a4239c3a10"
+        },
+        "emitted": {
+          "path": ".decomp-lab/generation-direct-pair-source-first/function-automatic-assignments.bin",
+          "sha256": "e215ab5e6dfd1c89f169a798cde784180eeee2ddaf4ab7cec24e8abfc2e59aab"
+        },
+        "exact_match": false,
+        "emitted_equal_to_prior_rejected_pointer_form": true
+      },
+      {
+        "case": "function-register-assignments",
+        "bytes": 140,
+        "changed_bytes": 65,
+        "source_sha256": "0c146aa8056d2e2d84a1ca008ce0e235bd37f5016be60163a2fb34c12556e037",
+        "emitted_sha256": "e215ab5e6dfd1c89f169a798cde784180eeee2ddaf4ab7cec24e8abfc2e59aab",
+        "source": {
+          "path": ".decomp-lab/generation-direct-pair-source-first/function-register-assignments.c",
+          "sha256": "0c146aa8056d2e2d84a1ca008ce0e235bd37f5016be60163a2fb34c12556e037"
+        },
+        "emitted": {
+          "path": ".decomp-lab/generation-direct-pair-source-first/function-register-assignments.bin",
+          "sha256": "e215ab5e6dfd1c89f169a798cde784180eeee2ddaf4ab7cec24e8abfc2e59aab"
+        },
+        "exact_match": false,
+        "emitted_equal_to_prior_rejected_pointer_form": true
+      }
+    ],
+    "new_complete_candidate_builds": 0,
+    "prior_complete_candidate_builds": 3,
+    "exact_candidate_images": 0,
+    "best_complete_image_changed_bytes": 10,
+    "source_functions_promoted": 0
+  },
+  "canonical_build": {
+    "executable_bytes": 505856,
+    "executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "game_sources_and_configuration_changed": false,
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "known_source_padding_functions": 24,
+    "prior_current_build_progress": {
+      "path": ".decomp-lab/generation-structures-progress-first.json",
+      "sha256": "86a2896642e77b03e0f360a9f4d9441e9023c4ecb527b5659cf604955ef04b80"
+    },
+    "prior_fresh_clean_build": {
+      "path": ".decomp-lab/source-promotion-correction-first/clean-build.json",
+      "sha256": "979d439694c1f6dcdc13df294a83112506fefb2966d4581689520be93a941466"
+    },
+    "prior_clean_build_inputs_verified_equal": 363
+  },
+  "tooling_tests": [
+    {
+      "path": ".decomp-lab/generation-effects-host-tests-first.log",
+      "sha256": "569860e71288ede9b4e3bb79deb434f75d0664b0d48b4c598c3ed48ee49fe77b",
+      "platform": "host",
+      "tests": 346,
+      "passed": true
+    },
+    {
+      "path": ".decomp-lab/generation-effects-wsl-tests-first.log",
+      "sha256": "20632057f31642ff1eaa3a9b1613da58c0d208ba4d3936304c0b006e59775e80",
+      "platform": "wsl",
+      "tests": 346,
+      "passed": true
+    }
+  ],
+  "before_after": {
+    "before": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 16,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "after": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 16,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "source_functions_promoted": 0,
+    "original_game_feature_groups_accepted": 0,
+    "bounded_npc_callback_count_unchanged": 16,
+    "developer_capabilities_unchanged": 10,
+    "optional_mods_unchanged": 3
+  },
+  "whole_feature_groups_accepted": 0,
+  "source_functions_promoted": 0,
+  "original_game_behavior_modified": false,
+  "model_api_calls": 0,
+  "game_inputs_raw_state_and_altered_instructions_published": false
+}
