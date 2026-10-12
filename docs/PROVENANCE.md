@@ -490,3 +490,16 @@ aggregate diagnostics emit the same rejected code as the earlier pointer
 hypothesis. Earlier source and inventory records remain frozen and reconstruct
 exactly after removing only the new supplement. Runtime inputs, raw buffers
 and faulted code remain private; no original behavior or whole feature is added.
+
+## Original entry scanner and source-lifetime supplement
+
+[generation-entry-checks.json](generation-entry-checks.json) pins the original
+entry/table/owner bindings, three actual methods, full packet/graph comparisons,
+six executed faults and backend/source preservation. Thirty-eight qualified
+source forms exclude six initial unused-local diagnostics. Original standalone
+text-section lengths and selected-function spans remain distinct: the by-value
+form emits a forty-byte helper. Published ten-byte fragments with defined word
+arithmetic reproduce their recorded complete candidate images. Original game
+inputs, generated assembly, raw buffers and faulted code stay private. Earlier
+inventory and source measurements remain frozen; no source or whole feature is
+promoted by bounded matching behavior.

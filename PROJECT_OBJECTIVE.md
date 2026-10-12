@@ -98,3 +98,9 @@ The [mode 0 extension](docs/GENERATION_EFFECTS.md) executes all eight rate
 variants and four active child layouts through fifteen original routines,
 including consecutive graph updates and periodic resets. Construction,
 natural histories and the exact C-frame explanation remain incomplete.
+
+The [entry scanner profile](docs/GENERATION_ENTRIES.md) checks all 56 original
+stage records through actual world-coordinate conversion. Its ten-byte packet,
+strict range/index semantics and native word arithmetic are verified on bounded
+fixtures; twenty source-layout differences and natural spawn/lifetime paths
+still require recovery.

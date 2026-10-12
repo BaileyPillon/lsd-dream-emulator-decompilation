@@ -366,3 +366,14 @@ and four active layouts. Current structure comparison is 3,116 standalone
 fixtures plus 40 histories of 480 update frames per original/candidate image,
 through fifteen original routines and nine detected faults. F024's source gate,
 the 16 / 107 bounded NPC count and all whole-feature gates remain unchanged.
+
+## Generation entry and spawn-packet composition
+
+The [entry profile](GENERATION_ENTRIES.md) adds F025 evidence for all 56 original
+records, fourteen stage bindings, signed eligibility and strict range selection
+through the actual virtual/world transform. Three original routines pass 4,116
+fixtures per original/candidate image, with six executed faults detected.
+Natural spawning, per-map parameter provenance and complete lifetimes remain
+open. F025 still retains assembly; current C, the 40 provisional groups,
+16 / 107 bounded NPC count, ten developer capabilities and three mods remain
+unchanged. No whole-feature or whole-NPC acceptance is added.

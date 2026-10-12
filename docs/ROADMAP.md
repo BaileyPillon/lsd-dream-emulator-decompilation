@@ -31,6 +31,13 @@ natural lifecycle histories next; fifteen-routine bounded composition alone
 does not establish those gates. Six direct aggregate forms retain the same
 rejected output, so they do not explain the scalar frame lifetime.
 
+For F025, [entry scanner composition](GENERATION_ENTRIES.md) now checks all
+56 original records through the actual world transform. Its ten-byte packet
+rules out source-record enlargement as a frame explanation. Resolve the
+remaining scalar lifetime; returned-style storage reaches the original frame
+but adds instructions, and by-value style copying emits a separate helper.
+Continue through natural parameter selection and sound/entity spawning.
+
 The initial seven also remained after the [save-title recovery](SAVE_LABEL.md). That
 additional game-support helper was discovered in a segment classified as SDK;
 it had not been included in this list. Continue auditing raw SDK-labelled

@@ -1,5 +1,20 @@
 # Changelog
 
+## Original generation entry selection and packet lifetimes - 2026-10-12
+
+- Check all 56 original records in fourteen stage tables through the native
+  scanner, virtual world wrapper and coordinate converter. Original and
+  padding-free candidate pass 4,116 fixtures each; six executed faults are
+  detected without substituted native output.
+- Qualify 38 source forms and three published complete candidate builds.
+  Recover the ten-byte packet and explicit native word arithmetic. Actual
+  compiler traces and ELF/link-map boundaries distinguish returned temporary
+  storage and an emitted by-value helper. The closest image remains twenty
+  bytes different; no C function or whole feature is promoted.
+- Add nine synthetic domain, range, packet, overflow and candidate guards.
+  All 355 tooling tests pass locally. Canonical source and feature/NPC/tool/mod
+  counts remain unchanged.
+
 ## Original mode 0 effects and consecutive updates - 2026-10-12
 
 - Execute all eight mode 0 rates and four active child layouts through actual

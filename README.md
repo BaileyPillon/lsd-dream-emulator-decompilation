@@ -51,6 +51,10 @@ The later [generation effect checks](docs/GENERATION_EFFECTS.md) extend mode 0
 through all eight rate variants and four active child layouts, using fifteen
 original routines, 3,116 fixtures and 40 consecutive-update histories per image.
 Its nine faults are detected with measured changed-instruction execution.
+The [generation entry checks](docs/GENERATION_ENTRIES.md) recover the actual
+ten-byte transform packet and check all 56 original entry records through the
+scanner and real coordinate conversion in 4,116 fixtures per image. The
+readable C candidate agrees on those fixtures but retains its source gate.
 The [save-title recovery](docs/SAVE_LABEL.md) documents an earlier matching C
 promotion, its native checks and the correction to SDK/game classification.
 The [SDK and sound API audit](docs/SDK_SIGNATURE_AUDIT.md) documents corrected

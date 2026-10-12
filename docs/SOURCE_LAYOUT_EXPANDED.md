@@ -65,6 +65,13 @@ from the unexplained original eight-byte frame region. The typed scalar
 candidate also passes bounded original/candidate behavior comparisons, but its
 ten stack-layout differences leave the assembly and source counts unchanged.
 
+The [entry scanner investigation](GENERATION_ENTRIES.md) confirms a ten-byte
+input packet, checks 38 qualified source forms and rejects three complete
+candidate images. A returned six-byte style temporary reaches the original
+frame but adds a copy; passing the style by value emits a separate helper.
+The closest candidate retains twenty stack-layout differences, so the original
+assembly and current source-quality counts remain intact.
+
 ## Build and continuation gates
 
 The corrected 305-object standard build and a separate fresh clean build both

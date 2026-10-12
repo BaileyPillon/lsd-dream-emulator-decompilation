@@ -1,0 +1,1392 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-12T05:54:49.549866+00:00",
+  "repository_before": "48b8f68866252e7e75fb4b04a30436fc823693b8",
+  "scope": "Original generation entry scanner, ten-byte packet and actual world-transform composition with rejected source-lifetime forms.",
+  "public_files": {
+    "README.md": "4599ed99389ddaaf4e47db2b1c1691703546eec1e1c45b4186321f03b9aa274c",
+    "CHANGELOG.md": "ae46a06e9cbac04b385ba86aa43e1bd1e746771211b79528e37542a0404a3058",
+    "PROJECT_OBJECTIVE.md": "308b9a216b2b3628ccfd6c860119a895a18faad6cb671607f925d4eed6437a57",
+    "docs/GENERATION_ENTRIES.md": "0825e7c68b4802beb40dca6bfb15b1e39b4e7fff4a54393b06b088e452504a01",
+    "docs/FEATURE_INVENTORY.md": "e0d3353907b1635c3e0af0d33cdfe32bae79e2a34c5dcc3f4f9d2dfcdc0f27f4",
+    "docs/ROADMAP.md": "e96b126604308f278fd62c8339c95d91ee921fa2b0d41894ed882da12b032bac",
+    "docs/PROVENANCE.md": "dbf85d14afdb5ff26ba12584b6640141310c12f45b4438d070b3dc77d9f8b6f7",
+    "docs/SOURCE_LAYOUT_EXPANDED.md": "bc195a24c6c2c6e7336fa8a14f2922e65ae45314d64c6c4fa37b4c504c04ca6b",
+    "research/source_layout/README.md": "00f03378796b44c2feebd68a3ba34c26c3bc8eb18e1c02fd5641cd4ac0333a19",
+    "research/source_layout/dream_generation_find_entry.c": "bc178585a72a5c15cbc3bf559a0b255b2eb313f6894f5198046da07c408f3a95",
+    "research/source_layout/entry-style-return-value.c": "aff452d0ef420b0ac5f99ebbf1b7107b5b775c34d256507933b63014636aec19",
+    "research/source_layout/entry-style-by-value.c": "e0bf6b5aa922c55bc819e0ebeae4f9a3f04e754fbb63c06e9579968ee20bef66",
+    "tools/verify_generation_entries.py": "18e29dd0b83d8c6bc11560427cc1cd87c1e021f56e9cf1790bef7e80e203fb78",
+    "tests/test_generation_entries.py": "175c35f50ae09490a96ac481bdbb663cebd3d84622949b7ee5056ec1d7d0f3a8"
+  },
+  "features_before_sha256": "64e21430b866e788285c12545890bd5f5472174cabfca39c394ba993b2ae6b8d",
+  "source_quality_snapshot": {
+    "path": "docs/source-layout-expanded-checks.json",
+    "sha256": "0fe3f5d77e25c3cfda234f86a685f24aff25fa241997b272557afddb56d34213"
+  },
+  "native_comparison": {
+    "path": ".decomp-lab/find-entry-native-fourth.json",
+    "sha256": "accb9a5f060a1b2a8c6ad24b49ac0de21ecb84a0167a3396d54c0bdedb7dd378",
+    "status": "passed_bounded_original_generation_entry_composition",
+    "profiles": {
+      "original": {
+        "native_cases": 4116,
+        "case_groups": {
+          "guards_and_flags": 420,
+          "all_original_entry_boundaries": 3024,
+          "signed_world_distance_edges": 672
+        },
+        "actual_native_entry_counts": {
+          "dream_generation_find_entry": 4116,
+          "func_8004B418": 12844,
+          "func_8004B44C": 12844
+        }
+      },
+      "unaccepted_complete_c_candidate": {
+        "native_cases": 4116,
+        "case_groups": {
+          "guards_and_flags": 420,
+          "all_original_entry_boundaries": 3024,
+          "signed_world_distance_edges": 672
+        },
+        "actual_native_entry_counts": {
+          "dream_generation_find_entry": 4116,
+          "func_8004B418": 12844,
+          "func_8004B44C": 12844
+        }
+      }
+    },
+    "native_functions": [
+      {
+        "function": "dream_generation_find_entry",
+        "address": "0x80055620",
+        "bytes": 444,
+        "sha256": "e04dac2ba99cee9ee544b7df866efe44f9949e933092bc4461d9b7e179200252"
+      },
+      {
+        "function": "func_8004B418",
+        "address": "0x8004B418",
+        "bytes": 52,
+        "sha256": "0f689e4c1155bdffabea669f166646e7aeb2242c46b6699de61f3121386e41ac"
+      },
+      {
+        "function": "func_8004B44C",
+        "address": "0x8004B44C",
+        "bytes": 292,
+        "sha256": "e4cd1302002bf780ae4ab51e78be2cf9bd6230995537f81617aee313102a4551"
+      }
+    ],
+    "native_tables": [
+      {
+        "symbol": "D_800866E8",
+        "address": "0x800866E8",
+        "bytes": 324,
+        "sha256": "a16d03ea12ca4240985fa3c2443fb5e962c8b7b6ad65eb28e842e6198d6135a6"
+      },
+      {
+        "symbol": "g_GenerationStageEntryData",
+        "address": "0x800874F4",
+        "bytes": 448,
+        "sha256": "e5a8bd4c299730c40adee76614fb96ee156b2a161c0eea510dc95faff71449fb"
+      },
+      {
+        "symbol": "g_GenerationStageEntries",
+        "address": "0x800876B4",
+        "bytes": 56,
+        "sha256": "4657597d1fe06ee015d1488340121727200b23083561f793e73538ee5ebd0e19"
+      },
+      {
+        "symbol": "g_GenerationStageEntryCounts",
+        "address": "0x800876EC",
+        "bytes": 16,
+        "sha256": "6ebc75892b748c4cb0f02e2e6eb445509bb5a7fc22e713accb2765e377cc16dc"
+      },
+      {
+        "symbol": "g_GenerationEntityRange",
+        "address": "0x80087474",
+        "bytes": 60,
+        "sha256": "915b3cdbf432fc902b3532d6c74b413ce161ba9e1c9e558bae6eea5efaf46cbf"
+      },
+      {
+        "symbol": "g_GenerationEntityEffects",
+        "address": "0x800874B0",
+        "bytes": 68,
+        "sha256": "d9b9138504b293ecc4bd0d32c553f8f478d2b07dd7cdc93db45f4086bc8e0be7"
+      }
+    ],
+    "original_stage_entry_tables": [
+      {
+        "stage": 0,
+        "address": "0x800874F4",
+        "entries": 1,
+        "bytes": 8,
+        "sha256": "72cb99aded3e016f39aaedb3ffc5a38ceb1567717f0fc18fb2ec3016a9f10190"
+      },
+      {
+        "stage": 1,
+        "address": "0x00000000",
+        "entries": 0,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "stage": 2,
+        "address": "0x800874FC",
+        "entries": 9,
+        "bytes": 72,
+        "sha256": "40bb823050d4c846b3c99339b415334698ae1784863eabc041c8844979e71a24"
+      },
+      {
+        "stage": 3,
+        "address": "0x80087544",
+        "entries": 29,
+        "bytes": 232,
+        "sha256": "0dd707918433bdbfb952a6f278111c0b98848178be7eebe20a0ae77fe50c152a"
+      },
+      {
+        "stage": 4,
+        "address": "0x8008762C",
+        "entries": 5,
+        "bytes": 40,
+        "sha256": "d2d3b4c816f944c20aff1ab07b8ab7db42e214932dca62060bee8244f5069a5c"
+      },
+      {
+        "stage": 5,
+        "address": "0x80087654",
+        "entries": 9,
+        "bytes": 72,
+        "sha256": "cc3d7f35ccbe7564bd8c6d382768eee90fb12ce4f3c14f2a859df79913205e39"
+      },
+      {
+        "stage": 6,
+        "address": "0x00000000",
+        "entries": 0,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "stage": 7,
+        "address": "0x00000000",
+        "entries": 0,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "stage": 8,
+        "address": "0x00000000",
+        "entries": 0,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "stage": 9,
+        "address": "0x00000000",
+        "entries": 0,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "stage": 10,
+        "address": "0x8008769C",
+        "entries": 1,
+        "bytes": 8,
+        "sha256": "59e492684912b9e4fc4dffca7e0f67be8e623bbeade4d7dd329c0c60c6bd558b"
+      },
+      {
+        "stage": 11,
+        "address": "0x800876A4",
+        "entries": 1,
+        "bytes": 8,
+        "sha256": "070e0c242f507cd0beb17e495aefac1641fdb6c111547dece60c18bdb37cbe84"
+      },
+      {
+        "stage": 12,
+        "address": "0x00000000",
+        "entries": 0,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "stage": 13,
+        "address": "0x800876AC",
+        "entries": 1,
+        "bytes": 8,
+        "sha256": "4d1f66358c02454164cbdba0462c04fa26d4ce2d308546c39d8dbe359db2fa87"
+      }
+    ],
+    "owner_virtual_method": {
+      "table": "D_800866E8",
+      "offset": 232,
+      "function": "func_8004B418"
+    },
+    "spawn_packet_bytes_observed": 10,
+    "backend_identity": {
+      "package_version": "2.1.4",
+      "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+      "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+    },
+    "negative_controls_detected": [
+      {
+        "kind": "wrong_index_advance",
+        "function": "dream_generation_find_entry",
+        "function_offset": 144,
+        "expected_word": "0x24420001",
+        "changed_word": "0x24420002",
+        "changed_instruction_executions": 1,
+        "fixture": {
+          "stage": 0,
+          "index": 0,
+          "flags": "original",
+          "grid": [
+            16,
+            6,
+            0
+          ],
+          "origin": [
+            0,
+            0,
+            0
+          ],
+          "query": [
+            -314368,
+            0,
+            -23552
+          ]
+        },
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_positive_flag_guard",
+        "function": "dream_generation_find_entry",
+        "function_offset": 160,
+        "expected_word": "0x18400034",
+        "changed_word": "0x1C400034",
+        "changed_instruction_executions": 1,
+        "fixture": {
+          "stage": 0,
+          "index": 0,
+          "flags": "original",
+          "grid": [
+            16,
+            6,
+            0
+          ],
+          "origin": [
+            0,
+            0,
+            0
+          ],
+          "query": [
+            -314368,
+            0,
+            -23552
+          ]
+        },
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_style_halfword_destination",
+        "function": "dream_generation_find_entry",
+        "function_offset": 232,
+        "expected_word": "0xA7A50018",
+        "changed_word": "0xA7A5001A",
+        "changed_instruction_executions": 1,
+        "fixture": {
+          "stage": 0,
+          "index": 0,
+          "flags": "original",
+          "grid": [
+            16,
+            6,
+            0
+          ],
+          "origin": [
+            0,
+            0,
+            0
+          ],
+          "query": [
+            -314368,
+            0,
+            -23552
+          ]
+        },
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_distance_axis",
+        "function": "dream_generation_find_entry",
+        "function_offset": 292,
+        "expected_word": "0x8E820008",
+        "changed_word": "0x8E820004",
+        "changed_instruction_executions": 1,
+        "fixture": {
+          "stage": 0,
+          "index": 0,
+          "flags": "original",
+          "grid": [
+            16,
+            6,
+            0
+          ],
+          "origin": [
+            0,
+            0,
+            0
+          ],
+          "query": [
+            -314368,
+            12345,
+            -23552
+          ]
+        },
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_range_predicate",
+        "function": "dream_generation_find_entry",
+        "function_offset": 352,
+        "expected_word": "0x0062102A",
+        "changed_word": "0x00621023",
+        "changed_instruction_executions": 1,
+        "fixture": {
+          "stage": 0,
+          "index": 0,
+          "flags": "original",
+          "grid": [
+            16,
+            6,
+            0
+          ],
+          "origin": [
+            0,
+            0,
+            0
+          ],
+          "query": [
+            -310271,
+            0,
+            -23552
+          ]
+        },
+        "scope": "Private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_grid_row_parity",
+        "function": "func_8004B44C",
+        "function_offset": 128,
+        "expected_word": "0x31020001",
+        "changed_word": "0x31020002",
+        "changed_instruction_executions": 1,
+        "fixture": {
+          "stage": 0,
+          "index": 0,
+          "flags": "original",
+          "grid": [
+            16,
+            6,
+            0
+          ],
+          "origin": [
+            0,
+            0,
+            0
+          ],
+          "query": [
+            -314368,
+            0,
+            -23552
+          ]
+        },
+        "scope": "Private Unicorn memory only."
+      }
+    ],
+    "dependency_output_contracts": [],
+    "scope": "Original scanner, virtual world wrapper and actual grid-coordinate conversion with all 56 original entry records in 14 stage tables. Manual valid owner/grid/query contexts and original/disabled/alternating/zero/minimum-signed flags. Full owner/grid/output/query/distance/all-entry buffers, ordered ten-byte packet reads, return/index effects and ABI. Includes native signed word overflow diagnostics. Excludes natural context construction, exact per-map grid/parameter provenance, nonzero style selectors, sound/entity spawning, entry lifetimes, rendering/audio and PS1 CPU timing."
+  },
+  "unaccepted_complete_c_candidate": {
+    "path": ".decomp-lab/find-entry-published-word-arithmetic-first/pointer/candidate.exe",
+    "bytes": 505856,
+    "sha256": "bba2825a87f0c2b9a26e67a27c6b77a07fb05bb5ac60f042936c3700f74cb5a1",
+    "function_sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1",
+    "complete_image_equal": false,
+    "changed_bytes": 20,
+    "source_promoted": false
+  },
+  "source_research": {
+    "qualified_source_forms": 38,
+    "initial_diagnostic_compilations": 46,
+    "excluded_initial_boundary_batch": {
+      "path": ".decomp-lab/find-entry-boundary-source-first/report.json",
+      "sha256": "a205c1a044a13ed02d8792914284fcc2250d459dc4ee363adfc14d1332071136"
+    },
+    "excluded_initial_unused_effect_local_cases": 6,
+    "corrected_boundary_forms": 8,
+    "qualified_cases": [
+      {
+        "case": "halfwords-word-record-pointer",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-word-record-pointer.c",
+          "sha256": "f45e7d11097e1d9ba2669d635d7d545002c054ffdbf98bd3e06d9b784f7b4498"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-word-record-pointer.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "halfwords-word-record-direct",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-word-record-direct.c",
+          "sha256": "93ee1bc427bfd8cd837ce35cbf2a266d0e4056e51c419623d0e70cb9c187c39f"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-word-record-direct.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "halfwords-word-record-return-value",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-word-record-return-value.c",
+          "sha256": "3a6ba9a4d61da447d99cd7afcfafe218ff757c18875ebed853793953eecb2178"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-word-record-return-value.bin",
+          "sha256": "2ded19067c6883bf2066081b97565f1521c335187eadb9c2a6d04250cfbfc7a6"
+        },
+        "standalone_text_bytes": 472,
+        "standalone_text_changed_bytes": 189,
+        "selected_scanner_bytes": 472,
+        "emitted_function_symbols": [
+          "80055620 000001d8 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "halfwords-word-record-return-local",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-word-record-return-local.c",
+          "sha256": "9cd178f39d287fe2c71511c2f2d8a825645042a61fd3aba276f5c6ccb2988f19"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-word-record-return-local.bin",
+          "sha256": "42a05631fc72612cd57e6a6bf89f184160701716f9d5892dc2f38985d6f4173a"
+        },
+        "standalone_text_bytes": 496,
+        "standalone_text_changed_bytes": 244,
+        "selected_scanner_bytes": 496,
+        "emitted_function_symbols": [
+          "80055620 000001f0 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "halfwords-word-record-by-value",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-word-record-by-value.c",
+          "sha256": "5a28774b84df3462a311768957fa4e9e1cc5e3014048ecf1399274fcc66af71b"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-word-record-by-value.bin",
+          "sha256": "5c0843eae7628c7dd8c208d9c5c701c319091511e34db432349f2406962b4991"
+        },
+        "standalone_text_bytes": 512,
+        "standalone_text_changed_bytes": 407,
+        "selected_scanner_bytes": 472,
+        "emitted_function_symbols": [
+          "800557f8 00000028 t dream_generation_copy_style",
+          "80055620 000001d8 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "halfwords-packet-record-pointer",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-packet-record-pointer.c",
+          "sha256": "2623db8c7e51d6fbde5e5bac55d8710ea2c01952a635f377b3e26e23ba6b45ae"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-packet-record-pointer.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "halfwords-packet-record-direct",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-packet-record-direct.c",
+          "sha256": "105ed75dc8729e3c3abd02be94a8460af4443957e0d2d7896486f2baba576fe2"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-packet-record-direct.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "halfwords-packet-record-return-value",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-packet-record-return-value.c",
+          "sha256": "2c1a29a5b17fcb75f8b4c95edb6dae077baee44c5e2b52afad8bb8a0baf84021"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-packet-record-return-value.bin",
+          "sha256": "2ded19067c6883bf2066081b97565f1521c335187eadb9c2a6d04250cfbfc7a6"
+        },
+        "standalone_text_bytes": 472,
+        "standalone_text_changed_bytes": 189,
+        "selected_scanner_bytes": 472,
+        "emitted_function_symbols": [
+          "80055620 000001d8 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "halfwords-packet-record-return-local",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-packet-record-return-local.c",
+          "sha256": "9fe4906c77cc478e355b9d23b209aebd59ebb87ea8ad74ff2e37d8aaac867a94"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-packet-record-return-local.bin",
+          "sha256": "42a05631fc72612cd57e6a6bf89f184160701716f9d5892dc2f38985d6f4173a"
+        },
+        "standalone_text_bytes": 496,
+        "standalone_text_changed_bytes": 244,
+        "selected_scanner_bytes": 496,
+        "emitted_function_symbols": [
+          "80055620 000001f0 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "halfwords-packet-record-by-value",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-packet-record-by-value.c",
+          "sha256": "e6c85c3514b60b849ec1c69b2b3071158fc0db1eb02bae1f882691d9bbf99c61"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-packet-record-by-value.bin",
+          "sha256": "5c0843eae7628c7dd8c208d9c5c701c319091511e34db432349f2406962b4991"
+        },
+        "standalone_text_bytes": 512,
+        "standalone_text_changed_bytes": 407,
+        "selected_scanner_bytes": 472,
+        "emitted_function_symbols": [
+          "800557f8 00000028 t dream_generation_copy_style",
+          "80055620 000001d8 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "halfwords-half-record-pointer",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-half-record-pointer.c",
+          "sha256": "b71c3829b24c711cfa6cbaec05e8fcd784ffdd6b582d9330f14ca393212c3a43"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-half-record-pointer.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "halfwords-half-record-direct",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-half-record-direct.c",
+          "sha256": "62b89a01b30df2f553eea382a2b15bd8530ec37922b8e622003572c46ad456ab"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-half-record-direct.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "halfwords-half-record-return-value",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-half-record-return-value.c",
+          "sha256": "a879bc34dc5e1fd76d6abb42b09c53837a7cf37694580d796d046c8e4057a0e8"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-half-record-return-value.bin",
+          "sha256": "2ded19067c6883bf2066081b97565f1521c335187eadb9c2a6d04250cfbfc7a6"
+        },
+        "standalone_text_bytes": 472,
+        "standalone_text_changed_bytes": 189,
+        "selected_scanner_bytes": 472,
+        "emitted_function_symbols": [
+          "80055620 000001d8 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "halfwords-half-record-return-local",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-half-record-return-local.c",
+          "sha256": "bfc7633c9edc19fcb02dccee0ab2f2c363aa01f2fc1de47315ccc7cb7c10d724"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-half-record-return-local.bin",
+          "sha256": "42a05631fc72612cd57e6a6bf89f184160701716f9d5892dc2f38985d6f4173a"
+        },
+        "standalone_text_bytes": 496,
+        "standalone_text_changed_bytes": 244,
+        "selected_scanner_bytes": 496,
+        "emitted_function_symbols": [
+          "80055620 000001f0 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "halfwords-half-record-by-value",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-half-record-by-value.c",
+          "sha256": "e71e254601ffb20c3857b9c3fbf5f8f8dff97e4c1dae2f5a822284d173e0aebb"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/halfwords-half-record-by-value.bin",
+          "sha256": "5c0843eae7628c7dd8c208d9c5c701c319091511e34db432349f2406962b4991"
+        },
+        "standalone_text_bytes": 512,
+        "standalone_text_changed_bytes": 407,
+        "selected_scanner_bytes": 472,
+        "emitted_function_symbols": [
+          "800557f8 00000028 t dream_generation_copy_style",
+          "80055620 000001d8 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-word-record-pointer",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-word-record-pointer.c",
+          "sha256": "d041bd28f851be1fc881c83427fa396a03864a9a9d1aef97e070526c08758e70"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-word-record-pointer.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-word-record-direct",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-word-record-direct.c",
+          "sha256": "549e2366155ce65109fd9a10bba2230be560475894541b4d697e35dae3561697"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-word-record-direct.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-word-record-return-value",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-word-record-return-value.c",
+          "sha256": "178ef8eb847e38d890fb1abaadab4cec732a77e82315b322a0ad900c0390466d"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-word-record-return-value.bin",
+          "sha256": "2ded19067c6883bf2066081b97565f1521c335187eadb9c2a6d04250cfbfc7a6"
+        },
+        "standalone_text_bytes": 472,
+        "standalone_text_changed_bytes": 189,
+        "selected_scanner_bytes": 472,
+        "emitted_function_symbols": [
+          "80055620 000001d8 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-word-record-return-local",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-word-record-return-local.c",
+          "sha256": "8c8bf5af6905a01ce322a91edc081d785160e2045593dac773a4bce8777b8501"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-word-record-return-local.bin",
+          "sha256": "42a05631fc72612cd57e6a6bf89f184160701716f9d5892dc2f38985d6f4173a"
+        },
+        "standalone_text_bytes": 496,
+        "standalone_text_changed_bytes": 244,
+        "selected_scanner_bytes": 496,
+        "emitted_function_symbols": [
+          "80055620 000001f0 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-word-record-by-value",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-word-record-by-value.c",
+          "sha256": "a3f7863357d09dde68a678b8a7a0f4d00ee737fac08a30e2f647b5254846dd86"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-word-record-by-value.bin",
+          "sha256": "5c0843eae7628c7dd8c208d9c5c701c319091511e34db432349f2406962b4991"
+        },
+        "standalone_text_bytes": 512,
+        "standalone_text_changed_bytes": 407,
+        "selected_scanner_bytes": 472,
+        "emitted_function_symbols": [
+          "800557f8 00000028 t dream_generation_copy_style",
+          "80055620 000001d8 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-packet-record-pointer",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-packet-record-pointer.c",
+          "sha256": "9e146574fedc1c94dee51af67399adb06212eb92c92a40e7f4ed10f726ebe627"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-packet-record-pointer.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-packet-record-direct",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-packet-record-direct.c",
+          "sha256": "fa1d16fa554247e69a0b40d59ae3e37b5e18e7d6fd3701297b93b6f96745d125"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-packet-record-direct.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-packet-record-return-value",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-packet-record-return-value.c",
+          "sha256": "69d3939740dafaf12f3cd3dfb431eeb7817b43542341918f0218bb2b30c5a2b3"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-packet-record-return-value.bin",
+          "sha256": "2ded19067c6883bf2066081b97565f1521c335187eadb9c2a6d04250cfbfc7a6"
+        },
+        "standalone_text_bytes": 472,
+        "standalone_text_changed_bytes": 189,
+        "selected_scanner_bytes": 472,
+        "emitted_function_symbols": [
+          "80055620 000001d8 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-packet-record-return-local",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-packet-record-return-local.c",
+          "sha256": "b4817a9c16903afc1807371a5feba381a3c52917a3d902390fd3492d77458836"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-packet-record-return-local.bin",
+          "sha256": "42a05631fc72612cd57e6a6bf89f184160701716f9d5892dc2f38985d6f4173a"
+        },
+        "standalone_text_bytes": 496,
+        "standalone_text_changed_bytes": 244,
+        "selected_scanner_bytes": 496,
+        "emitted_function_symbols": [
+          "80055620 000001f0 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-packet-record-by-value",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-packet-record-by-value.c",
+          "sha256": "a68a94541365d72dbf2c26a9934ab667a4e63329e57304a8a0fe81a731f52afa"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-packet-record-by-value.bin",
+          "sha256": "5c0843eae7628c7dd8c208d9c5c701c319091511e34db432349f2406962b4991"
+        },
+        "standalone_text_bytes": 512,
+        "standalone_text_changed_bytes": 407,
+        "selected_scanner_bytes": 472,
+        "emitted_function_symbols": [
+          "800557f8 00000028 t dream_generation_copy_style",
+          "80055620 000001d8 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-half-record-pointer",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-half-record-pointer.c",
+          "sha256": "3dc13ff69d042c6d1e5eb05c8e72d0034e52a62d85ff29f06d9837e56f639142"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-half-record-pointer.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-half-record-direct",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-half-record-direct.c",
+          "sha256": "808f2856c65c38cc7dd7fa66f6ba5454e292ae461faecad5caf3a3694379a0db"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-half-record-direct.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-half-record-return-value",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-half-record-return-value.c",
+          "sha256": "98eac35ec38dfef0d3a1afc05fe88a2a8aeb34d47e9aee44e17fe159c5cb2b9c"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-half-record-return-value.bin",
+          "sha256": "2ded19067c6883bf2066081b97565f1521c335187eadb9c2a6d04250cfbfc7a6"
+        },
+        "standalone_text_bytes": 472,
+        "standalone_text_changed_bytes": 189,
+        "selected_scanner_bytes": 472,
+        "emitted_function_symbols": [
+          "80055620 000001d8 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-half-record-return-local",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-half-record-return-local.c",
+          "sha256": "2807e9a649c388f524d4210385daf5375abffd6609e5831ae7b5ef96de639926"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-half-record-return-local.bin",
+          "sha256": "42a05631fc72612cd57e6a6bf89f184160701716f9d5892dc2f38985d6f4173a"
+        },
+        "standalone_text_bytes": 496,
+        "standalone_text_changed_bytes": 244,
+        "selected_scanner_bytes": 496,
+        "emitted_function_symbols": [
+          "80055620 000001f0 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-half-record-by-value",
+        "source": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-half-record-by-value.c",
+          "sha256": "05030e14cd70255276757506fb3e4acee24f8d7177b8e9b07eb4d0cdd9b82126"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-style-source-first/packet-half-record-by-value.bin",
+          "sha256": "5c0843eae7628c7dd8c208d9c5c701c319091511e34db432349f2406962b4991"
+        },
+        "standalone_text_bytes": 512,
+        "standalone_text_changed_bytes": 407,
+        "selected_scanner_bytes": 472,
+        "emitted_function_symbols": [
+          "800557f8 00000028 t dream_generation_copy_style",
+          "80055620 000001d8 T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-and-transform-value-entry",
+        "source": {
+          "path": ".decomp-lab/find-entry-boundary-source-second/packet-and-transform-value-entry.c",
+          "sha256": "220f7d6fc51bf3f9b7a982039e56350f1d1f3c5e21dcad26e2aba9d2afafe381"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-boundary-source-second/packet-and-transform-value-entry.bin",
+          "sha256": "f1f40a4bb8bd0d571f00733c55ff310b7c7628c86dc62e294e661bcb3aa759e7"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 31,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-and-transform-value-flag",
+        "source": {
+          "path": ".decomp-lab/find-entry-boundary-source-second/packet-and-transform-value-flag.c",
+          "sha256": "089cf445d5ab0c10562ddbe574ddb0dea84ec5d3d2358ab8d034bb02213448c7"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-boundary-source-second/packet-and-transform-value-flag.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-and-transform-pointer-entry",
+        "source": {
+          "path": ".decomp-lab/find-entry-boundary-source-second/packet-and-transform-pointer-entry.c",
+          "sha256": "27d1e3d279fc3fded08234b53309299aa01af3537a5561cc715a4003835dab1d"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-boundary-source-second/packet-and-transform-pointer-entry.bin",
+          "sha256": "f1f40a4bb8bd0d571f00733c55ff310b7c7628c86dc62e294e661bcb3aa759e7"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 31,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-and-transform-pointer-flag",
+        "source": {
+          "path": ".decomp-lab/find-entry-boundary-source-second/packet-and-transform-pointer-flag.c",
+          "sha256": "b91f675aad179b87f87ccead48149bf0a9ebdff9aedc68f37f6edbc0a10b767c"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-boundary-source-second/packet-and-transform-pointer-flag.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-only-value-entry",
+        "source": {
+          "path": ".decomp-lab/find-entry-boundary-source-second/packet-only-value-entry.c",
+          "sha256": "8189c524e4a92a83940dbe5dc7a70247b5d68671e044ccd55a012ec4a93778f1"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-boundary-source-second/packet-only-value-entry.bin",
+          "sha256": "f1f40a4bb8bd0d571f00733c55ff310b7c7628c86dc62e294e661bcb3aa759e7"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 31,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "packet-only-value-flag",
+        "source": {
+          "path": ".decomp-lab/find-entry-boundary-source-second/packet-only-value-flag.c",
+          "sha256": "b5609a533e47621cc3553749051888f0b49ed282cc3239e62c6addabfde042e1"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-boundary-source-second/packet-only-value-flag.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "transform-only-value-entry",
+        "source": {
+          "path": ".decomp-lab/find-entry-boundary-source-second/transform-only-value-entry.c",
+          "sha256": "ba4baec79b3bcfe18de25a27a17b7dc2ac208d9aca64265410cd8cbb2d38fcf7"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-boundary-source-second/transform-only-value-entry.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      },
+      {
+        "case": "transform-only-pointer-entry",
+        "source": {
+          "path": ".decomp-lab/find-entry-boundary-source-second/transform-only-pointer-entry.c",
+          "sha256": "bfdbeb577f477e28f8f8781ab18cbb5da5e99a992237ca64405cab03db990595"
+        },
+        "standalone_text": {
+          "path": ".decomp-lab/find-entry-boundary-source-second/transform-only-pointer-entry.bin",
+          "sha256": "f2babe8d4769a9f1ce98d323f5bc1561aa266a7b2fe0f35b062832f54a594fe1"
+        },
+        "standalone_text_bytes": 444,
+        "standalone_text_changed_bytes": 20,
+        "selected_scanner_bytes": 444,
+        "emitted_function_symbols": [
+          "80055620 000001bc T dream_generation_find_entry"
+        ],
+        "exact_match": false
+      }
+    ],
+    "function_scope_audit": {
+      "path": ".decomp-lab/find-entry-function-scope-first.json",
+      "sha256": "32e6cba77835cd9ecf544ea39c15bb3415fb34b9a13df848509f51ff7e9c252c"
+    },
+    "metric_boundary": "Standalone text differences include emitted helpers; selected scanner size comes from ELF symbols and complete link maps.",
+    "published_complete_candidates": [
+      {
+        "form": "pointer",
+        "public_fragment": {
+          "path": "research/source_layout/dream_generation_find_entry.c",
+          "sha256": "bc178585a72a5c15cbc3bf559a0b255b2eb313f6894f5198046da07c408f3a95"
+        },
+        "private_complete_source": {
+          "path": ".decomp-lab/find-entry-published-word-arithmetic-first/pointer.c",
+          "sha256": "de7e39d40110ab27ef33270d07fca2c28d2622006a6011858cc6d3a31b628f0f"
+        },
+        "comparison": {
+          "path": ".decomp-lab/find-entry-published-word-arithmetic-first/pointer/comparison.json",
+          "sha256": "7c2a09f7d42962642f4379613c5b482da8ca22057ed19c01847658f28b904333"
+        },
+        "candidate_image": {
+          "path": ".decomp-lab/find-entry-published-word-arithmetic-first/pointer/candidate.exe",
+          "sha256": "bba2825a87f0c2b9a26e67a27c6b77a07fb05bb5ac60f042936c3700f74cb5a1"
+        },
+        "scanner_address": "0x80055620",
+        "scanner_bytes": 444,
+        "frame_bytes": 72,
+        "additional_helper_bytes": 0,
+        "image_bytes": 505856,
+        "changed_image_bytes": 20,
+        "image_length_difference": 0,
+        "explicit_native_word_arithmetic": true,
+        "prior_complete_image_equal": true,
+        "exact_match": false
+      },
+      {
+        "form": "return-value",
+        "public_fragment": {
+          "path": "research/source_layout/entry-style-return-value.c",
+          "sha256": "aff452d0ef420b0ac5f99ebbf1b7107b5b775c34d256507933b63014636aec19"
+        },
+        "private_complete_source": {
+          "path": ".decomp-lab/find-entry-published-word-arithmetic-first/return-value.c",
+          "sha256": "05c00e89f284b3b2c83f747c2f36a525205bc754aff320e994c1faaf2f2644cd"
+        },
+        "comparison": {
+          "path": ".decomp-lab/find-entry-published-word-arithmetic-first/return-value/comparison.json",
+          "sha256": "d78dbe25a35a089fc4ca0ec9ad8a08433921de56ee9d7f3423b405f5c315958f"
+        },
+        "candidate_image": {
+          "path": ".decomp-lab/find-entry-published-word-arithmetic-first/return-value/candidate.exe",
+          "sha256": "91da62781f2dde1b5c7a35a676aa0fe082772ccd43dbc52886f5b40f77c62042"
+        },
+        "scanner_address": "0x80055620",
+        "scanner_bytes": 472,
+        "frame_bytes": 80,
+        "additional_helper_bytes": 0,
+        "image_bytes": 505884,
+        "changed_image_bytes": 148474,
+        "image_length_difference": 28,
+        "explicit_native_word_arithmetic": true,
+        "prior_complete_image_equal": true,
+        "exact_match": false
+      },
+      {
+        "form": "by-value",
+        "public_fragment": {
+          "path": "research/source_layout/entry-style-by-value.c",
+          "sha256": "e0bf6b5aa922c55bc819e0ebeae4f9a3f04e754fbb63c06e9579968ee20bef66"
+        },
+        "private_complete_source": {
+          "path": ".decomp-lab/find-entry-published-word-arithmetic-first/by-value.c",
+          "sha256": "86673e4c1244926c209abbf842995fe6073db140c53cd2471fca2e22bad93d4e"
+        },
+        "comparison": {
+          "path": ".decomp-lab/find-entry-published-word-arithmetic-first/by-value/comparison.json",
+          "sha256": "d657a6be2ba05b20f802cf5c497c1bd9bc45e1c587dcc98bbe6daca6766e26f1"
+        },
+        "candidate_image": {
+          "path": ".decomp-lab/find-entry-published-word-arithmetic-first/by-value/candidate.exe",
+          "sha256": "b0304e229164e0c1d124fd5c6880c2751be55d2df61b5eab99aee8959e4deb27"
+        },
+        "scanner_address": "0x80055620",
+        "scanner_bytes": 472,
+        "frame_bytes": 72,
+        "additional_helper_bytes": 40,
+        "image_bytes": 505924,
+        "changed_image_bytes": 168586,
+        "image_length_difference": 68,
+        "explicit_native_word_arithmetic": true,
+        "prior_complete_image_equal": true,
+        "exact_match": false
+      }
+    ],
+    "best_complete_image_changed_bytes": 20,
+    "exact_candidate_images": 0
+  },
+  "actual_compiler_checks": {
+    "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+    "returned_style_complete_unit": {
+      "path": ".decomp-lab/find-entry-complete-return-lifetime-first/report.json",
+      "sha256": "1244d7738a4214061fa0245702a26f1dab1275fd07df32af95fb6f5cee249dd7",
+      "lifetime_events": 128,
+      "temporary_allocation_calls": [
+        {
+          "sequence": 0,
+          "arguments": [
+            26,
+            10,
+            1
+          ],
+          "frame_offset_before": 0,
+          "frame_offset_after": 16
+        },
+        {
+          "sequence": 52,
+          "arguments": [
+            26,
+            6,
+            1
+          ],
+          "frame_offset_before": 16,
+          "frame_offset_after": 24
+        }
+      ],
+      "max_observed_virtual_frame_offset": 24,
+      "complete_assembly_equal": true
+    },
+    "by_value_style_complete_unit": {
+      "path": ".decomp-lab/find-entry-complete-value-stack-first/report.json",
+      "sha256": "821bf3efb5aebfb003378b2345236e35aabd8fbcdac8e4db388d1c31276a4b8d",
+      "allocation_events": 30,
+      "selected_function_allocations": [
+        {
+          "sequence": 2,
+          "function": "dream_generation_find_entry",
+          "allocator": "assign_stack_temp",
+          "mode_number": 26,
+          "size": 10,
+          "align_or_keep": 1,
+          "frame_offset_before": 0,
+          "temp_slot_level": 1,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ],
+          "frame_offset_after": 16,
+          "returned_rtx": "0x82ef494"
+        },
+        {
+          "sequence": 3,
+          "function": "dream_generation_find_entry",
+          "allocator": "assign_stack_local",
+          "mode_number": 26,
+          "size": 10,
+          "align_or_keep": -1,
+          "frame_offset_before": 0,
+          "temp_slot_level": 1,
+          "call_stack": [
+            "assign_stack_local",
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ],
+          "frame_offset_after": 16,
+          "returned_rtx": "0x82ef494"
+        },
+        {
+          "sequence": 4,
+          "function": "dream_generation_find_entry",
+          "allocator": "assign_stack_local",
+          "mode_number": 26,
+          "size": 0,
+          "align_or_keep": 0,
+          "frame_offset_before": 16,
+          "temp_slot_level": 0,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ],
+          "frame_offset_after": 16,
+          "returned_rtx": "0x82f88e0"
+        }
+      ],
+      "complete_assembly_equal": true
+    }
+  },
+  "canonical_build": {
+    "executable_bytes": 505856,
+    "executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "game_sources_and_configuration_changed": false,
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "known_source_padding_functions": 24,
+    "prior_current_build_progress": {
+      "path": ".decomp-lab/generation-effects-progress-first.json",
+      "sha256": "86a2896642e77b03e0f360a9f4d9441e9023c4ecb527b5659cf604955ef04b80"
+    },
+    "prior_fresh_clean_build": {
+      "path": ".decomp-lab/source-promotion-correction-first/clean-build.json",
+      "sha256": "979d439694c1f6dcdc13df294a83112506fefb2966d4581689520be93a941466"
+    },
+    "prior_clean_inputs_verified_equal": 363
+  },
+  "tooling_tests": [
+    {
+      "path": ".decomp-lab/find-entry-host-tests-first.log",
+      "sha256": "140fb036ef352b9348067c35f295c927608469abcccf39d538401927c2dc599e",
+      "platform": "host",
+      "tests": 355,
+      "passed": true
+    },
+    {
+      "path": ".decomp-lab/find-entry-wsl-tests-first.log",
+      "sha256": "185c9410ee7af462907bcb33f8c56e41736bfc604283fdd7a4d7af9557834e10",
+      "platform": "wsl",
+      "tests": 355,
+      "passed": true
+    }
+  ],
+  "before_after": {
+    "before": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 16,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "after": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 16,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "source_functions_promoted": 0,
+    "original_game_feature_groups_accepted": 0,
+    "bounded_npc_callback_count_unchanged": 16,
+    "developer_capabilities_unchanged": 10,
+    "optional_mods_unchanged": 3
+  },
+  "source_functions_promoted": 0,
+  "whole_feature_groups_accepted": 0,
+  "original_game_behavior_modified": false,
+  "model_api_calls": 0,
+  "game_inputs_raw_state_and_altered_code_published": false
+}

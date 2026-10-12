@@ -37,3 +37,14 @@ are separate from the four withdrawal candidates and remain outside the game.
 Copy either fragment at the same generation-update inclusion and run the
 complete-unit workbench above. Actual compiler observations show the added
 live storage and stores; neither reproduces the original source lifetime.
+
+The [entry scanner investigation](../../docs/GENERATION_ENTRIES.md) updates
+`dream_generation_find_entry.c` to the actual ten-byte packet representation
+and explicit native word arithmetic. Its complete image still differs in
+twenty bytes. `entry-style-return-value.c` and `entry-style-by-value.c` are
+additional live style-copy hypotheses for the same inclusion. Their complete
+images grow by 28 and 68 bytes. The by-value form emits a separate forty-byte
+helper; its standalone text-section size is not the scanner's function size.
+Replace only the selected inclusion in a private complete source unit and use
+the existing workbench gate. Canonical types/declarations supply `generation_style_t`
+and the pointer form's copy helper. All three fragments remain unaccepted.
