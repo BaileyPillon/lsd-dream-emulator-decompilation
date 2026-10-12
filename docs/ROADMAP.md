@@ -119,8 +119,8 @@ and 191 initial source trials found no exact match. The subsequent
 
 - Resolve asset/command inventory gaps and runtime reachability.
 - Close virtual-call dependencies and verify semantic callback signatures.
-- Extend native fixtures beyond the 11 currently checked callbacks and their
-  documented contracts; see the [scripted callback checks](SCRIPTED_AI.md).
+- Extend native fixtures beyond the 16 currently checked callbacks and their
+  documented contracts; see the [scripted callback extension](SCRIPTED_EXTENSION.md).
 - Compare natural animation construction, lifetime and actor/render behavior.
 - Review every feature's recorded scenarios, including rare RNG, save/card
   error, audio and hardware-timing branches.

@@ -438,3 +438,16 @@ Private short-pulse diagnostics remain preserved rather than being relabelled
 as effective inputs. Original game images, BIOS, captures and raw state buffers
 remain excluded. No game C function or whole feature is promoted; original
 NPC behavior, AI-assisted tooling and optional mods retain separate counts.
+## Additional original scripted callback supplement
+
+The [callback extension](SCRIPTED_EXTENSION.md) records five newly checked
+original callbacks and rechecks the preceding scripted, Lion and Gray Man
+profiles. [scripted-extension-checks.json](scripted-extension-checks.json) pins
+current reports, producer/model tests, original function/property bindings,
+loaded Unicorn and binding identities, actual call/state counts and private
+negative controls. Original game inputs, raw buffers and faulted code remain
+private. The canonical executable and its source/configuration are unchanged.
+The new publication supplement raises bounded callback coverage from 11 to 16
+without altering earlier inventory bytes or accepting a whole encounter or
+feature group. Developer analysis and optional mods stay separate from original
+scripted NPC behavior; no model API call or new gameplay behavior is added.

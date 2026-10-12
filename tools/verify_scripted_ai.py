@@ -1,10 +1,12 @@
-"""Bounded native checks for nine original timed/input-driven behavior scripts.
+"""Bounded native checks for original timed/input-driven behavior scripts.
 
 Actual original callback, RNG, action-read and behavior-stop code executes.
 Geometry, motion, animation selection and sound have explicit contracts.
 These checks do not add game behavior or certify whole NPC encounters.
 """
+from collections import Counter
 import hashlib
+import importlib
 import itertools
 import json
 import struct
@@ -22,12 +24,33 @@ SCRIPT_FUNCTIONS = [
     {'function':'entity_car_water','address':'0x80063784','bytes':240,'sha256':'d5e7325194dc0f33b2bff0f5cf4adc893228d97366d03e8f55e3ad450edccee1'},
     {'function':'entity_fetus_walk','address':'0x80064450','bytes':152,'sha256':'27b3ecd6d26e02c3ac9edfa033c33a7e242b82a2ba8b62140301689b0bd69dfb'},
     {'function':'entity_fetus_jump','address':'0x800644E8','bytes':304,'sha256':'b0d0683099191ec4e33ea72594623628d2db6265b1d8beaa75d98c4a7196ff5b'},
+    {'function':'entity_elephant','address':'0x8005E694','bytes':92,'sha256':'67e919a2363f09c29188fa4a4dbb36bbe40822df8c32c4758a28e490bc72b18d'},
+    {'function':'entity_elephant_small','address':'0x80064CEC','bytes':92,'sha256':'a3d21a60b1e97e83a1768ced70182ac11c13cc57fbaf57e0917def7fdcaa6dec'},
+    {'function':'entity_fish','address':'0x8005FC58','bytes':420,'sha256':'8385538423a467f3a1b9ae8a5e7c4b528f7f3699c320e64d3d82aff26ad7a86d'},
+    {'function':'entity_fish_giant','address':'0x800651D0','bytes':52,'sha256':'7037b5ff05270e8be50b545a6b50b5f9038408967b975ba419fa922b827dc09b'},
+    {'function':'entity_airship','address':'0x80064928','bytes':380,'sha256':'1fb2904f97e3ed39c7410421a9a77771e7599b26dd4877c9b1e7de832f0c6d37'},
 ]
 ACTION_READ = {'function':'dream_sys_get_action_pressed','address':'0x8005931C','bytes':12,
                'sha256':'bc9d9a4597fc5c324c34fb0acc7dc1596cd1a7b617fc46f0fd1b7f63d9bf4061'}
 NATIVE_FUNCTIONS = SCRIPT_FUNCTIONS + [ACTION_READ] + [
     record for record in native.NATIVE_FUNCTIONS if record['function'] in
     {'rand','entity_stop_behaviour','func_80066148','func_800662B4'}]
+CHILD = 0x105000
+
+
+def child_fixture():
+    """One linked entity under the explicit child-animation contract."""
+    child = bytearray([0xB3] * 0x108)
+    native.word(child, 0, native.h.symbols['g_ENTITY_VTABLE'])
+    return child
+
+
+def backend_identity():
+    module = importlib.import_module('unicorn.unicorn_py3.unicorn')
+    library = native.Path(module.uclib._name).resolve(strict=True)
+    return {'package_version':native.unicorn.__version__,
+            'loaded_library_sha256':hashlib.sha256(library.read_bytes()).hexdigest(),
+            'binding_sha256':hashlib.sha256(native.Path(module.__file__).read_bytes()).hexdigest()}
 
 
 def signed_remainder(value, divisor):
@@ -45,7 +68,7 @@ def fixtures(case):
     context = bytearray([0xC4] * 0x60)
     for offset, value in [(0,native.h.symbols['g_ENTITY_VTABLE']), (0x44,case['state']),
                           (0x48,0x12340000 | (case['nudge'] & 0xFFFF)),
-                          (0x58,native.SOUND), (0x6C,0), (0x70,0),
+                          (0x4C,CHILD), (0x58,native.SOUND), (0x6C,0), (0x70,0),
                           (0x7C,case['variant']), (0x80,case['duration']), (0x84,case['frame']),
                           (0x8C,1), (0x90,1), (0x94,native.DREAM),
                           (0xF0,1), (0xF4,1), (0xF8,1), (0xFC,case['tick'])]:
@@ -173,9 +196,40 @@ def expected(callback, case):
             ratio()
             for index,value in ((7,22),(8,2),(9,64),(10,32)):
                 command(index,value)
+    elif callback == 'entity_elephant':
+        call('scale',native.ENTITY,1,native.h.symbols['g_OffsetTwo'])
+        call('translation',native.ENTITY,native.h.symbols['g_MoveDown64Then32'])
+    elif callback == 'entity_elephant_small':
+        call('scale',native.ENTITY,1,native.h.symbols['g_OffsetHalf'])
+        motion('forward',-10,0)
+    elif callback == 'entity_fish_giant':
+        call('scale',native.ENTITY,1,native.h.symbols['g_OffsetSix'])
+    elif callback == 'entity_fish':
+        motion('vertical',-64 if signed_remainder(tick,6) < 3 else 64,0)
+        motion('axis_c8',-64 if signed_remainder(tick,12) < 6 else 64,0)
+        motion('forward',-128 if signed_remainder(tick,64) < 32 else 128,0)
+        remainder = signed_remainder(tick,500)
+        if remainder < 32:
+            call('translation',native.ENTITY,native.h.symbols['g_MoveDown64Then32'])
+        elif remainder < 64:
+            call('translation',native.ENTITY,native.h.symbols['g_MoveUp64'])
+    elif callback == 'entity_airship':
+        if tick == 700 and random() % 3 == 0:
+            state = 11
+            native.word(entity,0x44,state)
+        if state == 11:
+            if tick < 1020:
+                rotation('g_RotateYawNegHalf')
+                motion('vertical',30,0)
+            if tick == 930:
+                call('notification',native.ENTITY,10)
+        elif tick in (100,800) and random() % 5 == 0:
+            call('motion_blend',CHILD,4,0)
+        motion('forward',-30,0)
     else:
         raise ValueError('Unsupported callback: '+callback)
     return {'entity':bytes(entity),'dream':bytes(dream),'context':bytes(context),
+            'child':bytes(child_fixture()),
             'rng_seed':seed,'trace':trace}
 
 
@@ -203,6 +257,16 @@ def cases_by_callback():
         'entity_fetus_walk':product(tick=(-1,0,1,14,15,16),duration=(1,15),variant=(-1,0,1,2)),
         'entity_fetus_jump':product(tick=(-31,-30,-1,0,1,14,15,16,29,30,31),
                                    duration=(1,3,15),seed=seeds,ratio=(-1,99)),
+        'entity_elephant':product(tick=(-1,0,0x7fffffff),state=(-1,0,11)),
+        'entity_elephant_small':product(tick=(-1,0,0x7fffffff),state=(-1,0,11)),
+        'entity_fish_giant':product(tick=(-1,0,0x7fffffff),state=(-1,0,11)),
+        # lcm(6,12,64,500)=24000: every nonnegative joint movement phase.
+        'entity_fish':product(tick=tuple(range(24000)) +
+            (-0x80000000,-24001,-24000,-501,-500,-65,-64,-13,-12,-7,-6,-1,
+             24000,24001,0x7fffffff)),
+        'entity_airship':product(tick=(-0x80000000,-1,0,99,100,101,699,700,701,
+                                     799,800,801,929,930,931,1019,1020,1021,0x7fffffff),
+                                 state=(-1,0,11,12),seed=(0,1,2,3,5,42,0xffffffff)),
     }
 
 
@@ -212,11 +276,15 @@ class Machine(native.Machine):
         self.stubs = {native.h.symbols['func_8001EACC'] & native.MASK: ('orientation',5),
                       native.h.symbols['sound_entity_stop'] & native.MASK: ('sound_entity_stop',2)}
         for offset,name,count in ((0x44,'rotation',3),(0x48,'scale',3),(0xBC,'translation',2),
-                                  (0xC4,'forward',3),(0xCC,'vertical',3),(0xD0,'lateral',3),
-                                  (0x128,'motion_selection',2),(0x148,'trigger_ratio',1)):
+                                  (0xC4,'forward',3),(0xC8,'axis_c8',3),(0xCC,'vertical',3),(0xD0,'lateral',3),
+                                  (0x128,'motion_selection',2),(0x138,'motion_blend',3),
+                                  (0x30,'notification',2),(0x148,'trigger_ratio',1)):
             self.stubs[native.slot('g_ENTITY_VTABLE',offset) & native.MASK] = (name,count)
-        if len(self.stubs) != 10:
-            raise ValueError('Expected ten distinct native dependency contracts.')
+        if len(self.stubs) != 13:
+            raise ValueError('Expected thirteen distinct native dependency contracts.')
+        native_addresses = {int(record['address'],16) & native.MASK for record in NATIVE_FUNCTIONS}
+        if native_addresses.intersection(self.stubs):
+            raise ValueError('A dependency contract would bypass a claimed native function.')
         super().__init__(code,native.h.symbols[callback] & native.MASK,NATIVE_FUNCTIONS)
 
     def hook(self, cpu, address, size, unused):
@@ -248,6 +316,7 @@ class Machine(native.Machine):
         buffers = fixtures(case)
         for address,data in zip((native.ENTITY,native.DREAM,native.CONTEXT),buffers):
             cpu.mem_write(address,bytes(data))
+        cpu.mem_write(CHILD,bytes(child_fixture()))
         cpu.mem_write(native.RNG,struct.pack('<I',native.u32(case['seed'])))
         cpu.mem_write(native.STACK-0x200,bytes([0xCC])*0x400)
         saved = [native.u32(0xAB000000 + 0x10203*i) for i in range(len(native.SAVED))]
@@ -267,6 +336,7 @@ class Machine(native.Machine):
         return {**{name:bytes(cpu.mem_read(address,len(buffer)))
                    for name,address,buffer in zip(('entity','dream','context'),
                                                  (native.ENTITY,native.DREAM,native.CONTEXT),buffers)},
+                'child':bytes(cpu.mem_read(CHILD,0x108)),
                 'rng_seed':int.from_bytes(cpu.mem_read(native.RNG,4),'little'),'trace':self.trace}
 
 
@@ -274,9 +344,10 @@ def verify(destination):
     dependencies = native.evidence_dependencies('tools/verify_scripted_ai.py')
     before = {path:hashlib.sha256(path.read_bytes()).hexdigest() for path in dependencies}
     native.initialize_backend(native.load_program(NATIVE_FUNCTIONS))
+    backend = backend_identity()
     started = time.monotonic()
     groups = cases_by_callback()
-    entry_counts,contracts,controls,bindings = {},set(),[],{}
+    entry_counts,contracts,controls,bindings,observations = {},set(),[],{},{}
     table = native.h.target(native.h.symbols['g_ENTITY_TABLE'],130*16)
     for record in SCRIPT_FUNCTIONS:
         callback = record['function']
@@ -286,6 +357,7 @@ def verify(destination):
             raise ValueError('Callback has no native property-table binding: '+callback)
         bindings[callback] = indices
         machine = Machine(callback)
+        observed_calls,observed_states = Counter(),Counter()
         for index,case in enumerate(groups[callback]):
             actual,model = machine.run(case),expected(callback,case)
             if actual != model:
@@ -293,6 +365,10 @@ def verify(destination):
                 failure.write_text(json.dumps({'callback':callback,'case':case,
                     'native':repr(actual),'model':repr(model)},indent=2)+'\n')
                 raise ValueError('Native callback/model disagreement: '+str(failure))
+            observed_calls.update(call[0] for call in actual['trace'])
+            observed_states.update([struct.unpack_from('<i',actual['entity'],0x44)[0]])
+        observations[callback] = {'actual_call_counts':dict(sorted(observed_calls.items())),
+                                  'actual_resulting_state_counts':dict(sorted(observed_states.items()))}
         for name,count in machine.entry_counts.items():
             entry_counts[name] = entry_counts.get(name,0)+count
         contracts.update(name for name,count in machine.stubs.values())
@@ -308,6 +384,19 @@ def verify(destination):
                 word = struct.unpack_from('<I',original,offset)[0]
                 if word in (0x34050003,0x24050003):
                     mutation = (offset,word,(word & 0xFFFF0000) | 2,'wrong_motion_selection')
+                    break
+        if callback in {'entity_elephant','entity_elephant_small','entity_fish_giant'}:
+            for offset in range(0,len(original),4):
+                word = struct.unpack_from('<I',original,offset)[0]
+                if word in (0x34050001,0x24050001):
+                    mutation = (offset,word,(word & 0xffff0000) | 2,'wrong_scale_mode')
+                    break
+        if callback in {'entity_fish','entity_airship'}:
+            immediate = 0xffc0 if callback == 'entity_fish' else 0xffe2
+            for offset in range(0,len(original),4):
+                word = struct.unpack_from('<I',original,offset)[0]
+                if word == (0x24050000 | immediate):
+                    mutation = (offset,word,word+1,'wrong_motion_amount')
                     break
         if mutation is None:
             raise ValueError('No reviewed store/selection control found: '+callback)
@@ -327,23 +416,27 @@ def verify(destination):
     if ((native.ROOT/native.configure.ROM).read_bytes() != native.h.ROM or
             (native.ROOT/native.configure.EXE).read_bytes() != native.h.ROM or
             native.check_build_current(native.ROOT) is not True or
+            backend_identity() != backend or
             any(hashlib.sha256(path.read_bytes()).hexdigest() != digest for path,digest in before.items())):
         raise ValueError('Verifier source or canonical build changed during verification.')
     report = {'status':'passed_bounded_original_scripted_callbacks',
         'canonical_executable_sha1':hashlib.sha1(native.h.ROM).hexdigest(),
         'original_and_current_build_equal':True,'original_behavior_modified':False,'model_api_calls':0,
         'backend':'Unicorn '+native.unicorn.__version__, 'callback_count':len(groups),
+        'backend_identity':backend,
         'native_cases':sum(map(len,groups.values())),
         'cases_by_callback':{name:len(cases) for name,cases in groups.items()},
         'native_property_record_bindings':bindings,'native_functions':NATIVE_FUNCTIONS,
         'executed_native_entry_counts':entry_counts,'dependency_contracts':sorted(contracts),
+        'observed_native_calls_and_states':observations,
         'negative_controls_detected':controls,
         'producer_dependencies':[{'path':path.resolve().relative_to(native.ROOT).as_posix(),'sha256':digest}
                                  for path,digest in before.items()],
         'callback_runtime_accepted':False,'original_feature_groups_accepted':0,
         'scope':'Original callback/RNG/action-read/behavior-stop code versus separate script models. '
-                'Full entity/dream/context buffers, RNG, ordered calls and ABI preservation. '
-                'Empty actor-child fixtures and explicit geometry/motion/selection/sound contracts. '
+                'Full entity/dream/context/linked-child buffers, RNG, ordered calls and ABI preservation. '
+                'Empty actor-child lists and one valid linked entity under explicit '
+                'geometry/motion/selection/child-blend/notification/sound contracts. '
                 'Excludes natural encounters, lifetime histories, renderer/GTE, actual sound, '
                 'zero-duration traps, physical devices and PS1 instruction/cycle timing.',
         'elapsed_seconds':round(time.monotonic()-started,3)}

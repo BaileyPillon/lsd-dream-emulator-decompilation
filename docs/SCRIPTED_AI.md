@@ -51,7 +51,7 @@ current build, function addresses, native range hashes and source dependencies
 before and after execution. It also checks each original callback binding in
 `g_ENTITY_TABLE` rather than relying on a source label alone.
 
-The latest exercised report is `.decomp-lab/sound-api-scripted-proof-first.json`;
+That checkpoint's exercised report is `.decomp-lab/sound-api-scripted-proof-first.json`;
 its SHA-256 is
 `c78424c703fa8468514bdc95838829f6c0e76070ca313d7617ca66ef0ee67c8b`.
 The report and original inputs stay private. A metadata supplement in
@@ -79,3 +79,10 @@ known remaining game assembly functions still remain. Whole-callback acceptance
 and whole-feature acceptance remain zero.
 This extends an existing analysis capability; it adds no original-game or
 optional gameplay feature.
+
+The later [five-callback supplement](SCRIPTED_EXTENSION.md) retains this
+historical nine-script profile and adds Elephant, Small Elephant, Fish, Giant
+Fish and Airship comparisons. Fresh current profiles now check 16 / 107
+callbacks and 31,358 fixtures, with whole-callback and whole-feature acceptance
+still zero. The original game, earlier reports and separate AI/mod counts are
+preserved.

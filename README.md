@@ -27,6 +27,7 @@ publication and subsequent evidence are retained separately.
 | Known remaining game assembly functions | 5 |
 | Known C functions with explicit dummy stack padding | 5 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
+| Original callbacks with bounded native comparisons | 16 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 37 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
 
@@ -130,6 +131,11 @@ tap duration while preserving the canonical game and whole-feature gates.
 
 The analysis tools and optional mods do not count as recovered original-game
 features. There are no added generative-AI NPCs in the matching game.
+
+The [additional original NPC checks](docs/SCRIPTED_EXTENSION.md) cover the
+fish's full 24,000-tick joint command cycle, elephant scale requests and
+airship RNG/link/child decisions. Current bounded comparisons cover 16 of
+107 callbacks; natural encounters and whole-feature acceptance remain open.
 
 ## Build the matching executable
 

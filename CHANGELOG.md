@@ -1,5 +1,17 @@
 # Changelog
 
+## Additional original NPC callback checks - 2026-10-11
+
+- Verify Elephant, Small Elephant, Fish, Giant Fish and Airship native callbacks,
+  including the complete 24,000-tick nonnegative joint fish cycle and signed edges.
+- Compare 28,982 scripted fixtures and detect 14 private faults. Recheck Lion
+  and Gray Man, raising current bounded coverage from 11 to 16 callbacks and
+  from 6,784 to 31,358 fixtures. Whole-callback/feature acceptance stays zero.
+- Record actual calls and resulting states, hash the loaded native backend and
+  binding, and reject contracts that would bypass a claimed native function.
+- Add ten synthetic guards; all 324 tooling tests pass on Windows and Linux.
+  Matching C, original gameplay, AI-tool and optional-mod counts stay unchanged.
+
 ## Japanese movement and controller-poll evidence - 2026-10-11
 
 - Compare four original/rebuilt shared-state replays: 9,000 emulator frames,

@@ -323,3 +323,13 @@ unclassified F010-related link transition.
 All accepted counts remain unchanged: 37 / 40 groups have their listed core
 functions in C, and 0 / 40 whole groups are independently accepted. Earlier
 feature records are preserved before the new publication supplement.
+## Additional original NPC callback supplement
+
+The [five-callback extension](SCRIPTED_EXTENSION.md) adds bounded original
+Elephant, Small Elephant, Fish, Giant Fish and Airship comparisons. It covers
+the fish's complete nonnegative joint command cycle, signed edges and airship
+RNG/link/linked-child requests. Current scripted, Lion and Gray Man profiles
+check 16 / 107 callbacks and 31,358 fixtures; whole-callback and whole-feature
+acceptance remain zero. Earlier feature and execution records are preserved.
+Original C bodies, C-byte recovery, 40 provisional groups, ten developer
+capabilities and three optional mods retain their existing counts.
