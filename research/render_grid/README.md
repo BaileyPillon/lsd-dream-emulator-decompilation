@@ -31,3 +31,16 @@ substitution or copied assembly. Compiler flags are unchanged.
 [GRID_RECOVERY.md](../../docs/GRID_RECOVERY.md) records compiler observations,
 ordered-store results and comparison hashes. Original scenes, hardware timing
 and whole-feature acceptance remain separate requirements.
+
+## Read qualified compiler phases
+
+The [phase comparison](../../docs/GRID_PHASES.md) follows the incoming-height
+copy through seven actual compiler stages in both formal and local source forms.
+It identifies the first scheduling pass's order change and rechecks complete
+eleven- and thirteen-byte candidates. A further 133 qualified source forms have
+no exact match; the canonical game retains assembly.
+
+`inspect_compiler_phases.py` reads qualified outputs of the existing allocation
+tracer. It checks every preserved input and pinned artifact, reconstructs
+qualification and writes a new private journal. Function-begin note positions
+are stage-specific; late note relocation does not establish original source.

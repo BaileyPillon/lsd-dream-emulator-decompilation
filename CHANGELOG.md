@@ -1,5 +1,15 @@
 # Changelog
 
+## Grid source boundaries and compiler phases - 2026-10-12
+
+- Qualify 133 additional helper, extent-type and rotation-capture source forms.
+  Recheck all emitted text and selected ELF spans; none matches.
+- Compare two complete candidate builds and actual compiler observations through
+  seven stages. Locate the local-height order change in the first scheduling pass
+  and preserve the formal/local width allocation tradeoff.
+- Add a reusable phase reader and five synthetic evidence guards. All 365 tooling
+  tests pass locally. Canonical source and completion counts remain unchanged.
+
 ## Unpadded overlap source and native pairs - 2026-10-12
 
 - Recover the actual twelve-byte midpoint object and publish a typed C research

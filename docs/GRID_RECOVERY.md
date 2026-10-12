@@ -97,9 +97,17 @@ The public recipe prepares a complete candidate without editing the game.
 It must pass complete-executable equality before promotion. Native scenes,
 framebuffers, original hardware and full PS1 timing acceptance remain open.
 
-Matching C stays **195,844 / 199,912 bytes (97.97%)**. Five assembly functions
-and five inherited source-padding explanations remain. Listed core source
-groups stay **37 / 40**; independently accepted whole groups stay **0 / 40**.
+At this earlier checkpoint, matching C was **195,844 / 199,912 bytes (97.97%)**.
+The later [source-layout correction](SOURCE_LAYOUT_EXPANDED.md) withdraws four
+padded promotions and expands the inherited-storage audit. Current matching C
+is **194,212 / 199,912 (97.15%)**, with nine assembly functions and 24 inherited
+storage explanations. Listed-core C groups are **35 / 40**; independently
+accepted whole groups remain **0 / 40**. Earlier measurements remain frozen in
+their publication metadata.
 The 107 original NPC callbacks with C bodies, ten developer capabilities and
 three optional mods are unchanged. Research and analysis remain separate from
 original gameplay; this work makes no model API calls.
+
+The later [compiler-phase comparison](GRID_PHASES.md) rechecks fresh complete
+eleven- and thirteen-byte candidates, locates the height-capture order change in
+the first scheduling pass and qualifies 133 further source forms. None matches.

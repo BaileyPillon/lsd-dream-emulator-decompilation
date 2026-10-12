@@ -106,6 +106,9 @@ The later [grid source recovery](GRID_RECOVERY.md) publishes a reproducible
 candidate whose body and store order match, with eleven differences confined
 to three prologue instructions. Recover the incoming-height capture boundary
 before accepting its 660 bytes; the canonical game still uses assembly.
+The [compiler-phase comparison](GRID_PHASES.md) locates that order change in the
+first scheduling pass. Preserve the formal-height boundary while resolving the
+scheduled width/cell-Z lifetime; 133 further source forms retain no exact match.
 
 | Function | Source |
 | --- | --- |

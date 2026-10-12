@@ -20127,6 +20127,69 @@
         "developer_capabilities_unchanged": 10,
         "optional_mods_unchanged": 3
       }
+    },
+    "grid_compiler_phases_and_source_boundaries_20261012": {
+      "recorded_utc": "2026-10-12T15:54:31.633659+00:00",
+      "document": "docs/GRID_PHASES.md",
+      "metadata": {
+        "path": "docs/grid-phase-checks.json",
+        "sha256": "9ef76a71f7f648415137f179381b90728dc931254ddc79677bf84104798465cf"
+      },
+      "feature_group": "F033",
+      "qualified_source_cases": 133,
+      "exact_selected_functions": 0,
+      "complete_candidate_builds": 2,
+      "candidate_changed_bytes": [
+        11,
+        13
+      ],
+      "compiler_observations": 2,
+      "stages_each": 7,
+      "actual_global_allocator_calls": 28,
+      "actual_priority_comparisons": 77,
+      "tooling_tests_each_platform": 365,
+      "new_original_game_distinct_cases": 0,
+      "core_source_promoted": false,
+      "whole_feature_groups_accepted": 0,
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0,
+      "before_after": {
+        "before": {
+          "c_bytes": 194212,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 9,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 16,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 24
+        },
+        "after": {
+          "c_bytes": 194212,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 9,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 16,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 24
+        },
+        "source_functions_promoted": 0,
+        "original_game_feature_groups_accepted": 0,
+        "bounded_npc_callback_count_unchanged": 16,
+        "developer_capabilities_unchanged": 10,
+        "optional_mods_unchanged": 3
+      }
     }
   }
 }

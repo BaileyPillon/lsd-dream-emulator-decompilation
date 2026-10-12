@@ -121,6 +121,10 @@ nonmatching source form or changing original gameplay.
 The [grid source-recovery fragment](research/render_grid/README.md) now retains
 the native body and store order, with eleven differences in three prologue
 instructions. Its complete candidate remains outside the matching game.
+The [grid phase comparison](docs/GRID_PHASES.md) locates the height-copy order
+change in the first scheduling pass, rechecks two complete builds and rules out
+133 further source forms. Its reusable phase reader retains the exact source
+gate and adds no whole-feature acceptance.
 The [sprite scaling audit](docs/UI_SCALE.md) checks 203,472 native cases,
 including overlapping inputs and incoming-register quirks. Its full C
 candidate still differs in 12 executable bytes and remains unaccepted.

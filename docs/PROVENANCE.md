@@ -514,3 +514,14 @@ fault has a measured coarse-path execution; its second patched location is not
 claimed executed. Raw game images, generated assembly, caller buffers and faulted
 code stay private. Earlier feature records remain frozen and reconstruct after
 removing only the new supplement. Neither source nor whole feature is promoted.
+
+## Grid compiler-phase source supplement
+
+[grid-phase-checks.json](grid-phase-checks.json) pins 133 independently rechecked
+source trials, two complete candidate builds and two actual compiler observations.
+The phase reader revalidates raw trace qualification and preserved artifact/input
+hashes. Unsized GNU marker labels are excluded from function spans; later
+function-begin note relocation is distinguished from earlier source boundaries.
+Original code, generated assembly and candidate executables remain private.
+Earlier feature and source measurements remain frozen. No source or whole
+feature is promoted, and no new gameplay execution is claimed.

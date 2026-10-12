@@ -387,3 +387,13 @@ and native GTE operations. The candidate's 170 byte differences retain the sourc
 gate; natural scene/history and full timing acceptance remain open. Current C,
 nine assembly functions, 24 inherited layouts and the 40 provisional groups are
 unchanged. No whole feature, NPC callback, developer capability or mod is added.
+
+## Grid compiler-phase source supplement
+
+The [phase comparison](GRID_PHASES.md) adds F033 source evidence for the incoming
+height capture and width/cell-Z allocation. Two complete candidate images retain
+eleven and thirteen differences; 133 further qualified source forms have no exact
+match. This is compiler research and adds no native gameplay cases. Current C,
+the nine assembly functions, 24 inherited layouts, 40 provisional groups,
+16 / 107 bounded NPC count, ten developer capabilities and three mods are
+unchanged. Source recovery and whole-feature acceptance remain incomplete.

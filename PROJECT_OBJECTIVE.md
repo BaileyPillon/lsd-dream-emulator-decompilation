@@ -110,3 +110,9 @@ candidate through original collision/SDK routines and native GTE commands in
 6,912 graph pairs. It retains 170 code differences and the unexplained original
 frame lifetime. Bounded behavior agreement preserves the original source and
 whole-feature gates; natural scenes, content and timing remain required.
+
+The [grid phase profile](docs/GRID_PHASES.md) identifies the first scheduling
+pass's height-copy change and preserves the formal/local allocation tradeoff.
+Two complete builds and 133 further source forms still fail the exact source
+gate. This extends analysis without accepting original gameplay or relaxing any
+completion requirement.
