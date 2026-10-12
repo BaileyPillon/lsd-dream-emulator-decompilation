@@ -18,6 +18,13 @@ helper lifetimes for those functions and the four retained
 [source-layout candidates](../research/source_layout/README.md). Full source
 quality and runtime acceptance remain separate gates.
 
+For the retained generation update, [native structure checks](GENERATION_STRUCTURES.md)
+now cover actual dispatch, position replacement and mode 3 sprite RNG/scaling
+without output contracts. Recover the scalar candidate's missing eight-byte
+source lifetime, then extend mode 0 child effects and natural object histories.
+The two tested live argument-pair helpers reserve extra storage but emit
+nonoriginal stores; their complete images remain rejected.
+
 The initial seven also remained after the [save-title recovery](SAVE_LABEL.md). That
 additional game-support helper was discovered in a segment classified as SDK;
 it had not been included in this list. Continue auditing raw SDK-labelled

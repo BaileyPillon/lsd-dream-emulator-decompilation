@@ -465,3 +465,17 @@ composition, actual routine/GTE entry counts, bridge/backend identities, four
 detected faults and source/tests. The earlier abstract profile remains frozen.
 Valid synthetic object graphs and one trigger-ratio contract leave natural
 construction, histories, visible/audio behavior and full hardware timing open.
+
+## Generation structure source and execution supplement
+
+[generation-structure-checks.json](generation-structure-checks.json) retains
+hashes and summaries for 34 qualified source forms, three complete candidate
+images, actual compiler stack/lifetime observations and bounded native
+original/candidate comparisons. Two initial unused-argument diagnostics remain
+excluded; corrected forms preserve their negative result. Full graph buffers,
+source/build/backend preservation and five deliberate faults are checked.
+Only original function/table identities, source fragments and evidence metadata
+are published. Complete game images, raw buffers and altered native code remain
+private. Earlier feature records are retained through an append-only supplement.
+Matching C remains unchanged; bounded execution does not waive the source gate
+or accept construction, encounters, lifecycle histories or a whole feature.

@@ -1,5 +1,16 @@
 # Changelog
 
+## Original generation structure checks and source lifetimes - 2026-10-12
+
+- Execute eleven original routines in 1,116 graph fixtures per original and
+  padding-free candidate image, with native virtual dispatch, coordinate
+  replacement, mode 3 sprite scaling and RNG. Detect five private faults.
+- Check 34 qualified source forms, three complete candidate builds and actual
+  compiler stack/lifetime observations. The closest candidate still differs
+  in ten bytes; no source function or whole feature is accepted.
+- Add eight synthetic graph/candidate guards; all 340 tooling tests pass on
+  Windows and WSL. Current source, NPC, AI-tool and mod counts stay unchanged.
+
 ## Source-layout correction and original NPC spatial composition - 2026-10-12
 
 - Expand source-quality review from five selected functions to 28 unused-storage

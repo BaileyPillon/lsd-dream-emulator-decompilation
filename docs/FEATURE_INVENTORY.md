@@ -347,3 +347,15 @@ callbacks in 26,194 separate fixtures, executing original transform/SDK/GTE
 dependencies with one trigger-ratio contract. Bounded callback coverage stays
 16 / 107; source/feature/AI-tool/mod measures stay separate. Whole-callback and
 whole-feature acceptance remain zero; the official exhaustive total is unknown.
+
+## Generation structure composition
+
+The [generation update profile](GENERATION_STRUCTURES.md) adds F024 evidence
+for original virtual dispatch, position replacement and mode 3 sprite RNG and
+scaling. Eleven actual routines run in 1,116 fixtures per original/candidate
+image, with five detected faults and no substituted dependency output. Mode 0
+is restricted to disabled child work or the first three zero-rate variants.
+F024 retains assembly; no core-source or whole-feature status is promoted.
+These methods are outside the NPC catalogue, so its 16 / 107 bounded count
+stays unchanged. The 40 provisional groups, ten developer capabilities and
+three optional mods also retain their separate counts.

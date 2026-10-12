@@ -19870,6 +19870,66 @@
       "original_game_behavior_modified": false,
       "model_api_calls": 0,
       "whole_feature_groups_accepted": 0
+    },
+    "generation_structure_composition_and_source_lifetimes_20261012": {
+      "recorded_utc": "2026-10-12T04:45:27.790442+00:00",
+      "document": "docs/GENERATION_STRUCTURES.md",
+      "metadata": {
+        "path": "docs/generation-structure-checks.json",
+        "sha256": "c281c5fb6fb729ba0b59b3bccf7ddb00b57b2047bf18730755022e8fc8e09cae"
+      },
+      "before_after": {
+        "before": {
+          "c_bytes": 194212,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 9,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 16,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 24
+        },
+        "after": {
+          "c_bytes": 194212,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 9,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 16,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 24
+        },
+        "source_functions_promoted": 0,
+        "original_game_feature_groups_accepted": 0,
+        "new_npc_callbacks_catalogued": 0,
+        "bounded_npc_callback_count_unchanged": 16,
+        "developer_capabilities_unchanged": 10,
+        "optional_mods_unchanged": 3
+      },
+      "bounded_original_generation_structure_fixtures": 1116,
+      "unaccepted_complete_c_candidate_fixtures": 1116,
+      "actual_native_routines_entered": 11,
+      "negative_controls_detected": 5,
+      "substituted_dependency_contracts": 0,
+      "qualified_source_forms": 34,
+      "complete_candidate_builds": 3,
+      "exact_candidate_images": 0,
+      "tooling_tests_each_platform": 340,
+      "feature_group": "F024",
+      "core_source_promoted": false,
+      "whole_feature_groups_accepted": 0,
+      "original_game_behavior_modified": false,
+      "model_api_calls": 0
     }
   }
 }

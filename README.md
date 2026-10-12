@@ -42,6 +42,11 @@ earlier selected five-function scan. It identifies 28 unused-storage functions
 and withdraws four promotions that added padding. Their readable padding-free
 candidates remain research; 24 inherited source explanations and nine assembly
 functions remain. C-byte coverage does not certify original source quality.
+The [generation structure checks](docs/GENERATION_STRUCTURES.md) execute eleven
+original routines and compare 1,116 fixtures per original/candidate image,
+including virtual dispatch, position updates and mode 3 sprite RNG/scaling.
+The padding-free candidate agrees on those fixtures but still fails the exact
+source gate. It adds no whole-feature acceptance or new NPC callback coverage.
 The [save-title recovery](docs/SAVE_LABEL.md) documents an earlier matching C
 promotion, its native checks and the correction to SDK/game classification.
 The [SDK and sound API audit](docs/SDK_SIGNATURE_AUDIT.md) documents corrected

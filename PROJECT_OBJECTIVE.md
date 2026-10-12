@@ -86,3 +86,10 @@ fresh clean builds remain canonical. No completion requirement is relaxed.
 The [spatial composition](docs/NPC_SPATIAL.md) adds original transform/SDK/GTE
 execution for seven callbacks; whole-feature and whole-callback acceptance
 remain zero.
+
+The [generation structure profile](docs/GENERATION_STRUCTURES.md) now executes
+eleven original routines and checks 1,116 fixtures per original/candidate image.
+Actual dispatch, position replacement and mode 3 sprite RNG/scaling agree,
+but the scalar C candidate still has ten stack-layout differences. No original
+feature, C function or whole NPC is accepted; source and runtime gates remain
+separate.

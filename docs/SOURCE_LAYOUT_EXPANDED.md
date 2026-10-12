@@ -58,6 +58,13 @@ The earlier five-function report stays frozen. Its five literal findings were
 valid within its stated search boundary; using that count for all current
 source workarounds was incomplete.
 
+The later [generation structure investigation](GENERATION_STRUCTURES.md)
+checks 34 qualified source forms and three complete images. Actual compiler
+observations distinguish live aggregate storage and inline argument copies
+from the unexplained original eight-byte frame region. The typed scalar
+candidate also passes bounded original/candidate behavior comparisons, but its
+ten stack-layout differences leave the assembly and source counts unchanged.
+
 ## Build and continuation gates
 
 The corrected 305-object standard build and a separate fresh clean build both

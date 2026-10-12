@@ -1,6 +1,6 @@
 # Unaccepted source-layout candidates
 
-The four C fragments in this directory retain the readable behavior of earlier
+The four primary C fragments in this directory retain the readable behavior of earlier
 promotions while removing their added unused stack arrays. They remain outside
 the canonical build because their complete executable comparisons differ.
 
@@ -27,3 +27,13 @@ ABI behavior through real source lifetimes or helper boundaries; adding unused
 arrays, dead branches or instruction substitutions does not close this gate.
 The [expanded audit](../../docs/SOURCE_LAYOUT_EXPANDED.md) records the withdrawal,
 current standard/clean matching builds and separate source-quality counts.
+
+The later [generation structure checks](../../docs/GENERATION_STRUCTURES.md)
+type the update argument as the caller's position pointer. Its complete image
+still differs in ten bytes. `structure-update-pointer.c` and
+`structure-update-value.c` test two additional live argument-pair hypotheses;
+their complete images grow by four and 28 bytes, respectively. These hypotheses
+are separate from the four withdrawal candidates and remain outside the game.
+Copy either fragment at the same generation-update inclusion and run the
+complete-unit workbench above. Actual compiler observations show the added
+live storage and stores; neither reproduces the original source lifetime.
