@@ -411,3 +411,14 @@ source trials have no exact match. Natural screens, constructors, rendering and
 full input reachability remain open. C recovery, the 40 provisional groups,
 16 / 107 bounded NPC count, ten developer capabilities, three mods and zero
 whole-feature acceptances remain unchanged.
+
+## Compiler memory-store source supplement
+
+The [memory-store profile](COMPILER_MEMORY_STORES.md) adds compiler evidence for
+packed-word flag helpers and F033 grid-source recovery. Eight actual store
+decisions and eight address-equality calls retain the consumed work pair's two
+extra stores. Fifty further qualified C forms and three isolated frontend
+controls accept no source. These are compiler observations, with zero new
+original gameplay cases. C, nine assembly functions, 24 inherited layouts,
+40 provisional groups, 16 / 107 bounded NPC callbacks, ten developer capabilities,
+three mods and zero whole-feature acceptances retain their separate counts.

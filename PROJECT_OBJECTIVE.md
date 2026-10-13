@@ -122,3 +122,8 @@ The [menu profile](docs/MENU_LAYOUT.md) compares layout and acceptance through
 images. Two corrected callback declarations preserve a fresh canonical build.
 The callers retain 20 and 16 byte differences; natural menu construction,
 rendering, controller reachability and full source recovery remain required.
+
+The [memory-store profile](docs/COMPILER_MEMORY_STORES.md) observes actual
+compiler decisions for two extra stores in a consumed math work pair. Fifty
+further C forms have no exact match, and three isolated frontend controls retain
+the same differences. No source or behavior gate is relaxed by this diagnostic.

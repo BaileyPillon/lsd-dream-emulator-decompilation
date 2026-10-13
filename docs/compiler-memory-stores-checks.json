@@ -1,0 +1,1945 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-13T04:51:04.587035+00:00",
+  "repository_before": "cde8e81d6baaa0cd757492094cce3adcd79ac3ba",
+  "scope": "50 independently rehashed C forms and two exact-compiler observations. Three isolated C++ bodies have the same emitted bytes as their C counterparts; this is neither complete C++ translation-unit verification nor C recovery.",
+  "features_before_sha256": "86b0e333bbbf0483b43c938442ea433be4ce73e2078a39f9990cfae8d3817a9d",
+  "public_files": {
+    "README.md": "284b89c679ed855532bd1a135e4c3664b490c661e80b57a2c1058e0447c0a8e6",
+    "CHANGELOG.md": "1f3775ff45dd3b43328f234ffd8200ca2cbccf74bffead01ad27288a440e105e",
+    "PROJECT_OBJECTIVE.md": "942bdbf2c4632fbedef9cd41e5fb5920db156861ae38d2d512ede9b3c223efea",
+    "docs/COMPILER_MEMORY_STORES.md": "d16acf65be87b65cf795be6bcbe0caddb02c6ad1b15be70bd73a9c10f2989f2d",
+    "docs/SOURCE_LAYOUT_EXPANDED.md": "858218010e4bdb0c6995805376f4740ad10d367d02c5df69f67fc6239194f6e8",
+    "docs/ROADMAP.md": "29eee447eab13d2c5aa8014e71bbf365671a58ae658887ee2d4e06017a7d0b9b",
+    "docs/FEATURE_INVENTORY.md": "c901043ac4319d0f5c34107a1c7ba0b891cd938efa7d52410c39f465a866d630",
+    "docs/PROVENANCE.md": "2f118413612d3618fd20b7b5f1de1cda36ecdd1e5e088371df12f7ec83fed93e",
+    "research/compiler/README.md": "33d194d23d9ae233f3fec9d77ee4e7e177dae660e30cbde1f8c44a0764ec48c6",
+    "research/compiler/trace_memory_stores.py": "3951e431235a202c8a37d098fd445348c972a7842c21a06dacc500b503f4409b",
+    "research/compiler/memory_stores_gdb.py": "32434761901e343354ba532db0fb9ae10a8623d5ad6257e5d71ce3552831ba38",
+    "tests/test_compiler_memory_stores.py": "aea00b0da5f59241a496498866eca1c212c9f049c88456385c53b0bc1904165f"
+  },
+  "source_quality_snapshot": {
+    "path": "docs/source-layout-expanded-checks.json",
+    "sha256": "0fe3f5d77e25c3cfda234f86a685f24aff25fa241997b272557afddb56d34213"
+  },
+  "qualified_research": {
+    "path": ".decomp-lab/compiler-store-research-qualified-first.json",
+    "sha256": "f81d4e5bd06df443f41908b6a70409d0cc7e56335d944e169af58b547427071e"
+  },
+  "actual_compiler_observations": [
+    {
+      "report": {
+        "path": ".decomp-lab/owned-pair-public-flow-original-first/report.json",
+        "sha256": "7d1b19809b2c8d920fb4446979665ff25c304d26a000d0f4d22294e04ebaffd1"
+      },
+      "trace": {
+        "path": ".decomp-lab/owned-pair-public-flow-original-first/memory-stores.json",
+        "sha256": "468c9640d898a2cef2bf24bea64a0f000691f2ac77f3fd9289b26b6b4c32f245"
+      },
+      "qualification": {
+        "memory_store_decisions": 2,
+        "address_equality_calls": 0,
+        "dead_decisions": 0,
+        "complete_assembly_equal": true,
+        "selected_function_observed": true
+      },
+      "memory_destination_summary": [
+        {
+          "rtl_base_register": 71,
+          "offset": 0,
+          "returned_dead": 0,
+          "observed_decisions": 2
+        }
+      ]
+    },
+    {
+      "report": {
+        "path": ".decomp-lab/owned-pair-public-flow-candidate-first/report.json",
+        "sha256": "3b81b6107149776489fc854f1f6ce36501088dd847167df4b1fa3fd829a24e55"
+      },
+      "trace": {
+        "path": ".decomp-lab/owned-pair-public-flow-candidate-first/memory-stores.json",
+        "sha256": "99c906c10774e9b3c488a75de5eae1fc004de85a114ede64952966cdc7f3fcc2"
+      },
+      "qualification": {
+        "memory_store_decisions": 6,
+        "address_equality_calls": 8,
+        "dead_decisions": 0,
+        "complete_assembly_equal": true,
+        "selected_function_observed": true
+      },
+      "memory_destination_summary": [
+        {
+          "rtl_base_register": 30,
+          "offset": 0,
+          "returned_dead": 0,
+          "observed_decisions": 2
+        },
+        {
+          "rtl_base_register": 30,
+          "offset": 4,
+          "returned_dead": 0,
+          "observed_decisions": 2
+        },
+        {
+          "rtl_base_register": 71,
+          "offset": 0,
+          "returned_dead": 0,
+          "observed_decisions": 2
+        }
+      ]
+    }
+  ],
+  "actual_memory_store_decisions": 8,
+  "actual_address_equality_calls": 8,
+  "memory_store_deletion_decisions": 0,
+  "absent_function_control": {
+    "path": ".decomp-lab/compiler-store-absent-control-first.json",
+    "sha256": "57675eea94001f10db22eb68f1274299daafa97753ae79676c40d5043d3904bc"
+  },
+  "prior_math_pair_qualification": {
+    "path": ".decomp-lab/owned-scalar-pairs-qualified-first.json",
+    "sha256": "f12ba874b4dbaaaf90342b543a7dd96db40d78acd1df76b9faeabe6585c32ae2"
+  },
+  "prior_math_lifetime_qualification": {
+    "path": ".decomp-lab/owned-pair-lifetime-qualified-first.json",
+    "sha256": "d234ddf80e0800df728e3ba97f5ac38cfef9213a5cb110c6043386c361f14a93"
+  },
+  "prior_math_unpadded_source_forms": 23,
+  "new_math_argument_record_forms": 18,
+  "new_grid_extent_word_forms": 32,
+  "new_qualified_c_source_forms": 50,
+  "exact_selected_c_functions": 0,
+  "source_groups": [
+    {
+      "directory": "bit-range-abi-first",
+      "report": {
+        "path": ".decomp-lab/bit-range-abi-first/report.json",
+        "sha256": "0c20db53e3879c90cf9c1ea3e1039254a2d337bfd2bdd236ed51e2879a89f0cb"
+      },
+      "qualified_cases": [
+        {
+          "case": "first_ordinary_original_order",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/first_ordinary_original_order.c",
+            "sha256": "58024e22a63fb2947b8c11369a4141725fd42de184c7e19929368c5e7c97f959"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/first_ordinary_original_order.bin",
+            "sha256": "2c23fe237092a421af51a8394bde6ed024fc3c60aae418490c826ec2b9862653"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/first_ordinary_original_order.o",
+            "sha256": "f181961fdd9bdf76adfc6a988b1c557bc624b5405c8b692dd31649f25514d2f4"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/first_ordinary_original_order.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 92
+            }
+          ],
+          "standalone_text_bytes": 92,
+          "selected_function_bytes": 92,
+          "changed_standalone_text_bytes": 57,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "first_ordinary_prewrite",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/first_ordinary_prewrite.c",
+            "sha256": "d818321ed1a38b907e718af841e8b527c46fb02c97381face2f8910868ce107e"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/first_ordinary_prewrite.bin",
+            "sha256": "7ce7063502206e96b441b2637a0bae08dd1b185844b07c6a8377fa674be0cdfc"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/first_ordinary_prewrite.o",
+            "sha256": "5326e4e1c75f9ed6038f26ee84fb4e301fd3329694cd96281aa817b25fee1d8f"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/first_ordinary_prewrite.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 88
+            }
+          ],
+          "standalone_text_bytes": 88,
+          "selected_function_bytes": 88,
+          "changed_standalone_text_bytes": 52,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "first_register_original_order",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/first_register_original_order.c",
+            "sha256": "42b693a1ba7a4bc0855d2534a048d19623a7d2f4aef844b2d3ae9d4b1fd893f0"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/first_register_original_order.bin",
+            "sha256": "2c23fe237092a421af51a8394bde6ed024fc3c60aae418490c826ec2b9862653"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/first_register_original_order.o",
+            "sha256": "c0ebbdf148990fc942f1c5a530276e00e40cff96709b24fe34547cd2fedc2554"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/first_register_original_order.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 92
+            }
+          ],
+          "standalone_text_bytes": 92,
+          "selected_function_bytes": 92,
+          "changed_standalone_text_bytes": 57,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "first_register_prewrite",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/first_register_prewrite.c",
+            "sha256": "736e6dca8eef73452f40ea3f2100825e071289519b1de4a0272ac74060297a0f"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/first_register_prewrite.bin",
+            "sha256": "7ce7063502206e96b441b2637a0bae08dd1b185844b07c6a8377fa674be0cdfc"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/first_register_prewrite.o",
+            "sha256": "0f7366de6c402c793835d515f89ea14b4f4ccb0a702504273c77b0fa71ccd46f"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/first_register_prewrite.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 88
+            }
+          ],
+          "standalone_text_bytes": 88,
+          "selected_function_bytes": 88,
+          "changed_standalone_text_bytes": 52,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "middle_ordinary_original_order",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/middle_ordinary_original_order.c",
+            "sha256": "d67019782ac601b22b6175e3dac8408cea55f7c530905921440bdb157277ac01"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/middle_ordinary_original_order.bin",
+            "sha256": "2797b9dcfa4c7718acd66264f577ad6983795638d297e297429764d10da459e4"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/middle_ordinary_original_order.o",
+            "sha256": "389527835e70748bfd87ec69d45ea8123d8ec6b0ad902770ef3f523f92ddda7c"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/middle_ordinary_original_order.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 92
+            }
+          ],
+          "standalone_text_bytes": 92,
+          "selected_function_bytes": 92,
+          "changed_standalone_text_bytes": 74,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "middle_ordinary_prewrite",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/middle_ordinary_prewrite.c",
+            "sha256": "c04283a3f197fc2fcc733acdcd77a306eb94bc66ce3df92e07d9fed9ae2b0265"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/middle_ordinary_prewrite.bin",
+            "sha256": "4d5ecbf064c11188fd88cc1a7f41463ff75eeffb1c80d3e25a5b04dd7e52d04c"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/middle_ordinary_prewrite.o",
+            "sha256": "03fb0a2bbb8c12b4a8b28876050c96842550bac362d1698b89a4c09a19be0f71"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/middle_ordinary_prewrite.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 88
+            }
+          ],
+          "standalone_text_bytes": 88,
+          "selected_function_bytes": 88,
+          "changed_standalone_text_bytes": 69,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "middle_register_original_order",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/middle_register_original_order.c",
+            "sha256": "bf3ec1de18d4cf077c56bec20b7ac343cfbe32d7bcf4ddddc3754e3dee26fef4"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/middle_register_original_order.bin",
+            "sha256": "2797b9dcfa4c7718acd66264f577ad6983795638d297e297429764d10da459e4"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/middle_register_original_order.o",
+            "sha256": "f9aefce9c90c5571668012ca3caacda8a98f41c3f8f4601b5eed1c9577e11c81"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/middle_register_original_order.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 92
+            }
+          ],
+          "standalone_text_bytes": 92,
+          "selected_function_bytes": 92,
+          "changed_standalone_text_bytes": 74,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "middle_register_prewrite",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/middle_register_prewrite.c",
+            "sha256": "7011e7b8def62adcba9e29008e9fb43bb9a3660e93d2414da03b6ec2e7c8a62a"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/middle_register_prewrite.bin",
+            "sha256": "4d5ecbf064c11188fd88cc1a7f41463ff75eeffb1c80d3e25a5b04dd7e52d04c"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/middle_register_prewrite.o",
+            "sha256": "81a7d1170271ab7fe7bdd6a54eae06d5856167a8664c1622de6dfb5e6e7720b2"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/middle_register_prewrite.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 88
+            }
+          ],
+          "standalone_text_bytes": 88,
+          "selected_function_bytes": 88,
+          "changed_standalone_text_bytes": 69,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "last_ordinary_original_order",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/last_ordinary_original_order.c",
+            "sha256": "4e024d4c778fd7b66ac84776acec266901c4ea7a803028868c9dfe53a7c89da9"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/last_ordinary_original_order.bin",
+            "sha256": "1469478090d67272fc6d1756b160a72c084634e9330fbb9e136eaba8986713f7"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/last_ordinary_original_order.o",
+            "sha256": "9a768aaf5e39d4c7576824903af24b2b4c800e3768b500137315f5efa1b5a5cc"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/last_ordinary_original_order.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 88
+            }
+          ],
+          "standalone_text_bytes": 88,
+          "selected_function_bytes": 88,
+          "changed_standalone_text_bytes": 74,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "last_register_original_order",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/last_register_original_order.c",
+            "sha256": "dc43d3d11c076fa0805dbdf0a4739c198acbf1a367d144067a51bc891a94d115"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/last_register_original_order.bin",
+            "sha256": "1469478090d67272fc6d1756b160a72c084634e9330fbb9e136eaba8986713f7"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/last_register_original_order.o",
+            "sha256": "179bec0170a9b835a33b125532560f790d373efcfd4fce11e7993f27d770bdeb"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/last_register_original_order.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 88
+            }
+          ],
+          "standalone_text_bytes": 88,
+          "selected_function_bytes": 88,
+          "changed_standalone_text_bytes": 74,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "all_ordinary_original_order",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/all_ordinary_original_order.c",
+            "sha256": "96b9787cff8a4346d0b3fcb53448d20b7b98ffed97e776756503b680fad86064"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/all_ordinary_original_order.bin",
+            "sha256": "8f16d7765a9789d814c76d482ffa67f6aa3a7058bee907e7ba2c1d0c8cec3e04"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/all_ordinary_original_order.o",
+            "sha256": "577b8a27489f07efeba1c33f32b3e17e29f1ddce27e1aa1cc89032e34d6e3059"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/all_ordinary_original_order.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 104
+            }
+          ],
+          "standalone_text_bytes": 104,
+          "selected_function_bytes": 104,
+          "changed_standalone_text_bytes": 94,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "all_ordinary_prewrite",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/all_ordinary_prewrite.c",
+            "sha256": "cded66c750b6b5e32d850caca75cd988a09528dd4d8fa191a45acb0c94acc7ec"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/all_ordinary_prewrite.bin",
+            "sha256": "81522308984d632ef9643b9cecceed2bbbf94c579466d2dda68ceac686fb72d2"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/all_ordinary_prewrite.o",
+            "sha256": "f09b3dc65935fdc41a942782fb3045c17b6bd010f7c6b0ce94ee306cc1af2b8e"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/all_ordinary_prewrite.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 100
+            }
+          ],
+          "standalone_text_bytes": 100,
+          "selected_function_bytes": 100,
+          "changed_standalone_text_bytes": 92,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "all_register_original_order",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/all_register_original_order.c",
+            "sha256": "6885c3f77e8274597a9e9e4927db2463b1b4df25055c97a8d7764254e6962c22"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/all_register_original_order.bin",
+            "sha256": "8f16d7765a9789d814c76d482ffa67f6aa3a7058bee907e7ba2c1d0c8cec3e04"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/all_register_original_order.o",
+            "sha256": "daa9640a3d3a035a8a3c98d535b7d68f11a5269ab0a3031f707ed4bb46a6124a"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/all_register_original_order.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 104
+            }
+          ],
+          "standalone_text_bytes": 104,
+          "selected_function_bytes": 104,
+          "changed_standalone_text_bytes": 94,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "all_register_prewrite",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/all_register_prewrite.c",
+            "sha256": "7a78c8c2360c9f04054c0f518ae7c65063d36b272b96e98b4659617e1df44403"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/all_register_prewrite.bin",
+            "sha256": "81522308984d632ef9643b9cecceed2bbbf94c579466d2dda68ceac686fb72d2"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/all_register_prewrite.o",
+            "sha256": "dc490d6cfbabc2331d6afbbaa641cd73599a1bc9ee488546256c781e80c31c27"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/all_register_prewrite.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 100
+            }
+          ],
+          "standalone_text_bytes": 100,
+          "selected_function_bytes": 100,
+          "changed_standalone_text_bytes": 92,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "two_pairs_ordinary_original_order",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/two_pairs_ordinary_original_order.c",
+            "sha256": "f0e080c566cf1825f548bc124376ea985827bb5aa790b799629a80b9a353bacd"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/two_pairs_ordinary_original_order.bin",
+            "sha256": "8f16d7765a9789d814c76d482ffa67f6aa3a7058bee907e7ba2c1d0c8cec3e04"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/two_pairs_ordinary_original_order.o",
+            "sha256": "1f48cbf60803c3d8f91baee5e7038aa6ca28608516ba63f7f4b6c5150eb4b7d6"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/two_pairs_ordinary_original_order.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 104
+            }
+          ],
+          "standalone_text_bytes": 104,
+          "selected_function_bytes": 104,
+          "changed_standalone_text_bytes": 94,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "two_pairs_ordinary_prewrite",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/two_pairs_ordinary_prewrite.c",
+            "sha256": "45a07a67393a406c1c946cd18da5c927a419835276de4de4981dab61eee33f3c"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/two_pairs_ordinary_prewrite.bin",
+            "sha256": "81522308984d632ef9643b9cecceed2bbbf94c579466d2dda68ceac686fb72d2"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/two_pairs_ordinary_prewrite.o",
+            "sha256": "ec56677a8cb73bf54dbb83b252e2b2f004bd7bb4a5aef268b93e8d36886a0246"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/two_pairs_ordinary_prewrite.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 100
+            }
+          ],
+          "standalone_text_bytes": 100,
+          "selected_function_bytes": 100,
+          "changed_standalone_text_bytes": 92,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "two_pairs_register_original_order",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/two_pairs_register_original_order.c",
+            "sha256": "cd8807261979a1136586ebd2df19fc232f781af5a1a22b7a870531898739b93d"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/two_pairs_register_original_order.bin",
+            "sha256": "8f16d7765a9789d814c76d482ffa67f6aa3a7058bee907e7ba2c1d0c8cec3e04"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/two_pairs_register_original_order.o",
+            "sha256": "d0556b7092c22170fc6822e801a90df2ace557d0130fb44fd957cd0c67216738"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/two_pairs_register_original_order.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 104
+            }
+          ],
+          "standalone_text_bytes": 104,
+          "selected_function_bytes": 104,
+          "changed_standalone_text_bytes": 94,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "two_pairs_register_prewrite",
+          "function": "func_8001EDAC",
+          "source": {
+            "path": ".decomp-lab/bit-range-abi-first/two_pairs_register_prewrite.c",
+            "sha256": "c3a515877197b866c1ac6f0aef00e853c1d65d73c47c834b767ad6a6a72628cd"
+          },
+          "binary": {
+            "path": ".decomp-lab/bit-range-abi-first/two_pairs_register_prewrite.bin",
+            "sha256": "81522308984d632ef9643b9cecceed2bbbf94c579466d2dda68ceac686fb72d2"
+          },
+          "object": {
+            "path": ".decomp-lab/bit-range-abi-first/two_pairs_register_prewrite.o",
+            "sha256": "e6c25089bf457b8388bd24a22a55b8ee809ace2b25e37da1d7fb61cf3b696ae2"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/bit-range-abi-first/two_pairs_register_prewrite.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8001EDAC",
+              "offset": 0,
+              "bytes": 100
+            }
+          ],
+          "standalone_text_bytes": 100,
+          "selected_function_bytes": 100,
+          "changed_standalone_text_bytes": 92,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        }
+      ],
+      "qualified_source_forms": 18,
+      "minimum_changed_bytes": 52,
+      "distinct_emitted_texts": 7
+    },
+    {
+      "directory": "grid-height-words-second",
+      "report": {
+        "path": ".decomp-lab/grid-height-words-second/report.json",
+        "sha256": "a25ebb69d90b9aba63a5dc729a319e23a38389fb9ef4c61d8e0a3cff26b3cefa"
+      },
+      "qualified_cases": [
+        {
+          "case": "formal_struct_direct_ordinary",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-height-words-second/formal_struct_direct_ordinary.c",
+            "sha256": "62cee8a997ebb88a36ad7da01cf49636ac5ae571471057edde7f99f1f649881a"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-height-words-second/formal_struct_direct_ordinary.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-height-words-second/formal_struct_direct_ordinary.o",
+            "sha256": "33197aa168cd8961f0259c819247cd5b69e32bf72c54e91ffde4141eb708e691"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-height-words-second/formal_struct_direct_ordinary.stderr",
+            "sha256": "50f681f6aa768e2c0d8f271dfa533c18a74986a78030b6be1fa2566c922a3c49"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "formal_struct_direct_register",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-height-words-second/formal_struct_direct_register.c",
+            "sha256": "0876619fd1308bfb40b789015eb207d43b58f4f24f096592928b9ab58214aa78"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-height-words-second/formal_struct_direct_register.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-height-words-second/formal_struct_direct_register.o",
+            "sha256": "163d8235a167ad77881f6346061308e9be7c887b5c300e0c21a832b320c2b78e"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-height-words-second/formal_struct_direct_register.stderr",
+            "sha256": "4701456283db2a5616796855a794357d6bc5bee0256bce3051a0bc11752d3fa0"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "formal_struct_local_ordinary",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-height-words-second/formal_struct_local_ordinary.c",
+            "sha256": "cef972ae4abcee487e8bf184f510749a2a20dbce45b853b6522bd775155fab36"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-height-words-second/formal_struct_local_ordinary.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-height-words-second/formal_struct_local_ordinary.o",
+            "sha256": "3927ac4bf5a4d774a97a5cebb2ab871c0ed805f883a3a514bedd76c7295ac1c3"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-height-words-second/formal_struct_local_ordinary.stderr",
+            "sha256": "858afa54dad639a91620e72ddbe7e1b4e9cd4c0ae96a1e19eeb3f5551a113ba4"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "formal_struct_local_register",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-height-words-second/formal_struct_local_register.c",
+            "sha256": "738381441a4075754ec048a448a40b135f526e80de57cdf92b8f2b96f2e7e579"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-height-words-second/formal_struct_local_register.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-height-words-second/formal_struct_local_register.o",
+            "sha256": "94a58553dc7b9244f778ad47c74fe5e4ee9480dd18bca013489babbf17957b16"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-height-words-second/formal_struct_local_register.stderr",
+            "sha256": "f009746be9c47d501838e00698ba553f558b4424620eabc4b1df26744730f3d7"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "formal_union_direct_ordinary",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-height-words-second/formal_union_direct_ordinary.c",
+            "sha256": "9601aade8959e2ea35ffc28731f6e058639af5b9e4796e13819fd33ea2252b18"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-height-words-second/formal_union_direct_ordinary.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-height-words-second/formal_union_direct_ordinary.o",
+            "sha256": "7ed70d4e2ac968c42a91dedee58a34e23ebb93e7b048a96b2b69212a7b72baf3"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-height-words-second/formal_union_direct_ordinary.stderr",
+            "sha256": "5532ab71b86e79e2562a36c89ed40b33b75e2f06fec05847ae5703105d916801"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "formal_union_direct_register",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-height-words-second/formal_union_direct_register.c",
+            "sha256": "e683a824845f2d988106a1f4ad0d7d7bf5b5e07bd332960886c82f3ca8951dc1"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-height-words-second/formal_union_direct_register.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-height-words-second/formal_union_direct_register.o",
+            "sha256": "b7760d4fe44ebe4717a51ae977c10ee81c37b4258427c51aae7e10452b037c7e"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-height-words-second/formal_union_direct_register.stderr",
+            "sha256": "d9200e951705ca3f08261fd75f371af07b8d994b1f80821d95b408be1502739d"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "formal_union_local_ordinary",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-height-words-second/formal_union_local_ordinary.c",
+            "sha256": "67de4b20428ea6f86f7df4cb741b218891c067dd475e344c55cf70e14a1ccbaf"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-height-words-second/formal_union_local_ordinary.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-height-words-second/formal_union_local_ordinary.o",
+            "sha256": "3a1c1c1d19ceffea09eb769f05549281ad0bf3a4bb751153728cad2d28129fb7"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-height-words-second/formal_union_local_ordinary.stderr",
+            "sha256": "8b22df03352697b61e2e90f579166e194f9b8760c3219264a9c46ef42a9a1be0"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "formal_union_local_register",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-height-words-second/formal_union_local_register.c",
+            "sha256": "bd193ebf9c61005c2a83999c2ad8ef08367ac3e154c0b330829d536816366dba"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-height-words-second/formal_union_local_register.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-height-words-second/formal_union_local_register.o",
+            "sha256": "17d1c66c8ab00cb4e7238987e97518bf8e500ae5e146e95109fb9a0e293b102e"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-height-words-second/formal_union_local_register.stderr",
+            "sha256": "97c5924cb981babab4d33ce3d1896bd239b9b65f3be8cea31c5421c80c8be934"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "local_struct_direct_ordinary",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-height-words-second/local_struct_direct_ordinary.c",
+            "sha256": "e89f1441689d0b70f7434bf5859ebfce660770a64ed590f28021a4370b850351"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-height-words-second/local_struct_direct_ordinary.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-height-words-second/local_struct_direct_ordinary.o",
+            "sha256": "8efa7258fbd161551481490c97a3566a965aa179b3c2b393e89b4edade7e22bf"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-height-words-second/local_struct_direct_ordinary.stderr",
+            "sha256": "133601ae7b5c49792e11c05ecccbdb1b04f32070adcc02a3a6ed5d046414f4ea"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "local_struct_direct_register",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-height-words-second/local_struct_direct_register.c",
+            "sha256": "d6a8ad055c6589d2c320aba6a0ca21ed4657f79df0ca6d112f370a587f48e8de"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-height-words-second/local_struct_direct_register.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-height-words-second/local_struct_direct_register.o",
+            "sha256": "d89d18891e75668f944dc17a685792b9b78e113827fba7ce151591e3635c0dee"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-height-words-second/local_struct_direct_register.stderr",
+            "sha256": "b6a769458bf4fd107d1ae927e6b7cab0676758f6454a11e200b01a1c1129d143"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "local_struct_local_ordinary",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-height-words-second/local_struct_local_ordinary.c",
+            "sha256": "7e6905eeb772816061e1e4a014dea589386b2b27cd7aca661c7927b4cd531acc"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-height-words-second/local_struct_local_ordinary.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-height-words-second/local_struct_local_ordinary.o",
+            "sha256": "8900055b8281a4d5ad60b1789be38e98271a743ddddee154153b0c2d8ef4e4c4"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-height-words-second/local_struct_local_ordinary.stderr",
+            "sha256": "fc2634c9ddd7255fea5585794ac22ca359200cfb680dbbb36bceda40cb22276b"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "local_struct_local_register",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-height-words-second/local_struct_local_register.c",
+            "sha256": "68d8b7b0f17733386523faeb6cd258360c8a89b59211178b1091ed5617f1d5c3"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-height-words-second/local_struct_local_register.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-height-words-second/local_struct_local_register.o",
+            "sha256": "e641d974d5c7d0dd5ea10a4cac7be4b6adcdd2310e646c9454252508d1ec43a0"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-height-words-second/local_struct_local_register.stderr",
+            "sha256": "f5f2ee9ed3fce1b5a9b4afaf4bfbf7a0a93ea13626b8c88b94f5a625983772bd"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "local_union_direct_ordinary",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-height-words-second/local_union_direct_ordinary.c",
+            "sha256": "5d69283448c0992668232296f0e7d5a982ecbc89cd2c620c69768f87c1a82917"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-height-words-second/local_union_direct_ordinary.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-height-words-second/local_union_direct_ordinary.o",
+            "sha256": "ac28162e44dc5a1c9b23e05d9eddd89d6e6999a20b4bfbe49212202c07263871"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-height-words-second/local_union_direct_ordinary.stderr",
+            "sha256": "9ebde9eea4c8e611d9e5cfed0fa6e85d5ae077d10006f2b2ec3336a207f00d82"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "local_union_direct_register",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-height-words-second/local_union_direct_register.c",
+            "sha256": "e8b298608c321aae4d4a3a094a04d8ecd692761bba6c7fd28f69a0f3c305de4c"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-height-words-second/local_union_direct_register.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-height-words-second/local_union_direct_register.o",
+            "sha256": "afaa8f3ab8a3c2b3fcd10ee87f5817933d176e42338a83fff65ced3c19206956"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-height-words-second/local_union_direct_register.stderr",
+            "sha256": "4836f0f6071eb7692c63ced4f8c3e7616e54ba0a0cff22db9f8133089242ba63"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "local_union_local_ordinary",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-height-words-second/local_union_local_ordinary.c",
+            "sha256": "51772ccbbb3a557c75750c84740b56fcd4212d3b218b89d4e7712f9680349e89"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-height-words-second/local_union_local_ordinary.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-height-words-second/local_union_local_ordinary.o",
+            "sha256": "1f2c07074b87f173c08de71db35102610b77cb1c48c518115a00b72e00460bde"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-height-words-second/local_union_local_ordinary.stderr",
+            "sha256": "7e0f3dce0f7a5707e7cc5a329910ce8158c15c23fdee59aa044a8899f7d58706"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "local_union_local_register",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-height-words-second/local_union_local_register.c",
+            "sha256": "a413f267157cac25800eedbf539ebdfed513407d207c80bfcaba708681a16a37"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-height-words-second/local_union_local_register.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-height-words-second/local_union_local_register.o",
+            "sha256": "f4931176a6c23d9708f6aed8ebc28131c273e67e024349b162aa76e245d99c30"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-height-words-second/local_union_local_register.stderr",
+            "sha256": "b2e20d0580f2728240d52b702146c64f6353c723eaf98ce70d7874b2e94d3a60"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        }
+      ],
+      "qualified_source_forms": 16,
+      "minimum_changed_bytes": 13,
+      "distinct_emitted_texts": 1
+    },
+    {
+      "directory": "grid-extent-words-second",
+      "report": {
+        "path": ".decomp-lab/grid-extent-words-second/report.json",
+        "sha256": "55e12797206c0b402d966f6a4cf0556dd9f14655087ef8140f5114de2a933a01"
+      },
+      "qualified_cases": [
+        {
+          "case": "struct_struct_direct_direct",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_struct_direct_direct.c",
+            "sha256": "d4b5260dc5cd2ad92a40bc969381335eee719e970212fa4a6bca48720073043c"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_struct_direct_direct.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_struct_direct_direct.o",
+            "sha256": "2becd6835c48856f5171d6a1e7732df5eeb7d6d09b2065e3e414bff611e13973"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_struct_direct_direct.stderr",
+            "sha256": "acc7674d22ebcecd6b8e926245740386d44b3c9b34db9e36d66de9b30ce46c2b"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "struct_struct_direct_local",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_struct_direct_local.c",
+            "sha256": "ea7dc97fb2c14ed97ab67ae6dab8578aad22ac4de10a1e519ab6c80cd01f5cfa"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_struct_direct_local.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_struct_direct_local.o",
+            "sha256": "ddc31b679ca18ecc876c3c6bb08f3d24e457aca5899278a2e89c800d991190da"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_struct_direct_local.stderr",
+            "sha256": "c30209980cda3290db44a43c64af7a5a97c87fc04d4c85a0c8edfb33c0bb8ab4"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "struct_struct_local_direct",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_struct_local_direct.c",
+            "sha256": "118d7d878b459fed7d103b46047b4ea27973a10bf1672bc8a1ad086198f925ca"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_struct_local_direct.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_struct_local_direct.o",
+            "sha256": "130a6c7d37cfe70227e70b64becd89b22f79b463fcaafdbc90f017ba6b4ea513"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_struct_local_direct.stderr",
+            "sha256": "4695dff148ea5ad6a8be8a9f7656bd7e45e5da88302bb272e8b84f6ed9935508"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "struct_struct_local_local",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_struct_local_local.c",
+            "sha256": "45db94aa5ec925be47847a53df1ae10b39171c61d4fa76a6eefbae102df5bd39"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_struct_local_local.bin",
+            "sha256": "8c29da844550f22cebd785a512971bb5bcac56016d84e9b3253d1d8364fa5381"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_struct_local_local.o",
+            "sha256": "45f586cef3a229d185b8edd147341cff81a3f764bd02726c901a77b56dd9cb3e"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_struct_local_local.stderr",
+            "sha256": "6230a553ece130d607eea9db6a67abb95ee70f61a0bb8b9cd56044263d6e2851"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 11,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "struct_union_direct_direct",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_union_direct_direct.c",
+            "sha256": "6701ead92400c645d0918e5d8294778d3e5d1ee1fb031c3186b60610569dd5d8"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_union_direct_direct.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_union_direct_direct.o",
+            "sha256": "7f20e71cf62fc2044332a66a38c7370800da43b048ee50457a4a3d6212ec7a71"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_union_direct_direct.stderr",
+            "sha256": "ab9013916d819f261efff223f7661958bbf8b07996c0e8cd133027cfcd00cddb"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "struct_union_direct_local",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_union_direct_local.c",
+            "sha256": "3407fd49076ad33bec97528927c204dcf1f60454c9738087293c502bfef33ab5"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_union_direct_local.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_union_direct_local.o",
+            "sha256": "a1c32a5d1ab1135b31efa35079a7d1e786e0c3fa5115970458fa8cd6415bf65f"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_union_direct_local.stderr",
+            "sha256": "368dab5e42d74d7317e9fcdebc6ff7005296af229514cc9b726c6bc68778ad9a"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "struct_union_local_direct",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_union_local_direct.c",
+            "sha256": "337bb61a5ff424a1be65807f1add73a718043d3ca5e1561ec5abce5acc384269"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_union_local_direct.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_union_local_direct.o",
+            "sha256": "ec5a79d144a0c825705b90ef1ce0e15d197342c128c894436f6e4fb54b2eaf75"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_union_local_direct.stderr",
+            "sha256": "2e607df280496e505b2fcf064d237a91b7c3630cd83c2d71a875320fefc602c4"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "struct_union_local_local",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_union_local_local.c",
+            "sha256": "df909b6b1d262c54015da8ac64f323fdf672d4978f3e802931d73ac63d2d1392"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_union_local_local.bin",
+            "sha256": "8c29da844550f22cebd785a512971bb5bcac56016d84e9b3253d1d8364fa5381"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_union_local_local.o",
+            "sha256": "423df2a411f61378215fb6d2e70d6edaef78c5b175dda4f40b4e690dcd7aae18"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-extent-words-second/struct_union_local_local.stderr",
+            "sha256": "c8d62ccf2d1dcbc03e720b0e22d8a523f64bd2d18df978ccbb9de8c5bca2ff75"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 11,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "union_struct_direct_direct",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-extent-words-second/union_struct_direct_direct.c",
+            "sha256": "128ef4b405753364c7a213c104392657138648e8041bbcf6d434a191a620d753"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-extent-words-second/union_struct_direct_direct.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-extent-words-second/union_struct_direct_direct.o",
+            "sha256": "720cf16874e73fb039bc79f81296bb57a2e2045cc08af36413465de85b228195"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-extent-words-second/union_struct_direct_direct.stderr",
+            "sha256": "241d6b07935519cc245d37e53e920ae1f51b69a3aadbba746454f27c70fe2c52"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "union_struct_direct_local",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-extent-words-second/union_struct_direct_local.c",
+            "sha256": "541e30e1e650d7d87ab8b27403cbbfa9c7db34a326a6a0a9616198ee53cab975"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-extent-words-second/union_struct_direct_local.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-extent-words-second/union_struct_direct_local.o",
+            "sha256": "5aec9ca1fde72cf181cf0d607287801f5328839a5e8ba276bc3f347c7b70c2f4"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-extent-words-second/union_struct_direct_local.stderr",
+            "sha256": "d23cefebb4ff4aa6270efa8791c8744b51580a4e9fd9a8f127767cf441ec571b"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "union_struct_local_direct",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-extent-words-second/union_struct_local_direct.c",
+            "sha256": "2201149253c6039ac5192a78b458ad378d4db4141ec345ceb35df5a90d767b62"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-extent-words-second/union_struct_local_direct.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-extent-words-second/union_struct_local_direct.o",
+            "sha256": "0567ba24a89473c3476207edaae60a3a61a9dd0029bdf9ca9a8148daf4efd24c"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-extent-words-second/union_struct_local_direct.stderr",
+            "sha256": "c4159bfc76537d70a8cba56089ffbc293229959f7f31fdc63055adead80a2bf8"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "union_struct_local_local",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-extent-words-second/union_struct_local_local.c",
+            "sha256": "e47f73c399b35831b8ee53613189880c64504225a54dc660376048a3e7f92308"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-extent-words-second/union_struct_local_local.bin",
+            "sha256": "8c29da844550f22cebd785a512971bb5bcac56016d84e9b3253d1d8364fa5381"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-extent-words-second/union_struct_local_local.o",
+            "sha256": "26408ab7b73117321472f1ae6a284297123223a195ddad226c400382f17be84e"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-extent-words-second/union_struct_local_local.stderr",
+            "sha256": "d92d53c7bd6a675b1da549ac4617a1ef2387ee099dba6b74a3fdcbb2db923fea"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 11,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "union_union_direct_direct",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-extent-words-second/union_union_direct_direct.c",
+            "sha256": "dbe8e5875cbd6f64d92c489fcaa64420747ead220c9b5f0299b6f4618dc7a71d"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-extent-words-second/union_union_direct_direct.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-extent-words-second/union_union_direct_direct.o",
+            "sha256": "93dceee7b23f80df15c9066d4bffb7764c276f5778dd44158bb99eb2d7154d8b"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-extent-words-second/union_union_direct_direct.stderr",
+            "sha256": "00624b98dfd46a6a0f8b082fc6050eaf2e42d9d18efe7d6118984dc0321091aa"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "union_union_direct_local",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-extent-words-second/union_union_direct_local.c",
+            "sha256": "f9aab79e3851e0109f3378aa10905d5237284198e756e3ceee58a6a7ba23e322"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-extent-words-second/union_union_direct_local.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-extent-words-second/union_union_direct_local.o",
+            "sha256": "9087bddbbc49d38a13bcf211be57b5f35582a26979b5f4ccbcca5cb1bea76ffb"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-extent-words-second/union_union_direct_local.stderr",
+            "sha256": "e67a093a6d7aea93f6a3e7d99b5628eab1f047f1a2c4d14f9831269e10456bbb"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "union_union_local_direct",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-extent-words-second/union_union_local_direct.c",
+            "sha256": "6ef400abf58da9e9ff7e98e91409580f5f4b4b9be2defed8c839fe6d7a8bcb4f"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-extent-words-second/union_union_local_direct.bin",
+            "sha256": "8d061c52608fc4558b6eb98547a3e84b2f8f46718574553c523da2d5723074bc"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-extent-words-second/union_union_local_direct.o",
+            "sha256": "9441fad664f49eea230f790c71953bd704be89c84ec649afdce4492b159762ff"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-extent-words-second/union_union_local_direct.stderr",
+            "sha256": "4596ec269bfcce53c595aa3e1582a0cebdb22f06d3e57cecb0ff00fe0685a214"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 13,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        },
+        {
+          "case": "union_union_local_local",
+          "function": "func_8004C6A8",
+          "source": {
+            "path": ".decomp-lab/grid-extent-words-second/union_union_local_local.c",
+            "sha256": "6229cda53a9502b07aa8f8d148b090bfa314ef1d54d9dc11f503d167f5825044"
+          },
+          "binary": {
+            "path": ".decomp-lab/grid-extent-words-second/union_union_local_local.bin",
+            "sha256": "8c29da844550f22cebd785a512971bb5bcac56016d84e9b3253d1d8364fa5381"
+          },
+          "object": {
+            "path": ".decomp-lab/grid-extent-words-second/union_union_local_local.o",
+            "sha256": "0d8beb94e9ac449e03d41d3c19755243eb717cd2299eb2e78119dc8da649736a"
+          },
+          "diagnostics": {
+            "path": ".decomp-lab/grid-extent-words-second/union_union_local_local.stderr",
+            "sha256": "862cc436bb6ad66d2c1ffdc9d5c831bcf0608c5a3784f86e2d13f36304a88cbf"
+          },
+          "emitted_function_symbols": [
+            {
+              "function": "func_8004C6A8",
+              "offset": 0,
+              "bytes": 660
+            }
+          ],
+          "standalone_text_bytes": 660,
+          "selected_function_bytes": 660,
+          "changed_standalone_text_bytes": 11,
+          "selected_function_exact": false,
+          "complete_text_exact": false
+        }
+      ],
+      "qualified_source_forms": 16,
+      "minimum_changed_bytes": 11,
+      "distinct_emitted_texts": 2
+    }
+  ],
+  "isolated_cpp_diagnostic_forms": 3,
+  "cpp_forms_equal_corresponding_c_outputs": [
+    {
+      "case": "flat",
+      "cpp_source": {
+        "path": ".decomp-lab/pair-frontend-third/flat.cc",
+        "sha256": "781f31b19c03614faf996bfb4b302e6ac8fd8bd33c99131eb37f9ec4970b2d59"
+      },
+      "cpp_object": {
+        "path": ".decomp-lab/pair-frontend-third/flat.o",
+        "sha256": "ef688420fc9835bc482b1b92a0d4e9a94986c69f7e29ade4c4c49e65939b5257"
+      },
+      "cpp_text": {
+        "path": ".decomp-lab/pair-frontend-third/flat.bin",
+        "sha256": "d6136beaf12c254024591c0fafa5bdda9e6bdca9c85453e5f90f4a1527e11c35"
+      },
+      "c_source": {
+        "path": ".decomp-lab/owned-scalar-pairs-first/func_8001EDAC_no_padding_baseline.c",
+        "sha256": "e90bb5256a21228e61dffc528db283856f2e2df75f5713d48ee4b6e776d4cdd4"
+      },
+      "c_text": {
+        "path": ".decomp-lab/owned-scalar-pairs-first/func_8001EDAC_no_padding_baseline.bin",
+        "sha256": "d6136beaf12c254024591c0fafa5bdda9e6bdca9c85453e5f90f4a1527e11c35"
+      },
+      "texts_equal": true,
+      "changed_bytes": 78,
+      "source_promotable_as_c": false
+    },
+    {
+      "case": "pair",
+      "cpp_source": {
+        "path": ".decomp-lab/pair-frontend-third/pair.cc",
+        "sha256": "f9c81b39a1d49b02d0ba81bf9f44d56e45f1048661cafebf5896d3a444b8bd51"
+      },
+      "cpp_object": {
+        "path": ".decomp-lab/pair-frontend-third/pair.o",
+        "sha256": "4bc845f7da64a8c925c2d450403e7ddcb051b00a9b26b3b0356b092b2e462440"
+      },
+      "cpp_text": {
+        "path": ".decomp-lab/pair-frontend-third/pair.bin",
+        "sha256": "39481c75dc5c8c9b2927266b84f06a27dda2d1d74b626098398091547e6f6101"
+      },
+      "c_source": {
+        "path": ".decomp-lab/owned-pair-lifetime-first/func_8001EDAC_struct_return_before_store_first.c",
+        "sha256": "3de97458ba47f60a78a77b81ac4ca0ba428eb5f2967ac74929c0533657aba28f"
+      },
+      "c_text": {
+        "path": ".decomp-lab/owned-pair-lifetime-first/func_8001EDAC_struct_return_before_store_first.bin",
+        "sha256": "39481c75dc5c8c9b2927266b84f06a27dda2d1d74b626098398091547e6f6101"
+      },
+      "texts_equal": true,
+      "changed_bytes": 28,
+      "source_promotable_as_c": false
+    },
+    {
+      "case": "parameter_pair",
+      "cpp_source": {
+        "path": ".decomp-lab/pair-frontend-third/parameter_pair.cc",
+        "sha256": "63e8395343fa972951224fd7a68a93d9d29c29fff48f31ce52fd65da22c2d75a"
+      },
+      "cpp_object": {
+        "path": ".decomp-lab/pair-frontend-third/parameter_pair.o",
+        "sha256": "5520251617de2d70d5297b9337484b805bcde721c697f18d451906034be7c0d4"
+      },
+      "cpp_text": {
+        "path": ".decomp-lab/pair-frontend-third/parameter_pair.bin",
+        "sha256": "1469478090d67272fc6d1756b160a72c084634e9330fbb9e136eaba8986713f7"
+      },
+      "c_source": {
+        "path": ".decomp-lab/bit-range-abi-first/last_ordinary_original_order.c",
+        "sha256": "4e024d4c778fd7b66ac84776acec266901c4ea7a803028868c9dfe53a7c89da9"
+      },
+      "c_text": {
+        "path": ".decomp-lab/bit-range-abi-first/last_ordinary_original_order.bin",
+        "sha256": "1469478090d67272fc6d1756b160a72c084634e9330fbb9e136eaba8986713f7"
+      },
+      "texts_equal": true,
+      "changed_bytes": 74,
+      "source_promotable_as_c": false
+    }
+  ],
+  "cpp_translation_unit_or_c_recovery_claimed": false,
+  "historical_compiler_source": {
+    "provenance": {
+      "path": ".decomp-lab/gcc263-source-first/provenance.json",
+      "sha256": "337ad5efe3c65e34ca773fbc114eccaa43b42b16bfb784d64a05c7acd0ae0b1d"
+    },
+    "flow_source": {
+      "path": ".decomp-lab/gcc263-source-first/flow.c",
+      "sha256": "d2dc7a7c6e892b1196ec09c98be473dd8de955c48a64fdab46ab0c5573575128"
+    },
+    "archive_sha256": "66529b6ced4ccc580ec365809c1abed856d948283deff656801dec14f47d081a",
+    "source_url": "https://mirrors.slackware.com/slackware/slackware-2.2.0/source/d/gcc/gcc-2.6.3.tar.gz",
+    "scope": "Historical GNU source reference, separately checked against actual bundled-binary behavior."
+  },
+  "canonical_build": {
+    "current_matching_build_progress": {
+      "path": ".decomp-lab/menu-current-progress-first.json",
+      "sha256": "3ce9778c09f4d0f027f8be19c80129e6572270243a083a8badb1af96f3600fc8"
+    },
+    "build_inputs_verified_current": 391,
+    "executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "executable_bytes": 505856,
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "objects_expected": 305,
+    "objects_found": 305,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "latest_clean_build": {
+      "path": ".decomp-lab/menu-signature-clean-build-first.json",
+      "sha256": "0ba6daf88ad4b233ed4085d857bae06a52f89bc2569f47518318d1c497a893f0"
+    },
+    "current_clean_build_inputs_verified_equal": 363
+  },
+  "tooling_tests": [
+    {
+      "path": ".decomp-lab/compiler-stores-host-tests-first.log",
+      "sha256": "3dbedae2e9c4f256911af760316c7df8d77751e23755d01f67e09c9d19b3928f",
+      "platform": "host",
+      "tests": 377,
+      "passed": true
+    },
+    {
+      "path": ".decomp-lab/compiler-stores-wsl-tests-first.log",
+      "sha256": "8de48506034eb288d3821ef7c9e4c749d494f49c31af0cee2ce7fa401feaaaae",
+      "platform": "wsl",
+      "tests": 377,
+      "passed": true
+    }
+  ],
+  "before_after": {
+    "before": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 16,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "after": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 16,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "source_functions_promoted": 0,
+    "original_game_feature_groups_accepted": 0,
+    "bounded_npc_callback_count_unchanged": 16,
+    "developer_capabilities_unchanged": 10,
+    "optional_mods_unchanged": 3
+  },
+  "retained_diagnostics": [
+    {
+      "path": ".decomp-lab/pair-frontend-first/diagnostic.json",
+      "sha256": "6f4c62b58d9d8c71ffef8d7361cd188169506947707c9707105336e28faa269f"
+    },
+    {
+      "path": ".decomp-lab/pair-frontend-second/diagnostic.json",
+      "sha256": "bc67c064208a0d3a8163cf9e0dd67858f61f02355f6c05a88a0bfdc6d7a0ae68"
+    },
+    {
+      "path": ".decomp-lab/grid-height-words-first/diagnostic.json",
+      "sha256": "3f40a05f35a35ce90cf0c1cc66ae5d068b88cdb2f029c64c3d4ef2a85028cff0"
+    },
+    {
+      "path": ".decomp-lab/grid-extent-words-first/diagnostic.json",
+      "sha256": "21d5a169cc76156f9a9fd54a99889cb79be240c3309914cff3e1abf3947eea42"
+    }
+  ],
+  "source_functions_promoted": 0,
+  "source_explanations_resolved": 0,
+  "original_game_behavior_modified": false,
+  "new_original_game_cases": 0,
+  "whole_feature_groups_accepted": 0,
+  "model_api_calls": 0,
+  "game_images_raw_compiler_memory_and_generated_assembly_published": false,
+  "trace_publication_scope": "Hashes, qualification and symbolic destination counts only; complete decoded traces and compiler memory addresses stay private."
+}

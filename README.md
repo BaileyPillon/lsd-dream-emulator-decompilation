@@ -17,7 +17,7 @@ distributed here.
 
 ## Current status
 
-The current verified source snapshot is dated October 12, 2026. These are
+The current verified source snapshot is dated October 13, 2026. These are
 separate measures, not a whole-game completion percentage. The initial
 publication and subsequent evidence are retained separately.
 
@@ -125,6 +125,10 @@ The [grid phase comparison](docs/GRID_PHASES.md) locates the height-copy order
 change in the first scheduling pass, rechecks two complete builds and rules out
 133 further source forms. Its reusable phase reader retains the exact source
 gate and adds no whole-feature acceptance.
+The [compiler memory-store investigation](docs/COMPILER_MEMORY_STORES.md)
+observes why a consumed math work pair retains two extra stores, checks 50
+further source forms and compares three isolated frontend controls. Its
+reusable tracer preserves complete assembly; exact source recovery remains open.
 The [menu layout checks](docs/MENU_LAYOUT.md) compare 864 constructed histories
 per original and three candidate images through 39 original methods, including
 glyphs, graphics effects, parent lists and the allocator. Two callback declaration

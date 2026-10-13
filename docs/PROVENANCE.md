@@ -544,3 +544,18 @@ diagnostics, separate from the successful active-object range proof. Public
 code and metadata contain no original game images, generated assembly, raw
 buffers, BIOS, assets or faulted native code. Earlier feature records reconstruct
 after removing only the new supplement; no source or whole feature is promoted.
+
+## Actual compiler memory-store supplement
+
+[compiler-memory-stores-checks.json](compiler-memory-stores-checks.json) pins two
+observations made with the public exact-compiler tracer, independently rechecks
+eight memory-store decisions and eight equality calls, and preserves complete
+assembly equality. Raw traced compiler memory, original code and generated
+assembly stay private. The mirrored GNU 2.6.3 source is a separately pinned
+reference; actual binary observations support the recorded decisions.
+
+Fifty C source forms retain zero exact selected functions. Three C++ controls
+compare isolated bodies with the same integer typedefs; they are not complete
+translation-unit checks or C promotions. Initial preprocessing/declaration
+failures remain excluded diagnostics. All 377 local tooling tests pass; earlier
+feature records reconstruct exactly after removing only the new supplement.

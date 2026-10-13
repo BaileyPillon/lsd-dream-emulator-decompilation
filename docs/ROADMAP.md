@@ -8,6 +8,11 @@ boundary of the published snapshot.
 
 ## Matching C recovery
 
+- Use the [memory-store tracer](COMPILER_MEMORY_STORES.md) to distinguish real
+  consumed storage from retained unused regions. The two local stores in the
+  math candidate remain an exact-source failure; incoming records and frontend
+  controls do not resolve the current grid or inherited-storage gates.
+
 Nine game functions remain in assembly after the
 [source-layout correction](SOURCE_LAYOUT_EXPANDED.md):
 

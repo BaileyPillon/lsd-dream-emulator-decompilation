@@ -1,5 +1,16 @@
 # Changelog
 
+## Actual compiler memory-store decisions - 2026-10-13
+
+- Observe eight memory-store decisions and eight actual address-equality calls
+  across original and consumed-pair sources; traced complete assembly is unchanged.
+- Add a reusable exact-compiler tracer, an absent-function rejection control and
+  six evidence guards. All 377 tooling tests pass locally on Windows and WSL.
+- Qualify 18 argument-record and 32 grid extent-word forms without an exact match.
+  Three isolated C++ controls reproduce their corresponding C output bytes.
+- Preserve parser/preprocessor diagnostics separately. No game source is promoted;
+  C, NPC, feature, capability, mod and source-quality counts remain unchanged.
+
 ## Original menu layout and acceptance - 2026-10-12
 
 - Compare 864 constructed histories per original and three complete candidate

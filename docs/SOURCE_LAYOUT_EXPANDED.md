@@ -81,6 +81,12 @@ callers remain in assembly and unused storage is not reintroduced.
 
 ## Build and continuation gates
 
+The [compiler memory-store investigation](COMPILER_MEMORY_STORES.md) checks the
+inherited bit-field helper's eight-byte region with consumed state objects.
+The closest pair preserves all original instruction words but adds two stores;
+actual compiler decisions retain them. Eighteen argument-record hypotheses and
+32 grid extent-word forms remain nonmatching. No storage explanation is resolved.
+
 The corrected 305-object standard build and a separate fresh clean build both
 produce the canonical 505,856-byte executable, SHA-1
 `76322eeade5ebb22dca57fdeac7d68c30f06308d`. Original inputs, generated assembly,
