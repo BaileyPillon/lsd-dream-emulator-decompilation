@@ -598,3 +598,20 @@ missing optional ELF-library attempt is retained separately; the successful
 audit uses the standard library. All game/source inputs are preserved, raw
 code stays private and removing only this supplement restores earlier feature
 bytes. No new original gameplay cases, tools, mods or whole features are added.
+
+## Menu storage, ABI and function-comparison supplement
+
+[menu-abi-source-checks.json](menu-abi-source-checks.json) pins 27 independently
+linked menu C forms, eleven complete linked spans from twelve compiler ABI
+diagnostics, and two retained candidate demonstrations with the public comparator.
+The original span authority remains a separate reviewed inventory requirement;
+the comparator validates complete candidate ELF extents. It never promotes source
+or treats reordered bytes as a complete-image match.
+
+The initial menu source guard stops before compilation. One ABI link failure and
+five packed syntax/layout probes remain excluded from complete candidate counts.
+All 391 canonical build inputs and 363 retained clean inputs are unchanged;
+the standard and retained clean executables preserve the canonical hashes.
+All 396 local tooling tests pass on Windows and WSL. Raw words, linked ELFs,
+compiler output and images stay private. Earlier feature bytes reconstruct after
+removing only this supplement; no C function or whole feature is promoted.

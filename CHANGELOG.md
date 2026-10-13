@@ -1,5 +1,16 @@
 # Changelog
 
+## Menu storage, ABI diagnostics and function comparison - 2026-10-13
+
+- Independently qualify 27 menu C forms and eleven complete linked spans from
+  twelve isolated ABI diagnostics. None matches; canonical settings, C coverage
+  and original-feature counts remain unchanged.
+- Add a reusable complete-function comparator and thirteen synthetic guards.
+  Reproduce the retained grid and sprite differences and pass all 396 local
+  tooling tests on Windows and WSL.
+- Retain the initial source-guard failure, one failed ABI link and five packed
+  declaration/layout diagnostics separately from qualified C source results.
+
 ## Bounds return and coordinate source forms - 2026-10-13
 
 - Independently qualify 66 additional C forms and six isolated C++ diagnostics

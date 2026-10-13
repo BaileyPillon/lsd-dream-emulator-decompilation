@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-13T16:24:42.953721+00:00",
+  "repository_before": "36ff2d6f48399d2055e41cac436802651542e566",
+  "scope": "Menu/compiler research and reusable comparison tooling. No original gameplay case, C promotion or whole-feature acceptance.",
+  "features_before_sha256": "4de3ac0ce09e31b3f616ca7d4148a89e836f9b6383de04aae47cc73dee8f10b7",
+  "public_files": [
+    {
+      "path": "docs/MENU_ABI_SOURCE.md",
+      "sha256": "2914918be609a3d35618ac8d3af861ac48a94e274f6673e62931515914f0edb3"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "sha256": "775fc1456752becdcee61bdea4de5789e3cc0a8e5bf09f6985ae4a2480e6daef"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "29e75a31d7406bb68dcfed9bc4ab1664465f17b5ae9ba58318932ae9038b8e4e"
+    },
+    {
+      "path": "research/compiler/compare_function.py",
+      "sha256": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff"
+    },
+    {
+      "path": "research/compiler/README.md",
+      "sha256": "ab3c4896f5ae5a8df0ee6bcec65f21265f682e4f7b791a3a268e4b5957b9cf5f"
+    },
+    {
+      "path": "tests/test_compiler_function_compare.py",
+      "sha256": "219d45800435f96694a14f8541a15aac8da6863acb092d8f9dda28a773c76cbb"
+    }
+  ],
+  "qualified_research": {
+    "path": ".decomp-lab/menu-abi-qualification-first/report.json",
+    "sha256": "4941fb777aa7b33991e9ccaa83fe3595aff106d1b821487b208f32c33d88b378"
+  },
+  "qualification_producer": {
+    "path": ".decomp-lab/qualify_menu_abi_first.py",
+    "sha256": "9bac73f7396c53d7bcded966753734a7c03411d803be8f7eadfb9f5b6f8e8dea"
+  },
+  "qualified_menu_c_forms": 27,
+  "menu_exact_functions": 0,
+  "menu_payload_bytes": 8,
+  "unused_storage_added": 0,
+  "menu_best_differences": {
+    "func_8003D73C": 20,
+    "func_8003DAD4": 16
+  },
+  "original_menu_frame_bytes": {
+    "func_8003D73C": 88,
+    "func_8003DAD4": 64
+  },
+  "best_c_menu_frame_bytes": {
+    "func_8003D73C": 72,
+    "func_8003DAD4": 56
+  },
+  "menu_experiment_report": {
+    "path": ".decomp-lab/menu-aggregate-alignment-second/report.json",
+    "sha256": "cc3db543531eebc8bc6a06dcba7dc9322306a559a0e98072565bcc030ed864cf"
+  },
+  "menu_experiment_producer": {
+    "path": ".decomp-lab/probe_menu_aggregate_alignment_second.py",
+    "sha256": "1dd2e22a507a1db0025c78862b050cba77a40bcfc4da0aec41aa79f61bf8cfbf"
+  },
+  "initial_menu_preflight": {
+    "path": ".decomp-lab/menu-aggregate-alignment-first/preflight-diagnostic.json",
+    "sha256": "1420be8b7e25a660b6043ab25fa84d5ca146c588c436668d92d8aaa0b4012060"
+  },
+  "initial_menu_preflight_compiler_executed": false,
+  "abi_compiler_diagnostics": 12,
+  "qualified_linked_abi_spans": 11,
+  "abi_experiment_report": {
+    "path": ".decomp-lab/abi-stack-first/report.json",
+    "sha256": "af6e2dfd606f18697067b082a87a4d9c1531f58a7196e3c65793e45c03516ba2"
+  },
+  "abi_experiment_producer": {
+    "path": ".decomp-lab/probe_abi_stack_first.py",
+    "sha256": "3c8ad8e49e22944f38698504974b144eb5d2c03764cfa7952314054564f2de92"
+  },
+  "canonical_and_default_abi_outputs_equal": true,
+  "abi_exact_functions": 0,
+  "excluded_abi_link_attempts": [
+    {
+      "name": "func_8001EE98_explicit_abicalls",
+      "object": {
+        "path": ".decomp-lab/abi-stack-first/func_8001EE98_explicit_abicalls.o",
+        "sha256": "3e550de3ee8bb13a481d6e8c52105e7bca459c4db42959a9bc7cd9559b06e39c"
+      },
+      "link_diagnostic": {
+        "path": ".decomp-lab/abi-stack-first/func_8001EE98_explicit_abicalls.link.stderr",
+        "sha256": "224b5a7f64320c1c200e96d2d0dbedba17016f4d87623d37214879e1d61d20ef"
+      },
+      "complete_span_qualified": false
+    }
+  ],
+  "packed_syntax_report": {
+    "path": ".decomp-lab/bounds-packed-fields-first/report.json",
+    "sha256": "b13a5b7d2efc1d4302a6225965d604aa1a3f52c0325aeb54daa8511950b7cd04"
+  },
+  "packed_declaration_probes_excluded": 5,
+  "packed_parser_rejections": 2,
+  "packed_two_byte_layout_guard_rejections": 3,
+  "packed_two_byte_records_qualified": 0,
+  "function_comparator_demonstrations": [
+    {
+      "function": "func_8004C6A8",
+      "elf": {
+        "path": ".decomp-lab/menu-abi-qualification-first/grid_closest.elf",
+        "sha256": "8fbd209d9301e5d64332ab71a15e944badeea7044df741bdf5c176a92a09b384"
+      },
+      "report": {
+        "path": ".decomp-lab/menu-abi-qualification-first/grid_closest.json",
+        "sha256": "162916d94c6d0d588a89c73e1a30152b1089647aa1ca08633f9b6306f2beb86a"
+      },
+      "differing_bytes": 11,
+      "complete_selected_function_qualified": true
+    },
+    {
+      "function": "func_8004441C",
+      "elf": {
+        "path": ".decomp-lab/menu-abi-qualification-first/scale_baseline.elf",
+        "sha256": "0da28a56fcfc899d30d1e5b95b7ba33be791a0e96cacbbaef850e3f5d62dcebb"
+      },
+      "report": {
+        "path": ".decomp-lab/menu-abi-qualification-first/scale_baseline.json",
+        "sha256": "c760053e407dc912293d3f588177b9178cd90543eec9bc4cb8ae8793a620bf22"
+      },
+      "differing_bytes": 12,
+      "complete_selected_function_qualified": true
+    }
+  ],
+  "function_comparator_guards": 13,
+  "tooling_tests_each_platform": 396,
+  "local_checks": {
+    "path": ".decomp-lab/menu-abi-local-checks-first.json",
+    "sha256": "cd83e1ac4d1c72777902a475b87997d56fe8a456aaa2b829ee272fd9aa41fe64"
+  },
+  "canonical_build": {
+    "current_progress": {
+      "path": ".decomp-lab/menu-abi-current-progress-first.json",
+      "sha256": "3ce9778c09f4d0f027f8be19c80129e6572270243a083a8badb1af96f3600fc8"
+    },
+    "objects_found": 305,
+    "objects_expected": 305,
+    "build_current": true,
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 97.14874544799711,
+    "sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "current_inputs_unchanged": 391,
+    "retained_clean_inputs_unchanged": 363,
+    "retained_clean_report": {
+      "path": ".decomp-lab/menu-signature-clean-build-first.json",
+      "sha256": "0ba6daf88ad4b233ed4085d857bae06a52f89bc2569f47518318d1c497a893f0"
+    },
+    "standard_and_retained_clean_original_equal": true
+  },
+  "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+  "canonical_compiler_flags_changed": false,
+  "physical_register_bindings": false,
+  "synthetic_register_interference": false,
+  "before_after": {
+    "before": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 20,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "after": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 20,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "source_functions_promoted": 0,
+    "source_explanations_resolved": 0,
+    "original_game_feature_groups_accepted": 0,
+    "new_original_game_cases": 0,
+    "bounded_npc_callbacks_unchanged": 20,
+    "developer_capabilities_unchanged": 10,
+    "optional_mods_unchanged": 3
+  },
+  "source_functions_promoted": 0,
+  "source_explanations_resolved": 0,
+  "original_game_behavior_modified": false,
+  "new_original_game_cases": 0,
+  "whole_feature_groups_accepted": 0,
+  "model_api_calls": 0,
+  "game_images_raw_words_or_compiler_output_published": false
+}
