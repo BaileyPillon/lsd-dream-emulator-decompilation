@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-13T15:17:27.189177+00:00",
+  "repository_before": "1819f852edb4cdcf4f0c5f00383e1115ae256c88",
+  "scope": "Compiler/source research only. No C function, original gameplay case or whole-feature acceptance is promoted.",
+  "features_before_sha256": "d421bb4978b7293b90b1806e65326914fddec981452eb9cde7f457f9f5538996",
+  "public_files": [
+    {
+      "path": "docs/BOUNDS_SOURCE_TYPES.md",
+      "sha256": "b23da94fce711784f7df02885eb1b3f7a38949eb8543a29df855728d763b8bb8"
+    },
+    {
+      "path": "docs/RENDER_BOUNDS.md",
+      "sha256": "7502736263b1d6abd538078371711a6819db3443c93e93718c1633fc54cdc177"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "sha256": "6e244018fac6205f158484d4733ddd5dacd4437d1e1372780f5cafef84b2971b"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "46f0951bee668ba7abe6185b6bb14924da61eedc8d0ca1525523d96752837eef"
+    }
+  ],
+  "original_function": {
+    "function": "func_8004CD38",
+    "address": "0x8004cd38",
+    "bytes": 108,
+    "sha256": "73713a1bd9a992c92c7a7fb6c5c88684a9224107fbc2b0d4d2f83b606e71d03a",
+    "original_and_closest_candidate_frame_bytes": 0
+  },
+  "qualified_research": {
+    "path": ".decomp-lab/bounds-source-qualification-first.json",
+    "sha256": "7d42cc35369f28493a85f1bcb0694caee6883b4f9dc9f894ba061f17a8434ff0"
+  },
+  "independent_qualification_producer": {
+    "path": ".decomp-lab/qualify_bounds_sources_first.py",
+    "sha256": "9285a620d6cfeedf1c40b24f1575dd8f5b983bcc1824d158be42a2c87253c9d8"
+  },
+  "experiment_reports": [
+    {
+      "path": ".decomp-lab/bounds-typed-lifetimes-first/results.json",
+      "sha256": "17ad9670a9b13c4701790b76099f845270ef176390223396378fd1bb74264c99"
+    },
+    {
+      "path": ".decomp-lab/bounds-return-context-first/results.json",
+      "sha256": "9e0943c1bffec10b9ec74c56690cbdb555aca5951f41ab1fc598af25f638d785"
+    },
+    {
+      "path": ".decomp-lab/bounds-conditional-result-first/results.json",
+      "sha256": "cf107a5e658c72c83e756e16c9d4b674f09d101f650848fe16d6c69237f2094a"
+    }
+  ],
+  "qualified_c_source_forms": 66,
+  "c_source_families": [
+    {
+      "forms": 46,
+      "scope": "Byte records/byte bitfields, enum result values and ordinary C register declarations"
+    },
+    {
+      "forms": 4,
+      "scope": "Returned GNU C statement expressions, optional result casts"
+    },
+    {
+      "forms": 16,
+      "scope": "Direct conditional result with meaningful minimum/coordinate argument reuse"
+    }
+  ],
+  "qualified_c_outputs": 8,
+  "c_forms_equal_previous_best_text": 25,
+  "previous_best_candidate_text": {
+    "path": ".decomp-lab/cd38-narrow-parameter-first/narrow_0.bin",
+    "sha256": "a36fc75621ceafb128f14d9bbf2d5ae1bc71b72880c0c6c94e9870620456d4d8"
+  },
+  "best_c_byte_differences": 38,
+  "exact_c_functions": 0,
+  "isolated_cpp_diagnostic_forms": 6,
+  "cpp_function_bytes": 120,
+  "cpp_byte_differences": 93,
+  "cpp_named_returns_equal_corresponding_ordinary_outputs": true,
+  "cpp_translation_unit_or_c_recovery_claimed": false,
+  "historical_cpp_reference": {
+    "url": "https://gcc.gnu.org/onlinedocs/gcc-2.95.3/gcc_5.html",
+    "scope": "Later GNU named-return syntax reference; actual retained frontend supplies syntax acceptance/output evidence."
+  },
+  "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+  "isolated_cpp_frontend_sha256": "63193309a5fbbea0b0028b93a28a8aaec7d518a5ffa720548eb8f9ecca9713ab",
+  "parser_attempts_excluded": 32,
+  "unqualified_packed_word_source_ideas": 16,
+  "excluded_optional_elf_import_diagnostic": {
+    "path": ".decomp-lab/qualify_bounds_sources_before_optional_elf_import_first.py",
+    "sha256": "220c926096e4cdfddc969dc9513d7f3c63923ff7036fdcb1d56936d1a3e99658"
+  },
+  "complete_selected_elf_spans_and_text_rechecked": 72,
+  "canonical_compiler_flags_changed": false,
+  "physical_register_bindings": false,
+  "unused_padding_added": false,
+  "synthetic_register_interference": false,
+  "canonical_build": {
+    "current_matching_build_progress": {
+      "path": ".decomp-lab/menu-current-progress-first.json",
+      "sha256": "3ce9778c09f4d0f027f8be19c80129e6572270243a083a8badb1af96f3600fc8"
+    },
+    "build_inputs_verified_current": 391,
+    "executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "executable_bytes": 505856,
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "objects_expected": 305,
+    "objects_found": 305,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "latest_clean_build": {
+      "path": ".decomp-lab/menu-signature-clean-build-first.json",
+      "sha256": "0ba6daf88ad4b233ed4085d857bae06a52f89bc2569f47518318d1c497a893f0"
+    },
+    "current_clean_build_inputs_verified_equal": 363,
+    "current_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "current_and_retained_clean_executables_equal_original": true
+  },
+  "before_after": {
+    "before": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 20,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "after": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 20,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "source_functions_promoted": 0,
+    "original_game_feature_groups_accepted": 0,
+    "new_original_game_cases": 0,
+    "bounded_npc_callbacks_unchanged": 20,
+    "developer_capabilities_unchanged": 10,
+    "optional_mods_unchanged": 3
+  },
+  "source_functions_promoted": 0,
+  "source_explanations_resolved": 0,
+  "original_game_behavior_modified": false,
+  "new_original_game_cases": 0,
+  "whole_feature_groups_accepted": 0,
+  "model_api_calls": 0,
+  "original_game_images_generated_assembly_or_native_buffers_published": false,
+  "qualification_scope": "Rehashed complete function/ELF text spans, retained inputs and differences. The 16 packed-word ideas remain unqualified after two failed syntax placements. No game source or whole-feature acceptance is promoted."
+}

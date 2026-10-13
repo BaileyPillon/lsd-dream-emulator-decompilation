@@ -582,3 +582,19 @@ generated assembly, full memory buffers, GTE logs and private faulted code stay
 outside Git. All 383 local tooling tests pass. Earlier feature bytes reconstruct
 after removing only this supplement; four new bounded callbacks do not promote
 source functions or accept whole features.
+
+## Bounds return/type source supplement
+
+[bounds-source-types-checks.json](bounds-source-types-checks.json) pins three
+retained experiment reports and an independent ELF qualification. It checks
+66 C forms and six isolated C++ bodies against complete original/function spans;
+no exact match or source promotion is claimed. The C++ named-return reference
+is a later GNU manual; actual syntax acceptance and emitted bytes come from the
+pinned retained frontend.
+
+Thirty-two parser attempts represent sixteen packed-word ideas tried with two
+attribute placements. They remain excluded and unqualified. The initial
+missing optional ELF-library attempt is retained separately; the successful
+audit uses the standard library. All game/source inputs are preserved, raw
+code stays private and removing only this supplement restores earlier feature
+bytes. No new original gameplay cases, tools, mods or whole features are added.

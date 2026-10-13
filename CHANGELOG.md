@@ -1,5 +1,13 @@
 # Changelog
 
+## Bounds return and coordinate source forms - 2026-10-13
+
+- Independently qualify 66 additional C forms and six isolated C++ diagnostics
+  for the 108-byte bounds predicate. No exact match is found; the best C text
+  still differs at 38 bytes. Source and runtime completion counts are unchanged.
+- Separate 32 parser failures from qualified source results. Preserve complete
+  selected ELF spans and canonical standard/clean input hashes.
+
 ## Original NPC proximity and movement - 2026-10-13
 
 - Check 10,408 distinct Bear, Rabbit, Acrobats and Ship fixtures through 25

@@ -108,3 +108,8 @@ remain open. The 107-callback NPC denominator and 6,784 NPC fixtures are
 unchanged. Developer capability count remains ten; this extends existing
 native-analysis and Ghidra workflows. Original gameplay and optional mods
 remain separate, and this verifier makes zero model API calls.
+
+The later [return/type investigation](BOUNDS_SOURCE_TYPES.md) qualifies 66
+additional C forms and six isolated C++ diagnostics without a match. Its
+current source/coverage snapshot supersedes the earlier seven-assembly count
+above; the original bounded behavior profile remains historical evidence.
