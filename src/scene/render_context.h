@@ -5,6 +5,14 @@
 
 #include "base/base.h"
 
+/* Inclusive cell bounds used to exclude the next stream slot. */
+typedef struct render_context_cell_bounds {
+    s16 min_x;
+    s16 min_z;
+    s32 max_x;
+    s32 max_z;
+} render_context_cell_bounds_t;
+
 typedef struct render_context_vtable {
     /* 0x000 800866e8 */ u32 type_id;
     /* 0x004 800866ec */ base_class_t *(*Destroy)(base_class_t *);
@@ -83,7 +91,7 @@ typedef struct render_context_vtable {
     /* 0x128 80086810 */ void (*Unk73)(void *);
     /* 0x12C 80086814 */ void (*Unk74)(void *, void *, s32);
     /* 0x130 80086818 */ void (*Unk75)(void *);
-    /* 0x134 8008681c */ void (*Unk76)(void *);
+    /* 0x134 8008681c */ void (*set_next_slot_exclusion_bounds)(void *, const render_context_cell_bounds_t *);
     /* 0x138 80086820 */ void (*Unk77)(void *);
     /* 0x13C 80086824 */ void (*Unk78)(void *);
     /* 0x140 80086828 */ void (*Unk79)(void *);
@@ -215,7 +223,7 @@ typedef struct render_context {
     /* 0x1D0 */ s32 m_Unk115;
     /* 0x1D4 */ s32 m_Unk116;
     /* 0x1D8 */ s32 m_Unk117;
-    /* 0x1DC */ s32 m_Unk118;
+    /* 0x1DC */ const render_context_cell_bounds_t *m_NextSlotExclusionBounds;
     /* 0x1E0 */ s32 m_Unk119;
     /* 0x1E4 */ s32 m_Unk120;
 } render_context_t;

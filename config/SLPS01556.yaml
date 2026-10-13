@@ -377,6 +377,8 @@ segments:
       - [0x772A0, .data, scene/notify_node]
       - [0x77360, .data, menu/main_menu]
       - [0x775C4, data]
+      - [0x77950, .data, scene/map_scene]
+      - [0x7795C, data]
       - [0x77974, .data, dream/dream_generation]
       - [0x77EFC, data]
       - [0x783dc, data] # DreamSys

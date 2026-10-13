@@ -71,6 +71,11 @@ volume-function names and an external signature workflow with explicit ambiguity
 The [render-context bounds checks](docs/RENDER_BOUNDS.md) recover the smallest
 remaining assembly function's bounded behavior; its C candidate still needs
 an exact code match.
+The [stream exclusion recovery](docs/STREAM_EXCLUSION.md) puts the original
+twelve-byte bounds record in matching C and corrects its typed setter. The
+actual cached-position and row-selection path passes 9,252 constructed fixtures
+through ten original routines without output stubs. C function coverage and
+whole-feature acceptance remain unchanged.
 The [save workflow checks](docs/CARD_SAVE.md) exercise the original writer,
 retry wrapper and native string helpers; physical card I/O and the writer's
 exact C recovery remained open at that checkpoint.

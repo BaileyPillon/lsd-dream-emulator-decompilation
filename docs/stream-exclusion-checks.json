@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-13T17:52:41.980560+00:00",
+  "repository_before": "5b17e8dd52efbdf51f1c91595ec210a5d26d8290",
+  "scope": "Matching original C data/interface recovery and bounded original stream-selection evidence. No C function or whole-feature promotion.",
+  "features_before_sha256": "c22a8c9038f343f10913de4c49cd99c9c123f323f3ed74bdfbf88c0d8e115646",
+  "public_documents": [
+    {
+      "path": "README.md",
+      "sha256": "bbcb7b9d3001cae333fb66d338ba2c650ef65dfa98f383432186738d48df8cfd"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "8c2acada0e4cca0a3fdfa14f12d16a650343a38531745adfd1fa9bbd5a39173b"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "sha256": "a68c70f44b15d9f7effda1744d73d0d48a25b7e80dfd6768f62df7ec524f7c5e"
+    },
+    {
+      "path": "docs/STREAM_EXCLUSION.md",
+      "sha256": "80619872cb664614a2946e2bd0fbcc1b765ea780e602787d351bf558b7c863a9"
+    }
+  ],
+  "game_source_inputs": [
+    {
+      "path": "src/scene/render_context.h",
+      "working_tree_sha256": "9a27d0b606659442100ed424d374077d2d0c65afd88a022e8c50e5319c74b960",
+      "normalized_git_source_sha256": "e576c4955247e1e4d0236960878555b500a3832bf1c13402aeac59fa751e3a7d"
+    },
+    {
+      "path": "src/scene/render_context.c",
+      "working_tree_sha256": "c81203402bd3def3fe3d5660044f64f516b92a39eb95136c3fbfd031c6915171",
+      "normalized_git_source_sha256": "5014501bb1a2709da05a4c20792bf8bbf85ad7dbfa73dd6335af278e82620e62"
+    },
+    {
+      "path": "src/scene/map_scene.c",
+      "working_tree_sha256": "d420d380e2f7758f495202851deffe1bf70f2bf6a556ced0f5d30fa301705ad1",
+      "normalized_git_source_sha256": "37c9e7d8ddd5c7a87b990bb738aed811e3b021d032e66e2583d8a93ef6361341"
+    },
+    {
+      "path": "config/SLPS01556.yaml",
+      "working_tree_sha256": "3de699f2150f73f2cd0654c503751a40489b8cbedeb012b99fb3315ac84e97fa",
+      "normalized_git_source_sha256": "8312f7c2f725b20d2a46b69f2357b1859879ea07b190e3218e4a29b388ce9f92"
+    },
+    {
+      "path": "configure.py",
+      "working_tree_sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+      "normalized_git_source_sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2"
+    }
+  ],
+  "original_data_record": {
+    "symbol": "D_80087150",
+    "address": "0x80087150",
+    "file_offset": 489808,
+    "bytes": 12,
+    "sha256": "d4cc062a8ae8e60507515aeb53bc78ff4e26daaa3157e72c5a25c5b9cc5addd5",
+    "fields": [
+      "s16 min_x",
+      "s16 min_z",
+      "s32 max_x",
+      "s32 max_z"
+    ],
+    "values": [
+      0,
+      0,
+      8,
+      9
+    ],
+    "raw_object_symbol_size": 0,
+    "raw_object_symbol_kind": 0,
+    "complete_data_section_bytes": 12,
+    "sole_named_data_label": true
+  },
+  "source_qualification": {
+    "path": ".decomp-lab/cell-bounds-source-qualification-second.json",
+    "sha256": "8119e7a3a8d072e43be8fa2e7c2f6a19b9ea5f564dc5cce124543604c55e90a3"
+  },
+  "source_promotion": {
+    "path": ".decomp-lab/cell-bounds-source-promotion-first.json",
+    "sha256": "03dbeaebaa77257c897cf976ad9102b54654226bb0a4d2b150fee9b12f4f320a"
+  },
+  "standard_and_fresh_clean_builds": {
+    "path": ".decomp-lab/cell-bounds-build-proof-first.json",
+    "sha256": "7b11aec8ba648b7a41e4f23f70eeb4c8531e3dfbf44d88ad11e12db93039976a"
+  },
+  "current_progress": {
+    "path": ".decomp-lab/cell-bounds-current-progress-first.json",
+    "sha256": "c26c672fe28a0c0b175bf33e6678f507002f23c9b331a59766a5e8cfaa5cb9cf"
+  },
+  "build_objects_before": 305,
+  "build_objects_after": 306,
+  "current_build_inputs": 392,
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "native_report": {
+    "path": ".decomp-lab/stream-selection-native-second.json",
+    "sha256": "0aa768306ed5f3c2b9c4505d36e25c0b71c1492da42fe20386b907bf4344f33a"
+  },
+  "native_producer": {
+    "path": ".decomp-lab/verify_stream_selection_second.py",
+    "sha256": "bb50cbb4993e5d41c7fba30937b22746c8535596e241b4cd7ea1ea00b4d481e9"
+  },
+  "independent_audit": {
+    "path": ".decomp-lab/cell-bounds-independent-audit-first.json",
+    "sha256": "8abc8827c4eecc83989de3523cba906224f478b88cb23dde4ed255b9b83b8f0f"
+  },
+  "independent_audit_producer": {
+    "path": ".decomp-lab/audit_cell_bounds_first.py",
+    "sha256": "f2397feb860f85781a5c37915904787e9e3d5b84ff2e54af0836de4773681b2d"
+  },
+  "native_cases": 9252,
+  "case_groups": {
+    "full_twenty_cell_grid_seven_layers": 5600,
+    "stream_load_masks": 3556,
+    "translated_origins_and_segment_aliases": 96
+  },
+  "actual_original_native_functions": 10,
+  "actual_native_function_bytes": 1524,
+  "executed_native_entries": {
+    "func_8004CFB0": 9252,
+    "func_8004CC74": 9252,
+    "func_8004C158": 9252,
+    "func_8004C1C0": 9252,
+    "func_8004C470": 9252,
+    "func_8004C434": 46260,
+    "func_8004C368": 9252,
+    "func_8004CDA4": 23758,
+    "func_8004C5D0": 23758,
+    "func_8004CD38": 9252
+  },
+  "caller_buffers_each_case": 25,
+  "caller_buffer_bytes_each_case": 4416,
+  "dependency_output_stubs": 0,
+  "native_scope": "Constructed seven-stream graphs through actual setter, cached-position query, cell conversion, predicate and row selection. Full caller/cache/meta buffers and GP/SP/RA/saved registers checked. No dependency output stubs. No natural constructor, rendering/GPU, asynchronous I/O, load-delay, timing or whole-feature acceptance.",
+  "fault_report": {
+    "path": ".decomp-lab/stream-selection-faults-first.json",
+    "sha256": "cf2aac0f4ce6680663eec16f1d2cfb0e0c596ced0236c25c980a2c529942d7c6"
+  },
+  "executed_fault_controls": 3,
+  "changed_instruction_hits_each_fault": 1,
+  "unsized_symbol_diagnostic": {
+    "path": ".decomp-lab/cell-bounds-unsized-data-diagnostic-first.json",
+    "sha256": "60ede8df1e12f933e74cdecd3a2512f67d3f42ae4c3829a3f378b8b79ca15cd7"
+  },
+  "native_tally_diagnostic": {
+    "path": ".decomp-lab/stream-selection-tally-diagnostic-first.json",
+    "sha256": "6bb8bd46efc71e7874a5a9112619367e6df3d0297833c718828ef5300bbfab67"
+  },
+  "local_tooling_tests_each_platform": 396,
+  "windows_test_log": {
+    "path": ".decomp-lab/cell-bounds-windows-tests-first.log",
+    "sha256": "60f04b2aefec72166dd864cd345b8fc1efc038b76914a7a61918b192e011d5e2"
+  },
+  "wsl_test_log": {
+    "path": ".decomp-lab/cell-bounds-wsl-tests-first.log",
+    "sha256": "164c27de3297535ce20888f4915a4a6625f70f97417ed20b3babcac7c74d4e81"
+  },
+  "source_functions_promoted": 0,
+  "original_data_records_recovered_in_c": 1,
+  "original_data_bytes_recovered_in_c": 12,
+  "source_explanations_resolved": 0,
+  "original_game_behavior_modified": false,
+  "whole_feature_groups_accepted": 0,
+  "modern_ai_model_calls": 0,
+  "new_original_gameplay_features": 0,
+  "original_game_images_code_or_native_buffers_published": false,
+  "before_after": {
+    "before": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 20,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "after": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 20,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "source_functions_promoted": 0,
+    "source_explanations_resolved": 0,
+    "original_game_feature_groups_accepted": 0,
+    "new_original_game_cases": 9252,
+    "original_data_records_recovered_in_c": 1,
+    "original_data_bytes_recovered_in_c": 12,
+    "bounded_npc_callbacks_unchanged": 20,
+    "developer_capabilities_unchanged": 10,
+    "optional_mods_unchanged": 3
+  }
+}

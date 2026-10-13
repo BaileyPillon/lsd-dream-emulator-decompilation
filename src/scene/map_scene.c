@@ -2,6 +2,7 @@
 #include "dream/dream_sys.h"
 #include "menu/text_line.h"
 #include "scene/scene.h"
+#include "scene/render_context.h"
 
 extern map_scene_vtable_t **D_80087034;
 
@@ -9,7 +10,8 @@ extern s32 D_8008AB38;
 extern s32 D_8008AB40;
 extern char D_8008AB44[];
 extern s32 D_80087118[];
-extern s32 D_80087150[];
+/* Stage zero suppresses the next stream slot inside these cell bounds. */
+render_context_cell_bounds_t D_80087150 = {0, 0, 8, 9};
 extern s32 D_8008715C[];
 extern s32 D_80087168[];
 
@@ -129,12 +131,12 @@ void func_80052F10(map_scene_t *This, s32 arg1, s32 arg2, s32 arg3) {
         if (stage == 3) {
             flag = 1;
         }
-        (*(void (**)(void *, s32 *))(*(s32 *) This->m_SceneObject + 0x134))(This->m_SceneObject, NULL);
+        ((render_context_t *) This->m_SceneObject)->vtable->set_next_slot_exclusion_bounds(This->m_SceneObject, NULL);
     } else {
         This->m_Unk15 = 0x10;
         This->m_Unk16 = 2;
         flag = 1;
-        (*(void (**)(void *, s32 *))(*(s32 *) This->m_SceneObject + 0x134))(This->m_SceneObject, D_80087150);
+        ((render_context_t *) This->m_SceneObject)->vtable->set_next_slot_exclusion_bounds(This->m_SceneObject, &D_80087150);
     }
     This->m_Unk17 = arg1;
     if (arg1 == 0) {

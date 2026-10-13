@@ -128,6 +128,7 @@ asm_data_targets = [
     "asm/data/5FE14.data.s",
     "asm/data/76EE8.data.s",
     "asm/data/775C4.data.s",
+    "asm/data/7795C.data.s",
     "asm/data/77EFC.data.s",
     "asm/data/783DC.data.s",
     "asm/data/79528.data.s",

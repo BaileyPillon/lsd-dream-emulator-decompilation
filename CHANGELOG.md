@@ -1,5 +1,16 @@
 # Changelog
 
+## Matching cell-bounds data and original stream selection - 2026-10-13
+
+- Recover the original twelve-byte cell-bounds record in C, correct the renderer
+  setter's two-argument signature and use a typed map-scene call. Standard and
+  fresh 306-object builds retain the canonical executable byte for byte.
+- Compare 9,252 constructed stream-selection fixtures through ten original
+  routines with no dependency output stubs. Independently verify slot/row counts
+  and three faults with measured changed-instruction execution.
+- Keep C function coverage, NPC counts and whole-feature acceptance unchanged.
+  Retain the unsized-data-symbol and final-tally diagnostics separately.
+
 ## Menu storage, ABI diagnostics and function comparison - 2026-10-13
 
 - Independently qualify 27 menu C forms and eleven complete linked spans from

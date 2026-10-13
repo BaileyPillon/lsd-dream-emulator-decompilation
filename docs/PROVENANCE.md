@@ -615,3 +615,20 @@ the standard and retained clean executables preserve the canonical hashes.
 All 396 local tooling tests pass on Windows and WSL. Raw words, linked ELFs,
 compiler output and images stay private. Earlier feature bytes reconstruct after
 removing only this supplement; no C function or whole feature is promoted.
+
+## Matching cell-bounds data and native selection supplement
+
+[stream-exclusion-checks.json](stream-exclusion-checks.json) pins a twelve-byte
+record recovered from the original data section into C, the corrected setter
+interface, standard/fresh 306-object builds and native selection evidence. The
+complete C data section and its sole named label establish ownership despite the
+legacy label's zero symbol size/type; a full executable comparison preserves all
+original bytes. The failed stronger symbol assumption stays separate.
+
+The corrected native proof checks 9,252 distinct constructed graphs through ten
+actual routines with no dependency output stubs. An independent audit reconstructs
+the domain, verifies native slot/row entry counts and rechecks three executed
+fault controls. The failed final-tally assertion remains a retained diagnostic.
+Older source/build/feature snapshots remain frozen; removing only this supplement
+restores earlier feature bytes. Raw images, original code and native buffers stay
+private. One C data record does not raise C function or whole-feature counts.

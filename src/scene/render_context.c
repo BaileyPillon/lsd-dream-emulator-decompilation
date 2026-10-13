@@ -1418,7 +1418,7 @@ typedef struct {
     /* 0x2C */ s32 pad2;
 } cc74_buf_t;
 
-s32 func_8004CD38(s32 arg0, void *arg1);
+s32 func_8004CD38(const render_context_cell_bounds_t *bounds, const u8 *point);
 s32 func_8004CDA4(render_context_t *This, s32 unused, s32 index, s32 arg3);
 
 void func_8004CC74(render_context_t *This) {
@@ -1430,7 +1430,7 @@ void func_8004CC74(render_context_t *This) {
     This->m_Unk33 = 0;
     next = func_8004CDA4(This, unused, 0, buf.value);
     This->m_Unk33 = next;
-    if (func_8004CD38(This->m_Unk118, &buf.pad[2]) != 0) {
+    if (func_8004CD38(This->m_NextSlotExclusionBounds, &buf.pad[2]) != 0) {
         next = buf.value + 1;
         if (next < ((s16 *) This->m_Unk25)[1]) {
             This->m_Unk33 = func_8004CDA4(This, unused, This->m_Unk33, next);
@@ -1444,33 +1444,10 @@ void func_8004CC74(render_context_t *This) {
 
 INCLUDE_ASM("asm/nonmatchings/scene/render_context", func_8004CD38);
 
-/*
- * Near match (26/27 insns): holding the two bytes in u8 temporaries and casting
- * `(s8)` at each use reproduces the target's `lbu/sll/sra` sign-extend idiom
- * exactly. The only residual is GCC 2.6.3 register allocation: the target begins
- * with `addu a2,a0,zero`, keeps the box in $a2 and uses $a0 as the `lh` scratch;
- * the bundled cc1 (and 2.5.7/2.6.0/2.7.2) coalesces the pointer into $a0 and
- * uses $v0/$v1 instead. Swept: s32/void/struct-pointer forms, arg1 as char or
- * u8 pointer, flat vs nested vs early-return, extra argument, comparison
- * polarity, and all bundled cc1 versions/flags; the $a2 copy never appears.
- *
- * s32 func_8004CD38(void *arg0, u8 *arg1) {
- *     u8 temp_v1;
- *     u8 temp_v1_2;
- *     s32 inside = 1;
- *     if (arg0 != NULL) {
- *         temp_v1 = *(u8 *)arg1;
- *         if ((s8)temp_v1 >= *(s16 *)arg0 &&
- *             *(s32 *)((u8 *)arg0 + 4) >= (s8)temp_v1) {
- *             temp_v1_2 = *((u8 *)arg1 + 1);
- *             if ((s8)temp_v1_2 >= *(s16 *)((u8 *)arg0 + 2)) {
- *                 inside = *(s32 *)((u8 *)arg0 + 8) < (s8)temp_v1_2;
- *             }
- *         }
- *     }
- *     return inside;
- * }
- */
+/* The original reads signed X/Z cells against mixed-width inclusive bounds.
+ * Null bounds returns outside, enabling consideration of the next stream
+ * slot. Current C candidates reproduce bounded behavior but still differ
+ * in register allocation; the original assembly remains authoritative. */
 
 s32 func_8004CDA4(render_context_t *This, s32 unused, s32 index, s32 arg3) {
     s32 *dest;
@@ -1526,8 +1503,8 @@ void *func_8004CFA8(render_context_t *This) {
     return &This->m_Unk114;
 }
 
-void func_8004CFB0(render_context_t *This, s32 Unk) {
-    This->m_Unk118 = Unk;
+void func_8004CFB0(render_context_t *This, const render_context_cell_bounds_t *bounds) {
+    This->m_NextSlotExclusionBounds = bounds;
 }
 
 typedef struct scale_row {
