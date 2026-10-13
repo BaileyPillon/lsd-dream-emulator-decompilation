@@ -559,3 +559,26 @@ compare isolated bodies with the same integer typedefs; they are not complete
 translation-unit checks or C promotions. Initial preprocessing/declaration
 failures remain excluded diagnostics. All 377 local tooling tests pass; earlier
 feature records reconstruct exactly after removing only the new supplement.
+
+## Original NPC proximity supplement
+
+[npc-proximity-checks.json](npc-proximity-checks.json) pins the public checker,
+six semantic/domain guards, 26 original function ranges, original entity-table
+bindings and the report from 10,408 distinct fixtures through 25 actual routines.
+The loaded Unicorn 2.1.4 library and Python binding, bridge executable and four
+native runtime components are retained by hash. The exact Windows runtime path
+is documented in [NPC_PROXIMITY.md](NPC_PROXIMITY.md); it differs from older
+illustrative runtime paths.
+
+An independent audit reconstructs the distinct generated inputs, verifies
+original words and seven executed faults, and checks all 7,266 ordered GTE
+exchanges. There are no dependency output stubs. Original code executes through
+the event path with inactive geometry in deliberately meshless, childless
+graphs; this is not natural encounter or full timing acceptance.
+
+Initial wrong-runtime, command-observation-shape and event-number diagnostics
+remain separate from the passing preflight and full proof. Raw game images,
+generated assembly, full memory buffers, GTE logs and private faulted code stay
+outside Git. All 383 local tooling tests pass. Earlier feature bytes reconstruct
+after removing only this supplement; four new bounded callbacks do not promote
+source functions or accept whole features.

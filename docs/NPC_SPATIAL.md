@@ -81,3 +81,7 @@ PS1 timing still need reviewed comparisons. Whole-callback and whole-feature
 acceptance remain zero. The [source-layout correction](SOURCE_LAYOUT_EXPANDED.md)
 also withdraws four padded C promotions: current source recovery is 97.15%,
 with nine assembly functions and 24 inherited unused-storage explanations.
+
+The later [proximity profile](NPC_PROXIMITY.md) adds four different callbacks and
+raises current bounded coverage to 20 / 107. This spatial profile and its earlier
+16-callback checkpoint remain unchanged historical evidence.

@@ -179,3 +179,18 @@ These are separately counted developer capabilities. They do not add an
 in-game generative AI character, replace original NPC rules or count toward
 original game-feature parity. Optional gameplay mods write separate
 executables/discs and require their own runtime checks.
+
+## Original proximity and movement extension
+
+The [proximity profile](NPC_PROXIMITY.md) adds Bear, Rabbit, Acrobats and Ship
+through their actual distance, trigger-ratio, RNG, movement, event and GTE
+dependencies. It checks 10,408 distinct inputs through 25 original routines,
+with no dependency output stubs, and detects seven executed instruction faults.
+The retained audit verifies all 7,266 ordered GTE exchanges. Bounded original
+callback coverage increases from 16 to 20 of 107; prior counts remain historical.
+
+These constructed graphs have no collider or actor children. Natural encounters,
+active geometry, lifetime, animation/render/audio and hardware timing remain
+unverified. Whole-callback acceptance stays zero. These are checks of original
+NPC rules; the separately counted AI-assisted developer tools and optional mods
+are unchanged, with zero model API calls in this profile.

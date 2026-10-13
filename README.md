@@ -27,7 +27,7 @@ publication and subsequent evidence are retained separately.
 | Known remaining game assembly functions | 9 |
 | Known C functions with unresolved unused local storage | 24 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
-| Original callbacks with bounded native comparisons | 16 / 107 |
+| Original callbacks with bounded native comparisons | 20 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 35 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
 
@@ -37,6 +37,10 @@ denominator. Bounded native and emulator comparisons have passed, including
 a 6,000-frame sequence with matching frame, GPU, state and PCM audio output.
 Their scope and remaining gaps are documented in the
 [feature inventory](docs/FEATURE_INVENTORY.md) and [roadmap](docs/ROADMAP.md).
+The [NPC proximity checks](docs/NPC_PROXIMITY.md) add Bear, Rabbit, Acrobats and
+Ship in 10,408 distinct fixtures through 25 original routines. Real distance,
+trigger-ratio, RNG, movement, event and GTE dependencies execute with no output
+stubs. Natural encounters and whole-callback acceptance remain open.
 The [expanded source-layout audit](docs/SOURCE_LAYOUT_EXPANDED.md) corrects the
 earlier selected five-function scan. It identifies 28 unused-storage functions
 and withdraws four promotions that added padding. Their readable padding-free

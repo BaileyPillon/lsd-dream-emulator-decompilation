@@ -1,5 +1,18 @@
 # Changelog
 
+## Original NPC proximity and movement - 2026-10-13
+
+- Check 10,408 distinct Bear, Rabbit, Acrobats and Ship fixtures through 25
+  original routines, with no dependency output stubs. Bounded callback coverage
+  increases from 16 to 20 of 107; whole-callback and whole-feature acceptance
+  remain zero.
+- Recover actual property bindings, X/Z distance, two-stage ratio rounding,
+  post-translation proximity, complete timer phases and flagged movement event 7.
+  Independently audit all 7,266 GTE exchanges and seven executed fault controls.
+- Add a reusable native checker and six semantic/domain guards. All 383 tooling
+  tests pass locally on Windows and WSL. Game source, matching C coverage,
+  developer-capability and optional-mod counts remain unchanged.
+
 ## Actual compiler memory-store decisions - 2026-10-13
 
 - Observe eight memory-store decisions and eight actual address-equality calls

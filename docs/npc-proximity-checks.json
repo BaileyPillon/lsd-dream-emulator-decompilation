@@ -1,0 +1,530 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-13T06:01:14.243388+00:00",
+  "repository_before": "580cfff553e6be51c3de463bd3e80f84a41d0298",
+  "scope": "Four original callbacks, real RNG/distance/ratio, spatial/pose helpers and checked native GTE. Valid constructed graphs have no collider or actor children. Full buffers, ordered GTE/flagged events, ABI and original property bindings are checked. Excludes natural construction/encounters, zero-scale/quotient traps, animation/render/audio output and PS1 scheduling/timing.",
+  "features_before_sha256": "0de9d87cdbf616f2ce3449d17e26423a0674300ea25a3b78fc90eda573b6a820",
+  "public_files": [
+    {
+      "path": "tools/verify_npc_proximity.py",
+      "sha256": "3e7c216ed1553c42aedc1c1b9a0f9d67724ec4645713b14ea42470a1d3f6ec21"
+    },
+    {
+      "path": "tests/test_npc_proximity.py",
+      "sha256": "87aa50aeff62bebf164769e9a5860f966a780f4c58869b01a7ef0f4cf38efead"
+    },
+    {
+      "path": "docs/npc-proximity-function-ranges.json",
+      "sha256": "b92795fdc53082ab87132adcce7033d26b43505e1374c83b407bae017a32d2a7"
+    },
+    {
+      "path": "docs/NPC_PROXIMITY.md",
+      "sha256": "13ffd3e71f7b921946959770700940d0540df0e031d309bae6ddc31106714b5e"
+    },
+    {
+      "path": "README.md",
+      "sha256": "806d359c79abc87710b59d3da5e7229a8f52d15f1a2243ec630dd0cf040026ed"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "1aed0d944cf282daf2cae418c260d15903dc37c890e0db49259a3ed253e88501"
+    },
+    {
+      "path": "PROJECT_OBJECTIVE.md",
+      "sha256": "374058898b3e21d016d6247b41cb967a45c8c197aa5cb4e64fbe5f50d4b06d12"
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "sha256": "fc68d67be6b52d49c5260032e12899adcad5421332618f8a45fca4cb453fce87"
+    },
+    {
+      "path": "docs/FEATURE_INVENTORY.md",
+      "sha256": "9292e17a8fbd5a5d74181d142c18c42b9e21cb1039638680d381920b12dec25a"
+    },
+    {
+      "path": "docs/NATIVE_AI.md",
+      "sha256": "fc8b78ae2cdfa2143b71bcd82fe7a8d9e9901772861696d8505f5126a8c0e9a4"
+    },
+    {
+      "path": "docs/NPC_SPATIAL.md",
+      "sha256": "305133626e0546e7e3902a8b56d2c27bbe79eff2e8fc83d1931976ae62da6420"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "sha256": "6ccaf323be205b740ed2214dd034b25c3f4e4e2953a0ab98648e5f1673ccb200"
+    }
+  ],
+  "retained_native_report": {
+    "path": ".decomp-lab/npc-proximity-native-first/report.json",
+    "sha256": "e27806c65e5e9b4f8ed3bea5505e4a92219d3ef85a6c46d4541a1f8516b4d206"
+  },
+  "independent_audit": {
+    "path": ".decomp-lab/npc-proximity-audit-first.json",
+    "sha256": "4de439da10a307ca2e5d5df23c69c1787139bb13341a769549b591df75d9e9bc"
+  },
+  "independent_audit_producer": {
+    "path": ".decomp-lab/audit_npc_proximity_first.py",
+    "sha256": "d7cd63942406f7e6b1cb7d4597d6f1b120e2cd8e3f7cf61f009681d9fdf09c68"
+  },
+  "range_preparation": {
+    "path": ".decomp-lab/npc-proximity-preparation-first.json",
+    "sha256": "d87e06c7ddef222cc3418eed0c1ab85de22b8bdf91d8baa74ee92121aa1f331f"
+  },
+  "callbacks": [
+    "entity_bear",
+    "entity_rabbit",
+    "entity_acrobats",
+    "entity_ship"
+  ],
+  "distinct_constructed_fixtures": 10408,
+  "fixtures_by_callback": {
+    "entity_acrobats": 279,
+    "entity_bear": 4496,
+    "entity_rabbit": 5084,
+    "entity_ship": 549
+  },
+  "fixtures_by_group": [
+    {
+      "callback": "entity_acrobats",
+      "group": "complete_timer_phases",
+      "cases": 39
+    },
+    {
+      "callback": "entity_acrobats",
+      "group": "native_proximity_boundaries",
+      "cases": 240
+    },
+    {
+      "callback": "entity_bear",
+      "group": "behavior_boundaries",
+      "cases": 3528
+    },
+    {
+      "callback": "entity_bear",
+      "group": "native_proximity_boundaries",
+      "cases": 240
+    },
+    {
+      "callback": "entity_bear",
+      "group": "ratio_after_common_translation",
+      "cases": 8
+    },
+    {
+      "callback": "entity_bear",
+      "group": "spatial_boundaries",
+      "cases": 720
+    },
+    {
+      "callback": "entity_rabbit",
+      "group": "behavior_boundaries",
+      "cases": 4116
+    },
+    {
+      "callback": "entity_rabbit",
+      "group": "native_proximity_boundaries",
+      "cases": 240
+    },
+    {
+      "callback": "entity_rabbit",
+      "group": "ratio_after_common_translation",
+      "cases": 8
+    },
+    {
+      "callback": "entity_rabbit",
+      "group": "spatial_boundaries",
+      "cases": 720
+    },
+    {
+      "callback": "entity_ship",
+      "group": "complete_timer_phases",
+      "cases": 309
+    },
+    {
+      "callback": "entity_ship",
+      "group": "native_proximity_boundaries",
+      "cases": 240
+    }
+  ],
+  "original_property_bindings": {
+    "entity_bear": [
+      {
+        "index": 43,
+        "proximity": 10,
+        "record_sha256": "257fa9ee43cacbf75d24949157dc76b174ac2d8d57988e817bdfd38e123b34d6"
+      }
+    ],
+    "entity_rabbit": [
+      {
+        "index": 44,
+        "proximity": 10,
+        "record_sha256": "c4e358d4d96a2c17d099946cb40353dbbceb5b847efa7f3a582ec38ae0124244"
+      }
+    ],
+    "entity_acrobats": [
+      {
+        "index": 66,
+        "proximity": 20,
+        "record_sha256": "f1fd6852c2a97f490504eae2361a35099749fbe731abd19b989ed3f2b75d23a1"
+      }
+    ],
+    "entity_ship": [
+      {
+        "index": 64,
+        "proximity": 40,
+        "record_sha256": "03a77ee1a7dcbddbc98fe09301ff7921ba79a66dfc7d7e3e77d6f466ddbdf869"
+      }
+    ]
+  },
+  "original_property_table": {
+    "records": 130,
+    "record_bytes": 16,
+    "total_bytes": 2080,
+    "sha256": "209e6f5d82ab17604cbf2ad16ef1bec624f89c61bdf9d1a3d24905527c47424a"
+  },
+  "actual_original_methods_entered": 25,
+  "reviewed_original_method_ranges": 26,
+  "unused_reviewed_ranges": [
+    "func_800574FC"
+  ],
+  "positive_original_method_entry_counts": {
+    "entity_bear": 4496,
+    "entity_bear_rabbit_common": 9580,
+    "entity_get_trigger_ratio": 10408,
+    "entity_get_distance": 9928,
+    "rand": 5374,
+    "func_8001D008": 196,
+    "func_8001EC84": 10722,
+    "func_800573A8": 6103,
+    "func_800573CC": 6103,
+    "func_800574C4": 2334,
+    "func_80057534": 3631,
+    "func_80057444": 3631,
+    "func_8001E58C": 3631,
+    "func_8001D4DC": 3631,
+    "RotMatrix": 3631,
+    "func_8001EE98": 3631,
+    "ApplyMatrixLV": 3631,
+    "func_8001CEB4": 3378,
+    "entity_rabbit": 5084,
+    "func_8005748C": 1297,
+    "func_800571F8": 750,
+    "func_8001E57C": 750,
+    "func_8001D568": 750,
+    "entity_acrobats": 279,
+    "entity_ship": 549
+  },
+  "dependency_output_stubs": 0,
+  "positive_gte_commands": 7262,
+  "negative_control_gte_commands": 4,
+  "ordered_gte_requests_and_responses_checked": 7266,
+  "separate_startup_identity_checks": 1,
+  "checked_buffers_sha256": "bc0b939cdaba55822e06fb1d4b65ea6e2e8379e43d523719e228361f7c5b2964",
+  "buffer_and_value_bytes_per_fixture": 3508,
+  "checked_observations": [
+    "complete entity/dream/context/coordinate/pose/player-coordinate/parent-root/linked-child buffers",
+    "RNG seed and ordered draws",
+    "motion scratch",
+    "ordered native GTE exchanges",
+    "flagged movement events",
+    "return PC/SP/GP/saved registers/stack red zones"
+  ],
+  "negative_controls_detected": [
+    {
+      "kind": "entity_bear_wrong_command_slot",
+      "callback": "entity_bear",
+      "address": "0x80060530",
+      "expected_word": "0xae22001c",
+      "changed_word": "0xae220020",
+      "changed_instruction_executions": 1,
+      "scope": "Private original-code emulator memory only; original inputs unchanged."
+    },
+    {
+      "kind": "entity_rabbit_wrong_command_slot",
+      "callback": "entity_rabbit",
+      "address": "0x80060624",
+      "expected_word": "0xae22001c",
+      "changed_word": "0xae220020",
+      "changed_instruction_executions": 1,
+      "scope": "Private original-code emulator memory only; original inputs unchanged."
+    },
+    {
+      "kind": "entity_acrobats_wrong_command_slot",
+      "callback": "entity_acrobats",
+      "address": "0x800620ac",
+      "expected_word": "0xae02001c",
+      "changed_word": "0xae020020",
+      "changed_instruction_executions": 1,
+      "scope": "Private original-code emulator memory only; original inputs unchanged."
+    },
+    {
+      "kind": "entity_ship_wrong_command_slot",
+      "callback": "entity_ship",
+      "address": "0x80061ed4",
+      "expected_word": "0xae22001c",
+      "changed_word": "0xae220020",
+      "changed_instruction_executions": 1,
+      "scope": "Private original-code emulator memory only; original inputs unchanged."
+    },
+    {
+      "kind": "entity_get_distance_wrong_field",
+      "callback": "entity_acrobats",
+      "address": "0x8005d838",
+      "expected_word": "0x8c830020",
+      "changed_word": "0x8c83001c",
+      "changed_instruction_executions": 1,
+      "scope": "Private original-code emulator memory only; original inputs unchanged."
+    },
+    {
+      "kind": "entity_get_trigger_ratio_wrong_field",
+      "callback": "entity_acrobats",
+      "address": "0x8005d8b4",
+      "expected_word": "0x80230000",
+      "changed_word": "0x80230001",
+      "changed_instruction_executions": 1,
+      "scope": "Private original-code emulator memory only; original inputs unchanged."
+    },
+    {
+      "kind": "omit_flagged_movement_event",
+      "callback": "entity_rabbit",
+      "address": "0x8005758c",
+      "expected_word": "0x40f809",
+      "changed_word": "0x0",
+      "changed_instruction_executions": 1,
+      "scope": "Private original-code emulator memory only; original inputs unchanged."
+    }
+  ],
+  "backend_identity": {
+    "package_version": "2.1.4",
+    "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+  },
+  "bridge_executable_sha256": "95c318b5b0d0b69f7808d20cc77b5312e69ce2c9e355a986550d4471b42a79ef",
+  "runtime_component_sha256": {
+    "dll/shock.wbx.zst": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126",
+    "dll/BizHawk.Emulation.Cores.dll": "444bc157418e9b5df5d07e987fc7ad1d2d1c6993676f5b864368027cb4f054d5",
+    "dll/BizHawk.Emulation.Common.dll": "f557d94912b12bde18413b60d25b3e61332b7bbfc7184349d1289d6ba9f350ee",
+    "dll/waterboxhost.dll": "e8e47426941a710c7ceea98fb0833b8387de1952f54ca0fa40001cd494507cee"
+  },
+  "native_dependencies_verified_preserved": [
+    {
+      "path": "tools/verify_native_ai.py",
+      "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+    },
+    {
+      "path": "tools/inventory_vtables.py",
+      "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+    },
+    {
+      "path": "tools/progress.py",
+      "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+    },
+    {
+      "path": "configure.py",
+      "sha256": "329036be22689b4d9b787f3db7b8084672e91ce0aa1f3ae1a9c2ece0a12525af"
+    },
+    {
+      "path": "requirements-analysis.txt",
+      "sha256": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911"
+    },
+    {
+      "path": "build/SLPS01556.map",
+      "sha256": "426c38e9540990433d8492cf2045b5a96d608900120a126f26d7baf3f8a313c4"
+    },
+    {
+      "path": "build/undefined_funcs_auto.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "build/undefined_syms_auto.txt",
+      "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+    },
+    {
+      "path": "src/scene/entity.c",
+      "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+    },
+    {
+      "path": "src/scene/entity.h",
+      "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+    },
+    {
+      "path": "src/dream/dream_sys.c",
+      "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+    },
+    {
+      "path": "src/dream/dream_sys.h",
+      "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+    },
+    {
+      "path": "src/scene/actor.c",
+      "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+    },
+    {
+      "path": "src/base/transform.c",
+      "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+    },
+    {
+      "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+      "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+    },
+    {
+      "path": "tools/verify_npc_proximity.py",
+      "sha256": "3e7c216ed1553c42aedc1c1b9a0f9d67724ec4645713b14ea42470a1d3f6ec21"
+    },
+    {
+      "path": "tools/verify_scripted_ai.py",
+      "sha256": "a4aca127181c9884d7f36d15679a005f3d943b272507d6496c30a441a05e7974"
+    },
+    {
+      "path": "tools/verify_npc_spatial.py",
+      "sha256": "e25422dddcbcd445bdaabacf200ba0e418336e0a161648403ae08084d006983f"
+    },
+    {
+      "path": "tools/verify_render_gte.py",
+      "sha256": "624a607b167be932702501fb6e07a04595992773bacc8d4344b2200a8c2784b0"
+    },
+    {
+      "path": "tools/verify_render_rotation.py",
+      "sha256": "2ce32389c8e158692dff7663a9fb0aa700b7e3bb7204254d402b0ae45f956e8f"
+    },
+    {
+      "path": "docs/npc-proximity-function-ranges.json",
+      "sha256": "b92795fdc53082ab87132adcce7033d26b43505e1374c83b407bae017a32d2a7"
+    },
+    {
+      "path": "src/scene/scene_node.c",
+      "sha256": "4c9802ade32e9cd08fbb89c94db1694e737814b5a0a922c45bd3abb1afe73ea9"
+    },
+    {
+      "path": "src/base/object_math.c",
+      "sha256": "75a0faa7a51c8b53cc88c1100f8ab64dcb1b9838a1f2266051b4a57ea0d4b7af"
+    }
+  ],
+  "canonical_build": {
+    "current_matching_build_progress": {
+      "path": ".decomp-lab/menu-current-progress-first.json",
+      "sha256": "3ce9778c09f4d0f027f8be19c80129e6572270243a083a8badb1af96f3600fc8"
+    },
+    "build_inputs_verified_current": 391,
+    "executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "executable_bytes": 505856,
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "objects_expected": 305,
+    "objects_found": 305,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "latest_clean_build": {
+      "path": ".decomp-lab/menu-signature-clean-build-first.json",
+      "sha256": "0ba6daf88ad4b233ed4085d857bae06a52f89bc2569f47518318d1c497a893f0"
+    },
+    "current_clean_build_inputs_verified_equal": 363,
+    "current_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "current_and_retained_clean_executables_equal_original": true
+  },
+  "tooling_tests": [
+    {
+      "path": ".decomp-lab/npc-proximity-host-tests-first.log",
+      "sha256": "811416211f60c417223e347c33b01eb02972ca688f77e1c134a218e16dc7e26a",
+      "platform": "host",
+      "tests": 383,
+      "passed": true
+    },
+    {
+      "path": ".decomp-lab/npc-proximity-wsl-tests-first.log",
+      "sha256": "e4265ca32dd6c8e812e7ab0fc9f77a1ac84f226e97cd7bb8efb94b5a081fd57c",
+      "platform": "wsl",
+      "tests": 383,
+      "passed": true
+    }
+  ],
+  "before_after": {
+    "before": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 16,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "after": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 20,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "new_bounded_npc_callbacks": 4,
+    "source_functions_promoted": 0,
+    "original_game_feature_groups_accepted": 0,
+    "developer_capabilities_unchanged": 10,
+    "optional_mods_unchanged": 3
+  },
+  "retained_diagnostics": [
+    {
+      "directory": ".decomp-lab/npc-proximity-probe-first",
+      "outcome": "Wrong illustrative runtime path; bridge failed before game execution.",
+      "evidence": {
+        "path": ".decomp-lab/npc-proximity-probe-first/diagnostic.json",
+        "sha256": "b14ee26cf4304cbf64f56ba30d4db4e9f12fc3bcb1d7171da7b47fe0c3aff779"
+      }
+    },
+    {
+      "directory": ".decomp-lab/npc-proximity-probe-second",
+      "outcome": "Command-observation structure differed; excluded preflight.",
+      "producer_before_fix": {
+        "path": ".decomp-lab/npc-proximity-before-command-shape-first.py",
+        "sha256": "1bf38991674ffd6878fe7caa5bfaa13c261b83d46d90242abbfd12d2a0286714"
+      }
+    },
+    {
+      "directory": ".decomp-lab/npc-proximity-probe-third",
+      "outcome": "Model event 8 differed from original event 7; buffers agreed, model corrected.",
+      "evidence": {
+        "path": ".decomp-lab/npc-proximity-probe-third/failure.json",
+        "sha256": "bc4b782997ee7b7b286a0faccc245c7d2fb05b8b61ab7c4536831503453fdcba"
+      },
+      "producer_before_fix": {
+        "path": ".decomp-lab/npc-proximity-before-axis-event-first.py",
+        "sha256": "3a4d2daef97b5c9cf62b06941b921933ba4013173ab1b1367b7173e24b55416f"
+      }
+    },
+    {
+      "directory": ".decomp-lab/npc-proximity-probe-fourth",
+      "outcome": "Passing preflight, four cases for each of four callbacks; not added to distinct full-profile count.",
+      "evidence": {
+        "path": ".decomp-lab/npc-proximity-probe-fourth/report.json",
+        "sha256": "0cff8d958d6d461cfed84b8bb5d95817d24fa8cabb6c43eb81179d05bfd1a871"
+      }
+    }
+  ],
+  "excluded_domains": [
+    "zero-scale/zero-inner-quotient division traps",
+    "natural actor construction and encounters",
+    "actor children and active geometry/collision",
+    "persistent actor histories",
+    "animation/render/audio output",
+    "original PS1 scheduling and timing"
+  ],
+  "source_functions_promoted": 0,
+  "source_explanations_resolved": 0,
+  "original_game_behavior_modified": false,
+  "whole_callback_acceptances": 0,
+  "whole_feature_groups_accepted": 0,
+  "model_api_calls": 0,
+  "original_game_images_buffers_gte_logs_or_generated_assembly_published": false
+}

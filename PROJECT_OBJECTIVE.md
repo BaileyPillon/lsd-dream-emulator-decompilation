@@ -127,3 +127,10 @@ The [memory-store profile](docs/COMPILER_MEMORY_STORES.md) observes actual
 compiler decisions for two extra stores in a consumed math work pair. Fifty
 further C forms have no exact match, and three isolated frontend controls retain
 the same differences. No source or behavior gate is relaxed by this diagnostic.
+
+The [NPC proximity profile](docs/NPC_PROXIMITY.md) adds four callbacks through
+original distance, trigger, RNG, movement, event and GTE routines in 10,408
+distinct fixtures. Bounded coverage is now 20 / 107. The constructed meshless
+graphs do not complete natural encounters, active collision, actor lifetime,
+rendering, audio or timing requirements; whole-callback and whole-feature
+acceptance remain zero.

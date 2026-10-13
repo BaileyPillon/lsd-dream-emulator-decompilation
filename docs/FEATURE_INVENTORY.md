@@ -422,3 +422,28 @@ controls accept no source. These are compiler observations, with zero new
 original gameplay cases. C, nine assembly functions, 24 inherited layouts,
 40 provisional groups, 16 / 107 bounded NPC callbacks, ten developer capabilities,
 three mods and zero whole-feature acceptances retain their separate counts.
+
+## Original NPC proximity supplement
+
+The [proximity composition](NPC_PROXIMITY.md) adds bounded native coverage for
+Bear, Rabbit, Acrobats and Ship: **16 / 107 before, 20 / 107 after**. It executes
+25 original routines in 10,408 distinct constructed fixtures, with no dependency
+output stubs. Original property bindings, signed X/Z distance, two-stage ratio
+rounding, RNG, post-translation trigger checks, full timer phases and flagged
+movement event 7 are compared. All seven executed faults are detected; 7,262
+positive GTE commands and four control commands pass independent arithmetic
+and retained-log checks.
+
+The earlier 16-callback snapshots above remain historical. This new profile
+checks meshless graphs with no collider or actor children; natural encounters,
+active geometry, persistent histories, animation/render/audio and PS1 timing
+remain open. C recovery is unchanged at 194,212 / 199,912 bytes (97.15%), with
+nine assembly functions and 24 inherited source-layout explanations. All 107
+catalogued NPC callbacks retain C bodies. The 40 provisional groups, 35 listed
+core-source groups, ten developer capabilities and three mods retain their
+separate counts. Whole-callback and whole-group acceptances remain zero.
+
+[npc-proximity-checks.json](npc-proximity-checks.json) records this before/after
+and its evidence identities. The supplement in [features.json](features.json)
+preserves the frozen initial inventory; removing only its new node reconstructs
+the preceding inventory bytes exactly.
