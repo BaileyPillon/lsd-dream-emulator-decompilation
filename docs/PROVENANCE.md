@@ -650,3 +650,14 @@ counts, hashes, and scope metadata are published.
 
 The added feature-inventory supplement preserves every earlier field and
 snapshot. Matching C bytes and whole-feature acceptance do not increase.
+
+## Natural window-link supplement
+
+[natural-window-link-checks.json](natural-window-link-checks.json) records the
+2,400-frame original/rebuilt window scenario. The published Lua bytes equal
+the executed scripts. All declared launch inputs are revalidated, every
+controller/NPC/scene log byte agrees, and five complete RAM/image/save-state
+member checkpoints agree. ZIP wrapper bytes differ and are reported separately.
+Audio, direct callback entries and whole-feature acceptance are not claimed.
+Original game inputs and raw captures remain private. Removing only the new
+feature supplement reconstructs the preceding committed inventory bytes.

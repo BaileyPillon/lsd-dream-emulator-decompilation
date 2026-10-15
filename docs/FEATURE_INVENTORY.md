@@ -461,3 +461,17 @@ measurement remains 194,212 / 199,912 bytes, with nine assembly functions,
 24 inherited storage explanations, 35 / 40 listed-core C groups, and 20 / 107
 bounded NPC callbacks. Whole-feature acceptance remains 0 / 40. No new original
 feature, optional mod, or generative-AI gameplay behavior is claimed.
+
+## October 15 natural window-link evidence
+
+The [window-link profile](NATURAL_WINDOW_LINK.md) adds one ordinary in-game
+activation and following map transition to the recorded comparison evidence.
+All 2,400 controller rows, 81 scene rows, 74 entity rows, and five complete
+RAM/image/state checkpoints agree between original and rebuilt discs. The
+window's registered context owner, callback binding and advancing ticks are
+verified; inactive entity records do not add callback coverage.
+
+This is one integration path. The C, provisional feature, bounded-native NPC,
+whole-encounter, developer-capability and mod counts remain unchanged. Its
+new supplement in [features.json](features.json) preserves every earlier field
+and snapshot, and does not treat this path as a complete accepted feature.
