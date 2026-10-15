@@ -2,6 +2,7 @@
  * Unaccepted research fragment for func_8004C6A8.
  * Insert into the complete render_context.c unit with prepare_candidate.py.
  * It relies on that unit's existing func_8004C1C0_out_t declaration.
+ * The current candidate differs in two inclusive-edge arithmetic instructions.
  * Complete executable equality is required before any source promotion.
  */
 typedef struct {
@@ -27,9 +28,7 @@ static inline s32 *render_grid_columns_after_rows(render_context_t *This,
     return &This->m_Unk32;
 }
 
-void func_8004C6A8(render_context_t *This, s32 input_width, s32 input_height) {
-    s32 width = input_width;
-    s32 height = input_height;
+void func_8004C6A8(render_context_t *This, s32 width, s32 height) {
     func_8004C1C0_out_t info;
     render_grid_matrix_t matrix;
     s32 orientation;
@@ -59,7 +58,7 @@ void func_8004C6A8(render_context_t *This, s32 input_width, s32 input_height) {
     if ((u16) (angle - 0x200) < 0x400 || (u16) (angle - 0xA00) < 0x400) {
         correction = matrix.vector.z;
         render_grid_set_dimensions(This, height, width);
-        origin = matrix.vector.x > 0 ? x : x - width + 1;
+        origin = matrix.vector.x > 0 ? x : x + (1 - width);
         This->m_Unk30_1 = origin;
         if (matrix.vector.z > 0) {
             This->m_Unk30_2 = z - *(u16 *) &This->m_Unk29_1 - 1;

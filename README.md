@@ -151,12 +151,15 @@ local/global compiler decisions, verifies priority comparisons and preserves
 complete assembly output. It extends candidate analysis without accepting a
 nonmatching source form or changing original gameplay.
 The [grid source-recovery fragment](research/render_grid/README.md) now retains
-the native body and store order, with eleven differences in three prologue
-instructions. Its complete candidate remains outside the matching game.
+the original frame and register allocation, with eight differences in two
+edge-arithmetic instructions. Its complete candidate remains outside the
+matching game.
 The [grid phase comparison](docs/GRID_PHASES.md) locates the height-copy order
 change in the first scheduling pass, rechecks two complete builds and rules out
 133 further source forms. Its reusable phase reader retains the exact source
-gate and adds no whole-feature acceptance.
+gate and adds no whole-feature acceptance. The later edge-lifetime study
+explains the allocation change and checks the improved C image against all
+74,832 existing scalar fixtures per image, retaining four dependency contracts.
 The [compiler memory-store investigation](docs/COMPILER_MEMORY_STORES.md)
 observes why a consumed math work pair retains two extra stores, checks 50
 further source forms and compares three isolated frontend controls. Its

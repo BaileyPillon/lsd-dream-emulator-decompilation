@@ -1,0 +1,301 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-15T19:50:23.102194+00:00",
+  "repository_code_base_commit": "4896e329e9e5ffe5679f7d146b101369faec7baf",
+  "scope": "Improved unaccepted grid C research source, actual compiler lifetime observations and repeated existing scalar fixtures. Matching game sources and original behavior remain unchanged.",
+  "documentation": "docs/GRID_PHASES.md#inclusive-edge-lifetime-study",
+  "research_source": {
+    "path": "research/render_grid/c6a8_candidate.c",
+    "before_git_blob_sha256": "fdcc50098c741c98a488307efa2b73d0ed8a04e0afd8dc62d727624fa06466b7",
+    "after_sha256": "de23ead276cafd2a2f34096f52c0dd78143403617e4c9d5ac91b45c9e273efa6",
+    "previous_different_bytes": 11,
+    "current_different_bytes": 8,
+    "function_bytes": 660,
+    "frame_bytes": 152,
+    "original_assembly_retained": true,
+    "actual_candidate_function_sha256": "0254118c744c0f5a04e506cf20763e565fe8df8df496735777116081faf6cccf",
+    "entire_candidate_executable_bytes": 505856,
+    "candidate_executable_sha256": "519d06501c2e50016f54f56e23765f139cbe1530f25b79483413b545c9464d5e",
+    "changed_instruction_addresses": [
+      "0x8004C7D4",
+      "0x8004C7D8"
+    ],
+    "all_other_executable_bytes_equal": true,
+    "complete_comparison": {
+      "path": ".decomp-lab/grid-edge8-public-source-20261015-first/build/comparison.json",
+      "sha256": "ca22c33d58074147cd031d8f4cac6099bec1ba32c5a32cc96cb1cabeb7f5de80"
+    },
+    "new_preparation": {
+      "path": ".decomp-lab/grid-edge8-public-source-20261015-first/preparation.json",
+      "sha256": "64b71150e7953c369f2fe955590f826c30bf2431bbd2d85c37451c2f1d9670e3"
+    }
+  },
+  "actual_compiler_observations": {
+    "formal13": {
+      "path": ".decomp-lab/grid-formal13-allocation-20261015-first/report.json",
+      "sha256": "04b964384cd52022fc48f8f9baf6a8db8a75d66503c541b9ea025e9321fc5176"
+    },
+    "edge8": {
+      "path": ".decomp-lab/grid-edge8-allocation-20261015-first/report.json",
+      "sha256": "3e14ff79fa04a09088f03384360b64344cc4f4de9c5bb5f67ba2cd98805ef613"
+    }
+  },
+  "qualified_phase_journal": {
+    "path": ".decomp-lab/grid-edge8-phase-journal-20261015-first/report.json",
+    "sha256": "ddf9796c0dffc12733439134f177118369a942de0263972d1e1481a32aef537b"
+  },
+  "allocation": {
+    "width": {
+      "references": 4,
+      "formal_live_length": 52,
+      "edge_live_length": 53,
+      "formal_priority": 1538,
+      "edge_priority": 1509,
+      "formal_register": "s6",
+      "edge_register": "s7"
+    },
+    "cell_z": {
+      "references": 5,
+      "live_length": 65,
+      "priority": 1538,
+      "formal_register": "s7",
+      "edge_register": "s6"
+    },
+    "height_boundary_retained": true,
+    "normal_and_observed_complete_assembly_equal": true
+  },
+  "native_comparison": {
+    "report": {
+      "path": ".decomp-lab/grid-edge8-native-20261015-first/report.json",
+      "sha256": "b4e6f16665814f811c94ddf42ae149be2bd4c0ad26020a5f6669756d1b0a04db"
+    },
+    "paired_cases": 74832,
+    "case_groups": {
+      "complete_angle_word_sweep": 65536,
+      "projection_clamp_boundaries": 896,
+      "coordinate_and_dimension_edges": 8232,
+      "callback_mutation_order": 72,
+      "segment_aliases_and_template_contents": 96
+    },
+    "existing_fixture_classes_repeated": true,
+    "new_distinct_original_scenarios": 0,
+    "images": 2,
+    "positive_initial_vm_program_bytes_equal_complete_images": true,
+    "positive_instruction_edits": 0,
+    "independent_scalar_model_agrees": true,
+    "changed_instruction_hits": [
+      {
+        "0x4c7d4": 1570,
+        "0x4c7d8": 1570
+      },
+      {
+        "0x4c7d4": 1570,
+        "0x4c7d8": 1570
+      }
+    ],
+    "explicit_stubs": 4,
+    "contracts": [
+      "position lookup",
+      "RotMatrix",
+      "ApplyMatrixLV",
+      "grid builder"
+    ],
+    "negative_controls_detected": 8,
+    "negative_controls_apply_to_separate_original_code_copies": true,
+    "scene_or_hardware_timing_accepted": false
+  },
+  "additional_source_families": [
+    {
+      "report": {
+        "path": ".decomp-lab/grid-transverse-width-lifetime-20261015-first/report.json",
+        "sha256": "09cfcff3edaefb6deddb0565c89fde4a1c107ba92cdf84fed45c73e7135b056c"
+      },
+      "source_invocations": 18,
+      "calibration_controls": 2,
+      "fixed_address_diagnostics_completed": 18,
+      "fixed_address_diagnostics_rejected": 0
+    },
+    {
+      "report": {
+        "path": ".decomp-lab/grid-extent-pair-abi-20261015-first/report.json",
+        "sha256": "493e0f3a0e4dd7fea47ad96a04e87ea9f0f81886697f217f437135a18e119085"
+      },
+      "source_invocations": 4,
+      "calibration_controls": 0,
+      "fixed_address_diagnostics_completed": 0,
+      "fixed_address_diagnostics_rejected": 4
+    },
+    {
+      "report": {
+        "path": ".decomp-lab/grid-height-parameter-abi-20261015-first/report.json",
+        "sha256": "ad30802348e75750a5f93ac46e278a00a7b0d39b71f9db67ddf0ad927186278b"
+      },
+      "source_invocations": 6,
+      "calibration_controls": 2,
+      "fixed_address_diagnostics_completed": 6,
+      "fixed_address_diagnostics_rejected": 0
+    }
+  ],
+  "retained_relocated_image_inspection": {
+    "path": ".decomp-lab/grid-extent-pair-abi-20261015-first/retained-image-inspection.json",
+    "sha256": "bab7d4cfb783e27c1e1f92dcae6ca41f90dd1f40d2317ff83fa2e1771e309cd3"
+  },
+  "local_search": {
+    "result": {
+      "path": ".decomp-lab/grid-edge8-permuter-20261015-second/search-result.json",
+      "sha256": "ea3318c11c2f19c188d646e727a820e74805c04f5c2e237e31f8e1a855196a53"
+    },
+    "seconds": 601.5839595299985,
+    "exit_code": 124,
+    "baseline_search_score": 205,
+    "baseline_raw_different_bytes": 8,
+    "improved_outputs": 0,
+    "padding_enabled": false,
+    "constant_condition_insertion_enabled": false,
+    "network_compute_enabled": false,
+    "stack_and_branch_targets_counted": true,
+    "tool_commit": "8556c81d80d1c1af98a858c8f4dc951357f29139",
+    "local_workers": 2,
+    "setup": {
+      "path": ".decomp-lab/grid-edge8-permuter-20261015-second/setup.json",
+      "sha256": "94cf3c8b7c39c1aafe323cf04f140732f3d4b369b1d2efc63ac3ef5d443f7468"
+    }
+  },
+  "isolated_cpp_diagnostics": {
+    "report": {
+      "path": ".decomp-lab/grid-frontends-20261015-third/report.json",
+      "sha256": "cf4dadf17653493b76a63108bcd7e49d9bfe954897241fd56c315852b1555d81"
+    },
+    "qualified_comparisons": 4,
+    "matching_c_promotable": false,
+    "qualified_cases": [
+      {
+        "case": "flat-native",
+        "bytes": 712,
+        "different_function_bytes": 527,
+        "sha256": "c64cd7e7b4825affdeb58bcf93757b2f77035e038c5464c56315508a78a7b7b0"
+      },
+      {
+        "case": "flat-lifetime",
+        "bytes": 712,
+        "different_function_bytes": 527,
+        "sha256": "c079d36c4061d1430c5f7d732cf1197978676f422c9d3d291c322e9c91ec79f3"
+      },
+      {
+        "case": "word-class-native",
+        "bytes": 748,
+        "different_function_bytes": 557,
+        "sha256": "b4c9cbf680660442495920ad0b81fafe84ca3e6877e547f2aba28e51648141a1"
+      },
+      {
+        "case": "word-class-lifetime",
+        "bytes": 744,
+        "different_function_bytes": 546,
+        "sha256": "a936b491b59d95dede3fb61d9374daf104f0388accacaf17c873197d4c90f053"
+      }
+    ],
+    "prior_preprocessor_rejections": 8,
+    "whole_cpp_game_build_claimed": false
+  },
+  "retained_preparatory_diagnostics": [
+    {
+      "path": ".decomp-lab/grid-frontends-20261015-first/report.json",
+      "sha256": "b341554afe83153f9ef11a5809d6880a815565b6d220f0b8bfc2f1b8977cfa4a"
+    },
+    {
+      "path": ".decomp-lab/grid-frontends-20261015-second/report.json",
+      "sha256": "f9de7a64747fe049c6ade09365bb02a5974200d28e37985687aa60e5c48f9bd2"
+    },
+    {
+      "path": ".decomp-lab/grid-edge8-permuter-20261015-first/setup-rejected.json",
+      "sha256": "3a458ab5bcbbe4ad735ec547e982bf21b3af4b7ac50b2558128466850a4f0a4b"
+    },
+    {
+      "path": ".decomp-lab/grid-edge8-permuter-20261015-second/debug_source.c",
+      "sha256": "467102e53df66e3c93def259a3476e0cf41f8544b51d5e354f79c576807ae4c3"
+    }
+  ],
+  "canonical_build": {
+    "objects": 306,
+    "entire_executable_equal": true,
+    "executable_bytes": 505856,
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "protected_build_inputs_retained": 392,
+    "progress": {
+      "path": ".decomp-lab/grid-edge-order-progress-20261015-first.json",
+      "sha256": "269dfc77e2cf1f472751d0ab864d74d36449741b901abed08eccc3ab6f08eb35"
+    },
+    "check_log": {
+      "path": ".decomp-lab/grid-edge-order-build-20261015-first.log",
+      "sha256": "5c7a395f9de6fe8a15a3fdd7ef8138d2d539ef029ba91b1495caee27a268e8bf"
+    }
+  },
+  "historical_metadata_retained": [
+    {
+      "path": "docs/grid-phase-checks.json",
+      "sha256": "9ef76a71f7f648415137f179381b90728dc931254ddc79677bf84104798465cf"
+    },
+    {
+      "path": "docs/grid-recovery-checks.json",
+      "sha256": "932af4b5fd3abf5317015711de9d9e3c68dbcf8ffdd00d7b998cbd3bc4a68cd0"
+    }
+  ],
+  "tooling_tests": {
+    "windows": {
+      "tests": 510,
+      "passed": true,
+      "log": {
+        "path": ".decomp-lab/grid-edge-order-tooling-windows-20261015-first.log",
+        "sha256": "7cdb0ca84cc706cdefc034afbaabfe0a0189c0b6be8f18aeb958cd550ab45683"
+      }
+    },
+    "linux": {
+      "tests": 510,
+      "passed": true,
+      "log": {
+        "path": ".decomp-lab/grid-edge-order-tooling-linux-20261015-first.log",
+        "sha256": "fe0c3607d3fcf1ca19d1d7053dcc388d8ac042847a5656a47d83c562b51389e3"
+      }
+    }
+  },
+  "new_tooling_tests": 0,
+  "new_c_bytes": 0,
+  "whole_feature_groups_accepted": 0,
+  "source_explanations_resolved": 0,
+  "npc_coverage_changed": false,
+  "developer_category_count_changed": false,
+  "optional_mods_added": 0,
+  "model_api_calls": 0,
+  "gameplay_changed": false,
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_game_assembly_functions": 9,
+    "inherited_unused_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "groups_with_listed_core_functions_in_c": 35,
+    "whole_feature_groups_accepted": 0,
+    "npc_callbacks_with_c_bodies": 107,
+    "npc_callbacks_catalogued": 107,
+    "bounded_native_callback_profiles": 20,
+    "whole_npc_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_game_assembly_functions": 9,
+    "inherited_unused_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "groups_with_listed_core_functions_in_c": 35,
+    "whole_feature_groups_accepted": 0,
+    "npc_callbacks_with_c_bodies": 107,
+    "npc_callbacks_catalogued": 107,
+    "bounded_native_callback_profiles": 20,
+    "whole_npc_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "producer_sha256": "483560aa435a47e9f1bf751e92f6df51f3d2741b53c477113ba14c91150911b1"
+}
