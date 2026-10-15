@@ -171,7 +171,9 @@ corrections preserve standard and fresh clean builds; both menu callers still
 need matching C and natural screen/input/render evidence.
 The [sprite scaling audit](docs/UI_SCALE.md) checks 203,472 native cases,
 including overlapping inputs and incoming-register quirks. Its full C
-candidate still differs in 12 executable bytes and remains unaccepted.
+candidate still differs in 12 executable bytes and remains unaccepted. The
+[public source recipe](research/ui_scale/README.md) reproduces that comparison
+and the actual reload allocations behind its stack frame.
 The [level-model loader audit](docs/LBD_PIPELINE.md) checks 418 local level
 files through native construction and destruction, including repeated loads.
 The later [matching loader recovery](docs/LBD_RECOVERY.md) promotes its 600-byte

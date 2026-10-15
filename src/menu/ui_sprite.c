@@ -63,92 +63,11 @@ void func_80044380(ui_sprite_t *This, s32 arg1, u8 *arg2) {
 }
 
 INCLUDE_ASM("asm/nonmatchings/menu/ui_sprite", func_8004441C);
-// Best attempt, 140/140 with two instructions swapped (lh then sll vs sll then lh).
-// void func_8004441C(ui_sprite_t *This, s32 arg1, u8 *arg2) {
-//     s32 neg_x;
-//     s32 neg_y;
-//     s32 ratio_x;
-//     s32 ratio_y;
-//     s32 num_x;
-//     s32 den_x;
-//     s32 num_y;
-//     s32 den_y;
-//     s32 old;
-//     s32 sum;
-//     s32 result;
-//     s32 added;
-//     s8 pad[0x10];
-//
-//     neg_x = 0;
-//     neg_y = 0;
-//     if (*(s16 *)arg2 < 0 || *(s16 *)(arg2 + 2) < 0) {
-//         neg_x = 1;
-//     }
-//     if (*(s16 *)(arg2 + 4) < 0 || *(s16 *)(arg2 + 6) < 0) {
-//         neg_y = 1;
-//     }
-//
-//     den_x = *(s16 *)(arg2 + 2);
-//     if (den_x != 0) {
-//         num_x = *(s16 *)arg2;
-//         ratio_x = ((num_x / den_x) << 12) + (((num_x % den_x) << 12) / den_x);
-//     }
-//     den_y = *(s16 *)(arg2 + 6);
-//     if (den_y != 0) {
-//         num_y = *(s16 *)(arg2 + 4);
-//         ratio_y = ((num_y / den_y) << 12) + (((num_y % den_y) << 12) / den_y);
-//     }
-//
-//     if (arg1 != 0) {
-//         if (*(s16 *)(arg2 + 2) == 0) {
-//             This->m_Unk23_0 = 0x1000;
-//         } else {
-//             result = (s16)ratio_x;
-//             if (result >= 30001) {
-//                 result = 30000;
-//             }
-//             This->m_Unk23_0 = result;
-//         }
-//         if (*(s16 *)(arg2 + 6) == 0) {
-//             added = 0x1000;
-//             This->m_Unk23_1 = added;
-//         } else {
-//             result = (s16)ratio_y;
-//             if (result >= 30001) {
-//                 result = 30000;
-//             }
-//             This->m_Unk23_1 = result;
-//         }
-//     } else {
-//         old = This->m_Unk23_0;
-//         sum = old + ratio_x - ratio_x;
-//         old = old + (s16)ratio_x;
-//         old = old < 30001;
-//         if (old == 0) {
-//             added = 1;
-//             if (neg_x == 0) {
-//                 added = 30000;
-//             }
-//         } else {
-//             added = ratio_x + sum;
-//         }
-//         This->m_Unk23_0 = added;
-//         old = This->m_Unk23_1;
-//         sum = old + ratio_y - ratio_y;
-//         old = old + (s16)ratio_y;
-//         old = old < 30001;
-//         if (old == 0) {
-//             added = 1;
-//             if (neg_y == 0) {
-//                 added = 30000;
-//             }
-//         } else {
-//             added = ratio_y + sum;
-//         }
-//         This->m_Unk23_1 = added;
-//     }
-// }
-//
+/* Unaccepted padding-free source and its exact reproduction recipe live in
+ * research/ui_scale/. The closest candidate retains twelve differing bytes
+ * across four instructions. Keep the original assembly until the full image
+ * matches; see docs/UI_SCALE.md for source, ABI and native-behavior limits. */
+
 void func_8004464C(ui_sprite_t *This, s32 Unk1, s8 *Data) {
     if (Unk1) {
         __builtin_memcpy(This->m_Unk20, Data, 3);

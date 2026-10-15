@@ -85,6 +85,41 @@ load relative to a shift. They still prevent complete-executable equality.
 108 additional independent-axis and typed-access helper trials, plus one
 baseline reproduction, produced no exact match with the canonical flags.
 
+## Reproducible source and reload evidence
+
+The [research fragment and preparation recipe](../research/ui_scale/README.md)
+now expose the padding-free candidate directly. Its complete linked executable
+is byte-identical to the earlier candidate tested above. Those native fixtures
+are retained evidence, not another 203,472 new cases. The canonical source keeps
+the assembly inclusion and replaces an obsolete commented sketch with this
+research reference.
+
+Two actual compiler observations locate the candidate's sixteen-byte frame in
+register reload. The extended [stack tracer](../research/collision/trace_compiler_stack.py)
+records completed `alter_reg` callers: compiler pseudos 141 and 155 each request
+a four-byte local slot, rounded to eight bytes. A halfword-increment control
+requests neither slot and emits a 544-byte, zero-frame function that does not
+match. Normal and observed complete assembly agree in both runs. These are
+compiler temporaries, not PS1 register bindings or proof of the original author's
+source construction.
+
+Five further studies qualify 49 source forms and five repeated controls: thirteen
+complete-unit image checks and forty-one complete linked-function checks.
+They test the increment interface, ordinary value qualifiers, arithmetic
+representations, result types and consumed old-scale snapshots. None improves
+the twelve-byte closest candidate. Eight declaration-order parser failures from
+an initial snapshot preparation are retained separately and excluded from those
+qualified forms.
+
+Five new tooling tests cover completed and absent caller contexts, malformed
+records and an unsupported compiler rejected before debugger execution. The extended
+decoder requires the exact bundled compiler hash. The canonical build remains
+byte-identical after the comment-only source edit. C recovery remains 194,212 /
+199,912 bytes (97.15%), with nine assembly functions and twenty-four inherited
+storage explanations. No source promotion, new native fixture, whole-NPC or
+whole-feature acceptance is claimed. [ui-scale-source-checks.json](ui-scale-source-checks.json)
+pins the source reproduction, actual compiler observations and retained studies.
+
 ## Reproduce locally
 
 After preparing the current complete canonical build and installing the
