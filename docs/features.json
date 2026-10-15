@@ -20825,6 +20825,48 @@
         "developer_capability_categories": 10,
         "optional_mods": 3
       }
+    },
+    "movie_structure_and_routes_20261015": {
+      "date": "2026-10-15",
+      "metadata": "docs/movie-inventory-checks.json",
+      "scope": "All encoded movie-frame structures and bounded native routing; no decoded playback acceptance.",
+      "movies": 39,
+      "encoded_frames": 22382,
+      "native_fixtures": 620,
+      "native_routines": 15,
+      "function_output_stubs": 0,
+      "new_c_bytes": 0,
+      "new_original_gameplay_features": 0,
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_game_assembly_functions": 9,
+        "inherited_unused_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "groups_with_listed_core_functions_in_c": 35,
+        "whole_feature_groups_accepted": 0,
+        "npc_callbacks_with_c_bodies": 107,
+        "npc_callbacks_catalogued": 107,
+        "bounded_native_callback_profiles": 20,
+        "whole_npc_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_game_assembly_functions": 9,
+        "inherited_unused_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "groups_with_listed_core_functions_in_c": 35,
+        "whole_feature_groups_accepted": 0,
+        "npc_callbacks_with_c_bodies": 107,
+        "npc_callbacks_catalogued": 107,
+        "bounded_native_callback_profiles": 20,
+        "whole_npc_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      }
     }
   }
 }

@@ -13,8 +13,8 @@ static s32 g_MusicTrackOverride = NULL;
 
 extern const char *g_SE_PATHS[];
 
-/* Play length in seconds for each movie in g_STRING_TABLE order; indexed by
-   the duration hint returned by the movie path getters. */
+/* Encoded-frame thresholds, indexed by the movie path getters.
+   Positive values trigger str_stream_get_next's completion result. */
 static s16 g_MovieDurations[] = {
     1060, 1088, 953, 1179, 979, 1231, 1046, 474, 524, 439, 349, 379, 352, 352, 475, 867, 527,
     445,  399,  579, 264,  541, 566,  325,  436, 524, 522, 523, 649, 451, 465, 473, 411, 490,
