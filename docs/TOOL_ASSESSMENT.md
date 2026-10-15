@@ -23,6 +23,13 @@ dummy-block mutations disabled. It produced no improvement or output candidate.
 Evidence: `.decomp-lab/root-work/c6a8-permuter-state-join-01-result.json`.
 Neither timed search establishes an exact C match or whole-game parity.
 
+The later [grid edge-lifetime study](GRID_PHASES.md#inclusive-edge-lifetime-study)
+calibrates a new eight-byte seed against the original 660-byte function and the
+current compiler stages. Its ten-minute local search disables padding and
+constant-condition insertion and produces no improved output. Stack and branch
+targets remain part of the score; complete-executable equality remains the
+independent acceptance gate.
+
 ## Linked video
 
 The actual metadata/description of [The AI unlock has begun](https://www.youtube.com/watch?v=h5zkzon0gM4)

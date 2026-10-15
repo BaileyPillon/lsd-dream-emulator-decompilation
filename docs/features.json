@@ -21050,6 +21050,50 @@
         "developer_capability_categories": 10,
         "optional_mods": 3
       }
+    },
+    "grid_edge_order_20261015": {
+      "date": "2026-10-15",
+      "metadata": "docs/grid-edge-order-checks.json",
+      "scope": "Improved unaccepted grid C research source, actual compiler lifetime observations and repeated existing scalar fixtures. Matching game sources and original behavior remain unchanged.",
+      "research_candidate_previous_different_bytes": 11,
+      "research_candidate_current_different_bytes": 8,
+      "paired_existing_scalar_cases": 74832,
+      "explicit_dependency_contracts": 4,
+      "actual_compiler_observations": 2,
+      "new_original_scenarios": 0,
+      "new_c_bytes": 0,
+      "whole_feature_groups_accepted": 0,
+      "tooling_tests_passed": 510,
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_game_assembly_functions": 9,
+        "inherited_unused_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "groups_with_listed_core_functions_in_c": 35,
+        "whole_feature_groups_accepted": 0,
+        "npc_callbacks_with_c_bodies": 107,
+        "npc_callbacks_catalogued": 107,
+        "bounded_native_callback_profiles": 20,
+        "whole_npc_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_game_assembly_functions": 9,
+        "inherited_unused_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "groups_with_listed_core_functions_in_c": 35,
+        "whole_feature_groups_accepted": 0,
+        "npc_callbacks_with_c_bodies": 107,
+        "npc_callbacks_catalogued": 107,
+        "bounded_native_callback_profiles": 20,
+        "whole_npc_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      }
     }
   }
 }
