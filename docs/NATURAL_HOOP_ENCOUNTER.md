@@ -29,6 +29,11 @@ binding, and active flag. They cover the recorded motion and animation path.
 The callback's branch at tick **2,401** was not reached before the dream ended.
 Its initial RNG choice and every later branch are not accepted by these samples.
 
+A later [earlier-start timing profile](NATURAL_HOOP_TIMING.md) reaches tick
+2,498 and compares post-threshold facing/motion on both discs. That is a
+separate 15,000-frame history; it does not change this profile's observations
+or establish complete encounter acceptance.
+
 The global generation variable `g_CurrentDay` remains one after the DreamSys
 day field advances. These are different fields and are recorded separately.
 Day numbers here apply the getter's plus-one rule to the stored field; the

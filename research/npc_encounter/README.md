@@ -64,3 +64,26 @@ require the expected entity ID, dream owner, context state/owner, callback
 binding, and advancing ticks. `dream_object_layout_valid` means the retained
 DreamSys layout passed the observer's checks; it does not prove an active world
 after the dream ends. Raw game content and captures stay private.
+
+## Earlier window-to-Hoop route
+
+[window_hoop_chain.lua](window_hoop_chain.lua) is the exact script from the
+[15,000-frame timing follow-up](../../docs/NATURAL_HOOP_TIMING.md). It uses the
+same explicit neutralization and complete input logging, first targeting the
+window in map 3 and then Hoop Girl in map 12. After Hoop Girl activates, it
+requests no further buttons. The original recorder above remains unchanged.
+
+This route requires the original Japanese play run's frame-4800 state, not
+the later frame-2400 window-result state used above. Its size and SHA-256 are
+recorded in [the timing metadata](../../docs/natural-hoop-timing-checks.json).
+The recorded frame limit is 15,000, with six full checkpoints every 3,000 frames.
+Use fresh isolated QA/save directories and the same pinned runtime/input rules.
+
+The existing pure check can extract the helper from this script too:
+
+```sh
+lua5.4 research/npc_encounter/test_neutral.lua research/npc_encounter/window_hoop_chain.lua
+```
+
+Registered post-threshold fields are observed; direct instruction entries,
+every RNG choice, complete encounters, audio, and cold boot are not accepted.
