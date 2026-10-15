@@ -1,0 +1,588 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-15T22:07:50.220535+00:00",
+  "source_commit_before": "9afd24f2f96fc60da63217d53518a19ffeb58a87",
+  "scope": "Complete private collision-source comparisons and actual compiler allocation observations; no original gameplay acceptance.",
+  "function": "func_8001F8B8",
+  "original_function_bytes": 1944,
+  "original_function_sha256": "c23a87535a6a4949e414266f5a298b8d0409debb8be4ef6482e627fcc6269513",
+  "published_fragment": {
+    "path": "research/collision/primitive_candidate.c",
+    "sha256": "5494e273a4c6e30023e298d65071ff5a5f00e07fbd173346b70ac054a6e4b2db"
+  },
+  "previous_published_fragment_sha256": "778ac71bebfbf56cf2b8cd4d268130d97c2d76920d2c7a746c9c19edd2cc4d82",
+  "published_reproduction": {
+    "path": ".decomp-lab/collision-fraction-publication-20261015-first/preparation.json",
+    "sha256": "e189adcb23bd4c851f01482cc8b240081b90367a58ae484cf335d61041294d35"
+  },
+  "current_candidate": {
+    "complete_executable_bytes": 505856,
+    "complete_executable_sha1": "729f0d86098eca285c436a35d01374574cc8abf4",
+    "changed_bytes": 22,
+    "frame_bytes": 352,
+    "candidate_bounds_SP_offset": 96,
+    "original_bounds_SP_offset": 240,
+    "final_square_SP_offset": 240,
+    "contact_distance_SP_offset": 256,
+    "complete_executable_same_as_previous_native_tested_candidate": true,
+    "complete_executable_exact": false,
+    "canonical_source_uses_assembly": true
+  },
+  "fraction_operand_stores_consumed": true,
+  "pointer_helper_previously_present_in_private_research": true,
+  "qualified_source_studies": [
+    {
+      "report": {
+        "path": ".decomp-lab/collision-fraction-use-20261015-first/report.json",
+        "sha256": "0434058ec5117f1d1d2c4ae5f46d67011e4db8c7ff92686682772b65da4f7759"
+      },
+      "hypothesis": "Consuming both real fraction operands can explain the original stores and aggregate lifetimes without unused fields.",
+      "compiled_complete_units": 6,
+      "build_rejections": 0,
+      "cases": [
+        {
+          "case": "pointer-caller",
+          "source": {
+            "path": ".decomp-lab/collision-fraction-use-20261015-first/pointer-caller.c",
+            "sha256": "8c0dd154e0765e0c5c24b86c0ed1d51b39ff4b0b131b401a6f055a6517170ce5"
+          },
+          "complete_function_bytes": 1944,
+          "function_sha256": "4cf4a11bb0cc642f51b68bb5c01daa5f8403daece73946e6ccc84f4942cdf785",
+          "function_address": "0x8001F8B8",
+          "function_changed_bytes_in_common_range": 22,
+          "function_length_difference": 0,
+          "frame_bytes": 352,
+          "complete_executable_bytes": 505856,
+          "complete_executable_sha1": "729f0d86098eca285c436a35d01374574cc8abf4",
+          "complete_executable_changed_bytes_in_common_range": 22,
+          "complete_executable_length_difference": 0,
+          "complete_executable_exact": false
+        },
+        {
+          "case": "pointer-helper",
+          "source": {
+            "path": ".decomp-lab/collision-fraction-use-20261015-first/pointer-helper.c",
+            "sha256": "6e556ef89f0c075789154f6423cfde16cb9dec225611a0771827e0efdfc08bdd"
+          },
+          "complete_function_bytes": 1944,
+          "function_sha256": "7ddfebc5190e7d1b2a3aff7000eeac04198f1266f94182f09df52477286ffc3c",
+          "function_address": "0x8001F8B8",
+          "function_changed_bytes_in_common_range": 117,
+          "function_length_difference": 0,
+          "frame_bytes": 336,
+          "complete_executable_bytes": 505856,
+          "complete_executable_sha1": "e8ba443fe908774f7c9eeb6afad3d9fe1b037c10",
+          "complete_executable_changed_bytes_in_common_range": 117,
+          "complete_executable_length_difference": 0,
+          "complete_executable_exact": false
+        },
+        {
+          "case": "value-caller",
+          "source": {
+            "path": ".decomp-lab/collision-fraction-use-20261015-first/value-caller.c",
+            "sha256": "f9a6771b6693de74296d6cf1444754719eaf771d4f0c7fbef4a9ccf9276cea35"
+          },
+          "complete_function_bytes": 2020,
+          "function_sha256": "1985f025282d4b7c42ddd98d09c20004517dc9d9663cbf0dbaeca50cbfce3b0b",
+          "function_address": "0x8001F8B8",
+          "function_changed_bytes_in_common_range": 1041,
+          "function_length_difference": 76,
+          "frame_bytes": 376,
+          "complete_executable_bytes": 505932,
+          "complete_executable_sha1": "904b8d992704dfaea01a7c993d9458a1d5c88c87",
+          "complete_executable_changed_bytes_in_common_range": 348235,
+          "complete_executable_length_difference": 76,
+          "complete_executable_exact": false
+        },
+        {
+          "case": "value-helper",
+          "source": {
+            "path": ".decomp-lab/collision-fraction-use-20261015-first/value-helper.c",
+            "sha256": "f3ad2c31a35f212fb98c3906459525ee2b807fccb209d17e19cda144ed4c7ee0"
+          },
+          "complete_function_bytes": 2020,
+          "function_sha256": "aedf9bfb8cca8ce41d10539466e10affb5b1030f98f6282ef1601bd974a389e8",
+          "function_address": "0x8001F8B8",
+          "function_changed_bytes_in_common_range": 1056,
+          "function_length_difference": 76,
+          "frame_bytes": 344,
+          "complete_executable_bytes": 505932,
+          "complete_executable_sha1": "2086610469082fb1f38c14a114b409ef14c1ce52",
+          "complete_executable_changed_bytes_in_common_range": 348250,
+          "complete_executable_length_difference": 76,
+          "complete_executable_exact": false
+        },
+        {
+          "case": "return-caller",
+          "source": {
+            "path": ".decomp-lab/collision-fraction-use-20261015-first/return-caller.c",
+            "sha256": "d2978b5afbd1fd3dab8cff53f783a2cbc0987610f641cac70a481415795b7213"
+          },
+          "complete_function_bytes": 2044,
+          "function_sha256": "49bbbd49a5be7104312de35decf52b8ab610ff8911045e2eb78fb2c53f162446",
+          "function_address": "0x8001F8B8",
+          "function_changed_bytes_in_common_range": 1034,
+          "function_length_difference": 100,
+          "frame_bytes": 384,
+          "complete_executable_bytes": 505956,
+          "complete_executable_sha1": "12b81d70cc21ff232677f7a1f7b899a7bbe78000",
+          "complete_executable_changed_bytes_in_common_range": 350623,
+          "complete_executable_length_difference": 100,
+          "complete_executable_exact": false
+        },
+        {
+          "case": "return-helper",
+          "source": {
+            "path": ".decomp-lab/collision-fraction-use-20261015-first/return-helper.c",
+            "sha256": "fd4913afd15ffb9c9dcd32ec77d07cb9e70808b1bd39a82cbc0fd246e45db49f"
+          },
+          "complete_function_bytes": 2044,
+          "function_sha256": "2e023a77e1c979c1603b7c86d1dbadc4861ff1779b2e994e5b19dc70c2a4bee7",
+          "function_address": "0x8001F8B8",
+          "function_changed_bytes_in_common_range": 1037,
+          "function_length_difference": 100,
+          "frame_bytes": 352,
+          "complete_executable_bytes": 505956,
+          "complete_executable_sha1": "edec6f119fcb46822f43b1f9b807c3d9b500585e",
+          "complete_executable_changed_bytes_in_common_range": 350626,
+          "complete_executable_length_difference": 100,
+          "complete_executable_exact": false
+        }
+      ]
+    },
+    {
+      "report": {
+        "path": ".decomp-lab/collision-contact-result-20261015-first/report.json",
+        "sha256": "0a6d4f4a123d51900d6ca4ab0cce550047c94affe69da65abfc879a4e95e53dd"
+      },
+      "hypothesis": "A consumed aggregate contact result may explain early aggregate storage and final square/bounds reuse.",
+      "compiled_complete_units": 8,
+      "build_rejections": 0,
+      "cases": [
+        {
+          "case": "point_first-caller-return",
+          "source": {
+            "path": ".decomp-lab/collision-contact-result-20261015-first/point_first-caller-return.c",
+            "sha256": "b017123df0e392e38b806a63536e1d899e0436f911e0f4855b2f95d0ffaf8c69"
+          },
+          "complete_function_bytes": 2112,
+          "function_sha256": "06e92bec9b298861ea91d4c9171e8a5db67578ecd11b533b5b0c04b0b4855825",
+          "function_address": "0x8001F8B8",
+          "function_changed_bytes_in_common_range": 1523,
+          "function_length_difference": 168,
+          "frame_bytes": 400,
+          "complete_executable_bytes": 506024,
+          "complete_executable_sha1": "96d9f993e479c6ca04a7661f32dca3c484402e56",
+          "complete_executable_changed_bytes_in_common_range": 305953,
+          "complete_executable_length_difference": 168,
+          "complete_executable_exact": false
+        },
+        {
+          "case": "point_first-caller-output",
+          "source": {
+            "path": ".decomp-lab/collision-contact-result-20261015-first/point_first-caller-output.c",
+            "sha256": "f113125e857c80fa65ab09e74b0853885cffefa25949e2ad5f3a081786b2f1af"
+          },
+          "complete_function_bytes": 2080,
+          "function_sha256": "6605fd75bfd653eeca517d2c70eb130d5b114f742d5c15bb2e92bbc77affaebb",
+          "function_address": "0x8001F8B8",
+          "function_changed_bytes_in_common_range": 1532,
+          "function_length_difference": 136,
+          "frame_bytes": 384,
+          "complete_executable_bytes": 505992,
+          "complete_executable_sha1": "8bae45c9585933c859c0fda01fc9d215a90f38ce",
+          "complete_executable_changed_bytes_in_common_range": 310632,
+          "complete_executable_length_difference": 136,
+          "complete_executable_exact": false
+        },
+        {
+          "case": "point_first-helper-return",
+          "source": {
+            "path": ".decomp-lab/collision-contact-result-20261015-first/point_first-helper-return.c",
+            "sha256": "934216c4746aadb916d40bd60aafa5ba266e2a7895648cee060a84777b8fb013"
+          },
+          "complete_function_bytes": 2112,
+          "function_sha256": "944dc88b80e25c499306cc3c20804da71bc19648c3537c0a51d98e9cd8b14590",
+          "function_address": "0x8001F8B8",
+          "function_changed_bytes_in_common_range": 1521,
+          "function_length_difference": 168,
+          "frame_bytes": 384,
+          "complete_executable_bytes": 506024,
+          "complete_executable_sha1": "9a832a8b9a7db7c6ac016716539a887055d9a426",
+          "complete_executable_changed_bytes_in_common_range": 305951,
+          "complete_executable_length_difference": 168,
+          "complete_executable_exact": false
+        },
+        {
+          "case": "point_first-helper-output",
+          "source": {
+            "path": ".decomp-lab/collision-contact-result-20261015-first/point_first-helper-output.c",
+            "sha256": "8c4ab889d9790b1ab44bf2beb2bd783e7a584bc5824be548bb3cf4274579379e"
+          },
+          "complete_function_bytes": 2080,
+          "function_sha256": "a9ddcb0b3ae741202e7432d61631403dd3a7f8bf0387f1da0be864936a0fea4a",
+          "function_address": "0x8001F8B8",
+          "function_changed_bytes_in_common_range": 1525,
+          "function_length_difference": 136,
+          "frame_bytes": 368,
+          "complete_executable_bytes": 505992,
+          "complete_executable_sha1": "15d73f26c9665d90b2cef56cd0c13538d094fa4c",
+          "complete_executable_changed_bytes_in_common_range": 310625,
+          "complete_executable_length_difference": 136,
+          "complete_executable_exact": false
+        },
+        {
+          "case": "status_first-caller-return",
+          "source": {
+            "path": ".decomp-lab/collision-contact-result-20261015-first/status_first-caller-return.c",
+            "sha256": "c0360505e4d7fc74225a026c75a18cf4d3542afad4ed6d7596163e5a0d1b7c57"
+          },
+          "complete_function_bytes": 2112,
+          "function_sha256": "53d3fb949550777e5d5a00026037621ad55df49f2d6df6712c2a52ac05b5ab9e",
+          "function_address": "0x8001F8B8",
+          "function_changed_bytes_in_common_range": 1523,
+          "function_length_difference": 168,
+          "frame_bytes": 400,
+          "complete_executable_bytes": 506024,
+          "complete_executable_sha1": "eac478e09480e8c623f070229264bf136f15a214",
+          "complete_executable_changed_bytes_in_common_range": 305953,
+          "complete_executable_length_difference": 168,
+          "complete_executable_exact": false
+        },
+        {
+          "case": "status_first-caller-output",
+          "source": {
+            "path": ".decomp-lab/collision-contact-result-20261015-first/status_first-caller-output.c",
+            "sha256": "242137f44ef37a5838453d9c5e1c6bfc9933c6251bbbd736bbef45ff5baff69f"
+          },
+          "complete_function_bytes": 2080,
+          "function_sha256": "d66e74957b05ca0e24250eab959cac12621895f5b2252688524850345e1def67",
+          "function_address": "0x8001F8B8",
+          "function_changed_bytes_in_common_range": 1532,
+          "function_length_difference": 136,
+          "frame_bytes": 384,
+          "complete_executable_bytes": 505992,
+          "complete_executable_sha1": "6372b1aa907f323cde5d96bc134ea4ffba5ac981",
+          "complete_executable_changed_bytes_in_common_range": 310632,
+          "complete_executable_length_difference": 136,
+          "complete_executable_exact": false
+        },
+        {
+          "case": "status_first-helper-return",
+          "source": {
+            "path": ".decomp-lab/collision-contact-result-20261015-first/status_first-helper-return.c",
+            "sha256": "f5c429b04fdbd72767611e4db6cb3486446e9ea4e9bbdebf37546a25caa26ac9"
+          },
+          "complete_function_bytes": 2112,
+          "function_sha256": "ac2dab088ffc32e40997e9786b452a9fd542e50095d5e94c470a6be77250c6f6",
+          "function_address": "0x8001F8B8",
+          "function_changed_bytes_in_common_range": 1521,
+          "function_length_difference": 168,
+          "frame_bytes": 384,
+          "complete_executable_bytes": 506024,
+          "complete_executable_sha1": "6499c65b14e7edc51bd997665b93a38948c98180",
+          "complete_executable_changed_bytes_in_common_range": 305951,
+          "complete_executable_length_difference": 168,
+          "complete_executable_exact": false
+        },
+        {
+          "case": "status_first-helper-output",
+          "source": {
+            "path": ".decomp-lab/collision-contact-result-20261015-first/status_first-helper-output.c",
+            "sha256": "1ff6bb02729cd6ae0a4ec6dc503134b12def87c59b493b81f904650005a93a9c"
+          },
+          "complete_function_bytes": 2080,
+          "function_sha256": "bb11d09dc6015c0045c638401b15ac472a0bd427463571ff949295972106e2ec",
+          "function_address": "0x8001F8B8",
+          "function_changed_bytes_in_common_range": 1525,
+          "function_length_difference": 136,
+          "frame_bytes": 368,
+          "complete_executable_bytes": 505992,
+          "complete_executable_sha1": "beb887a172b5f455b8c631c93ce0e697a09674ca",
+          "complete_executable_changed_bytes_in_common_range": 310625,
+          "complete_executable_length_difference": 136,
+          "complete_executable_exact": false
+        }
+      ]
+    }
+  ],
+  "complete_unit_comparisons": 14,
+  "refreshed_previous_fragment_complete_unit_control": {
+    "path": ".decomp-lab/collision-reload-baseline-20261015-first/build/comparison.json",
+    "sha256": "6613b9f06f83972758c5e1c5f5f2d3fc8a9c023b0bfbf05d55cb855e3e69f832"
+  },
+  "compiler_observations": [
+    {
+      "name": "previous_fragment",
+      "report": {
+        "path": ".decomp-lab/collision-reload-baseline-20261015-first/stack/report.json",
+        "sha256": "2a9b893d8ec9f6caaa08ee15d88b9537a3bbb802a72d4623106aafe303727344"
+      },
+      "allocations": {
+        "path": ".decomp-lab/collision-reload-baseline-20261015-first/stack/allocations.json",
+        "sha256": "701e1e10e345f897ac48ac7b98a951137f6596be3eeee67d89718403a9df1a93"
+      },
+      "complete_unit_allocator_events": 68,
+      "target_allocator_events": 43,
+      "reload_allocations": [
+        {
+          "sequence": 54,
+          "size": 4,
+          "frame_offset_before": 236,
+          "frame_offset_after": 248,
+          "compiler_pseudo": 358
+        },
+        {
+          "sequence": 55,
+          "size": 4,
+          "frame_offset_before": 248,
+          "frame_offset_after": 256,
+          "compiler_pseudo": 360
+        },
+        {
+          "sequence": 56,
+          "size": 4,
+          "frame_offset_before": 256,
+          "frame_offset_after": 264,
+          "compiler_pseudo": 368
+        },
+        {
+          "sequence": 57,
+          "size": 4,
+          "frame_offset_before": 264,
+          "frame_offset_after": 272,
+          "compiler_pseudo": 376
+        },
+        {
+          "sequence": 58,
+          "size": 4,
+          "frame_offset_before": 272,
+          "frame_offset_after": 280,
+          "compiler_pseudo": 387
+        },
+        {
+          "sequence": 59,
+          "size": 4,
+          "frame_offset_before": 280,
+          "frame_offset_after": 288,
+          "compiler_pseudo": 395
+        },
+        {
+          "sequence": 60,
+          "size": 4,
+          "frame_offset_before": 288,
+          "frame_offset_after": 296,
+          "compiler_pseudo": 403
+        }
+      ],
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "e0d3cbfb86fc0b39bbb2f8ee6edacb371ce3e33c9688355d60e96ab44ac251cd"
+    },
+    {
+      "name": "consumed_fractions_caller_square",
+      "report": {
+        "path": ".decomp-lab/collision-fraction-use-20261015-first/pointer-caller-stack/report.json",
+        "sha256": "188c9bfdfb541873719217b8d863bb06fafe05dd8ab7a2f3f0678e74568b05d7"
+      },
+      "allocations": {
+        "path": ".decomp-lab/collision-fraction-use-20261015-first/pointer-caller-stack/allocations.json",
+        "sha256": "b64e77c146ed2118987e3c99e9b8d8ab904473f12c11a70e03bf09e7a7b4aef8"
+      },
+      "complete_unit_allocator_events": 68,
+      "target_allocator_events": 43,
+      "reload_allocations": [
+        {
+          "sequence": 54,
+          "size": 4,
+          "frame_offset_before": 236,
+          "frame_offset_after": 248,
+          "compiler_pseudo": 364
+        },
+        {
+          "sequence": 55,
+          "size": 4,
+          "frame_offset_before": 248,
+          "frame_offset_after": 256,
+          "compiler_pseudo": 366
+        },
+        {
+          "sequence": 56,
+          "size": 4,
+          "frame_offset_before": 256,
+          "frame_offset_after": 264,
+          "compiler_pseudo": 374
+        },
+        {
+          "sequence": 57,
+          "size": 4,
+          "frame_offset_before": 264,
+          "frame_offset_after": 272,
+          "compiler_pseudo": 382
+        },
+        {
+          "sequence": 58,
+          "size": 4,
+          "frame_offset_before": 272,
+          "frame_offset_after": 280,
+          "compiler_pseudo": 393
+        },
+        {
+          "sequence": 59,
+          "size": 4,
+          "frame_offset_before": 280,
+          "frame_offset_after": 288,
+          "compiler_pseudo": 401
+        },
+        {
+          "sequence": 60,
+          "size": 4,
+          "frame_offset_before": 288,
+          "frame_offset_after": 296,
+          "compiler_pseudo": 409
+        }
+      ],
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "ccc1466aaa8d6eed4d850c79eb9928c5d3729c97542a8c9e22826acbdf0e9c3b"
+    },
+    {
+      "name": "consumed_fractions_helper_square",
+      "report": {
+        "path": ".decomp-lab/collision-fraction-use-20261015-first/pointer-helper-stack/report.json",
+        "sha256": "64f04529ade52e74509e29edf0f799dd64f564dc023b6d496dc1a0c8f76af57d"
+      },
+      "allocations": {
+        "path": ".decomp-lab/collision-fraction-use-20261015-first/pointer-helper-stack/allocations.json",
+        "sha256": "de1b8674ef7b2cc2cb38af0202f7ae3653cff810fd7741e6afea8a4d30462541"
+      },
+      "complete_unit_allocator_events": 69,
+      "target_allocator_events": 42,
+      "reload_allocations": [
+        {
+          "sequence": 55,
+          "size": 4,
+          "frame_offset_before": 220,
+          "frame_offset_after": 232,
+          "compiler_pseudo": 365
+        },
+        {
+          "sequence": 56,
+          "size": 4,
+          "frame_offset_before": 232,
+          "frame_offset_after": 240,
+          "compiler_pseudo": 367
+        },
+        {
+          "sequence": 57,
+          "size": 4,
+          "frame_offset_before": 240,
+          "frame_offset_after": 248,
+          "compiler_pseudo": 375
+        },
+        {
+          "sequence": 58,
+          "size": 4,
+          "frame_offset_before": 248,
+          "frame_offset_after": 256,
+          "compiler_pseudo": 383
+        },
+        {
+          "sequence": 59,
+          "size": 4,
+          "frame_offset_before": 256,
+          "frame_offset_after": 264,
+          "compiler_pseudo": 394
+        },
+        {
+          "sequence": 60,
+          "size": 4,
+          "frame_offset_before": 264,
+          "frame_offset_after": 272,
+          "compiler_pseudo": 402
+        },
+        {
+          "sequence": 61,
+          "size": 4,
+          "frame_offset_before": 272,
+          "frame_offset_after": 280,
+          "compiler_pseudo": 410
+        }
+      ],
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "2fcd94c91b79961301f7db15b322a54b10c839c2d4b125c5a79baaccc7b8d40c"
+    }
+  ],
+  "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+  "tracer_producer": {
+    "path": "research/collision/trace_compiler_stack.py",
+    "sha256": "05226a290759358650001880ffe74ef8f13690a85e08ed6cc11f630409b9e2ca"
+  },
+  "tracer_backend": {
+    "path": "research/collision/compiler_stack_gdb.py",
+    "sha256": "393f2b02ef90ad3d84382bcdcd2aedfca02c7d636064f26c16edc5fde8acc21e"
+  },
+  "reloads_explain_original_early_region": false,
+  "protected_build_inputs_verified": 392,
+  "protected_build_inputs_changed": false,
+  "current_build": {
+    "path": ".decomp-lab/collision-fraction-publication-20261015-first/progress.json",
+    "sha256": "4346df8d9584bfff1b6a5887c8048b02b9ea6b0075846d89f167948a8fc11174"
+  },
+  "current_canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "validation": {
+    "canonical_ninja_check": "passed",
+    "windows_tooling_tests": 519,
+    "windows_test_failures": 0,
+    "windows_test_skips": 0,
+    "optional_Lua": "bundled Lua 5.4 library used",
+    "windows_test_log": {
+      "path": ".decomp-lab/collision-fraction-tests-windows-20261015-first.log",
+      "sha256": "635aadfaa0d48939ca1d928ff2d67d72eddae925c9f0c9bfc51414c02c993068"
+    },
+    "new_tooling_tests": 0,
+    "normal_observed_assembly_equal_in_all_three_runs": true
+  },
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 20,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 20,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_C_bytes": 0,
+  "new_native_cases": 0,
+  "source_promoted": false,
+  "unused_padding_added": false,
+  "physical_register_bindings": false,
+  "compiler_flags_changed": false,
+  "instruction_substitutions": false,
+  "new_original_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "original_AI_and_developer_tooling_separate": true,
+  "limits": [
+    "Original early aggregate storage remains unexplained.",
+    "Existing native fixtures refer to identical retained executable bytes and were not rerun.",
+    "The fourteen forms include repeated controls and are not fourteen newly recovered algorithms.",
+    "Whole game source recovery, PS1 timing, natural scenes and full parity remain incomplete."
+  ]
+}

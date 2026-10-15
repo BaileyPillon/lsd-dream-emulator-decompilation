@@ -21178,6 +21178,48 @@
       "original_source_explanations_resolved": 0,
       "new_native_cases": 0,
       "original_AI_and_tools_separate": true
+    },
+    "collision_fractions_20261015": {
+      "status": "unaccepted_collision_fraction_operands_consumed_and_late_reload_slots_observed",
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 20,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 20,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "guide": "docs/COLLISION_FRACTIONS.md",
+      "metadata": "docs/collision-fraction-checks.json",
+      "source_recipe": "research/collision/README.md",
+      "qualified_complete_unit_comparisons": 14,
+      "refreshed_previous_fragment_controls": 1,
+      "actual_complete_unit_compiler_traces": 3,
+      "remaining_image_differing_bytes": 22,
+      "new_C_bytes": 0,
+      "original_source_explanations_resolved": 0,
+      "new_native_cases": 0,
+      "original_AI_and_tools_separate": true
     }
   }
 }

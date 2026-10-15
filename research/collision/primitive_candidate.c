@@ -19,6 +19,11 @@ extern s32 SquareRoot0(s32);
 
 #define collision_abs(value) ((value)>=0?(value):~(value)+1)
 
+static inline void divide_fraction(const collision_fraction_t *a,const collision_fraction_t *b,collision_fraction_t *result) {
+    result->numerator=a->numerator*b->denominator;
+    result->denominator=a->denominator*b->numerator;
+}
+
 static inline s32 fraction_fixed(collision_fraction_t *ratio_ptr) {
 #define ratio (*ratio_ptr)
     s32 remainder=ratio.numerator%ratio.denominator;
@@ -134,8 +139,7 @@ s32 func_8001F8B8(void *model,s32 *nearest,model_point_t *output,s32 *height,
             state.start_dot+=plane.d;
             numerator.numerator=-state.start_dot;
             numerator.denominator=1;
-            ratio.numerator=-state.start_dot;
-            ratio.denominator=state.dot;
+            divide_fraction(&numerator,&normal.fraction,&ratio);
             if(collision_abs(state.dot)>=0x1000) {
                 ratio.numerator/=0x1000;
                 ratio.denominator/=0x1000;
