@@ -56,8 +56,8 @@ history the source viewport is `(640, 0, 320, 240)`, while decoding advances
 through 16-pixel strips.
 
 `mdec_movie_viewport_t` replaces the opaque three-word record. The complete
-candidate translation unit produces the entire canonical 505,856-byte image,
-and the standard build also remains canonical. This clarifies an existing C
+candidate translation unit and the published Git source each produce the entire
+canonical 505,856-byte image. The standard build also remains canonical. This clarifies an existing C
 function; it adds **zero recovered C bytes**. The allocator's inherited eight-byte
 stack region remains unexplained among the 24 source-layout requirements.
 

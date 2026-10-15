@@ -1196,7 +1196,10 @@
     "complete_candidate_image_matches": true,
     "inherited_eight_byte_stack_region_explained": false,
     "candidate_source_sha256": "7e85f5101f9035789f715be8f53bee4d81505fc4b5ae4635ff39b33727355874",
-    "candidate_comparison_sha256": "1aca8aa4b42202bb214dfbbdac1934f2137182bff3d405128a835efb616fa080"
+    "candidate_comparison_sha256": "1aca8aa4b42202bb214dfbbdac1934f2137182bff3d405128a835efb616fa080",
+    "published_git_source_sha256": "1acdee2c03594823874e729625c5f51984a429919f0983a569be4d059f610c87",
+    "published_git_source_complete_image_matches": true,
+    "candidate_source_line_endings": "CRLF; the separately checked Git blob uses LF"
   },
   "preservation": {
     "unchanged_inputs": 391,
@@ -1210,13 +1213,15 @@
     "tools/capture_movie_playback.py": "a77670dab7632443a83ff1d141ff1fc75642d4e962d41a97edddbf7857b046f1",
     "tools/compare_movie_playback.py": "6b7aa74d96822f46f890dd3f2dd5069eb74c12777ee5c08e6dd535ad877a7369",
     "tests/test_movie_playback.py": "bb2e614877216181da187ae9657ac777eb117437a007607b96cb07d9e0f5764f",
-    ".decomp-lab/publish_movie_playback_20261015_second.py": "6194533f7a683ee6571bfa5f3a15f17bd5d84c69dbbe136f01800c15659f97e0"
+    ".decomp-lab/publish_movie_playback_20261015_second.py": "6194533f7a683ee6571bfa5f3a15f17bd5d84c69dbbe136f01800c15659f97e0",
+    ".decomp-lab/publish_movie_playback_20261015_third.py": "fa8396e1bb620be89c9772fcb009c9898ff04fde974433772c9b61f8060621f5"
   },
   "private_reports": {
     ".decomp-lab/movie-playback-fullgpu-20261015-third.json": "0df85e3abfba98604f2abbf632cf345f3849feea41fa29a9510938cd4204cd7a",
     ".decomp-lab/movie-playback-comparison-20261015-first.json": "2f067ad14b4f112734f07fa4a0a0d0a1027825fa4e27544b060c0deb4faa1fa2",
     ".decomp-lab/movie-playback-preservation-20261015-first.json": "9e2a70cf7ec1ec4133f0d0b412117bec818e0ecae0086c5e52db1749241f7d56",
-    ".decomp-lab/movie-playback-first-recorder-failure-20261015.json": "3d813ec768e2f92b3f40475c23a63134a2c68082eb73cb5e348e0d4cfd836e9e"
+    ".decomp-lab/movie-playback-first-recorder-failure-20261015.json": "3d813ec768e2f92b3f40475c23a63134a2c68082eb73cb5e348e0d4cfd836e9e",
+    ".decomp-lab/mdec-viewport-git-source-20261015-first/build/comparison.json": "ec4f0a39a96b2cea35602e07305a5150e95bb21bb240c1fb037fc2558480ef9b"
   },
   "rejected_initial_recorder_included": false,
   "instruction_entries_claimed": false,
@@ -1265,5 +1270,6 @@
   "configuration_sha256": {
     "original": "f771c59f5af037ef4dbc95186bb9f08e2c73e8964c926b9496013c9da9247e69",
     "rebuilt": "f771c59f5af037ef4dbc95186bb9f08e2c73e8964c926b9496013c9da9247e69"
-  }
+  },
+  "source_validation_added_utc": "2026-10-15T14:41:51.504542+00:00"
 }
