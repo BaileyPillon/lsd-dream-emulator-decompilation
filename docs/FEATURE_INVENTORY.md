@@ -95,6 +95,19 @@ The same audit bounded 418 of 418 LBD files, 167,200 grid cells and 270 addition
 
 ## Remaining scope
 
+The [Hoop Girl and day-transition profile](NATURAL_HOOP_ENCOUNTER.md) compares
+30,000 controller frames, full submitted-input and game-pad logs, 345 registered
+NPC samples, and eleven full memory/image/save-state checkpoints. The same run
+reaches the next stored day, movie imagery, and the chart. It does not reach
+the NPC's tick-2,401 branch or accept complete encounters or feature groups.
+
+The [generation return-temporary follow-up](GENERATION_RETURN_TEMPORARY.md)
+observes actual compiler allocation/store decisions, qualifies fourteen more
+source forms, and checks the eight-byte-different candidate through 3,116
+standalone native fixtures plus 480 history frames per image. The original
+source lifetime remains unexplained; no C promotion or count increase follows.
+Both supplements preserve every earlier inventory entry and before/after count.
+
 The [ordered-store audit](RENDER_MATCHING.md) executes three variants over the
 same 74,832 scalar fixtures. It rejects the four-byte candidate's internal
 write order in 68,306 cases; the corrected candidate preserves that order but

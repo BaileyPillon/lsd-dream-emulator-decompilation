@@ -33,6 +33,15 @@ Japanese-disc asset or hardware configuration.
 
 ## Publication boundary
 
+The [Hoop Girl replay](NATURAL_HOOP_ENCOUNTER.md) and
+[generation return-temporary investigation](GENERATION_RETURN_TEMPORARY.md)
+append new evidence to the existing snapshots. Their check manifests contain
+identities, hashes, bounded observations, and exclusions. The executed recorder
+is published unchanged, with a separate pure helper regression check. Original
+captures, save states, compiler RTL/assembly, and failed diagnostics remain
+private. The older window recorder's input limitation is documented without
+rewriting its executed bytes or frozen comparison metadata.
+
 The October 11, 2026 feature inventory is a frozen report of local checks,
 not an independently rerun result supplied by GitHub CI. References beneath
 `.decomp-lab/` identify private evidence artifacts and are deliberately not

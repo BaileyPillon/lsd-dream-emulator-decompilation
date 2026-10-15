@@ -46,8 +46,10 @@ dispatcher. At relative instruction offsets `0x4C` and `0x54`, it moves the
 position earlier and stores the returned method at `sp + 0x10`; the original
 has a load-delay NOP and passes the position in the call delay slot.
 
-That store is not present in the original. The fragment remains unaccepted,
-and has **not** been run through the native fixture campaign above. The
+That store is not present in the original. At this initial checkpoint the
+fragment had **not** run through the native fixture campaign above. The later
+[return-temporary investigation](GENERATION_RETURN_TEMPORARY.md) records its
+own bounded campaign and actual compiler decisions; it remains unaccepted. The
 [direct typed candidate](../research/source_layout/dream_generation_update_structure_entities.c)
 retains its ten stack-layout differences. The build continues to use the
 original assembly dispatcher. A plausible frame size alone does not recover

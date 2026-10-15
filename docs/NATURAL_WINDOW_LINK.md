@@ -9,8 +9,9 @@ path. It adds no recovered C bytes or whole-feature acceptance.
 
 Both runs start from the same existing dream save state. The controller reads
 the player's position and heading, then uses ordinary directional and Cross
-inputs to approach the window. It releases every button after behavior starts
-or the map changes. It writes no game RAM and injects no entities or assets.
+inputs to approach the window. Its policy requests no further buttons after
+behavior starts or the map changes. It writes no game RAM and injects no
+entities or assets. See the historical input-recording limitation below.
 
 | Observation | Result in both runs |
 | --- | --- |
@@ -64,6 +65,16 @@ remain local. The [feature inventory](FEATURE_INVENTORY.md) preserves all
 earlier snapshots and appends this evidence separately.
 
 ## Remaining acceptance gates
+
+The executed historical recorder uses Lua's `is_boolean and false or value`
+expression when constructing its starting input table. That expression can
+preserve an initially held Boolean. The requested-button log does not capture
+the full submitted vector, so it cannot prove that every digital control was
+cleared. The recorded output comparisons remain exact for their stated scope;
+the original script bytes and frozen metadata are preserved. The newer
+[Hoop Girl recorder](../research/npc_encounter/README.md) demonstrates explicit
+neutralization, separate numeric submission, and full input/pad logs for its
+own warm-state-specific scenario.
 
 The installed Nymashock core reports zero available execution-hook scopes and
 zero exposed registers. These are frame-level state observations. Direct

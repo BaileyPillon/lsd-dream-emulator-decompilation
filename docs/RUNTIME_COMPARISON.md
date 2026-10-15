@@ -188,3 +188,14 @@ PNG bytes, and every save-state member payload at five checkpoints. This profile
 does not capture separate GPU dumps or audio and does not use this guide's
 standard trace format; its private comparison producer is pinned in the profile
 metadata. Direct callback entries and whole-feature acceptance remain open.
+
+## Natural Hoop Girl and later screens
+
+The [Hoop Girl profile](NATURAL_HOOP_ENCOUNTER.md) extends a controller-only
+scenario to 30,000 frames, registered NPC ticks, a day-field change, movie
+imagery, and the dream chart. All submitted controller values, recorded game
+pad fields, NPC/scene tables, and eleven full memory/image/save-state checkpoint
+pairs agree. The revised recorder explicitly clears digital buttons and records
+numeric baselines. This warm-state scenario captures no audio and ends the
+dream before the NPC's tick-2,401 branch; complete encounter and feature
+acceptance remain open.
