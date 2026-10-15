@@ -475,3 +475,17 @@ This is one integration path. The C, provisional feature, bounded-native NPC,
 whole-encounter, developer-capability and mod counts remain unchanged. Its
 new supplement in [features.json](features.json) preserves every earlier field
 and snapshot, and does not treat this path as a complete accepted feature.
+
+## October 15 generation-interface recovery
+
+The [generation interface audit](GENERATION_INTERFACE.md) corrects callback,
+position-vector, and generated-object declarations while preserving standard
+and fresh full matching builds. A read-only observer identifies three live
+generation receivers in two of five earlier matched RAM snapshot pairs and
+correctly skips the disabled list after transition. This is observation of
+retained evidence, not another emulator run or callback-entry trace.
+
+A consumed method-return hypothesis narrows the dispatcher to eight differing
+bytes but remains unaccepted. Source, feature, NPC, developer-capability and mod
+counts are unchanged. The new inventory supplement preserves every prior
+field and snapshot.

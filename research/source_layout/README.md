@@ -1,5 +1,11 @@
 # Unaccepted source-layout candidates
 
+The later [generation interface audit](../../docs/GENERATION_INTERFACE.md)
+uses the recovered typed virtual method. `structure-update-method.c` tests a
+consumed method-word return: its complete image retains eight differing bytes
+and the original 40-byte frame, with an extra store absent from the original.
+It remains unaccepted and separate from the direct scalar candidate below.
+
 The [menu investigation](../../docs/MENU_LAYOUT.md) checks both retained menu
 callers through actual glyph, graphics, list and allocator dependencies. Corrected
 callback types and effect naming preserve the original executable; complete

@@ -51,35 +51,29 @@ void func_800564A4(generation_structure_t *This, s32 *Unk) {
     This->m_Unk8 = 0;
 }
 
-void func_800564F4(generation_structure_t *This, s32 Unk1) {
+void func_800564F4(generation_structure_t *This, s32 *position) {
     ++This->m_Unk8;
-    func_80056640(This, Unk1);
+    func_80056640(This, position);
 }
 
-void func_80056794(generation_structure_t *This, s32 *Unk1, s32 *Unk2);
+void func_80056794(vec3d_t *out, s32 *left, s32 *right);
 void func_800567D4(generation_structure_t *This, s32 Unk1, s32 Unk2, s32 Unk3, s32 Unk4);
 void func_80056858(generation_structure_t *This, s32 arg1);
-void func_800569A8(generation_structure_t *This, s32 Unk1);
+void func_800569A8(generation_structure_t *This, s32 *unused);
 void func_80056BBC(generation_structure_t *This, s32 Unk1);
 void func_80056DF0(void);
 void func_80056E1C(generation_structure_t *This);
 void func_80056E44(generation_structure_t *This);
 void func_8001E770(void *obj, s32 arg);
 
-typedef struct {
-    s32 x;
-    s32 y;
-    s32 z;
-} func_80056640_vec_t;
-
 void func_80056520(generation_structure_t *This, s32 Unk1, s32 Unk2) {
-    func_80056640_vec_t local;
+    vec3d_t local;
     s32 mode;
     void *obj;
     s32 (*method)(void *, s32);
 
     D_8008ACB0 = *(s32 *) ((u8 *) D_8008ACAC + 0x18);
-    func_80056794((generation_structure_t *) &local, (s32 *) Unk2, &This->m_Unk21);
+    func_80056794(&local, (s32 *) Unk2, &This->m_Unk21);
     func_800567D4(This, Unk1, (s32) &local, This->m_Unk24, This->m_Unk25);
     mode = This->m_Unk20;
     if (mode < 2) {
@@ -101,23 +95,23 @@ void func_80056520(generation_structure_t *This, s32 Unk1, s32 Unk2) {
     }
 }
 
-void func_80056640(generation_structure_t *This, s32 Unk1) {
-    func_80056640_vec_t local;
+void func_80056640(generation_structure_t *This, s32 *position) {
+    vec3d_t local;
     s32 mode;
 
-    func_80056794((generation_structure_t *) &local, (s32 *) Unk1, &This->m_Unk21);
+    func_80056794(&local, position, &This->m_Unk21);
     local.y += *(s32 *) ((u8 *) D_8008ACAC + 0x18) - D_8008ACB0;
-    This->vtable->Unk45(This, &local);
+    This->vtable->SetPosition(This, &local);
     mode = This->m_Unk20;
     switch (mode) {
         case 0:
-            func_800569A8(This, Unk1);
+            func_800569A8(This, position);
             return;
         case 2:
-            ((void (*)(generation_structure_t *, s32)) func_80056DF0)(This, Unk1);
+            ((void (*)(generation_structure_t *, s32 *)) func_80056DF0)(This, position);
             return;
         case 3:
-            ((void (*)(generation_structure_t *, s32)) func_80056E44)(This, Unk1);
+            ((void (*)(generation_structure_t *, s32 *)) func_80056E44)(This, position);
             return;
     }
 }
@@ -150,10 +144,10 @@ void func_80056718(generation_structure_t *This) {
     }
 }
 
-void func_80056794(generation_structure_t *This, s32 *Unk1, s32 *Unk2) {
-    This->vtable = (generation_structure_vtable_t *) (*Unk1 + *Unk2);
-    This->m_Unk0 = Unk1[1] + Unk2[1];
-    This->m_Unk1 = Unk1[2] + Unk2[2];
+void func_80056794(vec3d_t *out, s32 *left, s32 *right) {
+    out->x = left[0] + right[0];
+    out->y = left[1] + right[1];
+    out->z = left[2] + right[2];
 }
 
 void func_800567D4(generation_structure_t *This, s32 Unk1, s32 Unk2, s32 Unk3, s32 Unk4) {
@@ -212,7 +206,7 @@ void func_80056858(generation_structure_t *This, s32 arg1) {
     } while (i < 2);
 }
 
-void func_800569A8(generation_structure_t *This, s32 unused) {
+void func_800569A8(generation_structure_t *This, s32 *unused) {
     scene_node_t **slot;
     s32 local[3];
     s32 i;
