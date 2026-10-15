@@ -33,9 +33,13 @@ The native offset tables, bank extents, palette blocks and image rectangles
 have been inspected. These are records, not additional player features or a
 claim that every texture has been independently seen at runtime.
 
-There are 39 mixed-sector STR files and one data-sector dummy STR. Movie
+There are 39 mixed-sector STR files and one data-sector STR record. Movie
 records must retain their XA sector layout. A generic 2,048-byte ISO read is
 not a substitute for dumpsxiso's mixed extraction or the complete BIN hash.
+The [movie audit](MOVIE_INVENTORY.md) now checks all 22,382 encoded frames and
+the original path/threshold helpers. It preserves three nonuniform frame-count
+margins and the nonzero data-sector STR; decoded audio/video and natural movie
+playback remain open.
 
 ## Native texture structure
 

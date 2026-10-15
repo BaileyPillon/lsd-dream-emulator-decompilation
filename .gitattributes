@@ -3,3 +3,7 @@ tools/gcc263/* binary
 
 # Keep the published executed recorder and its extractor identical on Windows.
 research/npc_encounter/*.lua text eol=lf
+
+# Retain the exact executed movie-tool bytes across Windows and Linux checkouts.
+tools/inventory_movies.py text eol=lf
+tools/verify_movie_paths.py text eol=lf

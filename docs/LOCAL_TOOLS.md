@@ -5,6 +5,17 @@ server or an emulator. Install these tools separately when doing native analysis
 or runtime comparison. All launcher paths are explicit; no personal drive
 layout or network model service is assumed.
 
+## Original movie content and routing
+
+After a current canonical build, `tools/inventory_movies.py` reads a local
+mixed-sector extraction and checks complete movie frames against original
+path/threshold tables. With `requirements-analysis.txt` installed,
+`tools/verify_movie_paths.py` executes the original helpers and RNG in bounded
+MIPS fixtures. The [movie audit](MOVIE_INVENTORY.md#repeat-the-checks) gives
+commands, exact scope, and remaining decoded-playback requirements. Both tools
+require new private output paths, preserve original inputs, and make no model
+API calls.
+
 ## Windows build helper
 
 For interactive play, use the Python [matching-game launcher](PLAYING.md).

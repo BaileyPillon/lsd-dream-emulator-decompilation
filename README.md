@@ -24,6 +24,10 @@ The current verified source snapshot is dated October 15, 2026. These are
 separate measures, not a whole-game completion percentage. The initial
 publication and subsequent evidence are retained separately.
 
+The [movie audit](docs/MOVIE_INVENTORY.md) now checks all 39 movie streams,
+22,382 encoded frames, and 620 original path/RNG fixtures. Decoded audiovisual
+playback and complete movie scenarios remain separate acceptance work.
+
 | Measure | Verified snapshot |
 | --- | ---: |
 | Matching game-function bytes compiled from C | 194,212 / 199,912 (97.15%) |

@@ -1,0 +1,2256 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-15T12:43:11.780877+00:00",
+  "repository_before": "8955d736727fbaa402bbe55b70bfd6ba52c51d4e",
+  "status": "encoded_structure_and_bounded_native_routing_verified",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "layout_sha256": "cf93cc690c83baa91e7f54d57bc160007ceee859dc566333105124bf126ed1bc",
+  "source_hashes": {
+    "src/utils/paths.h": "96a53b12cb65920fea70333fb4c9ab0f698e07915fbad1a26a2dbf70efdc3116",
+    "src/utils/cd_paths.c": "380f325eb63bfcee49f4bfee8fc8917ce04d99bf7121dea427b1f6a6bccb9eae",
+    "src/file/str_stream.c": "788cc2ed6ef4794485bb5dbae52c702d090faa279ab67d4ba471e798344a3acc",
+    "src/menu/mdec_movie.c": "f4e223502c8e01855f540bcc6a40e1cbaef6e7d8d335d6992ee24b182d5102ce",
+    "src/game/game_flow.c": "9de13ce2869c14c0ba5c103e7300938783db33929aa2b280acf6e27f34b3da71"
+  },
+  "native_tables": {
+    "path_table_sha256": "83b06c6d559183aaa31546e602c4f6d4cf742c5bcf13655bfe0dacc3a806b9d3",
+    "cutoff_table_sha256": "cf79f12e755310fbbd78f35906d3c852b8b8d6c092125127d98f3aadf011b509"
+  },
+  "movie_count": 39,
+  "encoded_frame_count": 22382,
+  "mixed_sector_count": 224034,
+  "sector_kinds": {
+    "video": 195920,
+    "xa_audio": 27921,
+    "zero_data_filler": 193
+  },
+  "routes": [
+    {
+      "family": "opening",
+      "path": "/CDI/ETC/OPENINGA.STR",
+      "path_index": 560,
+      "cutoff_index": 0,
+      "frame_cutoff": 1060,
+      "encoded_frames": 1070,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "opening",
+      "path": "/CDI/ETC/OPENINGB.STR",
+      "path_index": 561,
+      "cutoff_index": 1,
+      "frame_cutoff": 1088,
+      "encoded_frames": 1098,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "opening",
+      "path": "/CDI/ETC/OPENINGC.STR",
+      "path_index": 562,
+      "cutoff_index": 2,
+      "frame_cutoff": 953,
+      "encoded_frames": 963,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "opening",
+      "path": "/CDI/ETC/OPENINGD.STR",
+      "path_index": 563,
+      "cutoff_index": 3,
+      "frame_cutoff": 1179,
+      "encoded_frames": 1189,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "opening",
+      "path": "/CDI/ETC/OPENINGE.STR",
+      "path_index": 564,
+      "cutoff_index": 4,
+      "frame_cutoff": 979,
+      "encoded_frames": 989,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "opening",
+      "path": "/CDI/ETC/OPENINGF.STR",
+      "path_index": 565,
+      "cutoff_index": 5,
+      "frame_cutoff": 1231,
+      "encoded_frames": 1241,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "opening",
+      "path": "/CDI/ETC/OPENINGG.STR",
+      "path_index": 566,
+      "cutoff_index": 6,
+      "frame_cutoff": 1046,
+      "encoded_frames": 1056,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "ending",
+      "path": "/CDI/ETC/ENDING.STR",
+      "path_index": 567,
+      "cutoff_index": 7,
+      "frame_cutoff": 474,
+      "encoded_frames": 484,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "event",
+      "path": "/CDI/FILM/EVENT1.STR",
+      "path_index": 568,
+      "cutoff_index": 8,
+      "frame_cutoff": 524,
+      "encoded_frames": 534,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "event",
+      "path": "/CDI/FILM/EVENT2.STR",
+      "path_index": 569,
+      "cutoff_index": 9,
+      "frame_cutoff": 439,
+      "encoded_frames": 449,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "event",
+      "path": "/CDI/FILM/EVENT3.STR",
+      "path_index": 570,
+      "cutoff_index": 10,
+      "frame_cutoff": 349,
+      "encoded_frames": 359,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "event",
+      "path": "/CDI/FILM/EVENT4.STR",
+      "path_index": 571,
+      "cutoff_index": 11,
+      "frame_cutoff": 379,
+      "encoded_frames": 389,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "event",
+      "path": "/CDI/FILM/EVENT5.STR",
+      "path_index": 572,
+      "cutoff_index": 12,
+      "frame_cutoff": 352,
+      "encoded_frames": 362,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "event",
+      "path": "/CDI/FILM/EVENT6.STR",
+      "path_index": 573,
+      "cutoff_index": 13,
+      "frame_cutoff": 352,
+      "encoded_frames": 362,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY01A.STR",
+      "path_index": 574,
+      "cutoff_index": 14,
+      "frame_cutoff": 475,
+      "encoded_frames": 485,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY01B.STR",
+      "path_index": 575,
+      "cutoff_index": 15,
+      "frame_cutoff": 867,
+      "encoded_frames": 877,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY02A.STR",
+      "path_index": 580,
+      "cutoff_index": 16,
+      "frame_cutoff": 527,
+      "encoded_frames": 537,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY02B.STR",
+      "path_index": 581,
+      "cutoff_index": 17,
+      "frame_cutoff": 445,
+      "encoded_frames": 455,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY03A.STR",
+      "path_index": 586,
+      "cutoff_index": 18,
+      "frame_cutoff": 399,
+      "encoded_frames": 409,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY03B.STR",
+      "path_index": 587,
+      "cutoff_index": 19,
+      "frame_cutoff": 579,
+      "encoded_frames": 589,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY04A.STR",
+      "path_index": 592,
+      "cutoff_index": 20,
+      "frame_cutoff": 264,
+      "encoded_frames": 274,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY04B.STR",
+      "path_index": 593,
+      "cutoff_index": 21,
+      "frame_cutoff": 541,
+      "encoded_frames": 551,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY05A.STR",
+      "path_index": 598,
+      "cutoff_index": 22,
+      "frame_cutoff": 566,
+      "encoded_frames": 576,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY05B.STR",
+      "path_index": 599,
+      "cutoff_index": 23,
+      "frame_cutoff": 325,
+      "encoded_frames": 335,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY06A.STR",
+      "path_index": 604,
+      "cutoff_index": 24,
+      "frame_cutoff": 436,
+      "encoded_frames": 446,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY06B.STR",
+      "path_index": 605,
+      "cutoff_index": 25,
+      "frame_cutoff": 524,
+      "encoded_frames": 534,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY07A.STR",
+      "path_index": 610,
+      "cutoff_index": 26,
+      "frame_cutoff": 522,
+      "encoded_frames": 532,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY07B.STR",
+      "path_index": 611,
+      "cutoff_index": 27,
+      "frame_cutoff": 523,
+      "encoded_frames": 533,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY08A.STR",
+      "path_index": 616,
+      "cutoff_index": 28,
+      "frame_cutoff": 649,
+      "encoded_frames": 660,
+      "encoded_tail_after_cutoff": 11
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY08B.STR",
+      "path_index": 617,
+      "cutoff_index": 29,
+      "frame_cutoff": 451,
+      "encoded_frames": 461,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY09A.STR",
+      "path_index": 622,
+      "cutoff_index": 30,
+      "frame_cutoff": 465,
+      "encoded_frames": 475,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY09B.STR",
+      "path_index": 623,
+      "cutoff_index": 31,
+      "frame_cutoff": 473,
+      "encoded_frames": 483,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY10A.STR",
+      "path_index": 628,
+      "cutoff_index": 32,
+      "frame_cutoff": 411,
+      "encoded_frames": 421,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY10B.STR",
+      "path_index": 629,
+      "cutoff_index": 33,
+      "frame_cutoff": 490,
+      "encoded_frames": 500,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY11A.STR",
+      "path_index": 634,
+      "cutoff_index": 34,
+      "frame_cutoff": 467,
+      "encoded_frames": 479,
+      "encoded_tail_after_cutoff": 12
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY11B.STR",
+      "path_index": 635,
+      "cutoff_index": 35,
+      "frame_cutoff": 523,
+      "encoded_frames": 534,
+      "encoded_tail_after_cutoff": 11
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY12A.STR",
+      "path_index": 640,
+      "cutoff_index": 36,
+      "frame_cutoff": 187,
+      "encoded_frames": 197,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "special_day",
+      "path": "/CDI/FILM/SPDAY12B.STR",
+      "path_index": 641,
+      "cutoff_index": 37,
+      "frame_cutoff": 384,
+      "encoded_frames": 394,
+      "encoded_tail_after_cutoff": 10
+    },
+    {
+      "family": "logo",
+      "path": "/CDI/ETC/ASMK.STR",
+      "path_index": null,
+      "cutoff_index": 49,
+      "frame_cutoff": 90,
+      "encoded_frames": 100,
+      "encoded_tail_after_cutoff": 10
+    }
+  ],
+  "movies": [
+    {
+      "sha256": "eecd39baf2e0d44f1fd70454e2c09a3849ca7de41b905d735cb6ed1e51857ca9",
+      "bytes": 2354688,
+      "sectors": 1008,
+      "sector_kinds": {
+        "video": 938,
+        "xa_audio": 63,
+        "zero_data_filler": 7
+      },
+      "frame_count": 100,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 7
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 938
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 0,
+          "sectors": 62
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 0,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/ASMK.STR",
+      "lba": 21120
+    },
+    {
+      "sha256": "b4ac2518bed7e87006c92b0b536f8dad688cb870b83f2f9e466d85ae30dd3b9a",
+      "bytes": 25004544,
+      "sectors": 10704,
+      "sector_kinds": {
+        "video": 9363,
+        "xa_audio": 1338,
+        "zero_data_filler": 3
+      },
+      "frame_count": 1070,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 3
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 9363
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 1337
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/OPENINGA.STR",
+      "lba": 22128
+    },
+    {
+      "sha256": "c77be8c50176c019deb8a9ca1914b99d12d8a53d89f3df7a2968c2ad29322615",
+      "bytes": 25658624,
+      "sectors": 10984,
+      "sector_kinds": {
+        "video": 9608,
+        "xa_audio": 1373,
+        "zero_data_filler": 3
+      },
+      "frame_count": 1098,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 3
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 9608
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 1372
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/OPENINGB.STR",
+      "lba": 32832
+    },
+    {
+      "sha256": "bce7dcd24a2794879a817a9d51ef540bb14da67f5aee56de8d61b43b922ccd18",
+      "bytes": 22500352,
+      "sectors": 9632,
+      "sector_kinds": {
+        "video": 8427,
+        "xa_audio": 1204,
+        "zero_data_filler": 1
+      },
+      "frame_count": 963,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 1
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 8427
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 1203
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/OPENINGC.STR",
+      "lba": 43816
+    },
+    {
+      "sha256": "7aea8683fff4d42d10f9233bfc589546a93c7838dcbb74a0acc5c8fe5d47beb6",
+      "bytes": 27789056,
+      "sectors": 11896,
+      "sector_kinds": {
+        "video": 10404,
+        "xa_audio": 1487,
+        "zero_data_filler": 5
+      },
+      "frame_count": 1189,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 10404
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 1486
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/OPENINGD.STR",
+      "lba": 53448
+    },
+    {
+      "sha256": "9baee1fcad8a513799389732c29ab4b3a66fb784ae54911e0ba72d4f77306377",
+      "bytes": 23117056,
+      "sectors": 9896,
+      "sector_kinds": {
+        "video": 8654,
+        "xa_audio": 1237,
+        "zero_data_filler": 5
+      },
+      "frame_count": 989,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 8654
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 1236
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/OPENINGE.STR",
+      "lba": 65344
+    },
+    {
+      "sha256": "f808feb6d7ba3365e4b968e7198ea2fd06fbb164dfda3d4ecc12895ac7d332be",
+      "bytes": 29003776,
+      "sectors": 12416,
+      "sector_kinds": {
+        "video": 10859,
+        "xa_audio": 1552,
+        "zero_data_filler": 5
+      },
+      "frame_count": 1241,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 10859
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 1551
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/OPENINGF.STR",
+      "lba": 75240
+    },
+    {
+      "sha256": "93bcdccc2fa9f720ea1ac1d697e548ad916b3d89cbb7343bef439d0df98c117c",
+      "bytes": 24668160,
+      "sectors": 10560,
+      "sector_kinds": {
+        "video": 9240,
+        "xa_audio": 1320
+      },
+      "frame_count": 1056,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 9240
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 1319
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/OPENINGG.STR",
+      "lba": 87656
+    },
+    {
+      "sha256": "95e3cbfc4a5e5a400fa98a42ba02ae0cb627bef361a815ed96ff5f5f8d0e33df",
+      "bytes": 11324928,
+      "sectors": 4848,
+      "sector_kinds": {
+        "video": 4235,
+        "xa_audio": 606,
+        "zero_data_filler": 7
+      },
+      "frame_count": 484,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 7
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 4235
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 605
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/ENDING.STR",
+      "lba": 98216
+    },
+    {
+      "sha256": "73dcc0481df1a97f64b8e187f33f007b346aeea1952cb6ffe7348dadde80cce6",
+      "bytes": 12483584,
+      "sectors": 5344,
+      "sector_kinds": {
+        "video": 4673,
+        "xa_audio": 668,
+        "zero_data_filler": 3
+      },
+      "frame_count": 534,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 3
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 4673
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 667
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/EVENT1.STR",
+      "lba": 103064
+    },
+    {
+      "sha256": "f01f9ae67f89cc343e613bbd1c558fdf879048e5c3412cd198befd9ad670dae5",
+      "bytes": 10502656,
+      "sectors": 4496,
+      "sector_kinds": {
+        "video": 3929,
+        "xa_audio": 562,
+        "zero_data_filler": 5
+      },
+      "frame_count": 449,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 3929
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 561
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/EVENT2.STR",
+      "lba": 108408
+    },
+    {
+      "sha256": "bb73940c91d9fccf1d002d053dcf4b748d4cbfdce87e5edc7560e17a88bed539",
+      "bytes": 8390912,
+      "sectors": 3592,
+      "sector_kinds": {
+        "video": 3142,
+        "xa_audio": 449,
+        "zero_data_filler": 1
+      },
+      "frame_count": 359,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 1
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 3142
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 448
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/EVENT3.STR",
+      "lba": 112904
+    },
+    {
+      "sha256": "c01ea18cf711706fc5924e2ec78271e29dc9c17c2b5b61526d46f0e57975328d",
+      "bytes": 9101056,
+      "sectors": 3896,
+      "sector_kinds": {
+        "video": 3404,
+        "xa_audio": 487,
+        "zero_data_filler": 5
+      },
+      "frame_count": 389,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 3404
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 486
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/EVENT4.STR",
+      "lba": 116496
+    },
+    {
+      "sha256": "3c579caadcf983e0ff30c3ed00a823fe5ccab5a83e269a839d997705457c90b1",
+      "bytes": 8484352,
+      "sectors": 3632,
+      "sector_kinds": {
+        "video": 3168,
+        "xa_audio": 454,
+        "zero_data_filler": 10
+      },
+      "frame_count": 362,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 10
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 3168
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 453
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/EVENT5.STR",
+      "lba": 120392
+    },
+    {
+      "sha256": "3c579caadcf983e0ff30c3ed00a823fe5ccab5a83e269a839d997705457c90b1",
+      "bytes": 8484352,
+      "sectors": 3632,
+      "sector_kinds": {
+        "video": 3168,
+        "xa_audio": 454,
+        "zero_data_filler": 10
+      },
+      "frame_count": 362,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 10
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 3168
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 453
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/EVENT6.STR",
+      "lba": 124024
+    },
+    {
+      "sha256": "9ad942d5cb7db1d0abe500124ac2a3e7b38116c3a45651c2b93495f1040f3b35",
+      "bytes": 11343616,
+      "sectors": 4856,
+      "sector_kinds": {
+        "video": 4244,
+        "xa_audio": 607,
+        "zero_data_filler": 5
+      },
+      "frame_count": 485,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 4244
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 606
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY01A.STR",
+      "lba": 127656
+    },
+    {
+      "sha256": "c4a9b602d3caf04d8170d428f62169d4affaa91ee27e103de652ce9a7daff445",
+      "bytes": 20500736,
+      "sectors": 8776,
+      "sector_kinds": {
+        "video": 7674,
+        "xa_audio": 1097,
+        "zero_data_filler": 5
+      },
+      "frame_count": 877,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 7674
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 1096
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY01B.STR",
+      "lba": 132512
+    },
+    {
+      "sha256": "ffc212d3cf068fd9c56fbb474495daba18f29c4d59fc2c252fc5821b3b523ff8",
+      "bytes": 12558336,
+      "sectors": 5376,
+      "sector_kinds": {
+        "video": 4699,
+        "xa_audio": 672,
+        "zero_data_filler": 5
+      },
+      "frame_count": 537,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 4699
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 671
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY02A.STR",
+      "lba": 141288
+    },
+    {
+      "sha256": "0c09fb11246ec417567f6b96fecfdc9a7ad1b24090937a334d0be40cb2081bb5",
+      "bytes": 10633472,
+      "sectors": 4552,
+      "sector_kinds": {
+        "video": 3982,
+        "xa_audio": 569,
+        "zero_data_filler": 1
+      },
+      "frame_count": 455,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 1
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 3982
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 568
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY02B.STR",
+      "lba": 146664
+    },
+    {
+      "sha256": "842d15ebd3d6360789d35c15ce46bd040a504652763b2d86f0d2d5270d62df46",
+      "bytes": 9568256,
+      "sectors": 4096,
+      "sector_kinds": {
+        "video": 3579,
+        "xa_audio": 512,
+        "zero_data_filler": 5
+      },
+      "frame_count": 409,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 3579
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 511
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY03A.STR",
+      "lba": 151216
+    },
+    {
+      "sha256": "a006790bd129aee4bd036d04f76935c11da062513edab8a86e86e7bd6999a34b",
+      "bytes": 13773056,
+      "sectors": 5896,
+      "sector_kinds": {
+        "video": 5154,
+        "xa_audio": 737,
+        "zero_data_filler": 5
+      },
+      "frame_count": 589,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 5154
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 736
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY03B.STR",
+      "lba": 155312
+    },
+    {
+      "sha256": "3e6ff756e5946b8a196dcf1007545c67b333f19ecd1258ca9a8c6e2b77aace30",
+      "bytes": 6428672,
+      "sectors": 2752,
+      "sector_kinds": {
+        "video": 2398,
+        "xa_audio": 344,
+        "zero_data_filler": 10
+      },
+      "frame_count": 274,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 10
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 2398
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 343
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY04A.STR",
+      "lba": 161208
+    },
+    {
+      "sha256": "045da0646937b420f86859989b6fcf32e2b6eaf7c1ac310dde88d3c5fb5dc653",
+      "bytes": 12876032,
+      "sectors": 5512,
+      "sector_kinds": {
+        "video": 4822,
+        "xa_audio": 689,
+        "zero_data_filler": 1
+      },
+      "frame_count": 551,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 1
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 4822
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 688
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY04B.STR",
+      "lba": 163960
+    },
+    {
+      "sha256": "9b999d1660ed467bbb82574194f60858375dd4c14d563ab72a3acdd8668bda20",
+      "bytes": 13474048,
+      "sectors": 5768,
+      "sector_kinds": {
+        "video": 5040,
+        "xa_audio": 721,
+        "zero_data_filler": 7
+      },
+      "frame_count": 576,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 7
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 5040
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 720
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY05A.STR",
+      "lba": 169472
+    },
+    {
+      "sha256": "d51bd50b64687ab433daf2975fb8d7372851e01c2779978d91368b9724e352a1",
+      "bytes": 7830272,
+      "sectors": 3352,
+      "sector_kinds": {
+        "video": 2932,
+        "xa_audio": 419,
+        "zero_data_filler": 1
+      },
+      "frame_count": 335,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 1
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 2932
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 418
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY05B.STR",
+      "lba": 175240
+    },
+    {
+      "sha256": "f71cd3db0e29d8bcb980f15e2f1ad2f18b96da87e4acd23e60eced416a39b8e2",
+      "bytes": 10446592,
+      "sectors": 4472,
+      "sector_kinds": {
+        "video": 3903,
+        "xa_audio": 559,
+        "zero_data_filler": 10
+      },
+      "frame_count": 446,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 10
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 3903
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 558
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY06A.STR",
+      "lba": 178592
+    },
+    {
+      "sha256": "f5e049d2caeda6fb58d89243d7a68b698cc9cdc6d46d573265f0563b28f715a0",
+      "bytes": 12483584,
+      "sectors": 5344,
+      "sector_kinds": {
+        "video": 4673,
+        "xa_audio": 668,
+        "zero_data_filler": 3
+      },
+      "frame_count": 534,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 3
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 4673
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 667
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY06B.STR",
+      "lba": 183064
+    },
+    {
+      "sha256": "b507ab60a974a6286d23ae3bc7d4c010605447ed4fad38f142095e317f7f94d8",
+      "bytes": 12425184,
+      "sectors": 5319,
+      "sector_kinds": {
+        "video": 4655,
+        "xa_audio": 646,
+        "zero_data_filler": 18
+      },
+      "frame_count": 532,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 18
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 4654
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 646
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 200,
+          "coding": 0,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY07A.STR",
+      "lba": 188408
+    },
+    {
+      "sha256": "44f6871e6c8d71ce8d412db3a9f48d243207bacbdca47c0424d3a7e49e4390b8",
+      "bytes": 12464896,
+      "sectors": 5336,
+      "sector_kinds": {
+        "video": 4664,
+        "xa_audio": 667,
+        "zero_data_filler": 5
+      },
+      "frame_count": 533,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 4664
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 666
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY07B.STR",
+      "lba": 193727
+    },
+    {
+      "sha256": "b8b0b045b386f2f35393c9b142eebf50dc84008fd1cae81e07a064f7e416b4f6",
+      "bytes": 15417600,
+      "sectors": 6600,
+      "sector_kinds": {
+        "video": 5775,
+        "xa_audio": 825
+      },
+      "frame_count": 660,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 5775
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 824
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY08A.STR",
+      "lba": 199063
+    },
+    {
+      "sha256": "4be161b8d988e3ba20d99961666cbdacd46db36be59e0a0fd8f8978fee540d24",
+      "bytes": 10782976,
+      "sectors": 4616,
+      "sector_kinds": {
+        "video": 4034,
+        "xa_audio": 577,
+        "zero_data_filler": 5
+      },
+      "frame_count": 461,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 4034
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 576
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY08B.STR",
+      "lba": 205663
+    },
+    {
+      "sha256": "fe741b2a7271ecfcf356a93dad93062b24597240595e0749115285ffe779282a",
+      "bytes": 11100672,
+      "sectors": 4752,
+      "sector_kinds": {
+        "video": 4157,
+        "xa_audio": 594,
+        "zero_data_filler": 1
+      },
+      "frame_count": 475,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 1
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 4157
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 593
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY09A.STR",
+      "lba": 210279
+    },
+    {
+      "sha256": "585ee1dc31e239db981ac42a02c5da38db760a55593c302e39e17890a5e91dd3",
+      "bytes": 11306240,
+      "sectors": 4840,
+      "sector_kinds": {
+        "video": 4227,
+        "xa_audio": 605,
+        "zero_data_filler": 8
+      },
+      "frame_count": 483,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 8
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 4227
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 604
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY09B.STR",
+      "lba": 215031
+    },
+    {
+      "sha256": "5661afcd60ffb7bb3b068a943981db43b7674442bd4e978080cf46a55ad1a961",
+      "bytes": 9848576,
+      "sectors": 4216,
+      "sector_kinds": {
+        "video": 3684,
+        "xa_audio": 527,
+        "zero_data_filler": 5
+      },
+      "frame_count": 421,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 3684
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 526
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY10A.STR",
+      "lba": 219871
+    },
+    {
+      "sha256": "db602e8dc56fe91bdf8788870aaf0beedf3f0855d1bf4505b1f1e14e4de7ac2e",
+      "bytes": 11677664,
+      "sectors": 4999,
+      "sector_kinds": {
+        "video": 4375,
+        "xa_audio": 624
+      },
+      "frame_count": 500,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 4374
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 624
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 200,
+          "coding": 0,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY10B.STR",
+      "lba": 224087
+    },
+    {
+      "sha256": "958137b391f6c25f506e75bad795069208ed9a8cc61c993eb65152d23e96f748",
+      "bytes": 11212800,
+      "sectors": 4800,
+      "sector_kinds": {
+        "video": 4192,
+        "xa_audio": 600,
+        "zero_data_filler": 8
+      },
+      "frame_count": 479,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 8
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 4192
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 599
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY11A.STR",
+      "lba": 229086
+    },
+    {
+      "sha256": "8f5900ba40214c3c0bb5d6f30c8b1dc7a24628ec40f0f7e2e9150f7dcae5b25d",
+      "bytes": 12474240,
+      "sectors": 5340,
+      "sector_kinds": {
+        "video": 4673,
+        "xa_audio": 667
+      },
+      "frame_count": 534,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 4672
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 667
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 200,
+          "coding": 0,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY11B.STR",
+      "lba": 233886
+    },
+    {
+      "sha256": "c37643afeb533a681993242a10a91eb853364ad960c68e7ac9272747c16fc312",
+      "bytes": 4615936,
+      "sectors": 1976,
+      "sector_kinds": {
+        "video": 1724,
+        "xa_audio": 247,
+        "zero_data_filler": 5
+      },
+      "frame_count": 197,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 1724
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 246
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY12A.STR",
+      "lba": 239226
+    },
+    {
+      "sha256": "1fcf32402d0170e4d874e18c5a0682ddd41b84a09e191c7d1dfba0afb77ae7ff",
+      "bytes": 9231872,
+      "sectors": 3952,
+      "sector_kinds": {
+        "video": 3448,
+        "xa_audio": 494,
+        "zero_data_filler": 10
+      },
+      "frame_count": 394,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 10
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 3448
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 493
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/FILM/SPDAY12B.STR",
+      "lba": 241202
+    }
+  ],
+  "non_mixed_str_files_unparsed": [
+    {
+      "path": "/CDI/ZDUMMY/ZDUMMY.STR",
+      "bytes": 61937664,
+      "sha256": "58c7665a9b6bc95002b860dc5dfbfad9ba8782c1afe6a92cf3fe0acb5fa3f095",
+      "storage_type": "data"
+    }
+  ],
+  "unbound_cutoff_indices": [
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48
+  ],
+  "native_routing": {
+    "fixture_count": 620,
+    "original_routines_entered": {
+      "get_path_table": 568,
+      "get_logo_asmk_path": 2,
+      "get_opening_movie_path": 258,
+      "get_ending_movie_path": 12,
+      "get_event1_movie_path": 38,
+      "get_ending_movie_path_2": 10,
+      "get_event_movie_path": 36,
+      "get_special_movie_path": 258,
+      "get_special_day_movie": 168,
+      "get_special_reel_movie_path": 90,
+      "get_movie_duration_maybe": 50,
+      "srand": 16,
+      "get_random_opening_movie_path": 256,
+      "get_seeded_random": 256,
+      "rand": 256
+    },
+    "negative_controls": [
+      {
+        "kind": "unsigned-cutoff-load",
+        "detected": true,
+        "observed_target_executions": 1
+      },
+      {
+        "kind": "cutoff-data",
+        "detected": true,
+        "observed_target_executions": 1
+      },
+      {
+        "kind": "path-data",
+        "detected": true,
+        "observed_target_executions": 1
+      }
+    ],
+    "rng_histories": 16,
+    "rng_steps_per_history": 16,
+    "function_output_stubs": 0,
+    "scope": "Manual valid path/table/RNG contexts; not natural movie construction, decode, audible output, or playback timing.",
+    "backend": {
+      "version": "2.1.4",
+      "library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+      "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+    }
+  },
+  "function_ranges": [
+    {
+      "function": "get_logo_asmk_path",
+      "address": "0x800490F4",
+      "bytes": 28,
+      "sha256": "fc5e45ee46447aa5ee5fa1758740259e6d67addc3a7c048cd520cf445f19c98f"
+    },
+    {
+      "function": "get_opening_movie_path",
+      "address": "0x80049110",
+      "bytes": 44,
+      "sha256": "8554dd5ae3540fe750e33afc4cc11323f4a15e63e03084998a243f5a7db391e0"
+    },
+    {
+      "function": "get_random_opening_movie_path",
+      "address": "0x8004913C",
+      "bytes": 144,
+      "sha256": "01dfa2133ac1575131024ed32e888b00457bd79df8c978456872bf044eebd857"
+    },
+    {
+      "function": "get_ending_movie_path",
+      "address": "0x800491CC",
+      "bytes": 48,
+      "sha256": "ffcba2d93fead9998f204935b0ee90ff58751f0bdc8362806a4673863e668b34"
+    },
+    {
+      "function": "get_ending_movie_path_2",
+      "address": "0x800491FC",
+      "bytes": 68,
+      "sha256": "bd65bf43f8fb4cddd69c6af3ea8f9e71024cbb682568ee4716cdd28316e0812b"
+    },
+    {
+      "function": "get_event1_movie_path",
+      "address": "0x80049240",
+      "bytes": 48,
+      "sha256": "e26dbbfa99879113b2eca393ea28346305298f8e24aeebc4bbde8c3ee1509aca"
+    },
+    {
+      "function": "get_event_movie_path",
+      "address": "0x80049270",
+      "bytes": 96,
+      "sha256": "3bc389a50989cf7323b35915a09a7e6bbb073e9f4c4776ba5fc35208d0f11b80"
+    },
+    {
+      "function": "get_special_movie_path",
+      "address": "0x800492D0",
+      "bytes": 100,
+      "sha256": "22d6aca4e55190ba28740500ef4f1d35cac9e099d2c2e535bc9bf34a0ed2f364"
+    },
+    {
+      "function": "get_special_day_movie",
+      "address": "0x80049334",
+      "bytes": 148,
+      "sha256": "cd69dbb12c6277685d047f6dc4e35d7bba3ecac22d5cf2b8ca5a92c23037335e"
+    },
+    {
+      "function": "get_special_reel_movie_path",
+      "address": "0x800493E4",
+      "bytes": 156,
+      "sha256": "6848d728a3907f4ad85cc344d133ef6446a6adc7a49bc7fac202cf378ccde884"
+    },
+    {
+      "function": "get_movie_duration_maybe",
+      "address": "0x800493C8",
+      "bytes": 28,
+      "sha256": "2627ea962effea99af77268773e25af9f43b38e074b2305565ec384ed2f45513"
+    },
+    {
+      "function": "get_path_table",
+      "address": "0x80048D48",
+      "bytes": 28,
+      "sha256": "daf17bc0c637610f5ecc894afa83dbaba43df82e2f000c003c1d70c0fdfb777d"
+    },
+    {
+      "function": "get_seeded_random",
+      "address": "0x80048CFC",
+      "bytes": 44,
+      "sha256": "d6a663de736ac83d8fe70a47d4746484004b201fe4cb02c18939cc0e022d418d"
+    },
+    {
+      "function": "rand",
+      "address": "0x80049480",
+      "bytes": 40,
+      "sha256": "4c54a1210ed147afe9b02657c9b12bdec5bb62c5584a2a9fef212567d0e04c0c"
+    },
+    {
+      "function": "srand",
+      "address": "0x800494A8",
+      "bytes": 12,
+      "sha256": "41e2537527158d69ebbd13e2205b03816cf27c981266d1f3683a978930beb94a"
+    }
+  ],
+  "range_qualification": {
+    "status": "actual_sized_function_symbols_from_identical_complete_image",
+    "symbol_elf_sha256": "23cd8eac306c892c49d6a76c915b7ddb1d883cb8742170319bc45a93a3e9950a",
+    "complete_binary_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "source_objects": 306,
+    "canonical_link_flags": [
+      "--no-check-sections",
+      "-nostdlib",
+      "-s"
+    ],
+    "diagnostic_link_flags": [
+      "--no-check-sections",
+      "-nostdlib"
+    ]
+  },
+  "producers": {
+    "tools/inventory_movies.py": "c0c591a30e11eca32973fc3dbf60f34d970fdf42a0a808c6ebeca2131f8ec711",
+    "tools/verify_movie_paths.py": "a2886c3e654e98843b000dd5d5f7e8aacaff436e3d14364c884f7e0539f4eb78",
+    ".decomp-lab/qualify_movie_native_ranges_20261015_first.py": "74c9e672d91125677ba753f3e92c74beca89185ff342acd3a9ebebe03ffebb2f",
+    ".decomp-lab/publish_movie_inventory_20261015_first.py": "0831e5d325dc766269b57ab7313d7253b764a6b4fbb49f98d42422d2519d1ddd"
+  },
+  "private_reports": {
+    ".decomp-lab/movie-inventory-20261015-fourth.json": "e22b923aa8515d3c915fbc196e37127c9719dc9c31ab3b5cb7bebc7fafcb4689",
+    ".decomp-lab/movie-path-native-20261015-third.json": "b46087a833a08afb91a3a4e17c948e12192949b096b06bb805f6f7e347ca1d0d",
+    ".decomp-lab/movie-native-ranges-20261015-first/report.json": "ff6930e750183d5b2e1888d0fc642ce3bfcbf33a184ef63b935440c2f5266bf5",
+    ".decomp-lab/movie-preservation-20261015-first.json": "f43e2acfc017699b53902ae75ace4366149d7dbe6f3385cb9317dcd75c4b7f0b"
+  },
+  "preservation": {
+    "changed_input": "src/utils/cd_paths.c",
+    "before_sha256": "76c3ce462d315738a3ee203987343d9eeefd5051aca1b3424af5004ae96008cd",
+    "after_sha256": "380f325eb63bfcee49f4bfee8fc8917ce04d99bf7121dea427b1f6a6bccb9eae",
+    "only_reviewed_comment_changed": true,
+    "unchanged_inputs": 391
+  },
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_game_assembly_functions": 9,
+    "inherited_unused_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "groups_with_listed_core_functions_in_c": 35,
+    "whole_feature_groups_accepted": 0,
+    "npc_callbacks_with_c_bodies": 107,
+    "npc_callbacks_catalogued": 107,
+    "bounded_native_callback_profiles": 20,
+    "whole_npc_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_game_assembly_functions": 9,
+    "inherited_unused_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "groups_with_listed_core_functions_in_c": 35,
+    "whole_feature_groups_accepted": 0,
+    "npc_callbacks_with_c_bodies": 107,
+    "npc_callbacks_catalogued": 107,
+    "bounded_native_callback_profiles": 20,
+    "whole_npc_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_c_bytes": 0,
+  "new_original_gameplay_features": 0,
+  "movie_playback_accepted": false,
+  "whole_feature_groups_accepted": 0,
+  "model_api_calls": 0,
+  "format_reference": "https://github.com/m35/jpsxdec/blob/fd5403629ac81aaca0feff0dc89e6cadd6353b26/jpsxdec/PlayStation1_STR_format.txt"
+}
