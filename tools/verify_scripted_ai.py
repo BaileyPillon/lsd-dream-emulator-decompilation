@@ -29,6 +29,8 @@ SCRIPT_FUNCTIONS = [
     {'function':'entity_fish','address':'0x8005FC58','bytes':420,'sha256':'8385538423a467f3a1b9ae8a5e7c4b528f7f3699c320e64d3d82aff26ad7a86d'},
     {'function':'entity_fish_giant','address':'0x800651D0','bytes':52,'sha256':'7037b5ff05270e8be50b545a6b50b5f9038408967b975ba419fa922b827dc09b'},
     {'function':'entity_airship','address':'0x80064928','bytes':380,'sha256':'1fb2904f97e3ed39c7410421a9a77771e7599b26dd4877c9b1e7de832f0c6d37'},
+    {'function':'entity_bell_striker','address':'0x8005EBB4','bytes':228,'sha256':'b8aa567436e41a6d3bab469e87c34fe6d383f06a345afdd64c0872e3be3fe916'},
+    {'function':'entity_opera_singer','address':'0x8005FEF8','bytes':132,'sha256':'5ed1824a794192c7b11f887c758a3643d3016c2db0087424124395152f960008'},
 ]
 ACTION_READ = {'function':'dream_sys_get_action_pressed','address':'0x8005931C','bytes':12,
                'sha256':'bc9d9a4597fc5c324c34fb0acc7dc1596cd1a7b617fc46f0fd1b7f63d9bf4061'}
@@ -60,6 +62,11 @@ def signed_remainder(value, divisor):
     if (value < 0) != (divisor < 0):
         quotient = -quotient
     return value - quotient * divisor
+
+
+def signed_word(value):
+    """Model the original MIPS word arithmetic, including signed boundaries."""
+    return ((value + 0x80000000) & 0xFFFFFFFF) - 0x80000000
 
 
 def fixtures(case):
@@ -226,6 +233,20 @@ def expected(callback, case):
         elif tick in (100,800) and random() % 5 == 0:
             call('motion_blend',CHILD,4,0)
         motion('forward',-30,0)
+    elif callback == 'entity_bell_striker':
+        ratio()
+        if timer == 0:
+            command(7,12)
+            state = signed_word(state+1)
+            native.word(entity,0x44,state)
+        elif timer >= signed_word(case['duration']-1):
+            command(1,-1)
+        if state == 36 and random() % 3 == 0:
+            call('notification',native.ENTITY,11)
+    elif callback == 'entity_opera_singer':
+        if signed_remainder(timer,120) == 0:
+            ratio()
+            command(7,1)
     else:
         raise ValueError('Unsupported callback: '+callback)
     return {'entity':bytes(entity),'dream':bytes(dream),'context':bytes(context),
@@ -244,6 +265,14 @@ def cases_by_callback():
     dog = product(state=(0,),timer=(-20,-1,0,1,9,10,13,14,19,20,21,40),
                   tick=(-1,0,1,2,7,8,9),action=(0,1,-1),seed=seeds,ratio=(-1,99))
     dog += product(state=(-1,1,10),timer=(0,1,14,20),tick=(-1,0,1,7,8,9),seed=seeds)
+    bell = []
+    for duration in (-0x80000000,-1,0,1,2,3,15,37,0x7fffffff):
+        boundary = signed_word(duration-1)
+        bell_timers = sorted({-0x80000000,-2,-1,0,1,2,13,14,15,35,36,37,0x7fffffff,
+                              signed_word(boundary-1),boundary,signed_word(boundary+1)})
+        bell += product(duration=(duration,),timer=bell_timers,
+                        state=(-0x80000000,-1,0,34,35,36,37,0x7fffffff),
+                        seed=seeds,ratio=(-1,0,99))
     return {
         'entity_bird':product(timer=timers,ratio=(-1,0,99)),
         'entity_rocket':product(timer=timers,tick=(-1,0,1,98,99,100,101,299,300,301)),
@@ -267,6 +296,10 @@ def cases_by_callback():
         'entity_airship':product(tick=(-0x80000000,-1,0,99,100,101,699,700,701,
                                      799,800,801,929,930,931,1019,1020,1021,0x7fffffff),
                                  state=(-1,0,11,12),seed=(0,1,2,3,5,42,0xffffffff)),
+        'entity_bell_striker':bell,
+        'entity_opera_singer':product(
+            timer=tuple(range(-240,240))+(-0x80000000,-241,240,241,0x7fffffff),
+            ratio=(-0x80000000,-1,0,99,0x7fffffff)),
     }
 
 
@@ -400,18 +433,26 @@ def verify(destination):
                     break
         if mutation is None:
             raise ValueError('No reviewed store/selection control found: '+callback)
-        offset,word,changed_word,reason = mutation
-        modified = bytearray(original)
-        struct.pack_into('<I',modified,offset,changed_word)
-        changed = Machine(callback,bytes(modified))
-        for index,case in enumerate(groups[callback]):
-            if changed.run(case) != expected(callback,case):
-                controls.append({'callback':callback,'kind':reason,'function_offset':offset,
-                    'expected_word':f'0x{word:08X}','changed_word':f'0x{changed_word:08X}',
-                    'detected_case_index':index,'fixture':case,'scope':'Private Unicorn memory only.'})
-                break
-        else:
-            raise ValueError('Negative control was not detected: '+callback)
+        mutations = [mutation]
+        if callback == 'entity_bell_striker':
+            for offset,word,changed_word,reason in (
+                    (0x60,0x2442FFFF,0x2442FFFE,'wrong_duration_reset_boundary'),
+                    (0x78,0x34020024,0x34020023,'wrong_state_rng_gate')):
+                if struct.unpack_from('<I',original,offset)[0] != word:
+                    raise ValueError('Reviewed Bell Striker control instruction changed.')
+                mutations.append((offset,word,changed_word,reason))
+        for offset,word,changed_word,reason in mutations:
+            modified = bytearray(original)
+            struct.pack_into('<I',modified,offset,changed_word)
+            changed = Machine(callback,bytes(modified))
+            for index,case in enumerate(groups[callback]):
+                if changed.run(case) != expected(callback,case):
+                    controls.append({'callback':callback,'kind':reason,'function_offset':offset,
+                        'expected_word':f'0x{word:08X}','changed_word':f'0x{changed_word:08X}',
+                        'detected_case_index':index,'fixture':case,'scope':'Private Unicorn memory only.'})
+                    break
+            else:
+                raise ValueError('Negative control was not detected: '+callback+'/'+reason)
         print(callback,len(groups[callback]),'passed',flush=True)
     if ((native.ROOT/native.configure.ROM).read_bytes() != native.h.ROM or
             (native.ROOT/native.configure.EXE).read_bytes() != native.h.ROM or

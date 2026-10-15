@@ -194,3 +194,13 @@ active geometry, lifetime, animation/render/audio and hardware timing remain
 unverified. Whole-callback acceptance stays zero. These are checks of original
 NPC rules; the separately counted AI-assisted developer tools and optional mods
 are unchanged, with zero model API calls in this profile.
+
+## Original timing-script extension
+
+The later [Bell Striker and Opera Singer profiles](BELL_OPERA_SCRIPTS.md) add
+17,065 distinct native fixtures and four detected controls. Catalogued bounded
+coverage increases from 20 to 22 of 107 callbacks; both already had matching C
+bodies. Earlier counts remain historical. The complete current scripted run
+checks sixteen callbacks, 46,047 fixtures and eighteen controls. It preserves
+the distinction between original behavior, developer analysis and whole-NPC
+acceptance.

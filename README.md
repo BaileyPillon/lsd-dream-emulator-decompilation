@@ -36,7 +36,7 @@ All-movie decoding, skip/error branches, and complete feature acceptance remain 
 | Known remaining game assembly functions | 9 |
 | Known C functions with unresolved unused local storage | 24 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
-| Original callbacks with bounded native comparisons | 20 / 107 |
+| Original callbacks with bounded native comparisons | 22 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 35 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
 
@@ -50,6 +50,10 @@ The [model enumeration interfaces](docs/MODEL_ENUMERATION.md) now explicitly
 forward the original arguments through the object/list/part callback chain.
 The matching game can be launched with the [play helper](docs/PLAYING.md),
 which verifies local inputs and creates an isolated emulator profile.
+The [Bell Striker and Opera Singer checks](docs/BELL_OPERA_SCRIPTS.md) add
+17,065 distinct fixtures for the original timer/state/RNG rules. The complete
+scripted suite checks 46,047 fixtures across sixteen callbacks and detects
+eighteen private faults. These bounded profiles leave whole encounters open.
 The [NPC proximity checks](docs/NPC_PROXIMITY.md) add Bear, Rabbit, Acrobats and
 Ship in 10,408 distinct fixtures through 25 original routines. Real distance,
 trigger-ratio, RNG, movement, event and GTE dependencies execute with no output
