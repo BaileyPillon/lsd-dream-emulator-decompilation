@@ -2,6 +2,17 @@
 #ifndef LSD_MEMORY_CARD_H
 #define LSD_MEMORY_CARD_H
 
+/* Native operation at 0x24 and state at 0x28; other states retain numeric labels. */
+enum {
+    MEMORY_CARD_OPERATION_IDLE = 0,
+    MEMORY_CARD_OPERATION_LOAD = 1,
+    MEMORY_CARD_OPERATION_SAVE = 2
+};
+enum {
+    MEMORY_CARD_STATE_IDLE = 0,
+    MEMORY_CARD_STATE_NOT_FOUND = 13
+};
+
 typedef struct memory_card_vtable {
     /* 0x000 80086dc4 */ u32 type_id;
     /* 0x004 80086dc8 */ base_class_t *(*Destroy)(base_class_t *);
@@ -60,8 +71,8 @@ typedef struct memory_card {
     /* 0x18 */ s32 m_Unk5;
     /* 0x1C */ s32 m_Unk6;
     /* 0x20 */ s32 m_Unk7;
-    /* 0x24 */ s32 m_Unk8;
-    /* 0x28 */ s32 m_Unk9;
+    /* 0x24 */ s32 m_Operation;
+    /* 0x28 */ s32 m_State;
     /* 0x2C */ s32 m_Unk10;
     /* 0x30 */ s32 m_Unk11;
     /* 0x34 */ s32 m_Unk12;

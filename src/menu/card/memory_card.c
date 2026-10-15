@@ -572,8 +572,8 @@ void func_8004F55C(memory_card_t *This, s32 a1, s32 a2, void *a3, void *a4, s32 
     This->vtable->Attach(This, a3);
     This->vtable->Attach(This, a4);
     This->m_Unk27 = 0;
-    This->m_Unk9 = 0;
-    This->m_Unk8 = 0;
+    This->m_State = MEMORY_CARD_STATE_IDLE;
+    This->m_Operation = MEMORY_CARD_OPERATION_IDLE;
 }
 
 void func_8004F5DC(memory_card_t *This) {
@@ -590,7 +590,7 @@ void func_8004F638(memory_card_t *This, s32 a1, s32 a2, s32 a3, s32 a4) {
     This->m_Unk15 = a1;
     This->m_Unk16 = a2;
     This->m_Unk20 = a3;
-    This->m_Unk8 = 1;
+    This->m_Operation = MEMORY_CARD_OPERATION_LOAD;
     This->m_Unk21 = a4;
     if (func_8004F9D8(This) != 0) {
         func_8004F810(This);
@@ -600,11 +600,11 @@ void func_8004F638(memory_card_t *This, s32 a1, s32 a2, s32 a3, s32 a4) {
         if (temp_v0 != 0) {
             func_8004F784(This);
             state = 0x12;
-            if (This->m_Unk9 == 0xE) {
+            if (This->m_State == 0xE) {
                 state = 0xF;
             }
         } else {
-            state = 0xD;
+            state = MEMORY_CARD_STATE_NOT_FOUND;
             This->m_Unk10 = 0xF;
         }
         This->vtable->Unk30(This, state);
@@ -669,7 +669,7 @@ void func_8004F8A4(memory_card_t *This, s32 arg1, s32 arg2, s32 arg3, u8 arg4, s
     This->m_Unk15 = arg1;
     This->m_Unk16 = arg2;
     This->m_Unk17 = arg3;
-    This->m_Unk8 = 2;
+    This->m_Operation = MEMORY_CARD_OPERATION_SAVE;
     *(u8 *) &This->m_Unk18 = arg4;
     This->m_Unk19 = arg5;
     This->m_Unk20 = arg6;
@@ -679,9 +679,9 @@ void func_8004F8A4(memory_card_t *This, s32 arg1, s32 arg2, s32 arg3, u8 arg4, s
     }
     if (This->vtable->Unk20(This, 0, (char *) arg1) != 0) {
         state = 0xA;
-        if (This->m_Unk9 == 0xA) {
+        if (This->m_State == 0xA) {
             state = 0x11;
-        } else if (This->m_Unk9 == 0x11) {
+        } else if (This->m_State == 0x11) {
             state = 0xB;
         }
         This->vtable->Unk30(This, state);
@@ -695,7 +695,7 @@ void func_8004F8A4(memory_card_t *This, s32 arg1, s32 arg2, s32 arg3, u8 arg4, s
         memory_card_vtable_t *vt = This->vtable;
 
         state = 0x11;
-        if (This->m_Unk9 == 0x11) {
+        if (This->m_State == 0x11) {
             state = 0xB;
         }
         vt->Unk30(This, state);
@@ -740,7 +740,7 @@ chain:
     if (slot2 != 0) {
         goto done;
     }
-    if (This->m_Unk8 == 1) {
+    if (This->m_Operation == MEMORY_CARD_OPERATION_LOAD) {
         mode = 5;
     } else {
         mode = 6;
@@ -785,7 +785,7 @@ void func_8004FBE4(memory_card_t *This, s32 Unk) {
 
     state = Unk;
     vtable = This->vtable;
-    if (This->m_Unk9 == Unk) {
+    if (This->m_State == Unk) {
         state = 0x17;
     }
     vtable->Notify(This, state);
@@ -830,7 +830,7 @@ void func_8004FBE4(memory_card_t *This, s32 Unk) {
     }
 
     if ((u32) (state - 0x16) < 2U) {
-        if (This->m_Unk8 == 1) {
+        if (This->m_Operation == MEMORY_CARD_OPERATION_LOAD) {
             if (This->m_Unk13 != 0) {
                 i = 0;
                 memory_free_mem((void *) This->m_Unk14);
@@ -844,10 +844,10 @@ void func_8004FBE4(memory_card_t *This, s32 Unk) {
                 This->m_Unk13 = 0;
             }
         }
-        This->m_Unk9 = 0;
-        This->m_Unk8 = 0;
+        This->m_State = MEMORY_CARD_STATE_IDLE;
+        This->m_Operation = MEMORY_CARD_OPERATION_IDLE;
     } else {
-        This->m_Unk9 = state;
+        This->m_State = state;
     }
 }
 
@@ -891,7 +891,7 @@ s32 func_8004FF90(memory_card_t *This, s32 unused, s32 state) {
     void (*fn)(void *);
 
     (void) unused;
-    if (This->m_Unk9 != 0) {
+    if (This->m_State != MEMORY_CARD_STATE_IDLE) {
         if (state == 0x19) {
             fn = This->vtable->Unk35;
         } else {
@@ -918,21 +918,21 @@ void func_80050034(memory_card_t *This) {
     memory_card_vtable_t *vtable;
 
     vtable = This->vtable;
-    switch (This->m_Unk9) {
+    switch (This->m_State) {
         case 2:
         case 4:
         case 10:
         case 14:
             vtable->Unk34(This, 0);
-            if (This->m_Unk9 == 0xE) {
+            if (This->m_State == 0xE) {
                 strcpy((char *) This->m_Unk15, (char *) This->m_Unk11);
                 strcat((char *) This->m_Unk15, *(char **) (This->m_Unk14 + (This->m_Unk31 * 4)));
                 strcpy((char *) This->m_Unk16, *(char **) (This->m_Unk13 + (This->m_Unk31 * 4)));
             }
-            if (This->m_Unk8 == 2) {
+            if (This->m_Operation == MEMORY_CARD_OPERATION_SAVE) {
                 vtable->Unk29(This, This->m_Unk15, This->m_Unk16, This->m_Unk17, *(u8 *) &This->m_Unk18, This->m_Unk19,
                               This->m_Unk20, This->m_Unk21);
-            } else if (This->m_Unk8 == 1) {
+            } else if (This->m_Operation == MEMORY_CARD_OPERATION_LOAD) {
                 vtable->Unk28(This, This->m_Unk15, This->m_Unk16, This->m_Unk20, This->m_Unk21);
             }
             break;
@@ -945,7 +945,7 @@ void func_80050034(memory_card_t *This) {
         case 8:
         case 9:
         case 12:
-        case 13:
+        case MEMORY_CARD_STATE_NOT_FOUND:
         case 16:
             vtable->Unk34(This, 0x10);
             vtable->Unk30(This, 0x17);
@@ -954,7 +954,7 @@ void func_80050034(memory_card_t *This) {
 }
 
 void func_800501F0(memory_card_t *This) {
-    switch (This->m_Unk9) {
+    switch (This->m_State) {
         case 4:
         case 6:
         case 0xA:
@@ -966,17 +966,17 @@ void func_800501F0(memory_card_t *This) {
 }
 
 void func_80050280(memory_card_t *This) {
-    if (This->m_Unk9 == 7) {
+    if (This->m_State == 7) {
         if (This->m_Unk22++ < 6) {
             return;
         }
         This->vtable->Unk30(This, 0x13);
-    } else if (This->m_Unk9 == 0xB) {
+    } else if (This->m_State == 0xB) {
         if (This->m_Unk22++ < 6) {
             return;
         }
         This->vtable->Unk30(This, 0x14);
-    } else if (This->m_Unk9 == 0xF) {
+    } else if (This->m_State == 0xF) {
         if (This->m_Unk22++ < 6) {
             return;
         }

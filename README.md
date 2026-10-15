@@ -100,6 +100,10 @@ The [persisted-card round trip](docs/CARD_ROUNDTRIP.md) compares an ordinary
 day-two save and a cold-boot load, including complete card files and restoration
 of the 1,792-byte native save buffer. The replay tools preserve isolated QA
 profiles; source recovery and the remaining card/error routes stay separate.
+The [empty-card Load investigation](docs/EMPTY_CARD_LOAD.md) identifies the
+native not-found dialog and names its operation/state fields in matching C.
+Recorded game buffers agree; eight differing core-state bytes keep its full
+runtime comparison open.
 The [card cleanup audit](docs/CARD_CLEANUP.md) checks 501 original/candidate
 fixture pairs with an explicit allocator stub. It verifies dynamic reloads
 and release order while retaining the eight-byte source-layout mismatch.

@@ -522,3 +522,13 @@ C remains 194,212 / 199,912 bytes (97.15%), with nine assembly functions,
 24 inherited storage explanations and 35 / 40 listed-core C groups. NPC,
 developer-capability, optional-mod and accepted-feature counts are unchanged.
 The additive supplement preserves every preceding inventory field and snapshot.
+
+## October 15 empty-card Load observations
+
+The [empty-card investigation](EMPTY_CARD_LOAD.md) observes native state 13 and
+its not-found resource during a controller-only cold Load. Game traces, RAM,
+GPU output, images and card files agree; eight differing core-state bytes keep
+the complete runtime check unsuccessful. Matching C now names the existing
+operation/state fields, with no new C bytes or source-layout explanation.
+The inventory counts above remain unchanged. The additional evidence accepts
+no whole feature or NPC encounter and adds no developer-capability category.

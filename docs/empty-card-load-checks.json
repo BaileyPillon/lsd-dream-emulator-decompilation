@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-15T16:55:04.581994+00:00",
+  "scope": "One not-found route with two formatted empty-card inputs. Game buffers agree; full state comparison remains unsuccessful.",
+  "canonical_executable": {
+    "bytes": 505856,
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+  },
+  "public_code": {
+    "tools/capture_card_roundtrip.py": "2d80252712f4ec4562fd0ab989b653cdad16945cfc4fb530d40d3b2324210512",
+    "tools/compare_empty_card_load.py": "67ae1199ff07dd221ead724b0615c802a0bda344f16a3b374a945c9e6a63aada",
+    "tests/test_empty_card_load.py": "9b16b710fe036e8db33b569354fdf42a456cc79c54338e6d00c45fe0fc864c43",
+    "research/card_roundtrip/load.lua": "2d8c014521550ac3fa5431becabb59e002e7ed98e34394497ba3bec08cea9197"
+  },
+  "source_names": {
+    "src/menu/card/memory_card.c": {
+      "working_sha256": "0c48d3de1f029554e1634b2bc04482a70a6749b509da045a5063341d4ea67467",
+      "git_lf_sha256": "ee38f670aba35cd274804969390f6365724cf52679b6d62026c6887889de6059"
+    },
+    "src/menu/card/memory_card.h": {
+      "working_sha256": "7fad340f710cbaa8c1baccefc7c96202d43b14e9e98c8892ec11c8ee729e2d6b",
+      "git_lf_sha256": "0713d1e207bb78332067205068e333d93582ed57ae0d0c8a90662ff0476fb1da"
+    }
+  },
+  "builds": {
+    "standard_and_fresh_canonical": true,
+    "objects_each": 306,
+    "build_objects_copied": false,
+    "changed_build_inputs": [
+      "src/menu/card/memory_card.c",
+      "src/menu/card/memory_card.h"
+    ],
+    "private_proof_sha256": "47c4ea827c04b6a1a6f1f527da9c8c025e580b8ab04005d58736c616b9d60467"
+  },
+  "input_profiles": [
+    {
+      "input_kind": "blank_write_test_frame",
+      "frames_each": 6000,
+      "observed_rows_each": 6001,
+      "observed_columns": 135,
+      "full_checkpoints_each": 16,
+      "status": "different_recorded_empty_card_load",
+      "recorded_game_buffers_and_inputs_equal": true,
+      "complete_state_members_equal": false,
+      "input_card_sha256": "78b6d4ac9ab4d23caf7e5f04f83539bf5d994cccfb0a709d14ac53d05c8e21ef",
+      "exit_card_sha256": "ac0dbcb89e54bcddf7c698fb6fe52cb0ca71977dba2d28e521d6ed556c7a11b5",
+      "routes": [
+        {
+          "not_found_state": 13,
+          "first_not_found_frame": 2536,
+          "first_returned_frame": 2580,
+          "stored_day": 0,
+          "new_game": 1
+        },
+        {
+          "not_found_state": 13,
+          "first_not_found_frame": 2536,
+          "first_returned_frame": 2580,
+          "stored_day": 0,
+          "new_game": 1
+        }
+      ],
+      "card_changes_each": 3,
+      "private_report_sha256": "941e77564266a4a7d75c3af1b28b02c6c800fd834f5b41118e6133a991dfda62"
+    },
+    {
+      "input_kind": "initialized_write_test_frame",
+      "frames_each": 6000,
+      "observed_rows_each": 6001,
+      "observed_columns": 135,
+      "full_checkpoints_each": 16,
+      "status": "different_recorded_empty_card_load",
+      "recorded_game_buffers_and_inputs_equal": true,
+      "complete_state_members_equal": false,
+      "input_card_sha256": "ac0dbcb89e54bcddf7c698fb6fe52cb0ca71977dba2d28e521d6ed556c7a11b5",
+      "exit_card_sha256": "ac0dbcb89e54bcddf7c698fb6fe52cb0ca71977dba2d28e521d6ed556c7a11b5",
+      "routes": [
+        {
+          "not_found_state": 13,
+          "first_not_found_frame": 2536,
+          "first_returned_frame": 2580,
+          "stored_day": 0,
+          "new_game": 1
+        },
+        {
+          "not_found_state": 13,
+          "first_not_found_frame": 2536,
+          "first_returned_frame": 2580,
+          "stored_day": 0,
+          "new_game": 1
+        }
+      ],
+      "card_changes_each": 0,
+      "private_report_sha256": "2d7b371d571ee903d07d9c5c951f692feb775353e77936b6f5f36209c10c0335"
+    }
+  ],
+  "full_state_difference": {
+    "decoded_bytes_different_per_checkpoint": 8,
+    "present_at_initial_frame": true,
+    "cause": "unresolved",
+    "bytes_masked": 0,
+    "profile_accepted": false
+  },
+  "altered_record_controls": [
+    {
+      "control": "changed write-test frame in private card bytes",
+      "detected": true,
+      "error": "Unexpected card transition outside the header write-test copy."
+    },
+    {
+      "control": "changed preserved backup in private bytes",
+      "detected": true,
+      "error": "The backup does not preserve the input card."
+    },
+    {
+      "control": "different error code in copied trace rows",
+      "detected": true,
+      "error": "Not the fixed empty-card Load route."
+    },
+    {
+      "control": "changed native operation word in private RAM bytes",
+      "detected": true,
+      "error": "Checkpoint card word 0x24 disagrees with RAM."
+    },
+    {
+      "control": "unexpected digital button in private copied records",
+      "detected": true,
+      "error": "Unexpected submitted digital input."
+    }
+  ],
+  "native_audit_sha256": "94d91e85f6b8de409f42301612d164083791142bdb99bdc0a61c9b33acc5f035",
+  "tooling_tests": {
+    "windows": 488,
+    "linux": 488,
+    "new_synthetic_tests": 17
+  },
+  "new_c_bytes": 0,
+  "layout_explanations_resolved": 0,
+  "whole_feature_groups_accepted": 0,
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_game_assembly_functions": 9,
+    "inherited_unused_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "groups_with_listed_core_functions_in_c": 35,
+    "whole_feature_groups_accepted": 0,
+    "npc_callbacks_with_c_bodies": 107,
+    "npc_callbacks_catalogued": 107,
+    "bounded_native_callback_profiles": 20,
+    "whole_npc_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_game_assembly_functions": 9,
+    "inherited_unused_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "groups_with_listed_core_functions_in_c": 35,
+    "whole_feature_groups_accepted": 0,
+    "npc_callbacks_with_c_bodies": 107,
+    "npc_callbacks_catalogued": 107,
+    "bounded_native_callback_profiles": 20,
+    "whole_npc_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "producer_sha256": "b55e85550d73ef8e0b7c87a1e032f6b96cea4b1b2b9c602f2fafde438869b795",
+  "second_input_native_audit_sha256": "952d290ddc02da0ba42e2858d48d55d605816bd5e9a81f9ecb62478b293c4f91",
+  "shared_code": {
+    "tools/compare_card_roundtrip.py": {
+      "working_sha256": "af8c2cf4ccd6a1635f904d188d6c42c39d302ebcb1e88b2182fc509564d5d703",
+      "git_lf_sha256": "af8c2cf4ccd6a1635f904d188d6c42c39d302ebcb1e88b2182fc509564d5d703"
+    },
+    "tools/compare_runtime.py": {
+      "working_sha256": "0e33d75acf5f416096164bdee57572c82975ca68ccd2de7f3b2a07a6a19880f3",
+      "git_lf_sha256": "0e33d75acf5f416096164bdee57572c82975ca68ccd2de7f3b2a07a6a19880f3"
+    },
+    "tools/runtime_inputs.py": {
+      "working_sha256": "a1e0865b13801414bfad30f31ce00ffd13840b2a836dbc527e138d89d6d877e4",
+      "git_lf_sha256": "a1e0865b13801414bfad30f31ce00ffd13840b2a836dbc527e138d89d6d877e4"
+    },
+    "tools/play_game.py": {
+      "working_sha256": "99e6aa5c98c86a90cbc3bd261cf9088f614fa5f105e19aa665e16b95e4bf3c5e",
+      "git_lf_sha256": "99e6aa5c98c86a90cbc3bd261cf9088f614fa5f105e19aa665e16b95e4bf3c5e"
+    }
+  },
+  "visual_review": {
+    "relative_frame": 2580,
+    "image_sha256": "caa108378119a4e134a1bcc479b3573f24a368484b96142d9860d575c33ee9b3",
+    "observation": "Japanese corresponding-file-not-found message remains visible as the native operation returns to idle."
+  },
+  "finalization": {
+    "initial_metadata_sha256": "b8fe4b5ca230caa288496eb1166caa7694ddab47139c90e088adf71257a07800",
+    "code_git_bytes_qualified": true,
+    "producer_sha256": "a980653e59569d83a8c8c61e2948e6d88a11908599272dd64702112e7e93eb3a"
+  }
+}
