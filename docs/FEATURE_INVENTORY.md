@@ -508,3 +508,17 @@ A consumed method-return hypothesis narrows the dispatcher to eight differing
 bytes but remains unaccepted. Source, feature, NPC, developer-capability and mod
 counts are unchanged. The new inventory supplement preserves every prior
 field and snapshot.
+
+## October 15 persisted save and cold-load evidence
+
+The [card round trip](CARD_ROUNDTRIP.md) compares one day-two slot-01 save
+and a subsequent cold-boot load from its actual persisted file. All 34 full
+RAM/GPU/image/state checkpoints agree. Both versions restore the entire
+1,792-byte native save buffer, and their complete card and backup bytes agree.
+The portable launcher's repeat checks the same history; it adds no distinct
+gameplay scenario or whole-feature acceptance.
+
+C remains 194,212 / 199,912 bytes (97.15%), with nine assembly functions,
+24 inherited storage explanations and 35 / 40 listed-core C groups. NPC,
+developer-capability, optional-mod and accepted-feature counts are unchanged.
+The additive supplement preserves every preceding inventory field and snapshot.

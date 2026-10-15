@@ -23,6 +23,16 @@ checkpoint state and finalized PCM. The [startup movie guide](MOVIE_PLAYBACK.md)
 gives the exact commands and separates setup words, accepted-frame counters,
 complete observed lifetimes, and partial repeats.
 
+## Persisted memory-card round trip
+
+`tools/capture_card_roundtrip.py` records a fixed Save or cold-Load pair in
+fresh isolated Windows profiles. Save takes the reviewed chart state; Load
+takes the actual persisted card and starts without an emulator save state.
+`tools/compare_card_roundtrip.py` verifies both pairs, all checkpoint state,
+controller/native fields, card allocation and the complete restored payload.
+The [round-trip guide](CARD_ROUNDTRIP.md) gives the commands and acceptance
+boundary. Both tools make zero model API calls and preserve original play data.
+
 ## Windows build helper
 
 For interactive play, use the Python [matching-game launcher](PLAYING.md).
