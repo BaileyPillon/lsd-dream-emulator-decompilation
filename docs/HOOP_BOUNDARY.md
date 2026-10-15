@@ -56,6 +56,12 @@ actor fields agree with the prior snapshot; the cause of the complete-memory
 drift remains unproven. All differences remain in the private record. This
 profile does not establish uninterrupted-process identity with the prior run.
 
+The later [state-restoration investigation](STATE_REPLAY_BOUNDARY.md) reproduces
+that one-frame/645-byte difference with command-line loading. A synchronous
+Lua load then preserves the source frame, full RAM and every state-member
+payload, followed by another exact paired boundary replay. The earlier
+captures and relative-frame values above remain unchanged.
+
 An initial recorder attempt emitted an extra TSV column because Lua's unpack
 operation also returns its next index. That attempt is preserved and excluded.
 The corrected single-result readers and input helper pass their synthetic Lua
