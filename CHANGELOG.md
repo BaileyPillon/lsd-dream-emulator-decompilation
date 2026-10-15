@@ -1,5 +1,14 @@
 # Changelog
 
+## Natural window linking in the matching build - 2026-10-15
+
+- Compare a 2,400-frame controller-only approach, natural window activation and
+  following map transition on the original and rebuilt Japanese discs.
+- Retain exact controller/NPC/scene logs, five full MainRAM and image checkpoints,
+  and every save-state member payload, with revalidated identical launch inputs.
+- Publish the executed research scenario and scoped metadata. C remains 97.15%,
+  with nine assembly functions and no whole-feature acceptance increase.
+
 ## Play launcher and matching model interfaces - 2026-10-15
 
 - Explicitly forward the original model enumeration arguments through six

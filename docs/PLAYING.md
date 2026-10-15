@@ -87,3 +87,8 @@ A matching executable and a playable session do not finish the C recovery,
 exhaustive content inventory, natural NPC encounters, card error cases, or every
 other requirement in [the project objective](../PROJECT_OBJECTIVE.md). Original
 parity, optional mods, and AI-assisted developer tools retain separate evidence.
+
+A further [natural window-link replay](NATURAL_WINDOW_LINK.md) verifies one
+controller-driven activation, transition from map key 3 to 12, and continued
+in-game updates in the matching build. Its five RAM/image/state checkpoints
+and complete recorded input/NPC/scene logs agree with the original disc.

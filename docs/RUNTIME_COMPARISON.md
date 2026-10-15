@@ -178,3 +178,13 @@ configuration, script, and starting state. The current executable is canonical.
 the isolated [interactive play launcher](PLAYING.md). A saved-state replay is
 separate from cold-boot determinism, natural encounters, physical card behavior,
 and acceptance of complete feature groups. Those gates remain open.
+
+## Natural window-link scenario
+
+The [window integration profile](NATURAL_WINDOW_LINK.md) compares 2,400 frames
+of ordinary controller input, registered window behavior, a map transition, and
+subsequent updates. All controller and NPC/scene rows agree, as do full MainRAM,
+PNG bytes, and every save-state member payload at five checkpoints. This profile
+does not capture separate GPU dumps or audio and does not use this guide's
+standard trace format; its private comparison producer is pinned in the profile
+metadata. Direct callback entries and whole-feature acceptance remain open.

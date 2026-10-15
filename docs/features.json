@@ -20611,6 +20611,59 @@
           "known_source_padding_functions": 24
         }
       }
+    },
+    "natural_window_link_20261015": {
+      "status": "exact_recorded_natural_window_link_scenario",
+      "scope": "One controller-driven original/rebuilt window activation and following map transition; not whole-encounter or feature acceptance.",
+      "metadata": "docs/natural-window-link-checks.json",
+      "frames": 2400,
+      "controller_rows": 2400,
+      "scene_rows": 81,
+      "entity_rows": 74,
+      "full_ram_image_state_checkpoints": 5,
+      "window_entity_id": 75,
+      "registered_owner_and_callback_bindings_verified": true,
+      "first_registered_controller_frame": 698,
+      "first_destination_controller_frame": 773,
+      "map_keys": [
+        3,
+        12
+      ],
+      "game_ram_modified_by_observer": false,
+      "direct_callback_entry_counts_claimed": false,
+      "audio_captured": false,
+      "new_original_gameplay_features": 0,
+      "new_c_bytes": 0,
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_game_assembly_functions": 9,
+        "inherited_unused_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "groups_with_listed_core_functions_in_c": 35,
+        "whole_feature_groups_accepted": 0,
+        "npc_callbacks_with_c_bodies": 107,
+        "npc_callbacks_catalogued": 107,
+        "bounded_native_callback_profiles": 20,
+        "whole_npc_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_game_assembly_functions": 9,
+        "inherited_unused_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "groups_with_listed_core_functions_in_c": 35,
+        "whole_feature_groups_accepted": 0,
+        "npc_callbacks_with_c_bodies": 107,
+        "npc_callbacks_catalogued": 107,
+        "bounded_native_callback_profiles": 20,
+        "whole_npc_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      }
     }
   }
 }
