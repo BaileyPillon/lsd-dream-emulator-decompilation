@@ -21319,6 +21319,49 @@
       "new_original_feature_groups_accepted": 0,
       "new_whole_NPC_encounters_accepted": 0,
       "original_AI_and_tools_separate": true
+    },
+    "render_query_record_20261015": {
+      "status": "passed_matching_existing_C_record_cleanup",
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 22,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 22,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "guide": "docs/RENDER_QUERY_RECORD.md",
+      "metadata": "docs/render-query-record-checks.json",
+      "new_C_bytes": 0,
+      "actual_compiler_stack_traces": 2,
+      "additional_redundant_tail_bytes_removed": 4,
+      "prior_24_unresolved_inherited_functions_unchanged": true,
+      "new_native_fixtures": 0,
+      "new_gameplay_runs": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "original_AI_and_tools_separate": true,
+      "Bevy_port_modified": false
     }
   }
 }

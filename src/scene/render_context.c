@@ -1412,31 +1412,25 @@ s32 func_8004CAF0(render_context_t *This, render_context_line_t *line, s32 count
     return count;
 }
 
-typedef struct {
-    /* 0x00 */ u8 pad[0x28];
-    /* 0x28 */ s32 value;
-    /* 0x2C */ s32 pad2;
-} cc74_buf_t;
-
 s32 func_8004CD38(const render_context_cell_bounds_t *bounds, const u8 *point);
 s32 func_8004CDA4(render_context_t *This, s32 unused, s32 index, s32 arg3);
 
 void func_8004CC74(render_context_t *This) {
-    cc74_buf_t buf;
+    func_8004C1C0_out_t buf;
     s32 unused;
     s32 next;
 
     This->vtable->Unk66(This, &buf, 0);
     This->m_Unk33 = 0;
-    next = func_8004CDA4(This, unused, 0, buf.value);
+    next = func_8004CDA4(This, unused, 0, buf.divisor);
     This->m_Unk33 = next;
-    if (func_8004CD38(This->m_NextSlotExclusionBounds, &buf.pad[2]) != 0) {
-        next = buf.value + 1;
+    if (func_8004CD38(This->m_NextSlotExclusionBounds, (const u8 *) &buf + 2) != 0) {
+        next = buf.divisor + 1;
         if (next < ((s16 *) This->m_Unk25)[1]) {
             This->m_Unk33 = func_8004CDA4(This, unused, This->m_Unk33, next);
         }
     }
-    next = buf.value - 1;
+    next = buf.divisor - 1;
     if (next >= 0) {
         This->m_Unk33 = func_8004CDA4(This, unused, This->m_Unk33, next);
     }

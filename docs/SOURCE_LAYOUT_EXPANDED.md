@@ -7,6 +7,12 @@ with unused local storage**, covering 6,720 compiled game-function bytes and
 comparison produces a nonmatching complete executable. This does not certify
 that every possible source workaround has been found.
 
+A later [render query record cleanup](RENDER_QUERY_RECORD.md) removes an
+additional four-byte tail outside this selected audit. Actual compiler traces
+show that the real 44-byte record naturally receives the required 48-byte
+local allocation, preserving the complete executable. That additional finding
+does not reduce the 24 unresolved inherited functions recorded below.
+
 Twenty-four declarations are present in the imported upstream source. Four
 others were introduced when previously retained assembly was promoted during
 this project. Those four promotions do not satisfy the no-padding recovery

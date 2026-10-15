@@ -532,3 +532,14 @@ the complete runtime check unsuccessful. Matching C now names the existing
 operation/state fields, with no new C bytes or source-layout explanation.
 The inventory counts above remain unchanged. The additional evidence accepts
 no whole feature or NPC encounter and adds no developer-capability category.
+
+## October 15 render query result cleanup
+
+The [typed query result](RENDER_QUERY_RECORD.md) replaces a separate opaque
+buffer with the existing 44-byte resolver record. Actual compiler traces
+explain why its local allocation remains 48 bytes, and complete candidate and
+regular builds reproduce the canonical executable. The redundant tail was
+outside the earlier selected storage audit, so its 24 unresolved inherited
+functions remain. The additive inventory supplement preserves all preceding
+fields and counts; it adds no C bytes, NPC profile, gameplay run or accepted
+whole feature. The Bevy port is unchanged.
