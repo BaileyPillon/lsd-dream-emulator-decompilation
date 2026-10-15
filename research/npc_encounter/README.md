@@ -87,3 +87,33 @@ lua5.4 research/npc_encounter/test_neutral.lua research/npc_encounter/window_hoo
 
 Registered post-threshold fields are observed; direct instruction entries,
 every RNG choice, complete encounters, audio, and cold boot are not accepted.
+
+## Hoop Girl boundary continuation
+
+[hoop_boundary.lua](hoop_boundary.lua) is the exact corrected recorder from the
+[frame-level boundary comparison](../../docs/HOOP_BOUNDARY.md). It requires
+the earlier route's **frame-12000** save state, whose identity is recorded in
+[hoop-boundary-checks.json](../../docs/hoop-boundary-checks.json). The original
+route reached and activated this actor through ordinary controller inputs.
+
+Run for 1,800 frames in fresh isolated original/rebuilt QA profiles with the
+same verified Japanese content, runtime, BIOS, configuration, and state. All
+Boolean inputs are false; numeric values retain their recorded baseline.
+The recorder checks the specific state's actor and context bindings every
+frame. It rejects a different layout instead of scanning for a substitute.
+
+The observer writes `boundary.tsv` and all input values in `submitted.tsv`.
+It captures complete MainRAM, PNG, and state files at zero, the first observed
+ticks 2,399 through 2,403, and the final frame. `captures.tsv` identifies those
+seven checkpoints. The pure helper checks run without a game:
+
+```sh
+lua5.4 research/npc_encounter/test_neutral.lua research/npc_encounter/hoop_boundary.lua
+lua5.4 research/npc_encounter/test_boundary.lua
+```
+
+The earlier route's RAM snapshot and the resumed initial snapshot differ by
+645 bytes, while the new original/rebuilt pair agrees completely. Preserve
+that distinction when interpreting continuation. The first malformed-column
+attempt is excluded. This remains a warm-state boundary observation without
+direct callback tracing, complete encounters, or audible-output acceptance.
