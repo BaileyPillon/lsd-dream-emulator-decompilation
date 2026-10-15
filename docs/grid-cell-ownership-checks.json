@@ -1,0 +1,450 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-15T23:09:27.628354+00:00",
+  "source_commit_before": "ccd38a49863ed310c82e27c2230be7e26346c155",
+  "guide": "docs/GRID_CELL_OWNERSHIP.md",
+  "scope": "Two unaccepted grid C variants, complete source-unit studies and bounded repeated scalar comparisons. No matching-C promotion or original gameplay acceptance.",
+  "public_preparer": {
+    "path": "research/render_grid/prepare_candidate.py",
+    "sha256": "844b1071618584c01d6ae5766628b21ff00ff56d43f71c19c7e1db872b420347"
+  },
+  "default_variant_unchanged": "edge",
+  "variants": [
+    {
+      "variant": "edge",
+      "published_source": {
+        "path": "research/render_grid/c6a8_candidate.c",
+        "sha256": "de23ead276cafd2a2f34096f52c0dd78143403617e4c9d5ac91b45c9e273efa6"
+      },
+      "preparation": {
+        "path": ".decomp-lab/grid-cell-ownership-publication-20261015-first/edge-source/preparation.json",
+        "sha256": "3f2d90a1ceed333e61c70791662d3faebfb10f647bf688f3a9e501332eb1c3b7"
+      },
+      "complete_comparison": {
+        "path": ".decomp-lab/grid-cell-ownership-publication-20261015-first/edge-build/comparison.json",
+        "sha256": "7bc670993b1387f14bc19a5347e3513643a776078f3b66c04ac9908c79746267"
+      },
+      "complete_executable_sha256": "519d06501c2e50016f54f56e23765f139cbe1530f25b79483413b545c9464d5e",
+      "complete_executable_sha1": "c19e161fe2bee72cb96d11936d1f3de114f1b271",
+      "function_sha256": "0254118c744c0f5a04e506cf20763e565fe8df8df496735777116081faf6cccf",
+      "function_bytes": 660,
+      "frame_bytes": 152,
+      "differing_executable_bytes": 8,
+      "differing_instruction_words": 2,
+      "different_instruction_addresses": [
+        "0x8004c7d4",
+        "0x8004c7d8"
+      ],
+      "all_bytes_outside_function_equal": true,
+      "complete_executable_exact": false
+    },
+    {
+      "variant": "cell-reuse",
+      "published_source": {
+        "path": "research/render_grid/c6a8_cell_reuse_candidate.c",
+        "sha256": "5538a2b8100992b9190833fff7a5db0ffebab2914ef291946192a206069781d7"
+      },
+      "preparation": {
+        "path": ".decomp-lab/grid-cell-ownership-publication-20261015-first/cell-reuse-source/preparation.json",
+        "sha256": "d00b24101564f43fdd9aab106b7cc31e6686fdbd36c7cd16b0a91406cec0424d"
+      },
+      "complete_comparison": {
+        "path": ".decomp-lab/grid-cell-ownership-publication-20261015-first/cell-reuse-build/comparison.json",
+        "sha256": "9295bf8b2b3758eea097df156795d695d3d84a620d20c4bb1e132aa80518f5ad"
+      },
+      "complete_executable_sha256": "213114a02b1481ebf1af0d45c8ee8cf4cf7328b23a093d0145ce751060a0db28",
+      "complete_executable_sha1": "262c2ba58cd2533c14d0227e7e2d096d84407c58",
+      "function_sha256": "40546f68a95a20efa26103a46b7662a4a7cfd9da7d057414358c1e2e58dcfb89",
+      "function_bytes": 660,
+      "frame_bytes": 152,
+      "differing_executable_bytes": 7,
+      "differing_instruction_words": 4,
+      "different_instruction_addresses": [
+        "0x8004c700",
+        "0x8004c704",
+        "0x8004c88c",
+        "0x8004c890"
+      ],
+      "all_bytes_outside_function_equal": true,
+      "complete_executable_exact": false
+    }
+  ],
+  "complete_unit_source_studies": [
+    {
+      "report": {
+        "path": ".decomp-lab/grid-coordinate-lifetimes-20261015-first/report.json",
+        "sha256": "d9272be0c3b4829d641e5fe742bf696ab4c007b2c25d6aeb07734cf7a7664c6f"
+      },
+      "complete_units": 15,
+      "matching_images": 0,
+      "compiler_failures": 0,
+      "minimum_common_function_byte_differences": 8,
+      "function_lengths": [
+        648,
+        652,
+        660
+      ],
+      "hypothesis": "Later real coordinate reads may raise cell-Z allocation priority while instruction scheduling preserves the native load order and subtract-then-add edge."
+    },
+    {
+      "report": {
+        "path": ".decomp-lab/grid-edge-helper-split-20261015-first/report.json",
+        "sha256": "3340a6d417ca18a39a695482277f3ed73852fe425837f4306382bc9f501bce3d"
+      },
+      "complete_units": 13,
+      "matching_images": 0,
+      "compiler_failures": 0,
+      "minimum_common_function_byte_differences": 8,
+      "function_lengths": [
+        660
+      ],
+      "hypothesis": "Separating real subtraction and inclusive-end helpers may retain a pre-allocation value copy while final allocation removes it and preserves subtract-then-add ordering."
+    },
+    {
+      "report": {
+        "path": ".decomp-lab/grid-coordinate-reuse-20261015-first/report.json",
+        "sha256": "56e646b1dee9e45a9bb55336c29a15e6584f6dc943f7d968a9c266b7f4aa0eb7"
+      },
+      "complete_units": 10,
+      "matching_images": 0,
+      "compiler_failures": 0,
+      "minimum_common_function_byte_differences": 7,
+      "function_lengths": [
+        640,
+        648,
+        656,
+        660
+      ],
+      "hypothesis": "Reusing the real coordinate or origin while constructing the inclusive edge may change pre-allocation copies without changing the game ABI or final instruction sequence."
+    },
+    {
+      "report": {
+        "path": ".decomp-lab/grid-angle-representation-20261015-first/report.json",
+        "sha256": "ddc39921cf763f18eef43cbb43088f52fb51fa2d7e07a0fa081d31d2bc7d2ffd"
+      },
+      "complete_units": 8,
+      "matching_images": 0,
+      "compiler_failures": 0,
+      "minimum_common_function_byte_differences": 8,
+      "function_lengths": [
+        644,
+        648,
+        652,
+        660
+      ],
+      "hypothesis": "The angle signedness and normalization boundary may alter one pre-allocation instruction while preserving native halfword loads, width/cell-Z registers and subtract-then-add arithmetic."
+    },
+    {
+      "report": {
+        "path": ".decomp-lab/grid-z-helper-ownership-20261015-first/report.json",
+        "sha256": "2b107eb4de79c75e5fc7a5353603896e8a0b5ce74e3efe2841b1b24902d89742"
+      },
+      "complete_units": 8,
+      "matching_images": 0,
+      "compiler_failures": 0,
+      "minimum_common_function_byte_differences": 8,
+      "function_lengths": [
+        660
+      ],
+      "hypothesis": "An inline longitudinal-origin value parameter can own the updated coordinate while preserving the caller cell and generating the original subtraction destination; the complete image remains the gate."
+    },
+    {
+      "report": {
+        "path": ".decomp-lab/grid-z-result-ownership-20261015-second/report.json",
+        "sha256": "fda520c89be65b70f018b38377e38097cb09e792b08bb020adecb8582cb44741"
+      },
+      "complete_units": 9,
+      "matching_images": 0,
+      "compiler_failures": 0,
+      "minimum_common_function_byte_differences": 7,
+      "function_lengths": [
+        660
+      ],
+      "hypothesis": "Owning the complete inclusive Z result, or using original 32-bit long coordinate types, may preserve the native temporary destination and load scheduling while retaining the recovered allocation."
+    }
+  ],
+  "qualified_complete_units": 63,
+  "repeated_controls": 12,
+  "excluded_source_pattern_preparations": 1,
+  "matching_images": 0,
+  "compiler_allocation_observations": [
+    {
+      "name": "formal_control",
+      "report": {
+        "path": ".decomp-lab/grid-coordinate-formal-allocation-20261015-first/report.json",
+        "sha256": "7a08d64fb725a3a7a8342d169031255c4ff9a7d83fc9859ae2b2a313b9a9e804"
+      },
+      "observations": {
+        "path": ".decomp-lab/grid-coordinate-formal-allocation-20261015-first/allocations.json",
+        "sha256": "3e821a9a7094427b3db73564cd5dbce69938faf7b046b90c518f28094e712014"
+      },
+      "global_allocations": 14,
+      "priority_comparisons": 39,
+      "complete_assembly_equal": true,
+      "selected_values": {
+        "width": {
+          "pseudo": 72,
+          "references": 4,
+          "live_length": 52,
+          "hard_register_after": 22,
+          "allocno": 1
+        },
+        "Z": {
+          "pseudo": 79,
+          "references": 5,
+          "live_length": 65,
+          "hard_register_after": 23,
+          "allocno": 7
+        }
+      }
+    },
+    {
+      "name": "angle_read_z",
+      "report": {
+        "path": ".decomp-lab/grid-coordinate-angle-allocation-20261015-first/report.json",
+        "sha256": "8d0ff93ef6337ba9cc306b1263bebc1ba2fadc2bb75e07d13892bb18d23fa267"
+      },
+      "observations": {
+        "path": ".decomp-lab/grid-coordinate-angle-allocation-20261015-first/allocations.json",
+        "sha256": "3e821a9a7094427b3db73564cd5dbce69938faf7b046b90c518f28094e712014"
+      },
+      "global_allocations": 14,
+      "priority_comparisons": 39,
+      "complete_assembly_equal": true,
+      "selected_values": {
+        "width": {
+          "pseudo": 72,
+          "references": 4,
+          "live_length": 52,
+          "hard_register_after": 22,
+          "allocno": 1
+        },
+        "Z": {
+          "pseudo": 79,
+          "references": 5,
+          "live_length": 65,
+          "hard_register_after": 23,
+          "allocno": 7
+        }
+      }
+    },
+    {
+      "name": "angle_adjust_z",
+      "report": {
+        "path": ".decomp-lab/grid-coordinate-adjusted-allocation-20261015-first/report.json",
+        "sha256": "df439ec95781ff405e87a6e6d7101f15096ad39b0e8d3277582f0a4f46332447"
+      },
+      "observations": {
+        "path": ".decomp-lab/grid-coordinate-adjusted-allocation-20261015-first/allocations.json",
+        "sha256": "1647ea1b330ffdc63ed45234311544a8eac86980b09918f456963dfe920b9ddc"
+      },
+      "global_allocations": 14,
+      "priority_comparisons": 38,
+      "complete_assembly_equal": true,
+      "selected_values": {
+        "width": {
+          "pseudo": 72,
+          "references": 4,
+          "live_length": 52,
+          "hard_register_after": 23,
+          "allocno": 1
+        },
+        "Z": {
+          "pseudo": 79,
+          "references": 5,
+          "live_length": 63,
+          "hard_register_after": 22,
+          "allocno": 7
+        }
+      }
+    },
+    {
+      "name": "cell_reuse",
+      "report": {
+        "path": ".decomp-lab/grid-cell-reuse-allocation-20261015-first/report.json",
+        "sha256": "714fbf62e540c8febcac87f9f6937dd5da74346e63eeedb050a84083055ffec2"
+      },
+      "observations": {
+        "path": ".decomp-lab/grid-cell-reuse-allocation-20261015-first/allocations.json",
+        "sha256": "3d3645696ba342f6ea079811d5da09c92bce5b52de8f0a17703f470b3211dbf4"
+      },
+      "global_allocations": 14,
+      "priority_comparisons": 38,
+      "complete_assembly_equal": true,
+      "selected_values": {
+        "width": {
+          "pseudo": 72,
+          "references": 4,
+          "live_length": 52,
+          "hard_register_after": 23,
+          "allocno": 1
+        },
+        "Z": {
+          "pseudo": 79,
+          "references": 7,
+          "live_length": 70,
+          "hard_register_after": 22,
+          "allocno": 7
+        }
+      }
+    }
+  ],
+  "actual_allocation_runs": 4,
+  "native_comparison": {
+    "path": ".decomp-lab/grid-cell-reuse-native-20261015-second/report.json",
+    "sha256": "e47397cb0dbf660f1dcd8c488aeb70fe28cd2910ff1f9ab3fd24d4c8ba177256"
+  },
+  "native_producer": {
+    "path": ".decomp-lab/verify_grid_cell_reuse_native_20261015_second.py",
+    "sha256": "7ad089132459e7f33badad73489345508653800ad33b874da3e82c139df2a7ca"
+  },
+  "native_paired_cases": 74832,
+  "cases_sha256": "7efb4d0ec9245ea0c5192fcf30d68e5d72b1f18b55e0b2f2de2ec788d7c026ff",
+  "retained_fixture_classes_repeated": true,
+  "backend": "Unicorn 2.1.4",
+  "backend_identity_before_after": {
+    "package_version": "2.1.4",
+    "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+  },
+  "changed_instruction_hits": [
+    {
+      "0x4c700": 74832,
+      "0x4c704": 74832,
+      "0x4c88c": 66018,
+      "0x4c890": 66018
+    },
+    {
+      "0x4c700": 74832,
+      "0x4c704": 74832,
+      "0x4c88c": 66018,
+      "0x4c890": 66018
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "first_angle_interval_width",
+      "detected": true,
+      "scope": "Separate original-image fault in private Unicorn memory; positive source code is unmodified."
+    },
+    {
+      "name": "unsigned_grid_z",
+      "detected": true,
+      "scope": "Separate original-image fault in private Unicorn memory; positive source code is unmodified."
+    },
+    {
+      "name": "wrong_row_extent",
+      "detected": true,
+      "scope": "Separate original-image fault in private Unicorn memory; positive source code is unmodified."
+    },
+    {
+      "name": "negative_origin_boundary",
+      "detected": true,
+      "scope": "Separate original-image fault in private Unicorn memory; positive source code is unmodified."
+    },
+    {
+      "name": "unsigned_radius_read",
+      "detected": true,
+      "scope": "Separate original-image fault in private Unicorn memory; positive source code is unmodified."
+    },
+    {
+      "name": "logical_projection_shift",
+      "detected": true,
+      "scope": "Separate original-image fault in private Unicorn memory; positive source code is unmodified."
+    },
+    {
+      "name": "unsigned_upper_clamp",
+      "detected": true,
+      "scope": "Separate original-image fault in private Unicorn memory; positive source code is unmodified."
+    },
+    {
+      "name": "wrong_correction_axis",
+      "detected": true,
+      "scope": "Separate original-image fault in private Unicorn memory; positive source code is unmodified."
+    },
+    {
+      "name": "candidate_unsigned_grid_z",
+      "detected": true,
+      "scope": "Separate candidate-image fault in private Unicorn memory; positive source code is unmodified."
+    },
+    {
+      "name": "candidate_longitudinal_end",
+      "detected": true,
+      "scope": "Separate candidate-image fault in private Unicorn memory; positive source code is unmodified."
+    }
+  ],
+  "candidate_specific_new_fault_controls": 2,
+  "explicit_dependency_contracts": [
+    "position lookup",
+    "RotMatrix",
+    "ApplyMatrixLV",
+    "grid builder"
+  ],
+  "positive_VM_images_equal_complete_linked_images": true,
+  "positive_instruction_substitutions": false,
+  "validation": {
+    "tooling_tests": 528,
+    "new_tooling_tests": 0,
+    "windows_test_log": {
+      "path": ".decomp-lab/grid-cell-ownership-tests-windows-20261015-first.log",
+      "sha256": "96762b3670cfab0453f47faeddb040d12b295682931f057709b9525ed261da20"
+    },
+    "both_public_variants_rebuilt": true,
+    "invalid_variant_rejected_before_output_creation": true,
+    "invalid_variant_log": {
+      "path": ".decomp-lab/grid-cell-ownership-publication-20261015-first/unsupported-variant.log",
+      "sha256": "9e96926fb7ba6c0bda3a0b681db95aaf754c7daf3e07fabf9e4686975b8d4f92"
+    },
+    "canonical_ninja_check": "passed"
+  },
+  "current_progress": {
+    "path": ".decomp-lab/grid-cell-ownership-publication-20261015-first/progress.json",
+    "sha256": "4346df8d9584bfff1b6a5887c8048b02b9ea6b0075846d89f167948a8fc11174"
+  },
+  "protected_build_inputs_verified": 392,
+  "protected_build_inputs_changed": false,
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 22,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 22,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_C_bytes": 0,
+  "new_original_positive_scenario_classes": 0,
+  "new_original_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "model_API_calls": 0,
+  "source_promoted": false,
+  "unused_storage_added": false,
+  "physical_register_bindings": false,
+  "canonical_flags_changed": false,
+  "original_AI_and_developer_tooling_separate": true,
+  "limits": [
+    "Seven changed bytes span four words; the retained eight-byte source changes fewer words.",
+    "The original early load order and temporary destination remain unexplained.",
+    "Paired scalar fixtures repeat existing classes and retain four explicit contracts.",
+    "Natural scenes, native SDK/GTE composition, frame/audio output and PS1 timing remain open."
+  ]
+}

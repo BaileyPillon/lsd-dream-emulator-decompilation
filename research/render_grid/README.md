@@ -6,6 +6,23 @@ from the original at eight byte positions in two edge-arithmetic instructions.
 The other 163 instruction words and every byte outside the function match.
 The canonical game retains its assembly implementation.
 
+The separate [cell-reuse candidate](c6a8_cell_reuse_candidate.c) differs in seven
+bytes across four instruction words. It preserves the original subtraction
+order but changes coordinate-load order and the longitudinal subtraction's
+destination. The default above retains fewer changed instruction words; neither
+source form matches. [The cell-ownership study](../../docs/GRID_CELL_OWNERSHIP.md)
+records both measures, actual allocation observations and bounded comparisons.
+
+Select that alternative with the existing preparation command:
+
+```bash
+python research/render_grid/prepare_candidate.py --variant cell-reuse \
+  --output .decomp-lab/grid-cell-reuse-new
+```
+
+Omitting `--variant` keeps the eight-byte `edge` reference. Complete executable
+equality remains the source acceptance gate for both variants.
+
 Prepare the fragment in the current complete source unit:
 
 ```bash

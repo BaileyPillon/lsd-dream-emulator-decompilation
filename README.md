@@ -117,8 +117,7 @@ The later [native heap composition](docs/CARD_HEAP.md) runs the real allocator
 and lock helpers with zero output stubs, checking 96 allocator sequences and
 180 cleanup layouts per image. The source-layout mismatch remains unresolved.
 The [rendering grid-window checks](docs/RENDER_GRID.md) verify every angle word
-and bounded scalar grid/clamp rules; the closest C candidate still has four
-byte differences in two stores.
+and bounded scalar grid/clamp rules; complete matching C remains unresolved.
 The [grid and streaming composition](docs/RENDER_STREAM.md) checks 45,408 cases
 through the original builder, row splitter and object selector; three position
 and GTE contracts remain.
@@ -158,10 +157,11 @@ The [register-allocation tracer](docs/COMPILER_ALLOCATION.md) records actual
 local/global compiler decisions, verifies priority comparisons and preserves
 complete assembly output. It extends candidate analysis without accepting a
 nonmatching source form or changing original gameplay.
-The [grid source-recovery fragment](research/render_grid/README.md) now retains
-the original frame and register allocation, with eight differences in two
-edge-arithmetic instructions. Its complete candidate remains outside the
-matching game.
+The [grid research sources](research/render_grid/README.md) retain the original
+frame, with eight differences in two words for the edge reference and seven
+differences in four words for the cell-reuse alternative. The
+[cell-ownership study](docs/GRID_CELL_OWNERSHIP.md) repeats 74,832 scalar pairs
+and detects ten faults; both source forms remain outside the matching game.
 The [grid phase comparison](docs/GRID_PHASES.md) locates the height-copy order
 change in the first scheduling pass, rechecks two complete builds and rules out
 133 further source forms. Its reusable phase reader retains the exact source

@@ -174,3 +174,14 @@ functions, 24 inherited storage explanations and 35 / 40 listed-core C groups.
 The 20 / 107 bounded NPC profiles, ten developer capability categories, three
 optional mods and zero whole-feature/whole-encounter acceptance are unchanged.
 This study makes no model API calls and changes no original game behavior.
+
+## Cell ownership follow-up
+
+The later [cell-ownership investigation](GRID_CELL_OWNERSHIP.md) tests 63 complete
+source units and observes four actual allocation runs. Reusing the longitudinal
+cell produces a separate seven-byte/four-word candidate; the existing
+eight-byte/two-word reference remains available. The source change raises cell
+Z's measured priority, while its destination register and initial load order
+still differ. A repeated 74,832-pair scalar comparison and ten fault controls
+pass. Neither candidate is accepted in matching C, and no original scenario
+class or whole-feature acceptance is added.
