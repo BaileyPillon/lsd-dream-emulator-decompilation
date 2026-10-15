@@ -9,6 +9,9 @@ import struct
 import sys
 import zipfile
 
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
 
 # This profile was checked against the installed BizHawk 2.11.1 Windows core,
 # its symbols, Waterbox serializer and native RMD construction instructions.
@@ -171,23 +174,59 @@ def inspect(original, rebuilt, core):
             "scope": "Read-only core-state structure and unused short-string storage diagnosis. Full byte differences remain reported. Launch-input identity, other state members, game scenarios and feature acceptance require separate evidence."}
 
 
+def inspect_native(original, rebuilt, core, controls=False, execute=True):
+    """Inspect pinned ELF ownership and optionally execute its real string accessors."""
+    from research.emulator_state import CoreImage, Snapshot, classify, execute_accessors, require
+    from tools.compare_runtime import compare_state
+
+    require(not controls or execute, 'Accessor controls require --execute-accessors.')
+    image = CoreImage(core)
+    paths = [Path(original), Path(rebuilt)]
+    snapshots = [Snapshot.from_file(path, image.layout) for path in paths]
+    report = classify(image, *snapshots)
+    report.update(schema_version=2, core_input_sha256=image.input_sha256,
+                  raw_archive_comparison=compare_state(*paths), accessors_executed=execute,
+                  parity_profile_accepted=False, new_c_bytes=0)
+    if execute:
+        report['accessor_campaigns'] = [execute_accessors(image, snapshot, controls) for snapshot in snapshots]
+    report['producer_sha256'] = digest(Path(__file__).read_bytes())
+    report['reader_sha256'] = digest((ROOT / 'research/emulator_state.py').read_bytes())
+    report['scope'] = ('Pinned emulator media metadata and actual bundled accessors; raw archive comparisons '
+                       'remain strict. This does not promote game source or accept a complete runtime profile.')
+    return report
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("original", "rebuilt", "core", "output"):
         parser.add_argument("--" + name, required=True, type=Path)
+    parser.add_argument('--execute-accessors', action='store_true',
+                        help='Execute the pinned x86-64 string accessors in isolated Unicorn 2.1.4.')
+    parser.add_argument('--controls', action='store_true',
+                        help='Also vary private accessor inputs; requires --execute-accessors.')
     args = parser.parse_args(argv)
     try:
+        if args.controls and not args.execute_accessors:
+            raise ValueError('Accessor controls require --execute-accessors.')
         if args.output.exists():
             raise ValueError("Choose a new diagnostic output; previous evidence is preserved.")
-        report = inspect(args.original, args.rebuilt, args.core)
+        if args.execute_accessors:
+            report = inspect_native(args.original, args.rebuilt, args.core, args.controls)
+        else:
+            report = inspect(args.original, args.rebuilt, args.core)
         with args.output.open("x", encoding="utf-8") as stream:
             json.dump(report, stream, indent=2)
             stream.write("\n")
-        print(f"Decoded differences: {report['different_bytes']}; unused label storage: "
-              f"{report['identified_unused_label_storage_difference_bytes']}; "
-              f"unclassified: {report['unclassified_difference_bytes']}. No bytes masked.")
+        if args.execute_accessors:
+            print(json.dumps({key: report[key] for key in ('core_frame', 'different_decoded_bytes',
+                             'all_differences_in_unused_media_label_storage', 'accessors_executed',
+                             'parity_profile_accepted')}))
+        else:
+            print(f"Decoded differences: {report['different_bytes']}; unused label storage: "
+                  f"{report['identified_unused_label_storage_difference_bytes']}; "
+                  f"unclassified: {report['unclassified_difference_bytes']}. No bytes masked.")
         return 0
-    except (OSError, ValueError, zipfile.BadZipFile, KeyError) as error:
+    except (OSError, ValueError, zipfile.BadZipFile, KeyError, struct.error) as error:
         print(f"[!] {error}", file=sys.stderr)
         return 1
 

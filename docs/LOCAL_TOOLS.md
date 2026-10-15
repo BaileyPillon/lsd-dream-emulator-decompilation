@@ -35,7 +35,7 @@ boundary. Both tools make zero model API calls and preserve original play data.
 
 For a formatted empty card, select `--phase load --card-kind empty` and use
 `tools/compare_empty_card_load.py`. Its [profile guide](EMPTY_CARD_LOAD.md)
-records the not-found route, exact card-header write and unresolved full-state
+records the not-found route, exact card-header write and retained full-state
 difference. A matching game buffer does not override that state check.
 
 ## Windows build helper
@@ -160,6 +160,16 @@ The [native field diagnosis](NYMASHOCK_STATE.md) describes its fixed binary
 profile and limitations. Reports require a new output path and retain complete
 decoded differences alongside their classification. No state bytes are masked,
 and the tool does not modify inputs, launch an emulator or call a model API.
+
+Add `--execute-accessors --controls` to execute the pinned core's actual
+x86-64 `c_str()` and `size()` methods in isolated Unicorn 2.1.4 instances.
+This optional mode needs `requirements-analysis.txt`, derives symbols and the
+memory layout from the hash-checked ELF, checks the native calling convention,
+and preserves the complete archive comparison in its report. Controls change
+private input copies only. A successful diagnostic exit does not mean the
+states match or that gameplay parity has been accepted. See the
+[empty-card extension](NYMASHOCK_STATE.md#empty-card-extension-and-native-accessors)
+for the recorded scope and reproduction command.
 
 ## Native world-position and streaming composition
 

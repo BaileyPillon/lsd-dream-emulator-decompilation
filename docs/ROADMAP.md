@@ -78,8 +78,12 @@ save and cold-boot load from the actual card file, including all 1,792 native
 payload bytes. Continue with missing/full/corrupt cards, cancel/overwrite paths,
 other slots and saved contents; this one history accepts no complete card feature.
 The [empty-card Load investigation](EMPTY_CARD_LOAD.md) observes the not-found
-dialog and preserves its eight-byte core-state mismatch. Resolve that mismatch
-before accepting the complete profile; keep the other card paths open.
+dialog and preserves its eight-byte core-state mismatch. The
+[native accessor extension](NYMASHOCK_STATE.md#empty-card-extension-and-native-accessors)
+identifies the same emulator media-label capacity described in the earlier
+cold-boot diagnosis and checks the bundled accessors. Full-state acceptance,
+other consumers and the other card paths remain open; the diagnostic does not
+change the strict comparator.
 The [grid-window audit](RENDER_GRID.md) verifies all 65,536 angle words within
 74,832 scalar fixtures. Its full C candidate agrees on those fixtures but
 reorders two stores, differing in four bytes. Real GTE transforms and the

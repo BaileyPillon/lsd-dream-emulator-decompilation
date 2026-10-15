@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-15T18:20:35.505670+00:00",
+  "repository_code_base_commit": "886c0a37c95d418ba5cee206e54d689a5a3ef102",
+  "scope": "Extension of the existing emulator field diagnosis to empty-card captures and actual native string accessor execution; no new field discovery or whole-game acceptance.",
+  "documentation": "docs/NYMASHOCK_STATE.md#empty-card-extension-and-native-accessors",
+  "previous_field_diagnosis": {
+    "path": "docs/nymashock-state-checks.json",
+    "sha256": "dd38f492cb6618bb36ee09585fc04f83ab21b5b093ed6a23d355827bec461337"
+  },
+  "previous_empty_card_result": {
+    "path": "docs/empty-card-load-checks.json",
+    "sha256": "06b1e686b10e315ee54435f48d51e2fe02711257f92e6e5d74add62cdbbec97f"
+  },
+  "profile": {
+    "name": "BizHawk 2.11.1 Windows Nymashock",
+    "compressed_core_sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126",
+    "uncompressed_elf_sha256": "71f62393c291a16f1f181b18755bf12868432c6e87140b1c0980a51b36ee95bc"
+  },
+  "recorded_pairs": {
+    "checkpoint_pairs": 32,
+    "snapshots": 64,
+    "different_bytes_each": 8,
+    "different_emulator_guest_addresses": [
+      "0x36f0080fc10",
+      "0x36f0080fc11",
+      "0x36f0080fc12",
+      "0x36f0080fc13",
+      "0x36f0080fc14",
+      "0x36f0080fc15",
+      "0x36f0080fc16",
+      "0x36f0080fc17"
+    ],
+    "unique_label_object_inputs": 2,
+    "existing_structural_diagnostic_agrees": true,
+    "input_state_bytes_retained": true
+  },
+  "native_accessors": {
+    "backend": "Unicorn 2.1.4",
+    "actual_calls": 12,
+    "c_str": {
+      "address": "0x36f0001b540",
+      "symbol_bytes": 34
+    },
+    "size": {
+      "address": "0x36f0001bc90",
+      "symbol_bytes": 100
+    },
+    "variants": [
+      "baseline",
+      "capacity-variation",
+      "live-length",
+      "live-character"
+    ],
+    "instructions_modified": false,
+    "result_stubs": 0,
+    "abi_preserved": true,
+    "reads_of_unused_capacity": 0,
+    "reads_outside_object_and_stack": 0,
+    "all_consumers_proved": false,
+    "prior_allocator_contents_traced": false
+  },
+  "same_source_controls": [
+    {
+      "source_disc": "original",
+      "different_decoded_bytes": 8,
+      "same_source_difference_reproduced": true,
+      "report_sha256": "8a0727e019c89afd70246ab99b3146885263ffe9a45497244247c478701f3933"
+    },
+    {
+      "source_disc": "rebuilt",
+      "different_decoded_bytes": 8,
+      "same_source_difference_reproduced": true,
+      "report_sha256": "d61834e776f9b04c8c82ccb7db8ebefc0f4ca1304c6a3750f64461997cd04c15"
+    }
+  ],
+  "same_source_controls_frames_each": 1,
+  "equal_state_control": true,
+  "private_campaign": {
+    "path": ".decomp-lab/emulator-state-public-campaign-20261015-third/report.json",
+    "sha256": "672d2391666d8e84c584f551da11fe2a4c6e6de411d0e182d1243542c12c8905"
+  },
+  "cli_executions": {
+    "windows_structural": {
+      "path": ".decomp-lab/emulator-state-integrated-cli-windows-20261015-first.json",
+      "sha256": "87d3abf81c8fbab2c8a9776a8e001cf5d41bdf2a06601e5236de9f1bcb927e74"
+    },
+    "linux_native_with_controls": {
+      "path": ".decomp-lab/emulator-state-integrated-cli-linux-20261015-first.json",
+      "sha256": "d19183dee2f39cbef1025a5f81e5c2c0403f10665d6bd7aaac584fb8ec221f4b"
+    }
+  },
+  "public_code": {
+    "research/emulator_state.py": "aeb574cac25738cf1a9e3e1cf2b5b6a5e487b78e43ca43a4d791f58ae0365ab6",
+    "tools/inspect_nymashock_state.py": "044b6fda3e14506ae0a1b5fef729622ec4fd22b7aa55c3e0aa5aa6c21cac4bd0",
+    "tests/test_emulator_state.py": "97cd93364309eb8593abe3fd3788e3d10ba2d60c7707cae1561420df0191dd64"
+  },
+  "strict_comparator_unchanged": {
+    "path": "tools/compare_runtime.py",
+    "sha256": "0e33d75acf5f416096164bdee57572c82975ca68ccd2de7f3b2a07a6a19880f3"
+  },
+  "empty_card_comparator_unchanged": {
+    "path": "tools/compare_empty_card_load.py",
+    "sha256": "67ae1199ff07dd221ead724b0615c802a0bda344f16a3b374a945c9e6a63aada"
+  },
+  "game_build": {
+    "progress": {
+      "path": ".decomp-lab/emulator-state-progress-20261015-first.json",
+      "sha256": "269dfc77e2cf1f472751d0ab864d74d36449741b901abed08eccc3ab6f08eb35"
+    },
+    "check_log": {
+      "path": ".decomp-lab/emulator-state-build-20261015-first.log",
+      "sha256": "5c7a395f9de6fe8a15a3fdd7ef8138d2d539ef029ba91b1495caee27a268e8bf"
+    },
+    "objects": 306,
+    "complete_executable_equal": true,
+    "executable_bytes": 505856,
+    "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "protected_build_inputs_retained": 392,
+    "game_sources_and_flags_unchanged": true
+  },
+  "tooling_tests": {
+    "windows": {
+      "tests": 510,
+      "passed": true,
+      "log": {
+        "path": ".decomp-lab/emulator-state-tests-windows-20261015-second.log",
+        "sha256": "255dc482de5013f173ee021a84d2bf347322736c1669dba638598e8c78724b1c"
+      }
+    },
+    "linux": {
+      "tests": 510,
+      "passed": true,
+      "log": {
+        "path": ".decomp-lab/emulator-state-tests-linux-20261015-second.log",
+        "sha256": "cb62a8192be669dcd5d11d8888acc1eaafc7d4d110cdd4c6cbb6bcacda38a19f"
+      }
+    }
+  },
+  "new_synthetic_tests": 22,
+  "additional_source_experiments": [
+    {
+      "report": {
+        "path": ".decomp-lab/structure-wide-context-20261015-first/report.json",
+        "sha256": "0086b962079191a6ebe62752c3acdf6cb5d29b6b359e34f2fc73f9678c6ce407"
+      },
+      "invocations": 5,
+      "control_comparisons": 1,
+      "qualified_comparisons": 5,
+      "link_rejections": 0,
+      "matching_candidates": 0
+    },
+    {
+      "report": {
+        "path": ".decomp-lab/structure-const-context-20261015-first/report.json",
+        "sha256": "b7cf824aa6ffd33ff75cfb2621411178e5f783b13cd64bf79b03fd33c7dda1fc"
+      },
+      "invocations": 9,
+      "control_comparisons": 1,
+      "qualified_comparisons": 9,
+      "link_rejections": 0,
+      "matching_candidates": 0
+    },
+    {
+      "report": {
+        "path": ".decomp-lab/structure-method-selector-20261015-first/report.json",
+        "sha256": "72f2e0a8e58b2a58d51f4ec96abab942e6a2350ca01fb49cbcb848b167972f43"
+      },
+      "invocations": 5,
+      "control_comparisons": 1,
+      "qualified_comparisons": 1,
+      "link_rejections": 4,
+      "matching_candidates": 0
+    },
+    {
+      "report": {
+        "path": ".decomp-lab/structure-method-selector-assignment-20261015-second/report.json",
+        "sha256": "f7501a4e49bd72a0085d19d2301f730df0078d3596c71c20133810cececfaeea"
+      },
+      "invocations": 5,
+      "control_comparisons": 1,
+      "qualified_comparisons": 5,
+      "link_rejections": 0,
+      "matching_candidates": 0
+    }
+  ],
+  "new_c_bytes": 0,
+  "new_original_feature_groups_accepted": 0,
+  "state_bytes_masked": 0,
+  "complete_empty_card_state_members_equal": false,
+  "empty_card_profile_accepted": false,
+  "developer_capability_extended": "A004",
+  "developer_category_count_changed": false,
+  "model_api_calls": 0,
+  "optional_mods_added": 0,
+  "private_game_emulator_firmware_or_capture_bytes_published": false,
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_game_assembly_functions": 9,
+    "inherited_unused_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "groups_with_listed_core_functions_in_c": 35,
+    "whole_feature_groups_accepted": 0,
+    "npc_callbacks_with_c_bodies": 107,
+    "npc_callbacks_catalogued": 107,
+    "bounded_native_callback_profiles": 20,
+    "whole_npc_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_game_assembly_functions": 9,
+    "inherited_unused_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "groups_with_listed_core_functions_in_c": 35,
+    "whole_feature_groups_accepted": 0,
+    "npc_callbacks_with_c_bodies": 107,
+    "npc_callbacks_catalogued": 107,
+    "bounded_native_callback_profiles": 20,
+    "whole_npc_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "producer_sha256": "a96187ca2254e84baf5f880c8595320394a3f6cd2f0d76f6044cfc6b170e6a1c"
+}
