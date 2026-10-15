@@ -1,5 +1,12 @@
 # Original/rebuilt runtime comparison
 
+The [persisted-card profile](CARD_ROUNDTRIP.md) adds a separate 2,400-frame
+Save pair and 6,000-frame cold-Load pair. All 34 RAM/GPU/image/state checkpoints
+and persisted card files agree, and the complete 1,792-byte game save buffer is
+restored after restart. Its fixed recorders, isolated capture command and
+dedicated comparator preserve the distinction between a warm starting Save,
+cold boot for Load, repeated checks, and whole-card/feature acceptance.
+
 This developer workflow records an emulator-local input sequence, then compares
 the original disc with a separately packaged matching build. It preserves the
 original game and measures only the recorded scenario. Optional mods require

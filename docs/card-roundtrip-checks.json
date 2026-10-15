@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-15T15:45:37.250663+00:00",
+  "scope": "One controller-only day-two Save followed by cold-boot Load from its persisted file. Repeated public-launcher execution verifies tooling without adding a distinct history.",
+  "canonical_executable": {
+    "bytes": 505856,
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+  },
+  "public_code": {
+    "tools/capture_card_roundtrip.py": "a82b9016c9f42d91230b334acd7ee4919126ee8906dafd464a6e4440cd7d523d",
+    "tools/compare_card_roundtrip.py": "af8c2cf4ccd6a1635f904d188d6c42c39d302ebcb1e88b2182fc509564d5d703",
+    "research/card_roundtrip/save.lua": "bf9d45a702e7a3380b3a90d51bd205610067315afe71f0ad6c62c323e6d3a52f",
+    "research/card_roundtrip/load.lua": "2d8c014521550ac3fa5431becabb59e002e7ed98e34394497ba3bec08cea9197",
+    "tests/test_card_roundtrip.py": "92c7522ae12de74378bc2818543c862de39fb328ac121000ad09a3f43cb51e03"
+  },
+  "phases": {
+    "save": {
+      "frames": 2400,
+      "observations": [
+        {
+          "rows": 2401,
+          "columns": 135,
+          "controller_rows": 2400,
+          "first_registered_frame": 614,
+          "first_returned_frame": 830
+        },
+        {
+          "rows": 2401,
+          "columns": 135,
+          "controller_rows": 2400,
+          "first_registered_frame": 614,
+          "first_returned_frame": 830
+        }
+      ],
+      "card_sha256": [
+        "e208a7263da45897ffff758e49687995fe139346b3a8c434245acdda914fd722",
+        "e208a7263da45897ffff758e49687995fe139346b3a8c434245acdda914fd722"
+      ],
+      "payload_sha256": [
+        "e8220ab85acb95534ddc3bd936f2745da3989027a6fd50319b34d232c1656eb7",
+        "e8220ab85acb95534ddc3bd936f2745da3989027a6fd50319b34d232c1656eb7"
+      ],
+      "observer_sha256": "bf9d45a702e7a3380b3a90d51bd205610067315afe71f0ad6c62c323e6d3a52f",
+      "full_checkpoints": 14,
+      "launch_input_identity_sha256": "ac97150c365e1a9da735036c28924bcab4b99f423deb76e9ba9cb79bcd8e3ed3"
+    },
+    "load": {
+      "frames": 6000,
+      "observations": [
+        {
+          "rows": 6001,
+          "columns": 135,
+          "controller_rows": 6000,
+          "first_registered_frame": 2553,
+          "first_returned_frame": 2863
+        },
+        {
+          "rows": 6001,
+          "columns": 135,
+          "controller_rows": 6000,
+          "first_registered_frame": 2553,
+          "first_returned_frame": 2863
+        }
+      ],
+      "card_sha256": [
+        "e208a7263da45897ffff758e49687995fe139346b3a8c434245acdda914fd722",
+        "e208a7263da45897ffff758e49687995fe139346b3a8c434245acdda914fd722"
+      ],
+      "payload_sha256": [
+        "e8220ab85acb95534ddc3bd936f2745da3989027a6fd50319b34d232c1656eb7",
+        "e8220ab85acb95534ddc3bd936f2745da3989027a6fd50319b34d232c1656eb7"
+      ],
+      "observer_sha256": "2d8c014521550ac3fa5431becabb59e002e7ed98e34394497ba3bec08cea9197",
+      "full_checkpoints": 20,
+      "launch_input_identity_sha256": "31f16a991d5d18bfd56b6f3605db654e5c20b0ac8012296e98e904ea3c4fd600"
+    }
+  },
+  "first_successful_roundtrip": {
+    "private_report_sha256": "c342f7cba8b3f9667448d2283178c2b0b0e3d81499c6e8e7aea69f554cc88783",
+    "save_launcher_sha256": "ecb704008831130a41c4d84400bbda15151f0188bd4663955687319d715deab3",
+    "load_launcher_sha256": "e37ecdd7ab0c28f1a83a69d11b1b3ce2743a35c9b6172147cc453b6869d5a793"
+  },
+  "portable_launcher_roundtrip": {
+    "private_report_sha256": "742258937c70cfdda619f17ce41415d3d271ef63b978f34bda269eec38d81974",
+    "report_status": "equal_recorded_card_roundtrip",
+    "all_recorded_outputs_equal": true,
+    "save_original_and_rebuilt_executed": true,
+    "load_original_and_rebuilt_executed": true
+  },
+  "owned_capture_processes": [
+    {
+      "capture": "private/save/original",
+      "pid": 75640,
+      "exit_code": 0
+    },
+    {
+      "capture": "private/save/rebuilt",
+      "pid": 95348,
+      "exit_code": 0
+    },
+    {
+      "capture": "private/load/original",
+      "pid": 10004,
+      "exit_code": 0
+    },
+    {
+      "capture": "private/load/rebuilt",
+      "pid": 63028,
+      "exit_code": 0
+    },
+    {
+      "capture": "portable/save/original",
+      "pid": 29852,
+      "exit_code": 0
+    },
+    {
+      "capture": "portable/save/rebuilt",
+      "pid": 87644,
+      "exit_code": 0
+    },
+    {
+      "capture": "portable/load/original",
+      "pid": 52928,
+      "exit_code": 0
+    },
+    {
+      "capture": "portable/load/rebuilt",
+      "pid": 25256,
+      "exit_code": 0
+    }
+  ],
+  "evidence_manifest_sha256": "fb3a376d969fa9f45fc6619d3cc6e405d863f9d4d88703a29d1c139f0d0319d2",
+  "warm_start": {
+    "bytes": 1147400,
+    "sha256": "62992592fa8ffdd8ce730d60410a7d3bbd57be957e207a3d82c87c7f36fea686",
+    "route": "Naturally reached original Hoop Girl route frame 30000; dream chart, day two.",
+    "embedded_blank_card_sha256": "78b6d4ac9ab4d23caf7e5f04f83539bf5d994cccfb0a709d14ac53d05c8e21ef",
+    "blank_card_evidence_sha256": "9acd97dd660e6161bbe5ebd64b76c7ed53104ae71fac66f0fc4965e40de2991d"
+  },
+  "cold_load": {
+    "emulator_save_state_used": false,
+    "source": "Actual persisted card from the paired Save output.",
+    "card_and_backup_unchanged": true,
+    "initial_stored_day": 0,
+    "initial_new_game_flag": 1,
+    "loaded_stored_day": 1,
+    "loaded_derived_day_number": 2,
+    "loaded_new_game_flag": 0,
+    "complete_native_payload_equals_card_after_load": true
+  },
+  "native_layout": {
+    "card_operation_offset": "0x24",
+    "card_ui_state_offset": "0x28",
+    "save_payload_dream_offset": "0x178",
+    "save_payload_bytes": 1792,
+    "save_file_header_bytes": 512,
+    "allocation_checksum_frames_checked": 16,
+    "complete_object_words_rechecked_at_each_checkpoint": true
+  },
+  "audit": {
+    "private_report_sha256": "4350c315c3322d8276d7d3dd28ddb23aafb45f1cc61a6881070b19c4b2ed7cbf",
+    "producer_sha256": "345f71ad64e251d3e90fb303e3dfcab30d99175a4276e245e8c95e2a56e69fba",
+    "record_corruption_controls_detected": 4,
+    "controls_change_private_record_copies_only": true
+  },
+  "excluded_diagnostics": {
+    "first_observer_wrong_derived_mode_and_state_offsets": "b02e265941a58a309c48e0ad3c236b27a02993fcf34941a48a0f8d3d450e142d",
+    "second_observer_unknown_control_name_rejected": "e1702776acba6526acd6a1cff88bcd4ec2837a900d8db2cd858230f6c6fe66fc",
+    "first_comparator_unsupported_equal_serialized_offset_requirement": "cebc1f45f74960a582bda6149d4cdf91c75190ab8e673173237650b36ba92863",
+    "first_cold_startup_only_no_load_observed": "ff76d9c1a10cb5d73fb670253dda0c0161e22bafcee87b1eab896e7a1adc207f"
+  },
+  "tests": {
+    "total": 471,
+    "new_profile_tests": 27,
+    "windows_log_sha256": "4b4f3133ded5f3042801723fff3f3df1514642ed51c3ba6724f1680143dd7b28",
+    "linux_log_sha256": "5e7356adeb996157219daa57a9317e3148d7b7cc545723a724ed1a75380e7fd9",
+    "windows_final_log_sha256": "f7ee4517662a629f75e7213d1c27b13393e3a911b192dd7c373c8a478dea5b3b",
+    "linux_final_log_sha256": "2b3e29dbad2a14d95f99ae77103c2edadd32314f5fed6dcfb6ef3b0623e1d9b4"
+  },
+  "progress_report_sha256": "7ca0d72ddb7b48c243927a04ebb942cfda8ede1dd7992ba36d492eb2e57bd8c6",
+  "protected_build_inputs_preserved": 392,
+  "original_game_code_modified": false,
+  "inventory": {
+    "before_raw_sha256": "9db29cf5f06fcc7ede44b32ca4eae7811eff7c4042bd665b362a47404652a567",
+    "after_raw_sha256": "6bb7e8e1b9c5e7a2864933cb69c2723946648c882dd80ef769df45453c3a9d52",
+    "supplement": "persisted_card_roundtrip_20261015",
+    "removing_only_this_supplement_recreates_prior_bytes": true
+  },
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_game_assembly_functions": 9,
+    "inherited_unused_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "groups_with_listed_core_functions_in_c": 35,
+    "whole_feature_groups_accepted": 0,
+    "npc_callbacks_with_c_bodies": 107,
+    "npc_callbacks_catalogued": 107,
+    "bounded_native_callback_profiles": 20,
+    "whole_npc_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_game_assembly_functions": 9,
+    "inherited_unused_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "groups_with_listed_core_functions_in_c": 35,
+    "whole_feature_groups_accepted": 0,
+    "npc_callbacks_with_c_bodies": 107,
+    "npc_callbacks_catalogued": 107,
+    "bounded_native_callback_profiles": 20,
+    "whole_npc_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_c_bytes": 0,
+  "audio_captured": false,
+  "state_bytes_masked": 0,
+  "model_api_calls": 0,
+  "original_npc_behavior_and_optional_mods_unchanged": true,
+  "whole_feature_groups_accepted": 0,
+  "all_project_completion_requirements_retained": true,
+  "publisher_sha256": "51b10fa4d887264051e063c4398ad0cecf49cf38f1475e40871a6e8cdb7a5a6e",
+  "limitations": [
+    "One slot and one day-two save/load history, repeated for portability.",
+    "Save begins warm; only Load begins at cold boot.",
+    "Missing/full/corrupt cards, cancel/overwrite branches, all slots/days and complete contents remain open.",
+    "No direct instruction-entry, audio-output, physical-card or original-hardware timing acceptance."
+  ],
+  "reviewed_visual_checkpoint": {
+    "phase": "load",
+    "relative_frame": 3000,
+    "image_sha256": "bc6687d90186f640fd6d07902e614aaff328e40159afb74c095b2c0ec29b8eff",
+    "observation": "Retained menu PNG displays Day 002 after the loading dialog clears. Frame 2863 still shows the loading dialog.",
+    "method": "Visual inspection of the retained PNG; not a direct instruction hook or full UI acceptance."
+  },
+  "git_source_qualification": {
+    "sources": {
+      "tools/capture_card_roundtrip.py": {
+        "git_blob_sha256": "a82b9016c9f42d91230b334acd7ee4919126ee8906dafd464a6e4440cd7d523d",
+        "matches_executed_or_tested_bytes": true
+      },
+      "tools/compare_card_roundtrip.py": {
+        "git_blob_sha256": "af8c2cf4ccd6a1635f904d188d6c42c39d302ebcb1e88b2182fc509564d5d703",
+        "matches_executed_or_tested_bytes": true
+      },
+      "research/card_roundtrip/save.lua": {
+        "git_blob_sha256": "bf9d45a702e7a3380b3a90d51bd205610067315afe71f0ad6c62c323e6d3a52f",
+        "matches_executed_or_tested_bytes": true
+      },
+      "research/card_roundtrip/load.lua": {
+        "git_blob_sha256": "2d8c014521550ac3fa5431becabb59e002e7ed98e34394497ba3bec08cea9197",
+        "matches_executed_or_tested_bytes": true
+      },
+      "tests/test_card_roundtrip.py": {
+        "git_blob_sha256": "92c7522ae12de74378bc2818543c862de39fb328ac121000ad09a3f43cb51e03",
+        "matches_executed_or_tested_bytes": true
+      }
+    },
+    "inventory_before_git_lf_sha256": "d05f6ef16e2f9834c2773a90f75b7547119604c7a02e5ba2d09f2cc9fe6121c6",
+    "inventory_after_git_lf_sha256": "5efcb8f6722caa3a3f100154799c15788349c8362a92e060c1ecac9578233958",
+    "removing_only_the_new_supplement_recreates_prior_git_bytes": true,
+    "private_raw_inventory_hashes_are_preserved_separately": true
+  },
+  "finalizer_sha256": "c0402911d1d90697812360d35c48daaa0155db666a9b2f1773458f38c409e73a"
+}

@@ -73,6 +73,10 @@ and retained an eight-byte mismatch at that checkpoint. The later
 [matching writer recovery](CARD_WRITER_RECOVERY.md) resolves the argument
 layout and promotes its 960-byte function to C. Standard and clean builds
 remain exact; physical cards and natural error/cancel scenarios remain open.
+The [persisted-card profile](CARD_ROUNDTRIP.md) now compares an ordinary day-two
+save and cold-boot load from the actual card file, including all 1,792 native
+payload bytes. Continue with missing/full/corrupt cards, cancel/overwrite paths,
+other slots and saved contents; this one history accepts no complete card feature.
 The [grid-window audit](RENDER_GRID.md) verifies all 65,536 angle words within
 74,832 scalar fixtures. Its full C candidate agrees on those fixtures but
 reorders two stores, differing in four bytes. Real GTE transforms and the

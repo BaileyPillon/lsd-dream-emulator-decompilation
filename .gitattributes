@@ -11,3 +11,9 @@ tools/verify_movie_paths.py text eol=lf
 research/movie_playback/observe.lua -text
 tools/capture_movie_playback.py text eol=lf
 tools/compare_movie_playback.py text eol=lf
+
+# Preserve the executed card observers and their verifier on every checkout.
+research/card_roundtrip/*.lua text eol=lf
+tools/compare_card_roundtrip.py text eol=lf
+tools/capture_card_roundtrip.py text eol=lf
+tests/test_card_roundtrip.py text eol=lf
