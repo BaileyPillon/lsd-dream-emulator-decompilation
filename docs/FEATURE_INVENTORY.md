@@ -95,6 +95,12 @@ The same audit bounded 418 of 418 LBD files, 167,200 grid cells and 270 addition
 
 ## Remaining scope
 
+The [earlier window-to-Hoop route](NATURAL_HOOP_TIMING.md) adds 15,000 exact
+controller frames and six full checkpoint pairs. Its 417 registered Hoop Girl
+samples include 17 beyond tick 2,401, through tick 2,498. This extends one
+natural timing history; C recovery, bounded-native profile counts, and whole
+NPC/feature acceptance remain unchanged.
+
 The [Hoop Girl and day-transition profile](NATURAL_HOOP_ENCOUNTER.md) compares
 30,000 controller frames, full submitted-input and game-pad logs, 345 registered
 NPC samples, and eleven full memory/image/save-state checkpoints. The same run

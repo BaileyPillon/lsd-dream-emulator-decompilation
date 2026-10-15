@@ -1,5 +1,12 @@
 # Changelog
 
+## Earlier natural Hoop Girl timing - 2026-10-15
+
+- Compare a 15,000-frame window-to-Hoop route, including 17 post-threshold
+  facing/motion samples through tick 2,498 and six full checkpoint pairs.
+- Publish the executed controller chain and scoped evidence separately from
+  the later-start 30,000-frame profile. No C or whole-feature count increases.
+
 ## Natural NPC replay and compiler temporary observations - 2026-10-15
 
 - Compare a 30,000-frame Hoop Girl approach and subsequent day/movie/chart
