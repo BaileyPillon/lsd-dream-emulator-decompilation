@@ -7,6 +7,13 @@ their own scenarios and outputs.
 
 ## Inputs and outputs
 
+The [startup movie profile](MOVIE_PLAYBACK.md) is a separate recorder and
+comparator. It preserves a full GPU-memory SHA-256 at every observed frame,
+native movie/stream words, controlled neutral inputs, complete checkpoint state,
+and PCM. Use its dedicated launcher to isolate SaveRAM and its dedicated
+comparator to distinguish stream setup from playback. Its one shared-state
+trajectory does not accept all movies, startup branches, or whole-game parity.
+
 `tools/start_runtime_qa.ps1` freezes the Lua script and optional starting state,
 then hashes the CUE layout and all referenced binary tracks, the emulator/core
 files, all three regional BIOS files, and a snapshot of the launch settings.
