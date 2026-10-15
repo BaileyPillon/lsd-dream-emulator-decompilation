@@ -1,0 +1,457 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-15",
+  "status": "matching_interfaces_with_bounded_runtime_field_observations",
+  "canonical_image_bytes": 505856,
+  "canonical_image_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "matching_builds": {
+    "objects_each": 306,
+    "protected_build_inputs": 392,
+    "changed_build_inputs": [
+      "src/dream/dream_generation.c",
+      "src/dream/generation_structure.c",
+      "src/dream/generation_structure.h"
+    ],
+    "no_build_objects_copied": true,
+    "standard_progress_sha256": "95975314c0eb6a22e48088d97bcf6fdd9b505f9f4e14a82a7104980c1c0d4c5e",
+    "clean_progress_sha256": "95975314c0eb6a22e48088d97bcf6fdd9b505f9f4e14a82a7104980c1c0d4c5e"
+  },
+  "published_source_inputs": [
+    {
+      "path": "src/dream/dream_generation.c",
+      "sha256": "d42347b98da7d90d898db78919420c11adac12481bed71f63177c38cfe7273a8"
+    },
+    {
+      "path": "src/dream/generation_structure.c",
+      "sha256": "1e327aa90dbd125f32791da7be049ef0c53c883bcf2cae01671b8eab31091237"
+    },
+    {
+      "path": "src/dream/generation_structure.h",
+      "sha256": "01cf00924814355cbcd9e765fb122a1beaf1d71ccc1bc73b8d517131ad1c08d3"
+    }
+  ],
+  "source_line_endings": [
+    {
+      "path": "src/dream/dream_generation.c",
+      "native_observation_source_sha256": "89fd639fd0589667d46715e9a2145bf34c466e9df92b31943a5be08ddce30c0a",
+      "published_source_sha256": "d42347b98da7d90d898db78919420c11adac12481bed71f63177c38cfe7273a8",
+      "only_change": "CRLF to LF"
+    },
+    {
+      "path": "src/dream/generation_structure.c",
+      "native_observation_source_sha256": "5e2d3b32d6ed9df02b8a2325e3a83618e9ad27a3c24868a5fed89eed53720139",
+      "published_source_sha256": "1e327aa90dbd125f32791da7be049ef0c53c883bcf2cae01671b8eab31091237",
+      "only_change": "CRLF to LF"
+    },
+    {
+      "path": "src/dream/generation_structure.h",
+      "native_observation_source_sha256": "56e6beb44b926199e5fc55ecfc94c866227805bcc61e1ec86b69b4c996442c26",
+      "published_source_sha256": "01cf00924814355cbcd9e765fb122a1beaf1d71ccc1bc73b8d517131ad1c08d3",
+      "only_change": "CRLF to LF"
+    }
+  ],
+  "bounded_native_campaign": {
+    "candidate": "ten-byte-different typed scalar dispatcher; not the later method-return form",
+    "profiles": {
+      "original": {
+        "native_cases": 3116,
+        "case_groups": {
+          "guards_modes_and_ticks": 840,
+          "sprite_rng_and_word_width": 216,
+          "mode_zero_zero_rate_variants": 60,
+          "all_mode_zero_variants": 560,
+          "period_and_coordinate_reset": 1440
+        },
+        "consecutive_update_histories": 40,
+        "history_frames": 480,
+        "history_frame_groups": {
+          "late_activation": 240,
+          "first_period_reset": 240
+        },
+        "actual_native_entry_counts": {
+          "dream_generation_update_structure_entities": 3596,
+          "func_8001CEB4": 12360,
+          "func_8001EC84": 37080,
+          "func_800564F4": 12540,
+          "func_80056640": 12540,
+          "func_80056794": 12540,
+          "func_80056858": 760,
+          "func_800569A8": 9300,
+          "func_80056DF0": 600,
+          "func_80056E44": 2040,
+          "func_80057384": 14060,
+          "func_800573A8": 8240,
+          "func_800573CC": 22300,
+          "func_80057DF4": 8160,
+          "rand": 16320
+        }
+      },
+      "unaccepted_complete_c_candidate": {
+        "native_cases": 3116,
+        "case_groups": {
+          "guards_modes_and_ticks": 840,
+          "sprite_rng_and_word_width": 216,
+          "mode_zero_zero_rate_variants": 60,
+          "all_mode_zero_variants": 560,
+          "period_and_coordinate_reset": 1440
+        },
+        "consecutive_update_histories": 40,
+        "history_frames": 480,
+        "history_frame_groups": {
+          "late_activation": 240,
+          "first_period_reset": 240
+        },
+        "actual_native_entry_counts": {
+          "dream_generation_update_structure_entities": 3596,
+          "func_8001CEB4": 12360,
+          "func_8001EC84": 37080,
+          "func_800564F4": 12540,
+          "func_80056640": 12540,
+          "func_80056794": 12540,
+          "func_80056858": 760,
+          "func_800569A8": 9300,
+          "func_80056DF0": 600,
+          "func_80056E44": 2040,
+          "func_80057384": 14060,
+          "func_800573A8": 8240,
+          "func_800573CC": 22300,
+          "func_80057DF4": 8160,
+          "rand": 16320
+        }
+      }
+    },
+    "native_function_count": 15,
+    "fault_controls_detected": 9,
+    "virtual_bindings": [
+      {
+        "table": "D_800876FC",
+        "offset": 236,
+        "function": "func_800564F4"
+      },
+      {
+        "table": "D_800876FC",
+        "offset": 184,
+        "function": "func_80057384"
+      },
+      {
+        "table": "D_800879C4",
+        "offset": 72,
+        "function": "func_80057DF4"
+      },
+      {
+        "table": "D_800876FC",
+        "offset": 68,
+        "function": "func_8001CEB4"
+      },
+      {
+        "table": "D_800878D4",
+        "offset": 68,
+        "function": "func_8001CEB4"
+      },
+      {
+        "table": "D_800878D4",
+        "offset": 184,
+        "function": "func_80057384"
+      },
+      {
+        "table": "D_800878D4",
+        "offset": 188,
+        "function": "func_800573A8"
+      }
+    ],
+    "proof_sha256": "0f36a4d7ceb5526b2417c94ab8d4d77ab3ec563fd79815bf204e34ff74345aeb"
+  },
+  "source_hypotheses": {
+    "qualified_complete_text_forms": 16,
+    "exact_matches": 0,
+    "reports": [
+      {
+        "report_sha256": "6da873e3ec575b335dbddd838254a2fabeda5fc84b4c15dd6d2fd43df571cc74",
+        "qualified_complete_text_cases": 8,
+        "exact_matches": 0
+      },
+      {
+        "report_sha256": "97711cc70faacf265a7e851d54551d0fab7be05907398bd23e602cfa2a55c779",
+        "qualified_complete_text_cases": 8,
+        "exact_matches": 0
+      }
+    ],
+    "method_return_complete_image": {
+      "actual_bytes": 505856,
+      "actual_sha1": "9209b0e1be73f7523d26d098fadd296892875e33",
+      "changed_bytes_in_common_range": 8,
+      "first_changed_offsets": [
+        283840,
+        283841,
+        283842,
+        283843,
+        283848,
+        283849,
+        283850,
+        283851
+      ],
+      "candidate_sha256": "00c932f0d622bc866383ec3c296264a138cafb9e78c92ddd7b986daa6f8466a5"
+    },
+    "method_return_native_campaign_executed": false,
+    "original_and_method_return_frame_bytes": 40,
+    "remaining_difference": "At function offsets 0x4C and 0x54, an earlier argument move and return-slot store replace a load-delay NOP and the call-delay argument move.",
+    "fragment": {
+      "path": "research/source_layout/structure-update-method.c",
+      "sha256": "b9926ebcd9f145fd09007066ae492186326e5bcde003c0614b17843d0b083efc"
+    },
+    "accepted_into_game": false
+  },
+  "existing_snapshot_observations": {
+    "source_scenario": "docs/NATURAL_WINDOW_LINK.md",
+    "new_emulator_replay": false,
+    "matching_original_rebuilt_pairs": 5,
+    "unique_active_receivers": 3,
+    "snapshot_rows": [
+      {
+        "frame": 0,
+        "mainram_sha256": "1c111465bdd07bfc9e259e602966d4a8f79b03753aa35b0df926c85bfe2c23aa",
+        "generation_type": 1,
+        "structure_count": 3,
+        "dispatch_enabled": true,
+        "active_objects": [
+          {
+            "index": 0,
+            "address": "0x801c5de8",
+            "vtable": "0x800876fc",
+            "tick": 185,
+            "mode": 0,
+            "update": "0x800564f4",
+            "set_position": "0x80057384"
+          },
+          {
+            "index": 1,
+            "address": "0x801c611c",
+            "vtable": "0x800876fc",
+            "tick": 185,
+            "mode": 0,
+            "update": "0x800564f4",
+            "set_position": "0x80057384"
+          },
+          {
+            "index": 2,
+            "address": "0x801c6450",
+            "vtable": "0x800876fc",
+            "tick": 185,
+            "mode": 0,
+            "update": "0x800564f4",
+            "set_position": "0x80057384"
+          }
+        ]
+      },
+      {
+        "frame": 600,
+        "mainram_sha256": "bc352330dd66d440a03cf737bfff51587533fcb5123a5e1d97f827b2eb526529",
+        "generation_type": 1,
+        "structure_count": 3,
+        "dispatch_enabled": true,
+        "active_objects": [
+          {
+            "index": 0,
+            "address": "0x801c5de8",
+            "vtable": "0x800876fc",
+            "tick": 297,
+            "mode": 0,
+            "update": "0x800564f4",
+            "set_position": "0x80057384"
+          },
+          {
+            "index": 1,
+            "address": "0x801c611c",
+            "vtable": "0x800876fc",
+            "tick": 297,
+            "mode": 0,
+            "update": "0x800564f4",
+            "set_position": "0x80057384"
+          },
+          {
+            "index": 2,
+            "address": "0x801c6450",
+            "vtable": "0x800876fc",
+            "tick": 297,
+            "mode": 0,
+            "update": "0x800564f4",
+            "set_position": "0x80057384"
+          }
+        ]
+      },
+      {
+        "frame": 1200,
+        "mainram_sha256": "b1d058909a3adc913c0fe05e963637ecf1bca78cceb455d4c88df382a0ed8bd0",
+        "generation_type": -1,
+        "structure_count": 3,
+        "dispatch_enabled": false,
+        "active_objects": []
+      },
+      {
+        "frame": 1800,
+        "mainram_sha256": "4fe8685fbebed2c35106de488249af9dae5139ffa805edc9e322fa7816bbce5d",
+        "generation_type": -1,
+        "structure_count": 3,
+        "dispatch_enabled": false,
+        "active_objects": []
+      },
+      {
+        "frame": 2400,
+        "mainram_sha256": "a2fc11e2004d8fd17b6911d6c3fb626df8a2fa22934b471ae99a6bb082736808",
+        "generation_type": -1,
+        "structure_count": 3,
+        "dispatch_enabled": false,
+        "active_objects": []
+      }
+    ],
+    "verified_code_and_table_regions": [
+      {
+        "name": "dream_generation_update_structure_entities",
+        "address": "0x80054c74",
+        "bytes": 136,
+        "sha256": "8e76e15aa6bb2308176a4a72b32eb3b71f3adc0e5d2b88c3c229f2d6335e54a5"
+      },
+      {
+        "name": "func_800564F4",
+        "address": "0x800564f4",
+        "bytes": 44,
+        "sha256": "fab2c1f0323e006fa234e024d1b4fd571ea09e24ce4c3c7dbf9c9fe0f3ee11a3"
+      },
+      {
+        "name": "func_80056640",
+        "address": "0x80056640",
+        "bytes": 216,
+        "sha256": "3cc6def140e06a9bd9e7b2c106751e0124171436e49a4e6bbb86fcb414d31066"
+      },
+      {
+        "name": "func_80056794",
+        "address": "0x80056794",
+        "bytes": 64,
+        "sha256": "491f5cc3d82c61bde594eb5804a4ed3ab1588587adfeaeb3e393d3aa05fdf7e7"
+      },
+      {
+        "name": "generation_structure_vtable",
+        "address": "0x800876fc",
+        "bytes": 240,
+        "sha256": "ea50c46e67e855f2a98796a6a7a490f146ed485761ececdc3555a834f28d3cc7"
+      }
+    ],
+    "observer": {
+      "path": "research/generation_interface/inspect_objects.py",
+      "sha256": "5387e830033ac774c72bcac79a9bbd5a66a103c0bc0f7a14952fcf6028ddb4be"
+    },
+    "observer_fault_controls": [
+      {
+        "fault": "short_ram",
+        "detected": true,
+        "diagnostic": "Expected a complete 2 MiB MainRAM capture."
+      },
+      {
+        "fault": "different_reference",
+        "detected": true,
+        "diagnostic": "Reference is not the supported canonical executable."
+      },
+      {
+        "fault": "changed_code",
+        "detected": true,
+        "diagnostic": "Captured original code or virtual table differs: dream_generation_update_structure_entities"
+      },
+      {
+        "fault": "changed_table",
+        "detected": true,
+        "diagnostic": "Captured original code or virtual table differs: generation_structure_vtable"
+      },
+      {
+        "fault": "oversize_active_count",
+        "detected": true,
+        "diagnostic": "Active structure count exceeds the identified 17-slot boundary."
+      },
+      {
+        "fault": "null_receiver",
+        "detected": true,
+        "diagnostic": "Active structure list contains a null receiver."
+      },
+      {
+        "fault": "unmapped_receiver",
+        "detected": true,
+        "diagnostic": "Address is outside the supported MainRAM windows."
+      },
+      {
+        "fault": "unaligned_receiver",
+        "detected": true,
+        "diagnostic": "Unaligned or out-of-bounds MainRAM read."
+      },
+      {
+        "fault": "receiver_crosses_ram_end",
+        "detected": true,
+        "diagnostic": "Unaligned or out-of-bounds MainRAM read."
+      },
+      {
+        "fault": "wrong_receiver_class",
+        "detected": true,
+        "diagnostic": "Active receiver does not use the identified generation structure class."
+      }
+    ],
+    "disabled_stale_list_guard_passed": true,
+    "cli_report_equality_and_no_overwrite": {
+      "profiles": [
+        {
+          "profile": "original",
+          "exit": 0,
+          "snapshots": 5,
+          "output_sha256": "e9c78ed45637ebfcf7fd6c9cbd36ea0cc111b00abeb2fa4c2302f2b0366b5587",
+          "existing_evidence_overwrite_rejected": true
+        },
+        {
+          "profile": "rebuilt",
+          "exit": 0,
+          "snapshots": 5,
+          "output_sha256": "e9c78ed45637ebfcf7fd6c9cbd36ea0cc111b00abeb2fa4c2302f2b0366b5587",
+          "existing_evidence_overwrite_rejected": true
+        }
+      ],
+      "reports_identical": true
+    },
+    "raw_captures_modified": false,
+    "callback_entry_tracing": false
+  },
+  "measurements_before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_game_assembly_functions": 9,
+    "inherited_unused_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "groups_with_listed_core_functions_in_c": 35,
+    "whole_feature_groups_accepted": 0,
+    "npc_callbacks_with_c_bodies": 107,
+    "npc_callbacks_catalogued": 107,
+    "bounded_native_callback_profiles": 20,
+    "whole_npc_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "measurements_after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_game_assembly_functions": 9,
+    "inherited_unused_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "groups_with_listed_core_functions_in_c": 35,
+    "whole_feature_groups_accepted": 0,
+    "npc_callbacks_with_c_bodies": 107,
+    "npc_callbacks_catalogued": 107,
+    "bounded_native_callback_profiles": 20,
+    "whole_npc_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_c_bytes": 0,
+  "new_original_gameplay_features": 0,
+  "model_api_calls": 0,
+  "limitations": [
+    "Nine assembly functions and 24 inherited storage explanations remain.",
+    "The method return is an unaccepted source-lifetime hypothesis, not the original recovered source.",
+    "Snapshot fields do not prove constructor entry, all natural modes, child lifetime, complete RNG, rendering, audio or hardware timing.",
+    "No whole NPC or complete feature group is accepted. The full project objective remains active."
+  ]
+}

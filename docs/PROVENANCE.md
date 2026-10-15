@@ -661,3 +661,17 @@ member checkpoints agree. ZIP wrapper bytes differ and are reported separately.
 Audio, direct callback entries and whole-feature acceptance are not claimed.
 Original game inputs and raw captures remain private. Removing only the new
 feature supplement reconstructs the preceding committed inventory bytes.
+
+## Generation-interface supplement
+
+[generation-interface-checks.json](generation-interface-checks.json) records
+the three matching C/header corrections, both complete builds, sixteen
+qualified source forms, the separate unaccepted dispatcher comparisons, and
+five existing original/rebuilt RAM snapshot pairs. The observer and source
+fragments are published; game files, RAM and altered-input copies stay private.
+
+The native campaign tests the ten-byte-different scalar candidate. The later
+eight-byte method-return form has a complete-image comparison but no native
+campaign in this supplement. Line-ending-only normalization is recorded
+separately from source-interface recovery. Neither observation nor a plausible
+stack frame raises original feature, NPC, or matching-C recovery counts.

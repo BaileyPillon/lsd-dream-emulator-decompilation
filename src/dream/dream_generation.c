@@ -1,4 +1,5 @@
 #include "common.h"
+#include "dream/generation_structure.h"
 #include "graphics/effect_base.h"
 
 extern u8 g_GenerationColorPalette[];
@@ -239,7 +240,7 @@ void dream_generation_destroy_effects(void) {
 }
 
 extern s32 g_GenerationStructureCount;
-extern base_class_t *g_GenerationStructures[];
+extern generation_structure_t *g_GenerationStructures[];
 void generation_apply_context(s32, void *, s32, s32);
 s32 *dream_generation_create_structures_random(s32 *, s32, s32);
 s32 *dream_generation_create_structures_type1(s32 *, s32, s32);
@@ -269,17 +270,17 @@ void dream_generation_build_entities(void *arg0) {
 }
 
 extern s32 g_GenerationStructureCount;
-extern base_class_t *g_GenerationStructures[];
+extern generation_structure_t *g_GenerationStructures[];
 
 INCLUDE_ASM("asm/nonmatchings/dream/dream_generation", dream_generation_update_structure_entities);
 
 extern s32 g_GenerationType;
 extern s32 g_GenerationStructureCount;
-extern base_class_t *g_GenerationStructures[];
+extern generation_structure_t *g_GenerationStructures[];
 
 void dream_generation_destroy_structures(void) {
     if (g_GenerationType >= 0) {
-        destroy_list(g_GenerationStructures, g_GenerationStructureCount);
+        destroy_list((base_class_t **)g_GenerationStructures, g_GenerationStructureCount);
     }
 }
 

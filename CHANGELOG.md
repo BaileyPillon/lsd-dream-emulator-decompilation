@@ -1,5 +1,14 @@
 # Changelog
 
+## Matching generation interfaces and live receivers - 2026-10-15
+
+- Correct the two-argument generation update, position setter, vector output,
+  and generated-object array types while preserving standard and fresh matching builds.
+- Observe three original-game generation receivers across five matching RAM
+  snapshot pairs; publish a read-only observer with strict input and overwrite guards.
+- Retain a consumed method-return candidate with the original frame and eight
+  differing bytes. The dispatcher remains in assembly; recovery and acceptance counts do not increase.
+
 ## Natural window linking in the matching build - 2026-10-15
 
 - Compare a 2,400-frame controller-only approach, natural window activation and

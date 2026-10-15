@@ -1,5 +1,10 @@
 # Original generation structure dispatch and source lifetimes
 
+The later [interface and live-receiver audit](GENERATION_INTERFACE.md) corrects
+the callback and vector declarations while preserving both full matching builds.
+It also retains a new eight-byte-different method-return hypothesis. The
+initial measurements below remain unchanged.
+
 The original 136-byte `dream_generation_update_structure_entities` walks the
 live structure list and invokes each object's virtual method at `0xEC`.
 Its caller supplies a three-word position vector. The canonical generation

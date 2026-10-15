@@ -52,7 +52,7 @@ typedef struct generation_structure_vtable {
     /* 0x0AC 800877a8 */ void (*Unk42)(void *);
     /* 0x0B0 800877ac */ void (*Unk43)(void *);
     /* 0x0B4 800877b0 */ void (*Unk44)(void *);
-    /* 0x0B8 800877b4 */ void (*Unk45)(void *, void *);
+    /* 0x0B8 800877b4 */ void (*SetPosition)(void *, vec3d_t *);
     /* 0x0BC 800877b8 */ void (*Unk46)(void *);
     /* 0x0C0 800877bc */ void (*Unk47)(void *);
     /* 0x0C4 800877c0 */ void (*Unk48)(void *);
@@ -65,7 +65,7 @@ typedef struct generation_structure_vtable {
     /* 0x0E0 800877dc */ void (*Unk55)(void *);
     /* 0x0E4 800877e0 */ void (*Unk56)(void *);
     /* 0x0E8 800877e4 */ void (*Unk57)(void *);
-    /* 0x0EC 800877e8 */ void (*Unk58)(void *);
+    /* 0x0EC 800877e8 */ void (*Update)(void *, s32 *);
 } generation_structure_vtable_t;
 
 typedef struct generation_structure {
@@ -111,7 +111,8 @@ typedef struct generation_structure {
 
 generation_structure_vtable_t *func_80056F4C(void);
 void func_80056520(generation_structure_t *This, s32 Unk3, s32 Unk4);
-void func_80056640(generation_structure_t *This, s32 Unk1);
+void func_800564F4(generation_structure_t *This, s32 *position);
+void func_80056640(generation_structure_t *This, s32 *position);
 void func_80056718(generation_structure_t *This);
 void func_80056B8C(generation_structure_t *This);
 void func_80056DF8(generation_structure_t *This);
