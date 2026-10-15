@@ -63,6 +63,10 @@ earlier selected five-function scan. It identifies 28 unused-storage functions
 and withdraws four promotions that added padding. Their readable padding-free
 candidates remain research; 24 inherited source explanations and nine assembly
 functions remain. C-byte coverage does not certify original source quality.
+The [render query record cleanup](docs/RENDER_QUERY_RECORD.md) removes a
+separately identified redundant buffer tail. Actual compiler traces explain
+its allocation, and the complete executable remains identical; the counts
+above are unchanged.
 The [generation structure checks](docs/GENERATION_STRUCTURES.md) execute eleven
 original routines and compare 1,116 fixtures per original/candidate image,
 including virtual dispatch, position updates and mode 3 sprite RNG/scaling.

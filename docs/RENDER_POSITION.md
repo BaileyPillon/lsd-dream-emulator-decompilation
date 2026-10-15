@@ -30,6 +30,11 @@ wrapper returns the cached context address at `0xBC`; it skips resolution.
 With a buffer, a successful resolver returns that cached address and a missing
 world slot returns null without changing the result buffer.
 
+The later [typed query result cleanup](RENDER_QUERY_RECORD.md) reuses the
+resolver's 44-byte output record in `func_8004CC74`. Actual compiler traces
+explain its 48-byte local allocation, and the complete executable is unchanged.
+The fixture counts and native scope in this position audit remain unchanged.
+
 The selector considers labels 0 through 6, resolving each through the actual
 seven-record table. Record storage order does not alter label priority. Its
 horizontal bounds are half-open intervals of size `0xA000` in x and z.

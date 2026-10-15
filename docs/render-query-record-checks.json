@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "status": "passed_matching_existing_C_record_cleanup",
+  "source": "src/scene/render_context.c",
+  "function": "func_8004CC74",
+  "source_before_sha256": "c81203402bd3def3fe3d5660044f64f516b92a39eb95136c3fbfd031c6915171",
+  "source_after_sha256": "54c3bef0da12e453ad60125e07f3457a8dc3a612db33f93879918616a219072a",
+  "source_hashes": {
+    "src/scene/render_context.c": "54c3bef0da12e453ad60125e07f3457a8dc3a612db33f93879918616a219072a",
+    "src/scene/render_context.h": "9a27d0b606659442100ed424d374077d2d0c65afd88a022e8c50e5319c74b960",
+    "configure.py": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+    "tools/decomp_workbench.py": "8d375145ca2b7f210889558ce75d4acd854a04606ea26d86ff50251b6a4820d1",
+    "tools/compile_c.py": "ab5217c43e9dca1fff7092d75e8a0ac407b3dd65b256b5c29b3ff29a4fc1afe7",
+    "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+    "research/collision/trace_compiler_stack.py": "05226a290759358650001880ffe74ef8f13690a85e08ed6cc11f630409b9e2ca"
+  },
+  "canonical_executable_bytes": 505856,
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "regular_complete_build_matches_canonical": true,
+  "qualified_candidate": {
+    "function": "func_8004CC74",
+    "address": "0x8004cc74",
+    "sized_ELF_function": true,
+    "function_bytes": 196,
+    "frame_bytes": 80,
+    "function_sha256": "f09b563a3792885b27f0296d881a7cd01351813dc8a7718170119d9222252d65",
+    "symbol_ELF_matches_compiled_candidate": true,
+    "complete_executable": {
+      "exact_match": true,
+      "expected_bytes": 505856,
+      "actual_bytes": 505856,
+      "changed_bytes_in_common_range": 0,
+      "length_difference": 0,
+      "first_changed_offsets": [],
+      "expected_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+      "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+    },
+    "original_gameplay_changed": false,
+    "new_C_bytes": 0
+  },
+  "complete_unit_comparison_sha256": "926be4f0a56a6c6331f4775f0d8c8354600e628e748cea36cfe39b6f7f1eca0b",
+  "sized_ELF_qualification_sha256": "70204ac8f509eafbf377d7b1f8238ed3defa43f5d0f6c283965955bd957ea7d1",
+  "actual_compiler_stack_traces": {
+    "baseline": {
+      "source_sha256": "c81203402bd3def3fe3d5660044f64f516b92a39eb95136c3fbfd031c6915171",
+      "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+      "compiler_mode": "g8",
+      "complete_normal_and_traced_assembly_equal": true,
+      "normal_assembly_sha256": "db1496cb3a7f645c243d0bb60b8d93a6a27d3ec0013c8a38ff4507a55d45aacc",
+      "traced_assembly_sha256": "db1496cb3a7f645c243d0bb60b8d93a6a27d3ec0013c8a38ff4507a55d45aacc",
+      "report_sha256": "7aeaa5b92b5f8a8b95e5f1e988e7e3364363d0235e989ecb6543f67300af4ab1",
+      "allocation_report_sha256": "ae6e56a15bb614e275f4526da68187d100728ef7b3fbebe61e853f2f82ac06d9",
+      "selected_function_allocations": [
+        {
+          "allocator": "assign_stack_temp",
+          "size": 48,
+          "frame_offset_before": 0,
+          "frame_offset_after": 48
+        },
+        {
+          "allocator": "assign_stack_local",
+          "size": 48,
+          "frame_offset_before": 0,
+          "frame_offset_after": 48
+        },
+        {
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 48,
+          "frame_offset_after": 48
+        }
+      ]
+    },
+    "candidate": {
+      "source_sha256": "54c3bef0da12e453ad60125e07f3457a8dc3a612db33f93879918616a219072a",
+      "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+      "compiler_mode": "g8",
+      "complete_normal_and_traced_assembly_equal": true,
+      "normal_assembly_sha256": "4040cc105ed38a98bf437eeff7ecd307b864764361a22ddb020903fd2606761a",
+      "traced_assembly_sha256": "4040cc105ed38a98bf437eeff7ecd307b864764361a22ddb020903fd2606761a",
+      "report_sha256": "64a545de92564c9a6fc8ceeeb0104fdb0ec7346bc826f2336878731d17daaed6",
+      "allocation_report_sha256": "519f69c8082b818e3b7c03e7337ae2021bb2351a1a1f3f952ceed9568545d563",
+      "selected_function_allocations": [
+        {
+          "allocator": "assign_stack_temp",
+          "size": 44,
+          "frame_offset_before": 0,
+          "frame_offset_after": 48
+        },
+        {
+          "allocator": "assign_stack_local",
+          "size": 44,
+          "frame_offset_before": 0,
+          "frame_offset_after": 48
+        },
+        {
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 48,
+          "frame_offset_after": 48
+        }
+      ]
+    }
+  },
+  "canonical_virtual_bindings": {
+    "0x10C": "0x8004C158",
+    "0x110": "0x8004C1C0"
+  },
+  "record": {
+    "existing_type": "func_8004C1C0_out_t",
+    "bytes": 44,
+    "used_offsets": {
+      "dx": 2,
+      "dz": 3,
+      "divisor": 40
+    },
+    "removed_opaque_type": "cc74_buf_t",
+    "removed_tail_bytes": 4,
+    "local_allocation_bytes": 48,
+    "complete_function_frame_bytes": 80
+  },
+  "additional_tail_absent_from_prior_28_function_audit": true,
+  "prior_24_unresolved_inherited_functions_unchanged": true,
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 22,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 22,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_C_bytes": 0,
+  "new_native_fixtures": 0,
+  "new_gameplay_runs": 0,
+  "new_whole_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "original_behavior_modified": false,
+  "Bevy_port_modified": false,
+  "original_AI_developer_tools_and_mods_separate": true,
+  "scope": "Cleaner typed source for an already matching C function, with complete executable equality. The two compiler traces explain local stack allocation. Earlier position/native evidence is retained without rerunning or expanding its scope. This is not new assembly recovery, exhaustive source-quality certification, whole-game parity or original-author type identification."
+}
