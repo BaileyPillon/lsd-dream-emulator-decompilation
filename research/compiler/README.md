@@ -1,5 +1,11 @@
 # Matching-function and exact-compiler diagnostics
 
+For a complete translation unit, use
+[`decomp_workbench.py check --function`](../../docs/SOURCE_INTERFACE_DIAGNOSTICS.md#repeatable-complete-function-diagnostics).
+The original whole-image link is preserved; a diagnostic link may retain
+symbols only when its entire binary equals the candidate. Full instruction
+details stay in the private `comparison.json` report.
+
 [compare_function.py](compare_function.py) compares a complete, sized function
 from an unstripped linked MIPS ELF against a supplied span of the canonical
 executable. It reports changed instruction fields, operand swaps and contiguous

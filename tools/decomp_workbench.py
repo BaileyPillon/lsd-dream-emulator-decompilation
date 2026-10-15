@@ -183,7 +183,47 @@ def new_output_directory(output):
     return output
 
 
-def check_candidate(source, candidate, output):
+def candidate_link_command(elf, map_path, ldscript, objects, flags):
+    # Keep the object spellings used by the linker script. Absolute versions of
+    # its relative object paths can make ld include the same input twice.
+    return [configure.CROSS + "ld", "-EL", "-o", str(elf),
+            "-Map", str(map_path), "-T", str(ldscript),
+            "-T", configure.UNDEF_SYMS, "-T", configure.UNDEF_FUNCS,
+            *flags, *map(str, objects)]
+
+
+def diagnostic_function(entry, original, output, ldscript, objects, binary):
+    """Retain real function symbols without accepting a changed allocated image."""
+    from research.compiler.compare_function import compare
+
+    start = entry["file_offset"]
+    reference = original[start:start + entry["bytes"]]
+    if hashlib.sha256(reference).hexdigest() != entry["sha256"]:
+        raise ValueError("Original function evidence changed before comparison.")
+    stripped = [flag for flag in configure.LD_FLAGS if flag in ("-s", "--strip-all")]
+    if len(stripped) != 1:
+        raise ValueError("Function diagnostics require exactly one symbol-strip flag.")
+    flags = [flag for flag in configure.LD_FLAGS if flag not in stripped]
+    elf = output / "candidate-symbols.elf"
+    subprocess.run(candidate_link_command(
+        elf, output / "candidate-symbols.map", ldscript, objects, flags), check=True)
+    diagnostic_binary = output / "candidate-symbols.exe"
+    subprocess.run([configure.CROSS + "objcopy", "-O", "binary",
+                    str(elf), str(diagnostic_binary)], check=True)
+    expected, actual = binary.read_bytes(), diagnostic_binary.read_bytes()
+    if expected != actual:
+        raise ValueError("Retaining function symbols changed the complete candidate image.")
+    result = compare(elf.read_bytes(), reference, entry["function"], int(entry["address"], 16))
+    result.update({"diagnostic_image_matches_candidate": True,
+                   "candidate_executable_sha256": hashlib.sha256(expected).hexdigest(),
+                   "diagnostic_executable_sha256": hashlib.sha256(actual).hexdigest(),
+                   "original_link_flags": list(configure.LD_FLAGS),
+                   "diagnostic_link_flags": flags,
+                   "removed_symbol_strip_flag": stripped[0]})
+    return result
+
+
+def check_candidate(source, candidate, output, function=None):
     if sys.platform == "win32":
         raise ValueError("Run candidate builds in Linux/WSL with the matching compiler environment.")
     import os
@@ -192,6 +232,13 @@ def check_candidate(source, candidate, output):
     allowed = {p for p, kind in build_manifest() if kind == "C"}
     if source not in allowed:
         raise ValueError("Select one of the configured game C source files.")
+    entry = None
+    if function is not None:
+        entries = [item for item in catalog()
+                   if item["function"] == function and item["source"] == source]
+        if len(entries) != 1:
+            raise ValueError("Select a current assembly function in the candidate's source file.")
+        entry = entries[0]
     candidate = Path(candidate).resolve(strict=True)
     output = new_output_directory(output)
     obj = output / "candidate.o"
@@ -208,10 +255,8 @@ def check_candidate(source, candidate, output):
     if any(not p.is_file() for p in objects):
         raise ValueError("A complete baseline build is required before candidate comparison.")
     elf = output / "candidate.elf"
-    subprocess.run([configure.CROSS + "ld", "-EL", "-o", str(elf),
-                    "-Map", str(output / "candidate.map"), "-T", str(ldscript),
-                    "-T", configure.UNDEF_SYMS, "-T", configure.UNDEF_FUNCS,
-                    *configure.LD_FLAGS, *map(str, objects)], check=True)
+    subprocess.run(candidate_link_command(
+        elf, output / "candidate.map", ldscript, objects, configure.LD_FLAGS), check=True)
     binary = output / "candidate.exe"
     subprocess.run([configure.CROSS + "objcopy", "-O", "binary", str(elf), str(binary)], check=True)
     original = (ROOT / configure.ROM).read_bytes()
@@ -219,6 +264,9 @@ def check_candidate(source, candidate, output):
     report.update({"source": source, "candidate": str(candidate),
                    "candidate_sha256": hashlib.sha256(candidate.read_bytes()).hexdigest(),
                    "output": str(output), "gameplay_tested": False})
+    if entry is not None:
+        report["function_diagnostics"] = diagnostic_function(
+            entry, original, output, ldscript, objects, binary)
     (output / "comparison.json").write_text(json.dumps(report, indent=2) + "\n")
     return report
 
@@ -231,6 +279,7 @@ def main(argv=None):
     check.add_argument("--source", required=True)
     check.add_argument("--candidate", required=True)
     check.add_argument("--output", required=True)
+    check.add_argument("--function", help="Also qualify and compare one current assembly function; the whole-image gate is unchanged.")
     context = commands.add_parser("context", help="Prepare original bytes, source, headers and AI matching instructions.")
     context.add_argument("--function", required=True)
     context.add_argument("--output", required=True)
@@ -241,8 +290,20 @@ def main(argv=None):
         elif args.command == "context":
             result = context_bundle(args.function, args.output)
         else:
-            result = check_candidate(args.source, args.candidate, args.output)
-        print(json.dumps(result, indent=2))
+            result = check_candidate(args.source, args.candidate, args.output, args.function)
+        printed = result
+        if args.command == "check" and args.function:
+            # Detailed instruction words and the full ELF symbol inventory stay
+            # in the private report instead of flooding a terminal or AI context.
+            printed = dict(result)
+            diagnostic = result.get("function_diagnostics", {})
+            summary = ("function", "address", "original_bytes", "candidate_bytes",
+                       "length_difference", "differing_bytes", "selected_function_bytes_equal",
+                       "diagnostic_image_matches_candidate", "source_promoted",
+                       "complete_executable_verified")
+            printed["function_diagnostics"] = {key: diagnostic[key] for key in summary if key in diagnostic}
+            printed["full_report"] = str(Path(args.output) / "comparison.json")
+        print(json.dumps(printed, indent=2))
         return 0 if args.command != "check" or result["exact_match"] else 1
     except (OSError, ValueError, subprocess.CalledProcessError) as error:
         print(f"[!] {error}", file=sys.stderr)
