@@ -286,6 +286,7 @@ For bugs and research findings, use the repository's issue templates.
 - [Original NPC behavior](docs/NATIVE_AI.md), [native dispatch](docs/NATIVE_DISPATCH.md) and [animation structures](docs/NATIVE_ANIMATIONS.md)
 - [Nine additional original scripted callback checks](docs/SCRIPTED_AI.md)
 - [Asset inventory](docs/ASSET_INVENTORY.md) and [runtime comparison](docs/RUNTIME_COMPARISON.md)
+- [Saved-state replay boundary and synchronous capture](docs/STATE_REPLAY_BOUNDARY.md)
 - [Optional exploration mods](docs/OPTIONAL_MODS.md)
 - [Local tool setup](docs/LOCAL_TOOLS.md), [tool applicability](docs/TOOL_ASSESSMENT.md) and [provenance](docs/PROVENANCE.md)
 

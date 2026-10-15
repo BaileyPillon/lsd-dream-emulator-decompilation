@@ -21094,6 +21094,48 @@
         "developer_capability_categories": 10,
         "optional_mods": 3
       }
+    },
+    "synchronous_state_replay_20261015": {
+      "status": "exact_paired_synchronous_hoop_boundary_with_source_RAM_and_frame_identity",
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "bounded_NPC_callbacks": 20,
+        "original_NPC_callbacks": 107,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "bounded_NPC_callbacks": 20,
+        "original_NPC_callbacks": 107,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "guide": "docs/STATE_REPLAY_BOUNDARY.md",
+      "metadata": "docs/state-replay-boundary-checks.json",
+      "frames_per_image": 1800,
+      "observation_rows_per_image": 1801,
+      "full_checkpoints_per_image": 7,
+      "new_original_scenario_classes": 0,
+      "new_C_bytes": 0,
+      "source_to_initial_RAM_differing_bytes": 0,
+      "source_to_initial_core_frame_difference": 0,
+      "source_to_initial_state_members_equal": true,
+      "original_AI_and_developer_tooling_separate": true
     }
   }
 }

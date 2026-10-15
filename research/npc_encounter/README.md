@@ -117,3 +117,18 @@ The earlier route's RAM snapshot and the resumed initial snapshot differ by
 that distinction when interpreting continuation. The first malformed-column
 attempt is excluded. This remains a warm-state boundary observation without
 direct callback tracing, complete encounters, or audible-output acceptance.
+
+## Restore the recorded checkpoint before observation
+
+The [synchronous replay guide](../../docs/STATE_REPLAY_BOUNDARY.md) repeats the
+boundary profile using [capture_state_replay.py](../../tools/capture_state_replay.py).
+The launcher prepends a scoped `savestate.load()` call to the unchanged observer
+bytes and pins that complete executed script. Its command omits command-line
+state loading. The new initial RAM, frame counter and all state-member payloads
+match the earlier route's frame-12000 checkpoint exactly. The new relative
+boundary frames are 1,542, 1,547, 1,552, 1,557 and 1,562; the earlier captures above
+remain historical evidence with their own start boundary.
+
+Local Lua execution tests can use an installed `lua5.4`/`lua` command or an
+explicit `LSD_TEST_LUA_LIBRARY` path to Lua 5.4. The tests exercise restoration
+before capture and failed-load rejection without game files.

@@ -23,3 +23,5 @@ research/emulator_state.py text eol=lf
 tools/inspect_nymashock_state.py text eol=lf
 tests/test_emulator_state.py text eol=lf
 research/render_grid/c6a8_candidate.c text eol=lf
+tools/capture_state_replay.py text eol=lf
+tests/test_state_replay.py text eol=lf

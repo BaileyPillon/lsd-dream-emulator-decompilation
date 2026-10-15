@@ -221,3 +221,17 @@ pairs agree. The revised recorder explicitly clears digital buttons and records
 numeric baselines. This warm-state scenario captures no audio and ends the
 dream before the NPC's tick-2,401 branch; complete encounter and feature
 acceptance remain open.
+
+## Preserve the saved-state observation boundary
+
+The [synchronous replay investigation](STATE_REPLAY_BOUNDARY.md) reproduces the
+earlier Hoop Girl resume's extra observed frame and 645 changed RAM bytes.
+Loading the same state from Lua before the observer starts preserves the source
+frame, full RAM and every state-member payload. A new 1,800-frame original/rebuilt
+pair agrees on all observations and seven complete checkpoints.
+
+Use `tools/capture_state_replay.py` with a self-contained observer and a fresh
+workspace. It pins the complete generated script and state, stages isolated save
+paths, and runs both discs in sequence. The launcher captures outputs; the
+profile-specific comparison remains necessary. This one warm-state result
+does not close cold-boot, full encounter, content, audio or timing gates.
