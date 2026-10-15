@@ -1,11 +1,95 @@
 """Synthetic guards for complete-function comparison and private evidence paths."""
 from pathlib import Path
+import hashlib
 import struct
 import tempfile
 import unittest
 from unittest.mock import patch
 
 from research.compiler import compare_function as tool
+from tools import decomp_workbench as workbench
+
+
+class WorkbenchFunctionDiagnosticsTests(unittest.TestCase):
+    WORDS = bytes.fromhex('0800e00300000000')
+
+    def entry(self):
+        return {'function': 'example', 'address': '0x80010000', 'file_offset': 0,
+                'bytes': len(self.WORDS), 'sha256': hashlib.sha256(self.WORDS).hexdigest()}
+
+    def run_diagnostic(self, folder, emitted=None, executable=None, entry=None):
+        root = Path(folder)
+        binary = root / 'candidate.exe'
+        image = self.WORDS + b'owned data'
+        binary.write_bytes(image)
+        calls = []
+
+        def run(command, **kwargs):
+            self.assertTrue(kwargs['check'])
+            calls.append(command)
+            if command[0].endswith('objcopy'):
+                Path(command[-1]).write_bytes(image if executable is None else executable)
+            else:
+                Path(command[command.index('-o') + 1]).write_bytes(
+                    fixture(self.WORDS) if emitted is None else emitted)
+
+        objects = [Path('build/src/retained.c.o'), root / 'candidate.o']
+        with patch.object(workbench.subprocess, 'run', side_effect=run):
+            result = workbench.diagnostic_function(
+                self.entry() if entry is None else entry, self.WORDS, root,
+                root / 'candidate.ld', objects, binary)
+        return result, calls
+
+    def test_actual_symbols_require_complete_candidate_image_identity(self):
+        with tempfile.TemporaryDirectory() as folder:
+            before = list(workbench.configure.LD_FLAGS)
+            result, calls = self.run_diagnostic(folder)
+        self.assertTrue(result['selected_function_bytes_equal'])
+        self.assertTrue(result['diagnostic_image_matches_candidate'])
+        self.assertEqual(result['candidate_executable_sha256'], result['diagnostic_executable_sha256'])
+        self.assertFalse(result['complete_executable_verified'])
+        self.assertFalse(result['source_promoted'])
+        self.assertEqual(workbench.configure.LD_FLAGS, before)
+        self.assertEqual(result['diagnostic_link_flags'], [flag for flag in before if flag != '-s'])
+        self.assertNotIn('-s', calls[0])
+        self.assertEqual(calls[0][-2], str(Path('build/src/retained.c.o')))
+        self.assertEqual(calls[0][-1], str(Path(folder) / 'candidate.o'))
+
+    def test_matching_symbol_cannot_hide_changed_or_appended_executable_bytes(self):
+        for image in (self.WORDS + b'wrong data', self.WORDS + b'owned data!'):
+            with self.subTest(image=image), tempfile.TemporaryDirectory() as folder:
+                with self.assertRaisesRegex(ValueError, 'complete candidate image'):
+                    self.run_diagnostic(folder, executable=image)
+
+    def test_actual_function_extent_cannot_be_replaced_by_reference_length(self):
+        with tempfile.TemporaryDirectory() as folder:
+            result, _ = self.run_diagnostic(folder, emitted=fixture(self.WORDS + b'\0' * 4))
+        self.assertEqual(result['candidate_bytes'], 12)
+        self.assertEqual(result['length_difference'], 4)
+        self.assertFalse(result['selected_function_bytes_equal'])
+
+    def test_missing_symbol_table_has_no_fabricated_boundary_fallback(self):
+        data = bytearray(fixture(self.WORDS))
+        section_table = struct.unpack_from('<I', data, 32)[0]
+        struct.pack_into('<I', data, section_table + 2 * 40 + 4, 0)
+        with tempfile.TemporaryDirectory() as folder:
+            with self.assertRaises(ValueError):
+                self.run_diagnostic(folder, emitted=bytes(data))
+
+    def test_changed_reference_evidence_is_rejected_before_linking(self):
+        entry = self.entry()
+        entry['sha256'] = '0' * 64
+        with tempfile.TemporaryDirectory() as folder:
+            with self.assertRaisesRegex(ValueError, 'Original function evidence'):
+                self.run_diagnostic(folder, entry=entry)
+            self.assertFalse((Path(folder) / 'candidate-symbols.elf').exists())
+
+    def test_unexpected_strip_configuration_is_rejected(self):
+        for flags in (['-nostdlib'], ['-s', '--strip-all']):
+            with self.subTest(flags=flags), tempfile.TemporaryDirectory() as folder:
+                with patch.object(workbench.configure, 'LD_FLAGS', flags):
+                    with self.assertRaisesRegex(ValueError, 'exactly one symbol-strip'):
+                        self.run_diagnostic(folder)
 
 
 def fixture(words, name='example', extra=b''):

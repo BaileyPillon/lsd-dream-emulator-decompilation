@@ -21,6 +21,14 @@ Pass its exact name, for example:
 The helper uses the repository's `.venv`, or the optional prepared environment
 `/opt/lsd-decomp-venv`, if present.
 
+## Complete candidate functions
+
+The [source-interface and diagnostic guide](SOURCE_INTERFACE_DIAGNOSTICS.md)
+explains the workbench's optional `check --function` comparison. It uses real
+ELF function boundaries only after a symbol-bearing diagnostic link reproduces
+the complete candidate executable. The original whole-image gate and exit
+status remain authoritative; detailed instruction evidence stays private.
+
 ## Native save workflow
 
 After building the canonical executable, install the optional analysis

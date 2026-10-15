@@ -51,3 +51,10 @@ and compares the entire executable. These developer tools remain separate
 from original NPC behavior and optional mod outputs. Binary equality proves executable identity; it does not certify a
 source explanation, exhaustive asset coverage or independently observed
 gameplay.
+
+The optional `check --function` diagnostic now qualifies actual complete ELF
+function extents after checking that retaining symbols changes no candidate
+executable bytes. Its [source-interface guide](SOURCE_INTERFACE_DIAGNOSTICS.md)
+records actual use on two nonmatching collision units and an unchanged bounds
+control, plus the remaining ABI and source gates. These are analysis results;
+they add no recovered C bytes or accepted game features.

@@ -1,6 +1,8 @@
 """Evidence and compiler-mode safeguards without copyrighted game inputs."""
 
 from pathlib import Path
+import contextlib
+import io
 import sys
 import tempfile
 import re
@@ -14,6 +16,31 @@ from tools import decomp_workbench as workbench
 
 
 class WorkbenchTests(unittest.TestCase):
+    def test_function_diagnostic_cannot_override_full_executable_exit_status(self):
+        result = {'exact_match': False, 'function_diagnostics': {
+            'selected_function_bytes_equal': True, 'changed_words': ['private instruction detail']}}
+        with patch.object(workbench, 'check_candidate', return_value=result) as check:
+            with contextlib.redirect_stdout(io.StringIO()) as stdout:
+                status = workbench.main(['check', '--source', 'src/example.c',
+                                         '--candidate', 'candidate.c', '--output', 'private',
+                                         '--function', 'example'])
+        self.assertEqual(status, 1)
+        self.assertNotIn('private instruction detail', stdout.getvalue())
+        self.assertIn('comparison.json', stdout.getvalue())
+        self.assertEqual(result['function_diagnostics']['changed_words'], ['private instruction detail'])
+        check.assert_called_once_with('src/example.c', 'candidate.c', 'private', 'example')
+
+    def test_wrong_source_function_is_rejected_before_creating_output(self):
+        with tempfile.TemporaryDirectory() as folder:
+            output = Path(folder) / '.decomp-lab' / 'new'
+            with patch.object(workbench.sys, 'platform', 'linux'):
+                with patch.object(workbench, 'build_manifest', return_value=[('src/example.c', 'C')]):
+                    with patch.object(workbench, 'catalog', return_value=[
+                            {'function': 'example', 'source': 'src/other.c'}]):
+                        with self.assertRaisesRegex(ValueError, 'candidate.s source file'):
+                            workbench.check_candidate('src/example.c', 'missing.c', output, 'example')
+            self.assertFalse(output.exists())
+
     def test_length_difference_cannot_pass_as_a_match(self):
         result = workbench.compare_bytes(b"abcd", b"abcdX")
         self.assertFalse(result["exact_match"])
