@@ -21266,6 +21266,59 @@
       "new_whole_NPC_encounters_accepted": 0,
       "new_original_feature_groups_accepted": 0,
       "original_AI_and_tools_separate": true
+    },
+    "grid_cell_ownership_20261015": {
+      "status": "unaccepted_grid_cell_ownership_alternative_reproduced_and_bounded_pairs_passed",
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 22,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 22,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "guide": "docs/GRID_CELL_OWNERSHIP.md",
+      "metadata": "docs/grid-cell-ownership-checks.json",
+      "complete_unit_comparisons": 63,
+      "repeated_controls": 12,
+      "excluded_preparation_failures": 1,
+      "actual_compiler_allocation_traces": 4,
+      "edge_reference_differences": {
+        "bytes": 8,
+        "words": 2
+      },
+      "cell_reuse_differences": {
+        "bytes": 7,
+        "words": 4
+      },
+      "repeated_scalar_pairs": 74832,
+      "negative_controls": 10,
+      "new_candidate_specific_fault_controls": 2,
+      "new_C_bytes": 0,
+      "new_original_positive_scenario_classes": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "original_AI_and_tools_separate": true
     }
   }
 }
