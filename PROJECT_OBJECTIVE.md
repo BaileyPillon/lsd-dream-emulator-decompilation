@@ -58,6 +58,10 @@ count toward original parity.
    independently tested behavior, optional mods and AI-assisted tooling.
 6. Requested tools have documented actual applicability and evidence of use.
    Tool incompatibility must not be hidden by mislabelling the game's binary.
+7. The matching build is playable with the complete local game content in a
+   supported emulator. Provide a working launch path, controls, and observed
+   in-game evidence; source coverage or a boot observation alone does not
+   establish complete gameplay parity.
 
 ## Work coordination
 

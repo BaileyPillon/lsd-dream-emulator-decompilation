@@ -33,8 +33,8 @@ void func_80043F78(model_part_t *This) {
     (*(void (**)(model_part_t *))(unk + 12))(This);
 }
 
-u8 func_80043FB0(model_part_t *This, s32 Unk1, s32 Unk2) {
-    return This->vtable->Unk30(This, Unk1, Unk2, This->m_Unk3 + 8);
+u8 func_80043FB0(model_part_t *This, u8 *types, s32 *index) {
+    return This->vtable->Unk30(This, types, index, (u8 *)(This->m_Unk3 + 8));
 }
 
 u32 *func_8004416C(model_part_t *, u32 *, u8 *, u8 *, u8 *, u8 *);

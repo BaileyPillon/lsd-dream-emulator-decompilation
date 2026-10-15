@@ -38,7 +38,7 @@ typedef struct class_object_model_vtable {
     /* 0x074 8006f3f8 */ void (*Unk28)(void *);
     /* 0x078 8006f3fc */ void (*Unk29)(void *);
     /* 0x07C 8006f400 */ void (*Unk30)(void *);
-    /* 0x080 8006f404 */ s32 (*Unk31)(void *, void *, s32 *);
+    /* 0x080 8006f404 */ s32 (*Unk31)(void *, u8 *, s32 *);
     /* 0x084 8006f408 */ void (*Unk32)(void *);
 } class_object_model_vtable_t;
 

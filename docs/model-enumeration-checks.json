@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-15T05:49:08.807786+00:00",
+  "repository_before": "6ea437373d2fca48fe4d55bead34c820d73f9206",
+  "scope": "Matching C declaration corrections and bounded original model enumeration; no new C function or whole-feature acceptance.",
+  "features_before_sha256": "a47a64b2ee716dfe09fc3f7657cdaf6140b92a5c94095679a7f7122950c3b0e3",
+  "game_source_inputs": {
+    "src/file/model_part.c": {
+      "working_tree_sha256": "f3081189fe234cc1c6c4bbdd6630ff13ddf46cd34344c1d46157e04fbf372910",
+      "normalized_git_source_sha256": "f3081189fe234cc1c6c4bbdd6630ff13ddf46cd34344c1d46157e04fbf372910"
+    },
+    "src/file/model_part.h": {
+      "working_tree_sha256": "b4acb35b0b655e43a60b5c09bdccc58cff30645ebebf71a6adabd2a865d002f6",
+      "normalized_git_source_sha256": "b4acb35b0b655e43a60b5c09bdccc58cff30645ebebf71a6adabd2a865d002f6"
+    },
+    "src/file/model_part_list.c": {
+      "working_tree_sha256": "9370262e505966e9789303c3519e24ae822143d3d1375fb5e4eb3c2d92b196e9",
+      "normalized_git_source_sha256": "9370262e505966e9789303c3519e24ae822143d3d1375fb5e4eb3c2d92b196e9"
+    },
+    "src/file/model_part_list.h": {
+      "working_tree_sha256": "54d2f0f4a7e74f5f3cecc4dffc3ad46c843ea27ede652e845c1c14f5c9c81551",
+      "normalized_git_source_sha256": "54d2f0f4a7e74f5f3cecc4dffc3ad46c843ea27ede652e845c1c14f5c9c81551"
+    },
+    "src/file/object_model.c": {
+      "working_tree_sha256": "2e42b3565a2ca339d52e9c81e32689fa4eba98e3e369ad89d6d4ae5a5c04d1dd",
+      "normalized_git_source_sha256": "2e42b3565a2ca339d52e9c81e32689fa4eba98e3e369ad89d6d4ae5a5c04d1dd"
+    },
+    "src/file/object_model.h": {
+      "working_tree_sha256": "b7456083ca4cd4ef0e609a2b2cc74adff72170a29e05c09b40611f47895499c3",
+      "normalized_git_source_sha256": "b7456083ca4cd4ef0e609a2b2cc74adff72170a29e05c09b40611f47895499c3"
+    }
+  },
+  "feature_group": "F029",
+  "complete_original_spans": [
+    {
+      "function": "func_8004497C",
+      "address": "0x8004497c",
+      "bytes": 60,
+      "sha256": "cd336339b322c0e9abcf6e063e1dc0a15fdc6ff06e64b912cc769b67e27ed0be",
+      "source": "src/file/object_model.c",
+      "next_original_address": "0x800449b8",
+      "complete_linked_span_equals_original": true
+    },
+    {
+      "function": "func_800453DC",
+      "address": "0x800453dc",
+      "bytes": 76,
+      "sha256": "df96c02741f08d7b58e22ac82298f93f8f0819841c042e21e523d9f623a98353",
+      "source": "src/file/model_part_list.c",
+      "next_original_address": "0x80045428",
+      "complete_linked_span_equals_original": true
+    },
+    {
+      "function": "func_80043FB0",
+      "address": "0x80043fb0",
+      "bytes": 52,
+      "sha256": "5200c4b3318697b8dd204a42bb0b0044de793d59e17869c70594ef8090c5e7b9",
+      "source": "src/file/model_part.c",
+      "next_original_address": "0x80043fe4",
+      "complete_linked_span_equals_original": true
+    },
+    {
+      "function": "func_80043FE4",
+      "address": "0x80043fe4",
+      "bytes": 392,
+      "sha256": "908b8c59abb21d2580be93344b54ae9105ed5182e743107f3109b15b8f6d508d",
+      "source": "src/file/model_part.c",
+      "next_original_address": "0x8004416c",
+      "complete_linked_span_equals_original": true
+    },
+    {
+      "function": "func_8004416C",
+      "address": "0x8004416c",
+      "bytes": 56,
+      "sha256": "48eb43f08ad38f0030c293a703e6421aa3906f38f68a70c143ca4c413271b67c",
+      "source": "src/file/model_part.c",
+      "next_original_address": "0x800441a4",
+      "complete_linked_span_equals_original": true
+    }
+  ],
+  "matching_builds": {
+    "objects_each": 306,
+    "no_build_objects_copied": true,
+    "complete_image_bytes": 505856,
+    "complete_image_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "standard_and_clean_and_original_equal": true,
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "known_remaining_game_assembly": 9
+  },
+  "native_profile": {
+    "owned_distinct_fixtures_per_run": 1584,
+    "original_functions": 5,
+    "decoder_visits_per_run": 213984,
+    "fresh_process_runs": 2,
+    "dependency_output_stubs": 0,
+    "measured_argument_drop_controls": 2,
+    "caller_buffers_per_case": 6,
+    "caller_buffer_bytes_per_case": 4992,
+    "index_write_bytes": 4,
+    "index_record_guard_tail_bytes": 12,
+    "execution_results_equal_across_runs": true,
+    "backend": {
+      "package_version": "2.1.4",
+      "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+      "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+    },
+    "producer_newlines_normalized_with_identical_python_bytecode": true,
+    "private_newline_code_proof_sha256": "a777f221653cbab3b07ef8564954b2ff090001d3c1d1a61a191379433a936392"
+  },
+  "source_research": {
+    "function": "dream_generation_update_structure_entities",
+    "further_consumed_scalar_forms": 96,
+    "distinct_emitted_texts": 1,
+    "differing_bytes": 10,
+    "exact_matches": 0,
+    "physical_register_bindings": false,
+    "unused_padding_added": false,
+    "private_report_sha256": "6c79c93bdc56cb868431afe3081a17194c4b2ccfa8c8f86293ee291df6d0bc27"
+  },
+  "private_evidence_sha256": {
+    ".decomp-lab/model-enumeration-public-native-20261015-third.json": "013f0cdc1e3541715ff60d02f44f3da13de95ea2e236c8916ac83e97b89e126e",
+    ".decomp-lab/model-enumeration-public-native-20261015-fourth.json": "c1ef58deabe991a5786d4f1dadc89ad1010fa1951f193efa74938383d5e437af",
+    ".decomp-lab/model-play-source-qualification-20261015-first/proof.json": "f874cab0555d66a22f9858cac154fa80a4774c73f4d99b55703b7a30ed919a1c",
+    ".decomp-lab/c-publication-builds-20261015-first/proof.json": "7ba79af0f69832772b787900caffd3e7f31bc5a6df8cf48f73b8c99a0248d96b",
+    ".decomp-lab/model-enumeration-public-first-diagnostic-20261015.json": "37b1116de5fbf75a8ddeb418ff945d8cb9ffa5145621b51fbdf766e179822e13"
+  },
+  "tools": {
+    "tools/verify_model_enumeration.py": "5a4a3032d47a91f4166994d000d3bc649d13bb5e2c2c17a9dcfae9afbb571d6a",
+    "docs/model-enumeration-function-ranges.json": "aac8f15612a959ea10f29a46dfd6c4f7ec5d78c768b1bf9456337dd673ae9eed"
+  },
+  "public_documents": {
+    "README.md": "4695ff36d18ef9aecd0e3e08890d21feb2b3eb6b48ccaefc8a95f67a30f6fc63",
+    "CHANGELOG.md": "98e654dadfc29c79497df76b431e053f8ba4e7baa6afc1697b249e4d76f76e26",
+    "PROJECT_OBJECTIVE.md": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+    "docs/PLAYING.md": "3ffe3b0b09d9c1e3997dc1ff823f19a2de921ae66361756ee21b4395b15418ba",
+    "docs/MODEL_ENUMERATION.md": "48aae31d519d9f7281d7b129c247b9614cb6d56e39a25886dff1cc48eb6acbe0",
+    "docs/LOCAL_TOOLS.md": "9fe4eb96ffa172dedf1cc6f63e5c79d435b7bc938ee56a5ce53548c0fb505148",
+    "docs/ROADMAP.md": "94187855c949e04d1c9c85f26d26a8f22c2225edeaee0c2e23211a87481593c5",
+    "docs/RUNTIME_COMPARISON.md": "493da07440f4aeddb8e4760a5471c4085dc40fc5efcdccc13e6b1b4593a67f56",
+    "docs/FEATURE_INVENTORY.md": "c55d758b136733d9a2a0e9d1678981e392fd88d8d6c706c64c9541531c9cd510",
+    "docs/PROVENANCE.md": "76d3a89bd34afe80b3337fd92c9a57ba5d03cc250efcbc12459cccd516b24a7a"
+  },
+  "new_c_functions": 0,
+  "c_bytes_added": 0,
+  "whole_feature_groups_accepted": 0,
+  "model_api_calls": 0,
+  "before_after": {
+    "before": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 20,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    },
+    "after": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "known_remaining_game_assembly_functions": 9,
+      "provisional_feature_groups": 40,
+      "original_groups_present_in_matching_c_and_assembly": 40,
+      "groups_with_every_listed_core_function_in_c": 35,
+      "original_feature_groups_accepted": 0,
+      "npc_callbacks_with_c_bodies": 107,
+      "npc_callbacks_catalogued": 107,
+      "bounded_npc_callbacks": 20,
+      "ai_assisted_developer_capabilities": 10,
+      "optional_mods": 3,
+      "known_source_padding_functions": 24
+    }
+  }
+}

@@ -9,6 +9,9 @@ with a reproducible build and tools for studying its dream systems, assets
 and scripted NPCs. It continues [cawfee/lsd_decompiled](https://github.com/cawfee/lsd_decompiled)
 and preserves that project's Git history and contributor attribution.
 
+[Build](#build-the-matching-executable) · [Play the matching build](docs/PLAYING.md) ·
+[Status and roadmap](docs/ROADMAP.md) · [Contribute](CONTRIBUTING.md)
+
 The verified local build reproduces the original Japanese executable byte for
 byte. **Full C recovery and independently reviewed gameplay coverage are still
 in progress.** The remaining assembly is regenerated from your own executable.
@@ -17,7 +20,7 @@ distributed here.
 
 ## Current status
 
-The current verified source snapshot is dated October 13, 2026. These are
+The current verified source snapshot is dated October 15, 2026. These are
 separate measures, not a whole-game completion percentage. The initial
 publication and subsequent evidence are retained separately.
 
@@ -37,6 +40,10 @@ denominator. Bounded native and emulator comparisons have passed, including
 a 6,000-frame sequence with matching frame, GPU, state and PCM audio output.
 Their scope and remaining gaps are documented in the
 [feature inventory](docs/FEATURE_INVENTORY.md) and [roadmap](docs/ROADMAP.md).
+The [model enumeration interfaces](docs/MODEL_ENUMERATION.md) now explicitly
+forward the original arguments through the object/list/part callback chain.
+The matching game can be launched with the [play helper](docs/PLAYING.md),
+which verifies local inputs and creates an isolated emulator profile.
 The [NPC proximity checks](docs/NPC_PROXIMITY.md) add Bear, Rabbit, Acrobats and
 Ship in 10,408 distinct fixtures through 25 original routines. Real distance,
 trigger-ratio, RNG, movement, event and GTE dependencies execute with no output
@@ -254,6 +261,8 @@ For bugs and research findings, use the repository's issue templates.
 ## Documentation
 
 - [Roadmap and remaining work](docs/ROADMAP.md)
+- [Play the matching game](docs/PLAYING.md)
+- [Model enumeration and callback interfaces](docs/MODEL_ENUMERATION.md)
 - [Feature inventory and before/after measurements](docs/FEATURE_INVENTORY.md)
 - [Original NPC behavior](docs/NATIVE_AI.md), [native dispatch](docs/NATIVE_DISPATCH.md) and [animation structures](docs/NATIVE_ANIMATIONS.md)
 - [Nine additional original scripted callback checks](docs/SCRIPTED_AI.md)

@@ -36,8 +36,8 @@ typedef struct model_part_list_vtable {
     /* 0x06C 8006f5fc */ void (*Unk26)(void *);
     /* 0x070 8006f600 */ void (*Unk27)(void *);
     /* 0x074 8006f604 */ void (*Unk28)(void *);
-    /* 0x078 8006f608 */ void (*Unk29)(void *);
-    /* 0x07C 8006f60c */ void (*Unk30)(void *);
+    /* 0x078 8006f608 */ u8 (*Unk29)(void *, u8 *, s32 *);
+    /* 0x07C 8006f60c */ u8 (*Unk30)(void *, u8 *, s32 *, u8 *);
     /* 0x080 8006f610 */ void (*Unk31)(void *);
 } model_part_list_vtable_t;
 

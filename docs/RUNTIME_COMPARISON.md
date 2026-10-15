@@ -159,3 +159,22 @@ COP2 transfer adapter. The eleven-function chain now has zero function-output
 stubs across its 13,230 distinct fixtures. Bounded MAC, IR and flag arithmetic
 is verified on that core; complete PS1 CPU scheduling, original hardware and
 paired natural-scene comparisons remain separate gates.
+
+## October 15 matching-build replay
+
+A fresh 1,800-frame original/rebuilt replay starts from the same preserved
+in-dream state and exercises looking, turning, shoulder inputs, walking, running,
+release gaps, and repeated button presses. The recorded movement table has 47
+columns per frame, including 43 MainRAM-derived values and four timeline/input
+columns. Native pad held/pressed/released state is included.
+
+All recorded tables, six PNG/GPU/save-state checkpoints, and the captured stereo
+PCM agree. The audio contains 1,326,847 stereo sample frames at 44.1 kHz and
+16 bits, with 2,651,450 nonzero channel samples. Both runs have verified schema-2
+input manifests, identical disc contents/layout, BIOS and core identities,
+configuration, script, and starting state. The current executable is canonical.
+
+[play-build-checks.json](play-build-checks.json) pins this bounded result and
+the isolated [interactive play launcher](PLAYING.md). A saved-state replay is
+separate from cold-boot determinism, natural encounters, physical card behavior,
+and acceptance of complete feature groups. Those gates remain open.

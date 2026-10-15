@@ -8,6 +8,11 @@ boundary of the published snapshot.
 
 ## Matching C recovery
 
+The [matching model interfaces](MODEL_ENUMERATION.md) now explicitly forward
+the native enumeration arguments. The game also has a verified
+[local play launcher](PLAYING.md). These complete no remaining assembly
+function or whole-feature gate; continue the source work below.
+
 - Use the [memory-store tracer](COMPILER_MEMORY_STORES.md) to distinguish real
   consumed storage from retained unused regions. The two local stores in the
   math candidate remain an exact-source failure; incoming records and frontend

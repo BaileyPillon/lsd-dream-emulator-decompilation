@@ -4,11 +4,11 @@
 model_part_list_t *func_80045228(model_part_list_t *, s32 *);
 void func_800452AC(model_part_list_t *This);
 s32 func_800452FC(model_part_list_t *This);
-u8 func_800453DC(model_part_list_t *, s32, s32);
+u8 func_800453DC(model_part_list_t *, u8 *, s32 *);
 s32 file_buf_destroy(void *);
 void file_buf_release(void *);
 void nullsub13(void *);
-void func_80043FE4(void *);
+u8 func_80043FE4(model_part_t *, u8 *, s32 *, u8 *);
 void func_8004416C(void *);
 
 model_part_list_vtable_t D_8006F590 = {
@@ -42,8 +42,8 @@ model_part_list_vtable_t D_8006F590 = {
     NULL,
     NULL,
     NULL,
-    (void (*)(void *)) func_800453DC,
-    func_80043FE4,
+    (u8 (*)(void *, u8 *, s32 *)) func_800453DC,
+    (u8 (*)(void *, u8 *, s32 *, u8 *)) func_80043FE4,
     func_8004416C,
 };
 
@@ -116,9 +116,9 @@ s32 func_800452FC(model_part_list_t *This) {
     return 0;
 }
 
-u8 func_800453DC(model_part_list_t *This, s32 Unk2, s32 Unk3) {
-    return ((u8(*)(model_part_list_t *, s32, s32, s32)) This->vtable->Unk30)(
-        This, Unk2, Unk3, 4 * *(s32 *) (This->m_Unk3 + 4) + This->m_Unk3 + 16);
+u8 func_800453DC(model_part_list_t *This, u8 *types, s32 *index) {
+    return This->vtable->Unk30(
+        This, types, index, (u8 *)(4 * *(s32 *) (This->m_Unk3 + 4) + This->m_Unk3 + 16));
 }
 
 model_part_list_vtable_t *func_80045428(void) {

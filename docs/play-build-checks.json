@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-15T05:49:08.807786+00:00",
+  "scope": "Verified local play-profile preparation and one strict saved-state original/rebuilt movement/audio replay; no complete feature acceptance.",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "launcher": {
+    "path": "tools/play_game.py",
+    "sha256": "99e6aa5c98c86a90cbc3bd261cf9088f614fa5f105e19aa665e16b95e4bf3c5e",
+    "game_inputs_supplied_locally": true,
+    "all_cue_tracks_fingerprinted": true,
+    "isolated_settings_and_saves": true,
+    "sound_enabled_in_interactive_profile": true,
+    "private_shortcut_prepared_and_read_back": true,
+    "physical_keyboard_and_audio_listening_acceptance": false
+  },
+  "runtime_replay": {
+    "status": "exact_for_recorded_scenario",
+    "frames": 1800,
+    "checkpoints": 6,
+    "recorded_columns_per_frame": 47,
+    "mainram_derived_columns_per_frame": 43,
+    "recorded_values_per_run": 84600,
+    "mainram_derived_values_per_run": 77400,
+    "native_pad_held_pressed_and_released_included": true,
+    "all_recorded_outputs_equal": true,
+    "complete_save_state_member_payloads_equal": true,
+    "input_manifest_schema": 2,
+    "inputs_verified": true,
+    "start_kind": "saved_state",
+    "audio": {
+      "channels": 2,
+      "sample_rate": 44100,
+      "sample_width": 2,
+      "sample_frames": 1326847,
+      "nonzero_channel_samples": 2651450,
+      "pcm_sha256": "6841cf82041374168b991d0197bcb50ac44ed1362e233871ded6eff84370d0ff"
+    },
+    "private_comparison_sha256": "ef433bd73129fd4e6547b92a8390123d1f440131579a673011ed9f1eddea78a7",
+    "interactive_sessions_untouched": true
+  },
+  "private_shortcut_proof_sha256": "eb8f2d39b50674e456632d8d6dd78a90dfac99b37eede2a082e525b7cadd4bf5",
+  "new_c_functions": 0,
+  "original_game_behavior_modified": false,
+  "whole_feature_groups_accepted": 0,
+  "model_api_calls": 0
+}

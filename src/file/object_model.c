@@ -90,8 +90,9 @@ void func_800448F8(class_object_model_t *This) {
     }
 }
 
-s32 func_8004497C(class_object_model_t *This) {
-    return (*(s32(**)(s32))(*(s32 *) This->m_Unk11 + 120))(This->m_Unk11) & 0xFF;
+s32 func_8004497C(class_object_model_t *This, u8 *types, s32 *index) {
+    return (*(s32(**)(s32, u8 *, s32 *))(*(s32 *) This->m_Unk11 + 120))(
+        This->m_Unk11, types, index) & 0xFF;
 }
 
 void func_800449B8(class_object_model_t *This, s32 Unk1, s32 Unk2, s32 Unk3, s32 Unk4, s32 Unk5) {

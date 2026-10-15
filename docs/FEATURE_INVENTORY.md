@@ -447,3 +447,17 @@ separate counts. Whole-callback and whole-group acceptances remain zero.
 and its evidence identities. The supplement in [features.json](features.json)
 preserves the frozen initial inventory; removing only its new node reconstructs
 the preceding inventory bytes exactly.
+
+## October 15 model interfaces and playable-build evidence
+
+The [model enumeration profile](MODEL_ENUMERATION.md) verifies the original
+object/list/part callback chain and the six corrected declarations. A fresh
+1,800-frame [play replay](PLAYING.md) also agrees on recorded state, six image/
+GPU/state checkpoints, and non-silent PCM output. Original and rebuilt inputs
+are pinned and identical for that replay.
+
+These additions recover interfaces and strengthen bounded evidence. The source
+measurement remains 194,212 / 199,912 bytes, with nine assembly functions,
+24 inherited storage explanations, 35 / 40 listed-core C groups, and 20 / 107
+bounded NPC callbacks. Whole-feature acceptance remains 0 / 40. No new original
+feature, optional mod, or generative-AI gameplay behavior is claimed.

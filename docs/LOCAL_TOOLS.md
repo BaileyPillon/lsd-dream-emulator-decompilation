@@ -7,6 +7,10 @@ layout or network model service is assumed.
 
 ## Windows build helper
 
+For interactive play, use the Python [matching-game launcher](PLAYING.md).
+It can invoke the WSL build directly, including on Windows installations where
+PowerShell script files are disabled.
+
 Set up the Linux toolchain inside your WSL distribution using the README.
 Pass its exact name, for example:
 

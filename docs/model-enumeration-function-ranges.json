@@ -1,0 +1,32 @@
+[
+  {
+    "function": "func_8004497C",
+    "address": "0x8004497c",
+    "bytes": 60,
+    "sha256": "cd336339b322c0e9abcf6e063e1dc0a15fdc6ff06e64b912cc769b67e27ed0be"
+  },
+  {
+    "function": "func_800453DC",
+    "address": "0x800453dc",
+    "bytes": 76,
+    "sha256": "df96c02741f08d7b58e22ac82298f93f8f0819841c042e21e523d9f623a98353"
+  },
+  {
+    "function": "func_80043FB0",
+    "address": "0x80043fb0",
+    "bytes": 52,
+    "sha256": "5200c4b3318697b8dd204a42bb0b0044de793d59e17869c70594ef8090c5e7b9"
+  },
+  {
+    "function": "func_80043FE4",
+    "address": "0x80043fe4",
+    "bytes": 392,
+    "sha256": "908b8c59abb21d2580be93344b54ae9105ed5182e743107f3109b15b8f6d508d"
+  },
+  {
+    "function": "func_8004416C",
+    "address": "0x8004416c",
+    "bytes": 56,
+    "sha256": "48eb43f08ad38f0030c293a703e6421aa3906f38f68a70c143ca4c413271b67c"
+  }
+]

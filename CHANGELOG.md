@@ -1,5 +1,17 @@
 # Changelog
 
+## Play launcher and matching model interfaces - 2026-10-15
+
+- Explicitly forward the original model enumeration arguments through six
+  C/header corrections while retaining the complete matching executable.
+- Publish the five-function original-code verifier with guarded owned receivers,
+  byte-wrap and full-word index checks, and measured forwarding faults.
+- Add a Python play launcher that can build through WSL, verify local disc/BIOS
+  and runtime inputs, and prepare isolated emulator settings and save paths.
+- Retain the generation dispatcher's 96 further declaration forms as unaccepted
+  research; all emit the same ten differing bytes. C recovery remains 97.15%,
+  with nine assembly functions and no whole-feature acceptance.
+
 ## Matching cell-bounds data and original stream selection - 2026-10-13
 
 - Recover the original twelve-byte cell-bounds record in C, correct the renderer

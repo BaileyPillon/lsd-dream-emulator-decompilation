@@ -20557,6 +20557,60 @@
         "developer_capabilities_unchanged": 10,
         "optional_mods_unchanged": 3
       }
+    },
+    "model_interfaces_and_playable_build_20261015": {
+      "recorded_utc": "2026-10-15T05:49:08.807786+00:00",
+      "documents": [
+        "docs/MODEL_ENUMERATION.md",
+        "docs/PLAYING.md"
+      ],
+      "metadata": {
+        "docs/model-enumeration-checks.json": "5099c03dc1c18a77e72cd0f0657cea84d9177277537269042bd0cc9d42607304",
+        "docs/play-build-checks.json": "12355683ef396ea01febf8a60082630f954d1b40de38b2c6e56d57827757f658"
+      },
+      "bounded_model_fixtures": 1584,
+      "record_decoder_visits_per_native_run": 213984,
+      "fresh_native_process_runs": 2,
+      "new_c_functions": 0,
+      "c_bytes_added": 0,
+      "source_declaration_files_corrected": 6,
+      "movement_replay_frames": 1800,
+      "movement_replay_checkpoints": 6,
+      "non_silent_pcm_equal": true,
+      "original_game_behavior_modified": false,
+      "whole_feature_groups_accepted": 0,
+      "before_after": {
+        "before": {
+          "c_bytes": 194212,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 9,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 20,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 24
+        },
+        "after": {
+          "c_bytes": 194212,
+          "game_text_bytes": 199912,
+          "known_remaining_game_assembly_functions": 9,
+          "provisional_feature_groups": 40,
+          "original_groups_present_in_matching_c_and_assembly": 40,
+          "groups_with_every_listed_core_function_in_c": 35,
+          "original_feature_groups_accepted": 0,
+          "npc_callbacks_with_c_bodies": 107,
+          "npc_callbacks_catalogued": 107,
+          "bounded_npc_callbacks": 20,
+          "ai_assisted_developer_capabilities": 10,
+          "optional_mods": 3,
+          "known_source_padding_functions": 24
+        }
+      }
     }
   }
 }

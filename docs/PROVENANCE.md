@@ -632,3 +632,21 @@ fault controls. The failed final-tally assertion remains a retained diagnostic.
 Older source/build/feature snapshots remain frozen; removing only this supplement
 restores earlier feature bytes. Raw images, original code and native buffers stay
 private. One C data record does not raise C function or whole-feature counts.
+
+## Model enumeration and playable-build supplement
+
+[model-enumeration-checks.json](model-enumeration-checks.json) pins six source
+declaration corrections, five independently qualified complete linked function
+spans, standard and fresh 306-object matching builds, and the repeatable native
+profile. Its 1,584 owned fixtures and 213,984 decoder visits execute original
+code with no substituted outputs. The failed initial report writer is retained
+as an excluded diagnostic, and the repaired producer is run in fresh processes.
+
+[play-build-checks.json](play-build-checks.json) records preparation of a verified
+local play profile and a strict 1,800-frame original/rebuilt movement/audio
+replay. Desktop shortcut paths, original disc/BIOS inputs, full captures, linked
+images, native details, and compiler outputs remain private. Only bounded
+counts, hashes, and scope metadata are published.
+
+The added feature-inventory supplement preserves every earlier field and
+snapshot. Matching C bytes and whole-feature acceptance do not increase.
