@@ -6,6 +6,14 @@ controller input and read-only MainRAM inspection in BizHawk 2.11.1/Nymashock.
 It never writes game RAM. This directory is research, outside the matching
 game build and recovered-C count.
 
+The historical executed script is preserved unchanged. Its Lua
+`is_boolean and false or value` expression can retain an initially held
+Boolean, and its policy log is not a complete submitted-input record. Its
+recorded output comparisons remain valid within that capture scope. For new
+controller harnesses, follow the explicit neutralization and complete logging
+in the [new NPC recorder](../npc_encounter/README.md); that recorder has its own
+Hoop Girl starting-state requirements and is not a drop-in window scenario.
+
 ## Required local inputs
 
 - The supported Japanese game content, canonical executable, and local BIOS.

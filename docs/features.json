@@ -20701,6 +20701,87 @@
         "developer_capability_categories": 10,
         "optional_mods": 3
       }
+    },
+    "natural_hoop_encounter_20261015": {
+      "date": "2026-10-15",
+      "metadata": "docs/natural-hoop-encounter-checks.json",
+      "scope": "One 30000-frame controller-driven NPC activation and later day/movie/chart sequence; no whole-encounter or feature acceptance.",
+      "frames": 30000,
+      "full_checkpoints": 11,
+      "submitted_rows": 30000,
+      "registered_npc_samples": 345,
+      "late_2401_tick_branch_observed": false,
+      "new_c_bytes": 0,
+      "new_original_gameplay_features": 0,
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_game_assembly_functions": 9,
+        "inherited_unused_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "groups_with_listed_core_functions_in_c": 35,
+        "whole_feature_groups_accepted": 0,
+        "npc_callbacks_with_c_bodies": 107,
+        "npc_callbacks_catalogued": 107,
+        "bounded_native_callback_profiles": 20,
+        "whole_npc_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_game_assembly_functions": 9,
+        "inherited_unused_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "groups_with_listed_core_functions_in_c": 35,
+        "whole_feature_groups_accepted": 0,
+        "npc_callbacks_with_c_bodies": 107,
+        "npc_callbacks_catalogued": 107,
+        "bounded_native_callback_profiles": 20,
+        "whole_npc_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      }
+    },
+    "generation_return_temporary_20261015": {
+      "date": "2026-10-15",
+      "metadata": "docs/generation-return-temporary-checks.json",
+      "scope": "Compiler storage/store observations, fourteen qualified source forms, and bounded native checks of the unaccepted eight-byte-different candidate.",
+      "new_qualified_source_forms": 14,
+      "remaining_candidate_differing_bytes": 8,
+      "new_c_bytes": 0,
+      "new_original_gameplay_features": 0,
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_game_assembly_functions": 9,
+        "inherited_unused_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "groups_with_listed_core_functions_in_c": 35,
+        "whole_feature_groups_accepted": 0,
+        "npc_callbacks_with_c_bodies": 107,
+        "npc_callbacks_catalogued": 107,
+        "bounded_native_callback_profiles": 20,
+        "whole_npc_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_game_assembly_functions": 9,
+        "inherited_unused_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "groups_with_listed_core_functions_in_c": 35,
+        "whole_feature_groups_accepted": 0,
+        "npc_callbacks_with_c_bodies": 107,
+        "npc_callbacks_catalogued": 107,
+        "bounded_native_callback_profiles": 20,
+        "whole_npc_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      }
     }
   }
 }

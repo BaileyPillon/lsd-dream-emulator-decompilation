@@ -1,2 +1,5 @@
 # Preserve the bundled compiler binaries without text conversion.
 tools/gcc263/* binary
+
+# Keep the published executed recorder and its extractor identical on Windows.
+research/npc_encounter/*.lua text eol=lf

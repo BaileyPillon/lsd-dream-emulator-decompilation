@@ -1,0 +1,1180 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-15T09:44:36.958942+00:00",
+  "repository_before": "596e22cc3b3bb2f37713f53f165167642d2044ec",
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_game_assembly_functions": 9,
+    "inherited_unused_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "groups_with_listed_core_functions_in_c": 35,
+    "whole_feature_groups_accepted": 0,
+    "npc_callbacks_with_c_bodies": 107,
+    "npc_callbacks_catalogued": 107,
+    "bounded_native_callback_profiles": 20,
+    "whole_npc_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_game_assembly_functions": 9,
+    "inherited_unused_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "groups_with_listed_core_functions_in_c": 35,
+    "whole_feature_groups_accepted": 0,
+    "npc_callbacks_with_c_bodies": 107,
+    "npc_callbacks_catalogued": 107,
+    "bounded_native_callback_profiles": 20,
+    "whole_npc_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_c_bytes": 0,
+  "whole_feature_groups_accepted": 0,
+  "goal_complete": false,
+  "status": "exact_recorded_hoop_npc_and_later_screen_sequence",
+  "scope": [
+    "Warm-state-specific controller scenario, not construction or every NPC branch.",
+    "Retained DreamSys fields and class-compatible screen records do not prove an object remains live or identify every displayed movie.",
+    "No audio/listening, direct callback-entry tracing, all-NPC or whole-feature acceptance."
+  ],
+  "input_identity": {
+    "schema_version": 2,
+    "selected_core": "Nymashock",
+    "scenario": "play",
+    "frames": 30000,
+    "disc_layout": [
+      "FILE <track-1> BINARY",
+      "TRACK 01 MODE2/2352",
+      "INDEX 01 00:00:00"
+    ],
+    "disc_tracks": [
+      {
+        "bytes": 648088896,
+        "sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61"
+      }
+    ],
+    "emulator_files": {
+      "EmuHawk.exe": {
+        "bytes": 5376512,
+        "sha256": "f8cdb93551a544f680bf3876d9d8d72643859e7a44a23b04e1a25b92e48f80cd"
+      },
+      "EmuHawk.exe.config": {
+        "bytes": 3266,
+        "sha256": "00146088ad19747e601d09dee0ead7bf75b27fccf23e3cf7809a5e7dede129cf"
+      },
+      "dll/BizHawk.Emulation.Cores.dll": {
+        "bytes": 10832896,
+        "sha256": "444bc157418e9b5df5d07e987fc7ad1d2d1c6993676f5b864368027cb4f054d5"
+      },
+      "dll/BizHawk.Emulation.Common.dll": {
+        "bytes": 413184,
+        "sha256": "f557d94912b12bde18413b60d25b3e61332b7bbfc7184349d1289d6ba9f350ee"
+      },
+      "dll/octoshock.dll": {
+        "bytes": 1259008,
+        "sha256": "466a6a1f9d958a4d365b10fcf9b4bde5aeb80cc9c4d4fd00da9ad05930569b41"
+      },
+      "dll/shock.wbx.zst": {
+        "bytes": 705813,
+        "sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126"
+      },
+      "dll/waterboxhost.dll": {
+        "bytes": 406016,
+        "sha256": "e8e47426941a710c7ceea98fb0833b8387de1952f54ca0fa40001cd494507cee"
+      }
+    },
+    "bios": {
+      "J": {
+        "bytes": 524288,
+        "sha256": "9c0421858e217805f4abe18698afea8d5aa36ff0727eb8484944e00eb5e7eadb"
+      },
+      "U": {
+        "bytes": 524288,
+        "sha256": "11052b6499e466bbf0a709b1f9cb6834a9418e66680387912451e971cf8a1fef"
+      },
+      "E": {
+        "bytes": 524288,
+        "sha256": "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+      }
+    },
+    "configuration": {
+      "normalized_json_sha256": "75e2d5071be67a5472dae42be5f20fd04b1d7dac887de5795755ab9cf43921e7"
+    },
+    "script": {
+      "bytes": 12536,
+      "sha256": "1fa746a7f5db26f5b286e77dca595d39ed6bc76b7aceb599693eae544e9671b7"
+    },
+    "start_kind": "saved_state",
+    "start_state": {
+      "bytes": 1220532,
+      "sha256": "8eb0bdd463e2deecaacc3f67f40429958b0a28e669bd8d38bb65c867f38297b6"
+    },
+    "audio_output_requested": false,
+    "audio_writer": null
+  },
+  "scenario_matches_both_executed_scripts": true,
+  "files": {
+    "capabilities.txt": {
+      "equal": true,
+      "original_bytes": 94,
+      "rebuilt_bytes": 94,
+      "original_sha256": "6c02e2b9e923e03abaa9cc0592a0dbce4c1f8fc41a82c77dc90e40dbea5e9578",
+      "rebuilt_sha256": "6c02e2b9e923e03abaa9cc0592a0dbce4c1f8fc41a82c77dc90e40dbea5e9578"
+    },
+    "npc.tsv": {
+      "equal": true,
+      "original_bytes": 41042,
+      "rebuilt_bytes": 41042,
+      "original_sha256": "8209393b6706e2617e5d214585a064cb397cb23a14e7f98e7a77981601dfcda0",
+      "rebuilt_sha256": "8209393b6706e2617e5d214585a064cb397cb23a14e7f98e7a77981601dfcda0"
+    },
+    "scene.tsv": {
+      "equal": true,
+      "original_bytes": 36475,
+      "rebuilt_bytes": 36475,
+      "original_sha256": "df0b6cea3e9062cd0ab44198e5ebc3fb900acb5b2580681c312934cbf48df8bb",
+      "rebuilt_sha256": "df0b6cea3e9062cd0ab44198e5ebc3fb900acb5b2580681c312934cbf48df8bb"
+    },
+    "controls.tsv": {
+      "equal": true,
+      "original_bytes": 2256166,
+      "rebuilt_bytes": 2256166,
+      "original_sha256": "55f680460aa38ec22d99cf8ec6d8d562074a7c219285868eb94922a87766447b",
+      "rebuilt_sha256": "55f680460aa38ec22d99cf8ec6d8d562074a7c219285868eb94922a87766447b"
+    },
+    "completed.txt": {
+      "equal": true,
+      "original_bytes": 111,
+      "rebuilt_bytes": 111,
+      "original_sha256": "70261c50a52bf983e08aeb6fffc1849b2c14aefab69852bdcb3e2cc99e1373ff",
+      "rebuilt_sha256": "70261c50a52bf983e08aeb6fffc1849b2c14aefab69852bdcb3e2cc99e1373ff"
+    },
+    "external-save-inputs.json": {
+      "equal": true,
+      "original_bytes": 47,
+      "rebuilt_bytes": 47,
+      "original_sha256": "fef5a0d92fb79298f7e4558fdd7db7fc5ff7b7376e69623753d39bb7fb2aaadc",
+      "rebuilt_sha256": "fef5a0d92fb79298f7e4558fdd7db7fc5ff7b7376e69623753d39bb7fb2aaadc"
+    },
+    "exit-save-records.json": {
+      "equal": true,
+      "original_bytes": 246,
+      "rebuilt_bytes": 246,
+      "original_sha256": "b027ff6655f0c0e75b4709d427223ff7a10bcecf72fa6fcdab5f6c5d1195d5f9",
+      "rebuilt_sha256": "b027ff6655f0c0e75b4709d427223ff7a10bcecf72fa6fcdab5f6c5d1195d5f9"
+    },
+    "input-definition.tsv": {
+      "equal": true,
+      "original_bytes": 883,
+      "rebuilt_bytes": 883,
+      "original_sha256": "4f8b5f6d4d473ea9d94bd0fc5c6d53ec71380a649fdb83a56e22ee582cbfda31",
+      "rebuilt_sha256": "4f8b5f6d4d473ea9d94bd0fc5c6d53ec71380a649fdb83a56e22ee582cbfda31"
+    },
+    "submitted.tsv": {
+      "equal": true,
+      "original_bytes": 2990978,
+      "rebuilt_bytes": 2990978,
+      "original_sha256": "5c5bdba18ef3703ba3691ca2c550d603b2d05758b3df33824ef408f7f9ec1644",
+      "rebuilt_sha256": "5c5bdba18ef3703ba3691ca2c550d603b2d05758b3df33824ef408f7f9ec1644"
+    }
+  },
+  "checkpoints": [
+    {
+      "frame": 0,
+      "ram": {
+        "equal": true,
+        "original_bytes": 2097152,
+        "rebuilt_bytes": 2097152,
+        "original_sha256": "a50d8ec4cac8ba334e507ab6cda81a8f8ab9bae92426d593bb51e9ac5f6adc1a",
+        "rebuilt_sha256": "a50d8ec4cac8ba334e507ab6cda81a8f8ab9bae92426d593bb51e9ac5f6adc1a"
+      },
+      "image": {
+        "equal": true,
+        "original_bytes": 10875,
+        "rebuilt_bytes": 10875,
+        "original_sha256": "a5df02f8dff7069e3281b4ba7c688ab2e7987fafd935ddf973b7105e32f4bf9c",
+        "rebuilt_sha256": "a5df02f8dff7069e3281b4ba7c688ab2e7987fafd935ddf973b7105e32f4bf9c"
+      },
+      "state": {
+        "archive_bytes_equal": false,
+        "member_contents_equal": true,
+        "members": {
+          "BizState 1.0": {
+            "equal": true,
+            "original_bytes": 3,
+            "rebuilt_bytes": 3,
+            "original_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed",
+            "rebuilt_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+          },
+          "BizVersion.txt": {
+            "equal": true,
+            "original_bytes": 16,
+            "rebuilt_bytes": 16,
+            "original_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4",
+            "rebuilt_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+          },
+          "Core.bin.zst": {
+            "equal": true,
+            "original_bytes": 1205766,
+            "rebuilt_bytes": 1205766,
+            "original_sha256": "28089a27168a3f1c0912f8e1e4464e942188cb4497cc4395b694fac562fba514",
+            "rebuilt_sha256": "28089a27168a3f1c0912f8e1e4464e942188cb4497cc4395b694fac562fba514"
+          },
+          "Framebuffer.bmp": {
+            "equal": true,
+            "original_bytes": 336054,
+            "rebuilt_bytes": 336054,
+            "original_sha256": "f7324c906482ac783aa60498548b665eb214f2a70f12c6ae827d35c3c85bd339",
+            "rebuilt_sha256": "f7324c906482ac783aa60498548b665eb214f2a70f12c6ae827d35c3c85bd339"
+          },
+          "SyncSettings.json": {
+            "equal": true,
+            "original_bytes": 140,
+            "rebuilt_bytes": 140,
+            "original_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee",
+            "rebuilt_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+          }
+        }
+      },
+      "game_fields": {
+        "stored_day_of_year": 0,
+        "display_day": 1,
+        "global_current_day": 1,
+        "retained_map_key": 12,
+        "input_locked": 0,
+        "pad_buttons": 0,
+        "pad_released": 0,
+        "pad_pressed": 0
+      },
+      "compatible_screen_records_not_entry_traces": []
+    },
+    {
+      "frame": 3000,
+      "ram": {
+        "equal": true,
+        "original_bytes": 2097152,
+        "rebuilt_bytes": 2097152,
+        "original_sha256": "b73768d5d8d476c8b8c38d5b4f1ef5f9f040f613c672f99980af32e8891f2108",
+        "rebuilt_sha256": "b73768d5d8d476c8b8c38d5b4f1ef5f9f040f613c672f99980af32e8891f2108"
+      },
+      "image": {
+        "equal": true,
+        "original_bytes": 23878,
+        "rebuilt_bytes": 23878,
+        "original_sha256": "c30ceebb7bfe0fb7cabab0055dfcc49a7382bbb13483d31e58c3b731ff26d4c8",
+        "rebuilt_sha256": "c30ceebb7bfe0fb7cabab0055dfcc49a7382bbb13483d31e58c3b731ff26d4c8"
+      },
+      "state": {
+        "archive_bytes_equal": false,
+        "member_contents_equal": true,
+        "members": {
+          "BizState 1.0": {
+            "equal": true,
+            "original_bytes": 3,
+            "rebuilt_bytes": 3,
+            "original_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed",
+            "rebuilt_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+          },
+          "BizVersion.txt": {
+            "equal": true,
+            "original_bytes": 16,
+            "rebuilt_bytes": 16,
+            "original_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4",
+            "rebuilt_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+          },
+          "Core.bin.zst": {
+            "equal": true,
+            "original_bytes": 1213575,
+            "rebuilt_bytes": 1213575,
+            "original_sha256": "885ec4fbfe62d2c0db584fe59999d07bd37d160c471e2f2355f99a3af65c6536",
+            "rebuilt_sha256": "885ec4fbfe62d2c0db584fe59999d07bd37d160c471e2f2355f99a3af65c6536"
+          },
+          "Framebuffer.bmp": {
+            "equal": true,
+            "original_bytes": 336054,
+            "rebuilt_bytes": 336054,
+            "original_sha256": "86a44e5afc98ac25c8540654bcd168bfb83e252b4404c7cf0f11b7c6a5130618",
+            "rebuilt_sha256": "86a44e5afc98ac25c8540654bcd168bfb83e252b4404c7cf0f11b7c6a5130618"
+          },
+          "SyncSettings.json": {
+            "equal": true,
+            "original_bytes": 140,
+            "rebuilt_bytes": 140,
+            "original_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee",
+            "rebuilt_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+          }
+        }
+      },
+      "game_fields": {
+        "stored_day_of_year": 0,
+        "display_day": 1,
+        "global_current_day": 1,
+        "retained_map_key": 12,
+        "input_locked": 0,
+        "pad_buttons": 0,
+        "pad_released": 0,
+        "pad_pressed": 0
+      },
+      "compatible_screen_records_not_entry_traces": []
+    },
+    {
+      "frame": 6000,
+      "ram": {
+        "equal": true,
+        "original_bytes": 2097152,
+        "rebuilt_bytes": 2097152,
+        "original_sha256": "24bb7363f94e9a157ad22498b38cfa88f38df02f9c6a9db2cd6ba99f18219868",
+        "rebuilt_sha256": "24bb7363f94e9a157ad22498b38cfa88f38df02f9c6a9db2cd6ba99f18219868"
+      },
+      "image": {
+        "equal": true,
+        "original_bytes": 23878,
+        "rebuilt_bytes": 23878,
+        "original_sha256": "c30ceebb7bfe0fb7cabab0055dfcc49a7382bbb13483d31e58c3b731ff26d4c8",
+        "rebuilt_sha256": "c30ceebb7bfe0fb7cabab0055dfcc49a7382bbb13483d31e58c3b731ff26d4c8"
+      },
+      "state": {
+        "archive_bytes_equal": false,
+        "member_contents_equal": true,
+        "members": {
+          "BizState 1.0": {
+            "equal": true,
+            "original_bytes": 3,
+            "rebuilt_bytes": 3,
+            "original_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed",
+            "rebuilt_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+          },
+          "BizVersion.txt": {
+            "equal": true,
+            "original_bytes": 16,
+            "rebuilt_bytes": 16,
+            "original_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4",
+            "rebuilt_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+          },
+          "Core.bin.zst": {
+            "equal": true,
+            "original_bytes": 1210834,
+            "rebuilt_bytes": 1210834,
+            "original_sha256": "cb59fcde401aad9f5597f44aff86c3126d02f2b5a7ebc4759dca28cf8d7d730b",
+            "rebuilt_sha256": "cb59fcde401aad9f5597f44aff86c3126d02f2b5a7ebc4759dca28cf8d7d730b"
+          },
+          "Framebuffer.bmp": {
+            "equal": true,
+            "original_bytes": 336054,
+            "rebuilt_bytes": 336054,
+            "original_sha256": "86a44e5afc98ac25c8540654bcd168bfb83e252b4404c7cf0f11b7c6a5130618",
+            "rebuilt_sha256": "86a44e5afc98ac25c8540654bcd168bfb83e252b4404c7cf0f11b7c6a5130618"
+          },
+          "SyncSettings.json": {
+            "equal": true,
+            "original_bytes": 140,
+            "rebuilt_bytes": 140,
+            "original_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee",
+            "rebuilt_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+          }
+        }
+      },
+      "game_fields": {
+        "stored_day_of_year": 0,
+        "display_day": 1,
+        "global_current_day": 1,
+        "retained_map_key": 12,
+        "input_locked": 0,
+        "pad_buttons": 0,
+        "pad_released": 0,
+        "pad_pressed": 0
+      },
+      "compatible_screen_records_not_entry_traces": []
+    },
+    {
+      "frame": 9000,
+      "ram": {
+        "equal": true,
+        "original_bytes": 2097152,
+        "rebuilt_bytes": 2097152,
+        "original_sha256": "1584c3e286d20165243c3db27d9ae31530a3ce09a4a28097f4b54d09dab84be5",
+        "rebuilt_sha256": "1584c3e286d20165243c3db27d9ae31530a3ce09a4a28097f4b54d09dab84be5"
+      },
+      "image": {
+        "equal": true,
+        "original_bytes": 23878,
+        "rebuilt_bytes": 23878,
+        "original_sha256": "c30ceebb7bfe0fb7cabab0055dfcc49a7382bbb13483d31e58c3b731ff26d4c8",
+        "rebuilt_sha256": "c30ceebb7bfe0fb7cabab0055dfcc49a7382bbb13483d31e58c3b731ff26d4c8"
+      },
+      "state": {
+        "archive_bytes_equal": false,
+        "member_contents_equal": true,
+        "members": {
+          "BizState 1.0": {
+            "equal": true,
+            "original_bytes": 3,
+            "rebuilt_bytes": 3,
+            "original_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed",
+            "rebuilt_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+          },
+          "BizVersion.txt": {
+            "equal": true,
+            "original_bytes": 16,
+            "rebuilt_bytes": 16,
+            "original_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4",
+            "rebuilt_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+          },
+          "Core.bin.zst": {
+            "equal": true,
+            "original_bytes": 1212783,
+            "rebuilt_bytes": 1212783,
+            "original_sha256": "0f27c2c834dc570cf4ddf33e741673f8dbf2632e6f6698d5d34a8185f9f118e3",
+            "rebuilt_sha256": "0f27c2c834dc570cf4ddf33e741673f8dbf2632e6f6698d5d34a8185f9f118e3"
+          },
+          "Framebuffer.bmp": {
+            "equal": true,
+            "original_bytes": 336054,
+            "rebuilt_bytes": 336054,
+            "original_sha256": "86a44e5afc98ac25c8540654bcd168bfb83e252b4404c7cf0f11b7c6a5130618",
+            "rebuilt_sha256": "86a44e5afc98ac25c8540654bcd168bfb83e252b4404c7cf0f11b7c6a5130618"
+          },
+          "SyncSettings.json": {
+            "equal": true,
+            "original_bytes": 140,
+            "rebuilt_bytes": 140,
+            "original_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee",
+            "rebuilt_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+          }
+        }
+      },
+      "game_fields": {
+        "stored_day_of_year": 0,
+        "display_day": 1,
+        "global_current_day": 1,
+        "retained_map_key": 12,
+        "input_locked": 0,
+        "pad_buttons": 0,
+        "pad_released": 0,
+        "pad_pressed": 0
+      },
+      "compatible_screen_records_not_entry_traces": []
+    },
+    {
+      "frame": 12000,
+      "ram": {
+        "equal": true,
+        "original_bytes": 2097152,
+        "rebuilt_bytes": 2097152,
+        "original_sha256": "748c2082af1a44ffbc8b525c3f538c2384ddff60c8f9f08edc29a494bf85a029",
+        "rebuilt_sha256": "748c2082af1a44ffbc8b525c3f538c2384ddff60c8f9f08edc29a494bf85a029"
+      },
+      "image": {
+        "equal": true,
+        "original_bytes": 36155,
+        "rebuilt_bytes": 36155,
+        "original_sha256": "afc72e7e567e2f2af06e209b9b6500674670c2d059cd35c6e7c319ccaa8d02b7",
+        "rebuilt_sha256": "afc72e7e567e2f2af06e209b9b6500674670c2d059cd35c6e7c319ccaa8d02b7"
+      },
+      "state": {
+        "archive_bytes_equal": false,
+        "member_contents_equal": true,
+        "members": {
+          "BizState 1.0": {
+            "equal": true,
+            "original_bytes": 3,
+            "rebuilt_bytes": 3,
+            "original_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed",
+            "rebuilt_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+          },
+          "BizVersion.txt": {
+            "equal": true,
+            "original_bytes": 16,
+            "rebuilt_bytes": 16,
+            "original_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4",
+            "rebuilt_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+          },
+          "Core.bin.zst": {
+            "equal": true,
+            "original_bytes": 1128288,
+            "rebuilt_bytes": 1128288,
+            "original_sha256": "37fc294b4c5e540b4ad3b331e69f620b6ad06b0b743c06e72d92f2b583081573",
+            "rebuilt_sha256": "37fc294b4c5e540b4ad3b331e69f620b6ad06b0b743c06e72d92f2b583081573"
+          },
+          "Framebuffer.bmp": {
+            "equal": true,
+            "original_bytes": 336054,
+            "rebuilt_bytes": 336054,
+            "original_sha256": "35a2d13baf0142537f8c3dd52445dd2473d28f87988f526b5147f78868141895",
+            "rebuilt_sha256": "35a2d13baf0142537f8c3dd52445dd2473d28f87988f526b5147f78868141895"
+          },
+          "SyncSettings.json": {
+            "equal": true,
+            "original_bytes": 140,
+            "rebuilt_bytes": 140,
+            "original_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee",
+            "rebuilt_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+          }
+        }
+      },
+      "game_fields": {
+        "stored_day_of_year": 1,
+        "display_day": 2,
+        "global_current_day": 1,
+        "retained_map_key": 12,
+        "input_locked": 1,
+        "pad_buttons": 0,
+        "pad_released": 0,
+        "pad_pressed": 0
+      },
+      "compatible_screen_records_not_entry_traces": []
+    },
+    {
+      "frame": 15000,
+      "ram": {
+        "equal": true,
+        "original_bytes": 2097152,
+        "rebuilt_bytes": 2097152,
+        "original_sha256": "9ae504fa11c76fa69759364dfe1f298b1dbe27d9124836204f0eff12570d9361",
+        "rebuilt_sha256": "9ae504fa11c76fa69759364dfe1f298b1dbe27d9124836204f0eff12570d9361"
+      },
+      "image": {
+        "equal": true,
+        "original_bytes": 6376,
+        "rebuilt_bytes": 6376,
+        "original_sha256": "e3371a920383d255611f580a2c98f36cb042eff06745c54c925b1769e0a1fde1",
+        "rebuilt_sha256": "e3371a920383d255611f580a2c98f36cb042eff06745c54c925b1769e0a1fde1"
+      },
+      "state": {
+        "archive_bytes_equal": false,
+        "member_contents_equal": true,
+        "members": {
+          "BizState 1.0": {
+            "equal": true,
+            "original_bytes": 3,
+            "rebuilt_bytes": 3,
+            "original_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed",
+            "rebuilt_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+          },
+          "BizVersion.txt": {
+            "equal": true,
+            "original_bytes": 16,
+            "rebuilt_bytes": 16,
+            "original_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4",
+            "rebuilt_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+          },
+          "Core.bin.zst": {
+            "equal": true,
+            "original_bytes": 1157204,
+            "rebuilt_bytes": 1157204,
+            "original_sha256": "fb74d2b5c6323617d3a02e24d89a33a91a0c0c07b2c5cf77fd33c57f3437318b",
+            "rebuilt_sha256": "fb74d2b5c6323617d3a02e24d89a33a91a0c0c07b2c5cf77fd33c57f3437318b"
+          },
+          "Framebuffer.bmp": {
+            "equal": true,
+            "original_bytes": 336054,
+            "rebuilt_bytes": 336054,
+            "original_sha256": "d7344b59d1104c7c8344bae0f4bdbbcc15346eb84e88f84787cedc6c2cfd13a3",
+            "rebuilt_sha256": "d7344b59d1104c7c8344bae0f4bdbbcc15346eb84e88f84787cedc6c2cfd13a3"
+          },
+          "SyncSettings.json": {
+            "equal": true,
+            "original_bytes": 140,
+            "rebuilt_bytes": 140,
+            "original_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee",
+            "rebuilt_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+          }
+        }
+      },
+      "game_fields": {
+        "stored_day_of_year": 1,
+        "display_day": 2,
+        "global_current_day": 1,
+        "retained_map_key": 12,
+        "input_locked": 1,
+        "pad_buttons": 0,
+        "pad_released": 0,
+        "pad_pressed": 0
+      },
+      "compatible_screen_records_not_entry_traces": [
+        {
+          "class": "movie_screen",
+          "address": "0x80091f70"
+        },
+        {
+          "class": "movie_screen",
+          "address": "0x801ffd34"
+        },
+        {
+          "class": "movie_screen",
+          "address": "0x801ffdd4"
+        },
+        {
+          "class": "movie_screen",
+          "address": "0x801ffe1c"
+        },
+        {
+          "class": "movie_screen",
+          "address": "0x801ffe58"
+        },
+        {
+          "class": "movie_screen",
+          "address": "0x801ffee8"
+        },
+        {
+          "class": "mdec_movie",
+          "address": "0x80092d80"
+        }
+      ]
+    },
+    {
+      "frame": 18000,
+      "ram": {
+        "equal": true,
+        "original_bytes": 2097152,
+        "rebuilt_bytes": 2097152,
+        "original_sha256": "8ec65012aa2ef05a678631cf96cb0d016d1f33110d5bb089263150212923ea30",
+        "rebuilt_sha256": "8ec65012aa2ef05a678631cf96cb0d016d1f33110d5bb089263150212923ea30"
+      },
+      "image": {
+        "equal": true,
+        "original_bytes": 36155,
+        "rebuilt_bytes": 36155,
+        "original_sha256": "afc72e7e567e2f2af06e209b9b6500674670c2d059cd35c6e7c319ccaa8d02b7",
+        "rebuilt_sha256": "afc72e7e567e2f2af06e209b9b6500674670c2d059cd35c6e7c319ccaa8d02b7"
+      },
+      "state": {
+        "archive_bytes_equal": false,
+        "member_contents_equal": true,
+        "members": {
+          "BizState 1.0": {
+            "equal": true,
+            "original_bytes": 3,
+            "rebuilt_bytes": 3,
+            "original_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed",
+            "rebuilt_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+          },
+          "BizVersion.txt": {
+            "equal": true,
+            "original_bytes": 16,
+            "rebuilt_bytes": 16,
+            "original_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4",
+            "rebuilt_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+          },
+          "Core.bin.zst": {
+            "equal": true,
+            "original_bytes": 1127381,
+            "rebuilt_bytes": 1127381,
+            "original_sha256": "f5cdebd8911d6903e904e98955cf1d3682e5f0efcf2d082a91bdf1c6091d32a2",
+            "rebuilt_sha256": "f5cdebd8911d6903e904e98955cf1d3682e5f0efcf2d082a91bdf1c6091d32a2"
+          },
+          "Framebuffer.bmp": {
+            "equal": true,
+            "original_bytes": 336054,
+            "rebuilt_bytes": 336054,
+            "original_sha256": "35a2d13baf0142537f8c3dd52445dd2473d28f87988f526b5147f78868141895",
+            "rebuilt_sha256": "35a2d13baf0142537f8c3dd52445dd2473d28f87988f526b5147f78868141895"
+          },
+          "SyncSettings.json": {
+            "equal": true,
+            "original_bytes": 140,
+            "rebuilt_bytes": 140,
+            "original_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee",
+            "rebuilt_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+          }
+        }
+      },
+      "game_fields": {
+        "stored_day_of_year": 1,
+        "display_day": 2,
+        "global_current_day": 1,
+        "retained_map_key": 12,
+        "input_locked": 1,
+        "pad_buttons": 0,
+        "pad_released": 0,
+        "pad_pressed": 0
+      },
+      "compatible_screen_records_not_entry_traces": []
+    },
+    {
+      "frame": 21000,
+      "ram": {
+        "equal": true,
+        "original_bytes": 2097152,
+        "rebuilt_bytes": 2097152,
+        "original_sha256": "77d5572928bebbd9984d85d3addcbcf8c1f5304aa81c5fe25e500b9121dc5516",
+        "rebuilt_sha256": "77d5572928bebbd9984d85d3addcbcf8c1f5304aa81c5fe25e500b9121dc5516"
+      },
+      "image": {
+        "equal": true,
+        "original_bytes": 78087,
+        "rebuilt_bytes": 78087,
+        "original_sha256": "2e90b42f59d6147149a0bd5ff52a7beaf1e6761edaf1fe8db9c3a9b957317b60",
+        "rebuilt_sha256": "2e90b42f59d6147149a0bd5ff52a7beaf1e6761edaf1fe8db9c3a9b957317b60"
+      },
+      "state": {
+        "archive_bytes_equal": false,
+        "member_contents_equal": true,
+        "members": {
+          "BizState 1.0": {
+            "equal": true,
+            "original_bytes": 3,
+            "rebuilt_bytes": 3,
+            "original_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed",
+            "rebuilt_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+          },
+          "BizVersion.txt": {
+            "equal": true,
+            "original_bytes": 16,
+            "rebuilt_bytes": 16,
+            "original_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4",
+            "rebuilt_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+          },
+          "Core.bin.zst": {
+            "equal": true,
+            "original_bytes": 1445648,
+            "rebuilt_bytes": 1445648,
+            "original_sha256": "3407d05e19546b5c2ffdd9a20014965648a6a5a8e9700dc975dd21ef3867c9a2",
+            "rebuilt_sha256": "3407d05e19546b5c2ffdd9a20014965648a6a5a8e9700dc975dd21ef3867c9a2"
+          },
+          "Framebuffer.bmp": {
+            "equal": true,
+            "original_bytes": 336054,
+            "rebuilt_bytes": 336054,
+            "original_sha256": "f9186d3f87caf61cd9089e1e2b550ef494bd8bd8533bd821b50245a47bb480cf",
+            "rebuilt_sha256": "f9186d3f87caf61cd9089e1e2b550ef494bd8bd8533bd821b50245a47bb480cf"
+          },
+          "SyncSettings.json": {
+            "equal": true,
+            "original_bytes": 140,
+            "rebuilt_bytes": 140,
+            "original_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee",
+            "rebuilt_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+          }
+        }
+      },
+      "game_fields": {
+        "stored_day_of_year": 1,
+        "display_day": 2,
+        "global_current_day": 1,
+        "retained_map_key": 12,
+        "input_locked": 1,
+        "pad_buttons": 0,
+        "pad_released": 0,
+        "pad_pressed": 0
+      },
+      "compatible_screen_records_not_entry_traces": [
+        {
+          "class": "movie_screen",
+          "address": "0x80091f70"
+        },
+        {
+          "class": "movie_screen",
+          "address": "0x801ffd34"
+        },
+        {
+          "class": "movie_screen",
+          "address": "0x801ffdd4"
+        },
+        {
+          "class": "movie_screen",
+          "address": "0x801ffe1c"
+        },
+        {
+          "class": "movie_screen",
+          "address": "0x801ffe58"
+        },
+        {
+          "class": "movie_screen",
+          "address": "0x801ffee8"
+        },
+        {
+          "class": "mdec_movie",
+          "address": "0x80092d80"
+        }
+      ]
+    },
+    {
+      "frame": 24000,
+      "ram": {
+        "equal": true,
+        "original_bytes": 2097152,
+        "rebuilt_bytes": 2097152,
+        "original_sha256": "644723a4498db69c8d6bfe576b99f1debd48e279e9093661a79f04f8bf8f562c",
+        "rebuilt_sha256": "644723a4498db69c8d6bfe576b99f1debd48e279e9093661a79f04f8bf8f562c"
+      },
+      "image": {
+        "equal": true,
+        "original_bytes": 36155,
+        "rebuilt_bytes": 36155,
+        "original_sha256": "afc72e7e567e2f2af06e209b9b6500674670c2d059cd35c6e7c319ccaa8d02b7",
+        "rebuilt_sha256": "afc72e7e567e2f2af06e209b9b6500674670c2d059cd35c6e7c319ccaa8d02b7"
+      },
+      "state": {
+        "archive_bytes_equal": false,
+        "member_contents_equal": true,
+        "members": {
+          "BizState 1.0": {
+            "equal": true,
+            "original_bytes": 3,
+            "rebuilt_bytes": 3,
+            "original_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed",
+            "rebuilt_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+          },
+          "BizVersion.txt": {
+            "equal": true,
+            "original_bytes": 16,
+            "rebuilt_bytes": 16,
+            "original_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4",
+            "rebuilt_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+          },
+          "Core.bin.zst": {
+            "equal": true,
+            "original_bytes": 1134518,
+            "rebuilt_bytes": 1134518,
+            "original_sha256": "8ac39fbe2794350c913ca3068a5d282986220ed07c443c48ecbeeb62faa30ceb",
+            "rebuilt_sha256": "8ac39fbe2794350c913ca3068a5d282986220ed07c443c48ecbeeb62faa30ceb"
+          },
+          "Framebuffer.bmp": {
+            "equal": true,
+            "original_bytes": 336054,
+            "rebuilt_bytes": 336054,
+            "original_sha256": "35a2d13baf0142537f8c3dd52445dd2473d28f87988f526b5147f78868141895",
+            "rebuilt_sha256": "35a2d13baf0142537f8c3dd52445dd2473d28f87988f526b5147f78868141895"
+          },
+          "SyncSettings.json": {
+            "equal": true,
+            "original_bytes": 140,
+            "rebuilt_bytes": 140,
+            "original_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee",
+            "rebuilt_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+          }
+        }
+      },
+      "game_fields": {
+        "stored_day_of_year": 1,
+        "display_day": 2,
+        "global_current_day": 1,
+        "retained_map_key": 12,
+        "input_locked": 1,
+        "pad_buttons": 0,
+        "pad_released": 0,
+        "pad_pressed": 0
+      },
+      "compatible_screen_records_not_entry_traces": []
+    },
+    {
+      "frame": 27000,
+      "ram": {
+        "equal": true,
+        "original_bytes": 2097152,
+        "rebuilt_bytes": 2097152,
+        "original_sha256": "fbe9b219a81684d7285fcca277dd61675bca9ad4279b76995016c75c174ccc80",
+        "rebuilt_sha256": "fbe9b219a81684d7285fcca277dd61675bca9ad4279b76995016c75c174ccc80"
+      },
+      "image": {
+        "equal": true,
+        "original_bytes": 98427,
+        "rebuilt_bytes": 98427,
+        "original_sha256": "bb7425ee28a2794b9133a1f81c8e81968019be4da9d10d3f1c78bf7dde7d47bd",
+        "rebuilt_sha256": "bb7425ee28a2794b9133a1f81c8e81968019be4da9d10d3f1c78bf7dde7d47bd"
+      },
+      "state": {
+        "archive_bytes_equal": false,
+        "member_contents_equal": true,
+        "members": {
+          "BizState 1.0": {
+            "equal": true,
+            "original_bytes": 3,
+            "rebuilt_bytes": 3,
+            "original_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed",
+            "rebuilt_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+          },
+          "BizVersion.txt": {
+            "equal": true,
+            "original_bytes": 16,
+            "rebuilt_bytes": 16,
+            "original_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4",
+            "rebuilt_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+          },
+          "Core.bin.zst": {
+            "equal": true,
+            "original_bytes": 1537386,
+            "rebuilt_bytes": 1537386,
+            "original_sha256": "585b6c9541fe29aec193d9c80c3e608ec264dc552522bf231c86ef46897b803c",
+            "rebuilt_sha256": "585b6c9541fe29aec193d9c80c3e608ec264dc552522bf231c86ef46897b803c"
+          },
+          "Framebuffer.bmp": {
+            "equal": true,
+            "original_bytes": 336054,
+            "rebuilt_bytes": 336054,
+            "original_sha256": "70c0444b56831336c33454e31a8a78c58a5acbbd0333f981402547194c519e37",
+            "rebuilt_sha256": "70c0444b56831336c33454e31a8a78c58a5acbbd0333f981402547194c519e37"
+          },
+          "SyncSettings.json": {
+            "equal": true,
+            "original_bytes": 140,
+            "rebuilt_bytes": 140,
+            "original_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee",
+            "rebuilt_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+          }
+        }
+      },
+      "game_fields": {
+        "stored_day_of_year": 1,
+        "display_day": 2,
+        "global_current_day": 1,
+        "retained_map_key": 12,
+        "input_locked": 1,
+        "pad_buttons": 0,
+        "pad_released": 0,
+        "pad_pressed": 0
+      },
+      "compatible_screen_records_not_entry_traces": [
+        {
+          "class": "movie_screen",
+          "address": "0x80091f70"
+        },
+        {
+          "class": "movie_screen",
+          "address": "0x801ffdd4"
+        },
+        {
+          "class": "movie_screen",
+          "address": "0x801ffe1c"
+        },
+        {
+          "class": "movie_screen",
+          "address": "0x801ffe58"
+        },
+        {
+          "class": "movie_screen",
+          "address": "0x801ffee8"
+        },
+        {
+          "class": "mdec_movie",
+          "address": "0x80092d80"
+        }
+      ]
+    },
+    {
+      "frame": 30000,
+      "ram": {
+        "equal": true,
+        "original_bytes": 2097152,
+        "rebuilt_bytes": 2097152,
+        "original_sha256": "0f97d2b534863f94db38303a918d438829e0ff9a98a91e9b3f0af8f357103742",
+        "rebuilt_sha256": "0f97d2b534863f94db38303a918d438829e0ff9a98a91e9b3f0af8f357103742"
+      },
+      "image": {
+        "equal": true,
+        "original_bytes": 20894,
+        "rebuilt_bytes": 20894,
+        "original_sha256": "5573b7f533ca32e6c9c761771dc1b8a95bca52010ff3d26ee87e751b2c484f9b",
+        "rebuilt_sha256": "5573b7f533ca32e6c9c761771dc1b8a95bca52010ff3d26ee87e751b2c484f9b"
+      },
+      "state": {
+        "archive_bytes_equal": false,
+        "member_contents_equal": true,
+        "members": {
+          "BizState 1.0": {
+            "equal": true,
+            "original_bytes": 3,
+            "rebuilt_bytes": 3,
+            "original_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed",
+            "rebuilt_sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+          },
+          "BizVersion.txt": {
+            "equal": true,
+            "original_bytes": 16,
+            "rebuilt_bytes": 16,
+            "original_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4",
+            "rebuilt_sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+          },
+          "Core.bin.zst": {
+            "equal": true,
+            "original_bytes": 1118053,
+            "rebuilt_bytes": 1118053,
+            "original_sha256": "15ccc082b5edbfc8a51f30a193d3094a6c706f30b734eff0ec0e40381f789e55",
+            "rebuilt_sha256": "15ccc082b5edbfc8a51f30a193d3094a6c706f30b734eff0ec0e40381f789e55"
+          },
+          "Framebuffer.bmp": {
+            "equal": true,
+            "original_bytes": 336054,
+            "rebuilt_bytes": 336054,
+            "original_sha256": "f618d34b8bfb9c2d0e4cba92bacaf4bfa6d5e77051edda63386929bc0e52e9ab",
+            "rebuilt_sha256": "f618d34b8bfb9c2d0e4cba92bacaf4bfa6d5e77051edda63386929bc0e52e9ab"
+          },
+          "SyncSettings.json": {
+            "equal": true,
+            "original_bytes": 140,
+            "rebuilt_bytes": 140,
+            "original_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee",
+            "rebuilt_sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+          }
+        }
+      },
+      "game_fields": {
+        "stored_day_of_year": 1,
+        "display_day": 2,
+        "global_current_day": 1,
+        "retained_map_key": 12,
+        "input_locked": 1,
+        "pad_buttons": 0,
+        "pad_released": 0,
+        "pad_pressed": 0
+      },
+      "compatible_screen_records_not_entry_traces": [
+        {
+          "class": "graph",
+          "address": "0x80091f70",
+          "result": 0,
+          "mode": 1,
+          "state": 5
+        }
+      ]
+    }
+  ],
+  "controller_rows": 30000,
+  "scene_rows": 1001,
+  "npc_rows": 353,
+  "registered_rows": 345,
+  "registered_first": {
+    "relative_frame": "240",
+    "core_frame": "10444",
+    "map": "12",
+    "dream": "00091530",
+    "object": "001c5dcc",
+    "entity_id": "71",
+    "state": "0",
+    "entity_tick": "4",
+    "context_state": "72",
+    "context_tick": "4",
+    "context_owner": "801c5dcc",
+    "callback": "80062570",
+    "expected_callback": "80062570",
+    "link_enabled": "1",
+    "triggered": "0",
+    "behaviour_active": "1",
+    "x": "-48128",
+    "y": "-200",
+    "z": "904",
+    "duration": "15",
+    "animation_frame": "4",
+    "pose_yaw": "0",
+    "context_arg4": "9",
+    "context_arg7": "-1"
+  },
+  "registered_last": {
+    "relative_frame": "10560",
+    "core_frame": "20764",
+    "map": "12",
+    "dream": "00091530",
+    "object": "001c5dcc",
+    "entity_id": "71",
+    "state": "0",
+    "entity_tick": "2068",
+    "context_state": "72",
+    "context_tick": "2068",
+    "context_owner": "801c5dcc",
+    "callback": "80062570",
+    "expected_callback": "80062570",
+    "link_enabled": "1",
+    "triggered": "0",
+    "behaviour_active": "1",
+    "x": "-48128",
+    "y": "-200",
+    "z": "-61016",
+    "duration": "15",
+    "animation_frame": "13",
+    "pose_yaw": "0",
+    "context_arg4": "-1",
+    "context_arg7": "-1"
+  },
+  "registered_ticks": {
+    "first": 4,
+    "last": 2068
+  },
+  "first_recorded_activation_controller_frame": 224,
+  "first_locked_controller_frame": 10564,
+  "late_2401_tick_branch_observed": false,
+  "submitted_controls": {
+    "rows": 30000,
+    "digital_controls": 21,
+    "numeric_controls": {
+      "Disk Index": 0.0,
+      "P1 Left Stick Left / Right": 128.0,
+      "P1 Left Stick Up / Down": 128.0,
+      "P1 Right Stick Left / Right": 128.0,
+      "P1 Right Stick Up / Down": 128.0
+    },
+    "all_submitted_values_verified": true,
+    "digital_buttons_released_from_frame": 224,
+    "last_nonzero_game_pad_frame": 227,
+    "pre_frame_game_pad_records": 30000,
+    "analog_autoholds_cleared_before_exit": true
+  },
+  "audio_captured": false,
+  "game_memory_writes": false,
+  "direct_callback_entries_claimed": false,
+  "pure_lua_regression": {
+    "status": "passed_published_lua_regression",
+    "test_sha256": "26ce06e41e69fe570f41c8f762ac285a43733f054b60d5688a1afab831d36459",
+    "executed_recorder_sha256": "1fa746a7f5db26f5b286e77dca595d39ed6bc76b7aceb599693eae544e9671b7",
+    "lua_library_sha256": "4786e0df4caf120e3bedf0b6dda260525df2187c66ded220a21a53ace76b0501",
+    "production_helper_extracted_not_duplicated": true,
+    "input_shape_cases": 5,
+    "old_expression_negative_control_detected": true,
+    "emulator_or_game_executed": false,
+    "producer_sha256": "4c182958439e98f2a2caab48611e4d5a12e475488c35b609eeb3b04e60ed88f7"
+  },
+  "legacy_window_recorder": {
+    "executed_bytes_preserved": true,
+    "complete_submitted_input_vector_not_recorded": true,
+    "initial_held_boolean_can_survive_old_neutral_expression": true
+  },
+  "public_files": {
+    "CHANGELOG.md": "5a3e088f4ccdfc2b4ab850ba9be376f189c201e47b460ffd5e5c7251837fba53",
+    "docs/FEATURE_INVENTORY.md": "569218cff8090b6ed716c63201ecf5d9d78bdd9a453ea78aa7709af261d17e68",
+    "docs/PROVENANCE.md": "7d32c2d4a65aaec70f1e741a0a88c2557f32600fc159a5d7b9f061502f3e39bb",
+    "docs/features.json": "3cb72ad2c40ee261c5dd3080821ede2050441b975fda616be7929912cf538dc6",
+    ".gitattributes": "458fbeccf7219ba03dc39abb6cf0351e5b05c04ba32037cbacad4b7a381eae30",
+    "docs/NATURAL_HOOP_ENCOUNTER.md": "ea6bba4bb3025ad7d60ec6e56e90910ce233a896c09e75612df2431a00438434",
+    "docs/NATURAL_WINDOW_LINK.md": "0a48aef1905e167cfdccb853556d439d12231ee648ccbca0dea1b2b8869046fd",
+    "docs/RUNTIME_COMPARISON.md": "ce4b03aa4f1cc5123409b800bdb878904c2b928d153f58e878176afed75cd01f",
+    "research/window_link/README.md": "a2047e46228ef3a7007fe294a1f9013191a886012b88d076f886bbe4812f0cb9",
+    "research/npc_encounter/README.md": "e681123db011fa6fc78f3b3d028194dad311a532ab6581561483dfae70b1c34e",
+    "research/npc_encounter/observe.lua": "1fa746a7f5db26f5b286e77dca595d39ed6bc76b7aceb599693eae544e9671b7",
+    "research/npc_encounter/test_neutral.lua": "26ce06e41e69fe570f41c8f762ac285a43733f054b60d5688a1afab831d36459"
+  },
+  "private_evidence": [
+    {
+      "path": ".decomp-lab/hoop-inputs-comparison-20261015-second.json",
+      "sha256": "170161d2ddd150fed8cfd1d08612d7f23c3b8f9ca927c717eff49c69398f0892"
+    },
+    {
+      "path": ".decomp-lab/compare_hoop_scenarios_20261015_first.py",
+      "sha256": "aa9f78038dd3608be6be38ab95c43d36c311c5a93ce693ce5111f91bfe7ac7d7"
+    },
+    {
+      "path": ".decomp-lab/run_hoop_approach_20261015_first.py",
+      "sha256": "9a3dde2a5067c547fd396d51b87a104ecfee6b8ff92908a544fc4bf326c0b3bb"
+    },
+    {
+      "path": ".decomp-lab/hoop-inputs-first-failure.json",
+      "sha256": "43dacd27452f8ed64428d750b81d69c7985cbcab1bb6385c92707b59cd37db95"
+    },
+    {
+      "path": ".decomp-lab/hoop-publication-20261015-first/public-lua-test.json",
+      "sha256": "6e8f60ea17b47e738478f16bebbfd0eb55c6983ae5d3bdc5118c47132b11ecc5"
+    },
+    {
+      "path": ".decomp-lab/hoop-publication-20261015-first/public-observer-syntax.json",
+      "sha256": "2dd84eadce88c6fa89496c89c17b57923971ddd43293d9e22808b8eba3231447"
+    },
+    {
+      "path": ".decomp-lab/hoop-publication-20261015-first/progress.json",
+      "sha256": "95975314c0eb6a22e48088d97bcf6fdd9b505f9f4e14a82a7104980c1c0d4c5e"
+    }
+  ],
+  "day_numbers_derived_from_stored_field_not_getter_entry_traces": true
+}

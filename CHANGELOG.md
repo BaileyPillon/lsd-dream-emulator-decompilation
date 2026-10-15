@@ -1,5 +1,15 @@
 # Changelog
 
+## Natural NPC replay and compiler temporary observations - 2026-10-15
+
+- Compare a 30,000-frame Hoop Girl approach and subsequent day/movie/chart
+  sequence with exact submitted inputs and eleven full state checkpoints.
+- Publish the executed recorder and held-button regression check; document
+  the older window recorder's input-table limitation without changing its bytes.
+- Observe the method-return candidate's compiler storage and retained store,
+  qualify fourteen further source forms, and compare that eight-byte-different
+  image through the bounded native generation profile. No C bytes are promoted.
+
 ## Matching generation interfaces and live receivers - 2026-10-15
 
 - Correct the two-argument generation update, position setter, vector output,

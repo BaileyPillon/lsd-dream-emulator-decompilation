@@ -5,6 +5,9 @@ uses the recovered typed virtual method. `structure-update-method.c` tests a
 consumed method-word return: its complete image retains eight differing bytes
 and the original 40-byte frame, with an extra store absent from the original.
 It remains unaccepted and separate from the direct scalar candidate below.
+The later [return-temporary investigation](../../docs/GENERATION_RETURN_TEMPORARY.md)
+records its actual compiler storage/store observations, fourteen further
+qualified forms, and a separate native campaign for the eight-byte candidate.
 
 The [menu investigation](../../docs/MENU_LAYOUT.md) checks both retained menu
 callers through actual glyph, graphics, list and allocator dependencies. Corrected
