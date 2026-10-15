@@ -75,27 +75,28 @@ void mdec_movie_cleanup(mdec_movie_t *This) {
 }
 
 typedef struct {
-    s32 a;
-    s32 b;
-    s32 c;
-} mdec_movie_triple_t;
+    s16 x;
+    s16 y;
+    s32 width;
+    s32 height;
+} mdec_movie_viewport_t;
 
 s32 func_8004564C(mdec_movie_t *This, s32 arg1, s32 arg2) {
-    mdec_movie_triple_t *src;
+    mdec_movie_viewport_t *src;
     s32 size;
     void *mem;
     char pad[8];
 
     if (&pad[0] == &pad[7]) {
     }
-    src = (mdec_movie_triple_t *) arg1;
+    src = (mdec_movie_viewport_t *) arg1;
     This->m_Unk2 = arg2;
     if (arg2 == 0) {
         This->m_Unk6 = 0;
         This->m_Unk5 = 0;
         This->m_Unk4 = 0;
         This->m_Unk3 = 0;
-        size = ((src->b * src->c) << 1) + 0x1000;
+        size = ((src->width * src->height) << 1) + 0x1000;
         mem = memory_allocate_mem(size);
         This->m_Unk4 = (s32) mem;
         if (mem == NULL) {
@@ -111,14 +112,14 @@ s32 func_8004564C(mdec_movie_t *This, s32 arg1, s32 arg2) {
         if (mem == NULL) {
             goto fail;
         }
-        mem = memory_allocate_mem(src->c << 5);
+        mem = memory_allocate_mem(src->height << 5);
         This->m_Unk6 = (s32) mem;
         if (mem == NULL) {
             goto fail;
         }
     }
-    *(mdec_movie_triple_t *) &This->m_Unk10 = *src;
-    *(mdec_movie_triple_t *) &This->m_Unk7 = *(mdec_movie_triple_t *) &This->m_Unk10;
+    *(mdec_movie_viewport_t *) &This->m_Unk10 = *src;
+    *(mdec_movie_viewport_t *) &This->m_Unk7 = *(mdec_movie_viewport_t *) &This->m_Unk10;
     This->m_Unk11 = 0x10;
     This->m_Unk13 = (This->m_Unk12 << 4) >> 1;
     return 0;

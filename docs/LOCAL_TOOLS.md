@@ -16,6 +16,13 @@ commands, exact scope, and remaining decoded-playback requirements. Both tools
 require new private output paths, preserve original inputs, and make no model
 API calls.
 
+For actual startup playback, `tools/capture_movie_playback.py` runs an owned
+pair with isolated SaveRAM and per-frame full GPU hashes.
+`tools/compare_movie_playback.py` checks the complete trace, neutral controls,
+checkpoint state and finalized PCM. The [startup movie guide](MOVIE_PLAYBACK.md)
+gives the exact commands and separates setup words, accepted-frame counters,
+complete observed lifetimes, and partial repeats.
+
 ## Windows build helper
 
 For interactive play, use the Python [matching-game launcher](PLAYING.md).

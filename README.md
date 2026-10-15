@@ -25,8 +25,10 @@ separate measures, not a whole-game completion percentage. The initial
 publication and subsequent evidence are retained separately.
 
 The [movie audit](docs/MOVIE_INVENTORY.md) now checks all 39 movie streams,
-22,382 encoded frames, and 620 original path/RNG fixtures. Decoded audiovisual
-playback and complete movie scenarios remain separate acceptance work.
+22,382 encoded frames, and 620 original path/RNG fixtures. The later
+[startup comparison](docs/MOVIE_PLAYBACK.md) matches 9,001 complete GPU-memory
+hashes, 32 full-state checkpoints, and complete PCM for one neutral replay.
+All-movie decoding, skip/error branches, and complete feature acceptance remain open.
 
 | Measure | Verified snapshot |
 | --- | ---: |

@@ -31,8 +31,10 @@ Their roles remain unresolved and they are not eleven additional movies.
 
 ## Complete routed inventory
 
-Files are under `/CDI/FILM/` except the logo, `/CDI/ETC/ASMK.STR`. The final
-column is encoded frame count minus threshold, not observed display duration.
+The seven openings, ending, and logo are under `/CDI/ETC/` (nine files).
+The six events and 24 special-day clips are under `/CDI/FILM/` (30 files).
+The final column is encoded frame count minus threshold, not observed display
+duration. The route paths in the metadata retain their exact native directories.
 
 | File | Threshold index | Native threshold | Encoded frames | Difference |
 | --- | ---: | ---: | ---: | ---: |
@@ -141,8 +143,11 @@ Sabin's [PlayStation STR format document, v1.20](https://github.com/m35/jpsxdec/
 That document is MIT licensed; the separate jPSXdec program has a different
 license. No converter implementation or original movie data is copied here.
 
-All 428 Python tooling tests pass with owned fixtures. The standard build
-remains canonical after the comment correction, with the other 391 protected
-inputs unchanged. C recovery remains **194,212 / 199,912 bytes**, with nine
+At this structural-audit checkpoint, all 428 Python tooling tests passed with
+owned fixtures. The standard build remained canonical after the comment
+correction, with the other 391 protected inputs unchanged. The later
+[startup playback comparison](MOVIE_PLAYBACK.md) adds runtime observations and
+a clearer, matching viewport type; complete movie acceptance remains open.
+C recovery remains **194,212 / 199,912 bytes**, with nine
 assembly functions and 24 inherited storage explanations. Whole-feature
 acceptance remains **0 / 40** provisional groups.

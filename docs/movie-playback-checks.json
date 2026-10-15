@@ -1,0 +1,1269 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-15T14:36:41.490811+00:00",
+  "repository_before": "7eaa5e5b241a6c99460c4a8643d380612011f7c3",
+  "status": "equal_recorded_movie_trajectory",
+  "scope": "Neutral shared-state startup replay. Full GPU hashes at every observation, checkpoint RAM/GPU/images/all state member payloads, and complete PCM compared without masking. Not uninterrupted cold boot, instruction tracing, every host-displayed frame, skip/error branches, all movies, or whole-feature acceptance.",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "frames": 9000,
+  "observed_rows_each": 9001,
+  "submitted_vectors_each": 9000,
+  "observed_columns": 57,
+  "gpu_hashes_each": 9001,
+  "gpu_bytes_per_hash": 1048576,
+  "checkpoint_count": 32,
+  "first_resumed_core_frame": 302,
+  "input_identity": {
+    "schema_version": 2,
+    "selected_core": "Nymashock",
+    "scenario": "boot",
+    "frames": 9000,
+    "disc_layout": [
+      "FILE <track-1> BINARY",
+      "TRACK 01 MODE2/2352",
+      "INDEX 01 00:00:00"
+    ],
+    "disc_tracks": [
+      {
+        "bytes": 648088896,
+        "sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61"
+      }
+    ],
+    "emulator_files": {
+      "EmuHawk.exe": {
+        "bytes": 5376512,
+        "sha256": "f8cdb93551a544f680bf3876d9d8d72643859e7a44a23b04e1a25b92e48f80cd"
+      },
+      "EmuHawk.exe.config": {
+        "bytes": 3266,
+        "sha256": "00146088ad19747e601d09dee0ead7bf75b27fccf23e3cf7809a5e7dede129cf"
+      },
+      "dll/BizHawk.Emulation.Cores.dll": {
+        "bytes": 10832896,
+        "sha256": "444bc157418e9b5df5d07e987fc7ad1d2d1c6993676f5b864368027cb4f054d5"
+      },
+      "dll/BizHawk.Emulation.Common.dll": {
+        "bytes": 413184,
+        "sha256": "f557d94912b12bde18413b60d25b3e61332b7bbfc7184349d1289d6ba9f350ee"
+      },
+      "dll/octoshock.dll": {
+        "bytes": 1259008,
+        "sha256": "466a6a1f9d958a4d365b10fcf9b4bde5aeb80cc9c4d4fd00da9ad05930569b41"
+      },
+      "dll/shock.wbx.zst": {
+        "bytes": 705813,
+        "sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126"
+      },
+      "dll/waterboxhost.dll": {
+        "bytes": 406016,
+        "sha256": "e8e47426941a710c7ceea98fb0833b8387de1952f54ca0fa40001cd494507cee"
+      }
+    },
+    "bios": {
+      "J": {
+        "bytes": 524288,
+        "sha256": "9c0421858e217805f4abe18698afea8d5aa36ff0727eb8484944e00eb5e7eadb"
+      },
+      "U": {
+        "bytes": 524288,
+        "sha256": "11052b6499e466bbf0a709b1f9cb6834a9418e66680387912451e971cf8a1fef"
+      },
+      "E": {
+        "bytes": 524288,
+        "sha256": "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+      }
+    },
+    "script": {
+      "bytes": 6786,
+      "sha256": "fb931401d7efa527d03e92ab496150bd83bdfc51e9ae68e3b47fac96cda02153"
+    },
+    "start_kind": "saved_state",
+    "start_state": {
+      "bytes": 348455,
+      "sha256": "82a3e79a348eb428fd8dcc4b3fffdadce415e2621a5771c2f0f59580041e90c5"
+    },
+    "audio_output_requested": true,
+    "audio_writer": "wave"
+  },
+  "all_recorded_files_equal": true,
+  "checkpoints": [
+    {
+      "relative_frame": 0,
+      "ram_sha256": "2a4b1f98d4d91eb5e7064f9293306ced4fa979217e1a1dbcff3e6afef02540a6",
+      "gpu_sha256": "281cda576b5b1d7b7e4b3421a3ec5cf999f2273b58495b76177f598e85b1f1e7",
+      "png_sha256": "2fb192aa7112cdd6f5b2e0ada802e87ec98c922b11dd6e614c59b885f82e3ec6",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 334989,
+          "sha256": "990a1d6e3cce142cf8a24763ced76f535c2ae478a6b938216a46a91bbc4ea6c9"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "3dd94b353f5c2ab23a6d14017318cbda7f527afa50e0a166c6c6b05aa08fc75e"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 593,
+      "ram_sha256": "3e38bdc501f23827716a5a26cefdfe3545e7abd2582eb0f9f3ae786f3f629490",
+      "gpu_sha256": "d8fd7b3b67bc7f66db5d09c3bc72aced16d127487c7df18dad4f3d47a3bdf877",
+      "png_sha256": "4644d0f235bc35c93652b183687d2bff0afdd8b1a060c8c545b65c22352f7792",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 298797,
+          "sha256": "9f64e92291f4b56de48f6ea7ef424628d6f64a70cb66b947b72a796acc6af7d6"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "9feefe7f3e870a00da5fed02b24f5626c368f4504fc79c4e8f33663db91bb786"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 600,
+      "ram_sha256": "ff10cd8ca498b01a02764dd390e3d43570755686cb76f6f4d56d0f3e869fdde8",
+      "gpu_sha256": "d8fd7b3b67bc7f66db5d09c3bc72aced16d127487c7df18dad4f3d47a3bdf877",
+      "png_sha256": "4644d0f235bc35c93652b183687d2bff0afdd8b1a060c8c545b65c22352f7792",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 311752,
+          "sha256": "24548320ccb6b2816652c1f49fa272385c8807da79fdb66da127207982fe46a6"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "9feefe7f3e870a00da5fed02b24f5626c368f4504fc79c4e8f33663db91bb786"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 950,
+      "ram_sha256": "29a3245f1fd6c84ef64ea1da89a7542f31f6d2e07e6763299e19424dbbf2ae68",
+      "gpu_sha256": "abfe7e8b05ec2fe37a71af2a7b3afeaa411a5f2345ce49b67554cbd73f5563da",
+      "png_sha256": "8134e29ad3c6cd51ef9096fbbe2e4bc8eab081cd31e07eca659e96b3afdb6416",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 323786,
+          "sha256": "0b87f40b5ec9258e47800dbba4e1b66456a8703c05239cd9a689107b05513189"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "8874988b3b729e0c02fabccdf218b1dc866c97f635ffa2d0d099966cd9016fa2"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 1200,
+      "ram_sha256": "d34746cfc1a8f20f7c410979b50bb594994c4f73631c84517470c51de532a9e5",
+      "gpu_sha256": "984cd4510f90f062792d5b96b4d24c7193a3750bc2665ea45bf9c9f733ae4824",
+      "png_sha256": "ec6ac13dfe7fdd6dc59f147ede00b95fa08a604cb284558c9cb9187721386ebf",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 371717,
+          "sha256": "752e3ab3198ae5f128a681c85fd2dd487a11352e222b2c9b603f218b298be5b4"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "d097c27bdc835dda21ef6b6b1d2b863add919d2f99b3d657a3b3a151577c521d"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 1303,
+      "ram_sha256": "2603ef32a2502ac26161f57ceccb6426da260f8648b2350de874cc732fd14824",
+      "gpu_sha256": "e05f96b0ced5c0095a13f9f973757d038297da8bb6649dcfbcb98abe6d98e1ff",
+      "png_sha256": "665be18ce9b56ea479fef188f36c96862f5639b2a9002d67d4dfccc7bc95c30c",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 407881,
+          "sha256": "5c81ddb743a6369caf40be84873fd0f36eaaa95c4904ebf8d9936db5cab0afae"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "cdef0c113d017d95f0e1f38d129f4c729fddde01d2ae4fecc025d1ea1229ebdd"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 1307,
+      "ram_sha256": "c7e37a3eb4a527045448b15236631aad12a1355e74e03e1be2f12e5419fd1f94",
+      "gpu_sha256": "8eb16449d9752483670813b0cf6dbd0429d5c80865e22d640350bdb3d189d50f",
+      "png_sha256": "f9bf5cc9e38ac39c2e929db6e2be6e86a4c4ffa670b6c2709ac77e82dcecb3af",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 404950,
+          "sha256": "a8bdca63ab3d7e2ae050dffd0f850dc4141bc07f2103ae7dbb30752de6b974f3"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "02f9f683ab3b62f59badb6aad77fc1784c09b04cba05206cd088378b7a0dfb71"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 1311,
+      "ram_sha256": "58850a757ce4a73667273e10e48a39892d50cf9173233960611442e47bf4d3e2",
+      "gpu_sha256": "dfdbcb726c49427ffe43d6734a37f612d5c3efbc0ceddc7a12f0e99473aa18cf",
+      "png_sha256": "67fb15b3b8b7764b95500e24263daf8c7cf7234c1e03d863e1d63ec831c591b3",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 402441,
+          "sha256": "ce358920475c96210bef0b71d44486e7fdcfd5ab963c2003898f42510f26fdcc"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "71675c2469f5598a410a7e30f1962a794252c91c4c8fcd6640130191756157da"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 1316,
+      "ram_sha256": "1d5f953579f4cca8732cf3e157a859e6f62423b51dd9ee42a8305908967f1c52",
+      "gpu_sha256": "bee756775e204af49100fd6eee17d494d008e4881d8e9d5be4e95d56cbb1f02f",
+      "png_sha256": "21b083bfb6faf4bf0572a0df231214d739cd68910a1d1a542ba17bbb638c493c",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 399279,
+          "sha256": "8dd960b7747a7cfb7d441ec40c37c32696ca1c6e91f9343c11a286275e447099"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "43ff1f35fb61503e7451c1b4c83c4b71d2879045421c904e8fab3288959e8d94"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 1319,
+      "ram_sha256": "1263f7d99ea010f98030e7e48e3ebce10a186d3a48ee89313c2ba4cd9ef03b50",
+      "gpu_sha256": "ed4931bce332893715ab8cca2cecc74d0f61db532cd9babaf1dd729880196c78",
+      "png_sha256": "5f6a13b68e5baeefc9ccde993aa477a8573b05c834ca779cc73aa7bd9771d8df",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 394447,
+          "sha256": "8f0d5834e115e06bb416a6a6d9f4818963e41f2e2fc70c80126e6d7978e3ebec"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "5f181296271135a8807abb1839a05780da08fb1bcf49aa7a96d6b47efc8ddcc0"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 1320,
+      "ram_sha256": "dfde0fb9589e9282e0da010c4ae01d804a75b9be72c33f14b08ea3e339f60f2a",
+      "gpu_sha256": "d0dbfd387079b5b4b330ea91d7ea271e4faf0fda3b898b6716b253d83f46d0f2",
+      "png_sha256": "c096573d5dc4bfad88b1ccac776744f226279dc4e79a6c98be950f8de29e919d",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 394870,
+          "sha256": "ce7b085ba5c4e20d27419a27d68bf6ce91f4f0fb5acecf6da311144da1b387ee"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "e83238baa2b5c0acc7938e0ecdd0f85b953ff910e48af845ae2feebafb6a6164"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 1632,
+      "ram_sha256": "80e89817f6f62c6274eb10d530c407fd3e415e71ccd52c928861095e1b8d8771",
+      "gpu_sha256": "abfe7e8b05ec2fe37a71af2a7b3afeaa411a5f2345ce49b67554cbd73f5563da",
+      "png_sha256": "8134e29ad3c6cd51ef9096fbbe2e4bc8eab081cd31e07eca659e96b3afdb6416",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 353802,
+          "sha256": "d70e3a9d51b3e4404edb9971aa7b2e6b910f5b098a77bcc5e067634843e657db"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "8874988b3b729e0c02fabccdf218b1dc866c97f635ffa2d0d099966cd9016fa2"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 1800,
+      "ram_sha256": "833b68cd3672a6b1d08406d75092f9931122a656ce7822e64e823be343f68e4a",
+      "gpu_sha256": "c0f90d6b78d1de98eb79b1719ac84020355558a2603af7bf655b4f5cfb9453e1",
+      "png_sha256": "533dfbebc13719688f4654d6f23f90b5db49d5c97253578bdce4490dcaa3f7d5",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 537617,
+          "sha256": "ad5cb95c2dc482563785b40547693eb96e5c6d6eaee2e9fdabaca7cc7b1412b6"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "122ce164ab635266b49a42f3cd9b7e5f07f6e41cc2c9ac3b6ad3a35b9a5eada9"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 2400,
+      "ram_sha256": "f22123bb8be1cf1a877add7a1cc74faddc41493781f1b1877a45f79e7f425f25",
+      "gpu_sha256": "3f9a1ca1ec942d30cd543a26c93e62a2af7fb119f897614dd4835c1d1eaa4477",
+      "png_sha256": "768d5f0b4a9e53298fc639505f96fef2f95591ab08f1bad893609686e88b5bc6",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 449480,
+          "sha256": "605991c0b675f6fb752097cb80ba64f691a4bc3cd23da8350f3b45b0de32cf54"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "48732b9333adee74f8aebc8398b0aa26b1af45f9de7cb4d943179ea143ad139a"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 3000,
+      "ram_sha256": "8d34ce718f5ccdcad306e172faf0d0b73e12a6588d7a1f2b399dff45e7425fee",
+      "gpu_sha256": "7a10181b4c26253337af5c00174cb4493c8888b3c8478212bce7ae6acbf4488a",
+      "png_sha256": "b2badc7bae65096fb99cc603f3e13329518c6004391685560e2c77cf92c5ba1e",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 580088,
+          "sha256": "5b8e14e3cd08d8b363103be4f0269e45599fc9359cc111e612e8383d0368485b"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "2be2a66c5b9ba020a7c687887b3f00f6206f3eac06b3bbb469cce7a330626d8e"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 3600,
+      "ram_sha256": "80f72042df1f42c5dc6da8777b8f1a067ac0b0cf80f7b13cdcd62db01cdd9133",
+      "gpu_sha256": "d9195e9fcf6e377827200503efc55eb6ca5ab13616935c8ab0028e57b45a30b1",
+      "png_sha256": "6c63100a124eba2631876b15afbef0f735ca0789bcdc69f425d9e33c73d97fb1",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 677450,
+          "sha256": "7807723d093bcab579b532b1c27e02e3a90ed02d459247870677c8164f258547"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "432e41f071b5e8265f1e79695bec6ad6f44f7b281e6d998c3c44cccf35cddcf7"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 4200,
+      "ram_sha256": "510a814e8c4b3baef05bcf0918ca25deb053a74c39f2d9d75c5c977b9b627369",
+      "gpu_sha256": "1a8d95ec88d4fd5304b74d913297bbb58df0ec2e10679a57baeed94d441e3e14",
+      "png_sha256": "d730dfa28f71ad4d863e742f0ec0e5121166d56c2ef43178ddbafc7024260d61",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 680796,
+          "sha256": "352aec38651e474838081fb00436f14b94915a0329d5bd34c681fdf32f0db365"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "27005641afd3105ceedaa07766c693bf249461758de9b8d86fae1986a06c1d64"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 4800,
+      "ram_sha256": "728d6760056cb5d3e7b3ee31aebd38451a3729b8b8c5bb1a0f460a98b739c45b",
+      "gpu_sha256": "5be54ab3809e0e29998247b198d17cb643f1026199cbf3ee3671b12eadc902fc",
+      "png_sha256": "ae18c0d0c39fce717d2deac12e11627658ca9ba6c8913cb8d0cd9f8d5b2ffaaa",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 711570,
+          "sha256": "12648c5a40bd0f5bb05c1ca2e7b98e2d89956f158030d332e782ca6b62eb4788"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "89cf8a8c370e1199ebc573c9f912520ef6ed594e58ebe6c9fa14a4c7554f6db6"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 5400,
+      "ram_sha256": "b9fd3e6ef2f47f1b3c80412ee5eb4eba7ba90899baf1c5f0118c15625fe17892",
+      "gpu_sha256": "d97d953a73f51b8f5efd16ac052bc65bf16a706b131d81eb0c70d6f281a3a770",
+      "png_sha256": "f9b6f3b0935102b9f401be8e2ec2def3320ba422c82d2fc6b48fa65f50aadd89",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 647480,
+          "sha256": "2b88a70b4178927016d9ea4b81b5e1f73f783063f2c4fe3adb352fcbd8dca489"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "dac65271fd370c622842a8dcac9c317ba3be1e988d628efaefd8320fb15fd353"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 5826,
+      "ram_sha256": "6f7f53a31204ef000dca1c0a98bb9d6937d604561606c70594ce7c4442bed4cb",
+      "gpu_sha256": "9a22cf1c179161c135b9cd9bf6f400515cd798de8d12f62989f606f7a6ccd706",
+      "png_sha256": "8134e29ad3c6cd51ef9096fbbe2e4bc8eab081cd31e07eca659e96b3afdb6416",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 340821,
+          "sha256": "6057c541f410590b4b1c4000e5be880f95644e7c569320691366f5195080e05e"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "8874988b3b729e0c02fabccdf218b1dc866c97f635ffa2d0d099966cd9016fa2"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 5829,
+      "ram_sha256": "9ae72ecf0a6c51bf2f45c8813efb9b7ca89354e337abbfae968e4b91a17e3703",
+      "gpu_sha256": "9a22cf1c179161c135b9cd9bf6f400515cd798de8d12f62989f606f7a6ccd706",
+      "png_sha256": "8134e29ad3c6cd51ef9096fbbe2e4bc8eab081cd31e07eca659e96b3afdb6416",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 340762,
+          "sha256": "a426866c8d92cff22f5389cfc26e978d2663ed5f902109ff7ea8a05346fb1b38"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "8874988b3b729e0c02fabccdf218b1dc866c97f635ffa2d0d099966cd9016fa2"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 5834,
+      "ram_sha256": "394953c908d37c6a095b58dd8671b6900d77b729efac77a0b869f435154ee09c",
+      "gpu_sha256": "9a22cf1c179161c135b9cd9bf6f400515cd798de8d12f62989f606f7a6ccd706",
+      "png_sha256": "8134e29ad3c6cd51ef9096fbbe2e4bc8eab081cd31e07eca659e96b3afdb6416",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 340563,
+          "sha256": "10c555ba0d1abcb6ad6bc5154b0dcb6ff954959b6e2213b781f7e427873ebc2d"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "8874988b3b729e0c02fabccdf218b1dc866c97f635ffa2d0d099966cd9016fa2"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 5838,
+      "ram_sha256": "3ad2ef8a02e95331b583b4bb9bb501947b3d701d88ba99dd3cdaf0479009cdb3",
+      "gpu_sha256": "9a22cf1c179161c135b9cd9bf6f400515cd798de8d12f62989f606f7a6ccd706",
+      "png_sha256": "8134e29ad3c6cd51ef9096fbbe2e4bc8eab081cd31e07eca659e96b3afdb6416",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 340619,
+          "sha256": "cadd414ba4cd0afb52f7a550bfe3663f024d6e909641b5e038819061b7cc6adf"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "8874988b3b729e0c02fabccdf218b1dc866c97f635ffa2d0d099966cd9016fa2"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 5841,
+      "ram_sha256": "7f353b12d5468e4e0cae2034d5b38c9421f769587fea232d5c118e72a7aed35c",
+      "gpu_sha256": "9a22cf1c179161c135b9cd9bf6f400515cd798de8d12f62989f606f7a6ccd706",
+      "png_sha256": "8134e29ad3c6cd51ef9096fbbe2e4bc8eab081cd31e07eca659e96b3afdb6416",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 340459,
+          "sha256": "918e891956f8f73ede7478123d211b00694deb0cdd2e6ab4f6644c4b87fafacd"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "8874988b3b729e0c02fabccdf218b1dc866c97f635ffa2d0d099966cd9016fa2"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 5842,
+      "ram_sha256": "ff2065d12b0d662247af4636c44c2319228374386852a1c2c2cfb6481bd5ed23",
+      "gpu_sha256": "9a22cf1c179161c135b9cd9bf6f400515cd798de8d12f62989f606f7a6ccd706",
+      "png_sha256": "8134e29ad3c6cd51ef9096fbbe2e4bc8eab081cd31e07eca659e96b3afdb6416",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 340607,
+          "sha256": "3cb6e1106630eadc2fb482ea92010c9644db0ab8a566a2ca0a9fff2d46f72c0f"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "8874988b3b729e0c02fabccdf218b1dc866c97f635ffa2d0d099966cd9016fa2"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 6000,
+      "ram_sha256": "a8ca870eb0a394533fcb3818d61e8840e7d0d18b77aeb6ed99e32ded1ba22991",
+      "gpu_sha256": "bc20e2dda8fae8dfb9ac4551dfc91405976c259acef87ef4d74dc8a5bfd1aa68",
+      "png_sha256": "886a3a7c9399e4f55983c7642d581f5e9738bcf383f0e1e80641050903ebb9db",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 396607,
+          "sha256": "e508fb773445450419a125594d23104fd03409f4f740e682a4691d4149c7f2ee"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "420a83d5a5633b5c2ba7f6d09023462fbcc1fcc9da45a568cc0bbc84e483ab69"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 6600,
+      "ram_sha256": "611075d485cd6249a5f5039724d2d4e289555a8dfe5e71e2ae002c7b0ef08639",
+      "gpu_sha256": "054a8fb92c112b912dfb149c6fe5ae6ff5ade5cd054efdf03980ad2a1be900f4",
+      "png_sha256": "eec992b26c949874145f1ba86784f19d37984edf9ad41ca500789bdb879f9d00",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 388927,
+          "sha256": "1a836b72b31cfbb253b57d72235ad6afcf3ea38aa7954dbf2808694286694006"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "9179560ad4ecb7649e58c3384ccbba12f6946cc6b9992d1554bd6b2d403b5586"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 6678,
+      "ram_sha256": "328dc4b9075cb0ee1078c3b8b82ce411fc54dfa9fdd977c5345607fc02488183",
+      "gpu_sha256": "1745d15ca405e775af5ff96581ef9eedce4f34807e98a36aabe1a1de823883c0",
+      "png_sha256": "8134e29ad3c6cd51ef9096fbbe2e4bc8eab081cd31e07eca659e96b3afdb6416",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 348401,
+          "sha256": "6b9e709352f4b32181e829087590c2cfa5fe13f11e40f7b47cc0a053ec004287"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "8874988b3b729e0c02fabccdf218b1dc866c97f635ffa2d0d099966cd9016fa2"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 7200,
+      "ram_sha256": "4fe721cc8e6bb57ce67304c052edd62ffb4660ba01d3ef1018928767d8255035",
+      "gpu_sha256": "f0b14b89bfdd1b53bbe45128809305091cb502ce4c5ae7dac93042a14cd34ed8",
+      "png_sha256": "322f9465674a85abbaa7c34c712116f2c385fe6e5d9e0d1de8cbc82b2029bcd2",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 632251,
+          "sha256": "9cf8fbdb17cdb60818cbebe33729b1b540856ee460ed037b0a516d42651d63f2"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "8ea159c064b5a3ce9a20d2c76e310a5c386c291114eae9047373a62bbe87c4e6"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 7800,
+      "ram_sha256": "7519cb45a6ed4b0fdf4183c3f2b32d8da081a67d4c6cefe251427f4e666fd56b",
+      "gpu_sha256": "a1cee8d07b3b033bff987052e816a10f1012745e8e2aa3d22c0391b19eed88b9",
+      "png_sha256": "4efd3147ff119d1e831a328687a63ca153f1ed6e78d9e7178ca32bd5fdc04246",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 693561,
+          "sha256": "0e28471b43ba9af9b8f5242efbb43c35d420c3f129e3490543011e81a2477092"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "bd0b24e34b0aa31477166f9deff943797d03021eb77daf65eff3292a586c42cd"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 8400,
+      "ram_sha256": "0a5e6fcf9878e396963bbe3cacf569758c8d030097790a93a367d8c5f4f9e2cd",
+      "gpu_sha256": "610a0212f89a0c0f6228f9394e2f5bf801fb73932bde99a9ff6854fb5e2cad24",
+      "png_sha256": "26baeaaf60f3a9d7b70a36456fb027c406184cbf1adc0c733d1fd71f8a83398f",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 654614,
+          "sha256": "0f7a4b095f7ef48b59afcaaa40e1158d3af125bef851eef87079398531a7e480"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "c2e91e0c520bbb32b162629f63fbabfb775207c4a46905e8fb6585ce36b66e7b"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    },
+    {
+      "relative_frame": 9000,
+      "ram_sha256": "0c1603cc5de4e52a220e91c682970dc9a45a91cac37de19e165d471d9f3f6923",
+      "gpu_sha256": "a81e2992d5d607e0739e0f118f5d5d448cce4730064c4c19f0ffd231e995afad",
+      "png_sha256": "8b8761a73cd50c60d75a83484939f764359ea6250c8a0cf26a98a757fab013f5",
+      "state_members": {
+        "BizState 1.0": {
+          "bytes": 3,
+          "sha256": "24ba1e99dc06b19351323aae0d7370243d586475a634b7f6ff7927fbc72cfaed"
+        },
+        "BizVersion.txt": {
+          "bytes": 16,
+          "sha256": "c522b425d9a51f63bfba58b52f7711b6d60ef9f6ca284a7b53ddddb520e730b4"
+        },
+        "Core.bin.zst": {
+          "bytes": 677829,
+          "sha256": "50ecd8b0bc111163238b24327888185a461cd52b1c3a72210d459f8256a7ef8d"
+        },
+        "Framebuffer.bmp": {
+          "bytes": 336054,
+          "sha256": "a1889c5ba2f9b210ca67f6d7eb9281728f8f1468d9c24f0b0a4ef2d539aa5386"
+        },
+        "SyncSettings.json": {
+          "bytes": 140,
+          "sha256": "8a85c740256ef8ca3ed26eb647af3b746c95a902330a9030fa392927a968b6ee"
+        }
+      },
+      "state_zip_wrapper_equal": false
+    }
+  ],
+  "audio": {
+    "equal_pcm_output": true,
+    "original": {
+      "channels": 2,
+      "sample_rate": 44100,
+      "sample_width": 2,
+      "sample_frames": 6633245,
+      "nonzero_channel_samples": 10414607,
+      "pcm_sha256": "53f560db90cc6ee482702f13515fe00a3e099f934ede0031a6b45b217c91136b"
+    },
+    "rebuilt": {
+      "channels": 2,
+      "sample_rate": 44100,
+      "sample_width": 2,
+      "sample_frames": 6633245,
+      "nonzero_channel_samples": 10414607,
+      "pcm_sha256": "53f560db90cc6ee482702f13515fe00a3e099f934ede0031a6b45b217c91136b"
+    },
+    "wav_file_bytes": {
+      "equal": true,
+      "original_bytes": 26533024,
+      "rebuilt_bytes": 26533024,
+      "original_sha256": "08ba8c35e5f444b1151c73292025c105c61fc675c6ea5fe891e8f00a3df83756",
+      "rebuilt_sha256": "08ba8c35e5f444b1151c73292025c105c61fc675c6ea5fe891e8f00a3df83756"
+    }
+  },
+  "movie_lifetimes": [
+    {
+      "sequence": 1,
+      "path": "/CDI/ETC/ASMK.STR",
+      "opened_file": {
+        "filename": "ASMK.STR;1",
+        "lba": 21120,
+        "logical_bytes": 2064384,
+        "sectors": 1008
+      },
+      "first_active_frame": 950,
+      "last_active_frame": 1319,
+      "first_inactive_frame_after": 1320,
+      "requested_cutoff": 90,
+      "setup_thresholds": [
+        90,
+        100
+      ],
+      "setup_raw_frame_values": [
+        0,
+        4096
+      ],
+      "maximum_accepted_frame_id_while_streaming": 89,
+      "nonzero_frame_ids_sampled": 89,
+      "sampled_ids_contiguous_from_zero": true,
+      "movie_complete_flag_observed": true,
+      "decode_complete_flag_observed": true,
+      "observed_complete_lifetime": true,
+      "source_viewports_xy_width_height": [
+        [
+          640,
+          0,
+          320,
+          240
+        ]
+      ]
+    },
+    {
+      "sequence": 2,
+      "path": "/CDI/ETC/OPENINGG.STR",
+      "opened_file": {
+        "filename": "OPENINGG.STR;1",
+        "lba": 87656,
+        "logical_bytes": 21626880,
+        "sectors": 10560
+      },
+      "first_active_frame": 1632,
+      "last_active_frame": 5841,
+      "first_inactive_frame_after": 5842,
+      "requested_cutoff": 1046,
+      "setup_thresholds": [
+        1046,
+        1052
+      ],
+      "setup_raw_frame_values": [
+        0,
+        4096
+      ],
+      "maximum_accepted_frame_id_while_streaming": 1045,
+      "nonzero_frame_ids_sampled": 1045,
+      "sampled_ids_contiguous_from_zero": true,
+      "movie_complete_flag_observed": true,
+      "decode_complete_flag_observed": true,
+      "observed_complete_lifetime": true,
+      "source_viewports_xy_width_height": [
+        [
+          640,
+          0,
+          320,
+          240
+        ]
+      ]
+    },
+    {
+      "sequence": 3,
+      "path": "/CDI/ETC/OPENINGG.STR",
+      "opened_file": {
+        "filename": "OPENINGG.STR;1",
+        "lba": 87656,
+        "logical_bytes": 21626880,
+        "sectors": 10560
+      },
+      "first_active_frame": 6678,
+      "last_active_frame": 9000,
+      "first_inactive_frame_after": null,
+      "requested_cutoff": 1046,
+      "setup_thresholds": [
+        1046,
+        1052
+      ],
+      "setup_raw_frame_values": [
+        0
+      ],
+      "maximum_accepted_frame_id_while_streaming": 573,
+      "nonzero_frame_ids_sampled": 573,
+      "sampled_ids_contiguous_from_zero": true,
+      "movie_complete_flag_observed": false,
+      "decode_complete_flag_observed": false,
+      "observed_complete_lifetime": false,
+      "source_viewports_xy_width_height": [
+        [
+          640,
+          0,
+          320,
+          240
+        ]
+      ]
+    }
+  ],
+  "observed_complete_distinct_movies": 2,
+  "movie_identification": "Native CD filename, BCD location/LBA, and logical byte size agree with the audited mixed-sector file; requested cutoff also agrees.",
+  "native_file_record": {
+    "stream_offset": 12,
+    "bytes": 24,
+    "location": "BCD MSF",
+    "logical_bytes_offset": 4,
+    "filename_offset": 8,
+    "filename_bytes": 16,
+    "post_nul_bytes_retained": true
+  },
+  "partial_movie_lifetimes": 1,
+  "movie_catalogue_total": 39,
+  "viewport_type": {
+    "name": "mdec_movie_viewport_t",
+    "bytes": 12,
+    "fields": [
+      {
+        "name": "x",
+        "offset": 0,
+        "bytes": 2,
+        "signed": true
+      },
+      {
+        "name": "y",
+        "offset": 2,
+        "bytes": 2,
+        "signed": true
+      },
+      {
+        "name": "width",
+        "offset": 4,
+        "bytes": 4,
+        "signed": true
+      },
+      {
+        "name": "height",
+        "offset": 8,
+        "bytes": 4,
+        "signed": true
+      }
+    ],
+    "complete_candidate_image_matches": true,
+    "inherited_eight_byte_stack_region_explained": false,
+    "candidate_source_sha256": "7e85f5101f9035789f715be8f53bee4d81505fc4b5ae4635ff39b33727355874",
+    "candidate_comparison_sha256": "1aca8aa4b42202bb214dfbbdac1934f2137182bff3d405128a835efb616fa080"
+  },
+  "preservation": {
+    "unchanged_inputs": 391,
+    "changed_input": "src/menu/mdec_movie.c",
+    "before_sha256": "f4e223502c8e01855f540bcc6a40e1cbaef6e7d8d335d6992ee24b182d5102ce",
+    "after_sha256": "7e85f5101f9035789f715be8f53bee4d81505fc4b5ae4635ff39b33727355874",
+    "change": "Matching 12-byte viewport type: s16 x/y and s32 width/height; inherited stack region retained."
+  },
+  "producer_hashes": {
+    "research/movie_playback/observe.lua": "fb931401d7efa527d03e92ab496150bd83bdfc51e9ae68e3b47fac96cda02153",
+    "tools/capture_movie_playback.py": "a77670dab7632443a83ff1d141ff1fc75642d4e962d41a97edddbf7857b046f1",
+    "tools/compare_movie_playback.py": "6b7aa74d96822f46f890dd3f2dd5069eb74c12777ee5c08e6dd535ad877a7369",
+    "tests/test_movie_playback.py": "bb2e614877216181da187ae9657ac777eb117437a007607b96cb07d9e0f5764f",
+    ".decomp-lab/publish_movie_playback_20261015_second.py": "6194533f7a683ee6571bfa5f3a15f17bd5d84c69dbbe136f01800c15659f97e0"
+  },
+  "private_reports": {
+    ".decomp-lab/movie-playback-fullgpu-20261015-third.json": "0df85e3abfba98604f2abbf632cf345f3849feea41fa29a9510938cd4204cd7a",
+    ".decomp-lab/movie-playback-comparison-20261015-first.json": "2f067ad14b4f112734f07fa4a0a0d0a1027825fa4e27544b060c0deb4faa1fa2",
+    ".decomp-lab/movie-playback-preservation-20261015-first.json": "9e2a70cf7ec1ec4133f0d0b412117bec818e0ecae0086c5e52db1749241f7d56",
+    ".decomp-lab/movie-playback-first-recorder-failure-20261015.json": "3d813ec768e2f92b3f40475c23a63134a2c68082eb73cb5e348e0d4cfd836e9e"
+  },
+  "rejected_initial_recorder_included": false,
+  "instruction_entries_claimed": false,
+  "source_paths_correction": {
+    "ETC_movies": 9,
+    "FILM_movies": 30,
+    "route_metadata_was_already_correct": true
+  },
+  "tooling_tests_passed": 444,
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_game_assembly_functions": 9,
+    "inherited_unused_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "groups_with_listed_core_functions_in_c": 35,
+    "whole_feature_groups_accepted": 0,
+    "npc_callbacks_with_c_bodies": 107,
+    "npc_callbacks_catalogued": 107,
+    "bounded_native_callback_profiles": 20,
+    "whole_npc_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_game_assembly_functions": 9,
+    "inherited_unused_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "groups_with_listed_core_functions_in_c": 35,
+    "whole_feature_groups_accepted": 0,
+    "npc_callbacks_with_c_bodies": 107,
+    "npc_callbacks_catalogued": 107,
+    "bounded_native_callback_profiles": 20,
+    "whole_npc_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_c_bytes": 0,
+  "new_original_gameplay_features": 0,
+  "whole_feature_groups_accepted": 0,
+  "all_movie_playback_accepted": false,
+  "game_memory_writes": 0,
+  "model_api_calls": 0,
+  "configuration_sha256": {
+    "original": "f771c59f5af037ef4dbc95186bb9f08e2c73e8964c926b9496013c9da9247e69",
+    "rebuilt": "f771c59f5af037ef4dbc95186bb9f08e2c73e8964c926b9496013c9da9247e69"
+  }
+}
