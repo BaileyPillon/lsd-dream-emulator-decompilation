@@ -28,6 +28,74 @@ class AdditionalScriptedCallbackTests(unittest.TestCase):
         case.update(updates)
         return case
 
+    def test_bell_zero_timer_increments_before_rng_and_takes_reset_priority(self):
+        result = scripts.expected('entity_bell_striker', self.case(timer=0, duration=1, state=35))
+        self.assertEqual(struct.unpack_from('<i', result['entity'], 0x44)[0], 36)
+        self.assertEqual(struct.unpack_from('<i', result['context'], 4)[0], 0)
+        self.assertEqual(struct.unpack_from('<i', result['context'], 28)[0], 12)
+        self.assertEqual(result['trace'], [
+            ['trigger_ratio', scripts.native.ENTITY], ['rand', 0],
+            ['notification', scripts.native.ENTITY, 11]])
+
+    def test_bell_leaving_state_36_does_not_consume_rng(self):
+        result = scripts.expected('entity_bell_striker', self.case(timer=0, state=36, seed=42))
+        self.assertEqual(struct.unpack_from('<i', result['entity'], 0x44)[0], 37)
+        self.assertEqual(result['rng_seed'], 42)
+        self.assertEqual(result['trace'], [['trigger_ratio', scripts.native.ENTITY]])
+
+    def test_bell_timer_resets_at_duration_minus_one(self):
+        before = scripts.expected('entity_bell_striker', self.case(timer=13, duration=15))
+        boundary = scripts.expected('entity_bell_striker', self.case(timer=14, duration=15))
+        self.assertEqual(struct.unpack_from('<i', before['context'], 4)[0], 13)
+        self.assertEqual(struct.unpack_from('<i', boundary['context'], 4)[0], -1)
+        self.assertEqual(struct.unpack_from('<i', boundary['context'], 28)[0],
+                         struct.unpack_from('<i', scripts.fixtures(self.case())[2], 28)[0])
+
+    def test_bell_rng_is_checked_on_nonzero_timers_in_state_36(self):
+        for seed, notification in ((0, True), (1, False), (42, False)):
+            with self.subTest(seed=seed):
+                result = scripts.expected('entity_bell_striker', self.case(timer=1, state=36, seed=seed))
+                self.assertEqual(result['trace'][:2], [['trigger_ratio', scripts.native.ENTITY], ['rand', seed]])
+                self.assertEqual(result['trace'][2:], [['notification', scripts.native.ENTITY, 11]] if notification else [])
+
+    def test_bell_state_increment_uses_original_word_wrap(self):
+        result = scripts.expected('entity_bell_striker', self.case(timer=0, state=0x7fffffff))
+        self.assertEqual(struct.unpack_from('<i', result['entity'], 0x44)[0], -0x80000000)
+        self.assertEqual(result['trace'], [['trigger_ratio', scripts.native.ENTITY]])
+
+    def test_bell_duration_subtraction_wraps_before_signed_comparison(self):
+        before = scripts.expected('entity_bell_striker', self.case(timer=0x7ffffffe, duration=-0x80000000))
+        boundary = scripts.expected('entity_bell_striker', self.case(timer=0x7fffffff, duration=-0x80000000))
+        self.assertEqual(struct.unpack_from('<i', before['context'], 4)[0], 0x7ffffffe)
+        self.assertEqual(struct.unpack_from('<i', boundary['context'], 4)[0], -1)
+
+    def test_opera_period_accepts_negative_and_zero_multiples(self):
+        for timer in (-240, -120, 0, 120, 240):
+            with self.subTest(timer=timer):
+                case = self.case(timer=timer, ratio=-1, seed=42)
+                result = scripts.expected('entity_opera_singer', case)
+                self.assertEqual(result['trace'], [['trigger_ratio', scripts.native.ENTITY]])
+                self.assertEqual(struct.unpack_from('<i', result['context'], 16)[0], -1)
+                self.assertEqual(struct.unpack_from('<i', result['context'], 28)[0], 1)
+                self.assertEqual(result['rng_seed'], 42)
+                self.assertEqual(result['entity'], bytes(scripts.fixtures(case)[0]))
+
+    def test_opera_other_timers_preserve_context_and_rng(self):
+        for timer in (-0x80000000, -121, -119, -1, 1, 119, 121, 0x7fffffff):
+            with self.subTest(timer=timer):
+                case = self.case(timer=timer, seed=42)
+                result = scripts.expected('entity_opera_singer', case)
+                self.assertEqual(result['trace'], [])
+                self.assertEqual(result['context'], bytes(scripts.fixtures(case)[2]))
+                self.assertEqual(result['rng_seed'], 42)
+
+    def test_bell_fixtures_include_wrap_and_all_rng_remainders(self):
+        cases = scripts.cases_by_callback()['entity_bell_striker']
+        self.assertEqual({case['seed'] for case in cases}, {0, 1, 2, 42, 0xffffffff})
+        for timer in (0, 0x7ffffffe, 0x7fffffff, -0x80000000):
+            self.assertTrue(any(case['duration'] == -0x80000000 and case['timer'] == timer for case in cases))
+        self.assertTrue(any(case['state'] == 0x7fffffff and case['timer'] == 0 for case in cases))
+
     def test_fish_fixtures_cover_every_nonnegative_joint_period(self):
         period = math.lcm(6, 12, 64, 500)
         cases = scripts.cases_by_callback()['entity_fish']

@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-15T22:28:53.048049+00:00",
+  "source_commit_before": "0212dbd7246eee779f6960d9e3a35db78ce4ddd2",
+  "scope": "Original timed NPC callbacks against separate models under explicit trigger-ratio and notification contracts; no complete encounter or feature acceptance.",
+  "guide": "docs/BELL_OPERA_SCRIPTS.md",
+  "executed_public_source": {
+    "path": "tools/verify_scripted_ai.py",
+    "sha256": "96abb8e0d0d3f5c2698d0488b194674627515fcdff6b14685f57bc5b067997cb"
+  },
+  "synthetic_tests": {
+    "path": "tests/test_scripted_callbacks.py",
+    "sha256": "be287570fb526d8bc44f065e07f3dbe208314a02e80ef5559b264fd324e3e7ee"
+  },
+  "final_native_report": {
+    "path": ".decomp-lab/scripted-bell-opera-native-20261015-second.json",
+    "sha256": "3891d2812ce5d0ed953b55f9151da4dec5982df40946a008e50f6c57ff1c8f6b"
+  },
+  "initial_same_fixture_report": {
+    "path": ".decomp-lab/scripted-bell-opera-native-20261015-first.json",
+    "sha256": "a6f2183d23b02006f8e3db1d187944b73a2895231abdd9174005f8b000424e28"
+  },
+  "backend": "Unicorn 2.1.4",
+  "backend_identity": {
+    "package_version": "2.1.4",
+    "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+  },
+  "new_callbacks": [
+    {
+      "function": "entity_bell_striker",
+      "address": "0x8005EBB4",
+      "bytes": 228,
+      "sha256": "b8aa567436e41a6d3bab469e87c34fe6d383f06a345afdd64c0872e3be3fe916"
+    },
+    {
+      "function": "entity_opera_singer",
+      "address": "0x8005FEF8",
+      "bytes": 132,
+      "sha256": "5ed1824a794192c7b11f887c758a3643d3016c2db0087424124395152f960008"
+    }
+  ],
+  "native_property_record_bindings": {
+    "entity_bell_striker": [
+      13
+    ],
+    "entity_opera_singer": [
+      38
+    ]
+  },
+  "new_distinct_cases_by_callback": {
+    "entity_bell_striker": 14640,
+    "entity_opera_singer": 2425
+  },
+  "new_distinct_native_cases": 17065,
+  "new_callback_fixture_records_unique": true,
+  "all_28982_earlier_scripted_fixtures_preserved": true,
+  "scripted_callback_family_before": 14,
+  "scripted_callback_family_after": 16,
+  "complete_scripted_native_cases": 46047,
+  "complete_scripted_negative_controls_detected": 18,
+  "new_callback_controls": [
+    {
+      "callback": "entity_bell_striker",
+      "kind": "wrong_command_destination",
+      "function_offset": 64,
+      "expected_word": "0xAE22001C",
+      "changed_word": "0xAE220020",
+      "detected_case_index": 360,
+      "fixture": {
+        "timer": 0,
+        "tick": 1,
+        "frame": 1,
+        "duration": -2147483648,
+        "state": -2147483648,
+        "variant": 0,
+        "action": 0,
+        "seed": 0,
+        "ratio": -1,
+        "nudge": -19
+      },
+      "scope": "Private Unicorn memory only."
+    },
+    {
+      "callback": "entity_bell_striker",
+      "kind": "wrong_duration_reset_boundary",
+      "function_offset": 96,
+      "expected_word": "0x2442FFFF",
+      "changed_word": "0x2442FFFE",
+      "detected_case_index": 1440,
+      "fixture": {
+        "timer": 2147483646,
+        "tick": 1,
+        "frame": 1,
+        "duration": -2147483648,
+        "state": -2147483648,
+        "variant": 0,
+        "action": 0,
+        "seed": 0,
+        "ratio": -1,
+        "nudge": -19
+      },
+      "scope": "Private Unicorn memory only."
+    },
+    {
+      "callback": "entity_bell_striker",
+      "kind": "wrong_state_rng_gate",
+      "function_offset": 120,
+      "expected_word": "0x34020024",
+      "changed_word": "0x34020023",
+      "detected_case_index": 60,
+      "fixture": {
+        "timer": -2147483648,
+        "tick": 1,
+        "frame": 1,
+        "duration": -2147483648,
+        "state": 35,
+        "variant": 0,
+        "action": 0,
+        "seed": 0,
+        "ratio": -1,
+        "nudge": -19
+      },
+      "scope": "Private Unicorn memory only."
+    },
+    {
+      "callback": "entity_opera_singer",
+      "kind": "wrong_command_destination",
+      "function_offset": 108,
+      "expected_word": "0xAE02001C",
+      "changed_word": "0xAE020020",
+      "detected_case_index": 0,
+      "fixture": {
+        "timer": -240,
+        "tick": 1,
+        "frame": 1,
+        "duration": 15,
+        "state": 0,
+        "variant": 0,
+        "action": 0,
+        "seed": 0,
+        "ratio": -2147483648,
+        "nudge": -19
+      },
+      "scope": "Private Unicorn memory only."
+    }
+  ],
+  "new_callback_observed_calls_and_states": {
+    "entity_bell_striker": {
+      "actual_call_counts": {
+        "notification": 366,
+        "rand": 1830,
+        "trigger_ratio": 14640
+      },
+      "actual_resulting_state_counts": {
+        "-2147483648": 1830,
+        "-2147483647": 135,
+        "-1": 1695,
+        "0": 1830,
+        "1": 135,
+        "34": 1695,
+        "35": 1830,
+        "36": 1830,
+        "37": 1830,
+        "38": 135,
+        "2147483647": 1695
+      }
+    },
+    "entity_opera_singer": {
+      "actual_call_counts": {
+        "trigger_ratio": 25
+      },
+      "actual_resulting_state_counts": {
+        "0": 2425
+      }
+    }
+  },
+  "original_source_callbacks_with_matching_C_bodies": 107,
+  "bounded_callbacks_before": [
+    "entity_acrobats",
+    "entity_airship",
+    "entity_bear",
+    "entity_bird",
+    "entity_can",
+    "entity_car_water",
+    "entity_dog",
+    "entity_elephant",
+    "entity_elephant_small",
+    "entity_fetus_jump",
+    "entity_fetus_walk",
+    "entity_fish",
+    "entity_fish_giant",
+    "entity_gray_man",
+    "entity_horse",
+    "entity_lion",
+    "entity_rabbit",
+    "entity_rocket",
+    "entity_ship",
+    "entity_ufo"
+  ],
+  "bounded_callbacks_after": [
+    "entity_acrobats",
+    "entity_airship",
+    "entity_bear",
+    "entity_bell_striker",
+    "entity_bird",
+    "entity_can",
+    "entity_car_water",
+    "entity_dog",
+    "entity_elephant",
+    "entity_elephant_small",
+    "entity_fetus_jump",
+    "entity_fetus_walk",
+    "entity_fish",
+    "entity_fish_giant",
+    "entity_gray_man",
+    "entity_horse",
+    "entity_lion",
+    "entity_opera_singer",
+    "entity_rabbit",
+    "entity_rocket",
+    "entity_ship",
+    "entity_ufo"
+  ],
+  "original_and_current_build_equal": true,
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "current_progress": {
+    "path": ".decomp-lab/scripted-bell-opera-publication-20261015-first/progress.json",
+    "sha256": "4346df8d9584bfff1b6a5887c8048b02b9ea6b0075846d89f167948a8fc11174"
+  },
+  "protected_build_inputs_verified": 392,
+  "protected_build_inputs_changed": false,
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 20,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 22,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "validation": {
+    "tooling_tests": 528,
+    "new_tooling_tests": 9,
+    "failures": 0,
+    "skips": 0,
+    "optional_Lua": "bundled Lua 5.4 library used",
+    "test_log": {
+      "path": ".decomp-lab/scripted-bell-opera-tests-windows-20261015-second.log",
+      "sha256": "c608f9bb5f9a2bf1a652a1edc00bec52d2cd0e40460f53ad24652e9dc7c6f247"
+    },
+    "canonical_ninja_check": "passed"
+  },
+  "original_game_behavior_modified": false,
+  "model_API_calls": 0,
+  "new_C_bytes": 0,
+  "whole_NPC_encounters_newly_accepted": 0,
+  "whole_feature_groups_newly_accepted": 0,
+  "original_AI_and_developer_tooling_separate": true,
+  "limits": [
+    "Fixture state, duration and timer extremes do not prove natural reachability.",
+    "The initial and final runs repeat the same input set; new distinct fixtures are counted once.",
+    "Trigger-ratio and notification contracts do not execute actual geometry or video playback.",
+    "Natural lifetimes, rendering, sound, PS1 timing and whole-game parity remain unaccepted."
+  ]
+}

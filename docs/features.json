@@ -21220,6 +21220,52 @@
       "original_source_explanations_resolved": 0,
       "new_native_cases": 0,
       "original_AI_and_tools_separate": true
+    },
+    "scripted_bell_opera_20261015": {
+      "status": "bounded_original_Bell_Striker_and_Opera_Singer_profiles_passed",
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 20,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 22,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "guide": "docs/BELL_OPERA_SCRIPTS.md",
+      "metadata": "docs/scripted-bell-opera-checks.json",
+      "new_callbacks": [
+        "entity_bell_striker",
+        "entity_opera_singer"
+      ],
+      "new_distinct_native_cases": 17065,
+      "complete_scripted_native_cases": 46047,
+      "new_callback_negative_controls": 4,
+      "complete_scripted_negative_controls": 18,
+      "new_tooling_tests": 9,
+      "new_C_bytes": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_original_feature_groups_accepted": 0,
+      "original_AI_and_tools_separate": true
     }
   }
 }
