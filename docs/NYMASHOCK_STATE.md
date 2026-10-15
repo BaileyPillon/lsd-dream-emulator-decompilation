@@ -111,3 +111,80 @@ groups independently accepted. NPC counts remain 107 C callbacks and 11 with
 bounded native checks; developer capabilities remain 10 and optional mods 3.
 The official exhaustive feature total remains unknown. The current complete
 505,856-byte executable still equals the canonical input byte for byte.
+
+## Empty-card extension and native accessors
+
+The October 15 extension applies the earlier field diagnosis to the two new
+empty-card Load captures. All **32 checkpoint pairs** (64 snapshots) have eight
+decoded differences at the same emulator guest addresses above. These are
+Waterbox addresses, separate from PlayStation RAM and Windows process memory.
+The symbolic owner chain, live `CD` text, vector extents and `Virtual CD Drive`
+label agree in every snapshot. Both observed 24-byte string objects are retained
+by hash; later checkpoints repeat those two exact object inputs.
+
+This extends the October 11 diagnosis; identifying the field is not a new
+discovery. The new execution evidence covers the bundled libc++ accessors:
+
+| Actual ELF method | Address | Symbol bytes |
+| --- | --- | ---: |
+| `std::__1::basic_string<char>::c_str() const` | `0x36f0001b540` | 34 |
+| `std::__1::basic_string<char>::size() const` | `0x36f0001bc90` | 100 |
+
+Unicorn 2.1.4 executes their unchanged x86-64 instructions and real helper
+calls against copies of the captured object and ELF memory. The harness
+requires a normal return, preserved saved registers and stack, no writes
+outside its private stack, no object mutation, and no reads outside the object
+and stack. Neither method reads unused object bytes 4–23. `c_str()` returns
+the live character pointer; the harness then reads its `CD\0` bytes. `size()`
+returns two. This is native emulator-code analysis, not execution of a new
+PlayStation game routine.
+
+Twelve calls cover both unique objects: the two baseline methods, both methods
+after changing unused bytes 16–23 in private copies, `size()` after changing
+the live size to three, and `c_str()` after changing the first character to
+`X`. The length and character controls change the observed result as expected;
+capacity changes do not. No instructions or saved input files are changed.
+Other consumers and earlier allocator contents remain outside this evidence.
+
+Two further one-frame pairs boot the original disc twice and the rebuilt disc
+twice. Each reproduces the eight-byte difference, so changing between the
+two discs is not necessary to produce it. These controls share their disc
+within each pair; output labels and launch order still differ. They are
+initialization controls, with no gameplay acceptance. A previously successful
+persisted-card Load pair is also checked as an equal-state control: all archive
+members agree, and it is not classified as a differing label.
+
+The existing structural diagnostic and the ELF-derived reader independently
+agree on all decoded hashes and difference counts. The raw archive comparator
+is included without changes. The empty-card comparator still reports failure;
+no masking, normalization or new runtime-profile acceptance is introduced.
+
+Install `requirements-analysis.txt` in the qualified Linux/WSL environment,
+then use the existing command with explicit execution and controls:
+
+```bash
+python tools/inspect_nymashock_state.py \
+  --original /private/empty-card/original/frame-0.State \
+  --rebuilt /private/empty-card/rebuilt/frame-0.State \
+  --core /private/BizHawk/dll/shock.wbx.zst \
+  --execute-accessors --controls \
+  --output .decomp-lab/nymashock-accessors-new.json
+```
+
+Without the new flags, the earlier structural interface and report remain
+available. Exit status zero means the diagnosis completed, not that the
+states match. Execution reports explicitly retain `parity_profile_accepted:
+false`, complete state hashes, all differing addresses and the raw comparison.
+Only the pinned Windows core is qualified. The tests use synthetic fixtures
+and need no emulator, game, firmware or optional native backend.
+
+[Extension metadata](emulator-state-checks.json) records the captures, actual
+accessor calls, controls, private evidence hashes and unchanged before/after
+counts. The new 22 tests bring the full tooling suite to **510**, passing on
+Windows Python 3.14 and Linux Python 3.13. Current C remains **194,212 / 199,912
+bytes (97.15%)**, with nine assembly functions, 24 inherited storage
+explanations, 35 / 40 listed-core C groups, 20 / 107 bounded NPC profiles and
+zero whole-feature or whole-encounter acceptance. Developer capability A004
+is extended; category and mod counts remain ten and three. No model API is
+called. The historical October 11 counts and metadata above remain a separate
+snapshot.

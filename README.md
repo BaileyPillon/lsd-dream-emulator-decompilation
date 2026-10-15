@@ -103,7 +103,9 @@ profiles; source recovery and the remaining card/error routes stay separate.
 The [empty-card Load investigation](docs/EMPTY_CARD_LOAD.md) identifies the
 native not-found dialog and names its operation/state fields in matching C.
 Recorded game buffers agree; eight differing core-state bytes keep its full
-runtime comparison open.
+runtime comparison open. The [native accessor checks](docs/NYMASHOCK_STATE.md#empty-card-extension-and-native-accessors)
+locate these bytes in the emulator's unused media-label storage and execute
+the bundled string methods. Raw state comparisons remain unchanged.
 The [card cleanup audit](docs/CARD_CLEANUP.md) checks 501 original/candidate
 fixture pairs with an explicit allocator stub. It verifies dynamic reloads
 and release order while retaining the eight-byte source-layout mismatch.

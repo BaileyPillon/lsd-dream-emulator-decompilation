@@ -19,3 +19,6 @@ tools/capture_card_roundtrip.py text eol=lf
 tests/test_card_roundtrip.py text eol=lf
 tools/compare_empty_card_load.py text eol=lf
 tests/test_empty_card_load.py text eol=lf
+research/emulator_state.py text eol=lf
+tools/inspect_nymashock_state.py text eol=lf
+tests/test_emulator_state.py text eol=lf

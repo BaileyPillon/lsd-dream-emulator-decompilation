@@ -9,8 +9,11 @@ cold boot for Load, repeated checks, and whole-card/feature acceptance.
 
 The [empty-card Load investigation](EMPTY_CARD_LOAD.md) adds an explicit
 not-found case. Its game buffers and controller records agree, but eight
-core-state bytes differ. The full-state gate remains unsuccessful; these
-observations do not extend the successful round-trip result to all card paths.
+core-state bytes differ. The [accessor extension](NYMASHOCK_STATE.md#empty-card-extension-and-native-accessors)
+locates all eight in the emulator's unused media-label capacity, confirms the
+same difference with repeated boots of each disc, and executes the original
+string accessors. The full-state gate remains unsuccessful; these observations
+do not extend the successful round-trip result to all card paths.
 
 This developer workflow records an emulator-local input sequence, then compares
 the original disc with a separately packaged matching build. It preserves the

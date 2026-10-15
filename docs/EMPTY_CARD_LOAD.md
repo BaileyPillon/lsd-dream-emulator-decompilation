@@ -63,9 +63,14 @@ Each pair records 6,001 rows with 135 columns, a complete GPU-memory hash
 at each frame, and 16 full RAM/GPU/image/state checkpoints per image. All
 non-state records and game-buffer checkpoints agree. Each decoded core state
 differs in eight bytes, already present at the initial frame. Serialized offsets
-move with the state layout; they are not PS1 memory addresses. Their cause and
-behavioral relevance remain unresolved. The verifier returns a nonzero result
-for this mismatch and accepts no complete runtime profile.
+move with the state layout; they are not PS1 memory addresses. The
+[native accessor extension](NYMASHOCK_STATE.md#empty-card-extension-and-native-accessors)
+maps every differing byte to unused capacity in Nymashock's `"CD"` media label.
+Actual bundled `c_str()` and `size()` paths do not read that capacity. Two
+additional same-disc cold-boot controls reproduce the difference without
+switching the disc. The allocator's earlier contents and every possible
+consumer have not been traced. The verifier still returns a nonzero result
+for the full-state mismatch and accepts no complete runtime profile.
 
 Five altered-record controls detect a changed write-test frame, changed backup,
 wrong native error state, changed operation word in a private RAM copy, and an

@@ -21006,6 +21006,50 @@
         "developer_capability_categories": 10,
         "optional_mods": 3
       }
+    },
+    "empty_card_native_accessors_20261015": {
+      "date": "2026-10-15",
+      "metadata": "docs/emulator-state-checks.json",
+      "scope": "Extension of the existing emulator field diagnosis to empty-card captures and actual native string accessor execution; no new field discovery or whole-game acceptance.",
+      "checkpoint_pairs": 32,
+      "unique_label_object_inputs": 2,
+      "actual_accessor_calls": 12,
+      "same_source_initialization_controls": 2,
+      "state_bytes_masked": 0,
+      "complete_state_members_equal": false,
+      "tooling_tests_passed": 510,
+      "new_c_bytes": 0,
+      "whole_feature_groups_accepted": 0,
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_game_assembly_functions": 9,
+        "inherited_unused_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "groups_with_listed_core_functions_in_c": 35,
+        "whole_feature_groups_accepted": 0,
+        "npc_callbacks_with_c_bodies": 107,
+        "npc_callbacks_catalogued": 107,
+        "bounded_native_callback_profiles": 20,
+        "whole_npc_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_game_assembly_functions": 9,
+        "inherited_unused_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "groups_with_listed_core_functions_in_c": 35,
+        "whole_feature_groups_accepted": 0,
+        "npc_callbacks_with_c_bodies": 107,
+        "npc_callbacks_catalogued": 107,
+        "bounded_native_callback_profiles": 20,
+        "whole_npc_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      }
     }
   }
 }
