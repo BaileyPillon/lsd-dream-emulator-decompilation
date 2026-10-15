@@ -139,6 +139,10 @@ The later [collision recovery research](research/collision/README.md) publishes
 an unaccepted primitive C fragment whose complete build differs in 22 bytes,
 down from 103. Paired native checks and non-NULL midpoint checks pass; those
 results add bounded evidence without accepting either remaining C function.
+The [fraction and reload study](docs/COLLISION_FRACTIONS.md) makes the candidate's
+fraction operands useful without changing its executable and locates its seven
+reload allocations after the main workspace. Fourteen complete-unit source
+comparisons leave the original bounds lifetime unresolved.
 The [compiler-layout diagnostic](docs/COMPILER_LAYOUT.md) observes actual GCC
 allocator calls and verifies that tracing preserves complete assembly output;
 the primitive's bounds-storage lifetime still needs recovery.

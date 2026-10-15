@@ -23,6 +23,13 @@ lifetimes or helper boundaries that explain that layout. Adding dummy padding,
 rewriting instructions or binding physical registers does not qualify as C
 recovery. The fragment's SDK vector padding is part of those established types.
 
+The [fraction and reload investigation](../../docs/COLLISION_FRACTIONS.md)
+qualifies the current fragment in its complete translation unit. Both fraction
+operands are consumed by division; the complete candidate image is unchanged.
+Actual compiler observations place seven register-reload slots after the main
+workspace. They do not explain the unused early region. Fourteen qualified
+source comparisons retain the 22-byte best and add no accepted C bytes.
+
 The [native collision audit](../../docs/COLLISION.md) explains the preserved
 behavior: halfword edge narrowing, SDK cross products and squares, signed fixed
 fractions, expanded AABB acceptance, nearest-distance ties and contact height
