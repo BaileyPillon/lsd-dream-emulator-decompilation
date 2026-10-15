@@ -21136,6 +21136,48 @@
       "source_to_initial_core_frame_difference": 0,
       "source_to_initial_state_members_equal": true,
       "original_AI_and_developer_tooling_separate": true
+    },
+    "ui_scale_source_20261015": {
+      "status": "unaccepted_UI_scale_source_reproduced_and_candidate_reload_slots_observed",
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 20,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 20,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "guide": "docs/UI_SCALE.md",
+      "metadata": "docs/ui-scale-source-checks.json",
+      "source_recipe": "research/ui_scale/README.md",
+      "source_forms": 49,
+      "repeated_controls": 5,
+      "excluded_parser_failures": 8,
+      "remaining_image_differing_bytes": 12,
+      "new_C_bytes": 0,
+      "original_source_explanations_resolved": 0,
+      "new_native_cases": 0,
+      "original_AI_and_tools_separate": true
     }
   }
 }

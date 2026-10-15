@@ -13,6 +13,56 @@ from research.collision import trace_compiler_stack as tracer
 
 
 class CompilerStackTraceTests(unittest.TestCase):
+    def reload_trace(self):
+        return {'schema_version': 2, 'compiler_exited': True, 'compiler_exit_code': 0,
+                'allocation_events': [{'sequence': 0, 'function': 'example',
+                    'allocator': 'assign_stack_local', 'frame_offset_after': 8,
+                    'call_stack': ['assign_stack_local', 'alter_reg', 'reload'],
+                    'alter_reg_context': {'pseudo': 141, 'from_pseudo': -1,
+                                          'function': 'example', 'completed': True}}]}
+
+    def test_completed_reload_context_is_retained(self):
+        trace = self.reload_trace()
+        self.assertIs(tracer.validate_trace(trace), trace['allocation_events'])
+        self.assertEqual(trace['allocation_events'][0]['alter_reg_context']['pseudo'], 141)
+
+    def test_missing_or_unfinished_reload_context_is_rejected(self):
+        for replacement in (None, {}, {'pseudo': 141, 'from_pseudo': -1,
+                                      'function': 'example', 'completed': False}):
+            trace = self.reload_trace()
+            trace['allocation_events'][0]['alter_reg_context'] = replacement
+            with self.subTest(context=replacement), self.assertRaisesRegex(ValueError, 'reload caller context'):
+                tracer.validate_trace(trace)
+
+    def test_wrong_function_and_invalid_pseudo_values_are_rejected(self):
+        for key, value in (('function', 'other'), ('pseudo', True), ('pseudo', 70),
+                           ('pseudo', 65536), ('from_pseudo', -2), ('from_pseudo', False)):
+            trace = self.reload_trace()
+            trace['allocation_events'][0]['alter_reg_context'][key] = value
+            with self.subTest(key=key, value=value), self.assertRaisesRegex(ValueError, 'reload caller context'):
+                tracer.validate_trace(trace)
+
+    def test_non_reload_allocation_needs_no_pseudo_context(self):
+        trace = self.reload_trace()
+        event = trace['allocation_events'][0]
+        event['call_stack'] = ['assign_stack_local', 'reload']
+        event['alter_reg_context'] = None
+        self.assertEqual(tracer.validate_trace(trace), [event])
+
+    def test_unpinned_i386_compiler_is_rejected_before_debugger(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder).resolve()
+            compiler, source = root / 'cc1', root / 'candidate.c'
+            data = bytearray(24)
+            data[:6], data[18:20] = b'\x7fELF\x01\x01', (3).to_bytes(2, 'little')
+            compiler.write_bytes(data)
+            source.write_text('int example(void) { return 1; }')
+            with patch.object(tracer, 'ROOT', root), patch.object(tracer.sys, 'platform', 'linux'):
+                with patch.object(tracer.configure, 'CC', str(compiler)), patch.object(tracer.subprocess, 'run') as run:
+                    with self.assertRaisesRegex(ValueError, 'exact bundled compiler'):
+                        tracer.trace_candidate(source, root / '.decomp-lab/rejected')
+                    run.assert_not_called()
+
     def test_help_does_not_read_inputs_or_launch_a_debugger(self):
         with patch.object(tracer, 'trace_candidate', side_effect=AssertionError('unexpected compiler run')):
             with contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit) as result:
@@ -94,14 +144,14 @@ class CompilerStackTraceTests(unittest.TestCase):
                     Path(argv[argv.index('-o') + 1]).write_bytes(b'li $2,2\n' if '--batch' in argv else b'li $2,1\n')
                 if '--batch' in argv:
                     Path(kwargs['env']['LSD_STACK_TRACE_REPORT']).write_text(json.dumps({
-                        'compiler_exited': True, 'compiler_exit_code': 0,
+                        'schema_version': 2, 'compiler_exited': True, 'compiler_exit_code': 0,
                         'allocation_events': []}), encoding='utf-8')
                 return SimpleNamespace(returncode=0, stdout=b'preprocessed', stderr=b'')
 
             before = source.read_bytes(), compiler.read_bytes()
             with patch.object(tracer, 'ROOT', root), patch.object(tracer.sys, 'platform', 'linux'):
                 with patch.object(tracer.configure, 'CC', str(compiler)), patch.object(tracer.shutil, 'which', side_effect=lambda name: name):
-                    with patch.object(tracer.subprocess, 'run', side_effect=command_run), patch.object(tracer.subprocess, 'check_output', return_value='GDB test\n'):
+                    with patch.object(tracer, 'COMPILER_SHA256', hashlib.sha256(header).hexdigest()), patch.object(tracer.subprocess, 'run', side_effect=command_run), patch.object(tracer.subprocess, 'check_output', return_value='GDB test\n'):
                         with self.assertRaisesRegex(ValueError, 'changed assembly'):
                             tracer.trace_candidate(source, output)
             report = json.loads((output/'report.json').read_text(encoding='utf-8'))

@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-15T21:38:07.971270+00:00",
+  "scope": "Reproducible unaccepted sprite-scale source, completed reload caller observations and comment-only game-source cleanup. No C promotion or new native gameplay fixture.",
+  "public_files": {
+    ".gitattributes": "5a951cedf04a1751a2a9414d6b13cfd50374d83c79b8dbb02e68adb88dafe8e9",
+    "README.md": "cadd61e1abc1667457b4ac514d7df678dfa2716b76cbb950f776a2709a8ccfad",
+    "docs/UI_SCALE.md": "0f4ab615b62ffb48ada52cb6bdfecd3a81039e8aada696b8c8a97ad64a87f993",
+    "docs/features.json": "f0300347d64bc34a2c7b7679695ad7c5b77875a65e256419d73089d69f70b2e0",
+    "research/collision/compiler_stack_gdb.py": "393f2b02ef90ad3d84382bcdcd2aedfca02c7d636064f26c16edc5fde8acc21e",
+    "research/collision/trace_compiler_stack.py": "05226a290759358650001880ffe74ef8f13690a85e08ed6cc11f630409b9e2ca",
+    "research/ui_scale/README.md": "5e2fcd1c2111501826d90f50e02fa0f8b4a4eb205cf771a7fe241698a1c065aa",
+    "research/ui_scale/prepare_candidate.py": "e3195ac7f62fcfb3e09422b50f6835005e98dfc17f61691aa631f67eb604d875",
+    "research/ui_scale/scale_candidate.c": "8b4e3bdcc0a34b3a9c25f70d774d87d2aa83a76a06606e13421be06408eb2e26",
+    "src/menu/ui_sprite.c": "8fcd208c0b243ab9135caa6edb5e15f3647688b5dc3806d7700d0f10cc013b4a",
+    "tests/test_compiler_stack_trace.py": "e70cc4f5d8999ac794f139ed34c23127110f30f1f50e88709091b83f2ccf2357"
+  },
+  "private_evidence": [
+    {
+      "path": ".decomp-lab/ui-scale-public-source-20261015-first/validation.json",
+      "sha256": "14423f2a014bd4baaf4d93b59a7de8a65d7af8cc4974f8823b3e91a6f3ae6950"
+    },
+    {
+      "path": ".decomp-lab/ui-scale-source-progress-20261015-first.json",
+      "sha256": "4346df8d9584bfff1b6a5887c8048b02b9ea6b0075846d89f167948a8fc11174"
+    },
+    {
+      "path": ".decomp-lab/validate_ui_scale_public_20261015_first.py",
+      "sha256": "8386c148269197320f3132bec683b25ace31abd7acc2cf7ac944ec0a73d3839e"
+    },
+    {
+      "path": ".decomp-lab/ui-scale-source-tests-windows-20261015-first.log",
+      "sha256": "4db5c47b8818b40165199262b28c1d150a5394e5daead2333fc3009182e3e4e2"
+    },
+    {
+      "path": ".decomp-lab/ui-scale-source-tests-wsl-20261015-first.log",
+      "sha256": "7191c2403b38dc92dc79fa6dc15e244718ff986eccdee7b62f6fabde626c6d93"
+    },
+    {
+      "path": ".decomp-lab/ui-scale-halfword-increment-20261015-first/report.json",
+      "sha256": "adba1642e98d14dfc2a3a9b2d0b8da9f91731b0621bb2b9a511dfae6506043d5"
+    },
+    {
+      "path": ".decomp-lab/ui-scale-sum-forms-20261015-first/report.json",
+      "sha256": "e8190918bed9321c7d1c41122e0c1122aa20ffa6438fd7f1009b28de8ecd8118"
+    },
+    {
+      "path": ".decomp-lab/ui-scale-result-types-20261015-first/report.json",
+      "sha256": "110315202fcd5d615a678af0ac3d8386eb21b9e3eacf1aadd750d17752654f61"
+    },
+    {
+      "path": ".decomp-lab/ui-scale-value-snapshot-20261015-second/report.json",
+      "sha256": "2cd3aa41fb3fa3ab71c41a0ec7bcfff697962bd165063cdfe5666a6bb4807ceb"
+    },
+    {
+      "path": ".decomp-lab/ui-scale-success-subtract-20261015-first/report.json",
+      "sha256": "2d88ed56b33f79da54c079c038825e60479b2bcd6ffe67819748e84b35f309e1"
+    },
+    {
+      "path": ".decomp-lab/ui-scale-value-snapshot-20261015-first/report.json",
+      "sha256": "8b73b91c0f2716fabc98388b00838319ad11a944ee0a17213750cdbaf3749a25"
+    },
+    {
+      "path": ".decomp-lab/ui-scale-public-closest-reload-20261015-first/report.json",
+      "sha256": "bb0d1014b5a16cbf36861e6588433e5b24c77b9ee59d9d28d28388cfb42adfe1"
+    },
+    {
+      "path": ".decomp-lab/ui-scale-public-halfword-increment-control-reload-20261015-first/report.json",
+      "sha256": "215645a128400714004894872e635e24b6f486b2b3f7e8564e91e4de9ab7c247"
+    },
+    {
+      "path": ".decomp-lab/ui-scale-zero-context-controls-20261015-first/g0/report.json",
+      "sha256": "ae071116431da199073dd1135d019226b8c08824a7cebbec58945733092a3b95"
+    },
+    {
+      "path": ".decomp-lab/ui-scale-zero-context-controls-20261015-first/g8/report.json",
+      "sha256": "048c4b0327da8b948322f95b419d6093cc50469f85f9e29a6fe6ce3b9087dcfc"
+    }
+  ],
+  "candidate": {
+    "function": "func_8004441C",
+    "function_bytes": 560,
+    "image_differing_bytes": 12,
+    "function_sha256": "9a28591790da1cc3cc7158618e233593cb99c42fa4ee00fed0815068e0110a14",
+    "image_sha256": "4da5c0e0c3efaf90d2059cd77fd88a786d7adc1596e312fafd6fde7c50d78441",
+    "identical_to_historical_native_validated_image": true,
+    "new_native_cases": 0,
+    "source_promoted": false
+  },
+  "compiler_observations": [
+    {
+      "label": "closest",
+      "trace_schema_version": 2,
+      "complete_assembly_equal": true,
+      "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+      "allocations": [
+        {
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "mode_number": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 141,
+            "from_pseudo": -1,
+            "function": "func_8004441C",
+            "completed": true
+          }
+        },
+        {
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "mode_number": 4,
+          "frame_offset_before": 8,
+          "frame_offset_after": 16,
+          "alter_reg_context": {
+            "pseudo": 155,
+            "from_pseudo": -1,
+            "function": "func_8004441C",
+            "completed": true
+          }
+        }
+      ]
+    },
+    {
+      "label": "halfword-increment-control",
+      "trace_schema_version": 2,
+      "complete_assembly_equal": true,
+      "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+      "allocations": []
+    }
+  ],
+  "synthetic_zero_context_controls": [
+    {
+      "mode": "g0",
+      "allocation_events": 1,
+      "reload_caller_contexts": 0,
+      "complete_assembly_equal": true
+    },
+    {
+      "mode": "g8",
+      "allocation_events": 1,
+      "reload_caller_contexts": 0,
+      "complete_assembly_equal": true
+    }
+  ],
+  "qualified_source_studies": [
+    {
+      "name": "halfword_increment_interface",
+      "comparison_kind": "complete_unit",
+      "comparisons": 13,
+      "repeated_controls": 1,
+      "source_forms": 12,
+      "exact_matches": 0,
+      "report": ".decomp-lab/ui-scale-halfword-increment-20261015-first/report.json",
+      "report_sha256": "adba1642e98d14dfc2a3a9b2d0b8da9f91731b0621bb2b9a511dfae6506043d5"
+    },
+    {
+      "name": "sum_expressions_and_qualifiers",
+      "comparison_kind": "complete_linked_function",
+      "comparisons": 10,
+      "repeated_controls": 1,
+      "source_forms": 9,
+      "exact_matches": 0,
+      "report": ".decomp-lab/ui-scale-sum-forms-20261015-first/report.json",
+      "report_sha256": "e8190918bed9321c7d1c41122e0c1122aa20ffa6438fd7f1009b28de8ecd8118"
+    },
+    {
+      "name": "result_representations",
+      "comparison_kind": "complete_linked_function",
+      "comparisons": 15,
+      "repeated_controls": 1,
+      "source_forms": 14,
+      "exact_matches": 0,
+      "report": ".decomp-lab/ui-scale-result-types-20261015-first/report.json",
+      "report_sha256": "110315202fcd5d615a678af0ac3d8386eb21b9e3eacf1aadd750d17752654f61"
+    },
+    {
+      "name": "consumed_value_snapshots",
+      "comparison_kind": "complete_linked_function",
+      "comparisons": 9,
+      "repeated_controls": 1,
+      "source_forms": 8,
+      "exact_matches": 0,
+      "report": ".decomp-lab/ui-scale-value-snapshot-20261015-second/report.json",
+      "report_sha256": "2cd3aa41fb3fa3ab71c41a0ec7bcfff697962bd165063cdfe5666a6bb4807ceb"
+    },
+    {
+      "name": "narrowed_subtraction",
+      "comparison_kind": "complete_linked_function",
+      "comparisons": 7,
+      "repeated_controls": 1,
+      "source_forms": 6,
+      "exact_matches": 0,
+      "report": ".decomp-lab/ui-scale-success-subtract-20261015-first/report.json",
+      "report_sha256": "2d88ed56b33f79da54c079c038825e60479b2bcd6ffe67819748e84b35f309e1"
+    }
+  ],
+  "excluded_parser_failures": 8,
+  "matching_build": {
+    "objects_expected": 306,
+    "objects_found": 306,
+    "build_current": true,
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 97.14874544799711,
+    "binary_match": "verified",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+  },
+  "game_source_change": {
+    "path": "src/menu/ui_sprite.c",
+    "comments_only": true,
+    "noncomment_text_equal_after_whitespace_normalization": true,
+    "previous_sha256": "2241eed19864e16042d63cab0cb43fc4b9248ef78f062ea3de0858897dd85a94",
+    "current_sha256": "8fcd208c0b243ab9135caa6edb5e15f3647688b5dc3806d7700d0f10cc013b4a"
+  },
+  "other_protected_inputs_retained": 391,
+  "current_protected_inputs": 392,
+  "historical_inventory_nodes_preserved": true,
+  "local_tooling_tests": {
+    "windows": {
+      "tests_run": 519,
+      "skipped": 0,
+      "failed": 0
+    },
+    "wsl": {
+      "tests_run": 519,
+      "skipped": 2,
+      "failed": 0
+    }
+  },
+  "current_counts": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 20,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "model_API_calls": 0,
+  "limitations": [
+    "The candidate still differs in four instructions; the original function remains assembly.",
+    "Observed compiler spills explain this candidate, not the original author source.",
+    "Zero-denominator increment paths retain an uninitialized C ratio hypothesis; no portable defined API is claimed.",
+    "No new natural gameplay, complete encounter, feature, audio or hardware timing acceptance."
+  ]
+}

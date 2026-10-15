@@ -17,6 +17,8 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 import configure
 
+COMPILER_SHA256 = '3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab'
+
 
 def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -51,6 +53,17 @@ def validate_trace(trace):
                 or event.get('allocator') not in ('assign_stack_local', 'assign_stack_temp')
                 or 'frame_offset_after' not in event):
             raise ValueError('GDB reported an incomplete or invalid stack allocation event.')
+        if trace.get('schema_version') == 2:
+            frames = event.get('call_stack')
+            context = event.get('alter_reg_context')
+            if not isinstance(frames, list) or ('alter_reg' in frames and context is None):
+                raise ValueError('GDB omitted a reload caller context.')
+            if context is not None and (
+                    not isinstance(context, dict) or context.get('completed') is not True
+                    or context.get('function') != event['function']
+                    or type(context.get('pseudo')) is not int or not 71 <= context['pseudo'] < 65536
+                    or type(context.get('from_pseudo')) is not int or not -1 <= context['from_pseudo'] < 65536):
+                raise ValueError('GDB reported an incomplete or invalid reload caller context.')
     return events
 
 
@@ -65,6 +78,8 @@ def trace_candidate(source, output, compiler_mode='g8'):
         raise ValueError('Compiler mode must be g0 or g8.')
     compiler = Path(configure.CC).resolve(strict=True)
     profile = compiler_profile(compiler)
+    if profile['sha256'] != COMPILER_SHA256:
+        raise ValueError('Reload argument decoding requires the exact bundled compiler SHA-256.')
     gdb = shutil.which('gdb')
     cpp = shutil.which(configure.CROSS + 'cpp')
     if not gdb or not cpp:
@@ -99,6 +114,8 @@ def trace_candidate(source, output, compiler_mode='g8'):
     run('gdb-compiler', [gdb, '--batch', '--quiet', '-x', str(backend), '--args',
                         str(compiler), *flags, '-o', str(traced_assembly), str(preprocessed)], env)
     trace = json.loads((output / 'allocations.json').read_text(encoding='utf-8'))
+    if trace.get('schema_version') != 2:
+        raise ValueError('The stack observer omitted the reload caller schema.')
     events = validate_trace(trace)
     assembly_equal = normal_assembly.read_bytes() == traced_assembly.read_bytes()
     inputs_preserved = all(digest(path) == expected for path, expected in baseline.items())
@@ -112,6 +129,8 @@ def trace_candidate(source, output, compiler_mode='g8'):
         'configuration_sha256': baseline[str(configuration)],
         'gdb_version': subprocess.check_output([gdb, '--version'], text=True).splitlines()[0],
         'allocation_events': len(events),
+        'trace_schema_version': 2,
+        'reload_caller_contexts': sum(event.get('alter_reg_context') is not None for event in events),
         'functions': sorted({event['function'] for event in events}),
         'complete_assembly_equal': assembly_equal,
         'normal_assembly_sha256': digest(normal_assembly),
