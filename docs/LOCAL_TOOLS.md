@@ -33,6 +33,11 @@ controller/native fields, card allocation and the complete restored payload.
 The [round-trip guide](CARD_ROUNDTRIP.md) gives the commands and acceptance
 boundary. Both tools make zero model API calls and preserve original play data.
 
+For a formatted empty card, select `--phase load --card-kind empty` and use
+`tools/compare_empty_card_load.py`. Its [profile guide](EMPTY_CARD_LOAD.md)
+records the not-found route, exact card-header write and unresolved full-state
+difference. A matching game buffer does not override that state check.
+
 ## Windows build helper
 
 For interactive play, use the Python [matching-game launcher](PLAYING.md).

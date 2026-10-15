@@ -44,7 +44,8 @@ def preserve_saves(save_root, folder):
     return {'files_preserved': records, 'shared_save_ram_empty': not any(p.is_file() for p in save_root.rglob('*'))}
 
 
-def capture_pair(workspace, original_cue, rebuilt_cue, emulator_root, bios_root, phase, state=None, card=None):
+def capture_pair(workspace, original_cue, rebuilt_cue, emulator_root, bios_root, phase, state=None, card=None,
+                 card_kind='persisted'):
     if sys.platform != 'win32':
         raise ValueError('This capture launcher requires Windows and BizHawk 2.11.1.')
     workspace = Path(workspace).resolve()
@@ -53,6 +54,8 @@ def capture_pair(workspace, original_cue, rebuilt_cue, emulator_root, bios_root,
     if phase not in ('save', 'load') or (phase == 'save' and (state is None or card is not None)) or (
             phase == 'load' and (card is None or state is not None)):
         raise ValueError('Save requires --state; cold Load requires --card and no state.')
+    if card_kind not in ('persisted', 'empty') or (phase != 'load' and card_kind != 'persisted'):
+        raise ValueError('The empty-card profile requires a cold Load.')
     runtime, bios = [Path(p).resolve(strict=True) for p in (emulator_root, bios_root)]
     cues = [Path(p).resolve(strict=True) for p in (original_cue, rebuilt_cue)]
     state = Path(state).resolve(strict=True) if state is not None else None
@@ -67,7 +70,11 @@ def capture_pair(workspace, original_cue, rebuilt_cue, emulator_root, bios_root,
         raise ValueError('A disc executable differs from the canonical build.')
     seed = card.read_bytes() if card else None
     if seed is not None:
-        lsd_payload(seed)
+        if card_kind == 'empty':
+            from tools.compare_empty_card_load import validate_empty_card
+            validate_empty_card(seed)
+        else:
+            lsd_payload(seed)
     for path in (runtime / 'EmuHawk.exe', *(bios / name for name in ('scph5500.bin', 'scph5501.BIN', 'scph5502.BIN'))):
         if not path.is_file():
             raise ValueError('Missing capture input: ' + str(path))
@@ -146,9 +153,11 @@ def main(argv=None):
     parser.add_argument('--phase', choices=('save', 'load'), required=True)
     parser.add_argument('--state', type=Path)
     parser.add_argument('--card', type=Path)
+    parser.add_argument('--card-kind', choices=('persisted', 'empty'), default='persisted',
+                        help='Cold Load input: saved slot 01 (default) or a formatted empty card.')
     args = parser.parse_args(argv)
     capture_pair(args.workspace, args.original_cue, args.rebuilt_cue, args.emulator_root, args.bios_root,
-                 args.phase, args.state, args.card)
+                 args.phase, args.state, args.card, args.card_kind)
     return 0
 
 

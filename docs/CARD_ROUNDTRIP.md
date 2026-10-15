@@ -51,7 +51,7 @@ it does not claim direct instruction-entry tracing.
 
 The [writer recovery](CARD_WRITER_RECOVERY.md) and [bounded save checks](CARD_SAVE.md)
 retain their earlier scopes. File allocation follows the
-[PSX-SPX memory-card format](https://psx-spx.consoledev.net/dev/ps1/sio/controllersandmemorycards/memory-card-data-format/).
+[PSX-SPX memory-card format reference](https://psx-spx.consoledev.net/psx-spx.pdf).
 
 ## Reproduce with local game inputs
 

@@ -7,6 +7,11 @@ restored after restart. Its fixed recorders, isolated capture command and
 dedicated comparator preserve the distinction between a warm starting Save,
 cold boot for Load, repeated checks, and whole-card/feature acceptance.
 
+The [empty-card Load investigation](EMPTY_CARD_LOAD.md) adds an explicit
+not-found case. Its game buffers and controller records agree, but eight
+core-state bytes differ. The full-state gate remains unsuccessful; these
+observations do not extend the successful round-trip result to all card paths.
+
 This developer workflow records an emulator-local input sequence, then compares
 the original disc with a separately packaged matching build. It preserves the
 original game and measures only the recorded scenario. Optional mods require

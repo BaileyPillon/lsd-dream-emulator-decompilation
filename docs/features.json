@@ -20960,6 +20960,52 @@
         "developer_capability_categories": 10,
         "optional_mods": 3
       }
+    },
+    "empty_card_load_20261015": {
+      "date": "2026-10-15",
+      "metadata": "docs/empty-card-load-checks.json",
+      "scope": "One not-found route with two formatted empty-card inputs. Game buffers agree; full state comparison remains unsuccessful.",
+      "input_profiles": 2,
+      "not_found_route_profiles": 1,
+      "frames_each": 6000,
+      "observed_columns": 135,
+      "full_checkpoints_each_input": 16,
+      "recorded_game_buffers_and_inputs_equal": true,
+      "complete_state_members_equal": false,
+      "state_bytes_masked": 0,
+      "tooling_tests_passed": 488,
+      "new_c_bytes": 0,
+      "whole_feature_groups_accepted": 0,
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_game_assembly_functions": 9,
+        "inherited_unused_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "groups_with_listed_core_functions_in_c": 35,
+        "whole_feature_groups_accepted": 0,
+        "npc_callbacks_with_c_bodies": 107,
+        "npc_callbacks_catalogued": 107,
+        "bounded_native_callback_profiles": 20,
+        "whole_npc_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_game_assembly_functions": 9,
+        "inherited_unused_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "groups_with_listed_core_functions_in_c": 35,
+        "whole_feature_groups_accepted": 0,
+        "npc_callbacks_with_c_bodies": 107,
+        "npc_callbacks_catalogued": 107,
+        "bounded_native_callback_profiles": 20,
+        "whole_npc_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      }
     }
   }
 }
