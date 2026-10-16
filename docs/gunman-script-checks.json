@@ -1,0 +1,2959 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-16T14:54:55.544948+00:00",
+  "repository": "https://github.com/BaileyPillon/lsd-dream-emulator-decompilation",
+  "repository_before": "6ee0035a84d4ed2a77cdce16bff77275e575418c",
+  "scope": "Original Gunman and Gunman Victim scripts with bounded native effect arithmetic; no original behavior added or whole-encounter acceptance.",
+  "public_files": {
+    "README.md": "b5334b48f1488cd94b86061953d64dfc0f929fdf4fd12e61cc67fe51e300ca4f",
+    "CHANGELOG.md": "f15ef3058b0df710bd25fe8211a00bcb2d62bdc9e3777c75f1d01dd86b9fc9b8",
+    "docs/FEATURE_INVENTORY.md": "43f942b5c882f4c468fde0f31f9f16b4d88f58c67f023b3a035988e5967829d2",
+    "docs/PROVENANCE.md": "d20911c2f9a74a43ce9d6d91b1dd75bdd37ef6e66e7ab70e494698a819c00744",
+    "docs/ROADMAP.md": "a643bfc1a518c9daa6eb1695c19e21daab88b93088210ff64985cef3ece4e673",
+    "docs/GUNMAN_SCRIPTS.md": "ff3d81580d78d15635539f48ada9eb9d45206cb287f5b72997d5e510cd0b8b8f",
+    "docs/gunman-function-ranges.json": "8a310d710b22cfc1d58a4a65a4f83a5dc6d6c0f1d9ef922b2c4cd4e44c9f3e39",
+    "docs/features.json": "966535cbbfa898a6af0e31ea8d8cd56bd123719a83b02b81eb31cfb93cc0413f",
+    "tools/verify_gunman_scripts.py": "6bb82b12a0570ec7448edf11f45c50f1f93e0de7622ea404bde22b11cfcce5d5",
+    "tests/test_gunman_scripts.py": "39b2a21b384e4dd4c9bf25483b0c0c9627eac4681de1a4aedd0a6ad93bbc8210",
+    ".gitattributes": "e69b5d4f7ded905a2af0b4e63571aef7436e6f06169ae46ae26df3321c5d450b"
+  },
+  "native_report_reference": ".decomp-lab/gunman-native-20261016-second/report.json",
+  "native_report_sha256": "22b2750f421f2e96a8dd6415181bb36f61d381f0a56ceaee0b3ced3b6c79450d",
+  "native_comparison": {
+    "status": "passed_bounded_original_gunman_scripts",
+    "profiles": {
+      "entity_gunman": {
+        "native_cases": 34847,
+        "groups": {
+          "state_input_and_phase_boundaries": 1440,
+          "initial_animation_and_completion": 63,
+          "player_callback_clear_modes": 36,
+          "native_effect_factory_activation_and_words": 540,
+          "all_first_rng_results": 32768
+        },
+        "resulting_states": {
+          "-1": 180,
+          "0": 222,
+          "1": 288,
+          "10": 43,
+          "12": 134,
+          "11": 330,
+          "13": 666,
+          "14": 32984
+        },
+        "actual_native_entry_counts": {
+          "entity_gunman": 34847,
+          "entity_set_aim_pose": 395,
+          "dream_sys_get_action_pressed": 84,
+          "dream_sys_clear_callbacks": 132,
+          "dream_sys_set_move_callback": 132,
+          "dream_sys_set_view_callback": 132,
+          "entity_create_effect": 354,
+          "func_8001D1A4": 300,
+          "effect_set_color_step": 300,
+          "effect_start": 216,
+          "effect_activate": 192,
+          "func_80040714": 192,
+          "func_8001EDAC": 576,
+          "func_80040740": 192,
+          "func_800406E4": 192,
+          "func_8004076C": 192,
+          "func_80040790": 192,
+          "entity_set_fall_pose": 32912,
+          "entity_stop_behaviour": 108,
+          "func_800662B4": 129,
+          "func_80066148": 108,
+          "effect_start_attached": 84,
+          "rand": 32804,
+          "dream_sys_set_view_mode": 6
+        }
+      },
+      "entity_gunman_victim": {
+        "native_cases": 1491,
+        "groups": {
+          "victim_animation_and_phase_boundaries": 1440,
+          "victim_wrapped_duration_completion": 51
+        },
+        "resulting_states": {
+          "0": 387,
+          "1": 402,
+          "10": 351,
+          "14": 351
+        },
+        "actual_native_entry_counts": {
+          "entity_gunman_victim": 1491,
+          "func_800662B4": 660,
+          "entity_set_fall_pose": 497,
+          "func_800662A8": 99,
+          "entity_stop_behaviour": 51,
+          "func_80066148": 51
+        }
+      }
+    },
+    "native_functions": [
+      {
+        "function": "dream_sys_clear_callbacks",
+        "address": "0x800595A8",
+        "bytes": 104,
+        "sha256": "fedcd6413050a1e563cb90214529e50b9a045b6f47e0f1dc93dd3a84f424422b"
+      },
+      {
+        "function": "dream_sys_get_action_pressed",
+        "address": "0x8005931C",
+        "bytes": 12,
+        "sha256": "bc9d9a4597fc5c324c34fb0acc7dc1596cd1a7b617fc46f0fd1b7f63d9bf4061"
+      },
+      {
+        "function": "dream_sys_set_move_callback",
+        "address": "0x800596E8",
+        "bytes": 216,
+        "sha256": "e0911b100ce2b5e6a7ea7d27d2516f24c0bd02b0c26cd3acecebdb3925323b78"
+      },
+      {
+        "function": "dream_sys_set_view_callback",
+        "address": "0x8005966C",
+        "bytes": 124,
+        "sha256": "8c1ddc757452838059838a6a588c8b41d57dcd14ce20c3f85e024e4112fd3a1f"
+      },
+      {
+        "function": "dream_sys_set_view_mode",
+        "address": "0x8005A134",
+        "bytes": 52,
+        "sha256": "72d3ee63800701f2a93f94297d166183be0fcc9775ce13a37c19f532d7294345"
+      },
+      {
+        "function": "effect_activate",
+        "address": "0x80040154",
+        "bytes": 412,
+        "sha256": "6bed0eb29f6c97e99183d1d272234e099e1199b138f05ab43ea67ee0245b4fde"
+      },
+      {
+        "function": "effect_set_color_step",
+        "address": "0x8004001C",
+        "bytes": 8,
+        "sha256": "dea8127e64d9c93d9a4df51d3c54e9747090fea982aea0c75be5609a7b895eef"
+      },
+      {
+        "function": "effect_start",
+        "address": "0x80040024",
+        "bytes": 140,
+        "sha256": "103995793cb7706b9b53835e04afe0c65df685a77706d6ef75f3d74ee248f50f"
+      },
+      {
+        "function": "effect_start_attached",
+        "address": "0x800400B0",
+        "bytes": 164,
+        "sha256": "ae24e1376ab1024cbc165469bc30158d3113607aac56d6331e7ca99bd7f1fe2b"
+      },
+      {
+        "function": "entity_create_effect",
+        "address": "0x8005D108",
+        "bytes": 228,
+        "sha256": "0f497b7b3419abfad4ef1524623f5645fd161a8c84af680154615202d30f6723"
+      },
+      {
+        "function": "entity_gunman",
+        "address": "0x80063874",
+        "bytes": 844,
+        "sha256": "47ad62adaf1470ed9b9609978daee0e14213bfec07790ef6c07263201e7ca7df"
+      },
+      {
+        "function": "entity_gunman_victim",
+        "address": "0x80063BC0",
+        "bytes": 196,
+        "sha256": "1df0383f7eeba0ec72bf1b0c7ecbf7c014456080eb466403bf3fecb827d4e0e5"
+      },
+      {
+        "function": "entity_set_aim_pose",
+        "address": "0x80063C84",
+        "bytes": 40,
+        "sha256": "b4459d5c3f861e1e0d8a807cf69e4cf27df755ef1549f62a4485f3e00554dbca"
+      },
+      {
+        "function": "entity_set_fall_pose",
+        "address": "0x80063CAC",
+        "bytes": 28,
+        "sha256": "912ded74ab16a5c363d9bbc5e8adef60438fc3d0c06dcb2b7b12ca638868cdcb"
+      },
+      {
+        "function": "entity_stop_behaviour",
+        "address": "0x8005DB8C",
+        "bytes": 100,
+        "sha256": "4fa7621002bfabe6bf1c105adc34415e5f321cde133ecbc8dc1a00aee60dcaf0"
+      },
+      {
+        "function": "func_8001D1A4",
+        "address": "0x8001D1A4",
+        "bytes": 96,
+        "sha256": "01d1e2eb0c36882c91c2b5ad8d9751361591fa66a04698d46d5e913e4e20c861"
+      },
+      {
+        "function": "func_8001EDAC",
+        "address": "0x8001EDAC",
+        "bytes": 88,
+        "sha256": "685cff5de3228050301baf2343de332f6b5d8f6e3792817177b649ff16605923"
+      },
+      {
+        "function": "func_800406E4",
+        "address": "0x800406E4",
+        "bytes": 48,
+        "sha256": "4671776de1b365e341212036b5fa04def7aa9ce7f63df994770582798aec3c5b"
+      },
+      {
+        "function": "func_80040714",
+        "address": "0x80040714",
+        "bytes": 44,
+        "sha256": "043d7aa6fe81cde4dce2603fb708ffaceb335ce68c963c64c444d6508ce5bd68"
+      },
+      {
+        "function": "func_80040740",
+        "address": "0x80040740",
+        "bytes": 44,
+        "sha256": "616e8ad945b7f1420b1cbccacc5b45e508cf4839d27d5ae8d63e9d9aa3fad379"
+      },
+      {
+        "function": "func_8004076C",
+        "address": "0x8004076C",
+        "bytes": 36,
+        "sha256": "994f17fc9f20e7c175b804a58f5375b5291399d80558bb9ca079cedbe033a83e"
+      },
+      {
+        "function": "func_80040790",
+        "address": "0x80040790",
+        "bytes": 104,
+        "sha256": "1cc201176ef51cd291478bad1023781cd5aa7eb58387da6bbb76cff36c09919f"
+      },
+      {
+        "function": "func_80066148",
+        "address": "0x80066148",
+        "bytes": 8,
+        "sha256": "d9dfabd9e6747c7995e1c7196bfc94f3f7afbb7969fabd491b62b77a117875e4"
+      },
+      {
+        "function": "func_800662A8",
+        "address": "0x800662A8",
+        "bytes": 12,
+        "sha256": "6c0fd7bd7af3e46186f01ef889ddcf38378eac84bdf2a34797ff4cc5eb546d8d"
+      },
+      {
+        "function": "func_800662B4",
+        "address": "0x800662B4",
+        "bytes": 8,
+        "sha256": "9551f2e22426c0ef38657b0ae7289d100e7d495c6f17cd81cbc78cddb68f81ee"
+      },
+      {
+        "function": "rand",
+        "address": "0x80049480",
+        "bytes": 40,
+        "sha256": "4c54a1210ed147afe9b02657c9b12bdec5bb62c5584a2a9fef212567d0e04c0c"
+      }
+    ],
+    "actual_native_entry_counts": {
+      "entity_gunman": 34958,
+      "entity_set_aim_pose": 419,
+      "dream_sys_get_action_pressed": 96,
+      "dream_sys_clear_callbacks": 141,
+      "dream_sys_set_move_callback": 141,
+      "dream_sys_set_view_callback": 141,
+      "entity_create_effect": 372,
+      "func_8001D1A4": 312,
+      "effect_set_color_step": 312,
+      "effect_start": 222,
+      "effect_activate": 198,
+      "func_80040714": 198,
+      "func_8001EDAC": 594,
+      "func_80040740": 198,
+      "func_800406E4": 198,
+      "func_8004076C": 198,
+      "func_80040790": 198,
+      "entity_set_fall_pose": 33424,
+      "entity_stop_behaviour": 165,
+      "func_800662B4": 813,
+      "func_80066148": 165,
+      "effect_start_attached": 90,
+      "rand": 32813,
+      "dream_sys_set_view_mode": 15,
+      "entity_gunman_victim": 1506,
+      "func_800662A8": 102
+    },
+    "dependency_contracts": [
+      "allocate_effect",
+      "effect_attach",
+      "effect_bind",
+      "forward",
+      "notification",
+      "orientation",
+      "rotation",
+      "sound_stop"
+    ],
+    "callback_bindings": {
+      "entity_gunman": [
+        {
+          "index": 85,
+          "record_sha256": "a27161e361ead2b77f2fb24a406aed6fe1070cd311b013fa87b5d9bfd7fc14cd"
+        }
+      ],
+      "entity_gunman_victim": [
+        {
+          "index": 86,
+          "record_sha256": "b25992884925ee3b47ffbb4d52d0f6f9899ea47b66e76df9c0c9b3f13774b78b"
+        }
+      ]
+    },
+    "property_table_sha256": "209e6f5d82ab17604cbf2ad16ef1bec624f89c61bdf9d1a3d24905527c47424a",
+    "backend_identity": {
+      "package_version": "2.1.4",
+      "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+      "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+    },
+    "negative_controls_detected": [
+      {
+        "kind": "wrong_initial_duration_field",
+        "function": "entity_gunman",
+        "callback": "entity_gunman",
+        "function_offset": 64,
+        "address": "0x800638b4",
+        "expected_word": "0x8e020080",
+        "changed_word": "0x8e020084",
+        "changed_instruction_executions": 1,
+        "changed_checked_fields": [
+          "entity",
+          "trace"
+        ],
+        "scope": "Separate private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_action_window",
+        "function": "entity_gunman",
+        "callback": "entity_gunman",
+        "function_offset": 132,
+        "address": "0x800638f8",
+        "expected_word": "0x2842000a",
+        "changed_word": "0x2842000b",
+        "changed_instruction_executions": 1,
+        "changed_checked_fields": [
+          "entity",
+          "dream",
+          "context",
+          "trace"
+        ],
+        "scope": "Separate private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_fall_boundary",
+        "function": "entity_gunman",
+        "callback": "entity_gunman",
+        "function_offset": 460,
+        "address": "0x80063a40",
+        "expected_word": "0x2862005a",
+        "changed_word": "0x2862005b",
+        "changed_instruction_executions": 1,
+        "changed_checked_fields": [
+          "entity",
+          "context",
+          "rng_seed",
+          "trace"
+        ],
+        "scope": "Separate private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_aim_command_destination",
+        "function": "entity_set_aim_pose",
+        "callback": "entity_gunman",
+        "function_offset": 12,
+        "address": "0x80063c90",
+        "expected_word": "0xac83001c",
+        "changed_word": "0xac830020",
+        "changed_instruction_executions": 1,
+        "changed_checked_fields": [
+          "context"
+        ],
+        "scope": "Separate private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_victim_completion",
+        "function": "entity_gunman_victim",
+        "callback": "entity_gunman_victim",
+        "function_offset": 128,
+        "address": "0x80063c40",
+        "expected_word": "0x2442000a",
+        "changed_word": "0x2442000b",
+        "changed_instruction_executions": 1,
+        "changed_checked_fields": [
+          "entity",
+          "trace"
+        ],
+        "scope": "Separate private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_victim_frame_field",
+        "function": "entity_gunman_victim",
+        "callback": "entity_gunman_victim",
+        "function_offset": 96,
+        "address": "0x80063c20",
+        "expected_word": "0x8e030084",
+        "changed_word": "0x8e030080",
+        "changed_instruction_executions": 1,
+        "changed_checked_fields": [
+          "context",
+          "trace"
+        ],
+        "scope": "Separate private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_effect_step_destination",
+        "function": "effect_set_color_step",
+        "callback": "entity_gunman",
+        "function_offset": 4,
+        "address": "0x80040020",
+        "expected_word": "0xac850074",
+        "changed_word": "0xac850078",
+        "changed_instruction_executions": 1,
+        "changed_checked_fields": [
+          "effect"
+        ],
+        "scope": "Separate private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_effect_flag_destination",
+        "function": "func_8001EDAC",
+        "callback": "entity_gunman",
+        "function_offset": 72,
+        "address": "0x8001edf4",
+        "expected_word": "0xad230000",
+        "changed_word": "0xad230004",
+        "changed_instruction_executions": 3,
+        "changed_checked_fields": [
+          "effect"
+        ],
+        "scope": "Separate private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_rng_multiplier",
+        "function": "rand",
+        "callback": "entity_gunman",
+        "function_offset": 8,
+        "address": "0x80049488",
+        "expected_word": "0x34634e6d",
+        "changed_word": "0x34634e6e",
+        "changed_instruction_executions": 1,
+        "changed_checked_fields": [
+          "rng_seed"
+        ],
+        "scope": "Separate private Unicorn memory only."
+      },
+      {
+        "kind": "wrong_view_reset_destination",
+        "function": "dream_sys_set_view_mode",
+        "callback": "entity_gunman",
+        "function_offset": 12,
+        "address": "0x8005a140",
+        "expected_word": "0xac4000c4",
+        "changed_word": "0xac4000c0",
+        "changed_instruction_executions": 1,
+        "changed_checked_fields": [
+          "dream"
+        ],
+        "scope": "Separate private Unicorn memory only."
+      },
+      {
+        "kind": "truncated_action_word",
+        "function": "dream_sys_get_action_pressed",
+        "callback": "entity_gunman",
+        "function_offset": 0,
+        "address": "0x8005931c",
+        "expected_word": "0x8c820074",
+        "changed_word": "0x94820074",
+        "changed_instruction_executions": 1,
+        "changed_checked_fields": [
+          "entity",
+          "context",
+          "trace"
+        ],
+        "scope": "Separate private Unicorn memory only."
+      }
+    ],
+    "histories": [
+      {
+        "callback": "entity_gunman",
+        "name": "action_taken-0",
+        "script_invocations": 4,
+        "submitted_inputs": [
+          {
+            "state": 0,
+            "tick": 5,
+            "frame": 5,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 6,
+            "duration": 5,
+            "action": 1,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 9,
+            "frame": 9,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 10,
+            "frame": 10,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 85
+          }
+        ],
+        "final_state": 1,
+        "actual_native_entry_counts": {
+          "entity_gunman": 4,
+          "entity_set_aim_pose": 2,
+          "func_800662B4": 2,
+          "dream_sys_get_action_pressed": 1,
+          "entity_set_fall_pose": 1,
+          "entity_stop_behaviour": 1,
+          "func_80066148": 1
+        }
+      },
+      {
+        "callback": "entity_gunman",
+        "name": "timeout-existing-0",
+        "script_invocations": 11,
+        "submitted_inputs": [
+          {
+            "state": 0,
+            "tick": 5,
+            "frame": 5,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 9,
+            "frame": 6,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 10,
+            "frame": 7,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 8,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 29,
+            "frame": 9,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 10,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 11,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 12,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 89,
+            "frame": 13,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 90,
+            "frame": 14,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 91,
+            "frame": 15,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          }
+        ],
+        "final_state": 14,
+        "actual_native_entry_counts": {
+          "entity_gunman": 11,
+          "entity_set_aim_pose": 2,
+          "func_800662B4": 1,
+          "dream_sys_get_action_pressed": 1,
+          "dream_sys_clear_callbacks": 1,
+          "dream_sys_set_move_callback": 1,
+          "dream_sys_set_view_mode": 1,
+          "dream_sys_set_view_callback": 1,
+          "entity_create_effect": 2,
+          "func_8001D1A4": 2,
+          "effect_set_color_step": 2,
+          "effect_start": 1,
+          "effect_activate": 1,
+          "func_80040714": 1,
+          "func_8001EDAC": 3,
+          "func_80040740": 1,
+          "func_800406E4": 1,
+          "func_8004076C": 1,
+          "func_80040790": 1,
+          "effect_start_attached": 1,
+          "entity_set_fall_pose": 1,
+          "rand": 1
+        }
+      },
+      {
+        "callback": "entity_gunman",
+        "name": "timeout-allocate-0",
+        "script_invocations": 11,
+        "submitted_inputs": [
+          {
+            "state": 0,
+            "tick": 5,
+            "frame": 5,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 9,
+            "frame": 6,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 10,
+            "frame": 7,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 8,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 29,
+            "frame": 9,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 10,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 11,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 12,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 89,
+            "frame": 13,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 90,
+            "frame": 14,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 91,
+            "frame": 15,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          }
+        ],
+        "final_state": 14,
+        "actual_native_entry_counts": {
+          "entity_gunman": 11,
+          "entity_set_aim_pose": 2,
+          "func_800662B4": 1,
+          "dream_sys_get_action_pressed": 1,
+          "dream_sys_clear_callbacks": 1,
+          "dream_sys_set_move_callback": 1,
+          "dream_sys_set_view_mode": 1,
+          "dream_sys_set_view_callback": 1,
+          "entity_create_effect": 2,
+          "func_8001D1A4": 2,
+          "effect_set_color_step": 2,
+          "effect_start": 1,
+          "effect_activate": 1,
+          "func_80040714": 1,
+          "func_8001EDAC": 3,
+          "func_80040740": 1,
+          "func_800406E4": 1,
+          "func_8004076C": 1,
+          "func_80040790": 1,
+          "effect_start_attached": 1,
+          "entity_set_fall_pose": 1,
+          "rand": 1
+        }
+      },
+      {
+        "callback": "entity_gunman",
+        "name": "timeout-fail-0",
+        "script_invocations": 11,
+        "submitted_inputs": [
+          {
+            "state": 0,
+            "tick": 5,
+            "frame": 5,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 9,
+            "frame": 6,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 10,
+            "frame": 7,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 8,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 29,
+            "frame": 9,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 10,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 11,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 12,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 89,
+            "frame": 13,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 90,
+            "frame": 14,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 91,
+            "frame": 15,
+            "duration": 5,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          }
+        ],
+        "final_state": 14,
+        "actual_native_entry_counts": {
+          "entity_gunman": 11,
+          "entity_set_aim_pose": 2,
+          "func_800662B4": 1,
+          "dream_sys_get_action_pressed": 1,
+          "dream_sys_clear_callbacks": 1,
+          "dream_sys_set_move_callback": 1,
+          "dream_sys_set_view_mode": 1,
+          "dream_sys_set_view_callback": 1,
+          "entity_create_effect": 2,
+          "entity_set_fall_pose": 1,
+          "rand": 1
+        }
+      },
+      {
+        "callback": "entity_gunman",
+        "name": "action_taken-42",
+        "script_invocations": 4,
+        "submitted_inputs": [
+          {
+            "state": 0,
+            "tick": 5,
+            "frame": 5,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 6,
+            "duration": 5,
+            "action": 1,
+            "seed": 42,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 9,
+            "frame": 9,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 10,
+            "frame": 10,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 85
+          }
+        ],
+        "final_state": 1,
+        "actual_native_entry_counts": {
+          "entity_gunman": 4,
+          "entity_set_aim_pose": 2,
+          "func_800662B4": 2,
+          "dream_sys_get_action_pressed": 1,
+          "entity_set_fall_pose": 1,
+          "entity_stop_behaviour": 1,
+          "func_80066148": 1
+        }
+      },
+      {
+        "callback": "entity_gunman",
+        "name": "timeout-existing-42",
+        "script_invocations": 11,
+        "submitted_inputs": [
+          {
+            "state": 0,
+            "tick": 5,
+            "frame": 5,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 9,
+            "frame": 6,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 10,
+            "frame": 7,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 8,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 29,
+            "frame": 9,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 10,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 11,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 12,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 89,
+            "frame": 13,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 90,
+            "frame": 14,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 91,
+            "frame": 15,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          }
+        ],
+        "final_state": 14,
+        "actual_native_entry_counts": {
+          "entity_gunman": 11,
+          "entity_set_aim_pose": 2,
+          "func_800662B4": 1,
+          "dream_sys_get_action_pressed": 1,
+          "dream_sys_clear_callbacks": 1,
+          "dream_sys_set_move_callback": 1,
+          "dream_sys_set_view_mode": 1,
+          "dream_sys_set_view_callback": 1,
+          "entity_create_effect": 2,
+          "func_8001D1A4": 2,
+          "effect_set_color_step": 2,
+          "effect_start": 1,
+          "effect_activate": 1,
+          "func_80040714": 1,
+          "func_8001EDAC": 3,
+          "func_80040740": 1,
+          "func_800406E4": 1,
+          "func_8004076C": 1,
+          "func_80040790": 1,
+          "effect_start_attached": 1,
+          "entity_set_fall_pose": 1,
+          "rand": 1
+        }
+      },
+      {
+        "callback": "entity_gunman",
+        "name": "timeout-allocate-42",
+        "script_invocations": 11,
+        "submitted_inputs": [
+          {
+            "state": 0,
+            "tick": 5,
+            "frame": 5,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 9,
+            "frame": 6,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 10,
+            "frame": 7,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 8,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 29,
+            "frame": 9,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 10,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 11,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 12,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 89,
+            "frame": 13,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 90,
+            "frame": 14,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 91,
+            "frame": 15,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          }
+        ],
+        "final_state": 14,
+        "actual_native_entry_counts": {
+          "entity_gunman": 11,
+          "entity_set_aim_pose": 2,
+          "func_800662B4": 1,
+          "dream_sys_get_action_pressed": 1,
+          "dream_sys_clear_callbacks": 1,
+          "dream_sys_set_move_callback": 1,
+          "dream_sys_set_view_mode": 1,
+          "dream_sys_set_view_callback": 1,
+          "entity_create_effect": 2,
+          "func_8001D1A4": 2,
+          "effect_set_color_step": 2,
+          "effect_start": 1,
+          "effect_activate": 1,
+          "func_80040714": 1,
+          "func_8001EDAC": 3,
+          "func_80040740": 1,
+          "func_800406E4": 1,
+          "func_8004076C": 1,
+          "func_80040790": 1,
+          "effect_start_attached": 1,
+          "entity_set_fall_pose": 1,
+          "rand": 1
+        }
+      },
+      {
+        "callback": "entity_gunman",
+        "name": "timeout-fail-42",
+        "script_invocations": 11,
+        "submitted_inputs": [
+          {
+            "state": 0,
+            "tick": 5,
+            "frame": 5,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 9,
+            "frame": 6,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 10,
+            "frame": 7,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 8,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 29,
+            "frame": 9,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 10,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 11,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 12,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 89,
+            "frame": 13,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 90,
+            "frame": 14,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 91,
+            "frame": 15,
+            "duration": 5,
+            "action": 0,
+            "seed": 42,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          }
+        ],
+        "final_state": 14,
+        "actual_native_entry_counts": {
+          "entity_gunman": 11,
+          "entity_set_aim_pose": 2,
+          "func_800662B4": 1,
+          "dream_sys_get_action_pressed": 1,
+          "dream_sys_clear_callbacks": 1,
+          "dream_sys_set_move_callback": 1,
+          "dream_sys_set_view_mode": 1,
+          "dream_sys_set_view_callback": 1,
+          "entity_create_effect": 2,
+          "entity_set_fall_pose": 1,
+          "rand": 1
+        }
+      },
+      {
+        "callback": "entity_gunman",
+        "name": "action_taken-4294967295",
+        "script_invocations": 4,
+        "submitted_inputs": [
+          {
+            "state": 0,
+            "tick": 5,
+            "frame": 5,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 6,
+            "duration": 5,
+            "action": 1,
+            "seed": 4294967295,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 9,
+            "frame": 9,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 10,
+            "frame": 10,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 85
+          }
+        ],
+        "final_state": 1,
+        "actual_native_entry_counts": {
+          "entity_gunman": 4,
+          "entity_set_aim_pose": 2,
+          "func_800662B4": 2,
+          "dream_sys_get_action_pressed": 1,
+          "entity_set_fall_pose": 1,
+          "entity_stop_behaviour": 1,
+          "func_80066148": 1
+        }
+      },
+      {
+        "callback": "entity_gunman",
+        "name": "timeout-existing-4294967295",
+        "script_invocations": 11,
+        "submitted_inputs": [
+          {
+            "state": 0,
+            "tick": 5,
+            "frame": 5,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 9,
+            "frame": 6,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 10,
+            "frame": 7,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 8,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 29,
+            "frame": 9,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 10,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 11,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 12,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 89,
+            "frame": 13,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 90,
+            "frame": 14,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 91,
+            "frame": 15,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          }
+        ],
+        "final_state": 14,
+        "actual_native_entry_counts": {
+          "entity_gunman": 11,
+          "entity_set_aim_pose": 2,
+          "func_800662B4": 1,
+          "dream_sys_get_action_pressed": 1,
+          "dream_sys_clear_callbacks": 1,
+          "dream_sys_set_move_callback": 1,
+          "dream_sys_set_view_mode": 1,
+          "dream_sys_set_view_callback": 1,
+          "entity_create_effect": 2,
+          "func_8001D1A4": 2,
+          "effect_set_color_step": 2,
+          "effect_start": 1,
+          "effect_activate": 1,
+          "func_80040714": 1,
+          "func_8001EDAC": 3,
+          "func_80040740": 1,
+          "func_800406E4": 1,
+          "func_8004076C": 1,
+          "func_80040790": 1,
+          "effect_start_attached": 1,
+          "entity_set_fall_pose": 1,
+          "rand": 1
+        }
+      },
+      {
+        "callback": "entity_gunman",
+        "name": "timeout-allocate-4294967295",
+        "script_invocations": 11,
+        "submitted_inputs": [
+          {
+            "state": 0,
+            "tick": 5,
+            "frame": 5,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 9,
+            "frame": 6,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 10,
+            "frame": 7,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 8,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 29,
+            "frame": 9,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 10,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 11,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 12,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 89,
+            "frame": 13,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 90,
+            "frame": 14,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 91,
+            "frame": 15,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "allocate",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          }
+        ],
+        "final_state": 14,
+        "actual_native_entry_counts": {
+          "entity_gunman": 11,
+          "entity_set_aim_pose": 2,
+          "func_800662B4": 1,
+          "dream_sys_get_action_pressed": 1,
+          "dream_sys_clear_callbacks": 1,
+          "dream_sys_set_move_callback": 1,
+          "dream_sys_set_view_mode": 1,
+          "dream_sys_set_view_callback": 1,
+          "entity_create_effect": 2,
+          "func_8001D1A4": 2,
+          "effect_set_color_step": 2,
+          "effect_start": 1,
+          "effect_activate": 1,
+          "func_80040714": 1,
+          "func_8001EDAC": 3,
+          "func_80040740": 1,
+          "func_800406E4": 1,
+          "func_8004076C": 1,
+          "func_80040790": 1,
+          "effect_start_attached": 1,
+          "entity_set_fall_pose": 1,
+          "rand": 1
+        }
+      },
+      {
+        "callback": "entity_gunman",
+        "name": "timeout-fail-4294967295",
+        "script_invocations": 11,
+        "submitted_inputs": [
+          {
+            "state": 0,
+            "tick": 5,
+            "frame": 5,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 9,
+            "frame": 6,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 10,
+            "frame": 7,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 8,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 29,
+            "frame": 9,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 10,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 11,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 30,
+            "frame": 12,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 89,
+            "frame": 13,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 90,
+            "frame": 14,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          },
+          {
+            "state": 0,
+            "tick": 91,
+            "frame": 15,
+            "duration": 5,
+            "action": 0,
+            "seed": 4294967295,
+            "effect_mode": "fail",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 2,
+            "property_index": 85
+          }
+        ],
+        "final_state": 14,
+        "actual_native_entry_counts": {
+          "entity_gunman": 11,
+          "entity_set_aim_pose": 2,
+          "func_800662B4": 1,
+          "dream_sys_get_action_pressed": 1,
+          "dream_sys_clear_callbacks": 1,
+          "dream_sys_set_move_callback": 1,
+          "dream_sys_set_view_mode": 1,
+          "dream_sys_set_view_callback": 1,
+          "entity_create_effect": 2,
+          "entity_set_fall_pose": 1,
+          "rand": 1
+        }
+      },
+      {
+        "callback": "entity_gunman_victim",
+        "name": "victim-duration-15",
+        "script_invocations": 5,
+        "submitted_inputs": [
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 0,
+            "duration": 15,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 86
+          },
+          {
+            "state": 0,
+            "tick": 9,
+            "frame": 9,
+            "duration": 15,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 86
+          },
+          {
+            "state": 0,
+            "tick": 10,
+            "frame": 10,
+            "duration": 15,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 86
+          },
+          {
+            "state": 0,
+            "tick": 24,
+            "frame": 11,
+            "duration": 15,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 86
+          },
+          {
+            "state": 0,
+            "tick": 25,
+            "frame": 12,
+            "duration": 15,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 86
+          }
+        ],
+        "final_state": 1,
+        "actual_native_entry_counts": {
+          "entity_gunman_victim": 5,
+          "func_800662B4": 3,
+          "func_800662A8": 1,
+          "entity_set_fall_pose": 1,
+          "entity_stop_behaviour": 1,
+          "func_80066148": 1
+        }
+      },
+      {
+        "callback": "entity_gunman_victim",
+        "name": "victim-duration-30",
+        "script_invocations": 5,
+        "submitted_inputs": [
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 0,
+            "duration": 30,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 86
+          },
+          {
+            "state": 0,
+            "tick": 9,
+            "frame": 9,
+            "duration": 30,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 86
+          },
+          {
+            "state": 0,
+            "tick": 10,
+            "frame": 10,
+            "duration": 30,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 86
+          },
+          {
+            "state": 0,
+            "tick": 39,
+            "frame": 11,
+            "duration": 30,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 86
+          },
+          {
+            "state": 0,
+            "tick": 40,
+            "frame": 12,
+            "duration": 30,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 86
+          }
+        ],
+        "final_state": 1,
+        "actual_native_entry_counts": {
+          "entity_gunman_victim": 5,
+          "func_800662B4": 3,
+          "func_800662A8": 1,
+          "entity_set_fall_pose": 1,
+          "entity_stop_behaviour": 1,
+          "func_80066148": 1
+        }
+      },
+      {
+        "callback": "entity_gunman_victim",
+        "name": "victim-duration-60",
+        "script_invocations": 5,
+        "submitted_inputs": [
+          {
+            "state": 0,
+            "tick": 0,
+            "frame": 0,
+            "duration": 60,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 86
+          },
+          {
+            "state": 0,
+            "tick": 9,
+            "frame": 9,
+            "duration": 60,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 86
+          },
+          {
+            "state": 0,
+            "tick": 10,
+            "frame": 10,
+            "duration": 60,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 86
+          },
+          {
+            "state": 0,
+            "tick": 69,
+            "frame": 11,
+            "duration": 60,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 86
+          },
+          {
+            "state": 0,
+            "tick": 70,
+            "frame": 12,
+            "duration": 60,
+            "action": 0,
+            "seed": 0,
+            "effect_mode": "existing",
+            "effect_state": 0,
+            "effect_mask": 255,
+            "effect_flags": 2309737967,
+            "move_mode": 1,
+            "property_index": 86
+          }
+        ],
+        "final_state": 1,
+        "actual_native_entry_counts": {
+          "entity_gunman_victim": 5,
+          "func_800662B4": 3,
+          "func_800662A8": 1,
+          "entity_set_fall_pose": 1,
+          "entity_stop_behaviour": 1,
+          "func_80066148": 1
+        }
+      }
+    ],
+    "history_invocations": 126,
+    "write_bounds_control": {
+      "kind": "out_of_profile_store_rejected_before_execution",
+      "address": "0x80040020",
+      "expected_word": "0xAC850074",
+      "attempted_word": "0xAC850700",
+      "attempted_destination": "0x105700",
+      "decoded_from_instruction": "0x4001c",
+      "changed_instruction_execution_observations": 0,
+      "store_completed": false,
+      "distinct_from_completed_behavior_faults": true
+    },
+    "store_guard": "Instruction-level integer-store spans; no memory-write hook.",
+    "palette_identities": [
+      {
+        "symbol": "D_8006EA90",
+        "bytes": 24,
+        "sha256": "48c91c4bc3c38cfc1ad13b2d73f327682a58a73011fb7840255318b12e7d0f83"
+      },
+      {
+        "symbol": "D_8006EAA8",
+        "bytes": 24,
+        "sha256": "9d908ecfb6b256def8b49a7c504e6c889c4b0e41fe6ce3e01863dd7b61a20aa0"
+      }
+    ],
+    "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "canonical_original_and_build_equal": true,
+    "input_digest_sha256": "be05f3682436cd6920907f5793494d70037c6efc12ebe7f86c640cd37e22f66f",
+    "output_digest_sha256": "c9a583ebcb2f55d0c7580b6c5624367c2fa1639596edd7d9b836dd47722c7fd9",
+    "producer_dependencies": [
+      {
+        "path": "tools/verify_native_ai.py",
+        "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+      },
+      {
+        "path": "tools/inventory_vtables.py",
+        "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+      },
+      {
+        "path": "tools/progress.py",
+        "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+      },
+      {
+        "path": "configure.py",
+        "sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2"
+      },
+      {
+        "path": "requirements-analysis.txt",
+        "sha256": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911"
+      },
+      {
+        "path": "build/SLPS01556.map",
+        "sha256": "f3b8125d512aa8aa2a6e7a06ec1e901b2550c5bb7aa85edd93ae4df1ca36b6a7"
+      },
+      {
+        "path": "build/undefined_funcs_auto.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "build/undefined_syms_auto.txt",
+        "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+      },
+      {
+        "path": "src/scene/entity.c",
+        "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+      },
+      {
+        "path": "src/scene/entity.h",
+        "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+      },
+      {
+        "path": "src/dream/dream_sys.c",
+        "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+      },
+      {
+        "path": "src/dream/dream_sys.h",
+        "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+      },
+      {
+        "path": "src/scene/actor.c",
+        "sha256": "dac4858fa2ece134c6e698c8aad5734bab89c9185bb745470be12bc0d08e0483"
+      },
+      {
+        "path": "src/base/transform.c",
+        "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+      },
+      {
+        "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+        "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+      },
+      {
+        "path": "tools/verify_gunman_scripts.py",
+        "sha256": "6bb82b12a0570ec7448edf11f45c50f1f93e0de7622ea404bde22b11cfcce5d5"
+      },
+      {
+        "path": "tools/verify_scripted_ai.py",
+        "sha256": "2edefddc727441c0066a48375efd882c80035af99db3b3990a2c674eedddb2c1"
+      },
+      {
+        "path": "docs/gunman-function-ranges.json",
+        "sha256": "8a310d710b22cfc1d58a4a65a4f83a5dc6d6c0f1d9ef922b2c4cd4e44c9f3e39"
+      },
+      {
+        "path": "src/graphics/effect.c",
+        "sha256": "d9b2dd6bceb64b1b9fc631d833c4e77278006c62b9969799ecfc6748166bd805"
+      },
+      {
+        "path": "src/graphics/effect.h",
+        "sha256": "767085b6d185b949592ca0d2adab6092efce6d518311ed2ba14ebad3194a08be"
+      },
+      {
+        "path": "src/graphics/effect_base.c",
+        "sha256": "0239e7c0da74d2640ec2610d9c2f2a90b5a3994585a84f78a75d59d15a562289"
+      },
+      {
+        "path": "src/graphics/effect_base.h",
+        "sha256": "f9ad5d9902a15989bee17905ff815a1990881d144a510ca0adb961bf02a04161"
+      },
+      {
+        "path": "src/base/object_math.c",
+        "sha256": "83ea0fbfdeb4db45ce7453b79101c25eda5ddbaddd04330534563b824d4fc02b"
+      }
+    ],
+    "original_behavior_modified": false,
+    "source_functions_promoted": 0,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "model_api_calls": 0,
+    "scope": "Constructed Gunman/victim script states and real pose, animation, callback-clear, RNG, effect-factory and effect-color arithmetic. Allocation, empty attachment, orientation, rotation, movement, notification and sound use explicit contracts. Histories retain buffers/RNG and explicitly inject tick/frame/action inputs; they do not run a complete engine frame or tick the effects. Excludes natural construction, populated attachment graphs, linked-effect mode, effect ticking/rendering, audio and PS1 CPU timing.",
+    "elapsed_seconds": 28.017
+  },
+  "current_counts_before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 34,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "current_counts_after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "contract_bindings": [
+    {
+      "name": "orientation",
+      "original_function": "func_8001EACC",
+      "address": "0x8001eacc",
+      "arguments": 5
+    },
+    {
+      "name": "sound_stop",
+      "original_function": "sound_entity_stop",
+      "address": "0x8002cc84",
+      "arguments": 2
+    },
+    {
+      "name": "allocate_effect",
+      "original_function": "effect_create",
+      "address": "0x8003fdb0",
+      "arguments": 3
+    },
+    {
+      "name": "rotation",
+      "original_function": "func_8001CEB4",
+      "address": "0x8001ceb4",
+      "arguments": 3
+    },
+    {
+      "name": "forward",
+      "original_function": "func_8005748C",
+      "address": "0x8005748c",
+      "arguments": 3
+    },
+    {
+      "name": "notification",
+      "original_function": "base_class_notify",
+      "address": "0x800182cc",
+      "arguments": 2
+    },
+    {
+      "name": "effect_bind",
+      "original_function": "func_80040664",
+      "address": "0x80040664",
+      "arguments": 3
+    },
+    {
+      "name": "effect_attach",
+      "original_function": "func_8001CC48",
+      "address": "0x8001cc48",
+      "arguments": 2
+    }
+  ],
+  "construction_contract_note": "effect_create includes allocation and construction; it returns null or an already initialized fixture. entity_create_effect executes natively. Attachment contracts make no graph changes.",
+  "sized_range_qualification": {
+    "objects_linked": 306,
+    "canonical_complete_image_equal": true,
+    "complete_image_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "elf_sha256": "23cd8eac306c892c49d6a76c915b7ddb1d883cb8742170319bc45a93a3e9950a",
+    "qualified_functions": 26,
+    "original_virtual_bindings": [
+      {
+        "role": "native",
+        "table": "g_ENTITY_VTABLE",
+        "offset": "0x12c",
+        "function": "func_800662A8",
+        "address": "0x800662a8"
+      },
+      {
+        "role": "native",
+        "table": "g_ENTITY_VTABLE",
+        "offset": "0x130",
+        "function": "func_800662B4",
+        "address": "0x800662b4"
+      },
+      {
+        "role": "native",
+        "table": "g_ENTITY_VTABLE",
+        "offset": "0x114",
+        "function": "func_80066148",
+        "address": "0x80066148"
+      },
+      {
+        "role": "native",
+        "table": "g_EFFECT_VTABLE",
+        "offset": "0xd0",
+        "function": "effect_set_color_step",
+        "address": "0x8004001c"
+      },
+      {
+        "role": "native",
+        "table": "g_EFFECT_VTABLE",
+        "offset": "0xd4",
+        "function": "effect_start",
+        "address": "0x80040024"
+      },
+      {
+        "role": "native",
+        "table": "g_EFFECT_VTABLE",
+        "offset": "0xd8",
+        "function": "effect_start_attached",
+        "address": "0x800400b0"
+      },
+      {
+        "role": "native",
+        "table": "g_EFFECT_VTABLE",
+        "offset": "0xdc",
+        "function": "effect_activate",
+        "address": "0x80040154"
+      },
+      {
+        "role": "native",
+        "table": "g_EFFECT_VTABLE",
+        "offset": "0xb8",
+        "function": "func_8004076C",
+        "address": "0x8004076c"
+      },
+      {
+        "role": "native",
+        "table": "g_EFFECT_VTABLE",
+        "offset": "0x50",
+        "function": "func_8001D1A4",
+        "address": "0x8001d1a4"
+      },
+      {
+        "role": "native",
+        "table": "g_EFFECT_VTABLE",
+        "offset": "0x60",
+        "function": "func_800406E4",
+        "address": "0x800406e4"
+      },
+      {
+        "role": "native",
+        "table": "g_EFFECT_VTABLE",
+        "offset": "0x64",
+        "function": "func_80040714",
+        "address": "0x80040714"
+      },
+      {
+        "role": "native",
+        "table": "g_EFFECT_VTABLE",
+        "offset": "0x68",
+        "function": "func_80040740",
+        "address": "0x80040740"
+      },
+      {
+        "role": "contract",
+        "table": "g_ENTITY_VTABLE",
+        "offset": "0x44",
+        "function": "func_8001CEB4",
+        "address": "0x8001ceb4"
+      },
+      {
+        "role": "contract",
+        "table": "g_ENTITY_VTABLE",
+        "offset": "0xc4",
+        "function": "func_8005748C",
+        "address": "0x8005748c"
+      },
+      {
+        "role": "contract",
+        "table": "g_ENTITY_VTABLE",
+        "offset": "0x30",
+        "function": "base_class_notify",
+        "address": "0x800182cc"
+      },
+      {
+        "role": "contract",
+        "table": "g_DREAM_SYS_VTABLE",
+        "offset": "0x44",
+        "function": "func_8001CEB4",
+        "address": "0x8001ceb4"
+      },
+      {
+        "role": "contract",
+        "table": "g_EFFECT_VTABLE",
+        "offset": "0x4c",
+        "function": "func_80040664",
+        "address": "0x80040664"
+      },
+      {
+        "role": "contract",
+        "table": "g_EFFECT_VTABLE",
+        "offset": "0x10",
+        "function": "func_8001CC48",
+        "address": "0x8001cc48"
+      }
+    ],
+    "range_report_sha256": "b96be6ce5d7ead55ff5c9712e5dcf18dddf215eabe302a7536441552506b664e",
+    "producer_sha256": "7fb73a8652934c7f84d291b90fb1a5fc0fbba37a1aa3ab3f6415c42187c1b613"
+  },
+  "features_before_sha256": "ed21c459a2a4606a9eaf6f63bd6349e65d40ff8e91923faad50f0fa553569dd3",
+  "all_prior_inventory_fields_retained": true,
+  "native_backend_changed": false,
+  "game_build_inputs_preserved": 392,
+  "game_source_files_changed": 0,
+  "project_objective_sha256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+  "all_seven_completion_requirements_retained": true,
+  "new_C_bytes": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "new_gameplay_replays": 0,
+  "model_api_calls": 0,
+  "optional_mod_changes": 0,
+  "developer_capability_categories_added": 0,
+  "Bevy_port_modified": false,
+  "public_file_hash_basis": "Raw bytes in the verified local execution checkout; ordinary Git text conversion may change documentation line endings. Native-tested Gunman sources and range inputs use explicit LF attributes."
+}

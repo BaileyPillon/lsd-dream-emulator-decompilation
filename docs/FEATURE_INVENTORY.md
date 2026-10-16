@@ -731,3 +731,21 @@ improvement. Matching C stays at 194,212 / 199,912 bytes, with nine assembly
 functions, 24 inherited storage explanations, 35 / 40 listed-core C groups
 and 34 / 107 bounded NPC profiles. Whole-feature and whole-encounter acceptance
 remain zero. Capability/mod counts and the Bevy port are unchanged.
+
+## Gunman state and effect supplement
+
+The [Gunman checks](GUNMAN_SCRIPTS.md) add F027 evidence for the original Gunman
+and Gunman Victim callbacks. All 36,338 distinct fixtures and 15 scheduled
+histories (126 further invocations) agree with the model. Twenty-six original
+routines execute, including effect activation, RGB copying, flags, RNG and
+mode-two callback clearing. Eleven instruction faults are detected; a separate
+out-of-profile store is rejected before execution. External allocation and
+construction, attachment, geometry, notification and sound retain contracts.
+
+Bounded callback coverage rises from 34 to 36 / 107. This adds no original game
+feature, matching-C byte or whole-encounter acceptance. C remains 194,212 /
+199,912, with nine assembly functions and 24 inherited storage explanations;
+listed-core groups remain 35 / 40. Natural construction, complete frame/effect
+lifecycles, rendering/audio, controller reachability and timing remain open.
+The additive inventory supplement preserves every earlier field and snapshot,
+with ten developer capabilities, three mods and the separate Bevy port unchanged.
