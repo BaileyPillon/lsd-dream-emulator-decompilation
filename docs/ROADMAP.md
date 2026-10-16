@@ -23,6 +23,9 @@ the original allocator and constructors from real model first frames with
 independent full-buffer comparisons. Extend full actor creation, resource-cache
 ownership, allocation failures and playback beyond its supplied descriptors
 and SDK matrix fixture; construction checks do not accept whole encounters.
+The optional [child lifetime profile](ACTOR_CHILD_LIFETIMES.md) now checks
+destruction, repeated cleanup and guarded reconstruction on the same pool.
+Full actor/model creation, attached descendants and allocation failures remain open.
 
 The [glyph character interface](GLYPH_CHARACTER_API.md) now has typed receivers
 and the original unsigned-byte getter return. Its compiled callers pass 4,656

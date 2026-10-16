@@ -28,6 +28,12 @@ produce 222 construction executions, 2,552 children and 8,100 allocations per
 extraction. These are content and fixture counts; all source-recovery,
 NPC-profile and whole-feature counts above remain unchanged.
 
+The later [child lifetime profile](ACTOR_CHILD_LIFETIMES.md) extends the same
+model inputs through two original construction/cleanup/reuse cycles, guarded
+reentry and repeated cleanup. Content instances and repeated fixture histories
+remain separate from feature totals; no additional C byte, NPC callback profile
+or whole-feature acceptance is added.
+
 > Publication note: this is a frozen local research snapshot. Private
 > `.decomp-lab` evidence is excluded; see [provenance](PROVENANCE.md).
 

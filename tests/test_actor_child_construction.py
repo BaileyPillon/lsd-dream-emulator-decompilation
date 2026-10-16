@@ -124,6 +124,99 @@ class ArithmeticTests(unittest.TestCase):
             model.rational_values(bytes(11))
 
 
+class LifetimeModelTests(unittest.TestCase):
+    def constructed(self):
+        frame = model.decode_first_frame(synthetic_mom([record(9), record(2)]))
+        reference = model.initial_pool('distinct')
+        reference.setup()
+        actor = model.descriptors({'g_ACTOR_VTABLE': 0x80060000}, 'distinct')[0]
+        expected = model.construct_reference(reference, frame, actor, 0x80061000, [0, 0, 0], [4096] * 3)
+        return reference, frame, expected
+
+    def test_cleanup_releases_each_owned_block_and_restores_one_free_pool(self):
+        reference, frame, expected = self.constructed()
+        live = {reference.block_pointer(block.offset) + 4 for block in reference.blocks if not block.free}
+        cleanup = model.cleanup_reference(reference, expected['actor'])
+        self.assertEqual(set(cleanup['releases']), live)
+        self.assertEqual(cleanup['owned_releases'], frame.child_count * 3 + 2)
+        self.assertEqual(len(reference.blocks), 1)
+        self.assertTrue(reference.blocks[0].free)
+        self.assertEqual(reference.blocks[0].size, model.POOL_SIZE)
+        self.assertEqual(reference.queue, [0])
+        self.assertEqual(struct.unpack_from('<4I', cleanup['actor'], 0x88), (0, 0xFFFFFFFF, 0, 0))
+
+    def test_reconstruction_reuses_the_pool_and_retains_unwritten_payload(self):
+        reference, frame, expected = self.constructed()
+        first_child = expected['children'][0]
+        coordinate = reference.get('pool', first_child - model.POOL + 0x14)
+        state = reference.get('pool', coordinate - model.POOL + 0x44)
+        cleanup = model.cleanup_reference(reference, expected['actor'])
+        # This byte is outside constructor fields and allocator queue/header data.
+        reference.buffers['pool'][state - model.POOL + 28] = 0x5A
+        second = model.construct_reference(reference, frame, cleanup['actor'], 0x80061000, [0] * 3, [4096] * 3)
+        self.assertEqual(second['children'], expected['children'])
+        self.assertEqual(second['requests'], expected['requests'])
+        self.assertEqual(reference.buffers['pool'][state - model.POOL + 28], 0x5A)
+        model.cleanup_reference(reference, second['actor'])
+        self.assertTrue(all(block.free for block in reference.blocks))
+
+    def test_repeated_cleared_cleanup_preserves_retained_actor_fields_and_pool(self):
+        reference, _, expected = self.constructed()
+        first = model.cleanup_reference(reference, expected['actor'])
+        before = reference.snapshot()
+        repeated = model.cleanup_reference(reference, first['actor'])
+        self.assertEqual(repeated['actor'], first['actor'])
+        self.assertEqual(repeated['releases'], [0, 0])
+        self.assertEqual(repeated['owned_releases'], 0)
+        self.assertEqual(reference.snapshot(), before)
+
+    def test_duplicate_children_are_rejected_before_any_release(self):
+        reference, _, expected = self.constructed()
+        table = struct.unpack_from('<I', expected['actor'], 0x90)[0]
+        reference.put('pool', table - model.POOL + 4, expected['children'][0])
+        before = reference.snapshot()
+        with self.assertRaisesRegex(ValueError, 'alias'):
+            model.cleanup_reference(reference, expected['actor'])
+        self.assertEqual(reference.snapshot(), before)
+
+    def test_foreign_aliased_and_undersized_nested_allocations_reject_atomically(self):
+        for replacement in (model.POOL - 4, model.POOL | 0x80000000, None):
+            with self.subTest(replacement=replacement):
+                reference, _, expected = self.constructed()
+                child = expected['children'][0]
+                table = struct.unpack_from('<I', expected['actor'], 0x90)[0]
+                reference.put('pool', child - model.POOL + 0x14, table if replacement is None else replacement)
+                before = reference.snapshot()
+                with self.assertRaises(ValueError):
+                    model.cleanup_reference(reference, expected['actor'])
+                self.assertEqual(reference.snapshot(), before)
+
+    def test_partial_setup_unowned_selection_and_attached_links_remain_outside_profile(self):
+        for field in ('partial_table', 'selection', 'attachment'):
+            with self.subTest(field=field):
+                reference, _, expected = self.constructed()
+                actor = bytearray(expected['actor'])
+                if field == 'partial_table':
+                    struct.pack_into('<I', actor, 0x94, 0)
+                elif field == 'selection':
+                    struct.pack_into('<I', actor, 0x88, 0x123456)
+                else:
+                    reference.put('pool', expected['children'][0] - model.POOL + 8, 0x123456)
+                before = reference.snapshot()
+                with self.assertRaises(ValueError):
+                    model.cleanup_reference(reference, actor)
+                self.assertEqual(reference.snapshot(), before)
+
+    def test_null_tables_do_not_clear_unrelated_selected_child_or_counter(self):
+        reference = model.initial_pool('distinct')
+        reference.setup()
+        actor = model.filled(0x180, 'distinct')
+        struct.pack_into('<4I', actor, 0x88, 0x123456, 77, 0, 0)
+        result = model.cleanup_reference(reference, actor)
+        self.assertEqual(result['actor'], actor)
+        self.assertEqual(result['releases'], [0, 0])
+
+
 class CustodyTests(unittest.TestCase):
     def test_existing_and_external_destinations_reject_before_original_access(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -181,6 +274,16 @@ class CustodyTests(unittest.TestCase):
             self.assertTrue((target / 'failure.json').is_file())
             self.assertIn('owned failure', (target / 'failure.json').read_text())
             self.assertFalse((target / 'report.json').exists())
+
+    def test_lifetime_profile_is_explicit_and_default_constructor_mode_is_retained(self):
+        for lifetime in (False, True):
+            with tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                target = root / '.decomp-lab' / 'new'
+                with patch.object(verifier, 'ROOT', root), patch.object(verifier, 'verify') as verify:
+                    argv = ['--layout', str(root / 'owned.xml'), '--output', str(target)]
+                    self.assertEqual(verifier.main(argv + (['--lifetime'] if lifetime else [])), 0)
+                    self.assertEqual(verify.call_args.args[3], lifetime)
 
     def test_diagnostic_binary_mismatch_rejects_before_symbol_parsing(self):
         with patch.object(verifier, 'elf_function') as function, self.assertRaisesRegex(ValueError, 'complete symbol diagnostic'):

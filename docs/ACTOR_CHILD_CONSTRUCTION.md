@@ -13,6 +13,10 @@ objects through original code, starting from supplied actor/model/list
 descriptors, an unlocked pool and the SDK identity-matrix table. Full actor
 creation, resource ownership and natural encounters remain separate gates.
 
+The later optional [lifetime profile](ACTOR_CHILD_LIFETIMES.md) adds destruction,
+repeated cleanup and guarded reconstruction on the same actor and pool. This
+constructor-only profile and its earlier measurements remain separate evidence.
+
 ## Observed corpus
 
 English-v1 and Japanese-labelled extractions each pass the complete profile:

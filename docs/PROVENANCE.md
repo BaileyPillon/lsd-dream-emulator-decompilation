@@ -905,3 +905,19 @@ All 392 canonical game inputs, source-recovery counts and the frozen objective
 retain their hashes. Reports, diagnostic images and extracted assets remain
 private. No NPC callback or whole encounter is accepted by this profile, and
 no model API is invoked. The separate Bevy port and current player are unchanged.
+
+## Original child destruction and reuse
+
+[actor-child-lifetime-checks.json](actor-child-lifetime-checks.json) records the
+optional native lifetime profile. It checks original construction, populated
+entry guards, destruction, repeated cleanup and reconstruction on one actor,
+CPU and pool. All 40 original function extents must match sized symbols and
+canonical bytes; no dependency outputs are supplied by the host.
+
+Complete buffer and allocator-ownership comparisons retain stale payloads and
+the original terminal count of -1. Five private instruction faults must execute
+and fail their declared independent buffer comparisons. Supplied descriptors,
+the pool binding and SDK matrix table remain explicit inputs. Full actor/model
+creation, attached descendants, failures, playback and natural encounters remain
+open. C recovery, source-quality remainders and whole-feature/NPC acceptance
+counts are unchanged; the earlier constructor-only evidence remains frozen.

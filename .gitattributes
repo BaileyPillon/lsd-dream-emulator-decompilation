@@ -60,3 +60,6 @@ tests/test_actor_child_construction.py text eol=lf
 docs/actor-child-construction-function-ranges.json text eol=lf
 docs/actor-child-construction-checks.json text eol=lf
 docs/ACTOR_CHILD_CONSTRUCTION.md text eol=lf
+docs/actor-child-lifetime-function-ranges.json text eol=lf
+docs/actor-child-lifetime-checks.json text eol=lf
+docs/ACTOR_CHILD_LIFETIMES.md text eol=lf
