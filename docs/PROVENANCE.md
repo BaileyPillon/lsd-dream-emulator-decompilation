@@ -758,3 +758,18 @@ remain private. Two new bounded callbacks raise coverage from 32 to 34 of 107;
 Bird was already counted. Matching-C bytes and whole-feature/encounter
 acceptance do not increase. All prior inventory snapshots and the separate
 Bevy port are preserved.
+
+## Collision query interface supplement
+
+[collision-api-checks.json](collision-api-checks.json) records the before/after
+compiler diagnostics, 21 target layout assertions, 76-byte analysis caller,
+12,696 reused constructed query inputs and four executed field-load faults.
+Both complete game builds remain canonical. Three pinned game inputs change;
+the other 389 retain their preceding hashes. The primitive research fragment
+retains its complete nonmatching code and 22-byte difference.
+
+Generated code, game images, full buffers and compiler products remain private.
+The scene-node caller is qualified by complete executable equality; it is not
+executed in this new native campaign. Published metadata distinguishes those
+claims and preserves previous inventory fields and source/feature/NPC counts.
+Original NPC AI, optional mods, AI-assisted tools and Bevy remain separate.

@@ -702,3 +702,18 @@ category. All preceding measurements remain historical snapshots. The current
 C count is 194,212 / 199,912, with nine assembly functions and 24 inherited
 storage explanations. Natural encounters, rendering/audio, lifecycle histories
 and the documented division-trap paths require further comparison.
+
+## Collision interface supplement
+
+The [collision API comparison](COLLISION_API.md) corrects the original height
+pointer declaration and the scene-node caller's output types while preserving
+the complete executable. An analysis-only compiled caller and direct original
+execution agree with the independent model on all 12,696 existing constructed
+query inputs. Four executed field-load faults change checked results.
+
+This adds an interface verification path, with no newly recovered C bytes,
+original feature group, bounded NPC callback, gameplay replay, developer
+capability category or optional mod. C recovery remains 194,212 / 199,912;
+nine assembly functions and 24 inherited storage explanations remain open.
+Bounded NPC profiles stay at 34 / 107, with zero whole-feature and whole-NPC
+acceptance. All preceding snapshots and the separate Bevy port are preserved.

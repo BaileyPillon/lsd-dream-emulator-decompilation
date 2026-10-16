@@ -74,7 +74,7 @@ static inline void publish_hit(model_point_t *hit,sdk_vector_t *intersection,s32
 }
 
 s32 func_8001F8B8(void *model,s32 *nearest,model_point_t *output,s32 *height,
-                 model_point_t *segment_start,model_point_t *segment_end) {
+                 const model_point_t *segment_start,const model_point_t *segment_end) {
     model_point_t points[4];
     collision_plane_t plane;
     model_point_t start_delta[2],hit;

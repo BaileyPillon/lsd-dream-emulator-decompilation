@@ -42,4 +42,9 @@ typedef struct tmd_prim {
 tmd_prim_t *class_FA50_create(s32 Unk1);
 tmd_prim_vtable_t *class_FA50_get_vtable();
 
+/* The hit and endpoints contain three signed halfwords. Nearest and the
+   optional height output are signed words; nearest is reset to INT_MAX. */
+s32 func_8001F8B8(void *model, s32 *nearest, vec3d_16_t *hit, s32 *height,
+                 const vec3d_16_t *start, const vec3d_16_t *end);
+
 #endif // LSD_TMD_PRIM_H

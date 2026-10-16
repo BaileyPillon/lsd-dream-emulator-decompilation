@@ -21876,6 +21876,65 @@
       "all_392_game_build_inputs_retained": true,
       "original_NPC_AI_and_tools_separate": true,
       "Bevy_port_modified": false
+    },
+    "collision_query_interface_20261016": {
+      "status": "passed_matching_collision_interface_and_bounded_compiled_caller",
+      "guide": "docs/COLLISION_API.md",
+      "metadata": "docs/collision-api-checks.json",
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 34,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 34,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "corrected_shared_collision_declarations": 1,
+      "native_initialized_inputs": 12696,
+      "positive_native_executions": 25392,
+      "existing_collision_domain_reused": true,
+      "compiled_analysis_callers": 1,
+      "target_ABI_assertions": 21,
+      "measured_field_load_faults": 4,
+      "all_changed_instructions_observed": true,
+      "dependency_output_stubs": 0,
+      "scene_node_caller_executed_in_this_campaign": false,
+      "regular_and_fresh_clean_images_match": true,
+      "changed_game_inputs": [
+        "src/base/object_math.c",
+        "src/file/tmd_prim.h",
+        "src/file/tmd_prim_geom.c"
+      ],
+      "other_protected_inputs_retained": 389,
+      "primitive_research_changed_bytes": 22,
+      "new_C_bytes": 0,
+      "new_bounded_NPC_callbacks": 0,
+      "new_gameplay_runs": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "source_explanations_resolved": 0,
+      "original_NPC_AI_and_tools_separate": true,
+      "Bevy_port_modified": false
     }
   }
 }
