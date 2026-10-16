@@ -1,5 +1,14 @@
 # Changelog
 
+## Original actor child destruction and reuse - 2026-10-16
+
+- Add an explicit lifetime mode that constructs, destroys and reconstructs
+  original child graphs on the same actor, CPU and pool without output stubs.
+- Check populated-entry guards, repeated cleanup, exact release order, allocator
+  locks and complete guarded buffers; retain the original final count of -1.
+- Preserve the default constructor-only mode and all source-recovery, feature
+  and NPC acceptance counts. Full actor/model creation and encounters remain open.
+
 ## Reproducible original actor child construction - 2026-10-16
 
 - Add a disc-extraction CLI that qualifies the complete canonical image and

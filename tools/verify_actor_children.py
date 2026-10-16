@@ -29,6 +29,7 @@ from tools.inventory_animations import inspect_animations
 from tools.progress import build_manifest
 
 RANGES = ROOT / 'docs/actor-child-construction-function-ranges.json'
+LIFETIME_RANGES = ROOT / 'docs/actor-child-lifetime-function-ranges.json'
 NINJA_VERSION = '1.13.2'
 # The pinned PyPI package's executable includes this upstream build suffix.
 NINJA_BUILD_VERSIONS = (NINJA_VERSION, NINJA_VERSION + '.git.kitware.jobserver-pipe-1')
@@ -38,12 +39,21 @@ FAULTS = (
     dict(name='child-lifetime', address=0x800571EC, old=0xA4820048, replacement=0xA4800048),
     dict(name='coordinate-matrix', address=0x80012854, old=0xACC20004, replacement=0xACC20008),
 )
+LIFETIME_FAULTS = (
+    dict(name='omitted-state-release', address=0x8001CC04, old=0x8C440044, replacement=0x00002021,
+         detection_contains='cleanup_cycle0_complete_pool_and_guards'),
+    dict(name='selected-child-not-cleared', address=0x80065FA0, old=0xAE000068, replacement=0xAE00006C,
+         detection_contains='cleanup_cycle0_actor_and_guards'),
+    dict(name='active-reentry-guard', address=0x80065DCC, old=0x14400003, replacement=0x10400003,
+         detection_contains='guarded_reentry_cycle0_actor_and_guards'),
+)
 DEPENDENCIES = ('tools/verify_actor_children.py', 'tools/actor_child_model.py',
                 'tools/heap_model.py', 'tools/verify_card_heap.py', 'tools/verify_card_cleanup.py',
                 'tools/verify_native_ai.py', 'tools/inventory_animations.py', 'tools/inventory_disc.py',
                 'tools/inventory_vtables.py', 'tools/psx_image.py', 'tools/progress.py',
                 'tools/decomp_workbench.py', 'research/compiler/compare_function.py',
-                'docs/actor-child-construction-function-ranges.json', 'requirements-card-heap.txt',
+                'docs/actor-child-construction-function-ranges.json',
+                'docs/actor-child-lifetime-function-ranges.json', 'requirements-card-heap.txt',
                 'requirements.txt')
 
 
@@ -171,6 +181,7 @@ class Machine:
         self.cpu.mem_write(program.LOAD & native.MASK, program.ROM[0x800:])
         self.ranges, self.starts = ranges, [row[0] for row in ranges]
         self.entries, self.allocations, self.steps, self.fault_hits = Counter(), [], 0, 0
+        self.releases, self.lock_calls = [], []
         self.fault, self.recent = fault, []
         self.saved = [getattr(reg, 'UC_MIPS_REG_S' + str(i)) for i in range(8)] + [reg.UC_MIPS_REG_FP]
         self.write_ranges = [(model.MANAGER, model.MANAGER + 0x100),
@@ -205,6 +216,10 @@ class Machine:
             self.entries[name] += 1
             if name == 'memory_allocate_mem':
                 self.allocations.append(cpu.reg_read(self.reg.UC_MIPS_REG_A0))
+            elif name == 'memory_free_mem':
+                self.releases.append(cpu.reg_read(self.reg.UC_MIPS_REG_A0))
+            elif name == 'memory_set_lock':
+                self.lock_calls.append(cpu.reg_read(self.reg.UC_MIPS_REG_A0))
 
     def access_hook(self, cpu, access, address, size, value, _):
         address &= native.MASK
@@ -235,10 +250,10 @@ class Machine:
         return cpu.reg_read(reg.UC_MIPS_REG_V0)
 
 
-def run_case(program, ranges, globals_, frame, pattern, source, fault=None):
+def run_case(program, ranges, globals_, frame, pattern, source, fault=None, lifetime=False):
     machine = Machine(program, ranges, globals_, len(frame.mos), fault)
     report = dict(status='failed_bounded_actor_child_construction', source=source, pattern=pattern,
-                  fault=fault, dependency_output_stubs=0)
+                  fault=fault, dependency_output_stubs=0, lifetime_profile=lifetime)
     began = time.monotonic()
     try:
         reference = model.initial_pool(pattern)
@@ -259,39 +274,99 @@ def run_case(program, ranges, globals_, frame, pattern, source, fault=None):
         machine.cpu.mem_write(model.ACTOR - 32, bytes(actor))
         for address, buffer in readonly:
             machine.cpu.mem_write(address, bytes(buffer))
-        expected = model.construct_reference(reference, frame, actor, program.symbols['D_800878D4'],
-                    model.rational_values(program.target(0x8006B684, 12)),
-                    model.rational_values(program.target(0x8006B690, 12)))
-        if machine.call('func_80065E1C', model.ACTOR) != 0:
-            raise ValueError('Original child construction did not return success.')
-        if machine.allocations != expected['requests']:
-            raise ValueError('Native allocation order disagrees with the independent model.')
-        equal_buffer('actor_and_guards', bytes(machine.cpu.mem_read(model.ACTOR - 32, len(actor))), expected['actor'])
-        for name, address, label in (('manager', model.MANAGER, 'manager_and_guards'),
-                                      ('pool', model.POOL, 'complete_pool_and_guards')):
-            equal_buffer(label, bytes(machine.cpu.mem_read(address, len(reference.buffers[name]))),
-                         bytes(reference.buffers[name]))
-        for address, buffer in readonly:
-            equal_buffer('readonly_fixture_' + hex(address), bytes(machine.cpu.mem_read(address, len(buffer))), bytes(buffer))
-        for name, value in (('memory_set_manager', reference.manager_pointer), ('memory_set_lock', 0)):
-            equal_buffer('allocator_global_' + name, bytes(machine.cpu.mem_read(globals_[name], 4)), struct.pack('<I', value))
+        def compare_buffers(stage, expected_actor):
+            buffers = ((model.ACTOR - 32, expected_actor, 'actor_and_guards'),
+                       (model.MANAGER, bytes(reference.buffers['manager']), 'manager_and_guards'),
+                       (model.POOL, bytes(reference.buffers['pool']), 'complete_pool_and_guards'))
+            hashes, failures = {}, []
+            for address, buffer, label in buffers:
+                actual = bytes(machine.cpu.mem_read(address, len(buffer)))
+                try:
+                    equal_buffer(stage + label, actual, buffer)
+                except ValueError as error:
+                    failures.append(str(error))
+                hashes[label] = sha(actual)
+            if failures:
+                raise ValueError('; '.join(failures))
+            for address, buffer in readonly:
+                equal_buffer(stage + 'readonly_fixture_' + hex(address),
+                             bytes(machine.cpu.mem_read(address, len(buffer))), bytes(buffer))
+            for name, value in (('memory_set_manager', reference.manager_pointer), ('memory_set_lock', 0)):
+                equal_buffer(stage + 'allocator_global_' + name,
+                             bytes(machine.cpu.mem_read(globals_[name], 4)), struct.pack('<I', value))
+            return hashes
+
+        requests, releases, histories = [], [], []
+        expected_actor = bytes(actor)
+        for cycle in range(2 if lifetime else 1):
+            expected = model.construct_reference(reference, frame, expected_actor, program.symbols['D_800878D4'],
+                        model.rational_values(program.target(0x8006B684, 12)),
+                        model.rational_values(program.target(0x8006B690, 12)))
+            lock_start = len(machine.lock_calls)
+            constructor = 'func_80065E1C' if cycle == 0 else 'func_80065DBC'
+            if machine.call(constructor, model.ACTOR) != 0:
+                raise ValueError('Original child construction did not return success.')
+            requests.extend(expected['requests'])
+            if machine.allocations != requests:
+                raise ValueError('Native allocation order disagrees with the independent model.')
+            if lifetime and machine.lock_calls[lock_start:] != [1, 0] * len(expected['requests']):
+                raise ValueError('Native construction lock transitions disagree with the allocator profile.')
+            expected_actor = expected['actor']
+            construction = compare_buffers('construction_cycle' + str(cycle) + '_' if lifetime else '', expected_actor)
+            if not lifetime:
+                break
+            # The original guarded entry must retain an already populated graph.
+            no_op_counts = (len(machine.allocations), len(machine.releases), len(machine.lock_calls))
+            if machine.call('func_80065DBC', model.ACTOR) != 0:
+                raise ValueError('Guarded reentry did not return success.')
+            guarded = compare_buffers('guarded_reentry_cycle' + str(cycle) + '_', expected_actor)
+            if no_op_counts != (len(machine.allocations), len(machine.releases), len(machine.lock_calls)):
+                raise ValueError('Guarded reentry allocated, released or changed the allocator lock.')
+            cleanup = model.cleanup_reference(reference, expected_actor)
+            lock_start = len(machine.lock_calls)
+            machine.call('func_80065F2C', model.ACTOR)
+            cleaned = compare_buffers('cleanup_cycle' + str(cycle) + '_', cleanup['actor'])
+            releases.extend(cleanup['releases'])
+            if machine.releases != releases or machine.lock_calls[lock_start:] != [1, 0] * len(cleanup['releases']):
+                raise ValueError('Native cleanup release order or lock transitions disagree with the ownership model.')
+            expected_actor = cleanup['actor']
+            repeated = model.cleanup_reference(reference, expected_actor)
+            lock_start = len(machine.lock_calls)
+            machine.call('func_80065F2C', model.ACTOR)
+            repeated_buffers = compare_buffers('repeat_cleanup_cycle' + str(cycle) + '_', repeated['actor'])
+            releases.extend(repeated['releases'])
+            if machine.releases != releases or machine.lock_calls[lock_start:] != [1, 0] * 2:
+                raise ValueError('Repeated cleanup did not perform exactly two NULL releases.')
+            if (len(reference.blocks) != 1 or not reference.blocks[0].free
+                    or reference.blocks[0].size != model.POOL_SIZE or machine.allocations != requests):
+                raise ValueError('The completed child lifetime did not restore the entire free pool.')
+            histories.append(dict(cycle=cycle, children=frame.child_count, allocation_sizes=expected['requests'],
+                owned_release_order=cleanup['releases'], repeated_release_order=repeated['releases'],
+                construction=construction, guarded_reentry=guarded, cleanup=cleaned, repeated_cleanup=repeated_buffers))
         report.update(status='passed_bounded_actor_child_construction', child_count=frame.child_count,
                       children=expected['children'], script_order_type_bytes=expected['types'],
                       selected_child_index=expected['selected_index'], independent_full_buffer_model=True,
                       complete_actor_bytes_checked=len(actor), complete_manager_bytes_checked=0x100,
-                      complete_pool_bytes_checked=model.POOL_SIZE + 0x80)
+                      complete_pool_bytes_checked=model.POOL_SIZE + 0x80,
+                      construction_executions=len(histories) if lifetime else 1,
+                      guarded_reentries_checked=len(histories), lifetime_cycles_checked=len(histories),
+                      lifetime_histories=histories,
+                      all_owned_blocks_released=lifetime,
+                      owned_release_calls=sum(bool(pointer) for pointer in machine.releases),
+                      null_release_calls=sum(pointer == 0 for pointer in machine.releases))
     except (ValueError, machine.unicorn.UcError) as error:
         report.update(error=str(error), recent_native_addresses=machine.recent)
     report.update(entered_original_functions=dict(machine.entries), allocation_sizes=machine.allocations,
                   instructions=machine.steps, changed_instruction_hits=machine.fault_hits,
+                  release_pointers=machine.releases, allocator_lock_calls=machine.lock_calls,
                   elapsed_seconds=time.monotonic() - began)
     return report
 
 
-def verify(layout, destination, edition_label):
+def verify(layout, destination, edition_label, lifetime=False):
     ninja = require_ninja()
     backend = {key: value for key, value in heap.backend_identity().items() if key in IDENTITY_KEYS}
-    functions = json.loads(RANGES.read_text(encoding='utf-8'))['functions']
+    functions = json.loads((LIFETIME_RANGES if lifetime else RANGES).read_text(encoding='utf-8'))['functions']
     before, dependencies = build_inputs(), dependency_hashes()
     program = native.load_program(functions)
     inventory = inspect_animations(layout)
@@ -304,10 +379,14 @@ def verify(layout, destination, edition_label):
     for index, (source, frame) in enumerate(planned):
         for pattern in model.PATTERNS:
             name = 'model-' + str(index).zfill(3) + '-' + pattern
-            report = run_case(program, ranges, heap.global_addresses(program), frame, pattern, source)
+            report = run_case(program, ranges, heap.global_addresses(program), frame, pattern, source, lifetime=lifetime)
             write_json(destination / (name + '.json'), report)
-            row = dict(case=name, passed=report['status'] == 'passed_bounded_actor_child_construction',
+            row = dict(case=name, passed=report['status'] == 'passed_bounded_actor_child_construction'
+                       and (not lifetime or report.get('lifetime_cycles_checked') == 2),
                        child_count=report.get('child_count', 0), allocations=len(report['allocation_sizes']),
+                       construction_executions=report.get('construction_executions', 0),
+                       owned_release_calls=report.get('owned_release_calls', 0),
+                       null_release_calls=report.get('null_release_calls', 0),
                        model_sha256=source['model_sha256'], report_sha256=sha((destination / (name + '.json')).read_bytes()))
             completed.append(row)
             if not row['passed']:
@@ -317,13 +396,14 @@ def verify(layout, destination, edition_label):
             print(json.dumps(dict(models_completed=index + 1, planned_models=len(planned),
                                   memory_patterns=len(model.PATTERNS))), flush=True)
     source, frame = planned[0]
-    for fault in FAULTS:
+    for fault in FAULTS + (LIFETIME_FAULTS if lifetime else ()):
         name = 'fault-' + fault['name']
-        report = run_case(program, ranges, heap.global_addresses(program), frame, 'distinct', source, fault)
+        report = run_case(program, ranges, heap.global_addresses(program), frame, 'distinct', source, fault, lifetime)
         write_json(destination / (name + '.json'), report)
         if (report['status'] != 'failed_bounded_actor_child_construction'
-                or not report['changed_instruction_hits'] or 'complete_pool_and_guards' not in report.get('error', '')):
-            raise ValueError('Instruction fault was not detected by the full pool comparison: ' + name)
+                or not report['changed_instruction_hits']
+                or fault.get('detection_contains', 'complete_pool_and_guards') not in report.get('error', '')):
+            raise ValueError('Instruction fault was not detected by its independent buffer comparison: ' + name)
         controls.append(dict(fault, changed_instruction_hits=report['changed_instruction_hits'],
                         detection=report['error'], report_sha256=sha((destination / (name + '.json')).read_bytes())))
     # Re-read every selected asset and layout. No extraction is silently replaced during execution.
@@ -336,17 +416,28 @@ def verify(layout, destination, edition_label):
         raise ValueError('Source, assets, backend or the complete canonical build changed during verification.')
     if set(totals) != {record['function'] for record in functions}:
         raise ValueError('The corpus did not enter every scoped original function.')
-    report = dict(schema_version=1, status='passed_bounded_original_actor_child_construction',
+    report = dict(schema_version=1, status='passed_bounded_original_actor_child_lifetimes' if lifetime
+                  else 'passed_bounded_original_actor_child_construction',
         recorded_utc=datetime.now(timezone.utc).isoformat(), edition_label=edition_label,
         edition_label_is_user_supplied=True, original_model_instances=len(planned),
         distinct_model_contents=len({source['model_sha256'] for source, _ in planned}),
-        memory_patterns=list(model.PATTERNS), positive_construction_executions=len(completed),
-        children_constructed=sum(row['child_count'] for row in completed),
+        memory_patterns=list(model.PATTERNS),
+        positive_construction_executions=sum(row['construction_executions'] for row in completed),
+        positive_fixture_cases=len(completed),
+        original_constructor_calls=sum(row['construction_executions'] for row in completed),
+        children_constructed=sum(row['child_count'] * row['construction_executions'] for row in completed),
         native_allocation_calls=sum(row['allocations'] for row in completed),
+        owned_release_calls=sum(row['owned_release_calls'] for row in completed),
+        null_release_calls=sum(row['null_release_calls'] for row in completed),
+        lifecycle_profile=lifetime, all_owned_blocks_released=lifetime,
+        complete_lifetime_cycles=sum(row['construction_executions'] for row in completed) if lifetime else 0,
         results=completed, negative_controls_detected=controls, executed_native_entry_counts=dict(totals),
         qualified_original_functions=functions, dependency_output_stubs=0, backend=backend, ninja=ninja,
         execution_profile=dict(fresh_cpu_per_model_and_pattern=True, ram_preserved_between_setup_calls=True,
-                               uninterrupted_cpu_within_child_construction_graph=True),
+                               uninterrupted_cpu_within_child_construction_graph=True,
+                               ram_retained_from_construction_through_cleanup_and_reuse=lifetime,
+                               uninterrupted_cpu_within_child_cleanup_graph=lifetime,
+                               caller_stack_reinitialized_between_host_calls=True),
         symbol_diagnostic=diagnostic, inventory_sha256=sha((destination / 'inventory.json').read_bytes()),
         layout_sha256=inventory['layout_sha256'], sdk_matrix_fixture_sha256=sha(model.SDK_MATRIX),
         canonical_sha256=sha(program.ROM), canonical_complete_image_equal=True,
@@ -355,8 +446,10 @@ def verify(layout, destination, edition_label):
         new_C_bytes=0, new_NPC_callback_profiles=0, whole_feature_acceptances=0, whole_NPC_encounters_accepted=0,
         elapsed_seconds=time.monotonic() - began, goal_complete=False,
         scope='Every bounded model first frame in this extraction drives original enumeration, allocation, '
-              'scene-node and transform constructors. Actor/model/list descriptors, native pool and SDK identity '
-              'table are supplied fixtures. Full actor creation, resource/cache ownership, allocation failure, '
+              'scene-node and transform constructors. ' + ('Two construction/cleanup/reuse cycles, populated-entry '
+              'guards and repeated cleanup are checked on the same CPU and pool. ' if lifetime else '') +
+              'Actor/model/list descriptors, native pool and SDK identity table are supplied fixtures. '
+              'Full actor creation, resource/cache ownership, attached descendants, allocation failure, '
               'playback, rendering, natural encounters and PS1 timing remain open.')
     write_json(destination / 'report.json', report)
     print(json.dumps({key: report[key] for key in ('status', 'original_model_instances',
@@ -369,13 +462,14 @@ def main(argv=None):
     parser.add_argument('--layout', required=True, help='Your dumpsxiso extraction XML.')
     parser.add_argument('--output', required=True, help='Fresh directory within .decomp-lab.')
     parser.add_argument('--edition-label', default='unspecified', help='Provenance label only; not edition detection.')
+    parser.add_argument('--lifetime', action='store_true', help='Check two construction/cleanup/reuse cycles on the same actor and pool.')
     args = parser.parse_args(argv)
     created = False
     try:
         destination = output_directory(args.output)
         destination.mkdir(parents=True, exist_ok=False)
         created = True
-        verify(Path(args.layout).resolve(), destination, args.edition_label)
+        verify(Path(args.layout).resolve(), destination, args.edition_label, args.lifetime)
         return 0
     except (OSError, ValueError, subprocess.CalledProcessError, ET.ParseError) as error:
         if created:

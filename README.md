@@ -68,6 +68,8 @@ The [actor construction checker](docs/ACTOR_CHILD_CONSTRUCTION.md) now makes
 the original child allocator and constructors reproducible from a disc
 extraction, with independent complete-buffer comparisons and two memory patterns.
 Supplied descriptors and SDK initialization remain explicit fixture boundaries.
+The optional [child lifetime profile](docs/ACTOR_CHILD_LIFETIMES.md) follows
+those objects through original destruction, repeated cleanup and pool reuse.
 The [NPC proximity checks](docs/NPC_PROXIMITY.md) add Bear, Rabbit, Acrobats and
 Ship in 10,408 distinct fixtures through 25 original routines. Real distance,
 trigger-ratio, RNG, movement, event and GTE dependencies execute with no output

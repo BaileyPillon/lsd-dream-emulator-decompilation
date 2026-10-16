@@ -15,6 +15,11 @@ The [construction guide](ACTOR_CHILD_CONSTRUCTION.md) gives the isolated
 backend setup and exact fixture boundary. No game assets are distributed and
 no model API calls are made; whole encounters and playback remain open.
 
+Add `--lifetime` to check two original construction/cleanup/reuse cycles on the
+same actor and pool, including populated-entry no-ops and repeated cleanup.
+The [lifetime guide](ACTOR_CHILD_LIFETIMES.md) records its larger function graph,
+complete buffer comparisons, ownership limits and executed fault controls.
+
 ## Original movie content and routing
 
 After a current canonical build, `tools/inventory_movies.py` reads a local

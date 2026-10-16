@@ -22933,6 +22933,98 @@
       "new_model_API_calls": 0,
       "all_392_game_inputs_retained": true,
       "Bevy_port_modified": false
+    },
+    "actor_child_lifetimes_20261016": {
+      "status": "passed_bounded_original_actor_child_lifetimes",
+      "guide": "docs/ACTOR_CHILD_LIFETIMES.md",
+      "metadata": "docs/actor-child-lifetime-checks.json",
+      "before": {
+        "c_bytes": 195844,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 5,
+        "inherited_storage_explanations": 17,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 195844,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 5,
+        "inherited_storage_explanations": 17,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "previous_constructor_only_profile": {
+        "model_pattern_fixtures": 222,
+        "original_functions": 22,
+        "children_constructed": 2552,
+        "native_allocation_calls": 8100,
+        "complete_lifetime_cycles": 0
+      },
+      "lifetime_extraction_runs": [
+        {
+          "label": "English-v1",
+          "original_model_instances": 111,
+          "distinct_model_contents": 100,
+          "memory_patterns": 2,
+          "model_pattern_fixtures": 222,
+          "lifetimes_per_fixture": 2,
+          "original_constructor_invocations": 444,
+          "children_constructed_and_destroyed": 5104,
+          "native_allocation_calls": 16200,
+          "owned_release_calls": 16200,
+          "null_release_calls": 888,
+          "guarded_populated_reentries": 444,
+          "original_cleanup_invocations": 888,
+          "original_functions": 40,
+          "dependency_output_stubs": 0,
+          "executed_fault_controls": 5
+        },
+        {
+          "label": "Japanese-labelled",
+          "original_model_instances": 111,
+          "distinct_model_contents": 100,
+          "memory_patterns": 2,
+          "model_pattern_fixtures": 222,
+          "lifetimes_per_fixture": 2,
+          "original_constructor_invocations": 444,
+          "children_constructed_and_destroyed": 5104,
+          "native_allocation_calls": 16200,
+          "owned_release_calls": 16200,
+          "null_release_calls": 888,
+          "guarded_populated_reentries": 444,
+          "original_cleanup_invocations": 888,
+          "original_functions": 40,
+          "dependency_output_stubs": 0,
+          "executed_fault_controls": 5
+        }
+      ],
+      "shared_original_model_instances": 111,
+      "shared_distinct_model_contents": 100,
+      "extraction_model_payloads_equal": true,
+      "all_222_constructor_only_outputs_retained": true,
+      "constructor_only_mode_remains_default": true,
+      "source_functions_promoted": 0,
+      "new_C_bytes": 0,
+      "new_bounded_NPC_callbacks": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_gameplay_runs": 0,
+      "new_model_API_calls": 0,
+      "all_392_game_inputs_retained": true,
+      "Bevy_port_modified": false
     }
   }
 }

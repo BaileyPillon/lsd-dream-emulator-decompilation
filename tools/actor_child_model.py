@@ -189,3 +189,50 @@ def construct_reference(reference, frame, actor, scene_vtable, angles, scales):
         struct.pack_into('<I', expected_actor, 0x20 + offset, value)
     return dict(actor=bytes(expected_actor), requests=requests, children=children,
                 types=list(type_bytes), selected_index=selected)
+
+
+def cleanup_reference(reference, actor):
+    """Release a complete successful child graph, or repeat its cleared cleanup.
+
+    All owned pointers are validated before any model mutation. Partial setup,
+    attached descendants and shared/foreign allocations require other profiles.
+    """
+    reference.require_setup()
+    if len(actor) != 0x180:
+        raise ValueError('Cleanup requires the complete guarded actor fixture.')
+    selected, count, pointers, types = struct.unpack_from('<4I', actor, 0x20 + 0x68)
+    if pointers == 0 and types == 0:
+        return dict(actor=bytes(actor), releases=[0, 0], owned_releases=0)
+    if not pointers or not types or not 0 < count < 256:
+        raise ValueError('Partial child setup is outside the successful lifetime profile.')
+
+    def owned(pointer, capacity):
+        block = reference.owned_block(pointer)
+        if block.size - 4 < capacity:
+            raise ValueError('A child graph allocation is too small for its native fields.')
+        return pointer
+
+    owned(pointers, count * 4)
+    owned(types, count)
+    releases, children = [], []
+    for index in range(count):
+        child = owned(reference.get('pool', pointers - POOL + index * 4), 88)
+        coordinate = owned(reference.get('pool', child - POOL + 0x14), 80)
+        state = owned(reference.get('pool', coordinate - POOL + 0x44), 40)
+        # These constructed nodes have no children, parents, bound actor or
+        # coordinate parent. Traversal/notification of populated links is open.
+        if (any(reference.get('pool', child - POOL + offset) for offset in (4, 8, 0xC, 0x10, 0x18, 0x20, 0x24, 0x4C, 0x50))
+                or reference.get('pool', coordinate - POOL + 0x48)):
+            raise ValueError('Attached child graph ownership is outside this lifetime profile.')
+        children.append(child)
+        releases.extend((state, coordinate, child))
+    releases.extend((types, pointers))
+    if len(set(releases)) != len(releases) or selected not in children:
+        raise ValueError('Child graph pointers alias or its selected child is not owned.')
+    for pointer in releases:
+        reference.free(pointer)
+    expected = bytearray(actor)
+    # The loop decrements once more at its terminal test; it retains -1.
+    for offset, value in ((0x68, 0), (0x6C, 0xFFFFFFFF), (0x70, 0), (0x74, 0)):
+        struct.pack_into('<I', expected, 0x20 + offset, value)
+    return dict(actor=bytes(expected), releases=releases, owned_releases=len(releases))
