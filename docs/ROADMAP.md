@@ -18,6 +18,12 @@ fan-out through real scene-node and bit-setter code, including repeated changes
 and duplicate list entries. Extend natural construction, encounters and visible
 effects separately; this profile adds no newly recovered assembly function.
 
+The [actor child construction checker](ACTOR_CHILD_CONSTRUCTION.md) executes
+the original allocator and constructors from real model first frames with
+independent full-buffer comparisons. Extend full actor creation, resource-cache
+ownership, allocation failures and playback beyond its supplied descriptors
+and SDK matrix fixture; construction checks do not accept whole encounters.
+
 The [glyph character interface](GLYPH_CHARACTER_API.md) now has typed receivers
 and the original unsigned-byte getter return. Its compiled callers pass 4,656
 bounded native inputs without output substitutions. Recover the getter's

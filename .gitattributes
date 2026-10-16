@@ -53,3 +53,10 @@ docs/MENU_LOOKUP_RECOVERY.md text eol=lf
 docs/menu-lookup-recovery-checks.json text eol=lf
 docs/CALLBACK_STORAGE_RECOVERY.md text eol=lf
 docs/callback-storage-recovery-checks.json text eol=lf
+# Keep the actor-construction producer and its evidence identical across hosts.
+tools/actor_child_model.py text eol=lf
+tools/verify_actor_children.py text eol=lf
+tests/test_actor_child_construction.py text eol=lf
+docs/actor-child-construction-function-ranges.json text eol=lf
+docs/actor-child-construction-checks.json text eol=lf
+docs/ACTOR_CHILD_CONSTRUCTION.md text eol=lf

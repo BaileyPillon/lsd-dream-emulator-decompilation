@@ -890,3 +890,18 @@ two sites but enters only the coarse one. Candidate frame metadata now comes
 from the actual prologue/epilogue. No C bytes or original runtime domain are added.
 All 392 canonical inputs, the original executable and historical metadata remain
 unchanged; private images, source trials and complete reports stay outside Git.
+
+## Reproducible actor child construction
+
+[actor-child-construction-checks.json](actor-child-construction-checks.json)
+records a public extraction-driven CLI for 22 sized original functions. The
+diagnostic ELF retains symbols only after its complete executable equals the
+canonical image. English-v1 and Japanese-labelled extractions each pass 222
+construction executions, with complete independent actor/manager/pool checks,
+two memory patterns and two executed faults. Edition runs are not additional
+content or features; descriptors, pool binding and SDK matrix remain fixtures.
+
+All 392 canonical game inputs, source-recovery counts and the frozen objective
+retain their hashes. Reports, diagnostic images and extracted assets remain
+private. No NPC callback or whole encounter is accepted by this profile, and
+no model API is invoked. The separate Bevy port and current player are unchanged.

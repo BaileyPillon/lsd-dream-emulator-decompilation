@@ -21,6 +21,13 @@ unaccepted source candidate from 170 to 148 differing executable bytes and
 rechecks the existing 6,912 native graph pairs. It adds no C byte, original
 input domain, NPC profile or whole-feature acceptance.
 
+The [actor child construction checker](ACTOR_CHILD_CONSTRUCTION.md) now
+executes original enumeration, allocation and constructors on all 111 model
+instances in each of two separately verified extractions. Two memory patterns
+produce 222 construction executions, 2,552 children and 8,100 allocations per
+extraction. These are content and fixture counts; all source-recovery,
+NPC-profile and whole-feature counts above remain unchanged.
+
 > Publication note: this is a frozen local research snapshot. Private
 > `.decomp-lab` evidence is excluded; see [provenance](PROVENANCE.md).
 

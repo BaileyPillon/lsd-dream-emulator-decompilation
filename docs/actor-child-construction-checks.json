@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "status": "qualified_bounded_original_actor_child_construction",
+  "recorded_utc": "2026-10-16T21:26:45.991215+00:00",
+  "baseline_commit": "6681637e2dde0f75d9679cb9a13ae54e581c7fc1",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "scope": "Successful child construction on every bounded first model frame in two separately inventoried extractions; no full actor construction or whole-feature acceptance.",
+  "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "before": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 17,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 17,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "public_files": {
+    "tools/verify_actor_children.py": "195728fddab786eab82c824c4d6960b89b76284cc261156baee184c7a879b096",
+    "tools/actor_child_model.py": "c57b55765a0d987e8786c86cedfb84c5310443214a18b5980fb51cd4d11e67e4",
+    "tests/test_actor_child_construction.py": "60dd0c0f32e1aad072de4c7c2c7efc9fc5e873ada3065fc9faeefdea5cb6b88c",
+    "docs/ACTOR_CHILD_CONSTRUCTION.md": "a1a61b2e715b5bfa09fdc9d3487fbc1141dd9047a91cf9f2502798b0e368ffd4",
+    "docs/actor-child-construction-function-ranges.json": "917010a67a4398af6137fc3a180a0a6d5d06e18ab151ddd21890078733b8da22"
+  },
+  "source_hash_convention": "SHA-256 of exact local bytes as executed. New producer/model/range files are pinned to LF. Existing transitive dependencies retain their recorded local line endings.",
+  "native_ranges": "docs/actor-child-construction-function-ranges.json",
+  "private_runs": [
+    {
+      "path": ".decomp-lab/actor-children-public-20261016-third/report.json",
+      "sha256": "ba6003e079306f6fefbeab4c8487215fbad2cd23b46477c607edf0f06abaa2e8",
+      "label": "English-v1",
+      "label_is_user_supplied": true,
+      "measured": {
+        "original_model_instances": 111,
+        "distinct_model_contents": 100,
+        "memory_patterns": 2,
+        "positive_construction_executions": 222,
+        "children_constructed": 2552,
+        "native_allocation_calls": 8100,
+        "entered_original_functions": 22,
+        "dependency_output_stubs": 0,
+        "executed_fault_controls": 2
+      },
+      "inventory_sha256": "4854db18757a027974f3432a12cce21d3d2600e9a2f2d9a767cb6d14e70eb16a",
+      "layout_sha256": "cf93cc690c83baa91e7f54d57bc160007ceee859dc566333105124bf126ed1bc",
+      "negative_controls": [
+        {
+          "name": "child-lifetime",
+          "address": 2147840492,
+          "old": 2759983176,
+          "replacement": 2759852104,
+          "changed_instruction_hits": 29,
+          "detection": "complete_pool_and_guards: buffer mismatch at [296, 297, 516, 517, 736, 737, 956, 957, 1176, 1177, 1396, 1397, 1616, 1617, 1836, 1837]",
+          "report_sha256": "9feeb6175010dc3161329682c0740f14f9123210c669d54c7a13a2ac741990d3"
+        },
+        {
+          "name": "coordinate-matrix",
+          "address": 2147559508,
+          "old": 2898395140,
+          "replacement": 2898395144,
+          "changed_instruction_hits": 29,
+          "detection": "complete_pool_and_guards: buffer mismatch at [321, 541, 761, 981, 1201, 1421, 1641, 1861, 2081, 2301, 2521, 2741, 2961, 3181, 3401, 3621]",
+          "report_sha256": "cd5abc31ac7ee7b17f648e02529393cd3d81015c813985f7920b5a29132e8113"
+        }
+      ]
+    },
+    {
+      "path": ".decomp-lab/actor-children-japanese-public-20261016-second/report.json",
+      "sha256": "8765401236d10fc613ccc3dfba221ec0a1e6ed8289fcc2c6a255aea139a03099",
+      "label": "Japanese-labelled",
+      "label_is_user_supplied": true,
+      "measured": {
+        "original_model_instances": 111,
+        "distinct_model_contents": 100,
+        "memory_patterns": 2,
+        "positive_construction_executions": 222,
+        "children_constructed": 2552,
+        "native_allocation_calls": 8100,
+        "entered_original_functions": 22,
+        "dependency_output_stubs": 0,
+        "executed_fault_controls": 2
+      },
+      "inventory_sha256": "10a046368ce3b116ca8e33b84b1b231042b29c506016f92b369f2e2e4b3446f4",
+      "layout_sha256": "cf93cc690c83baa91e7f54d57bc160007ceee859dc566333105124bf126ed1bc",
+      "negative_controls": [
+        {
+          "name": "child-lifetime",
+          "address": 2147840492,
+          "old": 2759983176,
+          "replacement": 2759852104,
+          "changed_instruction_hits": 29,
+          "detection": "complete_pool_and_guards: buffer mismatch at [296, 297, 516, 517, 736, 737, 956, 957, 1176, 1177, 1396, 1397, 1616, 1617, 1836, 1837]",
+          "report_sha256": "82f20f3daf423c6efc3cf628cf30032002b07256905f87563fcd354d0bbb3a48"
+        },
+        {
+          "name": "coordinate-matrix",
+          "address": 2147559508,
+          "old": 2898395140,
+          "replacement": 2898395144,
+          "changed_instruction_hits": 29,
+          "detection": "complete_pool_and_guards: buffer mismatch at [321, 541, 761, 981, 1201, 1421, 1641, 1861, 2081, 2301, 2521, 2741, 2961, 3181, 3401, 3621]",
+          "report_sha256": "076eabb458ea8164ba2a26fe900aae2e292699eaa959e8040640cdabcc9ff909"
+        }
+      ]
+    }
+  ],
+  "cross_corpus_qualification": {
+    "path": ".decomp-lab/actor-children-public-qualification-20261016-second/report.json",
+    "sha256": "36ca6b9357d4c54e70d1c4ad03ad94cc445f15ef75c8c4d12932d18f60157608",
+    "original_model_payloads_equal": true,
+    "shared_model_instances": 111,
+    "shared_distinct_contents": 100,
+    "previous_111_poison_case_outputs_retained": true,
+    "independent_whole_feature_review": false
+  },
+  "backend": {
+    "package_version": "2.1.2",
+    "library_api": [
+      2,
+      1,
+      33620735
+    ],
+    "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+    "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+    "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+    "binding_source_count": 21
+  },
+  "execution_profile": {
+    "fresh_cpu_per_model_and_pattern": true,
+    "ram_preserved_between_setup_calls": true,
+    "uninterrupted_cpu_within_child_construction_graph": true
+  },
+  "ninja": {
+    "version": "1.13.2.git.kitware.jobserver-pipe-1",
+    "executable_sha256": "08639e194fffa7f08b259fc4abfa4803aff66b64de52549cee42ec527d55cea6"
+  },
+  "symbol_diagnostic": {
+    "elf_sha256": "c0746d3982c314079a5a24f2d88072c43464032f969eeac5f172c7646df833a7",
+    "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "object_count": 306,
+    "original_link_flags": [
+      "--no-check-sections",
+      "-nostdlib",
+      "-s"
+    ],
+    "diagnostic_link_flags": [
+      "--no-check-sections",
+      "-nostdlib"
+    ],
+    "complete_canonical_image_equal": true
+  },
+  "producer_dependency_sha256": {
+    "tools/verify_actor_children.py": "195728fddab786eab82c824c4d6960b89b76284cc261156baee184c7a879b096",
+    "tools/actor_child_model.py": "c57b55765a0d987e8786c86cedfb84c5310443214a18b5980fb51cd4d11e67e4",
+    "tools/heap_model.py": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e",
+    "tools/verify_card_heap.py": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5",
+    "tools/verify_card_cleanup.py": "5eec21f9fe0afa2549f10eb890c1dbf9984f5f1541611102afd9fa995d58d6c0",
+    "tools/verify_native_ai.py": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697",
+    "tools/inventory_animations.py": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+    "tools/inventory_disc.py": "71319a4c51b50885753998fe9afb7a00b71acf0fa03167b9a63c48651e36aebf",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+    "tools/progress.py": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+    "tools/decomp_workbench.py": "8d375145ca2b7f210889558ce75d4acd854a04606ea26d86ff50251b6a4820d1",
+    "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+    "docs/actor-child-construction-function-ranges.json": "917010a67a4398af6137fc3a180a0a6d5d06e18ab151ddd21890078733b8da22",
+    "requirements-card-heap.txt": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212",
+    "requirements.txt": "bcd34abbb33438c8a7e18a9165b8ea5c503a179b23738ccf72dbd659ce174cde"
+  },
+  "sdk_matrix_fixture_sha256": "9f6665a8cdb2980ee185f3e931a1872ef4400ec18f79fd05036db36fbe7a1278",
+  "verified_fixture_inputs": [
+    "actor/model/list descriptors",
+    "unlocked native pool binding",
+    "SDK identity matrix table",
+    "complete bounded original first-frame MOS data"
+  ],
+  "full_buffer_bytes_checked_per_case": {
+    "actor": 384,
+    "manager": 256,
+    "pool": 65664
+  },
+  "tools_tests": {
+    "Windows_Python": "3.14.2",
+    "Linux_Python": "3.13.5",
+    "cases_per_platform": 632,
+    "expected_skips_per_platform": 2,
+    "new_synthetic_regressions": 20
+  },
+  "all_392_game_build_inputs_retained": true,
+  "canonical_complete_image_equal": true,
+  "original_behavior_modified": false,
+  "model_API_calls": 0,
+  "new_C_bytes": 0,
+  "new_NPC_callback_profiles": 0,
+  "whole_feature_acceptances": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "goal_complete": false,
+  "remaining_gates": [
+    "five assembly functions",
+    "seventeen identified inherited storage explanations",
+    "full actor creation and resource/cache ownership",
+    "allocation failures and destruction",
+    "playback and rendering",
+    "natural NPC encounters and PS1 timing",
+    "all forty whole-feature acceptance gates"
+  ]
+}

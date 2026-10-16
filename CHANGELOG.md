@@ -1,5 +1,13 @@
 # Changelog
 
+## Reproducible original actor child construction - 2026-10-16
+
+- Add a disc-extraction CLI that qualifies the complete canonical image and
+  sized function ranges before executing original allocation and constructors.
+- Independently compare complete guarded actor, manager and pool buffers under
+  two memory patterns; retain script-order rewinds and untouched payload bytes.
+- Preserve separate source-recovery, NPC-profile and whole-feature counts.
+
 ## Overlap result lifetimes and measured frames - 2026-10-16
 
 - Improve the unaccepted overlap candidate from 170 to 148 differing bytes,
