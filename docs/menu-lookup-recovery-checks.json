@@ -1,0 +1,572 @@
+{
+  "schema_version": 1,
+  "status": "passed_matching_menu_lookup_recovery",
+  "recorded_utc": "2026-10-16T18:44:37.348564+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "source_baseline_commit": "8129a82b6d3a4ecf4d85fb8fd4ded465f1f824ba",
+  "scope": "Matching C for original menu layout and acceptance, with existing bounded constructed native histories.",
+  "recovered_functions": [
+    {
+      "function": "func_8003DAD4",
+      "address": "0x8003dad4",
+      "bytes": 472,
+      "sha256": "0d1a105753288d5915c3f530b0e4a3f8bd4fc962ba67be68f9ab527f1b8ead75"
+    },
+    {
+      "function": "func_8003D73C",
+      "address": "0x8003d73c",
+      "bytes": 580,
+      "sha256": "d6ac424bf10ab058d71c8b83494a2526ee2f71030bb3e5ad564113a89fce8541"
+    }
+  ],
+  "canonical_image": {
+    "bytes": 505856,
+    "sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "normal_complete_image_equal": true,
+    "fresh_clean_complete_image_equal": true,
+    "fresh_objects": 306
+  },
+  "changed_game_inputs": [
+    "src/menu/ui_screen.c"
+  ],
+  "other_game_inputs_retained": 391,
+  "protected_build_inputs": 392,
+  "public_files": {
+    ".gitattributes": "2829060ba0a03588d994ff9ca20dd9a46807baf7892202b654c67025afdcf938",
+    "CHANGELOG.md": "c2b68f04dd656db5fa39157ffab21a65b8380cede01e3e567de23fbfac7845e6",
+    "README.md": "46a01d63193f5c0716146728472a2eeb8119feb49adf7abc03189a2e67c8c0ce",
+    "docs/FEATURE_INVENTORY.md": "f1d6da5c07b28cc1b91430fc1b89a73a2e4b926bee0ba322adc39aca0db7e9aa",
+    "docs/MENU_LAYOUT.md": "068fdc46b77f7209043ea9a09f7cb1ca2c1eb103d3938eaf0167a371e9e14ceb",
+    "docs/MENU_LOOKUP_RECOVERY.md": "a5a6a0e5422d976956aff0a5d1c7886d906ef545f21a0006110c70a4bbe76715",
+    "docs/PROVENANCE.md": "4f505fec462f7086ba645cfd86d524ce13addef7994fda7be6c5f9989b2f7740",
+    "docs/ROADMAP.md": "d7a5982944428d165182c2db924957253970c9f416d70c183a0ef36ac2de3f97",
+    "docs/features.json": "895040111d5891b596115365f2c9fb055d854ee404d0b0fde67997d7977fa660",
+    "research/source_layout/README.md": "9dc077e09cbafbe20295bb8d9be96748d9183e3162218d074f827a159af4402b",
+    "src/menu/ui_screen.c": "b342afae784fa9b2dcd4e4bbc087d620e44fa5e0e094652902b6ea585e19eb1b"
+  },
+  "public_file_hash_basis": "Raw verified local checkout bytes; Git text conversion can change historical documentation/source line endings.",
+  "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+  "configuration_sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+  "compiler_and_flags_unchanged": true,
+  "compiler_observations": 9,
+  "repeated_controls": 2,
+  "combined_readable_complete_image_matches": 2,
+  "compiler_allocation_traces": {
+    "menu-lookup-stack-20261016-first": {
+      "report_sha256": "5a398706caa03e309a378a44461ecb85d0712e86cc3e19fdd5a44fc5bcae7f6b",
+      "source_sha256": "30eeb783702b252c31769c565ee540429c2ca3d642c6ffce512c54f1dc7816b2",
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "8a982a9d11f4ed25907e76b6abb81f5236b502a17aa8d5376befc9c76f898e99",
+      "selected_allocations": [
+        {
+          "function": "func_8003D73C",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8003D73C",
+          "allocator": "assign_stack_local",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8003D73C",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 8,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8003D73C",
+          "allocator": "assign_stack_local",
+          "size": 8,
+          "frame_offset_before": 8,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8003D73C",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 16,
+          "frame_offset_after": 24,
+          "alter_reg_context": {
+            "pseudo": 100,
+            "from_pseudo": -1,
+            "function": "func_8003D73C",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8003D73C",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 24,
+          "frame_offset_after": 32,
+          "alter_reg_context": {
+            "pseudo": 137,
+            "from_pseudo": -1,
+            "function": "func_8003D73C",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8003D73C",
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 32,
+          "frame_offset_after": 32,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ]
+        },
+        {
+          "function": "func_8003DAD4",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8003DAD4",
+          "allocator": "assign_stack_local",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8003DAD4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 8,
+          "frame_offset_after": 16,
+          "alter_reg_context": {
+            "pseudo": 113,
+            "from_pseudo": -1,
+            "function": "func_8003DAD4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8003DAD4",
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 16,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ]
+        }
+      ]
+    },
+    "menu-scalar-control-stack-20261016-first": {
+      "report_sha256": "0544b6b41de27a6289a73f71ea9c1f64b576da0180471ac333e13a0320bcad54",
+      "source_sha256": "28cd75f68a20aa2210d9ac91d3cdb29c46fd9da223549b0eed8a821ab3656178",
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "001b22ad2faac82f7c58ee82f0d9da471a31424be78040a5844f561303d68ae9",
+      "selected_allocations": [
+        {
+          "function": "func_8003D73C",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8003D73C",
+          "allocator": "assign_stack_local",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8003D73C",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 8,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8003D73C",
+          "allocator": "assign_stack_local",
+          "size": 8,
+          "frame_offset_before": 8,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8003D73C",
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 16,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ]
+        },
+        {
+          "function": "func_8003DAD4",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8003DAD4",
+          "allocator": "assign_stack_local",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8003DAD4",
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 8,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ]
+        }
+      ]
+    }
+  },
+  "trace_to_public_source_scope": "Observed shared typed-table candidate precedes comment/whitespace cleanup; promoted source separately passes standard and fresh whole-executable equality. Pseudo IDs are not attributed to source fields.",
+  "native_profile": {
+    "histories_per_image": 864,
+    "paired_images_before_promotion": 2,
+    "repeated_after_promotion": true,
+    "original_routines_entered": 39,
+    "actual_original_native_entries": {
+      "memory_set_manager": 864,
+      "memory_setup_manager": 864,
+      "func_8003D73C": 1296,
+      "func_80040C00": 3600,
+      "func_8001D1A4": 3648,
+      "func_80040AE8": 3600,
+      "glyph_get_vtable": 9000,
+      "sprite_node_run": 9000,
+      "func_800422BC": 9000,
+      "func_8001D0EC": 9576,
+      "base_class_attach": 9576,
+      "linked_list_prepend": 19152,
+      "memory_allocate_mem": 19152,
+      "memory_set_lock": 50880,
+      "base_class_add_parent": 9576,
+      "func_80040E14": 4200,
+      "sprite_node_set_offset": 20100,
+      "func_80040CD0": 5712,
+      "func_8003DAD4": 864,
+      "base_class_detach": 3144,
+      "linked_list_remove": 6288,
+      "memory_free_mem": 6288,
+      "base_class_remove_parent": 3144,
+      "func_8001CC48": 5400,
+      "base_class_get_vtable": 7200,
+      "func_8004220C": 8568,
+      "func_8001EDAC": 8568,
+      "func_8001CCB4": 1800,
+      "func_80040664": 864,
+      "func_8001E57C": 576,
+      "func_800407F8": 576,
+      "func_80040824": 864,
+      "func_80040D74": 216,
+      "func_8003C63C": 216,
+      "timer_get_vtable": 216,
+      "func_8003E4B8": 216,
+      "base_class_notify": 216,
+      "linked_list_next": 216,
+      "func_8004229C": 324
+    },
+    "full_snapshot_bytes": 98316,
+    "snapshot_hash": "ccd7a4ad0615bd61a0c258be91196106b9666a282991c47846d355186ad428d5",
+    "dependency_output_stubs": 0,
+    "backend": {
+      "package_version": "2.1.2",
+      "library_api": [
+        2,
+        1,
+        33620735
+      ],
+      "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+      "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+      "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+      "binding_source_count": 21,
+      "execution_hook": "UC_HOOK_CODE",
+      "fresh_cpu_per_host_call": true,
+      "all_emulated_ram_preserved_between_host_calls": true,
+      "uninterrupted_cpu_within_guest_cleanup_graph": true
+    },
+    "backend_identical_to_earlier_qualified_menu_run": true,
+    "negative_controls": [
+      {
+        "kind": "layout_row_spacing",
+        "function": "func_8003D73C",
+        "function_offset": 456,
+        "changed_instruction_executions": 2
+      },
+      {
+        "kind": "accept_row_spacing",
+        "function": "func_8003DAD4",
+        "function_offset": 232,
+        "changed_instruction_executions": 2
+      },
+      {
+        "kind": "persist_wrong_selection",
+        "function": "func_8003DAD4",
+        "function_offset": 364,
+        "changed_instruction_executions": 1
+      }
+    ],
+    "scope": "Manual valid object/ownership graphs with original menu, glyph, graphics, list and heap methods. Independent XY/visibility/color/selection/timer rules plus complete original/candidate caller/heap/global buffers. Excludes natural constructors/assets, rendered output, full input/menu reachability and PS1 hardware timing."
+  },
+  "current_counts_before": {
+    "c_bytes": 194792,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 7,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "current_counts_after": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_functions_promoted": 2,
+  "new_C_bytes": 1052,
+  "new_distinct_native_fixture_inputs": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "new_gameplay_runs": 0,
+  "new_model_API_calls": 0,
+  "original_behavior_modified": false,
+  "Bevy_port_modified": false,
+  "earlier_inventory_fields_and_snapshots_preserved": true,
+  "objective_sha256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+  "all_seven_completion_requirements_retained": true,
+  "excluded_setup_diagnostic": "First layout control expected an 80-byte frame; the actual known scalar control reserves 72 bytes. Its retained ELF has the expected 580 bytes and 20 differences. The corrected second producer uses that measured frame; no game source or compiler options changed.",
+  "private_evidence": [
+    {
+      "path": ".decomp-lab/menu-lookup-acceptance-20261016-first/validation.json",
+      "sha256": "c7f1d617ae8c4e319ce271c2b0c428f2d07953a2416e48e53d96cf57ce22b512"
+    },
+    {
+      "path": ".decomp-lab/menu-lookup-requalification-20261016-first/report.json",
+      "sha256": "a7f58c04744fb3f54d73bf477f95b38ab2d1edcba5f94b7488c2204f92f7a8df"
+    },
+    {
+      "path": ".decomp-lab/menu-lookup-acceptance-20261016-first/native-before/report.json",
+      "sha256": "e968c7d0ae4b685c650bce9447d1a5f163466b5ec8999160e61be05197046d32"
+    },
+    {
+      "path": ".decomp-lab/menu-lookup-acceptance-20261016-first/native-after/report.json",
+      "sha256": "53d0dda4cdb859e060d7daf79ba5f733967e1901b16aa37f3ee5a38f160d249e"
+    },
+    {
+      "path": ".decomp-lab/menu-lookup-source-review-20261016-first/report.json",
+      "sha256": "1d2c57ccc3160e91722c1b68af3ef6f13c48a1ac5078e15a7e3712a2e64a5305"
+    }
+  ],
+  "tooling_tests": {
+    "windows": {
+      "tests": 608,
+      "skipped": 2,
+      "passed": true,
+      "log_sha256": "e73f93cad3c004d12f53bb93c57cd04729ec603386bb40caeefe9bc3a193f3fd"
+    },
+    "wsl": {
+      "tests": 608,
+      "skipped": 2,
+      "passed": true,
+      "log_sha256": "7b063aeac3418b797e27abe65bd9cd3532593bdb33b0fb13003f73a14ba59200"
+    }
+  }
+}

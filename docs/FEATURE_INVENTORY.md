@@ -1,9 +1,11 @@
 # LSD feature inventory
 
-The latest [generation lookup recovery](GENERATION_LOOKUP_RECOVERY.md) brings
-matching C to **194,792 / 199,912 bytes (97.44%)**, with **seven** game assembly
+The latest [menu lookup recovery](MENU_LOOKUP_RECOVERY.md) brings
+matching C to **195,844 / 199,912 bytes (97.97%)**, with **five** game assembly
 fallbacks and **37 / 40** groups whose listed core functions are in C. The
-historical measurements below retain their original dates and scope.
+historical measurements below retain their original dates and scope. F035
+still includes a remaining UI-scale assembly function, so its whole listed-core
+source gate remains open despite the two recovered menu callers.
 
 > Publication note: this is a frozen local research snapshot. Private
 > `.decomp-lab` evidence is excluded; see [provenance](PROVENANCE.md).
@@ -792,3 +794,21 @@ inherited storage explanations, 107 callback C bodies, 36 bounded NPC profiles,
 ten developer capability categories and three optional mods retain their counts.
 The additive machine inventory preserves every prior field and snapshot; the
 separate Bevy port, running player and frozen objective remain unchanged.
+
+## Matching menu lookup recovery supplement
+
+The [menu layout and acceptance recovery](MENU_LOOKUP_RECOVERY.md) adds 1,052
+matching C bytes. Current C is 195,844 / 199,912 (97.97%), with five game assembly
+fallbacks and 24 inherited storage explanations. All four earlier source-layout
+withdrawals now have replacement matching C. Standard and fresh 306-object
+builds reproduce the complete canonical executable.
+
+The retained native profile passes 864 constructed histories per original/exact
+combined candidate and repeats after promotion through all 39 scoped methods.
+Three executed faults are detected. These are existing fixture domains; natural
+menu construction, rendered output, controller reachability and timing remain
+open. F035 retains the UI-scale fallback, so listed-core groups remain 37 / 40.
+Original callback C bodies stay 107 / 107, bounded profiles 36 / 107, whole
+features 0 / 40 and whole encounters zero. Ten developer capability categories,
+three optional mods and the separate Bevy port are unchanged. The machine
+supplement preserves all earlier measurements and the full frozen objective.

@@ -1,5 +1,9 @@
 # Menu layout, glyphs and acceptance
 
+> The later [matching menu recovery](MENU_LOOKUP_RECOVERY.md) closes both
+> callers' C-source gates. This earlier nonmatching-candidate report retains its
+> measurements; natural menu/rendering and whole-feature acceptance stay open.
+
 The original menu layout and acceptance routines pass 864 constructed histories
 per original and three padding-free candidate images. All 39 scoped methods
 execute, including glyph positioning/color/visibility, graphics effects, parent

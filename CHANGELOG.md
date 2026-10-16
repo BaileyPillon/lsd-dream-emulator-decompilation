@@ -1,5 +1,16 @@
 # Changelog
 
+## Matching menu layout and acceptance - 2026-10-16
+
+- Recover both menu callers in matching C using three consumed typed vtable
+  snapshots, preserving the original XY/size records and callback arguments.
+- Add 1,052 recovered bytes: matching C reaches 195,844 / 199,912 (97.97%),
+  with five game assembly fallbacks and 24 inherited storage explanations.
+- Recheck 864 existing histories per original/exact candidate through all 39
+  scoped methods and three executed faults; preserve whole-feature counts.
+- Observe the actual reload allocations and retain standard/fresh complete
+  executable equality. The Bevy repository and running player are unchanged.
+
 ## Matching generation dispatch and entry scanning - 2026-10-16
 
 - Recover the 444-byte entry scanner and 136-byte structure updater in C using

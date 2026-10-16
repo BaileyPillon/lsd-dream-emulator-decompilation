@@ -1,9 +1,9 @@
 # Unaccepted source-layout candidates
 
-The later [matching lookup recovery](../../docs/GENERATION_LOOKUP_RECOVERY.md)
-supersedes the entry scanner and structure-update hypotheses here. Both
-functions now compile as matching C in `src/dream/`. These older fragments
-remain historical comparisons; the two menu recoveries remain open.
+The later [generation lookup recovery](../../docs/GENERATION_LOOKUP_RECOVERY.md)
+and [menu lookup recovery](../../docs/MENU_LOOKUP_RECOVERY.md) supersede all
+four primary hypotheses here. The functions now compile as matching C in
+`src/dream/` and `src/menu/`. These older fragments remain historical comparisons.
 
 The later [generation interface audit](../../docs/GENERATION_INTERFACE.md)
 uses the recovered typed virtual method. `structure-update-method.c` tests a
