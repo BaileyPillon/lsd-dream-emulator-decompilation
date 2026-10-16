@@ -1,0 +1,581 @@
+{
+  "schema_version": 1,
+  "status": "passed_matching_callback_storage_recovery",
+  "recorded_utc": "2026-10-16T19:21:18.494808+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "source_baseline_commit": "d7cfae53ae359490f3d6d3b574f5edf3aa9aca62",
+  "scope": "Five existing C functions replace inherited unused local arrays/dead comparisons with actual consumed callback/table lookup lifetimes.",
+  "explained_functions": [
+    {
+      "function": "func_8003D050",
+      "source": "src/menu/ui_screen.c",
+      "address": "0x8003d050",
+      "bytes": 324,
+      "sha256": "326358627053ab1fbf6659da91d394978548096001c4704fdfae1b39586af504",
+      "family": "ui-cleanup-lifetime-20261016-first",
+      "case": "typed-callback-snapshot",
+      "unused_declared_bytes_removed": 8,
+      "function_report_sha256": "6764bc58cb68216eaec9c71c0e2f7b3796c0ed02c9754b7ab0eeef9e90160098",
+      "complete_comparison_sha256": "fa74a591e4ebb91eeb75631490d8032219654e6c768e7ca0d38580d7e6c4ed0d"
+    },
+    {
+      "function": "func_8003D194",
+      "source": "src/menu/ui_screen.c",
+      "address": "0x8003d194",
+      "bytes": 312,
+      "sha256": "8e04fc8df3a46305172d336d99815f983b44f7241afdd4c92f812bf620b9a79f",
+      "family": "ui-row-callback-lifetimes-20261016-first",
+      "case": "row-attach",
+      "unused_declared_bytes_removed": 8,
+      "function_report_sha256": "ae0aa4e53529d9abc02f319223c168895fee98baedc8ac897128c00939f0d592",
+      "complete_comparison_sha256": "a431a44ef8e3dee6faa2464acd32b100e8759554bcff19bfefe5d0e5ca7c42ac"
+    },
+    {
+      "function": "func_8005278C",
+      "source": "src/menu/card/select_menu.c",
+      "address": "0x8005278c",
+      "bytes": 144,
+      "sha256": "eca819ed866ce703f92e65243bd9199d0ef56624a0fe8312ea7b0bbb55c5a371",
+      "family": "select-line-destroy-lifetime-20261016-first",
+      "case": "typed-callback-snapshot",
+      "unused_declared_bytes_removed": 8,
+      "function_report_sha256": "8d0ff738f5fb2f30f9c395a86e2680b6a271e79fdbcab57d9d179ce23a253ef9",
+      "complete_comparison_sha256": "98f6ae9b4579d6459425bd515956f491d74816cb8d8dbb21f916c0474ff68e80"
+    },
+    {
+      "function": "func_80051C84",
+      "source": "src/menu/card/select_menu.c",
+      "address": "0x80051c84",
+      "bytes": 152,
+      "sha256": "1d6a2881f69f33c6e93dabe08aceaa77b4cae29fd9eedc00e6e541bb83705274",
+      "family": "select-base-method-20261016-third",
+      "case": "callback-array",
+      "unused_declared_bytes_removed": 8,
+      "function_report_sha256": "5803fa478c80f70281dbc4772ffaa3fd3579fae168959e10beeeb38c56ce5cc9",
+      "complete_comparison_sha256": "4fa3d9ea8010bb8a48934cc3ee7d98d098f24a4c400ac44bcecc9c347813f4fd"
+    },
+    {
+      "function": "graph_screen_update_event",
+      "source": "src/menu/graph_screen.c",
+      "address": "0x80058404",
+      "bytes": 432,
+      "sha256": "f199286b8e699fad3240f6e129db3c993d67d95555eb86c2e37de8f973d287a0",
+      "family": "graph-callback-lifetimes-20261016-first",
+      "case": "loop-slot",
+      "unused_declared_bytes_removed": 8,
+      "function_report_sha256": "0f0a49712dca8e45d1333851593fb1e65728f6cb6d37378b88d69a1fe7779c45",
+      "complete_comparison_sha256": "46b50d150fd82996a4f837003ba06b3d1df8fb337dc108d5d9ed4552f7433994"
+    }
+  ],
+  "source_quality_functions_explained": 5,
+  "affected_existing_C_bytes": 1364,
+  "unused_declared_local_bytes_removed": 40,
+  "canonical_image": {
+    "bytes": 505856,
+    "sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "normal_complete_image_equal": true,
+    "fresh_clean_complete_image_equal": true,
+    "fresh_objects": 306
+  },
+  "protected_build_inputs": 392,
+  "changed_game_inputs": [
+    "src/menu/card/select_menu.c",
+    "src/menu/graph_screen.c",
+    "src/menu/ui_screen.c"
+  ],
+  "other_game_inputs_retained": 389,
+  "public_files": {
+    ".gitattributes": "02b3729d7be81a9e47e0d3f59915fe5da4f3281bb55c1693f083a2a1925b8f02",
+    "CHANGELOG.md": "30c3b40b131eca72a9c3fee509b639627e498fe30e306138edebc5c5bbed20dc",
+    "README.md": "a958135ebe6fac896837a396b20025c05692854a04279fefe130dce9b37d71b1",
+    "docs/CALLBACK_STORAGE_RECOVERY.md": "bf886b93cbee03c692d2680f0441dfd87fc6c876f112a744496dc282f1c4d3a2",
+    "docs/FEATURE_INVENTORY.md": "1d30c25f732710df46fda17c8211bb748b1336ed3d7cf5d5477063e338c66940",
+    "docs/PROVENANCE.md": "ddcade314dd6203d77827479efdfdc11a8b04812baf149b8dbb76086ec844afe",
+    "docs/ROADMAP.md": "91ad0d5e78356e0114d771ef9ba537d01775272c36c14ef4b936d765f00cbef5",
+    "docs/SOURCE_LAYOUT_EXPANDED.md": "5b30240fd2e3330f41a21c72142a34a111f5912f58dc6e4fc520c29cb1798e18",
+    "docs/features.json": "4241c524647ec263241a2d11e454b1cd3b287047df568a0cc7cfc9dded0ec62f",
+    "src/menu/ui_screen.c": "7092852a20d3452c87a4629c4817a7a6c4e6e7ffe6c102e88d17bc5d6de4d724",
+    "src/menu/card/select_menu.c": "baec6c919facd192b085e189c0380f5e2372dc945be89a879e18ed11e42bab0c",
+    "src/menu/graph_screen.c": "3459c26004f92d3f0549195fbb52d74dd11d5af856f73132653503ec39fa7ea4"
+  },
+  "public_file_hash_basis": "Raw verified local checkout bytes. Git text conversion can alter existing source/historical documentation line endings.",
+  "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+  "configuration_sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+  "compiler_and_flags_unchanged": true,
+  "compiler_allocator_observations": [
+    {
+      "source": "src/menu/ui_screen.c",
+      "kind": "baseline",
+      "source_sha256": "b342afae784fa9b2dcd4e4bbc087d620e44fa5e0e094652902b6ea585e19eb1b",
+      "report_sha256": "066e4e076eee76da5606eb9de1156af2339712dbea01000325349afcc683d7d3",
+      "normal_assembly_sha256": "95ac9a6c91ca7ad07faa6ee03fd050ad0fcb2e5ab98eac6c5266d9eefb491e47",
+      "complete_assembly_equal": true,
+      "root_allocation_events": [
+        {
+          "function": "func_8003D050",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8003D194",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "src/menu/ui_screen.c",
+      "kind": "padding-removed",
+      "source_sha256": "e44938f852747a2df7770acb8e60f8177f5466ba8627b38bc19865de757a6b59",
+      "report_sha256": "0e92d3436a88f178b281805cd16f655a36bc1e4a4da0b5fe80dfa853e80b9cbe",
+      "normal_assembly_sha256": "a1c130fc3029c49dfcc2c26280485f49e91c5b8f617f344ddeaed5e563db7e39",
+      "complete_assembly_equal": true,
+      "root_allocation_events": []
+    },
+    {
+      "source": "src/menu/ui_screen.c",
+      "kind": "matching",
+      "source_sha256": "7092852a20d3452c87a4629c4817a7a6c4e6e7ffe6c102e88d17bc5d6de4d724",
+      "report_sha256": "2818cf966cbc8e19c76746b57e00e748e3555d870e4cd846305b5be8d00aaf3d",
+      "normal_assembly_sha256": "93d05e8e5f0380be5be673d00312c3d49bb332edf31f912365f2a583f1a1bcc9",
+      "complete_assembly_equal": true,
+      "root_allocation_events": [
+        {
+          "function": "func_8003D050",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 92,
+            "from_pseudo": -1,
+            "function": "func_8003D050",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8003D194",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 89,
+            "from_pseudo": -1,
+            "function": "func_8003D194",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "src/menu/card/select_menu.c",
+      "kind": "baseline",
+      "source_sha256": "bbd8d295cb88e3ab9d7b01a50deafda580c3cd648ef4a975d0aaef4f961ee512",
+      "report_sha256": "2c61414143dde826cefff1d8dec7985f6dc0d8a8438aed2a795d17bba61b7fff",
+      "normal_assembly_sha256": "c9055d3cb8a3b6044f5b8f0fd2c3f6e742b08e9666bf6482b2041e7c88d6b449",
+      "complete_assembly_equal": true,
+      "root_allocation_events": [
+        {
+          "function": "func_80051C84",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8005278C",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "src/menu/card/select_menu.c",
+      "kind": "padding-removed",
+      "source_sha256": "d2cb6c821a47e820a9609e89c37347c3cd8d31244a754421e12372743a0e0d5f",
+      "report_sha256": "7cdcd26cb851bc2b908923dc450b8ae60f84cd5b3c7d851c5a5315aae018ae0d",
+      "normal_assembly_sha256": "c6359d37a29f99048198b09476d76079ceea43be0deae0f7d964bb8550ea75d4",
+      "complete_assembly_equal": true,
+      "root_allocation_events": []
+    },
+    {
+      "source": "src/menu/card/select_menu.c",
+      "kind": "matching",
+      "source_sha256": "baec6c919facd192b085e189c0380f5e2372dc945be89a879e18ed11e42bab0c",
+      "report_sha256": "8b75a109d384fb1c03e3ec89595bc881026f8e0a2bc8c3ac0a2105c44219e78d",
+      "normal_assembly_sha256": "5594acf61819f83867182f270106d77a19aaf79b8b61fbce4ac60f566801cee1",
+      "complete_assembly_equal": true,
+      "root_allocation_events": [
+        {
+          "function": "func_80051C84",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 83,
+            "from_pseudo": -1,
+            "function": "func_80051C84",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8005278C",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 83,
+            "from_pseudo": -1,
+            "function": "func_8005278C",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "src/menu/graph_screen.c",
+      "kind": "baseline",
+      "source_sha256": "1a8b08a0a96838f3da9d88724c57dacb80bab0dce0e0382f3127f0de91433b36",
+      "report_sha256": "f7af38f8bccf3d31a6c9dc473336e8229fe8a1eda453b59380c9d28c3f208977",
+      "normal_assembly_sha256": "5caf462913dd29f5f4da0f9ea7374c55de8df298a13185c71d051dc4b1ef1922",
+      "complete_assembly_equal": true,
+      "root_allocation_events": [
+        {
+          "function": "graph_screen_update_event",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "graph_screen_update_event",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 8,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "graph_screen_update_event",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 16,
+          "frame_offset_after": 24,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "src/menu/graph_screen.c",
+      "kind": "padding-removed",
+      "source_sha256": "cc99513dd0d3bc15d826514e79872c3d6971b8ee728f9e2059cd3cf9615a88b2",
+      "report_sha256": "b2217f9272d67d4d4eee34e645b2c4288a206ff5ef9bfd8f8fbc9b66e4622f28",
+      "normal_assembly_sha256": "7bedb4dc5b1e7c9d6c325baf87cbc8a705d409d307f5007590d8dacff1b37fcf",
+      "complete_assembly_equal": true,
+      "root_allocation_events": [
+        {
+          "function": "graph_screen_update_event",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "graph_screen_update_event",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 8,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "src/menu/graph_screen.c",
+      "kind": "matching",
+      "source_sha256": "3459c26004f92d3f0549195fbb52d74dd11d5af856f73132653503ec39fa7ea4",
+      "report_sha256": "72a0252cbf06e5258255b31440f9f872e88ea652a6efe9743537874cd0d911bd",
+      "normal_assembly_sha256": "8941277ae989f9e03e456d323db12f6ada1a68385e1b0f0f1584204b0d6b1c60",
+      "complete_assembly_equal": true,
+      "root_allocation_events": [
+        {
+          "function": "graph_screen_update_event",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "graph_screen_update_event",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 8,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "graph_screen_update_event",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 16,
+          "frame_offset_after": 24,
+          "alter_reg_context": {
+            "pseudo": 117,
+            "from_pseudo": -1,
+            "function": "graph_screen_update_event",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        }
+      ]
+    }
+  ],
+  "allocator_scope": "Actual compiler allocator calls, one observation per complete source unit and variant. Nested temporary/local calls describe one allocation. Pseudo IDs are not source-field identities; no explicit inferior memory rewrites or forced results.",
+  "individually_qualified_complete_ELF_functions": 5,
+  "combined_private_complete_unit_matches": 3,
+  "remaining_identified_inherited_functions": [
+    "func_8001EDAC",
+    "func_8001EE98",
+    "generate_initial_spawn",
+    "debug_file_driver_unk15",
+    "debug_file_driver_open",
+    "memory_card_wait_event",
+    "func_8004F810",
+    "func_8004FBE4",
+    "func_80051AC8",
+    "glyph_get_char",
+    "graph_screen_setup_video_event",
+    "func_8004564C",
+    "func_80044F90",
+    "func_80045060",
+    "func_80044D40",
+    "func_80044E64",
+    "func_8003D2CC",
+    "func_80065E1C",
+    "func_8004ADD8"
+  ],
+  "current_counts_before": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "current_counts_after": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 19,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_C_bytes": 0,
+  "source_functions_promoted": 0,
+  "new_distinct_native_fixture_inputs": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "new_gameplay_runs": 0,
+  "new_model_API_calls": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "original_behavior_modified": false,
+  "Bevy_port_modified": false,
+  "runtime_scope": "No new native fixture domain or emulator run. Canonical code identity is preserved; independently executed cleanup/graph scenarios and broader gameplay/asset acceptance remain separate open requirements.",
+  "retained_setup_diagnostic": "The optional workbench --function diagnostic accepts active ASM inclusions only. The first existing-C experiment was independently qualified as a complete ELF function, then its complete unit was correctly checked without that option. No full-image mismatch was accepted.",
+  "earlier_inventory_fields_and_snapshots_preserved": true,
+  "objective_sha256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+  "all_seven_completion_requirements_retained": true,
+  "private_evidence": [
+    {
+      "path": "C:/Users/Administrator/Documents/AI Research/lsd-recovered/.decomp-lab/callback-storage-acceptance-20261016-first/validation.json",
+      "sha256": "5a03dc54a34c86fd034ffe67780a0fc5821940629a0235f3e31e1052cccc4a1c"
+    },
+    {
+      "path": ".decomp-lab/callback-storage-qualification-20261016-first/report.json",
+      "sha256": "a490d24fc24bd9eddc813a4b4c7e23b8f011527c98067975e01b76f084aad013"
+    },
+    {
+      "path": ".decomp-lab/callback-storage-traces-20261016-first/report.json",
+      "sha256": "2f2f5e9db9c057c9134011a96235f54524abc1423ac20bfff88186f189922500"
+    },
+    {
+      "path": ".decomp-lab/callback-storage-review-20261016-first/report.json",
+      "sha256": "d40a3e174c792bb5871ac44c32259663ac1eab4d81013adeb23d676035c8a544"
+    }
+  ],
+  "tooling_tests": {
+    "windows": {
+      "tests": 608,
+      "skipped": 2,
+      "passed": true,
+      "log_sha256": "d885a46dd7c078e41a6117ee8c4e2b5993f64a6e52bb0c629f6e9623b582dcd8"
+    },
+    "wsl": {
+      "tests": 608,
+      "skipped": 2,
+      "passed": true,
+      "log_sha256": "13c90b9b8d6e243255ac421017e2039ff60f0dc41ba63c536cdb344839f0fe40"
+    }
+  }
+}

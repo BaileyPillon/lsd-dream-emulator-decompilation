@@ -1,5 +1,11 @@
 # Expanded source-layout audit and corrected recovery status
 
+> Historical baseline: later generation and menu recoveries replace the four
+> withdrawn functions with matching C. The subsequent
+> [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md) explains five of the
+> 24 inherited declarations, leaving nineteen identified explanations open.
+> Measurements below retain their original snapshot and scope.
+
 The earlier [five-function audit](SOURCE_QUALITY.md) inspected selected
 `dummy_stack_padding` declarations. A wider review now verifies **28 functions
 with unused local storage**, covering 6,720 compiled game-function bytes and

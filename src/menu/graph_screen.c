@@ -133,6 +133,16 @@ typedef struct graph_screen_point {
     /* 0x04 */ s32 y;
 } graph_screen_point_t;
 
+typedef void (*graph_event_slot_fn_t)(graph_screen_event_slot_t *, s32, s32 *, s32);
+typedef struct {
+    graph_screen_event_slot_vtable_t *table[1];
+} graph_event_slot_ref_t;
+typedef char checked_graph_event_slot_ref_t[
+    (sizeof(graph_event_slot_ref_t) == 4) ? 1 : -1];
+static inline graph_event_slot_fn_t graph_event_read_slot_method(graph_screen_event_slot_t *obj) {
+    graph_event_slot_ref_t reference = {{ obj->vtable }};
+    return reference.table[0]->Unk48;
+}
 void graph_screen_update_event(graph_screen_t *This, s32 arg) {
     graph_screen_event_rec_t *rec;
     s32 limit;
@@ -143,10 +153,7 @@ void graph_screen_update_event(graph_screen_t *This, s32 arg) {
     graph_screen_point_t cur;
     graph_screen_point_t saved;
     graph_screen_event_slot_t *slot;
-    char pad[8];
 
-    if (&pad[0] == &pad[7]) {
-    }
     func_8003DFBC()->Unk55(This, arg);
     rec = ((dream_sys_t *) This->m_DreamSys)->vtable->dream_sys_get_save_data(This->m_DreamSys, NULL);
     This->m_VideoReelReady = graph_screen_setup_video_event(This, (u8 *) rec);
@@ -174,7 +181,7 @@ void graph_screen_update_event(graph_screen_t *This, s32 arg) {
                 flag = 1;
             } else {
                 slot = *(graph_screen_event_slot_t **) (cursor + 0xA8);
-                slot->vtable->Unk48(slot, arg, &cur.x, 0);
+                graph_event_read_slot_method(slot)(slot, arg, &cur.x, 0);
             }
             cursor += 4;
             i += 1;

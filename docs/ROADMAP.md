@@ -50,11 +50,13 @@ The [bounds candidate](BOUNDS_NARROW_COMPARISON.md) now has a published
 4,648 existing inputs. Recover the unresolved return/packed-X allocation;
 128 further compiler observations in this checkpoint find no exact match.
 
-The expanded audit identifies 28 unused-storage functions and withdraws four
-padded promotions. Twenty-four inherited source explanations remain in C;
+The expanded audit identified 28 unused-storage functions and withdrew four
+padded promotions. Twenty-four inherited explanations remained at that snapshot;
 the correction's historical count was 194,212 / 199,912 (97.15%). The two
 generation and two menu recoveries now raise it to 195,844 / 199,912 (97.97%).
-Recover real storage and helper lifetimes for the 24 inherited functions.
+The [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md) now explains five
+inherited functions. Recover the real storage and helper lifetimes for the
+remaining nineteen identified functions.
 All four withdrawn functions have replacement matching C; the earlier
 [source-layout candidates](../research/source_layout/README.md) remain
 historical research. Full source quality and runtime acceptance are separate.

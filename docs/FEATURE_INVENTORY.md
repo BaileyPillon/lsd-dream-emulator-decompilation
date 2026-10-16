@@ -7,6 +7,10 @@ historical measurements below retain their original dates and scope. F035
 still includes a remaining UI-scale assembly function, so its whole listed-core
 source gate remains open despite the two recovered menu callers.
 
+The subsequent [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md)
+reduces identified inherited storage explanations from **24 to 19**, with all
+C-byte, assembly, feature and NPC acceptance counts above unchanged.
+
 > Publication note: this is a frozen local research snapshot. Private
 > `.decomp-lab` evidence is excluded; see [provenance](PROVENANCE.md).
 
@@ -812,3 +816,20 @@ Original callback C bodies stay 107 / 107, bounded profiles 36 / 107, whole
 features 0 / 40 and whole encounters zero. Ten developer capability categories,
 three optional mods and the separate Bevy port are unchanged. The machine
 supplement preserves all earlier measurements and the full frozen objective.
+
+## Callback storage explanation supplement
+
+The [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md) removes forty
+unused declared local bytes and dead comparisons from five existing C functions.
+Actual four-byte method/table snapshots supply their original callbacks, with
+observed reload allocation reproducing every original instruction. The known
+inherited storage explanations fall from 24 to 19. These functions already
+counted as C; the affected 1,364 bytes add no recovered C-byte coverage.
+
+Regular and fresh 306-object builds remain canonical. C stays 195,844 / 199,912
+(97.97%), with five assembly fallbacks, 37 / 40 listed-core C groups, 107 original
+callback C bodies and 36 bounded profiles. Whole-feature and whole-encounter
+acceptance remain zero. No new native input domain or emulator scenario is
+claimed. The additive inventory preserves all earlier fields and snapshots,
+ten developer capability categories, three optional mods, the frozen objective
+and the separate Bevy port.

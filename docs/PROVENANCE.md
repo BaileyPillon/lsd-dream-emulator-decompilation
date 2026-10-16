@@ -1,5 +1,15 @@
 # Source and evidence provenance
 
+The [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md) explains five
+existing C functions through real four-byte callback/table views. Their forty
+unused declared bytes and dead comparisons are removed; original function
+instructions and normal/fresh complete images remain unchanged. Nine compiler
+observations compare baseline, removed-array control and matching source.
+The [new metadata](callback-storage-recovery-checks.json) appends the reduction
+from 24 to 19 identified inherited explanations without adding C bytes or
+runtime acceptance. Earlier snapshots, raw private evidence and all full-goal
+requirements are retained.
+
 The [matching menu recovery](MENU_LOOKUP_RECOVERY.md) adds 1,052 C bytes through
 consumed typed vtable snapshots. Its normal/fresh complete builds, qualified
 function spans, actual allocator traces and retained 864-history native profile

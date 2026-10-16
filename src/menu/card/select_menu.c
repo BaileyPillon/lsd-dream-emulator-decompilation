@@ -67,10 +67,19 @@ void func_80051C74(class_select_menu_t *This) {
     This->m_Unk19 = 0;
 }
 
+typedef void (*select_base_cleanup_fn_t)(base_class_t *);
+typedef struct {
+    select_base_cleanup_fn_t value[1];
+} select_base_method_ref_t;
+typedef char checked_select_base_method_ref_t[
+    (sizeof(select_base_method_ref_t) == 4) ? 1 : -1];
+static inline select_base_cleanup_fn_t select_read_base_cleanup(void) {
+    select_base_method_ref_t reference = {{ base_class_get_vtable()->Cleanup }};
+    return reference.value[0];
+}
 void func_80051C84(class_select_menu_t *This) {
     s32 temp_a0;
     s32 var_s0;
-    s32 pad[2];
 
     var_s0 = 0;
     if (This->m_Unk3 > 0) {
@@ -82,7 +91,7 @@ void func_80051C84(class_select_menu_t *This) {
     }
     memory_free_mem((void *) This->m_Unk6);
     memory_free_mem((void *) This->m_Unk5);
-    base_class_get_vtable()->Cleanup(This);
+    select_read_base_cleanup()((base_class_t *)This);
 }
 
 void func_80051D1C(class_select_menu_t *This, void **Unk) {
@@ -376,11 +385,20 @@ void func_80052644(class_select_menu_t *This, s32 arg1, s32 arg2, s32 arg3, char
     }
 }
 
+typedef base_class_t *(*select_line_destroy_fn_t)(base_class_t *);
+typedef struct {
+    text_line_vtable_t *table[1];
+} select_line_table_ref_t;
+typedef char checked_select_line_table_ref_t[
+    (sizeof(select_line_table_ref_t) == 4) ? 1 : -1];
+static inline select_line_destroy_fn_t select_read_line_destroy(text_line_t *line) {
+    select_line_table_ref_t reference = {{ line->vtable }};
+    return reference.table[0]->Destroy;
+}
 void func_8005278C(class_select_menu_t *This) {
     s32 count;
     s32 index;
     text_line_t *line;
-    s32 pad[2];
 
     if (This->m_Unk19 != 0) {
         count = This->m_Unk3;
@@ -391,7 +409,7 @@ void func_8005278C(class_select_menu_t *This) {
         if (count > 0) {
             do {
                 line = ((text_line_t **) &This->m_Unk15)[index];
-                line->vtable->Destroy((base_class_t *) line);
+                select_read_line_destroy(line)((base_class_t *) line);
                 ((text_line_t **) &This->m_Unk15)[index] = 0;
                 index += 1;
             } while (index < count);
