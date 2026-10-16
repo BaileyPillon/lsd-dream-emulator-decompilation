@@ -875,3 +875,18 @@ separate renderer/overlap comparisons retain no exact match. Six further forms
 emit a real helper and are excluded from the single-function count. Failed
 attempts, game images, ELF exports and complete compiler traces remain private.
 Historical measurements are preserved; the Bevy repository and player are unchanged.
+
+## Overlap result lifetimes
+
+[overlap-result-lifetimes-checks.json](overlap-result-lifetimes-checks.json)
+records the current unaccepted 148-byte overlap difference, its complete sized
+ELF span and three normal/instrumented source observations. All 69 isolated
+source comparisons are independently requalified. The original early region
+remains unexplained despite the matching total frame size.
+
+The current candidate repeats the existing 6,912 native graph pairs, retaining
+full caller buffers, ABI and ordered GTE comparisons. The height control patches
+two sites but enters only the coarse one. Candidate frame metadata now comes
+from the actual prologue/epilogue. No C bytes or original runtime domain are added.
+All 392 canonical inputs, the original executable and historical metadata remain
+unchanged; private images, source trials and complete reports stay outside Git.

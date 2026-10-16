@@ -1,5 +1,10 @@
 # Overlap source recovery
 
+> Historical checkpoint: the later
+> [result-lifetime study](OVERLAP_RESULT_LIFETIMES.md) reduces the current
+> candidate to 148 differing bytes and a 176-byte frame. The measurements below
+> retain this earlier 170-byte snapshot and its separate evidence.
+
 The unaccepted C candidate for `func_8001DDF4` uses two six-byte midpoint
 objects. It agrees with the original on 6,912 paired collision graphs, including
 complete caller buffers, ABI checks and ordered native GTE results. Its complete
@@ -98,8 +103,10 @@ python tools/decomp_workbench.py check \
   --output .decomp-lab/overlap-candidate-new/build
 ```
 
-The matching gate should fail with exit code 1: the complete image has its
-original length but 170 differing bytes. Build a current bridge as described
+The current matching gate should fail with exit code 1: the complete image has
+its original length but 148 differing bytes. The earlier fragment at commit
+`dacecb8995f393a69367b260b6252b80adbf7be6` reproduces the historical 170-byte
+result. Build a current bridge as described
 in [the GTE audit](RENDER_GTE.md), then run:
 
 ```bash

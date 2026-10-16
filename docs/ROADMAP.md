@@ -87,6 +87,11 @@ private buffer tail and checks the twelve-byte midpoint candidate in 6,912 paire
 native graphs. Twenty-seven source forms and actual compiler traces retain no
 exact match. Recover the remaining frame/register lifetime without artificial
 storage; natural geometry, histories and hardware timing also remain open.
+The later [result-lifetime study](OVERLAP_RESULT_LIFETIMES.md) reproduces the
+original 176-byte frame and reduces the complete-image difference to 148 bytes.
+Its additional storage comes from late reloads, leaving the earlier original
+region unexplained. The same bounded native graph domain passes; exact source
+and whole-feature acceptance remain open.
 
 The initial seven also remained after the [save-title recovery](SAVE_LABEL.md). That
 additional game-support helper was discovered in a segment classified as SDK;

@@ -1,5 +1,6 @@
 """Private candidate preparation and complete-image isolation use synthetic data."""
 from pathlib import Path
+import struct
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -63,6 +64,32 @@ class OverlapCandidateTests(unittest.TestCase):
                 compare.candidate_patch(reference, bytes(candidate), compare.ADDRESS)
         with self.assertRaises(ValueError):
             compare.candidate_patch(reference, reference[:-1], compare.ADDRESS)
+
+    def framed_function(self, frame, restore=None):
+        restore = frame if restore is None else restore
+        return struct.pack('<5I', 0x27BD0000 | (-frame & 0xFFFF), 0,
+                           0x27BD0000 | (restore & 0xFFFF), 0x03E00008, 0)
+
+    def test_frame_metadata_follows_each_compiled_layout(self):
+        for frame in (40, 152, 176, 200):
+            with self.subTest(frame=frame):
+                self.assertEqual(compare.fixed_stack_frame(self.framed_function(frame)), frame)
+
+    def test_mismatched_epilogue_does_not_report_a_plausible_frame(self):
+        with self.assertRaises(ValueError):
+            compare.fixed_stack_frame(self.framed_function(176, restore=152))
+
+    def test_missing_zero_or_unaligned_frames_are_rejected(self):
+        for function in (b'', b'\0' * 8, self.framed_function(0),
+                         self.framed_function(12), self.framed_function(176)[:-1]):
+            with self.subTest(function=function), self.assertRaises(ValueError):
+                compare.fixed_stack_frame(function)
+
+    def test_additional_stack_adjustment_is_not_a_fixed_frame(self):
+        function = self.framed_function(176)
+        function = function[:4] + struct.pack('<I', 0x27BDFFF8) + function[4:]
+        with self.assertRaises(ValueError):
+            compare.fixed_stack_frame(function)
 
 
 if __name__ == '__main__':

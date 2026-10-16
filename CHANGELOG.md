@@ -1,5 +1,15 @@
 # Changelog
 
+## Overlap result lifetimes and measured frames - 2026-10-16
+
+- Improve the unaccepted overlap candidate from 170 to 148 differing bytes,
+  retaining its 796-byte extent and twelve-byte midpoint payload. The original
+  176-byte frame is reproduced; the earlier storage region remains unexplained.
+- Derive candidate frame metadata from its actual prologue and epilogue;
+  add four synthetic regression checks instead of reporting a fixed 152 bytes.
+- Recheck the candidate on 6,912 existing native collision/GTE graph pairs.
+  Keep all canonical game inputs, C coverage and runtime acceptance unchanged.
+
 ## Menu constructor and actor allocator storage - 2026-10-16
 
 - Replace the menu constructor's unused array and actor allocator's unused

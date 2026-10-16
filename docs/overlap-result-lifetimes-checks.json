@@ -1,0 +1,876 @@
+{
+  "schema_version": 1,
+  "status": "qualified_unaccepted_overlap_result_lifetimes",
+  "recorded_utc": "2026-10-16T20:51:35.856316+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "dacecb8995f393a69367b260b6252b80adbf7be6",
+  "scope": "Unaccepted C result views improve the complete candidate to 148 differences. The fixed-frame diagnostic is derived from the actual candidate, with bounded original/candidate native comparisons.",
+  "original_address": "0x8001DDF4",
+  "function_bytes": 796,
+  "midpoint_payload_bytes": 12,
+  "previous_candidate": {
+    "differing_executable_bytes": 170,
+    "frame_bytes": 152
+  },
+  "current_candidate": {
+    "differing_executable_bytes": 148,
+    "frame_bytes": 176,
+    "function_sha256": "752ab4f89868a5e8c99a126c55ae39fcdba41b2b5b246485ddb3f20bd0ae258f",
+    "complete_image_sha256": "baf178f503099850da4c6e6aeb27325c22c0f35ee3b6632a1fbc8e41ae0410f7"
+  },
+  "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "before": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 17,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 17,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "all_392_game_build_inputs_retained": true,
+  "canonical_complete_image_equal": true,
+  "current_regular_build_verified": true,
+  "prior_clean_build_evidence_retained_for_identical_game_inputs": ".decomp-lab/constructor-actor-storage-acceptance-20261016-first/validation.json",
+  "public_files": {
+    "README.md": "c4095830ce289e9098797d3590f6f089faaf0f3c618279cacdb5c5bc7ce55c6a",
+    "CHANGELOG.md": "fe9f5f93971e58466ce150986f80d7a48cab4b4b69c5fdee4a4d91114fed9620",
+    "docs/OVERLAP_RECOVERY.md": "685fda166695819523fbafe049abeeab2be22928de1d5efbc84b0b90d2e9179a",
+    "docs/OVERLAP_RESULT_LIFETIMES.md": "21ec3b3e48b57880ebdea32e1ea8e2f4965ac4b582576cb9ddd44865318c48fc",
+    "docs/FEATURE_INVENTORY.md": "7494fd5d69a05f49ffd5770e8b4c125fe1aeeede844095d934f40cf731fc62d7",
+    "docs/PROVENANCE.md": "884cbb4ed4cb2cd2c01c926d0a6d5f21b32f51ab409622b7bd08ab0c8e6dbbda",
+    "docs/ROADMAP.md": "7f6b4f5f28bf6862ab392b0d3f5eaf685fc4bfb74d55c52221102c6e091208c2",
+    "docs/features.json": "131656eddff614309b512bf5bab70e3983e63735817a351d58d58956249b558f",
+    "research/collision/overlap_candidate.c": "b58c94661390f32e48e90fb91f5105b96625db3a7bfadafb9a0a61340ec393f0",
+    "research/collision/compare_overlap_candidate.py": "1df5faa37c6a70613a2751b4759c8a0b30c28919e12048874d7885af73369361",
+    "tests/test_overlap_candidate.py": "1b7559a5f5152a661152eb1e8d6416e5249f61d68236fb2c2d5fd71963b430e2"
+  },
+  "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+  "configuration_sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+  "isolated_compiler_observations": 69,
+  "distinct_prepared_sources": 63,
+  "source_studies": [
+    {
+      "family": "primitive-plane-records-20261016-first",
+      "compiler_observations": 11,
+      "best_differing_bytes": 22,
+      "report_sha256": "92ca9343c11871da251c5d8262cda11511d599dd1abc650385782ea6c0dbbdb9"
+    },
+    {
+      "family": "primitive-sdk-references-20261016-first",
+      "compiler_observations": 13,
+      "best_differing_bytes": 22,
+      "report_sha256": "62b85132b690a1b5804c4781bdcd215f5b4cacafa290064832b9f4fc679511bd"
+    },
+    {
+      "family": "overlap-argument-references-20261016-first",
+      "compiler_observations": 15,
+      "best_differing_bytes": 170,
+      "report_sha256": "fb997310cf20bb5d189e35b5dc75d68326bb8e0c4ba33df1abc4a6127c3baa9d"
+    },
+    {
+      "family": "overlap-result-references-20261016-first",
+      "compiler_observations": 16,
+      "best_differing_bytes": 148,
+      "report_sha256": "9c92df7ad8f6a850e964066f952718d4c183eed423337169a89b23b59076178c"
+    },
+    {
+      "family": "overlap-owned-results-20261016-first",
+      "compiler_observations": 14,
+      "best_differing_bytes": 148,
+      "report_sha256": "05069bcaa088e93a4b919accade4bd3d8e71a9e7ce7982e5219cbce4a79e8ee8"
+    }
+  ],
+  "complete_source_allocator_observations": 3,
+  "earlier_allocator_observations": [
+    {
+      "name": "published-170",
+      "source_sha256": "5290c3b684c99d2c73267fe6845f78ffb11286dadd7a8e0dae07f822926e55c9",
+      "report_sha256": "18b610524dd5ffd5050534dddef4d50f23dce35349c8dbdf835ee17c4dc65778",
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "73ae809d40c9a62dfdd61a0d36efac6649abd53cef27e8e9857222feb4045943",
+      "selected_events": [
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_temp",
+          "size": 12,
+          "frame_offset_before": 0,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 12,
+          "frame_offset_before": 0,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 16,
+          "frame_offset_after": 20,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "put_reg_into_stack",
+            "put_var_into_stack",
+            "mark_addressable",
+            "build_unary_op",
+            "yyparse",
+            "compile_file"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 20,
+          "frame_offset_after": 24,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "put_reg_into_stack",
+            "put_var_into_stack",
+            "mark_addressable",
+            "build_unary_op",
+            "yyparse",
+            "compile_file"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 24,
+          "frame_offset_after": 32,
+          "alter_reg_context": {
+            "pseudo": 72,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 32,
+          "frame_offset_after": 40,
+          "alter_reg_context": {
+            "pseudo": 73,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 40,
+          "frame_offset_after": 48,
+          "alter_reg_context": {
+            "pseudo": 74,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 48,
+          "frame_offset_after": 56,
+          "alter_reg_context": {
+            "pseudo": 83,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 56,
+          "frame_offset_after": 64,
+          "alter_reg_context": {
+            "pseudo": 84,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 64,
+          "frame_offset_after": 72,
+          "alter_reg_context": {
+            "pseudo": 152,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 72,
+          "frame_offset_after": 80,
+          "alter_reg_context": {
+            "pseudo": 153,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 80,
+          "frame_offset_after": 88,
+          "alter_reg_context": {
+            "pseudo": 154,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 88,
+          "frame_offset_after": 88,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "result-fields-148",
+      "source_sha256": "00588d9328e4816ae029e8347b6906a1244c2a9dc74684937a8e0188179aca87",
+      "report_sha256": "101f658336b5bd2a19744d49bb85e4a10e44aaf84dc2c95594fc4fd4d4c678bb",
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "9a7ea3e272c90e3a46b508277d6ee1ceae7ef425fd9ac39ece154c958f723a03",
+      "selected_events": [
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_temp",
+          "size": 12,
+          "frame_offset_before": 0,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 12,
+          "frame_offset_before": 0,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 16,
+          "frame_offset_after": 20,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "put_reg_into_stack",
+            "put_var_into_stack",
+            "mark_addressable",
+            "build_unary_op",
+            "yyparse",
+            "compile_file"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 20,
+          "frame_offset_after": 24,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "put_reg_into_stack",
+            "put_var_into_stack",
+            "mark_addressable",
+            "build_unary_op",
+            "yyparse",
+            "compile_file"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 24,
+          "frame_offset_after": 32,
+          "alter_reg_context": {
+            "pseudo": 72,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 32,
+          "frame_offset_after": 40,
+          "alter_reg_context": {
+            "pseudo": 73,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 40,
+          "frame_offset_after": 48,
+          "alter_reg_context": {
+            "pseudo": 74,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 48,
+          "frame_offset_after": 56,
+          "alter_reg_context": {
+            "pseudo": 83,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 56,
+          "frame_offset_after": 64,
+          "alter_reg_context": {
+            "pseudo": 84,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 64,
+          "frame_offset_after": 72,
+          "alter_reg_context": {
+            "pseudo": 116,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 72,
+          "frame_offset_after": 80,
+          "alter_reg_context": {
+            "pseudo": 120,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 80,
+          "frame_offset_after": 88,
+          "alter_reg_context": {
+            "pseudo": 139,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 88,
+          "frame_offset_after": 96,
+          "alter_reg_context": {
+            "pseudo": 161,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 96,
+          "frame_offset_after": 104,
+          "alter_reg_context": {
+            "pseudo": 162,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 104,
+          "frame_offset_after": 112,
+          "alter_reg_context": {
+            "pseudo": 163,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_8001DDF4",
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 112,
+          "frame_offset_after": 112,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ]
+        }
+      ]
+    }
+  ],
+  "current_public_allocator_report_sha256": "bf30b476125d6719bfd54ec90f35680b98dc609dfddbb8effcfdc1237d38b413",
+  "current_public_normal_assembly_sha256": "15f43fdc6e6301c7e3f1dcbb63eaa4fd814b8f9221cc81107a2139a9cf404779",
+  "complete_normal_and_instrumented_assembly_equal": true,
+  "previous_target_reload_allocations": 8,
+  "current_target_reload_allocations": 11,
+  "previous_virtual_local_area": 88,
+  "current_virtual_local_area": 112,
+  "unresolved_source_layout": "Additional reloads are late. Original best is at SP+0x40; candidate best is still at SP+0x28. Total frame equality does not explain the original earlier region.",
+  "native_composition_pairs": 6912,
+  "distinct_final_input_graphs": 5760,
+  "repeated_final_input_graphs": 1152,
+  "entered_original_routines": 15,
+  "original_native_entries": {
+    "class_FA50_is_active": 13824,
+    "refresh_source_vertices": 6912,
+    "func_8001F3B0": 13824,
+    "get_source_vertices": 36720,
+    "func_8001F51C": 6912,
+    "func_8001F66C": 6912,
+    "func_8001DDF4": 6912,
+    "class_FA50_reset_flag": 1728,
+    "func_8001E110": 48420,
+    "func_8001ECFC": 96840,
+    "func_8001F8B8": 4536,
+    "func_80020050": 9072,
+    "OuterProduct10": 4536,
+    "Square0": 6480,
+    "SquareRoot0": 6480
+  },
+  "candidate_native_entries": {
+    "class_FA50_is_active": 13824,
+    "refresh_source_vertices": 6912,
+    "func_8001F3B0": 13824,
+    "get_source_vertices": 36720,
+    "func_8001F51C": 6912,
+    "func_8001F66C": 6912,
+    "func_8001DDF4": 6912,
+    "class_FA50_reset_flag": 1728,
+    "func_8001E110": 48420,
+    "func_8001ECFC": 96840,
+    "func_8001F8B8": 4536,
+    "func_80020050": 9072,
+    "OuterProduct10": 4536,
+    "Square0": 6480,
+    "SquareRoot0": 6480
+  },
+  "native_gte_commands_before_controls": 22032,
+  "native_leading_requests_before_controls": 12960,
+  "native_gte_control_commands": 3,
+  "native_leading_control_requests": 2,
+  "executed_fault_control": {
+    "kind": "wrong_candidate_height_boundary",
+    "function": "func_8001DDF4",
+    "function_offsets": [
+      340,
+      620
+    ],
+    "expected_word": "0x28420201",
+    "changed_word": "0x28420200",
+    "changed_instruction_executions": {
+      "340": 1
+    },
+    "fixture": {
+      "polygons": [
+        [
+          [
+            -1024,
+            -512,
+            0
+          ],
+          [
+            1024,
+            -512,
+            0
+          ],
+          [
+            -1024,
+            1536,
+            0
+          ]
+        ]
+      ],
+      "query_bounds": [
+        [
+          -128,
+          0,
+          -1024
+        ],
+        [
+          128,
+          0,
+          1024
+        ]
+      ],
+      "mode": 1,
+      "count": 1,
+      "flip": 0,
+      "face": 0,
+      "amount": 0,
+      "segment": 0
+    },
+    "scope": "Private compiled-candidate emulator memory only."
+  },
+  "backend_identity": {
+    "package_version": "2.1.4",
+    "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+  },
+  "native_compressed_core_sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126",
+  "bridge_sha256": "4daac5674808410751b9b776659c832f2cd742582faf529154f214a3695d88c3",
+  "source_promoted": false,
+  "new_C_bytes": 0,
+  "source_quality_functions_explained": 0,
+  "new_original_fixture_domain": 0,
+  "new_NPC_callback_profiles": 0,
+  "new_gameplay_runs": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "new_model_API_calls": 0,
+  "Bevy_port_modified": false,
+  "earlier_inventory_fields_and_snapshots_preserved": true,
+  "objective_sha256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+  "all_seven_completion_requirements_retained": true,
+  "private_evidence": [
+    {
+      "path": ".decomp-lab/overlap-frontier-qualification-20261016-first/report.json",
+      "sha256": "34a5f444e172cb1f0e8683af7e354751610095fd97184b675405ab24aee28057"
+    },
+    {
+      "path": ".decomp-lab/overlap-result-native-pairs-20261016-first/report.json",
+      "sha256": "7b851215e15feb7d07445eb1ec135f85c002cd7c70ed252b7ea3fa68272cf29d"
+    },
+    {
+      "path": ".decomp-lab/overlap-results-public-20261016-first/build/comparison.json",
+      "sha256": "5416fd5e45c2676a62d024effbd33dd3d3a41c24e047b71280e9bc2c806cbc64"
+    },
+    {
+      "path": ".decomp-lab/overlap-results-public-20261016-first/prepared.json",
+      "sha256": "0a6d52ced1b43c30a126933bc9afbd00fef60fddf6d8a06d882a8f1d0fa86334"
+    },
+    {
+      "path": ".decomp-lab/overlap-results-public-20261016-first/compiler-trace/report.json",
+      "sha256": "bf30b476125d6719bfd54ec90f35680b98dc609dfddbb8effcfdc1237d38b413"
+    },
+    {
+      "path": ".decomp-lab/overlap-result-frames-20261016-first/report.json",
+      "sha256": "291286bcbf35a42656006594976e9b55db6ae9d5957045713ff09159e2bbe255"
+    }
+  ],
+  "publisher_sha256": "300c6e370bccd7b629d89c38f013e1379c80e540b78c3387b75cdb1389531828",
+  "tooling_tests": {
+    "windows": {
+      "tests": 612,
+      "skipped": 2,
+      "passed": true,
+      "python_version": "3.14.2",
+      "log_sha256": "8bba303ec5ff8850c5472d0c12c1c0b400e5b5b640aed3e5292bfe186d3417f8"
+    },
+    "wsl": {
+      "tests": 612,
+      "skipped": 2,
+      "passed": true,
+      "python_version": "3.13.5",
+      "log_sha256": "c22d5822e506a3a4ff83d5ed45dbb52bd87c77bf9c9ffd517f63d3b7b9afd926"
+    }
+  }
+}

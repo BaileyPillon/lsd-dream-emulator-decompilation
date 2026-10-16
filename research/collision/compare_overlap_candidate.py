@@ -17,6 +17,20 @@ from tools.verify_scripted_ai import backend_identity
 ADDRESS, FUNCTION_BYTES = 0x8001DDF4, 796
 
 
+def fixed_stack_frame(function):
+    """Read this profile's fixed prologue and matching single epilogue."""
+    if len(function) < 8 or len(function) % 4:
+        raise ValueError('Candidate needs a complete aligned MIPS function.')
+    words = [word for (word,) in struct.iter_unpack('<I', function)]
+    adjustments = [((word & 0xFFFF) ^ 0x8000) - 0x8000
+                   for word in words if word >> 16 == 0x27BD]
+    if (words[0] >> 16 != 0x27BD or len(adjustments) != 2
+            or adjustments[0] >= 0 or adjustments[0] % 8
+            or adjustments[1] != -adjustments[0]):
+        raise ValueError('Candidate needs one fixed frame and its matching epilogue.')
+    return -adjustments[0]
+
+
 def candidate_patch(reference, candidate, load):
     start = 0x800 + ADDRESS - load
     end = start + FUNCTION_BYTES
@@ -110,6 +124,7 @@ def verify(args):
     candidate_path = Path(args.candidate).resolve()
     candidate = candidate_path.read_bytes()
     patch = candidate_patch(reference, candidate, n.h.LOAD)
+    candidate_frame_bytes = fixed_stack_frame(patch)
     bridge_path = Path(args.bridge).resolve()
     sources = [Path(__file__), Path(__file__).with_name('overlap_candidate.c'),
                Path(__file__).with_name('prepare_overlap_candidate.py'), ranges,
@@ -158,7 +173,7 @@ def verify(args):
             'original_executable_sha1': hashlib.sha1(reference).hexdigest(), 'candidate_executable_sha1': hashlib.sha1(candidate).hexdigest(),
             'candidate_function_sha256': hashlib.sha256(patch).hexdigest(),
             'changed_executable_bytes': sum(a != b for a, b in zip(reference, candidate)),
-            'only_changed_function': 'func_8001DDF4', 'candidate_frame_bytes': 152, 'midpoint_storage_bytes': 12,
+            'only_changed_function': 'func_8001DDF4', 'candidate_frame_bytes': candidate_frame_bytes, 'midpoint_storage_bytes': 12,
             'native_gte_commands_before_controls': native_commands, 'native_leading_requests_before_controls': leading_requests,
             'native_gte_control_commands': bridge.count - native_commands, 'native_leading_control_requests': bridge.lz_count - leading_requests,
             'pair_outputs_sha256': outputs.hexdigest(), 'ordered_native_events_sha256': commands.hexdigest(),
