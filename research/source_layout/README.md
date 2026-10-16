@@ -43,6 +43,13 @@ arrays, dead branches or instruction substitutions does not close this gate.
 The [expanded audit](../../docs/SOURCE_LAYOUT_EXPANDED.md) records the withdrawal,
 current standard/clean matching builds and separate source-quality counts.
 
+The later [entry method-return investigation](../../docs/GENERATION_ENTRY_METHOD.md)
+retains `entry-method-return.c` for `src/dream/dream_generation_post.c`. Its
+consumed four-byte method record reproduces the original 80-byte frame and
+reduces the complete image's differences from twenty to six bytes. The method
+store and argument scheduling remain unresolved. It passes the existing bounded
+entry/transform fixtures but stays outside the canonical build.
+
 The later [generation structure checks](../../docs/GENERATION_STRUCTURES.md)
 type the update argument as the caller's position pointer. Its complete image
 still differs in ten bytes. `structure-update-pointer.c` and
