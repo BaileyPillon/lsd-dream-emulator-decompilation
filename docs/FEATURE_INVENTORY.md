@@ -628,3 +628,23 @@ and three optional mods retain their preceding counts. Five synthetic recipe
 tests add preservation and invalid-input checks. No new original fixture domain,
 gameplay replay, entire feature or whole NPC encounter is accepted. Bevy is
 unchanged; the additive supplement preserves all preceding inventory data.
+
+## October 16 NPC state and cycle profiles
+
+The [state and cycle checks](STATE_CYCLE_SCRIPTS.md) add Buddha, Fox, Soldier
+and Balloon: 155,597 constructed native fixtures raise bounded callback
+coverage from 28 / 107 to 32 / 107. All 122,518 preceding scripted inputs are
+preserved; the expanded 26-callback suite checks 278,115 fixtures and detects
+37 instruction faults. Every changed instruction is observed executing.
+
+The profiles check original script requests, RNG order and state transitions.
+Fox's actor-child flag method executes with an empty child list; other
+geometry/motion/selection/ratio dependencies retain their declared contracts.
+Natural construction, complete actor effects, rendering, audio, timing and
+whole encounters remain open.
+
+C recovery stays 194,212 / 199,912 bytes, with nine assembly functions,
+24 inherited storage explanations and 35 / 40 listed-core C groups. These
+callbacks already had C bodies. No whole feature, gameplay run, new capability
+category or optional mod is added. The additive supplement preserves preceding
+inventory fields and snapshots, and Bevy remains separate.

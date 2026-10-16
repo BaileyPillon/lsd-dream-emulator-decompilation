@@ -1,0 +1,647 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-16T07:12:26.515176+00:00",
+  "status": "bounded_original_state_cycle_scripts",
+  "repository_code_base_commit": "3bdf0dcc259ce1fc4a1e4d73d39475bb35b79f88",
+  "source_hash_serialization": "Published source/document hashes use UTF-8 normalized to LF; private run artifacts use exact bytes.",
+  "source_hashes": {
+    "tools/verify_scripted_ai.py": "2edefddc727441c0066a48375efd882c80035af99db3b3990a2c674eedddb2c1",
+    "tests/test_scripted_callbacks.py": "3322b856fdee794bdc464088480e6bc02aac49be3c750fc7a39b70f03e35aba0",
+    "tools/verify_native_ai.py": "6094e565bdb4e6701055f08d0428d059b54c6183818170ae1a671610c53b40a0",
+    "tools/inventory_entities.py": "02836f67899a0079ef0a357525ec16295082ebfb51b0e9abc9a66dc73bb230d5",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "src/scene/entity.c": "ede517712cde6e41c8818e4b2d537f00a310dfdae5cb2614486c1b5d0f54bd72",
+    "src/scene/entity.h": "4028f6bb6d2c1e779b8da8ddfc44263f34f619ed4a19a12547982a4c1ecc15e3",
+    "src/scene/actor.c": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514",
+    "src/base/transform.c": "e1ead0e020d1a752b812891ab3114e7510fcbcf723d4539c423918c13f351c4e",
+    "src/dream/dream_sys.c": "bd5fe0817a553a4cccd5505e5f87577fd9264dacf9d3576ebc1a034faaa4b9f2",
+    "requirements-analysis.txt": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911"
+  },
+  "documentation": "docs/STATE_CYCLE_SCRIPTS.md",
+  "documentation_sha256": "9e8961e7e702fc417b956c69cd7011058e9fb8cd3600a1eb6660d2e6bd68807d",
+  "new_callback_functions": [
+    {
+      "function": "entity_buddha",
+      "address": "0x8005eff4",
+      "bytes": 228,
+      "sha256": "0df584f37e1a9ce253307a3a5310a8b59e1ed7ddded13619db86b9b01db3824a"
+    },
+    {
+      "function": "entity_fox",
+      "address": "0x8005ed30",
+      "bytes": 496,
+      "sha256": "5d093d83b5c5d680d73399d3a207b20cfb4cb12ce032f32327c298c2fd2bd3d7"
+    },
+    {
+      "function": "entity_soldier",
+      "address": "0x80060148",
+      "bytes": 356,
+      "sha256": "8bf8288cefc94cfe9c0bf1c6b440238c6b0891a11d2dda0a2ba45ec6a2519d3e"
+    },
+    {
+      "function": "entity_balloon",
+      "address": "0x8005fec8",
+      "bytes": 48,
+      "sha256": "c6c941eab2de5355b79c3976528bf5e20baf044a4e2f5ceec844bd458e4471ae"
+    }
+  ],
+  "additional_native_helper": {
+    "function": "func_80065A5C",
+    "address": "0x80065a5c",
+    "bytes": 132,
+    "sha256": "278028b4201f68dc536800ede29a45e5905ef7ed8e5929059a19709f705d1f23"
+  },
+  "complete_sized_extents_qualified": true,
+  "canonical_symbol_link": {
+    "objects": 306,
+    "complete_image_matches_original": true,
+    "image_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "elf_sha256": "23cd8eac306c892c49d6a76c915b7ddb1d883cb8742170319bc45a93a3e9950a"
+  },
+  "native_functions_in_scripted_suite": [
+    {
+      "function": "entity_bird",
+      "address": "0x8005F368",
+      "bytes": 236,
+      "sha256": "89a93cbfdcaf8d25da98f263aaf407578121c0310ef37dd199590e519ce179e5"
+    },
+    {
+      "function": "entity_rocket",
+      "address": "0x8005F454",
+      "bytes": 240,
+      "sha256": "9661bca320473fa46baea213abc90e6648e873e35c1f1b4fad3662ceea9cddb6"
+    },
+    {
+      "function": "entity_horse",
+      "address": "0x8005F544",
+      "bytes": 196,
+      "sha256": "bad476d8a6f01d61fed03d831c9a4008240296171a105e8ba9a77ffbf360ff05"
+    },
+    {
+      "function": "entity_ufo",
+      "address": "0x8005F608",
+      "bytes": 204,
+      "sha256": "dad1f71e4cd3ac57f6ddc02861258a4deed243b702be8c91dffe800872f39d9c"
+    },
+    {
+      "function": "entity_dog",
+      "address": "0x800621A8",
+      "bytes": 576,
+      "sha256": "99dcfc0101d9f894bbf40e00a9bca541be13af0c3fd213cdc50257e95db34527"
+    },
+    {
+      "function": "entity_can",
+      "address": "0x800636E4",
+      "bytes": 160,
+      "sha256": "d56b681a0343e4edde55f876ae28f78820d99802307b634d57929cbdd07bd49c"
+    },
+    {
+      "function": "entity_car_water",
+      "address": "0x80063784",
+      "bytes": 240,
+      "sha256": "d5e7325194dc0f33b2bff0f5cf4adc893228d97366d03e8f55e3ad450edccee1"
+    },
+    {
+      "function": "entity_fetus_walk",
+      "address": "0x80064450",
+      "bytes": 152,
+      "sha256": "27b3ecd6d26e02c3ac9edfa033c33a7e242b82a2ba8b62140301689b0bd69dfb"
+    },
+    {
+      "function": "entity_fetus_jump",
+      "address": "0x800644E8",
+      "bytes": 304,
+      "sha256": "b0d0683099191ec4e33ea72594623628d2db6265b1d8beaa75d98c4a7196ff5b"
+    },
+    {
+      "function": "entity_elephant",
+      "address": "0x8005E694",
+      "bytes": 92,
+      "sha256": "67e919a2363f09c29188fa4a4dbb36bbe40822df8c32c4758a28e490bc72b18d"
+    },
+    {
+      "function": "entity_elephant_small",
+      "address": "0x80064CEC",
+      "bytes": 92,
+      "sha256": "a3d21a60b1e97e83a1768ced70182ac11c13cc57fbaf57e0917def7fdcaa6dec"
+    },
+    {
+      "function": "entity_fish",
+      "address": "0x8005FC58",
+      "bytes": 420,
+      "sha256": "8385538423a467f3a1b9ae8a5e7c4b528f7f3699c320e64d3d82aff26ad7a86d"
+    },
+    {
+      "function": "entity_fish_giant",
+      "address": "0x800651D0",
+      "bytes": 52,
+      "sha256": "7037b5ff05270e8be50b545a6b50b5f9038408967b975ba419fa922b827dc09b"
+    },
+    {
+      "function": "entity_airship",
+      "address": "0x80064928",
+      "bytes": 380,
+      "sha256": "1fb2904f97e3ed39c7410421a9a77771e7599b26dd4877c9b1e7de832f0c6d37"
+    },
+    {
+      "function": "entity_bell_striker",
+      "address": "0x8005EBB4",
+      "bytes": 228,
+      "sha256": "b8aa567436e41a6d3bab469e87c34fe6d383f06a345afdd64c0872e3be3fe916"
+    },
+    {
+      "function": "entity_opera_singer",
+      "address": "0x8005FEF8",
+      "bytes": 132,
+      "sha256": "5ed1824a794192c7b11f887c758a3643d3016c2db0087424124395152f960008"
+    },
+    {
+      "function": "entity_hoop_girl",
+      "address": "0x80062570",
+      "bytes": 240,
+      "sha256": "b71d8f338ced18b39cb34cbc32ea4663e85ad7718dfff80b7a75aa8e7b392970"
+    },
+    {
+      "function": "entity_hoop_girl_giant",
+      "address": "0x80064CA4",
+      "bytes": 72,
+      "sha256": "6ae505b3418eb2055c7674f3a0f97b1e1c715239982f40a3abdddc8819b08d69"
+    },
+    {
+      "function": "entity_tea_doll",
+      "address": "0x8005ef54",
+      "bytes": 160,
+      "sha256": "03451ae46de03dc995fda21797611ce140373630b00208cfc27e8c255e979f2f"
+    },
+    {
+      "function": "entity_ox_cart",
+      "address": "0x8005f0d8",
+      "bytes": 208,
+      "sha256": "20e1a6bd2877ee89a9113bfc15fc3ac84df3c4325fdb6c3a700dbc97cd766c2b"
+    },
+    {
+      "function": "entity_kicking_man",
+      "address": "0x80061c04",
+      "bytes": 40,
+      "sha256": "94e48015901a95d1029d1b18674b3bd33927b29995f8c52d01713cff3ea12be3"
+    },
+    {
+      "function": "entity_maiko_small",
+      "address": "0x80064aa4",
+      "bytes": 112,
+      "sha256": "c7fba6bd17aaac628296b2dc8a0d6b492c03fa35ca13760b6bf8dc886c653ee1"
+    },
+    {
+      "function": "entity_buddha",
+      "address": "0x8005eff4",
+      "bytes": 228,
+      "sha256": "0df584f37e1a9ce253307a3a5310a8b59e1ed7ddded13619db86b9b01db3824a"
+    },
+    {
+      "function": "entity_fox",
+      "address": "0x8005ed30",
+      "bytes": 496,
+      "sha256": "5d093d83b5c5d680d73399d3a207b20cfb4cb12ce032f32327c298c2fd2bd3d7"
+    },
+    {
+      "function": "entity_soldier",
+      "address": "0x80060148",
+      "bytes": 356,
+      "sha256": "8bf8288cefc94cfe9c0bf1c6b440238c6b0891a11d2dda0a2ba45ec6a2519d3e"
+    },
+    {
+      "function": "entity_balloon",
+      "address": "0x8005fec8",
+      "bytes": 48,
+      "sha256": "c6c941eab2de5355b79c3976528bf5e20baf044a4e2f5ceec844bd458e4471ae"
+    },
+    {
+      "function": "dream_sys_get_action_pressed",
+      "address": "0x8005931C",
+      "bytes": 12,
+      "sha256": "bc9d9a4597fc5c324c34fb0acc7dc1596cd1a7b617fc46f0fd1b7f63d9bf4061"
+    },
+    {
+      "function": "rand",
+      "address": "0x80049480",
+      "bytes": 40,
+      "sha256": "4c54a1210ed147afe9b02657c9b12bdec5bb62c5584a2a9fef212567d0e04c0c"
+    },
+    {
+      "function": "entity_stop_behaviour",
+      "address": "0x8005DB8C",
+      "bytes": 100,
+      "sha256": "4fa7621002bfabe6bf1c105adc34415e5f321cde133ecbc8dc1a00aee60dcaf0"
+    },
+    {
+      "function": "func_80065A5C",
+      "address": "0x80065A5C",
+      "bytes": 132,
+      "sha256": "278028b4201f68dc536800ede29a45e5905ef7ed8e5929059a19709f705d1f23"
+    },
+    {
+      "function": "func_80066148",
+      "address": "0x80066148",
+      "bytes": 8,
+      "sha256": "d9dfabd9e6747c7995e1c7196bfc94f3f7afbb7969fabd491b62b77a117875e4"
+    },
+    {
+      "function": "func_800662B4",
+      "address": "0x800662B4",
+      "bytes": 8,
+      "sha256": "9551f2e22426c0ef38657b0ae7289d100e7d495c6f17cd81cbc78cddb68f81ee"
+    }
+  ],
+  "native_fixture_inputs": 278115,
+  "scripted_callback_count": 26,
+  "new_callback_fixture_counts": {
+    "entity_buddha": 35693,
+    "entity_fox": 100656,
+    "entity_soldier": 19008,
+    "entity_balloon": 240
+  },
+  "new_distinct_declared_fixture_inputs": 155597,
+  "prior_scripted_fixture_inputs": 122518,
+  "prior_scripted_fixture_digest": "636b17e4208e66a2f33a8d7f91a5fa48c0b3b22b8b65219f9c812d3b084cba74",
+  "all_prior_fixture_inputs_preserved": true,
+  "input_identity": "Initialized entity/dream/context/linked-child buffers plus callback, RNG seed and declared trigger-ratio contract value.",
+  "native_property_record_bindings": {
+    "entity_buddha": [
+      20
+    ],
+    "entity_fox": [
+      16
+    ],
+    "entity_soldier": [
+      40
+    ],
+    "entity_balloon": [
+      37
+    ]
+  },
+  "actual_new_callback_observations": {
+    "entity_buddha": {
+      "actual_call_counts": {
+        "forward": 35693,
+        "rand": 33353,
+        "scale": 4799,
+        "trigger_ratio": 34118
+      },
+      "actual_resulting_state_counts": {
+        "-1": 975,
+        "0": 33743,
+        "11": 975
+      },
+      "actual_native_entry_counts": {
+        "entity_buddha": 35693,
+        "rand": 33353
+      }
+    },
+    "entity_fox": {
+      "actual_call_counts": {
+        "child_flag": 49624,
+        "forward": 66300,
+        "lateral": 56,
+        "rand": 115412,
+        "rotation": 82168,
+        "translation": 32796
+      },
+      "actual_resulting_state_counts": {
+        "-2147483648": 376,
+        "-1": 376,
+        "0": 49528,
+        "1": 376,
+        "11": 49624,
+        "2147483647": 376
+      },
+      "actual_native_entry_counts": {
+        "entity_fox": 100656,
+        "func_80065A5C": 49624,
+        "rand": 115412
+      }
+    },
+    "entity_soldier": {
+      "actual_call_counts": {
+        "lateral": 19008,
+        "rotation": 4752,
+        "trigger_ratio": 2880,
+        "vertical": 15840
+      },
+      "actual_resulting_state_counts": {
+        "0": 19008
+      },
+      "actual_native_entry_counts": {
+        "entity_soldier": 19008
+      }
+    },
+    "entity_balloon": {
+      "actual_call_counts": {
+        "vertical": 240
+      },
+      "actual_resulting_state_counts": {
+        "-1": 80,
+        "0": 80,
+        "11": 80
+      },
+      "actual_native_entry_counts": {
+        "entity_balloon": 240
+      }
+    }
+  },
+  "original_RNG_result_domain_each_selected_phase": 32768,
+  "joint_RNG_histories_exhaustive": false,
+  "negative_controls_detected": 37,
+  "new_fault_controls": [
+    {
+      "callback": "entity_buddha",
+      "kind": "wrong_command_destination",
+      "function_offset": 172,
+      "expected_word": "0xAE22001C",
+      "changed_word": "0xAE220020",
+      "detected_case_index": 0,
+      "fixture": {
+        "timer": -2147483648,
+        "tick": -2147483648,
+        "frame": 1,
+        "duration": 15,
+        "state": -1,
+        "variant": 0,
+        "action": 0,
+        "seed": 0,
+        "ratio": -1,
+        "nudge": -19
+      },
+      "changed_instruction_executions_in_detecting_fixture": 1,
+      "scope": "Private Unicorn memory only."
+    },
+    {
+      "callback": "entity_buddha",
+      "kind": "wrong_initial_scale_mode",
+      "function_offset": 116,
+      "expected_word": "0x34050001",
+      "changed_word": "0x34050002",
+      "detected_case_index": 1170,
+      "fixture": {
+        "timer": -2147483648,
+        "tick": 0,
+        "frame": 1,
+        "duration": 15,
+        "state": -1,
+        "variant": 0,
+        "action": 0,
+        "seed": 0,
+        "ratio": -1,
+        "nudge": -19
+      },
+      "changed_instruction_executions_in_detecting_fixture": 1,
+      "scope": "Private Unicorn memory only."
+    },
+    {
+      "callback": "entity_fox",
+      "kind": "wrong_motion_amount",
+      "function_offset": 96,
+      "expected_word": "0x2405FFA6",
+      "changed_word": "0x2405FFA7",
+      "detected_case_index": 56,
+      "fixture": {
+        "timer": -2147483648,
+        "tick": -2147483648,
+        "frame": 1,
+        "duration": 15,
+        "state": 0,
+        "variant": 0,
+        "action": 0,
+        "seed": 0,
+        "ratio": 99,
+        "nudge": -19
+      },
+      "changed_instruction_executions_in_detecting_fixture": 1,
+      "scope": "Private Unicorn memory only."
+    },
+    {
+      "callback": "entity_fox",
+      "kind": "wrong_initial_rng_state_gate",
+      "function_offset": 40,
+      "expected_word": "0x30420001",
+      "changed_word": "0x30420000",
+      "detected_case_index": 1011,
+      "fixture": {
+        "timer": -2147483648,
+        "tick": 0,
+        "frame": 1,
+        "duration": 15,
+        "state": -2147483648,
+        "variant": 0,
+        "action": 0,
+        "seed": 3,
+        "ratio": 99,
+        "nudge": -19
+      },
+      "changed_instruction_executions_in_detecting_fixture": 1,
+      "scope": "Private Unicorn memory only."
+    },
+    {
+      "callback": "entity_fox",
+      "kind": "wrong_child_flag_remainder_gate",
+      "function_offset": 472,
+      "expected_word": "0x2C450001",
+      "changed_word": "0x2C450002",
+      "detected_case_index": 1012,
+      "fixture": {
+        "timer": -2147483648,
+        "tick": 0,
+        "frame": 1,
+        "duration": 15,
+        "state": -2147483648,
+        "variant": 0,
+        "action": 0,
+        "seed": 5,
+        "ratio": 99,
+        "nudge": -19
+      },
+      "changed_instruction_executions_in_detecting_fixture": 1,
+      "scope": "Private Unicorn memory only."
+    },
+    {
+      "callback": "entity_soldier",
+      "kind": "wrong_command_destination",
+      "function_offset": 112,
+      "expected_word": "0xAE22001C",
+      "changed_word": "0xAE220020",
+      "detected_case_index": 576,
+      "fixture": {
+        "timer": -14,
+        "tick": -2147483648,
+        "frame": 30,
+        "duration": 15,
+        "state": 0,
+        "variant": 0,
+        "action": 0,
+        "seed": 0,
+        "ratio": -1,
+        "nudge": -19,
+        "frame_offset_x": -2147483648
+      },
+      "changed_instruction_executions_in_detecting_fixture": 1,
+      "scope": "Private Unicorn memory only."
+    },
+    {
+      "callback": "entity_soldier",
+      "kind": "wrong_frame_offset_word_width",
+      "function_offset": 288,
+      "expected_word": "0x8E020028",
+      "changed_word": "0x86020028",
+      "detected_case_index": 0,
+      "fixture": {
+        "timer": -15,
+        "tick": -2147483648,
+        "frame": 30,
+        "duration": 15,
+        "state": 0,
+        "variant": 0,
+        "action": 0,
+        "seed": 0,
+        "ratio": -1,
+        "nudge": -19,
+        "frame_offset_x": -2147483648
+      },
+      "changed_instruction_executions_in_detecting_fixture": 1,
+      "scope": "Private Unicorn memory only."
+    },
+    {
+      "callback": "entity_balloon",
+      "kind": "wrong_motion_amount",
+      "function_offset": 12,
+      "expected_word": "0x2405FFA6",
+      "changed_word": "0x2405FFA7",
+      "detected_case_index": 0,
+      "fixture": {
+        "timer": -2147483648,
+        "tick": -2147483648,
+        "frame": -1,
+        "duration": 15,
+        "state": -1,
+        "variant": 0,
+        "action": 0,
+        "seed": 0,
+        "ratio": 99,
+        "nudge": -19
+      },
+      "changed_instruction_executions_in_detecting_fixture": 1,
+      "scope": "Private Unicorn memory only."
+    }
+  ],
+  "all_fault_instructions_observed_in_detecting_fixture": true,
+  "dependency_contracts": [
+    "axis_c8",
+    "forward",
+    "lateral",
+    "motion_blend",
+    "motion_selection",
+    "notification",
+    "orientation",
+    "rotation",
+    "scale",
+    "sound_entity_stop",
+    "translation",
+    "trigger_ratio",
+    "vertical"
+  ],
+  "actor_child_list_count": 0,
+  "actual_native_child_fanout_entries": 49624,
+  "native_backend_identity": {
+    "package_version": "2.1.4",
+    "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+  },
+  "private_native_report_sha256": "e4b04adbc4411b1f1d7a3b3bdf6ba1b0aeee4e0b16aecc0f68b2e7ac0dca0683",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "canonical_game_build_matches": true,
+  "all_392_game_inputs_retained": true,
+  "public_tests": {
+    "total": 568,
+    "skipped": 2,
+    "new_tests": 11,
+    "runtimes": [
+      "Windows Python 3.14.2",
+      "WSL Python 3.13.5"
+    ],
+    "logs_sha256": {
+      "windows": "c5218b3f16b41a91257bd15ff400217e1981b5bfe02e73477d792bd3f320f525",
+      "wsl": "9727894be26b653a2c20e8c1b4a7834baedab031366ced1b6f6e1df4978eda0d"
+    }
+  },
+  "separate_grid_compiler_study": {
+    "qualified_forms": 27,
+    "exact_matches": 0,
+    "best_differing_function_bytes": 7,
+    "report_sha256": "40d0f3ec729e187502724c25507775a43935cb6353baa84a4ecfa0a46b7d9bbb",
+    "producer_sha256": "6bd7faa8f6689d4841424016eee728d4d903369fba69867293270c7fc40f8bc5",
+    "native_behavior_claimed": false
+  },
+  "before_after": {
+    "status": "bounded_original_state_cycle_scripts",
+    "guide": "docs/STATE_CYCLE_SCRIPTS.md",
+    "metadata": "docs/state-cycle-script-checks.json",
+    "before": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "remaining_assembly_functions": 9,
+      "inherited_storage_explanations": 24,
+      "provisional_feature_groups": 40,
+      "listed_core_C_groups": 35,
+      "original_NPC_callbacks": 107,
+      "bounded_NPC_callbacks": 28,
+      "whole_feature_groups_accepted": 0,
+      "whole_NPC_encounters_accepted": 0,
+      "developer_capability_categories": 10,
+      "optional_mods": 3
+    },
+    "after": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "remaining_assembly_functions": 9,
+      "inherited_storage_explanations": 24,
+      "provisional_feature_groups": 40,
+      "listed_core_C_groups": 35,
+      "original_NPC_callbacks": 107,
+      "bounded_NPC_callbacks": 32,
+      "whole_feature_groups_accepted": 0,
+      "whole_NPC_encounters_accepted": 0,
+      "developer_capability_categories": 10,
+      "optional_mods": 3
+    },
+    "newly_profiled_callbacks": [
+      "entity_buddha",
+      "entity_fox",
+      "entity_soldier",
+      "entity_balloon"
+    ],
+    "new_distinct_declared_native_fixture_inputs": 155597,
+    "retained_original_fixture_inputs": 122518,
+    "scripted_callback_count": 26,
+    "scripted_native_fixtures": 278115,
+    "negative_controls_detected": 37,
+    "new_negative_controls": 8,
+    "all_fault_instructions_observed": true,
+    "original_NPC_AI_and_tools_separate": true,
+    "new_C_bytes": 0,
+    "new_gameplay_runs": 0,
+    "new_original_feature_groups_accepted": 0,
+    "new_whole_NPC_encounters_accepted": 0,
+    "Bevy_port_modified": false
+  },
+  "prior_inventory_data_preserved": true,
+  "new_C_bytes": 0,
+  "original_behavior_modified": false,
+  "model_api_calls": 0,
+  "whole_features_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "remaining_gates": [
+    "Recover nine assembly functions and 24 inherited storage explanations.",
+    "Resolve complete asset/feature scope, natural construction, actor effects and lifetime histories.",
+    "Verify original rendering/audio, PS1 timing and whole-feature scenarios with matched runtime inputs."
+  ],
+  "Bevy_port_modified": false,
+  "scope": "Original callback/RNG/action-read/behavior-stop code versus separate script models. Full entity/dream/context/linked-child buffers, RNG, ordered calls and ABI preservation. Empty actor-child lists and one valid linked entity under explicit geometry/motion/selection/child-blend/notification/sound contracts. Excludes natural encounters, lifetime histories, renderer/GTE, actual sound, zero-divisor and signed-division-overflow traps, physical devices and PS1 instruction/cycle timing."
+}

@@ -699,3 +699,17 @@ contains counts, hashes, fault locations and scope metadata.
 The inventory supplement preserves all preceding fields and snapshots. C
 recovery, whole-feature acceptance, NPC coverage and optional mods do not
 increase, and the Bevy repository is separate.
+
+## NPC state and cycle supplement
+
+[state-cycle-script-checks.json](state-cycle-script-checks.json) records four
+complete callback extents from a fresh canonical 306-object symbol link and
+the expanded 278,115-fixture native scripted campaign. The 155,597 added
+fixtures retain explicit dependency contracts. Fox's actor-child fan-out
+executes with zero children; visible effects are not inferred from that
+traversal. All 122,518 previous input records retain their frozen digest.
+
+Game images, generated code, buffers, faulted VM copies and compiler outputs
+stay private. Published records contain counts, hashes, scoped behavior and
+measured controls. Earlier inventory fields remain intact. Bounded NPC coverage
+increases; matching-C bytes and whole-feature acceptance do not.

@@ -36,7 +36,7 @@ All-movie decoding, skip/error branches, and complete feature acceptance remain 
 | Known remaining game assembly functions | 9 |
 | Known C functions with unresolved unused local storage | 24 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
-| Original callbacks with bounded native comparisons | 28 / 107 |
+| Original callbacks with bounded native comparisons | 32 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 35 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
 
@@ -50,10 +50,11 @@ The [model enumeration interfaces](docs/MODEL_ENUMERATION.md) now explicitly
 forward the original arguments through the object/list/part callback chain.
 The matching game can be launched with the [play helper](docs/PLAYING.md),
 which verifies local inputs and creates an isolated emulator profile.
-The [periodic NPC checks](docs/PERIODIC_SCRIPTS.md) extend the scripted suite
-to 122,518 fixtures across 22 callbacks. All 117,583 earlier inputs remain.
-The suite detects 29 injected faults and confirms the altered instructions executed.
-The [Hoop Girl](docs/HOOP_SCRIPTS.md) and
+The [NPC state and cycle checks](docs/STATE_CYCLE_SCRIPTS.md) extend the scripted
+suite to 278,115 fixtures across 26 callbacks. All 122,518 earlier inputs remain.
+The suite detects 37 faults and observes every altered instruction executing.
+The earlier [periodic NPC checks](docs/PERIODIC_SCRIPTS.md),
+[Hoop Girl](docs/HOOP_SCRIPTS.md) and
 [Bell Striker and Opera Singer](docs/BELL_OPERA_SCRIPTS.md) checkpoints retain
 their original evidence within this suite. Whole encounters remain open.
 The [NPC proximity checks](docs/NPC_PROXIMITY.md) add Bear, Rabbit, Acrobats and
