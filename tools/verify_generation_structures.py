@@ -566,7 +566,6 @@ def verify(destination, candidate=None):
         'src/dream/dream_generation_post.c', 'src/dream/generation_structure.c',
         'src/dream/generation_structure.h', 'src/dream/generation_sprite.c',
         'src/dream/generation_sprite.h', 'src/scene/scene_node.c', 'src/scene/scene_node.h',
-        'asm/nonmatchings/dream/dream_generation/dream_generation_update_structure_entities.s',
         'asm/data/77EFC.data.s')
     before = {path: hashlib.sha256(path.read_bytes()).hexdigest() for path in dependencies}
     n.initialize_backend(n.load_program(FUNCTIONS))

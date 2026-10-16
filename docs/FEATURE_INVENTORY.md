@@ -1,5 +1,10 @@
 # LSD feature inventory
 
+The latest [generation lookup recovery](GENERATION_LOOKUP_RECOVERY.md) brings
+matching C to **194,792 / 199,912 bytes (97.44%)**, with **seven** game assembly
+fallbacks and **37 / 40** groups whose listed core functions are in C. The
+historical measurements below retain their original dates and scope.
+
 > Publication note: this is a frozen local research snapshot. Private
 > `.decomp-lab` evidence is excluded; see [provenance](PROVENANCE.md).
 
@@ -770,3 +775,20 @@ signatures without adding C bytes. Its 768 constructed histories execute 77
 original routines with zero function-output contracts. They add no NPC callback
 profile, natural encounter, whole feature, mod or developer capability category;
 all earlier snapshots and the full completion requirements remain intact.
+
+## Matching generation lookup recovery supplement
+
+The [matching scanner and structure dispatcher](GENERATION_LOOKUP_RECOVERY.md)
+replace two assembly fallbacks with 580 C bytes. Matching C rises from
+194,212 / 199,912 (97.15%) to 194,792 / 199,912 (97.44%); game fallbacks fall
+from nine to seven and listed-core C groups rise from 35 to 37 / 40. Standard
+and fresh 306-object builds reproduce the complete canonical executable.
+
+Existing native entry inputs and structure cases/histories pass on the original,
+exact complete candidates and promoted build, with six and nine executed fault
+controls. These repeat existing fixture domains. No new original feature, NPC
+profile, natural encounter or whole-feature acceptance is claimed. The 24
+inherited storage explanations, 107 callback C bodies, 36 bounded NPC profiles,
+ten developer capability categories and three optional mods retain their counts.
+The additive machine inventory preserves every prior field and snapshot; the
+separate Bevy port, running player and frozen objective remain unchanged.

@@ -1,5 +1,10 @@
 # Generation method-return temporary investigation
 
+> Historical rejected hypothesis: the later
+> [matching lookup recovery](GENERATION_LOOKUP_RECOVERY.md) replaces the
+> dispatcher with C using a scalar return from an initialized vtable snapshot.
+> The observations and counts below describe this earlier candidate.
+
 The consumed method-return candidate remains **eight bytes different** from the
 canonical executable. New compiler observations explain why this hypothesis
 reserves storage and keeps a store; they do not recover the original source

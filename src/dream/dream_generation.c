@@ -272,7 +272,40 @@ void dream_generation_build_entities(void *arg0) {
 extern s32 g_GenerationStructureCount;
 extern generation_structure_t *g_GenerationStructures[];
 
-INCLUDE_ASM("asm/nonmatchings/dream/dream_generation", dream_generation_update_structure_entities);
+typedef void (*generation_structure_update_fn_t)(void *, s32 *);
+/* The initialized snapshot contains only the consumed four-byte vtable address. */
+typedef struct {
+    generation_structure_vtable_t *table[1];
+} generation_structure_table_ref_t;
+
+typedef char checked_generation_structure_table_ref[
+    (sizeof(generation_structure_table_ref_t) == 4) ? 1 : -1];
+
+static inline generation_structure_update_fn_t generation_structure_read_update(generation_structure_t *obj) {
+    generation_structure_table_ref_t reference = {{ obj->vtable }};
+    return reference.table[0]->Update;
+}
+
+void dream_generation_update_structure_entities(s32 *position) {
+    s32 i;
+    generation_structure_t **cursor;
+
+
+    if (g_GenerationType >= 0) {
+        if (g_GenerationStructureCount > 0) {
+            cursor = g_GenerationStructures;
+            i = 0;
+            do {
+                generation_structure_t *obj = *cursor;
+
+                generation_structure_read_update(obj)(obj, position);
+                cursor++;
+                i++;
+            } while (i < g_GenerationStructureCount);
+        }
+    }
+}
+
 
 extern s32 g_GenerationType;
 extern s32 g_GenerationStructureCount;

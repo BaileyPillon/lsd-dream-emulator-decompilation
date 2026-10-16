@@ -1,5 +1,10 @@
 # Unaccepted source-layout candidates
 
+The later [matching lookup recovery](../../docs/GENERATION_LOOKUP_RECOVERY.md)
+supersedes the entry scanner and structure-update hypotheses here. Both
+functions now compile as matching C in `src/dream/`. These older fragments
+remain historical comparisons; the two menu recoveries remain open.
+
 The later [generation interface audit](../../docs/GENERATION_INTERFACE.md)
 uses the recovered typed virtual method. `structure-update-method.c` tests a
 consumed method-word return: its complete image retains eight differing bytes
@@ -15,9 +20,9 @@ callback types and effect naming preserve the original executable; complete
 candidates retain 20 and 16 differences. Sixty-two source forms have no exact
 match, including returned XY values and emitted accessors.
 
-The four primary C fragments in this directory retain the readable behavior of earlier
-promotions while removing their added unused stack arrays. They remain outside
-the canonical build because their complete executable comparisons differ.
+The four primary fragments retain the readable behavior of earlier promotions
+while removing their added unused stack arrays. Their historical complete
+executable comparisons differ; none of these particular fragments was promoted.
 
 | Fragment | Complete source unit | Differing bytes |
 | --- | --- | ---: |
@@ -26,9 +31,12 @@ the canonical build because their complete executable comparisons differ.
 | `func_8003D73C.c` | `src/menu/ui_screen.c` | 20 |
 | `func_8003DAD4.c` | `src/menu/ui_screen.c` | 16 |
 
-Copy the current complete source unit into a fresh `.decomp-lab` directory and
-replace the selected `INCLUDE_ASM` with the fragment. Existing unit types and
-declarations supply the fragment's dependencies. Then run:
+For these historical comparisons, read the complete source unit from commit
+`8369e3574adae246dec8113101e630b1e5175f55` using `git show COMMIT:SOURCE`, save
+it in a fresh `.decomp-lab` directory, and replace the selected `INCLUDE_ASM`
+with the fragment. This retains the original inclusion for the two functions
+now recovered in C. Existing unit types and declarations supply the fragment's
+dependencies. Then run:
 
 ```bash
 python tools/decomp_workbench.py check \

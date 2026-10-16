@@ -44,3 +44,8 @@ docs/GUNMAN_SCRIPTS.md text eol=lf
 # Preserve the new callback/lifecycle evidence on every checkout.
 docs/EFFECT_LIFECYCLE.md text eol=lf
 docs/effect-lifecycle-checks.json text eol=lf
+# Preserve the promoted generation verifiers and new recovery evidence.
+tools/verify_generation_entries.py text eol=lf
+tools/verify_generation_structures.py text eol=lf
+docs/GENERATION_LOOKUP_RECOVERY.md text eol=lf
+docs/generation-lookup-recovery-checks.json text eol=lf
