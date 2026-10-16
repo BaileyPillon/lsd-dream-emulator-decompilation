@@ -22788,6 +22788,69 @@
       "new_gameplay_runs": 0,
       "new_model_API_calls": 0,
       "Bevy_port_modified": false
+    },
+    "overlap_result_lifetimes_20261016": {
+      "status": "passed_bounded_unaccepted_overlap_result_candidate",
+      "guide": "docs/OVERLAP_RESULT_LIFETIMES.md",
+      "metadata": "docs/overlap-result-lifetimes-checks.json",
+      "before": {
+        "c_bytes": 195844,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 5,
+        "inherited_storage_explanations": 17,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 195844,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 5,
+        "inherited_storage_explanations": 17,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "source_candidate_before": {
+        "differing_bytes": 170,
+        "frame_bytes": 152,
+        "function_bytes": 796
+      },
+      "source_candidate_after": {
+        "differing_bytes": 148,
+        "frame_bytes": 176,
+        "function_bytes": 796
+      },
+      "source_functions_promoted": 0,
+      "new_C_bytes": 0,
+      "source_quality_functions_explained": 0,
+      "qualified_source_compiler_observations": 69,
+      "distinct_prepared_sources": 63,
+      "complete_source_allocator_observations": 3,
+      "native_composition_pairs": 6912,
+      "distinct_final_input_graphs": 5760,
+      "repeated_final_input_graphs": 1152,
+      "actually_entered_original_routines": 15,
+      "dependency_output_contracts": 0,
+      "executed_fault_controls": 1,
+      "new_distinct_native_fixture_inputs": 0,
+      "new_bounded_NPC_callbacks": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_gameplay_runs": 0,
+      "new_model_API_calls": 0,
+      "all_392_game_inputs_retained": true,
+      "Bevy_port_modified": false
     }
   }
 }

@@ -16,6 +16,11 @@ explains two more inherited functions, reducing the identified remainder from
 **19 to 17**. Their 700 bytes already counted as C; no source-byte or runtime
 acceptance count increases.
 
+The [overlap result-lifetime study](OVERLAP_RESULT_LIFETIMES.md) improves an
+unaccepted source candidate from 170 to 148 differing executable bytes and
+rechecks the existing 6,912 native graph pairs. It adds no C byte, original
+input domain, NPC profile or whole-feature acceptance.
+
 > Publication note: this is a frozen local research snapshot. Private
 > `.decomp-lab` evidence is excluded; see [provenance](PROVENANCE.md).
 

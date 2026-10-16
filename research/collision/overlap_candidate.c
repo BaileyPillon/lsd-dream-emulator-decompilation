@@ -1,10 +1,38 @@
 /* Unaccepted twelve-byte midpoint candidate for func_8001DDF4.
  * Prepare a private complete translation unit with prepare_overlap_candidate.py.
- * The complete image differs by 170 bytes; this is excluded from game coverage. */
+ * The complete image differs by 148 bytes; this is excluded from game coverage. */
 extern s32 func_8001E110(func_8001E2E8_pt_t *, func_8001E2E8_box_t *,
                        func_8001E2E8_pt_t *, func_8001E2E8_pt_t *);
 extern s32 func_8001F8B8(s32, s32 *, void *, s32 *, func_8001E2E8_pt_t *, func_8001E2E8_pt_t *);
 extern s32 D_8008A838;
+
+extern void *get_source_vertices(s32, s32);
+
+typedef struct {
+    s32 value;
+} collision_source_count_reference_t;
+
+typedef char checked_collision_source_count_reference_t[
+    (sizeof(collision_source_count_reference_t) == 4) ? 1 : -1];
+
+static inline s32 collision_read_source_count(s32 model) {
+    collision_source_count_reference_t reference = { class_FA50_is_active(model) };
+    return reference.value;
+}
+
+typedef struct {
+    func_8001E2E8_box_t *value;
+} collision_source_bounds_reference_t;
+
+typedef char checked_collision_source_bounds_reference_t[
+    (sizeof(collision_source_bounds_reference_t) == 4) ? 1 : -1];
+
+static inline func_8001E2E8_box_t *collision_read_source_bounds(s32 model, s32 index) {
+    collision_source_bounds_reference_t reference = {
+        (func_8001E2E8_box_t *) get_source_vertices(model, index)
+    };
+    return reference.value;
+}
 
 s32 func_8001DDF4(transform_t *This, s32 *out, void *contact, u8 *input) {
     func_8001E2E8_pt_t points[2];
@@ -37,11 +65,11 @@ s32 func_8001DDF4(transform_t *This, s32 *out, void *contact, u8 *input) {
     }
     i = 0;
     This->m_Unk10 = 0;
-    count = class_FA50_is_active(This->m_Unk7);
+    count = collision_read_source_count(This->m_Unk7);
     j = 0;
     bit = 1;
     for (; i < count; i++) {
-        box = (func_8001E2E8_box_t *)get_source_vertices(This->m_Unk7, i);
+        box = collision_read_source_bounds(This->m_Unk7, i);
         if (func_8001E110(NULL, box, points, points + 1) != 0 &&
             func_8001F8B8(This->m_Unk7, &best, contact, &distance, points, points + 1) != 0 &&
             (D_8008A838 == 0 || distance > 0x200)) {
@@ -60,7 +88,7 @@ s32 func_8001DDF4(transform_t *This, s32 *out, void *contact, u8 *input) {
         for (i = 0; i < count; i++) {
             k = 0;
             a = (func_8001E2E8_pt_t *)(input + 4);
-            box = (func_8001E2E8_box_t *)get_source_vertices(This->m_Unk7, i);
+            box = collision_read_source_bounds(This->m_Unk7, i);
             for (; k < paths; k++) {
                 j = 0;
                 do {

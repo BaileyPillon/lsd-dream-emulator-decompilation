@@ -91,6 +91,9 @@ inherited unused arrays while retaining every original instruction. The
 two more. Seventeen identified inherited source explanations and five assembly
 functions remain.
 C-byte coverage does not certify original source quality or whole-game parity.
+The [overlap result-lifetime study](docs/OVERLAP_RESULT_LIFETIMES.md) reduces
+that unaccepted candidate's complete-image difference to 148 bytes and checks
+it through native collision/GTE dependencies. Its assembly fallback remains.
 The [render query record cleanup](docs/RENDER_QUERY_RECORD.md) removes a
 separately identified redundant buffer tail. Actual compiler traces explain
 its allocation, and the complete executable remains identical; the counts
