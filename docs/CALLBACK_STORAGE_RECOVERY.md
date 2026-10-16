@@ -1,5 +1,10 @@
 # Callback lookup storage recovery
 
+> Historical checkpoint: the later
+> [constructor and actor recovery](CONSTRUCTOR_ACTOR_STORAGE.md) explains two
+> more functions, leaving seventeen inherited storage explanations open.
+> Measurements below retain this checkpoint's scope.
+
 Five existing C functions now express their original stack layout through
 consumed callback lookups. Their unused eight-byte arrays and associated dead
 pointer comparisons are removed. Standard and fresh 306-object builds retain

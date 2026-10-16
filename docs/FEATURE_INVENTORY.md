@@ -11,6 +11,11 @@ The subsequent [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md)
 reduces identified inherited storage explanations from **24 to 19**, with all
 C-byte, assembly, feature and NPC acceptance counts above unchanged.
 
+The later [constructor and actor storage recovery](CONSTRUCTOR_ACTOR_STORAGE.md)
+explains two more inherited functions, reducing the identified remainder from
+**19 to 17**. Their 700 bytes already counted as C; no source-byte or runtime
+acceptance count increases.
+
 > Publication note: this is a frozen local research snapshot. Private
 > `.decomp-lab` evidence is excluded; see [provenance](PROVENANCE.md).
 

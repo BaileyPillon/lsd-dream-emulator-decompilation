@@ -34,7 +34,7 @@ All-movie decoding, skip/error branches, and complete feature acceptance remain 
 | --- | ---: |
 | Matching game-function bytes compiled from C | 195,844 / 199,912 (97.97%) |
 | Known remaining game assembly functions | 5 |
-| Known C functions with unresolved unused local storage | 19 |
+| Known C functions with unresolved unused local storage | 17 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
 | Original callbacks with bounded native comparisons | 36 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 37 / 40 |
@@ -86,8 +86,10 @@ The [menu lookup recovery](docs/MENU_LOOKUP_RECOVERY.md) adds another 1,052
 matching C bytes and resolves all four withdrawn source functions through
 consumed method lifetimes. The later
 [callback storage recovery](docs/CALLBACK_STORAGE_RECOVERY.md) removes five
-inherited unused arrays while retaining every original instruction. Nineteen
-identified inherited source explanations and five assembly functions remain.
+inherited unused arrays while retaining every original instruction. The
+[constructor and actor recovery](docs/CONSTRUCTOR_ACTOR_STORAGE.md) explains
+two more. Seventeen identified inherited source explanations and five assembly
+functions remain.
 C-byte coverage does not certify original source quality or whole-game parity.
 The [render query record cleanup](docs/RENDER_QUERY_RECORD.md) removes a
 separately identified redundant buffer tail. Actual compiler traces explain

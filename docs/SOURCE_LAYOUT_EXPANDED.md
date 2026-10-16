@@ -3,7 +3,9 @@
 > Historical baseline: later generation and menu recoveries replace the four
 > withdrawn functions with matching C. The subsequent
 > [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md) explains five of the
-> 24 inherited declarations, leaving nineteen identified explanations open.
+> 24 inherited declarations. The later
+> [constructor and actor recovery](CONSTRUCTOR_ACTOR_STORAGE.md) explains two
+> more, leaving seventeen identified explanations open.
 > Measurements below retain their original snapshot and scope.
 
 The earlier [five-function audit](SOURCE_QUALITY.md) inspected selected

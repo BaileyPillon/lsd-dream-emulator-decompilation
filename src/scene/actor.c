@@ -405,21 +405,28 @@ void func_80065DEC(actor_t *This, s32 Unk2) {
 
 extern scene_node_t *func_80056FE4(void);
 
+typedef s32 (*actor_model_enumerate_fn_t)(void *, u8 *, s32 *);
+typedef struct {
+    class_object_model_vtable_t * value[1];
+} actor_model_reference_t;
+typedef char checked_actor_model_reference[
+    (sizeof(actor_model_reference_t) == 4) ? 1 : -1];
+
+static inline actor_model_enumerate_fn_t actor_read_model_enumerator(class_object_model_t *obj) {
+    actor_model_reference_t reference = {{ obj->vtable }};
+    return reference.value[0]->Unk31;
+}
+
 s32 func_80065E1C(actor_t *This) {
-    struct {
-        s32 index;
-        char dummy[12];
-    } loc;
+    s32 index;
     class_object_model_t *obj;
     s32 i;
     s32 count;
     void **slot;
     void *mem;
 
-    if (&loc.dummy[0] == &loc.dummy[11]) {
-    }
     obj = (class_object_model_t *) This->m_Unk22;
-    count = obj->vtable->Unk31(obj, NULL, &loc.index) & 0xFF;
+    count = actor_read_model_enumerator(obj)(obj, NULL, &index) & 0xFF;
     mem = memory_allocate_mem(count * 4);
     This->m_Unk27 = mem;
     if (mem == NULL) {
@@ -431,7 +438,7 @@ s32 func_80065E1C(actor_t *This) {
         goto alloc_fail;
     }
     obj = (class_object_model_t *) This->m_Unk22;
-    obj->vtable->Unk31(obj, mem, &loc.index);
+    obj->vtable->Unk31(obj, mem, &index);
     slot = This->m_Unk27;
     i = 0;
     This->m_Unk26 = 0;
@@ -449,7 +456,7 @@ s32 func_80065E1C(actor_t *This) {
             i += 1;
         } while (i < count);
     }
-    This->m_Unk25 = (s32) This->m_Unk27[loc.index];
+    This->m_Unk25 = (s32) This->m_Unk27[index];
     return 0;
 alloc_fail:
     This->m_Unk28 = 0;

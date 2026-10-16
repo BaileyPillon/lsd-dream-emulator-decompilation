@@ -1,5 +1,12 @@
 # Source recovery quality
 
+> Historical selected-function audit. The subsequent
+> [expanded audit](SOURCE_LAYOUT_EXPANDED.md),
+> [callback recovery](CALLBACK_STORAGE_RECOVERY.md) and
+> [constructor/actor recovery](CONSTRUCTOR_ACTOR_STORAGE.md) supersede its
+> counts. Seventeen identified inherited storage explanations remain open;
+> the measurements below retain their original scope.
+
 The current complete executable matches the original, with 194,884 of 199,912
 game-function bytes compiled from C. That byte count includes **five existing
 C functions with explicit dummy stack padding**. They need source recovery

@@ -859,3 +859,19 @@ Replay fixtures are reused and add no new original scenarios or NPC profiles.
 Private compiler inputs, complete outputs, original images and failed controls
 remain outside publication. C recovery, feature/encounter acceptance, mods,
 developer capability categories and the separate Bevy repository are unchanged.
+
+## Constructor and actor storage recovery
+
+[constructor-actor-storage-checks.json](constructor-actor-storage-checks.json)
+records two existing C functions whose unused storage is replaced by consumed
+four-byte method/table references. Eight qualified source comparisons and six
+complete-source allocator observations preserve exact functions and full images.
+Regular and fresh 306-object builds remain canonical. Two of 392 protected game
+inputs change; the other 390 and the frozen objective retain their hashes.
+
+The inherited storage remainder falls from 19 to 17, with no new C bytes,
+original fixture domains, NPC profiles or whole-feature acceptance. Thirty-seven
+separate renderer/overlap comparisons retain no exact match. Six further forms
+emit a real helper and are excluded from the single-function count. Failed
+attempts, game images, ELF exports and complete compiler traces remain private.
+Historical measurements are preserved; the Bevy repository and player are unchanged.

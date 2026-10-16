@@ -1,5 +1,14 @@
 # Changelog
 
+## Menu constructor and actor allocator storage - 2026-10-16
+
+- Replace the menu constructor's unused array and actor allocator's unused
+  index-record tail with consumed, checked four-byte method/table references.
+- Preserve both complete functions and the canonical executable, with six
+  complete-source allocator observations and normal/fresh build checks.
+- Reduce identified inherited storage explanations from 19 to 17. C recovery
+  remains 97.97%, with five assembly fallbacks and unchanged runtime coverage.
+
 ## Explained callback storage in existing C - 2026-10-16
 
 - Replace five inherited unused eight-byte arrays with consumed, checked
