@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-16T05:22:25.058936+00:00",
+  "status": "passed_matching_glyph_region_source_recovery",
+  "repository_code_base_commit": "52ebf82cfc96799431039c532ab8e4f7d2f1e226",
+  "source_hash_serialization": "SHA-256 of UTF-8 source text normalized to LF. The promoted source also records exact executed CRLF working-tree bytes.",
+  "source_changes": [
+    {
+      "file": "src/menu/glyph.c",
+      "before_disk_sha256": "5a8a1decdef63de957996a0aa326d5d067575ad091c34a2681c00f4cd2b48486",
+      "after_disk_sha256": "5e3cd781458db861a9b1f2394eb249d2d18b3a4d094f337dcd62124393990067",
+      "after_normalized_text_sha256": "2d998c6627f8f4e3162a23da615509af46bb3c3cccfaac5b9c1f93da3b6ea3bd"
+    }
+  ],
+  "source_hashes": {
+    "src/menu/glyph.c": "2d998c6627f8f4e3162a23da615509af46bb3c3cccfaac5b9c1f93da3b6ea3bd",
+    "src/menu/glyph.h": "068df5c77a20432ea17b86b6a80fc298c2430375a4760d4f16256ea0b3b4358f",
+    "src/menu/sprite_node.c": "2f99fa98e294c66013d93483821eb27cbc9612fcfbc3fa2753acdffe4b07f335",
+    "src/menu/sprite_node.h": "679e1e9ea69984e9bbbe857d9b824fac74d1df7a1dbdf5d849a9153e288b79cd",
+    "src/menu/sprite.c": "9bd29a42d497fd78a960735829dae4008d0c5af768d148dcf3c9c7fb311a7cd3",
+    "src/menu/sprite.h": "4bf810b02921b416a1b2e5b43af6f96a73f805d9030d63b25b9a49eccfa8e40b",
+    "configure.py": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+    "tools/compile_c.py": "ab5217c43e9dca1fff7092d75e8a0ac407b3dd65b256b5c29b3ff29a4fc1afe7",
+    "tools/decomp_workbench.py": "10ce58a132c2e0b1084bad492590e3acdb1dc9b328747615b33999bb56a1803f",
+    "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+    "research/collision/trace_compiler_stack.py": "05226a290759358650001880ffe74ef8f13690a85e08ed6cc11f630409b9e2ca",
+    "research/collision/compiler_stack_gdb.py": "393f2b02ef90ad3d84382bcdcd2aedfca02c7d636064f26c16edc5fde8acc21e"
+  },
+  "documentation": "docs/GLYPH_REGIONS.md",
+  "documentation_sha256": "58ba69ba217f0278432ca12e1544e67891e204621c133700ca15a0bc4a268126",
+  "canonical_executable_bytes": 505856,
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "complete_sized_function_checks": [
+    {
+      "function": "glyph_create",
+      "address": "0x80041ab4",
+      "bytes": 108,
+      "frame_bytes": 32,
+      "sha256": "8a625e7b76b3729b5121423486a22f48a87ef1ee8d48755f1858d13d6da8555f",
+      "complete_sized_function_equal": true,
+      "allocated_section": ".main"
+    },
+    {
+      "function": "glyph_construct",
+      "address": "0x80041b20",
+      "bytes": 140,
+      "frame_bytes": 48,
+      "sha256": "b3b58314a70c4c9d5435c2bdb752c786c6ba8807a1f86fc9f3d463734245108c",
+      "complete_sized_function_equal": true,
+      "allocated_section": ".main"
+    },
+    {
+      "function": "glyph_set_mode",
+      "address": "0x80041bac",
+      "bytes": 48,
+      "frame_bytes": 24,
+      "sha256": "faa8f245965c58c9894c2dfc1482ec8804308394cf255387b525b9428c713a0e",
+      "complete_sized_function_equal": true,
+      "allocated_section": ".main"
+    },
+    {
+      "function": "glyph_set_char",
+      "address": "0x80041bdc",
+      "bytes": 76,
+      "frame_bytes": 40,
+      "sha256": "aa64ff97d3400f436d4dbed22f1687c3c6d68ab6f575284650f2cc5402c1323c",
+      "complete_sized_function_equal": true,
+      "allocated_section": ".main"
+    },
+    {
+      "function": "glyph_get_char",
+      "address": "0x80041c28",
+      "bytes": 20,
+      "frame_bytes": 16,
+      "sha256": "5b6b699c5a61336764d09934ffb8183244e3da097dc542b0b1bb15357856b728",
+      "complete_sized_function_equal": true,
+      "allocated_section": ".main"
+    },
+    {
+      "function": "glyph_get_vtable",
+      "address": "0x80041c3c",
+      "bytes": 16,
+      "frame_bytes": 0,
+      "sha256": "0316969602e0fe6f98dfa9d9a92cc4a288bcc0c3821ad8bb862a0c37dd565db2",
+      "complete_sized_function_equal": true,
+      "allocated_section": ".main"
+    },
+    {
+      "function": "func_80041C4C",
+      "address": "0x80041c4c",
+      "bytes": 80,
+      "frame_bytes": 0,
+      "sha256": "79f4b67714427f714cff33464a3ba3728d8c2b29709947b2eaef1f7133bc332e",
+      "complete_sized_function_equal": true,
+      "allocated_section": ".main"
+    }
+  ],
+  "retained_symbol_link_converts_to_canonical": true,
+  "original_function_extent_ELF_sha256": "0c94d14a1320b9f313a201257eab973778040137fc0abddb8dad50353282cc02",
+  "sized_ELF_qualification_sha256": "549f9d0e0154a00427a11d95118ac6d2c1ba3364c18f68f03ef6f8f07d71f13e",
+  "diagnostic_link_change": "Remove only -s to retain symbols; converted binary remains canonical.",
+  "target_ABI_assertion_count": 13,
+  "target_ABI_expected": {
+    "region_bytes": 12,
+    "region_alignment": 4,
+    "halfword_bytes": 2,
+    "word_bytes": 4,
+    "pointer_bytes": 4,
+    "region_u": 0,
+    "region_v": 2,
+    "region_width": 4,
+    "region_height": 8,
+    "glyph_char": 168,
+    "glyph_bytes": 172,
+    "setter_slot": 196,
+    "getter_slot": 200
+  },
+  "false_layout_control": {
+    "rejected": true,
+    "compiler_exit_code": 33
+  },
+  "actual_compiler_stack_traces": [
+    {
+      "label": "before",
+      "complete_assembly_equal": true,
+      "report_sha256": "c89a24f65c28d32708cc838a89b00dc096b90d3fc2716f77584b3f2d96cd4af2",
+      "actual_allocations": [
+        {
+          "function": "glyph_construct",
+          "requested_bytes": 16,
+          "allocated_bytes": 16
+        },
+        {
+          "function": "glyph_set_char",
+          "requested_bytes": 16,
+          "allocated_bytes": 16
+        }
+      ]
+    },
+    {
+      "label": "after",
+      "complete_assembly_equal": true,
+      "report_sha256": "76559cddebbaf94a98eb097bcb62efa1d9ff9c4ade823078c57acdd40235b59a",
+      "actual_allocations": [
+        {
+          "function": "glyph_construct",
+          "requested_bytes": 12,
+          "allocated_bytes": 16
+        },
+        {
+          "function": "glyph_set_char",
+          "requested_bytes": 12,
+          "allocated_bytes": 16
+        }
+      ]
+    }
+  ],
+  "compiler_profile": {
+    "architecture": "ELF32 little-endian i386",
+    "calling_convention": "cdecl",
+    "pointer_bytes": 4,
+    "sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab"
+  },
+  "source_tail_bytes_removed": 8,
+  "prior_24_unresolved_inherited_functions_unchanged": true,
+  "inherited_glyph_getter_unused_local_unchanged": true,
+  "regular_and_fresh_clean_complete_builds": [
+    {
+      "stage": "normal-build",
+      "complete_image_equal": true,
+      "bytes": 505856,
+      "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+    },
+    {
+      "stage": "fresh-clean-build",
+      "complete_image_equal": true,
+      "bytes": 505856,
+      "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+    }
+  ],
+  "clean_build_objects": 306,
+  "complete_build_report_sha256": "4869563542e78295a62e47616636f4c77673605ce889a9ff8b3f8d962cfc53eb",
+  "existing_tooling_suite": [
+    {
+      "platform": "windows",
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+      "tests": 542,
+      "skipped": 2,
+      "exit_code": 0,
+      "log_sha256": "cff250314a7d81011279ad025f80cfe168a5c95d0f60dd9b56787afbdeddd65e"
+    },
+    {
+      "platform": "wsl",
+      "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+      "tests": 542,
+      "skipped": 2,
+      "exit_code": 0,
+      "log_sha256": "e85a2b5659a67d8ad177dd2a5de58f2c3d8cd85ce2c84535ed317264c280bed6"
+    }
+  ],
+  "changed_game_inputs": [
+    "src/menu/glyph.c"
+  ],
+  "other_game_build_inputs_preserved": 391,
+  "source_forms_compared": 7,
+  "qualification_boundary": "Complete function extents, entire executable equality, target layout assertions and actual compiler allocation. Record semantics follow original copy and immediate sprite consumers; exact original-author declarations are unknown.",
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 28,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 28,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_C_bytes": 0,
+  "new_native_fixture_inputs": 0,
+  "new_gameplay_runs": 0,
+  "new_original_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "model_api_calls": 0,
+  "original_AI_and_tools_separate": true,
+  "Bevy_port_modified": false,
+  "objective_unchanged": true,
+  "private_evidence_files": {
+    ".decomp-lab/glyph-region-20261016-second/report.json": "549f9d0e0154a00427a11d95118ac6d2c1ba3364c18f68f03ef6f8f07d71f13e",
+    ".decomp-lab/glyph-region-20261016-first/report.json": "5c53ba51e4bd3946e82cf8452abce5819a5fae16a72e9519762931fe77e8565b",
+    ".decomp-lab/glyph-region-builds-20261016-first/report.json": "4869563542e78295a62e47616636f4c77673605ce889a9ff8b3f8d962cfc53eb",
+    ".decomp-lab/glyph-region-tests-20261016-first-windows/report.json": "32c3fa6e260d45ad5cde8615b1949191ed676096aee97c4548c9030df40ace61",
+    ".decomp-lab/glyph-region-tests-20261016-first-wsl/report.json": "0e99a504329377def019d852d9d0bc3c03415c219883d3f628f2b742f70a8ec2"
+  }
+}

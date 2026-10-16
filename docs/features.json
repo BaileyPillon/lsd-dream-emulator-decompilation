@@ -21502,6 +21502,53 @@
       "new_whole_NPC_encounters_accepted": 0,
       "original_AI_and_tools_separate": true,
       "Bevy_port_modified": false
+    },
+    "glyph_regions_20261016": {
+      "status": "passed_matching_glyph_region_source_recovery",
+      "guide": "docs/GLYPH_REGIONS.md",
+      "metadata": "docs/glyph-region-checks.json",
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 28,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 28,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "new_C_bytes": 0,
+      "complete_sized_function_checks": 7,
+      "target_ABI_assertions": 13,
+      "actual_compiler_stack_traces": 2,
+      "additional_redundant_tail_bytes_removed": 8,
+      "prior_24_unresolved_inherited_functions_unchanged": true,
+      "inherited_glyph_getter_unused_local_unchanged": true,
+      "regular_and_fresh_clean_complete_builds_canonical": true,
+      "new_native_fixture_inputs": 0,
+      "new_gameplay_runs": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "original_AI_and_tools_separate": true,
+      "Bevy_port_modified": false
     }
   }
 }

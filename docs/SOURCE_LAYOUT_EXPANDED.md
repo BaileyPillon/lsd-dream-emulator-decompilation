@@ -19,6 +19,12 @@ four-byte tail in `func_8004AEA4`, also outside this selected audit. The shared
 separate, fully used 48-byte saved builder record. Both full builds remain
 canonical; the 24 unresolved inherited functions remain unchanged.
 
+The [glyph region cleanup](GLYPH_REGIONS.md) replaces two sixteen-byte caller
+buffers with the twelve-byte record actually written by their helper. Compiler
+observations show natural sixteen-byte allocation in both callers. These eight
+additional source-tail bytes were outside this selected audit. The separate
+`glyph_get_char` declaration remains unresolved; the count stays at 24.
+
 Twenty-four declarations are present in the imported upstream source. Four
 others were introduced when previously retained assembly was promoted during
 this project. Those four promotions do not satisfy the no-padding recovery
