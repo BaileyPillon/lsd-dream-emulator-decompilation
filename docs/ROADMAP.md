@@ -25,6 +25,10 @@ inherited unused local and extend natural menu/rendering histories separately.
 
 ## Matching C recovery
 
+The [collision interface](COLLISION_API.md) now has typed outputs and checked
+compiled-caller evidence. Its primitive C candidate still has 22 differing
+bytes; recover its storage lifetimes before accepting that assembly function.
+
 The [matching model interfaces](MODEL_ENUMERATION.md) now explicitly forward
 the native enumeration arguments. The game also has a verified
 [local play launcher](PLAYING.md). These complete no remaining assembly

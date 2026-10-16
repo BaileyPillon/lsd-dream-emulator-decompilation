@@ -1,0 +1,504 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-16T11:28:53.387100+00:00",
+  "status": "passed_matching_collision_interface_and_bounded_compiled_caller",
+  "repository_code_base_commit": "376d25ced30493f91c49b5da54a44a9275d6004b",
+  "source_hash_serialization": "Published source/document hashes use UTF-8 normalized to LF; private artifacts use exact bytes.",
+  "source_hashes": {
+    "tools/verify_native_ai.py": "6094e565bdb4e6701055f08d0428d059b54c6183818170ae1a671610c53b40a0",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/progress.py": "5768fea4dd162e1fe406c4d909742396a9174b988216629bd52fa902204663dd",
+    "configure.py": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+    "requirements-analysis.txt": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911",
+    "src/scene/entity.c": "ede517712cde6e41c8818e4b2d537f00a310dfdae5cb2614486c1b5d0f54bd72",
+    "src/scene/entity.h": "4028f6bb6d2c1e779b8da8ddfc44263f34f619ed4a19a12547982a4c1ecc15e3",
+    "src/dream/dream_sys.c": "bd5fe0817a553a4cccd5505e5f87577fd9264dacf9d3576ebc1a034faaa4b9f2",
+    "src/dream/dream_sys.h": "0c5e29a07f133924a7d2eda9e7425e2b3bcbf6c3b9cb905c097e6eb879d45657",
+    "src/scene/actor.c": "dac4858fa2ece134c6e698c8aad5734bab89c9185bb745470be12bc0d08e0483",
+    "src/base/transform.c": "e1ead0e020d1a752b812891ab3114e7510fcbcf723d4539c423918c13f351c4e",
+    "asm/nonmatchings/psyq/libc/rand/rand.s": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7",
+    "research/collision_api/verify.py": "af02f55a4bed250a7abf91203e66bfa112aa06dcad8fe8fc6073699c4bea99bd",
+    "research/collision_api/consumer.c": "afc30dedaa24d64c8e24bc6c5e29a9cfbefc7235a9a48553c4f664ef21be0a9e",
+    "research/collision_api/abi_checks.h": "03c246fa89d3cd5d7c265ba1b30d5d72feefa70b4f8c425f3426bb36be5e615e",
+    "tools/verify_collision.py": "bc1b5779be9ff60a70011d30263821bf17429c1f094b58528f1a930823e20bff",
+    "tools/verify_render_gte.py": "624a607b167be932702501fb6e07a04595992773bacc8d4344b2200a8c2784b0",
+    "tools/verify_scripted_ai.py": "2edefddc727441c0066a48375efd882c80035af99db3b3990a2c674eedddb2c1",
+    "tools/compile_c.py": "ab5217c43e9dca1fff7092d75e8a0ac407b3dd65b256b5c29b3ff29a4fc1afe7",
+    "tools/decomp_workbench.py": "10ce58a132c2e0b1084bad492590e3acdb1dc9b328747615b33999bb56a1803f",
+    "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+    "docs/collision-function-ranges.json": "9bfc8bdb864e7f1529adb7cde9c0be5313c5161b460e0ba31db51c59c58c3dd8",
+    "src/file/tmd_prim.h": "7f55fe227f1ad73e91b817590ce81f5c36c8c4c579290ee079183bc283bc2234",
+    "src/file/tmd_prim_geom.c": "0f267574d4a279b9bf4ccf695b09d36950d57b741e260bafe7466db3e232b439",
+    "src/base/object_math.h": "4a640e1818c7028efafe5f77d66100509163584cd570f6fa7dd1a3fc991bafb7",
+    "include/common.h": "f591e61752e0e1553eb3890d2dba984a3accf93fe7c605136b274bd80be208ba",
+    "tools/nymashock_gte_bridge.cs": "969e0af3b030e5b2eafedad032b68173ac76e41b089a28b4d4fc1084e33fedd9",
+    "src/base/object_math.c": "db30ffb25d5f890ad11236c3cf5c82f425073b8edf02d4e1c2a7d1ba62c1713b",
+    "research/collision/primitive_candidate.c": "7380c55bd112a7f38fdb746303c0e7ba3628eea7f05e59b5d3d76dd0c3effa38",
+    "tests/test_collision_api.py": "bad43b77a68f0dd7c356ae92cdb19ad4e5f951a82da1233d14eebc3dede18256",
+    "research/collision_api/README.md": "45ef10c049f0fcda2e70f5bcaf7fcd40c61b3e47685122e7d23f157dd4bc5802"
+  },
+  "documentation": "docs/COLLISION_API.md",
+  "documentation_sha256": "7f2c3d96447ee91a56bad9b9509ad56a14b94c9c27065558226d32e2502841ad",
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 34,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 34,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "interface": {
+    "function": "func_8001F8B8",
+    "declaration": "src/file/tmd_prim.h",
+    "arguments": [
+      "void *model",
+      "s32 *nearest",
+      "vec3d_16_t *hit",
+      "s32 *height",
+      "const vec3d_16_t *start",
+      "const vec3d_16_t *end"
+    ],
+    "before_height_argument": "s32",
+    "after_height_argument": "s32 *",
+    "height_nullable": true,
+    "nearest_bytes": 4,
+    "hit_bytes": 6,
+    "transform_buffers_retained_bytes": 8
+  },
+  "compiler_diagnostic_comparison": {
+    "legacy_declaration_compiles": true,
+    "legacy_height_pointer_warning": true,
+    "legacy_discards_endpoint_const": true,
+    "shared_header_caller_warning_free": true,
+    "legacy_and_shared_caller_code_equal": true
+  },
+  "already_C_scene_node_caller": {
+    "function": "func_8001E7BC",
+    "bytes": 720,
+    "sha256": "f0a182a01ac13af8a034c5b831f47210d88887087dd0aa8b813944b2fde0abf2",
+    "isolated_type_changes_qualified": 5,
+    "all_five_complete_images_canonical": true,
+    "final_regular_and_clean_images_canonical": true,
+    "executed_in_this_native_campaign": false
+  },
+  "compiled_analysis_caller": {
+    "address": "0x80180000",
+    "bytes": 76,
+    "sha256": "23fd3b4a2db006c4b764f29f9e70d8a821cc87a93ce1b1edc63b9939e0793bf8",
+    "included_in_game": false,
+    "legacy_and_typed_code_equal": true,
+    "legacy_height_pointer_warning": true,
+    "typed_caller_warning_free": true,
+    "target_ABI_assertions": 21
+  },
+  "reviewed_original_ranges": [
+    {
+      "function": "class_FA50_reset_flag",
+      "address": "0x8001f394",
+      "bytes": 16,
+      "sha256": "a57cb9efcd8f219d53c0616d6e374ebc25aa7538029b076a71eca31cc2539256"
+    },
+    {
+      "function": "class_FA50_is_active",
+      "address": "0x8001f3a4",
+      "bytes": 12,
+      "sha256": "1a4bb67a6e467146f4884650e603989a0a95394e10e71ce01c54c63f4f726199"
+    },
+    {
+      "function": "func_8001F3B0",
+      "address": "0x8001f3b0",
+      "bytes": 308,
+      "sha256": "6ac1cdbb58c9d23f95f664b3213f167f0cb397435688b4ce9e248be8d861c291"
+    },
+    {
+      "function": "refresh_source_vertices",
+      "address": "0x8001f4e4",
+      "bytes": 40,
+      "sha256": "53ac0118d566d634d6de5187c748fad0e7327e8a10270c907ae38f24cc3b37da"
+    },
+    {
+      "function": "get_source_vertices",
+      "address": "0x8001f50c",
+      "bytes": 16,
+      "sha256": "3960bf714c3d63c777cb90c0336714cf7599f0e575ed62e305a53527258c9ea5"
+    },
+    {
+      "function": "func_8001F51C",
+      "address": "0x8001f51c",
+      "bytes": 336,
+      "sha256": "2861d23ad37f4c8004c221d7b93f98285c4e2e792bb81ae8883f31e8a5a8f3fe"
+    },
+    {
+      "function": "func_8001F66C",
+      "address": "0x8001f66c",
+      "bytes": 588,
+      "sha256": "f0b0ff1121df8193c06a986047242bf5ed7068954634060b3f9e7557c01d56f5"
+    },
+    {
+      "function": "func_8001DDF4",
+      "address": "0x8001ddf4",
+      "bytes": 796,
+      "sha256": "e61be058229e5ecc97387ea9e246d7b578594f5d77495b56fc3f2900f2a6b193"
+    },
+    {
+      "function": "func_8001E110",
+      "address": "0x8001e110",
+      "bytes": 472,
+      "sha256": "c6bb20cf05899b90950c8aa14708812e200a46e305aa34d53489d0df78128530"
+    },
+    {
+      "function": "func_8001E2E8",
+      "address": "0x8001e2e8",
+      "bytes": 436,
+      "sha256": "a66812f7c4f3fc089fdc20ac4ea1b59c02d51fc6b771343779d03076568b8113"
+    },
+    {
+      "function": "func_8001ECFC",
+      "address": "0x8001ecfc",
+      "bytes": 176,
+      "sha256": "5070c8f9b60f3e51ea87f2d35887a3a097bc932f9f00a2c3e3449f10c66d8eda"
+    },
+    {
+      "function": "func_8001F8B8",
+      "address": "0x8001f8b8",
+      "bytes": 1944,
+      "sha256": "c23a87535a6a4949e414266f5a298b8d0409debb8be4ef6482e627fcc6269513"
+    },
+    {
+      "function": "func_80020050",
+      "address": "0x80020050",
+      "bytes": 1152,
+      "sha256": "d58160f9ae8a3adcc81dfda474988896476e823a614afd7f686896ec64677469"
+    },
+    {
+      "function": "OuterProduct10",
+      "address": "0x800179ac",
+      "bytes": 88,
+      "sha256": "b0df3db5528e30315b774c82d909799911f21a661fc9d23bf7ce2dbb33ef3f53"
+    },
+    {
+      "function": "Square0",
+      "address": "0x800178e8",
+      "bytes": 40,
+      "sha256": "99cb1c8d0c79529e8c6f1a56f640ebd7400c2eb0f57312cdc2e252c1e34f201b"
+    },
+    {
+      "function": "SquareRoot0",
+      "address": "0x800205c0",
+      "bytes": 132,
+      "sha256": "97c082d2d41751f9fccfc5cf37e8dd0b369fbc97fddd6d85c81c2fa2ca3feff7"
+    }
+  ],
+  "native": {
+    "distinct_initialized_inputs": 12696,
+    "positive_executions": 25392,
+    "existing_collision_domain_reused": true,
+    "duplicate_inputs_skipped": 0,
+    "positive_entry_counts": {
+      "func_8001F8B8": 25392,
+      "func_80020050": 50880,
+      "OuterProduct10": 25488,
+      "Square0": 33888,
+      "SquareRoot0": 33888,
+      "collision_api_invoke": 12696
+    },
+    "dependency_output_stubs": 0,
+    "positive_GTE_commands": 59376,
+    "positive_leading_sign_bit_queries": 33888,
+    "control_GTE_commands": 10,
+    "control_leading_sign_bit_queries": 6,
+    "initialized_inputs_sha256": "087da2576a97cdc735ea9eaf801f30146050150587589f1f71f395a6afc89822",
+    "original_and_typed_output_sha256": {
+      "original": "9e97019c7a2cfaf8a37b76320d4ffe4f01e709f4e9c413d30ec2c277889a2984",
+      "typed_caller": "9e97019c7a2cfaf8a37b76320d4ffe4f01e709f4e9c413d30ec2c277889a2984"
+    },
+    "negative_controls": [
+      {
+        "kind": "height_to_nearest",
+        "address": "0x80180030",
+        "changed_instruction_hits": 1,
+        "wrong_return": false,
+        "wrong_buffer": true,
+        "detecting_case": {
+          "polygons": [
+            [
+              [
+                -1024,
+                -1024,
+                0
+              ],
+              [
+                1024,
+                -1024,
+                0
+              ],
+              [
+                -1024,
+                1024,
+                0
+              ]
+            ]
+          ],
+          "start": [
+            -512,
+            -512,
+            -1000
+          ],
+          "end": [
+            -512,
+            -512,
+            1000
+          ]
+        }
+      },
+      {
+        "kind": "nearest_to_height",
+        "address": "0x80180028",
+        "changed_instruction_hits": 1,
+        "wrong_return": false,
+        "wrong_buffer": true,
+        "detecting_case": {
+          "polygons": [
+            [
+              [
+                -1024,
+                -1024,
+                0
+              ],
+              [
+                1024,
+                -1024,
+                0
+              ],
+              [
+                -1024,
+                1024,
+                0
+              ]
+            ]
+          ],
+          "start": [
+            -512,
+            -512,
+            -1000
+          ],
+          "end": [
+            -512,
+            -512,
+            1000
+          ]
+        }
+      },
+      {
+        "kind": "start_to_end",
+        "address": "0x8018000c",
+        "changed_instruction_hits": 1,
+        "wrong_return": true,
+        "wrong_buffer": true,
+        "detecting_case": {
+          "polygons": [
+            [
+              [
+                -1024,
+                -1024,
+                0
+              ],
+              [
+                1024,
+                -1024,
+                0
+              ],
+              [
+                -1024,
+                1024,
+                0
+              ]
+            ]
+          ],
+          "start": [
+            -512,
+            -512,
+            -1000
+          ],
+          "end": [
+            -512,
+            -512,
+            1000
+          ]
+        }
+      },
+      {
+        "kind": "hit_to_start",
+        "address": "0x8018002c",
+        "changed_instruction_hits": 1,
+        "wrong_return": false,
+        "wrong_buffer": true,
+        "detecting_case": {
+          "polygons": [
+            [
+              [
+                -1024,
+                -1024,
+                0
+              ],
+              [
+                1024,
+                -1024,
+                0
+              ],
+              [
+                -1024,
+                1024,
+                0
+              ]
+            ]
+          ],
+          "start": [
+            -512,
+            -512,
+            -1000
+          ],
+          "end": [
+            -512,
+            -512,
+            1000
+          ]
+        }
+      }
+    ],
+    "all_changed_instructions_observed": true,
+    "backend_identity": {
+      "package_version": "2.1.4",
+      "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+      "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+    },
+    "bridge_executable_sha256": "c8309c9d4c6fadc7d547f5e1547c1ee3bfab9638d3c8bb53eb059bb7a55f6949",
+    "producer_report_sha256": "6ba6ea6d2d75e0eacc4594908177313c6e48f001e8dec79e36660fc763210c16"
+  },
+  "canonical_builds": {
+    "regular_complete_image_matches": true,
+    "fresh_clean_complete_image_matches": true,
+    "all_306_objects_absent_before_fresh_build": true,
+    "objects_rebuilt": 306,
+    "executable_bytes": 505856,
+    "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "protected_game_inputs": 392,
+    "changed_inputs": [
+      {
+        "path": "src/base/object_math.c",
+        "before_sha256": "75a0faa7a51c8b53cc88c1100f8ab64dcb1b9838a1f2266051b4a57ea0d4b7af",
+        "after_sha256": "83ea0fbfdeb4db45ce7453b79101c25eda5ddbaddd04330534563b824d4fc02b"
+      },
+      {
+        "path": "src/file/tmd_prim.h",
+        "before_sha256": "15cb090b57e4e48514037812193568edf5378661848e02f402c44ca8e5599995",
+        "after_sha256": "4a17801f9e29f5d01261271f51ca782a52639cb722ebc7b2586467902b714231"
+      },
+      {
+        "path": "src/file/tmd_prim_geom.c",
+        "before_sha256": "95fbc8ac5610b0acf8351cd0f5f3e6a2db58c7f6b5f0c44e54396548b976f4e1",
+        "after_sha256": "22836e9f992c1b3128311c56e27a6c3ab75f6aae74e622a92bfad4837607e9e5"
+      }
+    ],
+    "other_inputs_retained": 389,
+    "normal_log_sha256": "b03165d837d554d5abe47dfdcaf2f10bc86641af55573adf2cc7e24b8ad746ba",
+    "clean_stages": [
+      {
+        "stage": "clean-generated-build-outputs",
+        "exit_code": 0,
+        "log_sha256": "20417d9394163ed5264401296fac7363146ac3d1d8ef068919fcf6a267030feb"
+      },
+      {
+        "stage": "fresh-clean-build",
+        "exit_code": 0,
+        "log_sha256": "6d2e58cc4a6ef0d54f0d485a755e0751a0c906e199eb6f93289fe68f3dc73f42"
+      },
+      {
+        "stage": "progress",
+        "exit_code": 0,
+        "log_sha256": "b823181a54a24e4ee6fc79992b889f383ba32401c72bfd03742e665001b63d9f"
+      }
+    ],
+    "clean_report_sha256": "d0c1b8a2051021daa4b3f59f2cff4cfbcfc265b173e0dd66de5c52d9ab38646c",
+    "native_dependencies_retained_after_clean_build": true
+  },
+  "retained_primitive_research": {
+    "accepted": false,
+    "function_bytes": 1944,
+    "function_sha256": "4cf4a11bb0cc642f51b68bb5c01daa5f8403daece73946e6ccc84f4942cdf785",
+    "complete_image_changed_bytes": 22,
+    "complete_image_length_difference": 0,
+    "code_unchanged_after_type_qualification": true,
+    "qualification_report_sha256": "bd65c2ead61a1c1cc4e891ff9988619e1d1d08f2b8af13957213424ec885cd98"
+  },
+  "earlier_source_diagnostics": {
+    "qualified_source_forms": 34,
+    "noncontrol_exact_matches": 0,
+    "report_sha256": "70c65bf657f7720eeeab91625f5d30ef98212558487f334bd54b1443b3aa0776",
+    "native_behavior_claimed": false
+  },
+  "excluded_preparatory_runs": [
+    {
+      "stage": "five guarded workbench attempts",
+      "accepted_compilations": 0,
+      "reason": "Selected already-C caller rejected by the assembly-function guard before compilation.",
+      "report_sha256": "2459578a2758ff307eca35dee8d699a4e9e1542f6cf8897a06314832c9b68cee"
+    },
+    {
+      "stage": "first diagnostic symbol link",
+      "accepted_function_qualifications": 0,
+      "reason": "Normal candidate image matches; diagnostic linker script included the baseline object twice.",
+      "diagnostic_sha256": "7cd59e26f582e50354db4cf33d2c9442a37778a8d2a78c59486b72f964720b4b",
+      "correction": "Use the workbench-generated candidate linker script."
+    }
+  ],
+  "tooling_tests": [
+    {
+      "environment": "Windows",
+      "python": "3.14.2",
+      "tests": 591,
+      "expected_skips": 2,
+      "exact_log_sha256": "019a309e346195170c531e10e41a96f8e95ed57cfe141d03ceee508c518adec4",
+      "command": "python -m unittest discover -s tests -v"
+    },
+    {
+      "environment": "WSL/Linux",
+      "python": "3.13.5",
+      "tests": 591,
+      "expected_skips": 2,
+      "exact_log_sha256": "aa90c0cb801a619e0f416cf2771decd29f0f6ec5c8cba2b45f9fbfb140fcf68a",
+      "command": "python -m unittest discover -s tests -v"
+    }
+  ],
+  "new_game_function_C_bytes": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "new_gameplay_runs": 0,
+  "new_whole_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters": 0,
+  "source_explanations_resolved": 0,
+  "original_behavior_modified": false,
+  "model_API_calls": 0,
+  "original_NPC_AI_and_analysis_tools_separate": true,
+  "Bevy_port_modified": false,
+  "scope": "Compiled typed C caller and direct original primitive query on constructed models. Full model/request/output buffers, return, saved registers, GP and lower stack guard checked; real decoder/SDK and native GTE/leading-bit operations. No scene-node caller execution, natural construction, argument-output aliasing, complete collision domain or PS1 timing acceptance."
+}

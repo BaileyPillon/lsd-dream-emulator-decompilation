@@ -4,11 +4,11 @@
 #include <psx/libgte.h>
 
 #include "base/transform.h"
+#include "file/tmd_prim.h"
 #include "scene/scene_node.h"
 
 // todo cleanup file its a pain
 
-extern s32 func_8001F8B8(void *arg0, void *arg1, void *arg2, s32 arg3, void *arg4, void *arg5);
 void func_8001EA8C(s32 *arg0, s16 *arg1, s16 *arg2);
 void func_8001EE98(u8 *arg0, u8 *arg1, s32 arg2, u8 *arg3);
 
@@ -67,7 +67,9 @@ void func_8001E7B0(transform_t *This) {
 }
 
 s32 func_8001E7BC(scene_node_t *This, s32 *arg1, u16 *arg2) {
-    vec4d_16_t vecA, vecB, vecC, vecD;
+    vec4d_16_t vecA, vecB;
+    vec3d_16_t contact;
+    s32 nearest;
     s32 *a3;
     scene_node_t *scene_node;
 
@@ -106,13 +108,17 @@ s32 func_8001E7BC(scene_node_t *This, s32 *arg1, u16 *arg2) {
         vecB.x = vecA.x;
         vecB.y = vecA.y - 0x400;
         vecB.z = vecA.z;
-        if (func_8001F8B8(This->m_Unk7, &vecD, &vecC, 0, &vecA, &vecB) != 0) {
-            func_8001EA8C(arg1, (s16 *) &vecA, (s16 *) &vecC);
+        /* Retain the eight-byte transform buffers. Collision reads their
+           six-byte XYZ prefix, and writes a packed contact and distance word. */
+        if (func_8001F8B8(This->m_Unk7, &nearest, &contact, 0,
+                         (const vec3d_16_t *) &vecA, (const vec3d_16_t *) &vecB) != 0) {
+            func_8001EA8C(arg1, (s16 *) &vecA, (s16 *) &contact);
             return 1;
         }
         vecB.y = vecA.y + 0x400;
-        if (func_8001F8B8(This->m_Unk7, &vecD, &vecC, 0, &vecA, &vecB) != 0) {
-            func_8001EA8C(arg1, (s16 *) &vecA, (s16 *) &vecC);
+        if (func_8001F8B8(This->m_Unk7, &nearest, &contact, 0,
+                         (const vec3d_16_t *) &vecA, (const vec3d_16_t *) &vecB) != 0) {
+            func_8001EA8C(arg1, (s16 *) &vecA, (s16 *) &contact);
             return 1;
         }
     }

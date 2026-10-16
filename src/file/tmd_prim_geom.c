@@ -14,9 +14,7 @@ s32 class_FA50_is_active(s32 arg0) {
     return D_8008AC4C;
 }
 
-typedef struct {
-    s16 x, y, z;
-} vec3s_t;
+typedef vec3d_16_t vec3s_t;
 
 typedef struct {
     vec3s_t min;
