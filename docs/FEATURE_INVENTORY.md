@@ -16,6 +16,14 @@ explains two more inherited functions, reducing the identified remainder from
 **19 to 17**. Their 700 bytes already counted as C; no source-byte or runtime
 acceptance count increases.
 
+The [accessor storage recovery](ACCESSOR_STORAGE_RECOVERY.md) explains three
+more existing C frames, reducing that remainder from **17 to 14**. Its 232
+function bytes already counted as C. The
+[native model/actor factory profile](ACTOR_FACTORY_OWNERSHIP.md) adds independent
+ownership-event checks through original construction and first-frame setup.
+Neither changes the 40-group inventory, 36 bounded NPC callbacks, matching-C
+byte count or whole-feature/encounter acceptance totals.
+
 The [overlap result-lifetime study](OVERLAP_RESULT_LIFETIMES.md) improves an
 unaccepted source candidate from 170 to 148 differing executable bytes and
 rechecks the existing 6,912 native graph pairs. It adds no C byte, original

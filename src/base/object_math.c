@@ -201,14 +201,26 @@ s32 func_8001ECFC(box3d_16_t *box, vec3d_16_t *pt) {
     return flags;
 }
 
+/* Consumed word access retains the compiler's original reload slot.
+ * See docs/ACCESSOR_STORAGE_RECOVERY.md for the observed allocation. */
+typedef struct {
+    s32 *value;
+} math_word_reference_t;
+
+typedef char checked_math_word_reference[
+    (sizeof(math_word_reference_t) == 4) ? 1 : -1];
+
+static inline s32 math_read_word(s32 *pointer) {
+    math_word_reference_t word = { pointer };
+    return *word.value;
+}
+
 s32 func_8001EDAC(s32 *arg0, s32 arg1, s32 arg2, s32 arg3) {
-    s32 pad[2];
     s32 temp_t0;
     s32 temp_v0;
     s32 var_a0;
     s32 var_t0;
 
-    (void) pad;
     var_t0 = 1;
     var_a0 = 0;
     if (arg2 > 0) {
@@ -219,7 +231,7 @@ s32 func_8001EDAC(s32 *arg0, s32 arg1, s32 arg2, s32 arg3) {
     }
     var_t0 -= 1;
     var_t0 <<= arg1;
-    temp_v0 = *arg0;
+    temp_v0 = math_read_word(arg0);
     temp_t0 = ~var_t0 & temp_v0;
     *arg0 = (arg3 << arg1) | temp_t0;
     return (u32) (var_t0 & temp_v0) >> arg1;
@@ -236,13 +248,24 @@ void func_8001EE04(void *arg0, void *arg1, s32 arg2, void *arg3) {
     }
 }
 
+/* This input reference is consumed by the native SDK matrix call. */
+typedef struct {
+    u8 *value;
+} math_stream_reference_t;
+
+typedef char checked_math_stream_reference[
+    (sizeof(math_stream_reference_t) == 4) ? 1 : -1];
+
+static inline u8 *math_stream_pointer(u8 *pointer) {
+    math_stream_reference_t stream = { pointer };
+    return stream.value;
+}
+
 void func_8001EE98(u8 *arg0, u8 *arg1, s32 arg2, u8 *arg3) {
-    s32 pad[2];
     u8 *end = arg0 + arg2 * 12;
 
-    (void) pad;
     while (arg0 < end) {
-        ApplyMatrixLV(arg3, arg1, arg0);
+        ApplyMatrixLV(arg3, math_stream_pointer(arg1), arg0);
         arg0 += 12;
         arg1 += 12;
     }

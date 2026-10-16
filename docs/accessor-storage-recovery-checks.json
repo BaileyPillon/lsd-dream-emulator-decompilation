@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "status": "verified_three_matching_accessor_storage_recoveries",
+  "recorded_utc": "2026-10-16T23:06:04.911743+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "2616767e3de1cc794194c1adf49a861205318b1a",
+  "before": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 17,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 14,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "functions": [
+    {
+      "function": "func_8001EDAC",
+      "address": "0x8001edac",
+      "bytes": 88,
+      "sha256": "685cff5de3228050301baf2343de332f6b5d8f6e3792817177b649ff16605923"
+    },
+    {
+      "function": "func_8001EE98",
+      "address": "0x8001ee98",
+      "bytes": 124,
+      "sha256": "2569a9b916b6606e7e75e70b4397a0c3b0a4d08781d858570dd43e384b3217ab"
+    },
+    {
+      "function": "glyph_get_char",
+      "address": "0x80041c28",
+      "bytes": 20,
+      "sha256": "5b6b699c5a61336764d09934ffb8183244e3da097dc542b0b1bb15357856b728"
+    }
+  ],
+  "source_functions_explained": 3,
+  "existing_C_bytes_explained": 232,
+  "unused_array_bytes_removed": 32,
+  "consumed_view_field_bytes": 13,
+  "new_C_bytes": 0,
+  "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+  "compiler_observations": [
+    {
+      "unit": "math",
+      "variant": "baseline",
+      "source_sha256": "db30ffb25d5f890ad11236c3cf5c82f425073b8edf02d4e1c2a7d1ba62c1713b",
+      "report_path": ".decomp-lab/accessor-math-baseline-allocation-20261016-first/report.json",
+      "report_sha256": "43dd0fcb8fc58b338a45ed1eff37b0b639d14ea104e1e2271fab9f58b4b19a9e",
+      "allocations": [
+        {
+          "function": "func_8001EDAC",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        },
+        {
+          "function": "func_8001EDAC",
+          "allocator": "assign_stack_local",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        },
+        {
+          "function": "func_8001EE98",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        },
+        {
+          "function": "func_8001EE98",
+          "allocator": "assign_stack_local",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        }
+      ]
+    },
+    {
+      "unit": "math",
+      "variant": "removed",
+      "source_sha256": "d861b93e9646f5abbf07be99f2431ddaa1b2644ddd0a80143d06620f1891ff90",
+      "report_path": ".decomp-lab/accessor-math-removed-allocation-20261016-first/report.json",
+      "report_sha256": "e83d7c2e5e1dcfebd23accf6f1321cb87704d5e1fcb3875af734e89f69225ade",
+      "allocations": []
+    },
+    {
+      "unit": "math",
+      "variant": "matching",
+      "source_sha256": "71afbc2a177b0a6abfcdf986631b4cfd0a4ea91efc50c0ccd7f31c36d3a9cc48",
+      "report_path": ".decomp-lab/accessor-math-matching-allocation-20261016-first/report.json",
+      "report_sha256": "abf75df441394eddeb019dfe24e6acb1379385dc19c62eae801481ec949ebcb9",
+      "allocations": [
+        {
+          "function": "func_8001EDAC",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 82,
+            "from_pseudo": -1,
+            "function": "func_8001EDAC",
+            "completed": true
+          }
+        },
+        {
+          "function": "func_8001EE98",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 82,
+            "from_pseudo": -1,
+            "function": "func_8001EE98",
+            "completed": true
+          }
+        }
+      ]
+    },
+    {
+      "unit": "glyph",
+      "variant": "baseline",
+      "source_sha256": "65b9a0bb9376b472e47f4377e6d93df4b61fccf6a30aecea7cff5df9f54801ac",
+      "report_path": ".decomp-lab/accessor-glyph-baseline-allocation-20261016-first/report.json",
+      "report_sha256": "c6bc681eeb1e4640ae0bbdfb3292bce3aa45c17066e97cc1214f4240f53325b2",
+      "allocations": [
+        {
+          "function": "glyph_get_char",
+          "allocator": "assign_stack_temp",
+          "size": 16,
+          "frame_offset_before": 0,
+          "frame_offset_after": 16,
+          "alter_reg_context": null
+        },
+        {
+          "function": "glyph_get_char",
+          "allocator": "assign_stack_local",
+          "size": 16,
+          "frame_offset_before": 0,
+          "frame_offset_after": 16,
+          "alter_reg_context": null
+        }
+      ]
+    },
+    {
+      "unit": "glyph",
+      "variant": "removed",
+      "source_sha256": "ff9af0a99ae491f132c5c628f90a5ffc70e65b89475229a5f9565fccb283c0cf",
+      "report_path": ".decomp-lab/accessor-glyph-removed-allocation-20261016-first/report.json",
+      "report_sha256": "6abeb93812db08617d615b4faa2b15757e61622473d59972c26e5c561c9295b6",
+      "allocations": []
+    },
+    {
+      "unit": "glyph",
+      "variant": "matching",
+      "source_sha256": "74ee55ff95c90ed03f36596b0602b0d35bd06bbf504150f175ae40057a355f04",
+      "report_path": ".decomp-lab/accessor-glyph-matching-allocation-20261016-first/report.json",
+      "report_sha256": "b1cf0c440f1338b2c9c11b081c81731598f337d1ced81e39d8eccae22b5b1426",
+      "allocations": [
+        {
+          "function": "glyph_get_char",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 73,
+            "from_pseudo": -1,
+            "function": "glyph_get_char",
+            "completed": true
+          }
+        },
+        {
+          "function": "glyph_get_char",
+          "allocator": "assign_stack_local",
+          "size": 1,
+          "frame_offset_before": 8,
+          "frame_offset_after": 16,
+          "alter_reg_context": {
+            "pseudo": 76,
+            "from_pseudo": -1,
+            "function": "glyph_get_char",
+            "completed": true
+          }
+        }
+      ]
+    }
+  ],
+  "qualified_compiler_observations": 6,
+  "normal_and_observed_complete_assembly_equal": true,
+  "explicit_compiler_memory_rewrites": false,
+  "extra_inferior_functions_invoked": 0,
+  "ordinary_complete_image_equal": true,
+  "fresh_complete_build": {
+    "status": "verified_fresh_complete_accessor_storage_build",
+    "objects": 306,
+    "executable_bytes": 505856,
+    "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "protected_build_inputs_preserved": true,
+    "source_units": [
+      "src/base/object_math.c",
+      "src/menu/glyph.c"
+    ],
+    "regular_and_fresh_complete_images_equal": true,
+    "new_C_bytes": 0,
+    "whole_feature_acceptances": 0,
+    "goal_complete": false
+  },
+  "private_qualification": {
+    "path": ".decomp-lab/accessor-storage-recovery-20261016-first/qualification.json",
+    "sha256": "dc60b806fa80188699dce877c8246332ca8aca287b0b113bbbcdf4526bb340ac"
+  },
+  "private_fresh_build": {
+    "path": ".decomp-lab/accessor-storage-recovery-20261016-first/fresh-build-report-second.json",
+    "sha256": "30272c084fcfe27955c70e4fc32838ce0cc2f2ad6ce9a9ccfaddf08f26b08d35",
+    "producer_sha256": "7adaf831bb11ad4d453bb80ce4451569e6bd53bdf3f4d4ba57caaed6eaf71f62",
+    "maspsx_revision": "e85ecb373828aabea96d7e6400974d4f91ce8c74"
+  },
+  "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "public_files": {
+    "src/base/object_math.c": "71afbc2a177b0a6abfcdf986631b4cfd0a4ea91efc50c0ccd7f31c36d3a9cc48",
+    "src/menu/glyph.c": "74ee55ff95c90ed03f36596b0602b0d35bd06bbf504150f175ae40057a355f04",
+    "docs/ACCESSOR_STORAGE_RECOVERY.md": "9a7846fbc1a7038ad67db9e98e3f691b79024fe7cd37365a281fd023cff57a71"
+  },
+  "exactly_two_game_source_inputs_changed": [
+    "src/base/object_math.c",
+    "src/menu/glyph.c"
+  ],
+  "other_390_game_inputs_preserved": true,
+  "whole_feature_acceptances": 0,
+  "new_NPC_callback_profiles": 0,
+  "goal_complete": false,
+  "source_hash_convention": "SHA-256 of exact executed local bytes. Promoted C units and new guides are pinned to LF. Existing transitive inputs retain their recorded local line endings.",
+  "scope": "Actual word, matrix-input, glyph-receiver and unsigned-character views explain three inherited local frames. All view fields are consumed. Original author declarations remain unknown; no source or runtime completion gate is relaxed.",
+  "tooling_tests": [
+    {
+      "platform": "Windows",
+      "python_version": "Python 3.14.2",
+      "total_cases": 654,
+      "passed": 652,
+      "expected_skips": 2,
+      "private_log": ".decomp-lab/accessor-factory-tests-windows-20261016-final.log",
+      "log_sha256": "af8d73f9e81c71a6ce938e4867cc3f0f1f0cc2d6f149a49b8726dd70b7389020"
+    },
+    {
+      "platform": "WSL/Linux",
+      "python_version": "Python 3.13.5",
+      "total_cases": 654,
+      "passed": 652,
+      "expected_skips": 2,
+      "private_log": ".decomp-lab/accessor-factory-tests-wsl-20261016-final.log",
+      "log_sha256": "3f0eb9cef98e3ec7cc700ce5c967257ef573f391ceaa3fd7811a4c0a1e52dd52"
+    }
+  ]
+}

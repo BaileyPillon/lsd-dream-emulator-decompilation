@@ -1,5 +1,21 @@
 # Source and evidence provenance
 
+The [accessor storage recovery](ACCESSOR_STORAGE_RECOVERY.md) removes three
+inherited arrays while preserving their original instructions. Six actual
+compiler observations distinguish the old arrays, removed-array controls and
+consumed accessors. Identified storage explanations fall from 17 to 14; the
+232 function bytes were already in C. Regular and fresh complete build evidence
+is retained in [new metadata](accessor-storage-recovery-checks.json).
+
+The [model/actor factory profile](ACTOR_FACTORY_OWNERSHIP.md) checks original
+resource preparation, animation-zero initialization and three ownership
+histories against an independent allocation/release plan. Its English-labelled
+campaign preceded the accessor cleanup; its Japanese-labelled campaign follows
+it. Both execute the same canonical image. Source, backend, input and executed
+fault records are retained in [factory metadata](actor-factory-ownership-checks.json).
+Complete object-payload oracles and natural encounters remain open. These
+records add no matching C byte, NPC callback profile or whole-feature acceptance.
+
 The [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md) explains five
 existing C functions through real four-byte callback/table views. Their forty
 unused declared bytes and dead comparisons are removed; original function

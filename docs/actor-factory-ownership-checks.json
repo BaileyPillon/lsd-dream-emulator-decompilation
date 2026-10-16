@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "status": "qualified_bounded_original_actor_factory_ownership",
+  "recorded_utc": "2026-10-16T23:06:14.657392+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "2616767e3de1cc794194c1adf49a861205318b1a",
+  "before": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 14,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 14,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "private_runs": [
+    {
+      "edition_label": "English-v1",
+      "label_is_user_supplied": true,
+      "private_report": ".decomp-lab/actor-factory-ownership-english-20261016-first/report.json",
+      "report_sha256": "8d63e6f5cde5f4d2c6f2785b05fc4700b5777c113e37805630a8ddda26acc369",
+      "inventory_sha256": "79ea48de3073e7e64d42737b5b9f5d21ed8aa4b6d7a77e2b87b1eae9b6c9512b",
+      "layout_sha256": "cf93cc690c83baa91e7f54d57bc160007ceee859dc566333105124bf126ed1bc",
+      "measured": {
+        "original_model_instances": 111,
+        "distinct_model_contents": 100,
+        "positive_cases": 666,
+        "actor_lifetimes": 888,
+        "heap_events": 128384,
+        "native_allocation_calls": 64192,
+        "native_release_calls": 64192
+      },
+      "faults": [
+        {
+          "name": "primitive-allocation-size",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x1f25c": 13
+          },
+          "detection": "planned_heap_event 3: actual=[('memory_allocate_mem', 32, 655600)]; expected=[('memory_allocate_mem', 36, 655600)]"
+        },
+        {
+          "name": "omitted-state-release",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x1cc04": 60
+          },
+          "detection": "planned_heap_event 173: actual=[('memory_free_mem', 0, 0)]; expected=[('memory_free_mem', 656880, 0)]"
+        },
+        {
+          "name": "reversed-table-releases",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x65fa4": 2,
+            "0x65fb0": 2
+          },
+          "detection": "planned_heap_event 316: actual=[('memory_free_mem', 656548, 0)]; expected=[('memory_free_mem', 656668, 0)]"
+        }
+      ],
+      "original_function_count": 134,
+      "source_state": "before accessor cleanup",
+      "backend": {
+        "package_version": "2.1.2",
+        "library_api": [
+          2,
+          1,
+          33620735
+        ],
+        "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+        "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+        "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+        "binding_source_count": 21
+      }
+    },
+    {
+      "edition_label": "Japanese-labelled",
+      "label_is_user_supplied": true,
+      "private_report": ".decomp-lab/actor-factory-ownership-japanese-20261016-first/report.json",
+      "report_sha256": "3e67df472d0de44cec76d6f2017c3465c01020dc8f543a564fa1f021b3f77d64",
+      "inventory_sha256": "cadd801a4facffde5194dba2f8265c4ab42f45aea5c7be0f143b8ed52f162c58",
+      "layout_sha256": "cf93cc690c83baa91e7f54d57bc160007ceee859dc566333105124bf126ed1bc",
+      "measured": {
+        "original_model_instances": 111,
+        "distinct_model_contents": 100,
+        "positive_cases": 666,
+        "actor_lifetimes": 888,
+        "heap_events": 128384,
+        "native_allocation_calls": 64192,
+        "native_release_calls": 64192
+      },
+      "faults": [
+        {
+          "name": "primitive-allocation-size",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x1f25c": 13
+          },
+          "detection": "planned_heap_event 3: actual=[('memory_allocate_mem', 32, 655600)]; expected=[('memory_allocate_mem', 36, 655600)]"
+        },
+        {
+          "name": "omitted-state-release",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x1cc04": 60
+          },
+          "detection": "planned_heap_event 173: actual=[('memory_free_mem', 0, 0)]; expected=[('memory_free_mem', 656880, 0)]"
+        },
+        {
+          "name": "reversed-table-releases",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x65fa4": 2,
+            "0x65fb0": 2
+          },
+          "detection": "planned_heap_event 316: actual=[('memory_free_mem', 656548, 0)]; expected=[('memory_free_mem', 656668, 0)]"
+        }
+      ],
+      "original_function_count": 134,
+      "source_state": "after accessor cleanup",
+      "backend": {
+        "package_version": "2.1.2",
+        "library_api": [
+          2,
+          1,
+          33620735
+        ],
+        "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+        "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+        "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+        "binding_source_count": 21
+      }
+    }
+  ],
+  "shared_model_instances": 111,
+  "shared_distinct_contents": 100,
+  "extraction_model_payloads_equal": true,
+  "scenarios": [
+    "actor-first",
+    "owned",
+    "model-first"
+  ],
+  "memory_patterns": [
+    "poison",
+    "distinct"
+  ],
+  "functions": "docs/actor-factory-function-ranges.json",
+  "original_functions": 134,
+  "public_files": {
+    "tools/actor_factory_model.py": "fae1f6e1cfaddeac478b5f9e4fc9ea585da5c2bf21889c1a6cc6830b1f794595",
+    "tools/verify_actor_factory.py": "ed997e40b0ec0b15f7d701e8ee893d8d6bf21bcca94a3f08668568f00e6725cc",
+    "tests/test_actor_factory_ownership.py": "951473b4a14538e491cf4720dd8f42574e3db5f02e8b5bcea91feb12692cd600",
+    "docs/ACTOR_FACTORY_OWNERSHIP.md": "0b111a79183bf9c5030a9a23356dfb1e310e836b1869b67f5775484260c43796",
+    "docs/actor-factory-function-ranges.json": "1c7223ddeb1b0f440461e350e08184f383f5468b506496924c6b789f16c36611"
+  },
+  "producer_dependency_sha256": {
+    "tools/verify_actor_children.py": "09b3beef12fe216bde9dc43840b35bf027ad174935f8a34a9e998465943cd356",
+    "tools/actor_child_model.py": "40980e4c0518acc7785bcd79bfc9a48274e09579c4ab05c8ea93f611ed3372f7",
+    "tools/heap_model.py": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e",
+    "tools/verify_card_heap.py": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5",
+    "tools/verify_card_cleanup.py": "5eec21f9fe0afa2549f10eb890c1dbf9984f5f1541611102afd9fa995d58d6c0",
+    "tools/verify_native_ai.py": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697",
+    "tools/inventory_animations.py": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+    "tools/inventory_disc.py": "71319a4c51b50885753998fe9afb7a00b71acf0fa03167b9a63c48651e36aebf",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+    "tools/progress.py": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+    "tools/decomp_workbench.py": "8d375145ca2b7f210889558ce75d4acd854a04606ea26d86ff50251b6a4820d1",
+    "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+    "docs/actor-child-construction-function-ranges.json": "917010a67a4398af6137fc3a180a0a6d5d06e18ab151ddd21890078733b8da22",
+    "docs/actor-child-lifetime-function-ranges.json": "16e676914cb87df4990a8dc6db9efa64779a810f3f9824e9fbaf691c261317df",
+    "requirements-card-heap.txt": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212",
+    "requirements.txt": "bcd34abbb33438c8a7e18a9165b8ea5c503a179b23738ccf72dbd659ce174cde",
+    "tools/actor_factory_model.py": "fae1f6e1cfaddeac478b5f9e4fc9ea585da5c2bf21889c1a6cc6830b1f794595",
+    "tools/verify_actor_factory.py": "ed997e40b0ec0b15f7d701e8ee893d8d6bf21bcca94a3f08668568f00e6725cc",
+    "docs/actor-factory-function-ranges.json": "1c7223ddeb1b0f440461e350e08184f383f5468b506496924c6b789f16c36611"
+  },
+  "backend": {
+    "package_version": "2.1.2",
+    "library_api": [
+      2,
+      1,
+      33620735
+    ],
+    "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+    "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+    "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+    "binding_source_count": 21
+  },
+  "independent_factory_requests_releases_and_returns": true,
+  "independent_complete_object_payload_model": false,
+  "complete_manager_comparison_at_final_checkpoint": true,
+  "complete_pool_payload_comparison": false,
+  "explicit_dependency_output_stubs": 0,
+  "executed_instruction_fault_controls_per_extraction": 3,
+  "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "new_C_bytes": 0,
+  "new_NPC_callback_profiles": 0,
+  "whole_feature_acceptances": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "new_model_API_calls": 0,
+  "goal_complete": false,
+  "supplied_inputs": [
+    "original MOM bytes copied to writable VM memory",
+    "unlocked supplied pool",
+    "g_CdInitialized=1 ready-state fixture",
+    "SDK identity matrix table"
+  ],
+  "scope": "Native model/TMD/MOS factories, animation-zero initialization and three actor/model ownership histories. An independent plan predicts ordered heap requests, releases and return words before execution. Complete object/geometry/raw-model mutation oracles, allocation failures, cold CD initialization, physical disc I/O, later playback, natural encounters, rendering and PS1 timing remain open.",
+  "source_hash_convention": "SHA-256 of exact executed local bytes. Promoted C units and new guides are pinned to LF. Existing transitive inputs retain their recorded local line endings.",
+  "original_behavior_modified": false,
+  "Bevy_port_modified": false,
+  "tooling_tests": [
+    {
+      "platform": "Windows",
+      "python_version": "Python 3.14.2",
+      "total_cases": 654,
+      "passed": 652,
+      "expected_skips": 2,
+      "private_log": ".decomp-lab/accessor-factory-tests-windows-20261016-final.log",
+      "log_sha256": "af8d73f9e81c71a6ce938e4867cc3f0f1f0cc2d6f149a49b8726dd70b7389020"
+    },
+    {
+      "platform": "WSL/Linux",
+      "python_version": "Python 3.13.5",
+      "total_cases": 654,
+      "passed": 652,
+      "expected_skips": 2,
+      "private_log": ".decomp-lab/accessor-factory-tests-wsl-20261016-final.log",
+      "log_sha256": "3f0eb9cef98e3ec7cc700ce5c967257ef573f391ceaa3fd7811a4c0a1e52dd52"
+    }
+  ]
+}

@@ -25,12 +25,16 @@ ownership, allocation failures and playback beyond its supplied descriptors
 and SDK matrix fixture; construction checks do not accept whole encounters.
 The optional [child lifetime profile](ACTOR_CHILD_LIFETIMES.md) now checks
 destruction, repeated cleanup and guarded reconstruction on the same pool.
-Full actor/model creation, attached descendants and allocation failures remain open.
+The [factory ownership profile](ACTOR_FACTORY_OWNERSHIP.md) now executes actual
+model/actor creation and animation-zero parent attachment. Extend its independent
+checks to complete object payloads, allocation failures, resource-cache loading,
+later playback and natural encounters.
 
 The [glyph character interface](GLYPH_CHARACTER_API.md) now has typed receivers
 and the original unsigned-byte getter return. Its compiled callers pass 4,656
-bounded native inputs without output substitutions. Recover the getter's
-inherited unused local and extend natural menu/rendering histories separately.
+bounded native inputs without output substitutions. The
+[accessor recovery](ACCESSOR_STORAGE_RECOVERY.md) now explains the getter's
+inherited storage; extend natural menu/rendering histories separately.
 
 ## Matching C recovery
 
@@ -44,9 +48,10 @@ the native enumeration arguments. The game also has a verified
 function or whole-feature gate; continue the source work below.
 
 - Use the [memory-store tracer](COMPILER_MEMORY_STORES.md) to distinguish real
-  consumed storage from retained unused regions. The two local stores in the
-  math candidate remain an exact-source failure; incoming records and frontend
-  controls do not resolve the current grid or inherited-storage gates.
+  consumed storage from retained unused regions. The earlier math-pair candidate
+  retains two extra stores; the later [accessor recovery](ACCESSOR_STORAGE_RECOVERY.md)
+  instead resolves the packed-word and matrix-stream functions through real
+  input views. Continue the remaining source gates below.
 
 Five game functions remain in assembly after the source-layout correction,
 [matching generation lookup recovery](GENERATION_LOOKUP_RECOVERY.md) and
@@ -66,8 +71,9 @@ generation and two menu recoveries now raise it to 195,844 / 199,912 (97.97%).
 The [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md) now explains five
 inherited functions. The subsequent
 [constructor and actor storage recovery](CONSTRUCTOR_ACTOR_STORAGE.md) explains
-two more. Recover the real storage and helper lifetimes for the remaining
-seventeen identified functions.
+two more. The [accessor recovery](ACCESSOR_STORAGE_RECOVERY.md) explains another
+three. Recover the real storage and helper lifetimes for the remaining fourteen
+identified functions.
 All four withdrawn functions have replacement matching C; the earlier
 [source-layout candidates](../research/source_layout/README.md) remain
 historical research. Full source quality and runtime acceptance are separate.
