@@ -1,5 +1,15 @@
 # Changelog
 
+## Typed effect activation interface - 2026-10-16
+
+- Name and type three original effect callbacks with their four arguments;
+  remove activation casts and expose the matching public prototypes.
+- Recover entity offset `0x50` as an attachment-target pointer and update five
+  NPC effect-start sites. Structure layouts and the canonical executable match.
+- Recheck compiler layout, deliberate declaration regressions, dispatch bindings
+  and the existing Gunman campaign. C recovery and behavior acceptance counts
+  remain unchanged.
+
 ## Original Gunman scripts and effect arithmetic - 2026-10-16
 
 - Compare Gunman and Gunman Victim through 36,338 bounded native fixtures and

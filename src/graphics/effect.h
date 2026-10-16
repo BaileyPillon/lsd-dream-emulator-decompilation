@@ -4,6 +4,8 @@
 #include "base/base.h"
 #include "common.h"
 
+struct effect;
+
 /* Effect: a short-lived colour-cycling primitive attached to an entity.
  * Created by entity_create_effect() when an entity triggers (hit spark / link
  * marker) and removed when its life counter expires.  Derives from effect_base
@@ -66,9 +68,9 @@ typedef struct effect_vtable {
     /* 0x0C8 8006ea64 */ void (*Unk49)(void *);
     /* 0x0CC 8006ea68 */ void (*Unk50)(void *);
     /* 0x0D0 8006ea6c */ void (*effect_set_color_step)(void *, s32);
-    /* 0x0D4 8006ea70 */ void (*Unk52)(void *, s32, s32, s32);
-    /* 0x0D8 8006ea74 */ void (*Unk53)(void *, s32, s32, s32);
-    /* 0x0DC 8006ea78 */ s32 (*Unk54)(void *);
+    /* 0x0D4 8006ea70 */ void (*effect_start)(struct effect *, base_class_t *, s32, s32);
+    /* 0x0D8 8006ea74 */ void (*effect_start_attached)(struct effect *, base_class_t *, s32, s32);
+    /* 0x0DC 8006ea78 */ s32 (*effect_activate)(struct effect *, base_class_t *, s32, s32);
     /* 0x0E0 8006ea7c */ void (*Unk55)(void *, s32);
     /* 0x0E4 8006ea80 */ void (*Unk56)(void *);
     /* 0x0E8 8006ea84 */ s32 (*effect_get_color)(void *);
@@ -129,6 +131,9 @@ typedef struct effect {
 } effect_t;
 
 effect_t *effect_create(s32 Unk1, s32 Unk2, s32 Unk3);
+void effect_start(effect_t *This, base_class_t *Target, s32 Variant, s32 Mode);
+void effect_start_attached(effect_t *This, base_class_t *Target, s32 Variant, s32 Mode);
+s32 effect_activate(effect_t *This, base_class_t *Target, s32 Variant, s32 Mode);
 effect_vtable_t *effect_get_vtable();
 
 #endif // LSD_EFFECT_H

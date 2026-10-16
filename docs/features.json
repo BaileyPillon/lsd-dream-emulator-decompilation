@@ -22470,6 +22470,58 @@
       "new_whole_NPC_encounters_accepted": 0,
       "original_NPC_AI_and_tools_separate": true,
       "Bevy_port_modified": false
+    },
+    "effect_activation_api_20261016": {
+      "status": "passed_matching_effect_activation_api",
+      "guide": "docs/EFFECT_ACTIVATION_API.md",
+      "metadata": "docs/effect-activation-api-checks.json",
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "typed_original_effect_slots": 3,
+      "NPC_start_call_sites_updated": 5,
+      "activation_call_sites_updated": 2,
+      "entity_target_offset": "0x50",
+      "normal_complete_image_equal": true,
+      "clean_complete_image_equal": true,
+      "fresh_objects": 306,
+      "changed_game_inputs": 4,
+      "all_other_388_game_inputs_retained": true,
+      "reused_native_cases": 36338,
+      "reused_scheduled_histories": 15,
+      "reused_scheduled_invocations": 126,
+      "new_original_fixture_inputs": 0,
+      "new_C_bytes": 0,
+      "new_bounded_NPC_callbacks": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_gameplay_runs": 0,
+      "Bevy_port_modified": false
     }
   }
 }

@@ -1,0 +1,362 @@
+{
+  "schema_version": 1,
+  "status": "passed_matching_effect_activation_api",
+  "recorded_utc": "2026-10-16T15:33:07.545378+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "source_baseline_commit": "0b5c1e261df3da8bc9679e31f1be47cd35ce229e",
+  "scope": "Original effect callback types and entity attachment-target typing; unchanged canonical game behavior.",
+  "public_files": {
+    "src/graphics/effect.h": "ab954a7b3c205d2d2bc4e50c3a450332991c85ca29bfbb064a677b1a1a6bbd80",
+    "src/graphics/effect.c": "0e378f4f5181109d9dad14ef1d7f2f79a82e9048d17d426c6182c783f581ff76",
+    "src/scene/entity.h": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f",
+    "src/scene/entity.c": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811",
+    "CHANGELOG.md": "433fd5ba6bf6a522a6b2b8dcb9ff218a5567e9c3eb36ee17a75258f3297ccc94",
+    "docs/FEATURE_INVENTORY.md": "fc8194b7cf48c28ad6ddfe5e29a205f9785d847a3fb16274379b766d43c8f6b2",
+    "docs/NATIVE_DISPATCH.md": "fe4925f6a3a090ca06e34076bd8f4fd5af19b3550da68393270a46f7fb292efe",
+    "docs/PROVENANCE.md": "ec3427697bc8f0c22ae94a94d02f12b77e6ab9e51b525aa34390808002c26f39",
+    "docs/EFFECT_ACTIVATION_API.md": "eb44a47dc27be39e53fcf33cf7ea8de0fb776b6817de15863df4d391baf2cbbf",
+    "docs/features.json": "d480b48534e33f2aed61c118088e57c19cbe979721282cede22d50efd7cb0d70"
+  },
+  "public_file_hash_basis": "Raw bytes in the verified local checkout; ordinary Git text conversion may change documentation or source line endings.",
+  "game_source_changes": {
+    "src/graphics/effect.h": {
+      "before": "767085b6d185b949592ca0d2adab6092efce6d518311ed2ba14ebad3194a08be",
+      "after": "ab954a7b3c205d2d2bc4e50c3a450332991c85ca29bfbb064a677b1a1a6bbd80"
+    },
+    "src/graphics/effect.c": {
+      "before": "d9b2dd6bceb64b1b9fc631d833c4e77278006c62b9969799ecfc6748166bd805",
+      "after": "0e378f4f5181109d9dad14ef1d7f2f79a82e9048d17d426c6182c783f581ff76"
+    },
+    "src/scene/entity.h": {
+      "before": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6",
+      "after": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f"
+    },
+    "src/scene/entity.c": {
+      "before": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e",
+      "after": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811"
+    }
+  },
+  "game_input_manifest_before_sha256": "b430e9477447d2fbbd1a8d73aa02fdf77f57489612ab7b5bd484a4db0d33a613",
+  "game_input_manifest_after_sha256": "59b3f79a688d6cb37d257db05c8260656c84e9b70e059b43415c4bb097705631",
+  "changed_game_inputs": 4,
+  "other_game_inputs_retained": 388,
+  "original_slot_bindings": [
+    {
+      "table": "g_EFFECT_VTABLE",
+      "offset": "0xd4",
+      "original_address": "0x8006ea70",
+      "target": "effect_start",
+      "target_address": "0x80040024",
+      "target_sha256": "103995793cb7706b9b53835e04afe0c65df685a77706d6ef75f3d74ee248f50f"
+    },
+    {
+      "table": "g_EFFECT_VTABLE",
+      "offset": "0xd8",
+      "original_address": "0x8006ea74",
+      "target": "effect_start_attached",
+      "target_address": "0x800400b0",
+      "target_sha256": "ae24e1376ab1024cbc165469bc30158d3113607aac56d6331e7ca99bd7f1fe2b"
+    },
+    {
+      "table": "g_EFFECT_VTABLE",
+      "offset": "0xdc",
+      "original_address": "0x8006ea78",
+      "target": "effect_activate",
+      "target_address": "0x80040154",
+      "target_sha256": "6bed0eb29f6c97e99183d1d272234e099e1199b138f05ab43ea67ee0245b4fde"
+    }
+  ],
+  "current_declared_slots": [
+    {
+      "offset": 212,
+      "field": "effect_start",
+      "declared_function_pointer": true,
+      "value": "0x80040024",
+      "linker_symbols": [
+        "effect_start"
+      ]
+    },
+    {
+      "offset": 216,
+      "field": "effect_start_attached",
+      "declared_function_pointer": true,
+      "value": "0x800400B0",
+      "linker_symbols": [
+        "effect_start_attached"
+      ]
+    },
+    {
+      "offset": 220,
+      "field": "effect_activate",
+      "declared_function_pointer": true,
+      "value": "0x80040154",
+      "linker_symbols": [
+        "effect_activate"
+      ]
+    }
+  ],
+  "interface_arguments": [
+    "effect",
+    "attachment target",
+    "variant",
+    "mode"
+  ],
+  "original_target_cache_producer": {
+    "function": "func_800570B4",
+    "entity_offset": "0x50",
+    "attached_type_low_nibble": 5,
+    "source": "src/scene/scene_node.c",
+    "source_sha256": "4c9802ade32e9cd08fbb89c94db1694e737814b5a0a922c45bd3abb1afe73ea9"
+  },
+  "affected_NPC_start_sites": {
+    "entity_airplane": 1,
+    "entity_gunman": 2,
+    "entity_big_face_man_hidden": 1,
+    "entity_gray_man": 1
+  },
+  "activation_callers": [
+    "effect_start",
+    "effect_start_attached"
+  ],
+  "compiler_layout": {
+    "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+    "effect_bytes": 160,
+    "entity_bytes": 264,
+    "effect_table_bytes": 244,
+    "effect_slots": [
+      "0xD4",
+      "0xD8",
+      "0xDC"
+    ],
+    "entity_target_offset": "0x50",
+    "checks": [
+      {
+        "name": "current",
+        "expected_result": "compiled",
+        "source_sha256": "7cea202e048245a759c06d9dfa14f73fd4896d6e149b4c9559ef5b7bbd3b69a9",
+        "diagnostic_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "overridden_header_sha256": {},
+        "canonical_compiler_used": true,
+        "warnings_are_errors": true
+      },
+      {
+        "name": "one-argument-activation",
+        "expected_result": "rejected",
+        "source_sha256": "7cea202e048245a759c06d9dfa14f73fd4896d6e149b4c9559ef5b7bbd3b69a9",
+        "diagnostic_sha256": "2c83107ad07d3aed2d3628ebe0496e15c1558fa01b1a551c366004f97fe04d6b",
+        "overridden_header_sha256": {
+          "include/graphics/effect.h": "18b714b52e2a6c7fad642903d7efd6538147e5d13291b0e2d47a751247f61d0e"
+        },
+        "canonical_compiler_used": true,
+        "warnings_are_errors": true
+      },
+      {
+        "name": "integer-attachment-target",
+        "expected_result": "rejected",
+        "source_sha256": "7cea202e048245a759c06d9dfa14f73fd4896d6e149b4c9559ef5b7bbd3b69a9",
+        "diagnostic_sha256": "889bc2a70ee10d50ef32bb6c74ed8fa91dc3afdf163fba95546d61f17a708aae",
+        "overridden_header_sha256": {
+          "include/scene/entity.h": "a35fdf0efb760c5d1cbc2751194842aed844e4b4c780da6dbabfc454afcde963"
+        },
+        "canonical_compiler_used": true,
+        "warnings_are_errors": true
+      }
+    ]
+  },
+  "complete_builds": {
+    "normal_equal": true,
+    "fresh_clean_equal": true,
+    "all_306_objects_absent_before_fresh_build": true,
+    "objects_current": 306,
+    "bytes": 505856,
+    "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "validation_reference": ".decomp-lab/effect-activation-api-20261016-first/validation.json",
+    "validation_sha256": "b790d450a31e0d7d50844e604a82af65233b2539be1ad64851906d2dc765ab18",
+    "logs": {
+      "baseline-build.log": "87a4b575babc477052efb3be89ae4c9ace3fba485c554f808af96f75356b5fa6",
+      "baseline-progress.log": "b823181a54a24e4ee6fc79992b889f383ba32401c72bfd03742e665001b63d9f",
+      "clean-generated-outputs.log": "20417d9394163ed5264401296fac7363146ac3d1d8ef068919fcf6a267030feb",
+      "configure.log": "d984ca155b8b69a984c0574edfa2e0efa5340c34f0de4d466075dbac033be36a",
+      "current-progress.log": "717ff19f8e779d84b2c31f977de7fc20008267f5cccc90aff18d8464a61b8952",
+      "doctor.log": "c63d993adbe914b700bad00158fa7578ab3b9a7a95071d772d5cff95c5717379",
+      "fresh-clean-build.log": "070c16e02680f38a12da047a055ca3ac76a6f7706ac82cac317e8a1f41b3c90c",
+      "native-replay.log": "101ef3f2f49a20d3bdccb50529a15448e6ae55379853bde51d52e2c370625e97",
+      "native-table-inventory.log": "99be8e3e7275aabe2906480916a7bb9d51a48ea2e398d9defbb82b9d2d24f9da",
+      "regular-build.log": "d9034091ff7098a2ba903d8a6a114028d37aff6d178c2ab18e97aaba7ae086e2",
+      "validation-console.log": "870d48e3de1e214105e4d661881b235cd258443ab57e6b4852c5128ec08f73f4",
+      "windows-tests.log": "acaac713940c11920b3f1fc3ef4f11c54155d28017ed1acd69f3171269074c68",
+      "wsl-tests.log": "c46a2a6bc040a9d2552e41059bbade7efc69137b06f448ab140788242375b17a"
+    }
+  },
+  "virtual_table_audit": {
+    "reference": ".decomp-lab/effect-activation-api-20261016-first/native-tables.json",
+    "sha256": "2f6b094bb33f7c814a785be75ba664d99596ff27097800d82b1792b2370e2057",
+    "declared_tables": 57,
+    "explicit_C_initializers_verified": 29,
+    "declared_slots": 2463,
+    "nonnull_slots": 2205,
+    "unique_declared_addresses": 838,
+    "all_dynamic_dispatch_resolved": false
+  },
+  "bounded_native_replay": {
+    "reference": ".decomp-lab/effect-activation-api-20261016-first/native/report.json",
+    "sha256": "ac24d95c372ec2c8b90015ff0bf78a9284f4d53ce19e902ddc307aff74547f6a",
+    "producer_dependencies": [
+      {
+        "path": "tools/verify_native_ai.py",
+        "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+      },
+      {
+        "path": "tools/inventory_vtables.py",
+        "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+      },
+      {
+        "path": "tools/progress.py",
+        "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+      },
+      {
+        "path": "configure.py",
+        "sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2"
+      },
+      {
+        "path": "requirements-analysis.txt",
+        "sha256": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911"
+      },
+      {
+        "path": "build/SLPS01556.map",
+        "sha256": "f3b8125d512aa8aa2a6e7a06ec1e901b2550c5bb7aa85edd93ae4df1ca36b6a7"
+      },
+      {
+        "path": "build/undefined_funcs_auto.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "build/undefined_syms_auto.txt",
+        "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+      },
+      {
+        "path": "src/scene/entity.c",
+        "sha256": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811"
+      },
+      {
+        "path": "src/scene/entity.h",
+        "sha256": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f"
+      },
+      {
+        "path": "src/dream/dream_sys.c",
+        "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+      },
+      {
+        "path": "src/dream/dream_sys.h",
+        "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+      },
+      {
+        "path": "src/scene/actor.c",
+        "sha256": "dac4858fa2ece134c6e698c8aad5734bab89c9185bb745470be12bc0d08e0483"
+      },
+      {
+        "path": "src/base/transform.c",
+        "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+      },
+      {
+        "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+        "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+      },
+      {
+        "path": "tools/verify_gunman_scripts.py",
+        "sha256": "6bb82b12a0570ec7448edf11f45c50f1f93e0de7622ea404bde22b11cfcce5d5"
+      },
+      {
+        "path": "tools/verify_scripted_ai.py",
+        "sha256": "2edefddc727441c0066a48375efd882c80035af99db3b3990a2c674eedddb2c1"
+      },
+      {
+        "path": "docs/gunman-function-ranges.json",
+        "sha256": "8a310d710b22cfc1d58a4a65a4f83a5dc6d6c0f1d9ef922b2c4cd4e44c9f3e39"
+      },
+      {
+        "path": "src/graphics/effect.c",
+        "sha256": "0e378f4f5181109d9dad14ef1d7f2f79a82e9048d17d426c6182c783f581ff76"
+      },
+      {
+        "path": "src/graphics/effect.h",
+        "sha256": "ab954a7b3c205d2d2bc4e50c3a450332991c85ca29bfbb064a677b1a1a6bbd80"
+      },
+      {
+        "path": "src/graphics/effect_base.c",
+        "sha256": "0239e7c0da74d2640ec2610d9c2f2a90b5a3994585a84f78a75d59d15a562289"
+      },
+      {
+        "path": "src/graphics/effect_base.h",
+        "sha256": "f9ad5d9902a15989bee17905ff815a1990881d144a510ca0adb961bf02a04161"
+      },
+      {
+        "path": "src/base/object_math.c",
+        "sha256": "83ea0fbfdeb4db45ce7453b79101c25eda5ddbaddd04330534563b824d4fc02b"
+      }
+    ],
+    "reused_cases": 36338,
+    "reused_histories": 15,
+    "reused_callback_invocations": 126,
+    "actual_original_routines_entered": 26,
+    "measured_executed_faults": 11,
+    "separate_pre_execution_write_bounds_control": true,
+    "new_distinct_original_inputs": 0,
+    "scope": "Constructed Gunman/victim script states and real pose, animation, callback-clear, RNG, effect-factory and effect-color arithmetic. Allocation, empty attachment, orientation, rotation, movement, notification and sound use explicit contracts. Histories retain buffers/RNG and explicitly inject tick/frame/action inputs; they do not run a complete engine frame or tick the effects. Excludes natural construction, populated attachment graphs, linked-effect mode, effect ticking/rendering, audio and PS1 CPU timing.",
+    "construction_and_attachment_contracts_retained": true
+  },
+  "synthetic_tests": {
+    "Windows": {
+      "tests": 608,
+      "optional_skips": 2,
+      "result": "passed"
+    },
+    "WSL": {
+      "tests": 608,
+      "optional_skips": 2,
+      "result": "passed"
+    }
+  },
+  "current_counts_before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "current_counts_after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "all_prior_inventory_fields_retained": true,
+  "features_before_sha256": "966535cbbfa898a6af0e31ea8d8cd56bd123719a83b02b81eb31cfb93cc0413f",
+  "project_objective_sha256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+  "all_seven_completion_requirements_retained": true,
+  "new_C_bytes": 0,
+  "new_original_features": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "new_gameplay_replays": 0,
+  "developer_capability_categories_added": 0,
+  "optional_mod_changes": 0,
+  "model_API_calls": 0,
+  "Bevy_port_modified": false
+}

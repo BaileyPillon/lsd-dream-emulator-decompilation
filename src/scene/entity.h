@@ -143,7 +143,7 @@ struct entity {
     /* 0x44 */ s32 m_State;
     /* 0x48 */ s32 m_Unk17;
     /* 0x4C */ struct entity *m_LinkTarget;
-    /* 0x50 */ s32 m_EffectColor;
+    /* 0x50 */ base_class_t *m_EffectTarget;
     /* 0x54 */ s32 m_Unk20;
     /* 0x58 */ void *m_Helper;
     /* 0x5C */ s32 m_Unk22;

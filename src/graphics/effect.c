@@ -73,26 +73,23 @@ void effect_set_color_step(effect_t *This, s32 Value) {
     This->m_ColorStep = Value;
 }
 
-/* The inherited activation callback receives parent, variant and mode.
- * Retaining its full ABI also preserves the original delay-slot scheduling. */
-void effect_start(effect_t *This, base_class_t *Parent, s32 Variant, s32 Mode) {
+/* Both start modes forward the attachment target, color variant and mode. */
+void effect_start(effect_t *This, base_class_t *Target, s32 Variant, s32 Mode) {
     s32 color_index;
 
     if (This->m_State == 0) {
-        color_index = ((s32 (*)(effect_t *, base_class_t *, s32, s32))
-                       This->vtable->Unk54)(This, Parent, Variant, Mode);
+        color_index = This->vtable->effect_activate(This, Target, Variant, Mode);
         This->vtable->Unk45(This, 1, (s32 *)((u8 *)D_8006EA90 + color_index * 3));
         This->m_State = 1;
         This->m_ColorStep = -This->m_ColorStep;
     }
 }
 
-void effect_start_attached(effect_t *This, base_class_t *Parent, s32 Variant, s32 Mode) {
+void effect_start_attached(effect_t *This, base_class_t *Target, s32 Variant, s32 Mode) {
     s32 color_index = Variant;
 
     if (This->m_State == 0) {
-        color_index = ((s32 (*)(effect_t *, base_class_t *, s32, s32))
-                       This->vtable->Unk54)(This, Parent, color_index, Mode);
+        color_index = This->vtable->effect_activate(This, Target, color_index, Mode);
         if (This->m_Unk37 != 0) {
             This->m_Life -= 1;
         } else {
@@ -102,14 +99,14 @@ void effect_start_attached(effect_t *This, base_class_t *Parent, s32 Variant, s3
     }
 }
 
-s32 effect_activate(effect_t *This, base_class_t *arg1, s32 arg2, s32 arg3) {
+s32 effect_activate(effect_t *This, base_class_t *Target, s32 Variant, s32 Mode) {
     effect_vtable_t *vtable;
     s32 state;
     s32 life;
     s32 variant;
 
     vtable = This->vtable;
-    variant = arg2;
+    variant = Variant;
     if (variant < 0) {
         variant = This->m_Variant;
     } else {
@@ -127,13 +124,13 @@ s32 effect_activate(effect_t *This, base_class_t *arg1, s32 arg2, s32 arg3) {
         This->m_ColorChannels = 0xF;
     }
     life = 0x100 / This->m_ColorStep;
-    This->m_Mode = arg3;
+    This->m_Mode = Mode;
     This->m_Life = life;
     if (This->m_Unk37 != 0) {
         This->m_Life = life - life / This->m_Unk38;
     }
     This->m_Unk32 = This->m_ColorMask / This->m_Life;
-    vtable->Attach((base_class_t *) This, arg1);
+    vtable->Attach((base_class_t *) This, Target);
     vtable->Unk24((void *) This, 1);
     vtable->Unk25((void *) This, state);
     vtable->Unk23((void *) This, 1);
