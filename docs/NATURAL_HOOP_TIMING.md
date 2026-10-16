@@ -62,3 +62,10 @@ This extends the recorded natural timing coverage. C remains **194,212 /
 199,912 bytes (97.15%)**, with nine assembly functions and 24 inherited storage
 explanations. Complete NPC/feature acceptance remains zero. All
 [project completion requirements](../PROJECT_OBJECTIVE.md) are preserved.
+
+## Later native callback profile
+
+The [Hoop Girl script checks](HOOP_SCRIPTS.md) directly test the zero-timer RNG
+choices, tick-2,401 facing branch and giant wrapper under explicit dependency
+contracts. They complement these recorded field observations without adding
+emulator frames or extending this route's natural-encounter acceptance.

@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "status": "passed_bounded_original_hoop_scripts",
+  "source_commit_before": "26cec3bde573415395030320077820c891ef8e4c",
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "canonical_build_input_hashes_preserved": 392,
+  "complete_executable_equal": true,
+  "sized_ELF_qualification_sha256": "ef0ee410aa0e2f1e964474e42cee79a71855f0331044e7081248d0d3b27883c9",
+  "primary_native_report_sha256": "a13d2e6ed2620dd08274ce3fee1bdbe5ac46fe807a3678b11dfcfbba13d8f88f",
+  "primary_native_log_sha256": "330c9c36cd8ce34c43238048205eb85d41df97c5a503c6be81d9c181bb5b7544",
+  "backend_identity": {
+    "package_version": "2.1.4",
+    "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+  },
+  "producer_dependencies": [
+    {
+      "path": "tools/verify_native_ai.py",
+      "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+    },
+    {
+      "path": "tools/inventory_vtables.py",
+      "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+    },
+    {
+      "path": "tools/progress.py",
+      "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+    },
+    {
+      "path": "configure.py",
+      "sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2"
+    },
+    {
+      "path": "requirements-analysis.txt",
+      "sha256": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911"
+    },
+    {
+      "path": "build/SLPS01556.map",
+      "sha256": "f3b8125d512aa8aa2a6e7a06ec1e901b2550c5bb7aa85edd93ae4df1ca36b6a7"
+    },
+    {
+      "path": "build/undefined_funcs_auto.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "build/undefined_syms_auto.txt",
+      "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+    },
+    {
+      "path": "src/scene/entity.c",
+      "sha256": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e"
+    },
+    {
+      "path": "src/scene/entity.h",
+      "sha256": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6"
+    },
+    {
+      "path": "src/dream/dream_sys.c",
+      "sha256": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c"
+    },
+    {
+      "path": "src/dream/dream_sys.h",
+      "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+    },
+    {
+      "path": "src/scene/actor.c",
+      "sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514"
+    },
+    {
+      "path": "src/base/transform.c",
+      "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+    },
+    {
+      "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+      "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+    },
+    {
+      "path": "tools/verify_scripted_ai.py",
+      "sha256": "9866b9714381af7f8f568859db9040f72607b81c46e11e8c5b5d48403e1b3898"
+    }
+  ],
+  "additional_source_hashes": {
+    "tests/test_scripted_callbacks.py": "e3ccdba080f1c74d658248ca82aff9d95c82c6bea90ebcd73fcffd6b7bb4a3a8"
+  },
+  "profiles": {
+    "entity_hoop_girl": {
+      "function": "entity_hoop_girl",
+      "address": "0x80062570",
+      "bytes": 240,
+      "sha256": "b71d8f338ced18b39cb34cbc32ea4663e85ad7718dfff80b7a75aa8e7b392970",
+      "property_records": [
+        71
+      ],
+      "distinct_fixtures": 35768,
+      "boundary_fixtures": 3000,
+      "complete_rng_result_fixtures": 32768,
+      "distinct_15_bit_rng_results": 32768,
+      "inputs_sha256": "5548e5c19960de3c0371d166b1c78c7f566a09af4aeff694dc36a45c7670aa1b",
+      "observed_positive_calls_and_entries": {
+        "actual_call_counts": {
+          "axis_c8": 33368,
+          "forward": 35768,
+          "orientation": 33893,
+          "rand": 33368,
+          "trigger_ratio": 35768
+        },
+        "actual_resulting_state_counts": {
+          "-2147483648": 1000,
+          "0": 33768,
+          "2147483647": 1000
+        },
+        "actual_native_entry_counts": {
+          "entity_hoop_girl": 35768,
+          "rand": 33368
+        }
+      }
+    },
+    "entity_hoop_girl_giant": {
+      "function": "entity_hoop_girl_giant",
+      "address": "0x80064CA4",
+      "bytes": 72,
+      "sha256": "6ae505b3418eb2055c7674f3a0f97b1e1c715239982f40a3abdddc8819b08d69",
+      "property_records": [
+        108
+      ],
+      "distinct_fixtures": 35768,
+      "boundary_fixtures": 3000,
+      "complete_rng_result_fixtures": 32768,
+      "distinct_15_bit_rng_results": 32768,
+      "inputs_sha256": "5548e5c19960de3c0371d166b1c78c7f566a09af4aeff694dc36a45c7670aa1b",
+      "observed_positive_calls_and_entries": {
+        "actual_call_counts": {
+          "axis_c8": 33368,
+          "forward": 35768,
+          "orientation": 33893,
+          "rand": 33368,
+          "scale": 35768,
+          "trigger_ratio": 35768
+        },
+        "actual_resulting_state_counts": {
+          "-2147483648": 1000,
+          "0": 33768,
+          "2147483647": 1000
+        },
+        "actual_native_entry_counts": {
+          "entity_hoop_girl": 35768,
+          "entity_hoop_girl_giant": 35768,
+          "rand": 33368
+        }
+      }
+    }
+  },
+  "scripted_callback_count": 18,
+  "complete_scripted_suite_fixtures": 117583,
+  "retained_scripted_fixtures": 46047,
+  "new_distinct_fixtures": 71536,
+  "all_previous_fixture_inputs_preserved": true,
+  "previous_fixture_inputs": {
+    "entity_bird": {
+      "cases": 42,
+      "inputs_sha256": "c126ac15206ff86e873cf51a6a95294b5ed938350dba95fe39b24a34189612d6"
+    },
+    "entity_rocket": {
+      "cases": 140,
+      "inputs_sha256": "1a4b4c326aaf39aa557c965540f235b9987a46b503536ccef7ca1e9f08ef5035"
+    },
+    "entity_horse": {
+      "cases": 504,
+      "inputs_sha256": "4a74014670826a8bef09810aae64d3314d12f02d067799d3322c593c7875e4d5"
+    },
+    "entity_ufo": {
+      "cases": 140,
+      "inputs_sha256": "8ce3793fca2398041481d25ec73a0541ef159f5162bebd5cca9b0dd2cf087538"
+    },
+    "entity_dog": {
+      "cases": 2880,
+      "inputs_sha256": "e4c3b6a4bae274a9ecb6ba0cca786642c0b312ac2cea933aec04582e8594bee9"
+    },
+    "entity_can": {
+      "cases": 240,
+      "inputs_sha256": "505ee021758c865eeea7b508d71255a14b5ec5be0ee56abaef1b1e753067e2bc"
+    },
+    "entity_car_water": {
+      "cases": 84,
+      "inputs_sha256": "fd1c2c99f5513879a1fa72c18f411fe8a661479e49da9b67de7292b584adbe14"
+    },
+    "entity_fetus_walk": {
+      "cases": 48,
+      "inputs_sha256": "568bc8e04b6070073124abc971d0548b78b21f3ffa9349f4bdf8f5f0117cb871"
+    },
+    "entity_fetus_jump": {
+      "cases": 330,
+      "inputs_sha256": "ca25d5f4067678b8e2449086a812418f468d5c0599fe1435d3f5ecc56e08833b"
+    },
+    "entity_elephant": {
+      "cases": 9,
+      "inputs_sha256": "8b3358ad6e14e7db4701c103ba0fa03582ecb2e9263d92c13e3bbcfc84f6c6d9"
+    },
+    "entity_elephant_small": {
+      "cases": 9,
+      "inputs_sha256": "8b3358ad6e14e7db4701c103ba0fa03582ecb2e9263d92c13e3bbcfc84f6c6d9"
+    },
+    "entity_fish_giant": {
+      "cases": 9,
+      "inputs_sha256": "8b3358ad6e14e7db4701c103ba0fa03582ecb2e9263d92c13e3bbcfc84f6c6d9"
+    },
+    "entity_fish": {
+      "cases": 24015,
+      "inputs_sha256": "1e2398839c930c4a1c584086246e8ae2f3a291c0e376d603552d653bf33e1f9c"
+    },
+    "entity_airship": {
+      "cases": 532,
+      "inputs_sha256": "7d3eb165865b7e1094040092d4f9976a24914308a7ce4db4a4c8072539fe6cc9"
+    },
+    "entity_bell_striker": {
+      "cases": 14640,
+      "inputs_sha256": "d6d9086fe2c2f6cb4cfdb02633acc5ea02ab9393c230782460d13a57f6c5bd61"
+    },
+    "entity_opera_singer": {
+      "cases": 2425,
+      "inputs_sha256": "ff1ebbe8eba91992a17a7dbc1bca8c24e1c66c376589ed8341c503dc968d5c0d"
+    }
+  },
+  "complete_scripted_suite_fault_controls": 23,
+  "new_fault_controls": [
+    {
+      "callback": "entity_hoop_girl",
+      "kind": "wrong_command_destination"
+    },
+    {
+      "callback": "entity_hoop_girl",
+      "kind": "wrong_zero_timer_rng_gate"
+    },
+    {
+      "callback": "entity_hoop_girl",
+      "kind": "wrong_initial_axis_amount"
+    },
+    {
+      "callback": "entity_hoop_girl",
+      "kind": "wrong_facing_threshold"
+    },
+    {
+      "callback": "entity_hoop_girl_giant",
+      "kind": "wrong_scale_mode"
+    }
+  ],
+  "Hoop_dependency_contracts": [
+    "trigger_ratio",
+    "axis_c8",
+    "orientation",
+    "forward"
+  ],
+  "giant_additional_dependency_contracts": [
+    "scale"
+  ],
+  "actual_regular_parent_executed_for_giant": true,
+  "earlier_natural_observation": "docs/NATURAL_HOOP_TIMING.md",
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 22,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 24,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_C_bytes": 0,
+  "new_gameplay_runs": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_original_feature_groups_accepted": 0,
+  "original_behavior_modified": false,
+  "model_API_calls": 0,
+  "Bevy_port_modified": false,
+  "original_AI_developer_tools_and_optional_mods_separate": true,
+  "scope": "Native regular/giant callback and RNG code with guarded buffers, exact request order/arguments and saved ABI. Movement/facing/scaling/trigger-ratio implementations are explicit contracts. Raw request amounts do not establish downstream transforms or visible displacement. Seeds cover all 32768 original RNG outputs, not all 32-bit initial states. No natural giant encounter, successive lifecycle, renderer/audio, physical PS1 timing or whole-feature acceptance is claimed."
+}

@@ -31,6 +31,8 @@ SCRIPT_FUNCTIONS = [
     {'function':'entity_airship','address':'0x80064928','bytes':380,'sha256':'1fb2904f97e3ed39c7410421a9a77771e7599b26dd4877c9b1e7de832f0c6d37'},
     {'function':'entity_bell_striker','address':'0x8005EBB4','bytes':228,'sha256':'b8aa567436e41a6d3bab469e87c34fe6d383f06a345afdd64c0872e3be3fe916'},
     {'function':'entity_opera_singer','address':'0x8005FEF8','bytes':132,'sha256':'5ed1824a794192c7b11f887c758a3643d3016c2db0087424124395152f960008'},
+    {'function':'entity_hoop_girl','address':'0x80062570','bytes':240,'sha256':'b71d8f338ced18b39cb34cbc32ea4663e85ad7718dfff80b7a75aa8e7b392970'},
+    {'function':'entity_hoop_girl_giant','address':'0x80064CA4','bytes':72,'sha256':'6ae505b3418eb2055c7674f3a0f97b1e1c715239982f40a3abdddc8819b08d69'},
 ]
 ACTION_READ = {'function':'dream_sys_get_action_pressed','address':'0x8005931C','bytes':12,
                'sha256':'bc9d9a4597fc5c324c34fb0acc7dc1596cd1a7b617fc46f0fd1b7f63d9bf4061'}
@@ -247,6 +249,16 @@ def expected(callback, case):
         if signed_remainder(timer,120) == 0:
             ratio()
             command(7,1)
+    elif callback in {'entity_hoop_girl','entity_hoop_girl_giant'}:
+        ratio()
+        if timer == 0:
+            command(7,0)
+            motion('axis_c8',(random() % 3)*0xC800,0)
+        if tick >= 2401:
+            call('orientation',native.ENTITY,native.DREAM,1,0,0)
+        motion('forward',-30,0)
+        if callback == 'entity_hoop_girl_giant':
+            call('scale',native.ENTITY,1,native.h.symbols['g_OffsetSix'])
     else:
         raise ValueError('Unsupported callback: '+callback)
     return {'entity':bytes(entity),'dream':bytes(dream),'context':bytes(context),
@@ -273,6 +285,17 @@ def cases_by_callback():
         bell += product(duration=(duration,),timer=bell_timers,
                         state=(-0x80000000,-1,0,34,35,36,37,0x7fffffff),
                         seed=seeds,ratio=(-1,0,99))
+    hoop = product(timer=(-0x80000000,-1,0,1,0x7fffffff),
+                   tick=(-0x80000000,-1,0,2399,2400,2401,2402,0x7fffffff),
+                   seed=seeds,ratio=(-0x80000000,-1,0,99,0x7fffffff),
+                   state=(-0x80000000,0,0x7fffffff))
+    # Select one initial LCG state for every possible original 15-bit result.
+    inverse = pow(0x41C64E6D,-1,1 << 32)
+    rng_seeds = tuple((((value << 16)-0x3039)*inverse) & 0xffffffff
+                      for value in range(1 << 15))
+    hoop += product(timer=(0,),tick=(2401,),seed=rng_seeds)
+    unique_hoop = {tuple(sorted(case.items())):case for case in hoop}
+    hoop = list(unique_hoop.values())
     return {
         'entity_bird':product(timer=timers,ratio=(-1,0,99)),
         'entity_rocket':product(timer=timers,tick=(-1,0,1,98,99,100,101,299,300,301)),
@@ -297,6 +320,8 @@ def cases_by_callback():
                                      799,800,801,929,930,931,1019,1020,1021,0x7fffffff),
                                  state=(-1,0,11,12),seed=(0,1,2,3,5,42,0xffffffff)),
         'entity_bell_striker':bell,
+        'entity_hoop_girl':hoop,
+        'entity_hoop_girl_giant':[dict(case) for case in hoop],
         'entity_opera_singer':product(
             timer=tuple(range(-240,240))+(-0x80000000,-241,240,241,0x7fffffff),
             ratio=(-0x80000000,-1,0,99,0x7fffffff)),
@@ -401,7 +426,8 @@ def verify(destination):
             observed_calls.update(call[0] for call in actual['trace'])
             observed_states.update([struct.unpack_from('<i',actual['entity'],0x44)[0]])
         observations[callback] = {'actual_call_counts':dict(sorted(observed_calls.items())),
-                                  'actual_resulting_state_counts':dict(sorted(observed_states.items()))}
+                                  'actual_resulting_state_counts':dict(sorted(observed_states.items())),
+                                  'actual_native_entry_counts':dict(sorted(machine.entry_counts.items()))}
         for name,count in machine.entry_counts.items():
             entry_counts[name] = entry_counts.get(name,0)+count
         contracts.update(name for name,count in machine.stubs.values())
@@ -418,7 +444,7 @@ def verify(destination):
                 if word in (0x34050003,0x24050003):
                     mutation = (offset,word,(word & 0xFFFF0000) | 2,'wrong_motion_selection')
                     break
-        if callback in {'entity_elephant','entity_elephant_small','entity_fish_giant'}:
+        if callback in {'entity_elephant','entity_elephant_small','entity_fish_giant','entity_hoop_girl_giant'}:
             for offset in range(0,len(original),4):
                 word = struct.unpack_from('<I',original,offset)[0]
                 if word in (0x34050001,0x24050001):
@@ -440,6 +466,14 @@ def verify(destination):
                     (0x78,0x34020024,0x34020023,'wrong_state_rng_gate')):
                 if struct.unpack_from('<I',original,offset)[0] != word:
                     raise ValueError('Reviewed Bell Striker control instruction changed.')
+                mutations.append((offset,word,changed_word,reason))
+        if callback == 'entity_hoop_girl':
+            for offset,word,changed_word,reason in (
+                    (0x34,0x14600017,0x10600017,'wrong_zero_timer_rng_gate'),
+                    (0x90,0x00052AC0,0x00052A80,'wrong_initial_axis_amount'),
+                    (0x9C,0x28420961,0x28420960,'wrong_facing_threshold')):
+                if struct.unpack_from('<I',original,offset)[0] != word:
+                    raise ValueError('Reviewed Hoop Girl control instruction changed.')
                 mutations.append((offset,word,changed_word,reason))
         for offset,word,changed_word,reason in mutations:
             modified = bytearray(original)
