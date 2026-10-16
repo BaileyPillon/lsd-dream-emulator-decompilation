@@ -13,6 +13,38 @@ typedef struct render_context_cell_bounds {
     s32 max_z;
 } render_context_cell_bounds_t;
 
+/* The first two query bytes are written separately and compared as one
+ * signed halfword by the cached-position notification path. */
+typedef union render_context_label_pair {
+    struct { s8 b0, b1; } bytes;
+    s16 pair;
+} render_context_label_pair_t;
+
+typedef struct func_8004C1C0_out {
+    /* 0x00 */ render_context_label_pair_t labels;
+    /* 0x02 */ s8 dx;
+    /* 0x03 */ s8 dz;
+    /* 0x04 */ s16 x;
+    /* 0x06 */ u16 y;
+    /* 0x08 */ s16 z;
+    /* 0x0C */ s32 vx;
+    /* 0x10 */ s32 vy;
+    /* 0x14 */ s32 vz;
+    /* 0x18 */ s32 rx;
+    /* 0x1C */ s32 ry;
+    /* 0x20 */ s32 rz;
+    /* 0x24 */ void *obj;
+    /* 0x28 */ s32 divisor;
+} func_8004C1C0_out_t;
+
+typedef struct func_8004C1C0_pos {
+    /* 0x00 */ s32 x;
+    /* 0x04 */ s32 y;
+    /* 0x08 */ s32 z;
+} func_8004C1C0_pos_t;
+
+struct render_context;
+
 typedef struct render_context_vtable {
     /* 0x000 800866e8 */ u32 type_id;
     /* 0x004 800866ec */ base_class_t *(*Destroy)(base_class_t *);
@@ -81,9 +113,9 @@ typedef struct render_context_vtable {
     /* 0x100 800867e8 */ void (*Unk63)(void *, s32 **, s32);
     /* 0x104 800867ec */ void (*Unk64)(void *, void *);
     /* 0x108 800867f0 */ void (*Unk65)(void *, void *);
-    /* 0x10C 800867f4 */ s32 (*Unk66)(void *, void *, s32);
-    /* 0x110 800867f8 */ s32 (*Unk67)(void *, void *, s32);
-    /* 0x114 800867fc */ void (*Unk68)(void *);
+    /* 0x10C 800867f4 */ func_8004C1C0_out_t *(*Unk66)(struct render_context *, func_8004C1C0_out_t *, func_8004C1C0_pos_t **);
+    /* 0x110 800867f8 */ s32 (*Unk67)(struct render_context *, func_8004C1C0_out_t *, func_8004C1C0_pos_t *);
+    /* 0x114 800867fc */ s32 (*Unk68)(struct render_context *, s8 *);
     /* 0x118 80086800 */ void *(*Unk69)(void *, s32);
     /* 0x11C 80086804 */ void *(*Unk70)(void *, void *);
     /* 0x120 80086808 */ s32 (*Unk71)(void *, s32);

@@ -98,6 +98,10 @@ twelve-byte bounds record in matching C and corrects its typed setter. The
 actual cached-position and row-selection path passes 9,252 constructed fixtures
 through ten original routines without output stubs. C function coverage and
 whole-feature acceptance remain unchanged.
+The [render-position query interfaces](docs/RENDER_QUERY_API.md) now share the
+44-byte result record and declare the original pointer arguments and return
+values. Compiler allocation traces explain another redundant buffer tail;
+regular and fresh clean builds preserve the complete original executable.
 The [save workflow checks](docs/CARD_SAVE.md) exercise the original writer,
 retry wrapper and native string helpers; physical card I/O and the writer's
 exact C recovery remained open at that checkpoint.

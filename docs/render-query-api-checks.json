@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-16T03:33:42.533683+00:00",
+  "status": "passed_matching_render_position_query_API_cleanup",
+  "repository_code_base_commit": "d0e4f0c11ac487eff7fc636979118b08c89acf42",
+  "source_hash_serialization": "SHA-256 of exact CRLF working-tree source bytes; normalized LF hashes are also recorded for the two changed game inputs.",
+  "source_changes": [
+    {
+      "file": "src/scene/render_context.c",
+      "before_disk_sha256": "54c3bef0da12e453ad60125e07f3457a8dc3a612db33f93879918616a219072a",
+      "after_disk_sha256": "7bd8188f3db846957fa32a84d50ead4ba015d6aa480b8dbccd55b775581dcd20",
+      "after_normalized_text_sha256": "d4f75c462cca87f5bd3e19502b43d489edc9e468d5b036bc0973e77dd3985af1"
+    },
+    {
+      "file": "src/scene/render_context.h",
+      "before_disk_sha256": "9a27d0b606659442100ed424d374077d2d0c65afd88a022e8c50e5319c74b960",
+      "after_disk_sha256": "35fc47fa5ca7dc9f4099125372f0c92c933930265c8511fcfb6a8eff4ee76bea",
+      "after_normalized_text_sha256": "a3f3e5a1fef53d65901d36a1a68aa0a43f628fe1b2931bfd516f23b154a2585d"
+    }
+  ],
+  "source_hashes": {
+    "src/scene/render_context.c": "7bd8188f3db846957fa32a84d50ead4ba015d6aa480b8dbccd55b775581dcd20",
+    "src/scene/render_context.h": "35fc47fa5ca7dc9f4099125372f0c92c933930265c8511fcfb6a8eff4ee76bea",
+    "configure.py": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+    "tools/compile_c.py": "ab5217c43e9dca1fff7092d75e8a0ac407b3dd65b256b5c29b3ff29a4fc1afe7",
+    "tools/decomp_workbench.py": "8d375145ca2b7f210889558ce75d4acd854a04606ea26d86ff50251b6a4820d1",
+    "research/collision/trace_compiler_stack.py": "05226a290759358650001880ffe74ef8f13690a85e08ed6cc11f630409b9e2ca",
+    "research/collision/compiler_stack_gdb.py": "393f2b02ef90ad3d84382bcdcd2aedfca02c7d636064f26c16edc5fde8acc21e",
+    "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff"
+  },
+  "documentation": "docs/RENDER_QUERY_API.md",
+  "documentation_sha256": "9093019284fe46f694fe8c55362c4a82955507db0c9a566353680f7eeeb6af5a",
+  "canonical_executable_bytes": 505856,
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "complete_sized_function_checks": [
+    {
+      "function": "func_8004AEA4",
+      "address": "0x8004aea4",
+      "bytes": 316,
+      "sha256": "7e0b1f4e746d969efb2f4730bf4ff26d16a91d4d18b3c96f520b4fa23e40e8c2",
+      "complete_sized_function_equal": true,
+      "allocated_section": ".main"
+    },
+    {
+      "function": "func_8004B5BC",
+      "address": "0x8004b5bc",
+      "bytes": 324,
+      "sha256": "e924fa4f2a03175eb143eff88ef6b395666c2acdf9e7f0390495907ce81fcf83",
+      "complete_sized_function_equal": true,
+      "allocated_section": ".main"
+    },
+    {
+      "function": "func_8004C158",
+      "address": "0x8004c158",
+      "bytes": 104,
+      "sha256": "ed0e88573bebaabe7193558da0ca5155fc928339b799e7ac05147d79ab2ec3ea",
+      "complete_sized_function_equal": true,
+      "allocated_section": ".main"
+    },
+    {
+      "function": "func_8004C1C0",
+      "address": "0x8004c1c0",
+      "bytes": 424,
+      "sha256": "d82d26562f1a91a9ae77988cfedcf3e0e41b69c558344850c56a6a1d8712933c",
+      "complete_sized_function_equal": true,
+      "allocated_section": ".main"
+    },
+    {
+      "function": "func_8004C368",
+      "address": "0x8004c368",
+      "bytes": 136,
+      "sha256": "fde21abc879fe53caac48f67490e480a5b4f00661f006583abfdd99a5b9bf25a",
+      "complete_sized_function_equal": true,
+      "allocated_section": ".main"
+    },
+    {
+      "function": "func_8004C3F0",
+      "address": "0x8004c3f0",
+      "bytes": 68,
+      "sha256": "3accc75c4f01a237291eaf896fb2ad93f7ef6d26e3bbe3fb55dee01c5d177e73",
+      "complete_sized_function_equal": true,
+      "allocated_section": ".main"
+    },
+    {
+      "function": "func_8004CC74",
+      "address": "0x8004cc74",
+      "bytes": 196,
+      "sha256": "f09b563a3792885b27f0296d881a7cd01351813dc8a7718170119d9222252d65",
+      "complete_sized_function_equal": true,
+      "allocated_section": ".main"
+    }
+  ],
+  "complete_unit_image_equal": true,
+  "sized_ELF_qualification_sha256": "b59d508a56d916998773098136e35b25a6edfe6f722236c7368596587094484d",
+  "diagnostic_link_change": "Remove only -s to retain symbols; converted binary remains canonical.",
+  "target_ABI_assertion_count": 24,
+  "target_ABI_expected": {
+    "label_pair_bytes": 2,
+    "query_bytes": 44,
+    "position_bytes": 12,
+    "pointer_bytes": 4,
+    "query_alignment": 4,
+    "query_labels": 0,
+    "query_dx": 2,
+    "query_dz": 3,
+    "query_x": 4,
+    "query_y": 6,
+    "query_z": 8,
+    "query_vx": 12,
+    "query_vy": 16,
+    "query_vz": 20,
+    "query_rx": 24,
+    "query_ry": 28,
+    "query_rz": 32,
+    "query_obj": 36,
+    "query_divisor": 40,
+    "slot_query": 268,
+    "slot_resolve": 272,
+    "slot_cached_labels": 276,
+    "cached_record": 188,
+    "saved_builder": 140
+  },
+  "false_43_byte_record_assertion_rejected": true,
+  "canonical_virtual_bindings": {
+    "0x10C": "0x8004C158",
+    "0x110": "0x8004C1C0",
+    "0x114": "0x8004C3F0"
+  },
+  "query_contract": {
+    "record_type": "func_8004C1C0_out_t",
+    "record_bytes": 44,
+    "position_bytes": 12,
+    "leading_labels_union_bytes": 2,
+    "cached_result_context_offset": 188,
+    "position_pointer_output_written_before_resolution": true,
+    "returned_success_pointer_is_cached_record": true,
+    "slot_0x114_label_output_bytes": 2
+  },
+  "actual_compiler_stack_traces": {
+    "before": {
+      "source_sha256": "54c3bef0da12e453ad60125e07f3457a8dc3a612db33f93879918616a219072a",
+      "compiler_mode": "g8",
+      "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+      "complete_normal_and_traced_assembly_equal": true,
+      "normal_assembly_sha256": "af432eef5c93ca026af526d1302c50faa19a8010f8b12f7d466a1793789e7e40",
+      "traced_assembly_sha256": "af432eef5c93ca026af526d1302c50faa19a8010f8b12f7d466a1793789e7e40",
+      "report_sha256": "c2d6c594da73be5f7477d704501e2da295dc4f275b0a88467a41301f0e5bde0c",
+      "allocation_report_sha256": "fc9bca4729b11ea6278278296dccaab98a2b6841680301bbaaea0800f4c27f31",
+      "requested_local_bytes": [
+        48,
+        48
+      ],
+      "allocated_local_bytes": [
+        48,
+        48
+      ],
+      "complete_function_frame_bytes": 136
+    },
+    "after": {
+      "source_sha256": "5cbb45935976eedb38226c668d191949e9e9de02c33b1c5f3d154ed26f9fa225",
+      "compiler_mode": "g8",
+      "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+      "complete_normal_and_traced_assembly_equal": true,
+      "normal_assembly_sha256": "2781c921456cdf9ee10879da7f1bc3df900da5d55ea7b4ced15e3eba755017e1",
+      "traced_assembly_sha256": "2781c921456cdf9ee10879da7f1bc3df900da5d55ea7b4ced15e3eba755017e1",
+      "report_sha256": "933289d5834e67124c8926c816e5672acae615ace2c4f8143af8c128b63667f4",
+      "allocation_report_sha256": "1e3876b616a21fac78f59e1db4a911db11ee04a237fccf2f29eee6ef2f04cfa3",
+      "requested_local_bytes": [
+        48,
+        44
+      ],
+      "allocated_local_bytes": [
+        48,
+        48
+      ],
+      "complete_function_frame_bytes": 136
+    }
+  },
+  "normal_build": {
+    "stage": "normal-build",
+    "complete_image_equal": true,
+    "bytes": 505856,
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+  },
+  "fresh_clean_build": {
+    "stage": "fresh-clean-build",
+    "complete_image_equal": true,
+    "bytes": 505856,
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+  },
+  "complete_build_report_sha256": "bc9f0c37d0153088793981779552afeacaf19aefe6057c8bf64d476ac597dc35",
+  "complete_build_objects": 306,
+  "changed_game_build_inputs": [
+    "src/scene/render_context.c",
+    "src/scene/render_context.h"
+  ],
+  "other_preserved_game_build_inputs": 390,
+  "retained_bounded_evidence": {
+    "guide": "docs/RENDER_POSITION.md",
+    "metadata": "docs/render-position-checks.json",
+    "metadata_sha256": "3ea3ff7ef01648ee79b9587f51892a60e2aabe6b14e9bb63cb8b500913d0d6fd",
+    "scope": "Previously recorded bounded evidence is unchanged. No new execution or whole-feature acceptance is claimed, including no new replay of slot 0x114."
+  },
+  "additional_redundant_tail_bytes_removed": 4,
+  "additional_tail_outside_prior_28_function_audit": true,
+  "prior_24_unresolved_inherited_functions_unchanged": true,
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 24,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 24,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_C_bytes": 0,
+  "new_native_fixture_inputs": 0,
+  "new_gameplay_runs": 0,
+  "new_whole_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "original_behavior_modified": false,
+  "Bevy_port_modified": false,
+  "original_AI_developer_tools_and_mods_separate": true,
+  "original_author_exact_types_claimed": false,
+  "proprietary_executable_assets_BIOS_captures_or_raw_traces_included": false,
+  "documentation_hash_serialization": "SHA-256 of the CRLF working-tree document bytes."
+}
