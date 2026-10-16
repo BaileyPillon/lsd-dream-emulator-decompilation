@@ -55,8 +55,10 @@ padded promotions. Twenty-four inherited explanations remained at that snapshot;
 the correction's historical count was 194,212 / 199,912 (97.15%). The two
 generation and two menu recoveries now raise it to 195,844 / 199,912 (97.97%).
 The [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md) now explains five
-inherited functions. Recover the real storage and helper lifetimes for the
-remaining nineteen identified functions.
+inherited functions. The subsequent
+[constructor and actor storage recovery](CONSTRUCTOR_ACTOR_STORAGE.md) explains
+two more. Recover the real storage and helper lifetimes for the remaining
+seventeen identified functions.
 All four withdrawn functions have replacement matching C; the earlier
 [source-layout candidates](../research/source_layout/README.md) remain
 historical research. Full source quality and runtime acceptance are separate.

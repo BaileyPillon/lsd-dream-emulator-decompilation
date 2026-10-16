@@ -1,0 +1,601 @@
+{
+  "schema_version": 1,
+  "status": "passed_matching_constructor_actor_storage_recovery",
+  "recorded_utc": "2026-10-16T19:53:34.013483+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "6c578784539da8b89cde4ed1b0cd1e12c109aa08",
+  "scope": "Two existing C functions replace inherited unused local storage with fully consumed method/table references; no new C bytes or gameplay acceptance.",
+  "explained_functions": [
+    {
+      "function": "func_80051AC8",
+      "source": "src/menu/card/select_menu.c",
+      "address": "0x80051ac8",
+      "bytes": 428,
+      "sha256": "5c5c2f1ac0cec1402520d389568d5941e222bb8fbba2d1739b4af7a8d24e3b84",
+      "family": "select-constructor-references-20261016-first",
+      "selected_case": "base-constructor-array",
+      "frame_bytes": 56,
+      "function_report_sha256": "45c72d72b4d981482827f4cceb0fced12c6b5666aa3e316621325e54648de584",
+      "complete_comparison_sha256": "7c42f1ba2922ff460d06599a6bc7395849071baf05562bdb89bdf3b7ea50c301"
+    },
+    {
+      "function": "func_80065E1C",
+      "source": "src/scene/actor.c",
+      "address": "0x80065e1c",
+      "bytes": 272,
+      "sha256": "25bb616bc2e3060cb096e703b620c5d0cf9b43061e7712e7bf8440434f03fd9f",
+      "family": "actor-enumerator-references-20261016-first",
+      "selected_case": "table-array-count",
+      "frame_bytes": 56,
+      "function_report_sha256": "6d79150abe475c7f2fe5c724a3fe36da14e62d44dacae99b06a5e8671f517c00",
+      "complete_comparison_sha256": "7fdaee586b86c12452ecccff4587e42c858112600c6713b06097bffe21a59274"
+    }
+  ],
+  "source_quality_functions_explained": 2,
+  "inherited_source_explanations_before": 19,
+  "inherited_source_explanations_after": 17,
+  "remaining_function_names": [
+    "func_8001EDAC",
+    "func_8001EE98",
+    "generate_initial_spawn",
+    "debug_file_driver_unk15",
+    "debug_file_driver_open",
+    "memory_card_wait_event",
+    "func_8004F810",
+    "func_8004FBE4",
+    "glyph_get_char",
+    "graph_screen_setup_video_event",
+    "func_8004564C",
+    "func_80044F90",
+    "func_80045060",
+    "func_80044D40",
+    "func_80044E64",
+    "func_8003D2CC",
+    "func_8004ADD8"
+  ],
+  "unused_declared_local_bytes_removed": 20,
+  "affected_existing_C_bytes": 700,
+  "new_C_bytes": 0,
+  "source_functions_promoted": 0,
+  "before": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 19,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 17,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "normal_complete_image_equal": true,
+  "fresh_clean_complete_image_equal": true,
+  "fresh_objects": 306,
+  "all_306_objects_absent_before_fresh_build": true,
+  "canonical_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "changed_game_inputs": [
+    "src/menu/card/select_menu.c",
+    "src/scene/actor.c"
+  ],
+  "other_390_game_inputs_retained": true,
+  "public_files": {
+    "README.md": "91dab4891ce6fda3012d2670ac2e5dd98c60ee912c43a950a480382c6555e0f7",
+    "CHANGELOG.md": "fb8e97d83521429a1cf2c09bb2b7f4bc0b9a213ee36b56972fb4717d1b5ea90a",
+    "docs/CONSTRUCTOR_ACTOR_STORAGE.md": "a14f1857b1bcc8c00b04c084bd385fc2390615c54152e6b25489c1ccb86efb85",
+    "docs/FEATURE_INVENTORY.md": "a7f9f9e926fec5b806ded312c5e2d9ece46dbea2770fe50a86b7684a2e261b0c",
+    "docs/PROVENANCE.md": "13eb8cfded51cb93474698383e350f6db456742a8582a44a06e3010fa6d69f8d",
+    "docs/ROADMAP.md": "782c5ec7a9895f1898ed8e5c3f40c0d3b97a300ca6d2adfdb783ec885476ddca",
+    "docs/SOURCE_LAYOUT_EXPANDED.md": "7fa03e666d9087e32d9325d528e18c4805dc2380422a09b07d5e78bbb755c5a1",
+    "docs/SOURCE_QUALITY.md": "ab2b4464bfa0abebcef9a7bb3177c404fae8f8e6953fc1afcd960b81ecac3f49",
+    "docs/CALLBACK_STORAGE_RECOVERY.md": "58a23195d8d4addeef37463c0f04ff85e106a23650503e55602fe3fb7cb517b0",
+    "docs/features.json": "9fb56b23d655438377221745ca7c8bea881f4230a55499907a4c118dd5f1d97e",
+    "src/menu/card/select_menu.c": "af92a00e83c0a116ed2fcc861279f79a31489343fb82572771a2863eb9ab8c2e",
+    "src/scene/actor.c": "c9da90f048399ad93127e4c841aaf49c81c6922a8d4528ae783f1edcf2be3a4b"
+  },
+  "configuration_sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+  "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+  "qualified_source_comparisons": 8,
+  "complete_source_allocator_observations": [
+    {
+      "source": "src/menu/card/select_menu.c",
+      "function": "func_80051AC8",
+      "kind": "baseline",
+      "source_sha256": "baec6c919facd192b085e189c0380f5e2372dc945be89a879e18ed11e42bab0c",
+      "report_sha256": "fd6c01c812c3d12bd92d3004d1453311382d3513b9da8dd07977bdf190f2c676",
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "b688ee7b8525f56461bce93838f7c5efd15feed5ada39cd8d50de64faf769fb4",
+      "selected_function_events": [
+        {
+          "function": "func_80051AC8",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_80051AC8",
+          "allocator": "assign_stack_local",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_80051AC8",
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 8,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "src/menu/card/select_menu.c",
+      "function": "func_80051AC8",
+      "kind": "padding-removed",
+      "source_sha256": "1dcc4c86d392d65e1c5087586deaefbff0397081682c1a7719320a418d000296",
+      "report_sha256": "91dcf462d55762bb02af5e06ded9d11dd4adddb0983b10d5f32acea21d3cbb38",
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "193789abe122a9da03a7d45868124a76113e296fc59746cf944c5e18d8ac2b58",
+      "selected_function_events": [
+        {
+          "function": "func_80051AC8",
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 0,
+          "frame_offset_after": 0,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "src/menu/card/select_menu.c",
+      "function": "func_80051AC8",
+      "kind": "matching",
+      "source_sha256": "af92a00e83c0a116ed2fcc861279f79a31489343fb82572771a2863eb9ab8c2e",
+      "report_sha256": "bf084a7233320be417cd4348e6fd103abb48c26cd66f277c682d0c96004377eb",
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "5d6fb901f021233992027d1c4b39e5fbe54611a8925bbd3279a0d75d6dd7dd3e",
+      "selected_function_events": [
+        {
+          "function": "func_80051AC8",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 78,
+            "from_pseudo": -1,
+            "function": "func_80051AC8",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_80051AC8",
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 8,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "src/scene/actor.c",
+      "function": "func_80065E1C",
+      "kind": "baseline",
+      "source_sha256": "dac4858fa2ece134c6e698c8aad5734bab89c9185bb745470be12bc0d08e0483",
+      "report_sha256": "8fb497a1d0f8dd397e8b2bcd9dcb82f0f71598be4fc2690f83ef8016f1d9d069",
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "17a94cd36b54d0010265213d61793d9e9a78a6139c6fef615f39b4799f614483",
+      "selected_function_events": [
+        {
+          "function": "func_80065E1C",
+          "allocator": "assign_stack_temp",
+          "size": 16,
+          "frame_offset_before": 0,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_80065E1C",
+          "allocator": "assign_stack_local",
+          "size": 16,
+          "frame_offset_before": 0,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "func_80065E1C",
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 16,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "src/scene/actor.c",
+      "function": "func_80065E1C",
+      "kind": "padding-removed",
+      "source_sha256": "39a26cc6098f6aabf1dbff0a694f175b5f76c01d13b207f5e71d6cf4801354eb",
+      "report_sha256": "672bbe82e764a02e33c3503f775c3aec3d4b526607c2ce4f93fb607de2e344f4",
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "16494a9932b17e54f92bcaac33ce104616954cad584f631ae664aca50d66d4c7",
+      "selected_function_events": [
+        {
+          "function": "func_80065E1C",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 4,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "put_reg_into_stack",
+            "put_var_into_stack",
+            "mark_addressable",
+            "build_unary_op",
+            "yyparse",
+            "compile_file"
+          ]
+        },
+        {
+          "function": "func_80065E1C",
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 4,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "src/scene/actor.c",
+      "function": "func_80065E1C",
+      "kind": "matching",
+      "source_sha256": "c9da90f048399ad93127e4c841aaf49c81c6922a8d4528ae783f1edcf2be3a4b",
+      "report_sha256": "ad51cae831860cb1a0f37ffd6ca3f373b320ff6a8b5149463c281aa5fa323559",
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "f263a8246d2850143b7968f276db37865b3c035ec365df7689d71e2451ed89e7",
+      "selected_function_events": [
+        {
+          "function": "func_80065E1C",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 4,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "put_reg_into_stack",
+            "put_var_into_stack",
+            "mark_addressable",
+            "build_unary_op",
+            "yyparse",
+            "compile_file"
+          ]
+        },
+        {
+          "function": "func_80065E1C",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 4,
+          "frame_offset_after": 16,
+          "alter_reg_context": {
+            "pseudo": 79,
+            "from_pseudo": -1,
+            "function": "func_80065E1C",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "func_80065E1C",
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 16,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ]
+        }
+      ]
+    }
+  ],
+  "separate_assembly_studies": [
+    {
+      "family": "grid-borrowed-cell-edges-20261016-first",
+      "attempted_cases": 27,
+      "qualified_observations": 27,
+      "best_differing_bytes": 7,
+      "exact_function_matches": 0,
+      "report_sha256": "68051d35d02e57ee4cede4910dd354609f8627a2663b312d885752ff5e5c6734"
+    },
+    {
+      "family": "overlap-wide-midpoints-20261016-first",
+      "attempted_cases": 7,
+      "qualified_observations": 7,
+      "best_differing_bytes": 170,
+      "exact_function_matches": 0,
+      "report_sha256": "670dc2c24da2f118647810a11d943bcd1aa4a53ad4352e8b71754b00c5e09b93"
+    },
+    {
+      "family": "overlap-point-values-20261016-first",
+      "attempted_cases": 9,
+      "qualified_observations": 3,
+      "best_differing_bytes": 170,
+      "exact_function_matches": 0,
+      "report_sha256": "86075f20b57e4c14ec20c85d82ceac1d40572c091886ad57302161307cd8cd25"
+    }
+  ],
+  "rejected_extra_helper_cases": [
+    {
+      "family": "overlap-point-values-20261016-first",
+      "case": "left-reference-right-value-result-reference",
+      "reason": "Aggregate operand helper was emitted separately and called by the target; it did not inline.",
+      "target_function_bytes": 760,
+      "target_differing_bytes": 611,
+      "extra_function": {
+        "function": "collision_average_points",
+        "address": "0x8001E0EC",
+        "bytes": 84,
+        "section_index": 1
+      },
+      "extra_helper_call_sites": [
+        "0x8001de8c"
+      ]
+    },
+    {
+      "family": "overlap-point-values-20261016-first",
+      "case": "left-reference-right-value-result-value",
+      "reason": "Aggregate operand helper was emitted separately and called by the target; it did not inline.",
+      "target_function_bytes": 784,
+      "target_differing_bytes": 601,
+      "extra_function": {
+        "function": "collision_average_points",
+        "address": "0x8001E104",
+        "bytes": 124,
+        "section_index": 1
+      },
+      "extra_helper_call_sites": [
+        "0x8001de88"
+      ]
+    },
+    {
+      "family": "overlap-point-values-20261016-first",
+      "case": "left-value-right-reference-result-reference",
+      "reason": "Aggregate operand helper was emitted separately and called by the target; it did not inline.",
+      "target_function_bytes": 760,
+      "target_differing_bytes": 612,
+      "extra_function": {
+        "function": "collision_average_points",
+        "address": "0x8001E0EC",
+        "bytes": 84,
+        "section_index": 1
+      },
+      "extra_helper_call_sites": [
+        "0x8001de8c"
+      ]
+    },
+    {
+      "family": "overlap-point-values-20261016-first",
+      "case": "left-value-right-reference-result-value",
+      "reason": "Aggregate operand helper was emitted separately and called by the target; it did not inline.",
+      "target_function_bytes": 784,
+      "target_differing_bytes": 602,
+      "extra_function": {
+        "function": "collision_average_points",
+        "address": "0x8001E104",
+        "bytes": 124,
+        "section_index": 1
+      },
+      "extra_helper_call_sites": [
+        "0x8001de88"
+      ]
+    },
+    {
+      "family": "overlap-point-values-20261016-first",
+      "case": "left-value-right-value-result-reference",
+      "reason": "Aggregate operand helper was emitted separately and called by the target; it did not inline.",
+      "target_function_bytes": 792,
+      "target_differing_bytes": 597,
+      "extra_function": {
+        "function": "collision_average_points",
+        "address": "0x8001E10C",
+        "bytes": 92,
+        "section_index": 1
+      },
+      "extra_helper_call_sites": [
+        "0x8001deac"
+      ]
+    },
+    {
+      "family": "overlap-point-values-20261016-first",
+      "case": "left-value-right-value-result-value",
+      "reason": "Aggregate operand helper was emitted separately and called by the target; it did not inline.",
+      "target_function_bytes": 812,
+      "target_differing_bytes": 620,
+      "extra_function": {
+        "function": "collision_average_points",
+        "address": "0x8001E120",
+        "bytes": 124,
+        "section_index": 1
+      },
+      "extra_helper_call_sites": [
+        "0x8001dea4"
+      ]
+    }
+  ],
+  "new_distinct_native_fixture_inputs": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "new_gameplay_runs": 0,
+  "new_model_API_calls": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "original_behavior_modified": false,
+  "Bevy_port_modified": false,
+  "runtime_scope": "No new runtime domain or emulator sequence; no independent constructor or allocator history is accepted. Natural scenes, failures, content and hardware timing remain open.",
+  "earlier_inventory_fields_and_snapshots_preserved": true,
+  "objective_sha256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+  "all_seven_completion_requirements_retained": true,
+  "private_evidence": [
+    {
+      "path": ".decomp-lab/constructor-actor-storage-acceptance-20261016-first/validation.json",
+      "sha256": "7114f7479ee5b5cdb7615dd4c1bad9c77ef7afdcdf228414aafd38b6eeb6c920"
+    },
+    {
+      "path": ".decomp-lab/constructor-actor-storage-qualification-20261016-first/report.json",
+      "sha256": "79d7ffde6d72056fdde7c96d038b2d3ab969cbd76a37df8a6373cc4dc22f60ae"
+    },
+    {
+      "path": ".decomp-lab/constructor-actor-storage-traces-20261016-first/report.json",
+      "sha256": "b48fd571d544b45eb384616e62e202b63c9451a2db8cad1a663cf02060e54107"
+    },
+    {
+      "path": ".decomp-lab/constructor-actor-storage-review-20261016-first/report.json",
+      "sha256": "c688cfc7a551918080f9c03c2b749cecb1407f39a410cefacb21ccdac1159973"
+    }
+  ],
+  "publisher_sha256": "0bbd2e3927794ac24af9dc8832ba55087d0a313946e9674f4a3dd0897b167881",
+  "tooling_tests": {
+    "windows": {
+      "tests": 608,
+      "skipped": 2,
+      "passed": true,
+      "python_version": "3.14.2",
+      "log_sha256": "6ac17075e17c63d0d984c30087f52bf887887641ac31a1923044aa1570c191c7"
+    },
+    "wsl": {
+      "tests": 608,
+      "skipped": 2,
+      "passed": true,
+      "python_version": "3.13.5",
+      "log_sha256": "1e59e7bf6a41b2b96064b9efd995c55eae4250beb238742586dd6154a7c4b317"
+    }
+  }
+}

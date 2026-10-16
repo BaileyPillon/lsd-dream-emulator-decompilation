@@ -17,17 +17,25 @@ class_select_menu_t *func_80051A5C(s32 Unk1, s32 Unk2) {
     return NULL;
 }
 
+typedef void (*select_construct_fn_t)(base_class_t *);
+typedef struct {
+    select_construct_fn_t value[1];
+} select_construct_reference_t;
+typedef char checked_select_construct_reference[
+    (sizeof(select_construct_reference_t) == 4) ? 1 : -1];
+
+static inline select_construct_fn_t select_read_construct(void) {
+    select_construct_reference_t reference = {{ base_class_get_vtable()->Construct }};
+    return reference.value[0];
+}
+
 void func_80051AC8(class_select_menu_t *This, char **arg1, s32 arg2) {
     s32 index = 0;
     char **cursor;
     s32 len;
-    char dummy_stack_padding[8];
-
-    if (&dummy_stack_padding[0] == &dummy_stack_padding[7]) {
-    }
 
     cursor = arg1;
-    base_class_get_vtable()->Construct(This);
+    select_read_construct()((base_class_t *) This);
     This->vtable = func_80052B60();
     while (*cursor++ != 0) {
         index += 1;
