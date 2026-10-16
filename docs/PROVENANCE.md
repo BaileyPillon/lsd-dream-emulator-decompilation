@@ -1,5 +1,15 @@
 # Source and evidence provenance
 
+The [input storage recovery](INPUT_STORAGE_RECOVERY.md) explains six existing
+C frames through actual event, release, viewport, history-cell and spawn-key
+inputs. Fifty-four unused declared bytes are removed. Twelve actual compiler
+observations and fully relocated sized functions retain the original executable;
+the ordinary/fresh builds and native cleanup regression are recorded in
+[new metadata](input-storage-recovery-checks.json). Four source units change;
+the other 388 protected game inputs retain their hashes. Identified inherited
+storage explanations fall from 14 to 8, with no new C byte, NPC callback profile,
+whole-feature acceptance or relaxed goal requirement.
+
 The [accessor storage recovery](ACCESSOR_STORAGE_RECOVERY.md) removes three
 inherited arrays while preserving their original instructions. Six actual
 compiler observations distinguish the old arrays, removed-array controls and

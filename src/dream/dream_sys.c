@@ -1982,10 +1982,20 @@ s32 get_static_spawn(void *dst, s16 *key, s32 chunk, s32 *counts, s32 *records, 
     return -1;
 }
 
+/* A consumed input view retains the native compiler reload lifetime.
+ * See docs/INPUT_STORAGE_RECOVERY.md for the matching allocation. */
+static inline s16 spawn_read_key(const s16 * input) {
+    struct {
+        const s16 * value;
+    } view = { input };
+    typedef char checked_input_view[(sizeof(view) == 4) ? 1 : -1];
+
+    return *view.value;
+}
+
 s32 generate_initial_spawn(void *dst, s32 *time_out, void *mood, s32 tick) {
     struct {
         s16 coords;
-        char pad[14];
     } loc;
     s32 chunk;
     s32 count;
@@ -1994,6 +2004,7 @@ s32 generate_initial_spawn(void *dst, s32 *time_out, void *mood, s32 tick) {
     s16 key;
     s32 ret;
     u8 idx;
+    typedef char checked_spawn_key[(sizeof(loc) == 2) ? 1 : -1];
 
     chunk = get_stage_chunk_from_mood((s8 *) &loc.coords, mood);
     if (chunk >= 0) {
@@ -2002,7 +2013,7 @@ s32 generate_initial_spawn(void *dst, s32 *time_out, void *mood, s32 tick) {
         ptr = STAGE_SPAWNPOINTS[chunk];
         i = 0;
         if (count != 0) {
-            key = loc.coords;
+            key = spawn_read_key(&loc.coords);
             do {
                 i += 1;
                 if (key == *ptr) {

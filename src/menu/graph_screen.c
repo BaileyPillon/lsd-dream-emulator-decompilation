@@ -196,13 +196,21 @@ void graph_screen_update_event(graph_screen_t *This, s32 arg) {
 
 extern s16 g_VideoEventCells[];
 
+/* A consumed input view retains the native compiler reload lifetime.
+ * See docs/INPUT_STORAGE_RECOVERY.md for the matching allocation. */
+static inline s16 graph_event_cell(const s16 * input) {
+    struct {
+        const s16 * value;
+    } view = { input };
+    typedef char checked_input_view[(sizeof(view) == 4) ? 1 : -1];
+
+    return *view.value;
+}
+
 s32 graph_screen_setup_video_event(graph_screen_t *This, u8 *obj) {
     s32 limit;
     u32 slot;
-    char dummy[8];
 
-    if (&dummy[0] == &dummy[7]) {
-    }
     if (((s8 *) obj)[0x467] == 0) {
         limit = 100;
         if (*(s32 *) (obj + 4) == 0) {
@@ -226,7 +234,7 @@ s32 graph_screen_setup_video_event(graph_screen_t *This, u8 *obj) {
                     if (idx < 0) {
                         idx = 0x16C;
                     }
-                    if (*(s16 *) ((u8 *) g_VideoEventCells + (slot << 1)) == *(s16 *) (obj + (idx << 1) + 0x18)) {
+                    if (*(s16 *) ((u8 *) g_VideoEventCells + (slot << 1)) == graph_event_cell((s16 *) (obj + (idx << 1) + 0x18))) {
                         ((u8 *) This->m_EventCellIndices)[slot] = i;
                         hits += 1;
                     }

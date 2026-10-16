@@ -75,3 +75,11 @@ src/base/object_math.c text eol=lf
 src/menu/glyph.c text eol=lf
 docs/ACCESSOR_STORAGE_RECOVERY.md text eol=lf
 docs/accessor-storage-recovery-checks.json text eol=lf
+
+# Preserve the matching input-storage reconstructions and their evidence.
+src/menu/card/memory_card.c text eol=lf
+src/menu/mdec_movie.c text eol=lf
+src/menu/graph_screen.c text eol=lf
+src/dream/dream_sys.c text eol=lf
+docs/INPUT_STORAGE_RECOVERY.md text eol=lf
+docs/input-storage-recovery-checks.json text eol=lf
