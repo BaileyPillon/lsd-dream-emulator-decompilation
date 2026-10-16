@@ -63,3 +63,15 @@ docs/ACTOR_CHILD_CONSTRUCTION.md text eol=lf
 docs/actor-child-lifetime-function-ranges.json text eol=lf
 docs/actor-child-lifetime-checks.json text eol=lf
 docs/ACTOR_CHILD_LIFETIMES.md text eol=lf
+
+# Preserve the executed actor/model factory ownership analysis.
+tools/actor_factory_model.py text eol=lf
+tools/verify_actor_factory.py text eol=lf
+tests/test_actor_factory_ownership.py text eol=lf
+docs/actor-factory-function-ranges.json text eol=lf
+docs/actor-factory-ownership-checks.json text eol=lf
+docs/ACTOR_FACTORY_OWNERSHIP.md text eol=lf
+src/base/object_math.c text eol=lf
+src/menu/glyph.c text eol=lf
+docs/ACCESSOR_STORAGE_RECOVERY.md text eol=lf
+docs/accessor-storage-recovery-checks.json text eol=lf

@@ -145,10 +145,34 @@ void glyph_set_char(class_glyph_t *This, u8 Unk) {
     This->m_Unk27[3] = (s8) region.v;
 }
 
-u8 glyph_get_char(class_glyph_t *This) {
-    s8 pad[0x10];
+/* Keep the receiver and unsigned character as distinct consumed views.
+ * Their natural reload allocations preserve the original accessor frame. */
+typedef struct {
+    class_glyph_t *value;
+} glyph_receiver_view_t;
 
-    return This->m_Char;
+typedef struct {
+    u8 value;
+} glyph_character_view_t;
+
+typedef char checked_glyph_receiver_view[
+    (sizeof(glyph_receiver_view_t) == 4) ? 1 : -1];
+typedef char checked_glyph_character_view[
+    (sizeof(glyph_character_view_t) == 1) ? 1 : -1];
+
+static inline class_glyph_t *glyph_receiver(class_glyph_t *input) {
+    glyph_receiver_view_t view = { input };
+    return view.value;
+}
+
+static inline u8 glyph_character(u8 input) {
+    glyph_character_view_t view = { input };
+    return view.value;
+}
+
+u8 glyph_get_char(class_glyph_t *This) {
+
+    return glyph_character(glyph_receiver(This)->m_Char);
 }
 
 class_glyph_vtable_t *glyph_get_vtable(void) {

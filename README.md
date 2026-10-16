@@ -34,7 +34,7 @@ All-movie decoding, skip/error branches, and complete feature acceptance remain 
 | --- | ---: |
 | Matching game-function bytes compiled from C | 195,844 / 199,912 (97.97%) |
 | Known remaining game assembly functions | 5 |
-| Known C functions with unresolved unused local storage | 17 |
+| Known C functions with unresolved unused local storage | 14 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
 | Original callbacks with bounded native comparisons | 36 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 37 / 40 |
@@ -70,6 +70,10 @@ extraction, with independent complete-buffer comparisons and two memory patterns
 Supplied descriptors and SDK initialization remain explicit fixture boundaries.
 The optional [child lifetime profile](docs/ACTOR_CHILD_LIFETIMES.md) follows
 those objects through original destruction, repeated cleanup and pool reuse.
+The [model/actor factory checker](docs/ACTOR_FACTORY_OWNERSHIP.md) now creates
+the real model resources and checks three ownership histories against an
+independent allocation/release plan. Complete object payloads and natural
+encounters remain open.
 The [NPC proximity checks](docs/NPC_PROXIMITY.md) add Bear, Rabbit, Acrobats and
 Ship in 10,408 distinct fixtures through 25 original routines. Real distance,
 trigger-ratio, RNG, movement, event and GTE dependencies execute with no output
@@ -94,8 +98,9 @@ consumed method lifetimes. The later
 [callback storage recovery](docs/CALLBACK_STORAGE_RECOVERY.md) removes five
 inherited unused arrays while retaining every original instruction. The
 [constructor and actor recovery](docs/CONSTRUCTOR_ACTOR_STORAGE.md) explains
-two more. Seventeen identified inherited source explanations and five assembly
-functions remain.
+two more. The [accessor recovery](docs/ACCESSOR_STORAGE_RECOVERY.md) explains
+another three. Fourteen identified inherited source explanations and five
+assembly functions remain.
 C-byte coverage does not certify original source quality or whole-game parity.
 The [overlap result-lifetime study](docs/OVERLAP_RESULT_LIFETIMES.md) reduces
 that unaccepted candidate's complete-image difference to 148 bytes and checks

@@ -1,5 +1,17 @@
 # Changelog
 
+## Matching accessor storage and native factory ownership - 2026-10-16
+
+- Replace three inherited unused arrays with consumed word, matrix-input,
+  glyph-receiver and character views. Actual compiler reload observations and
+  complete builds preserve the original instructions and executable.
+- Reduce identified inherited storage explanations from 17 to 14. The 232
+  function bytes already counted as C; source coverage remains 97.97%.
+- Add a reproducible original model/actor factory checker with an independent
+  ordered ownership plan, three destruction histories and executed fault controls.
+- Preserve all feature, NPC callback and whole-encounter acceptance counts;
+  complete object payloads, later playback and natural encounters remain open.
+
 ## Original actor child destruction and reuse - 2026-10-16
 
 - Add an explicit lifetime mode that constructs, destroys and reconstructs

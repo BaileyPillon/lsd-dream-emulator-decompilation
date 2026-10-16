@@ -6,6 +6,9 @@
 > 24 inherited declarations. The later
 > [constructor and actor recovery](CONSTRUCTOR_ACTOR_STORAGE.md) explains two
 > more, leaving seventeen identified explanations open.
+> The subsequent [accessor recovery](ACCESSOR_STORAGE_RECOVERY.md) explains
+> three more, leaving fourteen. Their existing C bytes and all gameplay
+> acceptance counts are unchanged.
 > Measurements below retain their original snapshot and scope.
 
 The earlier [five-function audit](SOURCE_QUALITY.md) inspected selected
