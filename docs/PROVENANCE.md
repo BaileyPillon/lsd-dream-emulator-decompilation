@@ -742,3 +742,19 @@ Both complete builds remain canonical. Two pinned game inputs change; the other
 complete native graphs and compiler outputs remain private. Earlier inventory
 fields and source/feature/NPC counts are preserved. Fox's callback and natural
 encounters are outside this new campaign, and Bevy remains separate.
+
+## Periodic NPC spatial supplement
+
+[npc-periodic-spatial-checks.json](npc-periodic-spatial-checks.json) records
+three complete callback extents and their original property bindings from a
+fresh canonical 306-object symbol link. All 2,628 distinct initialized inputs
+pass with real proximity, movement and GTE dependencies, without output stubs.
+The shared harness also repeats the preceding 10,408-case proximity campaign
+with its original checked-buffer digest unchanged.
+
+Published data contains hashes, counts, method ranges and measured fault
+locations. Game images, generated code, full graph buffers and native logs
+remain private. Two new bounded callbacks raise coverage from 32 to 34 of 107;
+Bird was already counted. Matching-C bytes and whole-feature/encounter
+acceptance do not increase. All prior inventory snapshots and the separate
+Bevy port are preserved.

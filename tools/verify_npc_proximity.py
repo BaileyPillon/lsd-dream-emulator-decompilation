@@ -191,12 +191,14 @@ def expected(callback, case):
 
 
 class Machine(n.Machine):
-    def __init__(self, callback, bridge, patches=None):
+    def __init__(self, callback, bridge, patches=None, *, native_functions=None, fixture_factory=None):
+        functions = FUNCTIONS if native_functions is None else native_functions
+        self.fixture_factory = fixtures if fixture_factory is None else fixture_factory
         self.entries, self.hits = Counter(), Counter()
         self.changed_addresses = set()
-        self.ranges = [(int(row['address'], 16) & n.MASK, (int(row['address'], 16) & n.MASK) + row['bytes']) for row in FUNCTIONS]
+        self.ranges = [(int(row['address'], 16) & n.MASK, (int(row['address'], 16) & n.MASK) + row['bytes']) for row in functions]
         self.adapter = g.Cop2Adapter(bridge)
-        super().__init__(start=n.h.symbols[callback] & n.MASK, native_functions=FUNCTIONS)
+        super().__init__(start=n.h.symbols[callback] & n.MASK, native_functions=functions)
         for address, data in (patches or {}).items():
             self.cpu.mem_write(address & n.MASK, data)
 
@@ -217,7 +219,7 @@ class Machine(n.Machine):
     def run(self, case):
         self.rng_trace, self.events = [], []
         self.adapter.reset()
-        buffers = fixtures(case)
+        buffers = self.fixture_factory(case)
         cpu = self.cpu
         for address, data in buffers.values():
             cpu.mem_write(address, bytes(data))

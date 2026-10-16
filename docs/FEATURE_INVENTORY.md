@@ -684,3 +684,21 @@ storage explanations, 35 / 40 listed-core C groups and 32 / 107 bounded NPC
 profiles. No whole feature, gameplay replay, NPC encounter, capability category
 or optional mod is added. All prior inventory fields and snapshots are retained;
 the separate Bevy port is unchanged.
+
+## Periodic spatial comparison supplement
+
+The [periodic NPC spatial profile](NPC_PERIODIC_SPATIAL.md) adds bounded native
+comparisons for Minotaur and Giant Minotaur, bringing the distinct callback
+count to 34 / 107. Bird was already counted; this profile replaces its remaining
+trigger-ratio output contract with original code. The 2,628 initialized inputs
+check complete graph buffers, signed timing, ratio-before-motion ordering,
+original property bindings, movement, GTE commands and saved-register guards.
+Seven instruction faults execute and change checked buffers. The earlier
+10,408-case proximity campaign is repeated with the same output digest.
+
+This adds two bounded profiles and no original game feature, matching-C byte,
+whole encounter, accepted feature group, optional mod or developer capability
+category. All preceding measurements remain historical snapshots. The current
+C count is 194,212 / 199,912, with nine assembly functions and 24 inherited
+storage explanations. Natural encounters, rendering/audio, lifecycle histories
+and the documented division-trap paths require further comparison.
