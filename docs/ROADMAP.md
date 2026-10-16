@@ -179,9 +179,10 @@ and 191 initial source trials found no exact match. The subsequent
 
 - Resolve asset/command inventory gaps and runtime reachability.
 - Close virtual-call dependencies and verify semantic callback signatures.
-- Extend native fixtures beyond the 20 currently checked callbacks and their
+- Extend native fixtures beyond the 24 currently checked callbacks and their
   documented scopes; see the [proximity composition](NPC_PROXIMITY.md) and
-  [scripted callback extension](SCRIPTED_EXTENSION.md).
+  [Hoop Girl script checks](HOOP_SCRIPTS.md). Complete natural encounters and
+  actual movement/facing/scaling dependencies remain separate gates.
 - Compare natural animation construction, lifetime and actor/render behavior.
 - Review every feature's recorded scenarios, including rare RNG, save/card
   error, audio and hardware-timing branches.

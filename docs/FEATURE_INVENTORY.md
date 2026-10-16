@@ -543,3 +543,18 @@ outside the earlier selected storage audit, so its 24 unresolved inherited
 functions remain. The additive inventory supplement preserves all preceding
 fields and counts; it adds no C bytes, NPC profile, gameplay run or accepted
 whole feature. The Bevy port is unchanged.
+
+## October 15 Hoop Girl callback profiles
+
+The [Hoop Girl checks](HOOP_SCRIPTS.md) add 71,536 distinct fixtures across
+the regular and giant callbacks, raising bounded coverage from 22 / 107 to
+24 / 107. The expanded scripted suite retains all 46,047 previous inputs,
+checks 117,583 fixtures across eighteen callbacks and detects 23 faults.
+The giant executes its real parent callback before requesting scaling.
+
+These profiles check native script/RNG execution with explicit movement,
+facing, scaling and trigger-ratio contracts. They add no emulator replay or
+whole-encounter acceptance. C coverage, the nine assembly functions, 24
+inherited storage explanations, 35 / 40 listed-core C groups, developer tools
+and optional mods retain their previous counts. The additive supplement
+preserves every preceding inventory field and snapshot. Bevy is unchanged.

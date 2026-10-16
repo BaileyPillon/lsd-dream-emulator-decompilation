@@ -28,6 +28,67 @@ class AdditionalScriptedCallbackTests(unittest.TestCase):
         case.update(updates)
         return case
 
+    def test_hoop_zero_timer_resets_command_and_draws_before_axis_request(self):
+        case = self.case(timer=0, tick=2400, seed=1, ratio=-7)
+        result = scripts.expected('entity_hoop_girl', case)
+        self.assertEqual(result['rng_seed'], 1103527590)
+        self.assertEqual(struct.unpack_from('<i', result['context'], 16)[0], -7)
+        self.assertEqual(struct.unpack_from('<i', result['context'], 28)[0], 0)
+        self.assertEqual(result['trace'], [
+            ['trigger_ratio', scripts.native.ENTITY], ['rand', 1],
+            ['axis_c8', scripts.native.ENTITY, 102400, 0],
+            ['forward', scripts.native.ENTITY, scripts.native.u32(-30), 0]])
+
+    def test_hoop_nonzero_timers_preserve_command_and_rng(self):
+        for timer in (-0x80000000, -1, 1, 0x7fffffff):
+            with self.subTest(timer=timer):
+                case = self.case(timer=timer, tick=-1, seed=42)
+                result = scripts.expected('entity_hoop_girl', case)
+                self.assertEqual(result['rng_seed'], 42)
+                self.assertEqual(result['context'][28:32], bytes(scripts.fixtures(case)[2][28:32]))
+                self.assertEqual(result['trace'], [
+                    ['trigger_ratio', scripts.native.ENTITY],
+                    ['forward', scripts.native.ENTITY, scripts.native.u32(-30), 0]])
+
+    def test_hoop_facing_starts_at_2401_and_precedes_forward_motion(self):
+        before = scripts.expected('entity_hoop_girl', self.case(tick=2400))
+        after = scripts.expected('entity_hoop_girl', self.case(tick=2401))
+        self.assertEqual([call[0] for call in before['trace']], ['trigger_ratio', 'forward'])
+        self.assertEqual(after['trace'], [
+            ['trigger_ratio', scripts.native.ENTITY],
+            ['orientation', scripts.native.ENTITY, scripts.native.DREAM, 1, 0, 0],
+            ['forward', scripts.native.ENTITY, scripts.native.u32(-30), 0]])
+        negative = scripts.expected('entity_hoop_girl', self.case(tick=-0x80000000))
+        maximum = scripts.expected('entity_hoop_girl', self.case(tick=0x7fffffff))
+        self.assertNotIn('orientation', [call[0] for call in negative['trace']])
+        self.assertIn('orientation', [call[0] for call in maximum['trace']])
+
+    def test_giant_hoop_adds_scale_after_the_complete_parent_trace(self):
+        case = self.case(timer=0, tick=2401, seed=0)
+        regular = scripts.expected('entity_hoop_girl', case)
+        giant = scripts.expected('entity_hoop_girl_giant', case)
+        self.assertEqual(giant['trace'], regular['trace'] + [
+            ['scale', scripts.native.ENTITY, 1, self.symbols['g_OffsetSix']]])
+        for key in ('entity', 'dream', 'context', 'child', 'rng_seed'):
+            self.assertEqual(giant[key], regular[key])
+
+    def test_hoop_fixtures_cover_every_original_rng_result(self):
+        cases = scripts.cases_by_callback()['entity_hoop_girl']
+        outputs = {((case['seed'] * 0x41C64E6D + 0x3039) & 0xffffffff) >> 16 & 0x7fff
+                   for case in cases if case['timer'] == 0 and case['tick'] == 2401}
+        self.assertEqual(outputs, set(range(32768)))
+
+    def test_hoop_fixture_groups_are_distinct_and_keep_signed_boundaries(self):
+        groups = scripts.cases_by_callback()
+        for name in ('entity_hoop_girl', 'entity_hoop_girl_giant'):
+            with self.subTest(callback=name):
+                cases = groups[name]
+                self.assertEqual(len(cases), 35768)
+                self.assertEqual(len({tuple(sorted(case.items())) for case in cases}), len(cases))
+                self.assertEqual({case['tick'] for case in cases},
+                                 {-0x80000000, -1, 0, 2399, 2400, 2401, 2402, 0x7fffffff})
+        self.assertIsNot(groups['entity_hoop_girl'][0], groups['entity_hoop_girl_giant'][0])
+
     def test_bell_zero_timer_increments_before_rng_and_takes_reset_priority(self):
         result = scripts.expected('entity_bell_striker', self.case(timer=0, duration=1, state=35))
         self.assertEqual(struct.unpack_from('<i', result['entity'], 0x44)[0], 36)
