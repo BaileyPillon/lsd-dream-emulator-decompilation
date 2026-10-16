@@ -1,5 +1,14 @@
 # Changelog
 
+## Entry scanner method-return candidate - 2026-10-16
+
+- Retain a consumed method-return candidate with the original 80-byte frame;
+  the complete image has six differing bytes, down from twenty.
+- Compare the original and complete candidate through the existing 4,116
+  entry/transform fixtures per image and six measured fault controls.
+- Keep the scanner's assembly fallback, canonical game build and all C/feature
+  acceptance counts unchanged. The remaining store and scheduling need recovery.
+
 ## Earlier natural Hoop Girl timing - 2026-10-15
 
 - Compare a 15,000-frame window-to-Hoop route, including 17 post-threshold

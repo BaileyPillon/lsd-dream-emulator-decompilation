@@ -75,8 +75,11 @@ The [research fragments](../research/source_layout/README.md) use a ten-byte
 packet and explicit unsigned-word arithmetic for the native wrap behavior.
 Those expressions reproduce the previous complete candidate images exactly.
 Actual whole-unit compiler stack/lifetime observations preserve complete normal
-assembly. The closest candidate still has twenty stack-layout byte differences
-and remains outside the canonical build.
+assembly. The pointer-style candidate retains twenty stack-layout differences.
+The later [method-return candidate](GENERATION_ENTRY_METHOD.md) supplies the
+original frame through a consumed method temporary and reduces the complete
+image's differences to six bytes. Its retained store and argument scheduling
+still fail the exact source gate; both candidates remain outside the game.
 
 Reproduce after a matching build and optional WSL analysis dependencies:
 

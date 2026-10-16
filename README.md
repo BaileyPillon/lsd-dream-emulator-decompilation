@@ -97,6 +97,9 @@ The [generation entry checks](docs/GENERATION_ENTRIES.md) recover the actual
 ten-byte transform packet and check all 56 original entry records through the
 scanner and real coordinate conversion in 4,116 fixtures per image. The
 readable C candidate agrees on those fixtures but retains its source gate.
+The later [entry method-return candidate](docs/GENERATION_ENTRY_METHOD.md)
+reduces the complete image's differences from twenty to six bytes and retains
+the original frame; it remains unaccepted research.
 The [overlap source recovery](docs/OVERLAP_RECOVERY.md) checks a two-point,
 twelve-byte collision candidate in 6,912 native graph pairs with matching caller
 buffers and ordered GTE results. Its frame and 170 code differences still need
