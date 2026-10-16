@@ -11,6 +11,11 @@ original callback coverage to 32 / 107 and preserve all earlier scripted inputs.
 Recover natural encounters, real downstream effects and lifetime histories;
 bounded request comparisons do not complete those gates.
 
+The [populated actor child profile](ACTOR_CHILD_FLAGS.md) now verifies the flag
+fan-out through real scene-node and bit-setter code, including repeated changes
+and duplicate list entries. Extend natural construction, encounters and visible
+effects separately; this profile adds no newly recovered assembly function.
+
 The [glyph character interface](GLYPH_CHARACTER_API.md) now has typed receivers
 and the original unsigned-byte getter return. Its compiled callers pass 4,656
 bounded native inputs without output substitutions. Recover the getter's

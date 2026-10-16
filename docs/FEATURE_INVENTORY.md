@@ -666,3 +666,21 @@ inputs. C recovery remains 194,212 / 199,912, with nine assembly functions,
 bounded NPC profiles. The getter's unused local remains open. No entire feature,
 NPC encounter, gameplay run, developer-capability category or optional mod is
 added. Earlier inventory data is preserved; the Bevy port is unchanged.
+
+## October 16 populated actor child flags
+
+The [actor child profile](ACTOR_CHILD_FLAGS.md) corrects the actor virtual slot's
+missing full-word argument. Its compiled caller and the original actor/entity
+tables dispatch through actual scene-node and bit-setter methods. All 16,512
+case inputs pass, including 48 five-call histories, for 16,704 positive
+invocations. Four instruction faults produce incorrect outputs with their
+changed instructions observed. Eight target ABI checks and regular/fresh clean
+306-object builds retain the complete original executable.
+
+This extends the downstream path previously reached with zero children in the
+Fox script comparison. It does not run Fox's callback or a natural encounter.
+C recovery remains 194,212 / 199,912, with nine assembly functions, 24 inherited
+storage explanations, 35 / 40 listed-core C groups and 32 / 107 bounded NPC
+profiles. No whole feature, gameplay replay, NPC encounter, capability category
+or optional mod is added. All prior inventory fields and snapshots are retained;
+the separate Bevy port is unchanged.

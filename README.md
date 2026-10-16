@@ -57,6 +57,10 @@ The earlier [periodic NPC checks](docs/PERIODIC_SCRIPTS.md),
 [Hoop Girl](docs/HOOP_SCRIPTS.md) and
 [Bell Striker and Opera Singer](docs/BELL_OPERA_SCRIPTS.md) checkpoints retain
 their original evidence within this suite. Whole encounters remain open.
+The [populated actor child checks](docs/ACTOR_CHILD_FLAGS.md) extend Fox's
+downstream flag path through the real scene-node and bit-setter methods.
+They verify 16,512 case inputs without output stubs and correct the actor
+virtual declaration while preserving both complete matching builds.
 The [NPC proximity checks](docs/NPC_PROXIMITY.md) add Bear, Rabbit, Acrobats and
 Ship in 10,408 distinct fixtures through 25 original routines. Real distance,
 trigger-ratio, RNG, movement, event and GTE dependencies execute with no output

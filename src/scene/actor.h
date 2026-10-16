@@ -12,7 +12,9 @@
  *                 (slots 0x40..), movement, collision and notify plumbing.
  * entity derives from it and overrides a few slots plus appends its own
  * (dream effects / interaction / per-type behaviour).  See entity.h.
- * Slots still named UnkNN are not yet understood. */
+ * Slots retain their legacy UnkNN identifiers while their contracts are recovered. */
+struct actor;
+
 typedef struct actor_vtable {
     /* 0x000 8008a6c4 */ u32 type_id;
     /* 0x004 8008a6c8 */ base_class_t *(*Destroy)(base_class_t *);
@@ -38,7 +40,7 @@ typedef struct actor_vtable {
     /* 0x054 8008a718 */ void (*Unk20)(void *);
     /* 0x058 8008a71c */ void (*Unk21)(void *);
     /* 0x05C 8008a720 */ void (*Unk22)(void *);
-    /* 0x060 8008a724 */ void (*Unk23)(void *);
+    /* 0x060 8008a724 */ void (*Unk23)(struct actor *, s32);
     /* 0x064 8008a728 */ void (*Unk24)(void *);
     /* 0x068 8008a72c */ void (*Unk25)(void *);
     /* 0x06C 8008a730 */ void (*Unk26)(void *);

@@ -727,3 +727,18 @@ VM copies remain private. Published records distinguish the two analysis callers
 from the original methods and preserve preceding inventory fields. This changes
 two game build inputs and no original behavior; C recovery, NPC coverage and
 whole-feature acceptance retain their preceding counts. Bevy remains separate.
+
+## Populated actor child flag supplement
+
+[actor-child-flag-checks.json](actor-child-flag-checks.json) records the original
+typed-call compiler rejection, corrected compiled caller, three complete native
+function spans, original table bindings, 16,512 case inputs and four measured
+instruction faults. The 48 histories retain the same graph between five calls.
+Every positive method runs without a function-output contract. The first failed
+guard comparison is retained as excluded instrumentation evidence.
+
+Both complete builds remain canonical. Two pinned game inputs change; the other
+390 retain their prior hashes. Original game bytes, generated caller/ELF code,
+complete native graphs and compiler outputs remain private. Earlier inventory
+fields and source/feature/NPC counts are preserved. Fox's callback and natural
+encounters are outside this new campaign, and Bevy remains separate.
