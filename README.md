@@ -32,12 +32,12 @@ All-movie decoding, skip/error branches, and complete feature acceptance remain 
 
 | Measure | Verified snapshot |
 | --- | ---: |
-| Matching game-function bytes compiled from C | 194,212 / 199,912 (97.15%) |
-| Known remaining game assembly functions | 9 |
+| Matching game-function bytes compiled from C | 194,792 / 199,912 (97.44%) |
+| Known remaining game assembly functions | 7 |
 | Known C functions with unresolved unused local storage | 24 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
 | Original callbacks with bounded native comparisons | 36 / 107 |
-| Provisional behavior/system groups with listed core functions in C | 35 / 40 |
+| Provisional behavior/system groups with listed core functions in C | 37 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
 
 The feature inventory has 40 provisional groups; an official exhaustive
@@ -79,8 +79,11 @@ attachment, geometry and sound contracts; whole encounters remain open.
 The [expanded source-layout audit](docs/SOURCE_LAYOUT_EXPANDED.md) corrects the
 earlier selected five-function scan. It identifies 28 unused-storage functions
 and withdraws four promotions that added padding. Their readable padding-free
-candidates remain research; 24 inherited source explanations and nine assembly
-functions remain. C-byte coverage does not certify original source quality.
+candidates remain historical research. The later
+[generation lookup recovery](docs/GENERATION_LOOKUP_RECOVERY.md) replaces the
+entry scanner and structure updater with matching C, adding 580 recovered bytes.
+Twenty-four inherited source explanations and seven assembly functions remain.
+C-byte coverage does not certify original source quality or whole-game parity.
 The [render query record cleanup](docs/RENDER_QUERY_RECORD.md) removes a
 separately identified redundant buffer tail. Actual compiler traces explain
 its allocation, and the complete executable remains identical; the counts
@@ -91,19 +94,20 @@ research starting point while the matching game retains its assembly fallback.
 The [generation structure checks](docs/GENERATION_STRUCTURES.md) execute eleven
 original routines and compare 1,116 fixtures per original/candidate image,
 including virtual dispatch, position updates and mode 3 sprite RNG/scaling.
-The padding-free candidate agrees on those fixtures but still fails the exact
-source gate. It adds no whole-feature acceptance or new NPC callback coverage.
+That earlier padding-free candidate agreed on the fixtures and failed the exact
+source gate. The later matching lookup recovery closes this source gate while
+whole-feature acceptance and NPC callback coverage remain unchanged.
 The later [generation effect checks](docs/GENERATION_EFFECTS.md) extend mode 0
 through all eight rate variants and four active child layouts, using fifteen
 original routines, 3,116 fixtures and 40 consecutive-update histories per image.
 Its nine faults are detected with measured changed-instruction execution.
 The [generation entry checks](docs/GENERATION_ENTRIES.md) recover the actual
 ten-byte transform packet and check all 56 original entry records through the
-scanner and real coordinate conversion in 4,116 fixtures per image. The
-readable C candidate agrees on those fixtures but retains its source gate.
-The later [entry method-return candidate](docs/GENERATION_ENTRY_METHOD.md)
-reduces the complete image's differences from twenty to six bytes and retains
-the original frame; it remains unaccepted research.
+scanner and real coordinate conversion in 4,116 fixtures per image. The earlier
+[entry method-return candidate](docs/GENERATION_ENTRY_METHOD.md) reduced the
+complete image's differences from twenty to six bytes. The matching lookup
+recovery now resolves the frame, store and call-register differences; natural
+spawning, lifetimes and whole-feature acceptance remain open.
 The [overlap source recovery](docs/OVERLAP_RECOVERY.md) checks a two-point,
 twelve-byte collision candidate in 6,912 native graph pairs with matching caller
 buffers and ordered GTE results. Its frame and 170 code differences still need

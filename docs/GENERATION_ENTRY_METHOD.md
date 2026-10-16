@@ -1,5 +1,9 @@
 # Entry scanner method-return candidate
 
+> Historical candidate: the later [matching lookup recovery](GENERATION_LOOKUP_RECOVERY.md)
+> closes this scanner's C-source gate. The six-byte candidate and measurements
+> below are preserved; broader runtime acceptance remains open.
+
 The retained [`entry-method-return.c`](../research/source_layout/entry-method-return.c)
 reduces the complete executable's differences from **20 to 6 bytes** for
 `dream_generation_find_entry`. The scanner remains 444 bytes and now uses the
@@ -67,10 +71,14 @@ only this fragment's replacement for the scanner inclusion:
 ```bash
 python - <<'PY'
 from pathlib import Path
+import subprocess
 
 destination = Path('.decomp-lab/entry-method-new')
 destination.mkdir()
-source = Path('src/dream/dream_generation_post.c').read_text()
+source = subprocess.check_output([
+    'git', 'show',
+    '8369e3574adae246dec8113101e630b1e5175f55:src/dream/dream_generation_post.c',
+], text=True)
 marker = 'INCLUDE_ASM("asm/nonmatchings/dream/dream_generation_post", dream_generation_find_entry);'
 if source.count(marker) != 1:
     raise ValueError('Expected exactly one scanner inclusion.')

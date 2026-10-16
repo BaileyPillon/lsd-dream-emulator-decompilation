@@ -1,5 +1,9 @@
 # Generation structure interfaces and live object observations
 
+> The later [matching lookup recovery](GENERATION_LOOKUP_RECOVERY.md) closes
+> the dispatcher's C-source gate. This earlier interface and captured-state
+> report retains its original measurements and remaining natural-history scope.
+
 The generated-structure update receives an object and a pointer to three
 32-bit position words. Its previous virtual declaration accepted only the
 object. The position-summing helper was also declared as writing a complete

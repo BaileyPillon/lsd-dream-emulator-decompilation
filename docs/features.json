@@ -22575,6 +22575,64 @@
       "new_gameplay_runs": 0,
       "new_model_API_calls": 0,
       "Bevy_port_modified": false
+    },
+    "generation_lookup_recovery_20261016": {
+      "status": "passed_matching_generation_lookup_recovery",
+      "guide": "docs/GENERATION_LOOKUP_RECOVERY.md",
+      "metadata": "docs/generation-lookup-recovery-checks.json",
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194792,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 7,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "new_C_bytes": 580,
+      "source_functions_promoted": 2,
+      "normal_complete_image_equal": true,
+      "clean_complete_image_equal": true,
+      "fresh_objects": 306,
+      "changed_game_inputs": 2,
+      "other_390_game_inputs_retained": true,
+      "new_listed_core_C_groups": [
+        "F024",
+        "F025"
+      ],
+      "entry_cases_per_image": 4116,
+      "structure_cases_per_image": 3116,
+      "structure_histories_per_image": 40,
+      "structure_history_frames_per_image": 480,
+      "entry_executed_fault_controls": 6,
+      "structure_executed_fault_controls": 9,
+      "dependency_output_contracts": 0,
+      "new_distinct_native_fixture_inputs": 0,
+      "new_bounded_NPC_callbacks": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_gameplay_runs": 0,
+      "new_model_API_calls": 0,
+      "Bevy_port_modified": false
     }
   }
 }

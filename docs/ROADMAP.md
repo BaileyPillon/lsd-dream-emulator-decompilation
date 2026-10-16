@@ -39,8 +39,10 @@ function or whole-feature gate; continue the source work below.
   math candidate remain an exact-source failure; incoming records and frontend
   controls do not resolve the current grid or inherited-storage gates.
 
-Nine game functions remain in assembly after the
-[source-layout correction](SOURCE_LAYOUT_EXPANDED.md):
+Seven game functions remain in assembly after the source-layout correction
+and [matching generation lookup recovery](GENERATION_LOOKUP_RECOVERY.md).
+The scanner and structure updater now compile from C with the complete
+executable unchanged.
 
 The [bounds candidate](BOUNDS_NARROW_COMPARISON.md) now has a published
 19-byte complete-image difference and a reproducible confined comparison over
@@ -49,17 +51,17 @@ The [bounds candidate](BOUNDS_NARROW_COMPARISON.md) now has a published
 
 The expanded audit identifies 28 unused-storage functions and withdraws four
 padded promotions. Twenty-four inherited source explanations remain in C;
-the corrected count is 194,212 / 199,912 (97.15%). Recover real storage and
-helper lifetimes for those functions and the four retained
-[source-layout candidates](../research/source_layout/README.md). Full source
-quality and runtime acceptance remain separate gates.
+the correction's historical count was 194,212 / 199,912 (97.15%). The two
+generation recoveries now raise it to 194,792 / 199,912 (97.44%). Recover real
+storage and helper lifetimes for the inherited functions and two remaining
+menu [source-layout candidates](../research/source_layout/README.md). Full
+source quality and runtime acceptance remain separate gates.
 
-For the retained generation update, [native structure checks](GENERATION_STRUCTURES.md)
-now cover actual dispatch, position replacement and mode 3 sprite RNG/scaling
-without output contracts. Recover the scalar candidate's missing eight-byte
-source lifetime, then extend mode 0 child effects and natural object histories.
-The two tested live argument-pair helpers reserve extra storage but emit
-nonoriginal stores; their complete images remain rejected.
+For the recovered generation update, [native structure checks](GENERATION_STRUCTURES.md)
+cover actual dispatch, position replacement and mode 3 sprite RNG/scaling
+without output contracts. The initialized typed vtable snapshot resolves the
+scalar candidate's missing frame allocation. Extend natural object histories
+and construction; the older argument-pair hypotheses remain rejected research.
 The later [mode 0 extension](GENERATION_EFFECTS.md) now checks all eight rate
 variants and four active child layouts, including ordered periodic resets and
 consecutive graph updates. Recover actual construction/parameter selection and
@@ -69,10 +71,10 @@ rejected output, so they do not explain the scalar frame lifetime.
 
 For F025, [entry scanner composition](GENERATION_ENTRIES.md) now checks all
 56 original records through the actual world transform. Its ten-byte packet
-rules out source-record enlargement as a frame explanation. Resolve the
-remaining scalar lifetime; returned-style storage reaches the original frame
-but adds instructions, and by-value style copying emits a separate helper.
-Continue through natural parameter selection and sound/entity spawning.
+is retained in the matching C recovery. An initialized vtable snapshot and
+scalar method return resolve the frame and call-register differences. Continue
+through natural parameter selection, sound/entity spawning and lifetimes;
+complete F025 runtime acceptance remains open.
 
 For F008, [overlap source recovery](OVERLAP_RECOVERY.md) removes an unexplained
 private buffer tail and checks the twelve-byte midpoint candidate in 6,912 paired
@@ -89,8 +91,9 @@ and a sound-API correction; unmatched functions still need further analysis.
 The [bounds-predicate audit](RENDER_BOUNDS.md) verifies the original
 `func_8004CD38` contract on bounded fixtures. The
 [current source-lifetime report](BOUNDS_SOURCE_LIFETIMES.md) and
-[recipe](../research/render_bounds/README.md) reproduce a 21-byte-different
-candidate; exact C recovery remains open.
+[recipe](../research/render_bounds/README.md) retain earlier source candidates.
+The later [narrow comparison](BOUNDS_NARROW_COMPARISON.md) reproduces the current
+19-byte candidate; exact C recovery remains open.
 The earlier [allocation diagnostic](COMPILER_ALLOCATION.md) checked 68 source
 forms against a 38-byte-different candidate. The later report supersedes that
 starting point and observes the new allocation in the complete source unit.
@@ -174,8 +177,6 @@ remaining byte differences before promoting either source form.
 | `func_8004C6A8` | [`src/scene/render_context.c`](../src/scene/render_context.c) |
 | `func_8004CD38` | [`src/scene/render_context.c`](../src/scene/render_context.c) |
 | `func_8004441C` | [`src/menu/ui_sprite.c`](../src/menu/ui_sprite.c) |
-| `dream_generation_update_structure_entities` | [`src/dream/dream_generation.c`](../src/dream/dream_generation.c) |
-| `dream_generation_find_entry` | [`src/dream/dream_generation_post.c`](../src/dream/dream_generation_post.c) |
 | `func_8003D73C` | [`src/menu/ui_screen.c`](../src/menu/ui_screen.c) |
 | `func_8003DAD4` | [`src/menu/ui_screen.c`](../src/menu/ui_screen.c) |
 
@@ -233,7 +234,7 @@ and 191 initial source trials found no exact match. The subsequent
 
 The catalogue currently has 40 provisional groups. None has been accepted for
 all required runtime scenarios. The [inventory](FEATURE_INVENTORY.md) lists the
-remaining scenario for each group; 97.15% describes current game C bytes only.
+remaining scenario for each group; 97.44% describes current game C bytes only.
 
 ## Developer tools and optional mods
 
@@ -243,7 +244,7 @@ remaining scenario for each group; 97.15% describes current game C bytes only.
 - Extend emulator checks for duration multipliers and passive Gray Man.
 - Keep all optional patched executables and discs outside the canonical build.
 
-After the source-layout correction, 35 / 40 groups have all listed core
+After the matching generation recoveries, 37 / 40 groups have all listed core
 functions in C. The [NPC spatial composition](NPC_SPATIAL.md) checks seven
 callbacks through actual transform/SDK/GTE dependencies in 26,194 fixtures;
 natural histories, encounters and timing remain open. These overlapping
@@ -253,5 +254,5 @@ The [Gunman profile](GUNMAN_SCRIPTS.md) checks both original scripts and their
 effect color arithmetic, including scheduled callback histories and mode-two
 callback clearing. Bounded coverage is 36 / 107. Complete engine frames, natural
 encounters, constructed attachment graphs, effect/render/audio lifetimes and
-controller reachability remain required; this does not close F027 or raise C
-recovery beyond 97.15%.
+controller reachability remain required; this bounded profile does not close
+F027. Current C recovery is measured separately above.

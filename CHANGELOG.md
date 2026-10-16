@@ -1,5 +1,16 @@
 # Changelog
 
+## Matching generation dispatch and entry scanning - 2026-10-16
+
+- Recover the 444-byte entry scanner and 136-byte structure updater in C using
+  consumed vtable snapshots and scalar method returns with the original ABI.
+- Reproduce the full executable in standard and fresh 306-object builds;
+  matching C rises to 194,792 / 199,912 bytes (97.44%), with seven game fallbacks.
+- Recheck 4,116 entry cases and 3,116 structure cases plus forty update histories,
+  retaining fifteen executed fault controls and no dependency-output stubs.
+- Preserve historical evidence, 24 inherited storage explanations and all
+  broader gameplay gates; the separate Bevy port is unchanged.
+
 ## Original effect lifecycle and callback types - 2026-10-16
 
 - Recover the frame and expiration callback signatures, preserving both target

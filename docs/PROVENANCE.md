@@ -1,5 +1,15 @@
 # Source and evidence provenance
 
+The [generation lookup recovery](GENERATION_LOOKUP_RECOVERY.md) replaces two
+assembly fallbacks with 580 matching C bytes. Normal and fresh complete builds,
+requalified function spans and unchanged-assembly compiler traces support the
+source recovery. Existing entry and structure native profiles pass before and
+after promotion with their original inputs and explicit remaining scope.
+[Recovery metadata](generation-lookup-recovery-checks.json) appends current
+counts; earlier snapshots and the frozen project objective are retained.
+Raw images, ELF files, generated assembly, debugger traces and buffers stay
+private. The separate Bevy repository and running player are unchanged.
+
 The [effect lifecycle supplement](EFFECT_LIFECYCLE.md) publishes metadata for
 768 constructed lifecycle histories and earlier 471 construction fixtures.
 The native harness, interval/object models, raw buffers, complete canonical

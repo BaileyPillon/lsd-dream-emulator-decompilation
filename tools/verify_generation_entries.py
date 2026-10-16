@@ -351,7 +351,7 @@ def verify(destination, candidate=None):
     dependencies = n.evidence_dependencies('tools/verify_generation_entries.py', 'tools/verify_scripted_ai.py',
         'src/dream/dream_generation.c', 'src/dream/dream_generation_post.c', 'src/scene/render_context.c',
         'src/scene/render_context.h', 'src/scene/map_scene.c', 'src/dream/dream_sys.h',
-        'asm/nonmatchings/dream/dream_generation_post/dream_generation_find_entry.s', 'asm/data/76EE8.data.s')
+        'asm/data/76EE8.data.s')
     before = {path: hashlib.sha256(path.read_bytes()).hexdigest() for path in dependencies}
     n.initialize_backend(n.load_program(FUNCTIONS))
     entries = qualify_tables(n.h)

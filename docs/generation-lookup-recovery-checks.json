@@ -1,0 +1,716 @@
+{
+  "schema_version": 1,
+  "status": "passed_matching_generation_lookup_recovery",
+  "recorded_utc": "2026-10-16T18:29:36.832378+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "source_baseline_commit": "8369e3574adae246dec8113101e630b1e5175f55",
+  "scope": "Matching C recovery of the original entry scanner and structure dispatcher; bounded native rechecks of existing fixture domains.",
+  "canonical_image": {
+    "bytes": 505856,
+    "sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "normal_complete_equal": true,
+    "fresh_clean_complete_equal": true,
+    "fresh_objects": 306
+  },
+  "public_files": {
+    ".gitattributes": "86159ffc02a6ec95f72c6a62c73a6af9f1988703d7819f4ece8275ec33a97f00",
+    "CHANGELOG.md": "0cce57b9fcf32b4e4e36e48cc8f138e9be2ebed6233f1bd24608b5ce49bf9041",
+    "README.md": "b8628fdc4c6d89719c305db04c3a5ef5a9de7c26c7a1d044507d120b258b0ea3",
+    "docs/FEATURE_INVENTORY.md": "61e3335184466fcb4185a2ff8dc7fa7c6f02e101b3e8252a77827ab46e668549",
+    "docs/GENERATION_ENTRY_METHOD.md": "017c77ca240ca90e29ac0c6b757d4f6aa28fa8539b40ac603d1cd2df85573303",
+    "docs/GENERATION_INTERFACE.md": "5f03ac2cecdde64ebe1dddbaf1c7c812f4757ff7ed5fdd2c12f6b92b20acd5be",
+    "docs/GENERATION_RETURN_TEMPORARY.md": "0004d83977ca04c0ffb8104fe1d987a0c3ce459d0726fc11605ee3cc5f40dfde",
+    "docs/GENERATION_LOOKUP_RECOVERY.md": "e61778f195e73d1a32f4580bd7f3078c65979c6ad0aa4a2b0426531b4800c82f",
+    "docs/PROVENANCE.md": "22560f1370d89be1f946f001a04119cac7b47f66af668643a107d5739fe5e2e1",
+    "docs/ROADMAP.md": "18c680be29f3ada54dd60b5f2b1c65ca3b47afdb754d5383182325a510b0e135",
+    "docs/features.json": "62af7a953e0094eec958b0f777468a7ac573f92984dc8b004107e377b4bd75d8",
+    "research/source_layout/README.md": "49f5e54ea3393d26452511159ddf8ded9a17d23a9b4a0395539198fabe6fd563",
+    "src/dream/dream_generation.c": "d61bfd4f5774cf3ffc214183a805e714d2f1ab08690da6b1d569a919dd4e80b8",
+    "src/dream/dream_generation_post.c": "2574f75419c746443d0dbaf3de3bac38a28702559a9d620f8cb1f8d91d0ac094",
+    "tools/verify_generation_entries.py": "3a400c450493910285b03e2195dd828444b0495d4e24cbed4c348b9a57e449f4",
+    "tools/verify_generation_structures.py": "af915386be7f1177fd56d7e1dfaec2eaaa52a955a7513cc013739d3d201f74ba"
+  },
+  "public_file_hash_basis": "Raw verified local checkout bytes. Existing Git text conversion can alter source and historical documentation line endings.",
+  "changed_game_inputs": [
+    "src/dream/dream_generation.c",
+    "src/dream/dream_generation_post.c"
+  ],
+  "other_game_inputs_retained": 390,
+  "protected_build_inputs": 392,
+  "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+  "compiler_configuration_sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+  "canonical_compiler_flags_unchanged": true,
+  "recovered_functions": [
+    {
+      "function": "dream_generation_find_entry",
+      "address": "0x80055620",
+      "bytes": 444,
+      "sha256": "e04dac2ba99cee9ee544b7df866efe44f9949e933092bc4461d9b7e179200252",
+      "frame_bytes": 80
+    },
+    {
+      "function": "dream_generation_update_structure_entities",
+      "address": "0x80054C74",
+      "bytes": 136,
+      "sha256": "8e76e15aa6bb2308176a4a72b32eb3b71f3adc0e5d2b88c3c229f2d6335e54a5",
+      "frame_bytes": 40
+    }
+  ],
+  "compiler_study": {
+    "qualified_observations": 105,
+    "repeated_controls": 11,
+    "unique_raw_sources": 98,
+    "unique_standard_function_images": 10,
+    "families": [
+      {
+        "family": "entry-method-containers-20261016-first",
+        "report_sha256": "93d39aa3896aafcb9dafa668f65e76bd00dbc630b21908c9ff32c8919dd01b50",
+        "qualified_observations": 29,
+        "exact_functions": 0,
+        "exact_complete_images": 0
+      },
+      {
+        "family": "entry-invoke-distance-20261016-first",
+        "report_sha256": "80644622ea06b6e587ed698e1608b836d1fd8a8d88092afc3db270902c5cf51f",
+        "qualified_observations": 14,
+        "exact_functions": 0,
+        "exact_complete_images": 0
+      },
+      {
+        "family": "entry-initialized-scalar-getters-20261016-first",
+        "report_sha256": "56d6d41955ae659b028a876934605b588c09dc33e8076ad1830e6b9111387443",
+        "qualified_observations": 26,
+        "exact_functions": 0,
+        "exact_complete_images": 0
+      },
+      {
+        "family": "entry-scalar-method-words-20261016-first",
+        "report_sha256": "e492591819e11524737600d862d167436a54e23f711ae4a7f2a21cddca667845",
+        "qualified_observations": 29,
+        "exact_functions": 0,
+        "exact_complete_images": 0
+      },
+      {
+        "family": "entry-initialized-lookup-values-20261016-first",
+        "report_sha256": "1316ff53ac85f29eb966cda5996e0b6b802aa4a09593b09f3eb6270e310bb162",
+        "qualified_observations": 4,
+        "exact_functions": 1,
+        "exact_complete_images": 1
+      },
+      {
+        "family": "structure-initialized-lookup-20261016-first",
+        "report_sha256": "dcad4f547cc452ebcee41deae4b3e08c23bb996b9672abe8ced4d02d62870dad",
+        "qualified_observations": 3,
+        "exact_functions": 1,
+        "exact_complete_images": 1
+      }
+    ],
+    "readable_complete_unit_matches": [
+      {
+        "family": "entry-lookup-source-review-20261016-first",
+        "name": "typed-callback",
+        "source_sha256": "4a29e367354b016325c0975cb0e7a3ca7da2e95075d211a088c511f24ca5b71e"
+      },
+      {
+        "family": "entry-lookup-source-review-20261016-first",
+        "name": "typed-slot-read",
+        "source_sha256": "21d369d585ead3300a59bc387ea0c0d3cc5b3fb31ca802f1f4785c904338d668"
+      },
+      {
+        "family": "entry-lookup-source-review-20261016-first",
+        "name": "named-table-reference",
+        "source_sha256": "0a872a0ee162830a7b77965249e2f26c7dc6da7b7f0108537773b2f100d088b7"
+      },
+      {
+        "family": "structure-lookup-source-review-20261016-first",
+        "name": "typed-table",
+        "source_sha256": "d5897bf89759f6e7cd99488616c633c928090e35d347b21f7a3e1262bf6d73d5"
+      },
+      {
+        "family": "structure-lookup-source-review-20261016-first",
+        "name": "named-word-table",
+        "source_sha256": "ea349310b1b4ea2910567a7d53dfba6a49d63106c098f742504a76317124adfd"
+      }
+    ]
+  },
+  "compiler_allocation_traces": {
+    "entry-lookup-stack-20261016-first": {
+      "report_sha256": "d784d679eedbd09d4fd69f6f78b15c558811c3575434d99c5bcf958fd46051fc",
+      "source_sha256": "0a872a0ee162830a7b77965249e2f26c7dc6da7b7f0108537773b2f100d088b7",
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "53ce60931e868072fc845af5708d0ae4ec942a8b825a7243fcf9f0a27be4c056",
+      "allocation_events": 29,
+      "selected_function_allocations": [
+        {
+          "function": "dream_generation_find_entry",
+          "allocator": "assign_stack_temp",
+          "size": 10,
+          "frame_offset_before": 0,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "dream_generation_find_entry",
+          "allocator": "assign_stack_local",
+          "size": 10,
+          "frame_offset_before": 0,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "dream_generation_find_entry",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 16,
+          "frame_offset_after": 24,
+          "alter_reg_context": {
+            "pseudo": 117,
+            "from_pseudo": -1,
+            "function": "dream_generation_find_entry",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "dream_generation_find_entry",
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 24,
+          "frame_offset_after": 24,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ]
+        }
+      ]
+    },
+    "entry-scalar-control-stack-20261016-first": {
+      "report_sha256": "40dcabea25eb0248309c1c323637fddbda7068c9b5e6b5b314a86c66df84433b",
+      "source_sha256": "de7e39d40110ab27ef33270d07fca2c28d2622006a6011858cc6d3a31b628f0f",
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "258b470379999cf939e797b650c9b450457094f5d776d67494e1e040ea752b6f",
+      "allocation_events": 28,
+      "selected_function_allocations": [
+        {
+          "function": "dream_generation_find_entry",
+          "allocator": "assign_stack_temp",
+          "size": 10,
+          "frame_offset_before": 0,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "dream_generation_find_entry",
+          "allocator": "assign_stack_local",
+          "size": 10,
+          "frame_offset_before": 0,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "assign_stack_temp",
+            "expand_decl",
+            "start_decl",
+            "yyparse",
+            "compile_file",
+            "main"
+          ]
+        },
+        {
+          "function": "dream_generation_find_entry",
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 16,
+          "frame_offset_after": 16,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ]
+        }
+      ]
+    },
+    "structure-lookup-stack-20261016-first": {
+      "report_sha256": "db0099a23dcaf59726a22ae1d4c4dbc44c05e8e70e76d6cd1b3ca4594e50937b",
+      "source_sha256": "d5897bf89759f6e7cd99488616c633c928090e35d347b21f7a3e1262bf6d73d5",
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "abba86a87145e27a19e7023d06b408d31135a9d644dafb3b1570b71cf560b3c0",
+      "allocation_events": 27,
+      "selected_function_allocations": [
+        {
+          "function": "dream_generation_update_structure_entities",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 78,
+            "from_pseudo": -1,
+            "function": "dream_generation_update_structure_entities",
+            "completed": true
+          },
+          "call_stack": [
+            "assign_stack_local",
+            "alter_reg",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse"
+          ]
+        },
+        {
+          "function": "dream_generation_update_structure_entities",
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 8,
+          "frame_offset_after": 8,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ]
+        }
+      ]
+    },
+    "structure-scalar-control-stack-20261016-first": {
+      "report_sha256": "526e2e30f17f93993f60765e96bf3fc469e0982a2cc11ab3ad9cbef228f15f77",
+      "source_sha256": "43807e2acba3bcbf5c4e7165ed81a1f5f75c13f35856d15ad1bbe831c8542eca",
+      "complete_assembly_equal": true,
+      "normal_assembly_sha256": "5a97d4a3eaf0851c70ee6d98dfb24960588408814665b8e20143a623cca84683",
+      "allocation_events": 26,
+      "selected_function_allocations": [
+        {
+          "function": "dream_generation_update_structure_entities",
+          "allocator": "assign_stack_local",
+          "size": 0,
+          "frame_offset_before": 0,
+          "frame_offset_after": 0,
+          "alter_reg_context": null,
+          "call_stack": [
+            "assign_stack_local",
+            "reload",
+            "global_alloc",
+            "rest_of_compilation",
+            "finish_function",
+            "yyparse",
+            "compile_file"
+          ]
+        }
+      ]
+    }
+  },
+  "trace_to_public_source_scope": "Observed readable candidates precede comment/whitespace cleanup; the public source separately passes standard and fresh complete-executable equality. Reload pseudo IDs are not attributed to particular source fields.",
+  "native_profiles": {
+    "entries": {
+      "report_sha256": "17f506dacdee94c555998467b34d4fb269169b6394827bc1a7f02be647c75837",
+      "status": "passed_bounded_original_generation_entry_composition",
+      "profile": {
+        "native_cases": 4116,
+        "case_groups": {
+          "guards_and_flags": 420,
+          "all_original_entry_boundaries": 3024,
+          "signed_world_distance_edges": 672
+        },
+        "actual_native_entry_counts": {
+          "dream_generation_find_entry": 4116,
+          "func_8004B418": 12844,
+          "func_8004B44C": 12844
+        }
+      },
+      "backend": {
+        "package_version": "2.1.4",
+        "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+        "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+      },
+      "native_function_ranges": [
+        {
+          "function": "dream_generation_find_entry",
+          "address": "0x80055620",
+          "bytes": 444,
+          "sha256": "e04dac2ba99cee9ee544b7df866efe44f9949e933092bc4461d9b7e179200252"
+        },
+        {
+          "function": "func_8004B418",
+          "address": "0x8004B418",
+          "bytes": 52,
+          "sha256": "0f689e4c1155bdffabea669f166646e7aeb2242c46b6699de61f3121386e41ac"
+        },
+        {
+          "function": "func_8004B44C",
+          "address": "0x8004B44C",
+          "bytes": 292,
+          "sha256": "e4cd1302002bf780ae4ab51e78be2cf9bd6230995537f81617aee313102a4551"
+        }
+      ],
+      "scope": "Original scanner, virtual world wrapper and actual grid-coordinate conversion with all 56 original entry records in 14 stage tables. Manual valid owner/grid/query contexts and original/disabled/alternating/zero/minimum-signed flags. Full owner/grid/output/query/distance/all-entry buffers, ordered ten-byte packet reads, return/index effects and ABI. Includes native signed word overflow diagnostics. Excludes natural context construction, exact per-map grid/parameter provenance, nonzero style selectors, sound/entity spawning, entry lifetimes, rendering/audio and PS1 CPU timing.",
+      "dependency_output_contracts": 0,
+      "negative_controls": [
+        {
+          "kind": "wrong_index_advance",
+          "function": "dream_generation_find_entry",
+          "function_offset": 144,
+          "changed_instruction_executions": 1
+        },
+        {
+          "kind": "wrong_positive_flag_guard",
+          "function": "dream_generation_find_entry",
+          "function_offset": 160,
+          "changed_instruction_executions": 1
+        },
+        {
+          "kind": "wrong_style_halfword_destination",
+          "function": "dream_generation_find_entry",
+          "function_offset": 232,
+          "changed_instruction_executions": 1
+        },
+        {
+          "kind": "wrong_distance_axis",
+          "function": "dream_generation_find_entry",
+          "function_offset": 292,
+          "changed_instruction_executions": 1
+        },
+        {
+          "kind": "wrong_range_predicate",
+          "function": "dream_generation_find_entry",
+          "function_offset": 352,
+          "changed_instruction_executions": 1
+        },
+        {
+          "kind": "wrong_grid_row_parity",
+          "function": "func_8004B44C",
+          "function_offset": 128,
+          "changed_instruction_executions": 1
+        }
+      ]
+    },
+    "structures": {
+      "report_sha256": "c667ebf2f044ebcb265bdfd53b031a922752fd20268bc55585a601e1e2d02a85",
+      "status": "passed_bounded_original_generation_structure_composition",
+      "profile": {
+        "native_cases": 3116,
+        "case_groups": {
+          "guards_modes_and_ticks": 840,
+          "sprite_rng_and_word_width": 216,
+          "mode_zero_zero_rate_variants": 60,
+          "all_mode_zero_variants": 560,
+          "period_and_coordinate_reset": 1440
+        },
+        "consecutive_update_histories": 40,
+        "history_frames": 480,
+        "history_frame_groups": {
+          "late_activation": 240,
+          "first_period_reset": 240
+        },
+        "actual_native_entry_counts": {
+          "dream_generation_update_structure_entities": 3596,
+          "func_8001CEB4": 12360,
+          "func_8001EC84": 37080,
+          "func_800564F4": 12540,
+          "func_80056640": 12540,
+          "func_80056794": 12540,
+          "func_80056858": 760,
+          "func_800569A8": 9300,
+          "func_80056DF0": 600,
+          "func_80056E44": 2040,
+          "func_80057384": 14060,
+          "func_800573A8": 8240,
+          "func_800573CC": 22300,
+          "func_80057DF4": 8160,
+          "rand": 16320
+        }
+      },
+      "backend": {
+        "package_version": "2.1.4",
+        "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+        "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+      },
+      "native_function_ranges": [
+        {
+          "function": "dream_generation_update_structure_entities",
+          "address": "0x80054C74",
+          "bytes": 136,
+          "sha256": "8e76e15aa6bb2308176a4a72b32eb3b71f3adc0e5d2b88c3c229f2d6335e54a5"
+        },
+        {
+          "function": "func_800564F4",
+          "address": "0x800564F4",
+          "bytes": 44,
+          "sha256": "fab2c1f0323e006fa234e024d1b4fd571ea09e24ce4c3c7dbf9c9fe0f3ee11a3"
+        },
+        {
+          "function": "func_80056640",
+          "address": "0x80056640",
+          "bytes": 216,
+          "sha256": "3cc6def140e06a9bd9e7b2c106751e0124171436e49a4e6bbb86fcb414d31066"
+        },
+        {
+          "function": "func_80056794",
+          "address": "0x80056794",
+          "bytes": 64,
+          "sha256": "491f5cc3d82c61bde594eb5804a4ed3ab1588587adfeaeb3e393d3aa05fdf7e7"
+        },
+        {
+          "function": "func_800569A8",
+          "address": "0x800569A8",
+          "bytes": 484,
+          "sha256": "118a8fd70514047175034b75986589933f746cb62ed4c9378122177ff098e826"
+        },
+        {
+          "function": "func_80056DF0",
+          "address": "0x80056DF0",
+          "bytes": 8,
+          "sha256": "6d64edf91449c1b17746c1ef18afa2eb25c70bdf1322ab3df5a2630993b7e2f1"
+        },
+        {
+          "function": "func_80056E44",
+          "address": "0x80056E44",
+          "bytes": 228,
+          "sha256": "a66d08b7b2426dba486e08913830f6bd56cb3c1f01a512fb8739206bf0b05386"
+        },
+        {
+          "function": "func_80057384",
+          "address": "0x80057384",
+          "bytes": 36,
+          "sha256": "209c4d51b9f0747d871ce8d9e5dde8a14d4e0235eeed3191c3723dfa3c7e2bba"
+        },
+        {
+          "function": "func_800573CC",
+          "address": "0x800573CC",
+          "bytes": 120,
+          "sha256": "c1a99e64390fec4e8dcf12a0a17942c6c30f55d6703dc08a78cd5e1111b8ad19"
+        },
+        {
+          "function": "func_80057DF4",
+          "address": "0x80057DF4",
+          "bytes": 324,
+          "sha256": "399a7dc526a1823315f40f5be164b6635b61bb36bddfb31d737c0c3cbb8fc54e"
+        },
+        {
+          "function": "rand",
+          "address": "0x80049480",
+          "bytes": 40,
+          "sha256": "4c54a1210ed147afe9b02657c9b12bdec5bb62c5584a2a9fef212567d0e04c0c"
+        },
+        {
+          "function": "func_8001CEB4",
+          "address": "0x8001CEB4",
+          "bytes": 340,
+          "sha256": "722d79cf1f8c109300d4a56aa1d421442a2b5c424a7f3f1e16ad27d281432217"
+        },
+        {
+          "function": "func_8001EC84",
+          "address": "0x8001EC84",
+          "bytes": 120,
+          "sha256": "7c14d23868ee93933886ecd2477e4e60c6200bef1982963f671e2d76e6d7caaf"
+        },
+        {
+          "function": "func_80056858",
+          "address": "0x80056858",
+          "bytes": 336,
+          "sha256": "7a884633b9d0163a2987efdc1a6545f4ddf0ccbc0af3968291f154532bd2aed8"
+        },
+        {
+          "function": "func_800573A8",
+          "address": "0x800573A8",
+          "bytes": 36,
+          "sha256": "cb98f20f55e4915c70de0cd5ec85346bad6f0c06c72aa4c2ff968b5327149cda"
+        }
+      ],
+      "scope": "Fifteen original routines execute in manually assembled valid structure/coordinate/sprite/child graphs. Full graph buffers, player/world/list preservation, ordered updates/position sets/scales/RNG, native 32-bit arithmetic and ABI. All four generation modes, all eight mode-0 rate variants, four active child layouts, late activation and periodic position reset with consecutive-update histories. Excludes construction, parameter-table selection provenance, dynamic list/count mutations during callbacks, null player vectors with live structures, rendering/audio, natural encounters/lifetimes and PS1 CPU timing.",
+      "dependency_output_contracts": 0,
+      "negative_controls": [
+        {
+          "kind": "wrong_generation_guard",
+          "function": "dream_generation_update_structure_entities",
+          "function_offset": 24,
+          "changed_instruction_executions": 1
+        },
+        {
+          "kind": "repeated_structure_instead_of_next",
+          "function": "dream_generation_update_structure_entities",
+          "function_offset": 68,
+          "changed_instruction_executions": 2
+        },
+        {
+          "kind": "additive_instead_of_absolute_position",
+          "function": "func_80057384",
+          "function_offset": 16,
+          "changed_instruction_executions": 1
+        },
+        {
+          "kind": "wrong_sprite_scale_destination",
+          "function": "func_80057DF4",
+          "function_offset": 308,
+          "changed_instruction_executions": 4
+        },
+        {
+          "kind": "wrong_rng_increment",
+          "function": "rand",
+          "function_offset": 20,
+          "changed_instruction_executions": 8
+        },
+        {
+          "kind": "wrong_late_activation_tick",
+          "function": "func_800569A8",
+          "function_offset": 88,
+          "changed_instruction_executions": 1
+        },
+        {
+          "kind": "wrong_second_child_offset",
+          "function": "func_800569A8",
+          "function_offset": 220,
+          "changed_instruction_executions": 2
+        },
+        {
+          "kind": "wrong_reposition_period",
+          "function": "func_800569A8",
+          "function_offset": 288,
+          "changed_instruction_executions": 1
+        },
+        {
+          "kind": "wrong_rotation_axis_destination",
+          "function": "func_8001CEB4",
+          "function_offset": 280,
+          "changed_instruction_executions": 9
+        }
+      ]
+    }
+  },
+  "native_evidence_timing": "Paired original/exact candidate profiles before promotion; original-code profiles repeated after both promoted C functions pass the complete image gate.",
+  "current_counts_before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "current_counts_after": {
+    "c_bytes": 194792,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 7,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_functions_promoted": 2,
+  "new_C_bytes": 580,
+  "new_distinct_native_fixture_inputs": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "new_gameplay_runs": 0,
+  "new_model_API_calls": 0,
+  "original_behavior_modified": false,
+  "Bevy_port_modified": false,
+  "earlier_inventory_fields_and_snapshots_preserved": true,
+  "objective_sha256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+  "all_seven_completion_requirements_retained": true,
+  "private_evidence": [
+    {
+      "path": ".decomp-lab/generation-lookup-acceptance-20261016-first/validation.json",
+      "sha256": "8d23e68c8b406629f1896f32cd7081191e3b190d7dee909f54062347494f6390"
+    },
+    {
+      "path": ".decomp-lab/generation-lookup-requalification-20261016-first/report.json",
+      "sha256": "a13eddfcc21bdf46eeb920b530aa58b0dd7b264c891296b5a6e327e0122493a5"
+    },
+    {
+      "path": ".decomp-lab/entry-lookup-acceptance-20261016-first/native-before.json",
+      "sha256": "e9fd6abd865c621b2c87b2d55d3bfb56582e4db48e0caf619dfbdf47f3383d4c"
+    },
+    {
+      "path": ".decomp-lab/structure-lookup-acceptance-20261016-first/native-before.json",
+      "sha256": "55012e950b859c6d7783ab91368043cdca465095a704eecf2b05f97d33d6df2c"
+    },
+    {
+      "path": ".decomp-lab/entry-lookup-source-review-20261016-first/report.json",
+      "sha256": "1615e1ef3eceb2271ec55b2023300e527c98d926d74a7d67d340b9cd5473c019"
+    },
+    {
+      "path": ".decomp-lab/structure-lookup-source-review-20261016-first/report.json",
+      "sha256": "2f9633c0e52e4b223effc5c9cef8170ac25e5d8f1dbc2b7bb2d3c52768d83fa6"
+    },
+    {
+      "path": ".decomp-lab/bounds-operands-and-records-audit-20261016-first/journal.json",
+      "sha256": "53e1efb752a51b9c9c47551ce72f30befe57761985e58dac841b34c043b49d29"
+    }
+  ],
+  "tooling_tests": {
+    "windows": {
+      "tests": 608,
+      "skipped": 2,
+      "passed": true,
+      "log_sha256": "edbfa482502863dd6ba26377e5c5d9691d69f340e6e016562c923b176f413697"
+    },
+    "wsl": {
+      "tests": 608,
+      "skipped": 2,
+      "passed": true,
+      "log_sha256": "a5c0b25b3b4043dcef900921652613e5450989f27366ca7e3d31485b38493856"
+    }
+  }
+}
