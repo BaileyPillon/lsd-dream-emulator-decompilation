@@ -49,3 +49,5 @@ tools/verify_generation_entries.py text eol=lf
 tools/verify_generation_structures.py text eol=lf
 docs/GENERATION_LOOKUP_RECOVERY.md text eol=lf
 docs/generation-lookup-recovery-checks.json text eol=lf
+docs/MENU_LOOKUP_RECOVERY.md text eol=lf
+docs/menu-lookup-recovery-checks.json text eol=lf

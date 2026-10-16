@@ -1,5 +1,12 @@
 # Source and evidence provenance
 
+The [matching menu recovery](MENU_LOOKUP_RECOVERY.md) adds 1,052 C bytes through
+consumed typed vtable snapshots. Its normal/fresh complete builds, qualified
+function spans, actual allocator traces and retained 864-history native profile
+are recorded in [new metadata](menu-lookup-recovery-checks.json). Only the menu
+C unit changes among the 392 protected game inputs; prior snapshots, original
+data layouts, the frozen objective, the player and Bevy repository are retained.
+
 The [generation lookup recovery](GENERATION_LOOKUP_RECOVERY.md) replaces two
 assembly fallbacks with 580 matching C bytes. Normal and fresh complete builds,
 requalified function spans and unchanged-assembly compiler traces support the

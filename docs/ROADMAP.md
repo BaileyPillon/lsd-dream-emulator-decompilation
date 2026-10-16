@@ -39,10 +39,11 @@ function or whole-feature gate; continue the source work below.
   math candidate remain an exact-source failure; incoming records and frontend
   controls do not resolve the current grid or inherited-storage gates.
 
-Seven game functions remain in assembly after the source-layout correction
-and [matching generation lookup recovery](GENERATION_LOOKUP_RECOVERY.md).
-The scanner and structure updater now compile from C with the complete
-executable unchanged.
+Five game functions remain in assembly after the source-layout correction,
+[matching generation lookup recovery](GENERATION_LOOKUP_RECOVERY.md) and
+[matching menu recovery](MENU_LOOKUP_RECOVERY.md). The scanner, structure
+updater and two menu callers now compile from C with the complete executable
+unchanged.
 
 The [bounds candidate](BOUNDS_NARROW_COMPARISON.md) now has a published
 19-byte complete-image difference and a reproducible confined comparison over
@@ -52,10 +53,11 @@ The [bounds candidate](BOUNDS_NARROW_COMPARISON.md) now has a published
 The expanded audit identifies 28 unused-storage functions and withdraws four
 padded promotions. Twenty-four inherited source explanations remain in C;
 the correction's historical count was 194,212 / 199,912 (97.15%). The two
-generation recoveries now raise it to 194,792 / 199,912 (97.44%). Recover real
-storage and helper lifetimes for the inherited functions and two remaining
-menu [source-layout candidates](../research/source_layout/README.md). Full
-source quality and runtime acceptance remain separate gates.
+generation and two menu recoveries now raise it to 195,844 / 199,912 (97.97%).
+Recover real storage and helper lifetimes for the 24 inherited functions.
+All four withdrawn functions have replacement matching C; the earlier
+[source-layout candidates](../research/source_layout/README.md) remain
+historical research. Full source quality and runtime acceptance are separate.
 
 For the recovered generation update, [native structure checks](GENERATION_STRUCTURES.md)
 cover actual dispatch, position replacement and mode 3 sprite RNG/scaling
@@ -177,8 +179,6 @@ remaining byte differences before promoting either source form.
 | `func_8004C6A8` | [`src/scene/render_context.c`](../src/scene/render_context.c) |
 | `func_8004CD38` | [`src/scene/render_context.c`](../src/scene/render_context.c) |
 | `func_8004441C` | [`src/menu/ui_sprite.c`](../src/menu/ui_sprite.c) |
-| `func_8003D73C` | [`src/menu/ui_screen.c`](../src/menu/ui_screen.c) |
-| `func_8003DAD4` | [`src/menu/ui_screen.c`](../src/menu/ui_screen.c) |
 
 Confirm the live catalogue after building with
 `python tools/decomp_workbench.py catalog`. SDK assembly is tracked separately.
@@ -234,7 +234,7 @@ and 191 initial source trials found no exact match. The subsequent
 
 The catalogue currently has 40 provisional groups. None has been accepted for
 all required runtime scenarios. The [inventory](FEATURE_INVENTORY.md) lists the
-remaining scenario for each group; 97.44% describes current game C bytes only.
+remaining scenario for each group; 97.97% describes current game C bytes only.
 
 ## Developer tools and optional mods
 

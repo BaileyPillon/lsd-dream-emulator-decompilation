@@ -22633,6 +22633,58 @@
       "new_gameplay_runs": 0,
       "new_model_API_calls": 0,
       "Bevy_port_modified": false
+    },
+    "menu_lookup_recovery_20261016": {
+      "status": "passed_matching_menu_lookup_recovery",
+      "guide": "docs/MENU_LOOKUP_RECOVERY.md",
+      "metadata": "docs/menu-lookup-recovery-checks.json",
+      "before": {
+        "c_bytes": 194792,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 7,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 195844,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 5,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "new_C_bytes": 1052,
+      "source_functions_promoted": 2,
+      "normal_complete_image_equal": true,
+      "clean_complete_image_equal": true,
+      "fresh_objects": 306,
+      "changed_game_inputs": 1,
+      "other_391_game_inputs_retained": true,
+      "listed_core_C_groups_unchanged_reason": "F035 still requires the UI-scale fallback func_8004441C.",
+      "native_histories_per_image": 864,
+      "actually_entered_original_routines": 39,
+      "executed_fault_controls": 3,
+      "dependency_output_contracts": 0,
+      "new_distinct_native_fixture_inputs": 0,
+      "new_bounded_NPC_callbacks": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_gameplay_runs": 0,
+      "new_model_API_calls": 0,
+      "Bevy_port_modified": false
     }
   }
 }

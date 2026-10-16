@@ -32,8 +32,8 @@ All-movie decoding, skip/error branches, and complete feature acceptance remain 
 
 | Measure | Verified snapshot |
 | --- | ---: |
-| Matching game-function bytes compiled from C | 194,792 / 199,912 (97.44%) |
-| Known remaining game assembly functions | 7 |
+| Matching game-function bytes compiled from C | 195,844 / 199,912 (97.97%) |
+| Known remaining game assembly functions | 5 |
 | Known C functions with unresolved unused local storage | 24 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
 | Original callbacks with bounded native comparisons | 36 / 107 |
@@ -82,7 +82,10 @@ and withdraws four promotions that added padding. Their readable padding-free
 candidates remain historical research. The later
 [generation lookup recovery](docs/GENERATION_LOOKUP_RECOVERY.md) replaces the
 entry scanner and structure updater with matching C, adding 580 recovered bytes.
-Twenty-four inherited source explanations and seven assembly functions remain.
+The [menu lookup recovery](docs/MENU_LOOKUP_RECOVERY.md) adds another 1,052
+matching C bytes and resolves all four withdrawn source functions through
+consumed method lifetimes. Twenty-four inherited source explanations and five
+assembly functions remain.
 C-byte coverage does not certify original source quality or whole-game parity.
 The [render query record cleanup](docs/RENDER_QUERY_RECORD.md) removes a
 separately identified redundant buffer tail. Actual compiler traces explain

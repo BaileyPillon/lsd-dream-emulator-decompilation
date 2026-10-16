@@ -831,7 +831,83 @@ void func_8003D6D4(ui_screen_t *This) {
     memory_free_mem((void *) This->m_Unk24[This->m_Unk21]);
 }
 
-INCLUDE_ASM("asm/nonmatchings/menu/ui_screen", func_8003D73C);
+/* Each initialized four-byte snapshot supplies its actual scalar callback. */
+typedef struct {
+    text_line_vtable_t *table[1];
+} menu_line_vtable_ref_t;
+typedef char checked_menu_line_vtable_ref[
+    (sizeof(menu_line_vtable_ref_t) == 4) ? 1 : -1];
+
+typedef void (*menu_layout_row_hide_fn_t)(void *);
+static inline menu_layout_row_hide_fn_t menu_layout_read_row_hide(text_line_t *obj) {
+    menu_line_vtable_ref_t reference = {{ obj->vtable }};
+    return reference.table[0]->Unk19;
+}
+typedef void (*menu_layout_row_attach_fn_t)(void *, s32, void *);
+static inline menu_layout_row_attach_fn_t menu_layout_read_row_attach(text_line_t *obj) {
+    menu_line_vtable_ref_t reference = {{ obj->vtable }};
+    return reference.table[0]->Unk18;
+}
+void func_8003D73C(ui_screen_t *This, s32 Unk2, s32 Unk3) {
+    s32 idx;
+    s32 count;
+    s32 v9;
+    s32 i;
+    text_line_t **row;
+    text_line_t *obj;
+    s32 *entry;
+    s32 pos[2];
+    s32 tmp[2];
+    effect_base_t *effect;
+
+    idx = This->m_Unk21;
+    row = (text_line_t **) This->m_Unk24[idx];
+    v9 = ((s32 *) ((func_8003CE98_arg_t *) This->m_Unk18)->table[idx])[1];
+    count = This->m_Unk22[idx];
+
+    i = 0;
+    if (count > 0) {
+        do {
+            obj = *row++;
+            menu_layout_read_row_hide(obj)(obj);
+            i++;
+        } while (i < count);
+    }
+
+    entry = (s32 *) ((func_8003CE98_arg_t *) This->m_Unk18)->table[idx];
+    __builtin_memcpy(pos, entry + 4, sizeof(pos));
+    pos[1] -= v9 * 10;
+
+    if (Unk3) {
+        effect = (effect_base_t *) This->m_Unk25;
+        effect->vtable->attach_to(effect, This->m_Unk4, pos);
+        i = 0;
+        tmp[0] = 0x28;
+        tmp[1] = count * 12;
+        effect = (effect_base_t *) This->m_Unk25;
+        effect->vtable->Unk47(effect, (s16 *) tmp);
+    } else {
+        effect = (effect_base_t *) This->m_Unk25;
+        effect->vtable->Unk19(effect);
+        i = 0;
+    }
+
+    row = (text_line_t **) This->m_Unk24[idx];
+    if (count > 0) {
+        do {
+            menu_layout_read_row_attach(*row)(*row, Unk2, pos);
+            i++;
+            (*row)->vtable->Unk23(*row, Unk3);
+            pos[1] += 10;
+            row++;
+        } while (i < count);
+    }
+
+    row = (text_line_t **) This->m_Unk24[idx];
+    obj = row[v9];
+    obj->vtable->Unk23(obj, 1);
+}
+
 
 void func_8003D980(ui_screen_t *This, char *arg1) {
     s32 count;
@@ -863,7 +939,56 @@ void func_8003DA10(ui_screen_t *This) {
     }
 }
 
-INCLUDE_ASM("asm/nonmatchings/menu/ui_screen", func_8003DAD4);
+typedef void (*menu_row_visibility_fn_t)(void *, s32);
+static inline menu_row_visibility_fn_t menu_read_row_visibility(text_line_t *obj) {
+    menu_line_vtable_ref_t reference = {{ obj->vtable }};
+    return reference.table[0]->Unk23;
+}
+void func_8003DAD4(ui_screen_t *This) {
+    s32 idx;
+    s32 sel;
+    s32 count;
+    s32 i;
+    text_line_t **row;
+    s32 pos[2];
+    s32 *entry;
+    effect_base_t *effect;
+
+    if (This->m_HasIdleTimeout != 2) {
+        return;
+    }
+
+    idx = This->m_Unk21;
+    sel = This->m_Unk23[idx];
+    entry = (s32 *) ((func_8003CE98_arg_t *) This->m_Unk18)->table[idx];
+    __builtin_memcpy(pos, entry + 4, sizeof(pos));
+    pos[1] -= sel * 10;
+
+    row = (text_line_t **) This->m_Unk24[idx];
+    count = This->m_Unk22[idx];
+    if (count > 0) {
+        i = 0;
+        do {
+            menu_read_row_visibility(*row)(*row, 0);
+            i++;
+            (*row)->vtable->Unk46(*row, pos);
+            pos[1] += 10;
+            row++;
+        } while (i < count);
+    }
+
+    {
+        text_line_t *obj = ((text_line_t **) This->m_Unk24[idx])[sel];
+        obj->vtable->Unk23(obj, 1);
+        obj->vtable->Unk45(obj, (char *)This->m_Unk18 + 0x10);
+    }
+    ((s32 *) ((func_8003CE98_arg_t *) This->m_Unk18)->table[idx])[1] = sel;
+    effect = (effect_base_t *)This->m_Unk25;
+    effect->vtable->Unk19(effect);
+    This->m_HasIdleTimeout = 1;
+    This->vtable->Unk23(This, 0x10);
+}
+
 
 void func_8003DCAC(ui_screen_t *This) {
     s32 idx;
