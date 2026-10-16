@@ -33,6 +33,10 @@ SCRIPT_FUNCTIONS = [
     {'function':'entity_opera_singer','address':'0x8005FEF8','bytes':132,'sha256':'5ed1824a794192c7b11f887c758a3643d3016c2db0087424124395152f960008'},
     {'function':'entity_hoop_girl','address':'0x80062570','bytes':240,'sha256':'b71d8f338ced18b39cb34cbc32ea4663e85ad7718dfff80b7a75aa8e7b392970'},
     {'function':'entity_hoop_girl_giant','address':'0x80064CA4','bytes':72,'sha256':'6ae505b3418eb2055c7674f3a0f97b1e1c715239982f40a3abdddc8819b08d69'},
+    {'function': 'entity_tea_doll', 'address': '0x8005ef54', 'bytes': 160, 'sha256': '03451ae46de03dc995fda21797611ce140373630b00208cfc27e8c255e979f2f'},
+    {'function': 'entity_ox_cart', 'address': '0x8005f0d8', 'bytes': 208, 'sha256': '20e1a6bd2877ee89a9113bfc15fc3ac84df3c4325fdb6c3a700dbc97cd766c2b'},
+    {'function': 'entity_kicking_man', 'address': '0x80061c04', 'bytes': 40, 'sha256': '94e48015901a95d1029d1b18674b3bd33927b29995f8c52d01713cff3ea12be3'},
+    {'function': 'entity_maiko_small', 'address': '0x80064aa4', 'bytes': 112, 'sha256': 'c7fba6bd17aaac628296b2dc8a0d6b492c03fa35ca13760b6bf8dc886c653ee1'},
 ]
 ACTION_READ = {'function':'dream_sys_get_action_pressed','address':'0x8005931C','bytes':12,
                'sha256':'bc9d9a4597fc5c324c34fb0acc7dc1596cd1a7b617fc46f0fd1b7f63d9bf4061'}
@@ -259,6 +263,32 @@ def expected(callback, case):
         motion('forward',-30,0)
         if callback == 'entity_hoop_girl_giant':
             call('scale',native.ENTITY,1,native.h.symbols['g_OffsetSix'])
+    elif callback == 'entity_tea_doll':
+        ratio()
+        if signed_remainder(timer,10) == 0:
+            command(7,17)
+        motion('forward',-256,0)
+    elif callback == 'entity_ox_cart':
+        ratio()
+        duration = case['duration']
+        half = (abs(duration)//2) * (-1 if duration < 0 else 1)
+        if half == 0 or (timer == -0x80000000 and half == -1):
+            raise ValueError('Original division-trap input is outside the Ox Cart fixture domain.')
+        phase = signed_remainder(timer,half)
+        if phase == 0:
+            command(7,10)
+        elif phase == 3:
+            command(12,13)
+        motion('forward',-30,1)
+    elif callback == 'entity_kicking_man':
+        if case['frame'] == 30:
+            command(7,18)
+            command(4,0)
+            command(8,-1)
+    elif callback == 'entity_maiko_small':
+        call('scale',native.ENTITY,1,native.h.symbols['g_OffsetQuarter'])
+        if native.u32(tick-201) < 99:
+            motion('vertical',-32,0)
     else:
         raise ValueError('Unsupported callback: '+callback)
     return {'entity':bytes(entity),'dream':bytes(dream),'context':bytes(context),
@@ -296,6 +326,13 @@ def cases_by_callback():
     hoop += product(timer=(0,),tick=(2401,),seed=rng_seeds)
     unique_hoop = {tuple(sorted(case.items())):case for case in hoop}
     hoop = list(unique_hoop.values())
+    ox_cart = []
+    for duration in (-0x80000000,-9,-8,-3,-2,2,3,7,8,9,20,21,0x7fffffff):
+        half = (abs(duration)//2) * (-1 if duration < 0 else 1)
+        ox_timers = sorted({-0x80000000,-21,-20,-11,-10,-9,-4,-3,-2,-1,0,1,2,3,4,9,10,11,20,21,0x7fffffff,
+                            signed_word(half-1),half,signed_word(half+1),signed_word(half+3)})
+        ox_timers = [timer for timer in ox_timers if not (timer == -0x80000000 and half == -1)]
+        ox_cart += product(duration=(duration,),timer=ox_timers,ratio=(-0x80000000,-1,0,99,0x7fffffff))
     return {
         'entity_bird':product(timer=timers,ratio=(-1,0,99)),
         'entity_rocket':product(timer=timers,tick=(-1,0,1,98,99,100,101,299,300,301)),
@@ -325,12 +362,22 @@ def cases_by_callback():
         'entity_opera_singer':product(
             timer=tuple(range(-240,240))+(-0x80000000,-241,240,241,0x7fffffff),
             ratio=(-0x80000000,-1,0,99,0x7fffffff)),
+        'entity_tea_doll':product(timer=tuple(range(-100,101))+(-0x80000000,0x7fffffff),
+                                  ratio=(-0x80000000,-1,0,99,0x7fffffff),state=(-1,0,11)),
+        'entity_ox_cart':ox_cart,
+        'entity_kicking_man':product(frame=(-0x80000000,-1,0,28,29,30,31,32,0x7fffffff),
+                                     tick=(-0x80000000,0,29,30,31,0x7fffffff),
+                                     timer=(-0x80000000,0,1,10,0x7fffffff)),
+        'entity_maiko_small':product(tick=(-0x80000000,-1,0,199,200,201,202,298,299,300,301,0x7fffffff),
+                                    frame=(-0x80000000,0,201,299,0x7fffffff),state=(-1,0,11)),
     }
 
 
 class Machine(native.Machine):
     def __init__(self, callback, code=None):
         self.entry_counts = {}
+        self.fault_instruction_address = None
+        self.fault_instruction_execution_count = 0
         self.stubs = {native.h.symbols['func_8001EACC'] & native.MASK: ('orientation',5),
                       native.h.symbols['sound_entity_stop'] & native.MASK: ('sound_entity_stop',2)}
         for offset,name,count in ((0x44,'rotation',3),(0x48,'scale',3),(0xBC,'translation',2),
@@ -347,6 +394,8 @@ class Machine(native.Machine):
 
     def hook(self, cpu, address, size, unused):
         address &= native.MASK
+        if address == self.fault_instruction_address:
+            self.fault_instruction_execution_count += 1
         if address in self.native_entries:
             name = self.native_entries[address]
             self.executed_native_functions.add(name)
@@ -370,6 +419,7 @@ class Machine(native.Machine):
 
     def run(self, case):
         self.case,self.trace = case,[]
+        self.fault_instruction_execution_count = 0
         cpu = self.cpu
         buffers = fixtures(case)
         for address,data in zip((native.ENTITY,native.DREAM,native.CONTEXT),buffers):
@@ -444,7 +494,7 @@ def verify(destination):
                 if word in (0x34050003,0x24050003):
                     mutation = (offset,word,(word & 0xFFFF0000) | 2,'wrong_motion_selection')
                     break
-        if callback in {'entity_elephant','entity_elephant_small','entity_fish_giant','entity_hoop_girl_giant'}:
+        if callback in {'entity_elephant','entity_elephant_small','entity_fish_giant','entity_hoop_girl_giant','entity_maiko_small'}:
             for offset in range(0,len(original),4):
                 word = struct.unpack_from('<I',original,offset)[0]
                 if word in (0x34050001,0x24050001):
@@ -475,15 +525,34 @@ def verify(destination):
                 if struct.unpack_from('<I',original,offset)[0] != word:
                     raise ValueError('Reviewed Hoop Girl control instruction changed.')
                 mutations.append((offset,word,changed_word,reason))
+        if callback == 'entity_ox_cart':
+            options = [(offset,struct.unpack_from('<I',original,offset)[0]) for offset in range(0,len(original),4)]
+            stores = [(offset,word) for offset,word in options if word >> 26 == 0x2B and (word >> 21) & 31 != 29 and word & 0xffff == 48]
+            if len(stores) != 1:
+                raise ValueError('Expected one reviewed secondary Ox Cart command store.')
+            offset,word = stores[0]
+            mutations.append((offset,word,(word & 0xffff0000)|52,'wrong_secondary_command_destination'))
+        if callback == 'entity_maiko_small':
+            options = [(offset,struct.unpack_from('<I',original,offset)[0]) for offset in range(0,len(original),4)]
+            boundaries = [(offset,word) for offset,word in options if word >> 26 == 0x0B and word & 0xffff == 99]
+            if len(boundaries) != 1:
+                raise ValueError('Expected one reviewed Small Maiko phase boundary.')
+            offset,word = boundaries[0]
+            mutations.append((offset,word,(word & 0xffff0000)|98,'wrong_vertical_phase_boundary'))
         for offset,word,changed_word,reason in mutations:
             modified = bytearray(original)
             struct.pack_into('<I',modified,offset,changed_word)
             changed = Machine(callback,bytes(modified))
+            changed.fault_instruction_address = (address+offset) & native.MASK
             for index,case in enumerate(groups[callback]):
                 if changed.run(case) != expected(callback,case):
+                    if changed.fault_instruction_execution_count == 0:
+                        raise ValueError('Detected fault without observing the changed instruction.')
                     controls.append({'callback':callback,'kind':reason,'function_offset':offset,
                         'expected_word':f'0x{word:08X}','changed_word':f'0x{changed_word:08X}',
-                        'detected_case_index':index,'fixture':case,'scope':'Private Unicorn memory only.'})
+                        'detected_case_index':index,'fixture':case,
+                        'changed_instruction_executions_in_detecting_fixture':changed.fault_instruction_execution_count,
+                        'scope':'Private Unicorn memory only.'})
                     break
             else:
                 raise ValueError('Negative control was not detected: '+callback+'/'+reason)
@@ -513,7 +582,7 @@ def verify(destination):
                 'Empty actor-child lists and one valid linked entity under explicit '
                 'geometry/motion/selection/child-blend/notification/sound contracts. '
                 'Excludes natural encounters, lifetime histories, renderer/GTE, actual sound, '
-                'zero-duration traps, physical devices and PS1 instruction/cycle timing.',
+                'zero-divisor and signed-division-overflow traps, physical devices and PS1 instruction/cycle timing.',
         'elapsed_seconds':round(time.monotonic()-started,3)}
     with destination.open('x') as stream:
         json.dump(report,stream,indent=2)

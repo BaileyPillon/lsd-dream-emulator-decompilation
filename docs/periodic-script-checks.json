@@ -1,0 +1,450 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-16T04:31:38.259564+00:00",
+  "status": "passed_bounded_original_periodic_scripts",
+  "repository_code_base_commit": "c6eed3c8c61f68d852f04aa633e89cf18e07dd75",
+  "documentation": "docs/PERIODIC_SCRIPTS.md",
+  "documentation_sha256": "b0b410a015b86fd2fde79d5cdc999efd32fd9f70ff796fd9b69a7aa753e87b29",
+  "documentation_hash_serialization": "Exact CRLF working-tree document bytes.",
+  "source_changes": [
+    {
+      "file": "tools/verify_scripted_ai.py",
+      "before_sha256": "9866b9714381af7f8f568859db9040f72607b81c46e11e8c5b5d48403e1b3898",
+      "after_sha256": "437e308a616a2ffaf33c47d62f8cd1680a6f6a59379115ecf2b831bfcc3c2c49",
+      "newline": "LF"
+    },
+    {
+      "file": "tests/test_scripted_callbacks.py",
+      "before_sha256": "e3ccdba080f1c74d658248ca82aff9d95c82c6bea90ebcd73fcffd6b7bb4a3a8",
+      "after_sha256": "8f9ce0f1f305e8137c08dee909f5486a1783d2407b64f7fd4f67a1aa113f2d3c",
+      "newline": "LF"
+    }
+  ],
+  "source_hashes": {
+    "tools/verify_scripted_ai.py": "437e308a616a2ffaf33c47d62f8cd1680a6f6a59379115ecf2b831bfcc3c2c49",
+    "tools/verify_native_ai.py": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697",
+    "tests/test_scripted_callbacks.py": "8f9ce0f1f305e8137c08dee909f5486a1783d2407b64f7fd4f67a1aa113f2d3c",
+    "src/scene/entity.c": "ecc95bba1e573093524d901f72f7f3e8cb323445f0e366389c3caaa093ca227e",
+    "src/scene/entity.h": "d981d1d631ed4a35579cc174ce324fc693257136ccb322554be108143bbbbdc6",
+    "src/dream/dream_sys.c": "9c223f500afb024320dce8f6031a5d6755a8c7e414c1a24005be0599fd19c94c",
+    "src/dream/dream_sys.h": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507",
+    "src/scene/actor.c": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514",
+    "src/base/transform.c": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4",
+    "configure.py": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+    "requirements-analysis.txt": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911"
+  },
+  "source_hash_serialization": "Exact captured working-tree bytes; verifier and regression test files are pinned to LF by .gitattributes.",
+  "canonical_executable_bytes": 505856,
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "new_callback_functions": [
+    {
+      "function": "entity_tea_doll",
+      "address": "0x8005ef54",
+      "bytes": 160,
+      "sha256": "03451ae46de03dc995fda21797611ce140373630b00208cfc27e8c255e979f2f"
+    },
+    {
+      "function": "entity_ox_cart",
+      "address": "0x8005f0d8",
+      "bytes": 208,
+      "sha256": "20e1a6bd2877ee89a9113bfc15fc3ac84df3c4325fdb6c3a700dbc97cd766c2b"
+    },
+    {
+      "function": "entity_kicking_man",
+      "address": "0x80061c04",
+      "bytes": 40,
+      "sha256": "94e48015901a95d1029d1b18674b3bd33927b29995f8c52d01713cff3ea12be3"
+    },
+    {
+      "function": "entity_maiko_small",
+      "address": "0x80064aa4",
+      "bytes": 112,
+      "sha256": "c7fba6bd17aaac628296b2dc8a0d6b492c03fa35ca13760b6bf8dc886c653ee1"
+    }
+  ],
+  "complete_sized_function_qualification": {
+    "ELF_sha256": "0c94d14a1320b9f313a201257eab973778040137fc0abddb8dad50353282cc02",
+    "complete_ELF_binary_is_canonical": true,
+    "all_four_complete_function_bytes_equal_original": true
+  },
+  "native_property_record_bindings": {
+    "entity_tea_doll": [
+      19
+    ],
+    "entity_ox_cart": [
+      21
+    ],
+    "entity_kicking_man": [
+      61
+    ],
+    "entity_maiko_small": [
+      104
+    ]
+  },
+  "new_callback_fixture_counts": {
+    "entity_tea_doll": 3045,
+    "entity_ox_cart": 1440,
+    "entity_kicking_man": 270,
+    "entity_maiko_small": 180
+  },
+  "new_distinct_original_fixture_inputs": 4935,
+  "retained_original_fixture_inputs": 117583,
+  "retained_fixture_inputs_sha256": "5b447e03d2fc31ba19e808c247722e4dd5489e03493dce0658fac40c41f77748",
+  "retained_fixture_serialization": "UTF-8 json.dumps(previous_groups,sort_keys=True,separators=(comma,colon)), without a trailing newline; previous_groups excludes the four new callbacks.",
+  "scripted_suite_native_fixtures": 122518,
+  "scripted_callback_profiles": 22,
+  "scripted_suite_case_counts": {
+    "entity_bird": 42,
+    "entity_rocket": 140,
+    "entity_horse": 504,
+    "entity_ufo": 140,
+    "entity_dog": 2880,
+    "entity_can": 240,
+    "entity_car_water": 84,
+    "entity_fetus_walk": 48,
+    "entity_fetus_jump": 330,
+    "entity_elephant": 9,
+    "entity_elephant_small": 9,
+    "entity_fish_giant": 9,
+    "entity_fish": 24015,
+    "entity_airship": 532,
+    "entity_bell_striker": 14640,
+    "entity_hoop_girl": 35768,
+    "entity_hoop_girl_giant": 35768,
+    "entity_opera_singer": 2425,
+    "entity_tea_doll": 3045,
+    "entity_ox_cart": 1440,
+    "entity_kicking_man": 270,
+    "entity_maiko_small": 180
+  },
+  "measured_new_callback_observations": {
+    "entity_tea_doll": {
+      "actual_call_counts": {
+        "forward": 3045,
+        "trigger_ratio": 3045
+      },
+      "actual_resulting_state_counts": {
+        "-1": 1015,
+        "0": 1015,
+        "11": 1015
+      },
+      "actual_native_entry_counts": {
+        "entity_tea_doll": 3045
+      }
+    },
+    "entity_ox_cart": {
+      "actual_call_counts": {
+        "forward": 1440,
+        "trigger_ratio": 1440
+      },
+      "actual_resulting_state_counts": {
+        "0": 1440
+      },
+      "actual_native_entry_counts": {
+        "entity_ox_cart": 1440
+      }
+    },
+    "entity_kicking_man": {
+      "actual_call_counts": {},
+      "actual_resulting_state_counts": {
+        "0": 270
+      },
+      "actual_native_entry_counts": {
+        "entity_kicking_man": 270
+      }
+    },
+    "entity_maiko_small": {
+      "actual_call_counts": {
+        "scale": 180,
+        "vertical": 60
+      },
+      "actual_resulting_state_counts": {
+        "-1": 60,
+        "0": 60,
+        "11": 60
+      },
+      "actual_native_entry_counts": {
+        "entity_maiko_small": 180
+      }
+    }
+  },
+  "negative_controls_detected": 29,
+  "new_negative_controls_detected": 6,
+  "measured_fault_controls": [
+    {
+      "callback": "entity_bird",
+      "kind": "wrong_command_destination",
+      "function_offset": 108,
+      "detected_case_index": 3,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_rocket",
+      "kind": "wrong_command_destination",
+      "function_offset": 84,
+      "detected_case_index": 10,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_horse",
+      "kind": "wrong_command_destination",
+      "function_offset": 124,
+      "detected_case_index": 0,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_ufo",
+      "kind": "wrong_command_destination",
+      "function_offset": 88,
+      "detected_case_index": 0,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_dog",
+      "kind": "wrong_command_destination",
+      "function_offset": 160,
+      "detected_case_index": 0,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_can",
+      "kind": "wrong_command_destination",
+      "function_offset": 68,
+      "detected_case_index": 24,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_car_water",
+      "kind": "wrong_command_destination",
+      "function_offset": 68,
+      "detected_case_index": 0,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_fetus_walk",
+      "kind": "wrong_motion_selection",
+      "function_offset": 28,
+      "detected_case_index": 8,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_fetus_jump",
+      "kind": "wrong_command_destination",
+      "function_offset": 252,
+      "detected_case_index": 0,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_elephant",
+      "kind": "wrong_scale_mode",
+      "function_offset": 40,
+      "detected_case_index": 0,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_elephant_small",
+      "kind": "wrong_scale_mode",
+      "function_offset": 40,
+      "detected_case_index": 0,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_fish",
+      "kind": "wrong_motion_amount",
+      "function_offset": 220,
+      "detected_case_index": 0,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_fish_giant",
+      "kind": "wrong_scale_mode",
+      "function_offset": 32,
+      "detected_case_index": 0,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_airship",
+      "kind": "wrong_motion_amount",
+      "function_offset": 340,
+      "detected_case_index": 0,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_bell_striker",
+      "kind": "wrong_command_destination",
+      "function_offset": 64,
+      "detected_case_index": 360,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_bell_striker",
+      "kind": "wrong_duration_reset_boundary",
+      "function_offset": 96,
+      "detected_case_index": 1440,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_bell_striker",
+      "kind": "wrong_state_rng_gate",
+      "function_offset": 120,
+      "detected_case_index": 60,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_opera_singer",
+      "kind": "wrong_command_destination",
+      "function_offset": 108,
+      "detected_case_index": 0,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_hoop_girl",
+      "kind": "wrong_command_destination",
+      "function_offset": 64,
+      "detected_case_index": 1200,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_hoop_girl",
+      "kind": "wrong_zero_timer_rng_gate",
+      "function_offset": 52,
+      "detected_case_index": 0,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_hoop_girl",
+      "kind": "wrong_initial_axis_amount",
+      "function_offset": 144,
+      "detected_case_index": 1215,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_hoop_girl",
+      "kind": "wrong_facing_threshold",
+      "function_offset": 156,
+      "detected_case_index": 300,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_hoop_girl_giant",
+      "kind": "wrong_scale_mode",
+      "function_offset": 48,
+      "detected_case_index": 0,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_tea_doll",
+      "kind": "wrong_command_destination",
+      "function_offset": 104,
+      "detected_case_index": 0,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_ox_cart",
+      "kind": "wrong_command_destination",
+      "function_offset": 136,
+      "detected_case_index": 0,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_ox_cart",
+      "kind": "wrong_secondary_command_destination",
+      "function_offset": 152,
+      "detected_case_index": 85,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_kicking_man",
+      "kind": "wrong_command_destination",
+      "function_offset": 16,
+      "detected_case_index": 150,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_maiko_small",
+      "kind": "wrong_scale_mode",
+      "function_offset": 40,
+      "detected_case_index": 0,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    },
+    {
+      "callback": "entity_maiko_small",
+      "kind": "wrong_vertical_phase_boundary",
+      "function_offset": 56,
+      "detected_case_index": 120,
+      "changed_instruction_executions_in_detecting_fixture": 1
+    }
+  ],
+  "all_changed_instructions_observed_in_detecting_fixture": true,
+  "dependency_contracts": [
+    "axis_c8",
+    "forward",
+    "lateral",
+    "motion_blend",
+    "motion_selection",
+    "notification",
+    "orientation",
+    "rotation",
+    "scale",
+    "sound_entity_stop",
+    "translation",
+    "trigger_ratio",
+    "vertical"
+  ],
+  "native_backend_identity": {
+    "package_version": "2.1.4",
+    "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+  },
+  "primary_native_report_sha256": "20a63c480c36536268d556cb8aeeedd058d332ea1b2fa24f24bd084a309bd736",
+  "private_candidate_report_sha256": "c46637453156809f213d84676617a1d0bc5ebb9c11a45fdbf7e60d108614060c",
+  "public_validation_report_sha256": "bc30296ed1246a6087b6199f4c860bd1fb9558f05f65190d252864389a58f5e3",
+  "optional_analysis_command": "python tools/verify_native_ai.py --callback scripted --output .decomp-lab/periodic-scripts-new.json",
+  "ox_cart_excluded_inputs": [
+    "signed duration halved toward zero equals zero",
+    "context timer INT_MIN with a halved duration of -1"
+  ],
+  "regular_matching_build_canonical": true,
+  "complete_build_objects": 306,
+  "all_392_game_build_inputs_preserved": true,
+  "new_regression_test_methods": 8,
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 24,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 28,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_C_bytes": 0,
+  "game_C_source_modified": false,
+  "new_gameplay_runs": 0,
+  "new_original_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "original_AI_developer_tools_and_mods_separate": true,
+  "external_model_API_calls": 0,
+  "Bevy_port_modified": false,
+  "private_game_assets_buffers_or_instruction_fault_bytes_published": false,
+  "scope": "Original callback decisions and arguments under explicit ratio/scale/movement contracts. Complete selected buffers, RNG, call order, stack pointer and saved registers are compared. This adds no natural encounter, full downstream simulation, renderer/GTE/audio/device/cycle evidence or whole-feature acceptance."
+}

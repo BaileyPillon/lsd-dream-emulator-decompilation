@@ -1,4 +1,6 @@
 """Semantic and custody checks for additional original callback models."""
+import hashlib
+import json
 import math
 from pathlib import Path
 import struct
@@ -17,7 +19,7 @@ class AdditionalScriptedCallbackTests(unittest.TestCase):
         self.symbols = {name: 0x80010000 + 16 * index for index, name in enumerate((
             'g_ENTITY_VTABLE', 'g_DREAM_SYS_VTABLE', 'g_OffsetTwo', 'g_OffsetHalf',
             'g_OffsetSix', 'g_MoveDown64Then32', 'g_MoveUp64', 'g_RotateYawNegHalf',
-            'func_8001EACC', 'sound_entity_stop', 'entity_fish'))}
+            'func_8001EACC', 'sound_entity_stop', 'entity_fish', 'g_OffsetQuarter'))}
         self.program = patch.object(scripts.native, 'h', SimpleNamespace(symbols=self.symbols), create=True)
         self.program.start()
         self.addCleanup(self.program.stop)
@@ -260,6 +262,106 @@ class AdditionalScriptedCallbackTests(unittest.TestCase):
                     after = scripts.backend_identity()
             self.assertEqual(before['loaded_library_sha256'], after['loaded_library_sha256'])
             self.assertNotEqual(before['binding_sha256'], after['binding_sha256'])
+
+
+
+    def test_tea_doll_periodic_request_preserves_other_commands(self):
+        for timer, requested in ((-11, False), (-10, True), (-1, False), (0, True),
+                                  (1, False), (10, True), (11, False),
+                                  (-0x80000000, False), (0x7fffffff, False)):
+            with self.subTest(timer=timer):
+                case = self.case(timer=timer, ratio=-7, seed=42)
+                before = scripts.fixtures(case)[2]
+                result = scripts.expected('entity_tea_doll', case)
+                self.assertEqual(struct.unpack_from('<i', result['context'], 16)[0], -7)
+                self.assertEqual(result['context'][28:32], struct.pack('<i', 17) if requested else before[28:32])
+                self.assertEqual(result['context'][48:], before[48:])
+                self.assertEqual(result['rng_seed'], 42)
+                self.assertEqual(result['trace'], [
+                    ['trigger_ratio', scripts.native.ENTITY],
+                    ['forward', scripts.native.ENTITY, scripts.native.u32(-256), 0]])
+
+    def test_ox_cart_half_duration_selects_distinct_command_channels(self):
+        for timer, channel, value in ((3, 12, 13), (4, 7, 10)):
+            with self.subTest(timer=timer):
+                case = self.case(timer=timer, duration=9, ratio=-7)
+                before = scripts.fixtures(case)[2]
+                result = scripts.expected('entity_ox_cart', case)
+                self.assertEqual(struct.unpack_from('<i', result['context'], channel*4)[0], value)
+                other = 7 if channel == 12 else 12
+                self.assertEqual(result['context'][other*4:other*4+4], before[other*4:other*4+4])
+                self.assertEqual(result['trace'], [
+                    ['trigger_ratio', scripts.native.ENTITY],
+                    ['forward', scripts.native.ENTITY, scripts.native.u32(-30), 1]])
+
+    def test_ox_cart_negative_timer_uses_signed_remainder(self):
+        case = self.case(timer=-1, duration=8)
+        before = scripts.fixtures(case)[2]
+        result = scripts.expected('entity_ox_cart', case)
+        self.assertEqual(result['context'][28:32], before[28:32])
+        self.assertEqual(result['context'][48:52], before[48:52])
+        result = scripts.expected('entity_ox_cart', self.case(timer=-4, duration=-9))
+        self.assertEqual(struct.unpack_from('<i', result['context'], 28)[0], 10)
+
+    def test_ox_cart_division_traps_are_explicitly_outside_the_model(self):
+        for duration in (-1, 0, 1):
+            with self.subTest(duration=duration):
+                with self.assertRaisesRegex(ValueError, 'division-trap'):
+                    scripts.expected('entity_ox_cart', self.case(duration=duration))
+        for duration in (-3, -2):
+            with self.subTest(duration=duration):
+                with self.assertRaisesRegex(ValueError, 'division-trap'):
+                    scripts.expected('entity_ox_cart', self.case(timer=-0x80000000, duration=duration))
+
+    def test_kicking_man_uses_frame_instead_of_tick(self):
+        for frame in (29, 31):
+            with self.subTest(frame=frame):
+                case = self.case(frame=frame, tick=30)
+                self.assertEqual(scripts.expected('entity_kicking_man', case)['context'], scripts.fixtures(case)[2])
+        case = self.case(frame=30, tick=29, seed=42)
+        result = scripts.expected('entity_kicking_man', case)
+        expected = bytearray(scripts.fixtures(case)[2])
+        for offset, value in ((16, 0), (28, 18), (32, -1)):
+            struct.pack_into('<i', expected, offset, value)
+        self.assertEqual(result['context'], bytes(expected))
+        self.assertEqual(result['entity'], bytes(scripts.fixtures(case)[0]))
+        self.assertEqual(result['trace'], [])
+        self.assertEqual(result['rng_seed'], 42)
+
+    def test_small_maiko_vertical_phase_includes_201_through_299(self):
+        for tick in (-0x80000000, -1, 200, 201, 202, 298, 299, 300, 0x7fffffff):
+            with self.subTest(tick=tick):
+                result = scripts.expected('entity_maiko_small', self.case(tick=tick, frame=301, seed=42))
+                expected = [['scale', scripts.native.ENTITY, 1, self.symbols['g_OffsetQuarter']]]
+                if 201 <= tick <= 299:
+                    expected.append(['vertical', scripts.native.ENTITY, scripts.native.u32(-32), 0])
+                self.assertEqual(result['trace'], expected)
+                self.assertEqual(result['rng_seed'], 42)
+
+    def test_periodic_extension_preserves_every_prior_fixture_input(self):
+        groups = scripts.cases_by_callback()
+        new_names = {'entity_tea_doll', 'entity_ox_cart', 'entity_kicking_man', 'entity_maiko_small'}
+        old_groups = {name: cases for name, cases in groups.items() if name not in new_names}
+        self.assertEqual(len(old_groups), 18)
+        self.assertEqual(sum(map(len, old_groups.values())), 117583)
+        digest = hashlib.sha256(json.dumps(old_groups, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+        self.assertEqual(digest, '5b447e03d2fc31ba19e808c247722e4dd5489e03493dce0658fac40c41f77748')
+
+    def test_periodic_fixture_domains_keep_boundaries_and_exclude_traps(self):
+        groups = scripts.cases_by_callback()
+        expected_counts = {'entity_tea_doll': 3045, 'entity_ox_cart': 1440,
+                           'entity_kicking_man': 270, 'entity_maiko_small': 180}
+        for name, count in expected_counts.items():
+            with self.subTest(callback=name):
+                self.assertEqual(len(groups[name]), count)
+                self.assertEqual(len({tuple(sorted(case.items())) for case in groups[name]}), count)
+        self.assertEqual(sum(map(len, groups.values())), 122518)
+        maiko_ticks = {case['tick'] for case in groups['entity_maiko_small']}
+        self.assertTrue({200, 201, 299, 300, -0x80000000, 0x7fffffff}.issubset(maiko_ticks))
+        for case in groups['entity_ox_cart']:
+            half = math.trunc(case['duration']/2)
+            self.assertNotEqual(half, 0)
+            self.assertFalse(case['timer'] == -0x80000000 and half == -1)
 
 
 if __name__ == '__main__':
