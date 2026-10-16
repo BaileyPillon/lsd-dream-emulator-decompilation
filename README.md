@@ -178,6 +178,10 @@ frame, with eight differences in two words for the edge reference and seven
 differences in four words for the cell-reuse alternative. The
 [cell-ownership study](docs/GRID_CELL_OWNERSHIP.md) repeats 74,832 scalar pairs
 and detects ten faults; both source forms remain outside the matching game.
+The [native candidate comparison](docs/GRID_NATIVE_COMPOSITION.md) extends
+those source forms through actual lookup, SDK/GTE and streaming dependencies
+in 24,780 distinct graph inputs per image, with zero function-output stubs.
+Complete executable equality and natural-scene acceptance remain open.
 The [grid phase comparison](docs/GRID_PHASES.md) locates the height-copy order
 change in the first scheduling pass, rechecks two complete builds and rules out
 133 further source forms. Its reusable phase reader retains the exact source

@@ -53,6 +53,11 @@ matrix application and the builder retain four explicit contracts in that
 comparison. Original scenes, hardware timing and whole-feature acceptance
 remain separate requirements.
 
+The [native composition recipe](../../docs/GRID_NATIVE_COMPOSITION.md) compares
+both complete C images through actual lookup, rotation, native GTE commands
+and streaming code, with zero function-output stubs. It preserves the earlier
+scalar evidence and the complete-executable source acceptance gate.
+
 [GRID_RECOVERY.md](../../docs/GRID_RECOVERY.md) preserves the earlier
 eleven-byte fragment and comparison snapshot.
 

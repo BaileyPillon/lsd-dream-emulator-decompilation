@@ -684,3 +684,18 @@ eight-byte method-return form has a complete-image comparison but no native
 campaign in this supplement. Line-ending-only normalization is recorded
 separately from source-interface recovery. Neither observation nor a plausible
 stack frame raises original feature, NPC, or matching-C recovery counts.
+
+## Grid candidate native-composition supplement
+
+[grid-native-composition-checks.json](grid-native-composition-checks.json)
+records complete candidate-build qualification and the paired original/C
+comparison through the existing eleven-function SDK/GTE and streaming graph.
+The 24,780 distinct inputs per image include 13,230 retained inputs and 11,550
+added to this graph profile. Positive code is unchanged; every fault stays in
+a separate private VM. Executables, generated ELF/assembly, complete source
+units, native command logs and graph bytes remain private. Published evidence
+contains counts, hashes, fault locations and scope metadata.
+
+The inventory supplement preserves all preceding fields and snapshots. C
+recovery, whole-feature acceptance, NPC coverage and optional mods do not
+increase, and the Bevy repository is separate.
