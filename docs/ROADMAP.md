@@ -66,12 +66,13 @@ segments for mixed game support as well as checking the known inclusions.
 The [SDK signature audit](SDK_SIGNATURE_AUDIT.md) records candidate provenance
 and a sound-API correction; unmatched functions still need further analysis.
 The [bounds-predicate audit](RENDER_BOUNDS.md) verifies the original
-`func_8004CD38` contract and a research candidate on bounded fixtures. Its 38
-byte differences remain to resolve before accepting C.
-The [register-allocation diagnostic](COMPILER_ALLOCATION.md) now measures why
-the candidate's result and scratch registers differ. Sixty-eight source
-compilations retain no exact match; the 38-byte research candidate remains.
-Use actual local/global allocation evidence to guide the next source boundary.
+`func_8004CD38` contract on bounded fixtures. The
+[current source-lifetime report](BOUNDS_SOURCE_LIFETIMES.md) and
+[recipe](../research/render_bounds/README.md) reproduce a 21-byte-different
+candidate; exact C recovery remains open.
+The earlier [allocation diagnostic](COMPILER_ALLOCATION.md) checked 68 source
+forms against a 38-byte-different candidate. The later report supersedes that
+starting point and observes the new allocation in the complete source unit.
 The [save workflow audit](CARD_SAVE.md) verifies the wrapper, writer and native
 helpers in 13,152 bounded cases. Its full C candidate agrees on those fixtures
 and retained an eight-byte mismatch at that checkpoint. The later
@@ -148,6 +149,10 @@ whole-feature gate.
 | `func_8004C6A8` | [`src/scene/render_context.c`](../src/scene/render_context.c) |
 | `func_8004CD38` | [`src/scene/render_context.c`](../src/scene/render_context.c) |
 | `func_8004441C` | [`src/menu/ui_sprite.c`](../src/menu/ui_sprite.c) |
+| `dream_generation_update_structure_entities` | [`src/dream/dream_generation.c`](../src/dream/dream_generation.c) |
+| `dream_generation_find_entry` | [`src/dream/dream_generation_post.c`](../src/dream/dream_generation_post.c) |
+| `func_8003D73C` | [`src/menu/ui_screen.c`](../src/menu/ui_screen.c) |
+| `func_8003DAD4` | [`src/menu/ui_screen.c`](../src/menu/ui_screen.c) |
 
 Confirm the live catalogue after building with
 `python tools/decomp_workbench.py catalog`. SDK assembly is tracked separately.
@@ -184,7 +189,7 @@ and 191 initial source trials found no exact match. The subsequent
 
 - Resolve asset/command inventory gaps and runtime reachability.
 - Close virtual-call dependencies and verify semantic callback signatures.
-- Extend native fixtures beyond the 24 currently checked callbacks and their
+- Extend native fixtures beyond the 28 currently checked callbacks and their
   documented scopes; see the [proximity composition](NPC_PROXIMITY.md) and
   [Hoop Girl script checks](HOOP_SCRIPTS.md). Complete natural encounters and
   actual movement/facing/scaling dependencies remain separate gates.
