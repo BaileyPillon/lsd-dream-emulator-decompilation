@@ -13,6 +13,12 @@ show that the real 44-byte record naturally receives the required 48-byte
 local allocation, preserving the complete executable. That additional finding
 does not reduce the 24 unresolved inherited functions recorded below.
 
+The subsequent [query interface cleanup](RENDER_QUERY_API.md) removes another
+four-byte tail in `func_8004AEA4`, also outside this selected audit. The shared
+44-byte result receives a natural 48-byte compiler allocation alongside a
+separate, fully used 48-byte saved builder record. Both full builds remain
+canonical; the 24 unresolved inherited functions remain unchanged.
+
 Twenty-four declarations are present in the imported upstream source. Four
 others were introduced when previously retained assembly was promoted during
 this project. Those four promotions do not satisfy the no-padding recovery

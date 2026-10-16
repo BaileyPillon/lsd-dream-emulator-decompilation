@@ -558,3 +558,19 @@ whole-encounter acceptance. C coverage, the nine assembly functions, 24
 inherited storage explanations, 35 / 40 listed-core C groups, developer tools
 and optional mods retain their previous counts. The additive supplement
 preserves every preceding inventory field and snapshot. Bevy is unchanged.
+
+## October 16 render-position query interfaces
+
+The [query interface cleanup](RENDER_QUERY_API.md) gives three original virtual
+methods accurate pointer signatures and shares the 44-byte result between its
+callers. Actual compiler allocation traces explain an additional four-byte tail
+outside the selected storage audit. Seven complete sized functions, 24 target
+ABI assertions and regular and fresh clean builds retain the canonical image.
+
+This improves existing matching C and adds no recovered assembly bytes, native
+fixture inputs or gameplay runs. Before and after, C coverage is
+194,212 / 199,912 (97.15%), with nine assembly functions, 24 inherited storage
+explanations, 35 / 40 listed-core C groups and 24 / 107 bounded NPC profiles.
+Whole-feature and whole-encounter acceptance remain zero. The additive
+supplement preserves preceding inventory data, tool and mod counts. Bevy is
+unchanged.

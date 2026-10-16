@@ -387,7 +387,7 @@ void func_8004B100(render_context_t *This, aea4_arg_t *arg1, s32 arg2);
 
 void func_8004AEA4(render_context_t *This, aea4_arg_t *arg1, s32 arg2) {
     blk30_t saved;
-    blk30_t out;
+    func_8004C1C0_out_t out;
     s32 extra;
     s32 keep;
     s32 *gate;
@@ -397,7 +397,7 @@ void func_8004AEA4(render_context_t *This, aea4_arg_t *arg1, s32 arg2) {
     } else {
         extra = 0;
     }
-    if (This->vtable->Unk67(This, &out, extra) != 0) {
+    if (This->vtable->Unk67(This, &out, (func_8004C1C0_pos_t *) extra) != 0) {
         return;
     }
     keep = This->m_Unk33;
@@ -613,23 +613,9 @@ void func_8004B57C(render_context_t *This) {
     This->m_Unk27 = 0;
 }
 
-typedef struct {
-    /* 0x00 */ s16 first;
-    /* 0x02 */ s16 pad0;
-    /* 0x04 */ s32 pad1;
-    /* 0x08 */ s32 pad2;
-    /* 0x0C */ s32 at_c;
-    /* 0x10 */ s32 pad4;
-    /* 0x14 */ s32 pad5;
-    /* 0x18 */ s32 pad6;
-    /* 0x1C */ s32 pad7;
-    /* 0x20 */ s32 pad8;
-    /* 0x24 */ void *obj;
-    /* 0x28 */ s32 value;
-} func_8004B5BC_buf_t;
 
 s32 func_8004B5BC(render_context_t *This) {
-    func_8004B5BC_buf_t buf;
+    func_8004C1C0_out_t buf;
     u16 old;
     void *inner;
     s32 index;
@@ -642,12 +628,12 @@ s32 func_8004B5BC(render_context_t *This) {
     index = *(s16 *) ((u8 *) inner + 0x32);
     kind = D_800868FC[index];
     if (*(s32 *) (This->m_Unk25 + 4) == 0) {
-        This->vtable->Unk61(This, buf.value, &buf.at_c, D_80086974[kind]);
+        This->vtable->Unk61(This, buf.divisor, &buf.vx, D_80086974[kind]);
     }
     This->vtable->Unk73(This);
     old = *(u16 *) &This->m_Unk46;
-    *(func_8004B5BC_buf_t *) &This->m_Unk46 = buf;
-    if ((s16) old != buf.first) {
+    *(func_8004C1C0_out_t *) &This->m_Unk46 = buf;
+    if ((s16) old != buf.labels.pair) {
         This->vtable->Notify(This, 5);
     }
     return kind;
@@ -1071,46 +1057,28 @@ void func_8004C0AC(render_context_t *This, render_context_slot_t *slot) {
     }
 }
 
-void *func_8004C158(render_context_t *This, s32 arg1, s32 *arg2) {
-    s32 temp_v1;
-    void *var_v0;
+/* Return the cached record on success; optionally expose the current
+ * position pointer even when no output record is requested. */
+func_8004C1C0_out_t *func_8004C158(render_context_t *This,
+                               func_8004C1C0_out_t *out,
+                               func_8004C1C0_pos_t **position_out) {
+    func_8004C1C0_pos_t *position;
+    func_8004C1C0_out_t *result;
 
-    temp_v1 = *(s32 *) (This->m_Unk26 + 0x14) + 0x18;
-    if (arg2 != NULL) {
-        *arg2 = temp_v1;
+    position = (func_8004C1C0_pos_t *) (*(s32 *) (This->m_Unk26 + 0x14) + 0x18);
+    if (position_out != NULL) {
+        *position_out = position;
     }
-    if ((arg1 == 0) || (((s32(*)(void *, s32, s32)) This->vtable->Unk67)(This, arg1, temp_v1) == 0)) {
-        var_v0 = (u8 *) This + 0xBC;
+    if ((out == NULL) || (This->vtable->Unk67(This, out, position) == 0)) {
+        result = (func_8004C1C0_out_t *) ((u8 *) This + 0xBC);
     } else {
-        var_v0 = NULL;
+        result = NULL;
     }
-    return var_v0;
+    return result;
 }
 
 s16 func_8004C368(render_context_t *, s8 *, s32);
-typedef struct func_8004C1C0_out {
-    /* 0x00 */ s8 b0;
-    /* 0x01 */ s8 b1;
-    /* 0x02 */ s8 dx;
-    /* 0x03 */ s8 dz;
-    /* 0x04 */ s16 x;
-    /* 0x06 */ u16 y;
-    /* 0x08 */ s16 z;
-    /* 0x0C */ s32 vx;
-    /* 0x10 */ s32 vy;
-    /* 0x14 */ s32 vz;
-    /* 0x18 */ s32 rx;
-    /* 0x1C */ s32 ry;
-    /* 0x20 */ s32 rz;
-    /* 0x24 */ void *obj;
-    /* 0x28 */ s32 divisor;
-} func_8004C1C0_out_t;
 
-typedef struct func_8004C1C0_pos {
-    /* 0x00 */ s32 x;
-    /* 0x04 */ s32 y;
-    /* 0x08 */ s32 z;
-} func_8004C1C0_pos_t;
 
 /* Resolve world coordinates into the active stream slot and local grid cell. */
 s32 func_8004C1C0(render_context_t *This, func_8004C1C0_out_t *out, func_8004C1C0_pos_t *pos) {
