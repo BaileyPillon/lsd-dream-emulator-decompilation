@@ -103,6 +103,10 @@ The [render-position query interfaces](docs/RENDER_QUERY_API.md) now share the
 44-byte result record and declare the original pointer arguments and return
 values. Compiler allocation traces explain another redundant buffer tail;
 regular and fresh clean builds preserve the complete original executable.
+The [glyph region cleanup](docs/GLYPH_REGIONS.md) replaces two oversized byte
+buffers with their twelve-byte source region. Compiler observations explain
+the original allocation; C coverage and the 24 unresolved storage functions
+remain unchanged.
 The [save workflow checks](docs/CARD_SAVE.md) exercise the original writer,
 retry wrapper and native string helpers; physical card I/O and the writer's
 exact C recovery remained open at that checkpoint.

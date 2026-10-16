@@ -42,7 +42,16 @@ void func_8004229C(void *);
 void sprite_node_set_offset(void *);
 void sprite_node_set_anchor(void *);
 
-void func_80041C4C(s8 *, s32);
+/* Twelve-byte source region copied into common sprite setup. The glyph
+ * setter writes the low byte of each halfword coordinate into the GPU command. */
+typedef struct glyph_region {
+    u16 u;
+    u16 v;
+    u32 width;
+    u32 height;
+} glyph_region_t;
+
+void func_80041C4C(glyph_region_t *, s32);
 
 void glyph_construct(class_glyph_t *This, s32 Unk1, u8 Unk2);
 void glyph_set_mode(class_glyph_t *This, u8 Unk);
@@ -115,10 +124,10 @@ class_glyph_t *glyph_create(s32 Unk1, u8 Unk2) {
 }
 
 void glyph_construct(class_glyph_t *This, s32 Unk1, u8 Unk2) {
-    s8 v3[16];
+    glyph_region_t region;
 
-    func_80041C4C(v3, 0x20);
-    sprite_node_get_vtable()->Construct(This, Unk1, (s32) v3, 0);
+    func_80041C4C(&region, 0x20);
+    sprite_node_get_vtable()->Construct(This, Unk1, (s32) &region, 0);
     This->vtable = glyph_get_vtable();
     This->vtable->Unk15(This, Unk2);
 }
@@ -128,12 +137,12 @@ void glyph_set_mode(class_glyph_t *This, u8 Unk) {
 }
 
 void glyph_set_char(class_glyph_t *This, u8 Unk) {
-    s8 v3[16];
+    glyph_region_t region;
 
     This->m_Char = Unk;
-    func_80041C4C(v3, Unk);
-    This->m_Unk27[2] = v3[0];
-    This->m_Unk27[3] = v3[2];
+    func_80041C4C(&region, Unk);
+    This->m_Unk27[2] = (s8) region.u;
+    This->m_Unk27[3] = (s8) region.v;
 }
 
 u8 glyph_get_char(class_glyph_t *This) {
@@ -148,12 +157,9 @@ class_glyph_vtable_t *glyph_get_vtable(void) {
 
 extern s32 D_8006ED40[3];
 
-void func_80041C4C(s8 *arg0, s32 arg1) {
-    s32 *dest;
-
-    dest = (s32 *) arg0;
-    __builtin_memcpy(dest, D_8006ED40, 12);
-    arg1 &= 0xFF;
-    *(u16 *) (arg0 + 0) = *(u16 *) (arg0 + 0) + (arg1 & 0x1F) * 8;
-    *(u16 *) (arg0 + 2) = *(u16 *) (arg0 + 2) + ((u32) arg1 >> 5) * 8;
+void func_80041C4C(glyph_region_t *region, s32 code) {
+    __builtin_memcpy(region, D_8006ED40, sizeof(*region));
+    code &= 0xFF;
+    region->u += (code & 0x1F) * 8;
+    region->v += ((u32) code >> 5) * 8;
 }

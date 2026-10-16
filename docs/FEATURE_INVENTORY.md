@@ -593,3 +593,20 @@ C coverage remains 194,212 / 199,912 (97.15%), with nine assembly functions,
 callbacks already have C bodies. Developer tools and optional mods retain
 their separate counts; Bevy is unchanged. The additive supplement preserves
 every preceding inventory field and snapshot.
+
+## October 16 glyph source regions
+
+The [glyph region cleanup](GLYPH_REGIONS.md) replaces two sixteen-byte byte
+arrays with the helper's actual twelve-byte coordinate/dimension record.
+Two compiler observations show natural sixteen-byte allocation, removing eight
+redundant source-tail bytes outside the selected storage audit. All seven
+complete glyph functions, thirteen target ABI assertions and regular and fresh
+clean builds retain the canonical executable.
+
+This improves existing matching C. It adds no recovered assembly bytes, native
+fixture inputs, gameplay runs or whole-feature acceptance. C recovery remains
+194,212 / 199,912 (97.15%), with nine assembly functions, 24 inherited storage
+explanations, 35 / 40 listed-core C groups and 28 / 107 bounded NPC profiles.
+The separate getter's unused local remains unresolved. The additive supplement
+preserves earlier inventory data; AI-assisted tools, optional mods and Bevy
+retain their separate accounting.
