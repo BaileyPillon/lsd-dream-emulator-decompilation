@@ -1,0 +1,514 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-16T09:51:56.645355+00:00",
+  "status": "passed_bounded_original_periodic_npc_spatial_composition",
+  "repository_code_base_commit": "d339efdb5dae1fbca4161bf20970d41416542a6b",
+  "source_hash_serialization": "Public source hashes use UTF-8 normalized to LF; executed private artifacts use exact bytes.",
+  "source_hashes": {
+    "tools/verify_native_ai.py": "6094e565bdb4e6701055f08d0428d059b54c6183818170ae1a671610c53b40a0",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/progress.py": "5768fea4dd162e1fe406c4d909742396a9174b988216629bd52fa902204663dd",
+    "configure.py": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+    "requirements-analysis.txt": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911",
+    "src/scene/entity.c": "ede517712cde6e41c8818e4b2d537f00a310dfdae5cb2614486c1b5d0f54bd72",
+    "src/scene/entity.h": "4028f6bb6d2c1e779b8da8ddfc44263f34f619ed4a19a12547982a4c1ecc15e3",
+    "src/dream/dream_sys.c": "bd5fe0817a553a4cccd5505e5f87577fd9264dacf9d3576ebc1a034faaa4b9f2",
+    "src/dream/dream_sys.h": "0c5e29a07f133924a7d2eda9e7425e2b3bcbf6c3b9cb905c097e6eb879d45657",
+    "src/scene/actor.c": "dac4858fa2ece134c6e698c8aad5734bab89c9185bb745470be12bc0d08e0483",
+    "src/base/transform.c": "e1ead0e020d1a752b812891ab3114e7510fcbcf723d4539c423918c13f351c4e",
+    "asm/nonmatchings/psyq/libc/rand/rand.s": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7",
+    "tools/verify_npc_periodic_spatial.py": "08f47d3020ebf24ae102575e71a5e173a027acfa51c7f82b30f5bb3e6df95ecd",
+    "tools/verify_npc_proximity.py": "50fa5bf1a77a2ec7904949e6c0833b90c2271b5577c37b7fe7aef768fca61c00",
+    "tools/verify_scripted_ai.py": "2edefddc727441c0066a48375efd882c80035af99db3b3990a2c674eedddb2c1",
+    "tools/verify_npc_spatial.py": "e25422dddcbcd445bdaabacf200ba0e418336e0a161648403ae08084d006983f",
+    "tools/verify_render_gte.py": "624a607b167be932702501fb6e07a04595992773bacc8d4344b2200a8c2784b0",
+    "tools/verify_render_rotation.py": "2ce32389c8e158692dff7663a9fb0aa700b7e3bb7204254d402b0ae45f956e8f",
+    "tools/nymashock_gte_bridge.cs": "969e0af3b030e5b2eafedad032b68173ac76e41b089a28b4d4fc1084e33fedd9",
+    "docs/npc-periodic-spatial-function-ranges.json": "390934f0e838261504cee41273e83dc52e993debb7be3c5b53d16e327012ced0",
+    "docs/npc-proximity-function-ranges.json": "b92795fdc53082ab87132adcce7033d26b43505e1374c83b407bae017a32d2a7",
+    "src/scene/scene_node.c": "3347001427b604329f39729925fc3ca0312d166674007870bdf1d54cf4c33c3d",
+    "src/base/object_math.c": "2b36fc3137451d89c674d0c433c6565cd330a59b1a664c6d0907c66dbc2449fa",
+    "tests/test_npc_periodic_spatial.py": "0c3606eef12154e9f5879d6fcea937f3d676b728e9270778024600fae0ecc933",
+    "tools/build_nymashock_gte_bridge.ps1": "c7d4b2b60eb3d62a254df19b4cea66dd6ac035a7070de8cd7636c34862c3644b"
+  },
+  "documentation": "docs/NPC_PERIODIC_SPATIAL.md",
+  "documentation_sha256": "27d0420f481096381230f54a7b0582ebb25dc765033c506ae9da2b2ea71a18e2",
+  "callbacks": {
+    "entity_bird": 943,
+    "entity_minotaur": 1504,
+    "entity_giant_minotaur": 181
+  },
+  "native_case_inputs": 2628,
+  "initialized_inputs_sha256": "a56a30ff6915ce349fa80a45614df2e58bbd93123f7316e149b9a6f5fea2700a",
+  "checked_buffers_sha256": "f0206aa0492b2a76161d43bc49b3540bb1e5cf00ffc2bcb829e10539647bf3ad",
+  "duplicate_initialized_inputs": 0,
+  "case_groups": [
+    {
+      "callback": "entity_bird",
+      "group": "periodic_or_zero_timer_branches",
+      "cases": 55
+    },
+    {
+      "callback": "entity_bird",
+      "group": "pose_word_wrap_and_preserved_buffers",
+      "cases": 168
+    },
+    {
+      "callback": "entity_bird",
+      "group": "ratio_before_motion_and_radius_boundaries",
+      "cases": 720
+    },
+    {
+      "callback": "entity_giant_minotaur",
+      "group": "periodic_or_zero_timer_branches",
+      "cases": 13
+    },
+    {
+      "callback": "entity_giant_minotaur",
+      "group": "pose_word_wrap_and_preserved_buffers",
+      "cases": 168
+    },
+    {
+      "callback": "entity_minotaur",
+      "group": "duration_and_signed_timer_boundaries",
+      "cases": 616
+    },
+    {
+      "callback": "entity_minotaur",
+      "group": "pose_word_wrap_and_preserved_buffers",
+      "cases": 168
+    },
+    {
+      "callback": "entity_minotaur",
+      "group": "ratio_before_motion_and_radius_boundaries",
+      "cases": 720
+    }
+  ],
+  "original_property_bindings": {
+    "entity_bird": [
+      {
+        "index": 24,
+        "proximity": 30,
+        "record_sha256": "7bd5e6e34d492dbe7b9e7192c9ad001ed910ceb614d0a369f7ac464bb84e8af5"
+      }
+    ],
+    "entity_minotaur": [
+      {
+        "index": 9,
+        "proximity": 30,
+        "record_sha256": "95e6aab3920c9a506ef68e022b25464d54f64b3b908ee4943d6b0484a37a021e"
+      }
+    ],
+    "entity_giant_minotaur": [
+      {
+        "index": 10,
+        "proximity": 60,
+        "record_sha256": "f6d3ba07235ba62050da328beed2b9412e3df59538bea36258b7879c7b3fb0d1"
+      }
+    ]
+  },
+  "original_property_table_sha256": "209e6f5d82ab17604cbf2ad16ef1bec624f89c61bdf9d1a3d24905527c47424a",
+  "original_fraction_tables": [
+    {
+      "symbol": "g_OffsetTwo",
+      "address": "0x80089df0",
+      "bytes": 12,
+      "sha256": "efd71aa960db0405a52741e037fe97d0dc0d185a5997c5afd1e685f6d8e450f3",
+      "signed_halfwords": [
+        2,
+        1,
+        2,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "symbol": "g_RotateYawTwo",
+      "address": "0x80089ca0",
+      "bytes": 12,
+      "sha256": "51944e5be8593ed3fc0860646b60e3605d4f34c9dd8116dcbda38f2b9963b0d6",
+      "signed_halfwords": [
+        0,
+        1,
+        2,
+        1,
+        0,
+        1
+      ]
+    }
+  ],
+  "original_entity_vtable": {
+    "address": "0x80089ad4",
+    "bytes": 332,
+    "sha256": "d2f1f7eee6c466a8dfa12bb5746e93e071eecbe26ba1ee09d13663ef170e62de",
+    "slots": {
+      "0x144": "entity_get_distance",
+      "0x148": "entity_get_trigger_ratio",
+      "0xc4": "func_8005748C"
+    }
+  },
+  "reviewed_original_ranges": [
+    {
+      "function": "func_8001D008",
+      "address": "0x8001d008",
+      "bytes": 228,
+      "sha256": "225abd6608917cf20ad9aca5ad59a9a7f6f43e67f64d8372e6aeb2e9fbfe7363"
+    },
+    {
+      "function": "func_8001CEB4",
+      "address": "0x8001ceb4",
+      "bytes": 340,
+      "sha256": "722d79cf1f8c109300d4a56aa1d421442a2b5c424a7f3f1e16ad27d281432217"
+    },
+    {
+      "function": "func_8001EC84",
+      "address": "0x8001ec84",
+      "bytes": 120,
+      "sha256": "7c14d23868ee93933886ecd2477e4e60c6200bef1982963f671e2d76e6d7caaf"
+    },
+    {
+      "function": "func_8001E58C",
+      "address": "0x8001e58c",
+      "bytes": 116,
+      "sha256": "d0f977e8df4d270bfd57647ce4d42f81641736d27383f8916fce2439796c34c2"
+    },
+    {
+      "function": "func_8001D4DC",
+      "address": "0x8001d4dc",
+      "bytes": 140,
+      "sha256": "66d6016ba623639a9f3c1e4d2ad39782f05a3eedaa2d4658e9aeaa0d634f950f"
+    },
+    {
+      "function": "func_8001EE98",
+      "address": "0x8001ee98",
+      "bytes": 124,
+      "sha256": "2569a9b916b6606e7e75e70b4397a0c3b0a4d08781d858570dd43e384b3217ab"
+    },
+    {
+      "function": "func_800573A8",
+      "address": "0x800573a8",
+      "bytes": 36,
+      "sha256": "cb98f20f55e4915c70de0cd5ec85346bad6f0c06c72aa4c2ff968b5327149cda"
+    },
+    {
+      "function": "func_800573CC",
+      "address": "0x800573cc",
+      "bytes": 120,
+      "sha256": "c1a99e64390fec4e8dcf12a0a17942c6c30f55d6703dc08a78cd5e1111b8ad19"
+    },
+    {
+      "function": "func_80057444",
+      "address": "0x80057444",
+      "bytes": 72,
+      "sha256": "f733da4527460b28cca35c365edb865d3612c61b47356ff8500d430a5bc7d680"
+    },
+    {
+      "function": "func_8005748C",
+      "address": "0x8005748c",
+      "bytes": 56,
+      "sha256": "56c4b7f4e13cde1be03d9e0f549a37ad158f8194a73c986e003153ea0acfe087"
+    },
+    {
+      "function": "func_800574C4",
+      "address": "0x800574c4",
+      "bytes": 56,
+      "sha256": "29303f176ed3d04daf35423bed542cbae4fafeaff90abdf8182d51eb31613f55"
+    },
+    {
+      "function": "func_800574FC",
+      "address": "0x800574fc",
+      "bytes": 56,
+      "sha256": "e22cf1c7265259493c587b72e18fdd9cf18a600fcf0189cc6bed5784078fef66"
+    },
+    {
+      "function": "func_80057534",
+      "address": "0x80057534",
+      "bytes": 124,
+      "sha256": "6bfcd219c77dc157668f2ca054b8ae40423b9bf2cc61552577216917aa6b37da"
+    },
+    {
+      "function": "RotMatrix",
+      "address": "0x800160b0",
+      "bytes": 652,
+      "sha256": "cab8838ded03b3b2a50a32cc279811d7fb6a1ee23cfe640c1ac4d7c1d9eee443"
+    },
+    {
+      "function": "ApplyMatrixLV",
+      "address": "0x80015618",
+      "bytes": 352,
+      "sha256": "b5cca44ff50bf0ca0e5996e8f5cf1b954740710e6773d57827b764a47fee082e"
+    },
+    {
+      "function": "entity_get_distance",
+      "address": "0x8005d7fc",
+      "bytes": 104,
+      "sha256": "f9aea2cd8da082454563fad7b8f4e87382786ba3dfdfe396510482cec65fd58c"
+    },
+    {
+      "function": "entity_get_trigger_ratio",
+      "address": "0x8005d864",
+      "bytes": 224,
+      "sha256": "e1d6cf893b07c3d54c0fb420ca3bda039ba14f0c4da8a462d32da917baeb9b4f"
+    },
+    {
+      "function": "func_800571F8",
+      "address": "0x800571f8",
+      "bytes": 296,
+      "sha256": "ad0d13796e3f4d7e32fff7005062eeff57e4a0af7b9218ce81d2ffbc2d219ce0"
+    },
+    {
+      "function": "func_8001E57C",
+      "address": "0x8001e57c",
+      "bytes": 16,
+      "sha256": "6b444c29202af0f323b5dfd638e1c9677848593458bdf1a70a8fc235380de21c"
+    },
+    {
+      "function": "func_8001D568",
+      "address": "0x8001d568",
+      "bytes": 152,
+      "sha256": "b5a107f6d3b6ae59a1a01cab9f206d012b323d0aefddeb9d1b3a68f7eec12914"
+    },
+    {
+      "function": "entity_bird",
+      "address": "0x8005f368",
+      "bytes": 236,
+      "sha256": "89a93cbfdcaf8d25da98f263aaf407578121c0310ef37dd199590e519ce179e5"
+    },
+    {
+      "function": "entity_minotaur",
+      "address": "0x8005e6f0",
+      "bytes": 184,
+      "sha256": "9decdf73eb6e46ff0e0860c237cd8790f74e7971fa42aca659c659c373221e1a"
+    },
+    {
+      "function": "entity_giant_minotaur",
+      "address": "0x8005e7a8",
+      "bytes": 80,
+      "sha256": "c7fdcc943acee0234d79b3751f2b610abecfa863675b1579606e2bbc38d355c9"
+    }
+  ],
+  "actual_original_entry_counts": {
+    "entity_bird": 943,
+    "func_8001D008": 943,
+    "func_8001EC84": 5658,
+    "func_8001CEB4": 943,
+    "func_8005748C": 2628,
+    "func_80057534": 2628,
+    "func_80057444": 2628,
+    "func_8001E58C": 2628,
+    "func_8001D4DC": 2628,
+    "RotMatrix": 2628,
+    "func_8001EE98": 2628,
+    "ApplyMatrixLV": 2628,
+    "func_800573A8": 2628,
+    "func_800573CC": 2628,
+    "entity_get_trigger_ratio": 2116,
+    "entity_get_distance": 1516,
+    "entity_minotaur": 1504,
+    "entity_giant_minotaur": 181
+  },
+  "unused_reviewed_ranges": [
+    "func_8001D568",
+    "func_8001E57C",
+    "func_800571F8",
+    "func_800574C4",
+    "func_800574FC"
+  ],
+  "range_preparation_sha256": "3b64a321312708bccd3a009a4ac4028fc47037e86a3c059a5624649371326a3b",
+  "private_native_report_sha256": "6c423ee4bcf9b445298dac0de264f0cf4b8a8987065d1d2daf019f902fc243cb",
+  "private_local_audit_sha256": "5730a43b15f34e66615de694246e0e8d5e77095d222b62bc712aacd283f1f4d3",
+  "private_local_audit_producer_sha256": "3599515bd2abfe729a429a4191b6b47f90dbcc6de65ac33a58fe5e912f44aa6c",
+  "private_native_log_sha256": "80c0e8650575fa333ceb09448fef8026e1e3e55865a96d8ecaf2e6670d12182a",
+  "checked_native_GTE_exchanges": 5270,
+  "positive_native_GTE_commands": 5256,
+  "negative_control_GTE_commands": 14,
+  "separate_startup_identity_checks": 1,
+  "dependency_output_stubs": 0,
+  "negative_controls_detected": [
+    {
+      "kind": "bird_wrong_command_destination",
+      "function": "entity_bird",
+      "callback": "entity_bird",
+      "address": "0x8005f3d4",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "context"
+      ]
+    },
+    {
+      "kind": "minotaur_wrong_command_destination",
+      "function": "entity_minotaur",
+      "callback": "entity_minotaur",
+      "address": "0x8005e774",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "context"
+      ]
+    },
+    {
+      "kind": "giant_missing_second_command",
+      "function": "entity_giant_minotaur",
+      "callback": "entity_giant_minotaur",
+      "address": "0x8005e7c8",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "context"
+      ]
+    },
+    {
+      "kind": "distance_wrong_z_field",
+      "function": "entity_get_distance",
+      "callback": "entity_minotaur",
+      "address": "0x8005d838",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "context"
+      ]
+    },
+    {
+      "kind": "ratio_wrong_property_byte",
+      "function": "entity_get_trigger_ratio",
+      "callback": "entity_bird",
+      "address": "0x8005d8b4",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "context"
+      ]
+    },
+    {
+      "kind": "motion_wrong_nudge_halfword",
+      "function": "func_80057534",
+      "callback": "entity_minotaur",
+      "address": "0x80057560",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "entity"
+      ]
+    },
+    {
+      "kind": "wrong_native_gte_shift",
+      "function": "ApplyMatrixLV",
+      "callback": "entity_minotaur",
+      "address": "0x800156f4",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "coordinate"
+      ]
+    }
+  ],
+  "backend_identity": {
+    "package_version": "2.1.4",
+    "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+  },
+  "bridge_executable_sha256": "c8309c9d4c6fadc7d547f5e1547c1ee3bfab9638d3c8bb53eb059bb7a55f6949",
+  "runtime_component_sha256": {
+    "dll/shock.wbx.zst": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126",
+    "dll/BizHawk.Common.dll": "15ebdf860bc1d8d9efcaabefe1df69de0b24f31d431b558621df353882f386b9",
+    "dll/BizHawk.BizInvoke.dll": "36784436af64e6547a1e6155071eab104ca09d9b2d5fe1d73c7282cee500bffb",
+    "dll/BizHawk.Emulation.Common.dll": "f557d94912b12bde18413b60d25b3e61332b7bbfc7184349d1289d6ba9f350ee",
+    "dll/BizHawk.Emulation.Cores.dll": "444bc157418e9b5df5d07e987fc7ad1d2d1c6993676f5b864368027cb4f054d5",
+    "dll/waterboxhost.dll": "e8e47426941a710c7ceea98fb0833b8387de1952f54ca0fa40001cd494507cee"
+  },
+  "retained_proximity_campaign": {
+    "native_case_inputs": 10408,
+    "checked_buffers_sha256": "bc0b939cdaba55822e06fb1d4b65ea6e2e8379e43d523719e228361f7c5b2964",
+    "previous_digest_retained": true,
+    "private_report_sha256": "565c44b521181e21fb76733db74300acb5ecb42d5f3a3702ae5214620b3ab9d8",
+    "GTE_commands_including_controls": 7266
+  },
+  "complete_build": {
+    "objects": 306,
+    "build_current": true,
+    "complete_executable_bytes": 505856,
+    "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "byte_for_byte_original_equal": true,
+    "all_392_game_inputs_retained": true,
+    "fresh_clean_build_rerun": false,
+    "explanation": "Game build inputs unchanged; current matching build and fresh complete sized symbol link checked. Prior clean-build evidence retained."
+  },
+  "public_tests": [
+    {
+      "environment": "windows",
+      "python": "3.14.2",
+      "tests": 585,
+      "expected_skips": 2,
+      "exact_log_sha256": "06dcdebaf9ab32fc9a1445ea896b8bcd05e6baa9037e6afc94a0e949c285716c"
+    },
+    {
+      "environment": "wsl",
+      "python": "3.13.5",
+      "tests": 585,
+      "expected_skips": 2,
+      "exact_log_sha256": "c50457a30100a17e849bffafc6804a9fdb1b6b864bbd086a02ccf87c795ca026"
+    }
+  ],
+  "before_after": {
+    "status": "passed_bounded_original_periodic_npc_spatial_composition",
+    "guide": "docs/NPC_PERIODIC_SPATIAL.md",
+    "metadata": "docs/npc-periodic-spatial-checks.json",
+    "before": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "remaining_assembly_functions": 9,
+      "inherited_storage_explanations": 24,
+      "provisional_feature_groups": 40,
+      "listed_core_C_groups": 35,
+      "original_NPC_callbacks": 107,
+      "bounded_NPC_callbacks": 32,
+      "whole_feature_groups_accepted": 0,
+      "whole_NPC_encounters_accepted": 0,
+      "developer_capability_categories": 10,
+      "optional_mods": 3
+    },
+    "after": {
+      "c_bytes": 194212,
+      "game_text_bytes": 199912,
+      "remaining_assembly_functions": 9,
+      "inherited_storage_explanations": 24,
+      "provisional_feature_groups": 40,
+      "listed_core_C_groups": 35,
+      "original_NPC_callbacks": 107,
+      "bounded_NPC_callbacks": 34,
+      "whole_feature_groups_accepted": 0,
+      "whole_NPC_encounters_accepted": 0,
+      "developer_capability_categories": 10,
+      "optional_mods": 3
+    },
+    "native_case_inputs": 2628,
+    "callbacks_with_this_profile": 3,
+    "new_bounded_NPC_callbacks": 2,
+    "newly_profiled_callbacks": [
+      "entity_giant_minotaur",
+      "entity_minotaur"
+    ],
+    "preexisting_callback_with_real_ratio": "entity_bird",
+    "dependency_output_contracts": 0,
+    "detected_instruction_faults": 7,
+    "all_changed_instructions_observed": true,
+    "positive_native_GTE_commands": 5256,
+    "negative_control_GTE_commands": 14,
+    "previous_proximity_cases_repeated": 10408,
+    "previous_proximity_digest_retained": true,
+    "new_C_bytes": 0,
+    "source_explanations_resolved": 0,
+    "new_original_feature_groups_accepted": 0,
+    "new_whole_NPC_encounters_accepted": 0,
+    "new_gameplay_runs": 0,
+    "all_392_game_build_inputs_retained": true,
+    "original_NPC_AI_and_tools_separate": true,
+    "Bevy_port_modified": false
+  },
+  "prior_inventory_reconstructed_exactly": true,
+  "original_game_behavior_modified": false,
+  "model_API_calls": 0,
+  "game_images_buffers_logs_or_generated_code_published": false,
+  "remaining_gates": [
+    "Nine assembly functions and 24 inherited storage explanations still need matching source recovery.",
+    "Whole-feature and whole-encounter acceptance remain zero; the provisional denominator remains 40 feature groups.",
+    "Natural construction/lifecycle histories, collision-bearing graphs, drawing/audio and PS1 timing are unverified here.",
+    "Zero-divisor and signed-overflow BREAK paths remain unverified; ordinary-return fixtures reject them."
+  ],
+  "scope": "Three original callbacks and real proximity/transform/SDK/GTE. Bird ratio is read before movement; Minotaur uses signed half-duration periods; Giant Minotaur has its own zero-timer commands. Constructed meshless graphs, no actor children. Full buffers, ordered GTE, ABI, signed/word boundaries. Excludes natural construction/encounters, lifecycle histories, zero-divisor/overflow BREAK paths, drawing/audio and PS1 scheduling/timing. No whole-NPC or whole-feature acceptance."
+}

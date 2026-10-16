@@ -36,7 +36,7 @@ All-movie decoding, skip/error branches, and complete feature acceptance remain 
 | Known remaining game assembly functions | 9 |
 | Known C functions with unresolved unused local storage | 24 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
-| Original callbacks with bounded native comparisons | 32 / 107 |
+| Original callbacks with bounded native comparisons | 34 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 35 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
 
@@ -65,6 +65,10 @@ The [NPC proximity checks](docs/NPC_PROXIMITY.md) add Bear, Rabbit, Acrobats and
 Ship in 10,408 distinct fixtures through 25 original routines. Real distance,
 trigger-ratio, RNG, movement, event and GTE dependencies execute with no output
 stubs. Natural encounters and whole-callback acceptance remain open.
+The [periodic spatial checks](docs/NPC_PERIODIC_SPATIAL.md) add Minotaur and
+Giant Minotaur and replace Bird's trigger-ratio output contract with the real
+method. All 2,628 distinct initialized inputs pass through original movement
+and native GTE code. These are bounded profiles; no whole encounter is accepted.
 The [expanded source-layout audit](docs/SOURCE_LAYOUT_EXPANDED.md) corrects the
 earlier selected five-function scan. It identifies 28 unused-storage functions
 and withdraws four promotions that added padding. Their readable padding-free

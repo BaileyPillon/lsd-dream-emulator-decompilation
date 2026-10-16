@@ -21820,6 +21820,62 @@
       "new_whole_NPC_encounters_accepted": 0,
       "original_NPC_AI_and_tools_separate": true,
       "Bevy_port_modified": false
+    },
+    "periodic_npc_spatial_20261016": {
+      "status": "passed_bounded_original_periodic_npc_spatial_composition",
+      "guide": "docs/NPC_PERIODIC_SPATIAL.md",
+      "metadata": "docs/npc-periodic-spatial-checks.json",
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 32,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 34,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "native_case_inputs": 2628,
+      "callbacks_with_this_profile": 3,
+      "new_bounded_NPC_callbacks": 2,
+      "newly_profiled_callbacks": [
+        "entity_giant_minotaur",
+        "entity_minotaur"
+      ],
+      "preexisting_callback_with_real_ratio": "entity_bird",
+      "dependency_output_contracts": 0,
+      "detected_instruction_faults": 7,
+      "all_changed_instructions_observed": true,
+      "positive_native_GTE_commands": 5256,
+      "negative_control_GTE_commands": 14,
+      "previous_proximity_cases_repeated": 10408,
+      "previous_proximity_digest_retained": true,
+      "new_C_bytes": 0,
+      "source_explanations_resolved": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_gameplay_runs": 0,
+      "all_392_game_build_inputs_retained": true,
+      "original_NPC_AI_and_tools_separate": true,
+      "Bevy_port_modified": false
     }
   }
 }
