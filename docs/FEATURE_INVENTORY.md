@@ -763,3 +763,10 @@ All counts remain at 194,212 / 199,912 C bytes, nine assembly functions,
 24 inherited storage explanations, 35 / 40 listed-core C groups and 36 / 107
 bounded NPC profiles. Whole-feature and whole-encounter acceptance remain zero.
 The additive machine inventory retains every earlier field and measurement.
+
+The [effect lifecycle supplement](EFFECT_LIFECYCLE.md) appends separate original
+construction and expiration/notification evidence, and recovers two callback
+signatures without adding C bytes. Its 768 constructed histories execute 77
+original routines with zero function-output contracts. They add no NPC callback
+profile, natural encounter, whole feature, mod or developer capability category;
+all earlier snapshots and the full completion requirements remain intact.

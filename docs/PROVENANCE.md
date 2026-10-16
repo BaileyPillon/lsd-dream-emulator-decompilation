@@ -1,5 +1,15 @@
 # Source and evidence provenance
 
+The [effect lifecycle supplement](EFFECT_LIFECYCLE.md) publishes metadata for
+768 constructed lifecycle histories and earlier 471 construction fixtures.
+The native harness, interval/object models, raw buffers, complete canonical
+symbol link and failed diagnostics remain private local evidence. Four executed
+behavior faults include one detected only by notification arguments. Two C
+declaration corrections retain ordinary and fresh clean executable equality;
+the recorded native campaigns preceded those edits and their original code
+is byte-identical to the resulting build. The additive inventory preserves
+earlier reports and acceptance counts.
+
 The current project title is **LSD: Dream Emulator Decompilation**, published at
 [LSD: Dream Emulator Decompilation](https://github.com/BaileyPillon/lsd-dream-emulator-decompilation). The repository retains its original
 GitHub identity, fork ancestry and Git history. Earlier frozen evidence

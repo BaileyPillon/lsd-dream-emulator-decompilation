@@ -53,7 +53,7 @@ typedef struct effect_vtable {
     /* 0x08C 8006ea28 */ void (*Unk34)(void *);
     /* 0x090 8006ea2c */ void (*Unk35)(void *);
     /* 0x094 8006ea30 */ void (*Unk36)(void *);
-    /* 0x098 8006ea34 */ void (*Unk37)(void *);
+    /* 0x098 8006ea34 */ void (*effect_tick)(struct effect *, base_class_t *, s32);
     /* 0x09C 8006ea38 */ void (*Unk38)(void *);
     /* 0x0A0 8006ea3c */ void (*Unk39)(void *);
     /* 0x0A4 8006ea40 */ void (*Unk40)(void *);
@@ -71,7 +71,7 @@ typedef struct effect_vtable {
     /* 0x0D4 8006ea70 */ void (*effect_start)(struct effect *, base_class_t *, s32, s32);
     /* 0x0D8 8006ea74 */ void (*effect_start_attached)(struct effect *, base_class_t *, s32, s32);
     /* 0x0DC 8006ea78 */ s32 (*effect_activate)(struct effect *, base_class_t *, s32, s32);
-    /* 0x0E0 8006ea7c */ void (*Unk55)(void *, s32);
+    /* 0x0E0 8006ea7c */ void (*effect_deactivate)(struct effect *, base_class_t *);
     /* 0x0E4 8006ea80 */ void (*Unk56)(void *);
     /* 0x0E8 8006ea84 */ s32 (*effect_get_color)(void *);
     /* 0x0EC 8006ea88 */ void (*Unk58)(void *);
@@ -131,6 +131,8 @@ typedef struct effect {
 } effect_t;
 
 effect_t *effect_create(s32 Unk1, s32 Unk2, s32 Unk3);
+void effect_tick(effect_t *This, base_class_t *Target, s32 Phase);
+void effect_deactivate(effect_t *This, base_class_t *Target);
 void effect_start(effect_t *This, base_class_t *Target, s32 Variant, s32 Mode);
 void effect_start_attached(effect_t *This, base_class_t *Target, s32 Variant, s32 Mode);
 s32 effect_activate(effect_t *This, base_class_t *Target, s32 Variant, s32 Mode);

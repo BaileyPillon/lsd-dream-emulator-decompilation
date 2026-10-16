@@ -193,3 +193,10 @@ declaration now uses `s32` for both dimensions. The existing caller still
 widens its signed-short height field. This declaration correction passed the
 complete canonical executable comparison; its original assembly body remains.
 Evidence: `.decomp-lab/root-work/c6a8-parameter-abi-evidence.json`.
+
+The [effect lifecycle interface](EFFECT_LIFECYCLE.md) recovers effect slot
+`0x98` as a three-argument frame callback and slot `0xE0` as a two-argument
+expiration callback. Both retain a typed attachment-target pointer. Original
+frame-phase, expiration and owner-notification routines execute in the bounded
+supplement; callback addresses and structure sizes remain canonical. This does
+not close unrelated virtual calls or natural encounter dependencies.

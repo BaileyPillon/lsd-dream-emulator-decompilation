@@ -1,5 +1,14 @@
 # Changelog
 
+## Original effect lifecycle and callback types - 2026-10-16
+
+- Recover the frame and expiration callback signatures, preserving both target
+  pointers and the complete canonical executable.
+- Check 768 constructed lifecycle histories through 77 original routines,
+  including linked lifetimes, owner notification and frame-phase list removal.
+- Record four executed fault controls and separate earlier construction evidence.
+  Matching C and whole-feature acceptance counts remain unchanged.
+
 ## Typed effect activation interface - 2026-10-16
 
 - Name and type three original effect callbacks with their four arguments;
