@@ -1,5 +1,15 @@
 # Changelog
 
+## Explained callback storage in existing C - 2026-10-16
+
+- Replace five inherited unused eight-byte arrays with consumed, checked
+  four-byte callback/table views; remove their associated dead comparisons.
+- Preserve the exact executable in regular and fresh 306-object builds, with
+  normal/instrumented compiler equality for all nine source/control observations.
+- Reduce identified inherited storage explanations from 24 to 19. Matching C
+  stays 97.97%, with five assembly fallbacks and unchanged runtime acceptance.
+- Keep earlier inventory measurements, the running player and Bevy port intact.
+
 ## Matching menu layout and acceptance - 2026-10-16
 
 - Recover both menu callers in matching C using three consumed typed vtable

@@ -580,6 +580,16 @@ func_8003CE98_count:
     arg->tex = tex;
 }
 
+typedef void (*ui_screen_cleanup_step_fn_t)(void *);
+typedef struct {
+    ui_screen_vtable_t *table[1];
+} ui_screen_cleanup_table_ref_t;
+typedef char checked_ui_screen_cleanup_table_ref_t[
+    (sizeof(ui_screen_cleanup_table_ref_t) == 4) ? 1 : -1];
+static inline ui_screen_cleanup_step_fn_t ui_screen_read_cleanup_step(ui_screen_t *obj) {
+    ui_screen_cleanup_table_ref_t reference = {{ obj->vtable }};
+    return reference.table[0]->Unk62;
+}
 void func_8003D050(ui_screen_t *This) {
     void *unk18;
     int s1;
@@ -589,9 +599,7 @@ void func_8003D050(ui_screen_t *This) {
     void *unk18_member4_arg;
     void *unk25_arg;
     void *loop_arg;
-    char unused_stack_padding[8];
 
-    (void) unused_stack_padding;
 
     unk18 = (void *) This->m_Unk18;
     if (unk18) {
@@ -613,7 +621,7 @@ void func_8003D050(ui_screen_t *This) {
             do {
                 if (*(void **) ((char *) *(void **) ((char *) (void *) This->m_Unk18 + 0x24) + s1 * 4)) {
                     This->m_Unk21 = s1;
-                    This->vtable->Unk62(This);
+                    ui_screen_read_cleanup_step(This)(This);
                 }
 
                 loop_arg = *s2;
@@ -631,8 +639,17 @@ void func_8003D050(ui_screen_t *This) {
     }
 }
 
+typedef void (*ui_row_method_fn_t)(void *, s32, s32);
+typedef struct {
+    u32 table[1];
+} ui_row_table_ref_t;
+typedef char checked_ui_row_table_ref_t[
+    (sizeof(ui_row_table_ref_t) == 4) ? 1 : -1];
+static inline ui_row_method_fn_t ui_row_read_method(void *obj) {
+    ui_row_table_ref_t reference = {{ *(u32 *)obj }};
+    return *(ui_row_method_fn_t *)(reference.table[0] + 0x4C);
+}
 void func_8003D194(void *this, s32 arg1) {
-    char dummy_stack_padding[8];
     void *pUnk4C;
     s32 count;
     void **ppUnk54;
@@ -643,8 +660,6 @@ void func_8003D194(void *this, s32 arg1) {
     void *pOther;
     void **vtable;
 
-    if (&dummy_stack_padding[0] == &dummy_stack_padding[7]) {
-    }
 
     pUnk4C = *(void **) ((char *) this + 0x4C);
     if (pUnk4C == NULL) {
@@ -665,8 +680,7 @@ void func_8003D194(void *this, s32 arg1) {
         pArray18 = *(int **) ((char *) *(void **) ((char *) this + 0x4C) + 0x18);
         if (pArray18[i] == 0) {
             pOther = *ppUnk54;
-            vtable = *(void ***) pOther;
-            ((void (*)(void *, s32, s32)) vtable[0x4C / 4])(pOther, arg1, loop_var_s4);
+            ui_row_read_method(pOther)(pOther, arg1, loop_var_s4);
 
             pArray24 = *(int **) ((char *) *(void **) ((char *) this + 0x4C) + 0x24);
             if (pArray24[i] != 0) {
