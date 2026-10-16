@@ -806,3 +806,19 @@ ELF/assembly, whole buffers, source snapshots and faulted code stay private.
 Only developer code, tests and metadata are published. The inventory appends
 two bounded callback profiles while preserving previous measurements, the
 canonical executable, source/feature acceptance counts and the Bevy repository.
+
+## Effect activation type recovery
+
+[effect-activation-api-checks.json](effect-activation-api-checks.json) records
+three original effect slot bindings and the corrected four-argument interface.
+The entity field at `0x50` has a pointer producer in the original scene-node
+attachment code and is consumed as an object by activation. The source now
+names that field `m_EffectTarget` and removes the two callback casts.
+
+Four game inputs change, with the other 388 retained. Normal and clean builds,
+MIPS layout checks, two rejected declaration regressions, the virtual-table
+audit and the existing Gunman replay retain their separate evidence records.
+Replay fixtures are reused and add no new original scenarios or NPC profiles.
+Private compiler inputs, complete outputs, original images and failed controls
+remain outside publication. C recovery, feature/encounter acceptance, mods,
+developer capability categories and the separate Bevy repository are unchanged.

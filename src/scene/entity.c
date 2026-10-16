@@ -2057,7 +2057,7 @@ void entity_airplane(entity_t *This, s32 *arg1) {
         if (step == 0x30) {
             if (entity_check_proximity(This, This->m_Transform + 24, 0xF, 0xA) != 0) {
                 if (entity_create_effect(This, NULL, NULL, EFFECT_COLOR_STEP_NORMAL, 0) != NULL) {
-                    This->m_Effect->vtable->Unk52(This->m_Effect, This->m_EffectColor, 4, 0);
+                    This->m_Effect->vtable->effect_start(This->m_Effect, This->m_EffectTarget, 4, 0);
                 }
                 if (rand() & 1) {
                     This->vtable->Notify(This, ENTITY_NOTIFY_LINK_VIDEO);
@@ -2927,7 +2927,7 @@ void entity_gunman(entity_t *This, s32 *arg1) {
         }
         entity_set_aim_pose(arg1);
         if (entity_create_effect(This, NULL, NULL, EFFECT_COLOR_STEP_FAST, 0) != NULL) {
-            This->m_Effect->vtable->Unk52(This->m_Effect, This->m_EffectColor, 7, 0);
+            This->m_Effect->vtable->effect_start(This->m_Effect, This->m_EffectTarget, 7, 0);
         }
         This->m_State = 0xD;
         This->m_Tick = -1;
@@ -2938,7 +2938,7 @@ void entity_gunman(entity_t *This, s32 *arg1) {
         if (tick < 0x5A) {
             if (tick == 0x1E) {
                 if (entity_create_effect(This, NULL, NULL, EFFECT_COLOR_STEP_NORMAL, 0) != NULL) {
-                    This->m_Effect->vtable->Unk53(This->m_Effect, This->m_EffectColor, 0, 0);
+                    This->m_Effect->vtable->effect_start_attached(This->m_Effect, This->m_EffectTarget, 0, 0);
                 }
             }
             This->m_DreamSys->vtable->Unk16(This->m_DreamSys, 0, &g_RotateRollOne);
@@ -3059,7 +3059,7 @@ void entity_big_face_man_hidden(entity_t *This, s32 *arg1) {
                 This->vtable->Unk46(This, &g_MoveDown256);
             }
             child = This->m_Effect;
-            child->vtable->Unk52(child, This->m_EffectColor, 0, 0);
+            child->vtable->effect_start(child, This->m_EffectTarget, 0, 0);
         }
     } else if (This->m_Frame == 0) {
         do {
@@ -3181,7 +3181,7 @@ void entity_fetus_jump(entity_t *This, s32 *arg1) {
 void entity_gray_man(entity_t *This, s32 *arg1) {
     if (This->m_Triggered != 0) {
         if (entity_create_effect(This, NULL, NULL, EFFECT_COLOR_STEP_NORMAL, 0) != NULL) {
-            This->m_Effect->vtable->Unk52(This->m_Effect, This->m_EffectColor, 7, 0);
+            This->m_Effect->vtable->effect_start(This->m_Effect, This->m_EffectTarget, 7, 0);
             This->vtable->entity_disable_link(This);
             This->m_DreamSys->vtable->dream_sys_reset_flashback_list(This->m_DreamSys);
         }

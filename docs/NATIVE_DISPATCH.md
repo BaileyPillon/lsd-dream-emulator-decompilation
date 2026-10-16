@@ -30,6 +30,13 @@ and is explicitly listed as an unsupported type view; it is excluded from the
 57 audited table bindings. Its Run/Destroy interface still needs concrete
 receiver mapping as part of call-site review.
 
+The [effect activation interface](EFFECT_ACTIVATION_API.md) recovers the four
+arguments at slots `0xD4`, `0xD8` and `0xDC`, plus the entity's cached target
+pointer at `0x50`. Five NPC start sites and both activation calls use the typed
+interface. Compiler layout checks, a complete matching rebuild and the bounded
+Gunman replay preserve the original dispatch words; natural attachment graphs
+and complete encounter acceptance remain open.
+
 ## Original animation decoder chain
 
 A private execution check resolves the animation record path through its real

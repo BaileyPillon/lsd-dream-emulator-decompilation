@@ -749,3 +749,17 @@ listed-core groups remain 35 / 40. Natural construction, complete frame/effect
 lifecycles, rendering/audio, controller reachability and timing remain open.
 The additive inventory supplement preserves every earlier field and snapshot,
 with ten developer capabilities, three mods and the separate Bevy port unchanged.
+
+## Effect activation interface supplement
+
+The [typed effect interface](EFFECT_ACTIVATION_API.md) corrects three original
+virtual slots and the entity's cached attachment-target pointer. Five NPC start
+sites and both activation calls now use that interface directly. Complete
+executable equality, compiler layout/control checks and the existing Gunman
+replay establish this bounded source improvement; they add no new game feature,
+recovered C byte, distinct fixture input or accepted encounter.
+
+All counts remain at 194,212 / 199,912 C bytes, nine assembly functions,
+24 inherited storage explanations, 35 / 40 listed-core C groups and 36 / 107
+bounded NPC profiles. Whole-feature and whole-encounter acceptance remain zero.
+The additive machine inventory retains every earlier field and measurement.
