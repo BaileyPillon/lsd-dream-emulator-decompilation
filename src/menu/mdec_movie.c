@@ -81,15 +81,23 @@ typedef struct {
     s32 height;
 } mdec_movie_viewport_t;
 
+/* A consumed input view retains the native compiler reload lifetime.
+ * See docs/INPUT_STORAGE_RECOVERY.md for the matching allocation. */
+static inline mdec_movie_viewport_t * movie_viewport(mdec_movie_viewport_t * input) {
+    struct {
+        mdec_movie_viewport_t * value;
+    } view = { input };
+    typedef char checked_input_view[(sizeof(view) == 4) ? 1 : -1];
+
+    return view.value;
+}
+
 s32 func_8004564C(mdec_movie_t *This, s32 arg1, s32 arg2) {
     mdec_movie_viewport_t *src;
     s32 size;
     void *mem;
-    char pad[8];
 
-    if (&pad[0] == &pad[7]) {
-    }
-    src = (mdec_movie_viewport_t *) arg1;
+    src = movie_viewport((mdec_movie_viewport_t *) arg1);
     This->m_Unk2 = arg2;
     if (arg2 == 0) {
         This->m_Unk6 = 0;

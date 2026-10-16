@@ -24,6 +24,11 @@ ownership-event checks through original construction and first-frame setup.
 Neither changes the 40-group inventory, 36 bounded NPC callbacks, matching-C
 byte count or whole-feature/encounter acceptance totals.
 
+The later [input storage recovery](INPUT_STORAGE_RECOVERY.md) resolves six
+more inherited frames, reducing the identified remainder from **14 to 8**.
+Its 1,796 function bytes already counted as C. All source-byte, feature and
+NPC acceptance counts above remain unchanged.
+
 The [overlap result-lifetime study](OVERLAP_RESULT_LIFETIMES.md) improves an
 unaccepted source candidate from 170 to 148 differing executable bytes and
 rechecks the existing 6,912 native graph pairs. It adds no C byte, original

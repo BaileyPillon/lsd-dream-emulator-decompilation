@@ -1,0 +1,732 @@
+{
+  "schema_version": 1,
+  "status": "verified_six_matching_input_storage_recoveries",
+  "recorded_utc": "2026-10-16T23:38:17.906311+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "9fa6253316ee3b3c90e0324ffa29fd2694c5ce04",
+  "before": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 14,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 8,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_functions_explained": 6,
+  "existing_C_bytes_explained": 1796,
+  "unused_declared_bytes_removed": 54,
+  "new_C_bytes": 0,
+  "functions": [
+    {
+      "function": "memory_card_wait_event",
+      "unit": "src/menu/card/memory_card.c",
+      "address": "0x8004f4c8",
+      "bytes": 148,
+      "sha256": "9632403a199e042f96a4c90007e97e6dd0dd103fe1ae091104af1a86a827e3b1",
+      "frame_bytes": 56,
+      "frame_entry_offset": 0,
+      "stack_adjustments": [
+        [
+          0,
+          -56
+        ],
+        [
+          136,
+          56
+        ]
+      ],
+      "diagnostic_elf_sha256": "05e42ee0ad1f73d6966457a22459cc492672aa009bac6b25abf5d5d564a77087",
+      "complete_relocated_function_exact": true
+    },
+    {
+      "function": "func_8004F810",
+      "unit": "src/menu/card/memory_card.c",
+      "address": "0x8004f810",
+      "bytes": 148,
+      "sha256": "32814b4159a6e0b553ca1dfc0b665501ddcd75f5dd8c1f3de0dee675ec3c79e0",
+      "frame_bytes": 40,
+      "frame_entry_offset": 0,
+      "stack_adjustments": [
+        [
+          0,
+          -40
+        ],
+        [
+          136,
+          40
+        ]
+      ],
+      "diagnostic_elf_sha256": "05e42ee0ad1f73d6966457a22459cc492672aa009bac6b25abf5d5d564a77087",
+      "complete_relocated_function_exact": true
+    },
+    {
+      "function": "func_8004FBE4",
+      "unit": "src/menu/card/memory_card.c",
+      "address": "0x8004fbe4",
+      "bytes": 576,
+      "sha256": "11d982d6c88407ffaff98fc3a8cae770c66705f954919190a815f55303343cde",
+      "frame_bytes": 56,
+      "frame_entry_offset": 0,
+      "stack_adjustments": [
+        [
+          0,
+          -56
+        ],
+        [
+          564,
+          56
+        ]
+      ],
+      "diagnostic_elf_sha256": "05e42ee0ad1f73d6966457a22459cc492672aa009bac6b25abf5d5d564a77087",
+      "complete_relocated_function_exact": true
+    },
+    {
+      "function": "func_8004564C",
+      "unit": "src/menu/mdec_movie.c",
+      "address": "0x8004564c",
+      "bytes": 272,
+      "sha256": "162fdab2b6e6f04fab7f8ad30ec74ec2ad458f954432cc02bc0f2d852c06ecdb",
+      "frame_bytes": 40,
+      "frame_entry_offset": 0,
+      "stack_adjustments": [
+        [
+          0,
+          -40
+        ],
+        [
+          260,
+          40
+        ]
+      ],
+      "diagnostic_elf_sha256": "38b2636f0623eb7f99027b1d12127ad6e40545c27de3be1de95b97e294079112",
+      "complete_relocated_function_exact": true
+    },
+    {
+      "function": "graph_screen_setup_video_event",
+      "unit": "src/menu/graph_screen.c",
+      "address": "0x800585b4",
+      "bytes": 224,
+      "sha256": "5f9fe9a5bf7546c8c096c554522f709a227c5a4649f822a33c85238ffcd27e2f",
+      "frame_bytes": 8,
+      "frame_entry_offset": 12,
+      "stack_adjustments": [
+        [
+          12,
+          -8
+        ],
+        [
+          212,
+          8
+        ]
+      ],
+      "diagnostic_elf_sha256": "3975d644c576064deb3e4954a3a69fabbc095ad586df4b9acc4566027dc06f5c",
+      "complete_relocated_function_exact": true
+    },
+    {
+      "function": "generate_initial_spawn",
+      "unit": "src/dream/dream_sys.c",
+      "address": "0x8005c28c",
+      "bytes": 428,
+      "sha256": "68bf66800376ffd7e0dc5940240d68064ceeb4a5d009d6047c2d001ec07616c0",
+      "frame_bytes": 48,
+      "frame_entry_offset": 0,
+      "stack_adjustments": [
+        [
+          0,
+          -48
+        ],
+        [
+          416,
+          48
+        ]
+      ],
+      "diagnostic_elf_sha256": "8013c7b6f78913fcaee3ce8b266cb5669955b4465cdfd16ff047407531179af2",
+      "complete_relocated_function_exact": true
+    }
+  ],
+  "remaining_identified_storage_functions": [
+    "debug_file_driver_unk15",
+    "debug_file_driver_open",
+    "func_80044F90",
+    "func_80045060",
+    "func_80044D40",
+    "func_80044E64",
+    "func_8003D2CC",
+    "func_8004ADD8"
+  ],
+  "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+  "compiler_observations": [
+    {
+      "unit": "src/menu/card/memory_card.c",
+      "variant": "baseline",
+      "source_sha256": "ee38f670aba35cd274804969390f6365724cf52679b6d62026c6887889de6059",
+      "report_path": ".decomp-lab/input-card-baseline-allocation-20261016-first/report.json",
+      "report_sha256": "bea3e0729135fb8e3b51d6836fc7b0817d2c07c01afe81811c459d9e8e106cf9",
+      "events": [
+        {
+          "function": "memory_card_wait_event",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        },
+        {
+          "function": "memory_card_wait_event",
+          "allocator": "assign_stack_local",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        },
+        {
+          "function": "func_8004F810",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        },
+        {
+          "function": "func_8004F810",
+          "allocator": "assign_stack_local",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        },
+        {
+          "function": "func_8004FBE4",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        },
+        {
+          "function": "func_8004FBE4",
+          "allocator": "assign_stack_local",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        }
+      ]
+    },
+    {
+      "unit": "src/menu/card/memory_card.c",
+      "variant": "removed",
+      "source_sha256": "459643d0c9a1244f17d61ce4f132f27c8a255c3ce7b7a6f6b34e92c3f8704343",
+      "report_path": ".decomp-lab/input-card-removed-allocation-20261016-first/report.json",
+      "report_sha256": "2b4d89f68c4cce132a1ce7dacc807e8a47208dee560e5cf031d4b7afc444cbe6",
+      "events": []
+    },
+    {
+      "unit": "src/menu/card/memory_card.c",
+      "variant": "matching",
+      "source_sha256": "b7845621a18392ce05c778086638e0e92969ea0e6432102a633f21b3bcc84669",
+      "report_path": ".decomp-lab/input-card-matching-allocation-20261016-first/report.json",
+      "report_sha256": "6ac5af86f5c38719c004394ddb42fa2235d653577bf9f55975ff4cc334ec368d",
+      "events": [
+        {
+          "function": "memory_card_wait_event",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 82,
+            "from_pseudo": -1,
+            "function": "memory_card_wait_event",
+            "completed": true
+          }
+        },
+        {
+          "function": "func_8004F810",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 76,
+            "from_pseudo": -1,
+            "function": "func_8004F810",
+            "completed": true
+          }
+        },
+        {
+          "function": "func_8004FBE4",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 108,
+            "from_pseudo": -1,
+            "function": "func_8004FBE4",
+            "completed": true
+          }
+        }
+      ]
+    },
+    {
+      "unit": "src/menu/mdec_movie.c",
+      "variant": "baseline",
+      "source_sha256": "1acdee2c03594823874e729625c5f51984a429919f0983a569be4d059f610c87",
+      "report_path": ".decomp-lab/input-movie-baseline-allocation-20261016-first/report.json",
+      "report_sha256": "d1ae3ddd391e0415a08aca2e10e31b2d0116628052ee1ca53743c41c5c122cd5",
+      "events": [
+        {
+          "function": "func_8004564C",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        },
+        {
+          "function": "func_8004564C",
+          "allocator": "assign_stack_local",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        }
+      ]
+    },
+    {
+      "unit": "src/menu/mdec_movie.c",
+      "variant": "removed",
+      "source_sha256": "8f1ee191fb05e534c88e3ed495c7bb3ffe5499a1eaa2b0beed664ceb51bf0830",
+      "report_path": ".decomp-lab/input-movie-removed-allocation-20261016-first/report.json",
+      "report_sha256": "3b696a30f898d70856f220ec1e788e9b4bf646fefbe06a98040e110be411aea8",
+      "events": []
+    },
+    {
+      "unit": "src/menu/mdec_movie.c",
+      "variant": "matching",
+      "source_sha256": "80ad6b55ed2a1923e1c00491565b16032a4b2fdc0cf25848f0b902f2f68b3019",
+      "report_path": ".decomp-lab/input-movie-matching-allocation-20261016-first/report.json",
+      "report_sha256": "7e32e01e16458488e083e57f0ef256b38fec585d03223c19444c2d4a22855025",
+      "events": [
+        {
+          "function": "func_8004564C",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 77,
+            "from_pseudo": -1,
+            "function": "func_8004564C",
+            "completed": true
+          }
+        }
+      ]
+    },
+    {
+      "unit": "src/menu/graph_screen.c",
+      "variant": "baseline",
+      "source_sha256": "3459c26004f92d3f0549195fbb52d74dd11d5af856f73132653503ec39fa7ea4",
+      "report_path": ".decomp-lab/input-graph-baseline-allocation-20261016-first/report.json",
+      "report_sha256": "1a0e0a2d6b4d08c40a57f9d3fa2ff64a193bee990882ba8d409f6613387457c4",
+      "events": [
+        {
+          "function": "graph_screen_setup_video_event",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        },
+        {
+          "function": "graph_screen_setup_video_event",
+          "allocator": "assign_stack_local",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        }
+      ]
+    },
+    {
+      "unit": "src/menu/graph_screen.c",
+      "variant": "removed",
+      "source_sha256": "0c2d7c34c653e1dc643983eb448fac2c6cb09481ae75aa1196376c800309ae94",
+      "report_path": ".decomp-lab/input-graph-removed-allocation-20261016-first/report.json",
+      "report_sha256": "866b50fbe02b43ab3eadf295378cedbd4506e534ff6b617acfaae84ec5c40d63",
+      "events": []
+    },
+    {
+      "unit": "src/menu/graph_screen.c",
+      "variant": "matching",
+      "source_sha256": "cbf99cff532d9231936f82f423769a4f16a5920d2d744afd68d6db40af3c6bf7",
+      "report_path": ".decomp-lab/input-graph-matching-allocation-20261016-first/report.json",
+      "report_sha256": "757f3e99360b993d76db22fbaf1dc9f3c4503bbb644c72fa8e7021df16f154a5",
+      "events": [
+        {
+          "function": "graph_screen_setup_video_event",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 90,
+            "from_pseudo": -1,
+            "function": "graph_screen_setup_video_event",
+            "completed": true
+          }
+        }
+      ]
+    },
+    {
+      "unit": "src/dream/dream_sys.c",
+      "variant": "baseline",
+      "source_sha256": "bd5fe0817a553a4cccd5505e5f87577fd9264dacf9d3576ebc1a034faaa4b9f2",
+      "report_path": ".decomp-lab/input-spawn-baseline-allocation-20261016-first/report.json",
+      "report_sha256": "bd629554aff9a7e2b1f1ddd9e5e77e683aeed9bd427e010ab761f640cda4f2d9",
+      "events": [
+        {
+          "function": "generate_initial_spawn",
+          "allocator": "assign_stack_temp",
+          "size": 16,
+          "frame_offset_before": 0,
+          "frame_offset_after": 16,
+          "alter_reg_context": null
+        },
+        {
+          "function": "generate_initial_spawn",
+          "allocator": "assign_stack_local",
+          "size": 16,
+          "frame_offset_before": 0,
+          "frame_offset_after": 16,
+          "alter_reg_context": null
+        }
+      ]
+    },
+    {
+      "unit": "src/dream/dream_sys.c",
+      "variant": "removed",
+      "source_sha256": "061475c43b941eb4945aba8b738357787bed266e9589e467066a82178f9404da",
+      "report_path": ".decomp-lab/input-spawn-removed-allocation-20261016-first/report.json",
+      "report_sha256": "45c34a45c02171ecef016e2b57142c12f5cb4359bd4643b2e89ca9a5641267b6",
+      "events": [
+        {
+          "function": "generate_initial_spawn",
+          "allocator": "assign_stack_local",
+          "size": 2,
+          "frame_offset_before": 0,
+          "frame_offset_after": 2,
+          "alter_reg_context": null
+        }
+      ]
+    },
+    {
+      "unit": "src/dream/dream_sys.c",
+      "variant": "matching",
+      "source_sha256": "d5b09c49d43d8b0001868f90abe81e6976906ae4180f4b70fb5f78fa400c8b3a",
+      "report_path": ".decomp-lab/input-spawn-matching-allocation-20261016-first/report.json",
+      "report_sha256": "5bef4593c63e8d61ddd6cb12a871cb9ce1c451aac0d8c4ed4e3bf7510405ed95",
+      "events": [
+        {
+          "function": "generate_initial_spawn",
+          "allocator": "assign_stack_local",
+          "size": 2,
+          "frame_offset_before": 0,
+          "frame_offset_after": 2,
+          "alter_reg_context": null
+        },
+        {
+          "function": "generate_initial_spawn",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 2,
+          "frame_offset_after": 16,
+          "alter_reg_context": {
+            "pseudo": 98,
+            "from_pseudo": -1,
+            "function": "generate_initial_spawn",
+            "completed": true
+          }
+        }
+      ]
+    }
+  ],
+  "qualified_compiler_observations": 12,
+  "normal_and_instrumented_complete_assembly_equal": true,
+  "explicit_compiler_memory_rewrites": false,
+  "extra_inferior_functions_invoked": 0,
+  "ordinary_complete_image_equal": true,
+  "fresh_complete_build": {
+    "status": "verified_fresh_complete_input_storage_build",
+    "objects": 306,
+    "executable_bytes": 505856,
+    "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "protected_build_inputs_preserved": true,
+    "source_units": [
+      "src/menu/card/memory_card.c",
+      "src/menu/mdec_movie.c",
+      "src/menu/graph_screen.c",
+      "src/dream/dream_sys.c"
+    ],
+    "regular_and_fresh_complete_images_equal": true,
+    "new_C_bytes": 0,
+    "whole_feature_acceptances": 0,
+    "goal_complete": false
+  },
+  "private_qualification": {
+    "path": ".decomp-lab/input-storage-recovery-20261016-first/qualification.json",
+    "sha256": "a1f580d0e15ec744a2e045cfdf825bf12a96257560a20d0e41451bb229ec4700"
+  },
+  "private_fresh_build": {
+    "path": ".decomp-lab/input-storage-recovery-20261016-first/fresh-build-report.json",
+    "sha256": "b849d335bd94aaba4fec645024baf3f8b80a518da97081385abbc5fa232a3682",
+    "producer_sha256": "afba9ee697f7083cbb870c0dbb08222079ef025e1b09614132b975a8c292d912",
+    "maspsx_revision": "e85ecb373828aabea96d7e6400974d4f91ce8c74"
+  },
+  "card_transition_isolated_link": {
+    "differing_bytes": 3,
+    "differing_words": 2,
+    "relocations": [
+      {
+        "offset": "0x78",
+        "type": "R_MIPS_HI16",
+        "symbol": ".rodata"
+      },
+      {
+        "offset": "0x7c",
+        "type": "R_MIPS_LO16",
+        "symbol": ".rodata"
+      }
+    ],
+    "complete_unit_differing_bytes": 0,
+    "complete_relocated_function_exact": true
+  },
+  "native_heap_regression": {
+    "private_report": ".decomp-lab/card-input-storage-heap-20261016-first.json",
+    "report_sha256": "89f8b1d4e86b9a9d85046cbb972649bcfb362b03d57eaa121f7f993966c004f6",
+    "status": "passed_bounded_original_card_heap_composition",
+    "component_cases": 96,
+    "cleanup_fixture_cases_per_image": 180,
+    "cleanup_executions_per_image": 360,
+    "images_checked": 2,
+    "negative_controls": [
+      {
+        "name": "wrong_minimum_payload",
+        "function": "memory_allocate_mem",
+        "function_offset": 88,
+        "detected": true,
+        "detection": "allocate 1 complete-buffer mismatch in manager at offsets [72, 76]",
+        "private_copy_only": true
+      },
+      {
+        "name": "missing_free_header_flag",
+        "function": "memory_free_mem",
+        "function_offset": 364,
+        "detected": true,
+        "detection": "free 0x110044 complete-buffer mismatch in pool at offsets [67]",
+        "private_copy_only": true
+      },
+      {
+        "name": "omitted_table_release",
+        "function": "func_8004F810",
+        "function_offset": 112,
+        "detected": true,
+        "detection": "composed cleanup complete-buffer mismatch in manager at offsets [72, 76]",
+        "private_copy_only": true
+      }
+    ],
+    "explicit_output_stubs": 0,
+    "backend": {
+      "package_version": "2.1.2",
+      "library_api": [
+        2,
+        1,
+        33620735
+      ],
+      "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+      "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+      "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+      "binding_source_count": 21,
+      "execution_hook": "UC_HOOK_CODE",
+      "fresh_cpu_per_host_call": true,
+      "all_emulated_ram_preserved_between_host_calls": true,
+      "uninterrupted_cpu_within_guest_cleanup_graph": true
+    },
+    "producer_dependencies": [
+      {
+        "path": "tools/verify_native_ai.py",
+        "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+      },
+      {
+        "path": "tools/inventory_vtables.py",
+        "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+      },
+      {
+        "path": "tools/progress.py",
+        "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+      },
+      {
+        "path": "configure.py",
+        "sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2"
+      },
+      {
+        "path": "requirements-analysis.txt",
+        "sha256": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911"
+      },
+      {
+        "path": "build/SLPS01556.map",
+        "sha256": "7243fb729bf7c21ac966b60769a24244c9520f8a376a75295a666fc8e1e79586"
+      },
+      {
+        "path": "build/undefined_funcs_auto.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "build/undefined_syms_auto.txt",
+        "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+      },
+      {
+        "path": "src/scene/entity.c",
+        "sha256": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811"
+      },
+      {
+        "path": "src/scene/entity.h",
+        "sha256": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f"
+      },
+      {
+        "path": "src/dream/dream_sys.c",
+        "sha256": "d5b09c49d43d8b0001868f90abe81e6976906ae4180f4b70fb5f78fa400c8b3a"
+      },
+      {
+        "path": "src/dream/dream_sys.h",
+        "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+      },
+      {
+        "path": "src/scene/actor.c",
+        "sha256": "c9da90f048399ad93127e4c841aaf49c81c6922a8d4528ae783f1edcf2be3a4b"
+      },
+      {
+        "path": "src/base/transform.c",
+        "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+      },
+      {
+        "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+        "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+      },
+      {
+        "path": "tools/verify_card_heap.py",
+        "sha256": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5"
+      },
+      {
+        "path": "tools/heap_model.py",
+        "sha256": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e"
+      },
+      {
+        "path": "tools/verify_card_cleanup.py",
+        "sha256": "5eec21f9fe0afa2549f10eb890c1dbf9984f5f1541611102afd9fa995d58d6c0"
+      },
+      {
+        "path": "requirements-card-heap.txt",
+        "sha256": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212"
+      },
+      {
+        "path": "src/base/base.c",
+        "sha256": "23f9ddac6d6e960eb2d0c40e6b8598d68aac401ea2d3031804d70c4309243722"
+      },
+      {
+        "path": "src/base/base.h",
+        "sha256": "aec74fef6d427a2242f2387894fd7374be4d092d313fed1fc02fa94578e6bfab"
+      },
+      {
+        "path": "src/menu/card/memory_card.c",
+        "sha256": "b7845621a18392ce05c778086638e0e92969ea0e6432102a633f21b3bcc84669"
+      },
+      {
+        "path": "src/menu/card/memory_card.h",
+        "sha256": "7fad340f710cbaa8c1baccefc7c96202d43b14e9e98c8892ec11c8ee729e2d6b"
+      }
+    ],
+    "scope": "Seven original functions: supplied-manager setup, global preference and explicit fallback for direct component calls, first-fit allocation, alignment, minimum and split thresholds, valid-owned free/coalescing, NULL and failed allocations, lock stores/getter, complete guarded buffers and globals, three consistent pointer aliases, signed cleanup counts, original release order, external and pooled owners, fragmented pools, repeated cleanup, o32 saved registers, stack and red zones. The entire native cleanup/free/lock graph runs uninterrupted without output stubs. The caller teardown is separate. Invalid/duplicate frees, overflowing requests, OS allocator failure, concurrent execution, physical cards, natural error-path reachability, PS1 timing, padding-source recovery and whole-feature parity are not established.",
+    "new_original_fixture_domain": false,
+    "new_whole_feature_acceptance": false
+  },
+  "additional_failed_source_studies": [
+    {
+      "report": ".decomp-lab/grid-consumed-views-20261016-first/report.json",
+      "qualified_observations": 41,
+      "exact_function_matches": 0,
+      "sha256": "68cab46a668df4cabae1f82487d23bb3a2f235566ffb0dd88ed16f4c622cea68"
+    },
+    {
+      "report": ".decomp-lab/primitive-scalar-pointer-lifetimes-20261016-first/report.json",
+      "qualified_observations": 15,
+      "exact_function_matches": 0,
+      "sha256": "e9d186e8497f27cc206e2ce2e38329fd86dc4723064d104034832c6d3bb33cdf"
+    }
+  ],
+  "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "public_files": {
+    "src/menu/card/memory_card.c": "b7845621a18392ce05c778086638e0e92969ea0e6432102a633f21b3bcc84669",
+    "src/menu/mdec_movie.c": "80ad6b55ed2a1923e1c00491565b16032a4b2fdc0cf25848f0b902f2f68b3019",
+    "src/menu/graph_screen.c": "cbf99cff532d9231936f82f423769a4f16a5920d2d744afd68d6db40af3c6bf7",
+    "src/dream/dream_sys.c": "d5b09c49d43d8b0001868f90abe81e6976906ae4180f4b70fb5f78fa400c8b3a",
+    "docs/INPUT_STORAGE_RECOVERY.md": "585a7ff334c16c6d26c730ca9ffa9c277d43e48b379200f5c8636e946f47e042"
+  },
+  "changed_game_source_units": [
+    "src/menu/card/memory_card.c",
+    "src/menu/mdec_movie.c",
+    "src/menu/graph_screen.c",
+    "src/dream/dream_sys.c"
+  ],
+  "other_388_game_inputs_preserved": true,
+  "tooling_tests": [
+    {
+      "platform": "Windows",
+      "python_version": "Python 3.14.2",
+      "total_cases": 654,
+      "passed": 652,
+      "expected_skips": 2,
+      "private_log": ".decomp-lab/input-storage-tests-windows-20261016-final.log",
+      "log_sha256": "960b086bb49281465cd4d9034bdc67088eeebc9757f29779386d8ee894aed455"
+    },
+    {
+      "platform": "WSL/Linux",
+      "python_version": "Python 3.13.5",
+      "total_cases": 654,
+      "passed": 652,
+      "expected_skips": 2,
+      "private_log": ".decomp-lab/input-storage-tests-wsl-20261016-final.log",
+      "log_sha256": "20747c4ad506a679f3d189e2a955083763d7bca5125310dc246e1029e92bd060"
+    }
+  ],
+  "new_NPC_callback_profiles": 0,
+  "whole_feature_acceptances": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_model_API_calls": 0,
+  "new_gameplay_runs": 0,
+  "Bevy_port_modified": false,
+  "goal_complete": false,
+  "source_hash_convention": "SHA-256 of exact executed local bytes. Promoted C units and new guide/metadata are pinned to LF. Earlier transitive inputs retain their recorded local line endings.",
+  "scope": "Six consumed input views explain inherited C storage while preserving all original instructions. The spawn key retains only two written bytes. No original author declaration is claimed; all whole-game source and runtime gates remain unchanged."
+}

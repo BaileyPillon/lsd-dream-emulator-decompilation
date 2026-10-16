@@ -1,5 +1,16 @@
 # Changelog
 
+## Matching input storage recovery - 2026-10-16
+
+- Replace unused storage in six card, movie, recorded-event and spawn functions
+  with consumed input references; retain only the spawn key's two written bytes.
+- Preserve all six fully relocated function spans and the complete executable,
+  with twelve unchanged-assembly compiler observations and full build evidence.
+- Reduce identified inherited storage explanations from 14 to 8, removing
+  54 unused declared bytes. The 1,796 function bytes already counted as C.
+- Retain all five assembly fallbacks, 97.97% C coverage and existing feature/NPC
+  acceptance boundaries; new renderer and collision source forms still fail.
+
 ## Matching accessor storage and native factory ownership - 2026-10-16
 
 - Replace three inherited unused arrays with consumed word, matrix-input,

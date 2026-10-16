@@ -532,8 +532,18 @@ s32 memory_card_check_events(memory_card_t *This) {
     return memory_card_wait_event(&This->m_Unk4, 4);
 }
 
+/* A consumed input view retains the native compiler reload lifetime.
+ * See docs/INPUT_STORAGE_RECOVERY.md for the matching allocation. */
+static inline s32 card_read_event_handle(const s32 * input) {
+    struct {
+        const s32 * value;
+    } view = { input };
+    typedef char checked_input_view[(sizeof(view) == 4) ? 1 : -1];
+
+    return *view.value;
+}
+
 s32 memory_card_wait_event(s32 *events, s32 count) {
-    char dummy_stack_padding[8];
     s32 *var_s4;
     s32 var_s3;
     s32 *var_s5;
@@ -541,8 +551,6 @@ s32 memory_card_wait_event(s32 *events, s32 count) {
     s32 *var_s1;
     s32 var_s2;
 
-    if (&dummy_stack_padding[0] == &dummy_stack_padding[7]) {
-    }
 
     var_s4 = events;
     var_s3 = count;
@@ -553,7 +561,7 @@ s32 memory_card_wait_event(s32 *events, s32 count) {
             var_s1 = var_s4;
             do {
                 var_s2 = var_s0 * 4;
-                if (TestEvent(*var_s1) != 0) {
+                if (TestEvent(card_read_event_handle(var_s1)) != 0) {
                     return *(s32 *) (var_s2 + (u32) var_s5);
                 }
                 var_s0 += 1;
@@ -640,16 +648,24 @@ void func_8004F784(memory_card_t *This) {
     *(s32 *) ((i * 4) + This->m_Unk13) = 0;
 }
 
+/* A consumed input view retains the native compiler reload lifetime.
+ * See docs/INPUT_STORAGE_RECOVERY.md for the matching allocation. */
+static inline void * card_release_pointer(void * input) {
+    struct {
+        void * value;
+    } view = { input };
+    typedef char checked_input_view[(sizeof(view) == 4) ? 1 : -1];
+
+    return view.value;
+}
+
 void func_8004F810(memory_card_t *This) {
-    char dummy_stack_padding[8];
     s32 i;
 
-    if (&dummy_stack_padding[0] == &dummy_stack_padding[7]) {
-    }
 
     if (This->m_Unk13 != 0) {
         i = 0;
-        memory_free_mem((void *) This->m_Unk14);
+        memory_free_mem(card_release_pointer((void *) This->m_Unk14));
         if (This->m_Unk10 > 0) {
             do {
                 memory_free_mem(*(void **) (This->m_Unk13 + (i * 4)));
@@ -773,15 +789,12 @@ s32 func_8004FB04(memory_card_t *This, void *Unk, s32 a2) {
 }
 
 void func_8004FBE4(memory_card_t *This, s32 Unk) {
-    char dummy_stack_padding[8];
     memory_card_vtable_t *vtable;
     s32 state;
     s32 result;
     void (*fn)(void *);
     s32 i;
 
-    if (&dummy_stack_padding[0] == &dummy_stack_padding[7]) {
-    }
 
     state = Unk;
     vtable = This->vtable;
@@ -833,7 +846,7 @@ void func_8004FBE4(memory_card_t *This, s32 Unk) {
         if (This->m_Operation == MEMORY_CARD_OPERATION_LOAD) {
             if (This->m_Unk13 != 0) {
                 i = 0;
-                memory_free_mem((void *) This->m_Unk14);
+                memory_free_mem(card_release_pointer((void *) This->m_Unk14));
                 if (This->m_Unk10 > 0) {
                     do {
                         memory_free_mem(*(void **) (This->m_Unk13 + (i * 4)));

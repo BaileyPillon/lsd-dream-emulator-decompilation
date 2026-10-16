@@ -9,6 +9,8 @@
 > The subsequent [accessor recovery](ACCESSOR_STORAGE_RECOVERY.md) explains
 > three more, leaving fourteen. Their existing C bytes and all gameplay
 > acceptance counts are unchanged.
+> The later [input storage recovery](INPUT_STORAGE_RECOVERY.md) explains six
+> further frames, leaving eight identified explanations open.
 > Measurements below retain their original snapshot and scope.
 
 The earlier [five-function audit](SOURCE_QUALITY.md) inspected selected

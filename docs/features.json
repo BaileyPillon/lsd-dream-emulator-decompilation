@@ -23123,6 +23123,64 @@
       "new_whole_NPC_encounters_accepted": 0,
       "new_model_API_calls": 0,
       "Bevy_port_modified": false
+    },
+    "input_storage_recovery_20261016": {
+      "status": "verified_six_matching_input_storage_recoveries",
+      "report": "docs/INPUT_STORAGE_RECOVERY.md",
+      "checks": "docs/input-storage-recovery-checks.json",
+      "before": {
+        "c_bytes": 195844,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 5,
+        "inherited_storage_explanations": 14,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 195844,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 5,
+        "inherited_storage_explanations": 8,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "source_functions_explained": 6,
+      "existing_C_bytes_explained": 1796,
+      "unused_declared_bytes_removed": 54,
+      "compiler_observations": 12,
+      "ordinary_and_fresh_complete_builds_equal": true,
+      "native_heap_regression_existing_fixture_cases_per_image": 180,
+      "native_heap_regression_executions_per_image": 360,
+      "native_heap_regression_images": 2,
+      "native_heap_executed_fault_controls": 3,
+      "new_C_bytes": 0,
+      "new_bounded_NPC_callbacks": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_model_API_calls": 0,
+      "remaining_identified_storage_functions": [
+        "debug_file_driver_unk15",
+        "debug_file_driver_open",
+        "func_80044F90",
+        "func_80045060",
+        "func_80044D40",
+        "func_80044E64",
+        "func_8003D2CC",
+        "func_8004ADD8"
+      ],
+      "Bevy_port_modified": false
     }
   }
 }
