@@ -773,3 +773,19 @@ The scene-node caller is qualified by complete executable equality; it is not
 executed in this new native campaign. Published metadata distinguishes those
 claims and preserves previous inventory fields and source/feature/NPC counts.
 Original NPC AI, optional mods, AI-assisted tools and Bevy remain separate.
+
+## Narrow bounds comparison supplement
+
+[bounds-narrow-comparison-checks.json](bounds-narrow-comparison-checks.json)
+records the published 19-byte research candidate, its complete sized function,
+4,648 repeated original/candidate inputs, eleven executed differing instruction
+words, four measured faults and actual compiler allocation observations.
+The 128 compiler observations include controls; twenty diagnostic relinks add
+no compilations. The initial linker-placement failures and wrapper status-label
+assertion remain retained, with the subsequent audit recorded separately.
+
+All 392 matching-game build inputs and the complete canonical executable remain
+unchanged. Earlier 21-byte source evidence and all prior inventory snapshots
+are retained. Original game images, linked code, complete buffers, failed runs
+and compiler outputs stay private. No accepted C bytes, whole-feature/encounter
+coverage, NPC profile, mod or capability category is added. Bevy is unchanged.

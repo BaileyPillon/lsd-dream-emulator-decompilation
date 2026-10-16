@@ -81,6 +81,9 @@ The [render query record cleanup](docs/RENDER_QUERY_RECORD.md) removes a
 separately identified redundant buffer tail. Actual compiler traces explain
 its allocation, and the complete executable remains identical; the counts
 above are unchanged.
+The [bounds research comparison](docs/BOUNDS_NARROW_COMPARISON.md) publishes
+the retained 19-byte candidate and a confined native checker. It improves the
+research starting point while the matching game retains its assembly fallback.
 The [generation structure checks](docs/GENERATION_STRUCTURES.md) execute eleven
 original routines and compare 1,116 fixtures per original/candidate image,
 including virtual dispatch, position updates and mode 3 sprite RNG/scaling.
