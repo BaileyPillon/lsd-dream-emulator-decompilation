@@ -717,3 +717,17 @@ capability category or optional mod. C recovery remains 194,212 / 199,912;
 nine assembly functions and 24 inherited storage explanations remain open.
 Bounded NPC profiles stay at 34 / 107, with zero whole-feature and whole-NPC
 acceptance. All preceding snapshots and the separate Bevy port are preserved.
+
+## Bounds research comparison supplement
+
+The [bounds source comparison](BOUNDS_NARROW_COMPARISON.md) publishes the
+previously private 19-byte candidate and its confined native checker. The
+4,648 existing initialized inputs, all eleven differing instruction words
+and four executed faults are checked again. These are repeated scalar inputs,
+with no new natural gameplay scenario or NPC callback.
+
+The 128 compiler observations include repeated controls and find no further
+improvement. Matching C stays at 194,212 / 199,912 bytes, with nine assembly
+functions, 24 inherited storage explanations, 35 / 40 listed-core C groups
+and 34 / 107 bounded NPC profiles. Whole-feature and whole-encounter acceptance
+remain zero. Capability/mod counts and the Bevy port are unchanged.

@@ -2,7 +2,7 @@
 
 [`bounds_candidate.c`](bounds_candidate.c) is an **unaccepted** C reconstruction
 of the original 108-byte `func_8004CD38`. Its complete executable differs from
-the canonical game at **21 byte positions**, all within this function. The
+the canonical game at **19 byte positions**, all within this function. The
 matching build continues to use the original assembly.
 
 The fragment uses the twelve-byte mixed-width bounds type from the existing
@@ -29,13 +29,34 @@ python tools/decomp_workbench.py check \
 
 The second command requires your canonical executable and configured toolchain.
 **Expected matching-gate result: exit code 1**, a 505,856-byte image, zero length
-difference and 21 changed bytes. Retain that failed gate. Promote the fragment
+difference and 19 changed bytes. Retain that failed gate. Promote the fragment
 only after the complete executable matches and the source explanation is reviewed.
 
-The [source-lifetime report](../../docs/BOUNDS_SOURCE_LIFETIMES.md) records the
+The [current comparison](../../docs/BOUNDS_NARROW_COMPARISON.md) records the
 complete linked function, native fixture boundary and actual compiler allocation.
+The [source-lifetime report](../../docs/BOUNDS_SOURCE_LIFETIMES.md) retains the
+preceding 21-byte source snapshot and its original evidence.
 The [original predicate profile](../../docs/RENDER_BOUNDS.md) documents read
 order, inclusive edges, mixed widths and the null-input rule.
+
+## Compare constructed inputs
+
+With `requirements-analysis.txt` installed, use the complete workbench image
+and sized diagnostic ELF produced above:
+
+```bash
+python research/render_bounds/compare_candidate.py \
+  --candidate .decomp-lab/bounds-candidate-new/build/candidate.exe \
+  --symbols .decomp-lab/bounds-candidate-new/build/candidate-symbols.elf \
+  --output .decomp-lab/bounds-candidate-new/native
+```
+
+The checker requires canonical bytes outside the complete function and verifies
+that retaining symbols preserves the entire image. It compares the original,
+candidate and independent model on 4,648 existing inputs. All changed instruction
+words must execute, and four candidate-local faults must produce wrong returns.
+An altered instruction layout requires control review; an exception alone is
+not a successful fault detection. No function-output stubs are used.
 
 ## Observe allocation
 

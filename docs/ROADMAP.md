@@ -42,6 +42,11 @@ function or whole-feature gate; continue the source work below.
 Nine game functions remain in assembly after the
 [source-layout correction](SOURCE_LAYOUT_EXPANDED.md):
 
+The [bounds candidate](BOUNDS_NARROW_COMPARISON.md) now has a published
+19-byte complete-image difference and a reproducible confined comparison over
+4,648 existing inputs. Recover the unresolved return/packed-X allocation;
+128 further compiler observations in this checkpoint find no exact match.
+
 The expanded audit identifies 28 unused-storage functions and withdraws four
 padded promotions. Twenty-four inherited source explanations remain in C;
 the corrected count is 194,212 / 199,912 (97.15%). Recover real storage and

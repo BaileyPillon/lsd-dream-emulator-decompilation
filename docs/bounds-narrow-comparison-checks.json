@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-16T12:04:16.961155+00:00",
+  "status": "passed_unaccepted_narrow_bounds_research_and_confined_comparison",
+  "repository_code_base_commit": "f6f547c8dd12b07d9c50dff2be39316efb6af090",
+  "source_hash_serialization": "Published source/document hashes use UTF-8 normalized to LF; private run artifacts use exact bytes.",
+  "source_hashes": {
+    "asm/nonmatchings/psyq/libc/rand/rand.s": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7",
+    "configure.py": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+    "requirements-analysis.txt": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911",
+    "research/compiler/allocation_gdb.py": "6001bdd488b56cfc0424a0372981324d3da124b3cc8a592c1d4de401371e5201",
+    "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+    "research/compiler/trace_allocation.py": "f86a3266fab3771738662b35c74690957cb7aeabc8725cf152db2ead6e7e9c6b",
+    "research/render_bounds/README.md": "9ec5f9ff4b417763ab6c24781dcbf4f3aff303d3ec35146bb4e09a551d4a67b1",
+    "research/render_bounds/bounds_candidate.c": "709ca63e1a549467f75646bf3a015b0348747495edfb9c1cd53d1848e0f79bd7",
+    "research/render_bounds/compare_candidate.py": "5f4ccff4f6535d34b9858aeea16b959cdf3a6b2e1e7aa21239eab57a4fdbd22b",
+    "research/render_bounds/prepare_candidate.py": "447b52988ad42c2f73f2ffd30a762c9d4c54dc52964481f51ce830489a469c77",
+    "src/base/transform.c": "e1ead0e020d1a752b812891ab3114e7510fcbcf723d4539c423918c13f351c4e",
+    "src/dream/dream_sys.c": "bd5fe0817a553a4cccd5505e5f87577fd9264dacf9d3576ebc1a034faaa4b9f2",
+    "src/dream/dream_sys.h": "0c5e29a07f133924a7d2eda9e7425e2b3bcbf6c3b9cb905c097e6eb879d45657",
+    "src/scene/actor.c": "dac4858fa2ece134c6e698c8aad5734bab89c9185bb745470be12bc0d08e0483",
+    "src/scene/entity.c": "ede517712cde6e41c8818e4b2d537f00a310dfdae5cb2614486c1b5d0f54bd72",
+    "src/scene/entity.h": "4028f6bb6d2c1e779b8da8ddfc44263f34f619ed4a19a12547982a4c1ecc15e3",
+    "src/scene/render_context.c": "d4f75c462cca87f5bd3e19502b43d489edc9e468d5b036bc0973e77dd3985af1",
+    "src/scene/render_context.h": "a3f3e5a1fef53d65901d36a1a68aa0a43f628fe1b2931bfd516f23b154a2585d",
+    "tests/test_bounds_candidate_comparison.py": "8a85b8a790f51f31c3e972cc1cc6314643b9fbb75b4e102f5f1307d7a0f5fa9e",
+    "tests/test_bounds_source_recipe.py": "7fd6db0997c279482f15b68a41080543ca1d2a98e7c6b873049d750844e83390",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/progress.py": "5768fea4dd162e1fe406c4d909742396a9174b988216629bd52fa902204663dd",
+    "tools/verify_native_ai.py": "6094e565bdb4e6701055f08d0428d059b54c6183818170ae1a671610c53b40a0",
+    "tools/verify_render_bounds.py": "67054d6c7db816816aec33d67080e2cfb0070454790dfa952e95b29d588c8397",
+    "tools/verify_scripted_ai.py": "2edefddc727441c0066a48375efd882c80035af99db3b3990a2c674eedddb2c1"
+  },
+  "documentation": "docs/BOUNDS_NARROW_COMPARISON.md",
+  "documentation_sha256": "ef340aea1f6c2dedda4254c3d50a722a9f4f547a7a1bbda7979807565225d44e",
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 34,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 34,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "research_before_after": {
+    "previous_published_changed_bytes": 21,
+    "current_published_changed_bytes": 19,
+    "privately_retained_before_this_checkpoint": true,
+    "private_best_before": 19,
+    "private_best_after": 19,
+    "original_function_bytes": 108,
+    "original_function_sha256": "73713a1bd9a992c92c7a7fb6c5c88684a9224107fbc2b0d4d2f83b606e71d03a",
+    "current_candidate_function_sha256": "852e9a1037c383a1e46cec6a982b065ea84022b3c6142c90c6e2ec37da47ab54",
+    "previous_published_source_commit": "f6f547c8dd12b07d9c50dff2be39316efb6af090",
+    "previous_published_fragment_sha256": "710a8d2598181105c610f8752b3ebe2a4efbf4832c9a2336dc08cd1709748212",
+    "preceding_private_native_audit_sha256": "679c1ca842169deb1c88914e74c59cf9c2faeb388f883b1b1a807409e429fc70",
+    "newly_recovered_game_C_bytes": 0
+  },
+  "complete_build": {
+    "candidate_bytes": 505856,
+    "complete_image_changed_bytes": 19,
+    "length_difference": 0,
+    "complete_candidate_image_sha256": "34778bc136cdeec7a7c6f3f286700bcd3a3409fbaa89f503f1ca348f8cbb0ae4",
+    "matching_gate_passed": false,
+    "all_bytes_outside_sized_function_canonical": true,
+    "symbol_image_matches_candidate": true,
+    "sized_ELF_sha256": "2e53b35d8f048c6be99cbfa457216d5babbb2a1189077f3f51edb5eb1e8b6b20",
+    "qualification_report_sha256": "5016398d9d6feafca9caf786dbfa944d34473ae03ac0424592f4be6e8b054a34"
+  },
+  "native": {
+    "fixture_records": 4648,
+    "distinct_initialized_inputs": 4648,
+    "positive_executions": 9296,
+    "existing_scalar_input_domain_repeated": true,
+    "new_distinct_original_inputs": 0,
+    "fixture_groups": {
+      "complete_x_byte_sweep": 2048,
+      "complete_y_byte_sweep": 2040,
+      "cross_axis_edges": 314,
+      "aliased_input_fields": 144,
+      "unaligned_and_segment_alias": 98,
+      "null_bounds_unmapped_point": 4
+    },
+    "return_paths": {
+      "inside": 1557,
+      "below_min_x": 1307,
+      "below_min_y": 545,
+      "above_max_x": 992,
+      "above_max_y": 243,
+      "null_bounds": 4
+    },
+    "initialized_inputs_sha256": "74b9eec88d4f5db0f3157b741e45f37f5225e48a1cf12d0cdc46224dc747e0a4",
+    "checked_buffers_return_and_read_trace_sha256": "a59e27bd87656a09ed31360244a6399b993d65e268b3611033a4b4d0e4cf0ef4",
+    "digest_serialization": "SHA-256 of ordered repr((two complete byte buffers, unsigned return, ordered physical read/width pairs)) encoded as UTF-8.",
+    "differing_instruction_positive_hits": {
+      "0x8004cd38": 4648,
+      "0x8004cd3c": 4648,
+      "0x8004cd40": 4648,
+      "0x8004cd48": 4644,
+      "0x8004cd4c": 4644,
+      "0x8004cd50": 4644,
+      "0x8004cd5c": 4644,
+      "0x8004cd84": 2345,
+      "0x8004cd88": 2345,
+      "0x8004cd98": 1800,
+      "0x8004cda0": 4648
+    },
+    "all_differing_words_observed": true,
+    "negative_controls": [
+      {
+        "kind": "unsigned_x_unpack",
+        "address": "0x8004cd50",
+        "changed_instruction_hits": 1,
+        "wrong_return": true,
+        "expected_return": 1,
+        "actual_return": 0,
+        "detecting_case": {
+          "bounds": [
+            0,
+            0,
+            127,
+            127
+          ],
+          "x": 128,
+          "y": 63
+        },
+        "attempted_existing_fixtures": 129
+      },
+      {
+        "kind": "unsigned_minimum_x",
+        "address": "0x8004cd48",
+        "changed_instruction_hits": 1,
+        "wrong_return": true,
+        "expected_return": 0,
+        "actual_return": 1,
+        "detecting_case": {
+          "bounds": [
+            -128,
+            -128,
+            -1,
+            -1
+          ],
+          "x": 128,
+          "y": 191
+        },
+        "attempted_existing_fixtures": 689
+      },
+      {
+        "kind": "wrong_maximum_z_field",
+        "address": "0x8004cd90",
+        "changed_instruction_hits": 1,
+        "wrong_return": true,
+        "expected_return": 0,
+        "actual_return": 1,
+        "detecting_case": {
+          "bounds": [
+            -32,
+            -40,
+            32,
+            40
+          ],
+          "x": 0,
+          "y": 33
+        },
+        "attempted_existing_fixtures": 1409
+      },
+      {
+        "kind": "unsigned_maximum_x_compare",
+        "address": "0x8004cd68",
+        "changed_instruction_hits": 1,
+        "wrong_return": true,
+        "expected_return": 1,
+        "actual_return": 0,
+        "detecting_case": {
+          "bounds": [
+            -128,
+            -128,
+            -1,
+            -1
+          ],
+          "x": 0,
+          "y": 191
+        },
+        "attempted_existing_fixtures": 561
+      }
+    ],
+    "negative_controls_detected": 4,
+    "dependency_output_stubs": 0,
+    "backend_identity": {
+      "package_version": "2.1.4",
+      "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+      "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+    },
+    "report_sha256": "a4162e67c9bdd240f74d5fcc337b65d111a0d3890c88be3d6062e25e16b405c2"
+  },
+  "compiler_observation": {
+    "function": "func_8004CD38",
+    "compiler_mode": "g8",
+    "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+    "qualification": {
+      "local_allocations": 1,
+      "equivalence_updates": 1,
+      "global_allocations": 6,
+      "priority_comparisons": 10,
+      "complete_assembly_equal": true,
+      "register_dispositions_agree": true,
+      "reference_priority_comparisons_agree": true,
+      "diagnostic_option_comment_changes": [
+        "-  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -o",
+        "+  # -quiet -Wall -fno-builtin -mno-abicalls -funsigned-char -O2 -G8 -da",
+        "+  # -dumpbase -o"
+      ]
+    },
+    "report_sha256": "e680909d88f38691df03d8916c8935ec2f0fd40f7d953f1573115f1138600a62",
+    "target_registers_bound_by_source": false,
+    "canonical_flags_retained": true
+  },
+  "source_studies": {
+    "isolated_compiler_comparisons": 128,
+    "repeated_isolated_controls": 8,
+    "complete_function_qualifications": 128,
+    "unique_raw_source_texts": 122,
+    "unique_diagnostic_function_images": 30,
+    "separate_full_translation_unit_compilations": 5,
+    "normal_observed_diagnostic_compiler_executions": 3,
+    "total_target_compiler_executions_in_this_campaign": 136,
+    "source_exact_matches": 0,
+    "studies": [
+      {
+        "name": "bounds-result-records-20261016-first",
+        "isolated_compiler_comparisons": 34,
+        "repeated_controls": 2,
+        "complete_function_qualifications": 34,
+        "initially_failed_GP_relative_links": 20,
+        "minimum_differing_function_bytes": 19,
+        "exact_matches": 0,
+        "report_sha256": "0100319597b76dfac24fb5284965d9d67a71c2656efab2e59e81b0b04c615743",
+        "producer_sha256": "67b88751aa1b25b1f92d7f572d3f2efa7b3ec2305a3a764aa4b336ba4473265a"
+      },
+      {
+        "name": "bounds-result-records-20261016-second",
+        "isolated_compiler_comparisons": 34,
+        "repeated_controls": 2,
+        "complete_function_qualifications": 34,
+        "initially_failed_GP_relative_links": 0,
+        "minimum_differing_function_bytes": 19,
+        "exact_matches": 0,
+        "report_sha256": "7bf6685fb73b416f21e3caf31f1ecd1bffa2940bf46911186e84aad052d98d26",
+        "producer_sha256": "5e8fbe24375b537fea537a8268bd72f40bcbb17d721964f3e1ca66f26c83c1aa"
+      },
+      {
+        "name": "bounds-point-result-parameter-20261016-first",
+        "isolated_compiler_comparisons": 14,
+        "repeated_controls": 2,
+        "complete_function_qualifications": 14,
+        "initially_failed_GP_relative_links": 0,
+        "minimum_differing_function_bytes": 19,
+        "exact_matches": 0,
+        "report_sha256": "2cd29315242f214f6d027b0368473785c344e2fa4be819c7cf55c1b7de1a4445",
+        "producer_sha256": "0bacfc4cf9df5d1a682d8059bbc8b798918127f6e374ac8570b3f35a51254543"
+      },
+      {
+        "name": "bounds-control-expressions-20261016-first",
+        "isolated_compiler_comparisons": 46,
+        "repeated_controls": 2,
+        "complete_function_qualifications": 46,
+        "initially_failed_GP_relative_links": 0,
+        "minimum_differing_function_bytes": 19,
+        "exact_matches": 0,
+        "report_sha256": "6e707d87ae67bc2685d1161d602b1c96cc959cfa4b9d42ae3d65182628053c7e",
+        "producer_sha256": "e834da0b760c6fbef220b55831968f32e74b90a8576beab320e6eaadf8ba4e42"
+      }
+    ],
+    "preserved_initializer_objects_relinked": 20,
+    "recompilations_for_corrected_links": 0,
+    "corrected_link_report_sha256": "bc8895750ba79467dfa0e9c74b84495cb47aa942b05aa76ff9ef730d6b9494da"
+  },
+  "excluded_wrapper_assertion": {
+    "reason": "Expected success label ends in trace; completed observer reports observation.",
+    "native_and_observer_processes_completed_successfully": true,
+    "compiler_or_native_executions_repeated_by_this_audit": 0,
+    "wrapper_producer_sha256": "e45719282b16f626073389a6222f0ab025728c77e2e512c70f4a81bcaa7a8136",
+    "wrapper_console_sha256": "ff6df2863543e13db802615fba0b8b9dc89e51ad07c93b750497d9130e71e72e",
+    "preserved_running_record_sha256": "c98193438b3349ecbbb42400412fa3c30fd62686004a11d06c1077039ba45665"
+  },
+  "tooling_tests": [
+    {
+      "environment": "Windows",
+      "python": "3.14.2",
+      "tests": 597,
+      "expected_skips": 2,
+      "exact_log_sha256": "4f88cbb73c91e50b285f67fcafeb273f5a9686eab52873f04d8245944f2fbf11",
+      "command": "python -m unittest discover -s tests -v"
+    },
+    {
+      "environment": "WSL/Linux",
+      "python": "3.13.5",
+      "tests": 597,
+      "expected_skips": 2,
+      "exact_log_sha256": "560eeb7b9bfca4294e245623f5a90b6b5bee714f4851c77295f1b7beeb33683d",
+      "command": "python -m unittest discover -s tests -v"
+    }
+  ],
+  "canonical_game": {
+    "all_392_build_inputs_retained": true,
+    "game_build_inputs_changed": 0,
+    "regular_complete_image_matches": true,
+    "preceding_fresh_306_object_clean_build_retained": true,
+    "preceding_build_checkpoint": "f6f547c8dd12b07d9c50dff2be39316efb6af090",
+    "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "normal_build_log_sha256": "87a4b575babc477052efb3be89ae4c9ace3fba485c554f808af96f75356b5fa6"
+  },
+  "matching_source_accepted": false,
+  "new_game_function_C_bytes": 0,
+  "source_explanations_resolved": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "new_gameplay_runs": 0,
+  "new_whole_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters": 0,
+  "original_behavior_modified": false,
+  "model_API_calls": 0,
+  "original_NPC_AI_and_analysis_tools_separate": true,
+  "Bevy_port_modified": false,
+  "scope": "Existing constructed scalar bounds inputs only: full guarded buffers, result, ordered reads and widths, zero writes, SP/GP/RA/saved registers and confined PC. No renderer/stage composition, natural scenes, framebuffer/audio, PS1 timing or matching-source acceptance."
+}
