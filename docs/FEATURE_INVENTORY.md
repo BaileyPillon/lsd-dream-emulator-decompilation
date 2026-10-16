@@ -610,3 +610,21 @@ explanations, 35 / 40 listed-core C groups and 28 / 107 bounded NPC profiles.
 The separate getter's unused local remains unresolved. The additive supplement
 preserves earlier inventory data; AI-assisted tools, optional mods and Bevy
 retain their separate accounting.
+
+## October 16 bounds source lifetimes
+
+The [source-lifetime report](BOUNDS_SOURCE_LIFETIMES.md) publishes the retained
+21-byte-different bounds candidate with a reproducible private-unit recipe.
+Its complete 108-byte function and full image are qualified; all bytes outside
+the function match. The existing 4,648 scalar inputs agree, and four
+candidate-local faults change return values with their altered instructions
+observed executing. Two actual compiler observations retain the allocation
+failure. Sixty-eight further bounds forms and sixteen separate collision forms,
+including repeated controls, have no exact match.
+
+The candidate remains outside the matching game. C recovery, all 392 canonical
+build inputs, the feature/NPC inventory, ten developer-capability categories
+and three optional mods retain their preceding counts. Five synthetic recipe
+tests add preservation and invalid-input checks. No new original fixture domain,
+gameplay replay, entire feature or whole NPC encounter is accepted. Bevy is
+unchanged; the additive supplement preserves all preceding inventory data.

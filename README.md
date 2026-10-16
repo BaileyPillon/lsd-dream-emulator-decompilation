@@ -94,6 +94,8 @@ volume-function names and an external signature workflow with explicit ambiguity
 The [render-context bounds checks](docs/RENDER_BOUNDS.md) recover the smallest
 remaining assembly function's bounded behavior; its C candidate still needs
 an exact code match.
+The [bounds source recipe](research/render_bounds/README.md) reproduces the
+current 21-byte-different candidate and its explicitly failed matching gate.
 The [stream exclusion recovery](docs/STREAM_EXCLUSION.md) puts the original
 twelve-byte bounds record in matching C and corrects its typed setter. The
 actual cached-position and row-selection path passes 9,252 constructed fixtures

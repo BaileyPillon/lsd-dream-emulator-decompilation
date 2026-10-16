@@ -6,6 +6,11 @@ complete assembly output and checks returned decisions against the compiler's
 own RTL dump. This extends the existing candidate-analysis workflow; it does
 not execute the game or promote a C function.
 
+The later [bounds source-lifetime report](BOUNDS_SOURCE_LIFETIMES.md) observes
+the current 21-byte-different candidate in its complete source unit. The
+38-byte candidate and coverage figures below retain their historical checkpoint;
+current source counts are in the [expanded audit](SOURCE_LAYOUT_EXPANDED.md).
+
 ## Reproduce an observation
 
 Run from the repository root in the Linux/WSL build environment with GDB and

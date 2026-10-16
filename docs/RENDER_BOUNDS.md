@@ -6,6 +6,10 @@ data. Its original bytes pass **4,648 native fixtures with zero stubs**. Four
 deliberately changed instructions are detected. The function still uses
 assembly in the matching build; no C promotion is claimed.
 
+The later [source-lifetime report](BOUNDS_SOURCE_LIFETIMES.md) publishes a
+reproducible 21-byte-different candidate. The 38-byte source comparisons below
+retain their historical checkpoint; neither candidate is accepted C.
+
 ## Recovered contract
 
 The first argument holds a pointer to this 12-byte record:
