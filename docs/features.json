@@ -21602,6 +21602,60 @@
       "new_whole_NPC_encounters_accepted": 0,
       "original_AI_and_tools_separate": true,
       "Bevy_port_modified": false
+    },
+    "grid_native_composition_20261016": {
+      "status": "bounded_grid_candidate_native_composition",
+      "guide": "docs/GRID_NATIVE_COMPOSITION.md",
+      "metadata": "docs/grid-native-composition-checks.json",
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 28,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 28,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "retained_original_graph_inputs_repeated_each_image": 13230,
+      "added_inputs_to_native_GTE_graph_profile_each_image": 11550,
+      "total_distinct_inputs_each_image": 24780,
+      "positive_executions": 74340,
+      "function_output_contracts": 0,
+      "candidate_source_forms_promoted": 0,
+      "new_C_bytes": 0,
+      "candidate_image_differing_bytes": {
+        "edge": 8,
+        "cell": 7
+      },
+      "detected_candidate_faults": 4,
+      "detected_original_SDK_faults": 1,
+      "all_changed_candidate_instructions_observed": true,
+      "actual_native_GTE_command_invocations": 148690,
+      "hardware_command_cache": false,
+      "new_gameplay_runs": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "original_AI_and_tools_separate": true,
+      "Bevy_port_modified": false
     }
   }
 }

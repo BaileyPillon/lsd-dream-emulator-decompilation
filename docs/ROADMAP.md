@@ -141,6 +141,10 @@ now reproduces the original frame and register choices. Two arithmetic
 instructions still differ. Recover their original order while preserving the
 observed width lifetime; the repeated scalar profile accepts no new scene or
 whole-feature gate.
+The [native candidate comparison](GRID_NATIVE_COMPOSITION.md) removes the four
+scalar dependency contracts for both retained C images by reusing the existing
+eleven-function SDK/GTE and streaming composition. Recover the seven/eight
+remaining byte differences before promoting either source form.
 
 | Function | Source |
 | --- | --- |
