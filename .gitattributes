@@ -35,3 +35,9 @@ research/collision/primitive_candidate.c text eol=lf
 tests/test_compiler_stack_trace.py text eol=lf
 tools/verify_scripted_ai.py text eol=lf
 tests/test_scripted_callbacks.py text eol=lf
+# Preserve the native-tested Gunman verifier and its published range inputs.
+tools/verify_gunman_scripts.py text eol=lf
+tests/test_gunman_scripts.py text eol=lf
+docs/gunman-function-ranges.json text eol=lf
+docs/gunman-script-checks.json text eol=lf
+docs/GUNMAN_SCRIPTS.md text eol=lf

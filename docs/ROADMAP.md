@@ -248,3 +248,10 @@ functions in C. The [NPC spatial composition](NPC_SPATIAL.md) checks seven
 callbacks through actual transform/SDK/GTE dependencies in 26,194 fixtures;
 natural histories, encounters and timing remain open. These overlapping
 source groups retain zero whole-feature acceptances.
+
+The [Gunman profile](GUNMAN_SCRIPTS.md) checks both original scripts and their
+effect color arithmetic, including scheduled callback histories and mode-two
+callback clearing. Bounded coverage is 36 / 107. Complete engine frames, natural
+encounters, constructed attachment graphs, effect/render/audio lifetimes and
+controller reachability remain required; this does not close F027 or raise C
+recovery beyond 97.15%.

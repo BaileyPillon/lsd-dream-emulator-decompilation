@@ -789,3 +789,20 @@ unchanged. Earlier 21-byte source evidence and all prior inventory snapshots
 are retained. Original game images, linked code, complete buffers, failed runs
 and compiler outputs stay private. No accepted C bytes, whole-feature/encounter
 coverage, NPC profile, mod or capability category is added. Bevy is unchanged.
+
+## Gunman script and effect supplement
+
+[gunman-script-checks.json](gunman-script-checks.json) pins the two-callback
+comparison, 26 sized native spans, all original property bindings, source and
+backend identities. The 36,338 standalone fixtures, 15 scheduled histories and
+eleven completed instruction faults are distinct from the pre-execution store
+guard control. The initial memory-hook and delay-slot guard failures remain
+retained alongside their exact source snapshots; they are not passing reports.
+
+The final report executes the original effect factory and color arithmetic,
+with explicit effect-construction, attachment, geometry, notification and sound
+contracts. All 392 matching-game build inputs remain unchanged. Original images,
+ELF/assembly, whole buffers, source snapshots and faulted code stay private.
+Only developer code, tests and metadata are published. The inventory appends
+two bounded callback profiles while preserving previous measurements, the
+canonical executable, source/feature acceptance counts and the Bevy repository.

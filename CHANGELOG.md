@@ -1,5 +1,15 @@
 # Changelog
 
+## Original Gunman scripts and effect arithmetic - 2026-10-16
+
+- Compare Gunman and Gunman Victim through 36,338 bounded native fixtures and
+  15 scheduled histories containing 126 further callback invocations.
+- Execute original action reads, callback clearing, pose/animation helpers,
+  RNG and effect activation/color arithmetic; retain explicit external contracts.
+- Detect eleven executed faults and separately reject an escaped delay-slot
+  store before it writes. Bounded callback coverage rises from 34 to 36 / 107;
+  matching C, original gameplay and whole-feature acceptance remain unchanged.
+
 ## Entry scanner method-return candidate - 2026-10-16
 
 - Retain a consumed method-return candidate with the original 80-byte frame;
