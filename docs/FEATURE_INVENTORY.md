@@ -574,3 +574,22 @@ explanations, 35 / 40 listed-core C groups and 24 / 107 bounded NPC profiles.
 Whole-feature and whole-encounter acceptance remain zero. The additive
 supplement preserves preceding inventory data, tool and mod counts. Bevy is
 unchanged.
+
+## October 16 periodic NPC script profiles
+
+The [periodic script checks](PERIODIC_SCRIPTS.md) add Tea Doll, Ox Cart,
+Kicking Man and Small Maiko, raising bounded original callback coverage from
+24 / 107 to 28 / 107. The expanded scripted suite checks 122,518 fixtures
+across 22 callbacks, preserves all 117,583 preceding inputs and detects 29
+faults. The four profiles add 4,935 distinct callback/input fixtures. Every
+fault's changed instruction is observed in its detecting fixture.
+
+These profiles check timer, signed remainder, frame and unsigned tick gates
+through the original callbacks, with explicit ratio, scale and movement
+contracts. Original division-trap inputs are excluded from the Ox Cart model.
+No new gameplay replay, entire feature or whole NPC encounter is accepted.
+C coverage remains 194,212 / 199,912 (97.15%), with nine assembly functions,
+24 inherited storage explanations and 35 / 40 listed-core C groups. All 107
+callbacks already have C bodies. Developer tools and optional mods retain
+their separate counts; Bevy is unchanged. The additive supplement preserves
+every preceding inventory field and snapshot.

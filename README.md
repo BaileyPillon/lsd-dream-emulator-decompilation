@@ -20,7 +20,7 @@ distributed here.
 
 ## Current status
 
-The current verified source snapshot is dated October 15, 2026. These are
+The current verified source snapshot is dated October 16, 2026. These are
 separate measures, not a whole-game completion percentage. The initial
 publication and subsequent evidence are retained separately.
 
@@ -36,7 +36,7 @@ All-movie decoding, skip/error branches, and complete feature acceptance remain 
 | Known remaining game assembly functions | 9 |
 | Known C functions with unresolved unused local storage | 24 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
-| Original callbacks with bounded native comparisons | 24 / 107 |
+| Original callbacks with bounded native comparisons | 28 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 35 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
 
@@ -50,11 +50,12 @@ The [model enumeration interfaces](docs/MODEL_ENUMERATION.md) now explicitly
 forward the original arguments through the object/list/part callback chain.
 The matching game can be launched with the [play helper](docs/PLAYING.md),
 which verifies local inputs and creates an isolated emulator profile.
-The [Hoop Girl checks](docs/HOOP_SCRIPTS.md) add 71,536 distinct fixtures for
-the original RNG choices, facing threshold and giant variant. The expanded
-scripted suite checks 117,583 fixtures across eighteen callbacks and detects
-23 private faults. The earlier [Bell Striker and Opera Singer checkpoint](docs/BELL_OPERA_SCRIPTS.md)
-is retained within that suite. These bounded profiles leave whole encounters open.
+The [periodic NPC checks](docs/PERIODIC_SCRIPTS.md) extend the scripted suite
+to 122,518 fixtures across 22 callbacks. All 117,583 earlier inputs remain.
+The suite detects 29 injected faults and confirms the altered instructions executed.
+The [Hoop Girl](docs/HOOP_SCRIPTS.md) and
+[Bell Striker and Opera Singer](docs/BELL_OPERA_SCRIPTS.md) checkpoints retain
+their original evidence within this suite. Whole encounters remain open.
 The [NPC proximity checks](docs/NPC_PROXIMITY.md) add Bear, Rabbit, Acrobats and
 Ship in 10,408 distinct fixtures through 25 original routines. Real distance,
 trigger-ratio, RNG, movement, event and GTE dependencies execute with no output

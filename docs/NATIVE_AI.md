@@ -5,6 +5,12 @@ optional mods have separate commands and outputs. The original game does not
 call any added analysis tool; those tools currently make zero external model
 API calls.
 
+The latest [periodic script profiles](PERIODIC_SCRIPTS.md) bring bounded native
+callback coverage to **28 / 107**. The scripted suite checks 122,518 fixtures
+across 22 callbacks, with 29 detected faults and preserved earlier inputs.
+These are comparisons of existing original code; whole NPC encounters and
+whole feature groups remain unaccepted.
+
 ## Original game data
 
 `tools/inventory_entities.py` reads `g_ENTITY_TABLE` at `0x80089EA4` from the

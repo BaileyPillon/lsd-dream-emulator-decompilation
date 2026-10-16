@@ -21455,6 +21455,53 @@
       "new_whole_NPC_encounters_accepted": 0,
       "original_AI_and_tools_separate": true,
       "Bevy_port_modified": false
+    },
+    "periodic_scripts_20261016": {
+      "status": "passed_bounded_original_periodic_scripts",
+      "guide": "docs/PERIODIC_SCRIPTS.md",
+      "metadata": "docs/periodic-script-checks.json",
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 24,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 28,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "new_bounded_callback_profiles": 4,
+      "new_distinct_native_fixtures": 4935,
+      "retained_fixture_inputs_preserved": 117583,
+      "scripted_suite_native_fixtures": 122518,
+      "scripted_callback_profiles": 22,
+      "scripted_suite_fault_controls": 29,
+      "new_fault_controls": 6,
+      "all_fault_instructions_observed_in_detecting_fixture": true,
+      "new_C_bytes": 0,
+      "new_gameplay_runs": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "original_AI_and_tools_separate": true,
+      "Bevy_port_modified": false
     }
   }
 }

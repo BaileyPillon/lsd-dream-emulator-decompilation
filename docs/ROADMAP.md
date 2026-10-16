@@ -6,6 +6,11 @@ tools have separate deliverables. See [PROJECT_OBJECTIVE.md](../PROJECT_OBJECTIV
 for the completion requirements and [provenance](PROVENANCE.md) for the evidence
 boundary of the published snapshot.
 
+The [periodic NPC profiles](PERIODIC_SCRIPTS.md) raise bounded original callback
+coverage to 28 / 107, while preserving the earlier scripted fixture inputs.
+Recover natural encounters, real downstream effects and lifetime histories;
+bounded request comparisons do not complete those gates.
+
 ## Matching C recovery
 
 The [matching model interfaces](MODEL_ENUMERATION.md) now explicitly forward
