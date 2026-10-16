@@ -5,6 +5,16 @@ server or an emulator. Install these tools separately when doing native analysis
 or runtime comparison. All launcher paths are explicit; no personal drive
 layout or network model service is assumed.
 
+## Original actor child construction
+
+`tools/verify_actor_children.py` inventories your disc extraction, proves a
+complete canonical symbol diagnostic and executes original allocation and
+constructors through 22 qualified functions. Its independent model compares
+complete guarded actor, manager and pool buffers under two memory patterns.
+The [construction guide](ACTOR_CHILD_CONSTRUCTION.md) gives the isolated
+backend setup and exact fixture boundary. No game assets are distributed and
+no model API calls are made; whole encounters and playback remain open.
+
 ## Original movie content and routing
 
 After a current canonical build, `tools/inventory_movies.py` reads a local

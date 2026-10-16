@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "scope": "Closed successful first-frame actor child construction graph; sized ELF extents and full canonical image must be requalified at execution.",
+  "functions": [
+    {
+      "function": "memory_set_manager",
+      "address": "0x80017a9c",
+      "bytes": 12,
+      "sha256": "31e1fb7ee27c6d0a7e8bce6222ebe7d15d003b63a0bcdffc60e62cb98dc28ade"
+    },
+    {
+      "function": "memory_set_lock",
+      "address": "0x8001844c",
+      "bytes": 12,
+      "sha256": "d8fd53b2b7699e2b6135872ecc381394dea73cd963daff560ff6aa8342f3e80e"
+    },
+    {
+      "function": "memory_setup_manager",
+      "address": "0x80017ac8",
+      "bytes": 108,
+      "sha256": "22d9cb67eacb97f1f65887bec8fd406a6d25dd69511540ee811296e9445987ba"
+    },
+    {
+      "function": "func_80065E1C",
+      "address": "0x80065e1c",
+      "bytes": 272,
+      "sha256": "25bb616bc2e3060cb096e703b620c5d0cf9b43061e7712e7bf8440434f03fd9f"
+    },
+    {
+      "function": "func_8004497C",
+      "address": "0x8004497c",
+      "bytes": 60,
+      "sha256": "cd336339b322c0e9abcf6e063e1dc0a15fdc6ff06e64b912cc769b67e27ed0be"
+    },
+    {
+      "function": "func_800453DC",
+      "address": "0x800453dc",
+      "bytes": 76,
+      "sha256": "df96c02741f08d7b58e22ac82298f93f8f0819841c042e21e523d9f623a98353"
+    },
+    {
+      "function": "func_80043FE4",
+      "address": "0x80043fe4",
+      "bytes": 392,
+      "sha256": "908b8c59abb21d2580be93344b54ae9105ed5182e743107f3109b15b8f6d508d"
+    },
+    {
+      "function": "func_8004416C",
+      "address": "0x8004416c",
+      "bytes": 56,
+      "sha256": "48eb43f08ad38f0030c293a703e6421aa3906f38f68a70c143ca4c413271b67c"
+    },
+    {
+      "function": "memory_allocate_mem",
+      "address": "0x80017b34",
+      "bytes": 456,
+      "sha256": "a55ec79ff9c1252fd41968bf5abca2a74f3658b6c400df80289d51d943fc5ef9"
+    },
+    {
+      "function": "func_80056FE4",
+      "address": "0x80056fe4",
+      "bytes": 96,
+      "sha256": "171b9545c3d6ef9d08fe4266db0744ee6d3238df25bffbee9711494874ad050d"
+    },
+    {
+      "function": "scene_node_get_vtable",
+      "address": "0x80057c84",
+      "bytes": 16,
+      "sha256": "93483df92632f0350f8b2394f1ffd77e3a0cb94a431df85c3e400fd8cc3c9817"
+    },
+    {
+      "function": "func_80057044",
+      "address": "0x80057044",
+      "bytes": 112,
+      "sha256": "c6a1ce590e474be370e8f48fb40eadc5e578b82a14c5f2538d8594a51c34baaa"
+    },
+    {
+      "function": "func_8001E57C",
+      "address": "0x8001e57c",
+      "bytes": 16,
+      "sha256": "6b444c29202af0f323b5dfd638e1c9677848593458bdf1a70a8fc235380de21c"
+    },
+    {
+      "function": "func_8001CAF4",
+      "address": "0x8001caf4",
+      "bytes": 176,
+      "sha256": "527a636037b27a07ee91a83adbceb8c0043f6bf36c6484819012913142b8cf3b"
+    },
+    {
+      "function": "base_class_get_vtable",
+      "address": "0x80018390",
+      "bytes": 16,
+      "sha256": "6f3e96c03b803dbf1321407c23ea13c5f2b782f40d0be26b977088b8a0b51196"
+    },
+    {
+      "function": "base_class_construct",
+      "address": "0x80017ef8",
+      "bytes": 52,
+      "sha256": "fae5807aa21be9790538a8efd442eae9fbfa4ea250f96d35c4b6167dac374859"
+    },
+    {
+      "function": "func_8001CE30",
+      "address": "0x8001ce30",
+      "bytes": 132,
+      "sha256": "04ee8de1820142825148808ede7b18eb9026f319a8021c023eaa097a58fc685d"
+    },
+    {
+      "function": "GsInitCoordinate2",
+      "address": "0x80012838",
+      "bytes": 124,
+      "sha256": "ce38cdcec05905999e5f7ef912a1bcccbf63edb8391f5f8d86e8c2581bd5c4a9"
+    },
+    {
+      "function": "func_8001CEB4",
+      "address": "0x8001ceb4",
+      "bytes": 340,
+      "sha256": "722d79cf1f8c109300d4a56aa1d421442a2b5c424a7f3f1e16ad27d281432217"
+    },
+    {
+      "function": "func_8001EC84",
+      "address": "0x8001ec84",
+      "bytes": 120,
+      "sha256": "7c14d23868ee93933886ecd2477e4e60c6200bef1982963f671e2d76e6d7caaf"
+    },
+    {
+      "function": "func_8001D008",
+      "address": "0x8001d008",
+      "bytes": 228,
+      "sha256": "225abd6608917cf20ad9aca5ad59a9a7f6f43e67f64d8372e6aeb2e9fbfe7363"
+    },
+    {
+      "function": "func_800571E8",
+      "address": "0x800571e8",
+      "bytes": 16,
+      "sha256": "afe36b47ba4a6e668152724984d2df77f7ae7c23d65a9f7e7d2a3517124c392f"
+    }
+  ]
+}
