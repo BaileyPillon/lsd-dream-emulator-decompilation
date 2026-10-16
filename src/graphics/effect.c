@@ -43,8 +43,8 @@ void effect_reset(effect_t *This, s32 Unk2) {
     This->m_Unk37 = 0;
 }
 
-void effect_tick(effect_t *This, int Unk2, int Unk3) {
-    if (Unk3 == 2) {
+void effect_tick(effect_t *This, base_class_t *Target, s32 Phase) {
+    if (Phase == 2) {
         s32 value = This->m_Life;
 
         This->m_Life = value - 1;
@@ -64,7 +64,7 @@ void effect_tick(effect_t *This, int Unk2, int Unk3) {
                 }
             }
         } else {
-            This->vtable->Unk55(This, Unk2);
+            This->vtable->effect_deactivate(This, Target);
         }
     }
 }
@@ -137,7 +137,7 @@ s32 effect_activate(effect_t *This, base_class_t *Target, s32 Variant, s32 Mode)
     return variant;
 }
 
-void effect_deactivate(effect_t *This, s32 arg1) {
+void effect_deactivate(effect_t *This, base_class_t *Target) {
     effect_vtable_t *vt;
     s32 state;
     s32 which;
@@ -160,7 +160,7 @@ void effect_deactivate(effect_t *This, s32 arg1) {
                 vt->Unk24(This, 0);
             }
         }
-        vt->Detach(This, arg1);
+        vt->Detach((base_class_t *) This, Target);
         if (This->m_ColorStep < 0) {
             This->m_ColorStep = -This->m_ColorStep;
         }

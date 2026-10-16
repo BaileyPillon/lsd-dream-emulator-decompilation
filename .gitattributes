@@ -41,3 +41,6 @@ tests/test_gunman_scripts.py text eol=lf
 docs/gunman-function-ranges.json text eol=lf
 docs/gunman-script-checks.json text eol=lf
 docs/GUNMAN_SCRIPTS.md text eol=lf
+# Preserve the new callback/lifecycle evidence on every checkout.
+docs/EFFECT_LIFECYCLE.md text eol=lf
+docs/effect-lifecycle-checks.json text eol=lf
