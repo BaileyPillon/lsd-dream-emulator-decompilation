@@ -118,7 +118,7 @@ actor_vtable_t g_ACTOR_VTABLE = {
     (void (*)(void *)) func_8001D204,
     (void (*)(void *)) func_8001D280,
     (void (*)(void *)) func_8001D33C,
-    (void (*)(void *)) func_80065A5C,
+    func_80065A5C,
     (void (*)(void *)) func_8001D374,
     (void (*)(void *)) func_8001D3A0,
     (void (*)(void *)) func_8001D3CC,
@@ -267,6 +267,8 @@ void func_80065A5C(actor_t *This, s32 arg1) {
     s32 i;
     void **obj_list;
 
+    /* Forward the flag to the scene-node children created by func_80065E1C.
+     * Their default slot 0x60 sets flags bit 31 when arg1 is zero. */
     obj_list = This->m_Unk27;
 
     for (i = 0; i < This->m_Unk26; i++, obj_list++) {

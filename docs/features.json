@@ -21762,6 +21762,64 @@
       "new_whole_NPC_encounters_accepted": 0,
       "original_NPC_AI_and_tools_separate": true,
       "Bevy_port_modified": false
+    },
+    "actor_child_flags_20261016": {
+      "status": "passed_matching_actor_child_interface_and_bounded_populated_lists",
+      "guide": "docs/ACTOR_CHILD_FLAGS.md",
+      "metadata": "docs/actor-child-flag-checks.json",
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 32,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 32,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "corrected_virtual_method_declarations": 1,
+      "native_case_inputs": 16512,
+      "positive_native_invocations": 16704,
+      "five_call_histories": 48,
+      "compiled_analysis_callers": 1,
+      "caller_included_in_game": false,
+      "target_ABI_assertions": 8,
+      "detected_instruction_faults": 4,
+      "all_changed_instructions_observed": true,
+      "dependency_output_contracts": 0,
+      "Fox_callback_invoked_in_this_campaign": false,
+      "regular_and_fresh_clean_images_match": true,
+      "changed_game_inputs": [
+        "src/scene/actor.c",
+        "src/scene/actor.h"
+      ],
+      "other_protected_inputs_retained": 390,
+      "inherited_bit_setter_source_unchanged": true,
+      "new_C_bytes": 0,
+      "new_gameplay_runs": 0,
+      "new_bounded_NPC_callbacks": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "original_NPC_AI_and_tools_separate": true,
+      "Bevy_port_modified": false
     }
   }
 }

@@ -1,0 +1,324 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-16T08:37:01.198557+00:00",
+  "status": "passed_matching_actor_child_interface_and_bounded_populated_lists",
+  "repository_code_base_commit": "accd11490e31c73e0198487798abe65f562dc2fe",
+  "source_hash_serialization": "Published source/document hashes use UTF-8 normalized to LF; private run artifacts use exact bytes.",
+  "source_hashes": {
+    "tools/verify_native_ai.py": "6094e565bdb4e6701055f08d0428d059b54c6183818170ae1a671610c53b40a0",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/progress.py": "5768fea4dd162e1fe406c4d909742396a9174b988216629bd52fa902204663dd",
+    "configure.py": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+    "requirements-analysis.txt": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911",
+    "src/scene/entity.c": "ede517712cde6e41c8818e4b2d537f00a310dfdae5cb2614486c1b5d0f54bd72",
+    "src/scene/entity.h": "4028f6bb6d2c1e779b8da8ddfc44263f34f619ed4a19a12547982a4c1ecc15e3",
+    "src/dream/dream_sys.c": "bd5fe0817a553a4cccd5505e5f87577fd9264dacf9d3576ebc1a034faaa4b9f2",
+    "src/dream/dream_sys.h": "0c5e29a07f133924a7d2eda9e7425e2b3bcbf6c3b9cb905c097e6eb879d45657",
+    "src/scene/actor.c": "dac4858fa2ece134c6e698c8aad5734bab89c9185bb745470be12bc0d08e0483",
+    "src/base/transform.c": "e1ead0e020d1a752b812891ab3114e7510fcbcf723d4539c423918c13f351c4e",
+    "asm/nonmatchings/psyq/libc/rand/rand.s": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7",
+    "research/actor_children/consumer.c": "39c34befe3d7509801a7f939b3d42ac048f8c0048a3f06c704e68e8531e6861e",
+    "research/actor_children/abi_checks.h": "634822d92442ab378ff2995eea89eca865d2595b6aeb0608afa463d6ccee8cc9",
+    "research/actor_children/verify.py": "2395ce0b23b1be1f4471a992e39dd45ad68e3e2da6e5c74acde5f40cab8aa904",
+    "src/scene/actor.h": "3718491b326b3dbc397cd1b4cda1e1b2d96494ac284ae77a5d300f78d309c8b3",
+    "src/scene/scene_node.c": "3347001427b604329f39729925fc3ca0312d166674007870bdf1d54cf4c33c3d",
+    "src/scene/scene_node.h": "255fa31920249852f1446183f98f167f24a71dabee22ab73c8e117b88c95028a",
+    "src/base/object_math.c": "2b36fc3137451d89c674d0c433c6565cd330a59b1a664c6d0907c66dbc2449fa",
+    "tools/decomp_workbench.py": "10ce58a132c2e0b1084bad492590e3acdb1dc9b328747615b33999bb56a1803f",
+    "tools/verify_scripted_ai.py": "2edefddc727441c0066a48375efd882c80035af99db3b3990a2c674eedddb2c1",
+    "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+    "tests/test_actor_child_flags.py": "af4ded3afed7d6c304f76abe2b508b5de9ca7c224dbb77ffc56024d9344267ec",
+    "research/actor_children/README.md": "aac72fc6754829850a4e8231fb1016b313424e029930e9e2f31a9184969aa57c"
+  },
+  "documentation": "docs/ACTOR_CHILD_FLAGS.md",
+  "documentation_sha256": "33eb8db02db6a7ff58934bde5a8af96c30186c217655b5a3a51f319a0c0d300d",
+  "signature_correction": {
+    "slot": "0x60",
+    "method": "func_80065A5C",
+    "before": "void (void *)",
+    "after": "void (struct actor *, s32)"
+  },
+  "before_header_compiler_check": {
+    "preprocessor_exit_code": 0,
+    "compiler_exit_code": 33,
+    "diagnostic_contains": "too many arguments",
+    "diagnostic_sha256": "65ec1abd1bb07079e426dbebbabb3b6eee32ddc0de9f76aef9774d5578e0be91",
+    "same_consumer_definition_before_and_after": true
+  },
+  "original_functions": [
+    {
+      "function": "func_80065A5C",
+      "address": "0x80065a5c",
+      "bytes": 132,
+      "sha256": "278028b4201f68dc536800ede29a45e5905ef7ed8e5929059a19709f705d1f23"
+    },
+    {
+      "function": "func_8001D344",
+      "address": "0x8001d344",
+      "bytes": 48,
+      "sha256": "ff5d0290554c6476f831e69e135c146bc2efe1921f80df09eb4d8b262011d661"
+    },
+    {
+      "function": "func_8001EDAC",
+      "address": "0x8001edac",
+      "bytes": 88,
+      "sha256": "685cff5de3228050301baf2343de332f6b5d8f6e3792817177b649ff16605923"
+    }
+  ],
+  "original_tables": [
+    {
+      "symbol": "g_ACTOR_VTABLE",
+      "address": "0x8008a6c4",
+      "bytes": 324,
+      "sha256": "00907856ef17e7189c9749a820ebf11a7f2eb8c2aa71440573bf6a00d1458fc8"
+    },
+    {
+      "symbol": "g_ENTITY_VTABLE",
+      "address": "0x80089ad4",
+      "bytes": 332,
+      "sha256": "d2f1f7eee6c466a8dfa12bb5746e93e071eecbe26ba1ee09d13663ef170e62de"
+    },
+    {
+      "symbol": "D_800878D4",
+      "address": "0x800878d4",
+      "bytes": 240,
+      "sha256": "74ba4f812269d36e971368efa639a6cb725213972f6958caed2bdf3c42a15388"
+    }
+  ],
+  "compiled_analysis_caller": {
+    "function": "actor_children_set_flag",
+    "address": "0x180000",
+    "bytes": 48,
+    "sha256": "2197284076f77d07ba87f8fd9e098fb62b716b2cee31be1884a6339f9a694b2a"
+  },
+  "caller_included_in_game": false,
+  "canonical_sized_link": {
+    "objects": 306,
+    "complete_image_matches": true,
+    "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "ELF_sha256": "23cd8eac306c892c49d6a76c915b7ddb1d883cb8742170319bc45a93a3e9950a"
+  },
+  "target_ABI_assertions": 8,
+  "native": {
+    "distinct_initialized_case_inputs": 16512,
+    "positive_native_invocations": 16704,
+    "case_groups": {
+      "direct-actor": 5376,
+      "virtual-actor": 5376,
+      "virtual-entity": 5376,
+      "direct-node": 336,
+      "five_call_history": 48
+    },
+    "history_commands": [
+      0,
+      1,
+      1,
+      0,
+      -1
+    ],
+    "history_count": 48,
+    "full_word_flags": [
+      -2147483648,
+      -1,
+      0,
+      1,
+      2,
+      256,
+      2147483647
+    ],
+    "fixture_identity": "SHA-256 of initialized guarded graph, entry address, receiver and complete command argument words.",
+    "actual_entry_counts": {
+      "func_80065A5C": 16368,
+      "func_8001D344": 59712,
+      "func_8001EDAC": 59712,
+      "actor_children_set_flag": 10992
+    },
+    "dependency_output_contracts": [],
+    "input_and_output_sha256": "32584a7f30667ecdb0d10e56a318eca85eb15a8d78e9db8daf37333af18148c5",
+    "negative_controls": [
+      {
+        "kind": "child_list_stride",
+        "address": "0x80065abc",
+        "changed_instruction_hits": 2,
+        "wrong_buffer": true,
+        "wrong_return_word": false,
+        "fixture": {
+          "kind": "direct-actor",
+          "count": 2,
+          "layout": 0,
+          "flag": 0,
+          "word": 305419896,
+          "segment": 0,
+          "pattern": 0
+        }
+      },
+      {
+        "kind": "zero_argument_gate",
+        "address": "0x8001d34c",
+        "changed_instruction_hits": 1,
+        "wrong_buffer": true,
+        "wrong_return_word": false,
+        "fixture": {
+          "kind": "virtual-entity",
+          "count": 1,
+          "layout": 0,
+          "flag": 0,
+          "word": 0,
+          "segment": 0,
+          "pattern": 0
+        }
+      },
+      {
+        "kind": "wrong_flag_bit",
+        "address": "0x8001d354",
+        "changed_instruction_hits": 1,
+        "wrong_buffer": true,
+        "wrong_return_word": false,
+        "fixture": {
+          "kind": "virtual-actor",
+          "count": 1,
+          "layout": 0,
+          "flag": 0,
+          "word": 0,
+          "segment": 0,
+          "pattern": 0
+        }
+      },
+      {
+        "kind": "wrong_leaf_return",
+        "address": "0x8001d360",
+        "changed_instruction_hits": 1,
+        "wrong_buffer": false,
+        "wrong_return_word": true,
+        "fixture": {
+          "kind": "direct-node",
+          "count": 0,
+          "layout": 0,
+          "flag": 1,
+          "word": 2147483648,
+          "segment": 0,
+          "pattern": 0
+        }
+      }
+    ],
+    "negative_controls_detected": 4,
+    "all_changed_instructions_observed": true,
+    "Fox_callback_invoked": false,
+    "native_report_sha256": "efac030d4aff36d7690550f5fbb3fe5c1fff6018c4cbf2ba52b6d348b78866ac",
+    "backend_identity": {
+      "package_version": "2.1.4",
+      "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+      "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+    }
+  },
+  "excluded_instrumentation": {
+    "reason": "Upper stack guard slice had an incorrect length; not a native game disagreement.",
+    "accepted_cases": 0,
+    "upper_guard_read_bytes": 512,
+    "incorrectly_compared_tail_bytes": 1024,
+    "failed_producer_sha256": "bb3fc1ccec9fd7db0d87d317cdcbbd6620674049fa3cc4e459e2e4ebfeba5e42",
+    "failed_console_log_sha256": "6beec862a3b5af3c37d198fff2387285785f8723ad22482a8355851ced4d1d70",
+    "failed_run_audit_sha256": "003123d836c5455b2eff11342a20ce05fe7ff7fd1c391819022d8209c3c22090",
+    "correction": "Compare exactly the 512-byte upper guard; named ABI checks identify failures."
+  },
+  "canonical_builds": {
+    "regular_complete_image_matches": true,
+    "fresh_clean_complete_image_matches": true,
+    "all_306_objects_absent_before_fresh_build": true,
+    "objects_rebuilt": 306,
+    "canonical_executable_bytes": 505856,
+    "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "protected_input_count": 392,
+    "changed_inputs": [
+      {
+        "path": "src/scene/actor.c",
+        "before_sha256": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514",
+        "after_sha256": "dac4858fa2ece134c6e698c8aad5734bab89c9185bb745470be12bc0d08e0483"
+      },
+      {
+        "path": "src/scene/actor.h",
+        "before_sha256": "cd0edde45d0cf35e2134acabeb9c26a2b03f0eb9ab4a232aa4db63628c155baf",
+        "after_sha256": "762367821bbc0f0e80b9addf9d3528ef97b0e57791904fba92265a67f02b92f7"
+      }
+    ],
+    "other_inputs_retained": 390,
+    "native_dependencies_retained_after_clean_build": true,
+    "inherited_bit_setter_source_unchanged": true,
+    "regular_log_sha256": "c4425a07935b6bb4f7f3d4090986b68d147c924eb6add81226cb58e2cfea0b3a",
+    "clean_stages": [
+      {
+        "stage": "clean-generated-build-outputs",
+        "exit_code": 0,
+        "log_sha256": "20417d9394163ed5264401296fac7363146ac3d1d8ef068919fcf6a267030feb"
+      },
+      {
+        "stage": "fresh-clean-build",
+        "exit_code": 0,
+        "log_sha256": "512d79fa4c8e4b0b077d738904cbbefb18149829d49ab67d0da9595c71c7dfb7"
+      },
+      {
+        "stage": "progress",
+        "exit_code": 0,
+        "log_sha256": "5b381160843de9e2a306547b51a13d6db419d2c60b184ea7bc5df22c5d51f572"
+      }
+    ],
+    "clean_report_sha256": "5fb626b19e5895aa6aab73775278c04c82eab48c586cc4557a00c37e5e68e4f1"
+  },
+  "tooling_tests": [
+    {
+      "environment": "Windows",
+      "python": "3.14.2",
+      "tests": 579,
+      "expected_skips": 2,
+      "command": "python -m unittest discover -s tests",
+      "exact_log_sha256": "e4b0f9d6300b4873f6425fb1002cd15a9d4d91c4153085f9c537636939f61398"
+    },
+    {
+      "environment": "WSL/Linux",
+      "python": "3.13.5",
+      "tests": 579,
+      "expected_skips": 2,
+      "command": "python -m unittest discover -s tests",
+      "exact_log_sha256": "e373b5fc5d72b170118f31a7b919bebd0f9b79e5c8d99ceafe39f6eddc4f8ed8"
+    }
+  ],
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 32,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 32,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_game_function_C_bytes": 0,
+  "inherited_storage_explanations_remaining": 24,
+  "original_behavior_modified": false,
+  "new_gameplay_runs": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "new_whole_NPC_encounters": 0,
+  "new_whole_feature_groups_accepted": 0,
+  "model_API_calls": 0,
+  "original_NPC_AI_and_analysis_tools_separate": true,
+  "Bevy_port_modified": false,
+  "scope": "Original actor/entity table dispatch to populated disjoint scene-node lists, including duplicate entries, signed empty counts, full-word flags and repeated flag changes. The real fan-out, leaf and bit setter run without output contracts. Full guarded graph, ordered call arguments, leaf return word and saved ABI agree. Excludes natural construction/NPC encounters, recursion, call-time count changes, rendering/audio and PS1 timing; the bit setter inherited unused local remains unresolved."
+}
