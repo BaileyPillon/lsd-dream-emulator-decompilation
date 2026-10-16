@@ -37,12 +37,16 @@ SCRIPT_FUNCTIONS = [
     {'function': 'entity_ox_cart', 'address': '0x8005f0d8', 'bytes': 208, 'sha256': '20e1a6bd2877ee89a9113bfc15fc3ac84df3c4325fdb6c3a700dbc97cd766c2b'},
     {'function': 'entity_kicking_man', 'address': '0x80061c04', 'bytes': 40, 'sha256': '94e48015901a95d1029d1b18674b3bd33927b29995f8c52d01713cff3ea12be3'},
     {'function': 'entity_maiko_small', 'address': '0x80064aa4', 'bytes': 112, 'sha256': 'c7fba6bd17aaac628296b2dc8a0d6b492c03fa35ca13760b6bf8dc886c653ee1'},
+    {'function': 'entity_buddha', 'address': '0x8005eff4', 'bytes': 228, 'sha256': '0df584f37e1a9ce253307a3a5310a8b59e1ed7ddded13619db86b9b01db3824a'},
+    {'function': 'entity_fox', 'address': '0x8005ed30', 'bytes': 496, 'sha256': '5d093d83b5c5d680d73399d3a207b20cfb4cb12ce032f32327c298c2fd2bd3d7'},
+    {'function': 'entity_soldier', 'address': '0x80060148', 'bytes': 356, 'sha256': '8bf8288cefc94cfe9c0bf1c6b440238c6b0891a11d2dda0a2ba45ec6a2519d3e'},
+    {'function': 'entity_balloon', 'address': '0x8005fec8', 'bytes': 48, 'sha256': 'c6c941eab2de5355b79c3976528bf5e20baf044a4e2f5ceec844bd458e4471ae'},
 ]
 ACTION_READ = {'function':'dream_sys_get_action_pressed','address':'0x8005931C','bytes':12,
                'sha256':'bc9d9a4597fc5c324c34fb0acc7dc1596cd1a7b617fc46f0fd1b7f63d9bf4061'}
 NATIVE_FUNCTIONS = SCRIPT_FUNCTIONS + [ACTION_READ] + [
     record for record in native.NATIVE_FUNCTIONS if record['function'] in
-    {'rand','entity_stop_behaviour','func_80066148','func_800662B4'}]
+    {'rand','entity_stop_behaviour','func_80065A5C','func_80066148','func_800662B4'}]
 CHILD = 0x105000
 
 
@@ -89,6 +93,8 @@ def fixtures(case):
     native.word(dream,0,native.h.symbols['g_DREAM_SYS_VTABLE'])
     native.word(dream,0x74,case['action'])
     native.word(context,4,case['timer'])
+    if 'frame_offset_x' in case:
+        native.word(entity,0x28,case['frame_offset_x'])
     return entity,dream,context
 
 
@@ -289,6 +295,47 @@ def expected(callback, case):
         call('scale',native.ENTITY,1,native.h.symbols['g_OffsetQuarter'])
         if native.u32(tick-201) < 99:
             motion('vertical',-32,0)
+    elif callback == 'entity_buddha':
+        if tick == 0 and random() % 7 == 0:
+            call('scale',native.ENTITY,1,native.h.symbols['g_OffsetOneTwoOne'])
+        if timer % 4 == 0:
+            ratio()
+            command(7,28)
+        motion('forward',-100,0)
+    elif callback == 'entity_fox':
+        if tick == 0 and random() % 2:
+            state = 11
+            native.word(entity,0x44,state)
+        if state == 0:
+            if tick < 64:
+                motion('forward',-90,0)
+            elif tick == 64:
+                rotation('g_RotateYawQuarter' if random() % 2 else 'g_RotateYawNegQuarter')
+                call('translation',native.ENTITY,native.h.symbols['g_MoveUp256'])
+            else:
+                motion('lateral',-374,random() % 2)
+        elif state == 11:
+            if tick % 5 == 0:
+                rotation('g_RotateYawQuarter')
+            motion('forward',-2048,0)
+            # The original actor fan-out still executes with an empty child list.
+            call('child_flag',native.ENTITY,int(random() % 7 == 0))
+    elif callback == 'entity_soldier':
+        if signed_remainder(timer,7) == 0:
+            ratio()
+            for index,value in ((7,3),(9,64),(10,64)):
+                command(index,value)
+        turns = {200:'g_RotateYawNegQuarter',400:'g_RotateYawHalfTurn',
+                 600:'g_RotateYawQuarter',800:'g_RotateYawHalfTurn'}
+        if tick in turns:
+            if tick == 800:
+                native.word(entity,0xFC,-1)
+            rotation(turns[tick])
+        motion('lateral',-30,0)
+        if native.u32(case.get('frame_offset_x',0xD7D7D7D7)) != 0:
+            motion('vertical',-200,0)
+    elif callback == 'entity_balloon':
+        motion('vertical',-90,0)
     else:
         raise ValueError('Unsupported callback: '+callback)
     return {'entity':bytes(entity),'dream':bytes(dream),'context':bytes(context),
@@ -333,6 +380,17 @@ def cases_by_callback():
                             signed_word(half-1),half,signed_word(half+1),signed_word(half+3)})
         ox_timers = [timer for timer in ox_timers if not (timer == -0x80000000 and half == -1)]
         ox_cart += product(duration=(duration,),timer=ox_timers,ratio=(-0x80000000,-1,0,99,0x7fffffff))
+    buddha = product(tick=(-0x80000000,-1,0,1,0x7fffffff),
+        timer=(-0x80000000,-9,-8,-5,-4,-1,0,1,3,4,7,8,0x7fffffff),
+        state=(-1,0,11),seed=seeds,ratio=(-1,0,99))
+    buddha += product(tick=(0,),timer=(0,),seed=rng_seeds)
+    fox = product(tick=(-0x80000000,-65,-64,-6,-5,-1,0,1,4,5,63,64,65,0x7fffffff),
+        state=(-0x80000000,-1,0,1,11,0x7fffffff),timer=(-0x80000000,0,1,0x7fffffff),
+        seed=(0,1,2,3,5,42,0xffffffff))
+    for state,tick in ((0,0),(0,64),(11,5)):
+        fox += product(state=(state,),tick=(tick,),seed=rng_seeds)
+    buddha = list({tuple(sorted(case.items())):case for case in buddha}.values())
+    fox = list({tuple(sorted(case.items())):case for case in fox}.values())
     return {
         'entity_bird':product(timer=timers,ratio=(-1,0,99)),
         'entity_rocket':product(timer=timers,tick=(-1,0,1,98,99,100,101,299,300,301)),
@@ -370,11 +428,19 @@ def cases_by_callback():
                                      timer=(-0x80000000,0,1,10,0x7fffffff)),
         'entity_maiko_small':product(tick=(-0x80000000,-1,0,199,200,201,202,298,299,300,301,0x7fffffff),
                                     frame=(-0x80000000,0,201,299,0x7fffffff),state=(-1,0,11)),
+        'entity_buddha':buddha,
+        'entity_fox':fox,
+        'entity_soldier':product(timer=tuple(range(-15,16))+(-0x80000000,0x7fffffff),
+            tick=(-0x80000000,-1,0,199,200,201,399,400,401,599,600,601,799,800,801,0x7fffffff),
+            frame_offset_x=(-0x80000000,-1,0,1,0x10000,0x7fffffff),ratio=(-1,0,99),frame=(30,800)),
+        'entity_balloon':product(timer=(-0x80000000,0,1,0x7fffffff),
+            tick=(-0x80000000,-1,0,1,0x7fffffff),frame=(-1,0,30,0x7fffffff),state=(-1,0,11)),
     }
 
 
 class Machine(native.Machine):
     def __init__(self, callback, code=None):
+        self.callback = callback
         self.entry_counts = {}
         self.fault_instruction_address = None
         self.fault_instruction_execution_count = 0
@@ -402,6 +468,8 @@ class Machine(native.Machine):
             self.entry_counts[name] = self.entry_counts.get(name,0)+1
         if address == native.h.symbols['rand'] & native.MASK:
             self.trace.append(['rand',int.from_bytes(cpu.mem_read(native.RNG,4),'little')])
+        if self.callback == 'entity_fox' and address == native.h.symbols['func_80065A5C'] & native.MASK:
+            self.trace.append(['child_flag',cpu.reg_read(native.reg.UC_MIPS_REG_A0),cpu.reg_read(native.reg.UC_MIPS_REG_A1)])
         contract = self.stubs.get(address)
         if contract is None:
             return
@@ -500,8 +568,9 @@ def verify(destination):
                 if word in (0x34050001,0x24050001):
                     mutation = (offset,word,(word & 0xffff0000) | 2,'wrong_scale_mode')
                     break
-        if callback in {'entity_fish','entity_airship'}:
-            immediate = 0xffc0 if callback == 'entity_fish' else 0xffe2
+        if callback in {'entity_fish','entity_airship','entity_fox','entity_balloon'}:
+            immediate = {'entity_fish':0xffc0,'entity_airship':0xffe2,
+                         'entity_fox':0xffa6,'entity_balloon':0xffa6}[callback]
             for offset in range(0,len(original),4):
                 word = struct.unpack_from('<I',original,offset)[0]
                 if word == (0x24050000 | immediate):
@@ -539,6 +608,16 @@ def verify(destination):
                 raise ValueError('Expected one reviewed Small Maiko phase boundary.')
             offset,word = boundaries[0]
             mutations.append((offset,word,(word & 0xffff0000)|98,'wrong_vertical_phase_boundary'))
+        extra_controls = {
+            'entity_buddha':((0x74,0x34050001,0x34050002,'wrong_initial_scale_mode'),),
+            'entity_fox':((0x28,0x30420001,0x30420000,'wrong_initial_rng_state_gate'),
+                          (0x1D8,0x2C450001,0x2C450002,'wrong_child_flag_remainder_gate')),
+            'entity_soldier':((0x120,0x8E020028,0x86020028,'wrong_frame_offset_word_width'),),
+        }
+        for offset,word,changed_word,reason in extra_controls.get(callback,()):
+            if struct.unpack_from('<I',original,offset)[0] != word:
+                raise ValueError('Reviewed state-cycle control instruction changed: '+callback+'/'+reason)
+            mutations.append((offset,word,changed_word,reason))
         for offset,word,changed_word,reason in mutations:
             modified = bytearray(original)
             struct.pack_into('<I',modified,offset,changed_word)

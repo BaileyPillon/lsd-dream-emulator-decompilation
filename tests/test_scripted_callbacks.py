@@ -13,13 +13,22 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from tools import verify_scripted_ai as scripts
 
+PRE_STATE_CYCLE_CALLBACKS = (
+    'entity_bird','entity_rocket','entity_horse','entity_ufo','entity_dog','entity_can',
+    'entity_car_water','entity_fetus_walk','entity_fetus_jump','entity_elephant',
+    'entity_elephant_small','entity_fish','entity_fish_giant','entity_airship',
+    'entity_bell_striker','entity_hoop_girl','entity_hoop_girl_giant','entity_opera_singer',
+    'entity_tea_doll','entity_ox_cart','entity_kicking_man','entity_maiko_small')
+
 
 class AdditionalScriptedCallbackTests(unittest.TestCase):
     def setUp(self):
         self.symbols = {name: 0x80010000 + 16 * index for index, name in enumerate((
             'g_ENTITY_VTABLE', 'g_DREAM_SYS_VTABLE', 'g_OffsetTwo', 'g_OffsetHalf',
             'g_OffsetSix', 'g_MoveDown64Then32', 'g_MoveUp64', 'g_RotateYawNegHalf',
-            'func_8001EACC', 'sound_entity_stop', 'entity_fish', 'g_OffsetQuarter'))}
+            'func_8001EACC', 'sound_entity_stop', 'entity_fish', 'g_OffsetQuarter',
+            'g_OffsetOneTwoOne','g_RotateYawQuarter','g_RotateYawNegQuarter',
+            'g_RotateYawHalfTurn','g_MoveUp256'))}
         self.program = patch.object(scripts.native, 'h', SimpleNamespace(symbols=self.symbols), create=True)
         self.program.start()
         self.addCleanup(self.program.stop)
@@ -341,7 +350,7 @@ class AdditionalScriptedCallbackTests(unittest.TestCase):
     def test_periodic_extension_preserves_every_prior_fixture_input(self):
         groups = scripts.cases_by_callback()
         new_names = {'entity_tea_doll', 'entity_ox_cart', 'entity_kicking_man', 'entity_maiko_small'}
-        old_groups = {name: cases for name, cases in groups.items() if name not in new_names}
+        old_groups = {name: groups[name] for name in PRE_STATE_CYCLE_CALLBACKS if name not in new_names}
         self.assertEqual(len(old_groups), 18)
         self.assertEqual(sum(map(len, old_groups.values())), 117583)
         digest = hashlib.sha256(json.dumps(old_groups, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
@@ -355,13 +364,110 @@ class AdditionalScriptedCallbackTests(unittest.TestCase):
             with self.subTest(callback=name):
                 self.assertEqual(len(groups[name]), count)
                 self.assertEqual(len({tuple(sorted(case.items())) for case in groups[name]}), count)
-        self.assertEqual(sum(map(len, groups.values())), 122518)
+        self.assertEqual(sum(len(groups[name]) for name in PRE_STATE_CYCLE_CALLBACKS), 122518)
         maiko_ticks = {case['tick'] for case in groups['entity_maiko_small']}
         self.assertTrue({200, 201, 299, 300, -0x80000000, 0x7fffffff}.issubset(maiko_ticks))
         for case in groups['entity_ox_cart']:
             half = math.trunc(case['duration']/2)
             self.assertNotEqual(half, 0)
             self.assertFalse(case['timer'] == -0x80000000 and half == -1)
+
+    def test_state_cycle_extension_preserves_all_22_previous_input_groups(self):
+        groups = scripts.cases_by_callback()
+        retained = {name: groups[name] for name in PRE_STATE_CYCLE_CALLBACKS}
+        self.assertEqual(len(retained), 22)
+        self.assertEqual(sum(map(len, retained.values())), 122518)
+        self.assertEqual(hashlib.sha256(json.dumps(retained, sort_keys=True, separators=(',', ':')).encode()).hexdigest(),
+                         '636b17e4208e66a2f33a8d7f91a5fa48c0b3b22b8b65219f9c812d3b084cba74')
+
+    def test_buddha_initial_draw_precedes_periodic_command_and_forward_motion(self):
+        result = scripts.expected('entity_buddha', self.case(timer=-4, tick=0, seed=0, ratio=-7))
+        self.assertEqual(result['rng_seed'], 12345)
+        self.assertEqual(result['trace'], [
+            ['rand',0], ['scale',scripts.native.ENTITY,1,self.symbols['g_OffsetOneTwoOne']],
+            ['trigger_ratio',scripts.native.ENTITY], ['forward',scripts.native.ENTITY,scripts.native.u32(-100),0]])
+        self.assertEqual(struct.unpack_from('<i',result['context'],28)[0], 28)
+
+    def test_buddha_noninitial_ticks_do_not_draw_or_scale(self):
+        for tick in (-0x80000000,-1,1,0x7fffffff):
+            with self.subTest(tick=tick):
+                case = self.case(tick=tick, timer=-1, seed=42)
+                result = scripts.expected('entity_buddha', case)
+                self.assertEqual(result['rng_seed'],42)
+                self.assertEqual(result['context'],bytes(scripts.fixtures(case)[2]))
+                self.assertEqual(result['trace'],[['forward',scripts.native.ENTITY,scripts.native.u32(-100),0]])
+
+    def test_fox_initial_odd_roll_changes_state_and_consumes_a_second_draw(self):
+        inverse = pow(0x41C64E6D,-1,1 << 32)
+        seed = ((1 << 16)-0x3039)*inverse & 0xffffffff
+        result = scripts.expected('entity_fox',self.case(tick=0,state=0,seed=seed))
+        self.assertEqual(struct.unpack_from('<i',result['entity'],0x44)[0],11)
+        self.assertEqual([entry[0] for entry in result['trace']],
+                         ['rand','rotation','forward','rand','child_flag'])
+        self.assertEqual(result['trace'][-1][-1],int(((result['rng_seed'] >> 16) & 0x7fff) % 7 == 0))
+
+    def test_fox_transition_at_64_selects_rotation_and_translation_before_lateral_phase(self):
+        middle = scripts.expected('entity_fox',self.case(tick=64,state=0,seed=0))
+        self.assertEqual(middle['trace'],[
+            ['rand',0], ['rotation',scripts.native.ENTITY,0,self.symbols['g_RotateYawNegQuarter']],
+            ['translation',scripts.native.ENTITY,self.symbols['g_MoveUp256']]])
+        after = scripts.expected('entity_fox',self.case(tick=65,state=0,seed=0))
+        self.assertEqual(after['trace'],[['rand',0],['lateral',scripts.native.ENTITY,scripts.native.u32(-374),0]])
+        inactive = scripts.expected('entity_fox',self.case(tick=64,state=-1,seed=42))
+        self.assertEqual(inactive['trace'],[])
+        self.assertEqual(inactive['rng_seed'],42)
+
+    def test_fox_negative_periodic_tick_and_child_flag_remain_separate_from_motion(self):
+        result = scripts.expected('entity_fox',self.case(tick=-5,state=11,seed=0))
+        self.assertEqual(result['trace'],[
+            ['rotation',scripts.native.ENTITY,0,self.symbols['g_RotateYawQuarter']],
+            ['forward',scripts.native.ENTITY,scripts.native.u32(-2048),0],
+            ['rand',0],['child_flag',scripts.native.ENTITY,1]])
+        self.assertEqual(result['entity'],bytes(scripts.fixtures(self.case(tick=-5,state=11,seed=0))[0]))
+
+    def test_soldier_final_turn_resets_tick_before_motion_and_keeps_frame(self):
+        result = scripts.expected('entity_soldier',self.case(timer=-7,tick=800,frame=30,frame_offset_x=0,ratio=-7))
+        self.assertEqual(struct.unpack_from('<i',result['entity'],0xFC)[0],-1)
+        self.assertEqual(struct.unpack_from('<i',result['entity'],0x84)[0],30)
+        self.assertEqual(result['trace'],[
+            ['trigger_ratio',scripts.native.ENTITY],
+            ['rotation',scripts.native.ENTITY,0,self.symbols['g_RotateYawHalfTurn']],
+            ['lateral',scripts.native.ENTITY,scripts.native.u32(-30),0]])
+        self.assertEqual([struct.unpack_from('<i',result['context'],index*4)[0] for index in (7,9,10)],[3,64,64])
+
+    def test_soldier_reads_a_full_word_at_0x28_instead_of_a_halfword_or_nudge(self):
+        for offset in (0,-0x80000000,-1,1,0x10000,0x7fffffff):
+            with self.subTest(offset=offset):
+                case = self.case(tick=1,timer=1,frame_offset_x=offset,nudge=0)
+                self.assertEqual(struct.unpack_from('<I',scripts.fixtures(case)[0],0x28)[0],scripts.native.u32(offset))
+                result = scripts.expected('entity_soldier',case)
+                names = [entry[0] for entry in result['trace']]
+                self.assertEqual(names,['lateral','vertical'] if offset else ['lateral'])
+
+    def test_balloon_only_requests_its_vertical_motion(self):
+        case = self.case(tick=-0x80000000,timer=0,state=11,frame=30,seed=42)
+        result = scripts.expected('entity_balloon',case)
+        self.assertEqual(result['trace'],[['vertical',scripts.native.ENTITY,scripts.native.u32(-90),0]])
+        self.assertEqual(result['entity'],bytes(scripts.fixtures(case)[0]))
+        self.assertEqual(result['context'],bytes(scripts.fixtures(case)[2]))
+        self.assertEqual(result['rng_seed'],42)
+
+    def test_state_cycle_fixture_draws_cover_all_original_15_bit_results(self):
+        groups = scripts.cases_by_callback()
+        for name,state,tick in (('entity_buddha',0,0),('entity_fox',0,0),
+                                ('entity_fox',0,64),('entity_fox',11,5)):
+            with self.subTest(name=name,state=state,tick=tick):
+                outputs = {((case['seed']*0x41C64E6D+0x3039) & 0xffffffff) >> 16 & 0x7fff
+                           for case in groups[name] if case['state'] == state and case['tick'] == tick}
+                self.assertEqual(outputs,set(range(32768)))
+
+    def test_state_cycle_input_groups_are_distinct_and_keep_word_boundaries(self):
+        groups = scripts.cases_by_callback()
+        for name in ('entity_buddha','entity_fox','entity_soldier','entity_balloon'):
+            with self.subTest(callback=name):
+                self.assertEqual(len({tuple(sorted(case.items())) for case in groups[name]}),len(groups[name]))
+        self.assertTrue({0,0x10000,-0x80000000,0x7fffffff}.issubset(
+            {case['frame_offset_x'] for case in groups['entity_soldier']}))
 
 
 if __name__ == '__main__':

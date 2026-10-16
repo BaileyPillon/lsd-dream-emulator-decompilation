@@ -5,9 +5,10 @@ optional mods have separate commands and outputs. The original game does not
 call any added analysis tool; those tools currently make zero external model
 API calls.
 
-The latest [periodic script profiles](PERIODIC_SCRIPTS.md) bring bounded native
-callback coverage to **28 / 107**. The scripted suite checks 122,518 fixtures
-across 22 callbacks, with 29 detected faults and preserved earlier inputs.
+The latest [state and cycle profiles](STATE_CYCLE_SCRIPTS.md) bring bounded
+native callback coverage to **32 / 107**. The scripted suite checks 278,115
+fixtures across 26 callbacks, with 37 detected faults and all 122,518 earlier
+inputs preserved.
 These are comparisons of existing original code; whole NPC encounters and
 whole feature groups remain unaccepted.
 

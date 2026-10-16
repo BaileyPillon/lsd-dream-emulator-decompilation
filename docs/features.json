@@ -21656,6 +21656,58 @@
       "new_whole_NPC_encounters_accepted": 0,
       "original_AI_and_tools_separate": true,
       "Bevy_port_modified": false
+    },
+    "state_cycle_scripts_20261016": {
+      "status": "bounded_original_state_cycle_scripts",
+      "guide": "docs/STATE_CYCLE_SCRIPTS.md",
+      "metadata": "docs/state-cycle-script-checks.json",
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 28,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 32,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "newly_profiled_callbacks": [
+        "entity_buddha",
+        "entity_fox",
+        "entity_soldier",
+        "entity_balloon"
+      ],
+      "new_distinct_declared_native_fixture_inputs": 155597,
+      "retained_original_fixture_inputs": 122518,
+      "scripted_callback_count": 26,
+      "scripted_native_fixtures": 278115,
+      "negative_controls_detected": 37,
+      "new_negative_controls": 8,
+      "all_fault_instructions_observed": true,
+      "original_NPC_AI_and_tools_separate": true,
+      "new_C_bytes": 0,
+      "new_gameplay_runs": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "Bevy_port_modified": false
     }
   }
 }
