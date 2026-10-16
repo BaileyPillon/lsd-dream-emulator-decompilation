@@ -5,6 +5,8 @@
 
 #include "base/base.h"
 
+struct class_glyph;
+
 typedef struct class_glyph_vtable {
     /* 0x000 8006ec74 */ u32 type_id;
     /* 0x004 8006ec78 */ base_class_t *(*Destroy)(base_class_t *);
@@ -55,8 +57,8 @@ typedef struct class_glyph_vtable {
     /* 0x0B8 8006ed2c */ void (*Unk45)(void *);
     /* 0x0BC 8006ed30 */ void (*Unk46)(void *);
     /* 0x0C0 8006ed34 */ void (*Unk47)(void *);
-    /* 0x0C4 8006ed38 */ void (*Unk48)(void *, u8);
-    /* 0x0C8 8006ed3c */ void (*Unk49)(void *);
+    /* 0x0C4 8006ed38 */ void (*Unk48)(struct class_glyph *, u8);
+    /* 0x0C8 8006ed3c */ u8 (*Unk49)(struct class_glyph *);
 } class_glyph_vtable_t;
 
 typedef struct class_glyph {

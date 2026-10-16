@@ -110,6 +110,10 @@ The [glyph region cleanup](docs/GLYPH_REGIONS.md) replaces two oversized byte
 buffers with their twelve-byte source region. Compiler observations explain
 the original allocation; C coverage and the 24 unresolved storage functions
 remain unchanged.
+The [glyph character interface](docs/GLYPH_CHARACTER_API.md) corrects the
+virtual getter's unsigned-byte return and both character-method receivers.
+Compiled C callers pass 4,656 native checks through the original methods;
+regular and fresh clean builds retain the complete canonical executable.
 The [save workflow checks](docs/CARD_SAVE.md) exercise the original writer,
 retry wrapper and native string helpers; physical card I/O and the writer's
 exact C recovery remained open at that checkpoint.

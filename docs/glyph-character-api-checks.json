@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-16T08:06:46.168424+00:00",
+  "status": "passed_matching_glyph_character_interface_and_bounded_native_callers",
+  "repository_code_base_commit": "da5390d38c5e56b638d5dcaaeb6fc732feabca30",
+  "source_hash_serialization": "Published source/document hashes use UTF-8 normalized to LF; private run artifacts use exact bytes.",
+  "source_hashes": {
+    "tools/verify_native_ai.py": "6094e565bdb4e6701055f08d0428d059b54c6183818170ae1a671610c53b40a0",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/progress.py": "5768fea4dd162e1fe406c4d909742396a9174b988216629bd52fa902204663dd",
+    "configure.py": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+    "requirements-analysis.txt": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911",
+    "src/scene/entity.c": "ede517712cde6e41c8818e4b2d537f00a310dfdae5cb2614486c1b5d0f54bd72",
+    "src/scene/entity.h": "4028f6bb6d2c1e779b8da8ddfc44263f34f619ed4a19a12547982a4c1ecc15e3",
+    "src/dream/dream_sys.c": "bd5fe0817a553a4cccd5505e5f87577fd9264dacf9d3576ebc1a034faaa4b9f2",
+    "src/dream/dream_sys.h": "0c5e29a07f133924a7d2eda9e7425e2b3bcbf6c3b9cb905c097e6eb879d45657",
+    "src/scene/actor.c": "6be43effcf8920d89ce102b1b7557e362ad3384cc7f5c00b1e8d3c4e0accc514",
+    "src/base/transform.c": "e1ead0e020d1a752b812891ab3114e7510fcbcf723d4539c423918c13f351c4e",
+    "asm/nonmatchings/psyq/libc/rand/rand.s": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7",
+    "research/glyph_character/consumer.c": "b13d4e1e51f878836dd9be0475f176f12b721d920b6580c05f8a9bcbcb2d8efe",
+    "research/glyph_character/abi_checks.h": "15021633627b17514c902e66b22c59c24c6542b0b4f1197dcb8f452cd9801f40",
+    "research/glyph_character/verify.py": "6916d0c10bf04ac9532c04dc7666b8440673e34e3f81ea2f2442932cca82fd6b",
+    "src/menu/glyph.c": "65b9a0bb9376b472e47f4377e6d93df4b61fccf6a30aecea7cff5df9f54801ac",
+    "src/menu/glyph.h": "ae0b2924a484a86d39f4258025a6dd88cdfd41dcbd1eb8e6b770e9343c1acffc",
+    "tools/decomp_workbench.py": "10ce58a132c2e0b1084bad492590e3acdb1dc9b328747615b33999bb56a1803f",
+    "tools/verify_scripted_ai.py": "2edefddc727441c0066a48375efd882c80035af99db3b3990a2c674eedddb2c1",
+    "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+    "tests/test_glyph_character_api.py": "749c36846204e57d0a0a5332723148798e71b3783ed36f947114695fe49e602a",
+    "research/glyph_character/README.md": "771d716604b7313c0a51f32e39edac5f32481548597f7b8b7b5bceef82728318"
+  },
+  "documentation": "docs/GLYPH_CHARACTER_API.md",
+  "documentation_sha256": "4ea515e58345730491a4d94db0a04a4171abbb73af1006f08332e5f2ec51a9b1",
+  "signature_corrections": [
+    {
+      "slot": "0xC4",
+      "function": "glyph_set_char",
+      "before": "void (void *, u8)",
+      "after": "void (struct class_glyph *, u8)"
+    },
+    {
+      "slot": "0xC8",
+      "function": "glyph_get_char",
+      "before": "void (void *)",
+      "after": "u8 (struct class_glyph *)"
+    }
+  ],
+  "before_header_compiler_check": {
+    "preprocessor_exit_code": 0,
+    "compiler_exit_code": 33,
+    "diagnostic_contains": "void value",
+    "diagnostic_sha256": "acd8ff3daee943533857ff9a23c26527e4f0c6edd142821934dd71d55ff3eb1d",
+    "same_consumer_definitions_before_and_after": true
+  },
+  "original_functions": [
+    {
+      "function": "glyph_set_char",
+      "address": "0x80041bdc",
+      "bytes": 76,
+      "sha256": "aa64ff97d3400f436d4dbed22f1687c3c6d68ab6f575284650f2cc5402c1323c"
+    },
+    {
+      "function": "glyph_get_char",
+      "address": "0x80041c28",
+      "bytes": 20,
+      "sha256": "5b6b699c5a61336764d09934ffb8183244e3da097dc542b0b1bb15357856b728"
+    },
+    {
+      "function": "func_80041C4C",
+      "address": "0x80041c4c",
+      "bytes": 80,
+      "sha256": "79f4b67714427f714cff33464a3ba3728d8c2b29709947b2eaef1f7133bc332e"
+    }
+  ],
+  "compiled_analysis_callers": [
+    {
+      "function": "glyph_character_read",
+      "address": "0x180000",
+      "bytes": 52,
+      "sha256": "c86888f99e221e0616d4c0274ada2f7929535daf5fd591c277e8e86448092026"
+    },
+    {
+      "function": "glyph_character_write_read",
+      "address": "0x180034",
+      "bytes": 88,
+      "sha256": "accf61b9e4fc58751909eb82d6c4c133b9f77d12cf082f028a11385735fb2883"
+    }
+  ],
+  "callers_included_in_game": false,
+  "target_ABI_assertions": 8,
+  "original_vtable_sha256": "858e5f11a66c2911f636f15bda8bc61ede508196c60443d3fb311bc899a57b50",
+  "original_region_template_sha256": "12437a1a61b8d61a91a18278e4506bedaaf0eafc643b162f914a02ff738326b9",
+  "native": {
+    "distinct_initialized_inputs": 4656,
+    "case_groups": {
+      "direct-getter": 1536,
+      "virtual-getter": 1536,
+      "virtual-set-get": 1584
+    },
+    "fixture_identity": "SHA-256 of initialized guarded buffer, full argument word and entry address.",
+    "actual_entry_counts": {
+      "glyph_get_char": 4656,
+      "glyph_character_read": 1536,
+      "glyph_character_write_read": 1584,
+      "glyph_set_char": 1584,
+      "func_80041C4C": 1584
+    },
+    "dependency_output_contracts": [],
+    "input_and_output_sha256": "df8a47c98b948afcf35df316a3bbd6983a81cdae9f3d81a15324a4fce6f028fd",
+    "negative_controls": [
+      {
+        "kind": "signed_character_return",
+        "function": "glyph_get_char",
+        "function_offset": 4,
+        "fixture": {
+          "kind": "direct-getter",
+          "character": 128,
+          "segment": 0,
+          "seed": 0,
+          "code": 0
+        },
+        "changed_instruction_hits": 1,
+        "wrong_buffer": false,
+        "wrong_return_word": true
+      },
+      {
+        "kind": "wrong_character_destination",
+        "function": "glyph_set_char",
+        "function_offset": 20,
+        "fixture": {
+          "kind": "virtual-set-get",
+          "character": 31,
+          "segment": 0,
+          "seed": 0,
+          "code": 0
+        },
+        "changed_instruction_hits": 1,
+        "wrong_buffer": true,
+        "wrong_return_word": true
+      },
+      {
+        "kind": "wrong_character_row_mask",
+        "function": "func_80041C4C",
+        "function_offset": 32,
+        "fixture": {
+          "kind": "virtual-set-get",
+          "character": 31,
+          "segment": 0,
+          "seed": 0,
+          "code": 128
+        },
+        "changed_instruction_hits": 1,
+        "wrong_buffer": true,
+        "wrong_return_word": false
+      }
+    ],
+    "negative_controls_detected": 3,
+    "all_changed_instructions_observed": true,
+    "producer_report_sha256": "663754a7a1b738a73cc44a786137413c6f04162fbf2ecc77d0bedbe63c20112c",
+    "backend_identity": {
+      "package_version": "2.1.4",
+      "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+      "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+    }
+  },
+  "canonical_builds": {
+    "regular_complete_image_matches": true,
+    "fresh_clean_complete_image_matches": true,
+    "all_306_objects_absent_before_fresh_build": true,
+    "objects_rebuilt": 306,
+    "clean_rules": [
+      "asm",
+      "cc",
+      "cc_g8",
+      "cplus",
+      "link",
+      "objcopy"
+    ],
+    "canonical_executable_bytes": 505856,
+    "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "protected_input_count": 392,
+    "changed_inputs": [
+      {
+        "path": "src/menu/glyph.c",
+        "before_sha256": "5e3cd781458db861a9b1f2394eb249d2d18b3a4d094f337dcd62124393990067",
+        "after_sha256": "2431109086971c6f0263768b92bbfb0b4e732122add571ace0aa6b1c06af90b5"
+      },
+      {
+        "path": "src/menu/glyph.h",
+        "before_sha256": "3d35f7547c64429dd62f6c905392d172434b82c7871ccb4e8b50db3aaabdc0de",
+        "after_sha256": "8f49a4cac82a128de587fe62fc0e00d6b34c57f3ce1caf1045611ec18cb042ba"
+      }
+    ],
+    "other_inputs_retained": 390,
+    "native_dependencies_retained_after_clean_build": true,
+    "regular_log_sha256": "fe2e71006635669fc6b3948150074d9ba30aa1775e36116ff4933d7cee8c117f",
+    "clean_stages": [
+      {
+        "stage": "clean-generated-build-outputs",
+        "exit_code": 0,
+        "log_sha256": "20417d9394163ed5264401296fac7363146ac3d1d8ef068919fcf6a267030feb"
+      },
+      {
+        "stage": "fresh-clean-build",
+        "exit_code": 0,
+        "log_sha256": "b4e21d90d864cd94f57729d8428671a6b224cccd4bf12f7117de5192d804d147"
+      },
+      {
+        "stage": "progress",
+        "exit_code": 0,
+        "log_sha256": "233682ec57e85b0499e27cb3d07c28afdfd37e83555ba4c5d937793f5d7479d4"
+      }
+    ],
+    "clean_report_sha256": "b44211c4dc5b2e66c27b22e7dfc2b9b9dbf303fee2d800eec01be92b34cfc759"
+  },
+  "tooling_tests": [
+    {
+      "environment": "Windows",
+      "python": "3.14.2",
+      "tests": 573,
+      "expected_skips": 2,
+      "command": "python -m unittest discover -s tests",
+      "exact_log_sha256": "3141c6249e65be1e02bcde7712c2188f64d960455ddd5d7a98b88844f8ec53ab"
+    },
+    {
+      "environment": "WSL/Linux",
+      "python": "3.13.5",
+      "tests": 573,
+      "expected_skips": 2,
+      "command": "python -m unittest discover -s tests",
+      "exact_log_sha256": "6abb666da05485b87a73b0cf1e8e7cd5fceaa93d7b58279666bebd1a1148ac9c"
+    }
+  ],
+  "before": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 32,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 194212,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 9,
+    "inherited_storage_explanations": 24,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 35,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 32,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_game_function_C_bytes": 0,
+  "inherited_getter_unused_local_bytes": 16,
+  "inherited_storage_explanations_remaining": 24,
+  "original_behavior_modified": false,
+  "new_gameplay_runs": 0,
+  "new_whole_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "model_API_calls": 0,
+  "original_NPC_AI_and_analysis_tools_separate": true,
+  "Bevy_port_modified": false,
+  "scope": "Compiled C callers exercise the original getter, setter and region helper with no function-output stubs. Full guarded glyph buffers, character/UV bytes, return words, method order and saved ABI are compared. This does not explain the getter padding, render pixels, establish natural UI histories or verify PS1 CPU timing."
+}
