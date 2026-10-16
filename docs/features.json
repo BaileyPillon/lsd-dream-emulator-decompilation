@@ -21708,6 +21708,60 @@
       "new_original_feature_groups_accepted": 0,
       "new_whole_NPC_encounters_accepted": 0,
       "Bevy_port_modified": false
+    },
+    "glyph_character_interface_20261016": {
+      "status": "passed_matching_glyph_character_interface_and_bounded_native_callers",
+      "guide": "docs/GLYPH_CHARACTER_API.md",
+      "metadata": "docs/glyph-character-api-checks.json",
+      "before": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 32,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 194212,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 9,
+        "inherited_storage_explanations": 24,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 35,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 32,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "corrected_virtual_method_declarations": 2,
+      "native_inputs": 4656,
+      "compiled_analysis_callers": 2,
+      "callers_included_in_game": false,
+      "target_ABI_assertions": 8,
+      "negative_controls_detected": 3,
+      "all_changed_instructions_observed": true,
+      "dependency_output_contracts": 0,
+      "regular_and_fresh_clean_images_match": true,
+      "changed_game_inputs": [
+        "src/menu/glyph.c",
+        "src/menu/glyph.h"
+      ],
+      "other_protected_inputs_retained": 390,
+      "new_C_bytes": 0,
+      "getter_unused_local_unchanged": true,
+      "new_gameplay_runs": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "original_NPC_AI_and_tools_separate": true,
+      "Bevy_port_modified": false
     }
   }
 }

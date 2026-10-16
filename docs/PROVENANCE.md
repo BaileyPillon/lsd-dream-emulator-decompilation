@@ -713,3 +713,17 @@ Game images, generated code, buffers, faulted VM copies and compiler outputs
 stay private. Published records contain counts, hashes, scoped behavior and
 measured controls. Earlier inventory fields remain intact. Bounded NPC coverage
 increases; matching-C bytes and whole-feature acceptance do not.
+
+## Glyph character interface supplement
+
+[glyph-character-api-checks.json](glyph-character-api-checks.json) records the
+before-header compiler rejection and corrected typed-call compilation, complete
+original method spans, 4,656 native inputs, three measured faults and eight
+target ABI assertions. The original table and template are pinned. Both regular
+and fresh 306-object clean builds retain the entire canonical executable.
+
+Compiler products, complete source units, game bytes, native buffers and faulted
+VM copies remain private. Published records distinguish the two analysis callers
+from the original methods and preserve preceding inventory fields. This changes
+two game build inputs and no original behavior; C recovery, NPC coverage and
+whole-feature acceptance retain their preceding counts. Bevy remains separate.

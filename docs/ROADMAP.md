@@ -11,6 +11,11 @@ original callback coverage to 32 / 107 and preserve all earlier scripted inputs.
 Recover natural encounters, real downstream effects and lifetime histories;
 bounded request comparisons do not complete those gates.
 
+The [glyph character interface](GLYPH_CHARACTER_API.md) now has typed receivers
+and the original unsigned-byte getter return. Its compiled callers pass 4,656
+bounded native inputs without output substitutions. Recover the getter's
+inherited unused local and extend natural menu/rendering histories separately.
+
 ## Matching C recovery
 
 The [matching model interfaces](MODEL_ENUMERATION.md) now explicitly forward
@@ -193,7 +198,7 @@ and 191 initial source trials found no exact match. The subsequent
 
 - Resolve asset/command inventory gaps and runtime reachability.
 - Close virtual-call dependencies and verify semantic callback signatures.
-- Extend native fixtures beyond the 28 currently checked callbacks and their
+- Extend native fixtures beyond the 32 currently checked callbacks and their
   documented scopes; see the [proximity composition](NPC_PROXIMITY.md) and
   [Hoop Girl script checks](HOOP_SCRIPTS.md). Complete natural encounters and
   actual movement/facing/scaling dependencies remain separate gates.

@@ -648,3 +648,21 @@ C recovery stays 194,212 / 199,912 bytes, with nine assembly functions,
 callbacks already had C bodies. No whole feature, gameplay run, new capability
 category or optional mod is added. The additive supplement preserves preceding
 inventory fields and snapshots, and Bevy remains separate.
+
+## October 16 glyph character interface
+
+The [glyph character interface](GLYPH_CHARACTER_API.md) corrects two virtual
+method declarations, including the getter's unsigned-byte return. The same
+analysis callers fail against the previous void-return declaration and compile
+with the corrected header. Eight target ABI assertions and 4,656 native inputs
+check original method binding, character conversion, atlas coordinates, whole
+guarded buffers, return words and saved ABI. Three instruction faults are
+detected with their changed words observed executing.
+
+Both full builds retain the canonical executable; all 306 objects were rebuilt
+after cleaning. Only the glyph source/header change among 392 pinned build
+inputs. C recovery remains 194,212 / 199,912, with nine assembly functions,
+24 inherited storage explanations, 35 / 40 listed-core C groups and 32 / 107
+bounded NPC profiles. The getter's unused local remains open. No entire feature,
+NPC encounter, gameplay run, developer-capability category or optional mod is
+added. Earlier inventory data is preserved; the Bevy port is unchanged.

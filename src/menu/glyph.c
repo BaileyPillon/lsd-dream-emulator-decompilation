@@ -109,7 +109,7 @@ class_glyph_vtable_t g_GLYPH_VTABLE = {
     sprite_node_set_offset,
     sprite_node_set_anchor,
     glyph_set_char,
-    (void (*)(void *)) glyph_get_char,
+    glyph_get_char,
 };
 
 class_glyph_t *glyph_create(s32 Unk1, u8 Unk2) {
