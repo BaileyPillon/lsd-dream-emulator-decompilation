@@ -20,6 +20,10 @@ title menu into a playable dream, with recorded turning, walking and audio.
 The published-tool repeat matches all recorded outputs, including save states;
 an earlier pair's emulator-label differences remain documented separately.
 
+The read-only [recorded scene inventory](docs/RUNTIME_SCENE_INVENTORY.md)
+checks object ownership and distinguishes loaded entities from enabled NPC
+behavior contexts in those captured dreams.
+
 The [first-dream replay](docs/COLD_DREAM_CYCLE.md) now extends that route
 through the natural time limit, dream chart and visible `Day 002` menu,
 with 30,000 frames per disc and matching complete PCM. Its eight differing

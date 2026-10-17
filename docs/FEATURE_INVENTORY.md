@@ -24,6 +24,12 @@ callback coverage from **39 to 40 / 107**. It executes the original mood,
 proximity, transform and animation-stop methods, with no dependency-output
 stubs. It adds no C bytes or whole-feature/encounter acceptance.
 
+The [recorded scene inventory](RUNTIME_SCENE_INVENTORY.md) identifies five
+reachable entity instances across four original IDs in later cold-start
+checkpoints. Their sampled behavior contexts are disabled. Loaded objects and
+declared callback labels add no bounded callback profile or encounter acceptance;
+the inspector leaves inactive context payload uninterpreted.
+
 The [locomotive script checks](LOCOMOTIVE_SCRIPTS.md) extend bounded original
 callback coverage from **36 to 39 / 107** through 70,345 distinct fixtures.
 Those three callbacks already had matching C bodies. C bytes, the 40-group

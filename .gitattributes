@@ -157,3 +157,9 @@ research/runtime_state/label_construction.cpp text eol=lf
 research/runtime_state/bizhawk-2.11.1-label-initialization.patch -text whitespace=-blank-at-eol,-space-before-tab,cr-at-eol
 docs/EMULATOR_LABEL_INITIALIZATION.md text eol=lf
 docs/emulator-label-initialization-checks.json text eol=lf
+
+# Preserve the executed scene inspector and its evidence across host platforms.
+tools/inventory_runtime_scene.py text eol=lf
+tests/test_inventory_runtime_scene.py text eol=lf
+docs/RUNTIME_SCENE_INVENTORY.md text eol=lf
+docs/runtime-scene-checks.json text eol=lf
