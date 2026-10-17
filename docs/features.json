@@ -23181,6 +23181,61 @@
         "func_8004ADD8"
       ],
       "Bevy_port_modified": false
+    },
+    "text_render_callback_storage_20261016": {
+      "status": "verified_two_matching_callback_input_layouts",
+      "report": "docs/TEXT_CALLBACK_STORAGE.md",
+      "checks": "docs/text-callback-storage-checks.json",
+      "before": {
+        "c_bytes": 195844,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 5,
+        "inherited_storage_explanations": 8,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 195844,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 5,
+        "inherited_storage_explanations": 6,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "source_functions_explained": 2,
+      "existing_C_bytes_explained": 432,
+      "unused_declared_bytes_removed": 28,
+      "compiler_observations": 6,
+      "ordinary_and_fresh_complete_builds_equal": true,
+      "native_menu_regression_existing_histories_each_image": 864,
+      "native_menu_regression_images": 2,
+      "new_C_bytes": 0,
+      "new_bounded_NPC_callbacks": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_original_fixture_inputs": 0,
+      "new_model_API_calls": 0,
+      "remaining_identified_storage_functions": [
+        "debug_file_driver_unk15",
+        "debug_file_driver_open",
+        "func_80044F90",
+        "func_80045060",
+        "func_80044D40",
+        "func_80044E64"
+      ],
+      "Bevy_port_modified": false
     }
   }
 }

@@ -344,11 +344,7 @@ void func_8004ADD0(render_context_t *This, s32 Value) {
 }
 
 void func_8004ADD8(render_context_t *This, s32 **arg1, s32 arg2) {
-    char dummy_stack_padding[24];
     s32 *p;
-
-    if (&dummy_stack_padding[0] == &dummy_stack_padding[23]) {
-    }
 
     switch (arg2) {
         case 2:
@@ -361,7 +357,22 @@ void func_8004ADD8(render_context_t *This, s32 **arg1, s32 arg2) {
             if (p != NULL && *p != 0) {
                 do {
                     if (*p == **arg1) {
-                        This->vtable->Unk74(This, arg1, arg2);
+                        /* Each callback input has a consumed four-byte view.
+                         * See docs/TEXT_CALLBACK_STORAGE.md for allocation evidence. */
+                        struct {
+                            render_context_t *value;
+                        } receiver = { This };
+                        struct {
+                            s32 **value;
+                        } resource = { arg1 };
+                        struct {
+                            s32 value;
+                        } kind = { arg2 };
+                        typedef char checked_dispatch_views[
+                            (sizeof(receiver) == 4 && sizeof(resource) == 4 &&
+                             sizeof(kind) == 4) ? 1 : -1];
+
+                        receiver.value->vtable->Unk74(receiver.value, resource.value, kind.value);
                     }
                     p++;
                 } while (*p != 0);

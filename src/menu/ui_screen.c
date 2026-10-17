@@ -704,14 +704,23 @@ void func_8003D194(void *this, s32 arg1) {
     } while (i < count);
 }
 
+/* The text callback consumes this input view. Its reload lifetime preserves
+ * the native frame; see docs/TEXT_CALLBACK_STORAGE.md. */
+static inline char *ui_text_callback_data(char *input) {
+    struct {
+        char *value;
+    } view = { input };
+    typedef char checked_input_view[(sizeof(view) == 4) ? 1 : -1];
+
+    return view.value;
+}
+
 void func_8003D2CC(ui_screen_t *This, s32 Unk2) {
     s32 saved;
     s32 i;
     s32 count;
     text_line_t **list;
-    char pad[4];
 
-    (void) pad;
 
     if (This->m_Unk18 != 0) {
         list = (text_line_t **) This->m_Unk20;
@@ -721,7 +730,7 @@ void func_8003D2CC(ui_screen_t *This, s32 Unk2) {
             do {
                 text_line_t *line = *list;
 
-                line->vtable->Unk45(line, (char *) Unk2);
+                line->vtable->Unk45(line, ui_text_callback_data((char *) Unk2));
 
                 if (((func_8003CE98_arg_t *) This->m_Unk18)->table[i] != NULL) {
                     This->m_Unk21 = i;

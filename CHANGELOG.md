@@ -1,5 +1,14 @@
 # Changelog
 
+## Matching text and render callback storage - 2026-10-16
+
+- Replace two inherited unused locals with consumed text, receiver, resource
+  and event-kind views while preserving all 432 original function bytes.
+- Verify six complete-unit compiler observations and ordinary/fresh complete
+  builds. Remove 28 unused declared bytes and the render function's empty guard.
+- Reduce identified storage explanations from 8 to 6. Matching C remains
+  97.97%, with five assembly fallbacks and unchanged feature/NPC acceptance.
+
 ## Matching input storage recovery - 2026-10-16
 
 - Replace unused storage in six card, movie, recorded-event and spawn functions

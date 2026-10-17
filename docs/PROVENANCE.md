@@ -1,5 +1,14 @@
 # Source and evidence provenance
 
+The [text and render callback recovery](TEXT_CALLBACK_STORAGE.md) explains two
+more existing C frames through their consumed callback inputs. Six complete-unit
+compiler observations preserve the normal emitted assembly. Both relocated
+function spans and the ordinary/fresh complete builds remain canonical, as
+recorded in [its metadata](text-callback-storage-checks.json). Two source units
+change; the other 390 protected build inputs retain their hashes. The inherited
+storage remainder falls from 8 to 6. These 432 bytes already counted as C;
+feature/NPC acceptance and the frozen objective remain unchanged.
+
 The [input storage recovery](INPUT_STORAGE_RECOVERY.md) explains six existing
 C frames through actual event, release, viewport, history-cell and spawn-key
 inputs. Fifty-four unused declared bytes are removed. Twelve actual compiler

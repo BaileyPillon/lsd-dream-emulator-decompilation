@@ -83,3 +83,9 @@ src/menu/graph_screen.c text eol=lf
 src/dream/dream_sys.c text eol=lf
 docs/INPUT_STORAGE_RECOVERY.md text eol=lf
 docs/input-storage-recovery-checks.json text eol=lf
+
+# Preserve callback input reconstructions and their exact source evidence.
+src/menu/ui_screen.c text eol=lf
+src/scene/render_context.c text eol=lf
+docs/TEXT_CALLBACK_STORAGE.md text eol=lf
+docs/text-callback-storage-checks.json text eol=lf

@@ -29,6 +29,12 @@ more inherited frames, reducing the identified remainder from **14 to 8**.
 Its 1,796 function bytes already counted as C. All source-byte, feature and
 NPC acceptance counts above remain unchanged.
 
+The later [text and render callback recovery](TEXT_CALLBACK_STORAGE.md)
+explains two more inherited frames, reducing the identified remainder from
+**8 to 6** and removing 28 unused declared bytes. Their 432 function bytes
+already counted as C. This changes no feature, original NPC profile, whole
+encounter, optional-mod or AI-assisted capability count.
+
 The [overlap result-lifetime study](OVERLAP_RESULT_LIFETIMES.md) improves an
 unaccepted source candidate from 170 to 148 differing executable bytes and
 rechecks the existing 6,912 native graph pairs. It adds no C byte, original

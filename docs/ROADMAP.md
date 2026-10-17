@@ -73,7 +73,8 @@ inherited functions. The subsequent
 [constructor and actor storage recovery](CONSTRUCTOR_ACTOR_STORAGE.md) explains
 two more. The [accessor recovery](ACCESSOR_STORAGE_RECOVERY.md) explains another
 three. The [input storage recovery](INPUT_STORAGE_RECOVERY.md) explains six
-more. Recover the real storage and helper lifetimes for the remaining eight
+more. The [text and render callback recovery](TEXT_CALLBACK_STORAGE.md) explains
+another two. Recover the real storage and helper lifetimes for the remaining six
 identified functions.
 All four withdrawn functions have replacement matching C; the earlier
 [source-layout candidates](../research/source_layout/README.md) remain
