@@ -24184,6 +24184,75 @@
       "new_whole_NPC_encounters_accepted": 0,
       "model_API_calls": 0,
       "Bevy_port_modified": false
+    },
+    "original_actor_playback_20261017": {
+      "evidence": "docs/actor-playback-checks.json",
+      "guide": "docs/ACTOR_PLAYBACK.md",
+      "before": {
+        "c_bytes": 197172,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 2,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 38,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 40,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 197172,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 2,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 38,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 40,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "measured": {
+        "original_model_instances": 111,
+        "distinct_model_contents": 100,
+        "original_animation_instances": 122,
+        "original_frame_instances": 4260,
+        "completed_histories": 666,
+        "actor_lifetimes": 888,
+        "explicit_actions": 41888,
+        "tick_calls": 37008,
+        "live_payloads_compared": 3505120,
+        "live_payload_bytes": 161246016,
+        "mapped_MOM_bytes": 429618528,
+        "qualified_original_functions": 136,
+        "completed_payload_fault_controls": 24,
+        "distinct_content_frame_indices": 4076
+      },
+      "frame_data_axis": {
+        "prior_published_immediate_frame_instances": 122,
+        "prior_private_tick_probe_frame_instances": 41,
+        "overlap_between_those_sets": 3,
+        "prior_combined_native_frame_instances": 160,
+        "after_native_frame_instances": 4260,
+        "additional_original_frame_instances": 4100,
+        "counted_as_new_features": false
+      },
+      "injected_frame_counters": 0,
+      "injected_frame_cursors": 0,
+      "callbacks_enabled": false,
+      "new_C_bytes": 0,
+      "new_NPC_profiles": 0,
+      "whole_feature_groups_accepted": 0,
+      "whole_NPC_encounters_accepted": 0,
+      "rendered_playback_accepted": false,
+      "natural_encounters_accepted": false,
+      "original_game_modified": false,
+      "Bevy_port_modified": false,
+      "model_API_calls": 0
     }
   }
 }

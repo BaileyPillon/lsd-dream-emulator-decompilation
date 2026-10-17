@@ -82,8 +82,10 @@ every live pool allocation at actor-factory return, after the original
 first-frame commands. Later playback and natural encounters remain open.
 The [animation selector check](docs/ACTOR_ANIMATIONS.md) extends that comparison
 to all 122 animation instances, with 1,952 explicit first-frame selections and
-24 completed wrong-output controls. Full playback and NPC encounter acceptance
-remain separate gates.
+24 completed wrong-output controls. The
+[actor tick checker](docs/ACTOR_PLAYBACK.md) now follows all 4,260 script frames
+through 37,008 original tick calls, including animation pause/resume and looping.
+Rendered playback, enabled callbacks and natural encounters remain open.
 The [collision query interface](docs/COLLISION_API.md) now declares the original
 pointer roles and output sizes. A compiled C caller passes 12,696 bounded inputs;
 the complete matching executable and source-recovery counts are unchanged.

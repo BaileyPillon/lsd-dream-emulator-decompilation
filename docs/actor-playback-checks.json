@@ -1,0 +1,835 @@
+{
+  "schema_version": 1,
+  "status": "qualified_bounded_original_actor_playback_corpus",
+  "recorded_utc": "2026-10-17T20:27:53.396521+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "67de00fbb5f4d432ddac2a04174409262f375491",
+  "before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "measured": {
+    "original_model_instances": 111,
+    "distinct_model_contents": 100,
+    "original_animation_instances": 122,
+    "original_frame_instances": 4260,
+    "completed_histories": 666,
+    "actor_lifetimes": 888,
+    "explicit_actions": 41888,
+    "tick_calls": 37008,
+    "live_payloads_compared": 3505120,
+    "live_payload_bytes": 161246016,
+    "mapped_MOM_bytes": 429618528,
+    "qualified_original_functions": 136,
+    "completed_payload_fault_controls": 24,
+    "distinct_content_frame_indices": 4076
+  },
+  "frame_data_axis": {
+    "prior_published_immediate_frame_instances": 122,
+    "prior_private_tick_probe_frame_instances": 41,
+    "overlap_between_those_sets": 3,
+    "prior_combined_native_frame_instances": 160,
+    "after_native_frame_instances": 4260,
+    "additional_original_frame_instances": 4100,
+    "counted_as_new_features": false
+  },
+  "native_campaign": {
+    "private_report": ".decomp-lab/actor-playback-native-20261017-first/report.json",
+    "report_sha256": "98c64d28cb9e4824cd1964801eef24f53089ca2f35f53dce7126ae983a636474",
+    "inventory_sha256": "831b33a34f92c93fa16c3be140794914a07705b06efa10ff135a6347e8f4ea1d",
+    "layout_sha256": "cf93cc690c83baa91e7f54d57bc160007ceee859dc566333105124bf126ed1bc",
+    "edition_label": "Japanese-labelled",
+    "edition_label_is_user_supplied": true,
+    "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "symbol_diagnostic": {
+      "elf_sha256": "c0746d3982c314079a5a24f2d88072c43464032f969eeac5f172c7646df833a7",
+      "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+      "object_count": 306,
+      "original_link_flags": [
+        "--no-check-sections",
+        "-nostdlib",
+        "-s"
+      ],
+      "diagnostic_link_flags": [
+        "--no-check-sections",
+        "-nostdlib"
+      ],
+      "complete_canonical_image_equal": true
+    },
+    "backend_identity": {
+      "package_version": "2.1.2",
+      "library_api": [
+        2,
+        1,
+        33620735
+      ],
+      "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+      "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+      "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+      "binding_source_count": 21,
+      "execution_hook": "UC_HOOK_CODE",
+      "fresh_cpu_per_host_call": true,
+      "all_emulated_ram_preserved_between_host_calls": true,
+      "uninterrupted_cpu_within_guest_cleanup_graph": true
+    },
+    "producer_dependencies": {
+      "tools/verify_actor_children.py": "09b3beef12fe216bde9dc43840b35bf027ad174935f8a34a9e998465943cd356",
+      "tools/actor_child_model.py": "40980e4c0518acc7785bcd79bfc9a48274e09579c4ab05c8ea93f611ed3372f7",
+      "tools/heap_model.py": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e",
+      "tools/verify_card_heap.py": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5",
+      "tools/verify_card_cleanup.py": "5eec21f9fe0afa2549f10eb890c1dbf9984f5f1541611102afd9fa995d58d6c0",
+      "tools/verify_native_ai.py": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697",
+      "tools/inventory_animations.py": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+      "tools/inventory_disc.py": "71319a4c51b50885753998fe9afb7a00b71acf0fa03167b9a63c48651e36aebf",
+      "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+      "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+      "tools/progress.py": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+      "tools/decomp_workbench.py": "8d375145ca2b7f210889558ce75d4acd854a04606ea26d86ff50251b6a4820d1",
+      "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+      "docs/actor-child-construction-function-ranges.json": "917010a67a4398af6137fc3a180a0a6d5d06e18ab151ddd21890078733b8da22",
+      "docs/actor-child-lifetime-function-ranges.json": "16e676914cb87df4990a8dc6db9efa64779a810f3f9824e9fbaf691c261317df",
+      "requirements-card-heap.txt": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212",
+      "requirements.txt": "bcd34abbb33438c8a7e18a9165b8ea5c503a179b23738ccf72dbd659ce174cde",
+      "tools/actor_factory_model.py": "fb40720bc913c2a7d3957c5b65c1232d19b2f24a355bce3cdabe39dc6cb7489a",
+      "tools/verify_actor_factory.py": "5775e55cc6868807e09fa069507804ca76dee636ba1dd947a8d0eb62b398d571",
+      "tools/model_mapping_model.py": "d3f0866a0c2e1ec4fe0fe2dde7b07a094a98b8ebb09e560472a36592cd70fe9e",
+      "tools/model_payload_model.py": "d2ab054ea8dd848cb78c4eacbf0750e00c967474405173d72d917506e01909e6",
+      "tools/actor_payload_model.py": "53c243e67e3e6eb9b33ea5683985a956e247a748c649c00391fd366d9dcb7ff5",
+      "docs/actor-factory-function-ranges.json": "1c7223ddeb1b0f440461e350e08184f383f5468b506496924c6b789f16c36611",
+      "tools/verify_actor_animations.py": "6381ae1462bdb95ccb76686e21f9f0b1f1c84c0dbb93ab20198d8abd889d5ad6",
+      "tools/actor_animation_model.py": "fca3f6956613ada1ae3a385e0f640eb7975422a049182f6f02d59d39ea426bcf",
+      "tools/actor_animation_fixtures.py": "23d554394b8f55250afed96fb25c789fbf75e6f61ce5d60f4fd619e928f98a09",
+      "tools/actor_playback_model.py": "90e319b8a7158151b23041f3f63d2708ea9ef19fc6020b22e58ea70ed88b8787",
+      "tools/verify_actor_playback.py": "c9dfb33659569fd2d4ebf0c1d6e3a27f5f1779a987ec12f6615f73dcd48fb74c",
+      "docs/actor-playback-function-ranges.json": "e26ff327ee887674387ca8365937a0c546381196fbe928c63625fbad9e44883b"
+    },
+    "function_ranges": "docs/actor-playback-function-ranges.json",
+    "fault_controls": [
+      {
+        "case": "fault-00-frame-counter-increments-by-two",
+        "name": "frame-counter-increments-by-two",
+        "pattern": "poison",
+        "scenario": "actor-first",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x80066054": 84
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 132,
+          "actual_sha256": "1835a1404adb546120e8df625399272675be3f7204b5abdf9216125b255adfbd",
+          "expected_sha256": "963356b32db08199eef185d5d67e9d86991bc239c25dc151f8ab9db5f5bbadc9"
+        }
+      },
+      {
+        "case": "fault-01-frame-counter-increments-by-two",
+        "name": "frame-counter-increments-by-two",
+        "pattern": "poison",
+        "scenario": "owned",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x80066054": 42
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor",
+          "pointer": "0xa0044",
+          "first_difference": 132,
+          "actual_sha256": "9f4fc72bfa49c2c5e096ceb02a37d20dfb4afb84046dcb51e1ec0a6f46362b61",
+          "expected_sha256": "f9b2ba261107cbcc01510c703834f561c65d71bfcc19da29f4fc81040d700020"
+        }
+      },
+      {
+        "case": "fault-02-frame-counter-increments-by-two",
+        "name": "frame-counter-increments-by-two",
+        "pattern": "poison",
+        "scenario": "model-first",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x80066054": 42
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 132,
+          "actual_sha256": "1835a1404adb546120e8df625399272675be3f7204b5abdf9216125b255adfbd",
+          "expected_sha256": "963356b32db08199eef185d5d67e9d86991bc239c25dc151f8ab9db5f5bbadc9"
+        }
+      },
+      {
+        "case": "fault-03-frame-counter-increments-by-two",
+        "name": "frame-counter-increments-by-two",
+        "pattern": "distinct",
+        "scenario": "actor-first",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x80066054": 84
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 132,
+          "actual_sha256": "12f9d5d0dac9838f95f32dc32460b4261aeb2232f0ac50b0a539a4e9376776ab",
+          "expected_sha256": "dfe7f05cce6a49b7175a3cc93ad64d290b927172421fca0039efe807ae8a1955"
+        }
+      },
+      {
+        "case": "fault-04-frame-counter-increments-by-two",
+        "name": "frame-counter-increments-by-two",
+        "pattern": "distinct",
+        "scenario": "owned",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x80066054": 42
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor",
+          "pointer": "0xa0044",
+          "first_difference": 132,
+          "actual_sha256": "3713f9d8ddaf6db8fa61a16124050ae3a012523940f74143b15edd9dfefbd3a9",
+          "expected_sha256": "9bcf714dd54a81d055bb95150b58b8f27a8d2ca720b67751a0a5ecc0e4e87987"
+        }
+      },
+      {
+        "case": "fault-05-frame-counter-increments-by-two",
+        "name": "frame-counter-increments-by-two",
+        "pattern": "distinct",
+        "scenario": "model-first",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x80066054": 42
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 132,
+          "actual_sha256": "12f9d5d0dac9838f95f32dc32460b4261aeb2232f0ac50b0a539a4e9376776ab",
+          "expected_sha256": "dfe7f05cce6a49b7175a3cc93ad64d290b927172421fca0039efe807ae8a1955"
+        }
+      },
+      {
+        "case": "fault-06-multi-frame-playback-held",
+        "name": "multi-frame-playback-held",
+        "pattern": "poison",
+        "scenario": "actor-first",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x80066024": 84
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 132,
+          "actual_sha256": "480f24a03ed2bf1c53ebfafb19e7cb321fe047654326322a2b4873294ec8666f",
+          "expected_sha256": "963356b32db08199eef185d5d67e9d86991bc239c25dc151f8ab9db5f5bbadc9"
+        }
+      },
+      {
+        "case": "fault-07-multi-frame-playback-held",
+        "name": "multi-frame-playback-held",
+        "pattern": "poison",
+        "scenario": "owned",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x80066024": 42
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor",
+          "pointer": "0xa0044",
+          "first_difference": 132,
+          "actual_sha256": "cbd54726915c7e094551d337cd47e8898a3061b1ee4cd31474b45bcc148fd90a",
+          "expected_sha256": "f9b2ba261107cbcc01510c703834f561c65d71bfcc19da29f4fc81040d700020"
+        }
+      },
+      {
+        "case": "fault-08-multi-frame-playback-held",
+        "name": "multi-frame-playback-held",
+        "pattern": "poison",
+        "scenario": "model-first",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x80066024": 42
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 132,
+          "actual_sha256": "480f24a03ed2bf1c53ebfafb19e7cb321fe047654326322a2b4873294ec8666f",
+          "expected_sha256": "963356b32db08199eef185d5d67e9d86991bc239c25dc151f8ab9db5f5bbadc9"
+        }
+      },
+      {
+        "case": "fault-09-multi-frame-playback-held",
+        "name": "multi-frame-playback-held",
+        "pattern": "distinct",
+        "scenario": "actor-first",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x80066024": 84
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 132,
+          "actual_sha256": "1189ef262674bc063324708f62f9ab83d86e9827568043b51903a93dac249f81",
+          "expected_sha256": "dfe7f05cce6a49b7175a3cc93ad64d290b927172421fca0039efe807ae8a1955"
+        }
+      },
+      {
+        "case": "fault-10-multi-frame-playback-held",
+        "name": "multi-frame-playback-held",
+        "pattern": "distinct",
+        "scenario": "owned",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x80066024": 42
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor",
+          "pointer": "0xa0044",
+          "first_difference": 132,
+          "actual_sha256": "49db92ca6e417f45d11ed9be1ed2d86207353947dce99e0db1ab1394c92294ee",
+          "expected_sha256": "9bcf714dd54a81d055bb95150b58b8f27a8d2ca720b67751a0a5ecc0e4e87987"
+        }
+      },
+      {
+        "case": "fault-11-multi-frame-playback-held",
+        "name": "multi-frame-playback-held",
+        "pattern": "distinct",
+        "scenario": "model-first",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x80066024": 42
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 132,
+          "actual_sha256": "1189ef262674bc063324708f62f9ab83d86e9827568043b51903a93dac249f81",
+          "expected_sha256": "dfe7f05cce6a49b7175a3cc93ad64d290b927172421fca0039efe807ae8a1955"
+        }
+      },
+      {
+        "case": "fault-12-paused-ticks-still-advance",
+        "name": "paused-ticks-still-advance",
+        "pattern": "poison",
+        "scenario": "actor-first",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x8006600c": 92
+        },
+        "detection": {
+          "action": 4,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 132,
+          "actual_sha256": "f7a71a29ee971be90878f7fcc0cca3b6e10bc56eade0d17a1d88dc2c4efbf3fd",
+          "expected_sha256": "f5a9ffd3cd508d9d0d120e21d168c1f5aa3643f90a7c8f7b7f45a5dfadf9bf57"
+        }
+      },
+      {
+        "case": "fault-13-paused-ticks-still-advance",
+        "name": "paused-ticks-still-advance",
+        "pattern": "poison",
+        "scenario": "owned",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x8006600c": 46
+        },
+        "detection": {
+          "action": 4,
+          "kind": "actor",
+          "pointer": "0xa0044",
+          "first_difference": 132,
+          "actual_sha256": "285d70ae962977e56b9f50d43fc4b3e81ec5be6c8741dbab3ca516680d64d420",
+          "expected_sha256": "c837f9e6e8bb9b54d5d37313b6ac95ecd252c3aae217f6fc18f0829af1514569"
+        }
+      },
+      {
+        "case": "fault-14-paused-ticks-still-advance",
+        "name": "paused-ticks-still-advance",
+        "pattern": "poison",
+        "scenario": "model-first",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x8006600c": 46
+        },
+        "detection": {
+          "action": 4,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 132,
+          "actual_sha256": "f7a71a29ee971be90878f7fcc0cca3b6e10bc56eade0d17a1d88dc2c4efbf3fd",
+          "expected_sha256": "f5a9ffd3cd508d9d0d120e21d168c1f5aa3643f90a7c8f7b7f45a5dfadf9bf57"
+        }
+      },
+      {
+        "case": "fault-15-paused-ticks-still-advance",
+        "name": "paused-ticks-still-advance",
+        "pattern": "distinct",
+        "scenario": "actor-first",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x8006600c": 92
+        },
+        "detection": {
+          "action": 4,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 132,
+          "actual_sha256": "f63710f22b314721872c38cc4dc04438526d570e7e3e9cd645ce645b86741ea3",
+          "expected_sha256": "7ea6b6b2e29521942980e11e51f47a3551014e735e50958a9dd673a7c5e8aa2f"
+        }
+      },
+      {
+        "case": "fault-16-paused-ticks-still-advance",
+        "name": "paused-ticks-still-advance",
+        "pattern": "distinct",
+        "scenario": "owned",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x8006600c": 46
+        },
+        "detection": {
+          "action": 4,
+          "kind": "actor",
+          "pointer": "0xa0044",
+          "first_difference": 132,
+          "actual_sha256": "68858b0e7a21c65830f674af3abfb56d47bd0b70a9d8a60bbc6042b7359c94ec",
+          "expected_sha256": "61d6acc58873d70905fb2c848fd4fd0d8e7b04c50674e43aa309d9ef7c5914fd"
+        }
+      },
+      {
+        "case": "fault-17-paused-ticks-still-advance",
+        "name": "paused-ticks-still-advance",
+        "pattern": "distinct",
+        "scenario": "model-first",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x8006600c": 46
+        },
+        "detection": {
+          "action": 4,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 132,
+          "actual_sha256": "f63710f22b314721872c38cc4dc04438526d570e7e3e9cd645ce645b86741ea3",
+          "expected_sha256": "7ea6b6b2e29521942980e11e51f47a3551014e735e50958a9dd673a7c5e8aa2f"
+        }
+      },
+      {
+        "case": "fault-18-root-dirty-flag-not-cleared",
+        "name": "root-dirty-flag-not-cleared",
+        "pattern": "poison",
+        "scenario": "actor-first",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x800660a4": 92
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor-coordinate",
+          "pointer": "0xa02f0",
+          "first_difference": 0,
+          "actual_sha256": "95caf9b42b1886416585138b6fb1c0c9b521e61da264c5866ba493729bb2201f",
+          "expected_sha256": "f53751825d7464b465f268a6f2d23f021db16606978093a43402586afb7e4838"
+        }
+      },
+      {
+        "case": "fault-19-root-dirty-flag-not-cleared",
+        "name": "root-dirty-flag-not-cleared",
+        "pattern": "poison",
+        "scenario": "owned",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x800660a4": 46
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor-coordinate",
+          "pointer": "0xa00e0",
+          "first_difference": 0,
+          "actual_sha256": "2ed14bfec587feeba1a2069af9d715533d76f0fd800be24c1016953a38eb33d3",
+          "expected_sha256": "796631f03c29f247219d8415a8efb6798b39a52e9b6851ddd31a22059c99a04d"
+        }
+      },
+      {
+        "case": "fault-20-root-dirty-flag-not-cleared",
+        "name": "root-dirty-flag-not-cleared",
+        "pattern": "poison",
+        "scenario": "model-first",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x800660a4": 46
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor-coordinate",
+          "pointer": "0xa02f0",
+          "first_difference": 0,
+          "actual_sha256": "95caf9b42b1886416585138b6fb1c0c9b521e61da264c5866ba493729bb2201f",
+          "expected_sha256": "f53751825d7464b465f268a6f2d23f021db16606978093a43402586afb7e4838"
+        }
+      },
+      {
+        "case": "fault-21-root-dirty-flag-not-cleared",
+        "name": "root-dirty-flag-not-cleared",
+        "pattern": "distinct",
+        "scenario": "actor-first",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x800660a4": 92
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor-coordinate",
+          "pointer": "0xa02f0",
+          "first_difference": 0,
+          "actual_sha256": "16eafbd3fb65e251b6542828d6fba0adff31f9a35b4bf6af3703c6a6b2652ee5",
+          "expected_sha256": "62a25614de0d369836103d9cbd48914668ea60ed65da96eee029e4aa7f4e163a"
+        }
+      },
+      {
+        "case": "fault-22-root-dirty-flag-not-cleared",
+        "name": "root-dirty-flag-not-cleared",
+        "pattern": "distinct",
+        "scenario": "owned",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x800660a4": 46
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor-coordinate",
+          "pointer": "0xa00e0",
+          "first_difference": 0,
+          "actual_sha256": "1b887656853ba848a2268cb4a53150e15d11b648adafba85e6e5e977dda41b5a",
+          "expected_sha256": "7f23e911ff153a774e12f691d690a1e1f41e0e2673e38c327f565ae5d080dfb7"
+        }
+      },
+      {
+        "case": "fault-23-root-dirty-flag-not-cleared",
+        "name": "root-dirty-flag-not-cleared",
+        "pattern": "distinct",
+        "scenario": "model-first",
+        "detected": true,
+        "native_history_completed": true,
+        "changed_instruction_hits": {
+          "0x800660a4": 46
+        },
+        "detection": {
+          "action": 2,
+          "kind": "actor-coordinate",
+          "pointer": "0xa02f0",
+          "first_difference": 0,
+          "actual_sha256": "16eafbd3fb65e251b6542828d6fba0adff31f9a35b4bf6af3703c6a6b2652ee5",
+          "expected_sha256": "62a25614de0d369836103d9cbd48914668ea60ed65da96eee029e4aa7f4e163a"
+        }
+      }
+    ]
+  },
+  "independent_audit": {
+    "private_report": ".decomp-lab/actor-playback-native-audit-20261017-first/report.json",
+    "report_sha256": "6784db2dcf3013bef305fe3e485bdb6eb015938db0f7030957bf97786051dced",
+    "producer_sha256": "e35c0f11d364a7944bd24b9fc8c9fcc32f92b7d5287c8a2efa89715110f59459",
+    "scope": "Independent raw layout, retained action/counter/cursor/frame-entry and source-input audit. Not a second native implementation, enabled-callback, renderer, natural-encounter or hardware-timing acceptance."
+  },
+  "prior_bounded_probe": {
+    "private_report": ".decomp-lab/actor-playback-native-probe-20261017-second/report.json",
+    "report_sha256": "8969a8ed881f4ea0439ee863ab1dd8552399673e3bd931e9f1504d4e6b1a07a4",
+    "original_models": 2,
+    "original_animation_instances": 3,
+    "script_frames": 41,
+    "tick_calls": 50,
+    "qualified_functions": 136,
+    "injected_frame_counters": 0,
+    "scope": "Two real MOMs, original construction, selection, enable/pause/resume and actor ticks through one full cycle and following tick per animation; complete live payloads and original destruction. No callback execution, natural encounter, full engine frame, rendering, audio or PS1 timing acceptance.",
+    "corpus_exhaustive": false,
+    "later_frame_corpus_campaign_required": true,
+    "failed_initial_attempt_retained": ".decomp-lab/actor-playback-native-probe-20261017-first",
+    "predictor_offset_correction": ".decomp-lab/actor-playback-draft-offset-correction-20261017-first.json"
+  },
+  "source_byte_provenance": [
+    {
+      "path": "tools/verify_actor_children.py",
+      "executed_working_copy_sha256": "09b3beef12fe216bde9dc43840b35bf027ad174935f8a34a9e998465943cd356",
+      "published_Git_bytes_sha256": "09b3beef12fe216bde9dc43840b35bf027ad174935f8a34a9e998465943cd356",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/actor_child_model.py",
+      "executed_working_copy_sha256": "40980e4c0518acc7785bcd79bfc9a48274e09579c4ab05c8ea93f611ed3372f7",
+      "published_Git_bytes_sha256": "40980e4c0518acc7785bcd79bfc9a48274e09579c4ab05c8ea93f611ed3372f7",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/heap_model.py",
+      "executed_working_copy_sha256": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e",
+      "published_Git_bytes_sha256": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_card_heap.py",
+      "executed_working_copy_sha256": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5",
+      "published_Git_bytes_sha256": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_card_cleanup.py",
+      "executed_working_copy_sha256": "5eec21f9fe0afa2549f10eb890c1dbf9984f5f1541611102afd9fa995d58d6c0",
+      "published_Git_bytes_sha256": "5eec21f9fe0afa2549f10eb890c1dbf9984f5f1541611102afd9fa995d58d6c0",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_native_ai.py",
+      "executed_working_copy_sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697",
+      "published_Git_bytes_sha256": "6094e565bdb4e6701055f08d0428d059b54c6183818170ae1a671610c53b40a0",
+      "Git_bytes_equal_executed_working_copy": false,
+      "difference_if_any": "inherited CRLF working copy; LF Git blob"
+    },
+    {
+      "path": "tools/inventory_animations.py",
+      "executed_working_copy_sha256": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+      "published_Git_bytes_sha256": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/inventory_disc.py",
+      "executed_working_copy_sha256": "71319a4c51b50885753998fe9afb7a00b71acf0fa03167b9a63c48651e36aebf",
+      "published_Git_bytes_sha256": "71319a4c51b50885753998fe9afb7a00b71acf0fa03167b9a63c48651e36aebf",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/inventory_vtables.py",
+      "executed_working_copy_sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+      "published_Git_bytes_sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/psx_image.py",
+      "executed_working_copy_sha256": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+      "published_Git_bytes_sha256": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/progress.py",
+      "executed_working_copy_sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+      "published_Git_bytes_sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/decomp_workbench.py",
+      "executed_working_copy_sha256": "8d375145ca2b7f210889558ce75d4acd854a04606ea26d86ff50251b6a4820d1",
+      "published_Git_bytes_sha256": "10ce58a132c2e0b1084bad492590e3acdb1dc9b328747615b33999bb56a1803f",
+      "Git_bytes_equal_executed_working_copy": false,
+      "difference_if_any": "inherited CRLF working copy; LF Git blob"
+    },
+    {
+      "path": "research/compiler/compare_function.py",
+      "executed_working_copy_sha256": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+      "published_Git_bytes_sha256": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "docs/actor-child-construction-function-ranges.json",
+      "executed_working_copy_sha256": "917010a67a4398af6137fc3a180a0a6d5d06e18ab151ddd21890078733b8da22",
+      "published_Git_bytes_sha256": "917010a67a4398af6137fc3a180a0a6d5d06e18ab151ddd21890078733b8da22",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "docs/actor-child-lifetime-function-ranges.json",
+      "executed_working_copy_sha256": "16e676914cb87df4990a8dc6db9efa64779a810f3f9824e9fbaf691c261317df",
+      "published_Git_bytes_sha256": "16e676914cb87df4990a8dc6db9efa64779a810f3f9824e9fbaf691c261317df",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "requirements-card-heap.txt",
+      "executed_working_copy_sha256": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212",
+      "published_Git_bytes_sha256": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "requirements.txt",
+      "executed_working_copy_sha256": "bcd34abbb33438c8a7e18a9165b8ea5c503a179b23738ccf72dbd659ce174cde",
+      "published_Git_bytes_sha256": "bcd34abbb33438c8a7e18a9165b8ea5c503a179b23738ccf72dbd659ce174cde",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/actor_factory_model.py",
+      "executed_working_copy_sha256": "fb40720bc913c2a7d3957c5b65c1232d19b2f24a355bce3cdabe39dc6cb7489a",
+      "published_Git_bytes_sha256": "fb40720bc913c2a7d3957c5b65c1232d19b2f24a355bce3cdabe39dc6cb7489a",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_actor_factory.py",
+      "executed_working_copy_sha256": "5775e55cc6868807e09fa069507804ca76dee636ba1dd947a8d0eb62b398d571",
+      "published_Git_bytes_sha256": "5775e55cc6868807e09fa069507804ca76dee636ba1dd947a8d0eb62b398d571",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/model_mapping_model.py",
+      "executed_working_copy_sha256": "d3f0866a0c2e1ec4fe0fe2dde7b07a094a98b8ebb09e560472a36592cd70fe9e",
+      "published_Git_bytes_sha256": "d3f0866a0c2e1ec4fe0fe2dde7b07a094a98b8ebb09e560472a36592cd70fe9e",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/model_payload_model.py",
+      "executed_working_copy_sha256": "d2ab054ea8dd848cb78c4eacbf0750e00c967474405173d72d917506e01909e6",
+      "published_Git_bytes_sha256": "d2ab054ea8dd848cb78c4eacbf0750e00c967474405173d72d917506e01909e6",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/actor_payload_model.py",
+      "executed_working_copy_sha256": "53c243e67e3e6eb9b33ea5683985a956e247a748c649c00391fd366d9dcb7ff5",
+      "published_Git_bytes_sha256": "53c243e67e3e6eb9b33ea5683985a956e247a748c649c00391fd366d9dcb7ff5",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "docs/actor-factory-function-ranges.json",
+      "executed_working_copy_sha256": "1c7223ddeb1b0f440461e350e08184f383f5468b506496924c6b789f16c36611",
+      "published_Git_bytes_sha256": "1c7223ddeb1b0f440461e350e08184f383f5468b506496924c6b789f16c36611",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_actor_animations.py",
+      "executed_working_copy_sha256": "6381ae1462bdb95ccb76686e21f9f0b1f1c84c0dbb93ab20198d8abd889d5ad6",
+      "published_Git_bytes_sha256": "6381ae1462bdb95ccb76686e21f9f0b1f1c84c0dbb93ab20198d8abd889d5ad6",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/actor_animation_model.py",
+      "executed_working_copy_sha256": "fca3f6956613ada1ae3a385e0f640eb7975422a049182f6f02d59d39ea426bcf",
+      "published_Git_bytes_sha256": "fca3f6956613ada1ae3a385e0f640eb7975422a049182f6f02d59d39ea426bcf",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/actor_animation_fixtures.py",
+      "executed_working_copy_sha256": "23d554394b8f55250afed96fb25c789fbf75e6f61ce5d60f4fd619e928f98a09",
+      "published_Git_bytes_sha256": "23d554394b8f55250afed96fb25c789fbf75e6f61ce5d60f4fd619e928f98a09",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/actor_playback_model.py",
+      "executed_working_copy_sha256": "90e319b8a7158151b23041f3f63d2708ea9ef19fc6020b22e58ea70ed88b8787",
+      "published_Git_bytes_sha256": "90e319b8a7158151b23041f3f63d2708ea9ef19fc6020b22e58ea70ed88b8787",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_actor_playback.py",
+      "executed_working_copy_sha256": "c9dfb33659569fd2d4ebf0c1d6e3a27f5f1779a987ec12f6615f73dcd48fb74c",
+      "published_Git_bytes_sha256": "c9dfb33659569fd2d4ebf0c1d6e3a27f5f1779a987ec12f6615f73dcd48fb74c",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "docs/actor-playback-function-ranges.json",
+      "executed_working_copy_sha256": "e26ff327ee887674387ca8365937a0c546381196fbe928c63625fbad9e44883b",
+      "published_Git_bytes_sha256": "e26ff327ee887674387ca8365937a0c546381196fbe928c63625fbad9e44883b",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    }
+  ],
+  "original_game_build_inputs_unchanged": 392,
+  "canonical_complete_executable_unchanged": true,
+  "injected_frame_counters": 0,
+  "injected_frame_cursors": 0,
+  "callbacks_enabled": false,
+  "dependency_output_stubs": 0,
+  "new_C_bytes": 0,
+  "new_NPC_profiles": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "model_API_calls": 0,
+  "user_game_controlled": false,
+  "original_game_modified": false,
+  "Bevy_port_modified": false,
+  "scope": "Every supplied validated MOM frame, explicit selection, pause/resume, one active cycle and following tick per animation, with owned/shared/model-first lifetimes. Complete live capacities, MOM mapping, allocator manager/events and guards are checked. Original constructors leave callbacks disabled. No callback, natural encounter, full engine scheduling, rendering, audio or PS1 timing acceptance.",
+  "original_behavior_and_host_analysis_separate": true,
+  "rendered_playback_accepted": false,
+  "natural_encounters_accepted": false,
+  "PS1_timing_accepted": false
+}
