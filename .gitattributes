@@ -149,3 +149,11 @@ docs/features.json text eol=lf
 research/compiler/README.md text eol=lf
 README.md text eol=lf
 CHANGELOG.md text eol=lf
+
+# Preserve source-patch and host-construction evidence across Windows checkouts.
+research/runtime_state/README.md text eol=lf
+research/runtime_state/label_construction.cpp text eol=lf
+# Preserve upstream CRLF and the literal whitespace in unified-diff context.
+research/runtime_state/bizhawk-2.11.1-label-initialization.patch -text whitespace=-blank-at-eol,-space-before-tab,cr-at-eol
+docs/EMULATOR_LABEL_INITIALIZATION.md text eol=lf
+docs/emulator-label-initialization-checks.json text eol=lf

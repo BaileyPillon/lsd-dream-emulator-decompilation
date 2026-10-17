@@ -1,5 +1,17 @@
 # Changelog
 
+## Emulator media-record initialization - 2026-10-17
+
+- Add an optional BizHawk 2.11.1 adapter patch and a standalone short-string
+  construction reproducer. Preserve the original media names and descriptor values.
+- Check thirty hosted construction observations, six ordinary cold boots and
+  all 122 native descriptor graphs in a 30,000-frame original/rebuilt replay.
+  All 61 complete-state checkpoint pairs and recorded game outputs agree.
+- Qualify the exact fresh-source build recipe and Windows patch checkout;
+  retain distinct recipe/runtime binary hashes and strict cross-core input rejection.
+- Preserve the distributed-core and CD-only failures, canonical game inputs,
+  matching C, NPC/feature acceptance counts and separate Bevy port.
+
 ## Compiler inline-call type diagnosis - 2026-10-17
 
 - Add an exact-compiler inline-call observer, helper filtering and a standalone

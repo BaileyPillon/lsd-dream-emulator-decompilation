@@ -22,6 +22,10 @@ through the natural time limit, dream chart and visible `Day 002` menu,
 with 30,000 frames per disc and matching complete PCM. Its eight differing
 emulator-label bytes per state remain visible in the strict result.
 
+An optional [emulator media-initialization patch](docs/EMULATOR_LABEL_INITIALIZATION.md)
+passes that 30,000-frame first-dream profile with all 61 complete-state
+checkpoint pairs equal. The distributed profile retains its recorded failure.
+
 The verified local build reproduces the original Japanese executable byte for
 byte. **Full C recovery and independently reviewed gameplay coverage are still
 in progress.** The remaining assembly is regenerated from your own executable.
