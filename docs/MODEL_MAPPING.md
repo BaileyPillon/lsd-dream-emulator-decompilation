@@ -90,7 +90,9 @@ python -m unittest discover -s tests -v
 ## Remaining gates
 
 Full raw-copy equality does not decode or validate the meaning of every vertex,
-primitive or animation command. Complete allocated object payloads, subsequent
+primitive or animation command. The optional
+[model-object profile](MODEL_OBJECTS.md) now checks complete model allocations
+at initial factory return. Subsequent model and full actor payloads, later
 animation playback, allocation failures, resource-cache loading, cold CD
 initialization, natural NPC encounters, rendering, sound and PS1 timing remain
 open. The supplied pool, ready CD state and SDK identity matrix remain fixtures.

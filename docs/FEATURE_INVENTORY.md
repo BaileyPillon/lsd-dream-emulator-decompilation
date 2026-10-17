@@ -30,6 +30,12 @@ mapping reentry and destruction. Expected bytes and pointers are predicted
 without reading native outputs. It deepens the existing factory histories;
 all feature, C-byte, NPC callback and whole-encounter totals remain unchanged.
 
+The optional [model-object extension](MODEL_OBJECTS.md) adds independent
+complete-payload comparisons at the original model factory return. It covers
+the model resource allocations before actor attachment, including retained
+allocator residue. This deepens the same histories; all inventory, source and
+runtime acceptance counts remain unchanged.
+
 The later [input storage recovery](INPUT_STORAGE_RECOVERY.md) resolves six
 more inherited frames, reducing the identified remainder from **14 to 8**.
 Its 1,796 function bytes already counted as C. All source-byte, feature and

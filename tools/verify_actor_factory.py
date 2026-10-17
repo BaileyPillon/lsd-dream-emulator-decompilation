@@ -1,7 +1,8 @@
 """Check original MOM/actor factory ownership against an independent event plan.
 
 The optional model-data profile compares the complete mapped raw MOM copy.
-Allocated object payloads and complete animation state are not modeled.
+The model-objects profile checks complete allocations at original factory return.
+Subsequent object payloads and complete animation state are not modeled.
 This is a bounded analysis tool, not gameplay or whole-feature acceptance.
 """
 import argparse
@@ -24,6 +25,7 @@ from tools import verify_actor_children as common
 from tools.actor_factory_model import OwnershipPlan
 from tools.heap_model import PoolModel
 from tools.model_mapping_model import geometry_bindings, mapped_model_bytes
+from tools.model_payload_model import ModelPayloadPlan
 
 MANAGER, POOL, POOL_SIZE = 0x90000, 0xA0000, 0x60000
 DATA, MODEL_INPUT, ACTOR_INPUT = 0x140020, 0x92020, 0x93020
@@ -43,8 +45,14 @@ MODEL_DATA_FAULTS = (
     dict(name='primitive-batch-count', patches=[(0x8001F09C, 0xA6910000, 0xA6800000)]),
     dict(name='animation-slots-not-cleared', patches=[(0x80018420, 0xAE220000, 0x00000000)]),
 )
+MODEL_OBJECT_FAULTS = (
+    dict(name='model-construction-mode-word', patches=[(0x800446CC, 0x34060001, 0x34060003)]),
+    dict(name='constructed-file-flags', patches=[(0x80026C90, 0x34420001, 0x34420003)]),
+    dict(name='constructor-overwrites-residue', patches=[(0x80026A98, 0xA6000028, 0xA6000018)]),
+)
 DEPENDENCIES = common.DEPENDENCIES + ('tools/actor_factory_model.py',
     'tools/verify_actor_factory.py', 'tools/model_mapping_model.py',
+    'tools/model_payload_model.py',
     'docs/actor-factory-function-ranges.json')
 
 
@@ -69,9 +77,13 @@ def compare_events(actual, expected):
 
 
 class Machine(common.Machine):
-    def __init__(self, program, ranges, names, raw, pattern, events, faults=()):
+    def __init__(self, program, ranges, names, raw, pattern, events, faults=(), model_payloads=()):
         super().__init__(program, ranges, common.heap.global_addresses(program), len(raw))
         self.events, self.actual, self.pending = events, [], None
+        self.model_payloads = tuple(model_payloads)
+        self.model_payload_pending = None
+        self.model_payload_entries = 0
+        self.model_payload_snapshots = []
         self.patch_hits = Counter()
         self.patch_addresses = {address & common.native.MASK for address, _, _ in faults}
         self.observed = initial_pool(pattern)
@@ -96,6 +108,13 @@ class Machine(common.Machine):
 
     def code_hook(self, cpu, address, size, unused):
         physical = address & common.native.MASK
+        self.finish_model_payloads(physical)
+        if self.model_payloads and physical == self.program.symbols['func_8004468C'] & common.native.MASK:
+            require(self.model_payload_pending is None and self.model_payload_entries == 0,
+                    'The successful model-object profile requires one nonrecursive factory call.')
+            self.model_payload_entries += 1
+            self.model_payload_pending = (cpu.reg_read(self.reg.UC_MIPS_REG_RA) & common.native.MASK,
+                                          cpu.reg_read(self.reg.UC_MIPS_REG_SP))
         if physical in self.patch_addresses:
             self.patch_hits[physical] += 1
         if self.pending and physical == self.pending[0] and cpu.reg_read(self.reg.UC_MIPS_REG_SP) == self.pending[1]:
@@ -114,13 +133,37 @@ class Machine(common.Machine):
             self.pending = (cpu.reg_read(self.reg.UC_MIPS_REG_RA) & common.native.MASK,
                             cpu.reg_read(self.reg.UC_MIPS_REG_SP), name, argument, expected)
 
+    def finish_model_payloads(self, physical):
+        if (self.model_payload_pending is None or physical != self.model_payload_pending[0]
+                or self.cpu.reg_read(self.reg.UC_MIPS_REG_SP) != self.model_payload_pending[1]):
+            return
+        require(self.cpu.reg_read(self.reg.UC_MIPS_REG_V0) == self.model_payloads[0].pointer,
+                'The original factory did not return the independently planned model.')
+        for payload in self.model_payloads:
+            actual = bytes(self.cpu.mem_read(payload.pointer & common.native.MASK, len(payload.expected)))
+            mismatch = next((index for index, (a, b) in enumerate(zip(actual, payload.expected)) if a != b), None)
+            self.model_payload_snapshots.append(dict(kind=payload.kind, pointer=hex(payload.pointer),
+                phase='original_model_factory_return', requested_bytes=payload.requested_bytes,
+                bytes_compared=len(payload.expected), matched=actual == payload.expected,
+                first_difference=mismatch, expected_sha256=common.sha(payload.expected), actual_sha256=common.sha(actual)))
+        self.model_payload_pending = None
 
-def run_case(program, ranges, names, raw, pattern, scenario, fault=None, model_data=False):
+    def call(self, name, *arguments):
+        result = super().call(name, *arguments)
+        # A top-level call stops before END executes; nested factory returns
+        # are observed in code_hook, with the same SP/return-address guard.
+        self.finish_model_payloads(common.native.END)
+        return result
+
+
+def run_case(program, ranges, names, raw, pattern, scenario, fault=None, model_data=False, model_objects=False):
     reference = initial_pool(pattern)
     reference.setup()
     # Generate every expected argument and return before starting native code.
-    plan = OwnershipPlan(raw, reference)
+    plan = ModelPayloadPlan(raw, reference, names, DATA) if model_objects else OwnershipPlan(raw, reference)
     expected = plan.run(scenario)
+    if model_objects:
+        require(len(plan.model_payloads) == 1, 'The model-object profile requires one planned construction.')
     if model_data:
         require(len(plan.models) == 1, 'The raw-model profile requires one independently planned model.')
     mapped = mapped_model_bytes(raw, DATA, plan.models[0].animations) if model_data else None
@@ -129,7 +172,8 @@ def run_case(program, ranges, names, raw, pattern, scenario, fault=None, model_d
         linked = mapped_model_bytes(raw, DATA, plan.models[0].animations, indices)
         destroyed = mapped_model_bytes(raw, DATA, plan.models[0].animations, indices, destroyed=True)
     patches = fault['patches'] if fault else ()
-    machine = Machine(program, ranges, names, raw, pattern, expected, patches)
+    payloads = plan.model_payloads[0] if model_objects else ()
+    machine = Machine(program, ranges, names, raw, pattern, expected, patches, payloads)
     report = dict(status='failed_bounded_actor_factory_ownership', scenario=scenario, pattern=pattern,
                   fault=fault, dependency_output_stubs=0, independent_request_and_release_plan=True,
                   independent_complete_object_payload_model=False, native_history_completed=False)
@@ -242,6 +286,12 @@ def run_case(program, ranges, names, raw, pattern, scenario, fault=None, model_d
                     and reentered, 'The model-data profile did not execute all its mapping checks.')
             wrong = next((row for row in snapshots if not row['matched']), None)
             require(wrong is None, 'mapped_model_data ' + (str(wrong) if wrong else ''))
+        if model_objects:
+            require(machine.model_payload_entries == 1 and machine.model_payload_pending is None
+                    and len(machine.model_payload_snapshots) == len(payloads),
+                    'The model-object profile did not observe its complete original factory return.')
+            wrong = next((row for row in machine.model_payload_snapshots if not row['matched']), None)
+            require(wrong is None, 'constructed_model_payload ' + (str(wrong) if wrong else ''))
         report.update(status='passed_bounded_actor_factory_ownership', histories=histories,
                       all_owned_allocations_released=True)
     except (ValueError, machine.unicorn.UcError) as error:
@@ -249,12 +299,14 @@ def run_case(program, ranges, names, raw, pattern, scenario, fault=None, model_d
     report.update(expected_heap_events=expected, actual_heap_events=machine.actual,
                   model_data_profile=model_data, independent_raw_model_mapping=model_data,
                   model_data_snapshots=snapshots, original_mapping_reentry=reentered,
+                  model_objects_profile=model_objects, model_object_snapshots=machine.model_payload_snapshots,
+                  independent_constructed_model_payload_model=model_objects,
                   instructions=machine.steps, entered_original_functions=dict(machine.entries),
                   changed_instruction_hits={hex(address): count for address, count in machine.patch_hits.items()})
     return report
 
 
-def verify(layout, destination, edition_label, model_data=False):
+def verify(layout, destination, edition_label, model_data=False, model_objects=False):
     ninja = common.require_ninja()
     backend = {key: value for key, value in common.heap.backend_identity().items() if key in common.IDENTITY_KEYS}
     functions = json.loads(RANGES.read_text(encoding='utf-8'))['functions']
@@ -282,13 +334,16 @@ def verify(layout, destination, edition_label, model_data=False):
         for pattern in child.PATTERNS:
             for scenario in SCENARIOS:
                 name = 'model-'+str(index).zfill(3)+'-'+pattern+'-'+scenario
-                result = run_case(program, ranges, names, raw, pattern, scenario, model_data=model_data)
+                result = run_case(program, ranges, names, raw, pattern, scenario,
+                                  model_data=model_data, model_objects=model_objects)
                 common.write_json(destination/(name+'.json'), result)
                 require(result['status'] == 'passed_bounded_actor_factory_ownership', 'Retained '+name+'.json: '+result.get('error', ''))
                 rows.append(dict(case=name, model_sha256=common.sha(raw), scenario=scenario, pattern=pattern,
                     actor_lifetimes=len(result['histories']), heap_events=len(result['actual_heap_events']),
                     model_data_snapshots=len(result['model_data_snapshots']),
                     model_data_bytes_compared=sum(row['bytes_compared'] for row in result['model_data_snapshots']),
+                    model_object_snapshots=len(result['model_object_snapshots']),
+                    model_object_bytes_compared=sum(row['bytes_compared'] for row in result['model_object_snapshots']),
                     report_sha256=common.sha((destination/(name+'.json')).read_bytes())))
                 entered.update(result['entered_original_functions'])
                 gc.collect()
@@ -317,6 +372,20 @@ def verify(layout, destination, edition_label, model_data=False):
                     'Model-data fault did not finish and expose a wrong byte: '+fault['name'])
             model_controls.append(dict(name=fault['name'], detected=True, native_history_completed=True,
                                        changed_instruction_hits=result['changed_instruction_hits'], detection=result['error']))
+    object_controls = []
+    if model_objects:
+        for fault in MODEL_OBJECT_FAULTS:
+            result = run_case(program, ranges, names, raw, 'distinct', 'actor-first', fault,
+                              model_data=model_data, model_objects=True)
+            common.write_json(destination/('fault-'+fault['name']+'.json'), result)
+            require(result['native_history_completed'] and result['status'].startswith('failed_')
+                    and result.get('error', '').startswith('constructed_model_payload ')
+                    and all(row['matched'] for row in result['model_data_snapshots'])
+                    and all(result['changed_instruction_hits'].get(hex(address & common.native.MASK), 0)
+                            for address, _, _ in fault['patches']),
+                    'Model-object fault did not finish and expose a wrong payload: '+fault['name'])
+            object_controls.append(dict(name=fault['name'], detected=True, native_history_completed=True,
+                                        changed_instruction_hits=result['changed_instruction_hits'], detection=result['error']))
     require(before == common.build_inputs(), 'Canonical game inputs changed.')
     require(common.sha(Path(layout).read_bytes()) == inventory['layout_sha256'], 'Extraction layout changed.')
     require(all(common.sha(Path(source['source']).read_bytes()) == source['sha256']
@@ -335,6 +404,10 @@ def verify(layout, destination, edition_label, model_data=False):
         model_data_snapshots=sum(row['model_data_snapshots'] for row in rows),
         model_data_bytes_compared=sum(row['model_data_bytes_compared'] for row in rows),
         original_mapping_reentries=len(rows) if model_data else 0,
+        model_objects_profile=model_objects, independent_constructed_model_payload_model=model_objects,
+        model_object_faults=object_controls,
+        model_object_snapshots=sum(row['model_object_snapshots'] for row in rows),
+        model_object_bytes_compared=sum(row['model_object_bytes_compared'] for row in rows),
         backend=backend, ninja=ninja, canonical_sha256=common.sha(program.ROM),
         inventory_sha256=common.sha((destination/'inventory.json').read_bytes()),
         layout_sha256=inventory['layout_sha256'],
@@ -350,7 +423,8 @@ def verify(layout, destination, edition_label, model_data=False):
               'An independent plan predicts ordered heap requests, releases and return words before execution. ' +
               ('The optional complete guarded raw-model mapping oracle is active. ' if model_data else '') +
               ('Raw-model mutation comparisons are not enabled. ' if not model_data else '') +
-              'Geometry interpretation, complete allocated object payloads, allocation failures, cold CD initialization, '
+              ('Complete model allocations are checked at the original factory return, before actor attachment. ' if model_objects else '') +
+              'Geometry interpretation, subsequent model and actor payloads, allocation failures, cold CD initialization, '
               'physical disc I/O, later playback, natural encounters, rendering and PS1 timing remain open.')
     common.write_json(destination/'report.json', report)
     print(json.dumps({key: report[key] for key in ('status', 'positive_cases', 'actor_lifetimes', 'heap_events')}), flush=True)
@@ -363,13 +437,14 @@ def main(argv=None):
     parser.add_argument('--output', required=True, help='Fresh directory inside .decomp-lab.')
     parser.add_argument('--edition-label', default='unspecified', help='Provenance label; not edition detection.')
     parser.add_argument('--model-data', action='store_true', help='Also compare all guarded raw MOM mapping bytes and original mapping reentry.')
+    parser.add_argument('--model-objects', action='store_true', help='Compare complete model allocations at original factory return, before actor attachment.')
     args = parser.parse_args(argv)
     created = False
     try:
         destination = common.output_directory(args.output)
         destination.mkdir(parents=True, exist_ok=False)
         created = True
-        verify(Path(args.layout).resolve(), destination, args.edition_label, args.model_data)
+        verify(Path(args.layout).resolve(), destination, args.edition_label, args.model_data, args.model_objects)
         return 0
     except (OSError, ValueError, subprocess.CalledProcessError, ET.ParseError) as error:
         if created:

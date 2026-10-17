@@ -23347,6 +23347,67 @@
       "new_whole_NPC_encounters_accepted": 0,
       "new_model_API_calls": 0,
       "Bevy_port_modified": false
+    },
+    "model_object_payloads_20261016": {
+      "status": "qualified_bounded_original_model_construction_payloads",
+      "report": "docs/MODEL_OBJECTS.md",
+      "checks": "docs/model-object-checks.json",
+      "before": {
+        "c_bytes": 195844,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 5,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 195844,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 5,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "per_extraction": {
+        "original_model_instances": 111,
+        "distinct_model_contents": 100,
+        "positive_cases": 666,
+        "actor_lifetimes": 888,
+        "heap_events": 128384,
+        "native_allocation_calls": 64192,
+        "native_release_calls": 64192,
+        "model_data_snapshots": 3108,
+        "model_data_bytes_compared": 24028144,
+        "original_mapping_reentries": 666,
+        "model_object_snapshots": 6936,
+        "model_object_bytes_compared": 275496
+      },
+      "separately_labelled_extractions": 2,
+      "shared_model_instances": 111,
+      "shared_distinct_model_contents": 100,
+      "original_functions": 134,
+      "independent_complete_model_construction_payloads": true,
+      "complete_actor_payloads": false,
+      "native_instruction_count_change": 0,
+      "new_payload_fault_controls_per_extraction": 3,
+      "new_C_bytes": 0,
+      "new_bounded_NPC_callbacks": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_model_API_calls": 0,
+      "Bevy_port_modified": false
     }
   }
 }
