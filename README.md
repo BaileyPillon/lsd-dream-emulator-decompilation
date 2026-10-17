@@ -20,7 +20,7 @@ distributed here.
 
 ## Current status
 
-The current verified source snapshot is dated October 16, 2026. These are
+The current verified snapshot is dated October 17, 2026. These are
 separate measures, not a whole-game completion percentage. The initial
 publication and subsequent evidence are retained separately.
 
@@ -54,7 +54,9 @@ destruction against independently predicted bytes. It extends the existing
 ownership histories without adding C bytes or accepting whole encounters.
 The optional [model-object comparison](docs/MODEL_OBJECTS.md) also checks every
 allocated model payload at the original factory return, including retained
-allocator residue. Subsequent model and complete actor payloads remain open.
+allocator residue. The [actor-object comparison](docs/ACTOR_OBJECTS.md) checks
+every live pool allocation at actor-factory return, after the original
+first-frame commands. Later playback and natural encounters remain open.
 The [collision query interface](docs/COLLISION_API.md) now declares the original
 pointer roles and output sizes. A compiled C caller passes 12,696 bounded inputs;
 the complete matching executable and source-recovery counts are unchanged.
@@ -79,8 +81,9 @@ The optional [child lifetime profile](docs/ACTOR_CHILD_LIFETIMES.md) follows
 those objects through original destruction, repeated cleanup and pool reuse.
 The [model/actor factory checker](docs/ACTOR_FACTORY_OWNERSHIP.md) now creates
 the real model resources and checks three ownership histories against an
-independent allocation/release plan. Complete actor payloads and natural
-encounters remain open.
+independent allocation/release plan. Its optional
+[actor-object profile](docs/ACTOR_OBJECTS.md) checks complete live allocations
+at successful constructor return; natural encounters remain open.
 The [NPC proximity checks](docs/NPC_PROXIMITY.md) add Bear, Rabbit, Acrobats and
 Ship in 10,408 distinct fixtures through 25 original routines. Real distance,
 trigger-ratio, RNG, movement, event and GTE dependencies execute with no output

@@ -1,5 +1,16 @@
 # Changelog
 
+## Native actor construction payloads - 2026-10-17
+
+- Add `--actor-objects` to compare every live pool payload at original
+  actor-factory return against a plan generated before native execution.
+- Cover root and child transforms, first-frame commands, geometry binding,
+  animation state, ownership links, tables and retained allocator residue.
+- Require four executed faults to finish native cleanup and expose payload
+  differences. Retain earlier heap, raw-model and initial-model comparisons.
+- Preserve the canonical game build and source-recovery counts. Later playback,
+  natural encounters and whole-game acceptance remain open.
+
 ## Native model construction payloads - 2026-10-16
 
 - Add optional complete-payload comparisons for every model allocation at the

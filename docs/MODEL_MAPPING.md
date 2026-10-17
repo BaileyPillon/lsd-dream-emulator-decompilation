@@ -92,8 +92,10 @@ python -m unittest discover -s tests -v
 Full raw-copy equality does not decode or validate the meaning of every vertex,
 primitive or animation command. The optional
 [model-object profile](MODEL_OBJECTS.md) now checks complete model allocations
-at initial factory return. Subsequent model and full actor payloads, later
-animation playback, allocation failures, resource-cache loading, cold CD
+at initial factory return. The optional [actor-object profile](ACTOR_OBJECTS.md)
+checks all live pool payloads after original actor construction and first-frame
+interpretation. Subsequent model/actor mutations, later animation playback,
+allocation failures, resource-cache loading, cold CD
 initialization, natural NPC encounters, rendering, sound and PS1 timing remain
 open. The supplied pool, ready CD state and SDK identity matrix remain fixtures.
 These comparisons are developer analysis and invoke no model API.

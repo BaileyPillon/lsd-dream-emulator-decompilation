@@ -1,11 +1,19 @@
 # Source and evidence provenance
 
+The optional [actor-object profile](ACTOR_OBJECTS.md) predicts every live pool
+payload at successful actor-factory return, after first-frame interpretation.
+Its [metadata](actor-object-checks.json) retains separately labelled extraction
+runs, producer/backend identities, complete symbol qualification, executed
+payload faults and default-mode regression. Native fields and traces are never
+inputs to the expected payloads. This constructor boundary adds no matching C,
+NPC callback or whole-feature acceptance; later gameplay gates remain open.
+
 The optional [model-object profile](MODEL_OBJECTS.md) independently reconstructs
 all allocated model payloads at initial factory return, before actor attachment.
 Its [metadata](model-object-checks.json) preserves complete native histories,
 executed faults, prior-mode regression and separate extraction identities.
-No matching C, NPC or whole-feature acceptance count changes. Later model and
-full actor payloads remain open; the Bevy/Rust repository is separate.
+No matching C, NPC or whole-feature acceptance count changes. Later model/actor
+mutations remain open; the Bevy/Rust repository is separate.
 
 The optional [model-data profile](MODEL_MAPPING.md) extends the original
 model/actor factory histories with an independent complete raw-copy oracle.
