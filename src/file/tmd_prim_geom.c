@@ -71,7 +71,7 @@ void refresh_source_vertices(s32 arg0) {
 }
 
 /* Return the shared bounds storage, independent of the caller's index. */
-void *get_source_vertices(void) {
+void *get_source_vertices(s32 unused_model, s32 unused_index) {
     return &D_8008B21C;
 }
 

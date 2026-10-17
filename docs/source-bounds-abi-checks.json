@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "status": "matching_shared_bounds_accessor_interface",
+  "recorded_utc": "2026-10-17T07:40:58.169020+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "5578cf5d6a30d803fcd376e311c8138c736a43e5",
+  "shared_header": "src/file/tmd_prim.h",
+  "function": "get_source_vertices",
+  "function_address": "0x8001f50c",
+  "function_bytes": 16,
+  "function_sha256": "3960bf714c3d63c777cb90c0336714cf7599f0e575ed62e305a53527258c9ea5",
+  "previous_definition": "void *get_source_vertices(void)",
+  "current_definition": "void *get_source_vertices(s32 unused_model, s32 unused_index)",
+  "observed_direct_call_sites": [
+    "0x8001dc00",
+    "0x8001dee8",
+    "0x8001dfdc"
+  ],
+  "observed_argument_words": 2,
+  "callee_argument_reads": 0,
+  "exhaustive_indirect_call_graph_accepted": false,
+  "executed_source_sha256": {
+    "research/collision/overlap_candidate.c": "d8d3136c70d545d2e9377f15e0c52839745773f44c70c68c5595d6eaea3263d4",
+    "src/base/transform.c": "0166d95088d3476bf1cf8c2a760627f0c12640e68a1f8294a973acb91c09004d",
+    "src/file/tmd_prim.h": "2550975be12d48be86e6fc494eceab5e8968e7e566aafee32517e9b9b25aedfc",
+    "src/file/tmd_prim_geom.c": "e620789b4aae2a319e63a4a0b1e9617be82660ecbb0d378e3b2ce05aa715123b"
+  },
+  "changed_game_build_inputs": [
+    "src/base/transform.c",
+    "src/file/tmd_prim.h",
+    "src/file/tmd_prim_geom.c"
+  ],
+  "other_game_build_inputs_preserved": 389,
+  "source_counts_before": {
+    "c_bytes": 196504,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 4,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 196504,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 4,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "canonical_executable_bytes": 505856,
+  "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "regular_build_current": true,
+  "regular_objects": 306,
+  "fresh_build_objects": 306,
+  "fresh_prior_objects": 0,
+  "regular_and_fresh_complete_images_equal": true,
+  "conflicting_old_definition_control": {
+    "rejected": true,
+    "compiler_return_code": 33,
+    "diagnostic": "conflicting types for get_source_vertices"
+  },
+  "overlap_recipe": {
+    "source": "research/collision/overlap_candidate.c",
+    "complete_image_sha256": "baf178f503099850da4c6e6aeb27325c22c0f35ee3b6632a1fbc8e41ae0410f7",
+    "function_sha256": "752ab4f89868a5e8c99a126c55ae39fcdba41b2b5b246485ddb3f20bd0ae258f",
+    "function_bytes": 796,
+    "frame_bytes": 176,
+    "differing_executable_bytes": 148,
+    "whole_image_byte_identical_to_preceding_tested_candidate": true,
+    "source_promoted_to_game": false,
+    "new_original_fixture_domain": 0
+  },
+  "private_evidence": [
+    {
+      "path": ".decomp-lab\\source-bounds-abi-20261017-first\\qualification.json",
+      "sha256": "ea8333962fb675d102837990cea6493b9618aaed17e3924f683256f64914754f"
+    },
+    {
+      "path": ".decomp-lab\\source-bounds-abi-20261017-first\\regular-progress.json",
+      "sha256": "b4e7dec4400f5123f7bb1408f9b9432ef4f7a0835b510675dc15a4e76f2a78e5"
+    },
+    {
+      "path": ".decomp-lab\\source-bounds-abi-20261017-first\\fresh-progress.json",
+      "sha256": "10ff8a5a9ddc0d36d614e510ded5f0ecf2e8b11d118ae894f91e33e02b03feb3"
+    },
+    {
+      "path": ".decomp-lab\\source-bounds-abi-20261017-first\\old-contract-control\\result.json",
+      "sha256": "9db804c4cb39438ccc3d7c2ffc0236d723e836dddcf03cd9181b825a86d8dbb8"
+    },
+    {
+      "path": ".decomp-lab\\source-bounds-abi-20261017-first\\public-formatted\\prepared.json",
+      "sha256": "2a0506e629407a779cf2f3c0e750fe10549df931f7010f8050f12f58c575ad5b"
+    },
+    {
+      "path": ".decomp-lab\\source-bounds-abi-20261017-first\\public-formatted\\build\\comparison.json",
+      "sha256": "e2ea197f0758d701f8408dd28753e28a499a3ea764025a04832c9fcf1b6ef1a9"
+    }
+  ],
+  "new_C_bytes": 0,
+  "new_matching_function_promotions": 0,
+  "source_interfaces_corrected": 1,
+  "new_bounded_NPC_callbacks": 0,
+  "new_original_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_gameplay_runs": 0,
+  "new_model_API_calls": 0,
+  "original_behavior_modified": false,
+  "Bevy_port_modified": false,
+  "goal_complete": false,
+  "scope": "Consistent C declarations for three observed direct calls and an already recovered constant-address accessor. Every native executable byte is preserved. The unaccepted overlap recipe retains exactly its earlier linked image; no new native input, function recovery, scene, encounter or feature acceptance."
+}

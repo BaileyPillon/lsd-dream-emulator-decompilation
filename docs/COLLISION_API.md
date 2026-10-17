@@ -84,3 +84,35 @@ Choose a fresh private directory. Existing evidence and destinations outside
 [evidence metadata](collision-api-checks.json) records the compiled caller,
 original ranges, measured controls, source hashes and build comparisons.
 Game images, generated code, full buffers and compiler outputs remain private.
+
+## Shared bounds accessor declaration
+
+The October 17 supplement fixes a C function-type mismatch for the already
+recovered `get_source_vertices` at `0x8001F50C`. Its definition previously
+declared no arguments, while the caller declared two. The shared declaration
+in `file/tmd_prim.h` now names the model and index, and the definition explicitly
+ignores both. The canonical caller includes that same header.
+
+| Original direct call | Model argument | Index argument |
+| --- | --- | --- |
+| `0x8001DC00` | Transform's model value | Zero |
+| `0x8001DEE8` | Transform's model value | Loop index |
+| `0x8001DFDC` | Transform's model value | Loop index |
+
+The original 16-byte accessor constructs the shared bounds address and returns;
+it reads neither argument. This recovers a consistent interface for these
+observed calls, without making the scratch buffer model-specific or accepting
+an exhaustive indirect-call graph.
+
+Regular and fresh **306-object** builds still reproduce the complete original
+executable. Compiling the old no-argument definition against the shared header
+now produces a conflicting-type error. This target-compiler control protects
+the source contract; it changes no native instructions or recovered C count.
+
+The unaccepted overlap fragment also uses the canonical six-argument primitive
+pointer declaration. Its current complete candidate image is byte-identical
+to the earlier tested 148-byte nonmatch, and its 796-byte function remains
+unaccepted. [source-bounds-abi-checks.json](source-bounds-abi-checks.json) pins
+the compiler control, both builds and source/code identities. Earlier evidence
+metadata remains frozen; no new native input domain or runtime acceptance is
+counted.

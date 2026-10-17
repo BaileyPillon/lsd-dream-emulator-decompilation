@@ -3,7 +3,8 @@
  * The complete image differs by 148 bytes; this is excluded from game coverage. */
 extern s32 func_8001E110(func_8001E2E8_pt_t *, func_8001E2E8_box_t *,
                        func_8001E2E8_pt_t *, func_8001E2E8_pt_t *);
-extern s32 func_8001F8B8(s32, s32 *, void *, s32 *, func_8001E2E8_pt_t *, func_8001E2E8_pt_t *);
+extern s32 func_8001F8B8(void *, s32 *, vec3d_16_t *, s32 *,
+                       const vec3d_16_t *, const vec3d_16_t *);
 extern s32 D_8008A838;
 
 extern void *get_source_vertices(s32, s32);
@@ -71,7 +72,8 @@ s32 func_8001DDF4(transform_t *This, s32 *out, void *contact, u8 *input) {
     for (; i < count; i++) {
         box = collision_read_source_bounds(This->m_Unk7, i);
         if (func_8001E110(NULL, box, points, points + 1) != 0 &&
-            func_8001F8B8(This->m_Unk7, &best, contact, &distance, points, points + 1) != 0 &&
+            func_8001F8B8((void *)This->m_Unk7, &best, (vec3d_16_t *)contact, &distance,
+                         (const vec3d_16_t *)points, (const vec3d_16_t *)(points + 1)) != 0 &&
             (D_8008A838 == 0 || distance > 0x200)) {
             This->m_Unk10 |= bit << i;
         }
@@ -95,7 +97,8 @@ s32 func_8001DDF4(transform_t *This, s32 *out, void *contact, u8 *input) {
                     if ((u32)(j++ - 1) < 2U) {
                         next = (func_8001E2E8_pt_t *)((u8 *)a + 0x18);
                         if (func_8001E110(NULL, box, a, next) != 0 &&
-                            func_8001F8B8(This->m_Unk7, &best, contact, &distance, a, next) != 0 &&
+                            func_8001F8B8((void *)This->m_Unk7, &best, (vec3d_16_t *)contact,
+                                         &distance, (const vec3d_16_t *)a, (const vec3d_16_t *)next) != 0 &&
                             distance > 0x200) {
                             This->m_Unk10 |= bit << i;
                             *out |= bit << k;

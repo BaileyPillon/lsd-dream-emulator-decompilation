@@ -1,5 +1,15 @@
 # Changelog
 
+## Shared bounds accessor interface - 2026-10-17
+
+- Share the observed two-argument `get_source_vertices` declaration between
+  caller and definition, explicitly retaining its ignored model/index values.
+- Verify regular and fresh 306-object builds against the complete original
+  executable; the target compiler rejects the former conflicting definition.
+- Keep the overlap research recipe compatible with the canonical primitive
+  pointer interface. Its full candidate image remains the same 148-byte
+  nonmatch. Matching C and all feature/NPC acceptance counts are unchanged.
+
 ## Cold start into a playable dream - 2026-10-17
 
 - Compare the controller-only cold-boot title/menu/new-dream path, native

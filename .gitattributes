@@ -1,6 +1,13 @@
 # Preserve the bundled compiler binaries without text conversion.
 tools/gcc263/* binary
 
+# Preserve the executed shared collision interface and compatible research source.
+src/base/transform.c text eol=lf
+src/file/tmd_prim.h text eol=lf
+src/file/tmd_prim_geom.c text eol=lf
+research/collision/overlap_candidate.c text eol=lf
+docs/source-bounds-abi-checks.json text eol=lf
+
 # Keep the executed cold-start recorder and verifier identical on Windows and Linux.
 research/cold_start/*.lua text eol=lf
 tools/capture_cold_start.py text eol=lf

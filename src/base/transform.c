@@ -1,6 +1,7 @@
 #include "base/transform.h"
 
 #include "base/base.h"
+#include "file/tmd_prim.h"
 
 extern s32 class_FA50_is_active(s32);
 
@@ -430,7 +431,6 @@ void func_8001D950(transform_t *This, void *arg1, void *arg2, void *arg3, s32 ar
 
 /* Translate the collision cloud and test its aggregate bounds against the model. */
 extern void refresh_source_vertices(s32);
-extern void *get_source_vertices(s32,s32);
 extern s32 class_FA50_is_active(s32);
 typedef struct {s32 count;vec3d_16_t points[1];} bounds_cloud_t;
 s32 func_8001DA28(transform_t *This,bounds_cloud_t *cloud,vec3d_16_t *offset) {

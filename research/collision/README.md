@@ -1,5 +1,10 @@
 # Collision recovery research
 
+The [shared accessor declaration](../../docs/COLLISION_API.md#shared-bounds-accessor-declaration)
+keeps the canonical caller and getter compatible. The overlap research recipe
+uses the same primitive pointer interface and retains its previously tested
+796-byte function and 148-byte whole-image nonmatch.
+
 [`primitive_candidate.c`](primitive_candidate.c) reconstructs `func_8001F8B8`
 in C. It is **unaccepted**: the complete private executable differs from the
 canonical image in 22 bytes. The canonical game still uses its assembly.
