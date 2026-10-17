@@ -13,6 +13,12 @@ collision query. The bounds predicate is now matching C. This promotion adds
 whole-feature acceptance. Earlier inventory snapshots and publication
 supplements retain their original scope.
 
+The [complete software movie decode](MOVIE_DECODE.md) adds payload evidence
+for all **39** routed movies: **22,382** video frames and **27,921** XA audio
+packets, independently hashed again as raw decoded bytes. It adds no C bytes,
+NPC callback profiles or whole-feature acceptance. Native movie playback,
+mixing, controller paths and timing remain open; the Bevy port is unchanged.
+
 The [locomotive script checks](LOCOMOTIVE_SCRIPTS.md) extend bounded original
 callback coverage from **36 to 39 / 107** through 70,345 distinct fixtures.
 Those three callbacks already had matching C bodies. C bytes, the 40-group

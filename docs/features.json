@@ -23974,6 +23974,55 @@
       "new_model_API_calls": 0,
       "original_behavior_modified": false,
       "Bevy_port_modified": false
+    },
+    "movie_software_decode_20261017": {
+      "evidence": "docs/movie-decode-checks.json",
+      "guide": "docs/MOVIE_DECODE.md",
+      "before": {
+        "c_bytes": 197172,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 2,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 38,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 39,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 197172,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 2,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 38,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 39,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "prior_published_complete_software_corpus_results": 0,
+      "complete_software_movie_payloads": 39,
+      "decoded_video_frames": 22382,
+      "decoded_audio_packets": 27921,
+      "decoded_YUV_bytes": 2578406400,
+      "decoded_PCM_bytes": 225154944,
+      "independent_raw_byte_audit_passed": true,
+      "independent_native_decoder": false,
+      "native_playback_cadence_verified": false,
+      "natural_movie_scenarios_accepted": 0,
+      "new_C_bytes": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_NPC_callback_profiles": 0,
+      "new_model_API_calls": 0,
+      "original_behavior_modified": false,
+      "Bevy_port_modified": false
     }
   }
 }
