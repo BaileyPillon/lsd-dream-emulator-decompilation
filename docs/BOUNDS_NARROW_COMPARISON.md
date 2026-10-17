@@ -1,10 +1,14 @@
 # Bounds comparison and result ownership
 
+The later [matching C recovery](UI_SCALE_BOUNDS_MATCHING_C.md) supersedes this
+candidate and preserves the complete executable. This page retains the earlier
+19-byte comparison and its original fixture evidence as historical research.
+
 The published C research fragment for `func_8004CD38` now differs from the
 complete original executable in **19 bytes**, improving on the preceding
 21-byte published fragment. The 19-byte form was already retained privately;
 this checkpoint publishes and rechecks it. It remains unaccepted, and the
-matching game continues to use the original 108-byte assembly function.
+matching game used the original 108-byte assembly function at that checkpoint.
 
 ## What changed
 

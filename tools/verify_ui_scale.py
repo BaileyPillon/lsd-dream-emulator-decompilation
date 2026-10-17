@@ -1,6 +1,6 @@
 """Check the original sprite scaling leaf, including overlapping input records.
 
-The 560-byte function remains assembly. This local native audit checks signed
+The 560-byte function now has matching C. This local native audit checks signed
 fixed-point arithmetic, read/store order and incoming-register behavior; it
 does not accept menu rendering, a C candidate or any whole feature group.
 """

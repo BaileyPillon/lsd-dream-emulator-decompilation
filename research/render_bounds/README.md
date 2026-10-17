@@ -1,9 +1,16 @@
 # Bounds predicate source research
 
+The canonical predicate now has [matching C](../../docs/UI_SCALE_BOUNDS_MATCHING_C.md).
+This directory retains the earlier nonmatching hypothesis. The preparation
+recipe below targets pre-promotion commit `30785a96e6dce770ab53d478bc8f9cc547514173`;
+its assembly-inclusion guard deliberately rejects the recovered current source.
+
+## Historical candidate
+
 [`bounds_candidate.c`](bounds_candidate.c) is an **unaccepted** C reconstruction
 of the original 108-byte `func_8004CD38`. Its complete executable differs from
 the canonical game at **19 byte positions**, all within this function. The
-matching build continues to use the original assembly.
+matching build used the original assembly at that checkpoint.
 
 The fragment uses the twelve-byte mixed-width bounds type from the existing
 header. It recovers signed coordinates from two unsigned bytes. The initial

@@ -1,9 +1,16 @@
 # Sprite-scale source recovery
 
+The canonical function now has [matching C](../../docs/UI_SCALE_BOUNDS_MATCHING_C.md).
+This directory retains the earlier nonmatching hypothesis. The preparation
+recipe below targets pre-promotion commit `30785a96e6dce770ab53d478bc8f9cc547514173`;
+its assembly-inclusion guard deliberately rejects the recovered current source.
+
+## Historical candidate
+
 [scale_candidate.c](scale_candidate.c) is an unaccepted, padding-free C
 candidate for the original 560-byte `func_8004441C`. Its complete executable
 still differs at twelve byte positions across four instructions. The game
-continues to use the original assembly.
+used the original assembly at that checkpoint.
 
 The [native scaling profile](../../docs/UI_SCALE.md) records signed ratios,
 clamping, input-overlap behavior and 203,472 original/candidate fixtures per
