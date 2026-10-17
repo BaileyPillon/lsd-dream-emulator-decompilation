@@ -1,0 +1,366 @@
+{
+  "schema_version": 1,
+  "status": "verified_two_matching_callback_input_layouts",
+  "recorded_utc": "2026-10-17T00:10:50.998212+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "336c83d21b86544b527c0a035445080f022737d1",
+  "before": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 8,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 6,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_functions_explained": 2,
+  "existing_C_bytes_explained": 432,
+  "unused_declared_bytes_removed": 28,
+  "functions": [
+    {
+      "function": "func_8003D2CC",
+      "unit": "src/menu/ui_screen.c",
+      "address": "0x8003d2cc",
+      "bytes": 228,
+      "sha256": "62f06407c19fe4e79c9f85d7a45b3927b3fbf6ecb133a7d3faf856e3b71789cf",
+      "frame_bytes": 48,
+      "frame_entry_offset": 0,
+      "stack_adjustments": [
+        [
+          0,
+          -48
+        ],
+        [
+          216,
+          48
+        ]
+      ],
+      "diagnostic_elf_sha256": "b667c83d35db31fdd0dd5e9698cae22ede2eb50aaabdb3598d173b759eca53d1",
+      "original_function_exact": true,
+      "complete_image_exact": true,
+      "unused_declared_bytes_removed": 4
+    },
+    {
+      "function": "func_8004ADD8",
+      "unit": "src/scene/render_context.c",
+      "address": "0x8004add8",
+      "bytes": 204,
+      "sha256": "329b3ffc95700335079f1d8f4a51e0883c0f05bb4e73a75e677efc257714adae",
+      "frame_bytes": 64,
+      "frame_entry_offset": 0,
+      "stack_adjustments": [
+        [
+          0,
+          -64
+        ],
+        [
+          192,
+          64
+        ]
+      ],
+      "diagnostic_elf_sha256": "e5553149782d837589f6ed543680907f269e786f2ad5477a610992a8faf776ce",
+      "original_function_exact": true,
+      "complete_image_exact": true,
+      "unused_declared_bytes_removed": 24
+    }
+  ],
+  "remaining_identified_storage_functions": [
+    "debug_file_driver_unk15",
+    "debug_file_driver_open",
+    "func_80044F90",
+    "func_80045060",
+    "func_80044D40",
+    "func_80044E64"
+  ],
+  "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+  "compiler_observations": [
+    {
+      "function": "func_8003D2CC",
+      "unit": "src/menu/ui_screen.c",
+      "variant": "baseline",
+      "source_sha256": "7092852a20d3452c87a4629c4817a7a6c4e6e7ffe6c102e88d17bc5d6de4d724",
+      "report_path": ".decomp-lab/text-callback-baseline-allocation-20261016-first/report.json",
+      "report_sha256": "3e185b2960051369fd813ec7863c90f1a6b2efd57d64c1536dcaec7be4937800",
+      "complete_assembly_equal": true,
+      "events": [
+        {
+          "allocator": "assign_stack_temp",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        },
+        {
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        }
+      ]
+    },
+    {
+      "function": "func_8003D2CC",
+      "unit": "src/menu/ui_screen.c",
+      "variant": "removed",
+      "source_sha256": "ea3fde22c424cf57821ca3befaf5a66f728cb59e60bc16b05e6f31532e102976",
+      "report_path": ".decomp-lab/text-callback-removed-allocation-20261016-first/report.json",
+      "report_sha256": "5990e6fed14250e70fe4854325b58102718bcc664223b3db76d8c2cbc0873f3c",
+      "complete_assembly_equal": true,
+      "events": []
+    },
+    {
+      "function": "func_8003D2CC",
+      "unit": "src/menu/ui_screen.c",
+      "variant": "matching",
+      "source_sha256": "6c1273e59727cb77cfd466207fd43a98eb320fe1d0536d816327096ed7310a87",
+      "report_path": ".decomp-lab/text-callback-matching-allocation-20261016-first/report.json",
+      "report_sha256": "253a88674d8fb5a83a9f1f2fb12f4eadccdbed5b3291d0d54dbb6e1338272db5",
+      "complete_assembly_equal": true,
+      "events": [
+        {
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 81,
+            "from_pseudo": -1,
+            "function": "func_8003D2CC",
+            "completed": true
+          }
+        }
+      ]
+    },
+    {
+      "function": "func_8004ADD8",
+      "unit": "src/scene/render_context.c",
+      "variant": "baseline",
+      "source_sha256": "d4f75c462cca87f5bd3e19502b43d489edc9e468d5b036bc0973e77dd3985af1",
+      "report_path": ".decomp-lab/render-callback-baseline-allocation-20261016-first/report.json",
+      "report_sha256": "886c80b57ea2053dc01305cae637b1b2d5ae113eb7717299c20c1f579269e37b",
+      "complete_assembly_equal": true,
+      "events": [
+        {
+          "allocator": "assign_stack_temp",
+          "size": 24,
+          "frame_offset_before": 0,
+          "frame_offset_after": 24,
+          "alter_reg_context": null
+        },
+        {
+          "allocator": "assign_stack_local",
+          "size": 24,
+          "frame_offset_before": 0,
+          "frame_offset_after": 24,
+          "alter_reg_context": null
+        }
+      ]
+    },
+    {
+      "function": "func_8004ADD8",
+      "unit": "src/scene/render_context.c",
+      "variant": "removed",
+      "source_sha256": "294a643a257b4cf4d773aad29dca2d84159a4a14c133ae8bd23c4c17b3c0cc93",
+      "report_path": ".decomp-lab/render-callback-removed-allocation-20261016-first/report.json",
+      "report_sha256": "f65f63965d156dec53e7aad68f9cd925c21312f9713642da8b1e39432ff3d7f8",
+      "complete_assembly_equal": true,
+      "events": []
+    },
+    {
+      "function": "func_8004ADD8",
+      "unit": "src/scene/render_context.c",
+      "variant": "matching",
+      "source_sha256": "0abbcb1618908c03201398f4f5b1e58687859043634b942866157cbe7bf669a6",
+      "report_path": ".decomp-lab/render-callback-matching-allocation-20261016-first/report.json",
+      "report_sha256": "da761feaee95ba24b1d54f387b5c067620ddaf4fd294363926a85986920f9e47",
+      "complete_assembly_equal": true,
+      "events": [
+        {
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 79,
+            "from_pseudo": -1,
+            "function": "func_8004ADD8",
+            "completed": true
+          }
+        },
+        {
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 8,
+          "frame_offset_after": 16,
+          "alter_reg_context": {
+            "pseudo": 80,
+            "from_pseudo": -1,
+            "function": "func_8004ADD8",
+            "completed": true
+          }
+        },
+        {
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 16,
+          "frame_offset_after": 24,
+          "alter_reg_context": {
+            "pseudo": 81,
+            "from_pseudo": -1,
+            "function": "func_8004ADD8",
+            "completed": true
+          }
+        }
+      ]
+    }
+  ],
+  "qualified_compiler_observations": 6,
+  "normal_and_instrumented_complete_assembly_equal": true,
+  "explicit_compiler_memory_rewrites": false,
+  "extra_inferior_functions_invoked": 0,
+  "ordinary_complete_image_equal": true,
+  "fresh_complete_build": {
+    "status": "verified_fresh_complete_callback_input_build",
+    "objects": 306,
+    "baseline_commit": "336c83d21b86544b527c0a035445080f022737d1",
+    "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "executable_bytes": 505856,
+    "source_units": [
+      "src/menu/ui_screen.c",
+      "src/scene/render_context.c"
+    ],
+    "source_hashes": {
+      "src/menu/ui_screen.c": "6c1273e59727cb77cfd466207fd43a98eb320fe1d0536d816327096ed7310a87",
+      "src/scene/render_context.c": "0abbcb1618908c03201398f4f5b1e58687859043634b942866157cbe7bf669a6"
+    },
+    "regular_and_fresh_complete_images_equal": true,
+    "protected_original_inputs_preserved": true,
+    "maspsx_revision": "e85ecb373828aabea96d7e6400974d4f91ce8c74",
+    "new_C_bytes": 0,
+    "whole_feature_acceptances": 0,
+    "goal_complete": false
+  },
+  "private_qualification": {
+    "path": ".decomp-lab/callback-input-recovery-20261016-second/qualification.json",
+    "sha256": "e0a460189057341509a13b4523a73169b9e91022d8c02b2075c60206f076035e"
+  },
+  "private_fresh_build": {
+    "path": ".decomp-lab/callback-input-recovery-20261016-second/fresh-build-report.json",
+    "sha256": "f00d41d6394cd3ea7f4f77590bf62237f33b6454131461c8cf428ac25fc8edce",
+    "producer_sha256": "d418f76bc6c7978691d06af164b9f407b45404118206f0a1024e34c267b32655"
+  },
+  "native_menu_regression": {
+    "private_report": ".decomp-lab/callback-input-menu-regression-20261016-first/report.json",
+    "report_sha256": "0fcccf4e95602ed8abf5a53cde300c87a76a1cda56bd93ff0f2bb13956c7912c",
+    "existing_histories_each_image": 864,
+    "images_checked": 2,
+    "dependency_output_stubs": 0,
+    "negative_controls": [
+      {
+        "kind": "layout_row_spacing",
+        "function": "func_8003D73C",
+        "function_offset": 456,
+        "expected_word": "0x2442000a",
+        "changed_word": "0x24420009",
+        "changed_instruction_executions": 2,
+        "scope": "Private original-function emulator memory; game inputs unchanged."
+      },
+      {
+        "kind": "accept_row_spacing",
+        "function": "func_8003DAD4",
+        "function_offset": 232,
+        "expected_word": "0x2442000a",
+        "changed_word": "0x24420009",
+        "changed_instruction_executions": 2,
+        "scope": "Private original-function emulator memory; game inputs unchanged."
+      },
+      {
+        "kind": "persist_wrong_selection",
+        "function": "func_8003DAD4",
+        "function_offset": 364,
+        "expected_word": "0xac540004",
+        "changed_word": "0xac400004",
+        "changed_instruction_executions": 1,
+        "scope": "Private original-function emulator memory; game inputs unchanged."
+      }
+    ],
+    "backend_identity": {
+      "package_version": "2.1.2",
+      "library_api": [
+        2,
+        1,
+        33620735
+      ],
+      "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+      "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+      "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+      "binding_source_count": 21,
+      "execution_hook": "UC_HOOK_CODE",
+      "fresh_cpu_per_host_call": true,
+      "all_emulated_ram_preserved_between_host_calls": true,
+      "uninterrupted_cpu_within_guest_cleanup_graph": true
+    },
+    "source_profile_functions": [
+      "func_8003D73C",
+      "func_8003DAD4"
+    ],
+    "changed_callback_functions_exercised": false,
+    "scope": "Regression of the existing menu layout/acceptance histories; no additional callback or natural-gameplay coverage."
+  },
+  "tooling_tests": [
+    {
+      "platform": "Windows",
+      "python_version": "Python 3.14.2",
+      "total_cases": 654,
+      "passed": 652,
+      "expected_skips": 2,
+      "private_log": ".decomp-lab/callback-input-tests-windows-20261016-first.log",
+      "log_sha256": "351b175d3986ed06d164620eb6fb0b8aa63f88540f0ab3ffccbebe1705fdc56e"
+    },
+    {
+      "platform": "WSL/Linux",
+      "python_version": "Python 3.13.5",
+      "total_cases": 654,
+      "passed": 652,
+      "expected_skips": 2,
+      "private_log": ".decomp-lab/callback-input-tests-wsl-20261016-first.log",
+      "log_sha256": "1ed49e993a0ca45871d25806d58af01fdb1891c2790e4a7381cebf014a1f5ef1"
+    }
+  ],
+  "public_files": {
+    "src/menu/ui_screen.c": "6c1273e59727cb77cfd466207fd43a98eb320fe1d0536d816327096ed7310a87",
+    "src/scene/render_context.c": "0abbcb1618908c03201398f4f5b1e58687859043634b942866157cbe7bf669a6",
+    "docs/TEXT_CALLBACK_STORAGE.md": "188e4e5bddf27375d333e1f2cb1a1baa0c448db7050aac7cd31ae9e1d0bcdabb"
+  },
+  "new_C_bytes": 0,
+  "new_original_fixture_inputs": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "whole_feature_acceptances": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "new_model_API_calls": 0,
+  "new_gameplay_runs": 0,
+  "Bevy_port_modified": false,
+  "goal_complete": false,
+  "source_hash_convention": "SHA-256 of exact executed local source bytes; both C units and new report/metadata are pinned to LF. Earlier transitive inputs keep their recorded local endings.",
+  "scope": "Two consumed callback-input reconstructions replace inherited unused storage while preserving all original instructions. The original author declarations are unknown; all complete-game and runtime gates remain in force."
+}

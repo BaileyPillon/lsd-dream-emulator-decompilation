@@ -11,6 +11,8 @@
 > acceptance counts are unchanged.
 > The later [input storage recovery](INPUT_STORAGE_RECOVERY.md) explains six
 > further frames, leaving eight identified explanations open.
+> The subsequent [text and render callback recovery](TEXT_CALLBACK_STORAGE.md)
+> explains two further frames, leaving six identified explanations open.
 > Measurements below retain their original snapshot and scope.
 
 The earlier [five-function audit](SOURCE_QUALITY.md) inspected selected
