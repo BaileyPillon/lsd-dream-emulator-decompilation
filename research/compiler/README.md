@@ -35,6 +35,9 @@ complete executable match and explained source ownership.
   and priorities; see [COMPILER_ALLOCATION.md](../../docs/COMPILER_ALLOCATION.md).
 - [trace_memory_stores.py](trace_memory_stores.py) observes memory-store deletion
   and address-equality returns; see [COMPILER_MEMORY_STORES.md](../../docs/COMPILER_MEMORY_STORES.md).
+- [trace_inline_calls.py](trace_inline_calls.py) records inline returns and the
+  argument mode/type gate. A standalone reproducer and its type-identity result
+  are documented in [COMPILER_INLINE_TYPES.md](../../docs/COMPILER_INLINE_TYPES.md).
 - [The temporary-slot lifetime tracer](../collision/trace_compiler_lifetimes.py)
   observes allocation, address-taking and reuse; see
   [COMPILER_LIFETIMES.md](../../docs/COMPILER_LIFETIMES.md).

@@ -1,5 +1,14 @@
 # Changelog
 
+## Compiler inline-call type diagnosis - 2026-10-17
+
+- Add an exact-compiler inline-call observer, helper filtering and a standalone
+  aggregate type-identity reproducer. Preserve normal/observed complete assembly.
+- Expose the typedef-storage rejection and qualify actual-tag/constructor
+  controls. Reject incomplete traces and absent selections with retained logs.
+- Keep original game inputs, matching C, NPC and feature acceptance unchanged;
+  returned-fraction and repaired value-source candidates remain nonmatching.
+
 ## Cold boot through the first dream - 2026-10-17
 
 - Extend paired cold-start capture to 30,000 frames and add an optional

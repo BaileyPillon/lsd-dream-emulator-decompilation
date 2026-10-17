@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "title": "Exact compiler inline-call argument diagnosis",
+  "baseline_commit": "167286be748c3d6cce2baf78a04fe1d2908320d6",
+  "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+  "before": {
+    "c_bytes": 196504,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 4,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 196504,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 4,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "diagnostic": {
+    "qualified_observation_pairs": 9,
+    "expected_selection_rejections": 2,
+    "complete_normal_and_observed_assembly_equal": true,
+    "target_helper_and_G0_G8_profiles_executed": true,
+    "actual_type_identity_gate_observed": true,
+    "other_inline_rejection_causes_classified": false,
+    "original_game_executed": false,
+    "model_API_calls": 0,
+    "compilations_per_observation_pair": 2
+  },
+  "compiler_runs": [
+    {
+      "case": "alias-storage",
+      "compiler_mode": "g8",
+      "exit_code": 0,
+      "selected_inline_calls": 1,
+      "not_inlined_calls": 1,
+      "complete_assembly_equal": true
+    },
+    {
+      "case": "actual-tag-storage",
+      "compiler_mode": "g8",
+      "exit_code": 0,
+      "selected_inline_calls": 1,
+      "not_inlined_calls": 0,
+      "complete_assembly_equal": true
+    },
+    {
+      "case": "direct-constructor",
+      "compiler_mode": "g8",
+      "exit_code": 0,
+      "selected_inline_calls": 1,
+      "not_inlined_calls": 0,
+      "complete_assembly_equal": true
+    },
+    {
+      "case": "all-selected-calls",
+      "compiler_mode": "g8",
+      "exit_code": 0,
+      "selected_inline_calls": 7,
+      "not_inlined_calls": 0,
+      "complete_assembly_equal": true
+    },
+    {
+      "case": "synthetic-g0",
+      "compiler_mode": "g0",
+      "exit_code": 0,
+      "selected_inline_calls": 1,
+      "not_inlined_calls": 0,
+      "complete_assembly_equal": true
+    },
+    {
+      "case": "synthetic-g8",
+      "compiler_mode": "g8",
+      "exit_code": 0,
+      "selected_inline_calls": 1,
+      "not_inlined_calls": 0,
+      "complete_assembly_equal": true
+    },
+    {
+      "case": "absent-function",
+      "compiler_mode": "g8",
+      "exit_code": 1,
+      "selected_inline_calls": null,
+      "not_inlined_calls": null,
+      "complete_assembly_equal": true
+    },
+    {
+      "case": "absent-helper",
+      "compiler_mode": "g8",
+      "exit_code": 1,
+      "selected_inline_calls": null,
+      "not_inlined_calls": null,
+      "complete_assembly_equal": true
+    }
+  ],
+  "standalone_reproducer": [
+    {
+      "function": "alias_storage_example",
+      "inline_calls": 1,
+      "not_inlined_calls": 1,
+      "report_sha256": "4a615e8ba8af5d192bd1fa706a8b5845e006eabff63aedf1dea3bb9da7868b5e"
+    },
+    {
+      "function": "tagged_storage_example",
+      "inline_calls": 1,
+      "not_inlined_calls": 0,
+      "report_sha256": "dbb7716497ca88700d5682e83e3790ab542ddfdf85f74dbbba4418ad509213e8"
+    },
+    {
+      "function": "constructor_example",
+      "inline_calls": 1,
+      "not_inlined_calls": 0,
+      "report_sha256": "fb3cb1f8374f3c375eff3c1a66ad74f37a3421984d68740dc35d22c61bbca1c9"
+    }
+  ],
+  "source_comparison_families": [
+    {
+      "family": "primitive-fraction-record-operands-20261017-first",
+      "attempts": 16,
+      "qualified_complete_functions": 10,
+      "excluded_outlined_helpers": 6,
+      "compile_failures": 0,
+      "exact_function_matches": 0,
+      "complete_unit_builds": 0,
+      "private_report_sha256": "0b0a35ab84407ea5c8b19f86ae1bfd4a829fe6319a71ffbd5b8ab09c747df7d9"
+    },
+    {
+      "family": "primitive-fraction-actual-types-20261017-first",
+      "attempts": 10,
+      "qualified_complete_functions": 10,
+      "excluded_outlined_helpers": 0,
+      "compile_failures": 0,
+      "exact_function_matches": 0,
+      "complete_unit_builds": 0,
+      "private_report_sha256": "d8493bee5d6989cb5cc626e186566b45a11d4ee4983c4b1982bb22e3df6ae81b"
+    },
+    {
+      "family": "primitive-returned-quotient-20261017-first",
+      "attempts": 16,
+      "qualified_complete_functions": 16,
+      "excluded_outlined_helpers": 0,
+      "compile_failures": 0,
+      "exact_function_matches": 0,
+      "complete_unit_builds": 0,
+      "private_report_sha256": "f0e77b1426798cda874ed0d012b4815e582e812e3f4686ef01c1d87e115e4251"
+    }
+  ],
+  "tooling_tests": [
+    {
+      "platform": "windows",
+      "python": "3.14.2",
+      "tests_run": 741,
+      "passed": 739,
+      "skipped": 2,
+      "failures": 0,
+      "errors": 0,
+      "private_report_sha256": "a723e9b5c34249575a1a0af4d55e5c521ad57f85d8411a2f1c4cb4a32f443cd6",
+      "log_sha256": "495e32d8dd42ed892c4d423f85c48fb870205869183b18a11b697739a845f21e"
+    },
+    {
+      "platform": "linux",
+      "python": "3.13.5",
+      "tests_run": 741,
+      "passed": 739,
+      "skipped": 2,
+      "failures": 0,
+      "errors": 0,
+      "private_report_sha256": "9ece7450c2c942c2e8d25ace8752d706220acaf0cd3ff7be666bf8a1755f4f2b",
+      "log_sha256": "b200189cafedd102e79a11bfae61fcc974e483a83008b9bf3ad2006a18895613"
+    }
+  ],
+  "new_regression_tests": 22,
+  "game_build": {
+    "objects_found": 306,
+    "objects_expected": 306,
+    "build_current": true,
+    "binary_match": "verified",
+    "canonical_executable_bytes": 505856,
+    "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "all_392_game_build_inputs_unchanged": true,
+    "new_game_compilations": 0,
+    "inherited_current_matching_build_revalidated": true
+  },
+  "public_source_sha256": {
+    "research/compiler/trace_inline_calls.py": "85eae0d43d93ab21e3284c4c6c58c1110bcf39ae6590da456d99d097bb8ad9a3",
+    "research/compiler/inline_calls_gdb.py": "0ff698406c83277127fb840efb423bfe68b52191e5db9aeb811279ef9ad7d2bb",
+    "research/compiler/examples/inline_type_identity.c": "2f488ff2df11cc4ee065bcb2158556737995816f746e0922c867e94c2e3925e2",
+    "tests/test_compiler_inline_calls.py": "1d26f7e0558998cb31548471a3c2269e7d593099fc0e1aaa46d9a4abe19de08f",
+    "docs/COMPILER_INLINE_TYPES.md": "89e9bbb30a55482c6d0723fd815eb8fab1fa2bcd9a67c45546e4bca32e6e8eab",
+    "research/compiler/README.md": "c2d3fe6671413b273c899314a69a35ec64ba0620c0edefdd7a58443625c5af12",
+    "README.md": "c20ea25e0187953c69591223795218fafc81cc318254a14cb6d30fd79b91e00b",
+    "CHANGELOG.md": "be156268f86b3bb862eab67ac698cfd52908f8a78a5afc43d08fe152c2a0c157",
+    "docs/features.json": "5869fbf5563e7da21e0708775f3527fb237c732d20beddf9e280b338b20dfdf0",
+    ".gitattributes": "d22f4c47aa2903d8ef51890002c754420778603f2b5179b10b6690234489f748"
+  },
+  "private_evidence": [
+    {
+      "path": ".decomp-lab/public-inline-trace-20261017-second/report.json",
+      "sha256": "d6badce80e6859bbe4b6923a6c20feec0082f553ec2cedddee4ffa7a15afdc19"
+    },
+    {
+      "path": ".decomp-lab/public-inline-example-20261017-first/report.json",
+      "sha256": "1e6348c3373d04a84108ea9b078f6276ec69f3cefd698020451cda86f019e4e5"
+    },
+    {
+      "path": ".decomp-lab/fraction-inline-identity-20261017-first/report.json",
+      "sha256": "ee5edb613c5728e1f30e8657a4578f814cd677287bbdf3cdea669473871b8fa7"
+    }
+  ],
+  "publication_producer_sha256": "46661c36abcfb1a699cc022ab94e8001996fed279f51800c0ad9531e2831bd2d",
+  "scope": "Compiler/candidate analysis only. Rejected value calls are repaired for source-study qualification, not promoted to the matching game. Existing feature, original NPC, developer-category and mod counts are unchanged. The standalone C reproducer is excluded from the game build. Earlier metadata, emulator-state comparison failures and the frozen project objective remain preserved.",
+  "metadata_clarification_producer_sha256": "4cab5bb3f9434cd342292cd3fd0921824ef1b54dee6c8b09e5d0e65fcfb4d901",
+  "line_endings_producer_sha256": "4da9bba38859bae379077fcf574a6174922d2b5bc28d4d59c1b0fd3b34fa0848"
+}

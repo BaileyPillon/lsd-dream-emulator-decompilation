@@ -253,6 +253,10 @@ The [register-allocation tracer](docs/COMPILER_ALLOCATION.md) records actual
 local/global compiler decisions, verifies priority comparisons and preserves
 complete assembly output. It extends candidate analysis without accepting a
 nonmatching source form or changing original gameplay.
+The [inline-call diagnostic](docs/COMPILER_INLINE_TYPES.md) identifies the
+bundled compiler's aggregate type-identity rejection and includes a standalone
+reproducer. Normal and observed complete assembly must agree; C recovery and
+gameplay acceptance counts remain unchanged.
 The [matching grid-window source](docs/GRID_MATCHING_C.md) now reproduces all
 660 original function bytes, including its 152-byte frame. The signed angle
 test, unsigned normalization and consumed inclusive-endpoint operand resolve
