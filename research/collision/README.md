@@ -2,8 +2,10 @@
 
 The [shared accessor declaration](../../docs/COLLISION_API.md#shared-bounds-accessor-declaration)
 keeps the canonical caller and getter compatible. The overlap research recipe
-uses the same primitive pointer interface and retains its previously tested
-796-byte function and 148-byte whole-image nonmatch.
+uses the same primitive pointer interface. The latest
+[control-flow study](../../docs/OVERLAP_CONTROL_FLOW.md) retains the 796-byte
+function and 176-byte frame with a **26-byte** whole-image nonmatch; the earlier
+148-byte candidate remains historical evidence.
 
 [`primitive_candidate.c`](primitive_candidate.c) reconstructs `func_8001F8B8`
 in C. It is **unaccepted**: the complete private executable differs from the
@@ -146,10 +148,13 @@ This diagnostic adds compiler evidence without accepting original gameplay.
 
 ## Unpadded overlap candidate
 
-The [overlap recovery](../../docs/OVERLAP_RECOVERY.md) publishes a two-point,
-twelve-byte candidate for `func_8001DDF4`. It removes the unexplained tail of an
-older private candidate and passes 6,912 paired native collision graphs. Its
-152-byte frame and 170 complete-image byte differences remain unaccepted.
+The current [overlap candidate](overlap_candidate.c) has a two-point,
+twelve-byte midpoint payload and passes 6,912 existing native collision graph
+pairs. Its original 176-byte frame is retained, but **26 executable bytes still
+differ**, so it remains outside the matching game. The original opcode and
+register choices agree; the remaining stack offsets are 24 bytes too early.
+The [control-flow report](../../docs/OVERLAP_CONTROL_FLOW.md) records source
+attribution, compiler observations, executed mismatch coverage and limits.
 
 Use `prepare_overlap_candidate.py` to move the existing point/bounds declarations
 into a private complete translation unit. `compare_overlap_candidate.py` accepts
@@ -157,6 +162,9 @@ only a complete image that differs within the original 796-byte overlap span.
 It compares full caller buffers, ABI state and ordered OP/SQR/leading-bit results,
 with an executed height-boundary fault. The canonical game still uses assembly.
 
-Twenty-seven source forms and actual compiler allocation observations retain
-their negative matching results. Natural geometry and timing acceptance remain
-open; no source, original feature or NPC count increases.
+The earlier [overlap recovery](../../docs/OVERLAP_RECOVERY.md) and
+[result-lifetime study](../../docs/OVERLAP_RESULT_LIFETIMES.md) retain their
+170-byte and 148-byte candidates as historical evidence. Thirty-seven further
+qualified compiler observations still find no complete match. Natural geometry
+and timing acceptance remain open; no C byte, original feature or NPC count
+increases.

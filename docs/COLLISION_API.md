@@ -110,9 +110,11 @@ now produces a conflicting-type error. This target-compiler control protects
 the source contract; it changes no native instructions or recovered C count.
 
 The unaccepted overlap fragment also uses the canonical six-argument primitive
-pointer declaration. Its current complete candidate image is byte-identical
-to the earlier tested 148-byte nonmatch, and its 796-byte function remains
-unaccepted. [source-bounds-abi-checks.json](source-bounds-abi-checks.json) pins
+pointer declaration. At this interface checkpoint its complete candidate image
+was byte-identical to the earlier tested 148-byte nonmatch, and its 796-byte
+function remained unaccepted. The later [control-flow study](OVERLAP_CONTROL_FLOW.md)
+retains that interface and improves the source candidate to 26 differing bytes.
+[source-bounds-abi-checks.json](source-bounds-abi-checks.json) pins
 the compiler control, both builds and source/code identities. Earlier evidence
 metadata remains frozen; no new native input domain or runtime acceptance is
 counted.
