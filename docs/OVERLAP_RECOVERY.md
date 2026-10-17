@@ -1,9 +1,10 @@
 # Overlap source recovery
 
 > Historical checkpoint: the later
-> [result-lifetime study](OVERLAP_RESULT_LIFETIMES.md) reduces the current
-> candidate to 148 differing bytes and a 176-byte frame. The measurements below
-> retain this earlier 170-byte snapshot and its separate evidence.
+> [control-flow study](OVERLAP_CONTROL_FLOW.md) reduces the current candidate
+> to 26 differing bytes and a 176-byte frame. The preparation recipe now uses
+> that candidate. The measurements below retain this earlier 170-byte snapshot;
+> the intermediate [148-byte study](OVERLAP_RESULT_LIFETIMES.md) is also retained.
 
 The unaccepted C candidate for `func_8001DDF4` uses two six-byte midpoint
 objects. It agrees with the original on 6,912 paired collision graphs, including

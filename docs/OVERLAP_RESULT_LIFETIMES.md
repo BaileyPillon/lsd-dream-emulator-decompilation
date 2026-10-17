@@ -1,10 +1,14 @@
 # Overlap result lifetimes
 
+The later [control-flow study](OVERLAP_CONTROL_FLOW.md) supersedes this
+148-byte candidate with a 26-byte nonmatch. This page retains the earlier
+source, compiler and native evidence at its original checkpoint.
+
 The [shared bounds interface supplement](COLLISION_API.md#shared-bounds-accessor-declaration)
-updates the current research fragment's primitive pointer declaration and
-argument casts. Its complete linked function and candidate image remain
-byte-identical to the 148-byte nonmatch recorded here. The source hashes below
-identify the earlier text snapshot; the supplement pins the current source.
+updated the research fragment's primitive pointer declaration and
+argument casts at that checkpoint. Its complete linked function and candidate
+image remained byte-identical to the 148-byte nonmatch recorded here. The source hashes below
+identify the earlier text snapshot; the supplement pins that source revision.
 
 The unaccepted C candidate for `func_8001DDF4` now differs from the complete
 original executable in **148 bytes**, improving on the previous 170-byte

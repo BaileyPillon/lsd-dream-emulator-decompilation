@@ -1,0 +1,612 @@
+{
+  "status": "verified_closer_nonmatching_overlap_reconstruction",
+  "recorded_utc": "2026-10-17T17:03:38.895891+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "c39c2395e2a078c90ce98511b163563aa371f088",
+  "before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 39,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 39,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_candidate_before": {
+    "function_bytes": 796,
+    "frame_bytes": 176,
+    "differing_executable_bytes": 148
+  },
+  "source_candidate_after": {
+    "function_bytes": 796,
+    "frame_bytes": 176,
+    "differing_executable_bytes": 26
+  },
+  "research_fragment": "research/collision/overlap_candidate.c",
+  "research_fragment_sha256": "91812b2b2f3d572ebb42a9fc1906b655fb81795b8359c66e90c7e333bfb771cc",
+  "public_preparation_recipe": "research/collision/prepare_overlap_candidate.py",
+  "public_preparation_recipe_sha256": "826df97f3099e51061160d040f97c5e3bec3f723147cb25f5cdb34685b5962d3",
+  "expected_complete_image_gate_exit_code": 1,
+  "complete_image_exact_match": false,
+  "complete_executable_bytes": 505856,
+  "complete_executable_length_difference": 0,
+  "all_mismatches_are_original_opcode_register_fields_with_changed_SP_offsets": true,
+  "changed_instructions": [
+    {
+      "offset": 24,
+      "original_SP_offset": 88,
+      "candidate_SP_offset": 64
+    },
+    {
+      "offset": 44,
+      "original_SP_offset": 64,
+      "candidate_SP_offset": 40
+    },
+    {
+      "offset": 84,
+      "original_SP_offset": 72,
+      "candidate_SP_offset": 48
+    },
+    {
+      "offset": 92,
+      "original_SP_offset": 80,
+      "candidate_SP_offset": 56
+    },
+    {
+      "offset": 96,
+      "original_SP_offset": 88,
+      "candidate_SP_offset": 64
+    },
+    {
+      "offset": 228,
+      "original_SP_offset": 96,
+      "candidate_SP_offset": 72
+    },
+    {
+      "offset": 276,
+      "original_SP_offset": 64,
+      "candidate_SP_offset": 40
+    },
+    {
+      "offset": 280,
+      "original_SP_offset": 80,
+      "candidate_SP_offset": 56
+    },
+    {
+      "offset": 304,
+      "original_SP_offset": 68,
+      "candidate_SP_offset": 44
+    },
+    {
+      "offset": 332,
+      "original_SP_offset": 68,
+      "candidate_SP_offset": 44
+    },
+    {
+      "offset": 368,
+      "original_SP_offset": 96,
+      "candidate_SP_offset": 72
+    },
+    {
+      "offset": 404,
+      "original_SP_offset": 72,
+      "candidate_SP_offset": 48
+    },
+    {
+      "offset": 424,
+      "original_SP_offset": 72,
+      "candidate_SP_offset": 48
+    },
+    {
+      "offset": 436,
+      "original_SP_offset": 88,
+      "candidate_SP_offset": 64
+    },
+    {
+      "offset": 452,
+      "original_SP_offset": 104,
+      "candidate_SP_offset": 80
+    },
+    {
+      "offset": 456,
+      "original_SP_offset": 96,
+      "candidate_SP_offset": 72
+    },
+    {
+      "offset": 480,
+      "original_SP_offset": 88,
+      "candidate_SP_offset": 64
+    },
+    {
+      "offset": 496,
+      "original_SP_offset": 104,
+      "candidate_SP_offset": 80
+    },
+    {
+      "offset": 576,
+      "original_SP_offset": 64,
+      "candidate_SP_offset": 40
+    },
+    {
+      "offset": 580,
+      "original_SP_offset": 80,
+      "candidate_SP_offset": 56
+    },
+    {
+      "offset": 600,
+      "original_SP_offset": 68,
+      "candidate_SP_offset": 44
+    },
+    {
+      "offset": 612,
+      "original_SP_offset": 68,
+      "candidate_SP_offset": 44
+    },
+    {
+      "offset": 648,
+      "original_SP_offset": 72,
+      "candidate_SP_offset": 48
+    },
+    {
+      "offset": 684,
+      "original_SP_offset": 104,
+      "candidate_SP_offset": 80
+    },
+    {
+      "offset": 704,
+      "original_SP_offset": 96,
+      "candidate_SP_offset": 72
+    },
+    {
+      "offset": 724,
+      "original_SP_offset": 72,
+      "candidate_SP_offset": 48
+    }
+  ],
+  "diagnostic_is_not_a_comparison_mask": true,
+  "original_nearest_SP_offset": "0x40",
+  "candidate_nearest_SP_offset": "0x28",
+  "original_height_SP_offset": "0x44",
+  "candidate_height_SP_offset": "0x2c",
+  "source_attribution": {
+    "repository": "brian-oblivion/lsddecomp",
+    "commit": "90a398e4f429b4371be05648605fc198b9efb395",
+    "source": {
+      "path": "src/graphics/scene_node.c",
+      "status": "read_commit_pinned_blob",
+      "bytes": 42911,
+      "git_blob_sha1": "205f4fa15a6e618fb270428cd73f369e23a003f7",
+      "sha256": "977b3d966aebc44e33b2757a00d531a6c12aab01e053c3df8fa60d3ae12c2d9c",
+      "target_identifier_mentions": {
+        "func_8001DDF4": 0,
+        "func_8001F8B8": 0,
+        "func_8004441C": 0,
+        "func_8004CD38": 0
+      },
+      "url": "https://github.com/brian-oblivion/lsddecomp/blob/90a398e4f429b4371be05648605fc198b9efb395/src/graphics/scene_node.c"
+    },
+    "license": "CC0-1.0",
+    "license_url": "https://github.com/brian-oblivion/lsddecomp/blob/90a398e4f429b4371be05648605fc198b9efb395/LICENSE",
+    "removed_unused_array_bytes": 24,
+    "external_setup_or_assembler_patches_executed": false
+  },
+  "qualified_compiler_observations": 37,
+  "distinct_source_texts": 28,
+  "distinct_function_images": 21,
+  "compiler_studies": [
+    {
+      "name": "external-primitive-no-unused-20261017-first",
+      "qualified_compiler_observations": 5,
+      "report_sha256": "2215d68248a756252e4834594238c110aad4aeda736a9baba28861bda58a8279",
+      "best_differing_bytes": 22
+    },
+    {
+      "name": "external-overlap-no-unused-20261017-first",
+      "qualified_compiler_observations": 3,
+      "report_sha256": "6ca81b208fcbc6c205e6e3e40c7e70c792cdf9f9e94ab81d891d6589b1a773de",
+      "best_differing_bytes": 48
+    },
+    {
+      "name": "external-overlap-value-lifetimes-20261017-first",
+      "qualified_compiler_observations": 5,
+      "report_sha256": "94e547a4c7e4c0186d86df873a65e471c0587d54562086c2dd34f03428c540d3",
+      "best_differing_bytes": 26
+    },
+    {
+      "name": "overlap-declared-lookup-records-20261017-first",
+      "qualified_compiler_observations": 6,
+      "report_sha256": "aa97dc37b8b5cef3fa387a2b4b881e9aa2329d7f9e73507e81474cf4bd611b80",
+      "best_differing_bytes": 26
+    },
+    {
+      "name": "overlap-output-lookup-records-20261017-first",
+      "qualified_compiler_observations": 8,
+      "report_sha256": "0de2dce13bc68de61a6c2f14a8f3e3e3cc6c168adc4c801411eb958a8d50f00d",
+      "best_differing_bytes": 26
+    },
+    {
+      "name": "overlap-attributed-source-20261017-first",
+      "qualified_compiler_observations": 1,
+      "report_sha256": "2dfb332682ff4a28f415167641625f3065a8a6aef05c64760de4dc4c52771119",
+      "best_differing_bytes": 26
+    },
+    {
+      "name": "overlap-face-argument-records-20261017-first",
+      "qualified_compiler_observations": 6,
+      "report_sha256": "25d9f02fd6527051b1f13c2a48d5205956d4f5e1dfcf71aaf52fe6ab57f0466e",
+      "best_differing_bytes": 26
+    },
+    {
+      "name": "overlap-readonly-argument-initializers-20261017-first",
+      "qualified_compiler_observations": 3,
+      "report_sha256": "4ec5b7d2d6471df7bba737fd7a3b9af4a76ba6c413be9e789730bc989dddb7cb",
+      "best_differing_bytes": 26
+    }
+  ],
+  "independent_audit_sha256": "a1488b8de6ba801e1d3d8934e338dfcb1bc40817e008cb9c5a8c56d64d255981",
+  "actual_compiler_traces": [
+    {
+      "tag": "direct",
+      "report_sha256": "e24ef60f1fdc743ecb6b52871744cbb4ee0d72c1a8bc65379a6bc7b19ec72641",
+      "allocation_events": 106,
+      "complete_assembly_equal": true,
+      "reload_requests": [
+        {
+          "size": 4,
+          "frame_offset_before": 24,
+          "frame_offset_after": 32,
+          "alter_reg_context": {
+            "pseudo": 72,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 32,
+          "frame_offset_after": 40,
+          "alter_reg_context": {
+            "pseudo": 73,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 40,
+          "frame_offset_after": 48,
+          "alter_reg_context": {
+            "pseudo": 74,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 48,
+          "frame_offset_after": 56,
+          "alter_reg_context": {
+            "pseudo": 77,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 56,
+          "frame_offset_after": 64,
+          "alter_reg_context": {
+            "pseudo": 81,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 64,
+          "frame_offset_after": 72,
+          "alter_reg_context": {
+            "pseudo": 161,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 72,
+          "frame_offset_after": 80,
+          "alter_reg_context": {
+            "pseudo": 162,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 80,
+          "frame_offset_after": 88,
+          "alter_reg_context": {
+            "pseudo": 163,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        }
+      ]
+    },
+    {
+      "tag": "lookups",
+      "report_sha256": "fcc83c8d24db61423f02d4d7d718553fbf07fe4cee7328e9a513e0a9f50354ec",
+      "allocation_events": 109,
+      "complete_assembly_equal": true,
+      "reload_requests": [
+        {
+          "size": 4,
+          "frame_offset_before": 24,
+          "frame_offset_after": 32,
+          "alter_reg_context": {
+            "pseudo": 72,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 32,
+          "frame_offset_after": 40,
+          "alter_reg_context": {
+            "pseudo": 73,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 40,
+          "frame_offset_after": 48,
+          "alter_reg_context": {
+            "pseudo": 75,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 48,
+          "frame_offset_after": 56,
+          "alter_reg_context": {
+            "pseudo": 78,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 56,
+          "frame_offset_after": 64,
+          "alter_reg_context": {
+            "pseudo": 82,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 64,
+          "frame_offset_after": 72,
+          "alter_reg_context": {
+            "pseudo": 115,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 72,
+          "frame_offset_after": 80,
+          "alter_reg_context": {
+            "pseudo": 119,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 80,
+          "frame_offset_after": 88,
+          "alter_reg_context": {
+            "pseudo": 143,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 88,
+          "frame_offset_after": 96,
+          "alter_reg_context": {
+            "pseudo": 171,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 96,
+          "frame_offset_after": 104,
+          "alter_reg_context": {
+            "pseudo": 172,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        },
+        {
+          "size": 4,
+          "frame_offset_before": 104,
+          "frame_offset_after": 112,
+          "alter_reg_context": {
+            "pseudo": 173,
+            "from_pseudo": -1,
+            "function": "func_8001DDF4",
+            "completed": true
+          }
+        }
+      ]
+    }
+  ],
+  "trace_compiler_executions": 4,
+  "compiler_configuration_sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+  "compiler_flags_changed": false,
+  "unresolved_layout": "The additional lookup-view reload slots occur late; the original earlier 24-byte region before nearest/height remains unexplained.",
+  "paired_native_inputs": 6912,
+  "distinct_final_native_inputs": 5760,
+  "repeated_final_native_inputs": 1152,
+  "native_report_sha256": "e6ceb010ab63627451857c84e5b4a363175169618a10620be38b1cd48f8c905e",
+  "native_original_functions_entered": 15,
+  "positive_native_GTE_commands": 22032,
+  "positive_native_leading_requests": 12960,
+  "native_pair_outputs_sha256": "76cae3d17791cdd1684a232a7f9ab5b3cb762f35730814a916e776431e1f7a53",
+  "native_ordered_events_sha256": "58022004567f0b29e84ac299efb998d5f4637abed2cdc6c6238c33d3a572d737",
+  "executed_height_boundary_controls": [
+    {
+      "kind": "wrong_candidate_height_boundary",
+      "function": "func_8001DDF4",
+      "function_offsets": [
+        340,
+        620
+      ],
+      "expected_word": "0x28420201",
+      "changed_word": "0x28420200",
+      "changed_instruction_executions": {
+        "340": 1
+      },
+      "fixture": {
+        "polygons": [
+          [
+            [
+              -1024,
+              -512,
+              0
+            ],
+            [
+              1024,
+              -512,
+              0
+            ],
+            [
+              -1024,
+              1536,
+              0
+            ]
+          ]
+        ],
+        "query_bounds": [
+          [
+            -128,
+            0,
+            -1024
+          ],
+          [
+            128,
+            0,
+            1024
+          ]
+        ],
+        "mode": 1,
+        "count": 1,
+        "flip": 0,
+        "face": 0,
+        "amount": 0,
+        "segment": 0
+      },
+      "scope": "Private compiled-candidate emulator memory only."
+    }
+  ],
+  "changed_instruction_witness_pairs": 925,
+  "changed_instruction_execution_counts": {
+    "24": 925,
+    "44": 925,
+    "84": 925,
+    "92": 925,
+    "96": 925,
+    "228": 925,
+    "424": 733,
+    "436": 733,
+    "452": 733,
+    "456": 733,
+    "724": 733,
+    "276": 661,
+    "280": 661,
+    "304": 661,
+    "368": 661,
+    "480": 373,
+    "496": 373,
+    "576": 746,
+    "684": 373,
+    "704": 373,
+    "404": 192,
+    "332": 145,
+    "580": 74,
+    "600": 74,
+    "612": 74,
+    "648": 2
+  },
+  "witness_case_graphs_sha256": "fb97eeb43473a60fef8b43af9d947e9d4792a21bc71f1ac51a517529283bdafc",
+  "witness_native_GTE_commands": 3066,
+  "witness_native_leading_requests": 1596,
+  "witness_scope": "Additional executions from the existing domain to establish mismatched-instruction coverage; not new original input coverage.",
+  "native_bridge_sha256": "4daac5674808410751b9b776659c832f2cd742582faf529154f214a3695d88c3",
+  "native_compressed_core_sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126",
+  "all_392_game_inputs_preserved": true,
+  "canonical_complete_image_preserved": true,
+  "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "source_promoted": false,
+  "new_C_bytes": 0,
+  "new_original_fixture_domain": 0,
+  "new_NPC_callback_profiles": 0,
+  "new_original_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_model_API_calls": 0,
+  "original_behavior_modified": false,
+  "Bevy_port_modified": false,
+  "user_game_controlled": false,
+  "goal_complete": false,
+  "scope": "A closer attributed research reconstruction, failed strict matching gate, actual compiler allocation observations and bounded native replay. The canonical function remains assembly; no new original input domain, natural scene coverage, source acceptance or whole-feature parity is claimed.",
+  "producer_sha256": "8ce668b73afc33467c01b83883a1affe5bd1f16343743db73f8bd5cf28a40c50"
+}

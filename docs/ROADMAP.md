@@ -128,6 +128,11 @@ original 176-byte frame and reduces the complete-image difference to 148 bytes.
 Its additional storage comes from late reloads, leaving the earlier original
 region unexplained. The same bounded native graph domain passes; exact source
 and whole-feature acceptance remain open.
+The latest [control-flow study](OVERLAP_CONTROL_FLOW.md) reduces the difference
+to 26 stack-displacement bytes with the original opcode/register sequence and
+176-byte frame. All 6,912 existing pairs pass. Recover the earlier 24-byte
+region before the address-taken scalars; extra late reloads, mutable argument
+materialization and unused padding do not establish the original layout.
 
 The initial seven also remained after the [save-title recovery](SAVE_LABEL.md). That
 additional game-support helper was discovered in a segment classified as SDK;

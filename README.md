@@ -144,9 +144,10 @@ adds 668 matching C bytes from reviewed, attributed source. Both functions and
 the combined ordinary/fresh builds match the original executable, leaving two
 game assembly functions. The original compiler and assembler are unchanged.
 C-byte coverage does not certify original source quality or whole-game parity.
-The [overlap result-lifetime study](docs/OVERLAP_RESULT_LIFETIMES.md) reduces
-that unaccepted candidate's complete-image difference to 148 bytes and checks
-it through native collision/GTE dependencies. Its assembly fallback remains.
+The [overlap control-flow study](docs/OVERLAP_CONTROL_FLOW.md) reduces that
+unaccepted candidate's complete-image difference from 148 to 26 bytes. All
+remaining differences are stack displacements; 6,912 existing native graph
+pairs pass. Its assembly fallback and C-recovery counts remain unchanged.
 The [render query record cleanup](docs/RENDER_QUERY_RECORD.md) removes a
 separately identified redundant buffer tail. Actual compiler traces explain
 its allocation, and the complete executable remains identical; the counts
@@ -171,11 +172,11 @@ scanner and real coordinate conversion in 4,116 fixtures per image. The earlier
 complete image's differences from twenty to six bytes. The matching lookup
 recovery now resolves the frame, store and call-register differences; natural
 spawning, lifetimes and whole-feature acceptance remain open.
-The [overlap source recovery](docs/OVERLAP_RECOVERY.md) checks a two-point,
+The earlier [overlap source recovery](docs/OVERLAP_RECOVERY.md) checks a two-point,
 twelve-byte collision candidate in 6,912 native graph pairs with matching caller
-buffers and ordered GTE results. Its frame and 170 code differences still need
-recovery; the canonical game retains assembly and the completion counts remain
-unchanged.
+buffers and ordered GTE results. Its 170-byte nonmatch remains historical
+evidence; the later control-flow study above supersedes that candidate. The
+canonical game retains assembly and whole-feature acceptance remains open.
 The [save-title recovery](docs/SAVE_LABEL.md) documents an earlier matching C
 promotion, its native checks and the correction to SDK/game classification.
 The [SDK and sound API audit](docs/SDK_SIGNATURE_AUDIT.md) documents corrected
@@ -298,10 +299,10 @@ glyphs, graphics effects, parent lists and the allocator. Two callback declarati
 corrections preserve standard and fresh clean builds; both menu callers still
 need matching C and natural screen/input/render evidence.
 The [sprite scaling audit](docs/UI_SCALE.md) checks 203,472 native cases,
-including overlapping inputs and incoming-register quirks. Its full C
-candidate still differs in 12 executable bytes and remains unaccepted. The
-[public source recipe](research/ui_scale/README.md) reproduces that comparison
-and the actual reload allocations behind its stack frame.
+including overlapping inputs and incoming-register quirks. Its earlier
+12-byte nonmatch and reload observations remain historical research. The later
+[matching C recovery](docs/UI_SCALE_BOUNDS_MATCHING_C.md) replaces that assembly
+function and the bounds predicate while preserving the complete executable.
 The [level-model loader audit](docs/LBD_PIPELINE.md) checks 418 local level
 files through native construction and destruction, including repeated loads.
 The later [matching loader recovery](docs/LBD_RECOVERY.md) promotes its 600-byte
