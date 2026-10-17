@@ -17,6 +17,11 @@ title menu into a playable dream, with recorded turning, walking and audio.
 The published-tool repeat matches all recorded outputs, including save states;
 an earlier pair's emulator-label differences remain documented separately.
 
+The [first-dream replay](docs/COLD_DREAM_CYCLE.md) now extends that route
+through the natural time limit, dream chart and visible `Day 002` menu,
+with 30,000 frames per disc and matching complete PCM. Its eight differing
+emulator-label bytes per state remain visible in the strict result.
+
 The verified local build reproduces the original Japanese executable byte for
 byte. **Full C recovery and independently reviewed gameplay coverage are still
 in progress.** The remaining assembly is regenerated from your own executable.

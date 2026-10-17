@@ -11,6 +11,12 @@ sequentially. `tools/compare_cold_start.py` requires the observed path, native
 movement changes and full checkpoint consistency. It retains raw state
 differences and returns a failure result when state members disagree.
 
+Both commands accept `--frames` from 6000 through 30000 and default to 6000.
+The comparator also accepts `--require-day-advance`, requiring a native
+one-day change and a full checkpoint after it. The
+[first-dream profile](../../docs/COLD_DREAM_CYCLE.md) records the executed
+30,000-frame history and its unchanged observer bytes.
+
 Field provenance is the canonical symbol table and these recovered interfaces:
 
 - `src/game/game_flow.h`: global flow, graphics and dream ownership.

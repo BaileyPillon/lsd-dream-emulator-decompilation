@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "status": "recorded_matching_game_outputs_with_unmasked_emulator_label_differences",
+  "recorded_utc": "2026-10-17T08:36:04.664504+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "4cb452003496613370e8e6b7ab5d26f53ea96a12",
+  "canonical_executable_bytes": 505856,
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "preserved_game_build_inputs": 392,
+  "changed_game_build_inputs": 0,
+  "source_counts_before": {
+    "c_bytes": 196504,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 4,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 196504,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 4,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "executed_source_sha256": {
+    "tools/capture_cold_start.py": "c884deaafc929431d9fa2d13409d54cd2b708f0e7077f0c33198ce820dd7ade9",
+    "tools/compare_cold_start.py": "e3711b19ba14f7cfe1df6f775c8d98134e5e850f8ea92090b9c3f81a341f10c5",
+    "tests/test_cold_start.py": "6ce33474aeedd204ee55ae4c4cb73cb573fa5e01d33253ad13168b48b6871940",
+    "research/cold_start/observe.lua": "ec61b5804771bc54ad0859195107d89371c86ac10a72b979fe7376298a394ffe"
+  },
+  "comparison": {
+    "strict_exit_code": 2,
+    "frames_advanced_per_disc": 30000,
+    "observations_per_disc": 30001,
+    "submitted_controller_vectors_per_disc": 30000,
+    "controls_per_vector": 26,
+    "boolean_controls": 21,
+    "numeric_controls": 5,
+    "complete_GPU_hashes_per_disc": 30001,
+    "checkpoint_pairs": 61,
+    "full_MainRAM_bytes_per_checkpoint": 2097152,
+    "full_GPU_bytes_per_checkpoint": 1048576,
+    "every_state_member_payload_equal": false,
+    "complete_WAV_bytes_equal": true,
+    "state_bytes_masked": 0,
+    "first_observed_core_frame": 1
+  },
+  "state_diagnosis": {
+    "checkpoint_pairs": 61,
+    "different_decoded_bytes_per_pair": 8,
+    "changed_guest_address_first": "0x36f0080fc10",
+    "changed_guest_address_last": "0x36f0080fc17",
+    "field": "Unused bytes 16 through 23 of the native CD media-type short string",
+    "distinct_captured_string_objects_per_disc": [
+      1,
+      1
+    ],
+    "actual_emulator_native_accessor_calls": 12,
+    "original_PS1_routines_added": 0,
+    "raw_differences_retained": true,
+    "strict_full_state_parity": false,
+    "earlier_allocator_contents_and_all_other_consumers_verified": false
+  },
+  "audio": {
+    "channels": 2,
+    "sample_rate": 44100,
+    "sample_width": 2,
+    "sample_frames": 22113556,
+    "nonzero_channel_samples": 39026855,
+    "pcm_sha256": "7f2f66f950668e4f44e5b1334fba977a0eecae374d96c2730c51446275c14bb7"
+  },
+  "native_observations": {
+    "first_unlocked_dream": 2689,
+    "observed_time_limit": 3600,
+    "timer_resets": [
+      {
+        "relative_frame": 23706,
+        "before": 3601,
+        "after": 0
+      }
+    ],
+    "first_later_input_lock": 23705,
+    "post_day_checkpoint_bindings": {
+      "checkpoint_observations": 15,
+      "first_relative_frame": 23706,
+      "last_relative_frame": 30000,
+      "every_view_transform_zero": true,
+      "retained_player_transform": "0x80091e5c",
+      "full_observations_pinned_in": "native-timing-and-chart-fields.json"
+    },
+    "day_progression": {
+      "initial_stored_day": 0,
+      "last_observed_stored_day": 1,
+      "owner": 595248,
+      "changes": [
+        {
+          "relative_frame": 23706,
+          "before": 0,
+          "after": 1
+        }
+      ]
+    },
+    "owner_qualified_chart_checkpoint_fields": [
+      {
+        "relative_frame": 24000,
+        "physical_object": "0x91f70",
+        "tick": 43,
+        "timer": 400,
+        "mode": 1,
+        "state": 5
+      },
+      {
+        "relative_frame": 30000,
+        "physical_object": "0x91f70",
+        "tick": 86,
+        "timer": 400,
+        "mode": 1,
+        "state": 5
+      }
+    ]
+  },
+  "visual_observations": [
+    {
+      "relative_frame": 24000,
+      "observation": "Dream chart",
+      "original_inspected_directly": true,
+      "paired_PNG_bytes_equal": true,
+      "PNG_sha256": "28f973956c193568b46f8e231557615ba260c1526f0369adfa0309b8d643728e"
+    },
+    {
+      "relative_frame": 24600,
+      "observation": "Black transition frame",
+      "original_inspected_directly": true,
+      "paired_PNG_bytes_equal": true,
+      "PNG_sha256": "8134e29ad3c6cd51ef9096fbbe2e4bc8eab081cd31e07eca659e96b3afdb6416"
+    },
+    {
+      "relative_frame": 25200,
+      "observation": "Main menu visibly showing Day 002",
+      "original_inspected_directly": true,
+      "paired_PNG_bytes_equal": true,
+      "PNG_sha256": "afc72e7e567e2f2af06e209b9b6500674670c2d059cd35c6e7c319ccaa8d02b7"
+    },
+    {
+      "relative_frame": 27000,
+      "observation": "Subsequent title movie imagery",
+      "original_inspected_directly": true,
+      "paired_PNG_bytes_equal": true,
+      "PNG_sha256": "55ea76462ae378d0d1f90c56fc88fe632ef80d3a40e7f247787b83b2794a30e8"
+    }
+  ],
+  "default_6000_frame_profile": {
+    "strict_exit_code": 0,
+    "next_day_not_observed": true,
+    "require_day_advance_control_exit_code": 2,
+    "rejected_before_output_report_created": true
+  },
+  "tests": [
+    {
+      "platform": "windows",
+      "python": "3.14.2",
+      "tests_run": 719,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2
+    },
+    {
+      "platform": "wsl",
+      "python": "3.13.5",
+      "tests_run": 719,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2
+    }
+  ],
+  "build": {
+    "current_objects": 306,
+    "binary_match": "verified",
+    "new_fresh_build_run": false,
+    "earlier_fresh_build_game_inputs_preserved": true,
+    "build_input_files": 392,
+    "sorted_input_manifest_sha256": "bd02585656593df7127cc2c38b105fbd199c8869d8f3e0db14c44cab63a95d90"
+  },
+  "private_reports": {
+    "comparison.json": "87eee7830d2e5bfef1ea25e346671e55331b15d84dcacb19f31cf3715d2a48d2",
+    "native-timing-and-chart-fields.json": "811d49b447cf03a1a22b018d9bb624be66be906e0ce0f68a4c1a39bbb3f11f62",
+    "compatibility-controls.json": "bbb7f103ffcdf3f27d597640cfe999864b67bb9a5fef8ff0b908959523736df4",
+    "default-6000.json": "85dae2a340b6b97ba8ea84fc62f52af6d41c5d436bc5cd001e9ca407432fa068",
+    "windows-tests.json": "2ffa404b432605b54d95e9be319953638135bfb9d3184003123f718c6f856901",
+    "wsl-tests.json": "89b07d052ea0812a2d86113291d8eb28d00b1906338120476fdd96b052cff86f",
+    "matching-progress.json": "b4e7dec4400f5123f7bb1408f9b9432ef4f7a0835b510675dc15a4e76f2a78e5",
+    "all-state-diagnosis.json": "3d7e7c168e09f3d220d4a508b954d3203099ff5cfb3f54e867a7791897d050dd",
+    "state-first-native-accessors.json": "1cd696f58e957066906abe3d4b7d1a71169d12c0860f8a32051fdb4712797904",
+    "strict-recheck.json": "e21c1902ec0d674916384b4b0d0b5a355ebef74b7d865f91f09487e0ac445572",
+    "strict-comparison-exit.json": "8285fe7bdefae9aebdf650e4978d5d63eeb89a93f1a96eaca50eecb77d376b07"
+  },
+  "previous_evidence": "COLD_START.md retains both earlier 6000-frame pairs, including the unmasked strict state failure.",
+  "new_emulator_runs": 2,
+  "new_constructed_native_fixture_inputs": 0,
+  "new_C_bytes": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_whole_original_feature_groups_accepted": 0,
+  "new_model_API_calls": 0,
+  "Bevy_port_modified": false,
+  "scope": "One complete first-dream history from cold boot through the recorded next-day presentation. The first observer boundary is core frame 1. Native field and chart-owner observations are not direct instruction-entry or allocator-lifetime traces. Exhaustive content, all NPC encounters, card/error paths, original hardware timing, independent whole-feature review and remaining source recovery stay open."
+}

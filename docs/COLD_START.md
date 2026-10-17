@@ -58,6 +58,10 @@ state for every cold boot or accept a complete original feature group.
 All-content coverage, natural NPC encounters, physical hardware timing and
 the remaining matching C work remain separate requirements.
 
+The later [first-dream replay](COLD_DREAM_CYCLE.md) extends the same observer
+to 30,000 frames, through the natural dream end, chart and next-day menu.
+Its comparison and day-advance requirement are recorded separately.
+
 ## Reproduce with local inputs
 
 Use the matching build, supported complete Japanese original/rebuilt CUEs,

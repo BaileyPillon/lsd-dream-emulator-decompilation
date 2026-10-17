@@ -9,6 +9,7 @@ import unittest
 from unittest.mock import patch
 
 from tools import compare_cold_start as cold
+from tools import capture_cold_start as capture
 
 
 def checkpoint():
@@ -136,6 +137,42 @@ class SubmittedControlTests(unittest.TestCase):
 
 
 class EvidenceFileTests(unittest.TestCase):
+    def test_one_day_advance_cannot_switch_dream_owner(self):
+        _, first = checkpoint()
+        second = dict(first, relative_frame='1', stored_day='1')
+        self.assertEqual(cold.summarize_days([first, second], 0)['changes'],
+                         [{'relative_frame': 1, 'before': 0, 'after': 1}])
+        second['dream'] = str(int(second['dream']) + 0x100)
+        with self.assertRaisesRegex(ValueError, 'dream owner changed'):
+            cold.summarize_days([first, second], 0)
+
+    def test_day_jump_is_not_single_day_progression(self):
+        _, first = checkpoint()
+        second = dict(first, relative_frame='1', stored_day='2')
+        with self.assertRaisesRegex(ValueError, 'one-day advance'):
+            cold.summarize_days([first, second], 0)
+
+    def test_year_rollover_remains_one_day_progression(self):
+        _, first = checkpoint()
+        first['stored_day'] = '364'
+        second = dict(first, relative_frame='1', stored_day='0')
+        self.assertEqual(cold.summarize_days([first, second], 0)['changes'],
+                         [{'relative_frame': 1, 'before': 364, 'after': 0}])
+
+    def test_invalid_frame_count_is_rejected_before_capture_launch_or_input_reads(self):
+        with patch.object(capture.subprocess, 'check_output') as launch_probe:
+            for frames in (5999, 30001, True, 6000.0):
+                with self.subTest(frames=frames), self.assertRaisesRegex(ValueError, '6,000 through 30,000'):
+                    capture.capture_pair('unused', 'unused', 'unused', 'unused', 'unused', frames=frames)
+            launch_probe.assert_not_called()
+
+    def test_invalid_frame_count_is_rejected_before_comparison_input_reads(self):
+        with patch.object(cold, 'compare_inputs') as load:
+            for frames in (5999, 30001, False, 30000.0):
+                with self.subTest(frames=frames), self.assertRaisesRegex(ValueError, '6,000 through 30,000'):
+                    cold.compare_pair('unused', 'unused', frames=frames)
+            load.assert_not_called()
+
     def test_truncated_table_is_rejected(self):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / 'owned.tsv'

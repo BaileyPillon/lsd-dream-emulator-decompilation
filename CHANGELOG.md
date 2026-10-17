@@ -1,5 +1,15 @@
 # Changelog
 
+## Cold boot through the first dream - 2026-10-17
+
+- Extend paired cold-start capture to 30,000 frames and add an optional
+  native one-day requirement with a full post-change checkpoint.
+- Compare the natural dream end, chart and visible Day 002 menu, all 61
+  RAM/GPU/image checkpoints and complete PCM. Retain the strict failure
+  for eight unused emulator-label bytes per state, with a read-only diagnosis.
+- Preserve the shorter profiles, game inputs, matching C and acceptance
+  counts. Keep optional analysis tools separate from original behavior.
+
 ## Shared bounds accessor interface - 2026-10-17
 
 - Share the observed two-argument `get_source_vertices` declaration between
