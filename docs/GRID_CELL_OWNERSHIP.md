@@ -1,5 +1,9 @@
 # Grid cell ownership and matching-C boundaries
 
+This historical study predates the [matching grid-window recovery](GRID_MATCHING_C.md).
+The canonical function is now C with complete-executable equality; the two
+rejected source forms and their measurements below are retained as evidence.
+
 The grid-window function now has two reproducible, unaccepted C source forms.
 They make different source choices and leave different native instructions
 unexplained. Neither satisfies complete executable equality.

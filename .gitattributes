@@ -113,3 +113,8 @@ tools/actor_payload_model.py text eol=lf
 tests/test_actor_payloads.py text eol=lf
 docs/ACTOR_OBJECTS.md text eol=lf
 docs/actor-object-checks.json text eol=lf
+
+# Preserve the promoted grid verifier and matching-C evidence across hosts.
+tools/verify_render_grid.py text eol=lf
+docs/GRID_MATCHING_C.md text eol=lf
+docs/grid-matching-c-checks.json text eol=lf

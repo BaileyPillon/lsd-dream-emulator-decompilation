@@ -1,5 +1,14 @@
 # Source and evidence provenance
 
+The [matching grid-window recovery](GRID_MATCHING_C.md) replaces the 660-byte
+`func_8004C6A8` assembly inclusion with consumed-input C. Its complete relocated
+function and ordinary/fresh 306-object builds are identical to the original.
+[Its metadata](grid-matching-c-checks.json) separates exact source recovery,
+actual compiler observations and repeated bounded renderer verification.
+Only one game build input changes; the other 391 retain their hashes. Matching
+C rises to 98.30%, with four assembly functions and two inherited storage
+explanations left. Whole-feature/NPC acceptance and the Bevy port are unchanged.
+
 The optional [actor-object profile](ACTOR_OBJECTS.md) predicts every live pool
 payload at successful actor-factory return, after first-frame interpretation.
 Its [metadata](actor-object-checks.json) retains separately labelled extraction

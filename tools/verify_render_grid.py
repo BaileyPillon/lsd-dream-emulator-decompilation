@@ -292,7 +292,7 @@ def verify(destination):
                  'objects, exact call order/arguments, rotation inputs, intermediate matrices, final '
                  'grid fields, matrix/info buffers, stack guards, GP, RA and saved registers. '
                  'The four explicit contracts do not execute GTE transforms, position resolution '
-                 'or the downstream grid builder. The original function remains assembly; '
+                 'or the downstream grid builder. Source recovery is verified separately; '
                  'full rendering, natural scene lifetime and PS1 timing remain unaccepted.'}
     with destination.open('x', encoding='utf-8') as stream:
         json.dump(report, stream, indent=2)

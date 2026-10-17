@@ -1,5 +1,10 @@
 # Grid compiler phases and source boundaries
 
+This historical study precedes the [matching grid-window recovery](GRID_MATCHING_C.md).
+The canonical function is now C with complete-executable equality. Statements
+about the remaining assembly and rejected candidates below describe that
+earlier snapshot.
+
 The canonical `func_8004C6A8` remains assembly. The initial complete builds reproduce
 the earlier candidate's eleven byte differences and a formal-argument control's
 thirteen differences. Both images have the original 505,856-byte length, and every

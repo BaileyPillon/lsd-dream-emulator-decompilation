@@ -1257,7 +1257,115 @@ void func_8004C620(render_context_t *This) {
     }
 }
 
-INCLUDE_ASM("asm/nonmatchings/scene/render_context", func_8004C6A8);
+typedef struct {
+    s16 rotation[3][3];
+    s16 align;
+    vec3d_t vector;
+} render_grid_matrix_t;
+
+extern render_grid_matrix_t D_8008E98C;
+void RotMatrix(s16 *, render_grid_matrix_t *);
+void ApplyMatrixLV(render_grid_matrix_t *, vec3d_t *, vec3d_t *);
+void func_8004C93C(render_context_t *);
+
+static inline void render_grid_set_dimensions(render_context_t *This,
+                                              s32 rows, s32 columns) {
+    This->m_Unk31 = rows;
+    This->m_Unk32 = columns;
+}
+
+static inline s32 *render_grid_columns_after_rows(render_context_t *This,
+                                                 s32 rows) {
+    This->m_Unk31 = rows;
+    return &This->m_Unk32;
+}
+
+/* The inclusive endpoint consumes the requested grid extent. */
+typedef struct {
+    s32 extent;
+} grid_endpoint_operands_t;
+typedef char checked_grid_endpoint_operands[
+    (sizeof(grid_endpoint_operands_t) == 4) ? 1 : -1];
+
+static inline s32 grid_endpoint_from_operands(s32 cell,
+                                               grid_endpoint_operands_t operands) {
+    return cell - operands.extent + 1;
+}
+
+void func_8004C6A8(render_context_t *This, s32 width, s32 height) {
+    func_8004C1C0_out_t info;
+    render_grid_matrix_t matrix;
+    s32 orientation;
+    s16 *angles;
+    s16 *rotation;
+    s32 angle_sign;
+    s32 angle;
+    s32 x, z;
+    s32 correction;
+    s32 origin;
+
+    angles = *(s16 **) ((u8 *) *(void **) (This->m_Unk26 + 0x14) + 0x44);
+    rotation = angles + 8;
+    This->vtable->Unk66(This, &info, 0);
+    x = info.dx;
+    z = info.dz;
+    /* The native sign test and normalization read signed and unsigned words.
+     * Interval decisions below deliberately retain their 16-bit wrap. */
+    angle_sign = angles[9];
+    angle = (u16) angles[9];
+    if (angle_sign < 0) {
+        angle += 0x1000;
+    }
+    matrix = D_8008E98C;
+    matrix.vector.x = 0;
+    matrix.vector.y = 0;
+    matrix.vector.z = This->m_Unk28;
+    RotMatrix(rotation, &matrix);
+    ApplyMatrixLV(&matrix, &matrix.vector, &matrix.vector);
+
+    if ((u16) (angle - 0x200) < 0x400 || (u16) (angle - 0xA00) < 0x400) {
+        correction = matrix.vector.z;
+        render_grid_set_dimensions(This, height, width);
+        if (matrix.vector.x > 0) {
+            origin = x;
+        } else {
+            grid_endpoint_operands_t operands = {width};
+            origin = grid_endpoint_from_operands(x, operands);
+        }
+        This->m_Unk30_1 = origin;
+        if (matrix.vector.z > 0) {
+            This->m_Unk30_2 = z - *(u16 *) &This->m_Unk29_1 - 1;
+        } else {
+            This->m_Unk30_2 = z - *(u16 *) &This->m_Unk29_1 + 1;
+        }
+        orientation = 0;
+    } else if ((u16) (angle - 0x600) < 0x400 ||
+               (u16) (angle - 0x200) >= 0xC00) {
+        correction = matrix.vector.x;
+        *render_grid_columns_after_rows(This, width) = height;
+        if (matrix.vector.x > 0) {
+            This->m_Unk30_1 = x - *(u16 *) &This->m_Unk29_1 - 1;
+        } else {
+            This->m_Unk30_1 = x - *(u16 *) &This->m_Unk29_1 + 1;
+        }
+        origin = matrix.vector.z > 0 ? z : z - height + 1;
+        This->m_Unk30_2 = origin;
+        orientation = 1;
+    }
+    correction >>= 11;
+    if (correction >= *(s16 *) &This->m_Unk29_1) {
+        correction = *(s16 *) &This->m_Unk29_1 - 1;
+    }
+    if (correction <= -*(s16 *) &This->m_Unk29_1) {
+        correction = -*(s16 *) &This->m_Unk29_1 + 1;
+    }
+    if (orientation != 0) {
+        This->m_Unk30_1 += correction;
+    } else {
+        This->m_Unk30_2 += correction;
+    }
+    func_8004C93C(This);
+}
 
 typedef struct {
     s32 index;

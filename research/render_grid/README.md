@@ -1,5 +1,14 @@
 # Grid-window C recovery
 
+The canonical function is now [matching C](../../docs/GRID_MATCHING_C.md) in
+[`src/scene/render_context.c`](../../src/scene/render_context.c). It reproduces
+the entire original executable. The fragments and studies below preserve the
+earlier rejected forms; they are not the current game implementation.
+
+The historical preparation commands require the assembly-based source at
+commit `7415704a4f473def92ced9daa4400cf4ba6e7615`. On current `main`, build the
+promoted source using the [matching-build instructions](../../README.md#build-the-matching-executable).
+
 [c6a8_candidate.c](c6a8_candidate.c) is an **unaccepted research fragment** for
 the original 660-byte `func_8004C6A8`. Its complete candidate executable differs
 from the original at eight byte positions in two edge-arithmetic instructions.
