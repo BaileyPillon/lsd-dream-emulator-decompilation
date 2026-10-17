@@ -1,5 +1,12 @@
 # Original/rebuilt runtime comparison
 
+The [cold-start gameplay profile](COLD_START.md) compares power-on, menu
+navigation, starting a dream and native movement over 6,000 advanced frames.
+All recorded controller/native/GPU outputs, 16 full RAM/GPU/PNG/state checkpoints
+and complete PCM agree in the published-tool repeat. An earlier pair differs in
+eight unused Nymashock media-label bytes per decoded state. The strict comparator
+retains both results; neither accepts a complete original feature group.
+
 The [persisted-card profile](CARD_ROUNDTRIP.md) adds a separate 2,400-frame
 Save pair and 6,000-frame cold-Load pair. All 34 RAM/GPU/image/state checkpoints
 and persisted card files agree, and the complete 1,792-byte game save buffer is

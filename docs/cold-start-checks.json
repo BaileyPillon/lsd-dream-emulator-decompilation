@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "status": "strict_bounded_cold_start_repeat_passed_with_prior_failure_retained",
+  "recorded_utc": "2026-10-17T06:58:14.425581+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "51ce6afc4345839d831a258f6868aa9540cb6b63",
+  "canonical_executable_bytes": 505856,
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "game_build_inputs_preserved": 392,
+  "changed_game_build_inputs": 0,
+  "source_counts_before": {
+    "c_bytes": 196504,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 4,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 196504,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 4,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "executed_source_sha256": {
+    "tools/capture_cold_start.py": "1e3b8b60aa282f739cc1433df253b41822c79dd20a6c0933039313afb36195ae",
+    "tools/compare_cold_start.py": "a88eb2bb9ec35515f122c215a94f5368f7fdaeafb5adc52db630e3f860d168b5",
+    "research/cold_start/observe.lua": "ec61b5804771bc54ad0859195107d89371c86ac10a72b979fe7376298a394ffe",
+    "tests/test_cold_start.py": "52787b7515fb7afc3fc216774d9d81319c140d69dc0c09fdc3f60b1ad79ac9b2"
+  },
+  "profiles": [
+    {
+      "label": "initial_exploratory",
+      "comparison": {
+        "path": ".decomp-lab\\cold-start-initial-public-comparison-20261017-first.json",
+        "sha256": "ab6de3e3a38eee589a4077fd20980f638f04edc1f675e1b2c28d85b2a89fa1f0"
+      },
+      "status": "recorded_cold_start_differences",
+      "strict_comparator_exit_code": 2,
+      "frames_advanced_per_image": 6000,
+      "observations_per_image": 6001,
+      "checkpoint_pairs": 16,
+      "inputs_verified": true,
+      "recorded_controller_native_RAM_GPU_PNG_and_audio_equal": true,
+      "every_state_member_payload_equal": false,
+      "state_bytes_masked": 0,
+      "observer_first_emulator_frame": 1,
+      "first_unlocked_dream_relative_frame": 2689,
+      "stereo_PCM_sample_frames": 4422265,
+      "PCM_sha256": "08b05600a111958d9e21d4abea91bcdb7f1c6d5f0b3be39fb737ea6ca6da76fe"
+    },
+    {
+      "label": "published_tool_repeat",
+      "comparison": {
+        "path": ".decomp-lab\\cold-start-public-comparison-20261017-first.json",
+        "sha256": "d9fde5ae6da8737820de2a4f31174eddb903482a8751b906ed3702e042ae2fb5"
+      },
+      "status": "passed_bounded_cold_start_comparison",
+      "strict_comparator_exit_code": 0,
+      "frames_advanced_per_image": 6000,
+      "observations_per_image": 6001,
+      "checkpoint_pairs": 16,
+      "inputs_verified": true,
+      "recorded_controller_native_RAM_GPU_PNG_and_audio_equal": true,
+      "every_state_member_payload_equal": true,
+      "state_bytes_masked": 0,
+      "observer_first_emulator_frame": 1,
+      "first_unlocked_dream_relative_frame": 2689,
+      "stereo_PCM_sample_frames": 4422265,
+      "PCM_sha256": "08b05600a111958d9e21d4abea91bcdb7f1c6d5f0b3be39fb737ea6ca6da76fe"
+    }
+  ],
+  "initial_state_diagnosis": {
+    "report": {
+      "path": ".decomp-lab\\cold-start-play-state-diagnosis-20261017-first.json",
+      "sha256": "8f5db2fd59da3e8757a4dd6ea4f81e3cbd05aec536aa1b1a62214d85da306b73"
+    },
+    "checkpoint_pairs": 16,
+    "decoded_differences_per_pair": 8,
+    "every_difference_classified": true,
+    "native_guest_address_range": [
+      "0x36f0080fc10",
+      "0x36f0080fc17"
+    ],
+    "owner": "unused Nymashock CD media-label capacity",
+    "actual_emulator_accessor_call_observations": 12,
+    "new_PlayStation_routines_executed": 0,
+    "state_bytes_masked": 0
+  },
+  "capture_derived_rejection_controls": {
+    "report": {
+      "path": ".decomp-lab\\cold-start-native-controls-20261017-first\\report.json",
+      "sha256": "f75190f3cb4024d3c92e21f9d9f8ce6c5ebcb95334c9c2e4ae1cec0a57ff8def"
+    },
+    "detected": 6,
+    "game_or_emulator_instructions_modified": 0
+  },
+  "synthetic_tests": {
+    "path": "tests/test_cold_start.py",
+    "test_methods": 19,
+    "fixtures": "Owned byte buffers and controller records; no game files."
+  },
+  "new_gameplay_runs": 4,
+  "bounded_scenario_families": 1,
+  "strictly_equal_recorded_pairs": 1,
+  "prior_mismatching_recorded_pairs": 1,
+  "new_C_bytes": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "new_original_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_model_API_calls": 0,
+  "original_behavior_modified": false,
+  "Bevy_port_modified": false,
+  "goal_complete": false,
+  "scope": "Two controller-only cold-boot menu/start-dream/movement pairs. The published-tool repeat passes all recorded outputs and raw state members. The prior eight-byte emulator-label mismatch remains a strict failure. No every-boot determinism, complete feature/NPC/content/camera or hardware-timing acceptance."
+}
