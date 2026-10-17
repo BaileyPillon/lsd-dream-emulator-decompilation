@@ -23628,6 +23628,53 @@
       "new_model_API_calls": 0,
       "original_behavior_modified": false,
       "Bevy_port_modified": false
+    },
+    "cold_first_dream_cycle_20261017": {
+      "evidence": "docs/cold-dream-cycle-checks.json",
+      "guide": "docs/COLD_DREAM_CYCLE.md",
+      "before": {
+        "c_bytes": 196504,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 4,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 196504,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 4,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "frames_advanced_per_disc": 30000,
+      "observations_per_disc": 30001,
+      "checkpoint_pairs": 61,
+      "native_stored_day_advance_relative_frame": 23706,
+      "recorded_game_outputs_equal": true,
+      "strict_full_state_comparison_passed": false,
+      "strict_comparator_exit_code": 2,
+      "differing_unused_emulator_label_bytes_per_checkpoint": 8,
+      "complete_PCM_sample_frames": 22113556,
+      "new_emulator_runs": 2,
+      "new_C_bytes": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_whole_original_feature_groups_accepted": 0,
+      "original_behavior_modified": false,
+      "Bevy_port_modified": false
     }
   }
 }

@@ -16,10 +16,16 @@ from tools.compare_runtime import byte_comparison, compare_audio, compare_state
 from tools.runtime_inputs import compare_inputs, load_verified_manifest
 
 FRAMES = 6000
+MAX_FRAMES = 30000
 OBSERVER_SHA256 = 'ec61b5804771bc54ad0859195107d89371c86ac10a72b979fe7376298a394ffe'
 TRACE_FIELDS = ('relative_frame', 'core_frame', 'screen_kind', 'menu', 'menu_index', 'session', 'session_state',
                 'map_scene', 'flow', 'dream', 'timer', 'input_locked', 'map', 'stored_day', 'new_game',
                 'coordinate', 'pose', 'x', 'y', 'z', 'yaw', 'pad', 'pad_held', 'pad_released', 'pad_pressed', 'gpu_sha256')
+
+
+def validate_frame_count(frames):
+    require(type(frames) is int and FRAMES <= frames <= MAX_FRAMES,
+            'Cold-start captures require 6,000 through 30,000 frames.')
 
 
 def read_tsv(path, expected_header=None):
@@ -126,7 +132,28 @@ def validate_submissions(header, definitions, submitted, observations, frames=FR
     return phases
 
 
-def inspect_run(folder):
+def summarize_days(rows, first_ready):
+    """Record native stored-day changes after the first owner-qualified dream."""
+    initial = rows[first_ready]
+    owner, previous = initial['dream'], int(initial['stored_day'])
+    require(owner != '-' and 0 <= previous < 365, 'An unlocked dream requires a valid stored day and owner.')
+    changes = []
+    for row in rows[first_ready + 1:]:
+        if row['dream'] == '-':
+            continue
+        require(row['dream'] == owner, 'The dream owner changed during the day-progression history.')
+        value = int(row['stored_day'])
+        require(0 <= value < 365, 'Stored day is outside the original year range.')
+        if value != previous:
+            require(value == (previous + 1) % 365, 'Stored day changed without a one-day advance.')
+            changes.append({'relative_frame': int(row['relative_frame']), 'before': previous, 'after': value})
+            previous = value
+    return {'initial_stored_day': int(initial['stored_day']), 'last_observed_stored_day': previous,
+            'owner': int(owner), 'changes': changes}
+
+
+def inspect_run(folder, frames=FRAMES, require_day_advance=False):
+    validate_frame_count(frames)
     folder = Path(folder)
     require((folder / 'completed.txt').is_file() and not (folder / 'failed.txt').exists(), 'Incomplete recorder.')
     require(json.loads((folder / 'exit.json').read_text())['exit_code'] == 0, 'Owned emulator did not exit normally.')
@@ -139,15 +166,15 @@ def inspect_run(folder):
     external = json.loads((folder / 'external-save-inputs.json').read_text())
     require(external['initial_external_save_ram_empty'] and external['files'] == [], 'Unexpected initial external saves.')
     _, rows = read_tsv(folder / 'cold-start.tsv', TRACE_FIELDS)
-    require(len(rows) == FRAMES + 1 and [int(row['relative_frame']) for row in rows] == list(range(FRAMES + 1)),
+    require(len(rows) == frames + 1 and [int(row['relative_frame']) for row in rows] == list(range(frames + 1)),
             'Native observations must include every boundary.')
     first_core = int(rows[0]['core_frame'])
-    require([int(row['core_frame']) for row in rows] == list(range(first_core, first_core + FRAMES + 1)),
+    require([int(row['core_frame']) for row in rows] == list(range(first_core, first_core + frames + 1)),
             'Native emulator frames are not consecutive.')
     require(all(re.fullmatch('[0-9a-f]{64}', row['gpu_sha256']) for row in rows), 'Invalid full GPU-memory hash.')
     _, definitions = read_tsv(folder / 'input-definition.tsv', ('name', 'type', 'initial_value', 'neutral_value'))
     header, submitted = read_tsv(folder / 'submitted.tsv')
-    phases = validate_submissions(header, definitions, submitted, rows)
+    phases = validate_submissions(header, definitions, submitted, rows, frames=frames)
     firsts = {}
     for row in rows:
         firsts.setdefault(row['screen_kind'], int(row['relative_frame']))
@@ -170,8 +197,9 @@ def inspect_run(folder):
                 'Walking did not change the native position: ' + phase)
     _, captures = read_tsv(folder / 'captures.tsv', ('relative_frame', 'core_frame', 'reason'))
     selected = [int(row['relative_frame']) for row in captures]
-    require(selected == sorted(set(selected)) and all(0 <= frame <= FRAMES for frame in selected)
-            and set(range(0, FRAMES + 1, 600)) <= set(selected) and firsts['unlocked_dream'] in selected,
+    require(selected == sorted(set(selected)) and all(0 <= frame <= frames for frame in selected)
+            and set(range(0, frames + 1, 600)) <= set(selected) and frames in selected
+            and firsts['unlocked_dream'] in selected,
             'Required checkpoint boundaries are missing.')
     for capture in captures:
         frame = int(capture['relative_frame'])
@@ -181,17 +209,25 @@ def inspect_run(folder):
         require(len(gpu) == 0x100000 and hashlib.sha256(gpu).hexdigest() == rows[frame]['gpu_sha256'],
                 'Checkpoint GPU memory differs from the recorded full hash.')
         require((folder / f'frame-{frame}.png').read_bytes().startswith(b'\x89PNG\r\n\x1a\n'), 'Invalid checkpoint PNG.')
+    days = summarize_days(rows, firsts['unlocked_dream'])
+    if require_day_advance:
+        require(days['changes'], 'This profile requires an observed native one-day advance.')
+        first_change = days['changes'][0]
+        require(any(frame >= first_change['relative_frame'] and rows[frame]['dream'] != '-'
+                    and int(rows[frame]['stored_day']) == first_change['after'] for frame in selected),
+                'The next stored day requires a full native checkpoint after the change.')
     return {'observations': len(rows), 'submitted_frames': len(submitted), 'controller_fields': len(definitions),
             'first_core_frame': first_core, 'last_core_frame': int(rows[-1]['core_frame']),
             'first_observed_relative_frames': firsts, 'phases': summary, 'checkpoint_frames': selected,
-            'all_checkpoint_fields_reread_from_full_mainram': True}
+            'all_checkpoint_fields_reread_from_full_mainram': True, 'day_progression': days}
 
 
-def compare_pair(original, rebuilt):
+def compare_pair(original, rebuilt, frames=FRAMES, require_day_advance=False):
+    validate_frame_count(frames)
     folders = [Path(original), Path(rebuilt)]
-    identity = compare_inputs(*folders, 'boot', FRAMES)
+    identity = compare_inputs(*folders, 'boot', frames)
     require(identity['inputs_verified'], 'Require identical schema-2 launch identities.')
-    summaries = [inspect_run(folder) for folder in folders]
+    summaries = [inspect_run(folder, frames=frames, require_day_advance=require_day_advance) for folder in folders]
     require(summaries[0]['checkpoint_frames'] == summaries[1]['checkpoint_frames'], 'Checkpoint schedules differ.')
     files = {name: byte_comparison(*[(folder / name).read_bytes() for folder in folders])
              for name in ('input-definition.tsv', 'submitted.tsv', 'cold-start.tsv', 'captures.tsv')}
@@ -208,7 +244,8 @@ def compare_pair(original, rebuilt):
                      and audio['equal_pcm_output'] and audio['wav_file_bytes']['equal'])
     state_equal = all(item['state']['member_contents_equal'] for item in checkpoints)
     return {'status': 'passed_bounded_cold_start_comparison' if outputs_equal and state_equal else 'recorded_cold_start_differences',
-            'recorded_utc': datetime.now(timezone.utc).isoformat(), 'frames_advanced_per_image': FRAMES,
+            'recorded_utc': datetime.now(timezone.utc).isoformat(), 'frames_advanced_per_image': frames,
+            'native_one_day_advance_required': require_day_advance,
             'input_identity': identity, 'summaries': summaries, 'files': files, 'checkpoints': checkpoints, 'audio': audio,
             'controller_native_RAM_GPU_PNG_audio_outputs_equal': outputs_equal, 'all_state_member_payloads_equal': state_equal,
             'state_bytes_masked': 0, 'new_c_bytes': 0, 'whole_feature_groups_accepted': 0,
@@ -222,10 +259,15 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('original', 'rebuilt', 'output'):
         parser.add_argument('--' + name, required=True, type=Path)
+    parser.add_argument('--frames', type=int, default=FRAMES,
+                        help='Advanced frames per disc, from 6000 through 30000 (default: 6000).')
+    parser.add_argument('--require-day-advance', action='store_true',
+                        help='Also require native one-day progression and a full checkpoint after that change.')
     args = parser.parse_args(argv)
     try:
         require(not args.output.exists(), 'Choose a new report path; previous evidence is preserved.')
-        report = compare_pair(args.original, args.rebuilt)
+        report = compare_pair(args.original, args.rebuilt, frames=args.frames,
+                              require_day_advance=args.require_day_advance)
         with args.output.open('x', encoding='utf-8', newline='\n') as stream:
             json.dump(report, stream, indent=2)
             stream.write('\n')

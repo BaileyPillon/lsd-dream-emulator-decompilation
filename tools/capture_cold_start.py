@@ -13,12 +13,13 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from tools.capture_card_roundtrip import preserve_saves, write_json
 from tools.compare_card_roundtrip import CANONICAL_SHA256, require
-from tools.compare_cold_start import FRAMES, OBSERVER_SHA256
+from tools.compare_cold_start import FRAMES, OBSERVER_SHA256, validate_frame_count
 from tools.play_game import read_root_file
 from tools.runtime_inputs import load_verified_manifest, pin_inputs
 
 
-def capture_pair(workspace, original_cue, rebuilt_cue, emulator_root, bios_root):
+def capture_pair(workspace, original_cue, rebuilt_cue, emulator_root, bios_root, frames=FRAMES):
+    validate_frame_count(frames)
     require(sys.platform == 'win32', 'This recorder requires Windows and BizHawk 2.11.1.')
     workspace = Path(workspace).resolve()
     require(not workspace.exists(), 'Choose a new capture directory; existing files are preserved.')
@@ -67,11 +68,11 @@ def capture_pair(workspace, original_cue, rebuilt_cue, emulator_root, bios_root)
         script = folder / 'runtime_smoke.lua'
         script.write_bytes(observer_bytes)
         write_json(folder / 'inputs.json', pin_inputs(cue, bios, runtime, folder / 'config-input.json', script,
-                   'boot', FRAMES, None, capture_audio=True))
+                   'boot', frames, None, capture_audio=True))
         command = [str(runtime / 'EmuHawk.exe'), '--config', str(folder / 'config.json'), '--lua', str(script),
                    '--chromeless', '--gdi', '--dump-type', 'wave', '--dump-name', str(folder / 'audio.wav'),
-                   '--audiosync', 'true', '--dump-length', str(FRAMES), str(cue)]
-        environment = dict(os.environ, LSD_QA_OUTPUT=str(folder), LSD_QA_SCENARIO='boot', LSD_QA_FRAMES=str(FRAMES))
+                   '--audiosync', 'true', '--dump-length', str(frames), str(cue)]
+        environment = dict(os.environ, LSD_QA_OUTPUT=str(folder), LSD_QA_SCENARIO='boot', LSD_QA_FRAMES=str(frames))
         startup = subprocess.STARTUPINFO()
         startup.dwFlags, startup.wShowWindow = subprocess.STARTF_USESHOWWINDOW, 0
         with (folder / 'emulator.out.log').open('xb') as out, (folder / 'emulator.err.log').open('xb') as err:
@@ -96,9 +97,12 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('workspace', 'original-cue', 'rebuilt-cue', 'emulator-root', 'bios-root'):
         parser.add_argument('--' + name, type=Path, required=True)
+    parser.add_argument('--frames', type=int, default=FRAMES,
+                        help='Advanced frames per disc, from 6000 through 30000 (default: 6000).')
     args = parser.parse_args(argv)
     try:
-        capture_pair(args.workspace, args.original_cue, args.rebuilt_cue, args.emulator_root, args.bios_root)
+        capture_pair(args.workspace, args.original_cue, args.rebuilt_cue, args.emulator_root, args.bios_root,
+                     frames=args.frames)
     except (OSError, ValueError, subprocess.SubprocessError) as error:
         print(str(error), file=sys.stderr)
         return 2
