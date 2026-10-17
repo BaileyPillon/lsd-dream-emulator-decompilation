@@ -1,5 +1,13 @@
 # Changelog
 
+## Grid verification after C recovery - 2026-10-17
+
+- Remove the scalar grid and streaming verifiers' stale dependency on generated
+  assembly that disappears once the grid function is recovered in C.
+- Preserve canonical executable and function-span checks. Add a regression for
+  recovered-C checkouts and repeat both native commands in the fresh build.
+- Keep game source, 98.30% matching C and all runtime acceptance counts unchanged.
+
 ## Matching grid-window C recovery - 2026-10-17
 
 - Recover `func_8004C6A8` in readable C with all 660 original function bytes

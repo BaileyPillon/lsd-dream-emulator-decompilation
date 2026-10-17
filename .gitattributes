@@ -118,3 +118,6 @@ docs/actor-object-checks.json text eol=lf
 tools/verify_render_grid.py text eol=lf
 docs/GRID_MATCHING_C.md text eol=lf
 docs/grid-matching-c-checks.json text eol=lf
+tools/verify_render_stream.py text eol=lf
+tests/test_render_grid_output.py text eol=lf
+docs/grid-checkout-checks.json text eol=lf

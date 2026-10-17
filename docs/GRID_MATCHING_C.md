@@ -125,6 +125,8 @@ ninja check
 python tools/progress.py --json > build/progress-grid.json
 python tools/verify_render_grid.py \
   --output .decomp-lab/grid-matching-scalar-new.json
+python tools/verify_render_stream.py \
+  --output .decomp-lab/grid-matching-stream-new.json
 ```
 
 For the actual SDK/GTE composition, build a fresh local bridge and run
@@ -133,3 +135,23 @@ For the actual SDK/GTE composition, build a fresh local bridge and run
 Choose fresh private output names. The earlier
 [research fragments](../research/render_grid/README.md) remain rejected source
 forms and require their recorded assembly-based baseline.
+
+## Fresh-checkout verification
+
+Once this function is C, the splitter no longer emits its old nonmatching
+assembly file. The scalar grid and streaming verifiers now qualify the
+canonical executable and hash current sources without requiring that obsolete
+file. Their executable hashes, function-span checks and native comparisons
+remain intact.
+
+[grid-checkout-checks.json](grid-checkout-checks.json) records the repeated
+commands in the fresh C build, where the old assembly file is absent. It also
+records a synthetic regression that reproduces both former failures and the
+updated tooling tests. The C-promotion metadata above retains its original
+checkpoint and tool hashes. This follow-up changes no game source, C-byte
+count, fixture domain or whole-feature acceptance.
+
+The clean-archive repeats pass all **74,832 grid cases** and **45,408 streaming
+cases**, detecting eight and four existing faults respectively. The updated
+tooling suite passes **695 tests per platform**, with **693 passes and two
+expected skips** on both Windows and WSL.

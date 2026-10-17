@@ -226,8 +226,7 @@ def cases():
 
 def verify(destination):
     dependencies = native.evidence_dependencies('tools/verify_render_grid.py',
-        'src/scene/render_context.c', 'src/scene/render_context.h', 'config/symbols.txt',
-        'asm/nonmatchings/scene/render_context/func_8004C6A8.s')
+        'src/scene/render_context.c', 'src/scene/render_context.h', 'config/symbols.txt')
     before = {path: hashlib.sha256(path.read_bytes()).hexdigest() for path in dependencies}
     native.initialize_backend(native.load_program(FUNCTIONS))
     machine, groups, axes = Machine(), Counter(), Counter()
