@@ -136,3 +136,16 @@ docs/grid-matching-c-checks.json text eol=lf
 tools/verify_render_stream.py text eol=lf
 tests/test_render_grid_output.py text eol=lf
 docs/grid-checkout-checks.json text eol=lf
+
+# Preserve the executed inline diagnostic and its hashed publication across hosts.
+.gitattributes text eol=lf
+research/compiler/trace_inline_calls.py text eol=lf
+research/compiler/inline_calls_gdb.py text eol=lf
+research/compiler/examples/inline_type_identity.c text eol=lf
+tests/test_compiler_inline_calls.py text eol=lf
+docs/COMPILER_INLINE_TYPES.md text eol=lf
+docs/compiler-inline-checks.json text eol=lf
+docs/features.json text eol=lf
+research/compiler/README.md text eol=lf
+README.md text eol=lf
+CHANGELOG.md text eol=lf

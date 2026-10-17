@@ -23675,6 +23675,50 @@
       "new_whole_original_feature_groups_accepted": 0,
       "original_behavior_modified": false,
       "Bevy_port_modified": false
+    },
+    "compiler_inline_argument_types_20261017": {
+      "evidence": "docs/compiler-inline-checks.json",
+      "guide": "docs/COMPILER_INLINE_TYPES.md",
+      "before": {
+        "c_bytes": 196504,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 4,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 196504,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 4,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "qualified_compiler_observations": 9,
+      "expected_selection_rejections": 2,
+      "source_comparison_attempts": 42,
+      "qualified_source_functions": 36,
+      "excluded_outlined_helpers": 6,
+      "new_C_bytes": 0,
+      "new_original_fixture_inputs": 0,
+      "new_original_feature_acceptances": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_developer_capability_categories": 0,
+      "original_behavior_modified": false,
+      "Bevy_port_modified": false
     }
   }
 }
