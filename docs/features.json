@@ -23236,6 +23236,58 @@
         "func_80044E64"
       ],
       "Bevy_port_modified": false
+    },
+    "atlas_tile_storage_20261016": {
+      "status": "verified_four_matching_atlas_tile_layouts",
+      "report": "docs/ATLAS_TILE_STORAGE.md",
+      "checks": "docs/atlas-tile-storage-checks.json",
+      "before": {
+        "c_bytes": 195844,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 5,
+        "inherited_storage_explanations": 6,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 195844,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 5,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "source_functions_explained": 4,
+      "existing_C_bytes_explained": 532,
+      "unused_declared_bytes_removed": 104,
+      "compiler_observations": 6,
+      "actual_matching_reload_requests": 13,
+      "ordinary_and_fresh_complete_builds_equal": true,
+      "original_tile_count_read_retained_literally": true,
+      "new_volatile_constraints": 0,
+      "new_C_bytes": 0,
+      "new_original_fixture_inputs": 0,
+      "new_bounded_NPC_callbacks": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_model_API_calls": 0,
+      "remaining_identified_storage_functions": [
+        "debug_file_driver_unk15",
+        "debug_file_driver_open"
+      ],
+      "Bevy_port_modified": false
     }
   }
 }

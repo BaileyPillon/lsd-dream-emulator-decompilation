@@ -53,17 +53,47 @@ tile_buffer_t *func_80044CD4(s32 Unk1, void *Unk2) {
     return NULL;
 }
 
-void func_80044D40(tile_buffer_t *arg0, s32 arg1, s32 arg2) {
-    s32 pad[8];
-    void **v5;
+/* These consumed lookup/call inputs retain the original compiler frame.
+ * See docs/ATLAS_TILE_STORAGE.md for the observed allocation. */
+typedef void (*tile_base_method_t)(tile_buffer_t *);
 
-    v5 = (void **) get_file_driver();
-    ((void (*)(tile_buffer_t *)) v5[2])(arg0);
+static inline tile_base_method_t tile_base_read_method(void *input) {
+    struct {
+        void *value;
+    } driver = { input };
+    typedef char checked_driver[(sizeof(driver) == 4) ? 1 : -1];
+
+    return *(tile_base_method_t *)(driver.value + 8);
+}
+
+static inline void tile_base_invoke(tile_buffer_t *object, tile_base_method_t callback) {
+    struct {
+        tile_buffer_t *value;
+    } receiver = { object };
+    typedef char checked_receiver[(sizeof(receiver) == 4) ? 1 : -1];
+    struct {
+        tile_base_method_t value;
+    } method = { callback };
+    typedef char checked_method[(sizeof(method) == 4) ? 1 : -1];
+
+    method.value(receiver.value);
+}
+
+static inline s32 tile_base_default_mode(s32 input) {
+    struct {
+        s32 value;
+    } mode = { input };
+    typedef char checked_mode[(sizeof(mode) == 4) ? 1 : -1];
+
+    return mode.value == 0;
+}
+
+void func_80044D40(tile_buffer_t *arg0, s32 arg1, s32 arg2) {
+    tile_base_invoke(arg0, tile_base_read_method(get_file_driver()));
     arg0->vtable = func_80044F20();
     arg0->m_Unk14 = arg2;
     arg0->m_Unk15_2 = 0;
-
-    if (arg1 == 0) {
+    if (tile_base_default_mode(arg1)) {
         arg0->m_Unk15_1 = 1;
         arg0->m_Unk9_2 = 0;
         arg0->vtable->Unk24(arg0);
@@ -82,8 +112,18 @@ void func_80044E10(tile_buffer_t *This) {
     }
 }
 
+/* These consumed lookup/call inputs retain the original compiler frame.
+ * See docs/ATLAS_TILE_STORAGE.md for the observed allocation. */
+static inline void *tile_allocate_indices(s32 input) {
+    struct {
+        s32 value;
+    } view = { input };
+    typedef char checked_input_view[(sizeof(view) == 4) ? 1 : -1];
+
+    return memory_allocate_mem(view.value);
+}
+
 void func_80044E64(tile_buffer_t *This) {
-    s32 pad[2];
     s16 *mem;
     s32 count;
     s32 i;
@@ -98,7 +138,7 @@ void func_80044E64(tile_buffer_t *This) {
         This->m_Unk10_0 = 0x10;
         This->m_Unk10_1 = 0x10;
         This->m_Unk11_0 = 0xF;
-        if ((This->m_Unk13 = (s32) memory_allocate_mem(count << 1)) != 0) {
+        if ((This->m_Unk13 = (s32) tile_allocate_indices(count << 1)) != 0) {
             mem = This->m_Unk13;
             i = 0;
             if (count != 0) {

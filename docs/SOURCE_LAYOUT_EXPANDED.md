@@ -13,6 +13,8 @@
 > further frames, leaving eight identified explanations open.
 > The subsequent [text and render callback recovery](TEXT_CALLBACK_STORAGE.md)
 > explains two further frames, leaving six identified explanations open.
+> The later [atlas and tile-buffer recovery](ATLAS_TILE_STORAGE.md) explains
+> four further frames, leaving two identified explanations open.
 > Measurements below retain their original snapshot and scope.
 
 The earlier [five-function audit](SOURCE_QUALITY.md) inspected selected

@@ -58,16 +58,47 @@ sprite_atlas_t *func_80044F30(u32 Unk1) {
     return NULL;
 }
 
-void func_80044F90(sprite_atlas_t *This, s32 Unk) {
-    void *unk_class;
-    s8 pad[0x20];
+/* These consumed lookup/call inputs retain the original compiler frame.
+ * See docs/ATLAS_TILE_STORAGE.md for the observed allocation. */
+typedef void (*atlas_base_method_t)(sprite_atlas_t *);
 
-    unk_class = get_file_driver();
-    (*(void (**)(sprite_atlas_t *))(unk_class + 8))(This);
+static inline atlas_base_method_t atlas_base_read_method(void *input) {
+    struct {
+        void *value;
+    } driver = { input };
+    typedef char checked_driver[(sizeof(driver) == 4) ? 1 : -1];
+
+    return *(atlas_base_method_t *)(driver.value + 8);
+}
+
+static inline void atlas_base_invoke(sprite_atlas_t *object, atlas_base_method_t callback) {
+    struct {
+        sprite_atlas_t *value;
+    } receiver = { object };
+    typedef char checked_receiver[(sizeof(receiver) == 4) ? 1 : -1];
+    struct {
+        atlas_base_method_t value;
+    } method = { callback };
+    typedef char checked_method[(sizeof(method) == 4) ? 1 : -1];
+
+    method.value(receiver.value);
+}
+
+static inline s32 atlas_base_default_mode(s32 input) {
+    struct {
+        s32 value;
+    } mode = { input };
+    typedef char checked_mode[(sizeof(mode) == 4) ? 1 : -1];
+
+    return mode.value == 0;
+}
+
+void func_80044F90(sprite_atlas_t *This, s32 Unk) {
+    atlas_base_invoke(This, atlas_base_read_method(get_file_driver()));
     This->vtable = func_800451A8();
     This->m_Unk12 = 0;
     This->m_Unk11_2 = 0;
-    if (Unk == 0) {
+    if (atlas_base_default_mode(Unk)) {
         This->m_Unk11_1 = 1;
         This->m_Unk9_2 = 0;
         This->vtable->Unk24(This);
@@ -80,11 +111,44 @@ void func_8004500C(sprite_atlas_t *This) {
     (*(void (**)(sprite_atlas_t *))((s32) get_file_driver() + 12))(This);
 }
 
-void func_80045060(sprite_atlas_t *This) {
-    s8 pad[0x20];
+/* These consumed lookup/call inputs retain the original compiler frame.
+ * See docs/ATLAS_TILE_STORAGE.md for the observed allocation. */
+typedef void (*atlas_update_method_t)(void *);
 
-    if (!This->m_Unk9_2) {
-        This->vtable->Unk29(This);
+static inline u16 atlas_read_update_gate(const u16 *input) {
+    struct {
+        const u16 *value;
+    } gate = { input };
+    typedef char checked_gate[(sizeof(gate) == 4) ? 1 : -1];
+
+    return *gate.value;
+}
+
+static inline atlas_update_method_t atlas_read_update_method(sprite_atlas_vtable_t *input) {
+    struct {
+        sprite_atlas_vtable_t *value;
+    } table = { input };
+    typedef char checked_table[(sizeof(table) == 4) ? 1 : -1];
+
+    return table.value->Unk29;
+}
+
+static inline void atlas_invoke_update(sprite_atlas_t *object, atlas_update_method_t callback) {
+    struct {
+        sprite_atlas_t *value;
+    } receiver = { object };
+    typedef char checked_receiver[(sizeof(receiver) == 4) ? 1 : -1];
+    struct {
+        atlas_update_method_t value;
+    } method = { callback };
+    typedef char checked_method[(sizeof(method) == 4) ? 1 : -1];
+
+    method.value(receiver.value);
+}
+
+void func_80045060(sprite_atlas_t *This) {
+    if (!atlas_read_update_gate(&This->m_Unk9_2)) {
+        atlas_invoke_update(This, atlas_read_update_method(This->vtable));
         This->m_Unk11_2 = 1;
     }
 }

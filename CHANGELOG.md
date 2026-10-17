@@ -1,5 +1,15 @@
 # Changelog
 
+## Matching atlas and tile-buffer storage - 2026-10-16
+
+- Replace unused arrays in four existing C routines with consumed lookup,
+  invocation, mode and allocation inputs, removing 104 unused declared bytes.
+- Preserve all 532 original function bytes and the complete ordinary/fresh
+  builds. Six complete-unit compiler observations identify 13 actual reload
+  requests; retain the tile-buffer's existing count read without new constraints.
+- Reduce identified inherited storage explanations from 6 to 2. Matching C
+  remains 97.97%, with five assembly fallbacks and unchanged runtime acceptance.
+
 ## Matching text and render callback storage - 2026-10-16
 
 - Replace two inherited unused locals with consumed text, receiver, resource

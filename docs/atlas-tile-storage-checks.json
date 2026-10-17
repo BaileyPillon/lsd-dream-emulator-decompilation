@@ -1,0 +1,584 @@
+{
+  "schema_version": 1,
+  "status": "verified_four_matching_atlas_tile_layouts",
+  "recorded_utc": "2026-10-17T00:33:08.771214+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "a3d74d07818eb0ad19969a05fbf9f43bc7b4bde8",
+  "before": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 6,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_functions_explained": 4,
+  "existing_C_bytes_explained": 532,
+  "unused_declared_bytes_removed": 104,
+  "functions": [
+    {
+      "function": "func_80044F90",
+      "unit": "src/menu/sprite_atlas.c",
+      "address": "0x80044f90",
+      "bytes": 124,
+      "sha256": "212664bd23803532cbc6e563dc84f67d6c641caa2de895f7d87ff73335d941c2",
+      "frame_bytes": 64,
+      "frame_entry_offset": 0,
+      "stack_adjustments": [
+        [
+          0,
+          -64
+        ],
+        [
+          112,
+          64
+        ]
+      ],
+      "diagnostic_elf_sha256": "269d21454b2c61c85a89ad69125bf0c5c497af8c37feff80a15c13cdd415c327",
+      "original_function_exact": true,
+      "complete_image_exact": true,
+      "unused_declared_bytes_removed": 32
+    },
+    {
+      "function": "func_80045060",
+      "unit": "src/menu/sprite_atlas.c",
+      "address": "0x80045060",
+      "bytes": 84,
+      "sha256": "dd3f492f6ab45ee9346434e439b3d13e38e43e4db13042179daefae809cc6249",
+      "frame_bytes": 56,
+      "frame_entry_offset": 0,
+      "stack_adjustments": [
+        [
+          0,
+          -56
+        ],
+        [
+          72,
+          56
+        ]
+      ],
+      "diagnostic_elf_sha256": "269d21454b2c61c85a89ad69125bf0c5c497af8c37feff80a15c13cdd415c327",
+      "original_function_exact": true,
+      "complete_image_exact": true,
+      "unused_declared_bytes_removed": 32
+    },
+    {
+      "function": "func_80044D40",
+      "unit": "src/menu/tile_buffer.c",
+      "address": "0x80044d40",
+      "bytes": 136,
+      "sha256": "451690b623f4965545c12cf509734a1ef6fc246aff74fde5b94384f4e8a3d00f",
+      "frame_bytes": 64,
+      "frame_entry_offset": 0,
+      "stack_adjustments": [
+        [
+          0,
+          -64
+        ],
+        [
+          124,
+          64
+        ]
+      ],
+      "diagnostic_elf_sha256": "9ac5ce4419e9e77b0c1431734dd0dc611e69e8a9f72dd6b40f1b7eeefc21de6f",
+      "original_function_exact": true,
+      "complete_image_exact": true,
+      "unused_declared_bytes_removed": 32
+    },
+    {
+      "function": "func_80044E64",
+      "unit": "src/menu/tile_buffer.c",
+      "address": "0x80044e64",
+      "bytes": 188,
+      "sha256": "67e8a051986ac37838ba8f80b8bb004e6470577879189645e29032240b97ebf0",
+      "frame_bytes": 40,
+      "frame_entry_offset": 0,
+      "stack_adjustments": [
+        [
+          0,
+          -40
+        ],
+        [
+          176,
+          40
+        ]
+      ],
+      "diagnostic_elf_sha256": "9ac5ce4419e9e77b0c1431734dd0dc611e69e8a9f72dd6b40f1b7eeefc21de6f",
+      "original_function_exact": true,
+      "complete_image_exact": true,
+      "unused_declared_bytes_removed": 8
+    }
+  ],
+  "remaining_identified_storage_functions": [
+    "debug_file_driver_unk15",
+    "debug_file_driver_open"
+  ],
+  "remaining_debug_stubs": [
+    {
+      "function": "debug_file_driver_unk15",
+      "unit": "src/file/debug_file_driver.c",
+      "address": "0x8002c3d0",
+      "bytes": 16,
+      "frame_bytes": 64,
+      "sha256": "887dd8f3bf5edd5fe7c97b79ecc7cd0e23bfaefde06e8e4ddfd3818cadf5fe34",
+      "explanation_recovered": false
+    },
+    {
+      "function": "debug_file_driver_open",
+      "unit": "src/file/debug_file_driver.c",
+      "address": "0x8002c3e0",
+      "bytes": 16,
+      "frame_bytes": 64,
+      "sha256": "887dd8f3bf5edd5fe7c97b79ecc7cd0e23bfaefde06e8e4ddfd3818cadf5fe34",
+      "explanation_recovered": false
+    }
+  ],
+  "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+  "compiler_observations": [
+    {
+      "unit": "src/menu/sprite_atlas.c",
+      "variant": "baseline",
+      "source_sha256": "48ab22a375a56c1e9fb9479fa6bc393cff209f0273b9b138824dc27fd48cbdde",
+      "report_path": ".decomp-lab/atlas-storage-baseline-allocation-20261016-first/report.json",
+      "report_sha256": "61a721fb9fd2621b7f451433435e88d00c665b11cbfc0dc586759d469fe8059c",
+      "complete_assembly_equal": true,
+      "events": [
+        {
+          "function": "func_80044F90",
+          "allocator": "assign_stack_temp",
+          "size": 32,
+          "frame_offset_before": 0,
+          "frame_offset_after": 32,
+          "alter_reg_context": null
+        },
+        {
+          "function": "func_80044F90",
+          "allocator": "assign_stack_local",
+          "size": 32,
+          "frame_offset_before": 0,
+          "frame_offset_after": 32,
+          "alter_reg_context": null
+        },
+        {
+          "function": "func_80045060",
+          "allocator": "assign_stack_temp",
+          "size": 32,
+          "frame_offset_before": 0,
+          "frame_offset_after": 32,
+          "alter_reg_context": null
+        },
+        {
+          "function": "func_80045060",
+          "allocator": "assign_stack_local",
+          "size": 32,
+          "frame_offset_before": 0,
+          "frame_offset_after": 32,
+          "alter_reg_context": null
+        }
+      ]
+    },
+    {
+      "unit": "src/menu/sprite_atlas.c",
+      "variant": "removed",
+      "source_sha256": "b1cdb06f209113a4f4c71a2882f7808f7d2a28e00b6143052bae0c4a12f530a8",
+      "report_path": ".decomp-lab/atlas-storage-removed-allocation-20261016-first/report.json",
+      "report_sha256": "d86b068bedadda57b8a2f1741e2476886b6317e07dd6be0d17c47a2519ac8582",
+      "complete_assembly_equal": true,
+      "events": []
+    },
+    {
+      "unit": "src/menu/sprite_atlas.c",
+      "variant": "matching",
+      "source_sha256": "72b12db645fbe47ec10a0a2457daaa7b4d19e5b57d886d12e6bba35c8f798b61",
+      "report_path": ".decomp-lab/atlas-storage-matching-allocation-20261016-first/report.json",
+      "report_sha256": "f928316f8bdbdd121fae28424f85e49e7c72b8579c2e285e04d49c96c8bd2369",
+      "complete_assembly_equal": true,
+      "events": [
+        {
+          "function": "func_80044F90",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 76,
+            "from_pseudo": -1,
+            "function": "func_80044F90",
+            "completed": true
+          }
+        },
+        {
+          "function": "func_80044F90",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 8,
+          "frame_offset_after": 16,
+          "alter_reg_context": {
+            "pseudo": 78,
+            "from_pseudo": -1,
+            "function": "func_80044F90",
+            "completed": true
+          }
+        },
+        {
+          "function": "func_80044F90",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 16,
+          "frame_offset_after": 24,
+          "alter_reg_context": {
+            "pseudo": 79,
+            "from_pseudo": -1,
+            "function": "func_80044F90",
+            "completed": true
+          }
+        },
+        {
+          "function": "func_80044F90",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 24,
+          "frame_offset_after": 32,
+          "alter_reg_context": {
+            "pseudo": 82,
+            "from_pseudo": -1,
+            "function": "func_80044F90",
+            "completed": true
+          }
+        },
+        {
+          "function": "func_80045060",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 74,
+            "from_pseudo": -1,
+            "function": "func_80045060",
+            "completed": true
+          }
+        },
+        {
+          "function": "func_80045060",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 8,
+          "frame_offset_after": 16,
+          "alter_reg_context": {
+            "pseudo": 79,
+            "from_pseudo": -1,
+            "function": "func_80045060",
+            "completed": true
+          }
+        },
+        {
+          "function": "func_80045060",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 16,
+          "frame_offset_after": 24,
+          "alter_reg_context": {
+            "pseudo": 81,
+            "from_pseudo": -1,
+            "function": "func_80045060",
+            "completed": true
+          }
+        },
+        {
+          "function": "func_80045060",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 24,
+          "frame_offset_after": 32,
+          "alter_reg_context": {
+            "pseudo": 82,
+            "from_pseudo": -1,
+            "function": "func_80045060",
+            "completed": true
+          }
+        }
+      ]
+    },
+    {
+      "unit": "src/menu/tile_buffer.c",
+      "variant": "baseline",
+      "source_sha256": "15fec284373159ae31863e14174f293707a93582671d1b12d7ec22cef1a319c9",
+      "report_path": ".decomp-lab/tile-storage-baseline-allocation-20261016-first/report.json",
+      "report_sha256": "7cf058ef45b5bf686dcc6a67bcc80311aa7d7bb590ec34367837bea4a02d664a",
+      "complete_assembly_equal": true,
+      "events": [
+        {
+          "function": "func_80044D40",
+          "allocator": "assign_stack_temp",
+          "size": 32,
+          "frame_offset_before": 0,
+          "frame_offset_after": 32,
+          "alter_reg_context": null
+        },
+        {
+          "function": "func_80044D40",
+          "allocator": "assign_stack_local",
+          "size": 32,
+          "frame_offset_before": 0,
+          "frame_offset_after": 32,
+          "alter_reg_context": null
+        },
+        {
+          "function": "func_80044E64",
+          "allocator": "assign_stack_temp",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        },
+        {
+          "function": "func_80044E64",
+          "allocator": "assign_stack_local",
+          "size": 8,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": null
+        }
+      ]
+    },
+    {
+      "unit": "src/menu/tile_buffer.c",
+      "variant": "removed",
+      "source_sha256": "811793e7b0aff5d1c8e679a2bc3fa57fbcd1ae3fea64f9192043be37a914743e",
+      "report_path": ".decomp-lab/tile-storage-removed-allocation-20261016-first/report.json",
+      "report_sha256": "24e05d482151bc4d6d0bd76a01fdc8d766dab5a6bb79089b3acdbfb184db48d4",
+      "complete_assembly_equal": true,
+      "events": []
+    },
+    {
+      "unit": "src/menu/tile_buffer.c",
+      "variant": "matching",
+      "source_sha256": "f16a751e09ff13976fe7d6c6b21354c406da24785bd2e4dcf5149e8a9df8127e",
+      "report_path": ".decomp-lab/tile-storage-matching-allocation-20261016-first/report.json",
+      "report_sha256": "9e02243bb7fef7299f8342c7d2efaa2d387708750708236360fd65a1481c38f3",
+      "complete_assembly_equal": true,
+      "events": [
+        {
+          "function": "func_80044D40",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 77,
+            "from_pseudo": -1,
+            "function": "func_80044D40",
+            "completed": true
+          }
+        },
+        {
+          "function": "func_80044D40",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 8,
+          "frame_offset_after": 16,
+          "alter_reg_context": {
+            "pseudo": 79,
+            "from_pseudo": -1,
+            "function": "func_80044D40",
+            "completed": true
+          }
+        },
+        {
+          "function": "func_80044D40",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 16,
+          "frame_offset_after": 24,
+          "alter_reg_context": {
+            "pseudo": 80,
+            "from_pseudo": -1,
+            "function": "func_80044D40",
+            "completed": true
+          }
+        },
+        {
+          "function": "func_80044D40",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 24,
+          "frame_offset_after": 32,
+          "alter_reg_context": {
+            "pseudo": 83,
+            "from_pseudo": -1,
+            "function": "func_80044D40",
+            "completed": true
+          }
+        },
+        {
+          "function": "func_80044E64",
+          "allocator": "assign_stack_local",
+          "size": 4,
+          "frame_offset_before": 0,
+          "frame_offset_after": 8,
+          "alter_reg_context": {
+            "pseudo": 88,
+            "from_pseudo": -1,
+            "function": "func_80044E64",
+            "completed": true
+          }
+        }
+      ]
+    }
+  ],
+  "qualified_complete_unit_compiler_observations": 6,
+  "actual_matching_reload_requests": 13,
+  "normal_and_instrumented_complete_assembly_equal": true,
+  "explicit_compiler_memory_rewrites": false,
+  "extra_inferior_functions_invoked": 0,
+  "original_tile_count_read_retained_literally": true,
+  "new_volatile_constraints": 0,
+  "ordinary_complete_image_equal": true,
+  "fresh_complete_build": {
+    "status": "verified_fresh_complete_atlas_tile_build",
+    "objects": 306,
+    "baseline_commit": "a3d74d07818eb0ad19969a05fbf9f43bc7b4bde8",
+    "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "executable_bytes": 505856,
+    "source_units": [
+      "src/menu/sprite_atlas.c",
+      "src/menu/tile_buffer.c"
+    ],
+    "source_hashes": {
+      "src/menu/sprite_atlas.c": "72b12db645fbe47ec10a0a2457daaa7b4d19e5b57d886d12e6bba35c8f798b61",
+      "src/menu/tile_buffer.c": "f16a751e09ff13976fe7d6c6b21354c406da24785bd2e4dcf5149e8a9df8127e"
+    },
+    "regular_and_fresh_complete_images_equal": true,
+    "protected_original_inputs_preserved": true,
+    "maspsx_revision": "e85ecb373828aabea96d7e6400974d4f91ce8c74",
+    "new_C_bytes": 0,
+    "whole_feature_acceptances": 0,
+    "goal_complete": false
+  },
+  "private_qualification": {
+    "path": ".decomp-lab/atlas-tile-recovery-20261016-first/qualification.json",
+    "sha256": "cfa47a47c294da925bcb216a02c61de194c49d1ace364d8a1bbb4af90a470df8"
+  },
+  "private_fresh_build": {
+    "path": ".decomp-lab/atlas-tile-recovery-20261016-first/fresh-build-report.json",
+    "sha256": "cff417288e2b9ffd5eecad3686a4ed64f098a11d9293a0cf17b3924777a95190",
+    "producer_sha256": "3a76530572c448f029583afd86b6050ee77965453764c4dd085e889510da4144"
+  },
+  "isolated_source_comparisons": [
+    {
+      "path": ".decomp-lab/tile-column-input-views-20261016-first/report.json",
+      "sha256": "7e3d8c7935d8fe56ced2967aa88a9d56816ba70f82635b60f511b98b4998c2f2",
+      "qualified_observations": 7,
+      "exact_function_matches": 0,
+      "exact_complete_images": 0
+    },
+    {
+      "path": ".decomp-lab/atlas-update-input-views-20261016-first/report.json",
+      "sha256": "d626a0f5df6858c84762e4c895941956690d070fd2ad40047ac6d0fbfd0f759a",
+      "qualified_observations": 13,
+      "exact_function_matches": 0,
+      "exact_complete_images": 0
+    },
+    {
+      "path": ".decomp-lab/atlas-constructor-input-views-20261016-first/report.json",
+      "sha256": "fec2855030484dcb34792b873f0a1991049a48c8af96d041f65a54833f9c976c",
+      "qualified_observations": 9,
+      "exact_function_matches": 0,
+      "exact_complete_images": 0
+    },
+    {
+      "path": ".decomp-lab/tile-constructor-input-views-20261016-first/report.json",
+      "sha256": "9093b7d40b1c4a27e95306ffbe8cb45365add62b3d537ed39c45546be94a125a",
+      "qualified_observations": 9,
+      "exact_function_matches": 0,
+      "exact_complete_images": 0
+    },
+    {
+      "path": ".decomp-lab/atlas-functional-update-20261016-first/report.json",
+      "sha256": "3a4751554a5f9994bc5ba198a58fe4a0987dde6d4698a311c7e08293c31629d6",
+      "qualified_observations": 2,
+      "exact_function_matches": 1,
+      "exact_complete_images": 1
+    },
+    {
+      "path": ".decomp-lab/atlas-functional-constructor-20261016-first/report.json",
+      "sha256": "df7759ca73e65251e9094354483f390d04866861895ba949b31a72d50f34d3b5",
+      "qualified_observations": 2,
+      "exact_function_matches": 1,
+      "exact_complete_images": 1
+    },
+    {
+      "path": ".decomp-lab/tile-functional-constructor-20261016-first/report.json",
+      "sha256": "87d3b72bb45a16f7f206cbb2f8eae80e4e8984f81bff426a5f524e14ed539ff2",
+      "qualified_observations": 2,
+      "exact_function_matches": 1,
+      "exact_complete_images": 1
+    },
+    {
+      "path": ".decomp-lab/tile-existing-count-inputs-20261016-first/report.json",
+      "sha256": "7c32a061a5273146c7e6490ed4ec2be9e6cc285394036b08c1ef6335f8775647",
+      "qualified_observations": 2,
+      "exact_function_matches": 1,
+      "exact_complete_images": 1
+    }
+  ],
+  "qualified_isolated_observations": 46,
+  "tooling_tests": [
+    {
+      "platform": "Windows",
+      "python_version": "Python 3.14.2",
+      "total_cases": 654,
+      "passed": 652,
+      "expected_skips": 2,
+      "private_log": ".decomp-lab/atlas-tile-tests-windows-20261016-first.log",
+      "log_sha256": "a8d2428037e38a14479da010566aa4637e546e25b70294e7efae62aa2bf1ec41"
+    },
+    {
+      "platform": "WSL/Linux",
+      "python_version": "Python 3.13.5",
+      "total_cases": 654,
+      "passed": 652,
+      "expected_skips": 2,
+      "private_log": ".decomp-lab/atlas-tile-tests-wsl-20261016-first.log",
+      "log_sha256": "e7c3bbd30e9764352c675fa4ded55593dc56eb67f42b63a3d42e4d4c44dcf35b"
+    }
+  ],
+  "public_files": {
+    "src/menu/sprite_atlas.c": "72b12db645fbe47ec10a0a2457daaa7b4d19e5b57d886d12e6bba35c8f798b61",
+    "src/menu/tile_buffer.c": "f16a751e09ff13976fe7d6c6b21354c406da24785bd2e4dcf5149e8a9df8127e",
+    "docs/ATLAS_TILE_STORAGE.md": "2d7ccad7fb066c3a912449abb79c3533b37d8f6a490fae93aead8a4ec62813dc"
+  },
+  "new_C_bytes": 0,
+  "new_original_fixture_inputs": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "whole_feature_acceptances": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "new_model_API_calls": 0,
+  "new_native_game_executions": 0,
+  "new_gameplay_runs": 0,
+  "Bevy_port_modified": false,
+  "goal_complete": false,
+  "source_hash_convention": "SHA-256 of exact executed local source bytes. The two C units and new report/metadata are pinned to LF; earlier transitive inputs retain their recorded local endings.",
+  "scope": "Four consumed functional-input reconstructions replace inherited unused storage while retaining every original instruction. The inherited volatile count read is unchanged; original author declarations and its rationale remain unknown. No runtime input domain or complete-feature acceptance is added."
+}
