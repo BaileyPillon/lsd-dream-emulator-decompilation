@@ -95,3 +95,9 @@ src/menu/sprite_atlas.c text eol=lf
 src/menu/tile_buffer.c text eol=lf
 docs/ATLAS_TILE_STORAGE.md text eol=lf
 docs/atlas-tile-storage-checks.json text eol=lf
+
+# Preserve the executed raw-model mapping oracle and its evidence.
+tools/model_mapping_model.py text eol=lf
+tests/test_model_mapping.py text eol=lf
+docs/MODEL_MAPPING.md text eol=lf
+docs/model-mapping-checks.json text eol=lf

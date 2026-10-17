@@ -1,6 +1,7 @@
 """Check original MOM/actor factory ownership against an independent event plan.
 
-Object payloads, mapped geometry and complete animation state are not modeled.
+The optional model-data profile compares the complete mapped raw MOM copy.
+Allocated object payloads and complete animation state are not modeled.
 This is a bounded analysis tool, not gameplay or whole-feature acceptance.
 """
 import argparse
@@ -22,6 +23,7 @@ from tools import actor_child_model as child
 from tools import verify_actor_children as common
 from tools.actor_factory_model import OwnershipPlan
 from tools.heap_model import PoolModel
+from tools.model_mapping_model import geometry_bindings, mapped_model_bytes
 
 MANAGER, POOL, POOL_SIZE = 0x90000, 0xA0000, 0x60000
 DATA, MODEL_INPUT, ACTOR_INPUT = 0x140020, 0x92020, 0x93020
@@ -34,8 +36,16 @@ FAULTS = (
     dict(name='reversed-table-releases', patches=[(0x80065FA4, 0x8E040074, 0x8E040070),
                                                 (0x80065FB0, 0x8E040070, 0x8E040074)]),
 )
+MODEL_DATA_FAULTS = (
+    dict(name='mapped-flag-extra-bit', patches=[(0x8002055C, 0x34620001, 0x34620003)]),
+    dict(name='vertex-pointer-base', patches=[(0x8002058C, 0x00821021, 0x00021021)]),
+    dict(name='normal-pointer-base', patches=[(0x800205A0, 0x00821021, 0x00021021)]),
+    dict(name='primitive-batch-count', patches=[(0x8001F09C, 0xA6910000, 0xA6800000)]),
+    dict(name='animation-slots-not-cleared', patches=[(0x80018420, 0xAE220000, 0x00000000)]),
+)
 DEPENDENCIES = common.DEPENDENCIES + ('tools/actor_factory_model.py',
-    'tools/verify_actor_factory.py', 'docs/actor-factory-function-ranges.json')
+    'tools/verify_actor_factory.py', 'tools/model_mapping_model.py',
+    'docs/actor-factory-function-ranges.json')
 
 
 def require(condition, message):
@@ -105,17 +115,26 @@ class Machine(common.Machine):
                             cpu.reg_read(self.reg.UC_MIPS_REG_SP), name, argument, expected)
 
 
-def run_case(program, ranges, names, raw, pattern, scenario, fault=None):
+def run_case(program, ranges, names, raw, pattern, scenario, fault=None, model_data=False):
     reference = initial_pool(pattern)
     reference.setup()
     # Generate every expected argument and return before starting native code.
     plan = OwnershipPlan(raw, reference)
     expected = plan.run(scenario)
+    if model_data:
+        require(len(plan.models) == 1, 'The raw-model profile requires one independently planned model.')
+    mapped = mapped_model_bytes(raw, DATA, plan.models[0].animations) if model_data else None
+    if model_data:
+        indices = geometry_bindings(plan.types, plan.commands, plan.objects)
+        linked = mapped_model_bytes(raw, DATA, plan.models[0].animations, indices)
+        destroyed = mapped_model_bytes(raw, DATA, plan.models[0].animations, indices, destroyed=True)
     patches = fault['patches'] if fault else ()
     machine = Machine(program, ranges, names, raw, pattern, expected, patches)
     report = dict(status='failed_bounded_actor_factory_ownership', scenario=scenario, pattern=pattern,
                   fault=fault, dependency_output_stubs=0, independent_request_and_release_plan=True,
                   independent_complete_object_payload_model=False, native_history_completed=False)
+    snapshots = []
+    reentered = False
     word = lambda address: int.from_bytes(machine.cpu.mem_read(address & common.native.MASK, 4), 'little')
     try:
         machine.call('memory_set_manager', MANAGER+0x40)
@@ -145,6 +164,23 @@ def run_case(program, ranges, names, raw, pattern, scenario, fault=None):
         struct.pack_into('<4I', model_input, 32, DATA, 0, 1, 0)
         machine.cpu.mem_write(MODEL_INPUT-32, bytes(model_input))
         histories = []
+        def compare_model_data(phase, expected_copy):
+            if not model_data:
+                return
+            actual = bytes(machine.cpu.mem_read(DATA-32, len(raw)+64))
+            expected_data = bytes(data[:32]) + expected_copy + bytes(data[-32:])
+            mismatch = next((index for index, (a, b) in enumerate(zip(actual, expected_data)) if a != b), None)
+            snapshots.append(dict(phase=phase, bytes_compared=len(actual), matched=actual == expected_data,
+                                  first_difference=mismatch, expected_sha256=common.sha(expected_data),
+                                  actual_sha256=common.sha(actual)))
+        def mapping_reentry(model, expected_copy):
+            nonlocal reentered
+            if model_data and not reentered:
+                tmd = word(model+0x2C)
+                require(tmd == plan.models[0].tmd, 'Model TMD ownership pointer differs from its independent plan.')
+                machine.call('tmd_map', tmd)
+                reentered = True
+                compare_model_data('after_original_mapping_reentry', expected_copy)
         def create_actor(borrowed):
             actor_input = child.filled(80, pattern, 197)
             struct.pack_into('<4I', actor_input, 32, *((0, 0, 0, borrowed) if borrowed else (DATA, 0, 1, 0)))
@@ -157,20 +193,26 @@ def run_case(program, ranges, names, raw, pattern, scenario, fault=None):
             require(word(actor+0x60) == (0 if borrowed else 1), 'Actor model ownership flag differs.')
             require(word(model+8) != 0 and (not borrowed or model == borrowed), 'Model parent link differs.')
             common.equal_buffer('actor_factory_input', bytes(machine.cpu.mem_read(ACTOR_INPUT-32, 80)), bytes(actor_input))
+            compare_model_data('after_actor_factory', linked if model_data else None)
+            mapping_reentry(model, linked if model_data else None)
             return actor, model
         if scenario == 'owned':
             actor, model = create_actor(0)
             require(machine.call('base_class_destructor', actor) == 0, 'Actor destructor return differs.')
+            compare_model_data('after_owned_actor_destruction', destroyed if model_data else None)
             histories.append(dict(actor=actor, model=model, owned_model_destroyed_with_actor=True))
         else:
             model = machine.call('func_8004468C', MODEL_INPUT)
             require(model and word(model) == program.symbols['D_8006F384'], 'Borrowed model factory failed.')
+            compare_model_data('after_model_factory', mapped)
+            mapping_reentry(model, mapped)
             if scenario == 'model-first':
                 actor, _ = create_actor(model)
                 cleanups = machine.entries['actor_cleanup']
                 require(machine.call('file_buf_destroy', model) == 0, 'Model destructor return differs.')
                 require(machine.entries['actor_cleanup'] == cleanups+1 and machine.entries['func_80065790'] > 0,
                         'Original model notification did not destroy its borrowed actor.')
+                compare_model_data('after_model_notification_and_destruction', destroyed if model_data else None)
                 histories.append(dict(actor=actor, model=model, actor_destroyed_by_model_notification=True))
             else:
                 require(scenario == 'actor-first', 'Unknown ownership scenario.')
@@ -178,8 +220,10 @@ def run_case(program, ranges, names, raw, pattern, scenario, fault=None):
                     actor, _ = create_actor(model)
                     require(machine.call('base_class_destructor', actor) == 0 and word(model+8) == 0,
                             'Borrowed model did not survive actor destruction.')
+                    compare_model_data('after_borrowed_actor_destruction', linked if model_data else None)
                     histories.append(dict(actor=actor, model=model, borrowed_model_survived=True))
                 require(machine.call('file_buf_destroy', model) == 0, 'Final model destruction failed.')
+                compare_model_data('after_final_model_destruction', destroyed if model_data else None)
         require(machine.pending is None, 'Unfinished heap call.')
         report['native_history_completed'] = True
         compare_events(machine.actual, machine.events)
@@ -193,17 +237,24 @@ def run_case(program, ranges, names, raw, pattern, scenario, fault=None):
         require(word(names['D_8008AC4C']) == 1 and word(names['g_CdLocked']) == 0,
                 'Final enumeration flag or CD lock differs.')
         require(len(machine.observed.blocks) == 1 and machine.observed.blocks[0].free, 'Owned allocations remain live.')
+        if model_data:
+            require(len(snapshots) == {'owned': 3, 'actor-first': 7, 'model-first': 4}[scenario]
+                    and reentered, 'The model-data profile did not execute all its mapping checks.')
+            wrong = next((row for row in snapshots if not row['matched']), None)
+            require(wrong is None, 'mapped_model_data ' + (str(wrong) if wrong else ''))
         report.update(status='passed_bounded_actor_factory_ownership', histories=histories,
                       all_owned_allocations_released=True)
     except (ValueError, machine.unicorn.UcError) as error:
         report.update(error=str(error), recent_native_addresses=machine.recent)
     report.update(expected_heap_events=expected, actual_heap_events=machine.actual,
+                  model_data_profile=model_data, independent_raw_model_mapping=model_data,
+                  model_data_snapshots=snapshots, original_mapping_reentry=reentered,
                   instructions=machine.steps, entered_original_functions=dict(machine.entries),
                   changed_instruction_hits={hex(address): count for address, count in machine.patch_hits.items()})
     return report
 
 
-def verify(layout, destination, edition_label):
+def verify(layout, destination, edition_label, model_data=False):
     ninja = common.require_ninja()
     backend = {key: value for key, value in common.heap.backend_identity().items() if key in common.IDENTITY_KEYS}
     functions = json.loads(RANGES.read_text(encoding='utf-8'))['functions']
@@ -231,11 +282,13 @@ def verify(layout, destination, edition_label):
         for pattern in child.PATTERNS:
             for scenario in SCENARIOS:
                 name = 'model-'+str(index).zfill(3)+'-'+pattern+'-'+scenario
-                result = run_case(program, ranges, names, raw, pattern, scenario)
+                result = run_case(program, ranges, names, raw, pattern, scenario, model_data=model_data)
                 common.write_json(destination/(name+'.json'), result)
                 require(result['status'] == 'passed_bounded_actor_factory_ownership', 'Retained '+name+'.json: '+result.get('error', ''))
                 rows.append(dict(case=name, model_sha256=common.sha(raw), scenario=scenario, pattern=pattern,
                     actor_lifetimes=len(result['histories']), heap_events=len(result['actual_heap_events']),
+                    model_data_snapshots=len(result['model_data_snapshots']),
+                    model_data_bytes_compared=sum(row['bytes_compared'] for row in result['model_data_snapshots']),
                     report_sha256=common.sha((destination/(name+'.json')).read_bytes())))
                 entered.update(result['entered_original_functions'])
                 gc.collect()
@@ -252,6 +305,18 @@ def verify(layout, destination, edition_label):
                         for address, _, _ in fault['patches']), 'Fault did not finish and expose a wrong ownership event: '+fault['name'])
         controls.append(dict(name=fault['name'], detected=True, native_history_completed=True,
                              changed_instruction_hits=result['changed_instruction_hits'], detection=result['error']))
+    model_controls = []
+    if model_data:
+        for fault in MODEL_DATA_FAULTS:
+            result = run_case(program, ranges, names, raw, 'distinct', 'actor-first', fault, model_data=True)
+            common.write_json(destination/('fault-'+fault['name']+'.json'), result)
+            require(result['native_history_completed'] and result['status'].startswith('failed_')
+                    and result.get('error', '').startswith('mapped_model_data ')
+                    and all(result['changed_instruction_hits'].get(hex(address & common.native.MASK), 0)
+                            for address, _, _ in fault['patches']),
+                    'Model-data fault did not finish and expose a wrong byte: '+fault['name'])
+            model_controls.append(dict(name=fault['name'], detected=True, native_history_completed=True,
+                                       changed_instruction_hits=result['changed_instruction_hits'], detection=result['error']))
     require(before == common.build_inputs(), 'Canonical game inputs changed.')
     require(common.sha(Path(layout).read_bytes()) == inventory['layout_sha256'], 'Extraction layout changed.')
     require(all(common.sha(Path(source['source']).read_bytes()) == source['sha256']
@@ -266,6 +331,10 @@ def verify(layout, destination, edition_label):
         actor_lifetimes=sum(row['actor_lifetimes'] for row in rows), heap_events=sum(row['heap_events'] for row in rows),
         native_allocation_calls=entered['memory_allocate_mem'], native_release_calls=entered['memory_free_mem'],
         results=rows, faults=controls, entered_original_functions=dict(entered), function_ranges=functions,
+        model_data_profile=model_data, independent_raw_model_mapping=model_data, model_data_faults=model_controls,
+        model_data_snapshots=sum(row['model_data_snapshots'] for row in rows),
+        model_data_bytes_compared=sum(row['model_data_bytes_compared'] for row in rows),
+        original_mapping_reentries=len(rows) if model_data else 0,
         backend=backend, ninja=ninja, canonical_sha256=common.sha(program.ROM),
         inventory_sha256=common.sha((destination/'inventory.json').read_bytes()),
         layout_sha256=inventory['layout_sha256'],
@@ -278,8 +347,10 @@ def verify(layout, destination, edition_label):
                          'g_CdInitialized=1 ready-state fixture', 'SDK identity matrix table'],
         elapsed_seconds=time.monotonic()-began,
         scope='Native model/TMD/MOS factories, animation-zero initialization and three actor/model ownership histories. '
-              'An independent plan predicts ordered heap requests, releases and return words before execution. '
-              'Complete object/geometry/raw-model mutation oracles, allocation failures, cold CD initialization, '
+              'An independent plan predicts ordered heap requests, releases and return words before execution. ' +
+              ('The optional complete guarded raw-model mapping oracle is active. ' if model_data else '') +
+              ('Raw-model mutation comparisons are not enabled. ' if not model_data else '') +
+              'Geometry interpretation, complete allocated object payloads, allocation failures, cold CD initialization, '
               'physical disc I/O, later playback, natural encounters, rendering and PS1 timing remain open.')
     common.write_json(destination/'report.json', report)
     print(json.dumps({key: report[key] for key in ('status', 'positive_cases', 'actor_lifetimes', 'heap_events')}), flush=True)
@@ -291,13 +362,14 @@ def main(argv=None):
     parser.add_argument('--layout', required=True, help='Your dumpsxiso extraction XML.')
     parser.add_argument('--output', required=True, help='Fresh directory inside .decomp-lab.')
     parser.add_argument('--edition-label', default='unspecified', help='Provenance label; not edition detection.')
+    parser.add_argument('--model-data', action='store_true', help='Also compare all guarded raw MOM mapping bytes and original mapping reentry.')
     args = parser.parse_args(argv)
     created = False
     try:
         destination = common.output_directory(args.output)
         destination.mkdir(parents=True, exist_ok=False)
         created = True
-        verify(Path(args.layout).resolve(), destination, args.edition_label)
+        verify(Path(args.layout).resolve(), destination, args.edition_label, args.model_data)
         return 0
     except (OSError, ValueError, subprocess.CalledProcessError, ET.ParseError) as error:
         if created:

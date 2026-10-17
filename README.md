@@ -48,6 +48,10 @@ Their scope and remaining gaps are documented in the
 [feature inventory](docs/FEATURE_INVENTORY.md) and [roadmap](docs/ROADMAP.md).
 The [model enumeration interfaces](docs/MODEL_ENUMERATION.md) now explicitly
 forward the original arguments through the object/list/part callback chain.
+The optional [model-data comparison](docs/MODEL_MAPPING.md) checks the complete
+guarded MOM copy through original pointer mapping, primitive batching and
+destruction against independently predicted bytes. It extends the existing
+ownership histories without adding C bytes or accepting whole encounters.
 The [collision query interface](docs/COLLISION_API.md) now declares the original
 pointer roles and output sizes. A compiled C caller passes 12,696 bounded inputs;
 the complete matching executable and source-recovery counts are unchanged.

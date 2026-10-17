@@ -24,6 +24,7 @@ class OwnershipPlan:
     def __init__(self, raw, pool):
         raw = bytes(raw)
         self.raw, self.pool, self.events = raw, pool, []
+        self.models = []
         self.frame = child_model.decode_first_frame(raw)
         self.animations = struct.unpack_from('<I', raw, 16)[0]
         self.tmd = struct.unpack_from('<I', raw, 8)[0]
@@ -116,6 +117,7 @@ class OwnershipPlan:
         model.primitives = [self.allocate(36) for _ in range(self.objects)]
         model.parts = self.allocate(44)
         model.animations = [self.allocate(44) for _ in range(self.animations)]
+        self.models.append(model)
         return model
 
     def create_actor(self, model=None):

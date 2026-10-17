@@ -1,0 +1,378 @@
+{
+  "schema_version": 1,
+  "status": "qualified_bounded_original_model_data_mapping",
+  "recorded_utc": "2026-10-17T01:46:01.127710+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "c8fc98f1981aae26abdc0799f5711c811915cfae",
+  "before": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "private_runs": [
+    {
+      "edition_label": "English-v1",
+      "edition_label_is_user_supplied": true,
+      "private_report": ".decomp-lab/model-mapping-english-20261016-first/report.json",
+      "report_sha256": "e1ea7c4f29b5c30532450beb1f6b38a9f862c732fb25ec8ea38d125dd08b16d1",
+      "inventory_sha256": "3850fb36384a23e3ea1debf7d34e4936d89e6830cc450d03532a253ff73635f9",
+      "layout_sha256": "cf93cc690c83baa91e7f54d57bc160007ceee859dc566333105124bf126ed1bc",
+      "measured": {
+        "original_model_instances": 111,
+        "distinct_model_contents": 100,
+        "positive_cases": 666,
+        "actor_lifetimes": 888,
+        "heap_events": 128384,
+        "native_allocation_calls": 64192,
+        "native_release_calls": 64192,
+        "model_data_snapshots": 3108,
+        "model_data_bytes_compared": 24028144,
+        "original_mapping_reentries": 666
+      },
+      "faults": [
+        {
+          "name": "primitive-allocation-size",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x1f25c": 13
+          },
+          "detection": "planned_heap_event 3: actual=[('memory_allocate_mem', 32, 655600)]; expected=[('memory_allocate_mem', 36, 655600)]"
+        },
+        {
+          "name": "omitted-state-release",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x1cc04": 60
+          },
+          "detection": "planned_heap_event 173: actual=[('memory_free_mem', 0, 0)]; expected=[('memory_free_mem', 656880, 0)]"
+        },
+        {
+          "name": "reversed-table-releases",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x65fa4": 2,
+            "0x65fb0": 2
+          },
+          "detection": "planned_heap_event 316: actual=[('memory_free_mem', 656548, 0)]; expected=[('memory_free_mem', 656668, 0)]"
+        }
+      ],
+      "model_data_faults": [
+        {
+          "name": "mapped-flag-extra-bit",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x2055c": 1
+          },
+          "detection": "mapped_model_data {'phase': 'after_model_factory', 'bytes_compared': 10816, 'matched': False, 'first_difference': 6048, 'expected_sha256': '7dad99b2c188b1ec346f05b0fc1c6b0907d376f46888f4b79868cca18594f8c5', 'actual_sha256': '451e2257efd5e67cac8c23b443bb809a1b1975bbd568773f7f08e01f69dea22c'}"
+        },
+        {
+          "name": "vertex-pointer-base",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x2058c": 13
+          },
+          "detection": "mapped_model_data {'phase': 'after_model_factory', 'bytes_compared': 10816, 'matched': False, 'first_difference': 6056, 'expected_sha256': '7dad99b2c188b1ec346f05b0fc1c6b0907d376f46888f4b79868cca18594f8c5', 'actual_sha256': '986d3d43da7e32e6803b620314507aea8e00d99c29ec927d643cd129547cfa7f'}"
+        },
+        {
+          "name": "normal-pointer-base",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x205a0": 13
+          },
+          "detection": "mapped_model_data {'phase': 'after_model_factory', 'bytes_compared': 10816, 'matched': False, 'first_difference': 6064, 'expected_sha256': '7dad99b2c188b1ec346f05b0fc1c6b0907d376f46888f4b79868cca18594f8c5', 'actual_sha256': '94b5571d69c588b6a343117c35fa7cdc61b257cd0a9dc9f6eeb81261e05eaa35'}"
+        },
+        {
+          "name": "primitive-batch-count",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x1f09c": 28
+          },
+          "detection": "mapped_model_data {'phase': 'after_actor_factory', 'bytes_compared': 10816, 'matched': False, 'first_difference': 6756, 'expected_sha256': 'a06a362f4970f8b12097d598b9e2918189f6b9aa31c48c031e5816230616c887', 'actual_sha256': '70db63230ba094639dfaa33fc0578e2bc1bace473524d1cdb320e7d6e21189ab'}"
+        },
+        {
+          "name": "animation-slots-not-cleared",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x18420": 2
+          },
+          "detection": "mapped_model_data {'phase': 'after_final_model_destruction', 'bytes_compared': 10816, 'matched': False, 'first_difference': 52, 'expected_sha256': '2e604025b9f94c581c984acb03116bf61fd49208304a5db4892b2727150701bd', 'actual_sha256': 'a06a362f4970f8b12097d598b9e2918189f6b9aa31c48c031e5816230616c887'}"
+        }
+      ],
+      "backend": {
+        "package_version": "2.1.2",
+        "library_api": [
+          2,
+          1,
+          33620735
+        ],
+        "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+        "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+        "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+        "binding_source_count": 21
+      },
+      "ninja": {
+        "version": "1.13.2.git.kitware.jobserver-pipe-1",
+        "executable_sha256": "08639e194fffa7f08b259fc4abfa4803aff66b64de52549cee42ec527d55cea6"
+      },
+      "symbol_diagnostic": {
+        "elf_sha256": "c0746d3982c314079a5a24f2d88072c43464032f969eeac5f172c7646df833a7",
+        "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+        "object_count": 306,
+        "original_link_flags": [
+          "--no-check-sections",
+          "-nostdlib",
+          "-s"
+        ],
+        "diagnostic_link_flags": [
+          "--no-check-sections",
+          "-nostdlib"
+        ],
+        "complete_canonical_image_equal": true
+      },
+      "all_prior_ownership_events_and_histories_retained": true
+    },
+    {
+      "edition_label": "Japanese-labelled",
+      "edition_label_is_user_supplied": true,
+      "private_report": ".decomp-lab/model-mapping-japanese-20261016-first/report.json",
+      "report_sha256": "19c01b86ef4230d7245b4e711b9cc75bd03eca73c459d074761221e617d348dc",
+      "inventory_sha256": "a2ea703b22fa7a32bbefd023f030971c0688e08683793386f6a3ebbfbe6d72c8",
+      "layout_sha256": "cf93cc690c83baa91e7f54d57bc160007ceee859dc566333105124bf126ed1bc",
+      "measured": {
+        "original_model_instances": 111,
+        "distinct_model_contents": 100,
+        "positive_cases": 666,
+        "actor_lifetimes": 888,
+        "heap_events": 128384,
+        "native_allocation_calls": 64192,
+        "native_release_calls": 64192,
+        "model_data_snapshots": 3108,
+        "model_data_bytes_compared": 24028144,
+        "original_mapping_reentries": 666
+      },
+      "faults": [
+        {
+          "name": "primitive-allocation-size",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x1f25c": 13
+          },
+          "detection": "planned_heap_event 3: actual=[('memory_allocate_mem', 32, 655600)]; expected=[('memory_allocate_mem', 36, 655600)]"
+        },
+        {
+          "name": "omitted-state-release",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x1cc04": 60
+          },
+          "detection": "planned_heap_event 173: actual=[('memory_free_mem', 0, 0)]; expected=[('memory_free_mem', 656880, 0)]"
+        },
+        {
+          "name": "reversed-table-releases",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x65fa4": 2,
+            "0x65fb0": 2
+          },
+          "detection": "planned_heap_event 316: actual=[('memory_free_mem', 656548, 0)]; expected=[('memory_free_mem', 656668, 0)]"
+        }
+      ],
+      "model_data_faults": [
+        {
+          "name": "mapped-flag-extra-bit",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x2055c": 1
+          },
+          "detection": "mapped_model_data {'phase': 'after_model_factory', 'bytes_compared': 10816, 'matched': False, 'first_difference': 6048, 'expected_sha256': '7dad99b2c188b1ec346f05b0fc1c6b0907d376f46888f4b79868cca18594f8c5', 'actual_sha256': '451e2257efd5e67cac8c23b443bb809a1b1975bbd568773f7f08e01f69dea22c'}"
+        },
+        {
+          "name": "vertex-pointer-base",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x2058c": 13
+          },
+          "detection": "mapped_model_data {'phase': 'after_model_factory', 'bytes_compared': 10816, 'matched': False, 'first_difference': 6056, 'expected_sha256': '7dad99b2c188b1ec346f05b0fc1c6b0907d376f46888f4b79868cca18594f8c5', 'actual_sha256': '986d3d43da7e32e6803b620314507aea8e00d99c29ec927d643cd129547cfa7f'}"
+        },
+        {
+          "name": "normal-pointer-base",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x205a0": 13
+          },
+          "detection": "mapped_model_data {'phase': 'after_model_factory', 'bytes_compared': 10816, 'matched': False, 'first_difference': 6064, 'expected_sha256': '7dad99b2c188b1ec346f05b0fc1c6b0907d376f46888f4b79868cca18594f8c5', 'actual_sha256': '94b5571d69c588b6a343117c35fa7cdc61b257cd0a9dc9f6eeb81261e05eaa35'}"
+        },
+        {
+          "name": "primitive-batch-count",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x1f09c": 28
+          },
+          "detection": "mapped_model_data {'phase': 'after_actor_factory', 'bytes_compared': 10816, 'matched': False, 'first_difference': 6756, 'expected_sha256': 'a06a362f4970f8b12097d598b9e2918189f6b9aa31c48c031e5816230616c887', 'actual_sha256': '70db63230ba094639dfaa33fc0578e2bc1bace473524d1cdb320e7d6e21189ab'}"
+        },
+        {
+          "name": "animation-slots-not-cleared",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x18420": 2
+          },
+          "detection": "mapped_model_data {'phase': 'after_final_model_destruction', 'bytes_compared': 10816, 'matched': False, 'first_difference': 52, 'expected_sha256': '2e604025b9f94c581c984acb03116bf61fd49208304a5db4892b2727150701bd', 'actual_sha256': 'a06a362f4970f8b12097d598b9e2918189f6b9aa31c48c031e5816230616c887'}"
+        }
+      ],
+      "backend": {
+        "package_version": "2.1.2",
+        "library_api": [
+          2,
+          1,
+          33620735
+        ],
+        "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+        "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+        "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+        "binding_source_count": 21
+      },
+      "ninja": {
+        "version": "1.13.2.git.kitware.jobserver-pipe-1",
+        "executable_sha256": "08639e194fffa7f08b259fc4abfa4803aff66b64de52549cee42ec527d55cea6"
+      },
+      "symbol_diagnostic": {
+        "elf_sha256": "c0746d3982c314079a5a24f2d88072c43464032f969eeac5f172c7646df833a7",
+        "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+        "object_count": 306,
+        "original_link_flags": [
+          "--no-check-sections",
+          "-nostdlib",
+          "-s"
+        ],
+        "diagnostic_link_flags": [
+          "--no-check-sections",
+          "-nostdlib"
+        ],
+        "complete_canonical_image_equal": true
+      },
+      "all_prior_ownership_events_and_histories_retained": true
+    }
+  ],
+  "shared_model_instances": 111,
+  "shared_distinct_model_contents": 100,
+  "separately_labelled_extractions": 2,
+  "original_functions": 134,
+  "independent_guarded_raw_model_oracle": true,
+  "independent_ownership_plan": true,
+  "independent_complete_allocated_object_payload_model": false,
+  "new_model_data_fault_controls_per_extraction": 5,
+  "retained_ownership_fault_controls_per_extraction": 3,
+  "added_native_mapping_reentry_instructions_per_case": 17,
+  "default_profile_regression": {
+    "private_report": ".decomp-lab/model-mapping-default-regression-20261016-second/report.json",
+    "sha256": "903eea3868f83223987f303085acde382460a61e09c293aa884115341298ae5c",
+    "positive_cases": 6,
+    "original_event_history_entry_and_instruction_counts_retained": true
+  },
+  "tooling_tests": [
+    {
+      "platform": "windows",
+      "log": ".decomp-lab/model-mapping-tests-windows-20261016-second.log",
+      "sha256": "c736f3ef6c8912ae5798c0b57d9137a2f8095d47e19bebb4f05031076a8fddb5",
+      "tests": 669,
+      "passed": 667,
+      "expected_skips": 2
+    },
+    {
+      "platform": "wsl",
+      "log": ".decomp-lab/model-mapping-tests-wsl-20261016-second.log",
+      "sha256": "2fe6a84cd7d0a9e565ed0aecf0b6b44ef4442029d719686c6d6c4e6bbe4232f1",
+      "tests": 669,
+      "passed": 667,
+      "expected_skips": 2
+    }
+  ],
+  "producer_dependency_sha256": {
+    "tools/verify_actor_children.py": "09b3beef12fe216bde9dc43840b35bf027ad174935f8a34a9e998465943cd356",
+    "tools/actor_child_model.py": "40980e4c0518acc7785bcd79bfc9a48274e09579c4ab05c8ea93f611ed3372f7",
+    "tools/heap_model.py": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e",
+    "tools/verify_card_heap.py": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5",
+    "tools/verify_card_cleanup.py": "5eec21f9fe0afa2549f10eb890c1dbf9984f5f1541611102afd9fa995d58d6c0",
+    "tools/verify_native_ai.py": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697",
+    "tools/inventory_animations.py": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+    "tools/inventory_disc.py": "71319a4c51b50885753998fe9afb7a00b71acf0fa03167b9a63c48651e36aebf",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+    "tools/progress.py": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+    "tools/decomp_workbench.py": "8d375145ca2b7f210889558ce75d4acd854a04606ea26d86ff50251b6a4820d1",
+    "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+    "docs/actor-child-construction-function-ranges.json": "917010a67a4398af6137fc3a180a0a6d5d06e18ab151ddd21890078733b8da22",
+    "docs/actor-child-lifetime-function-ranges.json": "16e676914cb87df4990a8dc6db9efa64779a810f3f9824e9fbaf691c261317df",
+    "requirements-card-heap.txt": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212",
+    "requirements.txt": "bcd34abbb33438c8a7e18a9165b8ea5c503a179b23738ccf72dbd659ce174cde",
+    "tools/actor_factory_model.py": "fb40720bc913c2a7d3957c5b65c1232d19b2f24a355bce3cdabe39dc6cb7489a",
+    "tools/verify_actor_factory.py": "578a85c080b17b185ff9458870c79e9164f772386ec727f9f9ea156a4f55ac5b",
+    "tools/model_mapping_model.py": "d3f0866a0c2e1ec4fe0fe2dde7b07a094a98b8ebb09e560472a36592cd70fe9e",
+    "docs/actor-factory-function-ranges.json": "1c7223ddeb1b0f440461e350e08184f383f5468b506496924c6b789f16c36611",
+    "tests/test_model_mapping.py": "578935c4fe4c90874102b3544429eb77c607caacce40467b8195791e54782e39"
+  },
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "canonical_executable_bytes": 505856,
+  "all_392_game_inputs_preserved": true,
+  "current_306_object_build_verified": true,
+  "both_complete_symbol_diagnostic_images_equal": true,
+  "additional_source_research": {
+    "private_checkpoint": ".decomp-lab/checkpoint-source-nonmatches-20261016-first.json",
+    "sha256": "a8d9a9e8e0f8c324a745f8b72fd72cb2b7650b79d0b4a9373229e4dd94f9c577",
+    "qualified_source_comparisons": 165,
+    "actual_compiler_allocation_observations": 2,
+    "new_C_bytes": 0,
+    "source_promoted": false
+  },
+  "new_C_bytes": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "new_original_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_model_API_calls": 0,
+  "Bevy_port_modified": false,
+  "goal_complete": false,
+  "limitations": [
+    "Constructed successful factory histories with supplied pool, ready CD state and SDK identity matrix.",
+    "Complete raw-copy equality does not prove full geometry interpretation or allocated object payload equality.",
+    "Later animation playback, allocation failures, cache/CD loading, natural encounters, rendering, audio and PS1 timing remain open."
+  ]
+}
