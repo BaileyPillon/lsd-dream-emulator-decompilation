@@ -1,5 +1,14 @@
 # Changelog
 
+## Native model construction payloads - 2026-10-16
+
+- Add optional complete-payload comparisons for every model allocation at the
+  original factory return, including models created inside actor construction.
+- Predict initialized fields and retained allocator residue independently;
+  require three executed payload faults to finish their ownership histories.
+- Preserve prior heap events, raw-model comparisons and native instruction
+  counts. Matching C, whole-feature acceptance and the Bevy port are unchanged.
+
 ## Native model-data mapping - 2026-10-16
 
 - Add an optional factory profile that predicts and compares the complete

@@ -52,6 +52,9 @@ The optional [model-data comparison](docs/MODEL_MAPPING.md) checks the complete
 guarded MOM copy through original pointer mapping, primitive batching and
 destruction against independently predicted bytes. It extends the existing
 ownership histories without adding C bytes or accepting whole encounters.
+The optional [model-object comparison](docs/MODEL_OBJECTS.md) also checks every
+allocated model payload at the original factory return, including retained
+allocator residue. Subsequent model and complete actor payloads remain open.
 The [collision query interface](docs/COLLISION_API.md) now declares the original
 pointer roles and output sizes. A compiled C caller passes 12,696 bounded inputs;
 the complete matching executable and source-recovery counts are unchanged.
@@ -76,7 +79,7 @@ The optional [child lifetime profile](docs/ACTOR_CHILD_LIFETIMES.md) follows
 those objects through original destruction, repeated cleanup and pool reuse.
 The [model/actor factory checker](docs/ACTOR_FACTORY_OWNERSHIP.md) now creates
 the real model resources and checks three ownership histories against an
-independent allocation/release plan. Complete object payloads and natural
+independent allocation/release plan. Complete actor payloads and natural
 encounters remain open.
 The [NPC proximity checks](docs/NPC_PROXIMITY.md) add Bear, Rabbit, Acrobats and
 Ship in 10,408 distinct fixtures through 25 original routines. Real distance,

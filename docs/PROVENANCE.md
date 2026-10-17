@@ -1,5 +1,12 @@
 # Source and evidence provenance
 
+The optional [model-object profile](MODEL_OBJECTS.md) independently reconstructs
+all allocated model payloads at initial factory return, before actor attachment.
+Its [metadata](model-object-checks.json) preserves complete native histories,
+executed faults, prior-mode regression and separate extraction identities.
+No matching C, NPC or whole-feature acceptance count changes. Later model and
+full actor payloads remain open; the Bevy/Rust repository is separate.
+
 The optional [model-data profile](MODEL_MAPPING.md) extends the original
 model/actor factory histories with an independent complete raw-copy oracle.
 It predicts pointer relocation, primitive mode-run batching and animation-slot
