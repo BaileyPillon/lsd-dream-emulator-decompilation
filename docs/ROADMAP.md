@@ -6,9 +6,10 @@ tools have separate deliverables. See [PROJECT_OBJECTIVE.md](../PROJECT_OBJECTIV
 for the completion requirements and [provenance](PROVENANCE.md) for the evidence
 boundary of the published snapshot.
 
-The [periodic spatial profiles](NPC_PERIODIC_SPATIAL.md) raise bounded original
-callback coverage to 34 / 107. They add Minotaur and Giant Minotaur and replace
-Bird's ratio contract with its real helper. The earlier
+The [Gunman profiles](GUNMAN_SCRIPTS.md) bring bounded original callback coverage
+to 36 / 107. The earlier [periodic spatial profiles](NPC_PERIODIC_SPATIAL.md)
+add Minotaur and Giant Minotaur and replace Bird's ratio contract with its real
+helper. The earlier
 [NPC state and cycle profiles](STATE_CYCLE_SCRIPTS.md) retain all their inputs.
 Recover natural encounters, real downstream effects and lifetime histories;
 bounded request comparisons do not complete those gates.
@@ -27,8 +28,12 @@ The optional [child lifetime profile](ACTOR_CHILD_LIFETIMES.md) now checks
 destruction, repeated cleanup and guarded reconstruction on the same pool.
 The [factory ownership profile](ACTOR_FACTORY_OWNERSHIP.md) now executes actual
 model/actor creation and animation-zero parent attachment. Extend its independent
-checks to complete object payloads, allocation failures, resource-cache loading,
-later playback and natural encounters.
+checks to complete allocated object payloads, allocation failures, resource-cache
+loading, later playback and natural encounters. Its optional
+[model-data profile](MODEL_MAPPING.md) now compares the entire guarded MOM copy
+through construction, original mapping reentry and destruction. Pointer tables
+are predicted independently; geometry interpretation and later playback remain
+separate gates.
 
 The [glyph character interface](GLYPH_CHARACTER_API.md) now has typed receivers
 and the original unsigned-byte getter return. Its compiled callers pass 4,656

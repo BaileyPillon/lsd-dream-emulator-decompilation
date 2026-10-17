@@ -5,8 +5,9 @@ optional mods have separate commands and outputs. The original game does not
 call any added analysis tool; those tools currently make zero external model
 API calls.
 
-The latest [state and cycle profiles](STATE_CYCLE_SCRIPTS.md) bring bounded
-native callback coverage to **32 / 107**. The scripted suite checks 278,115
+The latest [Gunman profiles](GUNMAN_SCRIPTS.md) bring bounded native callback
+coverage to **36 / 107**. The earlier
+[state and cycle profiles](STATE_CYCLE_SCRIPTS.md) retain their scripted suite's 278,115
 fixtures across 26 callbacks, with 37 detected faults and all 122,518 earlier
 inputs preserved.
 These are comparisons of existing original code; whole NPC encounters and

@@ -1,5 +1,14 @@
 # Changelog
 
+## Native model-data mapping - 2026-10-16
+
+- Add an optional factory profile that predicts and compares the complete
+  guarded MOM copy through construction, mapping reentry and destruction.
+- Cover original geometry relocation, first-frame primitive batching and
+  animation-slot clearing with independent inputs and executed fault controls.
+- Preserve the default ownership profile, original game inputs, playable build
+  and separate Bevy port. C recovery and whole-feature acceptance are unchanged.
+
 ## Matching atlas and tile-buffer storage - 2026-10-16
 
 - Replace unused arrays in four existing C routines with consumed lookup,

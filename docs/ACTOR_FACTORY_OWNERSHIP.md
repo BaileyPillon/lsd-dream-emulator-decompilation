@@ -100,13 +100,16 @@ Game assets, executable bytes, buffers and diagnostic ELF files remain private.
 Synthetic model and comparison tests need neither game data nor Unicorn:
 
 ```bash
-python -m unittest tests.test_actor_factory_ownership -v
+python -m unittest discover -s tests -p 'test_actor_factory_ownership.py' -v
 ```
 
 ## Remaining boundaries
 
-The independent model covers ownership events, not complete object payloads,
-geometry mappings or mutations within the raw model copy. Successful factories
+The default independent model covers ownership events. The optional
+[`--model-data` profile](MODEL_MAPPING.md) now compares the complete guarded raw
+model copy and original mapping reentry using separately predicted pointers.
+Complete allocated object payloads and geometry interpretation remain open.
+Successful factories
 do not cover allocation failures, resource-cache loading, cold physical CD
 initialization, later animation playback, natural NPC encounters, rendering,
 audio or PS1 timing. `g_CdInitialized=1` is a ready-state fixture; the checker

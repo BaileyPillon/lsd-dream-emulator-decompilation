@@ -1,5 +1,14 @@
 # Source and evidence provenance
 
+The optional [model-data profile](MODEL_MAPPING.md) extends the original
+model/actor factory histories with an independent complete raw-copy oracle.
+It predicts pointer relocation, primitive mode-run batching and animation-slot
+clearing before native execution. Its [metadata](model-mapping-checks.json)
+retains separate extraction records, source/backend hashes, full-image symbol
+qualification and executed fault evidence. These are constructed histories;
+no C byte, NPC callback profile, whole encounter or whole feature is accepted.
+All 392 protected game inputs and the complete canonical build are preserved.
+
 The [atlas and tile-buffer recovery](ATLAS_TILE_STORAGE.md) explains four
 existing C frames through actual method lookup, invocation, mode and allocation
 inputs. Six complete-unit compiler observations identify 13 consumed reload
