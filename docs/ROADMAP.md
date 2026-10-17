@@ -28,14 +28,16 @@ The optional [child lifetime profile](ACTOR_CHILD_LIFETIMES.md) now checks
 destruction, repeated cleanup and guarded reconstruction on the same pool.
 The [factory ownership profile](ACTOR_FACTORY_OWNERSHIP.md) now executes actual
 model/actor creation and animation-zero parent attachment. Extend its independent
-checks to complete allocated object payloads, allocation failures, resource-cache
-loading, later playback and natural encounters. Its optional
+checks to allocation failures, resource-cache loading, later playback and
+natural encounters. Its optional
 [model-data profile](MODEL_MAPPING.md) now compares the entire guarded MOM copy
 through construction, original mapping reentry and destruction. Pointer tables
 are predicted independently; geometry interpretation and later playback remain
 separate gates. The optional [model-object profile](MODEL_OBJECTS.md) checks
-complete model payloads at initial factory return; extend complete actor
-payloads and subsequent model mutations separately.
+complete model payloads at initial factory return. The optional
+[actor-object profile](ACTOR_OBJECTS.md) now checks every live pool payload
+after successful actor construction and first-frame interpretation. Extend
+later animation state, model/actor mutations and natural lifetimes separately.
 
 The [glyph character interface](GLYPH_CHARACTER_API.md) now has typed receivers
 and the original unsigned-byte getter return. Its compiled callers pass 4,656

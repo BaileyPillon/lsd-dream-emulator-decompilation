@@ -109,8 +109,11 @@ The default independent model covers ownership events. The optional
 [`--model-data` profile](MODEL_MAPPING.md) now compares the complete guarded raw
 model copy and original mapping reentry using separately predicted pointers.
 The optional [`--model-objects` profile](MODEL_OBJECTS.md) compares complete
-model allocations at factory return, before actor attachment. Subsequent
-model and complete actor payloads and geometry interpretation remain open.
+model allocations at factory return, before actor attachment. The optional
+[`--actor-objects` profile](ACTOR_OBJECTS.md) compares every live pool payload
+after actor construction and its first-frame commands, including the bound
+geometry descriptors, transforms, animation header and populated ownership
+links. Later model/actor mutations and complete geometry interpretation remain open.
 Successful factories
 do not cover allocation failures, resource-cache loading, cold physical CD
 initialization, later animation playback, natural NPC encounters, rendering,

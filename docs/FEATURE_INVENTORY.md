@@ -893,3 +893,21 @@ acceptance remain zero. No new native input domain or emulator scenario is
 claimed. The additive inventory preserves all earlier fields and snapshots,
 ten developer capability categories, three optional mods, the frozen objective
 and the separate Bevy port.
+
+## Complete actor construction payload supplement
+
+The optional [actor-object profile](ACTOR_OBJECTS.md) compares every live pool
+allocation at original actor-factory return, after first-frame commands. The
+independent plan covers root/child state, geometry binding, animation headers,
+tables and populated ownership links, including retained allocator residue.
+Each labelled extraction checks 66,504 allocated payloads across 888 returns;
+the two extractions share the same 111 model instances and 100 distinct contents.
+
+Four executed payload faults and a separate 24-case fault campaign finish their
+native ownership histories before failing the declared byte comparisons. Earlier
+heap events, model comparisons and native instruction counts are retained.
+These are constructor boundaries, not complete animation playback or encounters.
+Matching C remains 195,844 / 199,912 bytes (97.97%), with five assembly functions
+and two inherited storage explanations. Listed-core C groups remain 37 / 40,
+bounded NPC callbacks 36 / 107, and accepted whole features and encounters zero.
+The additive machine inventory preserves every earlier measurement.

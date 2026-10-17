@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "status": "qualified_bounded_original_actor_construction_payloads",
+  "recorded_utc": "2026-10-17T04:22:51.538341+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "cb268bca2ae5df21bbe6f36265a126ca4ca9f3f9",
+  "before": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 195844,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 5,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "private_runs": [
+    {
+      "edition_label": "English-v1",
+      "edition_label_is_user_supplied": true,
+      "private_report": ".decomp-lab/actor-objects-english-20261017-first/report.json",
+      "report_sha256": "eeeb62f0e9ad63527ece0101fbb391530130f72cda7acb3b4b7984f724337ca6",
+      "inventory_sha256": "f148a2b464998126cfc555d85bcfdfc26e52799904e01704d8bb79d5090ea2bf",
+      "layout_sha256": "cf93cc690c83baa91e7f54d57bc160007ceee859dc566333105124bf126ed1bc",
+      "measured": {
+        "original_model_instances": 111,
+        "distinct_model_contents": 100,
+        "positive_cases": 666,
+        "actor_lifetimes": 888,
+        "heap_events": 128384,
+        "native_allocation_calls": 64192,
+        "native_release_calls": 64192,
+        "model_data_snapshots": 3108,
+        "model_data_bytes_compared": 24028144,
+        "original_mapping_reentries": 666,
+        "model_object_snapshots": 6936,
+        "model_object_bytes_compared": 275496,
+        "actor_factory_returns": 888,
+        "actor_object_snapshots": 66504,
+        "actor_object_bytes_compared": 3053664
+      },
+      "actor_object_faults": [
+        {
+          "name": "scene-height-cleared",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x571ec": 60
+          },
+          "detection": "constructed_actor_payload {'actor_index': 0, 'kind': 'child', 'pointer': '0xa0540', 'phase': 'original_actor_factory_return', 'requested_bytes': 88, 'bytes_compared': 88, 'matched': False, 'first_difference': 72, 'expected_sha256': '8f09af54920ea2c4ee41c0ae4745fe347f8c1f3445880c12eb2e4148fd269836', 'actual_sha256': 'bba052fb32007a556abde70c0f75a73c048b9cc223ccd65f1ab482104acd2c5b'}"
+        },
+        {
+          "name": "actor-callback-selected",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x658b4": 2
+          },
+          "detection": "constructed_actor_payload {'actor_index': 0, 'kind': 'actor', 'pointer': '0xa0388', 'phase': 'original_actor_factory_return', 'requested_bytes': 152, 'bytes_compared': 152, 'matched': False, 'first_difference': 120, 'expected_sha256': 'd84593f201bcf1f52e261d846f5fd3eb5ca28aac66d49f1a57cf7b95dbafacae', 'actual_sha256': 'b27988780e1a122dce1f9bc43c812814c88c6a9a048932f74818ffaf46a8e1ce'}"
+        },
+        {
+          "name": "actor-callback-enable-word",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x6614c": 2
+          },
+          "detection": "constructed_actor_payload {'actor_index': 0, 'kind': 'actor', 'pointer': '0xa0388', 'phase': 'original_actor_factory_return', 'requested_bytes': 152, 'bytes_compared': 152, 'matched': False, 'first_difference': 140, 'expected_sha256': 'd84593f201bcf1f52e261d846f5fd3eb5ca28aac66d49f1a57cf7b95dbafacae', 'actual_sha256': '113c668fd83f0677ab09ee8c97054605b97009420cb7e42670f11302116418d9'}"
+        },
+        {
+          "name": "sdk-overwrites-untouched-id-word",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x1efac": 28
+          },
+          "detection": "constructed_actor_payload {'actor_index': 0, 'kind': 'actor', 'pointer': '0xa0388', 'phase': 'original_actor_factory_return', 'requested_bytes': 152, 'bytes_compared': 152, 'matched': False, 'first_difference': 28, 'expected_sha256': 'd84593f201bcf1f52e261d846f5fd3eb5ca28aac66d49f1a57cf7b95dbafacae', 'actual_sha256': '7e0c6b10e4feaf00aa02206cf0f38e993c5c0c33afa5437b482286980ad4656f'}"
+        }
+      ],
+      "backend": {
+        "package_version": "2.1.2",
+        "library_api": [
+          2,
+          1,
+          33620735
+        ],
+        "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+        "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+        "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+        "binding_source_count": 21
+      },
+      "ninja": {
+        "version": "1.13.2.git.kitware.jobserver-pipe-1",
+        "executable_sha256": "08639e194fffa7f08b259fc4abfa4803aff66b64de52549cee42ec527d55cea6"
+      },
+      "symbol_diagnostic": {
+        "elf_sha256": "c0746d3982c314079a5a24f2d88072c43464032f969eeac5f172c7646df833a7",
+        "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+        "object_count": 306,
+        "original_link_flags": [
+          "--no-check-sections",
+          "-nostdlib",
+          "-s"
+        ],
+        "diagnostic_link_flags": [
+          "--no-check-sections",
+          "-nostdlib"
+        ],
+        "complete_canonical_image_equal": true
+      },
+      "all_prior_events_histories_entries_instructions_and_model_comparisons_retained": true
+    },
+    {
+      "edition_label": "Japanese-labelled",
+      "edition_label_is_user_supplied": true,
+      "private_report": ".decomp-lab/actor-objects-japanese-20261017-first/report.json",
+      "report_sha256": "0e5cab01e20752fdd07eaca22c8178aaf8ad035e1a68ef205b18d7c7cf308bd3",
+      "inventory_sha256": "4179a52f006a19b0ed121b8b32ac8ae658a4a892a7c3ba62cb8736a271118407",
+      "layout_sha256": "cf93cc690c83baa91e7f54d57bc160007ceee859dc566333105124bf126ed1bc",
+      "measured": {
+        "original_model_instances": 111,
+        "distinct_model_contents": 100,
+        "positive_cases": 666,
+        "actor_lifetimes": 888,
+        "heap_events": 128384,
+        "native_allocation_calls": 64192,
+        "native_release_calls": 64192,
+        "model_data_snapshots": 3108,
+        "model_data_bytes_compared": 24028144,
+        "original_mapping_reentries": 666,
+        "model_object_snapshots": 6936,
+        "model_object_bytes_compared": 275496,
+        "actor_factory_returns": 888,
+        "actor_object_snapshots": 66504,
+        "actor_object_bytes_compared": 3053664
+      },
+      "actor_object_faults": [
+        {
+          "name": "scene-height-cleared",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x571ec": 60
+          },
+          "detection": "constructed_actor_payload {'actor_index': 0, 'kind': 'child', 'pointer': '0xa0540', 'phase': 'original_actor_factory_return', 'requested_bytes': 88, 'bytes_compared': 88, 'matched': False, 'first_difference': 72, 'expected_sha256': '8f09af54920ea2c4ee41c0ae4745fe347f8c1f3445880c12eb2e4148fd269836', 'actual_sha256': 'bba052fb32007a556abde70c0f75a73c048b9cc223ccd65f1ab482104acd2c5b'}"
+        },
+        {
+          "name": "actor-callback-selected",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x658b4": 2
+          },
+          "detection": "constructed_actor_payload {'actor_index': 0, 'kind': 'actor', 'pointer': '0xa0388', 'phase': 'original_actor_factory_return', 'requested_bytes': 152, 'bytes_compared': 152, 'matched': False, 'first_difference': 120, 'expected_sha256': 'd84593f201bcf1f52e261d846f5fd3eb5ca28aac66d49f1a57cf7b95dbafacae', 'actual_sha256': 'b27988780e1a122dce1f9bc43c812814c88c6a9a048932f74818ffaf46a8e1ce'}"
+        },
+        {
+          "name": "actor-callback-enable-word",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x6614c": 2
+          },
+          "detection": "constructed_actor_payload {'actor_index': 0, 'kind': 'actor', 'pointer': '0xa0388', 'phase': 'original_actor_factory_return', 'requested_bytes': 152, 'bytes_compared': 152, 'matched': False, 'first_difference': 140, 'expected_sha256': 'd84593f201bcf1f52e261d846f5fd3eb5ca28aac66d49f1a57cf7b95dbafacae', 'actual_sha256': '113c668fd83f0677ab09ee8c97054605b97009420cb7e42670f11302116418d9'}"
+        },
+        {
+          "name": "sdk-overwrites-untouched-id-word",
+          "detected": true,
+          "native_history_completed": true,
+          "changed_instruction_hits": {
+            "0x1efac": 28
+          },
+          "detection": "constructed_actor_payload {'actor_index': 0, 'kind': 'actor', 'pointer': '0xa0388', 'phase': 'original_actor_factory_return', 'requested_bytes': 152, 'bytes_compared': 152, 'matched': False, 'first_difference': 28, 'expected_sha256': 'd84593f201bcf1f52e261d846f5fd3eb5ca28aac66d49f1a57cf7b95dbafacae', 'actual_sha256': '7e0c6b10e4feaf00aa02206cf0f38e993c5c0c33afa5437b482286980ad4656f'}"
+        }
+      ],
+      "backend": {
+        "package_version": "2.1.2",
+        "library_api": [
+          2,
+          1,
+          33620735
+        ],
+        "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+        "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+        "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+        "binding_source_count": 21
+      },
+      "ninja": {
+        "version": "1.13.2.git.kitware.jobserver-pipe-1",
+        "executable_sha256": "08639e194fffa7f08b259fc4abfa4803aff66b64de52549cee42ec527d55cea6"
+      },
+      "symbol_diagnostic": {
+        "elf_sha256": "c0746d3982c314079a5a24f2d88072c43464032f969eeac5f172c7646df833a7",
+        "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+        "object_count": 306,
+        "original_link_flags": [
+          "--no-check-sections",
+          "-nostdlib",
+          "-s"
+        ],
+        "diagnostic_link_flags": [
+          "--no-check-sections",
+          "-nostdlib"
+        ],
+        "complete_canonical_image_equal": true
+      },
+      "all_prior_events_histories_entries_instructions_and_model_comparisons_retained": true
+    }
+  ],
+  "shared_model_instances": 111,
+  "shared_distinct_model_contents": 100,
+  "separately_labelled_extractions": 2,
+  "original_functions": 134,
+  "independent_complete_actor_construction_payloads": true,
+  "later_animation_playback": false,
+  "payload_comparison_phase": "Original actor-factory return, after model attachment and animation-zero first-frame interpretation.",
+  "native_instruction_count_change": 0,
+  "new_payload_fault_controls_per_extraction": 4,
+  "extended_fault_campaign": {
+    "private_report": ".decomp-lab/actor-objects-faults-20261017-first/report.json",
+    "report_sha256": "90af6c6633b3d2ad926d191c796316bbc9f776a2833a4633df04abba30f62fcc",
+    "fault_kinds": 4,
+    "cases": 24,
+    "residue_patterns": 2,
+    "ownership_histories": 3,
+    "every_native_history_completed": true,
+    "every_fault_instruction_executed": true,
+    "earlier_model_comparisons_retained": true
+  },
+  "previous_modes_regression": {
+    "private_report": ".decomp-lab/actor-objects-api-regression-20261017-first/report.json",
+    "sha256": "a267a1e1f1783ad5236b099213388078e9b017798558fd740dbf2d4c64dae6f3",
+    "retained_native_cases": 12,
+    "standalone_actor_cases": 6
+  },
+  "tooling_tests": [
+    {
+      "platform": "windows",
+      "python_version": "3.14.2",
+      "log": ".decomp-lab/actor-objects-tests-windows-20261017-first.log",
+      "sha256": "e94955606ed2acfb3f268d3be8ccc3036f212a4acf017533554eac2c1a161a20",
+      "tests": 694,
+      "passed": 692,
+      "expected_skips": 2
+    },
+    {
+      "platform": "wsl",
+      "python_version": "3.13.5",
+      "log": ".decomp-lab/actor-objects-tests-wsl-20261017-first.log",
+      "sha256": "1facb93862bcab43a38aed81448b359835d0e46fa8a1475edd4c944bacda351f",
+      "tests": 694,
+      "passed": 692,
+      "expected_skips": 2
+    }
+  ],
+  "producer_dependency_sha256": {
+    "tools/verify_actor_children.py": "09b3beef12fe216bde9dc43840b35bf027ad174935f8a34a9e998465943cd356",
+    "tools/actor_child_model.py": "40980e4c0518acc7785bcd79bfc9a48274e09579c4ab05c8ea93f611ed3372f7",
+    "tools/heap_model.py": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e",
+    "tools/verify_card_heap.py": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5",
+    "tools/verify_card_cleanup.py": "5eec21f9fe0afa2549f10eb890c1dbf9984f5f1541611102afd9fa995d58d6c0",
+    "tools/verify_native_ai.py": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697",
+    "tools/inventory_animations.py": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+    "tools/inventory_disc.py": "71319a4c51b50885753998fe9afb7a00b71acf0fa03167b9a63c48651e36aebf",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+    "tools/progress.py": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+    "tools/decomp_workbench.py": "8d375145ca2b7f210889558ce75d4acd854a04606ea26d86ff50251b6a4820d1",
+    "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+    "docs/actor-child-construction-function-ranges.json": "917010a67a4398af6137fc3a180a0a6d5d06e18ab151ddd21890078733b8da22",
+    "docs/actor-child-lifetime-function-ranges.json": "16e676914cb87df4990a8dc6db9efa64779a810f3f9824e9fbaf691c261317df",
+    "requirements-card-heap.txt": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212",
+    "requirements.txt": "bcd34abbb33438c8a7e18a9165b8ea5c503a179b23738ccf72dbd659ce174cde",
+    "tools/actor_factory_model.py": "fb40720bc913c2a7d3957c5b65c1232d19b2f24a355bce3cdabe39dc6cb7489a",
+    "tools/verify_actor_factory.py": "5775e55cc6868807e09fa069507804ca76dee636ba1dd947a8d0eb62b398d571",
+    "tools/model_mapping_model.py": "d3f0866a0c2e1ec4fe0fe2dde7b07a094a98b8ebb09e560472a36592cd70fe9e",
+    "tools/model_payload_model.py": "d2ab054ea8dd848cb78c4eacbf0750e00c967474405173d72d917506e01909e6",
+    "tools/actor_payload_model.py": "53c243e67e3e6eb9b33ea5683985a956e247a748c649c00391fd366d9dcb7ff5",
+    "docs/actor-factory-function-ranges.json": "1c7223ddeb1b0f440461e350e08184f383f5468b506496924c6b789f16c36611",
+    "tests/test_actor_payloads.py": "973f58a59b04627c0a7896a23b82c9154f4e2b47efee06d3ef2c6755d29de7c6"
+  },
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "canonical_executable_bytes": 505856,
+  "all_392_game_inputs_preserved": true,
+  "current_306_object_build_verified": true,
+  "both_complete_symbol_diagnostic_images_equal": true,
+  "new_C_bytes": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "new_original_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_model_API_calls": 0,
+  "Bevy_port_modified": false,
+  "goal_complete": false,
+  "limitations": [
+    "Successful factories with supplied pool, ready CD state, SDK identity matrix and zero auxiliary actor argument.",
+    "Complete live payloads are compared at actor-factory return; later playback and post-construction states remain open.",
+    "Complete freed-pool contents, allocation failures, resource-cache loading, cold CD initialization, natural encounters, rendering, audio and PS1 timing remain outside this profile."
+  ]
+}

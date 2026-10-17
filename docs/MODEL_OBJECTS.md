@@ -86,8 +86,10 @@ python -m unittest discover -s tests -p 'test_model_payloads.py' -v
 ## Remaining gates
 
 These are successful constructed factory histories with a supplied pool,
-ready CD-driver state and SDK identity matrix. Full actor payloads, subsequent
-model mutations, later animation playback, allocation failures, cache/CD
+ready CD-driver state and SDK identity matrix. The later optional
+[actor-object profile](ACTOR_OBJECTS.md) checks every live pool payload at
+actor-factory return after first-frame interpretation. Subsequent model/actor
+mutations, later animation playback, allocation failures, cache/CD
 loading, natural NPC encounters, rendering, audio and PS1 timing remain open.
 The checker makes no model API calls and does not modify game assets.
 
