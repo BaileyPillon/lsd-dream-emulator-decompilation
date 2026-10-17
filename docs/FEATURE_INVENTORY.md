@@ -35,6 +35,12 @@ explains two more inherited frames, reducing the identified remainder from
 already counted as C. This changes no feature, original NPC profile, whole
 encounter, optional-mod or AI-assisted capability count.
 
+The subsequent [atlas and tile-buffer recovery](ATLAS_TILE_STORAGE.md) explains
+four more inherited frames, reducing the identified remainder from **6 to 2**
+and removing 104 unused declared bytes. Their 532 bytes already counted as C.
+All source-byte, feature, NPC, optional-mod and AI-assisted capability totals
+above remain unchanged; no new runtime input domain is accepted.
+
 The [overlap result-lifetime study](OVERLAP_RESULT_LIFETIMES.md) improves an
 unaccepted source candidate from 170 to 148 differing executable bytes and
 rechecks the existing 6,912 native graph pairs. It adds no C byte, original

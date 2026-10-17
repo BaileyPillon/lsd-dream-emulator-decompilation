@@ -34,7 +34,7 @@ All-movie decoding, skip/error branches, and complete feature acceptance remain 
 | --- | ---: |
 | Matching game-function bytes compiled from C | 195,844 / 199,912 (97.97%) |
 | Known remaining game assembly functions | 5 |
-| Known C functions with unresolved unused local storage | 6 |
+| Known C functions with unresolved unused local storage | 2 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
 | Original callbacks with bounded native comparisons | 36 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 37 / 40 |
@@ -104,8 +104,9 @@ assembly functions remained at that checkpoint. The
 [input storage recovery](docs/INPUT_STORAGE_RECOVERY.md) explains six more,
 leaving eight identified source explanations at that checkpoint. The
 [text and render callback recovery](docs/TEXT_CALLBACK_STORAGE.md) explains
-two further functions, leaving six identified explanations and five assembly
-functions.
+two further functions, leaving six identified explanations at that checkpoint.
+The [atlas and tile-buffer recovery](docs/ATLAS_TILE_STORAGE.md) explains four
+more, leaving two identified storage explanations and five assembly functions.
 C-byte coverage does not certify original source quality or whole-game parity.
 The [overlap result-lifetime study](docs/OVERLAP_RESULT_LIFETIMES.md) reduces
 that unaccepted candidate's complete-image difference to 148 bytes and checks

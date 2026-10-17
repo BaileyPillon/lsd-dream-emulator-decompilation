@@ -74,8 +74,14 @@ inherited functions. The subsequent
 two more. The [accessor recovery](ACCESSOR_STORAGE_RECOVERY.md) explains another
 three. The [input storage recovery](INPUT_STORAGE_RECOVERY.md) explains six
 more. The [text and render callback recovery](TEXT_CALLBACK_STORAGE.md) explains
-another two. Recover the real storage and helper lifetimes for the remaining six
+another two. The [atlas and tile-buffer recovery](ATLAS_TILE_STORAGE.md) explains
+four more. Recover the real storage and helper lifetimes for the remaining two
 identified functions.
+
+Those two are empty debug-driver stubs with unexplained 64-byte reservations.
+Keep them explicit while recovering the five remaining game assembly functions;
+unused fields or discarded identity chains do not explain those stubs.
+
 All four withdrawn functions have replacement matching C; the earlier
 [source-layout candidates](../research/source_layout/README.md) remain
 historical research. Full source quality and runtime acceptance are separate.

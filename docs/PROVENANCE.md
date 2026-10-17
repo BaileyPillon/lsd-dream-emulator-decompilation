@@ -1,5 +1,16 @@
 # Source and evidence provenance
 
+The [atlas and tile-buffer recovery](ATLAS_TILE_STORAGE.md) explains four
+existing C frames through actual method lookup, invocation, mode and allocation
+inputs. Six complete-unit compiler observations identify 13 consumed reload
+requests. Fully relocated function spans and ordinary/fresh complete builds
+remain canonical, as recorded in [its metadata](atlas-tile-storage-checks.json).
+Two source units change; the other 390 protected build inputs retain their
+hashes. The inherited storage remainder falls from 6 to 2. The tile-buffer's
+existing volatile count read is retained literally; no new volatile constraint
+is introduced. The 532 function bytes already counted as C, and no runtime
+profile or whole-feature acceptance is added.
+
 The [text and render callback recovery](TEXT_CALLBACK_STORAGE.md) explains two
 more existing C frames through their consumed callback inputs. Six complete-unit
 compiler observations preserve the normal emitted assembly. Both relocated
