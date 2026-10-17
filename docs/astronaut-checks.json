@@ -503,5 +503,179 @@
   "user_game_controlled": false,
   "Bevy_port_modified": false,
   "scope": "Constructed meshless poses, original mood/proximity/transform/RNG-preservation checks and injected script histories. All executed code uses the original image and native GTE backend. No natural encounters, complete animation playback, rendering, audio, full-engine scheduling or original-hardware timing acceptance.",
-  "remaining_scope": "Two collision C recoveries, two inherited storage explanations, Apartment Bear animation-switch/model fixture, natural encounter and engine/lifecycle histories, populated collision/child graphs, animation playback, video/audio and original timing; whole NPC and feature acceptance remain open."
+  "remaining_scope": "Two collision C recoveries, two inherited storage explanations, Apartment Bear animation-switch/model fixture, natural encounter and engine/lifecycle histories, populated collision/child graphs, animation playback, video/audio and original timing; whole NPC and feature acceptance remain open.",
+  "source_dependency_Git_blobs": [
+    {
+      "path": "tools/verify_native_ai.py",
+      "executed_working_copy_sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697",
+      "Git_blob_SHA256": "6094e565bdb4e6701055f08d0428d059b54c6183818170ae1a671610c53b40a0",
+      "Git_bytes_equal_executed_working_copy": false,
+      "difference_if_any": "working-copy CRLF versus Git LF only"
+    },
+    {
+      "path": "tools/inventory_vtables.py",
+      "executed_working_copy_sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+      "Git_blob_SHA256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/progress.py",
+      "executed_working_copy_sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+      "Git_blob_SHA256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "configure.py",
+      "executed_working_copy_sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+      "Git_blob_SHA256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "requirements-analysis.txt",
+      "executed_working_copy_sha256": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911",
+      "Git_blob_SHA256": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "build/SLPS01556.map",
+      "executed_working_copy_sha256": "0c8ad7a8e09678102951c5456175dc8ef7bb15a242b51ce2bbf6d62ab1e39f41",
+      "Git_blob_SHA256": null,
+      "kind": "retained original or generated build input; excluded from Git"
+    },
+    {
+      "path": "build/undefined_funcs_auto.txt",
+      "executed_working_copy_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Git_blob_SHA256": null,
+      "kind": "retained original or generated build input; excluded from Git"
+    },
+    {
+      "path": "build/undefined_syms_auto.txt",
+      "executed_working_copy_sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f",
+      "Git_blob_SHA256": null,
+      "kind": "retained original or generated build input; excluded from Git"
+    },
+    {
+      "path": "src/scene/entity.c",
+      "executed_working_copy_sha256": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811",
+      "Git_blob_SHA256": "42b79fe2e6463d01213b8be552e94132dd912212ace0171219466b2e1650c751",
+      "Git_bytes_equal_executed_working_copy": false,
+      "difference_if_any": "working-copy CRLF versus Git LF only"
+    },
+    {
+      "path": "src/scene/entity.h",
+      "executed_working_copy_sha256": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f",
+      "Git_blob_SHA256": "3dd0c265059b0566aca0f0934bbc5b85b5de9a1e1ef27e410985129e2c0ed2b4",
+      "Git_bytes_equal_executed_working_copy": false,
+      "difference_if_any": "working-copy CRLF versus Git LF only"
+    },
+    {
+      "path": "src/dream/dream_sys.c",
+      "executed_working_copy_sha256": "d5b09c49d43d8b0001868f90abe81e6976906ae4180f4b70fb5f78fa400c8b3a",
+      "Git_blob_SHA256": "d5b09c49d43d8b0001868f90abe81e6976906ae4180f4b70fb5f78fa400c8b3a",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "src/dream/dream_sys.h",
+      "executed_working_copy_sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507",
+      "Git_blob_SHA256": "0c5e29a07f133924a7d2eda9e7425e2b3bcbf6c3b9cb905c097e6eb879d45657",
+      "Git_bytes_equal_executed_working_copy": false,
+      "difference_if_any": "working-copy CRLF versus Git LF only"
+    },
+    {
+      "path": "src/scene/actor.c",
+      "executed_working_copy_sha256": "c9da90f048399ad93127e4c841aaf49c81c6922a8d4528ae783f1edcf2be3a4b",
+      "Git_blob_SHA256": "c9da90f048399ad93127e4c841aaf49c81c6922a8d4528ae783f1edcf2be3a4b",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "src/base/transform.c",
+      "executed_working_copy_sha256": "0166d95088d3476bf1cf8c2a760627f0c12640e68a1f8294a973acb91c09004d",
+      "Git_blob_SHA256": "0166d95088d3476bf1cf8c2a760627f0c12640e68a1f8294a973acb91c09004d",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+      "executed_working_copy_sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7",
+      "Git_blob_SHA256": null,
+      "kind": "retained original or generated build input; excluded from Git"
+    },
+    {
+      "path": "tools/verify_astronaut.py",
+      "executed_working_copy_sha256": "514d32f0dfc79f3bdc47e9a6aa6cd55661c8cb2b42a89ea4578eddca9ab7d90c",
+      "Git_blob_SHA256": "514d32f0dfc79f3bdc47e9a6aa6cd55661c8cb2b42a89ea4578eddca9ab7d90c",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "docs/astronaut-function-ranges.json",
+      "executed_working_copy_sha256": "249ab3af3bffb819dc13a31cfa152171132fc8f9b1b9ccef326f241139ef7bfc",
+      "Git_blob_SHA256": "249ab3af3bffb819dc13a31cfa152171132fc8f9b1b9ccef326f241139ef7bfc",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_npc_proximity.py",
+      "executed_working_copy_sha256": "50fa5bf1a77a2ec7904949e6c0833b90c2271b5577c37b7fe7aef768fca61c00",
+      "Git_blob_SHA256": "50fa5bf1a77a2ec7904949e6c0833b90c2271b5577c37b7fe7aef768fca61c00",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_npc_spatial.py",
+      "executed_working_copy_sha256": "e25422dddcbcd445bdaabacf200ba0e418336e0a161648403ae08084d006983f",
+      "Git_blob_SHA256": "e25422dddcbcd445bdaabacf200ba0e418336e0a161648403ae08084d006983f",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_scripted_ai.py",
+      "executed_working_copy_sha256": "2edefddc727441c0066a48375efd882c80035af99db3b3990a2c674eedddb2c1",
+      "Git_blob_SHA256": "2edefddc727441c0066a48375efd882c80035af99db3b3990a2c674eedddb2c1",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_locomotive_scripts.py",
+      "executed_working_copy_sha256": "2b1aa4a0577353cee5774318b948ef55cd8006cb4c7189e6529a076bd542c2e8",
+      "Git_blob_SHA256": "2b1aa4a0577353cee5774318b948ef55cd8006cb4c7189e6529a076bd542c2e8",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_gunman_scripts.py",
+      "executed_working_copy_sha256": "6bb82b12a0570ec7448edf11f45c50f1f93e0de7622ea404bde22b11cfcce5d5",
+      "Git_blob_SHA256": "6bb82b12a0570ec7448edf11f45c50f1f93e0de7622ea404bde22b11cfcce5d5",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_render_gte.py",
+      "executed_working_copy_sha256": "624a607b167be932702501fb6e07a04595992773bacc8d4344b2200a8c2784b0",
+      "Git_blob_SHA256": "624a607b167be932702501fb6e07a04595992773bacc8d4344b2200a8c2784b0",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_render_rotation.py",
+      "executed_working_copy_sha256": "2ce32389c8e158692dff7663a9fb0aa700b7e3bb7204254d402b0ae45f956e8f",
+      "Git_blob_SHA256": "2ce32389c8e158692dff7663a9fb0aa700b7e3bb7204254d402b0ae45f956e8f",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/nymashock_gte_bridge.cs",
+      "executed_working_copy_sha256": "969e0af3b030e5b2eafedad032b68173ac76e41b089a28b4d4fc1084e33fedd9",
+      "Git_blob_SHA256": "969e0af3b030e5b2eafedad032b68173ac76e41b089a28b4d4fc1084e33fedd9",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    }
+  ],
+  "source_line_ending_scope": "Executed dependency hashes identify the working copy. Tracked inherited helpers with CRLF working copies have their LF Git blob hashes recorded separately. Original/generated build inputs are retained privately. The new profile and range file match Git bytes exactly. No executable instruction or data normalization is used."
 }
