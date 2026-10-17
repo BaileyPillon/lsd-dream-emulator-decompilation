@@ -1,15 +1,21 @@
 # LSD feature inventory
 
-The latest [menu lookup recovery](MENU_LOOKUP_RECOVERY.md) brings
-matching C to **195,844 / 199,912 bytes (97.97%)**, with **five** game assembly
+The latest [grid-window recovery](GRID_MATCHING_C.md) brings
+matching C to **196,504 / 199,912 bytes (98.30%)**, with **four** game assembly
 fallbacks and **37 / 40** groups whose listed core functions are in C. The
 historical measurements below retain their original dates and scope. F035
 still includes a remaining UI-scale assembly function, so its whole listed-core
 source gate remains open despite the two recovered menu callers.
 
-The subsequent [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md)
-reduces identified inherited storage explanations from **24 to 19**, with all
-C-byte, assembly, feature and NPC acceptance counts above unchanged.
+F033 also remains partial: its primitive emitter and bounds predicate still
+retain assembly. The grid promotion adds 660 matching C bytes and one recovered
+function, with no new gameplay feature or whole-feature acceptance. Earlier
+inventory snapshots and publication supplements retain their original scope.
+
+The earlier [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md)
+reduced identified inherited storage explanations from **24 to 19** at that
+checkpoint. Later recoveries leave the two explanations reported in the current
+snapshot; these existing-C corrections did not add game features.
 
 The later [constructor and actor storage recovery](CONSTRUCTOR_ACTOR_STORAGE.md)
 explains two more inherited functions, reducing the identified remainder from

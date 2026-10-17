@@ -32,8 +32,8 @@ All-movie decoding, skip/error branches, and complete feature acceptance remain 
 
 | Measure | Verified snapshot |
 | --- | ---: |
-| Matching game-function bytes compiled from C | 195,844 / 199,912 (97.97%) |
-| Known remaining game assembly functions | 5 |
+| Matching game-function bytes compiled from C | 196,504 / 199,912 (98.30%) |
+| Known remaining game assembly functions | 4 |
 | Known C functions with unresolved unused local storage | 2 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
 | Original callbacks with bounded native comparisons | 36 / 107 |
@@ -116,7 +116,10 @@ leaving eight identified source explanations at that checkpoint. The
 [text and render callback recovery](docs/TEXT_CALLBACK_STORAGE.md) explains
 two further functions, leaving six identified explanations at that checkpoint.
 The [atlas and tile-buffer recovery](docs/ATLAS_TILE_STORAGE.md) explains four
-more, leaving two identified storage explanations and five assembly functions.
+more, leaving two identified storage explanations at that checkpoint. The
+[matching grid-window recovery](docs/GRID_MATCHING_C.md) now replaces another
+660 bytes of assembly with C, leaving four assembly functions. Ordinary and
+fresh 306-object builds reproduce the complete original executable.
 C-byte coverage does not certify original source quality or whole-game parity.
 The [overlap result-lifetime study](docs/OVERLAP_RESULT_LIFETIMES.md) reduces
 that unaccepted candidate's complete-image difference to 148 bytes and checks
@@ -240,15 +243,18 @@ The [register-allocation tracer](docs/COMPILER_ALLOCATION.md) records actual
 local/global compiler decisions, verifies priority comparisons and preserves
 complete assembly output. It extends candidate analysis without accepting a
 nonmatching source form or changing original gameplay.
-The [grid research sources](research/render_grid/README.md) retain the original
-frame, with eight differences in two words for the edge reference and seven
-differences in four words for the cell-reuse alternative. The
+The [matching grid-window source](docs/GRID_MATCHING_C.md) now reproduces all
+660 original function bytes, including its 152-byte frame. The signed angle
+test, unsigned normalization and consumed inclusive-endpoint operand resolve
+the earlier scheduling and reload differences. The
+[grid research sources](research/render_grid/README.md) retain the historical
+eight-byte edge and seven-byte cell-reuse candidates. The
 [cell-ownership study](docs/GRID_CELL_OWNERSHIP.md) repeats 74,832 scalar pairs
 and detects ten faults; both source forms remain outside the matching game.
 The [native candidate comparison](docs/GRID_NATIVE_COMPOSITION.md) extends
 those source forms through actual lookup, SDK/GTE and streaming dependencies
 in 24,780 distinct graph inputs per image, with zero function-output stubs.
-Complete executable equality and natural-scene acceptance remain open.
+Those comparisons remain bounded evidence; natural-scene acceptance remains open.
 The [grid phase comparison](docs/GRID_PHASES.md) locates the height-copy order
 change in the first scheduling pass, rechecks two complete builds and rules out
 133 further source forms. Its reusable phase reader retains the exact source

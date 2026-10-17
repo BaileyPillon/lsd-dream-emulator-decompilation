@@ -1,5 +1,9 @@
 # Grid-window source recovery and prologue
 
+The later [matching grid-window recovery](GRID_MATCHING_C.md) replaces this
+function's assembly inclusion. The rejected fragment and prologue measurements
+below remain a historical research snapshot.
+
 The [published C fragment](../research/render_grid/README.md) improves the
 candidate that preserves native store order from **13 to 11 differing
 executable bytes**. All eleven differences belong to three prologue

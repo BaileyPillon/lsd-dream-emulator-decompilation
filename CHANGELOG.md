@@ -1,5 +1,16 @@
 # Changelog
 
+## Matching grid-window C recovery - 2026-10-17
+
+- Recover `func_8004C6A8` in readable C with all 660 original function bytes
+  and the complete ordinary/fresh executable unchanged.
+- Express the signed angle test, unsigned normalization and inclusive endpoint
+  through consumed inputs; qualify the actual compiler's stack and allocation.
+- Repeat the existing scalar and native SDK/GTE renderer profiles. Preserve
+  their explicit contracts, hardware limits and whole-feature acceptance gates.
+- Raise matching game C to 196,504 / 199,912 bytes (98.30%), leaving four
+  assembly functions and two inherited storage explanations. Keep Bevy separate.
+
 ## Native actor construction payloads - 2026-10-17
 
 - Add `--actor-objects` to compare every live pool payload at original

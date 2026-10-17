@@ -62,11 +62,12 @@ function or whole-feature gate; continue the source work below.
   instead resolves the packed-word and matrix-stream functions through real
   input views. Continue the remaining source gates below.
 
-Five game functions remain in assembly after the source-layout correction,
-[matching generation lookup recovery](GENERATION_LOOKUP_RECOVERY.md) and
-[matching menu recovery](MENU_LOOKUP_RECOVERY.md). The scanner, structure
-updater and two menu callers now compile from C with the complete executable
-unchanged.
+Four game functions remain in assembly after the source-layout correction,
+[matching generation lookup recovery](GENERATION_LOOKUP_RECOVERY.md),
+[matching menu recovery](MENU_LOOKUP_RECOVERY.md) and
+[matching grid-window recovery](GRID_MATCHING_C.md). The scanner, structure
+updater, two menu callers and grid window compile from C with the complete
+executable unchanged.
 
 The [bounds candidate](BOUNDS_NARROW_COMPARISON.md) now has a published
 19-byte complete-image difference and a reproducible confined comparison over
@@ -76,7 +77,8 @@ The [bounds candidate](BOUNDS_NARROW_COMPARISON.md) now has a published
 The expanded audit identified 28 unused-storage functions and withdrew four
 padded promotions. Twenty-four inherited explanations remained at that snapshot;
 the correction's historical count was 194,212 / 199,912 (97.15%). The two
-generation and two menu recoveries now raise it to 195,844 / 199,912 (97.97%).
+generation and two menu recoveries raised it to 195,844 / 199,912 (97.97%).
+The grid-window recovery now raises it to 196,504 / 199,912 (98.30%).
 The [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md) now explains five
 inherited functions. The subsequent
 [constructor and actor storage recovery](CONSTRUCTOR_ACTOR_STORAGE.md) explains
@@ -88,7 +90,7 @@ four more. Recover the real storage and helper lifetimes for the remaining two
 identified functions.
 
 Those two are empty debug-driver stubs with unexplained 64-byte reservations.
-Keep them explicit while recovering the five remaining game assembly functions;
+Keep them explicit while recovering the four remaining game assembly functions;
 unused fields or discarded identity chains do not explain those stubs.
 
 All four withdrawn functions have replacement matching C; the earlier
@@ -196,28 +198,19 @@ The [ordered-store audit](RENDER_MATCHING.md) shows why final-output agreement
 is insufficient: that candidate reverses two stores in 68,306 scalar fixtures.
 A corrected full candidate retains native store order but differs in 13 bytes;
 106 additional source trials did not produce an exact match.
-The earlier [grid source recovery](GRID_RECOVERY.md) publishes a reproducible
-candidate whose body and store order match, with eleven differences confined
-to three prologue instructions. Recover the incoming-height capture boundary
-before accepting its 660 bytes; the canonical game still uses assembly.
-The [compiler-phase comparison](GRID_PHASES.md) locates that order change in the
-first scheduling pass. Preserve the formal-height boundary while resolving the
-scheduled width/cell-Z lifetime; 133 further source forms retain no exact match.
-The [edge-lifetime extension](GRID_PHASES.md#inclusive-edge-lifetime-study)
-now reproduces the original frame and register choices. Two arithmetic
-instructions still differ. Recover their original order while preserving the
-observed width lifetime; the repeated scalar profile accepts no new scene or
-whole-feature gate.
-The [native candidate comparison](GRID_NATIVE_COMPOSITION.md) removes the four
-scalar dependency contracts for both retained C images by reusing the existing
-eleven-function SDK/GTE and streaming composition. Recover the seven/eight
-remaining byte differences before promoting either source form.
+The [matching grid-window recovery](GRID_MATCHING_C.md) now resolves the
+remaining scheduling and frame differences through signed/unsigned angle
+views and a consumed inclusive-endpoint operand. All 660 function bytes and
+the complete ordinary/fresh executable match. The earlier
+[prologue](GRID_RECOVERY.md), [compiler-phase](GRID_PHASES.md) and
+[native candidate](GRID_NATIVE_COMPOSITION.md) studies retain their rejected
+forms and bounded evidence. Continue natural scene ownership, framebuffer and
+hardware timing verification; this source recovery does not accept F033.
 
 | Function | Source |
 | --- | --- |
 | `func_8001DDF4` | [`src/base/transform.c`](../src/base/transform.c) |
 | `func_8001F8B8` | [`src/file/tmd_prim_geom.c`](../src/file/tmd_prim_geom.c) |
-| `func_8004C6A8` | [`src/scene/render_context.c`](../src/scene/render_context.c) |
 | `func_8004CD38` | [`src/scene/render_context.c`](../src/scene/render_context.c) |
 | `func_8004441C` | [`src/menu/ui_sprite.c`](../src/menu/ui_sprite.c) |
 
@@ -275,7 +268,7 @@ and 191 initial source trials found no exact match. The subsequent
 
 The catalogue currently has 40 provisional groups. None has been accepted for
 all required runtime scenarios. The [inventory](FEATURE_INVENTORY.md) lists the
-remaining scenario for each group; 97.97% describes current game C bytes only.
+remaining scenario for each group; 98.30% describes current game C bytes only.
 
 ## Developer tools and optional mods
 

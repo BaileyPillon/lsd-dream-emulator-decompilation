@@ -1,5 +1,11 @@
 # Grid C candidates through native SDK and streaming code
 
+This is the historical comparison of two rejected candidates. The later
+[matching grid-window recovery](GRID_MATCHING_C.md) satisfies complete-image
+equality and replaces the assembly fallback. The reproduction commands below
+refer to the assembly-based source at commit
+`7415704a4f473def92ced9daa4400cf4ba6e7615`.
+
 The two unaccepted `func_8004C6A8` source forms now have a reproducible comparison
 through the existing eleven-function [native GTE composition](RENDER_GTE.md).
 The canonical game retains assembly. The edge candidate still differs in eight
