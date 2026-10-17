@@ -12,6 +12,12 @@ retain assembly. The grid promotion adds 660 matching C bytes and one recovered
 function, with no new gameplay feature or whole-feature acceptance. Earlier
 inventory snapshots and publication supplements retain their original scope.
 
+The [locomotive script checks](LOCOMOTIVE_SCRIPTS.md) extend bounded original
+callback coverage from **36 to 39 / 107** through 70,345 distinct fixtures.
+Those three callbacks already had matching C bodies. C bytes, the 40-group
+inventory, 37 listed-core C groups and zero whole-feature/encounter acceptances
+remain unchanged. Earlier measurements below retain their historical scope.
+
 The earlier [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md)
 reduced identified inherited storage explanations from **24 to 19** at that
 checkpoint. Later recoveries leave the two explanations reported in the current

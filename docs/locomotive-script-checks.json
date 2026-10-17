@@ -1,0 +1,6207 @@
+{
+  "status": "passed_bounded_original_locomotive_scripts",
+  "profiles": {
+    "entity_locomotive_factory": {
+      "native_cases": 66012,
+      "groups": {
+        "factory_branch_boundaries": 416,
+        "factory_inclusive_turn_windows": 36,
+        "separate_adjacent_denominator": 30,
+        "all_initial_rng_results": 32768,
+        "all_scale_rng_results": 32762
+      },
+      "resulting_states": {
+        "-2147483648": 44,
+        "10": 6630,
+        "1": 20,
+        "-1": 44,
+        "0": 44,
+        "13": 6633,
+        "14": 39393,
+        "15": 48,
+        "2147483647": 48,
+        "11": 6554,
+        "12": 6554
+      },
+      "actual_native_entry_counts": {
+        "entity_locomotive_factory": 66012,
+        "entity_locomotive_common": 33124,
+        "rand": 65604,
+        "entity_disable_link": 20,
+        "func_80065A5C": 20,
+        "entity_stop_behaviour": 20,
+        "func_800662B4": 20,
+        "func_80066148": 20,
+        "entity_set_triggered": 20
+      },
+      "actual_dependency_contract_counts": {
+        "forward": 33124,
+        "sound_stop": 20,
+        "scale": 32804,
+        "rotation": 24
+      }
+    },
+    "entity_locomotive_kyoto": {
+      "native_cases": 3182,
+      "groups": {
+        "kyoto_state_action_and_link_boundaries": 3168,
+        "kyoto_callback_reset_modes": 14
+      },
+      "resulting_states": {
+        "-1": 528,
+        "0": 176,
+        "10": 640,
+        "1": 528,
+        "11": 782,
+        "12": 528
+      },
+      "actual_native_entry_counts": {
+        "entity_locomotive_kyoto": 3182,
+        "dream_sys_get_action_pressed": 334,
+        "dream_sys_clear_callbacks": 254,
+        "dream_sys_set_move_callback": 254,
+        "dream_sys_set_view_mode": 4
+      },
+      "actual_dependency_contract_counts": {
+        "forward": 3182,
+        "link_pose": 606,
+        "rotation": 254,
+        "notification": 64
+      }
+    },
+    "entity_locomotive_natural": {
+      "native_cases": 1151,
+      "groups": {
+        "natural_pause_and_restart_boundaries": 756,
+        "natural_inclusive_turn_windows": 36,
+        "all_color_bins_and_axis_byte_edges": 240,
+        "counted_mood_wrap_and_contribution_combination": 119
+      },
+      "resulting_states": {
+        "-2147483648": 104,
+        "1": 203,
+        "-1": 104,
+        "0": 329,
+        "10": 104,
+        "11": 203,
+        "2147483647": 104
+      },
+      "actual_native_entry_counts": {
+        "entity_locomotive_natural": 1151,
+        "entity_locomotive_common": 839,
+        "dream_sys_get_dream_color": 387,
+        "dream_sys_update_dream_chart": 387,
+        "dream_sys_get_mood_average": 774,
+        "calc_dream_color": 387,
+        "func_800662B4": 52,
+        "func_800662A8": 24,
+        "entity_disable_link": 28,
+        "func_80065A5C": 28,
+        "entity_stop_behaviour": 28,
+        "func_80066148": 28,
+        "entity_set_triggered": 28,
+        "calc_mood_axis": 396
+      },
+      "actual_dependency_contract_counts": {
+        "forward": 839,
+        "vertical": 144,
+        "sound_stop": 28,
+        "rotation": 24
+      }
+    }
+  },
+  "native_functions": [
+    {
+      "function": "entity_locomotive_factory",
+      "address": "0x800602ac",
+      "bytes": 280,
+      "sha256": "7050cc9387f945a87ca849936b611265e3768506b484f40726d2149b31df85e4"
+    },
+    {
+      "function": "entity_locomotive_kyoto",
+      "address": "0x80060b34",
+      "bytes": 444,
+      "sha256": "a38ac1b2004338fda5a2c3fd370b6ba51804b921ef493e02dee73e0d01f206f4"
+    },
+    {
+      "function": "entity_locomotive_natural",
+      "address": "0x80064e34",
+      "bytes": 392,
+      "sha256": "4b54175273fdc55ce2354b4ca5776345d4905f27863d5883d3b1756b0b5c1dcd"
+    },
+    {
+      "function": "entity_locomotive_common",
+      "address": "0x80064fbc",
+      "bytes": 280,
+      "sha256": "23f828b29d6017d1ff9514aabf037eb8e4569697f2337067c61fb14f1e001d66"
+    },
+    {
+      "function": "rand",
+      "address": "0x80049480",
+      "bytes": 40,
+      "sha256": "4c54a1210ed147afe9b02657c9b12bdec5bb62c5584a2a9fef212567d0e04c0c"
+    },
+    {
+      "function": "entity_disable_link",
+      "address": "0x8005da3c",
+      "bytes": 112,
+      "sha256": "730e458b8fcbb0fbdd92a20f7825c109697c11b5c02e57668ba54d424df14efd"
+    },
+    {
+      "function": "entity_stop_behaviour",
+      "address": "0x8005db8c",
+      "bytes": 100,
+      "sha256": "4fa7621002bfabe6bf1c105adc34415e5f321cde133ecbc8dc1a00aee60dcaf0"
+    },
+    {
+      "function": "entity_set_triggered",
+      "address": "0x8005daac",
+      "bytes": 80,
+      "sha256": "a552a733f16261135c347927d25a256dbee266abca01f67fadfa3ade0ac1e8ae"
+    },
+    {
+      "function": "func_80065A5C",
+      "address": "0x80065a5c",
+      "bytes": 132,
+      "sha256": "278028b4201f68dc536800ede29a45e5905ef7ed8e5929059a19709f705d1f23"
+    },
+    {
+      "function": "func_800662A8",
+      "address": "0x800662a8",
+      "bytes": 12,
+      "sha256": "6c0fd7bd7af3e46186f01ef889ddcf38378eac84bdf2a34797ff4cc5eb546d8d"
+    },
+    {
+      "function": "func_800662B4",
+      "address": "0x800662b4",
+      "bytes": 8,
+      "sha256": "9551f2e22426c0ef38657b0ae7289d100e7d495c6f17cd81cbc78cddb68f81ee"
+    },
+    {
+      "function": "func_80066148",
+      "address": "0x80066148",
+      "bytes": 8,
+      "sha256": "d9dfabd9e6747c7995e1c7196bfc94f3f7afbb7969fabd491b62b77a117875e4"
+    },
+    {
+      "function": "dream_sys_get_action_pressed",
+      "address": "0x8005931c",
+      "bytes": 12,
+      "sha256": "bc9d9a4597fc5c324c34fb0acc7dc1596cd1a7b617fc46f0fd1b7f63d9bf4061"
+    },
+    {
+      "function": "dream_sys_clear_callbacks",
+      "address": "0x800595a8",
+      "bytes": 104,
+      "sha256": "fedcd6413050a1e563cb90214529e50b9a045b6f47e0f1dc93dd3a84f424422b"
+    },
+    {
+      "function": "dream_sys_set_move_callback",
+      "address": "0x800596e8",
+      "bytes": 216,
+      "sha256": "e0911b100ce2b5e6a7ea7d27d2516f24c0bd02b0c26cd3acecebdb3925323b78"
+    },
+    {
+      "function": "dream_sys_set_view_mode",
+      "address": "0x8005a134",
+      "bytes": 52,
+      "sha256": "72d3ee63800701f2a93f94297d166183be0fcc9775ce13a37c19f532d7294345"
+    },
+    {
+      "function": "dream_sys_get_dream_color",
+      "address": "0x8005b4e0",
+      "bytes": 56,
+      "sha256": "0659f6160b44a19f6341cee66ea9d18e54c72b45a9ff90b9a43e17beaf62a20c"
+    },
+    {
+      "function": "dream_sys_update_dream_chart",
+      "address": "0x8005b420",
+      "bytes": 192,
+      "sha256": "591c42e8751cf26f45b5000174b01636877328dc334d52ef2a62e7e71cbd0a9a"
+    },
+    {
+      "function": "dream_sys_get_mood_average",
+      "address": "0x8005b5f0",
+      "bytes": 124,
+      "sha256": "902ddc0df776d947022e19d909a27dab5d657d2a2747b0479707a57d1c910162"
+    },
+    {
+      "function": "calc_mood_axis",
+      "address": "0x8005b66c",
+      "bytes": 116,
+      "sha256": "15e18dfbad1b1dedd93c563b107c36fbfe34418af9cab5653f3f28dd3696c5c5"
+    },
+    {
+      "function": "calc_dream_color",
+      "address": "0x8005b518",
+      "bytes": 140,
+      "sha256": "5bb1be3cc5febfd1f3946d000d740df866e053555e9b8fb97330c76f20d5f3c9"
+    }
+  ],
+  "actual_native_entry_counts": {
+    "entity_locomotive_factory": 66044,
+    "entity_locomotive_common": 34041,
+    "rand": 65611,
+    "entity_disable_link": 54,
+    "func_80065A5C": 54,
+    "entity_stop_behaviour": 54,
+    "func_800662B4": 81,
+    "func_80066148": 54,
+    "entity_set_triggered": 54,
+    "entity_locomotive_kyoto": 3246,
+    "dream_sys_get_action_pressed": 358,
+    "dream_sys_clear_callbacks": 262,
+    "dream_sys_set_move_callback": 262,
+    "dream_sys_set_view_mode": 6,
+    "entity_locomotive_natural": 1247,
+    "dream_sys_get_dream_color": 391,
+    "dream_sys_update_dream_chart": 391,
+    "dream_sys_get_mood_average": 782,
+    "calc_dream_color": 391,
+    "func_800662A8": 28,
+    "calc_mood_axis": 396
+  },
+  "callback_bindings": {
+    "entity_locomotive_factory": [
+      {
+        "index": 41,
+        "record_sha256": "a8609c228e3236bb396289ce9719b36d1714b4044667528484a3d641b109a3b0"
+      }
+    ],
+    "entity_locomotive_kyoto": [
+      {
+        "index": 49,
+        "record_sha256": "3631ce6b7caf1899702a69b6cb76b01096bc86ec223652eb43fb43a18bac78f9"
+      }
+    ],
+    "entity_locomotive_natural": [
+      {
+        "index": 111,
+        "record_sha256": "c48e45453c73f01081d387df3a52fc8341911500d68b94bddb14468248d7cc31"
+      }
+    ]
+  },
+  "property_table_sha256": "209e6f5d82ab17604cbf2ad16ef1bec624f89c61bdf9d1a3d24905527c47424a",
+  "backend_identity": {
+    "package_version": "2.1.4",
+    "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+  },
+  "exhaustive_first_rng_results_per_site": 32768,
+  "histories": [
+    {
+      "callback": "entity_locomotive_factory",
+      "name": "factory-roll-0",
+      "script_invocations": 16,
+      "submitted_inputs": [
+        {
+          "state": 0,
+          "tick": 0,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 4235699843,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 4235699843,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 319,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 4235699843,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 320,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 4235699843,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 321,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 4235699843,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 324,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 4235699843,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 499,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 4235699843,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 500,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 4235699843,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 501,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 4235699843,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 3000,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 4235699843,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 3091,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 4235699843,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 3092,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 4235699843,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 3341,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 4235699843,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 3433,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 4235699843,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 3698,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 4235699843,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 3791,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 4235699843,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "final_state": 1,
+      "actual_native_entry_counts": {
+        "entity_locomotive_factory": 16,
+        "rand": 1,
+        "entity_locomotive_common": 16,
+        "entity_disable_link": 1,
+        "func_80065A5C": 1,
+        "entity_stop_behaviour": 1,
+        "func_800662B4": 1,
+        "func_80066148": 1,
+        "entity_set_triggered": 1
+      }
+    },
+    {
+      "callback": "entity_locomotive_factory",
+      "name": "factory-roll-4",
+      "script_invocations": 16,
+      "submitted_inputs": [
+        {
+          "state": 0,
+          "tick": 0,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 2852890243,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 2852890243,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 319,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 2852890243,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 320,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 2852890243,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 321,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 2852890243,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 324,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 2852890243,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 499,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 2852890243,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 500,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 2852890243,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 501,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 2852890243,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 3000,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 2852890243,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 3091,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 2852890243,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 3092,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 2852890243,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 3341,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 2852890243,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 3433,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 2852890243,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 3698,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 2852890243,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 3791,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 2852890243,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 41,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "final_state": 14,
+      "actual_native_entry_counts": {
+        "entity_locomotive_factory": 16,
+        "rand": 6,
+        "entity_locomotive_common": 3
+      }
+    },
+    {
+      "callback": "entity_locomotive_kyoto",
+      "name": "kyoto-link-0-move-0",
+      "script_invocations": 8,
+      "submitted_inputs": [
+        {
+          "state": 0,
+          "tick": 0,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 0,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 0,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 9,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 0,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 10,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 65536,
+          "seed": 0,
+          "move_mode": 0,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 11,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 65536,
+          "seed": 0,
+          "move_mode": 0,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 0,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 99,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 0,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 100,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 0,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "final_state": 11,
+      "actual_native_entry_counts": {
+        "entity_locomotive_kyoto": 8,
+        "dream_sys_get_action_pressed": 3,
+        "dream_sys_clear_callbacks": 1,
+        "dream_sys_set_move_callback": 1
+      }
+    },
+    {
+      "callback": "entity_locomotive_kyoto",
+      "name": "kyoto-link-0-move-1",
+      "script_invocations": 8,
+      "submitted_inputs": [
+        {
+          "state": 0,
+          "tick": 0,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 9,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 10,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 65536,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 11,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 65536,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 99,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 100,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "final_state": 11,
+      "actual_native_entry_counts": {
+        "entity_locomotive_kyoto": 8,
+        "dream_sys_get_action_pressed": 3,
+        "dream_sys_clear_callbacks": 1,
+        "dream_sys_set_move_callback": 1
+      }
+    },
+    {
+      "callback": "entity_locomotive_kyoto",
+      "name": "kyoto-link-0-move-2",
+      "script_invocations": 8,
+      "submitted_inputs": [
+        {
+          "state": 0,
+          "tick": 0,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 2,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 2,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 9,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 2,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 10,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 65536,
+          "seed": 0,
+          "move_mode": 2,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 11,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 65536,
+          "seed": 0,
+          "move_mode": 2,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 2,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 99,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 2,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 100,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 2,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "final_state": 11,
+      "actual_native_entry_counts": {
+        "entity_locomotive_kyoto": 8,
+        "dream_sys_get_action_pressed": 3,
+        "dream_sys_clear_callbacks": 1,
+        "dream_sys_set_move_callback": 1,
+        "dream_sys_set_view_mode": 1
+      }
+    },
+    {
+      "callback": "entity_locomotive_kyoto",
+      "name": "kyoto-link-0-move-3",
+      "script_invocations": 8,
+      "submitted_inputs": [
+        {
+          "state": 0,
+          "tick": 0,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 3,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 3,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 9,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 3,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 10,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 65536,
+          "seed": 0,
+          "move_mode": 3,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 11,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 65536,
+          "seed": 0,
+          "move_mode": 3,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 3,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 99,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 3,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 100,
+          "triggered": 1,
+          "active": 0,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 3,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "final_state": 11,
+      "actual_native_entry_counts": {
+        "entity_locomotive_kyoto": 8,
+        "dream_sys_get_action_pressed": 3,
+        "dream_sys_clear_callbacks": 1,
+        "dream_sys_set_move_callback": 1
+      }
+    },
+    {
+      "callback": "entity_locomotive_kyoto",
+      "name": "kyoto-link-1-move-0",
+      "script_invocations": 8,
+      "submitted_inputs": [
+        {
+          "state": 0,
+          "tick": 0,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 0,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 0,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 9,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 0,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 10,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 65536,
+          "seed": 0,
+          "move_mode": 0,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 11,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 65536,
+          "seed": 0,
+          "move_mode": 0,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 0,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 99,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 0,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 100,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 0,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "final_state": 11,
+      "actual_native_entry_counts": {
+        "entity_locomotive_kyoto": 8,
+        "dream_sys_get_action_pressed": 3,
+        "dream_sys_clear_callbacks": 1,
+        "dream_sys_set_move_callback": 1
+      }
+    },
+    {
+      "callback": "entity_locomotive_kyoto",
+      "name": "kyoto-link-1-move-1",
+      "script_invocations": 8,
+      "submitted_inputs": [
+        {
+          "state": 0,
+          "tick": 0,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 9,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 10,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 65536,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 11,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 65536,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 99,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 100,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "final_state": 11,
+      "actual_native_entry_counts": {
+        "entity_locomotive_kyoto": 8,
+        "dream_sys_get_action_pressed": 3,
+        "dream_sys_clear_callbacks": 1,
+        "dream_sys_set_move_callback": 1
+      }
+    },
+    {
+      "callback": "entity_locomotive_kyoto",
+      "name": "kyoto-link-1-move-2",
+      "script_invocations": 8,
+      "submitted_inputs": [
+        {
+          "state": 0,
+          "tick": 0,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 2,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 2,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 9,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 2,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 10,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 65536,
+          "seed": 0,
+          "move_mode": 2,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 11,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 65536,
+          "seed": 0,
+          "move_mode": 2,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 2,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 99,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 2,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 100,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 2,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "final_state": 11,
+      "actual_native_entry_counts": {
+        "entity_locomotive_kyoto": 8,
+        "dream_sys_get_action_pressed": 3,
+        "dream_sys_clear_callbacks": 1,
+        "dream_sys_set_move_callback": 1,
+        "dream_sys_set_view_mode": 1
+      }
+    },
+    {
+      "callback": "entity_locomotive_kyoto",
+      "name": "kyoto-link-1-move-3",
+      "script_invocations": 8,
+      "submitted_inputs": [
+        {
+          "state": 0,
+          "tick": 0,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 3,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 3,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 9,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 3,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 10,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 65536,
+          "seed": 0,
+          "move_mode": 3,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 11,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 65536,
+          "seed": 0,
+          "move_mode": 3,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 3,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 99,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 3,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 100,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 3,
+          "denominator": 1,
+          "property_index": 49,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "final_state": 11,
+      "actual_native_entry_counts": {
+        "entity_locomotive_kyoto": 8,
+        "dream_sys_get_action_pressed": 3,
+        "dream_sys_clear_callbacks": 1,
+        "dream_sys_set_move_callback": 1
+      }
+    },
+    {
+      "callback": "entity_locomotive_natural",
+      "name": "natural-state-0-pink-False",
+      "script_invocations": 24,
+      "submitted_inputs": [
+        {
+          "state": 0,
+          "tick": 0,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 481,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 572,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 822,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 914,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1179,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1272,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2159,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2160,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2161,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2180,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2181,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2549,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2550,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2559,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2560,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2561,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2562,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2563,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2800,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2801,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 3999,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 4000,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 4001,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "final_state": 1,
+      "actual_native_entry_counts": {
+        "entity_locomotive_natural": 24,
+        "dream_sys_get_dream_color": 1,
+        "dream_sys_update_dream_chart": 1,
+        "dream_sys_get_mood_average": 2,
+        "calc_dream_color": 1,
+        "entity_locomotive_common": 17,
+        "entity_disable_link": 2,
+        "func_80065A5C": 2,
+        "entity_stop_behaviour": 2,
+        "func_800662B4": 2,
+        "func_80066148": 2,
+        "entity_set_triggered": 2,
+        "func_800662A8": 1
+      }
+    },
+    {
+      "callback": "entity_locomotive_natural",
+      "name": "natural-state-0-pink-True",
+      "script_invocations": 24,
+      "submitted_inputs": [
+        {
+          "state": 0,
+          "tick": 0,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 481,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 572,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 822,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 914,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1179,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 1272,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2159,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2160,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2161,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2180,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2181,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2549,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2550,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2559,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2560,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2561,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2562,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2563,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2800,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 2801,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 3999,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 4000,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 0,
+          "tick": 4001,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "final_state": 1,
+      "actual_native_entry_counts": {
+        "entity_locomotive_natural": 24,
+        "dream_sys_get_dream_color": 1,
+        "dream_sys_update_dream_chart": 1,
+        "dream_sys_get_mood_average": 2,
+        "calc_dream_color": 1,
+        "entity_locomotive_common": 14,
+        "func_800662B4": 2,
+        "func_800662A8": 1,
+        "entity_disable_link": 1,
+        "func_80065A5C": 1,
+        "entity_stop_behaviour": 1,
+        "func_80066148": 1,
+        "entity_set_triggered": 1
+      }
+    },
+    {
+      "callback": "entity_locomotive_natural",
+      "name": "natural-state-1-pink-False",
+      "script_invocations": 24,
+      "submitted_inputs": [
+        {
+          "state": 1,
+          "tick": 0,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 481,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 572,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 822,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 914,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 1179,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 1272,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2159,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2160,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2161,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2180,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2181,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2549,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2550,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2559,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2560,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2561,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2562,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2563,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2800,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2801,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 3999,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 4000,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 4001,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "final_state": 1,
+      "actual_native_entry_counts": {
+        "entity_locomotive_natural": 24,
+        "dream_sys_get_dream_color": 1,
+        "dream_sys_update_dream_chart": 1,
+        "dream_sys_get_mood_average": 2,
+        "calc_dream_color": 1,
+        "entity_locomotive_common": 14,
+        "func_800662B4": 2,
+        "func_800662A8": 1,
+        "entity_disable_link": 1,
+        "func_80065A5C": 1,
+        "entity_stop_behaviour": 1,
+        "func_80066148": 1,
+        "entity_set_triggered": 1
+      }
+    },
+    {
+      "callback": "entity_locomotive_natural",
+      "name": "natural-state-1-pink-True",
+      "script_invocations": 24,
+      "submitted_inputs": [
+        {
+          "state": 1,
+          "tick": 0,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 481,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 572,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 822,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 914,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 1179,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 1272,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2159,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2160,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2161,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2180,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2181,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2549,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2550,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2559,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2560,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2561,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2562,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2563,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2800,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 2801,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 3999,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 4000,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "state": 1,
+          "tick": 4001,
+          "triggered": 1,
+          "active": 1,
+          "mode": 6,
+          "command_timer": 12345,
+          "action": 0,
+          "seed": 0,
+          "move_mode": 1,
+          "denominator": 1,
+          "property_index": 111,
+          "chunk_mood": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "instance_mood": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "final_state": 1,
+      "actual_native_entry_counts": {
+        "entity_locomotive_natural": 24,
+        "dream_sys_get_dream_color": 1,
+        "dream_sys_update_dream_chart": 1,
+        "dream_sys_get_mood_average": 2,
+        "calc_dream_color": 1,
+        "entity_locomotive_common": 14,
+        "func_800662B4": 2,
+        "func_800662A8": 1,
+        "entity_disable_link": 1,
+        "func_80065A5C": 1,
+        "entity_stop_behaviour": 1,
+        "func_80066148": 1,
+        "entity_set_triggered": 1
+      }
+    }
+  ],
+  "history_invocations": 192,
+  "original_data_objects": [
+    {
+      "symbol": "g_EntityOffsetScratch",
+      "address": "0x80089e8c",
+      "bytes": 22,
+      "sha256": "37d2875b874c53e2f440d81b9d6af546f276188867ca194873ba5b5f2fe4ab31"
+    },
+    {
+      "symbol": "g_EntityOffsetScratchDenom",
+      "address": "0x80089ea2",
+      "bytes": 2,
+      "sha256": "47dc540c94ceb704a23875c11273e16bb0b8a87aed84de911f2133568115f254"
+    },
+    {
+      "symbol": "g_RotateYawOne",
+      "address": "0x80089d18",
+      "bytes": 12,
+      "sha256": "81ad14a1b71fb38de65360973e1fb5682970605712903fd431eb57011830b4e1"
+    },
+    {
+      "symbol": "g_RotateYawNegQuarter",
+      "address": "0x80089c94",
+      "bytes": 12,
+      "sha256": "36f8184755a9270c4ff4b61ef8c1f718406cb0e026ed8a085e477b72bf44f779"
+    },
+    {
+      "symbol": "g_DreamColorTable",
+      "address": "0x80087e14",
+      "bytes": 12,
+      "sha256": "061be3af5e5531289ef8e752f8f1c9b3474f514ac31316a21d09847d91db1b5f"
+    }
+  ],
+  "dependency_contracts": [
+    "forward",
+    "link_pose",
+    "notification",
+    "rotation",
+    "scale",
+    "sound_stop",
+    "vertical"
+  ],
+  "actual_dependency_contract_counts": {
+    "forward": 37287,
+    "sound_stop": 54,
+    "scale": 32809,
+    "rotation": 340,
+    "link_pose": 638,
+    "notification": 80,
+    "vertical": 160
+  },
+  "negative_controls_detected": [
+    {
+      "kind": "wrong_initial_state_offset",
+      "function": "entity_locomotive_factory",
+      "callback": "entity_locomotive_factory",
+      "function_offset": 84,
+      "address": "0x80060300",
+      "expected_word": "0x2442000a",
+      "changed_word": "0x2442000b",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "entity"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_factory_scale_boundary",
+      "function": "entity_locomotive_factory",
+      "callback": "entity_locomotive_factory",
+      "function_offset": 120,
+      "address": "0x80060324",
+      "expected_word": "0x28620140",
+      "changed_word": "0x28620141",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "context",
+        "rng_seed",
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "scale_write_corrupts_array_instead_of_denominator",
+      "function": "entity_locomotive_factory",
+      "callback": "entity_locomotive_factory",
+      "function_offset": 228,
+      "address": "0x80060390",
+      "expected_word": "0xa4c20000",
+      "changed_word": "0xa4c2fffe",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "scratch",
+        "denominator",
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_scale_fraction_pointer",
+      "function": "entity_locomotive_factory",
+      "callback": "entity_locomotive_factory",
+      "function_offset": 252,
+      "address": "0x800603a8",
+      "expected_word": "0x24c6fff6",
+      "changed_word": "0x24c6fff4",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_first_inclusive_turn_end",
+      "function": "entity_locomotive_common",
+      "callback": "entity_locomotive_factory",
+      "function_offset": 76,
+      "address": "0x80065008",
+      "expected_word": "0x24c2005b",
+      "changed_word": "0x24c2005a",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_second_inclusive_turn_end",
+      "function": "entity_locomotive_common",
+      "callback": "entity_locomotive_factory",
+      "function_offset": 104,
+      "address": "0x80065024",
+      "expected_word": "0x24c201b1",
+      "changed_word": "0x24c201b0",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_third_inclusive_turn_end",
+      "function": "entity_locomotive_common",
+      "callback": "entity_locomotive_factory",
+      "function_offset": 132,
+      "address": "0x80065040",
+      "expected_word": "0x24c20317",
+      "changed_word": "0x24c20316",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "truncated_action_word",
+      "function": "dream_sys_get_action_pressed",
+      "callback": "entity_locomotive_kyoto",
+      "function_offset": 0,
+      "address": "0x8005931c",
+      "expected_word": "0x8c820074",
+      "changed_word": "0x94820074",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "entity",
+        "dream",
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_kyoto_action_exclusion",
+      "function": "entity_locomotive_kyoto",
+      "callback": "entity_locomotive_kyoto",
+      "function_offset": 108,
+      "address": "0x80060ba0",
+      "expected_word": "0x10430041",
+      "changed_word": "0x14430041",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "entity",
+        "dream",
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_kyoto_notification_tick",
+      "function": "entity_locomotive_kyoto",
+      "callback": "entity_locomotive_kyoto",
+      "function_offset": 360,
+      "address": "0x80060c9c",
+      "expected_word": "0x34020064",
+      "changed_word": "0x34020065",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_link_transform_offset",
+      "function": "entity_locomotive_kyoto",
+      "callback": "entity_locomotive_kyoto",
+      "function_offset": 184,
+      "address": "0x80060bec",
+      "expected_word": "0x24450038",
+      "changed_word": "0x2445003c",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "truncated_link_active_word",
+      "function": "entity_locomotive_kyoto",
+      "callback": "entity_locomotive_kyoto",
+      "function_offset": 160,
+      "address": "0x80060bd4",
+      "expected_word": "0x8e03000c",
+      "changed_word": "0x9603000c",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_view_reset_destination",
+      "function": "dream_sys_set_view_mode",
+      "callback": "entity_locomotive_kyoto",
+      "function_offset": 12,
+      "address": "0x8005a140",
+      "expected_word": "0xac4000c4",
+      "changed_word": "0xac4000c0",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "dream"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_pause_start",
+      "function": "entity_locomotive_natural",
+      "callback": "entity_locomotive_natural",
+      "function_offset": 108,
+      "address": "0x80064ea0",
+      "expected_word": "0x28620870",
+      "changed_word": "0x28620871",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "entity",
+        "context",
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_inclusive_animation_resume",
+      "function": "entity_locomotive_natural",
+      "callback": "entity_locomotive_natural",
+      "function_offset": 124,
+      "address": "0x80064eb0",
+      "expected_word": "0x2c420191",
+      "changed_word": "0x2c420190",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "context",
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_movement_resume",
+      "function": "entity_locomotive_natural",
+      "callback": "entity_locomotive_natural",
+      "function_offset": 264,
+      "address": "0x80064f3c",
+      "expected_word": "0x28620a03",
+      "changed_word": "0x28620a04",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "context",
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_vertical_start",
+      "function": "entity_locomotive_natural",
+      "callback": "entity_locomotive_natural",
+      "function_offset": 272,
+      "address": "0x80064f44",
+      "expected_word": "0x28620af1",
+      "changed_word": "0x28620af2",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_mood_axis_wrap",
+      "function": "calc_mood_axis",
+      "callback": "entity_locomotive_natural",
+      "function_offset": 72,
+      "address": "0x8005b6b4",
+      "expected_word": "0x28a2000a",
+      "changed_word": "0x28a2000b",
+      "changed_instruction_executions": 2,
+      "changed_checked_fields": [
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_positive_color_bin",
+      "function": "calc_dream_color",
+      "callback": "entity_locomotive_natural",
+      "function_offset": 36,
+      "address": "0x8005b53c",
+      "expected_word": "0x28620004",
+      "changed_word": "0x28620005",
+      "changed_instruction_executions": 2,
+      "changed_checked_fields": [
+        "entity",
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_negative_color_bin",
+      "function": "calc_dream_color",
+      "callback": "entity_locomotive_natural",
+      "function_offset": 44,
+      "address": "0x8005b544",
+      "expected_word": "0x2862fffd",
+      "changed_word": "0x2862fffe",
+      "changed_instruction_executions": 2,
+      "changed_checked_fields": [
+        "trace"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    },
+    {
+      "kind": "wrong_rng_multiplier",
+      "function": "rand",
+      "callback": "entity_locomotive_factory",
+      "function_offset": 8,
+      "address": "0x80049488",
+      "expected_word": "0x34634e6d",
+      "changed_word": "0x34634e6e",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "rng_seed"
+      ],
+      "scope": "Separate private Unicorn memory; no source or canonical image modification."
+    }
+  ],
+  "write_bounds_controls": [
+    {
+      "kind": "out_of_profile_halfword_store",
+      "function": "entity_locomotive_factory",
+      "function_offset": 228,
+      "address": "0x80060390",
+      "expected_word": "0xa4c20000",
+      "attempted_word": "0xa4c20002",
+      "attempted_destination": "0x80089ea4",
+      "bytes": 2,
+      "decoded_from_instruction": "0x60390",
+      "changed_instruction_execution_observations": 1,
+      "rejected_before_store": true,
+      "destination_bytes_preserved": true,
+      "distinct_from_completed_behavior_faults": true
+    },
+    {
+      "kind": "out_of_profile_delay_slot_store",
+      "function": "entity_locomotive_common",
+      "function_offset": 36,
+      "address": "0x80064fe0",
+      "expected_word": "0xaca00010",
+      "attempted_word": "0xaca00100",
+      "attempted_destination": "0x103100",
+      "bytes": 4,
+      "decoded_from_instruction": "0x64fdc",
+      "changed_instruction_execution_observations": 0,
+      "rejected_before_store": true,
+      "destination_bytes_preserved": true,
+      "distinct_from_completed_behavior_faults": true
+    }
+  ],
+  "store_guard": "Instruction-level R3000 integer-store spans; branch delay slots checked before the branch; no memory-write hook.",
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "canonical_original_and_build_equal": true,
+  "input_digest_sha256": "f2ee5e8a99a12dcb2a8bdf38d38df56dc3363ab3b030f24136bffa77ebc37d5f",
+  "output_digest_sha256": "f6575bfe396f3f779c17838b8874694f19fe107da7411de7c758c4e4b418f62d",
+  "input_digest_scope": "Deduplicated standalone initialized buffers and RNG seed, with callback identity. Histories separately record their submitted input sequences.",
+  "producer_dependencies": [
+    {
+      "path": "tools/verify_native_ai.py",
+      "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+    },
+    {
+      "path": "tools/inventory_vtables.py",
+      "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+    },
+    {
+      "path": "tools/progress.py",
+      "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+    },
+    {
+      "path": "configure.py",
+      "sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2"
+    },
+    {
+      "path": "requirements-analysis.txt",
+      "sha256": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911"
+    },
+    {
+      "path": "build/SLPS01556.map",
+      "sha256": "f33789ceb8c0665b372415f9d58087b0fc810d6d30465cee962cdfebc2da0846"
+    },
+    {
+      "path": "build/undefined_funcs_auto.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "build/undefined_syms_auto.txt",
+      "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+    },
+    {
+      "path": "src/scene/entity.c",
+      "sha256": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811"
+    },
+    {
+      "path": "src/scene/entity.h",
+      "sha256": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f"
+    },
+    {
+      "path": "src/dream/dream_sys.c",
+      "sha256": "d5b09c49d43d8b0001868f90abe81e6976906ae4180f4b70fb5f78fa400c8b3a"
+    },
+    {
+      "path": "src/dream/dream_sys.h",
+      "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+    },
+    {
+      "path": "src/scene/actor.c",
+      "sha256": "c9da90f048399ad93127e4c841aaf49c81c6922a8d4528ae783f1edcf2be3a4b"
+    },
+    {
+      "path": "src/base/transform.c",
+      "sha256": "0166d95088d3476bf1cf8c2a760627f0c12640e68a1f8294a973acb91c09004d"
+    },
+    {
+      "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+      "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+    },
+    {
+      "path": "tools/verify_scripted_ai.py",
+      "sha256": "2edefddc727441c0066a48375efd882c80035af99db3b3990a2c674eedddb2c1"
+    },
+    {
+      "path": "tools/verify_gunman_scripts.py",
+      "sha256": "6bb82b12a0570ec7448edf11f45c50f1f93e0de7622ea404bde22b11cfcce5d5"
+    },
+    {
+      "path": "docs/gunman-function-ranges.json",
+      "sha256": "8a310d710b22cfc1d58a4a65a4f83a5dc6d6c0f1d9ef922b2c4cd4e44c9f3e39"
+    },
+    {
+      "path": "asm/data/783DC.data.s",
+      "sha256": "76a71f0e8827db4d9d9e5d151111335b8c7d1d0760ad4271403839a805619924"
+    },
+    {
+      "path": "tools/verify_locomotive_scripts.py",
+      "sha256": "2b1aa4a0577353cee5774318b948ef55cd8006cb4c7189e6529a076bd542c2e8"
+    },
+    {
+      "path": "docs/locomotive-function-ranges.json",
+      "sha256": "31b72c3cc10dc63bce6ab9bad963ba0fbb2b131b5e711b1386532a0842cdde36"
+    }
+  ],
+  "original_behavior_modified": false,
+  "source_functions_promoted": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "model_api_calls": 0,
+  "negative_controls_executed": true,
+  "scope": "Constructed locomotive script states, actual RNG, link-disable helpers with no child nodes, animation flags, player callback clear and complete mood-to-color chain. Seven explicit contracts cover rotation, scale, forward/vertical motion, link pose, notification and sound. Histories preserve buffers/RNG and inject tick/action inputs. This is not complete engine stepping, natural encounter acceptance, geometry, audio or PS1 timing. No C recovered.",
+  "elapsed_seconds": 35.373
+}

@@ -23769,6 +23769,55 @@
       "new_model_API_calls": 0,
       "original_behavior_modified": false,
       "Bevy_port_modified": false
+    },
+    "locomotive_scripts_20261017": {
+      "evidence": "docs/locomotive-script-checks.json",
+      "guide": "docs/LOCOMOTIVE_SCRIPTS.md",
+      "before": {
+        "c_bytes": 196504,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 4,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 196504,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 4,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 39,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "native_fixture_inputs": 70345,
+      "new_bounded_NPC_callbacks": 3,
+      "qualified_native_functions": 21,
+      "native_history_invocations": 192,
+      "native_histories": 14,
+      "exhaustive_first_rng_results_per_site": 32768,
+      "RNG_draw_sites": 2,
+      "completed_behavior_faults": 21,
+      "rejected_write_controls": 2,
+      "explicit_dependency_contracts": 7,
+      "canonical_complete_image_preserved": true,
+      "new_C_bytes": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_model_API_calls": 0,
+      "original_behavior_modified": false,
+      "Bevy_port_modified": false
     }
   }
 }
