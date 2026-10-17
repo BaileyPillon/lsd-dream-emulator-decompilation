@@ -578,30 +578,30 @@ void func_800661D4(actor_t *This, s32 Unk2) {
     }
 }
 
+/* MOS animation header; its first frame follows the eight-byte header. */
+typedef struct actor_animation_header {
+    u16 tag;
+    u16 header_halfword;
+    u32 frame_count;
+} actor_animation_header_t;
+
+typedef char checked_actor_animation_header[
+    (sizeof(actor_animation_header_t) == 8) ? 1 : -1];
+
+static inline actor_animation_header_t *actor_animation_header(void *model, s32 index) {
+    u8 *animation_list = *(u8 **)((u8 *)model + 0x30);
+    u8 *mos = *(u8 **)(animation_list + 0x10);
+    u8 *animation = *(u8 **)(mos + 8 + index * 4);
+    return *(actor_animation_header_t **)(animation + 0x10);
+}
+
 void func_80066214(actor_t *this, s32 arg1) {
     void *(*pUnk76)(void *, void *, s32);
 
     this->m_Unk30 = arg1;
-    this->m_Unk31 =
-        *(s32 *) ((char *) (*(
-                      void **) ((char *) (*(
-                                    void **) ((char *) ((char *) (*(
-                                                            void **) ((char *) (*(void **) ((char *) this->m_Unk22 +
-                                                                                            0x30)) +
-                                                                      0x10)) +
-                                                        arg1 * 4) +
-                                              0x8)) +
-                                0x10)) +
-                  0x4);
+    this->m_Unk31 = actor_animation_header(this->m_Unk22, arg1)->frame_count;
     this->m_Unk33 =
-        (s32) (*(void **) ((char *) (*(
-                               void **) ((char *) ((char *) (*(
-                                                       void **) ((char *) (*(void **) ((char *) this->m_Unk22 + 0x30)) +
-                                                                 0x10)) +
-                                                   this->m_Unk30 * 4) +
-                                         0x8)) +
-                           0x10)) +
-        8;
+        (s32) (actor_animation_header(this->m_Unk22, this->m_Unk30) + 1);
     this->m_Unk32 = 0;
 
     pUnk76 = this->vtable->Unk76;

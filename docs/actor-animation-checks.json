@@ -1,0 +1,1140 @@
+{
+  "schema_version": 1,
+  "status": "qualified_bounded_original_actor_animation_selection",
+  "recorded_utc": "2026-10-17T19:33:42.550324+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "8f702a92c1713714c67e1b3093e93d69fa55202f",
+  "before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "measured": {
+    "original_model_instances": 111,
+    "distinct_model_contents": 100,
+    "animation_instance_indices": 122,
+    "completed_histories": 666,
+    "actor_lifetimes": 888,
+    "animation_selections": 1952,
+    "live_payloads_compared": 150592,
+    "live_payload_bytes": 6916928,
+    "mapped_MOM_bytes": 15737472,
+    "distinct_content_animation_indices": 108,
+    "original_functions_entered": 134,
+    "completed_wrong_output_controls": 24
+  },
+  "native_campaign": {
+    "private_report": ".decomp-lab/actor-animation-native-20261017-second/report.json",
+    "report_sha256": "6b51c5428f13d452eff84c589254e93732282fa1da4c674daf130fe9fd3337b3",
+    "inventory_sha256": "716e654315011777e0c62d57dd3a8098b97ca6b2da14249f2c0edf377b6032e5",
+    "layout_sha256": "cf93cc690c83baa91e7f54d57bc160007ceee859dc566333105124bf126ed1bc",
+    "edition_label": "Japanese-labelled",
+    "edition_label_is_user_supplied": true,
+    "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "symbol_diagnostic": {
+      "elf_sha256": "c0746d3982c314079a5a24f2d88072c43464032f969eeac5f172c7646df833a7",
+      "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+      "object_count": 306,
+      "original_link_flags": [
+        "--no-check-sections",
+        "-nostdlib",
+        "-s"
+      ],
+      "diagnostic_link_flags": [
+        "--no-check-sections",
+        "-nostdlib"
+      ],
+      "complete_canonical_image_equal": true
+    },
+    "backend_identity": {
+      "package_version": "2.1.2",
+      "library_api": [
+        2,
+        1,
+        33620735
+      ],
+      "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+      "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+      "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+      "binding_source_count": 21,
+      "execution_hook": "UC_HOOK_CODE",
+      "fresh_cpu_per_host_call": true,
+      "all_emulated_ram_preserved_between_host_calls": true,
+      "uninterrupted_cpu_within_guest_cleanup_graph": true
+    },
+    "fault_controls": [
+      {
+        "case": "fault-00-selection-index-not-stored",
+        "name": "selection-index-not-stored",
+        "scenario": "actor-first",
+        "pattern": "poison",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066220": 8
+        },
+        "wrong_payload_snapshots": 32,
+        "detection": {
+          "index": 1,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 124,
+          "actual_sha256": "7dcd68b3240091ab1a09fc15d82e769a1a66f88c8a648571e7daaf2ff7f2cc70",
+          "expected_sha256": "6f055b0cc198990c01d24ab8a092d7b345e59ee153ccb75a762ee311348da8c0"
+        }
+      },
+      {
+        "case": "fault-01-selection-index-not-stored",
+        "name": "selection-index-not-stored",
+        "scenario": "owned",
+        "pattern": "poison",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066220": 4
+        },
+        "wrong_payload_snapshots": 16,
+        "detection": {
+          "index": 1,
+          "kind": "actor",
+          "pointer": "0xa0044",
+          "first_difference": 124,
+          "actual_sha256": "64de4f996f29a48672fa2fa29dce0a2548cf831f26850a9a0bf9dad577c951fc",
+          "expected_sha256": "f0371f02248835c39c66d800e5832a8ad4635877df7222e137ec0001ecc16ca6"
+        }
+      },
+      {
+        "case": "fault-02-selection-index-not-stored",
+        "name": "selection-index-not-stored",
+        "scenario": "model-first",
+        "pattern": "poison",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066220": 4
+        },
+        "wrong_payload_snapshots": 16,
+        "detection": {
+          "index": 1,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 124,
+          "actual_sha256": "7dcd68b3240091ab1a09fc15d82e769a1a66f88c8a648571e7daaf2ff7f2cc70",
+          "expected_sha256": "6f055b0cc198990c01d24ab8a092d7b345e59ee153ccb75a762ee311348da8c0"
+        }
+      },
+      {
+        "case": "fault-03-selection-index-not-stored",
+        "name": "selection-index-not-stored",
+        "scenario": "actor-first",
+        "pattern": "distinct",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066220": 8
+        },
+        "wrong_payload_snapshots": 32,
+        "detection": {
+          "index": 1,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 124,
+          "actual_sha256": "657a3473485d1d843b73521c7ec0a20e51a2c777b2df1830707691db3d6deb0f",
+          "expected_sha256": "5a0350566ff060e9273d6d6e0c85576ae4c902a2ee0ee06c63415b5292a12f7a"
+        }
+      },
+      {
+        "case": "fault-04-selection-index-not-stored",
+        "name": "selection-index-not-stored",
+        "scenario": "owned",
+        "pattern": "distinct",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066220": 4
+        },
+        "wrong_payload_snapshots": 16,
+        "detection": {
+          "index": 1,
+          "kind": "actor",
+          "pointer": "0xa0044",
+          "first_difference": 124,
+          "actual_sha256": "b5d29391a487b521528727564e1b0d3788700a0078cac4833de435fa55a0aa2f",
+          "expected_sha256": "8a4507890c2dc3d8b10f3218905cc6d2269c9a0687131a85e27219d704956dc9"
+        }
+      },
+      {
+        "case": "fault-05-selection-index-not-stored",
+        "name": "selection-index-not-stored",
+        "scenario": "model-first",
+        "pattern": "distinct",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066220": 4
+        },
+        "wrong_payload_snapshots": 16,
+        "detection": {
+          "index": 1,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 124,
+          "actual_sha256": "657a3473485d1d843b73521c7ec0a20e51a2c777b2df1830707691db3d6deb0f",
+          "expected_sha256": "5a0350566ff060e9273d6d6e0c85576ae4c902a2ee0ee06c63415b5292a12f7a"
+        }
+      },
+      {
+        "case": "fault-06-duration-cleared",
+        "name": "duration-cleared",
+        "scenario": "actor-first",
+        "pattern": "poison",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066250": 8
+        },
+        "wrong_payload_snapshots": 8,
+        "detection": {
+          "index": 0,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 128,
+          "actual_sha256": "6337cb6d192cd8a2f945e18a93e13774b6610c548193812b92b76fa04e7196af",
+          "expected_sha256": "4edbcb95b19dc001051774eebfd8676114a3aea3017cbe4ea6b17f0c3dc7f8a2"
+        }
+      },
+      {
+        "case": "fault-07-duration-cleared",
+        "name": "duration-cleared",
+        "scenario": "owned",
+        "pattern": "poison",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066250": 4
+        },
+        "wrong_payload_snapshots": 4,
+        "detection": {
+          "index": 0,
+          "kind": "actor",
+          "pointer": "0xa0044",
+          "first_difference": 128,
+          "actual_sha256": "f44cfd527967342e26dd0f969095ea45d78804d5ce14f21a25b61f764dc5d5d7",
+          "expected_sha256": "9179114726143dedd4bc5ef6142aed61ef7c6bacd2e655ee0a7067284541e579"
+        }
+      },
+      {
+        "case": "fault-08-duration-cleared",
+        "name": "duration-cleared",
+        "scenario": "model-first",
+        "pattern": "poison",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066250": 4
+        },
+        "wrong_payload_snapshots": 4,
+        "detection": {
+          "index": 0,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 128,
+          "actual_sha256": "6337cb6d192cd8a2f945e18a93e13774b6610c548193812b92b76fa04e7196af",
+          "expected_sha256": "4edbcb95b19dc001051774eebfd8676114a3aea3017cbe4ea6b17f0c3dc7f8a2"
+        }
+      },
+      {
+        "case": "fault-09-duration-cleared",
+        "name": "duration-cleared",
+        "scenario": "actor-first",
+        "pattern": "distinct",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066250": 8
+        },
+        "wrong_payload_snapshots": 8,
+        "detection": {
+          "index": 0,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 128,
+          "actual_sha256": "4b1e5ae7e702b7c3661508377096ecd4e4dafbcd17def1d1c2b37fc210cfa2a0",
+          "expected_sha256": "8b702a58db4d9bbec7ce1cb80ce4999085805d7f713f0455378c2ad94cd04051"
+        }
+      },
+      {
+        "case": "fault-10-duration-cleared",
+        "name": "duration-cleared",
+        "scenario": "owned",
+        "pattern": "distinct",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066250": 4
+        },
+        "wrong_payload_snapshots": 4,
+        "detection": {
+          "index": 0,
+          "kind": "actor",
+          "pointer": "0xa0044",
+          "first_difference": 128,
+          "actual_sha256": "c6b391b467adfeb64815610d31dbe7c96bd952dcad48d668e190304a959e2019",
+          "expected_sha256": "30aad748c423b76d05a29ae1687a4a80b9f0d2672ccae5af95c6521fa33883ba"
+        }
+      },
+      {
+        "case": "fault-11-duration-cleared",
+        "name": "duration-cleared",
+        "scenario": "model-first",
+        "pattern": "distinct",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066250": 4
+        },
+        "wrong_payload_snapshots": 4,
+        "detection": {
+          "index": 0,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 128,
+          "actual_sha256": "4b1e5ae7e702b7c3661508377096ecd4e4dafbcd17def1d1c2b37fc210cfa2a0",
+          "expected_sha256": "8b702a58db4d9bbec7ce1cb80ce4999085805d7f713f0455378c2ad94cd04051"
+        }
+      },
+      {
+        "case": "fault-12-counter-reset-omitted",
+        "name": "counter-reset-omitted",
+        "scenario": "actor-first",
+        "pattern": "poison",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066274": 8
+        },
+        "wrong_payload_snapshots": 8,
+        "detection": {
+          "index": 0,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 132,
+          "actual_sha256": "099eb8b5a74203fc036ac9be101601a70ed0f09b8b84eca5f4fdbf3e60653c4a",
+          "expected_sha256": "4edbcb95b19dc001051774eebfd8676114a3aea3017cbe4ea6b17f0c3dc7f8a2"
+        }
+      },
+      {
+        "case": "fault-13-counter-reset-omitted",
+        "name": "counter-reset-omitted",
+        "scenario": "owned",
+        "pattern": "poison",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066274": 4
+        },
+        "wrong_payload_snapshots": 4,
+        "detection": {
+          "index": 0,
+          "kind": "actor",
+          "pointer": "0xa0044",
+          "first_difference": 132,
+          "actual_sha256": "e1aa1283a6078c44b9c1ccc25259e1a459d41e028d712d2372ff4db6eec1cc58",
+          "expected_sha256": "9179114726143dedd4bc5ef6142aed61ef7c6bacd2e655ee0a7067284541e579"
+        }
+      },
+      {
+        "case": "fault-14-counter-reset-omitted",
+        "name": "counter-reset-omitted",
+        "scenario": "model-first",
+        "pattern": "poison",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066274": 4
+        },
+        "wrong_payload_snapshots": 4,
+        "detection": {
+          "index": 0,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 132,
+          "actual_sha256": "099eb8b5a74203fc036ac9be101601a70ed0f09b8b84eca5f4fdbf3e60653c4a",
+          "expected_sha256": "4edbcb95b19dc001051774eebfd8676114a3aea3017cbe4ea6b17f0c3dc7f8a2"
+        }
+      },
+      {
+        "case": "fault-15-counter-reset-omitted",
+        "name": "counter-reset-omitted",
+        "scenario": "actor-first",
+        "pattern": "distinct",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066274": 8
+        },
+        "wrong_payload_snapshots": 8,
+        "detection": {
+          "index": 0,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 132,
+          "actual_sha256": "ae6444264284852918403c84b1170638d7e143435e33b0091119f4807e163140",
+          "expected_sha256": "8b702a58db4d9bbec7ce1cb80ce4999085805d7f713f0455378c2ad94cd04051"
+        }
+      },
+      {
+        "case": "fault-16-counter-reset-omitted",
+        "name": "counter-reset-omitted",
+        "scenario": "owned",
+        "pattern": "distinct",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066274": 4
+        },
+        "wrong_payload_snapshots": 4,
+        "detection": {
+          "index": 0,
+          "kind": "actor",
+          "pointer": "0xa0044",
+          "first_difference": 132,
+          "actual_sha256": "f8726841adc9f830da77171ee4d2512e68c74cdbdd6765d833684eb863a6f43c",
+          "expected_sha256": "30aad748c423b76d05a29ae1687a4a80b9f0d2672ccae5af95c6521fa33883ba"
+        }
+      },
+      {
+        "case": "fault-17-counter-reset-omitted",
+        "name": "counter-reset-omitted",
+        "scenario": "model-first",
+        "pattern": "distinct",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066274": 4
+        },
+        "wrong_payload_snapshots": 4,
+        "detection": {
+          "index": 0,
+          "kind": "actor",
+          "pointer": "0xa0254",
+          "first_difference": 132,
+          "actual_sha256": "ae6444264284852918403c84b1170638d7e143435e33b0091119f4807e163140",
+          "expected_sha256": "8b702a58db4d9bbec7ce1cb80ce4999085805d7f713f0455378c2ad94cd04051"
+        }
+      },
+      {
+        "case": "fault-18-first-frame-dispatch-omitted",
+        "name": "first-frame-dispatch-omitted",
+        "scenario": "actor-first",
+        "pattern": "poison",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066290": 8
+        },
+        "wrong_payload_snapshots": 28,
+        "detection": {
+          "index": 1,
+          "kind": "child-state",
+          "pointer": "0xa0994",
+          "first_difference": 20,
+          "actual_sha256": "0e7040501ff75af8a20c23601648abc00331f971ff47b05f2eb446a235c47909",
+          "expected_sha256": "aa1366662509cbfb1de4cd67623bf574650cace4084efae30f5e4e069bb93e2d"
+        }
+      },
+      {
+        "case": "fault-19-first-frame-dispatch-omitted",
+        "name": "first-frame-dispatch-omitted",
+        "scenario": "owned",
+        "pattern": "poison",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066290": 4
+        },
+        "wrong_payload_snapshots": 14,
+        "detection": {
+          "index": 1,
+          "kind": "child-state",
+          "pointer": "0xa0994",
+          "first_difference": 20,
+          "actual_sha256": "0e7040501ff75af8a20c23601648abc00331f971ff47b05f2eb446a235c47909",
+          "expected_sha256": "aa1366662509cbfb1de4cd67623bf574650cace4084efae30f5e4e069bb93e2d"
+        }
+      },
+      {
+        "case": "fault-20-first-frame-dispatch-omitted",
+        "name": "first-frame-dispatch-omitted",
+        "scenario": "model-first",
+        "pattern": "poison",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066290": 4
+        },
+        "wrong_payload_snapshots": 14,
+        "detection": {
+          "index": 1,
+          "kind": "child-state",
+          "pointer": "0xa0994",
+          "first_difference": 20,
+          "actual_sha256": "0e7040501ff75af8a20c23601648abc00331f971ff47b05f2eb446a235c47909",
+          "expected_sha256": "aa1366662509cbfb1de4cd67623bf574650cace4084efae30f5e4e069bb93e2d"
+        }
+      },
+      {
+        "case": "fault-21-first-frame-dispatch-omitted",
+        "name": "first-frame-dispatch-omitted",
+        "scenario": "actor-first",
+        "pattern": "distinct",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066290": 8
+        },
+        "wrong_payload_snapshots": 28,
+        "detection": {
+          "index": 1,
+          "kind": "child-state",
+          "pointer": "0xa0994",
+          "first_difference": 20,
+          "actual_sha256": "f0de3e15845879fb5f7b29c4a5aba1783386948ba52760ca8d82a27f10d208b1",
+          "expected_sha256": "3b76a95b71c73341f10d369dc58564af09cc3b3236b3c3bc30c0b48db1330c99"
+        }
+      },
+      {
+        "case": "fault-22-first-frame-dispatch-omitted",
+        "name": "first-frame-dispatch-omitted",
+        "scenario": "owned",
+        "pattern": "distinct",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066290": 4
+        },
+        "wrong_payload_snapshots": 14,
+        "detection": {
+          "index": 1,
+          "kind": "child-state",
+          "pointer": "0xa0994",
+          "first_difference": 20,
+          "actual_sha256": "f0de3e15845879fb5f7b29c4a5aba1783386948ba52760ca8d82a27f10d208b1",
+          "expected_sha256": "3b76a95b71c73341f10d369dc58564af09cc3b3236b3c3bc30c0b48db1330c99"
+        }
+      },
+      {
+        "case": "fault-23-first-frame-dispatch-omitted",
+        "name": "first-frame-dispatch-omitted",
+        "scenario": "model-first",
+        "pattern": "distinct",
+        "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+        "resource_path": "/CDI/STG00/M001.LBD",
+        "model_offset": 36960,
+        "detected": true,
+        "native_history_completed": true,
+        "initial_construction_preserved": true,
+        "changed_instruction_hits": {
+          "0x80066290": 4
+        },
+        "wrong_payload_snapshots": 14,
+        "detection": {
+          "index": 1,
+          "kind": "child-state",
+          "pointer": "0xa0994",
+          "first_difference": 20,
+          "actual_sha256": "f0de3e15845879fb5f7b29c4a5aba1783386948ba52760ca8d82a27f10d208b1",
+          "expected_sha256": "3b76a95b71c73341f10d369dc58564af09cc3b3236b3c3bc30c0b48db1330c99"
+        }
+      }
+    ],
+    "function_ranges": "docs/actor-factory-function-ranges.json",
+    "function_ranges_sha256": "1c7223ddeb1b0f440461e350e08184f383f5468b506496924c6b789f16c36611",
+    "producer_dependencies": {
+      "tools/verify_actor_children.py": "09b3beef12fe216bde9dc43840b35bf027ad174935f8a34a9e998465943cd356",
+      "tools/actor_child_model.py": "40980e4c0518acc7785bcd79bfc9a48274e09579c4ab05c8ea93f611ed3372f7",
+      "tools/heap_model.py": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e",
+      "tools/verify_card_heap.py": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5",
+      "tools/verify_card_cleanup.py": "5eec21f9fe0afa2549f10eb890c1dbf9984f5f1541611102afd9fa995d58d6c0",
+      "tools/verify_native_ai.py": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697",
+      "tools/inventory_animations.py": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+      "tools/inventory_disc.py": "71319a4c51b50885753998fe9afb7a00b71acf0fa03167b9a63c48651e36aebf",
+      "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+      "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+      "tools/progress.py": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+      "tools/decomp_workbench.py": "8d375145ca2b7f210889558ce75d4acd854a04606ea26d86ff50251b6a4820d1",
+      "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+      "docs/actor-child-construction-function-ranges.json": "917010a67a4398af6137fc3a180a0a6d5d06e18ab151ddd21890078733b8da22",
+      "docs/actor-child-lifetime-function-ranges.json": "16e676914cb87df4990a8dc6db9efa64779a810f3f9824e9fbaf691c261317df",
+      "requirements-card-heap.txt": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212",
+      "requirements.txt": "bcd34abbb33438c8a7e18a9165b8ea5c503a179b23738ccf72dbd659ce174cde",
+      "tools/actor_factory_model.py": "fb40720bc913c2a7d3957c5b65c1232d19b2f24a355bce3cdabe39dc6cb7489a",
+      "tools/verify_actor_factory.py": "5775e55cc6868807e09fa069507804ca76dee636ba1dd947a8d0eb62b398d571",
+      "tools/model_mapping_model.py": "d3f0866a0c2e1ec4fe0fe2dde7b07a094a98b8ebb09e560472a36592cd70fe9e",
+      "tools/model_payload_model.py": "d2ab054ea8dd848cb78c4eacbf0750e00c967474405173d72d917506e01909e6",
+      "tools/actor_payload_model.py": "53c243e67e3e6eb9b33ea5683985a956e247a748c649c00391fd366d9dcb7ff5",
+      "docs/actor-factory-function-ranges.json": "1c7223ddeb1b0f440461e350e08184f383f5468b506496924c6b789f16c36611",
+      "tools/verify_actor_animations.py": "08d47e54c2eb94608be15b830993f3bb7ef3cebb78ceebb94987f0d588667383",
+      "tools/actor_animation_model.py": "1d6ee826306aeeabdc87cbf20f5367673e9cd7a991695701f5af6e6d0ccb4364"
+    }
+  },
+  "independent_record_and_corpus_audit": {
+    "private_report": ".decomp-lab/actor-animation-native-audit-20261017-first/report.json",
+    "report_sha256": "96b7d179bae4eaf74a6200e04a9a7006650894f9ca2c4bd3da53522cbfcb9d72",
+    "producer_sha256": "cd069f07d339938d6ac26159600df0378d71974d2670ff08663dda20bd9dfeab",
+    "positive_cases_equal_prior_campaign": 666,
+    "prior_native_report_sha256": "aa02df82b2c9badee238bb80069fb69ac7f7b60c76f007c9e33a7fc9a9749a85",
+    "prior_animation_zero_instance_indices": 111,
+    "prior_distinct_content_animation_indices": 100,
+    "distinct_content_animation_indices": 108,
+    "earlier_original_asset_hashes_preserved": true,
+    "scope": "Independent raw-header recount and retained-history/regression audit; not an independent native implementation or later-frame playback acceptance."
+  },
+  "static_apartment_bear_binding": {
+    "private_report": ".decomp-lab/apartment-bear-binding-20261017-first/report.json",
+    "report_sha256": "af08dc4164c5d97d9341a195faa1d332bc665f9b356fafeb11f6fbba88d86917",
+    "entity_index": 77,
+    "entity_record_address": "0x8008a374",
+    "entity_record_sha256": "1b8a0ea21a1d4ce5748207d72673f505cd20b56ad72e1852d38a7dda67cfb4a1",
+    "selected_placement": {
+      "stage": 0,
+      "group": 8,
+      "address": "0x8008931c",
+      "record_hex": "0001024d2d6dff00",
+      "record_sha256": "570390b5e5d8aa3e14f0627ccc3b6014d409dd2026a4912ff0afcedc69212113",
+      "condition": 1,
+      "model_index": 2,
+      "entity_index": 77,
+      "spawn_variant_indices": [
+        45,
+        109
+      ]
+    },
+    "teleport": {
+      "stage": 0,
+      "entry": 1,
+      "record_hex": "000101060708",
+      "record_sha256": "df4237256a2699fa764cd254aa3c93416e4ebc5211156cb33141ccb881a92d9a",
+      "packed_cell": 256,
+      "coordinates": [
+        0,
+        1
+      ],
+      "condition": 1,
+      "groups": [
+        6,
+        7,
+        8
+      ]
+    },
+    "grid_dimensions": {
+      "columns": 1,
+      "rows": 5,
+      "is_vertical": true,
+      "sha256": "b25b00e4a776c2058868ee5a59cc2ea1877ee9eb10356a98244068ac9dc4f4e9"
+    },
+    "model_file_index": 1,
+    "path_table_index": 26,
+    "path_record_sha256": "f1011e33bb3ad11c51d225641bc5eed34f1ac9deb690ed4399a9e32a234eb70a",
+    "original_resource_path": "/CDI/STG00/M001.LBD",
+    "original_resource_sha256": "6da66f8769eaebaa57fa4c6ef37228aa353bbe25f10a3b2a72f5870272610e80",
+    "mml_offset": 30720,
+    "mml_streamed_bytes": 16384,
+    "mml_model_count": 3,
+    "model_index": 2,
+    "model_offset": 36960,
+    "model_bytes": 9820,
+    "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+    "animations": [
+      {
+        "index": 0,
+        "offset": 28,
+        "frames": 10,
+        "immediate_frame_offset": 36,
+        "header_sha256": "b63cee9146f3d9b8aa0a47bde0fd1cd24f7a18b511d26e46190864220322f273"
+      },
+      {
+        "index": 1,
+        "offset": 1584,
+        "frames": 30,
+        "immediate_frame_offset": 1592,
+        "header_sha256": "c2c6fe4af95d8196bdacae3c0904e5672972701eecbc2edfafca8ba5f06427b7"
+      }
+    ],
+    "qualified_original_functions": [
+      {
+        "function": "func_80066214",
+        "address": "0x80066214",
+        "bytes": 148,
+        "sha256": "cb038063db52b5edfe9953c294e6e98e858accd493fe820da7427af6c2fbdfcf"
+      },
+      {
+        "function": "entity_bear_apartment",
+        "address": "0x80062a40",
+        "bytes": 536,
+        "sha256": "90e4e5d644e537808499abd690d1b6fe0a0d8e41f887fdd3d672230fea41107d"
+      },
+      {
+        "function": "link_spawn_object_group",
+        "address": "0x8005c9dc",
+        "bytes": 216,
+        "sha256": "f6e4b7e726a69eafd96dee0f088c0809e9d098dd8614283b19d435c2efce007a"
+      },
+      {
+        "function": "link_spawn_object",
+        "address": "0x8005cab4",
+        "bytes": 276,
+        "sha256": "ada6d33195f6765f1f310ab8963151d28cb2383df1afcd54cbf3cd1dbe3c21f4"
+      },
+      {
+        "function": "link_create_object",
+        "address": "0x8005cdf8",
+        "bytes": 316,
+        "sha256": "cf04e10cbf067159dcfd2846e05c882400e75bfd59d8a38c4ae6d3e6bae0b386"
+      },
+      {
+        "function": "entity_create",
+        "address": "0x8005cfdc",
+        "bytes": 140,
+        "sha256": "7595c573f0419e558dadeed0f9b126ee0802bb3f3ef739885db0867220686a1a"
+      },
+      {
+        "function": "get_path_table",
+        "address": "0x80048d48",
+        "bytes": 28,
+        "sha256": "daf17bc0c637610f5ecc894afa83dbaba43df82e2f000c003c1d70c0fdfb777d"
+      },
+      {
+        "function": "get_stage_paths",
+        "address": "0x80048e2c",
+        "bytes": 84,
+        "sha256": "cc4419b61861d3f1f93e046c615c172b007ea01e2f9e7e9851ef72aa81a8d10e"
+      },
+      {
+        "function": "get_stage_model_paths",
+        "address": "0x8004903c",
+        "bytes": 36,
+        "sha256": "3b9334e4cd50599af01767a304b3097969872306b781ae63834670a0f7dedbc8"
+      },
+      {
+        "function": "get_stage_model_path",
+        "address": "0x80049060",
+        "bytes": 56,
+        "sha256": "0de74a108172ecf72351bfd28ec84502a9608c9e30f5a992bedbd1ae196ce052"
+      },
+      {
+        "function": "get_stage_model_path_by_grid",
+        "address": "0x80049098",
+        "bytes": 92,
+        "sha256": "5b511739ce11fe9613aa0d70b568d3bfe848d901e6768f851776eb7954a2f798"
+      },
+      {
+        "function": "stage_grid_get_dimension",
+        "address": "0x800494d8",
+        "bytes": 52,
+        "sha256": "e58c0eb3743c6cdf9f42b852ff9b84b966b02bc7290cbc8e90d0e35ebd31a82c"
+      },
+      {
+        "function": "stage_grid_get_dimension_table",
+        "address": "0x800494bc",
+        "bytes": 28,
+        "sha256": "3ea4737740ac7a2f5dad798f4e0286225a58df57dcc9ec23a5d875d0e28552ad"
+      },
+      {
+        "function": "func_80044C90",
+        "address": "0x80044c90",
+        "bytes": 52,
+        "sha256": "ca4ea376fc546bc7ecd931bf0692b6c6b16402e556a77502aba878361a542285"
+      }
+    ],
+    "source_dependencies": {
+      "src/scene/link.c": "50f47e400abd26da9be9e9fb17db62a1897cbacb0270cc8968b7e152b43d4138",
+      "src/scene/entity.c": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811",
+      "src/scene/stage_grid.c": "a13290b8ffce8ef9bc3519f9dd2c2649777751811ae5d729ff0c723a36c6cdda",
+      "src/scene/stage_grid.h": "eea904afb54e0f3aa9d1500f6940bd686cf7bbfa398bc7c22f613da15021f1ce",
+      "src/utils/cd_paths.c": "380f325eb63bfcee49f4bfee8fc8917ce04d99bf7121dea427b1f6a6bccb9eae",
+      "src/utils/paths.h": "96a53b12cb65920fea70333fb4c9ab0f698e07915fbad1a26a2dbf70efdc3116",
+      "src/scene/actor.c": "4a0c1f29434123834c3725cd12cad91a8b68cb39dbd927af1e46325a31113c3c"
+    },
+    "producer_sha256": "8f164d82f3a253356e0c314569c1158d8b42169c629ef7dd9d68c41e51b97587",
+    "natural_encounter_accepted": false,
+    "native_NPC_callback_executed": false,
+    "scope": "Static original table and resource chain only. Spawn conditions, resource-cache loading, natural reachability, NPC execution and complete animation playback remain open."
+  },
+  "matching_source": {
+    "function": "func_80066214",
+    "address": "0x80066214",
+    "bytes": 148,
+    "original_function_sha256": "cb038063db52b5edfe9953c294e6e98e858accd493fe820da7427af6c2fbdfcf",
+    "already_C_before_change": true,
+    "source": "src/scene/actor.c",
+    "source_sha256": "4a0c1f29434123834c3725cd12cad91a8b68cb39dbd927af1e46325a31113c3c",
+    "typed_header_bytes": 8,
+    "header_size_checked_at_compile_time": true,
+    "new_C_bytes": 0,
+    "source_padding_added": false,
+    "compiler_or_assembler_changed": false
+  },
+  "complete_builds": {
+    "private_report": ".decomp-lab/actor-animation-fresh-build-20261017-first.json",
+    "report_sha256": "3e656135604f5c3498010974f55dfc33c72cedd09210885cc567227d2be5adb2",
+    "standard_complete_image_equal": true,
+    "fresh_complete_image_equal": true,
+    "fresh_objects": 306,
+    "unchanged_other_game_inputs": 391,
+    "standard_log_sha256": "23c26c5e6b4908382cb79968734c230246785d5c29db2958550d1e72c7415ad1",
+    "fresh_log_sha256": "9c1d4af240428c55b48b1502bbcb6abcb0ff5505c1e3bd7bf111057e6c42c00e"
+  },
+  "source_byte_provenance": [
+    {
+      "path": "tools/verify_actor_children.py",
+      "executed_working_copy_sha256": "09b3beef12fe216bde9dc43840b35bf027ad174935f8a34a9e998465943cd356",
+      "published_Git_bytes_sha256": "09b3beef12fe216bde9dc43840b35bf027ad174935f8a34a9e998465943cd356",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/actor_child_model.py",
+      "executed_working_copy_sha256": "40980e4c0518acc7785bcd79bfc9a48274e09579c4ab05c8ea93f611ed3372f7",
+      "published_Git_bytes_sha256": "40980e4c0518acc7785bcd79bfc9a48274e09579c4ab05c8ea93f611ed3372f7",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/heap_model.py",
+      "executed_working_copy_sha256": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e",
+      "published_Git_bytes_sha256": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_card_heap.py",
+      "executed_working_copy_sha256": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5",
+      "published_Git_bytes_sha256": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_card_cleanup.py",
+      "executed_working_copy_sha256": "5eec21f9fe0afa2549f10eb890c1dbf9984f5f1541611102afd9fa995d58d6c0",
+      "published_Git_bytes_sha256": "5eec21f9fe0afa2549f10eb890c1dbf9984f5f1541611102afd9fa995d58d6c0",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_native_ai.py",
+      "executed_working_copy_sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697",
+      "published_Git_bytes_sha256": "6094e565bdb4e6701055f08d0428d059b54c6183818170ae1a671610c53b40a0",
+      "Git_bytes_equal_executed_working_copy": false,
+      "difference_if_any": "inherited CRLF working copy; LF Git blob"
+    },
+    {
+      "path": "tools/inventory_animations.py",
+      "executed_working_copy_sha256": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+      "published_Git_bytes_sha256": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/inventory_disc.py",
+      "executed_working_copy_sha256": "71319a4c51b50885753998fe9afb7a00b71acf0fa03167b9a63c48651e36aebf",
+      "published_Git_bytes_sha256": "71319a4c51b50885753998fe9afb7a00b71acf0fa03167b9a63c48651e36aebf",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/inventory_vtables.py",
+      "executed_working_copy_sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+      "published_Git_bytes_sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/psx_image.py",
+      "executed_working_copy_sha256": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+      "published_Git_bytes_sha256": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/progress.py",
+      "executed_working_copy_sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+      "published_Git_bytes_sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/decomp_workbench.py",
+      "executed_working_copy_sha256": "8d375145ca2b7f210889558ce75d4acd854a04606ea26d86ff50251b6a4820d1",
+      "published_Git_bytes_sha256": "10ce58a132c2e0b1084bad492590e3acdb1dc9b328747615b33999bb56a1803f",
+      "Git_bytes_equal_executed_working_copy": false,
+      "difference_if_any": "inherited CRLF working copy; LF Git blob"
+    },
+    {
+      "path": "research/compiler/compare_function.py",
+      "executed_working_copy_sha256": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+      "published_Git_bytes_sha256": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "docs/actor-child-construction-function-ranges.json",
+      "executed_working_copy_sha256": "917010a67a4398af6137fc3a180a0a6d5d06e18ab151ddd21890078733b8da22",
+      "published_Git_bytes_sha256": "917010a67a4398af6137fc3a180a0a6d5d06e18ab151ddd21890078733b8da22",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "docs/actor-child-lifetime-function-ranges.json",
+      "executed_working_copy_sha256": "16e676914cb87df4990a8dc6db9efa64779a810f3f9824e9fbaf691c261317df",
+      "published_Git_bytes_sha256": "16e676914cb87df4990a8dc6db9efa64779a810f3f9824e9fbaf691c261317df",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "requirements-card-heap.txt",
+      "executed_working_copy_sha256": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212",
+      "published_Git_bytes_sha256": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "requirements.txt",
+      "executed_working_copy_sha256": "bcd34abbb33438c8a7e18a9165b8ea5c503a179b23738ccf72dbd659ce174cde",
+      "published_Git_bytes_sha256": "bcd34abbb33438c8a7e18a9165b8ea5c503a179b23738ccf72dbd659ce174cde",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/actor_factory_model.py",
+      "executed_working_copy_sha256": "fb40720bc913c2a7d3957c5b65c1232d19b2f24a355bce3cdabe39dc6cb7489a",
+      "published_Git_bytes_sha256": "fb40720bc913c2a7d3957c5b65c1232d19b2f24a355bce3cdabe39dc6cb7489a",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_actor_factory.py",
+      "executed_working_copy_sha256": "5775e55cc6868807e09fa069507804ca76dee636ba1dd947a8d0eb62b398d571",
+      "published_Git_bytes_sha256": "5775e55cc6868807e09fa069507804ca76dee636ba1dd947a8d0eb62b398d571",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/model_mapping_model.py",
+      "executed_working_copy_sha256": "d3f0866a0c2e1ec4fe0fe2dde7b07a094a98b8ebb09e560472a36592cd70fe9e",
+      "published_Git_bytes_sha256": "d3f0866a0c2e1ec4fe0fe2dde7b07a094a98b8ebb09e560472a36592cd70fe9e",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/model_payload_model.py",
+      "executed_working_copy_sha256": "d2ab054ea8dd848cb78c4eacbf0750e00c967474405173d72d917506e01909e6",
+      "published_Git_bytes_sha256": "d2ab054ea8dd848cb78c4eacbf0750e00c967474405173d72d917506e01909e6",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/actor_payload_model.py",
+      "executed_working_copy_sha256": "53c243e67e3e6eb9b33ea5683985a956e247a748c649c00391fd366d9dcb7ff5",
+      "published_Git_bytes_sha256": "53c243e67e3e6eb9b33ea5683985a956e247a748c649c00391fd366d9dcb7ff5",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "docs/actor-factory-function-ranges.json",
+      "executed_working_copy_sha256": "1c7223ddeb1b0f440461e350e08184f383f5468b506496924c6b789f16c36611",
+      "published_Git_bytes_sha256": "1c7223ddeb1b0f440461e350e08184f383f5468b506496924c6b789f16c36611",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_actor_animations.py",
+      "executed_working_copy_sha256": "08d47e54c2eb94608be15b830993f3bb7ef3cebb78ceebb94987f0d588667383",
+      "published_Git_bytes_sha256": "08d47e54c2eb94608be15b830993f3bb7ef3cebb78ceebb94987f0d588667383",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/actor_animation_model.py",
+      "executed_working_copy_sha256": "1d6ee826306aeeabdc87cbf20f5367673e9cd7a991695701f5af6e6d0ccb4364",
+      "published_Git_bytes_sha256": "1d6ee826306aeeabdc87cbf20f5367673e9cd7a991695701f5af6e6d0ccb4364",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "src/scene/link.c",
+      "executed_working_copy_sha256": "50f47e400abd26da9be9e9fb17db62a1897cbacb0270cc8968b7e152b43d4138",
+      "published_Git_bytes_sha256": "13039d619addef02e6f40306d80fb4870637668ccbdbe1dd417da9746cc9829a",
+      "Git_bytes_equal_executed_working_copy": false,
+      "difference_if_any": "inherited CRLF working copy; LF Git blob"
+    },
+    {
+      "path": "src/scene/entity.c",
+      "executed_working_copy_sha256": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811",
+      "published_Git_bytes_sha256": "42b79fe2e6463d01213b8be552e94132dd912212ace0171219466b2e1650c751",
+      "Git_bytes_equal_executed_working_copy": false,
+      "difference_if_any": "inherited CRLF working copy; LF Git blob"
+    },
+    {
+      "path": "src/scene/stage_grid.c",
+      "executed_working_copy_sha256": "a13290b8ffce8ef9bc3519f9dd2c2649777751811ae5d729ff0c723a36c6cdda",
+      "published_Git_bytes_sha256": "46c7e68e480cc31e20fb9ce7bd8e128fb75443a1eec472c8694d2421e0d7ce0b",
+      "Git_bytes_equal_executed_working_copy": false,
+      "difference_if_any": "inherited CRLF working copy; LF Git blob"
+    },
+    {
+      "path": "src/scene/stage_grid.h",
+      "executed_working_copy_sha256": "eea904afb54e0f3aa9d1500f6940bd686cf7bbfa398bc7c22f613da15021f1ce",
+      "published_Git_bytes_sha256": "0ea7d6532a425cafe48e0b49a1a006b8e1cf7e6d58551d20f8e4d32585c256e4",
+      "Git_bytes_equal_executed_working_copy": false,
+      "difference_if_any": "inherited CRLF working copy; LF Git blob"
+    },
+    {
+      "path": "src/utils/cd_paths.c",
+      "executed_working_copy_sha256": "380f325eb63bfcee49f4bfee8fc8917ce04d99bf7121dea427b1f6a6bccb9eae",
+      "published_Git_bytes_sha256": "b5cab6b884909fcb3e87923d3fcfba00af0afecc2eec3960bc2f0960e8ecd8ea",
+      "Git_bytes_equal_executed_working_copy": false,
+      "difference_if_any": "inherited CRLF working copy; LF Git blob"
+    },
+    {
+      "path": "src/utils/paths.h",
+      "executed_working_copy_sha256": "96a53b12cb65920fea70333fb4c9ab0f698e07915fbad1a26a2dbf70efdc3116",
+      "published_Git_bytes_sha256": "96a53b12cb65920fea70333fb4c9ab0f698e07915fbad1a26a2dbf70efdc3116",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "src/scene/actor.c",
+      "executed_working_copy_sha256": "4a0c1f29434123834c3725cd12cad91a8b68cb39dbd927af1e46325a31113c3c",
+      "published_Git_bytes_sha256": "4a0c1f29434123834c3725cd12cad91a8b68cb39dbd927af1e46325a31113c3c",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    }
+  ],
+  "new_C_bytes": 0,
+  "newly_profiled_NPC_callbacks": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "whole_feature_groups_accepted": 0,
+  "model_API_calls": 0,
+  "original_gameplay_modified": false,
+  "user_game_controlled": false,
+  "Bevy_port_modified": false,
+  "scope": "All supplied validated MOM instances, valid animation indices and immediate first-frame commands after original construction, through owned/shared/model-first histories. Prior frame counters are injected before each selection. Live capacities, mapped MOM bytes, allocator events, manager and guards are compared. No later-frame playback, natural encounter, full engine stepping, rendering, audio or PS1 timing acceptance.",
+  "later_frame_playback_accepted": false,
+  "original_behavior_and_host_analysis_separate": true
+}
