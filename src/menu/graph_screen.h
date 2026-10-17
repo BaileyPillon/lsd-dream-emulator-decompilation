@@ -23,7 +23,7 @@ typedef struct graph_screen_vtable {
     /* 0x038 80087ae4 */ void (*OnNotify)(base_class_t *, base_class_t *, s32);
     /* 0x03C 80087ae8 */ void (*Unk14)(void *);
     /* 0x040 80087aec */ void (*show_graph)(void *, void *);
-    /* 0x044 80087af0 */ void (*Run)(void *);
+    /* 0x044 80087af0 */ s32 (*Run)(void *, void *, s32);
     /* 0x048 80087af4 */ void (*Unk17)(void *);
     /* 0x04C 80087af8 */ void (*Unk18)(void *);
     /* 0x050 80087afc */ void (*Unk19)(void *);

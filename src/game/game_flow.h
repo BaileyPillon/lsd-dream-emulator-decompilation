@@ -64,7 +64,7 @@ struct game_flow_screen_vtable {
     /* 0x00 */ u32 type_id;
     /* 0x04 */ void (*Destroy)(void *);
     /* 0x08 */ u8 pad[0x44 - 0x08];
-    /* 0x44 */ s32 (*Run)(void *, s32, u32);
+    /* 0x44 */ s32 (*Run)(void *, void *, s32);
 };
 
 struct game_flow_screen {
@@ -99,6 +99,6 @@ void game_flow_init_graphics(game_flow_t *This, display_t *Display, pad_t *Pad, 
 
 // Top-level flow helpers (not vtable slots)
 void play_special_reel(game_flow_t *This);
-s32 run_screen(game_flow_screen_t *(*create)(s32), s32 createArg, s32 runArg);
+s32 run_screen(game_flow_screen_t *(*create)(s32), s32 createArg, void *runArg);
 
 #endif

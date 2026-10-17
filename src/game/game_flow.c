@@ -167,7 +167,7 @@ s32 game_flow_execute_main_menu(game_flow_t *This) {
 
 // Creates a screen object, runs it (vtable +0x44) with runArg, destroys it (vtable +0x04),
 // and returns the value the screen's Run returned.
-s32 run_screen(game_flow_screen_t *(*create)(s32), s32 createArg, s32 runArg) {
+s32 run_screen(game_flow_screen_t *(*create)(s32), s32 createArg, void *runArg) {
     game_flow_screen_t *screen = create(createArg);
     s32 run_result = screen->vtable->Run(screen, runArg, 0);
     screen->vtable->Destroy(screen);
