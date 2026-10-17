@@ -6,6 +6,13 @@ tools have separate deliverables. See [PROJECT_OBJECTIVE.md](../PROJECT_OBJECTIV
 for the completion requirements and [provenance](PROVENANCE.md) for the evidence
 boundary of the published snapshot.
 
+The [software movie decoder audit](MOVIE_DECODE.md) now checks all 39 routed
+movie payloads, including every encoded tail frame and XA packet. A separate
+raw-byte hashing pass agrees throughout. Extend this content evidence to
+native MDEC/GPU and audio output, natural playback of every movie, skip/error
+paths and timing. Software decoding changes no source-recovery or runtime
+feature-acceptance count.
+
 The [locomotive profiles](LOCOMOTIVE_SCRIPTS.md) bring bounded original callback
 coverage to 39 / 107, following the [Gunman profiles](GUNMAN_SCRIPTS.md).
 The earlier [periodic spatial profiles](NPC_PERIODIC_SPATIAL.md)

@@ -5,9 +5,12 @@ The Japanese-labelled reference contains **39 mixed-sector movies** with
 IDs, consistent metadata, and an encoded prefix matching its sector header.
 All observed video frames are 320 × 240, STR version 2.
 
-This is a structural and bounded native-routing audit. Decoded pixels, XA
-audio, natural playback, controller skips, hardware cadence, and complete
-startup/special-day/ending scenarios remain open. No additional C function or
+This checkpoint covers structure and bounded native routing. The later
+[complete software decode](MOVIE_DECODE.md) validates all 22,382 video frames
+and 27,921 XA audio packets through FFmpeg and a separate raw-byte hashing pass.
+Native MDEC/GPU/audio equivalence, natural playback of every movie, controller
+skips, hardware cadence, and complete startup/special-day/ending scenarios
+remain open. No additional C function or
 whole feature is accepted by these checks.
 
 ## Native thresholds

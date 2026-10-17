@@ -9,6 +9,9 @@ with a reproducible build and tools for studying its dream systems, assets
 and scripted NPCs. It continues [cawfee/lsd_decompiled](https://github.com/cawfee/lsd_decompiled)
 and preserves that project's Git history and contributor attribution.
 
+The [Bevy/Rust port](https://github.com/BaileyPillon/lsd-dream-emulator-bevy)
+is a separate project with its own roadmap and progress measurements.
+
 [Build](#build-the-matching-executable) · [Play the matching build](docs/PLAYING.md) ·
 [Status and roadmap](docs/ROADMAP.md) · [Contribute](CONTRIBUTING.md)
 
@@ -38,11 +41,13 @@ The current verified snapshot is dated October 17, 2026. These are
 separate measures, not a whole-game completion percentage. The initial
 publication and subsequent evidence are retained separately.
 
-The [movie audit](docs/MOVIE_INVENTORY.md) now checks all 39 movie streams,
-22,382 encoded frames, and 620 original path/RNG fixtures. The later
-[startup comparison](docs/MOVIE_PLAYBACK.md) matches 9,001 complete GPU-memory
-hashes, 32 full-state checkpoints, and complete PCM for one neutral replay.
-All-movie decoding, skip/error branches, and complete feature acceptance remain open.
+The [movie structure audit](docs/MOVIE_INVENTORY.md) checks all 39 routed movies
+and 620 original path/RNG fixtures. The [complete software decode](docs/MOVIE_DECODE.md)
+now validates their 22,382 video frames and 27,921 XA audio packets, with a
+separate raw-byte hashing pass. The [startup comparison](docs/MOVIE_PLAYBACK.md)
+matches 9,001 complete GPU-memory hashes, 32 full-state checkpoints, and complete
+PCM for one neutral replay. Native playback of every movie, hardware cadence,
+skip/error branches, and complete feature acceptance remain open.
 
 | Measure | Verified snapshot |
 | --- | ---: |

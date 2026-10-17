@@ -16,6 +16,11 @@ movies, skip/error/disabled branches, every host-displayed frame, original
 hardware timing, or whole-feature acceptance. It makes no instruction-entry
 claim. The original NPC and optional AI/mod tracks remain separate.
 
+The later [software movie decode](MOVIE_DECODE.md) checks every encoded frame
+and XA packet across all 39 routed movie payloads. It uses an offline decoder
+and adds no natural playback history to this startup comparison. Native
+MDEC/GPU output, audio mixing, skips, errors and timing remain separate gates.
+
 ## Observed lifetimes
 
 | Movie | First active frame | First inactive frame after | Requested cutoff | Maximum accepted frame ID sampled while streaming |

@@ -1,0 +1,1333 @@
+{
+  "schema_version": 1,
+  "title": "Complete software decoding of the 39 routed Japanese STR movie payloads",
+  "recorded_utc": "2026-10-17T17:58:59.182790+00:00",
+  "verified_base_commit": "a526f612d37840906a54040046e7430b8afffc6e",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 39,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 39,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "prior_published_complete_software_corpus_results": 0,
+  "complete_software_movie_payloads": 39,
+  "decoded_video_frames": 22382,
+  "decoded_YUV_bytes": 2578406400,
+  "decoded_audio_packets": 27921,
+  "decoded_audio_sample_frames": 56415744,
+  "decoded_PCM_bytes": 225154944,
+  "original_raw_sector_copy_bytes": 526927968,
+  "full_encoded_tails_preserved": true,
+  "zero_data_filler_sectors_preserved": 193,
+  "excluded_data_STR_files": [
+    {
+      "path": "/CDI/ZDUMMY/ZDUMMY.STR",
+      "bytes": 61937664,
+      "sha256": "58c7665a9b6bc95002b860dc5dfbfad9ba8782c1afe6a92cf3fe0acb5fa3f095",
+      "storage_type": "data"
+    }
+  ],
+  "input_catalogue": {
+    "file": "docs/movie-inventory-checks.json",
+    "bytes": 55364,
+    "sha256": "8b450a19e27acebe77636bd785be0c9eb82cbe990a03e042d4026fa57c12180b"
+  },
+  "producer_sources": {
+    "tools/decode_movies.py": {
+      "bytes": 20740,
+      "sha256": "51e0ffb09774dcdd2a3c5a150fcea3707a6e870019937580012c515a8edd9c49"
+    },
+    "tools/runtime_inputs.py": {
+      "bytes": 10469,
+      "sha256": "a1e0865b13801414bfad30f31ce00ffd13840b2a836dbc527e138d89d6d877e4"
+    },
+    "tools/psx_image.py": {
+      "bytes": 3453,
+      "sha256": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3"
+    }
+  },
+  "private_decode_report_sha256": "05272a2fe7d800fb3d34e22bb4ade27b87252916a9503fd8d2481b9750f9f9ac",
+  "independent_raw_byte_audit": {
+    "status": "independently_hashed_all_decoded_movie_bytes",
+    "private_report_sha256": "2128c5a694e8cd763f4b6d9a550b8b124fa1bcf89ba7462ded388bc88098b87a",
+    "retained_producer": "audit_movie_decode_raw_bytes_20261017_first.py",
+    "producer_sha256": "232e081b909c8bde0673ce77ad4230d86b4712cdd76b114b653acff828bbe324",
+    "method": "Separate rawvideo and s16le stdout passes; Python hashlib checks each packet and hashes concatenated raw bytes. No import of the framehash parser.",
+    "all_packet_hashes_agree": true,
+    "extra_raw_output_bytes": 0,
+    "independent_decoder_implementation": false
+  },
+  "decoder_backend": {
+    "ffmpeg_version": "ffmpeg version 9.0.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+    "ffprobe_version": "ffprobe version 9.0.1-full_build-www.gyan.dev Copyright (c) 2007-2026 the FFmpeg developers",
+    "host": "Windows; local FFmpeg installation; no installed or downloaded dependencies",
+    "files": {
+      "avcodec-63.dll": {
+        "bytes": 97830912,
+        "sha256": "f958e8ae31ce50b58e228c354411e406cd46c0021a6d250e90cf007fe65740d3"
+      },
+      "avdevice-63.dll": {
+        "bytes": 6547456,
+        "sha256": "cc2de2187efd18aed52d3021d90934337bfe0e8ec60d988797b87ae7664f5ee0"
+      },
+      "avfilter-12.dll": {
+        "bytes": 103180800,
+        "sha256": "8f8e2d63f6658450169d7fe2f5696fa9b01df3c1d3820cf706e142ba80758924"
+      },
+      "avformat-63.dll": {
+        "bytes": 20256256,
+        "sha256": "8c0615789d41737051cf082351d4b9c869dd2f0abac4b792ff838041638752e5"
+      },
+      "avutil-61.dll": {
+        "bytes": 3160576,
+        "sha256": "e289456490e190e0d74aa34980aeaa68903a6656248e2e7ef830e17acd80eb49"
+      },
+      "ffmpeg.exe": {
+        "bytes": 632832,
+        "sha256": "cf6b46df53d3672e86af7662358bbd2b21c90cc78c133f3f81f46e63acc387b3"
+      },
+      "ffprobe.exe": {
+        "bytes": 230400,
+        "sha256": "0c49675a5f3098b881b1508368deb22e23d22fe56fa7a197df1b98c4e5ea79bf"
+      },
+      "swresample-7.dll": {
+        "bytes": 486912,
+        "sha256": "d240955beb927ff2fb46cc4f80f83db20a10a9b9032f4092a10f492836fb0213"
+      },
+      "swscale-10.dll": {
+        "bytes": 2421760,
+        "sha256": "89df1925fc718639cb13e849bc940dca114a10e97d93f8fdfd6c14369941a964"
+      }
+    },
+    "CPU_flags": "0",
+    "decoder_threads_per_stream": 1,
+    "workers": 2,
+    "input_format": "psxstr",
+    "video_codec": "mdec",
+    "audio_codec": "adpcm_xa",
+    "video_output": "rawvideo, native 8-bit 320x240 YUV 4:2:0 planes (yuvj420p)",
+    "audio_output": "pcm_s16le, original 37800 Hz and mono/stereo channel count",
+    "nominal_demuxer_video_time_base": "1/15",
+    "nominal_time_base_is_native_cadence_proof": false,
+    "error_output_empty_for_all_files": true
+  },
+  "format_reference": {
+    "url": "https://github.com/FFmpeg/FFmpeg/blob/e9b3c55fe0321915a70f44f30b276ef2afdc3a0c/libavformat/psxstr.c",
+    "role": "Demuxer format reference, not an identification of the installed decoder build source"
+  },
+  "original_and_rebuilt_disc": {
+    "bytes": 648088896,
+    "sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61",
+    "complete_BIN_bytes_identified_equal": true,
+    "canonical_executables_equal": true
+  },
+  "preserved_game_build_inputs": 392,
+  "before_after_scope": "Counts retain the existing matching-C and provisional-feature inventory. This study adds complete software movie payload evidence; it does not accept original runtime features.",
+  "new_C_bytes": 0,
+  "new_original_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_NPC_callback_profiles": 0,
+  "native_MDEC_GPU_audio_parity_accepted": false,
+  "native_playback_cadence_verified": false,
+  "natural_movie_scenarios_accepted": 0,
+  "original_game_modified": false,
+  "user_game_controlled": false,
+  "Bevy_port_modified": false,
+  "model_API_calls": 0,
+  "public_payloads": "Metadata and aggregate hashes only; no original sectors, decoded frames, audio, emulator states or BIOS",
+  "movies": [
+    {
+      "path": "/CDI/ETC/ASMK.STR",
+      "lba": 21120,
+      "source_payload_sha256": "eecd39baf2e0d44f1fd70454e2c09a3849ca7de41b905d735cb6ed1e51857ca9",
+      "video_frames": 100,
+      "video_decoded_bytes": 11520000,
+      "audio_packets": 63,
+      "audio_sample_frames": 254016,
+      "audio_PCM_bytes": 508032,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 0,
+        "channels": 1,
+        "sample_rate": 37800,
+        "sectors": 63,
+        "samples_per_packet": 4032
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "f55b9c183d0b3bbbc5175b206df3bd00d578c4dc96525882f34ad0664df59374",
+      "ordered_audio_packet_digests_sha256": "30a816368d921e5c0f8436bf5c4df750eab40a4dea1277cb64e1586880b1e036",
+      "framehash_sha256": "bdf76e559a1aa92f98f7e2eecbf2f84e33b6850da60c12858c1251662487cf9f",
+      "original_raw_sector_copy": {
+        "bytes": 2370816,
+        "sha256": "1f06920d5459a158334b06bf2852ed20a7e517ab2e8d1ed05d5816c3d25623b9"
+      },
+      "concatenated_raw_video_sha256": "1ede0946702fbb1509d0d20652c88459e0ae59b53e70633bfbaf389597b15b93",
+      "concatenated_raw_PCM_sha256": "bc20119d4a225f2e26c69546ac1432aae69fa529a54c2a67e9f78af8b3b3e2d1",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/ETC/ENDING.STR",
+      "lba": 98216,
+      "source_payload_sha256": "95e3cbfc4a5e5a400fa98a42ba02ae0cb627bef361a815ed96ff5f5f8d0e33df",
+      "video_frames": 484,
+      "video_decoded_bytes": 55756800,
+      "audio_packets": 606,
+      "audio_sample_frames": 1221696,
+      "audio_PCM_bytes": 4886784,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 606,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "e9ee28bfec12161a79fc56079b82f382e2580a267df135bca67ab4fd4d4537aa",
+      "ordered_audio_packet_digests_sha256": "cb5f6e243c139fcbcabe1d10f5e11887cb091cb9c67f38ab0702ea432fde6471",
+      "framehash_sha256": "e8a2520a7d7ee684ed08d92162ad31cb1ef2dba5d1b656f840078e9be310211f",
+      "original_raw_sector_copy": {
+        "bytes": 11402496,
+        "sha256": "8998e41063251148330521c5da445a99cb4795b60c15bcaa4ea7397633da28bc"
+      },
+      "concatenated_raw_video_sha256": "9cef753ba2f36d92575aca864c97abbee1c0fa98f32252eb67a39156dcf82de7",
+      "concatenated_raw_PCM_sha256": "13d881f48838738a721940122a97a8a9da6c4e3a717fc362a1aeeb4161f7ea23",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/ETC/OPENINGA.STR",
+      "lba": 22128,
+      "source_payload_sha256": "b4ac2518bed7e87006c92b0b536f8dad688cb870b83f2f9e466d85ae30dd3b9a",
+      "video_frames": 1070,
+      "video_decoded_bytes": 123264000,
+      "audio_packets": 1338,
+      "audio_sample_frames": 2697408,
+      "audio_PCM_bytes": 10789632,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 1338,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "e470ad664324d41b4211c445efe90ef18b9cdce1b33ee17b336aae70536c67dc",
+      "ordered_audio_packet_digests_sha256": "47af01114a2bfd5710805ea0f10665804fb26d9daba8cc720b9e1cd9edd30079",
+      "framehash_sha256": "083f958e1d23909159de38a6a3ba9a31b5f68dcdb042a21b79d927cd217602a8",
+      "original_raw_sector_copy": {
+        "bytes": 25175808,
+        "sha256": "c0b7d0897a4cbaeb9976d060aaa4acb76342d2305c1da281d54e494747613476"
+      },
+      "concatenated_raw_video_sha256": "b6e4d8fbe27646e278a4b3c838694b21ceb9540b4c3897a03cdd6816c806a77e",
+      "concatenated_raw_PCM_sha256": "eca6af7e6f22e1c04866a7bbe35195a7f958c613f57be7bd2bb501fa35aa0b61",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/ETC/OPENINGB.STR",
+      "lba": 32832,
+      "source_payload_sha256": "c77be8c50176c019deb8a9ca1914b99d12d8a53d89f3df7a2968c2ad29322615",
+      "video_frames": 1098,
+      "video_decoded_bytes": 126489600,
+      "audio_packets": 1373,
+      "audio_sample_frames": 2767968,
+      "audio_PCM_bytes": 11071872,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 1373,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "1fdf04803195b281f2f11517e98e17c107a11d21458cbf9b321f843fd45513f4",
+      "ordered_audio_packet_digests_sha256": "a39368377b93102b1fbd9ac77657946c337ad33da5c9974efbb2d16a9e85911d",
+      "framehash_sha256": "7a59028674781023529006952796a7c1bb036dae08df963a8468a613c9211e4a",
+      "original_raw_sector_copy": {
+        "bytes": 25834368,
+        "sha256": "faf6af6c69844be9a2d88333190b858a16b6002dfe2d0b526eb963a78e71a4a8"
+      },
+      "concatenated_raw_video_sha256": "cff8818824471c7ff30e697a9f679cf51f1bcab3c9fb756358b7c9b9771806f4",
+      "concatenated_raw_PCM_sha256": "fd58eaa89cac3b645a926db8d0678537e043fac85bb53938bd5fdfcdd966059a",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/ETC/OPENINGC.STR",
+      "lba": 43816,
+      "source_payload_sha256": "bce7dcd24a2794879a817a9d51ef540bb14da67f5aee56de8d61b43b922ccd18",
+      "video_frames": 963,
+      "video_decoded_bytes": 110937600,
+      "audio_packets": 1204,
+      "audio_sample_frames": 2427264,
+      "audio_PCM_bytes": 9709056,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 1204,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "64ac00c0c432c442707370d038944ab734c78f609488fb67a0a697f105b7aeea",
+      "ordered_audio_packet_digests_sha256": "4ec80831d412bd2dcf11dd324fac9d0037c291f533cba500ee83a0e6f485e326",
+      "framehash_sha256": "c6f522d34e9c1ad55a3869db102e0383228c98dee2e12d2cfa718283e60f1d1f",
+      "original_raw_sector_copy": {
+        "bytes": 22654464,
+        "sha256": "c5aafed224ab6193bcc954b553d5d37b25496e8eedde2d3d810f6b8487c0ce1f"
+      },
+      "concatenated_raw_video_sha256": "d80e8da060de84c61c43a3a68ffd73ac2c958be1d89f9da81c4a6c396b7e9a25",
+      "concatenated_raw_PCM_sha256": "dc0e1033d5103b47e539113be6518f2e9ff559d756ee988fad6a5e9d6047430d",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/ETC/OPENINGD.STR",
+      "lba": 53448,
+      "source_payload_sha256": "7aea8683fff4d42d10f9233bfc589546a93c7838dcbb74a0acc5c8fe5d47beb6",
+      "video_frames": 1189,
+      "video_decoded_bytes": 136972800,
+      "audio_packets": 1487,
+      "audio_sample_frames": 2997792,
+      "audio_PCM_bytes": 11991168,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 1487,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "97270c63adc8309ff593d631350b5396ff520b994de89841ca0bb9dd3cd85a5f",
+      "ordered_audio_packet_digests_sha256": "9057397741ffb689a1e8cda8f141322a8a5a5bf3877177008c8d7690e0dccc45",
+      "framehash_sha256": "bbb1b9baf0c0c528ce3b400676f7d848e448e08fc4c271fc57dda136aa62e85c",
+      "original_raw_sector_copy": {
+        "bytes": 27979392,
+        "sha256": "a4c383d319fbf09b7cb8c7d688701b603aa31a43b8564a49eb53776e0e46d81e"
+      },
+      "concatenated_raw_video_sha256": "dd4af5dc3df7cf9540d43dca60466c720206e44239ee3b14d8a45bc756022592",
+      "concatenated_raw_PCM_sha256": "ba025f3980f20de35b6cbbf812ff32aaf7afaf93f1ad9b34a2dd5ae610706e23",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/ETC/OPENINGE.STR",
+      "lba": 65344,
+      "source_payload_sha256": "9baee1fcad8a513799389732c29ab4b3a66fb784ae54911e0ba72d4f77306377",
+      "video_frames": 989,
+      "video_decoded_bytes": 113932800,
+      "audio_packets": 1237,
+      "audio_sample_frames": 2493792,
+      "audio_PCM_bytes": 9975168,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 1237,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "9f5482cf86f71a4b286728d9c5c7ace0b311aa34797b9fdc8179dc63c9f624d6",
+      "ordered_audio_packet_digests_sha256": "95717e9c18c134b44dc1d707ac85547aa18b16fbda9736f370448fe1a7a61596",
+      "framehash_sha256": "53179c51197585fe69841a09403fcbb9744a636a0cb8dac7886b21ba95c89f4e",
+      "original_raw_sector_copy": {
+        "bytes": 23275392,
+        "sha256": "94f533c53c5234289a86d5d7bf1f11ab1627af9395283850f97f15ac05eaf28f"
+      },
+      "concatenated_raw_video_sha256": "6e178cc2373c2927b167e3b5d6d51f0081ec5593c45a40906c234700c980cdb6",
+      "concatenated_raw_PCM_sha256": "cad8d9ed9dda79388fefd4ac47b0d3d1bc0db52d1ff3e69a710b8e498cf77c69",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/ETC/OPENINGF.STR",
+      "lba": 75240,
+      "source_payload_sha256": "f808feb6d7ba3365e4b968e7198ea2fd06fbb164dfda3d4ecc12895ac7d332be",
+      "video_frames": 1241,
+      "video_decoded_bytes": 142963200,
+      "audio_packets": 1552,
+      "audio_sample_frames": 3128832,
+      "audio_PCM_bytes": 12515328,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 1552,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "daf79ab3ef1f4ac340b47f305d577bc0c1edddf8fab2c723caffb99c1abd8f50",
+      "ordered_audio_packet_digests_sha256": "05d1f0751fbbb06583669df970d8dd9c5fb06a9da7cfb3e2f9e07915b30804ce",
+      "framehash_sha256": "6f937cca7ab9db6a8ec847ad259510249f08079aa16615f67f8affc9a091825b",
+      "original_raw_sector_copy": {
+        "bytes": 29202432,
+        "sha256": "791a8d1f16afe3328e14097cdc216d6b2670d5e0d46850742bb2c117ccdf99ab"
+      },
+      "concatenated_raw_video_sha256": "a4e938945dab3201f76bb107ca9fee9eea47dd0c062bdde79b8c6e7cc3ab7e05",
+      "concatenated_raw_PCM_sha256": "fb0e74cc8300bd3c9f79b9f7beafd6e1d6b337b9273c05ea0c6b67982fe586ae",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/ETC/OPENINGG.STR",
+      "lba": 87656,
+      "source_payload_sha256": "93bcdccc2fa9f720ea1ac1d697e548ad916b3d89cbb7343bef439d0df98c117c",
+      "video_frames": 1056,
+      "video_decoded_bytes": 121651200,
+      "audio_packets": 1320,
+      "audio_sample_frames": 2661120,
+      "audio_PCM_bytes": 10644480,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 1320,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "6a8513d59b12b32c64e15e373fa4d07ddeeca142a5eeaf97e54c0acc9eada54d",
+      "ordered_audio_packet_digests_sha256": "276c5adf78ad79ae5ebe42f7d0242df1bf639d40aceb852ef5c441a16c6b71da",
+      "framehash_sha256": "6ccf38e5c20d7b72c274b1ad8c420e0b89d5f9c609153d6ee4558fedbe86c902",
+      "original_raw_sector_copy": {
+        "bytes": 24837120,
+        "sha256": "9527918fdd154c47dc3d5c045b5ae7a81a00a637508912b3b8ec388aab28aa1f"
+      },
+      "concatenated_raw_video_sha256": "d227c2c211429b46dc98aa62e7e052f4e55108d286e3e32a23d701463be03050",
+      "concatenated_raw_PCM_sha256": "cc10cdc088e5d81b8be9476def2826b819159b5158bd699807f22a20ef433a27",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/EVENT1.STR",
+      "lba": 103064,
+      "source_payload_sha256": "73dcc0481df1a97f64b8e187f33f007b346aeea1952cb6ffe7348dadde80cce6",
+      "video_frames": 534,
+      "video_decoded_bytes": 61516800,
+      "audio_packets": 668,
+      "audio_sample_frames": 1346688,
+      "audio_PCM_bytes": 5386752,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 668,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "cc0ac77587d4346e37f67225b5d02b494d84a9065a84d35575a8f5d1c184c70b",
+      "ordered_audio_packet_digests_sha256": "dde8d42c1475c8798c87f8e4c4f200e695be03dc384e85ecc3f00bbf4d040eee",
+      "framehash_sha256": "2d35a80744dd20b4563bc09fb097ffae135d5c1f95d7a09f4d8dc35db3e07210",
+      "original_raw_sector_copy": {
+        "bytes": 12569088,
+        "sha256": "3b5d7f4cec5b20595ca573cb1d315f24555567dcbc19f9e5e3f25c890e27ff77"
+      },
+      "concatenated_raw_video_sha256": "908bb4acfe40aa3c3109bfba72e28b62ee7d3661d934aef68af3cd86bfe9fd7d",
+      "concatenated_raw_PCM_sha256": "29dc97d1f6df1df931c4328e3fa5bb03353f155d6d80586c93c678e7fae28bd5",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/EVENT2.STR",
+      "lba": 108408,
+      "source_payload_sha256": "f01f9ae67f89cc343e613bbd1c558fdf879048e5c3412cd198befd9ad670dae5",
+      "video_frames": 449,
+      "video_decoded_bytes": 51724800,
+      "audio_packets": 562,
+      "audio_sample_frames": 1132992,
+      "audio_PCM_bytes": 4531968,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 562,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "44d9deb5eb582a9e75390fcf9d2a5153a25ed0d427b27ca1e5ab1630a6f1e1b9",
+      "ordered_audio_packet_digests_sha256": "d883ece529c52289428bfc50d65d753274a7302a695152675b3710c6faf30a97",
+      "framehash_sha256": "9365ca10cd8b14f46b1430ae801711dd682dbaadae47a87e880a02aa83390cdf",
+      "original_raw_sector_copy": {
+        "bytes": 10574592,
+        "sha256": "6bd0e0a906838577e8f6e749fc26ae5fad92ad2553262f34e72e8efb29550b59"
+      },
+      "concatenated_raw_video_sha256": "bfd94ae4b470e56282bf5815903eea25fa1d69b0665988b17bc2b5819a5f281a",
+      "concatenated_raw_PCM_sha256": "1e4fa3634289612331157f410dda218b754c8e25b3c9052b02473a5d1a60fcae",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/EVENT3.STR",
+      "lba": 112904,
+      "source_payload_sha256": "bb73940c91d9fccf1d002d053dcf4b748d4cbfdce87e5edc7560e17a88bed539",
+      "video_frames": 359,
+      "video_decoded_bytes": 41356800,
+      "audio_packets": 449,
+      "audio_sample_frames": 905184,
+      "audio_PCM_bytes": 3620736,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 449,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "668c8fa180ee9a531cfe0361cb4e8c308e46373f7e894430b08b7a072f1433c1",
+      "ordered_audio_packet_digests_sha256": "368172838cc99cd614606b6214559d5a0bba1cf3dad0311d5dbd8387d5db808a",
+      "framehash_sha256": "e44bb611a03edb0d237db8e86745e307777460d8005922458fd836954ea1539e",
+      "original_raw_sector_copy": {
+        "bytes": 8448384,
+        "sha256": "5802ffcdba5ebaa51e0370ff75a5cacf22bfd972d6d387a74e088bf33cf442b3"
+      },
+      "concatenated_raw_video_sha256": "ee26267e29777fbc3de4fc63569ce0a022f7329697a6646811a4fcd7a96134e4",
+      "concatenated_raw_PCM_sha256": "ddabc9523ec3d65b9f2b5d6abac52ef472108c7ba371e34149458580f124de70",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/EVENT4.STR",
+      "lba": 116496,
+      "source_payload_sha256": "c01ea18cf711706fc5924e2ec78271e29dc9c17c2b5b61526d46f0e57975328d",
+      "video_frames": 389,
+      "video_decoded_bytes": 44812800,
+      "audio_packets": 487,
+      "audio_sample_frames": 981792,
+      "audio_PCM_bytes": 3927168,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 487,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "dbe07403cbb4bd1c1cf3022810637e1d6309ef6316984902895ba1af5898e0e6",
+      "ordered_audio_packet_digests_sha256": "3934e4ea39603c76122e3c479584565c103a194960d1bc529aee9242fce2cce3",
+      "framehash_sha256": "1756c5c0b41f7bb4b7cdd4a19980cca365f34ccdb36c9596697c96c6421213a1",
+      "original_raw_sector_copy": {
+        "bytes": 9163392,
+        "sha256": "4ac37537814c09f58fcae20dbf0d9cc76fd84c5f8c377dfb38b8c0c225e93d9f"
+      },
+      "concatenated_raw_video_sha256": "776e30c068425c30e1360dad35508f715625105af74a968bc7264b70f8ef8bfc",
+      "concatenated_raw_PCM_sha256": "83598458fcbfdea7d70ca190540976eef55dd9660bbc01a19ed3c8ade0f8d45d",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/EVENT5.STR",
+      "lba": 120392,
+      "source_payload_sha256": "3c579caadcf983e0ff30c3ed00a823fe5ccab5a83e269a839d997705457c90b1",
+      "video_frames": 362,
+      "video_decoded_bytes": 41702400,
+      "audio_packets": 454,
+      "audio_sample_frames": 915264,
+      "audio_PCM_bytes": 3661056,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 454,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "1e304028639b848e423c9e80f824af0a1f8c8db933b537ff747caf8dbaedfd19",
+      "ordered_audio_packet_digests_sha256": "376e74d9d0bfd698dc9ad8a4faab2214b2cbcc3fdd5af7b1b1352bfc613dca32",
+      "framehash_sha256": "4a7a427ac73facc1d507ae5a87b59c5442bcfdc864e8e386f25b7de6a0622122",
+      "original_raw_sector_copy": {
+        "bytes": 8542464,
+        "sha256": "095fedb87fb2a6d7c8c46ad106559452435a9a8d8cce8bc296c5dee4b044bd19"
+      },
+      "concatenated_raw_video_sha256": "7171dcfd79da625f405b4d1207bd98cfa32990539c2f6e3b5ccf90d1e6afb0c7",
+      "concatenated_raw_PCM_sha256": "54b74392d9658d8cf5ca9623290f2c26e7d1dbc53448d2a60a2a331691d78aa2",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/EVENT6.STR",
+      "lba": 124024,
+      "source_payload_sha256": "3c579caadcf983e0ff30c3ed00a823fe5ccab5a83e269a839d997705457c90b1",
+      "video_frames": 362,
+      "video_decoded_bytes": 41702400,
+      "audio_packets": 454,
+      "audio_sample_frames": 915264,
+      "audio_PCM_bytes": 3661056,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 454,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "1e304028639b848e423c9e80f824af0a1f8c8db933b537ff747caf8dbaedfd19",
+      "ordered_audio_packet_digests_sha256": "376e74d9d0bfd698dc9ad8a4faab2214b2cbcc3fdd5af7b1b1352bfc613dca32",
+      "framehash_sha256": "4a7a427ac73facc1d507ae5a87b59c5442bcfdc864e8e386f25b7de6a0622122",
+      "original_raw_sector_copy": {
+        "bytes": 8542464,
+        "sha256": "85f15729aefb022a0a848fd3e098e868e5f7964bbd89160bf8a32c3f338ae746"
+      },
+      "concatenated_raw_video_sha256": "7171dcfd79da625f405b4d1207bd98cfa32990539c2f6e3b5ccf90d1e6afb0c7",
+      "concatenated_raw_PCM_sha256": "54b74392d9658d8cf5ca9623290f2c26e7d1dbc53448d2a60a2a331691d78aa2",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY01A.STR",
+      "lba": 127656,
+      "source_payload_sha256": "9ad942d5cb7db1d0abe500124ac2a3e7b38116c3a45651c2b93495f1040f3b35",
+      "video_frames": 485,
+      "video_decoded_bytes": 55872000,
+      "audio_packets": 607,
+      "audio_sample_frames": 1223712,
+      "audio_PCM_bytes": 4894848,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 607,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "2a144fb0179fea475dd20336222d26994e8591c981ae5fab2a4cba003b4cb501",
+      "ordered_audio_packet_digests_sha256": "18afa0d956755a9941eeaaf96939c06afd9501c28dc3879865e43bf3743dad8c",
+      "framehash_sha256": "bf48bdf4e830ab60a60da8d2f554e1ff96e29a65c576a499636a81c64e614b60",
+      "original_raw_sector_copy": {
+        "bytes": 11421312,
+        "sha256": "a7ce7c98b8ef5412b42d73532f06e3d35ea16d3a2af11b1c72a41d181523fbd4"
+      },
+      "concatenated_raw_video_sha256": "c24168982f8d8c0378e1bab095a479dc2620f93b7da08f397db605303a6ddcf5",
+      "concatenated_raw_PCM_sha256": "44beaa51e770477c27820bde1755bd3320d7899750ee5288b680ae09b8a58714",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY01B.STR",
+      "lba": 132512,
+      "source_payload_sha256": "c4a9b602d3caf04d8170d428f62169d4affaa91ee27e103de652ce9a7daff445",
+      "video_frames": 877,
+      "video_decoded_bytes": 101030400,
+      "audio_packets": 1097,
+      "audio_sample_frames": 2211552,
+      "audio_PCM_bytes": 8846208,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 1097,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "36fabb216171bb9e83bb1f6103598bf40f43e411b46373ef58ca3d669e00730d",
+      "ordered_audio_packet_digests_sha256": "08debe1694bcd3e26978e57db998f33aea104e31b2a646215752c3e864137ee6",
+      "framehash_sha256": "2acce870045c9407e43fec08fae9caf7860e4b4ade8b50b5d1669cd7c687d784",
+      "original_raw_sector_copy": {
+        "bytes": 20641152,
+        "sha256": "d5b7cd0a4fae1ddde74baa1013d8daa04e61558778c6f5a47736a88fd81c2c6d"
+      },
+      "concatenated_raw_video_sha256": "14673cc448659970563feb8c6eeb5cfaca8abd19be52c2f8613208d2e4acf45f",
+      "concatenated_raw_PCM_sha256": "9ff13541d4bd2e092e30ff34e819b700bac16ef3dbe48ff026b572067563739f",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY02A.STR",
+      "lba": 141288,
+      "source_payload_sha256": "ffc212d3cf068fd9c56fbb474495daba18f29c4d59fc2c252fc5821b3b523ff8",
+      "video_frames": 537,
+      "video_decoded_bytes": 61862400,
+      "audio_packets": 672,
+      "audio_sample_frames": 1354752,
+      "audio_PCM_bytes": 5419008,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 672,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "ca39d83d52f7815fa5283c1603ef906446dc1bd8df91ccb5f8dbbea440a41414",
+      "ordered_audio_packet_digests_sha256": "0fa87f865bfe17293bd8d3d53133a0fe6a2f32aa59db14005b6ac4a89e3e18ee",
+      "framehash_sha256": "5e550d9c51991664adedb4dbc8045d1f2cd11ba3f6d52c4f6b107f0056f956c1",
+      "original_raw_sector_copy": {
+        "bytes": 12644352,
+        "sha256": "80de9291e883649841578b530351339d29e79836a678792e62d6eca69ae344c2"
+      },
+      "concatenated_raw_video_sha256": "74bfd2ce9f925aa8320de98a8332ffbdc75d732dd8c6ec137e153e93e0a5b2b6",
+      "concatenated_raw_PCM_sha256": "93544c7773475268c609a4ba583847e340fef4298913dcdcd18459e588338a81",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY02B.STR",
+      "lba": 146664,
+      "source_payload_sha256": "0c09fb11246ec417567f6b96fecfdc9a7ad1b24090937a334d0be40cb2081bb5",
+      "video_frames": 455,
+      "video_decoded_bytes": 52416000,
+      "audio_packets": 569,
+      "audio_sample_frames": 1147104,
+      "audio_PCM_bytes": 4588416,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 569,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "67787a13c9fe7b0336e2e3186520ea3a09603f88920539d9533da7e7e7c28bff",
+      "ordered_audio_packet_digests_sha256": "7ff6168c2c165103b5cb7a572669ad79dad1d13b8f9eeb228bd657156edd7534",
+      "framehash_sha256": "56b31eeb1f5c55390f723b6e1902045883ba2165892310e4fecd7c2fda8f569d",
+      "original_raw_sector_copy": {
+        "bytes": 10706304,
+        "sha256": "31a1f417ea14beda66031ca3a3f1f883c73105cf9cb77873d4430e8837c7eea5"
+      },
+      "concatenated_raw_video_sha256": "c45e4f70cacb736cf944036ed6ad8b30d43d33388054c6f4e342c9d54c033480",
+      "concatenated_raw_PCM_sha256": "d837fff49174ce35a0401a84811ce4de8f9ae712448440bcb2d1d8fc9bd73ef0",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY03A.STR",
+      "lba": 151216,
+      "source_payload_sha256": "842d15ebd3d6360789d35c15ce46bd040a504652763b2d86f0d2d5270d62df46",
+      "video_frames": 409,
+      "video_decoded_bytes": 47116800,
+      "audio_packets": 512,
+      "audio_sample_frames": 1032192,
+      "audio_PCM_bytes": 4128768,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 512,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "f42999ddfe9d67c8a3ef803748bb8a2352b86647377c8ffae1f69213186c795c",
+      "ordered_audio_packet_digests_sha256": "071314bd252e23ee68a99925179a11dac4d73f0810052cc92fe35f44c55547d8",
+      "framehash_sha256": "75ff61d4b420d611d788c3c58db5b9e444ac1e8eaf9bb1e4865cbdeb9ab64b47",
+      "original_raw_sector_copy": {
+        "bytes": 9633792,
+        "sha256": "84d5f9f4fd709a72814372f7efba7134c46e1b4e60312c4c48ed637574f03f24"
+      },
+      "concatenated_raw_video_sha256": "047ad0db6db1fa25d7d0efcb905872e4b1a069822b83d8584a68ba007540981d",
+      "concatenated_raw_PCM_sha256": "eb4eab533ffb939d29a99d88fcf8e9c9a03ebb69778d3d5c5cd351ea9bc1526a",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY03B.STR",
+      "lba": 155312,
+      "source_payload_sha256": "a006790bd129aee4bd036d04f76935c11da062513edab8a86e86e7bd6999a34b",
+      "video_frames": 589,
+      "video_decoded_bytes": 67852800,
+      "audio_packets": 737,
+      "audio_sample_frames": 1485792,
+      "audio_PCM_bytes": 5943168,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 737,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "c12ffc8779e5790ff1068cf4b61d777f3aad441b02c225dc05c242b0c2c5ba7a",
+      "ordered_audio_packet_digests_sha256": "c21bab54185701ae8e0e139be427d2d0a78e7587ffe5116e9086b1a35aabd80c",
+      "framehash_sha256": "3df319c1f84145ab22db586f656056f2d8be41db96002578ce6767aeaf3d71b5",
+      "original_raw_sector_copy": {
+        "bytes": 13867392,
+        "sha256": "0d32963423b1334481bf5e3d3d4e2d1164920cb585be42388c24d9df8f0a2903"
+      },
+      "concatenated_raw_video_sha256": "c9d228a82f6a459f03861ac360101fb8e250c01b112e8d6be55104c81371670a",
+      "concatenated_raw_PCM_sha256": "60a616ad042669d0a29de870bd99a4383f736adde85ea5b06257b52ae6562b29",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY04A.STR",
+      "lba": 161208,
+      "source_payload_sha256": "3e6ff756e5946b8a196dcf1007545c67b333f19ecd1258ca9a8c6e2b77aace30",
+      "video_frames": 274,
+      "video_decoded_bytes": 31564800,
+      "audio_packets": 344,
+      "audio_sample_frames": 693504,
+      "audio_PCM_bytes": 2774016,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 344,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "e67d0720316af66928dc6027c6b8486e8aae61aa94fcf5302f8017d0fe0546ac",
+      "ordered_audio_packet_digests_sha256": "7ad34fc2245ceb68d36f74bcdf72457f00a341f6dfc042849cf6eb7a64f9f585",
+      "framehash_sha256": "8b4a38aaab4948838a2a312d45ee51988568765fae142752913ee33464e9c7fa",
+      "original_raw_sector_copy": {
+        "bytes": 6472704,
+        "sha256": "a363aaf1280cf16ea64516543c232bf281292161dee708c871043bc104fff862"
+      },
+      "concatenated_raw_video_sha256": "d54dd27d285cf5f12654f7e44e78c23768f630856c33496c95b691fcfed860d5",
+      "concatenated_raw_PCM_sha256": "9e20e610565b51117991db195e94dc3576247e375ae05a150c9e700c55781559",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY04B.STR",
+      "lba": 163960,
+      "source_payload_sha256": "045da0646937b420f86859989b6fcf32e2b6eaf7c1ac310dde88d3c5fb5dc653",
+      "video_frames": 551,
+      "video_decoded_bytes": 63475200,
+      "audio_packets": 689,
+      "audio_sample_frames": 1389024,
+      "audio_PCM_bytes": 5556096,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 689,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "a1722d2e46a8f03c957f65ec41b7535a335e8813afe5fd71442f78b17edd7dbb",
+      "ordered_audio_packet_digests_sha256": "fc791b0ef86cf6037b1ed966f49ae9c843ae7788ecd1ef9b1a1ee7e60cfd44db",
+      "framehash_sha256": "8d6b105829ad48589440dcba281c4f7921eaadf3ece91e824c613a297e7d490a",
+      "original_raw_sector_copy": {
+        "bytes": 12964224,
+        "sha256": "1e9375e4347a3898b8543c4534df77a1a0772a3ee9c06c03f9d859f1c6833278"
+      },
+      "concatenated_raw_video_sha256": "9493e8cccb965a072b111f5239aa018490d846ea75023b4b521748879a3788ba",
+      "concatenated_raw_PCM_sha256": "7fca6ecdb27df402fe647d0b7d34954808af438a1c7d64cdd97a8704dc0d2d8e",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY05A.STR",
+      "lba": 169472,
+      "source_payload_sha256": "9b999d1660ed467bbb82574194f60858375dd4c14d563ab72a3acdd8668bda20",
+      "video_frames": 576,
+      "video_decoded_bytes": 66355200,
+      "audio_packets": 721,
+      "audio_sample_frames": 1453536,
+      "audio_PCM_bytes": 5814144,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 721,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "c3a6e30b6e6b0ad0ccdc87a344a6e8aec4b57212f271e6379c38f2bd78037931",
+      "ordered_audio_packet_digests_sha256": "ce5a62be1c6d67a74fb219176721ea37a4592d27988035ab547d70e1a8911005",
+      "framehash_sha256": "1e55322df69288f5d329eab934a5258a7650d8a4f5ffce66c0d3313dd8998067",
+      "original_raw_sector_copy": {
+        "bytes": 13566336,
+        "sha256": "768d2c0320009d16843a1e06274fb69230af1629564119ec999f81eb9a50a2ff"
+      },
+      "concatenated_raw_video_sha256": "90250400edb61f353fd3faefe5b52aeffe2535ccfe237fbb39a16708518b4981",
+      "concatenated_raw_PCM_sha256": "4eb5da931e6719752f9e314b268a64304c12698876596c9be190ebf5976283c8",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY05B.STR",
+      "lba": 175240,
+      "source_payload_sha256": "d51bd50b64687ab433daf2975fb8d7372851e01c2779978d91368b9724e352a1",
+      "video_frames": 335,
+      "video_decoded_bytes": 38592000,
+      "audio_packets": 419,
+      "audio_sample_frames": 844704,
+      "audio_PCM_bytes": 3378816,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 419,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "3c704966665778da86f096ca0f9f1555e6cc3a10c399e6f40e2c9fb38408ea7c",
+      "ordered_audio_packet_digests_sha256": "8b3f8978edf4b9cc66843d9dbcb400d75c25b5e4aa38d3dbeada45273efbfd6b",
+      "framehash_sha256": "cfdc19dc9d2eaecb1196b888e771983d3992b4ebb023f3964c8bae29361d3987",
+      "original_raw_sector_copy": {
+        "bytes": 7883904,
+        "sha256": "7ecf77cb232e7a94c66b9f7c07f4123ecf2075f8d4a89dce4cc5fdd7e0cd3be1"
+      },
+      "concatenated_raw_video_sha256": "0eae652ad210a38945a5549b475e915579c0203aa826ff0a38a55bf2031e5336",
+      "concatenated_raw_PCM_sha256": "3552a727ca4274d2d1b6b86f5aea0e563d3e7f86338af11c54d5cd753d2f8a97",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY06A.STR",
+      "lba": 178592,
+      "source_payload_sha256": "f71cd3db0e29d8bcb980f15e2f1ad2f18b96da87e4acd23e60eced416a39b8e2",
+      "video_frames": 446,
+      "video_decoded_bytes": 51379200,
+      "audio_packets": 559,
+      "audio_sample_frames": 1126944,
+      "audio_PCM_bytes": 4507776,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 559,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "8fe5b249ccbaf47589a0ea8b3fae4728eb132d7126044cc32ea4fbe0efea9c56",
+      "ordered_audio_packet_digests_sha256": "ac309b4b5315d8d6488f514998232416f018a44973a3999f1e18b26b3c0c6294",
+      "framehash_sha256": "078707ceb012c52b685edc1ce587e463fd8ab998e7167ac18d92e5a1dc4a1697",
+      "original_raw_sector_copy": {
+        "bytes": 10518144,
+        "sha256": "0ca7d821c9600f7d613ddd82d798abea30b9c71a8b8a54a0ca1383bb43c7d257"
+      },
+      "concatenated_raw_video_sha256": "ba07d4f5e064a3d05ef1180daf3332a121f6763f14c0ea8bdcc55ea8c485b000",
+      "concatenated_raw_PCM_sha256": "6e1364fe4599c602602ccedbe6992ebda429717d9891a41b6b4e9b3fffb03037",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY06B.STR",
+      "lba": 183064,
+      "source_payload_sha256": "f5e049d2caeda6fb58d89243d7a68b698cc9cdc6d46d573265f0563b28f715a0",
+      "video_frames": 534,
+      "video_decoded_bytes": 61516800,
+      "audio_packets": 668,
+      "audio_sample_frames": 1346688,
+      "audio_PCM_bytes": 5386752,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 668,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "6e2850fc5c20f3639d2744a4161c2e038f9c78cf9c12c588d54784bdb13236ec",
+      "ordered_audio_packet_digests_sha256": "0c101078bf2e551fe3f993e8b161774db5f95f44a67caae7ab8247d9d9e25911",
+      "framehash_sha256": "1fa03f16c8f8ad666437d8787f28d335a468c9ff037f8e91c163b9e784f96301",
+      "original_raw_sector_copy": {
+        "bytes": 12569088,
+        "sha256": "3dd428ccb16c8afce815e7e523a50242fc090e3860da5cd0761642f8a1d18702"
+      },
+      "concatenated_raw_video_sha256": "8d466551a99195bea9287e7b7a953995691cb4d09b33153df1a3c40ea7e1977f",
+      "concatenated_raw_PCM_sha256": "06d721359c2d5bea821d86873150a86deda202dc5609b9911552a3cc12113144",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY07A.STR",
+      "lba": 188408,
+      "source_payload_sha256": "b507ab60a974a6286d23ae3bc7d4c010605447ed4fad38f142095e317f7f94d8",
+      "video_frames": 532,
+      "video_decoded_bytes": 61286400,
+      "audio_packets": 646,
+      "audio_sample_frames": 1302336,
+      "audio_PCM_bytes": 5209344,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 646,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "950e484d602552153fd1d8d82c35915e90d65fb046478ea26896f4b579228b31",
+      "ordered_audio_packet_digests_sha256": "fa9f3dd59531281340a5170520a951f62de2378850ae8bac0a0c55132e25e398",
+      "framehash_sha256": "22914b658903dffb0ffb53ed143c58c1aa15e2305eb1c7ad001c995f9620f1cb",
+      "original_raw_sector_copy": {
+        "bytes": 12510288,
+        "sha256": "ca71a8121eb65fa46c6285de4cb7802865a76cc8e9e33b24f9b1738098403cfb"
+      },
+      "concatenated_raw_video_sha256": "b12dbc46d2c36daeecd95f13155a8df31415ad9b21c645cb17d604d401cd324a",
+      "concatenated_raw_PCM_sha256": "e15a752c9e3c556dc278b94525a4d6d7874a5097c5cf08ea5c985753f272e298",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY07B.STR",
+      "lba": 193727,
+      "source_payload_sha256": "44f6871e6c8d71ce8d412db3a9f48d243207bacbdca47c0424d3a7e49e4390b8",
+      "video_frames": 533,
+      "video_decoded_bytes": 61401600,
+      "audio_packets": 667,
+      "audio_sample_frames": 1344672,
+      "audio_PCM_bytes": 5378688,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 667,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "0617f09b163f5f0c0dd83743646b1b53d19eb2e7f424e485cc08626c08918933",
+      "ordered_audio_packet_digests_sha256": "43ffe27fc6c3aad04b507ca051eaaabb44482f5c86b222775fc475b4e445ceac",
+      "framehash_sha256": "6caad9162bf54479efbef3723b57f54c541f33dd709e7dd30ec9796cf0e98a04",
+      "original_raw_sector_copy": {
+        "bytes": 12550272,
+        "sha256": "c8515326af404888a6205e55faa31a289f76827448921bd576350b5e29f0b896"
+      },
+      "concatenated_raw_video_sha256": "ab8e6a02436769705c2b585d2b5aaef6fd4a74741820245f7c5c1a1ee8f32c7b",
+      "concatenated_raw_PCM_sha256": "78ac7c96be5041be892660c293dadcab4e75f3271639fd9c9479a719bc501721",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY08A.STR",
+      "lba": 199063,
+      "source_payload_sha256": "b8b0b045b386f2f35393c9b142eebf50dc84008fd1cae81e07a064f7e416b4f6",
+      "video_frames": 660,
+      "video_decoded_bytes": 76032000,
+      "audio_packets": 825,
+      "audio_sample_frames": 1663200,
+      "audio_PCM_bytes": 6652800,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 825,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "9f39d07f3d5af9d9ac7cbf111d5b5fb30e25c1f57a43aa8923926163f7d34bda",
+      "ordered_audio_packet_digests_sha256": "3d4d72606d05dc86ef26e64a28274e0829ff14459a8a668bf3e12d7b05cdfcf8",
+      "framehash_sha256": "27a6b1a71abc5f22109608feb0febfaf86daddf37a2b6b7b0116c51fb8e6d986",
+      "original_raw_sector_copy": {
+        "bytes": 15523200,
+        "sha256": "265477d55f417ffabd5e7377a55200cb1942e37465a6b6b06e922ee8357528c4"
+      },
+      "concatenated_raw_video_sha256": "1f7536a70bf05c38165325ae51dc36e63214188d646ed38bd4d19d35ca85e359",
+      "concatenated_raw_PCM_sha256": "69dd60274062b6772103e2ffbd70de269f6fdcd1eea81b390987ec6f3215fb17",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY08B.STR",
+      "lba": 205663,
+      "source_payload_sha256": "4be161b8d988e3ba20d99961666cbdacd46db36be59e0a0fd8f8978fee540d24",
+      "video_frames": 461,
+      "video_decoded_bytes": 53107200,
+      "audio_packets": 577,
+      "audio_sample_frames": 1163232,
+      "audio_PCM_bytes": 4652928,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 577,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "ed3d81302f2a42e10334096449932bb2a3c183d7b078bbbe258aeb62ad60bb5f",
+      "ordered_audio_packet_digests_sha256": "8a2f02b47c973cacbb94ae40516ee19cda3ac8d40469ef0c25981a60d0046017",
+      "framehash_sha256": "d7104542298c6d202f5e07b58c78726b824e08c56195804342080e8762626bbf",
+      "original_raw_sector_copy": {
+        "bytes": 10856832,
+        "sha256": "2fe2431c7f47c14f69e634f38e7677a0738e238693ee5050648923d274afbb5e"
+      },
+      "concatenated_raw_video_sha256": "3462a51350de9b7669aa27d555767caf4b93824e471d7ffa535ad0054739f446",
+      "concatenated_raw_PCM_sha256": "7461ada566c364200d336ab9c19c79040d785c00bf4da52c0916e851b7199c26",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY09A.STR",
+      "lba": 210279,
+      "source_payload_sha256": "fe741b2a7271ecfcf356a93dad93062b24597240595e0749115285ffe779282a",
+      "video_frames": 475,
+      "video_decoded_bytes": 54720000,
+      "audio_packets": 594,
+      "audio_sample_frames": 1197504,
+      "audio_PCM_bytes": 4790016,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 594,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "81db0ca99ae4ac23944e2b0774217b3c572b89457347c99812c10dd2262fd86e",
+      "ordered_audio_packet_digests_sha256": "007e9b8d1237bc0bda039e4c44d9496e9ad1a8e3f50e155b7030f12241db57bf",
+      "framehash_sha256": "fee0c36c077159ea6c642ff8fd5e0bd2548f8067596ad72a8a18699dcb12018e",
+      "original_raw_sector_copy": {
+        "bytes": 11176704,
+        "sha256": "e7fb0fc75a23a150917e79ed6aaf41bf69cf2838fe9842cf7220cccbb7877b44"
+      },
+      "concatenated_raw_video_sha256": "9c5ead88e673f0f65d80542a2b7c2c0126476b5552c8f5547095b22e0970ff05",
+      "concatenated_raw_PCM_sha256": "09f9c72131883d65c2391bf582ccf5cdc480b486d90de18e4a32dcb06e3b2d0c",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY09B.STR",
+      "lba": 215031,
+      "source_payload_sha256": "585ee1dc31e239db981ac42a02c5da38db760a55593c302e39e17890a5e91dd3",
+      "video_frames": 483,
+      "video_decoded_bytes": 55641600,
+      "audio_packets": 605,
+      "audio_sample_frames": 1219680,
+      "audio_PCM_bytes": 4878720,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 605,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "744394d15166f267a5819a7552785efbcfa751eb18b2c3d7fcb9ee7cca68cb55",
+      "ordered_audio_packet_digests_sha256": "189816219e084c3d930f0e685d401adbe296947f1653053ce0d852c8b341e9c0",
+      "framehash_sha256": "3c851f94cc63832a1aaeac1a53a7397ee269c3d1312354af9d4684789f6baffd",
+      "original_raw_sector_copy": {
+        "bytes": 11383680,
+        "sha256": "b579211a0687f7ca182e4df53282157382edddd91984db06da68a2136d147931"
+      },
+      "concatenated_raw_video_sha256": "be3d4d33752e843c5d2b5028c102eff44599e16f633c99bf167114553622c363",
+      "concatenated_raw_PCM_sha256": "f3cd888ba5c7a341f99d9b6e11c5fcc3c11207aa0dd80252a84cd6c8aa7cce30",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY10A.STR",
+      "lba": 219871,
+      "source_payload_sha256": "5661afcd60ffb7bb3b068a943981db43b7674442bd4e978080cf46a55ad1a961",
+      "video_frames": 421,
+      "video_decoded_bytes": 48499200,
+      "audio_packets": 527,
+      "audio_sample_frames": 1062432,
+      "audio_PCM_bytes": 4249728,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 527,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "d14438414f0a00fee8fede17af4036cb7fa528021bd37e48b507a7a42a6d80d0",
+      "ordered_audio_packet_digests_sha256": "1c4c897030713941e2ed743d559049849d9b95472a1fa9833708764dc73cd0c3",
+      "framehash_sha256": "3578548b1b94ef4eae605613b6f282ce443344d4e477be6ebfe5d9b91b104f3c",
+      "original_raw_sector_copy": {
+        "bytes": 9916032,
+        "sha256": "bd59f8f492c90dd7e01b770ec2e441f7d795eb3944b4f63687474fe9e907aee0"
+      },
+      "concatenated_raw_video_sha256": "1337782849c62d431a476cf9072f3a57bb4ef52e400254bc3256d9a2ea2dea0c",
+      "concatenated_raw_PCM_sha256": "337b4eefaef055127dce1e21309c8acd87bac59e3497918e413ad6fe6e6f3807",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY10B.STR",
+      "lba": 224087,
+      "source_payload_sha256": "db602e8dc56fe91bdf8788870aaf0beedf3f0855d1bf4505b1f1e14e4de7ac2e",
+      "video_frames": 500,
+      "video_decoded_bytes": 57600000,
+      "audio_packets": 624,
+      "audio_sample_frames": 1257984,
+      "audio_PCM_bytes": 5031936,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 624,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "84ff426fb5328af83f40868607312901e1bd57667eeeaae70fa626583a4740b4",
+      "ordered_audio_packet_digests_sha256": "06685d1474f13cfe793c45e93cebb85d93b14b0f7f9a2347a1c9ec50eae58b66",
+      "framehash_sha256": "3100fc0ae2d082d219a6db033f6e159096cc230211ec16cec50de8843335f1a8",
+      "original_raw_sector_copy": {
+        "bytes": 11757648,
+        "sha256": "d8fdd528a761b452e350e26d0e2a2533b5c8f2d55af47fd207d6a1a0ff344058"
+      },
+      "concatenated_raw_video_sha256": "371fc222859038860b7e4815248d0fa130116d77805c6c779234db36d2da45a8",
+      "concatenated_raw_PCM_sha256": "61ef15449e360acd5ffbaadbe8b60288e69da49dbe1214e54e74c82b8ea8d4bf",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY11A.STR",
+      "lba": 229086,
+      "source_payload_sha256": "958137b391f6c25f506e75bad795069208ed9a8cc61c993eb65152d23e96f748",
+      "video_frames": 479,
+      "video_decoded_bytes": 55180800,
+      "audio_packets": 600,
+      "audio_sample_frames": 1209600,
+      "audio_PCM_bytes": 4838400,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 600,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "3d8ccf8861af85a4713fc81304b7b0a902e187ca0bba72bd445cd45b3745d02d",
+      "ordered_audio_packet_digests_sha256": "02dbec9daaab57f62d5022889ddbf0689ff715f0b65ad9c8709524220edd75f7",
+      "framehash_sha256": "2718b7fc3cab590617eed3f50276b8b47c91278d9e0a81c04442f207f2118cb3",
+      "original_raw_sector_copy": {
+        "bytes": 11289600,
+        "sha256": "6c7070d5376792ab6045bbb2a0acc63478fe4f3092bdc4b0aa4445e50979bcf5"
+      },
+      "concatenated_raw_video_sha256": "c8c540af4bd2f81fefab9efae6cb267495e7300594fa8f8dd8ca2555149ace05",
+      "concatenated_raw_PCM_sha256": "d259ce83622efa8e80a5186ffa2b3b54adc02fa35380e48e2073093570cbb327",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY11B.STR",
+      "lba": 233886,
+      "source_payload_sha256": "8f5900ba40214c3c0bb5d6f30c8b1dc7a24628ec40f0f7e2e9150f7dcae5b25d",
+      "video_frames": 534,
+      "video_decoded_bytes": 61516800,
+      "audio_packets": 667,
+      "audio_sample_frames": 1344672,
+      "audio_PCM_bytes": 5378688,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 667,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "e6601f126d7a320bd21a56bc91251af11e966ee22a439de43cf20f5c01a2eeb5",
+      "ordered_audio_packet_digests_sha256": "8dcdecd2fb03f62678a3ff67fff08b78da4ee59ff0e9a8693b3940f3f357bb21",
+      "framehash_sha256": "01dad21db2695f0f60399e743b817626f9c35bb61bf6bd85eab4977caba4f628",
+      "original_raw_sector_copy": {
+        "bytes": 12559680,
+        "sha256": "c67a7c44a6c755cacfb95c26df336d230cc9e1c648a90fc9b2638c3609c4f4db"
+      },
+      "concatenated_raw_video_sha256": "c4cc48a451447fa05232e96648d9595d25329c06a8c504685c23dd532ac14977",
+      "concatenated_raw_PCM_sha256": "5493c743bbfe23a98bd888fa657a04374e446c940566ff7229b77e4d4c36100d",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY12A.STR",
+      "lba": 239226,
+      "source_payload_sha256": "c37643afeb533a681993242a10a91eb853364ad960c68e7ac9272747c16fc312",
+      "video_frames": 197,
+      "video_decoded_bytes": 22694400,
+      "audio_packets": 247,
+      "audio_sample_frames": 497952,
+      "audio_PCM_bytes": 1991808,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 247,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "45d370f7abfddf10b244b894280c1ceb51aa61b51b1ba3767c59f0e5cd515e91",
+      "ordered_audio_packet_digests_sha256": "f679ca1d529c814a9d61c3de94ed92d26dbd37cfac0f5fc4eb14dab90d8239e0",
+      "framehash_sha256": "2988e1d72633c002268e10e874b3eb23ee87dd4cf522b9baf59fe07ab4e6a47d",
+      "original_raw_sector_copy": {
+        "bytes": 4647552,
+        "sha256": "a5422446ffdc850c5d51458a785fda4b066af14e1d6bf084cfc03f2e591af3ca"
+      },
+      "concatenated_raw_video_sha256": "f7cffbeb9afcf4011bebca0ef4140c2c19793e3ec1217ea4b6c44369c1a2ad5b",
+      "concatenated_raw_PCM_sha256": "64db180bfad8562d91a4117408cf7d06e02b3a849356c29ba3fc4378ce0eeb58",
+      "independent_per_packet_hashes_agree": true
+    },
+    {
+      "path": "/CDI/FILM/SPDAY12B.STR",
+      "lba": 241202,
+      "source_payload_sha256": "1fcf32402d0170e4d874e18c5a0682ddd41b84a09e191c7d1dfba0afb77ae7ff",
+      "video_frames": 394,
+      "video_decoded_bytes": 45388800,
+      "audio_packets": 494,
+      "audio_sample_frames": 995904,
+      "audio_PCM_bytes": 3983616,
+      "audio_profile": {
+        "file": 1,
+        "channel": 1,
+        "coding": 1,
+        "channels": 2,
+        "sample_rate": 37800,
+        "sectors": 494,
+        "samples_per_packet": 2016
+      },
+      "pixel_format": "yuvj420p",
+      "ordered_video_frame_digests_sha256": "92b5cc8c3bbcd1dddc13305e25ff62a9d038bdedfc1ec8d9848a4085268534cc",
+      "ordered_audio_packet_digests_sha256": "7cb4f7d55f5ca09613ec872ca20e22e12c88cba9c7b5a9ce3bf48e8e7d7fb140",
+      "framehash_sha256": "a2697756f9f1a9715f187e2fa46b5b5340e8b16b2227da81c7fcd4050313d23a",
+      "original_raw_sector_copy": {
+        "bytes": 9295104,
+        "sha256": "a5f46965ec048758c4e16778540b170c8a79cbc47f33d4e8e67d1fed069a987a"
+      },
+      "concatenated_raw_video_sha256": "995559218c23b07bb6aba277d74b5c60bf6c04caf0113f34a34c5707d3a5ff54",
+      "concatenated_raw_PCM_sha256": "858a829ded4dc5441d254f3e76927492efaebdcb51140df83eb4e8f826a3deb9",
+      "independent_per_packet_hashes_agree": true
+    }
+  ]
+}

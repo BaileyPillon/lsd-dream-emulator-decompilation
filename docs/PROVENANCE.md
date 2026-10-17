@@ -1,5 +1,15 @@
 # Source and evidence provenance
 
+The [complete software movie decode](MOVIE_DECODE.md) reads exact original raw
+sectors for the 39 routed payloads and checks 22,382 YUV frames and 27,921 PCM
+packets. A separate Python hashing pass agrees with every decoder packet.
+[Its metadata](movie-decode-checks.json) pins the producer sources, local FFmpeg
+executables and media libraries, input catalogue, private reports and per-file
+aggregate hashes. Both passes use the same software codecs; this is not an
+independent native PS1 decoder comparison. All 392 game build inputs and the
+complete original/rebuilt BIN identity are preserved. C coverage remains
+98.63%; whole-feature acceptance and the separate Bevy port are unchanged.
+
 The [sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md) adapts two
 CC0 implementations from a pinned `brian-oblivion/lsddecomp` commit. Their
 complete relocated functions and the combined ordinary/fresh 306-object builds
