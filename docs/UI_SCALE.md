@@ -1,9 +1,15 @@
 # Original sprite scaling audit
 
+The later [matching C recovery](UI_SCALE_BOUNDS_MATCHING_C.md) replaces this
+function's assembly inclusion with attributed C and preserves the complete
+original executable. The sections below retain the earlier native and
+nonmatching-candidate audit at its original checkpoint; their fixture counts
+are not additional runs for the recovery.
+
 The original `func_8004441C` passes **203,472 bounded native cases** and four
 deliberately wrong controls without external stubs. A full C translation-unit
 candidate passes the same fixtures but differs in **12 executable bytes across
-four instructions**. The canonical build retains the original assembly.
+four instructions**. That checkpoint retained the original assembly.
 
 The recorded hashes, scopes and fixed before/after counts are in
 [ui-scale-checks.json](ui-scale-checks.json). This extends UI evidence without

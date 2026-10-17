@@ -1523,12 +1523,19 @@ void func_8004CC74(render_context_t *This) {
     }
 }
 
-INCLUDE_ASM("asm/nonmatchings/scene/render_context", func_8004CD38);
-
-/* The original reads signed X/Z cells against mixed-width inclusive bounds.
- * Null bounds returns outside, enabling consideration of the next stream
- * slot. Current C candidates reproduce bounded behavior but still differ
- * in register allocation; the original assembly remains authoritative. */
+/* Adapted from brian-oblivion/lsddecomp, commit 90a398e4f429b4371be05648605fc198b9efb395,
+ * src/world/stage_map.c (IsPointOutOfBounds), dedicated under CC0.
+ * Cell coordinates are signed bytes; bounds are inclusive.
+ * See docs/UI_SCALE_BOUNDS_MATCHING_C.md for provenance and verification. */
+typedef struct render_context_cell_coord { s8 x; s8 z; } render_context_cell_coord_t;
+s32 func_8004CD38(const render_context_cell_bounds_t *bounds, const u8 *point) {
+    const render_context_cell_coord_t *cell = (const render_context_cell_coord_t *)point;
+    if (bounds != NULL && cell->x >= bounds->min_x && bounds->max_x >= cell->x &&
+        cell->z >= bounds->min_z && bounds->max_z >= cell->z) {
+        return 0;
+    }
+    return 1;
+}
 
 s32 func_8004CDA4(render_context_t *This, s32 unused, s32 index, s32 arg3) {
     s32 *dest;

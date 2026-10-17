@@ -62,11 +62,75 @@ void func_80044380(ui_sprite_t *This, s32 arg1, u8 *arg2) {
     }
 }
 
-INCLUDE_ASM("asm/nonmatchings/menu/ui_sprite", func_8004441C);
-/* Unaccepted padding-free source and its exact reproduction recipe live in
- * research/ui_scale/. The closest candidate retains twelve differing bytes
- * across four instructions. Keep the original assembly until the full image
- * matches; see docs/UI_SCALE.md for source, ABI and native-behavior limits. */
+/* Adapted from brian-oblivion/lsddecomp, commit 90a398e4f429b4371be05648605fc198b9efb395,
+ * src/graphics/bg_layer.c (BgLayer__UpdateScale), dedicated under CC0.
+ * Signed numerator/denominator pairs for the X and Y scale.
+ * See docs/UI_SCALE_BOUNDS_MATCHING_C.md for provenance and verification. */
+typedef struct ui_sprite_scale_ratio { s16 num; s16 den; } ui_sprite_scale_ratio_t;
+void func_8004441C(ui_sprite_t *self, s32 set, ui_sprite_scale_ratio_t *src) {
+    s32 negX;
+    s32 negY;
+    s32 den;
+    s16 sx;
+    s16 sy;
+    s32 v;
+
+    negX = 0;
+    negY = 0;
+    if (src[0].num < 0 || src[0].den < 0) {
+        negX = 1;
+    }
+    if (src[1].num < 0 || src[1].den < 0) {
+        negY = 1;
+    }
+    den = src[0].den;
+    if (den != 0) {
+        sx = ((src[0].num / den) << 12) + (((src[0].num % den) << 12) / den);
+    }
+    if (src[1].den != 0) {
+        sy = ((src[1].num / src[1].den) << 12) +
+             (((src[1].num % src[1].den) << 12) / src[1].den);
+    }
+    if (set) {
+        if (den == 0) {
+            self->m_Unk23_0 = 0x1000;
+        } else {
+            v = sx;
+            if (v > 30000) {
+                v = 30000;
+            }
+            self->m_Unk23_0 = v;
+        }
+        if (src[1].den == 0) {
+            self->m_Unk23_1 = 0x1000;
+        } else {
+            v = sy;
+            if (v > 30000) {
+                v = 30000;
+            }
+            self->m_Unk23_1 = v;
+        }
+    } else {
+        if (self->m_Unk23_0 + sx > 30000) {
+            if (negX) {
+                self->m_Unk23_0 = 1;
+            } else {
+                self->m_Unk23_0 = 30000;
+            }
+        } else {
+            self->m_Unk23_0 = sx + self->m_Unk23_0;
+        }
+        if (self->m_Unk23_1 + sy > 30000) {
+            if (negY) {
+                self->m_Unk23_1 = 1;
+            } else {
+                self->m_Unk23_1 = 30000;
+            }
+        } else {
+            self->m_Unk23_1 = sy + self->m_Unk23_1;
+        }
+    }
+}
 
 void func_8004464C(ui_sprite_t *This, s32 Unk1, s8 *Data) {
     if (Unk1) {

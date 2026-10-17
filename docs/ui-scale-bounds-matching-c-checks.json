@@ -1,0 +1,184 @@
+{
+  "status": "verified_matching_sprite_scale_and_cell_bounds_C",
+  "recorded_utc": "2026-10-17T16:30:16.401968+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "30785a96e6dce770ab53d478bc8f9cc547514173",
+  "before": {
+    "c_bytes": 196504,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 4,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 39,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 39,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_C_bytes": 668,
+  "new_original_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_native_fixture_inputs": 0,
+  "retained_native_evidence": [
+    "docs/UI_SCALE.md",
+    "docs/RENDER_BOUNDS.md"
+  ],
+  "original_functions": [
+    {
+      "function": "func_8004441C",
+      "address": "0x8004441c",
+      "bytes": 560,
+      "sha256": "da711212afcc5d37cc0dc8f15ad0493cbfee5bda9f6fd5d3deffe3b6c6db729c",
+      "independently_extracted_complete_text_matches": true,
+      "separate_complete_image_matches": true
+    },
+    {
+      "function": "func_8004CD38",
+      "address": "0x8004cd38",
+      "bytes": 108,
+      "sha256": "73713a1bd9a992c92c7a7fb6c5c88684a9224107fbc2b0d4d2f83b606e71d03a",
+      "independently_extracted_complete_text_matches": true,
+      "separate_complete_image_matches": true
+    }
+  ],
+  "compiler_observations": [
+    {
+      "family": "external-ui-scale-source-20261017-first",
+      "name": "published-control",
+      "function": "func_8004441C",
+      "bytes": 560,
+      "differing_bytes": 12,
+      "sha256": "9a28591790da1cc3cc7158618e233593cb99c42fa4ee00fed0815068e0110a14",
+      "report_sha256": "586a3d042dae71c332aac372550f906ea87fe857c7acf8fa50728285eb761b47"
+    },
+    {
+      "family": "external-ui-scale-source-20261017-first",
+      "name": "external-ratio-formal",
+      "function": "func_8004441C",
+      "bytes": 560,
+      "differing_bytes": 0,
+      "sha256": "da711212afcc5d37cc0dc8f15ad0493cbfee5bda9f6fd5d3deffe3b6c6db729c",
+      "report_sha256": "586a3d042dae71c332aac372550f906ea87fe857c7acf8fa50728285eb761b47"
+    },
+    {
+      "family": "external-bounds-source-20261017-first",
+      "name": "published-control",
+      "function": "func_8004CD38",
+      "bytes": 108,
+      "differing_bytes": 19,
+      "sha256": "852e9a1037c383a1e46cec6a982b065ea84022b3c6142c90c6e2ec37da47ab54",
+      "report_sha256": "74a2cf67c4244a7ca64e03e1616012759ffc4881e611ff85afc0e7263af04170"
+    },
+    {
+      "family": "external-bounds-source-20261017-first",
+      "name": "external-cell-view",
+      "function": "func_8004CD38",
+      "bytes": 108,
+      "differing_bytes": 0,
+      "sha256": "73713a1bd9a992c92c7a7fb6c5c88684a9224107fbc2b0d4d2f83b606e71d03a",
+      "report_sha256": "74a2cf67c4244a7ca64e03e1616012759ffc4881e611ff85afc0e7263af04170"
+    },
+    {
+      "family": "ui-scale-import-source-20261017-first",
+      "name": "matching-scale-import",
+      "function": "func_8004441C",
+      "bytes": 560,
+      "differing_bytes": 0,
+      "sha256": "da711212afcc5d37cc0dc8f15ad0493cbfee5bda9f6fd5d3deffe3b6c6db729c",
+      "report_sha256": "9dd11daea8a66dbd3b1a30597792d92e3a125284e0cb0dcc56d1c6cd8e9ca8fb"
+    },
+    {
+      "family": "bounds-import-source-20261017-first",
+      "name": "matching-bounds-import",
+      "function": "func_8004CD38",
+      "bytes": 108,
+      "differing_bytes": 0,
+      "sha256": "73713a1bd9a992c92c7a7fb6c5c88684a9224107fbc2b0d4d2f83b606e71d03a",
+      "report_sha256": "4cc0ffcd31b65371349fac81bd4ad052deaf3b30489d512f2950562536f2b8ea"
+    }
+  ],
+  "original_source_repository": "brian-oblivion/lsddecomp",
+  "original_source_commit": "90a398e4f429b4371be05648605fc198b9efb395",
+  "original_source_license": "CC0-1.0",
+  "original_source_files": [
+    {
+      "path": "src/graphics/bg_layer.c",
+      "bytes": 8300,
+      "sha256": "8d8727d93a4be4dc8bb7213035c8876a2af2a2cb7597becdfdd0401ffa2d7eec",
+      "git_blob_sha1": "45d45d8ec76fce3d7cd7b3e73a0b6b2b0b4b113d",
+      "url": "https://github.com/brian-oblivion/lsddecomp/blob/90a398e4f429b4371be05648605fc198b9efb395/src/graphics/bg_layer.c"
+    },
+    {
+      "path": "src/world/stage_map.c",
+      "bytes": 55733,
+      "sha256": "595ade7e3f7d3431a6ebbaed6bb352ec4e217819c036f79da701de1e7b9a5bd3",
+      "git_blob_sha1": "c7e4bde51f76c5583a4647cedfd51cd33376bc37",
+      "url": "https://github.com/brian-oblivion/lsddecomp/blob/90a398e4f429b4371be05648605fc198b9efb395/src/world/stage_map.c"
+    }
+  ],
+  "original_license_url": "https://github.com/brian-oblivion/lsddecomp/blob/90a398e4f429b4371be05648605fc198b9efb395/LICENSE",
+  "local_adaptations": [
+    "Function, type and field names use this project's existing layouts.",
+    "Named fixed-point constants become the same literal values.",
+    "The bounds predicate retains its existing const bounds/byte-pointer API and views the signed cell record locally."
+  ],
+  "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab",
+  "configure_sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+  "maspsx_revision": "e85ecb373828aabea96d7e6400974d4f91ce8c74",
+  "compiler_or_assembler_changed": false,
+  "external_setup_scripts_executed": false,
+  "external_assembler_patches_applied": false,
+  "imported_unused_storage": false,
+  "imported_inline_instructions": false,
+  "imported_physical_register_bindings": false,
+  "changed_game_build_inputs": {
+    "src/menu/ui_sprite.c": "0535fa683faa1727b87916c156532ceda9f85850c797054bb3b59a134526c675",
+    "src/scene/render_context.c": "84fe64d7aa657c8c860c43890ed3be4ea0df26cf94efde75fdf306509fe526e6"
+  },
+  "unchanged_game_build_inputs": 390,
+  "standard_and_fresh_complete_images_equal": true,
+  "fresh_objects": 306,
+  "canonical_executable_bytes": 505856,
+  "canonical_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "fresh_build_evidence_sha256": "cc548c926206ae17528c2d409532608fbf6f5e083aa79d636f1c733e9fcac70f",
+  "Windows_tooling_tests": 768,
+  "Windows_tooling_skips": 2,
+  "Windows_tooling_log_sha256": "d74e9e5d0689bd7e33a11928e2b4c50044c9b1877e257ee63676eea1a10bdf98",
+  "vtables": {
+    "declared_tables": 57,
+    "header_layout_issues": 0,
+    "unresolved_declarations": 0,
+    "evidence_sha256": "d0d7dcbb8d9c1c85a9da2b90daa4f0b1f367b3ba55583108bf51a9c29fde14d9"
+  },
+  "remaining_assembly_functions": [
+    "func_8001DDF4",
+    "func_8001F8B8"
+  ],
+  "remaining_assembly_bytes": 2740,
+  "inherited_storage_explanations": [
+    "debug_file_driver_unk15",
+    "debug_file_driver_open"
+  ],
+  "Bevy_port_modified": false,
+  "user_game_controlled": false,
+  "goal_complete": false,
+  "scope": "Two attributed matching C functions and complete executable equality. Historical nonmatching candidates and bounded runtime evidence remain separate. No new game feature, exhaustive feature denominator, natural replay or whole-feature/NPC acceptance is claimed.",
+  "producer_sha256": "0e4c419377c06de4641941771982c54c296b5294875b109bf24d6aaefd707663"
+}

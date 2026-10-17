@@ -1,6 +1,6 @@
 """Verify the original render-context bounds predicate with local native fixtures.
 
-The original 108-byte function still uses assembly in the matching build.
+The original 108-byte function now has matching C with identical instructions.
 These fixtures recover signed field, boundary and short-circuit behavior;
 they do not accept rendering, stage traversal or a nonmatching C candidate.
 """

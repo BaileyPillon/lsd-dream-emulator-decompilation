@@ -1,22 +1,23 @@
 # LSD feature inventory
 
-The latest [grid-window recovery](GRID_MATCHING_C.md) brings
-matching C to **196,504 / 199,912 bytes (98.30%)**, with **four** game assembly
-fallbacks and **37 / 40** groups whose listed core functions are in C. The
-historical measurements below retain their original dates and scope. F035
-still includes a remaining UI-scale assembly function, so its whole listed-core
-source gate remains open despite the two recovered menu callers.
+The latest [sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md)
+brings matching C to **197,172 / 199,912 bytes (98.63%)**, with **two** game
+assembly fallbacks and **38 / 40** groups whose listed core functions are in C.
+F035 now has all its listed core functions in C. Whole-feature runtime
+acceptance remains separate. The historical measurements below retain their
+original dates and scope.
 
-F033 also remains partial: its primitive emitter and bounds predicate still
-retain assembly. The grid promotion adds 660 matching C bytes and one recovered
-function, with no new gameplay feature or whole-feature acceptance. Earlier
-inventory snapshots and publication supplements retain their original scope.
+F008 retains the hull/face collision query; F033 retains the primitive-face
+collision query. The bounds predicate is now matching C. This promotion adds
+668 C bytes and two recovered functions, with no new gameplay feature or
+whole-feature acceptance. Earlier inventory snapshots and publication
+supplements retain their original scope.
 
 The [locomotive script checks](LOCOMOTIVE_SCRIPTS.md) extend bounded original
 callback coverage from **36 to 39 / 107** through 70,345 distinct fixtures.
 Those three callbacks already had matching C bodies. C bytes, the 40-group
-inventory, 37 listed-core C groups and zero whole-feature/encounter acceptances
-remain unchanged. Earlier measurements below retain their historical scope.
+inventory and zero whole-feature/encounter acceptances remained unchanged at
+that checkpoint. The source counts above include the later two-function recovery.
 
 The earlier [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md)
 reduced identified inherited storage explanations from **24 to 19** at that

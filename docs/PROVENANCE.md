@@ -1,5 +1,14 @@
 # Source and evidence provenance
 
+The [sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md) adapts two
+CC0 implementations from a pinned `brian-oblivion/lsddecomp` commit. Their
+complete relocated functions and the combined ordinary/fresh 306-object builds
+match the original executable with this project's unchanged toolchain. Two game
+inputs change; the other 390 preserve their hashes. Matching C becomes 98.63%,
+with two assembly functions and two inherited storage explanations remaining.
+The linked metadata records the source, license, local adaptations and build
+evidence; this does not verify the external project's whole-game claims.
+
 The [matching grid-window recovery](GRID_MATCHING_C.md) replaces the 660-byte
 `func_8004C6A8` assembly inclusion with consumed-input C. Its complete relocated
 function and ordinary/fresh 306-object builds are identical to the original.

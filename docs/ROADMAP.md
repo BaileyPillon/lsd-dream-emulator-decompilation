@@ -63,23 +63,24 @@ function or whole-feature gate; continue the source work below.
   instead resolves the packed-word and matrix-stream functions through real
   input views. Continue the remaining source gates below.
 
-Four game functions remain in assembly after the source-layout correction,
-[matching generation lookup recovery](GENERATION_LOOKUP_RECOVERY.md),
-[matching menu recovery](MENU_LOOKUP_RECOVERY.md) and
-[matching grid-window recovery](GRID_MATCHING_C.md). The scanner, structure
-updater, two menu callers and grid window compile from C with the complete
-executable unchanged.
+Two game functions remain in assembly after the
+[sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md): the
+796-byte hull/face query (`func_8001DDF4`) and the 1,944-byte primitive-face query
+(`func_8001F8B8`). Matching C covers 197,172 / 199,912 bytes (98.63%). The two
+inherited debug-driver storage explanations remain open separately.
 
-The [bounds candidate](BOUNDS_NARROW_COMPARISON.md) now has a published
-19-byte complete-image difference and a reproducible confined comparison over
-4,648 existing inputs. Recover the unresolved return/packed-X allocation;
-128 further compiler observations in this checkpoint find no exact match.
+The [earlier bounds candidate](BOUNDS_NARROW_COMPARISON.md) retains its
+19-byte difference and 4,648-input comparison as historical research. The later
+recovery uses a signed cell record and the inclusive in-range predicate; its
+complete executable matches. Continue the two collision queries and natural
+runtime coverage rather than revisiting the superseded bounds candidate.
 
 The expanded audit identified 28 unused-storage functions and withdrew four
 padded promotions. Twenty-four inherited explanations remained at that snapshot;
 the correction's historical count was 194,212 / 199,912 (97.15%). The two
 generation and two menu recoveries raised it to 195,844 / 199,912 (97.97%).
-The grid-window recovery now raises it to 196,504 / 199,912 (98.30%).
+The grid-window recovery raised it to 196,504 / 199,912 (98.30%); sprite scaling
+and the bounds predicate subsequently raise it to 197,172 / 199,912 (98.63%).
 The [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md) now explains five
 inherited functions. The subsequent
 [constructor and actor storage recovery](CONSTRUCTOR_ACTOR_STORAGE.md) explains
@@ -91,7 +92,7 @@ four more. Recover the real storage and helper lifetimes for the remaining two
 identified functions.
 
 Those two are empty debug-driver stubs with unexplained 64-byte reservations.
-Keep them explicit while recovering the four remaining game assembly functions;
+Keep them explicit while recovering the two remaining game assembly functions;
 unused fields or discarded identity chains do not explain those stubs.
 
 All four withdrawn functions have replacement matching C; the earlier
@@ -275,7 +276,7 @@ and 191 initial source trials found no exact match. The subsequent
 
 The catalogue currently has 40 provisional groups. None has been accepted for
 all required runtime scenarios. The [inventory](FEATURE_INVENTORY.md) lists the
-remaining scenario for each group; 98.30% describes current game C bytes only.
+remaining scenario for each group; 98.63% describes current game C bytes only.
 
 ## Developer tools and optional mods
 

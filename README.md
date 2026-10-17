@@ -46,12 +46,12 @@ All-movie decoding, skip/error branches, and complete feature acceptance remain 
 
 | Measure | Verified snapshot |
 | --- | ---: |
-| Matching game-function bytes compiled from C | 196,504 / 199,912 (98.30%) |
-| Known remaining game assembly functions | 4 |
+| Matching game-function bytes compiled from C | 197,172 / 199,912 (98.63%) |
+| Known remaining game assembly functions | 2 |
 | Known C functions with unresolved unused local storage | 2 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
 | Original callbacks with bounded native comparisons | 39 / 107 |
-| Provisional behavior/system groups with listed core functions in C | 37 / 40 |
+| Provisional behavior/system groups with listed core functions in C | 38 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
 
 The feature inventory has 40 provisional groups; an official exhaustive
@@ -139,6 +139,10 @@ more, leaving two identified storage explanations at that checkpoint. The
 [matching grid-window recovery](docs/GRID_MATCHING_C.md) now replaces another
 660 bytes of assembly with C, leaving four assembly functions. Ordinary and
 fresh 306-object builds reproduce the complete original executable.
+The later [sprite-scale and bounds recovery](docs/UI_SCALE_BOUNDS_MATCHING_C.md)
+adds 668 matching C bytes from reviewed, attributed source. Both functions and
+the combined ordinary/fresh builds match the original executable, leaving two
+game assembly functions. The original compiler and assembler are unchanged.
 C-byte coverage does not certify original source quality or whole-game parity.
 The [overlap result-lifetime study](docs/OVERLAP_RESULT_LIFETIMES.md) reduces
 that unaccepted candidate's complete-image difference to 148 bytes and checks
