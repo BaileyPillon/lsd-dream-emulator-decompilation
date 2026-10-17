@@ -6,7 +6,6 @@ void func_8004D578(main_menu_t *This, dream_sys_t *DreamSys);
 void func_8004D704(main_menu_t *This);
 void func_8004D788(main_menu_t *This, void **Unk2, s32 Unk3);
 void show_title(main_menu_t *This);
-void func_8003C1DC(void);
 void func_8003E280(void);
 void func_8003C238(void);
 void func_8004D898(main_menu_t *This);
@@ -79,7 +78,7 @@ main_menu_vtable_t g_MAIN_MENU_VTABLE = {
     (void (*)(void *)) func_8004D788,
     0,
     (void (*)(void *)) show_title,
-    (void (*)(void *)) func_8003C1DC,
+    (s32 (*)(void *, void *, s32)) func_8003C1DC,
     (void (*)(void *)) func_8003E280,
     (void (*)(void *)) func_8003C238,
     (void (*)(void *)) func_8004D898,

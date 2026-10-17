@@ -29,7 +29,7 @@ typedef struct main_menu_vtable {
     /* 0x038 80086b98 */ void (*OnNotify)(base_class_t *, base_class_t *, s32);
     /* 0x03C 80086b9c */ u32 pad1;
     /* 0x040 80086ba0 */ void (*show_title)(void *, dream_sys_t *);
-    /* 0x044 80086ba4 */ void (*Run)(void *);
+    /* 0x044 80086ba4 */ s32 (*Run)(void *, void *, s32);
     /* 0x048 80086ba8 */ void (*Unk17)(void *);
     /* 0x04C 80086bac */ void (*Unk18)(void *);
     /* 0x050 80086bb0 */ void (*Unk19)(void *);

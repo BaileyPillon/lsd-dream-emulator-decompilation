@@ -1,0 +1,391 @@
+{
+  "status": "passed_bounded_screen_run_interfaces",
+  "initialized_interface_cases": 1890,
+  "positive_native_executions": 3780,
+  "case_groups": {
+    "ui": 378,
+    "main": 378,
+    "chart": 1134
+  },
+  "original_functions_executed": [
+    {
+      "function": "func_8003C1DC",
+      "address": "0x8003c1dc",
+      "bytes": 92,
+      "sha256": "f203459fa2735cf984809aeb5243d874c54c14711e5de4b22ef779f9bcc37431"
+    },
+    {
+      "function": "func_80058390",
+      "address": "0x80058390",
+      "bytes": 116,
+      "sha256": "3d199adb45140134173d8a6aeb5775f38ffeea4f4a374805cc885ddced7ec105"
+    },
+    {
+      "function": "timer_get_vtable",
+      "address": "0x8003e5c8",
+      "bytes": 16,
+      "sha256": "d238fa5daeb891fd90dea2848259a29f0a9430e25a55d881feaa6fe21a19fea4"
+    },
+    {
+      "function": "func_8003DFBC",
+      "address": "0x8003dfbc",
+      "bytes": 16,
+      "sha256": "8a93f3c1cad0692ba38e1b86f054de0165974eb7aebff4cea42d988cfd2b098b"
+    }
+  ],
+  "compiled_analysis_callers": [
+    {
+      "function": "screen_run_ui",
+      "address": "0x180000",
+      "bytes": 48,
+      "sha256": "20136277720953071828604723a2fc50da7514570373f7b6e4e78864664bfc6f"
+    },
+    {
+      "function": "screen_run_main",
+      "address": "0x180030",
+      "bytes": 48,
+      "sha256": "20136277720953071828604723a2fc50da7514570373f7b6e4e78864664bfc6f"
+    },
+    {
+      "function": "screen_run_chart",
+      "address": "0x180060",
+      "bytes": 48,
+      "sha256": "20136277720953071828604723a2fc50da7514570373f7b6e4e78864664bfc6f"
+    }
+  ],
+  "actual_entry_counts": {
+    "func_8003C1DC": 3780,
+    "timer_get_vtable": 3780,
+    "screen_run_ui": 378,
+    "screen_run_main": 378,
+    "func_80058390": 2268,
+    "func_8003DFBC": 2268,
+    "screen_run_chart": 1134
+  },
+  "dependency_output_contracts": [
+    {
+      "function": "func_8003E10C",
+      "address": "0x8003e10c",
+      "bytes": 372,
+      "sha256": "511d8d2c031c5905ef4852f4d428929181499d3da8f70423994ea68695b40fed",
+      "positive_entries": 3780,
+      "original_body_executed": false,
+      "scope": "Checks all three arguments, writes the supplied result and chart flag, clobbers caller-saved registers and returns a deliberately unrelated V0. Does not execute graphics initialization."
+    }
+  ],
+  "target_ABI_assertions": 8,
+  "Run_slot": "0x44",
+  "original_Run_bindings": {
+    "ui": {
+      "table_address": "0x8006e730",
+      "function": "func_8003C1DC",
+      "prefix_bytes": 72,
+      "prefix_sha256": "914a1a084ed7c13dc2045bafc3f11823ef296c38ddd5ee2bc02ecdf9953fd6a6"
+    },
+    "main": {
+      "table_address": "0x80086b60",
+      "function": "func_8003C1DC",
+      "prefix_bytes": 72,
+      "prefix_sha256": "0c6ca11f3389f78f05b63ee4e4f0be3dfeebd9810b44c058f88948445f3fb8c2"
+    },
+    "chart": {
+      "table_address": "0x80087aac",
+      "function": "func_80058390",
+      "prefix_bytes": 72,
+      "prefix_sha256": "b934f562f72a63e92c2ab08c70973ce671ee10b81634e7ce8ef5f662503f9979"
+    }
+  },
+  "input_and_output_sha256": "cf95a29856d1513909e710ac2ce97c850a70e2369dbfa7efdd25179ea58d5530",
+  "negative_controls": [
+    {
+      "kind": "wrong_result_field",
+      "function": "func_8003C1DC",
+      "function_offset": 60,
+      "fixture": {
+        "kind": "ui",
+        "result": 2147483648,
+        "video_flag": 0,
+        "segment": 0,
+        "graphics": 1146912,
+        "mode": 2147483648
+      },
+      "changed_instruction_hits": 1,
+      "wrong_return_word": true,
+      "wrong_buffer": false
+    },
+    {
+      "kind": "inverted_video_flag",
+      "function": "func_80058390",
+      "function_offset": 68,
+      "fixture": {
+        "kind": "chart",
+        "result": 2147483648,
+        "video_flag": 0,
+        "segment": 0,
+        "graphics": 1146912,
+        "mode": 2147483648
+      },
+      "changed_instruction_hits": 1,
+      "wrong_return_word": true,
+      "wrong_buffer": false
+    },
+    {
+      "kind": "wrong_chart_result_field",
+      "function": "func_80058390",
+      "function_offset": 76,
+      "fixture": {
+        "kind": "chart",
+        "result": 2147483648,
+        "video_flag": 0,
+        "segment": 0,
+        "graphics": 1146912,
+        "mode": 2147483648
+      },
+      "changed_instruction_hits": 1,
+      "wrong_return_word": true,
+      "wrong_buffer": false
+    }
+  ],
+  "backend_identity": {
+    "package_version": "2.1.4",
+    "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+  },
+  "warning_errors_enabled_for_analysis_callers": true,
+  "producer_dependencies": [
+    {
+      "path": "tools/verify_native_ai.py",
+      "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+    },
+    {
+      "path": "tools/inventory_vtables.py",
+      "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+    },
+    {
+      "path": "tools/progress.py",
+      "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+    },
+    {
+      "path": "configure.py",
+      "sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2"
+    },
+    {
+      "path": "requirements-analysis.txt",
+      "sha256": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911"
+    },
+    {
+      "path": "build/SLPS01556.map",
+      "sha256": "f33789ceb8c0665b372415f9d58087b0fc810d6d30465cee962cdfebc2da0846"
+    },
+    {
+      "path": "build/undefined_funcs_auto.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "build/undefined_syms_auto.txt",
+      "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+    },
+    {
+      "path": "src/scene/entity.c",
+      "sha256": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811"
+    },
+    {
+      "path": "src/scene/entity.h",
+      "sha256": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f"
+    },
+    {
+      "path": "src/dream/dream_sys.c",
+      "sha256": "d5b09c49d43d8b0001868f90abe81e6976906ae4180f4b70fb5f78fa400c8b3a"
+    },
+    {
+      "path": "src/dream/dream_sys.h",
+      "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+    },
+    {
+      "path": "src/scene/actor.c",
+      "sha256": "c9da90f048399ad93127e4c841aaf49c81c6922a8d4528ae783f1edcf2be3a4b"
+    },
+    {
+      "path": "src/base/transform.c",
+      "sha256": "0166d95088d3476bf1cf8c2a760627f0c12640e68a1f8294a973acb91c09004d"
+    },
+    {
+      "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+      "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+    },
+    {
+      "path": "research/screen_run/verify.py",
+      "sha256": "7deb110efd63b0266ede7dea6d7a5cb00ae128686df1828ec3834779587de167"
+    },
+    {
+      "path": "research/screen_run/consumer.c",
+      "sha256": "6635e33b013c6aaa5fa70a30fcb3872f81b3a0a2a8f10607cbbc6655df6673c8"
+    },
+    {
+      "path": "research/screen_run/abi_checks.h",
+      "sha256": "a481ded905df4d2cdecb9449ff59cf1d1095eed51fe81c7bc59390653d4599d2"
+    },
+    {
+      "path": "src/menu/ui_screen.c",
+      "sha256": "39a8e0ef96d7ff319e152c5fca9ed07fb0beea1f06b11eb1895a29133d558783"
+    },
+    {
+      "path": "src/menu/ui_screen.h",
+      "sha256": "0476e841a540189aba3f99b6c195f33268098f0f37146972e8439f6700448358"
+    },
+    {
+      "path": "src/menu/main_menu.c",
+      "sha256": "94736d85fde899d3503f632670a2f3324d3f71e724e1d857bdfb90c3ba344084"
+    },
+    {
+      "path": "src/menu/main_menu.h",
+      "sha256": "030a7153cf0a3e36c6aec04fcb58bfbe7fd3c260ece4f955c0cc5810c33c0471"
+    },
+    {
+      "path": "src/menu/main_menu_post.c",
+      "sha256": "85b5328ca81eb89ddc5c8cde9b994e9b606fefb9dbfc0d2c53d4fc6d194bc00e"
+    },
+    {
+      "path": "src/menu/graph_screen.c",
+      "sha256": "cbf99cff532d9231936f82f423769a4f16a5920d2d744afd68d6db40af3c6bf7"
+    },
+    {
+      "path": "src/menu/graph_screen.h",
+      "sha256": "7b4cdaeea3844eced8f9339823e4040921966d0036423b0932a4a698632a0748"
+    },
+    {
+      "path": "src/game/game_flow.c",
+      "sha256": "47e662a67f9828cc0d1f0a0d876687d5b2f5954dc32ab53c8812c734fbe2fddd"
+    },
+    {
+      "path": "src/game/game_flow.h",
+      "sha256": "3e376fa5c4ffde37c4979f187fc350946a4a835950c282dc93bc08fda6a34302"
+    },
+    {
+      "path": "tools/verify_scripted_ai.py",
+      "sha256": "2edefddc727441c0066a48375efd882c80035af99db3b3990a2c674eedddb2c1"
+    },
+    {
+      "path": "tools/compile_c.py",
+      "sha256": "ab5217c43e9dca1fff7092d75e8a0ac407b3dd65b256b5c29b3ff29a4fc1afe7"
+    },
+    {
+      "path": "tools/decomp_workbench.py",
+      "sha256": "8d375145ca2b7f210889558ce75d4acd854a04606ea26d86ff50251b6a4820d1"
+    },
+    {
+      "path": "research/compiler/compare_function.py",
+      "sha256": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff"
+    },
+    {
+      "path": "tools/gcc263/cc1",
+      "sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab"
+    }
+  ],
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "original_and_current_build_equal": true,
+  "new_game_function_C_bytes": 0,
+  "original_behavior_modified": false,
+  "model_api_calls": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "scope": "Three typed Run callers execute original UI/chart methods and table getters. Full guarded objects, three arguments, original call order, return words and saved ABI are checked. The graphics initializer is one explicit output contract. No real factory, graphics setup, natural screen history, whole-feature acceptance or PS1 timing claim is made.",
+  "publication": {
+    "format": "reviewed projection of an executed private report",
+    "baseline_commit": "abb58d005e7099f069acd59e57abf06116acf2c9",
+    "private_native_report_sha256": "09564ddc1c46796723e711a6e14e64058fcbc8d081b9cf929219a698a88c5afb",
+    "omitted_field": "compiler_commands contains local machine paths; reproduction command is in research/screen_run/README.md",
+    "original_range_qualification": "Complete function extents from a retained unstripped canonical ELF; independent audit re-extracted method/caller bytes and reconstructed the fixture/model digest."
+  },
+  "before": {
+    "c_bytes": 196504,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 4,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 39,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 196504,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 4,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 39,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "before_correction": {
+    "consumer_sha256": "6635e33b013c6aaa5fa70a30fcb3872f81b3a0a2a8f10607cbbc6655df6673c8",
+    "compiler_exit_code": 33,
+    "invalid_return_diagnostics": 3,
+    "compiler_log_sha256": "88cbe61652cd51d0d497234c8fb82de7a4a83eecd251e282edf1801f04a6ffb8"
+  },
+  "complete_builds": {
+    "standard_canonical": true,
+    "fresh_canonical": true,
+    "fresh_objects": 306,
+    "executable_bytes": 505856,
+    "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "game_input_edits": [
+      "src/game/game_flow.c",
+      "src/game/game_flow.h",
+      "src/menu/graph_screen.h",
+      "src/menu/main_menu.c",
+      "src/menu/main_menu.h",
+      "src/menu/main_menu_post.c",
+      "src/menu/ui_screen.c",
+      "src/menu/ui_screen.h"
+    ],
+    "other_game_inputs_preserved": 384,
+    "maspsx_revision": "e85ecb373828aabea96d7e6400974d4f91ce8c74",
+    "fresh_build_log_sha256": "4a2b89cfb152bc2b9ddda887daac1af0f820e8933d81f1ce28e98ec94c16ed9f"
+  },
+  "independent_audit": {
+    "report_sha256": "151103f8bc55819a0b0e2346d4a43c9d39e46e8d506df1bdbd078840aeb9cd58",
+    "fixture_input_and_output_digest_recomputed": true,
+    "native_and_caller_extents_qualified": true,
+    "positive_fault_witness_replays": 3,
+    "fault_replays": [
+      {
+        "kind": "wrong_result_field",
+        "independent_positive_witness_agrees": true,
+        "changed_instruction_executed": true,
+        "wrong_return_word": true
+      },
+      {
+        "kind": "inverted_video_flag",
+        "independent_positive_witness_agrees": true,
+        "changed_instruction_executed": true,
+        "wrong_return_word": true
+      },
+      {
+        "kind": "wrong_chart_result_field",
+        "independent_positive_witness_agrees": true,
+        "changed_instruction_executed": true,
+        "wrong_return_word": true
+      }
+    ],
+    "fresh_snapshot_only_CRLF_LF_differences_outside_exact_overlays": true
+  },
+  "local_tool_suite": {
+    "platform": "Windows",
+    "tests": 768,
+    "skipped": 2,
+    "status": "passed",
+    "log_sha256": "767332b6fffa16efd2137bf0628eaa91090cca9d887f7f0459fa09fe09a68c64"
+  },
+  "full_original_feature_acceptance": false,
+  "Bevy_port_modified": false,
+  "goal_complete": false
+}

@@ -74,8 +74,8 @@ void func_8003C11C(ui_screen_t *This) {
     This->m_HasIdleTimeout = 0;
 }
 
-s32 func_8003C1DC(ui_screen_t *This, s32 Unk2, s32 Unk3) {
-    timer_get_vtable()->Unk16(This, Unk2, Unk3);
+s32 func_8003C1DC(ui_screen_t *This, void *GraphicsCtx, s32 Mode) {
+    timer_get_vtable()->Unk16(This, GraphicsCtx, Mode);
     return This->m_Unk13;
 }
 

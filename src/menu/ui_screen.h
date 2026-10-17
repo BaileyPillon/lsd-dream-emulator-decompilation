@@ -29,7 +29,7 @@ typedef struct ui_screen_vtable {
     /* 0x038 8006e768 */ void (*OnNotify)(base_class_t *, base_class_t *, s32);
     /* 0x03C 8006e76c */ void (*Unk14)(void *);
     /* 0x040 8006e770 */ void (*Unk15)(void *);
-    /* 0x044 8006e774 */ void (*Run)(void *, void *, s32);
+    /* 0x044 8006e774 */ s32 (*Run)(void *, void *, s32);
     /* 0x048 8006e778 */ void (*Unk17)(void *);
     /* 0x04C 8006e77c */ void (*Unk18)(void *);
     /* 0x050 8006e780 */ void (*Unk19)(void *);
@@ -133,5 +133,6 @@ typedef struct ui_screen {
 
 ui_screen_t *ui_screen_create(u32 Unk1, u32 Unk2, u32 Unk3);
 ui_screen_vtable_t *func_8003DFBC(void);
+s32 func_8003C1DC(ui_screen_t *This, void *GraphicsCtx, s32 Mode);
 
 #endif

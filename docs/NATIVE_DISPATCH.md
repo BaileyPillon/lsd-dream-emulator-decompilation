@@ -27,8 +27,17 @@ signatures, or independent runtime acceptance.
 The partial `game_flow_screen_vtable_t` interface has a byte-array gap between
 its declared Destroy and Run callbacks. It has no bound concrete table symbol
 and is explicitly listed as an unsupported type view; it is excluded from the
-57 audited table bindings. Its Run/Destroy interface still needs concrete
-receiver mapping as part of call-site review.
+57 audited table bindings. The known main-menu and chart Run bindings now
+have [reviewed arguments and return ownership](SCREEN_RUN_INTERFACES.md).
+Factory construction, Destroy dispatch and other receiver paths remain part
+of the wider call-site review.
+
+The [screen Run interface check](SCREEN_RUN_INTERFACES.md) corrects the UI,
+main-menu and chart declarations at slot `0x44`. All three take a receiver,
+graphics-context pointer and mode word, and return a signed word. Compiled
+callers now consume that return correctly. The bounded check executes the
+original return-producing methods with one explicit graphics-initializer
+contract; it does not execute natural screen construction or rendering.
 
 The [effect activation interface](EFFECT_ACTIVATION_API.md) recovers the four
 arguments at slots `0xD4`, `0xD8` and `0xDC`, plus the entity's cached target

@@ -23818,6 +23818,55 @@
       "new_model_API_calls": 0,
       "original_behavior_modified": false,
       "Bevy_port_modified": false
+    },
+    "screen_run_interfaces_20261017": {
+      "evidence": "docs/screen-run-interface-checks.json",
+      "guide": "docs/SCREEN_RUN_INTERFACES.md",
+      "before": {
+        "c_bytes": 196504,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 4,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 39,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 196504,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 4,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 39,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "corrected_concrete_Run_views": 3,
+      "common_Run_graphics_pointer_corrected": true,
+      "compiled_analysis_callers": 3,
+      "initialized_interface_cases": 1890,
+      "original_and_typed_positive_executions": 3780,
+      "completed_behavior_faults": 3,
+      "graphics_initializer_output_contracts": 1,
+      "original_initializer_body_executed": false,
+      "canonical_complete_image_preserved": true,
+      "fresh_matching_build_objects": 306,
+      "new_C_bytes": 0,
+      "new_bounded_NPC_callbacks": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_model_API_calls": 0,
+      "original_behavior_modified": false,
+      "Bevy_port_modified": false
     }
   }
 }
