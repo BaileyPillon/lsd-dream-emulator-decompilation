@@ -23719,6 +23719,56 @@
       "new_developer_capability_categories": 0,
       "original_behavior_modified": false,
       "Bevy_port_modified": false
+    },
+    "emulator_media_initialization_20261017": {
+      "evidence": "docs/emulator-label-initialization-checks.json",
+      "guide": "docs/EMULATOR_LABEL_INITIALIZATION.md",
+      "before": {
+        "c_bytes": 196504,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 4,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 196504,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 4,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 37,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 36,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "host_constructor_observations": 30,
+      "ordinary_one_frame_boots": 6,
+      "one_frame_complete_state_repeat_pairs": 5,
+      "complete_controller_replay_checkpoint_pairs": 61,
+      "complete_controller_replay_native_states_checked": 122,
+      "frames_per_disc": 30000,
+      "strict_initialized_record_profile_passed": true,
+      "cross_core_game_outputs_preserved": true,
+      "strict_cross_core_identity_rejection_preserved": true,
+      "distributed_core_failure_retained": true,
+      "CD_only_failure_retained": true,
+      "new_C_bytes": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "new_bounded_NPC_callbacks": 0,
+      "new_model_API_calls": 0,
+      "original_behavior_modified": false,
+      "Bevy_port_modified": false
     }
   }
 }

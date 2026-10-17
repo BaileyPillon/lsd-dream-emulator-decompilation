@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "status": "qualified_emulator_media_initialization_and_bounded_first_dream_replay",
+  "recorded_utc": "2026-10-17T12:10:53.226020+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "e58a5a567296f78c8e7f2926e13af054b4bac593",
+  "before": {
+    "c_bytes": 196504,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 4,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 196504,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 4,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "upstream": {
+    "repository": "TASEmulators/BizHawk",
+    "tag": "2.11.1",
+    "commit": "bdddf4a58aa1a022afb11dc73294a81a5aa7bbd5",
+    "modified_source": "waterbox/nyma/cdrom.cpp",
+    "source_before_sha256": "d47e109d5d33558a5cf5f55b5b07886289b61268e45d329f5f8537fd62617268",
+    "source_after_sha256": "e35995cf92baabd13c4bb9216c9c2ef7405db38202d0aff0d6fb55d9e06d7c6a",
+    "public_patch_sha256": "e3087518e14f4b4e01951661927021ea059957aec2644729480b05d827f0335f",
+    "musl_commit": "2063abc4e16c84218757b1db10d3cdf9f36ef3f8",
+    "mednafen_commit": "382ff1b8d293c9a862497706808cbb79b2cecbfb",
+    "LLVM_commit": "3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff"
+  },
+  "hosted_constructor": {
+    "observations": 30,
+    "optimization_profiles": 2,
+    "storage_seeds": [
+      0,
+      23,
+      90,
+      165,
+      255
+    ],
+    "construction_modes": 3,
+    "compiler_version": "Debian clang version 18.1.8 (18+b1)",
+    "compiler_sha256": "7965eca808fd8808a3825e361d85dd4cfa086e8593bcbd9bb9518753c65be3de",
+    "libcxx_header_sha256": "32bca140aadc0dd8b1c9bda577e6fa2ca70231b49074d56d713ddd9f43fd0974",
+    "pinned_reference_header_equal": true,
+    "logical_names_and_guards_preserved": true,
+    "direct_construction_retains_all_20_prefilled_tail_bytes": true,
+    "default_construction_and_assignment_initializes_complete_24_byte_string": true,
+    "moves_preserve_complete_representation": true,
+    "original_game_executions": 0
+  },
+  "native_records": {
+    "ordinary_one_frame_boots": 6,
+    "equal_complete_state_repeat_pairs": 5,
+    "full_replay_states_checked": 122,
+    "full_replay_checkpoint_pairs": 61,
+    "logical_strings_checked_per_state": 6,
+    "original_named_fields_and_counts_preserved": true,
+    "initialized_unused_string_bytes_per_state": 64,
+    "initialized_existing_ABI_padding_bytes_per_state": 23,
+    "initialized_host_bytes_count_as_game_C_recovery": false
+  },
+  "retained_controls": {
+    "distributed_core": {
+      "frames_per_disc": 30000,
+      "checkpoint_pairs": 61,
+      "recorded_game_outputs_equal": true,
+      "strict_state_payloads_equal": false,
+      "differing_unused_media_type_name_bytes_per_checkpoint": 8,
+      "evidence": "docs/cold-dream-cycle-checks.json",
+      "old_failure_reclassified": false
+    },
+    "unmodified_source_rebuild": {
+      "frames_per_disc": 6000,
+      "checkpoint_pairs": 16,
+      "strict_state_payloads_equal": true,
+      "passing_control_attributed_to_patch": false
+    },
+    "CD_only_rebuild": {
+      "frames_per_disc": 30000,
+      "checkpoint_pairs": 61,
+      "recorded_game_outputs_equal": true,
+      "strict_state_payloads_equal": false,
+      "differing_unused_bytes_per_checkpoint": 8,
+      "difference_owner": "Media[0].Name",
+      "difference_owner_value": "Disc 1 of 1",
+      "old_failure_reclassified": false
+    }
+  },
+  "initialized_record_replay": {
+    "frames_per_disc": 30000,
+    "observations_per_disc": 30001,
+    "submitted_controller_vectors_per_disc": 30000,
+    "controller_fields": 26,
+    "checkpoint_pairs": 61,
+    "comparator_status": "passed_bounded_cold_start_comparison",
+    "complete_state_member_payloads_equal": true,
+    "controls_native_fields_RAM_GPU_PNG_and_audio_equal": true,
+    "native_stored_day_advance_relative_frame": 23706,
+    "state_bytes_masked": 0,
+    "compressed_runtime_core_sha256": "06120d49e98ebf0436488bfe1c18270f8a21e36093515b659a3555704d5a45b3",
+    "uncompressed_runtime_core_sha256": "f12f68df2bfb9645d582a2e832fa85f483e2949cee3c777bafdd2f19828fa49c",
+    "audio": {
+      "equal_pcm_output": true,
+      "original": {
+        "channels": 2,
+        "sample_rate": 44100,
+        "sample_width": 2,
+        "sample_frames": 22113556,
+        "nonzero_channel_samples": 39026855,
+        "pcm_sha256": "7f2f66f950668e4f44e5b1334fba977a0eecae374d96c2730c51446275c14bb7"
+      },
+      "rebuilt": {
+        "channels": 2,
+        "sample_rate": 44100,
+        "sample_width": 2,
+        "sample_frames": 22113556,
+        "nonzero_channel_samples": 39026855,
+        "pcm_sha256": "7f2f66f950668e4f44e5b1334fba977a0eecae374d96c2730c51446275c14bb7"
+      },
+      "wav_file_bytes": {
+        "equal": true,
+        "original_bytes": 88454268,
+        "rebuilt_bytes": 88454268,
+        "original_sha256": "f901beee7b66933eda4df4ed85ecc4a59a7e8d36500f17e3433cd4cfd14fcae9",
+        "rebuilt_sha256": "f901beee7b66933eda4df4ed85ecc4a59a7e8d36500f17e3433cd4cfd14fcae9"
+      }
+    }
+  },
+  "cross_core_game_output_preservation": {
+    "original_disc_runs": 2,
+    "frames_per_run": 30000,
+    "identical_recorded_game_outputs": true,
+    "checkpoint_pairs": 61,
+    "input_identity_differences": [
+      "emulator_files",
+      "configuration"
+    ],
+    "configuration_differences": [
+      "PathEntries"
+    ],
+    "owned_path_roots_are_only_configuration_difference": true,
+    "initial_external_save_inputs_empty": true,
+    "strict_comparator_rejection": "Runtime launch inputs differ: emulator_files, configuration",
+    "strict_cross_core_parity_accepted": false,
+    "original_recorded_bytes_modified": false
+  },
+  "public_build_recipe": {
+    "executed_unchanged": true,
+    "code_block_sha256": "c00e320331db0cdb692790a2881a6ef920ad2695e31258d0ee233e5177d7932f",
+    "exit_code": 0,
+    "elapsed_seconds": 134.88854937099998,
+    "source_after_sha256": "e35995cf92baabd13c4bb9216c9c2ef7405db38202d0aff0d6fb55d9e06d7c6a",
+    "output_cores": {
+      "shock-pristine.wbx": {
+        "bytes": 3390608,
+        "sha256": "7589d28d8d58da72cc19e78df12dbc9b2b226e5d95961245877d58445be7d7b8"
+      },
+      "shock-initialized-records.wbx": {
+        "bytes": 3390200,
+        "sha256": "9d1ffee604b673bb601a7072af0d4568ae9860d8e69ddb009e2057cd006bac13"
+      }
+    },
+    "recipe_output_cores_runtime_observed": false,
+    "runtime_observations_use_separately_pinned_initial_build": true
+  },
+  "patch_qualification": {
+    "staged_and_exported_Windows_patch_bytes_equal": true,
+    "core_autocrlf_true_export_tested": true,
+    "upstream_CRLF_source_preserved": true,
+    "fresh_pinned_source_application_passed": true,
+    "resulting_source_matches_executed_native_candidate": true,
+    "repeated_patch_check_rejected": true,
+    "rejected_check_leaves_target_unchanged": true
+  },
+  "game_build": {
+    "canonical_executable_bytes": 505856,
+    "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "protected_game_inputs": 392,
+    "changed_game_inputs": 0,
+    "frozen_objective_preserved": true
+  },
+  "new_C_bytes": 0,
+  "source_functions_promoted": 0,
+  "new_original_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "new_model_API_calls": 0,
+  "Bevy_port_modified": false,
+  "distributed_emulator_replaced": false,
+  "public_source_sha256": {
+    ".gitattributes": "af05870c051ba17ca03d26d22a2e456fec0c85323483551bcebd06b8d4e81f78",
+    "docs/EMULATOR_LABEL_INITIALIZATION.md": "3c13a264e3ba5a6a1838859d3de65401dcf0d8d09a9479c14e0b3b73ce31c117",
+    "research/runtime_state/README.md": "6f3ef012548541d14b42fcc2e6802ca83533ec6ece97121e72d93dea40f97213",
+    "research/runtime_state/label_construction.cpp": "4810e6e481c49692de2fb9505c3a6fb30f1bd8d7fa3b8dc185ee7bf1f28cb872",
+    "research/runtime_state/bizhawk-2.11.1-label-initialization.patch": "e3087518e14f4b4e01951661927021ea059957aec2644729480b05d827f0335f"
+  },
+  "private_evidence": [
+    {
+      "path": ".decomp-lab/sso-construction-qualification-20261017-public/report.json",
+      "sha256": "153cd476c6d6f81a4ca7d2cbf0d69e5a6d62f0592493e7b07cadf89f73aff060"
+    },
+    {
+      "path": ".decomp-lab/nymashock-pristine-cold-6000-20261017-first/report.json",
+      "sha256": "6b4859d9da3a3fc6c687ce30b1f4d2e9c0973d5442d00aa059b0731abafcc297"
+    },
+    {
+      "path": ".decomp-lab/nymashock-initialized-cold-30000-20261017-first/report.json",
+      "sha256": "1c38cea7e5e8918f0f0a478e6dffbbd810135b5d519c17f34d517a4f32ea8817"
+    },
+    {
+      "path": ".decomp-lab/initialized-replay-state-diagnosis-20261017-first/report.json",
+      "sha256": "39937a4d95f332e58dd76e941630cf4d0aadce7fe068714531c0f8efe285ca6f"
+    },
+    {
+      "path": ".decomp-lab/remaining-media-state-classification-20261017-second.json",
+      "sha256": "c005c2c6434d59cf71329fc681fbb66ebe7748b9ac40cebcafd7ff61fc25b9aa"
+    },
+    {
+      "path": ".decomp-lab/nymashock-initialized-records-build-20261017-second/report.json",
+      "sha256": "7b3481445341a8781c2c38cca1001c9737123883ef3bcbb71f6c48774536706d"
+    },
+    {
+      "path": ".decomp-lab/nymashock-records-runtime-20261017-first/report.json",
+      "sha256": "b0635866aefe078f35ad3733685d1f02a80a0507e11708336d372c36d7655490"
+    },
+    {
+      "path": ".decomp-lab/nymashock-records-smoke-20261017-first/report.json",
+      "sha256": "8257af793f72840f61f7088773d519c00cdad8d6f03aeacbabf58bdd8ecdd816"
+    },
+    {
+      "path": ".decomp-lab/complete-media-record-native-checks-20261017-first.json",
+      "sha256": "c0f54af4e6121439cc141173f6b036abe5f48745600662b7d9011bf1fde057a3"
+    },
+    {
+      "path": ".decomp-lab/nymashock-records-cold-30000-20261017-first/report.json",
+      "sha256": "09c5234e36352326b29e77ffa3b3f432bee385b366c726cff61d69a2bb6ee55d"
+    },
+    {
+      "path": ".decomp-lab/nymashock-records-cold-30000-20261017-first/comparison.json",
+      "sha256": "4ab0f10a49140a9ab1a17c9bf193a85734f68e5fbc364bed29b825612ebd3d10"
+    },
+    {
+      "path": ".decomp-lab/complete-media-replay-native-checks-20261017-first.json",
+      "sha256": "606b092646a9262ef3bf726f59e92a7817544006d9dfc895a71c967186bee31f"
+    },
+    {
+      "path": ".decomp-lab/label-core-game-output-preservation-20261017-third/report.json",
+      "sha256": "2990f516942ec20e5421d1c0b81fba9f71a0cf8a39d75857a46ab04746a39ada"
+    },
+    {
+      "path": ".decomp-lab/complete-media-public-patch-qualification-20261017-first/report.json",
+      "sha256": "0c469dda1445a3d33d2e8601eef9a61105066312bc019475abd9b37ebab5f003"
+    },
+    {
+      "path": ".decomp-lab/public-label-build-recipe-20261017-second/report.json",
+      "sha256": "15fe383ff113991eaa83cf45760386c9a925bc870cc409dbeab2a96e79ff03c8"
+    }
+  ],
+  "publication_producer_sha256": "9e14e9175f2fea6c9b4e1bc9c7050ca713000fa0dba11cf89c48988c82fcbb5d",
+  "scope": "Optional host-emulator source research and one bounded original/rebuilt cold-boot controller history through a natural dream end and Day 002. Every saved-state member payload is compared unchanged within the separately pinned initialized-record core profile. Existing distributed-core and CD-only failures remain failures; unmodified-source repeats already pass. Cross-core game-output preservation retains the strict binary/configuration identity rejection. Exact public recipe outputs have distinct hashes and are not the binaries observed at runtime. Whole-game content, NPC encounters, other media configurations, original-hardware timing and independent whole-feature acceptance remain open."
+}

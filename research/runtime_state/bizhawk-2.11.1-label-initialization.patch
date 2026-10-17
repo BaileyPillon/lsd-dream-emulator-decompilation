@@ -1,0 +1,49 @@
+diff --git a/waterbox/nyma/cdrom.cpp b/waterbox/nyma/cdrom.cpp
+index b242fbd..b88dfc2 100644
+--- a/waterbox/nyma/cdrom.cpp
++++ b/waterbox/nyma/cdrom.cpp
+@@ -82,8 +82,21 @@ void StartGameWithCds(int numdisks)
+ 	{
+-		RMD_Drive dr;
++		// Construct persistent records in place. Temporary short strings can
++		// retain prior stack bytes that Waterbox subsequently snapshots.
++		rmd->Drives.resize(1);
++		RMD_Drive& dr = rmd->Drives[0];
+ 
+ 		dr.Name = "Virtual CD Drive";
+-		dr.PossibleStates.push_back(RMD_State({"Tray Open", false, false, true}));
+-		dr.PossibleStates.push_back(RMD_State({"Tray Closed (Empty)", false, false, false}));
+-		dr.PossibleStates.push_back(RMD_State({"Tray Closed", true, true, false}));
++		dr.PossibleStates.resize(3);
++		dr.PossibleStates[0].Name = "Tray Open";
++		dr.PossibleStates[0].MediaPresent = false;
++		dr.PossibleStates[0].MediaUsable = false;
++		dr.PossibleStates[0].MediaCanChange = true;
++		dr.PossibleStates[1].Name = "Tray Closed (Empty)";
++		dr.PossibleStates[1].MediaPresent = false;
++		dr.PossibleStates[1].MediaUsable = false;
++		dr.PossibleStates[1].MediaCanChange = false;
++		dr.PossibleStates[2].Name = "Tray Closed";
++		dr.PossibleStates[2].MediaPresent = true;
++		dr.PossibleStates[2].MediaUsable = true;
++		dr.PossibleStates[2].MediaCanChange = false;
+ 		dr.CompatibleMedia.push_back(0);
+@@ -91,5 +104,5 @@ void StartGameWithCds(int numdisks)
+ 
+-		rmd->Drives.push_back(dr);
+-		rmd->DrivesDefaults.push_back(RMD_DriveDefaults({0, 0, 0}));
+-		rmd->MediaTypes.push_back(RMD_MediaType({"CD"}));
++		rmd->DrivesDefaults.resize(1);
++		rmd->MediaTypes.resize(1);
++		rmd->MediaTypes[0].Name = "CD";
+ 	}
+@@ -98,2 +111,3 @@ void StartGameWithCds(int numdisks)
+ 
++	rmd->Media.resize(CDInterfaces->size());
+ 	for(size_t i = 0; i < CDInterfaces->size(); i++)
+@@ -108,3 +122,4 @@ void StartGameWithCds(int numdisks)
+ 		trio_snprintf(namebuf, sizeof(namebuf), _("Disc %zu of %zu"), i + 1, CDInterfaces->size());
+-		rmd->Media.push_back(RMD_Media({namebuf, 0}));
++		rmd->Media[i].Name = namebuf;
++		rmd->Media[i].MediaType = 0;
+ 	}
