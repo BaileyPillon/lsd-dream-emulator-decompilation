@@ -50,7 +50,7 @@ All-movie decoding, skip/error branches, and complete feature acceptance remain 
 | Known remaining game assembly functions | 4 |
 | Known C functions with unresolved unused local storage | 2 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
-| Original callbacks with bounded native comparisons | 36 / 107 |
+| Original callbacks with bounded native comparisons | 39 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 37 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
 
@@ -110,6 +110,11 @@ The [Gunman checks](docs/GUNMAN_SCRIPTS.md) add 36,338 fixtures for the two
 Gunman callbacks and 15 scheduled script histories. Actual effect activation,
 color arithmetic, RNG and callback clearing execute under declared allocation,
 attachment, geometry and sound contracts; whole encounters remain open.
+The [locomotive checks](docs/LOCOMOTIVE_SCRIPTS.md) add the Factory, Kyoto and
+Natural callbacks in 70,345 distinct fixtures and 14 scheduled histories.
+Original RNG, mood/color calculation, animation flags and callback resets
+execute under explicit geometry, notification and sound contracts. All three
+callbacks already had matching C bodies; this extends behavior evidence.
 The [expanded source-layout audit](docs/SOURCE_LAYOUT_EXPANDED.md) corrects the
 earlier selected five-function scan. It identifies 28 unused-storage functions
 and withdraws four promotions that added padding. Their readable padding-free
@@ -406,6 +411,7 @@ For bugs and research findings, use the repository's issue templates.
 - [Feature inventory and before/after measurements](docs/FEATURE_INVENTORY.md)
 - [Original NPC behavior](docs/NATIVE_AI.md), [native dispatch](docs/NATIVE_DISPATCH.md) and [animation structures](docs/NATIVE_ANIMATIONS.md)
 - [Nine additional original scripted callback checks](docs/SCRIPTED_AI.md)
+- [Factory, Kyoto and Natural locomotive checks](docs/LOCOMOTIVE_SCRIPTS.md)
 - [Asset inventory](docs/ASSET_INVENTORY.md) and [runtime comparison](docs/RUNTIME_COMPARISON.md)
 - [Saved-state replay boundary and synchronous capture](docs/STATE_REPLAY_BOUNDARY.md)
 - [Optional exploration mods](docs/OPTIONAL_MODS.md)

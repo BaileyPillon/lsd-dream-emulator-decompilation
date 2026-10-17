@@ -6,8 +6,9 @@ tools have separate deliverables. See [PROJECT_OBJECTIVE.md](../PROJECT_OBJECTIV
 for the completion requirements and [provenance](PROVENANCE.md) for the evidence
 boundary of the published snapshot.
 
-The [Gunman profiles](GUNMAN_SCRIPTS.md) bring bounded original callback coverage
-to 36 / 107. The earlier [periodic spatial profiles](NPC_PERIODIC_SPATIAL.md)
+The [locomotive profiles](LOCOMOTIVE_SCRIPTS.md) bring bounded original callback
+coverage to 39 / 107, following the [Gunman profiles](GUNMAN_SCRIPTS.md).
+The earlier [periodic spatial profiles](NPC_PERIODIC_SPATIAL.md)
 add Minotaur and Giant Minotaur and replace Bird's ratio contract with its real
 helper. The earlier
 [NPC state and cycle profiles](STATE_CYCLE_SCRIPTS.md) retain all their inputs.
@@ -255,7 +256,7 @@ and 191 initial source trials found no exact match. The subsequent
 
 - Resolve asset/command inventory gaps and runtime reachability.
 - Close virtual-call dependencies and verify semantic callback signatures.
-- Extend native fixtures beyond the 36 currently checked callbacks and their
+- Extend native fixtures beyond the 39 currently checked callbacks and their
   documented scopes; see the [proximity composition](NPC_PROXIMITY.md) and
   [Hoop Girl script checks](HOOP_SCRIPTS.md). Complete natural encounters and
   actual movement/facing/scaling dependencies remain separate gates.
@@ -292,7 +293,8 @@ source groups retain zero whole-feature acceptances.
 
 The [Gunman profile](GUNMAN_SCRIPTS.md) checks both original scripts and their
 effect color arithmetic, including scheduled callback histories and mode-two
-callback clearing. Bounded coverage is 36 / 107. Complete engine frames, natural
-encounters, constructed attachment graphs, effect/render/audio lifetimes and
+callback clearing. That profile raised bounded coverage to 36 / 107 at its
+checkpoint. The locomotive extension now brings it to 39 / 107. Complete engine
+frames, natural encounters, constructed attachment graphs, effect/render/audio lifetimes and
 controller reachability remain required; this bounded profile does not close
 F027. Current C recovery is measured separately above.

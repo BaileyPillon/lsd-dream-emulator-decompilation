@@ -5,8 +5,9 @@ optional mods have separate commands and outputs. The original game does not
 call any added analysis tool; those tools currently make zero external model
 API calls.
 
-The latest [Gunman profiles](GUNMAN_SCRIPTS.md) bring bounded native callback
-coverage to **36 / 107**. The earlier
+The latest [locomotive profiles](LOCOMOTIVE_SCRIPTS.md) bring bounded native
+callback coverage to **39 / 107**, following the
+[Gunman profiles](GUNMAN_SCRIPTS.md). The earlier
 [state and cycle profiles](STATE_CYCLE_SCRIPTS.md) retain their scripted suite's 278,115
 fixtures across 26 callbacks, with 37 detected faults and all 122,518 earlier
 inputs preserved.
