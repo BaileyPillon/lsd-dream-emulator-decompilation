@@ -1,0 +1,507 @@
+{
+  "schema_version": 1,
+  "title": "Original Astronaut mood and spatial behavior",
+  "recorded_utc": "2026-10-17T18:25:59.007385+00:00",
+  "verified_base_commit": "ccf4130f1dfd29fff7e954a4c0bb297a371d29cb",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 39,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "callback": "entity_astronaut",
+  "callback_bindings": [
+    {
+      "index": 0,
+      "proximity": 10,
+      "record_sha256": "2026f9c88784fa149f9539033875795192e1e9b90737d2559d11ce9726478765"
+    }
+  ],
+  "property_table_sha256": "209e6f5d82ab17604cbf2ad16ef1bec624f89c61bdf9d1a3d24905527c47424a",
+  "standalone_native_cases": 2748,
+  "case_groups": {
+    "state_tick_and_signed_timer_boundaries": 2016,
+    "native_mood_color_boundaries": 480,
+    "signed_mood_averages_and_contributions": 36,
+    "proximity_before_motion_and_rotated_word_wrap": 216
+  },
+  "histories": [
+    {
+      "name": "normal_direction_and_tick_reset",
+      "script_invocations": 6
+    },
+    {
+      "name": "pink_activation_through_exit_rotation",
+      "script_invocations": 11
+    }
+  ],
+  "history_invocations": 17,
+  "independent_additional_distinct_inputs": 14,
+  "independent_hand_oracle_calls_producer_expected_function": false,
+  "qualified_original_functions": [
+    {
+      "function": "ApplyMatrixLV",
+      "address": "0x80015618",
+      "bytes": 352,
+      "sha256": "b5cca44ff50bf0ca0e5996e8f5cf1b954740710e6773d57827b764a47fee082e"
+    },
+    {
+      "function": "RotMatrix",
+      "address": "0x800160b0",
+      "bytes": 652,
+      "sha256": "cab8838ded03b3b2a50a32cc279811d7fb6a1ee23cfe640c1ac4d7c1d9eee443"
+    },
+    {
+      "function": "func_8001CEB4",
+      "address": "0x8001ceb4",
+      "bytes": 340,
+      "sha256": "722d79cf1f8c109300d4a56aa1d421442a2b5c424a7f3f1e16ad27d281432217"
+    },
+    {
+      "function": "func_8001D4DC",
+      "address": "0x8001d4dc",
+      "bytes": 140,
+      "sha256": "66d6016ba623639a9f3c1e4d2ad39782f05a3eedaa2d4658e9aeaa0d634f950f"
+    },
+    {
+      "function": "func_8001E58C",
+      "address": "0x8001e58c",
+      "bytes": 116,
+      "sha256": "d0f977e8df4d270bfd57647ce4d42f81641736d27383f8916fce2439796c34c2"
+    },
+    {
+      "function": "func_8001EC84",
+      "address": "0x8001ec84",
+      "bytes": 120,
+      "sha256": "7c14d23868ee93933886ecd2477e4e60c6200bef1982963f671e2d76e6d7caaf"
+    },
+    {
+      "function": "func_8001EE98",
+      "address": "0x8001ee98",
+      "bytes": 124,
+      "sha256": "2569a9b916b6606e7e75e70b4397a0c3b0a4d08781d858570dd43e384b3217ab"
+    },
+    {
+      "function": "func_800573A8",
+      "address": "0x800573a8",
+      "bytes": 36,
+      "sha256": "cb98f20f55e4915c70de0cd5ec85346bad6f0c06c72aa4c2ff968b5327149cda"
+    },
+    {
+      "function": "func_800573CC",
+      "address": "0x800573cc",
+      "bytes": 120,
+      "sha256": "c1a99e64390fec4e8dcf12a0a17942c6c30f55d6703dc08a78cd5e1111b8ad19"
+    },
+    {
+      "function": "func_80057444",
+      "address": "0x80057444",
+      "bytes": 72,
+      "sha256": "f733da4527460b28cca35c365edb865d3612c61b47356ff8500d430a5bc7d680"
+    },
+    {
+      "function": "func_8005748C",
+      "address": "0x8005748c",
+      "bytes": 56,
+      "sha256": "56c4b7f4e13cde1be03d9e0f549a37ad158f8194a73c986e003153ea0acfe087"
+    },
+    {
+      "function": "func_80057534",
+      "address": "0x80057534",
+      "bytes": 124,
+      "sha256": "6bfcd219c77dc157668f2ca054b8ae40423b9bf2cc61552577216917aa6b37da"
+    },
+    {
+      "function": "dream_sys_update_dream_chart",
+      "address": "0x8005b420",
+      "bytes": 192,
+      "sha256": "591c42e8751cf26f45b5000174b01636877328dc334d52ef2a62e7e71cbd0a9a"
+    },
+    {
+      "function": "dream_sys_get_dream_color",
+      "address": "0x8005b4e0",
+      "bytes": 56,
+      "sha256": "0659f6160b44a19f6341cee66ea9d18e54c72b45a9ff90b9a43e17beaf62a20c"
+    },
+    {
+      "function": "calc_dream_color",
+      "address": "0x8005b518",
+      "bytes": 140,
+      "sha256": "5bb1be3cc5febfd1f3946d000d740df866e053555e9b8fb97330c76f20d5f3c9"
+    },
+    {
+      "function": "dream_sys_get_mood_average",
+      "address": "0x8005b5f0",
+      "bytes": 124,
+      "sha256": "902ddc0df776d947022e19d909a27dab5d657d2a2747b0479707a57d1c910162"
+    },
+    {
+      "function": "calc_mood_axis",
+      "address": "0x8005b66c",
+      "bytes": 116,
+      "sha256": "15e18dfbad1b1dedd93c563b107c36fbfe34418af9cab5653f3f28dd3696c5c5"
+    },
+    {
+      "function": "entity_get_distance",
+      "address": "0x8005d7fc",
+      "bytes": 104,
+      "sha256": "f9aea2cd8da082454563fad7b8f4e87382786ba3dfdfe396510482cec65fd58c"
+    },
+    {
+      "function": "entity_get_trigger_ratio",
+      "address": "0x8005d864",
+      "bytes": 224,
+      "sha256": "e1d6cf893b07c3d54c0fb420ca3bda039ba14f0c4da8a462d32da917baeb9b4f"
+    },
+    {
+      "function": "entity_astronaut",
+      "address": "0x8005e160",
+      "bytes": 612,
+      "sha256": "decb7411061d0a1daf5d18dd179833fa3cd4723d796cde041e34b3983f016b8a"
+    },
+    {
+      "function": "func_800662B4",
+      "address": "0x800662b4",
+      "bytes": 8,
+      "sha256": "9551f2e22426c0ef38657b0ae7289d100e7d495c6f17cd81cbc78cddb68f81ee"
+    }
+  ],
+  "actual_positive_native_entry_counts": {
+    "entity_astronaut": 2765,
+    "entity_get_trigger_ratio": 2765,
+    "entity_get_distance": 2765,
+    "func_8005748C": 1395,
+    "func_80057534": 1395,
+    "func_80057444": 1395,
+    "func_8001E58C": 1395,
+    "func_8001D4DC": 1395,
+    "RotMatrix": 1395,
+    "func_8001EE98": 1395,
+    "ApplyMatrixLV": 1395,
+    "func_800573A8": 1677,
+    "func_800573CC": 1677,
+    "dream_sys_get_dream_color": 661,
+    "dream_sys_update_dream_chart": 661,
+    "dream_sys_get_mood_average": 1322,
+    "calc_dream_color": 661,
+    "func_800662B4": 141,
+    "func_8001CEB4": 987,
+    "func_8001EC84": 2961,
+    "calc_mood_axis": 96
+  },
+  "complete_original_ranges_equal_sized_ELF": true,
+  "sized_ELF_sha256": "c0746d3982c314079a5a24f2d88072c43464032f969eeac5f172c7646df833a7",
+  "positive_native_GTE_commands": 2790,
+  "fault_native_GTE_commands": 10,
+  "independent_audit_native_GTE_commands": 12,
+  "completed_behavior_faults": [
+    {
+      "kind": "wrong_normal_command_destination",
+      "function": "entity_astronaut",
+      "function_offset": 176,
+      "address": "0x8005e210",
+      "original_word": "0xae22001c",
+      "changed_word": "0xae220020",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "context"
+      ]
+    },
+    {
+      "kind": "normal_direction_one_tick_late",
+      "function": "entity_astronaut",
+      "function_offset": 200,
+      "address": "0x8005e228",
+      "original_word": "0x286204b0",
+      "changed_word": "0x286204b1",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "entity",
+        "coordinate",
+        "trace"
+      ]
+    },
+    {
+      "kind": "early_motion_one_tick_late",
+      "function": "entity_astronaut",
+      "function_offset": 352,
+      "address": "0x8005e2c0",
+      "original_word": "0x28620064",
+      "changed_word": "0x28620065",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "entity",
+        "coordinate",
+        "trace"
+      ]
+    },
+    {
+      "kind": "late_motion_window_one_tick_long",
+      "function": "entity_astronaut",
+      "function_offset": 480,
+      "address": "0x8005e340",
+      "original_word": "0x2c420133",
+      "changed_word": "0x2c420134",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "entity",
+        "coordinate",
+        "pose",
+        "trace"
+      ]
+    },
+    {
+      "kind": "exit_rotation_one_tick_early",
+      "function": "entity_astronaut",
+      "function_offset": 548,
+      "address": "0x8005e384",
+      "original_word": "0x28620239",
+      "changed_word": "0x28620238",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "coordinate",
+        "pose",
+        "trace"
+      ]
+    },
+    {
+      "kind": "missing_animation_stop",
+      "function": "func_800662B4",
+      "function_offset": 4,
+      "address": "0x800662b8",
+      "original_word": "0xac800090",
+      "changed_word": "0xac800094",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "entity"
+      ]
+    },
+    {
+      "kind": "wrong_native_GTE_shift",
+      "function": "ApplyMatrixLV",
+      "address": "0x800156f4",
+      "original_word": "0x4a49e012",
+      "changed_word": "0x4a41e012",
+      "changed_instruction_executions": 1,
+      "changed_checked_fields": [
+        "coordinate",
+        "trace"
+      ]
+    }
+  ],
+  "escaped_store_control": {
+    "kind": "out_of_profile_command_store",
+    "address": "0x8005e210",
+    "original_word": "0xae22001c",
+    "attempted_word": "0xae220060",
+    "attempted_destination": "0x103060",
+    "rejected_before_store": true,
+    "destination_bytes_preserved": true,
+    "distinct_from_completed_behavior_faults": true,
+    "instruction_execution_observations": 0
+  },
+  "store_guard": "Original integer/SWC2 store spans; branch delay slots checked before the branch. No memory-write hook.",
+  "original_readonly_data": [
+    {
+      "symbol": "g_MoveUp64Back64",
+      "address": "0x80089da8",
+      "bytes": 12,
+      "sha256": "3d9bca63fe2605c4481e833c9c2f9cdf6cf2c0fb87a94662e0908c3fcdd2848e"
+    },
+    {
+      "symbol": "g_RotateYawNeg120",
+      "address": "0x80089ce8",
+      "bytes": 12,
+      "sha256": "76578ca4ea97d773ec3dd0f23b5664c7cc77a40c6e613759151428226252b1fc"
+    },
+    {
+      "symbol": "g_Rotate5050Neg12030",
+      "address": "0x80089cf4",
+      "bytes": 12,
+      "sha256": "5aec63b4f29da71c9200f26ce968e85463bb4c0ae7a60642c943cbe5129d0c02"
+    },
+    {
+      "symbol": "g_DreamColorTable",
+      "address": "0x80087e14",
+      "bytes": 12,
+      "sha256": "061be3af5e5531289ef8e752f8f1c9b3474f514ac31316a21d09847d91db1b5f"
+    }
+  ],
+  "native_backend": {
+    "package_version": "2.1.4",
+    "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+  },
+  "native_GTE_bridge_sha256": "4daac5674808410751b9b776659c832f2cd742582faf529154f214a3695d88c3",
+  "runtime_files_observed_at_publication": {
+    "BizHawk.Common.dll": {
+      "bytes": 406016,
+      "sha256": "15ebdf860bc1d8d9efcaabefe1df69de0b24f31d431b558621df353882f386b9"
+    },
+    "BizHawk.BizInvoke.dll": {
+      "bytes": 183296,
+      "sha256": "36784436af64e6547a1e6155071eab104ca09d9b2d5fe1d73c7282cee500bffb"
+    },
+    "BizHawk.Emulation.Common.dll": {
+      "bytes": 413184,
+      "sha256": "f557d94912b12bde18413b60d25b3e61332b7bbfc7184349d1289d6ba9f350ee"
+    },
+    "BizHawk.Emulation.Cores.dll": {
+      "bytes": 10832896,
+      "sha256": "444bc157418e9b5df5d07e987fc7ad1d2d1c6993676f5b864368027cb4f054d5"
+    },
+    "waterboxhost.dll": {
+      "bytes": 406016,
+      "sha256": "e8e47426941a710c7ceea98fb0833b8387de1952f54ca0fa40001cd494507cee"
+    },
+    "shock.wbx.zst": {
+      "bytes": 705813,
+      "sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126"
+    }
+  },
+  "runtime_identity_scope": "Publication-time file observations. The bridge pins its managed/native loader files and checks native GTE entry bytes at startup. The complete compressed core hash is recorded here separately.",
+  "source_dependencies": [
+    {
+      "path": "tools/verify_native_ai.py",
+      "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+    },
+    {
+      "path": "tools/inventory_vtables.py",
+      "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+    },
+    {
+      "path": "tools/progress.py",
+      "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+    },
+    {
+      "path": "configure.py",
+      "sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2"
+    },
+    {
+      "path": "requirements-analysis.txt",
+      "sha256": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911"
+    },
+    {
+      "path": "build/SLPS01556.map",
+      "sha256": "0c8ad7a8e09678102951c5456175dc8ef7bb15a242b51ce2bbf6d62ab1e39f41"
+    },
+    {
+      "path": "build/undefined_funcs_auto.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "build/undefined_syms_auto.txt",
+      "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+    },
+    {
+      "path": "src/scene/entity.c",
+      "sha256": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811"
+    },
+    {
+      "path": "src/scene/entity.h",
+      "sha256": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f"
+    },
+    {
+      "path": "src/dream/dream_sys.c",
+      "sha256": "d5b09c49d43d8b0001868f90abe81e6976906ae4180f4b70fb5f78fa400c8b3a"
+    },
+    {
+      "path": "src/dream/dream_sys.h",
+      "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+    },
+    {
+      "path": "src/scene/actor.c",
+      "sha256": "c9da90f048399ad93127e4c841aaf49c81c6922a8d4528ae783f1edcf2be3a4b"
+    },
+    {
+      "path": "src/base/transform.c",
+      "sha256": "0166d95088d3476bf1cf8c2a760627f0c12640e68a1f8294a973acb91c09004d"
+    },
+    {
+      "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+      "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+    },
+    {
+      "path": "tools/verify_astronaut.py",
+      "sha256": "514d32f0dfc79f3bdc47e9a6aa6cd55661c8cb2b42a89ea4578eddca9ab7d90c"
+    },
+    {
+      "path": "docs/astronaut-function-ranges.json",
+      "sha256": "249ab3af3bffb819dc13a31cfa152171132fc8f9b1b9ccef326f241139ef7bfc"
+    },
+    {
+      "path": "tools/verify_npc_proximity.py",
+      "sha256": "50fa5bf1a77a2ec7904949e6c0833b90c2271b5577c37b7fe7aef768fca61c00"
+    },
+    {
+      "path": "tools/verify_npc_spatial.py",
+      "sha256": "e25422dddcbcd445bdaabacf200ba0e418336e0a161648403ae08084d006983f"
+    },
+    {
+      "path": "tools/verify_scripted_ai.py",
+      "sha256": "2edefddc727441c0066a48375efd882c80035af99db3b3990a2c674eedddb2c1"
+    },
+    {
+      "path": "tools/verify_locomotive_scripts.py",
+      "sha256": "2b1aa4a0577353cee5774318b948ef55cd8006cb4c7189e6529a076bd542c2e8"
+    },
+    {
+      "path": "tools/verify_gunman_scripts.py",
+      "sha256": "6bb82b12a0570ec7448edf11f45c50f1f93e0de7622ea404bde22b11cfcce5d5"
+    },
+    {
+      "path": "tools/verify_render_gte.py",
+      "sha256": "624a607b167be932702501fb6e07a04595992773bacc8d4344b2200a8c2784b0"
+    },
+    {
+      "path": "tools/verify_render_rotation.py",
+      "sha256": "2ce32389c8e158692dff7663a9fb0aa700b7e3bb7204254d402b0ae45f956e8f"
+    },
+    {
+      "path": "tools/nymashock_gte_bridge.cs",
+      "sha256": "969e0af3b030e5b2eafedad032b68173ac76e41b089a28b4d4fc1084e33fedd9"
+    }
+  ],
+  "source_report_sha256": "f87d8b5e8a487534a16558ff82002ca9f867ecaae618fecff281ad0da1295cb0",
+  "independent_audit_sha256": "169909c73c56cba5a5aa252b7834bae7361b464c18b39d101b07986657027f11",
+  "independent_audit_producer_sha256": "05ca4ca666562ff3519920b413fa6516569f035362df60581944b32830133db8",
+  "input_digest_sha256": "b0422fe3453ac37ca2ac23dccc02991219ce928c9ef172bc7f593dc5d73057b0",
+  "output_digest_sha256": "5af7826d53a41ee422279d5b12555a89e19461aebbb0f2b4e407647c5f29517c",
+  "distinct_input_scope": "Standalone cases deduplicate all initialized buffers and RNG seed; 17 history invocations and 14 independent hand-predicted inputs are recorded separately.",
+  "trace_scope": "Original high-level call order/arguments and helper returns. The movement vector payload and guarded stack role are compared; its internal stack address is not a cross-run equivalence claim.",
+  "preserved_game_build_inputs": 392,
+  "dependency_output_stubs": 0,
+  "new_C_bytes": 0,
+  "newly_profiled_original_callbacks": 1,
+  "whole_NPC_encounters_accepted": 0,
+  "whole_feature_groups_accepted": 0,
+  "model_API_calls": 0,
+  "original_game_modified": false,
+  "user_game_controlled": false,
+  "Bevy_port_modified": false,
+  "scope": "Constructed meshless poses, original mood/proximity/transform/RNG-preservation checks and injected script histories. All executed code uses the original image and native GTE backend. No natural encounters, complete animation playback, rendering, audio, full-engine scheduling or original-hardware timing acceptance.",
+  "remaining_scope": "Two collision C recoveries, two inherited storage explanations, Apartment Bear animation-switch/model fixture, natural encounter and engine/lifecycle histories, populated collision/child graphs, animation playback, video/audio and original timing; whole NPC and feature acceptance remain open."
+}
