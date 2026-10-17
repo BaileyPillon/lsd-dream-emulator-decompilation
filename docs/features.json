@@ -24138,6 +24138,52 @@
       "natural_Apartment_Bear_encounter_accepted": false,
       "original_behavior_modified": false,
       "Bevy_port_modified": false
+    },
+    "original_actor_parent_word_correction_20261017": {
+      "evidence": "docs/actor-parent-word-checks.json",
+      "guide": "docs/ACTOR_ANIMATIONS.md",
+      "before": {
+        "c_bytes": 197172,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 2,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 38,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 40,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 197172,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 2,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 38,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 40,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "original_C_and_executable_already_correct": true,
+      "corrected_host_predictor": true,
+      "original_positive_histories_preserved": 666,
+      "original_fault_histories_preserved": 24,
+      "owned_parent_word_histories": 36,
+      "owned_parent_word_fixtures": 6,
+      "legacy_prediction_wrong_for_words": 4,
+      "new_original_content_instances": 0,
+      "new_C_bytes": 0,
+      "new_NPC_profiles": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "model_API_calls": 0,
+      "Bevy_port_modified": false
     }
   }
 }

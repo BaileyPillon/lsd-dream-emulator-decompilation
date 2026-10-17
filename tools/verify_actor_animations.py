@@ -20,6 +20,7 @@ sys.path.insert(0, str(ROOT))
 from tools import verify_actor_factory as factory
 from tools import actor_child_model as child
 from tools.actor_animation_model import AnimationPayloadPlan
+from tools.actor_animation_fixtures import PARENT_WORDS, parent_word_fixture
 from tools.model_mapping_model import mapped_model_bytes
 
 ANIMATION_FAULTS = (
@@ -223,13 +224,34 @@ def run_controls(program, ranges, names, inventory, output):
     return controls
 
 
+def run_parent_regressions(program, ranges, names, output):
+    """Exercise full-word sentinels with owned, fully encoded two-frame MOMs."""
+    rows = []
+    for word in PARENT_WORDS:
+        raw = parent_word_fixture(word)
+        for pattern in child.PATTERNS:
+            for scenario in factory.SCENARIOS:
+                result = run_case(program, ranges, names, raw, pattern, scenario)
+                case = 'parent-word-' + str(len(rows)).zfill(2)
+                factory.common.write_json(output / (case + '.json'), result)
+                if result['status'] != 'passed_bounded_animation_history':
+                    raise ValueError('Original parent-word regression differs: ' + case)
+                rows.append(dict(case=case, parent_word=hex(word), pattern=pattern, scenario=scenario,
+                    fixture_sha256=factory.common.sha(raw), original_media_used=False,
+                    expected_parent='actor' if word in (0, 0xffff) else 'child-type-' + str(word & 255),
+                    actor_lifetimes=result['actor_lifetimes'], native_history_completed=True,
+                    complete_live_payloads_matched=True, all_owned_allocations_released=True))
+    return rows
+
+
 def verify(layout, output, edition_label):
     output = factory.common.output_directory(output)
     backend = factory.common.heap.backend_identity()
     require_backend(backend)
     factory.common.require_ninja()
     before = factory.common.build_inputs()
-    dependencies = (*factory.DEPENDENCIES, 'tools/verify_actor_animations.py', 'tools/actor_animation_model.py')
+    dependencies = (*factory.DEPENDENCIES, 'tools/verify_actor_animations.py', 'tools/actor_animation_model.py',
+                    'tools/actor_animation_fixtures.py')
     producer_hashes = {name: factory.common.sha((ROOT / name).read_bytes()) for name in dependencies}
     functions = json.loads(factory.RANGES.read_bytes())['functions']
     program = factory.common.native.load_program(functions)
@@ -281,6 +303,7 @@ def verify(layout, output, edition_label):
     if len(coverage) != inventory['totals']['animations']:
         raise ValueError('Incomplete original animation-instance coverage.')
     controls = run_controls(program, ranges, names, inventory, output)
+    parent_regressions = run_parent_regressions(program, ranges, names, output)
     if (factory.common.build_inputs() != before or factory.common.heap.backend_identity() != backend
             or any(factory.common.sha((ROOT / name).read_bytes()) != checksum for name, checksum in producer_hashes.items())):
         raise ValueError('Sources, backend or canonical game inputs changed during fault controls.')
@@ -292,7 +315,8 @@ def verify(layout, output, edition_label):
         live_payloads_compared=sum(row['payloads_compared'] for row in rows),
         live_payload_bytes=sum(row['payload_bytes'] for row in rows), mapped_MOM_bytes=sum(row['mapped_MOM_bytes'] for row in rows),
         actual_native_entry_counts=dict(entries), qualified_native_functions=functions, symbol_diagnostic=diagnostic,
-        rows=rows, fault_controls=controls, backend_identity=backend, producer_dependencies=producer_hashes,
+        rows=rows, fault_controls=controls, parent_word_regressions=parent_regressions,
+        backend_identity=backend, producer_dependencies=producer_hashes,
         canonical_sha256=factory.common.sha(program.ROM), all_game_build_inputs_preserved=True,
         dependency_output_stubs=0, new_C_bytes=0, newly_profiled_NPC_callbacks=0,
         whole_NPC_encounters_accepted=0, whole_feature_groups_accepted=0, model_API_calls=0,

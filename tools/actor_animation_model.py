@@ -84,7 +84,7 @@ class AnimationPayloadPlan(ActorPayloadPlan):
             elif kind == 3 and node.coordinate_parent is None:
                 if len(payload) < 4:
                     raise ValueError('Truncated animation parent command.')
-                parent_id = struct.unpack_from('<H', payload)[0]
+                parent_id = struct.unpack_from('<I', payload)[0]
                 if parent_id in (0, 0xffff):
                     parent = actor
                 elif parent_id & 255 in self.types:
