@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "status": "verified_clean_C_grid_and_stream_verifiers",
+  "recorded_utc": "2026-10-17T05:28:42.093025+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "93a36875c9a6b421ec40d83cb8dd894a3c52f1eb",
+  "original_generated_grid_assembly_absent": true,
+  "fresh_source_archive_includes_current_game_C": true,
+  "fresh_source_sha256": "bb0c0e2d7959845f15376713a60a78cba5e1ea4c5c7428b1d4a3dad7e4f06d33",
+  "executable_bytes": 505856,
+  "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "fresh_and_current_builds_equal": true,
+  "game_build_inputs_preserved": 392,
+  "changed_game_build_inputs": 0,
+  "source_counts_before": {
+    "c_bytes": 196504,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 4,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 196504,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 4,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 37,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 36,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "executed_tool_sha256": {
+    "tools/verify_render_grid.py": "c8a8b82f2d470454750a8174779d5eb769ef882b0b6689ce91a58c831221d134",
+    "tools/verify_render_stream.py": "a523fb48482a99cd8316b6cf94d2bb985853a636aedde7ae681b329aaaf86c09",
+    "tests/test_render_grid_output.py": "44ff71f05cd8ed0abb642addc2fc2ee26e4db87f0d8a5155bb4ed6f3220dfcb5"
+  },
+  "profiles": [
+    {
+      "profile": "grid",
+      "private_report": ".decomp-lab/grid-matching-fresh-build-20261017-first/.decomp-lab/grid-checkout-20261017-first/grid.json",
+      "sha256": "1016a83426630d2185fdc49d351382205d70ccdd0d48ad788956dbb517105ef3",
+      "native_cases": 74832,
+      "case_groups": {
+        "complete_angle_word_sweep": 65536,
+        "projection_clamp_boundaries": 896,
+        "coordinate_and_dimension_edges": 8232,
+        "callback_mutation_order": 72,
+        "segment_aliases_and_template_contents": 96
+      },
+      "explicit_dependency_contracts": 4,
+      "negative_controls_detected": 8,
+      "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+      "producer_dependencies": [
+        {
+          "path": "tools/verify_native_ai.py",
+          "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+        },
+        {
+          "path": "tools/inventory_vtables.py",
+          "sha256": "552fc43a9750e4a83f8747b8f670f51d8ed2358ace3d6690b2e86b98532a84f0"
+        },
+        {
+          "path": "tools/progress.py",
+          "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+        },
+        {
+          "path": "configure.py",
+          "sha256": "8f5647822fbb6abb740dffde97ba00e2e1a59b9b56bbd5908468957870b81412"
+        },
+        {
+          "path": "requirements-analysis.txt",
+          "sha256": "144d7ade2a85874e3d01887964a31f8babf0c1201629060bd2b8ed38e2a9d66f"
+        },
+        {
+          "path": "build/SLPS01556.map",
+          "sha256": "f33789ceb8c0665b372415f9d58087b0fc810d6d30465cee962cdfebc2da0846"
+        },
+        {
+          "path": "build/undefined_funcs_auto.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "build/undefined_syms_auto.txt",
+          "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+        },
+        {
+          "path": "src/scene/entity.c",
+          "sha256": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811"
+        },
+        {
+          "path": "src/scene/entity.h",
+          "sha256": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f"
+        },
+        {
+          "path": "src/dream/dream_sys.c",
+          "sha256": "d5b09c49d43d8b0001868f90abe81e6976906ae4180f4b70fb5f78fa400c8b3a"
+        },
+        {
+          "path": "src/dream/dream_sys.h",
+          "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+        },
+        {
+          "path": "src/scene/actor.c",
+          "sha256": "806e15bc5d2bdb0ea8ac14f6bdd572c0c9f084eabc68d6c959474373976cbd39"
+        },
+        {
+          "path": "src/base/transform.c",
+          "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+        },
+        {
+          "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+          "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+        },
+        {
+          "path": "tools/verify_render_grid.py",
+          "sha256": "c8a8b82f2d470454750a8174779d5eb769ef882b0b6689ce91a58c831221d134"
+        },
+        {
+          "path": "src/scene/render_context.c",
+          "sha256": "bb0c0e2d7959845f15376713a60a78cba5e1ea4c5c7428b1d4a3dad7e4f06d33"
+        },
+        {
+          "path": "src/scene/render_context.h",
+          "sha256": "35fc47fa5ca7dc9f4099125372f0c92c933930265c8511fcfb6a8eff4ee76bea"
+        },
+        {
+          "path": "config/symbols.txt",
+          "sha256": "9558bb5e4309d4f4cb3e2843cce14ad4af75205b43eef23ed527b200164bf1a8"
+        }
+      ],
+      "dependency_hash_basis": "Exact files in the preserved fresh source archive, including current C and verifier overlays.",
+      "scope": "All 65536 input angle words plus scalar clamp, signed coordinate, dimension, callback mutation, segment alias and template fixtures. Compare whole guarded objects, exact call order/arguments, rotation inputs, intermediate matrices, final grid fields, matrix/info buffers, stack guards, GP, RA and saved registers. The four explicit contracts do not execute GTE transforms, position resolution or the downstream grid builder. Source recovery is verified separately; full rendering, natural scene lifetime and PS1 timing remain unaccepted."
+    },
+    {
+      "profile": "stream",
+      "private_report": ".decomp-lab/grid-matching-fresh-build-20261017-first/.decomp-lab/grid-checkout-20261017-first/stream.json",
+      "sha256": "ac6683fe351feb45d6a3a7e96f3b2edda1be54dbda2f2b29d0cff0a7d10a5d29",
+      "native_cases": 45408,
+      "case_groups": {
+        "complete_cell_grid": 43200,
+        "angle_edges_and_corner_wraps": 192,
+        "slot_order_missing_duplicate_and_segment": 2016
+      },
+      "explicit_dependency_contracts": 3,
+      "negative_controls_detected": 4,
+      "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+      "producer_dependencies": [
+        {
+          "path": "tools/verify_native_ai.py",
+          "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+        },
+        {
+          "path": "tools/inventory_vtables.py",
+          "sha256": "552fc43a9750e4a83f8747b8f670f51d8ed2358ace3d6690b2e86b98532a84f0"
+        },
+        {
+          "path": "tools/progress.py",
+          "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+        },
+        {
+          "path": "configure.py",
+          "sha256": "8f5647822fbb6abb740dffde97ba00e2e1a59b9b56bbd5908468957870b81412"
+        },
+        {
+          "path": "requirements-analysis.txt",
+          "sha256": "144d7ade2a85874e3d01887964a31f8babf0c1201629060bd2b8ed38e2a9d66f"
+        },
+        {
+          "path": "build/SLPS01556.map",
+          "sha256": "f33789ceb8c0665b372415f9d58087b0fc810d6d30465cee962cdfebc2da0846"
+        },
+        {
+          "path": "build/undefined_funcs_auto.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "build/undefined_syms_auto.txt",
+          "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+        },
+        {
+          "path": "src/scene/entity.c",
+          "sha256": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811"
+        },
+        {
+          "path": "src/scene/entity.h",
+          "sha256": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f"
+        },
+        {
+          "path": "src/dream/dream_sys.c",
+          "sha256": "d5b09c49d43d8b0001868f90abe81e6976906ae4180f4b70fb5f78fa400c8b3a"
+        },
+        {
+          "path": "src/dream/dream_sys.h",
+          "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+        },
+        {
+          "path": "src/scene/actor.c",
+          "sha256": "806e15bc5d2bdb0ea8ac14f6bdd572c0c9f084eabc68d6c959474373976cbd39"
+        },
+        {
+          "path": "src/base/transform.c",
+          "sha256": "5579630dc998745bb7940b34214ba91b6489fa541568059466be1094f4b911a4"
+        },
+        {
+          "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+          "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+        },
+        {
+          "path": "tools/verify_render_stream.py",
+          "sha256": "a523fb48482a99cd8316b6cf94d2bb985853a636aedde7ae681b329aaaf86c09"
+        },
+        {
+          "path": "tools/verify_render_grid.py",
+          "sha256": "c8a8b82f2d470454750a8174779d5eb769ef882b0b6689ce91a58c831221d134"
+        },
+        {
+          "path": "src/scene/render_context.c",
+          "sha256": "bb0c0e2d7959845f15376713a60a78cba5e1ea4c5c7428b1d4a3dad7e4f06d33"
+        },
+        {
+          "path": "src/scene/render_context.h",
+          "sha256": "35fc47fa5ca7dc9f4099125372f0c92c933930265c8511fcfb6a8eff4ee76bea"
+        },
+        {
+          "path": "config/symbols.txt",
+          "sha256": "9558bb5e4309d4f4cb3e2843cce14ad4af75205b43eef23ed527b200164bf1a8"
+        }
+      ],
+      "dependency_hash_basis": "Exact files in the preserved fresh source archive, including current C and verifier overlays.",
+      "scope": "All 400 cell positions for bounded window sizes, orientations and vector signs; angle/corner boundaries; reordered, missing and duplicate signed slot labels; cached/uncached segment aliases and initial contents. Original grid builder, row splitting and seven-object slot scanner execute. Compare emitted rectangle records/counts/order, whole guarded objects, native/helper calls and eight row arguments, matrices/info buffers, stack guards, GP, RA and saved registers. Real position lookup, GTE, textures, scene lifetime, framebuffer and PS1 timing remain outside these three contracts and are not accepted."
+    }
+  ],
+  "tooling_tests": [
+    {
+      "platform": "windows",
+      "python_version": "3.14.2",
+      "tests": 695,
+      "passed": 693,
+      "expected_skips": 2,
+      "private_log": ".decomp-lab/grid-checkout-tests-windows-20261017-first.log",
+      "sha256": "062b58e6dc8247092f08c68c56ac9030de3d9ff7a6915606abd439b89da847d9"
+    },
+    {
+      "platform": "wsl",
+      "python_version": "3.13.5",
+      "tests": 695,
+      "passed": 693,
+      "expected_skips": 2,
+      "private_log": ".decomp-lab/grid-checkout-tests-wsl-20261017-first.log",
+      "sha256": "ffd784035b8ec938c8ed612db33d97ea5a6782734fe69c47057b808b39fd1db1"
+    }
+  ],
+  "private_qualification": {
+    "path": ".decomp-lab/grid-checkout-qualification-20261017-first.json",
+    "sha256": "6b2b7183801d06f45442bb48c1170e3851dc7e324cc65436267215c2ba5b317c"
+  },
+  "regression": {
+    "before_fix": "Both verifiers fail on the missing generated grid assembly file.",
+    "expected_failures": 2,
+    "private_log": ".decomp-lab/grid-checkout-regression-red-20261017-first.log",
+    "sha256": "2333dd126e15b0c0e953c0d794fca751ad2165da780b7396d768c52d46af83eb",
+    "test": "tests/test_render_grid_output.py::RenderGridOutputTests::test_recovered_grid_without_generated_assembly_reaches_program_checks",
+    "after_fix": "Both verifier preflights reach canonical executable qualification without generated grid assembly."
+  },
+  "new_C_bytes": 0,
+  "new_original_fixture_inputs": 0,
+  "new_gameplay_runs": 0,
+  "new_original_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "original_behavior_modified": false,
+  "Bevy_port_modified": false,
+  "goal_complete": false,
+  "scope": "Remove obsolete generated-assembly metadata dependencies; retain canonical image, function-span, build freshness, ABI and bounded native comparisons. Earlier promotion evidence remains historical."
+}
