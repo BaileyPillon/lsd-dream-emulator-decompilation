@@ -1,5 +1,16 @@
 # Changelog
 
+## Cold start into a playable dream - 2026-10-17
+
+- Compare the controller-only cold-boot title/menu/new-dream path, native
+  turning/walking, full GPU hashes and complete PCM in two isolated disc pairs.
+- Add a reusable recorder, strict comparator and native checkpoint/input
+  rejection tests. The published-tool repeat matches every state member;
+  the earlier pair's eight unused emulator-label differences retain a
+  nonzero strict comparison result.
+- Correct stale current counts in the play guide and roadmap. Keep game
+  inputs, 98.30% matching C, NPC counts and whole-feature acceptance unchanged.
+
 ## Grid verification after C recovery - 2026-10-17
 
 - Remove the scalar grid and streaming verifiers' stale dependency on generated

@@ -234,10 +234,16 @@ remain separate acceptance work.
 
 ## Original behavior and content
 
+- Extend the [cold-start menu/dream/movement profile](COLD_START.md). Its
+  recorded game outputs agree across two isolated original/rebuilt pairs,
+  with a strict full-state pass in the published-tool repeat. The earlier
+  unused emulator-label differences leave cold-boot repeatability open.
+  Complete content, encounter, camera and original-hardware acceptance remain.
+
 - Extend the [menu profile](MENU_LAYOUT.md) from constructed ownership graphs
   to natural constructors, screen assets, rendered glyphs/effects and complete
   controller reachability. Its 864 histories and 39 native methods are bounded
-  F035/F036 evidence; the two caller frames still need matching C.
+  F035/F036 evidence; sprite-scale matching C recovery remains open.
 The [level-model loader audit](LBD_PIPELINE.md) checks all 418 inventoried local
 LBD files, including native destruction/reloading, with actual allocator,
 decoder, constructors and SDK routines. Two virtual-call declarations now
@@ -249,7 +255,7 @@ and 191 initial source trials found no exact match. The subsequent
 
 - Resolve asset/command inventory gaps and runtime reachability.
 - Close virtual-call dependencies and verify semantic callback signatures.
-- Extend native fixtures beyond the 32 currently checked callbacks and their
+- Extend native fixtures beyond the 36 currently checked callbacks and their
   documented scopes; see the [proximity composition](NPC_PROXIMITY.md) and
   [Hoop Girl script checks](HOOP_SCRIPTS.md). Complete natural encounters and
   actual movement/facing/scaling dependencies remain separate gates.

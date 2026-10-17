@@ -1,6 +1,13 @@
 # Preserve the bundled compiler binaries without text conversion.
 tools/gcc263/* binary
 
+# Keep the executed cold-start recorder and verifier identical on Windows and Linux.
+research/cold_start/*.lua text eol=lf
+tools/capture_cold_start.py text eol=lf
+tools/compare_cold_start.py text eol=lf
+tests/test_cold_start.py text eol=lf
+docs/cold-start-checks.json text eol=lf
+
 # Keep the published executed recorder and its extractor identical on Windows.
 research/npc_encounter/*.lua text eol=lf
 

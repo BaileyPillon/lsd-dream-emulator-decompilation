@@ -12,6 +12,11 @@ and preserves that project's Git history and contributor attribution.
 [Build](#build-the-matching-executable) · [Play the matching build](docs/PLAYING.md) ·
 [Status and roadmap](docs/ROADMAP.md) · [Contribute](CONTRIBUTING.md)
 
+The [cold-start comparison](docs/COLD_START.md) now exercises the original
+title menu into a playable dream, with recorded turning, walking and audio.
+The published-tool repeat matches all recorded outputs, including save states;
+an earlier pair's emulator-label differences remain documented separately.
+
 The verified local build reproduces the original Japanese executable byte for
 byte. **Full C recovery and independently reviewed gameplay coverage are still
 in progress.** The remaining assembly is regenerated from your own executable.
@@ -304,7 +309,7 @@ features. There are no added generative-AI NPCs in the matching game.
 
 The [additional original NPC checks](docs/SCRIPTED_EXTENSION.md) cover the
 fish's full 24,000-tick joint command cycle, elephant scale requests and
-airship RNG/link/child decisions. Current bounded comparisons cover 16 of
+airship RNG/link/child decisions. That profile's bounded comparisons cover 16 of
 107 callbacks; natural encounters and whole-feature acceptance remain open.
 The [spatial composition](docs/NPC_SPATIAL.md) executes original transform,
 axis/world, SDK rotation and GTE dependencies for seven of those callbacks in

@@ -2,7 +2,7 @@
 
 This repository builds the original PlayStation executable. The matching game
 can be played in a PlayStation emulator with your own complete disc and BIOS.
-The nine remaining assembly functions are included in that executable; their
+The four remaining assembly functions are included in that executable; their
 source recovery is still unfinished. See [the roadmap](ROADMAP.md) for the
 remaining C and original-behavior verification work.
 
@@ -92,3 +92,10 @@ A further [natural window-link replay](NATURAL_WINDOW_LINK.md) verifies one
 controller-driven activation, transition from map key 3 to 12, and continued
 in-game updates in the matching build. Its five RAM/image/state checkpoints
 and complete recorded input/NPC/scene logs agree with the original disc.
+
+The [cold-start profile](COLD_START.md) also reaches an unlocked dream through
+the title menu without restoring a state, then verifies controller-driven
+turning and walking. The published-tool repeat agrees in every recorded output,
+including full state-member payloads. An earlier pair's eight unused emulator
+label differences remain preserved. This adds no recovered C bytes or
+whole-feature acceptance.
