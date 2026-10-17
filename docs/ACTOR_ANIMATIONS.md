@@ -44,8 +44,8 @@ evidence of elapsed engine frames.
 Each selection checks every live allocation's complete capacity, the complete
 mapped MOM copy and the allocation manager. The comparisons include untouched
 allocator residue, signed/relative motion, ordered attribute masks, the first
-nonzero geometry binding, coordinate-parent links and parent commands' original
-low-halfword semantics. Heap events, input guards and release of all owned
+nonzero geometry binding, coordinate-parent links and full-word root sentinel
+tests followed by low-byte child lookups. Heap events, input guards and release of all owned
 allocations are checked through destruction.
 
 Both memory patterns run through three histories: an actor owning its model,
@@ -77,6 +77,24 @@ The earlier constructor profile checked animation zero's immediate frame in
 all 111 instances. Selecting every valid index extends that data axis to 122
 instance/index pairs, or 108 distinct-content/index pairs rather than 100.
 Those additional indices are not eleven new features or eleven new NPCs.
+
+### Parent-command correction
+
+The earlier predictor incorrectly truncated parent words to 16 bits before
+testing the root sentinels. The original interpreter loads all 32 bits at
+`0x800666B4`; only exact `0` and `0x0000FFFF` select the actor root. Every other
+word uses its low byte to look up a child. For example, `0x00010000` selects
+child type 0 and `0x0001FFFF` selects child type 255 when those children exist.
+
+The original C and executable were already correct. The original corpus's
+first frames did not distinguish the mistaken prediction. The corrected model
+replaces that synthetic assertion and adds six owned MOM fixtures, tested in
+36 native histories across both memory patterns and all three ownership
+scenarios. Their complete payloads, parent/child links, allocator events and
+destruction must match. These fixtures contain no original media and do not
+add to original content or feature counts. The
+[correction metadata](actor-parent-word-checks.json) preserves the earlier
+campaign and records the new evidence separately.
 
 ## Fault controls
 

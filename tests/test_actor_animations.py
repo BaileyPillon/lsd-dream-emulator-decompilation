@@ -8,6 +8,7 @@ from tests.test_actor_payloads import SYMBOLS, command
 from tools.actor_animation_model import AnimationPayloadPlan, first_frame
 from tools import verify_actor_factory as factory
 from tools import verify_actor_animations as native_check
+from tools.actor_animation_fixtures import CHILD_TYPES, PARENT_WORDS, parent_word_fixture
 
 
 def mom(commands=(), frames=(7, 13)):
@@ -87,12 +88,37 @@ class ActorAnimationTests(unittest.TestCase):
         self.assertEqual(plan.word(actor.nodes[0].pointer, 32), pointer)
         self.assertEqual(plan.geometry_indices, {0})
 
-    def test_parent_command_uses_the_original_low_halfword(self):
-        raw = mom((command(3, struct.pack('<I', 0x12340000)),))
-        plan, actor = prepared(raw)
-        plan.select_animation(actor, 1)
-        self.assertIs(actor.nodes[0].coordinate_parent, actor)
-        self.assertEqual(plan.word(actor.nodes[0].coordinate, 72), actor.coordinate)
+    def test_only_the_full_word_root_sentinels_select_the_actor(self):
+        for word in (0, 0xffff):
+            with self.subTest(word=hex(word)):
+                plan, actor = prepared(parent_word_fixture(word))
+                target = actor.nodes[CHILD_TYPES.index(9)]
+                plan.select_animation(actor, 1)
+                self.assertIs(target.coordinate_parent, actor)
+                self.assertEqual(plan.word(target.coordinate, 72), actor.coordinate)
+
+    def test_other_parent_words_look_up_the_low_byte_including_zero_and_255(self):
+        for word in PARENT_WORDS[2:]:
+            with self.subTest(word=hex(word)):
+                plan, actor = prepared(parent_word_fixture(word))
+                target = actor.nodes[CHILD_TYPES.index(9)]
+                parent = actor.nodes[CHILD_TYPES.index(word & 255)]
+                plan.select_animation(actor, 1)
+                self.assertIs(target.coordinate_parent, parent)
+                self.assertEqual(plan.word(target.pointer, 12), parent.pointer)
+                self.assertEqual(plan.word(target.coordinate, 72), parent.coordinate)
+                plan.destroy_actor(actor)
+                self.assertFalse(plan.live)
+
+    def test_high_bits_do_not_turn_an_absent_child_into_the_actor_root(self):
+        plan, actor = prepared(mom((command(3, struct.pack('<I', 0x12340000)),)))
+        with self.assertRaisesRegex(ValueError, 'absent child type'):
+            plan.select_animation(actor, 1)
+
+    def test_parent_fixture_rejects_values_outside_its_encoded_word(self):
+        for word in (-1, 1 << 32, True):
+            with self.subTest(word=word), self.assertRaises(ValueError):
+                parent_word_fixture(word)
 
     def test_repeated_parent_command_keeps_the_existing_coordinate_parent(self):
         plan, actor = prepared(mom((command(3, struct.pack('<I', 0)),)))

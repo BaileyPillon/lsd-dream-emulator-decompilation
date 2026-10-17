@@ -1,0 +1,867 @@
+{
+  "schema_version": 1,
+  "status": "qualified_original_parent_word_prediction_correction",
+  "recorded_utc": "2026-10-17T19:55:31.475038+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "b75f3b85916ac7444ab283d22d27cc3ea6bfd932",
+  "before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "correction": {
+    "incorrect_prior_interpretation": "Truncate the parent word to 16 bits before testing the root sentinels.",
+    "original_interpretation": "Only exact 32-bit 0 and 0x0000FFFF select the actor; every other word looks up its low-byte child type.",
+    "original_interpreter": {
+      "function": "func_80066340",
+      "address": "0x80066340",
+      "bytes": 1032,
+      "sha256": "25c43f5f4a4d1fb5a5a67967c3353c6aec85fadea8b9c0250c91db6d89533742"
+    },
+    "parent_word_load": {
+      "address": "0x800666b4",
+      "instruction": "0x8e030000"
+    },
+    "child_type_byte_load": {
+      "address": "0x800666e4",
+      "instruction": "0x92050000"
+    },
+    "legacy_model_sha256": "1d6ee826306aeeabdc87cbf20f5367673e9cd7a991695701f5af6e6d0ccb4364",
+    "corrected_model_sha256": "fca3f6956613ada1ae3a385e0f640eb7975422a049182f6f02d59d39ea426bcf",
+    "earlier_metadata_preserved": "docs/actor-animation-checks.json",
+    "original_C_and_executable_already_correct": true
+  },
+  "owned_fixtures": {
+    "generator": "tools/actor_animation_fixtures.py",
+    "generator_sha256": "23d554394b8f55250afed96fb25c789fbf75e6f61ce5d60f4fd619e928f98a09",
+    "child_types": [
+      0,
+      9,
+      255
+    ],
+    "words": [
+      "0x0",
+      "0xffff",
+      "0x10000",
+      "0x12340000",
+      "0x1ffff",
+      "0x1234ffff"
+    ],
+    "native_histories": 36,
+    "actor_lifetimes": 48,
+    "original_media_embedded": false,
+    "counted_as_original_features": false,
+    "legacy_prediction_wrong_for_words": 4,
+    "predictions": [
+      {
+        "word": "0x0",
+        "legacy_selects_actor": true,
+        "corrected_selects_actor": true,
+        "correct_parent": "actor",
+        "fixture_sha256": "962fb9e3f893e2c516955987e90b7c38b710ba8932b0e17cdfd1bab42a92095d"
+      },
+      {
+        "word": "0xffff",
+        "legacy_selects_actor": true,
+        "corrected_selects_actor": true,
+        "correct_parent": "actor",
+        "fixture_sha256": "15aa52476b932faaa32bfbec0ff7328c65cebc399871621b4578214e6a5f2fc7"
+      },
+      {
+        "word": "0x10000",
+        "legacy_selects_actor": true,
+        "corrected_selects_actor": false,
+        "correct_parent": "child-type-0",
+        "fixture_sha256": "123f2982c653f53eeccac2bb7f745880814d7ac0bcaf6a266f5cfb042b18e3d3"
+      },
+      {
+        "word": "0x12340000",
+        "legacy_selects_actor": true,
+        "corrected_selects_actor": false,
+        "correct_parent": "child-type-0",
+        "fixture_sha256": "312008874e745d1e21072de9095c38067539dc78ff95bf4fd1b06668dfdc33d9"
+      },
+      {
+        "word": "0x1ffff",
+        "legacy_selects_actor": true,
+        "corrected_selects_actor": false,
+        "correct_parent": "child-type-255",
+        "fixture_sha256": "bc84385b8d1c2b4ce196f753587bbcb84df6d501e9381f0c5227a488fcfded1b"
+      },
+      {
+        "word": "0x1234ffff",
+        "legacy_selects_actor": true,
+        "corrected_selects_actor": false,
+        "correct_parent": "child-type-255",
+        "fixture_sha256": "8c14451d510c2d9787d6dea5e78b828d2d9928a41c8aad6515a9c776e3e3df72"
+      }
+    ]
+  },
+  "original_corpus": {
+    "model_instances": 111,
+    "distinct_contents": 100,
+    "animation_instances": 122,
+    "original_positive_histories_preserved": 666,
+    "original_fault_histories_preserved": 24,
+    "original_animation_selections": 1952,
+    "earlier_case_records_equal": true,
+    "original_assets_preserved": true
+  },
+  "native_campaign": {
+    "private_report": ".decomp-lab/actor-animation-native-20261017-third/report.json",
+    "report_sha256": "67d8227e633186b27a18546ece4e9910cce9e61cc7f52c1074e553105051eb67",
+    "backend_identity": {
+      "package_version": "2.1.2",
+      "library_api": [
+        2,
+        1,
+        33620735
+      ],
+      "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+      "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+      "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+      "binding_source_count": 21,
+      "execution_hook": "UC_HOOK_CODE",
+      "fresh_cpu_per_host_call": true,
+      "all_emulated_ram_preserved_between_host_calls": true,
+      "uninterrupted_cpu_within_guest_cleanup_graph": true
+    },
+    "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "symbol_diagnostic": {
+      "elf_sha256": "c0746d3982c314079a5a24f2d88072c43464032f969eeac5f172c7646df833a7",
+      "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+      "object_count": 306,
+      "original_link_flags": [
+        "--no-check-sections",
+        "-nostdlib",
+        "-s"
+      ],
+      "diagnostic_link_flags": [
+        "--no-check-sections",
+        "-nostdlib"
+      ],
+      "complete_canonical_image_equal": true
+    },
+    "producer_dependencies": {
+      "tools/verify_actor_children.py": "09b3beef12fe216bde9dc43840b35bf027ad174935f8a34a9e998465943cd356",
+      "tools/actor_child_model.py": "40980e4c0518acc7785bcd79bfc9a48274e09579c4ab05c8ea93f611ed3372f7",
+      "tools/heap_model.py": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e",
+      "tools/verify_card_heap.py": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5",
+      "tools/verify_card_cleanup.py": "5eec21f9fe0afa2549f10eb890c1dbf9984f5f1541611102afd9fa995d58d6c0",
+      "tools/verify_native_ai.py": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697",
+      "tools/inventory_animations.py": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+      "tools/inventory_disc.py": "71319a4c51b50885753998fe9afb7a00b71acf0fa03167b9a63c48651e36aebf",
+      "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+      "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+      "tools/progress.py": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+      "tools/decomp_workbench.py": "8d375145ca2b7f210889558ce75d4acd854a04606ea26d86ff50251b6a4820d1",
+      "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+      "docs/actor-child-construction-function-ranges.json": "917010a67a4398af6137fc3a180a0a6d5d06e18ab151ddd21890078733b8da22",
+      "docs/actor-child-lifetime-function-ranges.json": "16e676914cb87df4990a8dc6db9efa64779a810f3f9824e9fbaf691c261317df",
+      "requirements-card-heap.txt": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212",
+      "requirements.txt": "bcd34abbb33438c8a7e18a9165b8ea5c503a179b23738ccf72dbd659ce174cde",
+      "tools/actor_factory_model.py": "fb40720bc913c2a7d3957c5b65c1232d19b2f24a355bce3cdabe39dc6cb7489a",
+      "tools/verify_actor_factory.py": "5775e55cc6868807e09fa069507804ca76dee636ba1dd947a8d0eb62b398d571",
+      "tools/model_mapping_model.py": "d3f0866a0c2e1ec4fe0fe2dde7b07a094a98b8ebb09e560472a36592cd70fe9e",
+      "tools/model_payload_model.py": "d2ab054ea8dd848cb78c4eacbf0750e00c967474405173d72d917506e01909e6",
+      "tools/actor_payload_model.py": "53c243e67e3e6eb9b33ea5683985a956e247a748c649c00391fd366d9dcb7ff5",
+      "docs/actor-factory-function-ranges.json": "1c7223ddeb1b0f440461e350e08184f383f5468b506496924c6b789f16c36611",
+      "tools/verify_actor_animations.py": "6381ae1462bdb95ccb76686e21f9f0b1f1c84c0dbb93ab20198d8abd889d5ad6",
+      "tools/actor_animation_model.py": "fca3f6956613ada1ae3a385e0f640eb7975422a049182f6f02d59d39ea426bcf",
+      "tools/actor_animation_fixtures.py": "23d554394b8f55250afed96fb25c789fbf75e6f61ce5d60f4fd619e928f98a09"
+    },
+    "parent_word_regressions": [
+      {
+        "case": "parent-word-00",
+        "parent_word": "0x0",
+        "pattern": "poison",
+        "scenario": "actor-first",
+        "fixture_sha256": "962fb9e3f893e2c516955987e90b7c38b710ba8932b0e17cdfd1bab42a92095d",
+        "original_media_used": false,
+        "expected_parent": "actor",
+        "actor_lifetimes": 2,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-01",
+        "parent_word": "0x0",
+        "pattern": "poison",
+        "scenario": "owned",
+        "fixture_sha256": "962fb9e3f893e2c516955987e90b7c38b710ba8932b0e17cdfd1bab42a92095d",
+        "original_media_used": false,
+        "expected_parent": "actor",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-02",
+        "parent_word": "0x0",
+        "pattern": "poison",
+        "scenario": "model-first",
+        "fixture_sha256": "962fb9e3f893e2c516955987e90b7c38b710ba8932b0e17cdfd1bab42a92095d",
+        "original_media_used": false,
+        "expected_parent": "actor",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-03",
+        "parent_word": "0x0",
+        "pattern": "distinct",
+        "scenario": "actor-first",
+        "fixture_sha256": "962fb9e3f893e2c516955987e90b7c38b710ba8932b0e17cdfd1bab42a92095d",
+        "original_media_used": false,
+        "expected_parent": "actor",
+        "actor_lifetimes": 2,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-04",
+        "parent_word": "0x0",
+        "pattern": "distinct",
+        "scenario": "owned",
+        "fixture_sha256": "962fb9e3f893e2c516955987e90b7c38b710ba8932b0e17cdfd1bab42a92095d",
+        "original_media_used": false,
+        "expected_parent": "actor",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-05",
+        "parent_word": "0x0",
+        "pattern": "distinct",
+        "scenario": "model-first",
+        "fixture_sha256": "962fb9e3f893e2c516955987e90b7c38b710ba8932b0e17cdfd1bab42a92095d",
+        "original_media_used": false,
+        "expected_parent": "actor",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-06",
+        "parent_word": "0xffff",
+        "pattern": "poison",
+        "scenario": "actor-first",
+        "fixture_sha256": "15aa52476b932faaa32bfbec0ff7328c65cebc399871621b4578214e6a5f2fc7",
+        "original_media_used": false,
+        "expected_parent": "actor",
+        "actor_lifetimes": 2,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-07",
+        "parent_word": "0xffff",
+        "pattern": "poison",
+        "scenario": "owned",
+        "fixture_sha256": "15aa52476b932faaa32bfbec0ff7328c65cebc399871621b4578214e6a5f2fc7",
+        "original_media_used": false,
+        "expected_parent": "actor",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-08",
+        "parent_word": "0xffff",
+        "pattern": "poison",
+        "scenario": "model-first",
+        "fixture_sha256": "15aa52476b932faaa32bfbec0ff7328c65cebc399871621b4578214e6a5f2fc7",
+        "original_media_used": false,
+        "expected_parent": "actor",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-09",
+        "parent_word": "0xffff",
+        "pattern": "distinct",
+        "scenario": "actor-first",
+        "fixture_sha256": "15aa52476b932faaa32bfbec0ff7328c65cebc399871621b4578214e6a5f2fc7",
+        "original_media_used": false,
+        "expected_parent": "actor",
+        "actor_lifetimes": 2,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-10",
+        "parent_word": "0xffff",
+        "pattern": "distinct",
+        "scenario": "owned",
+        "fixture_sha256": "15aa52476b932faaa32bfbec0ff7328c65cebc399871621b4578214e6a5f2fc7",
+        "original_media_used": false,
+        "expected_parent": "actor",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-11",
+        "parent_word": "0xffff",
+        "pattern": "distinct",
+        "scenario": "model-first",
+        "fixture_sha256": "15aa52476b932faaa32bfbec0ff7328c65cebc399871621b4578214e6a5f2fc7",
+        "original_media_used": false,
+        "expected_parent": "actor",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-12",
+        "parent_word": "0x10000",
+        "pattern": "poison",
+        "scenario": "actor-first",
+        "fixture_sha256": "123f2982c653f53eeccac2bb7f745880814d7ac0bcaf6a266f5cfb042b18e3d3",
+        "original_media_used": false,
+        "expected_parent": "child-type-0",
+        "actor_lifetimes": 2,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-13",
+        "parent_word": "0x10000",
+        "pattern": "poison",
+        "scenario": "owned",
+        "fixture_sha256": "123f2982c653f53eeccac2bb7f745880814d7ac0bcaf6a266f5cfb042b18e3d3",
+        "original_media_used": false,
+        "expected_parent": "child-type-0",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-14",
+        "parent_word": "0x10000",
+        "pattern": "poison",
+        "scenario": "model-first",
+        "fixture_sha256": "123f2982c653f53eeccac2bb7f745880814d7ac0bcaf6a266f5cfb042b18e3d3",
+        "original_media_used": false,
+        "expected_parent": "child-type-0",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-15",
+        "parent_word": "0x10000",
+        "pattern": "distinct",
+        "scenario": "actor-first",
+        "fixture_sha256": "123f2982c653f53eeccac2bb7f745880814d7ac0bcaf6a266f5cfb042b18e3d3",
+        "original_media_used": false,
+        "expected_parent": "child-type-0",
+        "actor_lifetimes": 2,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-16",
+        "parent_word": "0x10000",
+        "pattern": "distinct",
+        "scenario": "owned",
+        "fixture_sha256": "123f2982c653f53eeccac2bb7f745880814d7ac0bcaf6a266f5cfb042b18e3d3",
+        "original_media_used": false,
+        "expected_parent": "child-type-0",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-17",
+        "parent_word": "0x10000",
+        "pattern": "distinct",
+        "scenario": "model-first",
+        "fixture_sha256": "123f2982c653f53eeccac2bb7f745880814d7ac0bcaf6a266f5cfb042b18e3d3",
+        "original_media_used": false,
+        "expected_parent": "child-type-0",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-18",
+        "parent_word": "0x12340000",
+        "pattern": "poison",
+        "scenario": "actor-first",
+        "fixture_sha256": "312008874e745d1e21072de9095c38067539dc78ff95bf4fd1b06668dfdc33d9",
+        "original_media_used": false,
+        "expected_parent": "child-type-0",
+        "actor_lifetimes": 2,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-19",
+        "parent_word": "0x12340000",
+        "pattern": "poison",
+        "scenario": "owned",
+        "fixture_sha256": "312008874e745d1e21072de9095c38067539dc78ff95bf4fd1b06668dfdc33d9",
+        "original_media_used": false,
+        "expected_parent": "child-type-0",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-20",
+        "parent_word": "0x12340000",
+        "pattern": "poison",
+        "scenario": "model-first",
+        "fixture_sha256": "312008874e745d1e21072de9095c38067539dc78ff95bf4fd1b06668dfdc33d9",
+        "original_media_used": false,
+        "expected_parent": "child-type-0",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-21",
+        "parent_word": "0x12340000",
+        "pattern": "distinct",
+        "scenario": "actor-first",
+        "fixture_sha256": "312008874e745d1e21072de9095c38067539dc78ff95bf4fd1b06668dfdc33d9",
+        "original_media_used": false,
+        "expected_parent": "child-type-0",
+        "actor_lifetimes": 2,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-22",
+        "parent_word": "0x12340000",
+        "pattern": "distinct",
+        "scenario": "owned",
+        "fixture_sha256": "312008874e745d1e21072de9095c38067539dc78ff95bf4fd1b06668dfdc33d9",
+        "original_media_used": false,
+        "expected_parent": "child-type-0",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-23",
+        "parent_word": "0x12340000",
+        "pattern": "distinct",
+        "scenario": "model-first",
+        "fixture_sha256": "312008874e745d1e21072de9095c38067539dc78ff95bf4fd1b06668dfdc33d9",
+        "original_media_used": false,
+        "expected_parent": "child-type-0",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-24",
+        "parent_word": "0x1ffff",
+        "pattern": "poison",
+        "scenario": "actor-first",
+        "fixture_sha256": "bc84385b8d1c2b4ce196f753587bbcb84df6d501e9381f0c5227a488fcfded1b",
+        "original_media_used": false,
+        "expected_parent": "child-type-255",
+        "actor_lifetimes": 2,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-25",
+        "parent_word": "0x1ffff",
+        "pattern": "poison",
+        "scenario": "owned",
+        "fixture_sha256": "bc84385b8d1c2b4ce196f753587bbcb84df6d501e9381f0c5227a488fcfded1b",
+        "original_media_used": false,
+        "expected_parent": "child-type-255",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-26",
+        "parent_word": "0x1ffff",
+        "pattern": "poison",
+        "scenario": "model-first",
+        "fixture_sha256": "bc84385b8d1c2b4ce196f753587bbcb84df6d501e9381f0c5227a488fcfded1b",
+        "original_media_used": false,
+        "expected_parent": "child-type-255",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-27",
+        "parent_word": "0x1ffff",
+        "pattern": "distinct",
+        "scenario": "actor-first",
+        "fixture_sha256": "bc84385b8d1c2b4ce196f753587bbcb84df6d501e9381f0c5227a488fcfded1b",
+        "original_media_used": false,
+        "expected_parent": "child-type-255",
+        "actor_lifetimes": 2,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-28",
+        "parent_word": "0x1ffff",
+        "pattern": "distinct",
+        "scenario": "owned",
+        "fixture_sha256": "bc84385b8d1c2b4ce196f753587bbcb84df6d501e9381f0c5227a488fcfded1b",
+        "original_media_used": false,
+        "expected_parent": "child-type-255",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-29",
+        "parent_word": "0x1ffff",
+        "pattern": "distinct",
+        "scenario": "model-first",
+        "fixture_sha256": "bc84385b8d1c2b4ce196f753587bbcb84df6d501e9381f0c5227a488fcfded1b",
+        "original_media_used": false,
+        "expected_parent": "child-type-255",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-30",
+        "parent_word": "0x1234ffff",
+        "pattern": "poison",
+        "scenario": "actor-first",
+        "fixture_sha256": "8c14451d510c2d9787d6dea5e78b828d2d9928a41c8aad6515a9c776e3e3df72",
+        "original_media_used": false,
+        "expected_parent": "child-type-255",
+        "actor_lifetimes": 2,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-31",
+        "parent_word": "0x1234ffff",
+        "pattern": "poison",
+        "scenario": "owned",
+        "fixture_sha256": "8c14451d510c2d9787d6dea5e78b828d2d9928a41c8aad6515a9c776e3e3df72",
+        "original_media_used": false,
+        "expected_parent": "child-type-255",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-32",
+        "parent_word": "0x1234ffff",
+        "pattern": "poison",
+        "scenario": "model-first",
+        "fixture_sha256": "8c14451d510c2d9787d6dea5e78b828d2d9928a41c8aad6515a9c776e3e3df72",
+        "original_media_used": false,
+        "expected_parent": "child-type-255",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-33",
+        "parent_word": "0x1234ffff",
+        "pattern": "distinct",
+        "scenario": "actor-first",
+        "fixture_sha256": "8c14451d510c2d9787d6dea5e78b828d2d9928a41c8aad6515a9c776e3e3df72",
+        "original_media_used": false,
+        "expected_parent": "child-type-255",
+        "actor_lifetimes": 2,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-34",
+        "parent_word": "0x1234ffff",
+        "pattern": "distinct",
+        "scenario": "owned",
+        "fixture_sha256": "8c14451d510c2d9787d6dea5e78b828d2d9928a41c8aad6515a9c776e3e3df72",
+        "original_media_used": false,
+        "expected_parent": "child-type-255",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      },
+      {
+        "case": "parent-word-35",
+        "parent_word": "0x1234ffff",
+        "pattern": "distinct",
+        "scenario": "model-first",
+        "fixture_sha256": "8c14451d510c2d9787d6dea5e78b828d2d9928a41c8aad6515a9c776e3e3df72",
+        "original_media_used": false,
+        "expected_parent": "child-type-255",
+        "actor_lifetimes": 1,
+        "native_history_completed": true,
+        "complete_live_payloads_matched": true,
+        "all_owned_allocations_released": true
+      }
+    ]
+  },
+  "independent_audit": {
+    "private_report": ".decomp-lab/actor-parent-word-audit-20261017-first/report.json",
+    "report_sha256": "20c843309ced8a6714ecb3d3e1a29689d13d08cea71e674cf84e226b1b33b59a",
+    "producer_sha256": "9cce69e4b305c35c2a49bfc5b8a8807eb55735734e5d291cc421b136f971d7b4",
+    "scope": "Full-word parent sentinel correction, owned fixtures and preserved original first-frame histories; no new original content, later-frame playback or natural-encounter acceptance."
+  },
+  "source_byte_provenance": [
+    {
+      "path": "tools/verify_actor_children.py",
+      "executed_working_copy_sha256": "09b3beef12fe216bde9dc43840b35bf027ad174935f8a34a9e998465943cd356",
+      "published_Git_bytes_sha256": "09b3beef12fe216bde9dc43840b35bf027ad174935f8a34a9e998465943cd356",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/actor_child_model.py",
+      "executed_working_copy_sha256": "40980e4c0518acc7785bcd79bfc9a48274e09579c4ab05c8ea93f611ed3372f7",
+      "published_Git_bytes_sha256": "40980e4c0518acc7785bcd79bfc9a48274e09579c4ab05c8ea93f611ed3372f7",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/heap_model.py",
+      "executed_working_copy_sha256": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e",
+      "published_Git_bytes_sha256": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_card_heap.py",
+      "executed_working_copy_sha256": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5",
+      "published_Git_bytes_sha256": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_card_cleanup.py",
+      "executed_working_copy_sha256": "5eec21f9fe0afa2549f10eb890c1dbf9984f5f1541611102afd9fa995d58d6c0",
+      "published_Git_bytes_sha256": "5eec21f9fe0afa2549f10eb890c1dbf9984f5f1541611102afd9fa995d58d6c0",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_native_ai.py",
+      "executed_working_copy_sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697",
+      "published_Git_bytes_sha256": "6094e565bdb4e6701055f08d0428d059b54c6183818170ae1a671610c53b40a0",
+      "Git_bytes_equal_executed_working_copy": false,
+      "difference_if_any": "inherited CRLF working copy; LF Git blob"
+    },
+    {
+      "path": "tools/inventory_animations.py",
+      "executed_working_copy_sha256": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+      "published_Git_bytes_sha256": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/inventory_disc.py",
+      "executed_working_copy_sha256": "71319a4c51b50885753998fe9afb7a00b71acf0fa03167b9a63c48651e36aebf",
+      "published_Git_bytes_sha256": "71319a4c51b50885753998fe9afb7a00b71acf0fa03167b9a63c48651e36aebf",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/inventory_vtables.py",
+      "executed_working_copy_sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+      "published_Git_bytes_sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/psx_image.py",
+      "executed_working_copy_sha256": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+      "published_Git_bytes_sha256": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/progress.py",
+      "executed_working_copy_sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+      "published_Git_bytes_sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/decomp_workbench.py",
+      "executed_working_copy_sha256": "8d375145ca2b7f210889558ce75d4acd854a04606ea26d86ff50251b6a4820d1",
+      "published_Git_bytes_sha256": "10ce58a132c2e0b1084bad492590e3acdb1dc9b328747615b33999bb56a1803f",
+      "Git_bytes_equal_executed_working_copy": false,
+      "difference_if_any": "inherited CRLF working copy; LF Git blob"
+    },
+    {
+      "path": "research/compiler/compare_function.py",
+      "executed_working_copy_sha256": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+      "published_Git_bytes_sha256": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "docs/actor-child-construction-function-ranges.json",
+      "executed_working_copy_sha256": "917010a67a4398af6137fc3a180a0a6d5d06e18ab151ddd21890078733b8da22",
+      "published_Git_bytes_sha256": "917010a67a4398af6137fc3a180a0a6d5d06e18ab151ddd21890078733b8da22",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "docs/actor-child-lifetime-function-ranges.json",
+      "executed_working_copy_sha256": "16e676914cb87df4990a8dc6db9efa64779a810f3f9824e9fbaf691c261317df",
+      "published_Git_bytes_sha256": "16e676914cb87df4990a8dc6db9efa64779a810f3f9824e9fbaf691c261317df",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "requirements-card-heap.txt",
+      "executed_working_copy_sha256": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212",
+      "published_Git_bytes_sha256": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "requirements.txt",
+      "executed_working_copy_sha256": "bcd34abbb33438c8a7e18a9165b8ea5c503a179b23738ccf72dbd659ce174cde",
+      "published_Git_bytes_sha256": "bcd34abbb33438c8a7e18a9165b8ea5c503a179b23738ccf72dbd659ce174cde",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/actor_factory_model.py",
+      "executed_working_copy_sha256": "fb40720bc913c2a7d3957c5b65c1232d19b2f24a355bce3cdabe39dc6cb7489a",
+      "published_Git_bytes_sha256": "fb40720bc913c2a7d3957c5b65c1232d19b2f24a355bce3cdabe39dc6cb7489a",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_actor_factory.py",
+      "executed_working_copy_sha256": "5775e55cc6868807e09fa069507804ca76dee636ba1dd947a8d0eb62b398d571",
+      "published_Git_bytes_sha256": "5775e55cc6868807e09fa069507804ca76dee636ba1dd947a8d0eb62b398d571",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/model_mapping_model.py",
+      "executed_working_copy_sha256": "d3f0866a0c2e1ec4fe0fe2dde7b07a094a98b8ebb09e560472a36592cd70fe9e",
+      "published_Git_bytes_sha256": "d3f0866a0c2e1ec4fe0fe2dde7b07a094a98b8ebb09e560472a36592cd70fe9e",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/model_payload_model.py",
+      "executed_working_copy_sha256": "d2ab054ea8dd848cb78c4eacbf0750e00c967474405173d72d917506e01909e6",
+      "published_Git_bytes_sha256": "d2ab054ea8dd848cb78c4eacbf0750e00c967474405173d72d917506e01909e6",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/actor_payload_model.py",
+      "executed_working_copy_sha256": "53c243e67e3e6eb9b33ea5683985a956e247a748c649c00391fd366d9dcb7ff5",
+      "published_Git_bytes_sha256": "53c243e67e3e6eb9b33ea5683985a956e247a748c649c00391fd366d9dcb7ff5",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "docs/actor-factory-function-ranges.json",
+      "executed_working_copy_sha256": "1c7223ddeb1b0f440461e350e08184f383f5468b506496924c6b789f16c36611",
+      "published_Git_bytes_sha256": "1c7223ddeb1b0f440461e350e08184f383f5468b506496924c6b789f16c36611",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/verify_actor_animations.py",
+      "executed_working_copy_sha256": "6381ae1462bdb95ccb76686e21f9f0b1f1c84c0dbb93ab20198d8abd889d5ad6",
+      "published_Git_bytes_sha256": "6381ae1462bdb95ccb76686e21f9f0b1f1c84c0dbb93ab20198d8abd889d5ad6",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/actor_animation_model.py",
+      "executed_working_copy_sha256": "fca3f6956613ada1ae3a385e0f640eb7975422a049182f6f02d59d39ea426bcf",
+      "published_Git_bytes_sha256": "fca3f6956613ada1ae3a385e0f640eb7975422a049182f6f02d59d39ea426bcf",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    },
+    {
+      "path": "tools/actor_animation_fixtures.py",
+      "executed_working_copy_sha256": "23d554394b8f55250afed96fb25c789fbf75e6f61ce5d60f4fd619e928f98a09",
+      "published_Git_bytes_sha256": "23d554394b8f55250afed96fb25c789fbf75e6f61ce5d60f4fd619e928f98a09",
+      "Git_bytes_equal_executed_working_copy": true,
+      "difference_if_any": "none"
+    }
+  ],
+  "unchanged_game_build_inputs": 392,
+  "new_C_bytes": 0,
+  "new_NPC_profiles": 0,
+  "new_original_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "model_API_calls": 0,
+  "original_game_modified": false,
+  "user_game_controlled": false,
+  "Bevy_port_modified": false,
+  "scope": "Correction of a host predictor and its incorrect synthetic assertion, with full native parent-word fixtures and unchanged original first-frame histories. No later-frame playback, natural encounter or complete feature acceptance."
+}
