@@ -15021,6 +15021,17 @@
       "scope": "Constructed Gunman/victim script states and real pose, animation, callback-clear, RNG, effect-factory and effect-color arithmetic. Allocation, empty attachment, orientation, rotation, movement, notification and sound use explicit contracts. Histories retain buffers/RNG and explicitly inject tick/frame/action inputs; they do not run a complete engine frame or tick the effects. Excludes natural construction, populated attachment graphs, linked-effect mode, effect ticking/rendering, audio and PS1 CPU timing.",
       "callback_runtime_accepted": false,
       "original_feature_groups_accepted": 0
+    },
+    {
+      "function": "entity_astronaut",
+      "reference": ".decomp-lab/astronaut-native-20261017-second/report.json",
+      "reference_sha256": "f87d8b5e8a487534a16558ff82002ca9f867ecaae618fecff281ad0da1295cb0",
+      "evidence": "docs/astronaut-checks.json",
+      "native_cases": 2748,
+      "original_functions_entered": 21,
+      "callback_runtime_accepted": false,
+      "original_feature_groups_accepted": 0,
+      "scope": "Constructed meshless poses, original mood/proximity/transform/RNG-preservation checks and injected script histories. All executed code uses the original image and native GTE backend. No natural encounters, complete animation playback, rendering, audio, full-engine scheduling or original-hardware timing acceptance."
     }
   ],
   "publication": {
@@ -24023,6 +24034,53 @@
       "new_model_API_calls": 0,
       "original_behavior_modified": false,
       "Bevy_port_modified": false
+    },
+    "original_astronaut_native_20261017": {
+      "evidence": "docs/astronaut-checks.json",
+      "guide": "docs/ASTRONAUT_BEHAVIOR.md",
+      "before": {
+        "c_bytes": 197172,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 2,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 38,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 39,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 197172,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 2,
+        "inherited_storage_explanations": 2,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 38,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 40,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "new_C_bytes": 0,
+      "newly_profiled_original_callbacks": 1,
+      "standalone_native_cases": 2748,
+      "history_invocations": 17,
+      "independent_additional_distinct_inputs": 14,
+      "native_functions_entered": 21,
+      "positive_native_GTE_commands": 2790,
+      "completed_behavior_faults": 7,
+      "stores_rejected_before_execution": 1,
+      "dependency_output_stubs": 0,
+      "new_original_feature_groups_accepted": 0,
+      "new_whole_NPC_encounters_accepted": 0,
+      "original_behavior_modified": false,
+      "Bevy_port_modified": false,
+      "new_model_API_calls": 0
     }
   }
 }

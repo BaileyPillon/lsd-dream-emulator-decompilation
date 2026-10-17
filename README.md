@@ -55,7 +55,7 @@ skip/error branches, and complete feature acceptance remain open.
 | Known remaining game assembly functions | 2 |
 | Known C functions with unresolved unused local storage | 2 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
-| Original callbacks with bounded native comparisons | 39 / 107 |
+| Original callbacks with bounded native comparisons | 40 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 38 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
 
@@ -65,6 +65,10 @@ denominator. Bounded native and emulator comparisons have passed, including
 a 6,000-frame sequence with matching frame, GPU, state and PCM audio output.
 Their scope and remaining gaps are documented in the
 [feature inventory](docs/FEATURE_INVENTORY.md) and [roadmap](docs/ROADMAP.md).
+The [Astronaut behavior check](docs/ASTRONAUT_BEHAVIOR.md) now exercises its
+original mood, proximity and movement chain through 21 native functions and
+the native GTE backend. Natural encounters and complete runtime acceptance
+remain open.
 The [model enumeration interfaces](docs/MODEL_ENUMERATION.md) now explicitly
 forward the original arguments through the object/list/part callback chain.
 The optional [model-data comparison](docs/MODEL_MAPPING.md) checks the complete

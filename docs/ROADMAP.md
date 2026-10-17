@@ -13,6 +13,13 @@ native MDEC/GPU and audio output, natural playback of every movie, skip/error
 paths and timing. Software decoding changes no source-recovery or runtime
 feature-acceptance count.
 
+The [Astronaut profile](ASTRONAUT_BEHAVIOR.md) raises bounded original callback
+coverage to 40 / 107 through actual mood, proximity and spatial dependencies.
+Extend these constructed poses and scheduled script calls to natural encounters,
+model animation, populated collision graphs, engine lifetimes and visible output.
+Apartment Bear additionally needs its model-animation switch fixture; it has
+not been counted as a newly profiled callback.
+
 The [locomotive profiles](LOCOMOTIVE_SCRIPTS.md) bring bounded original callback
 coverage to 39 / 107, following the [Gunman profiles](GUNMAN_SCRIPTS.md).
 The earlier [periodic spatial profiles](NPC_PERIODIC_SPATIAL.md)

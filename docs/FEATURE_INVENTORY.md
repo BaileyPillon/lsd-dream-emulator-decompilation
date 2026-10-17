@@ -19,6 +19,11 @@ packets, independently hashed again as raw decoded bytes. It adds no C bytes,
 NPC callback profiles or whole-feature acceptance. Native movie playback,
 mixing, controller paths and timing remain open; the Bevy port is unchanged.
 
+The [Astronaut profile](ASTRONAUT_BEHAVIOR.md) increases bounded original
+callback coverage from **39 to 40 / 107**. It executes the original mood,
+proximity, transform and animation-stop methods, with no dependency-output
+stubs. It adds no C bytes or whole-feature/encounter acceptance.
+
 The [locomotive script checks](LOCOMOTIVE_SCRIPTS.md) extend bounded original
 callback coverage from **36 to 39 / 107** through 70,345 distinct fixtures.
 Those three callbacks already had matching C bodies. C bytes, the 40-group

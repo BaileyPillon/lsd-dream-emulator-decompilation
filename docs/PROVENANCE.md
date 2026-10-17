@@ -1,5 +1,15 @@
 # Source and evidence provenance
 
+The [Astronaut profile](ASTRONAUT_BEHAVIOR.md) compares 2,748 distinct standalone
+fixtures and 17 scheduled script calls through 21 original functions and the
+native GTE backend, with no dependency-output stubs. An independent audit
+qualifies every complete function against the retained sized ELF and predicts
+14 additional complete-buffer cases without calling the producer's oracle.
+[Its metadata](astronaut-checks.json) binds sources, backends, original data,
+property records, reports and executed faults. All 392 game build inputs remain
+unchanged. This adds one bounded callback profile, bringing the count to 40 / 107;
+C recovery remains 98.63% and whole encounters remain unaccepted.
+
 The [complete software movie decode](MOVIE_DECODE.md) reads exact original raw
 sectors for the 39 routed payloads and checks 22,382 YUV frames and 27,921 PCM
 packets. A separate Python hashing pass agrees with every decoder packet.
