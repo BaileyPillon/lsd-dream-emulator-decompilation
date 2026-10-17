@@ -6,6 +6,13 @@ tools have separate deliverables. See [PROJECT_OBJECTIVE.md](../PROJECT_OBJECTIV
 for the completion requirements and [provenance](PROVENANCE.md) for the evidence
 boundary of the published snapshot.
 
+The [recorded scene inspector](RUNTIME_SCENE_INVENTORY.md) now follows the
+actual captured dream's object links. Five loaded entity instances have disabled
+behavior contexts at the sampled later checkpoints. Extend the controller route
+to record activation and actual callback execution, then compare the relevant
+effects, animation and lifetime. Reachability and registration remain separate
+from encounter acceptance.
+
 The [software movie decoder audit](MOVIE_DECODE.md) now checks all 39 routed
 movie payloads, including every encoded tail frame and XA packet. A separate
 raw-byte hashing pass agrees throughout. Extend this content evidence to

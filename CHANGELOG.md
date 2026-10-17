@@ -1,5 +1,15 @@
 # Changelog
 
+## Recorded dream-scene inventory - 2026-10-17
+
+- Add a read-only inspector for owner-qualified cold-start RAM checkpoints,
+  native object links, original entity properties and behavior registration.
+- Compare seven original/rebuilt checkpoint pairs and check 42,002 reciprocal
+  child edges. Report five loaded entity instances with disabled sampled
+  contexts, without interpreting old payload as live callbacks.
+- Add twelve synthetic tests and retain eight offline capture-copy controls.
+  Matching C, bounded NPC profiles and whole-feature acceptance remain unchanged.
+
 ## Emulator media-record initialization - 2026-10-17
 
 - Add an optional BizHawk 2.11.1 adapter patch and a standalone short-string

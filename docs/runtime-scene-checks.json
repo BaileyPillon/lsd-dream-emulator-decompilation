@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "status": "passed_paired_recorded_runtime_scene_inventory",
+  "recorded_utc": "2026-10-17T23:03:35.148712+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "3b854dbc0d294795cd4df7f65485533aa8dc90ff",
+  "private_report": {
+    "path": ".decomp-lab/runtime-scene-inventory-20261017-first/report.json",
+    "sha256": "b2bbb2a59d77684b1fa98bf3fa6b9f21caa5aed9ca61b3b1fc558fdb251a7d9f"
+  },
+  "executed_source_sha256": {
+    "tools/inventory_runtime_scene.py": "f76a06710daf5255c7888dd1e6548143f7224367a0dc2273ef1a3e989c309940",
+    "tests/test_inventory_runtime_scene.py": "f063b198dc85b265fcb9698492b86374b9be5a0b65955a714c8cca9fb43f9ec3",
+    "src/base/base.h": "aec74fef6d427a2242f2387894fd7374be4d092d313fed1fc02fa94578e6bfab",
+    "src/base/base.c": "23f9ddac6d6e960eb2d0c40e6b8598d68aac401ea2d3031804d70c4309243722",
+    "src/scene/entity.c": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811",
+    "src/scene/entity.h": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f",
+    "src/sound/sound.c": "c3174cf04aeb55867cd70fa681edc6146121551a27d9e7ca9ad5b4dd1697dc10"
+  },
+  "private_producer_sha256": "e3b16aa202e99fc944602c4960a8808d5d7a547a96b4ee19646d3bfe4e37dd14",
+  "source_counts_before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "snapshot_pairs": 7,
+  "checkpoint_observations": [
+    {
+      "relative_frame": 2689,
+      "objects_per_image": 2931,
+      "child_edges_per_image": 2941,
+      "loaded_entity_objects_per_image": 0,
+      "distinct_entity_ids": [],
+      "enabled_contexts_per_image": 0,
+      "complete_mainram_equal": true,
+      "graph_and_entity_inventory_equal": true
+    },
+    {
+      "relative_frame": 3000,
+      "objects_per_image": 2985,
+      "child_edges_per_image": 3010,
+      "loaded_entity_objects_per_image": 5,
+      "distinct_entity_ids": [
+        5,
+        77,
+        90,
+        91
+      ],
+      "enabled_contexts_per_image": 0,
+      "complete_mainram_equal": true,
+      "graph_and_entity_inventory_equal": true
+    },
+    {
+      "relative_frame": 3600,
+      "objects_per_image": 2985,
+      "child_edges_per_image": 3010,
+      "loaded_entity_objects_per_image": 5,
+      "distinct_entity_ids": [
+        5,
+        77,
+        90,
+        91
+      ],
+      "enabled_contexts_per_image": 0,
+      "complete_mainram_equal": true,
+      "graph_and_entity_inventory_equal": true
+    },
+    {
+      "relative_frame": 4200,
+      "objects_per_image": 2985,
+      "child_edges_per_image": 3010,
+      "loaded_entity_objects_per_image": 5,
+      "distinct_entity_ids": [
+        5,
+        77,
+        90,
+        91
+      ],
+      "enabled_contexts_per_image": 0,
+      "complete_mainram_equal": true,
+      "graph_and_entity_inventory_equal": true
+    },
+    {
+      "relative_frame": 4800,
+      "objects_per_image": 2985,
+      "child_edges_per_image": 3010,
+      "loaded_entity_objects_per_image": 5,
+      "distinct_entity_ids": [
+        5,
+        77,
+        90,
+        91
+      ],
+      "enabled_contexts_per_image": 0,
+      "complete_mainram_equal": true,
+      "graph_and_entity_inventory_equal": true
+    },
+    {
+      "relative_frame": 5400,
+      "objects_per_image": 2985,
+      "child_edges_per_image": 3010,
+      "loaded_entity_objects_per_image": 5,
+      "distinct_entity_ids": [
+        5,
+        77,
+        90,
+        91
+      ],
+      "enabled_contexts_per_image": 0,
+      "complete_mainram_equal": true,
+      "graph_and_entity_inventory_equal": true
+    },
+    {
+      "relative_frame": 6000,
+      "objects_per_image": 2985,
+      "child_edges_per_image": 3010,
+      "loaded_entity_objects_per_image": 5,
+      "distinct_entity_ids": [
+        5,
+        77,
+        90,
+        91
+      ],
+      "enabled_contexts_per_image": 0,
+      "complete_mainram_equal": true,
+      "graph_and_entity_inventory_equal": true
+    }
+  ],
+  "object_observations_both_images": 41682,
+  "reciprocal_child_edge_checks_both_images": 42002,
+  "corruption_controls_rejected": 7,
+  "disabled_payload_preservation_controls_passed": 1,
+  "synthetic_test_methods": 12,
+  "tooling_tests_passed_windows_and_WSL": 843,
+  "expected_skips_per_platform": 2,
+  "game_build_inputs_preserved": 392,
+  "changed_game_build_inputs": 0,
+  "new_gameplay_runs": 0,
+  "new_game_functions_executed": 0,
+  "new_C_bytes": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_whole_feature_groups_accepted": 0,
+  "emulator_controlled": false,
+  "native_guard": "sound_entity_update: signed state > 0",
+  "interpretation": "Loaded objects and enabled contexts are reported separately. A disabled context payload is not interpreted. Registration does not prove callback execution.",
+  "scope": "Selected retained cold-start RAM boundaries, source/native property bytes, immutable sixteen-byte vtable prefixes and reciprocal observed child edges; no complete encounter, visibility, allocator lifetime, complete vtable or whole-feature acceptance."
+}
