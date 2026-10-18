@@ -1029,3 +1029,27 @@ the pool binding and SDK matrix table remain explicit inputs. Full actor/model
 creation, attached descendants, failures, playback and natural encounters remain
 open. C recovery, source-quality remainders and whole-feature/NPC acceptance
 counts are unchanged; the earlier constructor-only evidence remains frozen.
+
+## Compiler census and corrected storage remainder
+
+[unused-local-census-checks.json](unused-local-census-checks.json) records the
+canonical compiler's diagnostics over all 79 configured game C units before
+and after three dead-pointer declaration removals. The ordinary flags are
+unchanged. Four full-unit controls and six individual removal builds qualify
+the findings through actual ELF/GNU function extents and complete images.
+
+The earlier selected storage audit missed the inherited 2,048-byte array in
+`cd_file_driver_read_sectors`. Its removal changes thirteen SP-relative
+instruction displacements, so it remains unexplained in the matching source.
+The latest known inherited storage remainder is **three**, correcting two;
+all earlier source-quality records retain their original scope. The three
+arrays span 256 existing C-function bytes and 2,176 declared storage bytes.
+
+Only the three matching dead-pointer removals are retained. The normal and
+fresh 306-object builds reproduce the original executable. The three changed
+C units and all other 389 game inputs are recorded separately. Ten further
+collision-source comparisons produce no exact match. Compiled C, original
+NPC/feature counts and whole-gameplay acceptance remain unchanged. This work
+adds no gameplay scenario, modifies no user emulator session or Bevy source,
+and invokes no model API. The new census is a diagnostic lead generator,
+not a certificate that every other source declaration is original.

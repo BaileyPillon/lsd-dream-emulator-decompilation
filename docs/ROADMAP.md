@@ -154,8 +154,9 @@ verification, other dispatch paths, and the full source and gameplay gates.
 Two game functions remain in assembly after the
 [sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md): the
 796-byte hull/face query (`func_8001DDF4`) and the 1,944-byte primitive-face query
-(`func_8001F8B8`). Matching C covers 197,172 / 199,912 bytes (98.63%). The two
-inherited debug-driver storage explanations remain open separately.
+(`func_8001F8B8`). Matching C covers 197,172 / 199,912 bytes (98.63%). The
+[compiler census](UNUSED_LOCAL_CENSUS.md) corrects the separate inherited
+storage remainder to three: both debug-driver frames and the CD sector buffer.
 
 The [earlier bounds candidate](BOUNDS_NARROW_COMPARISON.md) retains its
 19-byte difference and 4,648-input comparison as historical research. The later

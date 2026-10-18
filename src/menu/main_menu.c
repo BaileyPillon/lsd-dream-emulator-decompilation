@@ -369,7 +369,6 @@ void func_8004DABC(main_menu_t *This) {
 void func_8004DB18(main_menu_t *This, void *Unk) {
     s32 len;
     void *mem;
-    text_line_t *unk_class;
 
     if (Unk) {
         if (This->m_DreamSys->vtable->dream_sys_is_new_game(This->m_DreamSys)) {

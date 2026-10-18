@@ -25,8 +25,6 @@ generation_structure_t *generation_structure_create(s32 Unk1, s32 Unk2, s32 Unk3
 }
 
 void *func_800563C0(generation_structure_t *This, s32 Unk1, s32 Unk2, s32 Unk3, s32 Unk4) {
-    generation_structure_vtable_t *vtable;
-
     if (scene_node_get_vtable()->Construct(This)) {
         This->vtable = func_80056F4C();
 

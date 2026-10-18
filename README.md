@@ -92,12 +92,18 @@ skip/error branches, and complete feature acceptance remain open.
 | --- | ---: |
 | Matching game-function bytes compiled from C | 197,172 / 199,912 (98.63%) |
 | Known remaining game assembly functions | 2 |
-| Known C functions with unresolved unused local storage | 2 |
+| Known C functions with unresolved unused local storage | 3 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
 | Original callbacks with bounded native comparisons | 40 / 107 |
 | Original callback types with compared natural instruction histories | 5 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 38 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
+
+The [compiler census](docs/UNUSED_LOCAL_CENSUS.md) corrects the storage
+remainder from two to three: the earlier selected audit missed an inherited
+2 KB CD-reader buffer. The compiled-C figure includes these unresolved
+functions. Three unrelated dead pointer declarations were removed with no
+change to the executable.
 
 The feature inventory has 40 provisional groups; an official exhaustive
 feature total is unknown. SDK and startup code are excluded from the C-byte
