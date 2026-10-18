@@ -38,7 +38,13 @@ The [callback catalogue](NPC_CATALOGUE.md) verifies all 107 original callback
 ranges and 111 nonnull bindings through a complete matching symbolic link.
 Use its checked targets to extend observation to several callback types in
 one route, with per-instance clocks, activation histories and independent
-runtime-output qualification. The current recorder still selects one callback.
+runtime-output qualification. The optional [catalogue observer](NPC_CATALOGUE_TRACE.md)
+now records Boatman, three Fish instances and Giant Fish in the same route.
+Original/rebuilt and stock/observer comparisons agree on 2,467 dispatches,
+selected RAM and image checkpoints, and complete PCM. This brings compared
+natural callback histories to five types. Extend routes, seeds and activation
+cycles; the independent selected-PC trace remains mandatory, and a watched
+target alone supplies no execution or encounter evidence.
 
 The [isolated replay host](HEADLESS_REPLAY.md) now reproduces both retained
 opening profiles without controlling the user's EmuHawk session. The separate

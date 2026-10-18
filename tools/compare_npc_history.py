@@ -17,7 +17,7 @@ import zlib
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from tools.build_npc_observer import UPSTREAM, MEDNAFEN, SOURCE_SHA256
-from tools.record_npc_history import HOST_SOURCES, STOCK_RUNTIME, digest_text, expand_program, instance_expectations, validate_program
+from tools.record_npc_history import HOST_SOURCES, CATALOGUE_HOST_SOURCES, STOCK_RUNTIME, digest_text, expand_program, instance_expectations, validate_program
 from tools.replay_cold_start_headless import require, write_json
 from tools.runtime_inputs import content_identity, record_file
 
@@ -198,25 +198,51 @@ def inspect_run(folder, executable, *, context_clock_guard=None):
     require(settings == inputs['settings'], 'Native settings differ from their launch manifest.')
     frames = settings['frames']
     require(type(frames) is int and 1 <= frames <= program['frames'], 'Invalid native input window.')
+    has_catalogue = 'catalogue' in inputs
+    catalogue_targets = None
+    if has_catalogue:
+        from tools.npc_catalogue_trace import verified_catalogue
+        descriptor = inputs['catalogue']
+        require(isinstance(descriptor, dict) and set(descriptor) == {'value', 'catalogue_file', 'provenance_file'},
+                'Incomplete frozen catalogue inputs.')
+        verify_file(folder, 'npc-catalogue.json', descriptor['catalogue_file'])
+        verify_file(folder, 'npc-catalogue-provenance.json', descriptor['provenance_file'])
+        catalogue_targets = verified_catalogue(descriptor['value'],
+            json.loads((folder / 'npc-catalogue-provenance.json').read_bytes()),
+            (folder / 'npc-catalogue.json').read_bytes(), executable)
     expected_settings = dict(frames=frames,
         checkpoint_frames=sorted({frame for frame in program['checkpoint_frames'] if frame <= frames} | {0, frames}),
         RAM_sample_interval=program['RAM_sample_interval'], trace_enabled=inputs['runtime_kind'] == 'npc_observer',
         watched_pc=int(program['trace']['watched_pc'], 0), arm_frame=program['trace']['arm_frame'])
+    if has_catalogue:
+        expected_settings['catalogue_pcs'] = sorted(catalogue_targets)
     require(settings == expected_settings, 'Native settings do not describe the complete declared controller profile.')
     verify_file(folder, 'submitted.tsv', inputs['submitted'])
     require((folder / 'submitted.tsv').read_bytes() == expand_program(program, frames), 'Submitted native controls differ from the static program.')
     snapshots = inputs.get('source_snapshots', [])
     require(snapshots and len(snapshots) == len(inputs['source_pins']), 'Missing frozen recorder source inputs.')
     by_name = {}
+    host_sources = CATALOGUE_HOST_SOURCES if has_catalogue else HOST_SOURCES
+    required_sources = set(SOURCE_NAMES)
+    if has_catalogue:
+        required_sources.update(path.name for path in CATALOGUE_HOST_SOURCES)
+        required_sources.update(('npc_catalogue_observer.h', 'npc_catalogue_trace.py',
+                                 'npc-callback-catalogue.json', 'npc-catalogue-checks.json'))
     for item, original in zip(snapshots, inputs['source_pins']):
         require(item['original'] == original and content_identity(item) == content_identity(original), 'A frozen source identity is inconsistent.')
         verify_file(folder, item['file'], item)
         name = original['path'].replace('\\', '/').rsplit('/', 1)[-1]
-        if name in SOURCE_NAMES:
+        if name in required_sources:
             require(name not in by_name, 'Ambiguous repeated recorder source name.')
             by_name[name] = content_identity(item)
-    require(set(by_name) == SOURCE_NAMES, 'The recording omits a required recorder/compiler source identity.')
-    for path in HOST_SOURCES:
+    require(set(by_name) == required_sources, 'The recording omits a required recorder/compiler source identity.')
+    require(set(inputs['copied_host_sources']) == {path.name for path in host_sources},
+            'The compiled host source set differs from the declared observer mode.')
+    if has_catalogue:
+        require(content_identity(inputs['catalogue']['catalogue_file']) == by_name['npc-callback-catalogue.json']
+                and content_identity(inputs['catalogue']['provenance_file']) == by_name['npc-catalogue-checks.json'],
+                'Frozen catalogue copies differ from the compiled recorder inputs.')
+    for path in host_sources:
         verify_file(folder, 'host/' + path.name, inputs['copied_host_sources'][path.name])
         require(content_identity(inputs['copied_host_sources'][path.name]) == by_name[path.name], 'Compiled and frozen host sources disagree.')
     verify_file(folder, 'host/RecordNpcHistory.exe', inputs['host_binary'])
@@ -242,6 +268,11 @@ def inspect_run(folder, executable, *, context_clock_guard=None):
                 and profile['input_files_preserved'] is True and profile['original_adapter_sha256'] == SOURCE_SHA256['shock.cpp']
                 and profile['observer_header_sha256'] == by_name['npc_entry_observer.h']['sha256']
                 and profile['producer_sha256'] == by_name['build_npc_observer.py']['sha256'], 'Unsupported observer build provenance.')
+        require(profile.get('observer_mode', 'single') == ('catalogue' if has_catalogue else 'single'),
+                'The loaded observer mode differs from its recording.')
+        if has_catalogue:
+            require(profile.get('catalogue_header_sha256') == by_name['npc_catalogue_observer.h']['sha256'],
+                    'Catalogue observer header differs from its frozen source.')
         for key, name in (('core', 'dll/shock.wbx'), ('compressed_core', 'dll/shock.wbx.zst')):
             require(content_identity(profile[key]) == content_identity(runtime[name]), 'Loaded observer core differs from its build profile.')
     source = inputs['source_manifest']
@@ -309,6 +340,14 @@ def inspect_run(folder, executable, *, context_clock_guard=None):
     else:
         require(native['instruction_entries'] == 0 and native['observer_enabled'] is False
                 and not (folder / 'observations/npc-instructions.tsv').exists(), 'The distributed run unexpectedly contains an enabled observer.')
+    if has_catalogue:
+        require((folder / 'observations/npc-catalogue-instructions.tsv').exists() == settings['trace_enabled']
+                and (folder / 'observations/npc-catalogue-summary.json').exists() == settings['trace_enabled'],
+                'Catalogue output presence differs from the declared observer selection.')
+    else:
+        require(not (folder / 'observations/npc-catalogue-instructions.tsv').exists()
+                and not (folder / 'observations/npc-catalogue-summary.json').exists(),
+                'A single-target recording unexpectedly contains catalogue observations.')
     clock_checks = 0
     clock_checks_by_entity = {}
     if entries:
@@ -356,6 +395,22 @@ def compare(reference, candidate, executable, mode='same-runtime'):
     source_pins = [record_file(path) for path in source_paths]
     executable = Path(executable).read_bytes()
     left, right = [inspect_run(folder, executable) for folder in (reference, candidate)]
+    require(('catalogue' in left['inputs']) == ('catalogue' in right['inputs']),
+            'Catalogue selection differs between recordings.')
+    catalogue_observations = None
+    if 'catalogue' in left['inputs']:
+        from tools.npc_catalogue_trace import inspect_catalogue_log
+        observed = [inspect_catalogue_log(run, executable) if run['settings']['trace_enabled'] else None
+                    for run in (left, right)]
+        catalogue_equal = observed[0]['entries'] == observed[1]['entries'] if all(observed) else None
+        catalogue_observations = dict(
+            entry_records_equal=catalogue_equal,
+            original_function_entries_per_run=[len(item['entries']) if item is not None else 0 for item in observed],
+            classifications_per_run=[item['classifications'] if item is not None else {} for item in observed],
+            observed_registered_callback_PCs_per_run=[item['observed_registered_callback_PCs'] if item is not None else [] for item in observed],
+            instances_per_run=[item['instances'] if item is not None else [] for item in observed],
+            inspection_source_pins_per_run=[item['source_pins'] if item is not None else [] for item in observed],
+            unrooted_checkpoint_boundaries_per_run=[item['unrooted_checkpoint_boundaries'] if item is not None else [] for item in observed])
     require(left['program'] == right['program'] and left['source_identity'] == right['source_identity'], 'Controller program or frozen recorder/compiler sources differ.')
     changed_runtime = runtime_differences(left['inputs'], right['inputs'], mode)
     before, after = [dict(run['settings']) for run in (left, right)]
@@ -380,9 +435,14 @@ def compare(reference, candidate, executable, mode='same-runtime'):
     audio_equal = files_equal(left['audio'], right['audio'])
     entries_equal = left['entries'] == right['entries'] if left['settings']['trace_enabled'] and right['settings']['trace_enabled'] else None
     passed = (not frame_differences and not RAM_sample_differences and audio_equal and entries_equal is not False
+              and (catalogue_observations is None or catalogue_observations['entry_records_equal'] is not False)
               and all(row['MainRAM_equal'] and row['GPU_equal'] and row['RGB_equal'] for row in checkpoints))
     require([record_file(path) for path in source_paths] == source_pins, 'Comparison source changed while checking the retained history.')
-    return dict(status='passed_NPC_history_output_comparison' if passed else 'recorded_NPC_history_output_differences',
+    if catalogue_observations is not None:
+        require(all(record_file(Path(item['path'])) == item
+                    for pins in catalogue_observations['inspection_source_pins_per_run'] for item in pins),
+                'Catalogue inspection source changed while comparing the retained history.')
+    result = dict(status='passed_NPC_history_output_comparison' if passed else 'recorded_NPC_history_output_differences',
         comparison_source_pins=source_pins,
         mode=mode, runtime_differences=changed_runtime, input_frames=before['frames'], native_observation_pairs=len(left['frames']),
         RAM_observation_pairs=len(left['RAM_samples']), differing_frame_observations=frame_differences,
@@ -400,6 +460,9 @@ def compare(reference, candidate, executable, mode='same-runtime'):
         original_hardware_timing_verified=False, new_C_bytes=0, new_bounded_NPC_callbacks=0,
         whole_NPC_encounters_accepted=0, whole_feature_groups_accepted=0,
         scope='Static controller history; complete declared frame/GPU hashes, sampled full-RAM hashes, selected full RAM/GPU/raw RGB, complete PCM and validated original entries when enabled. No complete-state or whole-feature acceptance.')
+    if catalogue_observations is not None:
+        result['catalogue_observations'] = catalogue_observations
+    return result
 
 
 def main(argv=None):

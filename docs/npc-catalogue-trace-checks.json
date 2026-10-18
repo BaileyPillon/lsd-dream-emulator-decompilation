@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "status": "qualified_compared_multi_target_NPC_history",
+  "recorded_utc": "2026-10-18T07:47:33.480839+00:00",
+  "baseline_commit": "8d185a81bfce742a06799622bdc4e49ad771b6ce",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "source_sha256": {
+    ".gitattributes": "e8c62478088eb85f2c11ecca3a803a4cecf9d1cb83dc82a71873e1718a44fe38",
+    "CHANGELOG.md": "08de6b0e37e388c02ac4b589486224b0aacf7c35ff0ca877dfd844c598e2e8c4",
+    "CONTRIBUTING.md": "cae32a275887db6a8e368ed3fbe6fac2c4a1b0c57c547954a1929ee2f63d1d56",
+    "README.md": "bd9a837f796d5e7c80ba733b00aa25e04cf152302c3c3a443022828448e252f1",
+    "docs/NPC_CATALOGUE.md": "39cab8f4dc6e2054b4de8b889366c48c1605b5c43ca688517eb455229db4ec71",
+    "docs/NPC_CATALOGUE_TRACE.md": "d08d200cbbe329af6380b424f7b05f9e7b34fedc942112a81bb8ad3a329ca5e6",
+    "docs/ROADMAP.md": "fd9e87e2362ae096a654907e909bbc32c4b363a0840b2a33210f5313103f4e23",
+    "docs/npc-catalogue-checks.json": "23237ccf2526da3500df6a1a2cb83861faf94d2a839bc19d40fc9971622c9068",
+    "research/headless/NpcCatalogueTrace.cs": "1a315617f2f17971349a3e31a4c4475b5586ea1ffa8ebe716fc43f52d0be3082",
+    "research/headless/NpcInstructionTrace.cs": "f30e6939a4c95df586b83e36acc71a2fd4aa2d6ba55140909672fb0a96e63a6e",
+    "research/headless/RecordNpcCatalogue.cs": "0272062d0a11817a054bb6ad5b0126520255ada478f165246ebfbe1f5ce9ed8c",
+    "research/headless/RecordNpcHistory.cs": "57d3f067bea6d68e6a1b82116a4780422165fcf2024ff98f9e0fa2c7a82b71e4",
+    "research/headless/boatman-approach-route.json": "3130db81ceb43b2deea074f7f0b3392167ff3e38b8654cdef7b53b151a67521d",
+    "research/headless/npc-callback-catalogue.json": "e6b4b11a08446948e8c14c51542991b2cf472749f3063e7910b6c0d8cdbf2691",
+    "research/runtime_state/npc_catalogue_observer.h": "4e4598be0d1262e6dd17af791dcff1e11faed6129c2b91633774dc741d90e232",
+    "research/runtime_state/npc_entry_observer.h": "33abb17d6a3dc4cad71763f19e28c1576c6922a78b79d7f1389e53263b357c8b",
+    "src/scene/entity.c": "42b79fe2e6463d01213b8be552e94132dd912212ace0171219466b2e1650c751",
+    "src/scene/entity.h": "3dd0c265059b0566aca0f0934bbc5b85b5de9a1e1ef27e410985129e2c0ed2b4",
+    "tests/test_npc_catalogue_trace.py": "31c3a2b0e8236f8205b0340e5405002f8c5525106ac7dcc39c4079b4f49b19de",
+    "tools/build_npc_observer.py": "35448a21dff5c31e64b765586d1da103dcc9e7a4b6429695ff0f134d92de006f",
+    "tools/compare_npc_history.py": "e5736472438d0a966edb2bc81039da12490d5276e039ff918a9f7ab145a051ce",
+    "tools/inspect_npc_lifetime.py": "f06a116290cc82613accad946ca32fb0ca7f7934d6f93f2141e41eb6eacc9f69",
+    "tools/inventory_entities.py": "02836f67899a0079ef0a357525ec16295082ebfb51b0e9abc9a66dc73bb230d5",
+    "tools/inventory_runtime_scene.py": "f76a06710daf5255c7888dd1e6548143f7224367a0dc2273ef1a3e989c309940",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/npc_catalogue_trace.py": "c1294a94c056412d1c2fe3c7c7e878266b807f9e384deafdd4f3e4cf0ab6a229",
+    "tools/record_npc_history.py": "2267636bec135c1bcab454ccdf952aed8eefcc89e30c41832f53c6caa0f3aee9",
+    "tools/replay_cold_start_headless.py": "7dedf37e0fceb035fed90f359779df7f79234dc0ab2d4ef559fb2edffa885595",
+    "tools/runtime_inputs.py": "a1e0865b13801414bfad30f31ce00ffd13840b2a836dbc527e138d89d6d877e4"
+  },
+  "local_file_sha256": {
+    ".gitattributes": "e8c62478088eb85f2c11ecca3a803a4cecf9d1cb83dc82a71873e1718a44fe38",
+    "CHANGELOG.md": "08de6b0e37e388c02ac4b589486224b0aacf7c35ff0ca877dfd844c598e2e8c4",
+    "CONTRIBUTING.md": "74575269b0b51aefe4dcf0e8db0996eaa3f9338444639fec9c110e9b4487da43",
+    "README.md": "bd9a837f796d5e7c80ba733b00aa25e04cf152302c3c3a443022828448e252f1",
+    "docs/NPC_CATALOGUE.md": "39cab8f4dc6e2054b4de8b889366c48c1605b5c43ca688517eb455229db4ec71",
+    "docs/NPC_CATALOGUE_TRACE.md": "d08d200cbbe329af6380b424f7b05f9e7b34fedc942112a81bb8ad3a329ca5e6",
+    "docs/ROADMAP.md": "7ee8896bd8ff4c007583000819bed584cc74a8a5bc0c8d81ea6a721e27d32b4f",
+    "docs/npc-catalogue-checks.json": "23237ccf2526da3500df6a1a2cb83861faf94d2a839bc19d40fc9971622c9068",
+    "research/headless/NpcCatalogueTrace.cs": "1a315617f2f17971349a3e31a4c4475b5586ea1ffa8ebe716fc43f52d0be3082",
+    "research/headless/NpcInstructionTrace.cs": "f30e6939a4c95df586b83e36acc71a2fd4aa2d6ba55140909672fb0a96e63a6e",
+    "research/headless/RecordNpcCatalogue.cs": "0272062d0a11817a054bb6ad5b0126520255ada478f165246ebfbe1f5ce9ed8c",
+    "research/headless/RecordNpcHistory.cs": "57d3f067bea6d68e6a1b82116a4780422165fcf2024ff98f9e0fa2c7a82b71e4",
+    "research/headless/boatman-approach-route.json": "3130db81ceb43b2deea074f7f0b3392167ff3e38b8654cdef7b53b151a67521d",
+    "research/headless/npc-callback-catalogue.json": "e6b4b11a08446948e8c14c51542991b2cf472749f3063e7910b6c0d8cdbf2691",
+    "research/runtime_state/npc_catalogue_observer.h": "4e4598be0d1262e6dd17af791dcff1e11faed6129c2b91633774dc741d90e232",
+    "research/runtime_state/npc_entry_observer.h": "33abb17d6a3dc4cad71763f19e28c1576c6922a78b79d7f1389e53263b357c8b",
+    "src/scene/entity.c": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811",
+    "src/scene/entity.h": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f",
+    "tests/test_npc_catalogue_trace.py": "31c3a2b0e8236f8205b0340e5405002f8c5525106ac7dcc39c4079b4f49b19de",
+    "tools/build_npc_observer.py": "35448a21dff5c31e64b765586d1da103dcc9e7a4b6429695ff0f134d92de006f",
+    "tools/compare_npc_history.py": "e5736472438d0a966edb2bc81039da12490d5276e039ff918a9f7ab145a051ce",
+    "tools/inspect_npc_lifetime.py": "f06a116290cc82613accad946ca32fb0ca7f7934d6f93f2141e41eb6eacc9f69",
+    "tools/inventory_entities.py": "02836f67899a0079ef0a357525ec16295082ebfb51b0e9abc9a66dc73bb230d5",
+    "tools/inventory_runtime_scene.py": "f76a06710daf5255c7888dd1e6548143f7224367a0dc2273ef1a3e989c309940",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/npc_catalogue_trace.py": "c1294a94c056412d1c2fe3c7c7e878266b807f9e384deafdd4f3e4cf0ab6a229",
+    "tools/record_npc_history.py": "2267636bec135c1bcab454ccdf952aed8eefcc89e30c41832f53c6caa0f3aee9",
+    "tools/replay_cold_start_headless.py": "7dedf37e0fceb035fed90f359779df7f79234dc0ab2d4ef559fb2edffa885595",
+    "tools/runtime_inputs.py": "a1e0865b13801414bfad30f31ce00ffd13840b2a836dbc527e138d89d6d877e4"
+  },
+  "hash_scope": "source_sha256 hashes staged Git blobs; local_file_sha256 hashes executed working-tree bytes. Legacy game files can have CRLF working bytes. The evidence JSON excludes its own circular hash.",
+  "private_evidence_sha256": {
+    ".decomp-lab/catalogue-trace-audit-20261018-first/report.json": "bfd4ca53ff50d15d1be98ac110872c9636d9a3ae0009d4e263c057c51c230e63",
+    ".decomp-lab/catalogue-trace-audit-20261018-second/report.json": "de51b4a4c272449f77c07245fa93cff4a8bdcffb73820cee260d7e42278ad99b",
+    ".decomp-lab/catalogue-trace-audit-20261018-second/original-inspection.json": "a719b1671c176c1c0e050d73acd3cab2152750ed3b7f5373ac7520c6bbb65015",
+    ".decomp-lab/catalogue-trace-audit-20261018-second/rebuilt-inspection.json": "a719b1671c176c1c0e050d73acd3cab2152750ed3b7f5373ac7520c6bbb65015",
+    ".decomp-lab/catalogue-trace-audit-20261018-second/independent-pngs.json": "a180ed45df514ae581930a2ab15613d88d91cc56414edb3b1d66072282268400",
+    ".decomp-lab/audit_catalogue_trace_20261018_first.py": "b14a200bfc6830187926c987e084a15d764de8977a45b907aff51fd81d743e91",
+    ".decomp-lab/audit_catalogue_trace_20261018_second.py": "001531a24a185d0afbec5d4debf1a6d2ebf4fcda6bbdc6def7798113ec33cc59",
+    ".decomp-lab/catalogue-original-rebuilt-20261018-second.json": "211437ec6dd979e6162ef849b99527bd5e395f070159209a72938d50d46e3e4e",
+    ".decomp-lab/catalogue-stock-observer-20261018-second.json": "c40e41cff58d34277e22f72f1d93cddcaf0dbdb2a24be9c915867330eebfe9d8",
+    ".decomp-lab/catalogue-legacy-inspection-20261018-resume.json": "462f38ceb77ac2612bd2cd390a67a00b4abe2fba2ae5ba5751ff69b40cd5a6fd",
+    ".decomp-lab/npc-catalogue-observer-build-20261018-first/profile.json": "f94bb5176067ea8757c7d6194be5c2bd1b151ce54771cf845454103c5eb8ef32",
+    ".decomp-lab/catalogue-tests-windows-20261018-second.log": "50536fda582a667a0897d0d0a9e41d3392e395eb742f7d16be4209e04eca5618",
+    ".decomp-lab/catalogue-tests-wsl-20261018-second.log": "cbeef2c9650a3375a5667a7fe3255cc164c50a7bba0724f00e6b4deabb162bbf",
+    ".decomp-lab/catalogue-source-labels-20261018-first.json": "c9b374e2d92c614cc5f64e1b96d3663133597db64632c20e27be6b8e796e303d"
+  },
+  "private_evidence_scope": "Retained recordings, source snapshots, raw buffers, fault copies and observer binaries stay private. This document contains only hashes and measurements.",
+  "source_counts_before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "matching_C_bytes_before": 197172,
+  "matching_C_bytes_after": 197172,
+  "game_text_bytes": 199912,
+  "new_C_bytes": 0,
+  "new_C_functions": 0,
+  "protected_build_inputs_preserved": 392,
+  "watched_original_callback_PCs": 107,
+  "observed_registered_callback_types_on_route": 3,
+  "observed_instances_per_run": 5,
+  "registered_dispatches_per_observer_run": 2467,
+  "rooted_RAM_clock_checks_per_observer_run": 287,
+  "original_callback_instances": [
+    {
+      "PC": "0x8005EC98",
+      "entity": "0x801D056C",
+      "entity_id": 14,
+      "entries": 87,
+      "first_frame": 4577,
+      "last_frame": 5069,
+      "first_tick": 0,
+      "last_tick": 86,
+      "rooted_RAM_clock_checks": 111
+    },
+    {
+      "PC": "0x8005FC58",
+      "entity": "0x801C9ABC",
+      "entity_id": 35,
+      "entries": 595,
+      "first_frame": 5432,
+      "last_frame": 8996,
+      "first_tick": 0,
+      "last_tick": 594,
+      "rooted_RAM_clock_checks": 44
+    },
+    {
+      "PC": "0x8005FC58",
+      "entity": "0x801CA6EC",
+      "entity_id": 35,
+      "entries": 595,
+      "first_frame": 5432,
+      "last_frame": 8996,
+      "first_tick": 0,
+      "last_tick": 594,
+      "rooted_RAM_clock_checks": 44
+    },
+    {
+      "PC": "0x8005FC58",
+      "entity": "0x801CB32C",
+      "entity_id": 35,
+      "entries": 595,
+      "first_frame": 5432,
+      "last_frame": 8996,
+      "first_tick": 0,
+      "last_tick": 594,
+      "rooted_RAM_clock_checks": 44
+    },
+    {
+      "PC": "0x800651D0",
+      "entity": "0x801CBF6C",
+      "entity_id": 118,
+      "entries": 595,
+      "first_frame": 5432,
+      "last_frame": 8996,
+      "first_tick": 0,
+      "last_tick": 594,
+      "rooted_RAM_clock_checks": 44
+    }
+  ],
+  "natural_callback_types_before": 3,
+  "natural_callback_types_after": 5,
+  "newly_compared_natural_callback_types": [
+    "entity_fish",
+    "entity_fish_giant"
+  ],
+  "bounded_callback_profiles_before": 40,
+  "bounded_callback_profiles_after": 40,
+  "qualified_native_runs": 3,
+  "exploratory_native_runs": 1,
+  "input_steps_per_run": 9000,
+  "complete_GPU_observations_per_run": 9001,
+  "full_RAM_hash_samples_per_run": 1614,
+  "complete_RAM_GPU_RGB_checkpoints_per_run": 205,
+  "complete_PCM_bytes_per_run": 26537652,
+  "independent_PNG_decodes": 615,
+  "selected_PC_entries_per_observer_run": 87,
+  "selected_PC_projection_matches": true,
+  "same_runtime_original_rebuilt_comparison": "passed",
+  "explicit_stock_observer_output_comparison": "passed",
+  "native_corruption_controls": [
+    {
+      "name": "missing-selected-entry",
+      "rejected": true,
+      "reason": "Catalogue projection differs from the independent selected-PC trace."
+    },
+    {
+      "name": "duplicate-fish-entry",
+      "rejected": true,
+      "reason": "Repeated catalogue event."
+    },
+    {
+      "name": "wrong-original-entry-word",
+      "rejected": true,
+      "reason": "Wrong original catalogue entry instruction."
+    },
+    {
+      "name": "truncated-event",
+      "rejected": true,
+      "reason": "Truncated catalogue observation."
+    },
+    {
+      "name": "wrong-native-total",
+      "rejected": true,
+      "reason": "Catalogue summary differs from its complete log."
+    },
+    {
+      "name": "loaded-function-tail",
+      "rejected": true,
+      "reason": "A loaded catalogue callback span differs from the original."
+    },
+    {
+      "name": "consistent-but-false-clock-origin",
+      "rejected": true,
+      "reason": "A rooted catalogue context clock differs from its registered dispatches."
+    }
+  ],
+  "boundary_controls": [
+    {
+      "name": "wrong-owner-boundary",
+      "unregistered_entries": 1,
+      "miscounted_as_dispatch": false
+    },
+    {
+      "name": "unknown-clock-reset-boundary",
+      "invented_activation_epoch": false,
+      "rooted_clock_checks": 0
+    }
+  ],
+  "tests": {
+    "windows": {
+      "tests": 947,
+      "expected_skips": 2,
+      "result": "passed"
+    },
+    "wsl": {
+      "tests": 947,
+      "expected_skips": 2,
+      "result": "passed"
+    }
+  },
+  "new_test_methods": 18,
+  "prior_single_PC_recordings_revalidated": {
+    "Buddha": 2700,
+    "Corpse": 21,
+    "Boatman": 87
+  },
+  "observer_core_sha256": "21d0c928c36f1a9061228fc5c8e03bb9361049144475b4be01bd3c4db4943a85",
+  "observer_mode": "catalogue",
+  "original_CPU_source_modified": false,
+  "original_behavior_changed": false,
+  "source_snapshot_and_input_checks_passed": true,
+  "full_matching_executable_verified": true,
+  "game_RAM_injected": false,
+  "complete_state_parity_checked": false,
+  "original_hardware_timing_verified": false,
+  "whole_NPC_encounters_accepted": 0,
+  "whole_feature_groups_accepted": 0,
+  "exhaustive_original_feature_total": null,
+  "AI_assisted_analysis": "Exports and inspects original execution metadata. No model API calls or added original-game AI behavior.",
+  "separate_Bevy_checkout": {
+    "repository": "https://github.com/BaileyPillon/lsd-dream-emulator-bevy",
+    "head": "0610f776185e8e25d9bc8c39150fa69b90395293",
+    "clean": true,
+    "changed_by_this_work": false
+  },
+  "remaining_gates": [
+    "Two matching C assembly fallbacks and two inherited storage explanations",
+    "Further routes, seeds, callback branches and activation cycles",
+    "Downstream effects, visible behavior and audio causality",
+    "Complete emulator-state and original hardware timing verification",
+    "Independent whole-encounter and whole-feature acceptance"
+  ]
+}

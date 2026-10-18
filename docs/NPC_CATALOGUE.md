@@ -7,10 +7,10 @@ ranges, hashes and entity-table bindings. The
 metadata only. Its names are recovered source labels.
 
 This supplies a common target inventory for native observers and human or
-AI-assisted analysis. The existing [history recorder](NPC_ENTRY_TRACE.md)
-selects one callback per recording; simultaneous catalogue tracing is a next
-step. Creating a catalogue executes no game callback and changes no original
-NPC behavior.
+AI-assisted analysis. The [history recorder](NPC_ENTRY_TRACE.md) preserves
+its selected-PC trace, and the optional [catalogue mode](NPC_CATALOGUE_TRACE.md)
+records the complete target set in a second log. Creating a catalogue
+executes no game callback and changes no original NPC behavior.
 
 ## Verified coverage
 
@@ -76,12 +76,14 @@ The 29,232 bytes were already part of the recovered original NPC code; this
 export adds **zero C bytes**. Matching C remains **197,172 / 199,912 bytes
 (98.63%)**, with two game assembly functions and two inherited storage
 explanations remaining. Original NPC callbacks with C bodies remain 107 / 107,
-bounded callback profiles remain 40 / 107, and compared natural histories
-remain three callback types. Whole-NPC and whole-feature acceptance remain zero.
+bounded callback profiles remain 40 / 107. At catalogue publication, compared
+natural histories covered three callback types. The later
+[catalogue observer](NPC_CATALOGUE_TRACE.md) brings that measure to five.
+Whole-NPC and whole-feature acceptance remain zero.
 
-Next, use this verified target set to record several original callbacks in
-one fixed route, retain complete runtime identity and output comparisons,
-and corroborate each instance's registration, clock and activation history.
+Continue using this verified target set to record additional original callbacks,
+retain complete runtime identity and output comparisons, and corroborate each
+instance's registration, clock and activation history.
 Natural encounters, branches, visible effects and timing still need evidence.
 The [playable build](PLAYING.md), optional mods and separate Bevy port are
 unchanged. The exporter invokes no model API and adds no AI behavior to the game.

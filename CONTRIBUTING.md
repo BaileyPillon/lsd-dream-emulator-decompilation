@@ -98,6 +98,13 @@ callback ranges from a current matching build. Use its actual ELF/GNU extents
 and original hashes for observer targets; preserve the full-image check and
 keep the generated executable and ELF private.
 
+For several callback types in one route, use the optional
+[catalogue observer](docs/NPC_CATALOGUE_TRACE.md). Build and record with
+`--catalogue`, then compare original/rebuilt output and explicitly compare
+stock/observer output. Retain the independent selected-PC trace. Distinguish
+registered dispatches from nested function entries and unresolved contexts;
+corroborate each instance's clock through rooted RAM snapshots.
+
 Use the offline [NPC lifetime inspector](docs/NPC_LIFETIME.md) to distinguish
 enabled registration, disabled contexts and scene reachability in verified
 recordings. Preserve sampled transition intervals; do not interpret disabled

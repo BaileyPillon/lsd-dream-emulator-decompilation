@@ -60,6 +60,14 @@ callback PCs, complete function ranges and hashes from a matching symbolic
 link. It supplies checked observer targets and analysis metadata; it adds no
 game behavior or runtime acceptance.
 
+The optional [catalogue observer](docs/NPC_CATALOGUE_TRACE.md) watches that
+complete target set while retaining the independent selected-PC trace. One
+compared route records 2,467 registered dispatches across Boatman, Fish and
+Giant Fish, with five instances and corroborating RAM clocks. Fish and Giant
+Fish bring compared natural histories to five callback types. These remain
+bounded observations of the original game, separate from C recovery and
+whole-encounter acceptance.
+
 The verified local build reproduces the original Japanese executable byte for
 byte. **Full C recovery and independently reviewed gameplay coverage are still
 in progress.** The remaining assembly is regenerated from your own executable.
@@ -87,6 +95,7 @@ skip/error branches, and complete feature acceptance remain open.
 | Known C functions with unresolved unused local storage | 2 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
 | Original callbacks with bounded native comparisons | 40 / 107 |
+| Original callback types with compared natural instruction histories | 5 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 38 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
 

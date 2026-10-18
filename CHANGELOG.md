@@ -1,5 +1,20 @@
 # Changelog
 
+## Compared multi-target NPC recording - 2026-10-18
+
+- Add an optional catalogue observer for all 107 checked original callback
+  targets, preserving the independent selected-PC log and strict default mode.
+- Compare 2,467 original dispatches across five Boatman, Fish and Giant Fish
+  instances, with 287 rooted RAM clock checks per traced run. Compared natural
+  instruction histories increase from three callback types to five.
+- Qualify three 9,000-step cold boots, original/rebuilt and stock/observer
+  output comparisons, 615 independent PNG decodes and seven retained faults.
+- Distinguish registered dispatch, nested callback execution and unresolved
+  clocks. Add 18 source-only tests and preserve earlier single-PC recordings.
+- Matching C, original behavior, bounded callback profiles, whole-feature and
+  encounter acceptance, the playable build and the separate Bevy port remain
+  unchanged.
+
 ## Verified original NPC catalogue - 2026-10-18
 
 - Export all 107 original callback ranges and 111 nonnull entity bindings,
