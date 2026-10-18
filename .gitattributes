@@ -354,3 +354,10 @@ tests/test_hull_calls.py text eol=lf
 research/headless/collision-hull-opening-route.json text eol=lf
 docs/HULL_CALLS.md text eol=lf
 docs/hull-call-checks.json text eol=lf
+
+# Keep compiler-observer identities stable for private artifact-root evidence.
+research/collision/trace_compiler_stack.py text eol=lf
+research/collision/trace_compiler_lifetimes.py text eol=lf
+research/compiler/README.md text eol=lf
+tests/test_compiler_private_root.py text eol=lf
+docs/compiler-artifact-storage-checks.json text eol=lf

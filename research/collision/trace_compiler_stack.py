@@ -24,11 +24,42 @@ def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def new_output(output):
-    output = Path(output).resolve()
-    lab = (ROOT / '.decomp-lab').resolve()
+def private_root(lab_root=None):
+    """Keep raw diagnostics private while supporting a separate artifact drive."""
+    checkout = ROOT.resolve()
+    default = (checkout / '.decomp-lab').resolve()
+    if lab_root is None:
+        return default
+    requested = Path(lab_root)
+    if not requested.is_absolute():
+        raise ValueError('The private artifact root must be an absolute directory.')
+    lab = requested.resolve(strict=True)
+    if not lab.is_dir() or lab == Path(lab.anchor) or checkout.is_relative_to(lab):
+        raise ValueError('Choose a dedicated private artifact directory, not a checkout ancestor or drive root.')
+    if lab.is_relative_to(checkout) and not lab.is_relative_to(default):
+        raise ValueError('Private diagnostics inside the checkout must remain under .decomp-lab.')
+    for ancestor in (lab, *lab.parents):
+        marker = ancestor / '.git'
+        if marker.exists() or marker.is_symlink():
+            if ancestor != checkout or not lab.is_relative_to(default):
+                raise ValueError('An external private artifact root must be outside Git worktrees.')
+    return lab
+
+
+def new_output(output, lab_root=None):
+    requested = Path(output)
+    output = requested.resolve()
+    lab = private_root(lab_root)
     if output == lab or not output.is_relative_to(lab):
-        raise ValueError('Choose a fresh private output directory inside .decomp-lab.')
+        raise ValueError('Choose a fresh private output directory inside the private artifact root (.decomp-lab by default).')
+    if os.path.lexists(requested):
+        raise FileExistsError('Existing evidence cannot be overwritten: ' + str(requested))
+    for ancestor in (output, *output.parents):
+        if ancestor == lab:
+            break
+        marker = ancestor / '.git'
+        if marker.exists() or marker.is_symlink():
+            raise ValueError('Private diagnostics cannot be written inside a nested Git worktree.')
     output.mkdir(parents=True, exist_ok=False)
     return output
 
@@ -67,8 +98,8 @@ def validate_trace(trace):
     return events
 
 
-def trace_candidate(source, output, compiler_mode='g8'):
-    output = new_output(output)
+def trace_candidate(source, output, compiler_mode='g8', *, lab_root=None):
+    output = new_output(output, lab_root)
     if sys.platform == 'win32':
         raise ValueError('Run compiler stack tracing in Linux/WSL.')
     source = Path(source).resolve(strict=True)
@@ -151,9 +182,10 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source', type=Path, required=True, help='Complete C candidate translation unit.')
     parser.add_argument('--output', type=Path, required=True, help='New directory under .decomp-lab.')
+    parser.add_argument('--lab-root', type=Path, help='Absolute existing private artifact directory; external roots must be outside Git worktrees.')
     parser.add_argument('--compiler-mode', choices=('g0', 'g8'), default='g8')
     args = parser.parse_args(argv)
-    report = trace_candidate(args.source, args.output, args.compiler_mode)
+    report = trace_candidate(args.source, args.output, args.compiler_mode, lab_root=args.lab_root)
     print(json.dumps({key: report[key] for key in ('status', 'allocation_events', 'functions',
                                                  'complete_assembly_equal', 'source_promoted')}, indent=2))
     return 0

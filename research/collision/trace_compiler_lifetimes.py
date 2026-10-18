@@ -96,8 +96,8 @@ def validate_trace(trace, function):
     return events
 
 
-def trace_candidate(source, output, function, compiler_mode='g8'):
-    output = stack.new_output(output)
+def trace_candidate(source, output, function, compiler_mode='g8', *, lab_root=None):
+    output = stack.new_output(output, lab_root)
     function = function_name(function)
     if sys.platform == 'win32':
         raise ValueError('Run compiler lifetime tracing in Linux/WSL.')
@@ -172,9 +172,10 @@ def main(argv=None):
     parser.add_argument('--source', type=Path, required=True, help='Complete C candidate translation unit.')
     parser.add_argument('--function', required=True, help='C function whose storage lifetimes should be observed.')
     parser.add_argument('--output', type=Path, required=True, help='New directory under .decomp-lab.')
+    parser.add_argument('--lab-root', type=Path, help='Absolute existing private artifact directory; external roots must be outside Git worktrees.')
     parser.add_argument('--compiler-mode', choices=('g0', 'g8'), default='g8')
     args = parser.parse_args(argv)
-    report = trace_candidate(args.source, args.output, args.function, args.compiler_mode)
+    report = trace_candidate(args.source, args.output, args.function, args.compiler_mode, lab_root=args.lab_root)
     print(json.dumps({key: report[key] for key in ('status', 'function', 'lifetime_events',
                                                  'complete_assembly_equal', 'source_promoted')}, indent=2))
     return 0
