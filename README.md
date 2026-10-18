@@ -105,6 +105,11 @@ remainder from two to three: the earlier selected audit missed an inherited
 functions. Three unrelated dead pointer declarations were removed with no
 change to the executable.
 
+The [original return trace](docs/DISPATCH_RETURNS.md) now compares all 176
+recorded CD Open/Read returns and 14 nested synchronous reads. Their complete
+requested buffers match 1,007,616 disc bytes, including trailing data; queued
+completion and broader file-driver acceptance remain open.
+
 The feature inventory has 40 provisional groups; an official exhaustive
 feature total is unknown. SDK and startup code are excluded from the C-byte
 denominator. Bounded native and emulator comparisons have passed, including
@@ -484,7 +489,7 @@ For bugs and research findings, use the repository's issue templates.
 - [Play the matching game](docs/PLAYING.md)
 - [Model enumeration and callback interfaces](docs/MODEL_ENUMERATION.md)
 - [Feature inventory and before/after measurements](docs/FEATURE_INVENTORY.md)
-- [Original NPC behavior](docs/NATIVE_AI.md), [native dispatch](docs/NATIVE_DISPATCH.md), [target catalogue](docs/DISPATCH_CATALOGUE.md), [method-entry recording](docs/DISPATCH_ENTRY_TRACE.md), [executed slot loads](docs/DISPATCH_SLOT_FLOW.md) and [animation structures](docs/NATIVE_ANIMATIONS.md)
+- [Original NPC behavior](docs/NATIVE_AI.md), [native dispatch](docs/NATIVE_DISPATCH.md), [target catalogue](docs/DISPATCH_CATALOGUE.md), [method-entry recording](docs/DISPATCH_ENTRY_TRACE.md), [executed slot loads](docs/DISPATCH_SLOT_FLOW.md), [original returns and read buffers](docs/DISPATCH_RETURNS.md) and [animation structures](docs/NATIVE_ANIMATIONS.md)
 - [Nine additional original scripted callback checks](docs/SCRIPTED_AI.md)
 - [Factory, Kyoto and Natural locomotive checks](docs/LOCOMOTIVE_SCRIPTS.md)
 - [Asset inventory](docs/ASSET_INVENTORY.md) and [runtime comparison](docs/RUNTIME_COMPARISON.md)

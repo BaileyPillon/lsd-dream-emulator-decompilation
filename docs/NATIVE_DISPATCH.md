@@ -41,8 +41,15 @@ The optional [caller-context extension](DISPATCH_SLOT_FLOW.md) now proves the
 actual receiver/table/slot loads for those 176 entries. Eleven executed paths
 cover twelve table-slot bindings and 36 observed receiver/table/slot
 combinations. Original/rebuilt traces and stock/observer recorded outputs
-agree. This closes those bounded entry edges; returns, completed transfers
-and the wider dispatch graph remain open.
+agree. That checkpoint qualifies these bounded entry edges; the return
+extension below supplies separate evidence for later execution boundaries.
+
+The later [return extension](DISPATCH_RETURNS.md) compares all 176 original
+method returns and 14 nested synchronous helper returns. Their full requested
+buffers agree with 1,007,616 original sector bytes, including trailing data.
+Final polling results and original call/return boundaries are checked;
+asynchronous completion, SDK/disc errors and whole-feature acceptance remain
+open. The raw CD table and helper keep their separate qualified ranges.
 
 The partial `game_flow_screen_vtable_t` interface has a byte-array gap between
 its declared Destroy and Run callbacks. It has no bound concrete table symbol

@@ -36,6 +36,7 @@ internal sealed class DispatchInstructionTrace : IDisposable {
     readonly uint[] Memory;
     readonly int ArmFrame;
     readonly DispatchFlowTrace Flow;
+    readonly DispatchReturnTrace Returns;
     readonly Dictionary<uint, int> Sizes = new Dictionary<uint, int>();
     readonly Dictionary<string, long> StoredBodies = new Dictionary<string, long>();
     readonly Dictionary<string, uint> Counts = new Dictionary<string, uint>();
@@ -43,7 +44,7 @@ internal sealed class DispatchInstructionTrace : IDisposable {
     public bool Enabled { get; private set; }
     const int RecordWords = 1089;
 
-    public DispatchInstructionTrace(Nymashock core, string output, DispatchTarget[] targets, uint[] memory, int armFrame, uint[] flowSites) {
+    public DispatchInstructionTrace(Nymashock core, string output, DispatchTarget[] targets, uint[] memory, int armFrame, uint[] flowSites, DispatchReturnSettings returns) {
         if (targets == null || targets.Length < 1 || targets.Length > 16 || memory == null || memory.Length != 4)
             throw new Exception("Unsupported method trace target or memory set");
         foreach (var target in targets) {
@@ -70,6 +71,10 @@ internal sealed class DispatchInstructionTrace : IDisposable {
             Events = adapter.GetDelegateForFunctionPointer<Pointer>(Host.GetProcAddrOrThrow("LsdGetDispatchEvents"));
             Disable = adapter.GetDelegateForFunctionPointer<DisableTrace>(Host.GetProcAddrOrThrow("LsdDisableDispatchTrace"));
             if (flowSites != null && flowSites.Length != 0) Flow = new DispatchFlowTrace(Host, output, flowSites);
+            if (returns != null) {
+                if (Flow == null) throw new Exception("Return observation requires original caller-flow context");
+                Returns = new DispatchReturnTrace(Host, output, returns);
+            }
         } finally { Host.Exit(); }
         Writer = new StreamWriter(File.Open(Path.Combine(output,"method-instructions.tsv"),FileMode.CreateNew));
         Bodies = new BinaryWriter(File.Open(Path.Combine(output,"method-code.bin"),FileMode.CreateNew));
@@ -93,6 +98,7 @@ internal sealed class DispatchInstructionTrace : IDisposable {
             }
             BeginNativeFrame((uint)frame);
             if (Flow != null) Flow.Begin(frame, ArmFrame);
+            if (Returns != null) Returns.Begin(frame, ArmFrame);
         } finally { Host.Exit(); }
     }
     public void Drain(int frame) {
@@ -127,6 +133,7 @@ internal sealed class DispatchInstructionTrace : IDisposable {
             Total+=count;
             if (Total!=NativeTotal()) throw new Exception("Native method observations were lost");
             if (Flow != null) Flow.Drain(frame, count, Total);
+            if (Returns != null) Returns.Drain(frame);
             if (frame%300==0) { Writer.Flush(); Bodies.Flush(); }
         } finally { Host.Exit(); }
     }
@@ -135,6 +142,7 @@ internal sealed class DispatchInstructionTrace : IDisposable {
         Host.Enter(); try {
             nativeTotal=NativeTotal(); overflow=Overflow(); Disable();
             if (Flow != null) Flow.Dispose();
+            if (Returns != null) Returns.Dispose();
         } finally { Host.Exit(); }
         Writer.Dispose(); Bodies.Dispose();
         File.WriteAllText(Path.Combine(Output,"method-trace-summary.json"),new JavaScriptSerializer().Serialize(new {

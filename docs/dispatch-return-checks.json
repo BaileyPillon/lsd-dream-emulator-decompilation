@@ -1,0 +1,659 @@
+{
+  "schema_version": 1,
+  "status": "verified_bounded_original_method_returns_and_synchronous_disc_buffers",
+  "recorded_utc": "2026-10-18T12:32:05.199888+00:00",
+  "baseline_commit": "f969001982ff69d44793637eafe337cf0fe42c7b",
+  "repository": "https://github.com/BaileyPillon/lsd-dream-emulator-decompilation",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "canonical_executable_bytes": 505856,
+  "source_counts_before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "original_feature_total": null,
+  "current_C_bytes": 197172,
+  "game_text_bytes": 199912,
+  "current_compiled_C_percentage": 98.62939693465124,
+  "original_corrected_C_bytes": 169540,
+  "C_bytes_added_since_original": 27632,
+  "new_C_bytes": 0,
+  "new_C_functions_accepted": 0,
+  "known_unexplained_inherited_functions": 3,
+  "known_unexplained_declared_array_bytes": 2176,
+  "known_unexplained_function_bytes": 256,
+  "all_392_game_build_inputs_preserved": true,
+  "normal_complete_build_equal": true,
+  "normal_build_objects": 306,
+  "fresh_game_build_required_for_this_tool_only_change": false,
+  "before": {
+    "compared_method_entries": 176,
+    "qualified_receiver_table_slot_combinations": 36,
+    "compared_base_returns": 0,
+    "compared_synchronous_helper_returns": 0,
+    "disc_buffers_compared": 0,
+    "requested_disc_bytes_compared": 0
+  },
+  "after": {
+    "compared_method_entries": 176,
+    "qualified_receiver_table_slot_combinations": 36,
+    "compared_base_returns": 176,
+    "compared_synchronous_helper_returns": 14,
+    "disc_buffers_compared": 14,
+    "requested_disc_bytes_compared": 1007616
+  },
+  "original_return_results": {
+    "tracked_returns": 190,
+    "base_method_returns": 176,
+    "synchronous_helper_returns": 14,
+    "base_return_counts": {
+      "0x800272D0": 64,
+      "0x800276D0": 112
+    },
+    "captured_payload_bytes": 9068384,
+    "request_entries": 14,
+    "poll_entries": 14,
+    "poll_returns": 14,
+    "max_depth": 2,
+    "complete_return_values_are_not_transfer_counts": true,
+    "complete_state_parity_checked": false,
+    "disc_buffers": {
+      "synchronous_return_buffers_matched": 14,
+      "complete_requested_bytes_compared": 1007616,
+      "logical_file_bytes_compared": 989184,
+      "aligned_files_with_an_extra_sector": 0,
+      "files": [
+        {
+          "helper_entry_id": 3,
+          "parent_base_ordinal": 2,
+          "ISO_paths": [
+            "/CDI/ETC/DREAME5.TMD"
+          ],
+          "lba": 20855,
+          "file_bytes": 200,
+          "requested_bytes": 2048,
+          "trailing_bytes": 1848,
+          "fully_extra_sector_for_aligned_file": false,
+          "complete_buffer_sha256": "5777d3958ca0281616c7cf233d2cc6ac82ae956c4763b979044322da9839e8ca",
+          "logical_file_sha256": "8287d023e04af0d875e5cb0c111f9ddcc696e699a9eb61c667813a12b9952521"
+        },
+        {
+          "helper_entry_id": 6,
+          "parent_base_ordinal": 4,
+          "ISO_paths": [
+            "/CDI/ETC/ASMKLOGO.TIM"
+          ],
+          "lba": 20680,
+          "file_bytes": 153620,
+          "requested_bytes": 155648,
+          "trailing_bytes": 2028,
+          "fully_extra_sector_for_aligned_file": false,
+          "complete_buffer_sha256": "4d337a8b549cc224b05dd8cfc252840bd63c27bd490d7322398f5e6f4fd0f360",
+          "logical_file_sha256": "fa5051adb6a0d6d4fc3ee4c303f4dcc0435a23f614d06109882bcac1c94847c3"
+        },
+        {
+          "helper_entry_id": 9,
+          "parent_base_ordinal": 6,
+          "ISO_paths": [
+            "/CDI/ETC/OSDLOGO.TIM"
+          ],
+          "lba": 20884,
+          "file_bytes": 153620,
+          "requested_bytes": 155648,
+          "trailing_bytes": 2028,
+          "fully_extra_sector_for_aligned_file": false,
+          "complete_buffer_sha256": "289b2a5395caae24be3893b6f800b04ebd0fb42ee63a6f35f17c4f10f021f671",
+          "logical_file_sha256": "d97b689ddc7305b63bc53a886ad08d42587d4364acb2aee6a495e44fa61cca51"
+        },
+        {
+          "helper_entry_id": 12,
+          "parent_base_ordinal": 8,
+          "ISO_paths": [
+            "/CDI/ETC/FONTICON.TIM"
+          ],
+          "lba": 20761,
+          "file_bytes": 32832,
+          "requested_bytes": 34816,
+          "trailing_bytes": 1984,
+          "fully_extra_sector_for_aligned_file": false,
+          "complete_buffer_sha256": "d5ec24c60db0b92c69b976a69e042625b40e5319591ac035a11dd5d473139f20",
+          "logical_file_sha256": "e976064ffa8c4a3a2669403f0a914990a2da6b955bbe2a398415cc72d613acd4"
+        },
+        {
+          "helper_entry_id": 15,
+          "parent_base_ordinal": 10,
+          "ISO_paths": [
+            "/CDI/ETC/ETCSE.VH"
+          ],
+          "lba": 20759,
+          "file_bytes": 3616,
+          "requested_bytes": 4096,
+          "trailing_bytes": 480,
+          "fully_extra_sector_for_aligned_file": false,
+          "complete_buffer_sha256": "7a573ac251a18aa7c6fa037595936244fc8e8491c54bda2287cc91e1e50a1efb",
+          "logical_file_sha256": "d34fbb166c66d5f8f5b05e613208fbdbab886d20b56b7c173e2ddbdfa4d584d4"
+        },
+        {
+          "helper_entry_id": 18,
+          "parent_base_ordinal": 12,
+          "ISO_paths": [
+            "/CDI/ETC/ETCSE.VB"
+          ],
+          "lba": 20756,
+          "file_bytes": 5776,
+          "requested_bytes": 6144,
+          "trailing_bytes": 368,
+          "fully_extra_sector_for_aligned_file": false,
+          "complete_buffer_sha256": "e5ad443ba8b54cb9edf53e2115facc155eed1f9cddecc91fb0e100bbc4531b55",
+          "logical_file_sha256": "d3c6a3dcbdfe52e8bbddf2922d21bc0481a586e4c531e37bde2abe0d1e5c2e20"
+        },
+        {
+          "helper_entry_id": 21,
+          "parent_base_ordinal": 14,
+          "ISO_paths": [
+            "/CDI/ETC/TITLE.TIM"
+          ],
+          "lba": 20968,
+          "file_bytes": 153620,
+          "requested_bytes": 155648,
+          "trailing_bytes": 2028,
+          "fully_extra_sector_for_aligned_file": false,
+          "complete_buffer_sha256": "373fbf9de7cd96b27f6a4e875a017b27cc25e29523f7c3682bae244f40ba8d2d",
+          "logical_file_sha256": "8ded627604ef182c1b173c8ad88475165d4e3e2ea7c3d84346ee520de678263b"
+        },
+        {
+          "helper_entry_id": 24,
+          "parent_base_ordinal": 16,
+          "ISO_paths": [
+            "/CDI/SND/SE.VH"
+          ],
+          "lba": 1289,
+          "file_bytes": 18464,
+          "requested_bytes": 20480,
+          "trailing_bytes": 2016,
+          "fully_extra_sector_for_aligned_file": false,
+          "complete_buffer_sha256": "f332f38a9e93743ba61619d333c421176861f09ef88aa162b46d52984f28bc89",
+          "logical_file_sha256": "a5834011cf096bd534ca814abfeb6cf2cbe6e7abd1da3efe3be8192926f2c4fd"
+        },
+        {
+          "helper_entry_id": 27,
+          "parent_base_ordinal": 18,
+          "ISO_paths": [
+            "/CDI/SND/SE.VB"
+          ],
+          "lba": 1211,
+          "file_bytes": 158944,
+          "requested_bytes": 159744,
+          "trailing_bytes": 800,
+          "fully_extra_sector_for_aligned_file": false,
+          "complete_buffer_sha256": "bafc66f28bdf13f9d31c046b472727a0414bd9618635523ea9580cd2df76660c",
+          "logical_file_sha256": "61f654f1d0f216a267d9e20d7d7d491cfb6307d336a46433cff5d9e5ec0d1409"
+        },
+        {
+          "helper_entry_id": 30,
+          "parent_base_ordinal": 20,
+          "ISO_paths": [
+            "/CDI/ETC/SYMSPY.MOM"
+          ],
+          "lba": 20966,
+          "file_bytes": 3788,
+          "requested_bytes": 4096,
+          "trailing_bytes": 308,
+          "fully_extra_sector_for_aligned_file": false,
+          "complete_buffer_sha256": "e927298fb063ee959e85df3c76db9a36746806eca0cc5e48e1133f4e5e7c005f",
+          "logical_file_sha256": "59f6c637fb915cae9b5a03ff758b33824167e0d93dd4f060466cf24412720c66"
+        },
+        {
+          "helper_entry_id": 33,
+          "parent_base_ordinal": 22,
+          "ISO_paths": [
+            "/CDI/ETC/ETC.TIM"
+          ],
+          "lba": 20856,
+          "file_bytes": 22688,
+          "requested_bytes": 24576,
+          "trailing_bytes": 1888,
+          "fully_extra_sector_for_aligned_file": false,
+          "complete_buffer_sha256": "15fdf60ff96d8f8c6b3c5d28b49bfcabc77de10b5d669d6efe8458e1682b581e",
+          "logical_file_sha256": "25828d90d37cdaf45c07d805573d79c654e035f8ba871e4ae0c4eb9db032e362"
+        },
+        {
+          "helper_entry_id": 36,
+          "parent_base_ordinal": 24,
+          "ISO_paths": [
+            "/CDI/ETC/DREAMER.TMD"
+          ],
+          "lba": 20854,
+          "file_bytes": 400,
+          "requested_bytes": 2048,
+          "trailing_bytes": 1648,
+          "fully_extra_sector_for_aligned_file": false,
+          "complete_buffer_sha256": "71137ee797ea80b7aca53f50255760a9970d57800e680e7a0fab137bfd0cae86",
+          "logical_file_sha256": "373a1a06ccc66ca7b781375320a0ecb68883c3a8595829195648ee6d5784169a"
+        },
+        {
+          "helper_entry_id": 39,
+          "parent_base_ordinal": 26,
+          "ISO_paths": [
+            "/CDI/SND/STANDERD.VH"
+          ],
+          "lba": 1207,
+          "file_bytes": 7712,
+          "requested_bytes": 8192,
+          "trailing_bytes": 480,
+          "fully_extra_sector_for_aligned_file": false,
+          "complete_buffer_sha256": "1bed3066b3e03c4ac97ea6db33559f1b8bd5db16ffa2f55db230eb42cb6d3308",
+          "logical_file_sha256": "d2946e60cff867f801ea2732bd0ed7cb87b7b975a994c5230dff4112dd24cdfd"
+        },
+        {
+          "helper_entry_id": 42,
+          "parent_base_ordinal": 28,
+          "ISO_paths": [
+            "/CDI/SND/STANDERD.VB"
+          ],
+          "lba": 1073,
+          "file_bytes": 273904,
+          "requested_bytes": 274432,
+          "trailing_bytes": 528,
+          "fully_extra_sector_for_aligned_file": false,
+          "complete_buffer_sha256": "565de882d8c5d026a0bd885d9baa83d65ca3f53ceedb0b24e2794f6a4d15a1de",
+          "logical_file_sha256": "c28fe27ff88c051c91d47499c8481d9ef73d8367c6e3490f83ea95f28d59e9f4"
+        }
+      ],
+      "scope": "Complete requested RAM windows at synchronous helper and enclosing Read returns match original sectors, including trailing bytes. These are not CD hardware transfer counts or acceptance of asynchronous completion/error paths."
+    }
+  },
+  "helper": {
+    "function": "cd_file_driver_read_sectors",
+    "address": "0x80028A84",
+    "function_bytes": 224,
+    "complete_original_SHA256": "6af3ac0d4bffea8adf3b2ed681be0e1aba0d8340dffebfdee3281ca8bebbf657",
+    "range_provenance": "docs/unused-local-census-checks.json",
+    "outside_base_targets_and_declared_catalogue": true
+  },
+  "asynchronous_Read_returns_captured_but_completion_not_accepted": 98,
+  "Open_results_interpreted": false,
+  "return_values_are_not_transferred_byte_counts": true,
+  "all_synchronous_Read_and_helper_result_words_zero": true,
+  "final_poll_zero_results": 14,
+  "naturally_aligned_files_with_fully_extra_sector": 0,
+  "aligned_extra_sector_fixture_is_synthetic": true,
+  "receiver_inputs_taken_before_Read": true,
+  "raw_track_read_only_and_rehashed_before_and_after": true,
+  "independent_numeric_audit": {
+    "report": {
+      "bytes": 10936,
+      "sha256": "fb8947222c1fd0216b9011320b30e2606ead9f4755ca39ca6ca69f01e6c99348"
+    },
+    "source_sha256": "2b3912a238723faca3cfc6e97b75aa074cbf41b6d746d44e9776e9e0ca9f820f",
+    "source_snapshots_rehashed": 102,
+    "decoded_PNGs": 534,
+    "complete_checkpoints_per_run": 178,
+    "all_14_logical_files_match_older_extraction": true,
+    "older_inventory": {
+      "bytes": 993166,
+      "sha256": "986e7bad2d9173eb57e3e0f8ce72b0c3b74a7beab93f219d179c1c65b4b036d0"
+    },
+    "extraction_layout": {
+      "bytes": 92138,
+      "sha256": "cf93cc690c83baa91e7f54d57bc160007ceee859dc566333105124bf126ed1bc"
+    },
+    "complete_original_track": {
+      "bytes": 648088896,
+      "sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61"
+    }
+  },
+  "GPU_observations_per_run": 6001,
+  "RAM_observations_per_run": 1117,
+  "complete_checkpoints_per_run": 178,
+  "PCM_bytes_per_run": 17692008,
+  "recorded_input_frames": 6000,
+  "core_advances_per_run": 6001,
+  "observer_arm_frame": 900,
+  "first_selected_entry_frame": 967,
+  "original_rebuilt_return_and_payload_streams_equal": true,
+  "every_recorded_game_output_equal": true,
+  "original_rebuilt_comparison": {
+    "bytes": 30760,
+    "sha256": "35b5d4b4adafda8585664328b0cd8d73cec8a75c1204df583263fd3353e860ff"
+  },
+  "distributed_observer_comparison": {
+    "bytes": 16474,
+    "sha256": "0e0e98dc9c786859ad22167d6190527734f1b04ab1197d1edeaf231a4d05338c"
+  },
+  "runtime_runs": {
+    "original": {
+      "run_manifest": {
+        "bytes": 190029,
+        "sha256": "297a48260eeec1aa23e9332ed65c00f79a17db1e9f17e43908dbe6cdb244a272"
+      },
+      "native_report": {
+        "bytes": 56797,
+        "sha256": "7c797e068baf4a2c0cb9c3780ae459d8edce56adcc24b0c3094a0f6947c8ff3b"
+      },
+      "host_binary": {
+        "bytes": 72704,
+        "sha256": "7b983753f2039cfc8591d6135857b5ddfad250422b203fcb9a9870af25c442f5"
+      },
+      "host_compiler_warnings_as_errors": true,
+      "compiler_log_empty": true,
+      "exit_code": 0
+    },
+    "rebuilt": {
+      "run_manifest": {
+        "bytes": 189835,
+        "sha256": "b8b169ee4f5bd530c4f680b0a9403885ed878f46fae3947279ecf81b5ede61bc"
+      },
+      "native_report": {
+        "bytes": 56797,
+        "sha256": "7c797e068baf4a2c0cb9c3780ae459d8edce56adcc24b0c3094a0f6947c8ff3b"
+      },
+      "host_binary": {
+        "bytes": 72704,
+        "sha256": "7b983753f2039cfc8591d6135857b5ddfad250422b203fcb9a9870af25c442f5"
+      },
+      "host_compiler_warnings_as_errors": true,
+      "compiler_log_empty": true,
+      "exit_code": 0
+    },
+    "distributed": {
+      "run_manifest": {
+        "bytes": 142421,
+        "sha256": "08bfcc9f29c2dbea6818d93ad48f39c5f0de505d3b4eb759ab3ddd979410df85"
+      },
+      "native_report": {
+        "bytes": 56797,
+        "sha256": "0fa461c1f3a9e516c5b1432ba97fc48d8094b04288fa12a4d045e48638a05921"
+      },
+      "host_binary": {
+        "bytes": 72704,
+        "sha256": "7b983753f2039cfc8591d6135857b5ddfad250422b203fcb9a9870af25c442f5"
+      },
+      "host_compiler_warnings_as_errors": true,
+      "compiler_log_empty": true,
+      "exit_code": 0
+    }
+  },
+  "return_files": {
+    "method-returns.bin": {
+      "bytes": 114000,
+      "sha256": "7b17340c0e2c6cc84364d8cc48212b613ffd5bb50bf0888ea6064bba8c91065c"
+    },
+    "method-return-data.bin": {
+      "bytes": 9068384,
+      "sha256": "14197478c24509f00b213eb95d4c64eac0d2cb20a559707438b2d1a850c75d21"
+    },
+    "method-return-summary.json": {
+      "bytes": 505,
+      "sha256": "a7ea04255a9eb87684db022a4707ecf90fbd2b64ee7cdb930776a76a41abdec5"
+    }
+  },
+  "observer_profile": {
+    "bytes": 44121,
+    "sha256": "0688f340488f9eb94072791114503e14769fab643b8f55f3a334edd2c898b387"
+  },
+  "native_core": {
+    "file": "shock.wbx",
+    "bytes": 3409248,
+    "sha256": "570ff6e5ff58e291332632e6093b48d524f299b2608d1621bde9eb306202caaa"
+  },
+  "compressed_native_core": {
+    "file": "shock.wbx.zst",
+    "bytes": 827960,
+    "sha256": "9139733b67f49a5a7755cace814052b94f7e0eafe35cad002cc04db93d06adf7"
+  },
+  "native_export_count": 33,
+  "native_build_scope": "One new adapter object linked with the recorded pinned cached native objects; not a fresh full-core rebuild.",
+  "fresh_full_core_build": false,
+  "observer_profile_runtime_verified": false,
+  "existing_CPU_source_modified": false,
+  "original_game_RAM_written": false,
+  "restored_emulator_state": false,
+  "user_emulator_UI_controlled": false,
+  "calling_convention_setup": {
+    "configuration_arguments": [
+      3,
+      4
+    ],
+    "initial_seven_argument_attempt_failed_before_recording": true,
+    "retained_failure": "Too many parameters to marshal!",
+    "failed_host_stderr": {
+      "bytes": 906,
+      "sha256": "61bd2602799c3b188870aefe62ca490e18fbb676ade9fab3ca78351a79cc8b11"
+    }
+  },
+  "early_frame_zero_observer_discrepancy_still_unresolved": true,
+  "observer_general_transparency_established": false,
+  "protocol": {
+    "version": 1,
+    "return_event_bytes": 600,
+    "max_pending_calls": 64,
+    "max_returns_per_frame": 1024,
+    "max_payload_bytes_per_frame": 8388608,
+    "base_entry_event_bytes": 4356,
+    "caller_flow_event_bytes": 664
+  },
+  "new_source_only_tests": 20,
+  "tooling_tests": {
+    "windows": {
+      "tests": 1054,
+      "expected_skips": 2,
+      "result": "passed",
+      "log": {
+        "bytes": 172432,
+        "sha256": "94be935a11832a895f2e0bcab919011b51448ef2d1b41b8889249b8818e8e1da"
+      }
+    },
+    "linux": {
+      "tests": 1054,
+      "expected_skips": 2,
+      "result": "passed",
+      "log": {
+        "bytes": 172432,
+        "sha256": "cceac2209482ecf16c085a7771b08b7ff72afe94e4d943893eb63456cae5d64d"
+      }
+    }
+  },
+  "legacy_compatibility": {
+    "entry-only": {
+      "result": "passed",
+      "report": {
+        "bytes": 2818,
+        "sha256": "20167a00cafb25fd52c5b02edb89cf23ce660647dc5d08752b7bf69ead1f5dcf"
+      }
+    },
+    "flow-only": {
+      "result": "passed",
+      "report": {
+        "bytes": 6081,
+        "sha256": "d9e3d54af86b87b689c91ce9f12a323470a0c2aeabc569660da0470d2ead4270"
+      }
+    },
+    "distributed-inspection-control": {
+      "result": "passed",
+      "report": {
+        "bytes": 2088,
+        "sha256": "785db159db46fd5f7dcfe7ec50863a9846564ce77e28f6cba4c7a132ef2619b7"
+      },
+      "scope": "A retained folder compared to itself; inspection control, not an independent repeat."
+    }
+  },
+  "retained_data_negative_control_count": 18,
+  "retained_data_negative_controls": [
+    {
+      "name": "truncated_return",
+      "rejected": true,
+      "reason": "Missing, extra, truncated or lost native return/payload records."
+    },
+    {
+      "name": "missing_return",
+      "rejected": true,
+      "reason": "Missing, extra, truncated or lost native return/payload records."
+    },
+    {
+      "name": "duplicate_entry_id",
+      "rejected": true,
+      "reason": "Tracked entry IDs are missing or duplicated."
+    },
+    {
+      "name": "missing_parent",
+      "rejected": true,
+      "reason": "Synchronous helper does not belong to the observed Read arguments."
+    },
+    {
+      "name": "wrong_return_sp",
+      "rejected": true,
+      "reason": "A return disagrees with its original stack/caller boundary."
+    },
+    {
+      "name": "wrong_return_ra",
+      "rejected": true,
+      "reason": "A return disagrees with its original stack/caller boundary."
+    },
+    {
+      "name": "nonzero_Read_result",
+      "rejected": true,
+      "reason": "Original Read/helper result is not the captured zero result word."
+    },
+    {
+      "name": "nonzero_final_poll_result",
+      "rejected": true,
+      "reason": "Original synchronous request arguments or final SDK polling result disagree."
+    },
+    {
+      "name": "wrong_request_destination",
+      "rejected": true,
+      "reason": "Original synchronous request arguments or final SDK polling result disagree."
+    },
+    {
+      "name": "wrong_request_RA",
+      "rejected": true,
+      "reason": "Original request/poll events lack ordered helper/caller boundaries."
+    },
+    {
+      "name": "wrong_poll_return_instruction",
+      "rejected": true,
+      "reason": "Observed effective/RAM return instruction differs from the original."
+    },
+    {
+      "name": "overlapping_buffer",
+      "rejected": true,
+      "reason": "Missing, invalid or overlapping complete Read return RAM window."
+    },
+    {
+      "name": "unreferenced_payload",
+      "rejected": true,
+      "reason": "Base returns or referenced complete payload bytes are missing."
+    },
+    {
+      "name": "pending_entry",
+      "rejected": true,
+      "reason": "Native return source, protocol, overflow or pending-call state is unqualified."
+    },
+    {
+      "name": "native_overflow",
+      "rejected": true,
+      "reason": "Native return source, protocol, overflow or pending-call state is unqualified."
+    },
+    {
+      "name": "wrong_pre_Read_receiver_snapshot",
+      "rejected": true,
+      "reason": "Synchronous file receiver inputs changed between Read and helper entry."
+    },
+    {
+      "name": "full_helper_code_tail_changed",
+      "rejected": true,
+      "reason": "Full synchronous-helper code captured at entry differs from the original."
+    },
+    {
+      "name": "matching_parent_helper_trailing_byte_differs_from_disc",
+      "rejected": true,
+      "reason": "Complete synchronous return buffer differs from the verified disc sectors."
+    }
+  ],
+  "retained_data_negative_control_scope": "In-memory retained-data faults; no original game instruction or RAM mutations.",
+  "source_file_SHA256": {
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/RecordDispatchHistory.cs": "9f9ab9c8b8ee1ad2f1174d66605e8cef8e8beb11c1684ef4d88fb89718a87465",
+    "research/headless/DispatchInstructionTrace.cs": "804caf59a1f17687785e0c2ee602d9345c64f03f1bbf7792bb73beea52aa7830",
+    "research/headless/DispatchFlowTrace.cs": "deb08f999830429be3fcb5a9b4807fc1ce07576f618ac56b7db89aa019048ad9",
+    "research/headless/DispatchReturnTrace.cs": "bf93eb025f78021c3b5a588d6cd2a013feaed6f9044f3770f94115703327fe98",
+    "research/runtime_state/dispatch_entry_observer.h": "309de47e704ee37f58682237532bfaebeecae51e54ad1b0a288c3337edfb5925",
+    "research/runtime_state/dispatch_flow_observer.h": "03efc6e7d30b5d2fe9e6389871c0c5d47886ab9ca0a7905869b551382862964d",
+    "research/runtime_state/dispatch_return_observer.h": "37a3a6992a1ef9ea2831fde434ba035a6f00d7e1c4428b67a449f9af194ef7df",
+    "tools/dispatch_flow.py": "ac625c36f75d6712c9735525952e613aa042c1b7db727c0dd085a3eb728b9c91",
+    "tools/dispatch_returns.py": "d2f02c7c4bb4a8bde40add270b7e3223ade351cf012e5f209fe712ce0b07a67d",
+    "docs/unused-local-census-checks.json": "3562090d37a607d20e824c58c3b5df11a66b1973da6c84223b85b101a00ebf9e",
+    "research/headless/file-driver-return-route.json": "1e570039397ff938091ec5d16cb1cd874324cbf26ac0f449f492d4e770a6ef01",
+    "tools/record_dispatch_history.py": "0ccc993e1bd501365634c7466ee7cfa00131c5d6d518e40330bcaae75d22a1ec",
+    "tools/build_dispatch_observer.py": "dccb53a64984468b08cac148f74d97a2b5264ceb85b4e7a9465d662e36169081",
+    "tools/build_npc_observer.py": "35448a21dff5c31e64b765586d1da103dcc9e7a4b6429695ff0f134d92de006f",
+    "tools/dispatch_trace.py": "00f1d120f6e5d9c00012638cf9fd1eef6d4ad6e8a1f869671affa92226275b3f",
+    "tools/record_npc_history.py": "2267636bec135c1bcab454ccdf952aed8eefcc89e30c41832f53c6caa0f3aee9",
+    "tools/replay_cold_start_headless.py": "7dedf37e0fceb035fed90f359779df7f79234dc0ab2d4ef559fb2edffa885595",
+    "tools/runtime_inputs.py": "a1e0865b13801414bfad30f31ce00ffd13840b2a836dbc527e138d89d6d877e4",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+    "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+    "configure.py": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+    "research/dispatch/target-catalogue.json": "99093a997cc2e43b46f9c1c22c014c221547c10f976e6d1766696dce421b23e4",
+    "docs/dispatch-catalogue-checks.json": "74e73b081b85ddcbbdc5dc5f66a510712fa4c49bfef65f1c269e48d45627ddd9",
+    "research/file_driver/function-ranges.json": "6817dbde0ea9efc0fea419b06682cdc5c71369fc0ab397264092a2061094b9be",
+    "docs/file-driver-interface-checks.json": "3a12198cdbaf9e0bcc392b7deb05cb8e94a3b416531d82d66159332a903f6d6c",
+    "tests/test_dispatch_returns.py": "ab23ed8598668c56c72241c9f44c119abf20c3aff44f132aec8c5e010864cc4a"
+  },
+  "private_build_input_file_SHA256": {
+    "build/SLPS01556.map": "0c8ad7a8e09678102951c5456175dc8ef7bb15a242b51ce2bbf6d62ab1e39f41",
+    "build/undefined_funcs_auto.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/undefined_syms_auto.txt": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f",
+    "rom/SLPS_015.56": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    ".decomp-lab/dispatch-return-build-20261018-second/shock.wbx": "570ff6e5ff58e291332632e6093b48d524f299b2608d1621bde9eb306202caaa",
+    ".decomp-lab/dispatch-return-build-20261018-second/shock.wbx.zst": "9139733b67f49a5a7755cace814052b94f7e0eafe35cad002cc04db93d06adf7",
+    ".decomp-lab/dispatch-return-build-20261018-second/profile.json": "0688f340488f9eb94072791114503e14769fab643b8f55f3a334edd2c898b387"
+  },
+  "external_host_tool_file_SHA256": {
+    "csc.dll": "fc4fc82205936fa57670f9ebe4b1ddb2fd74da3240eef04c21e2123d584bdc76"
+  },
+  "complete_state_parity_checked": false,
+  "original_hardware_timing_verified": false,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "AI_model_API_called": false,
+  "original_NPC_behavior_added": false,
+  "bevy_port_unchanged": true,
+  "bevy_port_commit": "0610f776185e8e25d9bc8c39150fa69b90395293",
+  "play_launcher_sha256": "83d516c292694ebf64f568c8025b69a8161a05c51b564c6a2501857804cc4179",
+  "frozen_objective_sha256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+  "remaining_gates": [
+    "Two original assembly functions still require matching maintainable C.",
+    "Three inherited unused-storage functions still require original source explanations.",
+    "Asynchronous completion, SDK/disc errors, Open filename lookup, other callbacks and resource histories remain unaccepted.",
+    "No native sector-aligned file sample exercised the wholly additional-sector case.",
+    "Wider dynamic dispatch, natural NPC encounters, remaining original content and whole-feature review remain open.",
+    "Complete emulator state, original hardware timing and one-to-one gameplay parity are not established."
+  ],
+  "scope": "Bounded original method returns and synchronous destination-data evidence. No C recovery, asynchronous completion or whole-feature acceptance."
+}

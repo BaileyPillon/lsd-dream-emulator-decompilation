@@ -1,5 +1,19 @@
 # Changelog
 
+## Original method returns and synchronous disc buffers - 2026-10-18
+
+- Add an optional return observer with original caller, stack, instruction
+  and payload checks. Compare all 176 recorded CD Open/Read returns and
+  14 nested synchronous helper returns.
+- Match 1,007,616 requested bytes against original sectors, including
+  18,432 trailing bytes; independently check the 989,184 logical bytes
+  against the earlier extracted files.
+- Compare original/rebuilt traces and whole-boot recorded outputs against
+  the distributed core. Retain the initial adapter marshalling failure.
+- Add 20 source-only tests and reject 18 retained-data faults. Existing
+  entry-only and flow-only captures remain inspectable. C recovery,
+  asynchronous completion and whole-feature acceptance are unchanged.
+
 ## Canonical compiler census and storage correction - 2026-10-18
 
 - Audit all 79 configured game C files with the ordinary bundled compiler
