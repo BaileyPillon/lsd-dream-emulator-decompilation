@@ -22,9 +22,11 @@ the wider dynamic-dispatch completion gate remain separate.
 
 The [original method-entry profile](DISPATCH_ENTRY_TRACE.md) now supplies
 176 compared CD Open/Read observations through synchronous, queued and direct
-framed paths, with strict full-boot stock/observer output checks. Extend this
-to call-site receiver/slot data flow, return/completion evidence, destinations,
-other raw tables, error cases and natural histories. The retained early-hook
+framed paths, with strict full-boot stock/observer output checks. The later
+[slot-load](DISPATCH_SLOT_FLOW.md) and [return](DISPATCH_RETURNS.md) extensions
+add observed receiver/slot paths and synchronous destination data. Continue
+asynchronous completion, other raw tables, error cases and natural histories.
+The retained early-hook
 RAM difference remains an observer limitation; the qualified profile arms
 before the first watched method while comparing the whole boot sequence.
 
@@ -148,8 +150,11 @@ function or whole-feature gate; continue the source work below.
 
 The [original slot-load trace](DISPATCH_SLOT_FLOW.md) establishes actual
 receiver/table/slot chains for all 176 recorded CD Open/Read entries, including
-the TIM loader's shared tail. Continue return/completion and destination-data
-verification, other dispatch paths, and the full source and gameplay gates.
+the TIM loader's shared tail. The [return extension](DISPATCH_RETURNS.md) now
+compares all 176 method returns plus 14 synchronous helper returns and checks
+their complete requested destination data against disc sectors and earlier
+extracted files. Continue asynchronous completion, SDK/disc errors, other
+dispatch paths and file histories, and the full source and gameplay gates.
 
 Two game functions remain in assembly after the
 [sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md): the

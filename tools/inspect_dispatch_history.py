@@ -21,6 +21,7 @@ from tools.replay_cold_start_headless import require, write_json
 from tools.runtime_inputs import content_identity, record_file
 from tools.build_dispatch_observer import EXPORTS
 from tools.dispatch_flow import FLOW_EXPORTS, flow_sites, flow_windows, validate_flow
+from tools.dispatch_returns import RETURN_EXPORTS, verified_return_selection, validate_returns, verify_disc_buffers
 from tools.build_npc_observer import UPSTREAM, MEDNAFEN, SOURCE_SHA256
 from research.compiler.compare_function import CANONICAL_SHA256
 from tools.psx_image import executable_offset
@@ -181,6 +182,13 @@ def inspect(folder):
         executable,json.loads(supplemental),json.loads(owned_file(folder,'method-ranges-provenance.json').read_bytes()),supplemental)
     sites=flow_sites(program,executable)
     require(settings.get('flow_sites',[])==flow_windows(program,executable),'Flow settings differ from declared canonical sites.')
+    return_raw=None
+    if 'return_provenance_file' in manifest['dispatch']:
+        verify_file(folder,'return-helper-provenance.json',manifest['dispatch']['return_provenance_file'])
+        return_raw=owned_file(folder,'return-helper-provenance.json').read_bytes()
+    return_selection=verified_return_selection(program,selected,executable,
+        json.loads(return_raw) if return_raw else None,return_raw)
+    require(settings.get('return_trace')==return_selection,'Return settings differ from qualified original methods.')
     require(manifest['dispatch']['targets']==list(selected.values())
             and settings['dispatch_targets']==[dict(pc=pc,bytes=row['function_bytes']) for pc,row in selected.items()]
             and settings['dispatch_words']==list(manifest['dispatch']['memory_symbols'].values()),
@@ -200,12 +208,19 @@ def inspect(folder):
                 and profile['producer_sha256']==frozen['build_dispatch_observer.py'][1]['sha256']
                 and set(EXPORTS)<=set(profile['exported_functions']),'Method observer producer identity differs.')
         require(bool(sites)==(profile.get('flow_protocol')==1),'Flow sites and observer protocol disagree.')
+        require(bool(return_selection)==(profile.get('return_protocol')==1),'Return interface and observer protocol disagree.')
         if sites:
             require({'DispatchFlowTrace.cs','dispatch_flow_observer.h','dispatch_flow.py'}<=set(frozen)
                     and profile.get('flow_event_bytes')==664 and profile.get('flow_history_instructions')==16
                     and profile.get('flow_header_sha256')==frozen['dispatch_flow_observer.h'][1]['sha256']
                     and set(FLOW_EXPORTS)<=set(profile['exported_functions']),
                     'Incomplete native flow source or transport provenance.')
+        if return_selection:
+            require({'DispatchReturnTrace.cs','dispatch_return_observer.h','dispatch_returns.py','unused-local-census-checks.json'}<=set(frozen)
+                    and profile.get('return_event_bytes')==600 and profile.get('return_frame_payload_bytes')==8*1024*1024
+                    and profile.get('return_header_sha256')==frozen['dispatch_return_observer.h'][1]['sha256']
+                    and set(RETURN_EXPORTS)<=set(profile['exported_functions']),
+                    'Incomplete original return/data source or transport provenance.')
         for key,name in (('core','dll/shock.wbx'),('compressed_core','dll/shock.wbx.zst')):
             require(content_identity(profile[key])==content_identity(manifest['actual_runtime_files'][name]),
                     'Loaded method core differs from its build profile.')
@@ -265,10 +280,28 @@ def inspect(folder):
         else:
             require(not (output/'method-flow.bin').exists() and not (output/'method-flow-summary.json').exists(),
                     'Entry-only recordings cannot supply undeclared caller-flow data.')
+        if return_selection:
+            data=(output/'method-return-data.bin').read_bytes()
+            report,returned=validate_returns((output/'method-returns.bin').read_bytes(),data,
+                json.loads((output/'method-return-summary.json').read_text(encoding='utf-8-sig')),
+                entries,return_selection,selected,executable,effective)
+            track=manifest['source_manifest']['disc']['tracks'][0]
+            actual=record_file(track['path'])
+            require(content_identity(actual)==content_identity(track),'The complete return-data disc track changed.')
+            with Path(track['path']).open('rb') as stream:
+                report['disc_buffers']=verify_disc_buffers(returned,data,entries,return_selection,stream)
+            require(record_file(track['path'])==actual,'The source disc changed while return buffers were checked.')
+            entry_report['original_returns']=report
+        else:
+            require(all(not (output/name).exists() for name in
+                ('method-returns.bin','method-return-data.bin','method-return-summary.json')),
+                'Entry-only recordings cannot claim undeclared return/data observations.')
     else:
         require(native['instruction_entries']==0 and not (output/'method-instructions.tsv').exists()
                 and not (output/'method-code.bin').exists() and not (output/'method-flow.bin').exists()
-                and not (output/'method-flow-summary.json').exists(),'Distributed core unexpectedly supplied method entries.')
+                and not (output/'method-flow-summary.json').exists() and all(not (output/name).exists() for name in
+                    ('method-returns.bin','method-return-data.bin','method-return-summary.json')),
+                'Distributed core unexpectedly supplied method entries.')
     result=dict(status='inspected_bounded_original_method_history',runtime_kind=kind,input_frames=frames,
         GPU_observations=len(observations),RAM_observations=len(memory),complete_checkpoints=len(checkpoints),
         PCM_bytes=total*4,**entry_report,complete_state_parity_checked=False,original_hardware_timing_verified=False,
@@ -304,6 +337,10 @@ def compare(reference,candidate,mode):
             for name in ('method-flow.bin','method-flow-summary.json'):
                 require(files_equal(left['folder']/'observations'/name,right['folder']/'observations'/name),
                         'Original/rebuilt native caller-flow records differ.')
+        if a['runtime_kind']=='dispatch_observer' and left['program']['method_trace'].get('return_trace'):
+            for name in ('method-returns.bin','method-return-data.bin','method-return-summary.json'):
+                require(files_equal(left['folder']/'observations'/name,right['folder']/'observations'/name),
+                        'Original/rebuilt method return/data observations differ.')
     else:
         require({a['runtime_kind'],b['runtime_kind']}=={'distributed','dispatch_observer'} and changed
                 and set(changed)<=CORE_FILES,'Observer-output comparison permits only declared core artifacts to differ.')
@@ -338,7 +375,7 @@ def main(argv=None):
         report=compare(args.reference,args.candidate,args.mode) if args.candidate else inspect(args.reference)[0]
         report['verification_source_sha256']={name:sha((ROOT/name).read_bytes()) for name in
             ('tools/inspect_dispatch_history.py','tools/dispatch_trace.py','tools/compare_npc_history.py',
-             'tools/psx_image.py','tools/runtime_inputs.py','tools/dispatch_flow.py')}
+             'tools/psx_image.py','tools/runtime_inputs.py','tools/dispatch_flow.py','tools/dispatch_returns.py')}
         write_json(output,report)
         print(json.dumps(report),flush=True)
         return 0

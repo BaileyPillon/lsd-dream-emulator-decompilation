@@ -120,6 +120,10 @@ their retained source and protocol identities.
 
 ## Remaining work
 
+The later [return trace](DISPATCH_RETURNS.md) adds compared original returns
+and synchronous destination data. This document retains the slot-load
+checkpoint's original counts and remaining-work boundary below.
+
 The later [compiler census](UNUSED_LOCAL_CENSUS.md) corrects the overall
 inherited storage remainder to three by finding a missed CD-reader buffer.
 The counts below retain this trace checkpoint's earlier selected-audit scope.

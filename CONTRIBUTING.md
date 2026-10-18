@@ -74,6 +74,11 @@ source hashes. [Native dispatch](docs/NATIVE_DISPATCH.md) distinguishes static
 bindings from inferred signatures and remaining call-site closure. Preserve
 original callback bindings when improving names and types.
 
+The optional [return and buffer observer](docs/DISPATCH_RETURNS.md) follows
+original method returns and checks synchronous destinations against a verified
+private disc. Keep recorded returns, asynchronous completion and whole-feature
+acceptance separate. Its owned source-only fixtures require no game assets.
+
 [Native animation auditing](docs/NATIVE_ANIMATIONS.md) measures original
 model/animation records and references separately from feature counts.
 [Original NPC auditing](docs/NATIVE_AI.md) checks signed property bytes and
