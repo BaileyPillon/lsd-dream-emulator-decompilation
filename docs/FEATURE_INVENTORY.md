@@ -26,6 +26,13 @@ backing allocations. Its 30,000-frame replay reaches Day 002 with matching
 recorded original/rebuilt and observer/distributed outputs. It adds no C byte,
 original-game feature, NPC profile or whole-feature acceptance.
 
+The [CD error/reset profile](CD_ERROR_RESET_RECOVERY.md) adds five executed
+failed reads, exact driver-state effects and later recovery through the original
+reset input. It qualifies 162 successful SDK reads and all 49 post-reset queued
+read lifetime windows, with 35 backing allocations actually freed. Failed RAM,
+reset-censored generations and automatic read recovery remain separate. This
+adds no C bytes, original feature, NPC profile or whole-feature acceptance.
+
 The [complete software movie decode](MOVIE_DECODE.md) adds payload evidence
 for all **39** routed movies: **22,382** video frames and **27,921** XA audio
 packets, independently hashed again as raw decoded bytes. It adds no C bytes,

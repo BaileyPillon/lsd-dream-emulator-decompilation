@@ -13,10 +13,12 @@ stubs. The [SDK completion profile](SDK_READ_COMPLETIONS.md) now compares 102
 actual completed reads, including all 49 queued handoffs in its controller
 history. The [natural file-lifetime profile](FILE_HEAP_LIFETIMES.md) now follows
 their 35 backing allocations through the Day 002 menu, with actual constructor,
-release and free observations. Extend these checks to SDK errors, other object
-lifetimes and other natural file histories. Both inherited empty debug frames
-still need
-source explanations; the remaining two assembly functions are unchanged.
+release and free observations. The [CD error/reset profile](CD_ERROR_RESET_RECOVERY.md)
+now covers five actual failed reads, the original reseek/end-request behavior
+and controller-reset recovery. Extend these checks to other error paths,
+object lifetimes and natural file histories. The two inherited empty debug
+frames and the blocking reader's unused sector buffer still need source
+explanations; the remaining two assembly functions are unchanged.
 
 The [declared dispatch catalogue](DISPATCH_CATALOGUE.md) now qualifies all
 838 table targets and their 2,205 nonnull bindings using complete original

@@ -1,0 +1,571 @@
+{
+  "schema_version": 1,
+  "status": "verified_bounded_original_CD_errors_and_reset_recovery",
+  "repository": "https://github.com/BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "af4be0b53830a813aa91fe421d4546190dde3b51",
+  "canonical_executable": {
+    "bytes": 505856,
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+  },
+  "frozen_objective_sha256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+  "all_392_game_build_inputs_preserved": true,
+  "original_game_behavior_modified": false,
+  "source_counts_before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "matching_C_percentage": 98.62939693465124,
+  "new_C_bytes": 0,
+  "new_C_functions_accepted": 0,
+  "game_objects": 306,
+  "known_game_assembly_functions_remaining": 2,
+  "known_unexplained_storage_functions": 3,
+  "provisional_feature_groups": 40,
+  "listed_core_function_groups_in_C": 38,
+  "exhaustive_original_feature_count_known": false,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "original_NPC_callbacks_in_C": 107,
+  "bounded_original_NPC_callback_profiles": 40,
+  "developer_tool_categories_before": 10,
+  "developer_tool_categories_after": 10,
+  "optional_mod_categories_before": 3,
+  "optional_mod_categories_after": 3,
+  "AI_model_API_called": false,
+  "earlier_natural_lifetime_profile": {
+    "controller_frames": 30000,
+    "failed_SDK_reads": 0,
+    "completed_SDK_reads": 117,
+    "queued_Read_windows_qualified": 49,
+    "backing_generations_closed": 35,
+    "original_tray_reset_error_profile_accepted": false
+  },
+  "tray_open_frame": 2420,
+  "tray_close_frame": 2540,
+  "controller_reset_frame": 3000,
+  "original_disc_index": 0,
+  "actual_tray_reset_interruption_executed": true,
+  "game_instruction_or_RAM_fault_injection": false,
+  "SDK_successful_transfers": 162,
+  "SDK_successes_before_reset": 52,
+  "SDK_successes_after_reset": 110,
+  "SDK_failed_transfers": 5,
+  "successful_complete_sector_RAM_bytes": 6047744,
+  "distinct_successful_disc_sectors": 2108,
+  "failed_requested_destination_RAM_bytes_retained": 839680,
+  "failed_written_prefix_bytes_verified_against_disc": 59392,
+  "failed_tail_bytes_accepted": false,
+  "failed_RAM_is_successful_completion": false,
+  "failed_transfers": [
+    {
+      "request_id": 16113,
+      "terminal_id": 16129,
+      "epoch": 0,
+      "lba": 1301,
+      "sectors": 97,
+      "requested_sector_bytes": 198656,
+      "written_prefix_bytes": 59392,
+      "request_frame": 2405,
+      "terminal_frame": 2420,
+      "request_call": "0x8002866C",
+      "destination": "0x801C1540"
+    },
+    {
+      "request_id": 16397,
+      "terminal_id": 16399,
+      "epoch": 0,
+      "lba": 1398,
+      "sectors": 97,
+      "requested_sector_bytes": 198656,
+      "written_prefix_bytes": 0,
+      "request_frame": 2549,
+      "terminal_frame": 2550,
+      "request_call": "0x8002866C",
+      "destination": "0x801C1540"
+    },
+    {
+      "request_id": 16423,
+      "terminal_id": 16425,
+      "epoch": 0,
+      "lba": 1495,
+      "sectors": 97,
+      "requested_sector_bytes": 198656,
+      "written_prefix_bytes": 0,
+      "request_frame": 2557,
+      "terminal_frame": 2558,
+      "request_call": "0x8002866C",
+      "destination": "0x801C1540"
+    },
+    {
+      "request_id": 16449,
+      "terminal_id": 16451,
+      "epoch": 0,
+      "lba": 1567,
+      "sectors": 97,
+      "requested_sector_bytes": 198656,
+      "written_prefix_bytes": 0,
+      "request_frame": 2565,
+      "terminal_frame": 2566,
+      "request_call": "0x8002866C",
+      "destination": "0x801C1540"
+    },
+    {
+      "request_id": 16575,
+      "terminal_id": 16577,
+      "epoch": 0,
+      "lba": 2440,
+      "sectors": 22,
+      "requested_sector_bytes": 45056,
+      "written_prefix_bytes": 0,
+      "request_frame": 2576,
+      "terminal_frame": 2577,
+      "request_call": "0x8002866C",
+      "destination": "0x8009BC44"
+    }
+  ],
+  "original_error_endings": {
+    "qualified_failed_driver_endings": 5,
+    "endings": [
+      {
+        "request_id": 16113,
+        "failure_id": 16129,
+        "flush_id": 16130,
+        "driver_end_id": 16379,
+        "failure_frame": 2420,
+        "driver_end_frame": 2544,
+        "SDK_reads_reissued_before_driver_end": 0,
+        "accepted_reseek_calls": 62,
+        "reseek_sync_errors": 61,
+        "driver_busy_after": 0,
+        "failed_data_counted_as_completed": false
+      },
+      {
+        "request_id": 16397,
+        "failure_id": 16399,
+        "flush_id": 16400,
+        "driver_end_id": 16405,
+        "failure_frame": 2550,
+        "driver_end_frame": 2552,
+        "SDK_reads_reissued_before_driver_end": 0,
+        "accepted_reseek_calls": 1,
+        "reseek_sync_errors": 0,
+        "driver_busy_after": 0,
+        "failed_data_counted_as_completed": false
+      },
+      {
+        "request_id": 16423,
+        "failure_id": 16425,
+        "flush_id": 16426,
+        "driver_end_id": 16431,
+        "failure_frame": 2558,
+        "driver_end_frame": 2560,
+        "SDK_reads_reissued_before_driver_end": 0,
+        "accepted_reseek_calls": 1,
+        "reseek_sync_errors": 0,
+        "driver_busy_after": 0,
+        "failed_data_counted_as_completed": false
+      },
+      {
+        "request_id": 16449,
+        "failure_id": 16451,
+        "flush_id": 16452,
+        "driver_end_id": 16457,
+        "failure_frame": 2566,
+        "driver_end_frame": 2568,
+        "SDK_reads_reissued_before_driver_end": 0,
+        "accepted_reseek_calls": 1,
+        "reseek_sync_errors": 0,
+        "driver_busy_after": 0,
+        "failed_data_counted_as_completed": false
+      },
+      {
+        "request_id": 16575,
+        "failure_id": 16577,
+        "flush_id": 16578,
+        "driver_end_id": 16583,
+        "failure_frame": 2577,
+        "driver_end_frame": 2579,
+        "SDK_reads_reissued_before_driver_end": 0,
+        "accepted_reseek_calls": 1,
+        "reseek_sync_errors": 0,
+        "driver_busy_after": 0,
+        "failed_data_counted_as_completed": false
+      }
+    ],
+    "automatic_SDK_retry_within_each_failed_driver_request_observed": false
+  },
+  "original_driver_state_effects": {
+    "state_setter_transitions": {
+      "1->2": 125,
+      "2->1": 61,
+      "2->7": 4,
+      "7->8": 59,
+      "8->1": 5
+    },
+    "end_read_calls": 137,
+    "state_boundary_calls": 391
+  },
+  "before_reset_heap_epoch": {
+    "status": "verified_bounded_original_file_heap_history",
+    "boundary_calls": 16586,
+    "heap_and_file_boundary_calls": 16059,
+    "successful_allocations": 15235,
+    "failed_allocations": 0,
+    "zero_size_allocation_requests": 0,
+    "matched_frees": 689,
+    "null_frees": 6,
+    "unobserved_allocation_frees": 0,
+    "live_allocations_at_end": 14546,
+    "file_constructors": 57,
+    "file_releases": 40,
+    "file_releases_freeing_buffers": 10,
+    "file_destructors": 32,
+    "file_cleanup_calls": 0,
+    "queued_Read_lifetimes_checked": false,
+    "queued_Read_lifetime_windows_qualified": 0,
+    "queued_Read_lifetime_windows_unqualified": 0,
+    "complete_sector_bytes_with_qualified_lifetimes": 0,
+    "relevant_backing_allocations": 0,
+    "relevant_allocations_closed": 0,
+    "relevant_allocations_still_live": 0,
+    "whole_file_feature_accepted": false,
+    "all_object_lifetimes_accepted": false,
+    "whole_feature_groups_accepted": 0,
+    "new_C_bytes": 0,
+    "scope": "Original API allocation generations and constructor/release/destructor effects. Queued Read completion and liveness are not checked in this epoch and receive no credit. Open lifetimes and unknown storage remain explicit; address equality alone is not identity."
+  },
+  "after_reset_heap_epoch": {
+    "status": "verified_bounded_original_file_heap_history",
+    "boundary_calls": 39819,
+    "heap_and_file_boundary_calls": 38353,
+    "successful_allocations": 18922,
+    "failed_allocations": 0,
+    "zero_size_allocation_requests": 0,
+    "matched_frees": 18856,
+    "null_frees": 12,
+    "unobserved_allocation_frees": 0,
+    "live_allocations_at_end": 66,
+    "file_constructors": 178,
+    "file_releases": 210,
+    "file_releases_freeing_buffers": 33,
+    "file_destructors": 175,
+    "file_cleanup_calls": 0,
+    "queued_Read_lifetimes_checked": true,
+    "queued_Read_lifetime_windows_qualified": 49,
+    "queued_Read_lifetime_windows_unqualified": 0,
+    "complete_sector_bytes_with_qualified_lifetimes": 3506176,
+    "relevant_backing_allocations": 35,
+    "relevant_allocations_closed": 35,
+    "relevant_allocations_still_live": 0,
+    "whole_file_feature_accepted": false,
+    "all_object_lifetimes_accepted": false,
+    "whole_feature_groups_accepted": 0,
+    "new_C_bytes": 0,
+    "scope": "Original API allocation generations and constructor/release/destructor effects. File-view/destination liveness is checked through observed queued SDK completion. Open lifetimes and unknown storage remain explicit; address equality alone is not identity."
+  },
+  "reset_censored_live_allocations": 14546,
+  "reset_censored_allocations_counted_as_native_frees": false,
+  "post_reset_queued_Read_lifetime_windows_qualified": 49,
+  "post_reset_backing_allocation_generations_actually_freed": 35,
+  "recorded_game_output_scope": {
+    "input_frames": 30000,
+    "GPU_observations": 30001,
+    "RAM_observations": 5014,
+    "complete_checkpoints": 143,
+    "PCM_bytes": 88454624
+  },
+  "original_rebuilt_raw_records_RAM_and_epoch_models_equal": true,
+  "every_recorded_original_rebuilt_game_output_equal": true,
+  "every_recorded_observer_distributed_game_output_equal": true,
+  "decoded_PNGs": 429,
+  "rehashed_source_snapshots": 114,
+  "contradictory_retained_data_controls_rejected": 18,
+  "negative_controls_were_executed_game_faults": false,
+  "reviewed_screens": [
+    {
+      "relative_frame": 2999,
+      "observed_screen": "Black screen after the original failed-read episode, before reset",
+      "manually_reviewed": true,
+      "RGB_equal_across_three_runs": true,
+      "PNG": {
+        "bytes": 374,
+        "sha256": "20c4defb2076779f6a5f3bda294d5a5e06a798ff524437b5418992b781360a90"
+      }
+    },
+    {
+      "relative_frame": 6000,
+      "observed_screen": "Original apartment interior after reset",
+      "manually_reviewed": true,
+      "RGB_equal_across_three_runs": true,
+      "PNG": {
+        "bytes": 34036,
+        "sha256": "21e4d36f7c5891178424b3a54eda49a8e23ebcfbda18d9a7b02652810c299149"
+      }
+    },
+    {
+      "relative_frame": 9000,
+      "observed_screen": "Original green dream landscape after reset",
+      "manually_reviewed": true,
+      "RGB_equal_across_three_runs": true,
+      "PNG": {
+        "bytes": 32241,
+        "sha256": "977c800f8a874cadcf1923e410b311de3b938550b1ed9c9b138496294666b697"
+      }
+    },
+    {
+      "relative_frame": 26000,
+      "observed_screen": "Original green dream landscape",
+      "manually_reviewed": true,
+      "RGB_equal_across_three_runs": true,
+      "PNG": {
+        "bytes": 31411,
+        "sha256": "2da467e2eede0909ff3b2a51c0acab50b8a16f832e04cb1b129f30b78dcc3fe3"
+      }
+    },
+    {
+      "relative_frame": 30000,
+      "observed_screen": "Original movie text: in Limbo / the Silent / Dream",
+      "manually_reviewed": true,
+      "RGB_equal_across_three_runs": true,
+      "PNG": {
+        "bytes": 54370,
+        "sha256": "e0d45c9a78f9ae25b9f9650e19ff5bc34eccbd7d35f4f5b9b94e1414eeeb71a1"
+      }
+    }
+  ],
+  "native_protocol": 1,
+  "native_event_bytes": 464,
+  "native_targets_qualified": 15,
+  "native_targets_positively_observed": 14,
+  "native_boundary_records": 56405,
+  "tagged_driver_state_vectors_are_contiguous_RAM_windows": false,
+  "frame_event_capacity": 32768,
+  "frame_payload_capacity_bytes": 33554432,
+  "peak_events_in_one_frame": 1201,
+  "peak_payload_bytes_in_one_frame": 551356,
+  "native_lost_overflow_pending_calls_pending_SDK_transfers": 0,
+  "hook_arm_frame": 900,
+  "CPU_hook_retained_across_original_reset": true,
+  "CPU_source_or_rearm_patch_added": false,
+  "native_profile": {
+    "upstream_commit": "bdddf4a58aa1a022afb11dc73294a81a5aa7bbd5",
+    "mednafen_commit": "382ff1b8d293c9a862497706808cbb79b2cecbfb",
+    "sdk_read_header_sha256": "9a693965ed852df1fa5640ee5ad86becb79f2bf48329d08cb257cd9f3310c9fd",
+    "core": {
+      "file": "shock.wbx",
+      "bytes": 3415256,
+      "sha256": "f87afed999256a067d9aa58c7546035e73a727e5abe21b972351c3c4983a0d2b"
+    },
+    "compressed_core": {
+      "file": "shock.wbx.zst",
+      "bytes": 831807,
+      "sha256": "3a263f9a3e5f3a4a9887c034abfb435ac69cfa9f550b3e1b93e9fc8bfbd935a5"
+    },
+    "existing_CPU_source_modified": false,
+    "original_game_RAM_written_by_observer": false,
+    "build_scope": "One new adapter object linked with the recorded pinned cached native objects; not a fresh full-core rebuild."
+  },
+  "owned_new_recovery_tests": 22,
+  "tooling_tests_each_platform": 1135,
+  "expected_skips_each_platform": 2,
+  "earlier_SDK_completion_buffers_revalidated": 102,
+  "earlier_natural_Read_lifetime_windows_revalidated": 49,
+  "earlier_original_returns_revalidated": 190,
+  "qualified_collision_source_comparisons": 8,
+  "new_collision_source_forms": 6,
+  "repeated_source_controls": 2,
+  "source_candidates_promoted": false,
+  "best_hull_differing_bytes": 26,
+  "best_primitive_differing_bytes": 22,
+  "automatic_sector_read_recovery_accepted": false,
+  "controller_reset_recovery_observed": true,
+  "all_CD_error_paths_accepted": false,
+  "blocking_reader_error_retry_path_observed": false,
+  "full_file_feature_accepted": false,
+  "all_object_lifetimes_accepted": false,
+  "file_cleanup_runtime_accepted": false,
+  "complete_state_parity_checked": false,
+  "original_hardware_timing_verified": false,
+  "earlier_frame_zero_observer_discrepancy_resolved": false,
+  "playable_launcher_preserved": true,
+  "playable_launcher_sha256": "83d516c292694ebf64f568c8025b69a8161a05c51b564c6a2501857804cc4179",
+  "user_emulator_controls_touched": false,
+  "Bevy_repository_modified": false,
+  "source_file_SHA256": {
+    "research/runtime_state/sdk_read_observer.h": "9a693965ed852df1fa5640ee5ad86becb79f2bf48329d08cb257cd9f3310c9fd",
+    "research/headless/SdkReadTrace.cs": "f28b4257c49baa5b26489f15a70f960aa6aa054b1d0853a5ad856ff1a2e6b205",
+    "research/headless/file-driver-cd-recovery-route.json": "de11a3a2219edaf453ec8401483ed8fe2d4fbf5ff3e61dae757c2e6210dc863f",
+    "research/headless/file-driver-cd-reset-route.json": "d3f893763a01fc21b7b3313aef66de744244c4a77581f8b3b1b3eee4d68ca8c4",
+    "research/sdk_reads/recovery-function-ranges.json": "f1281f287adfd65decab2718af1e915847cdbffc64b2ef97292467d0dd16ec95",
+    "tools/sdk_reads.py": "cc82dc3b32c5b9616d9d3c034256cad2b5dc75a69627d0efc542eb1edd827b89",
+    "tools/inspect_sdk_reads.py": "beb3477326f3608a804e126185776a051025da50576db2c857793061e61e68d6",
+    "tools/inspect_file_heap.py": "106d423c7824706213e5bb4d5e182211878ca7b39ca3543d5b32812d4695ea63",
+    "tools/inspect_cd_recovery.py": "458962309b59348f3e8a66d3d38f3b29a5390e6bb1273a0f152ca059069922e0",
+    "tools/inspect_dispatch_history.py": "9b317ce0ba0e15d0300b2c66b1d73c039657fc42cc13c258f2042702d25c8599",
+    "tools/record_dispatch_history.py": "bb83cebec0b3fb31d010cf0ab135e24454aca604ddbc4bd2bb32daf333fa6e1d",
+    "tools/build_dispatch_observer.py": "de7e34f50995d21e16305844b4cb973d06412c52bbe51b832196d79c42413151",
+    "tests/test_cd_recovery.py": "7e086a0733fb9c94dd4e22671b73f18223df34ff1651c62e0240dd848c7f3c5b"
+  },
+  "captures": [
+    {
+      "label": "original",
+      "frames": 30000,
+      "run_inputs": {
+        "bytes": 200018,
+        "sha256": "5ff7d97f386bb084e7bcf8e8d251707c359acbeb8db7086bf12dfaa3178c4712"
+      },
+      "host_binary": {
+        "bytes": 83456,
+        "sha256": "73a5d1f95b33bf5d64c89a8ba65499aa1fafcd9c9b0fbddc42cadeb2fc9174a1"
+      },
+      "submitted_SHA256": "33840c463d16127da851f11168f89497ec261670e5af83c0825f05d6820da6f4",
+      "boundary_observations": {
+        "sdk-reads.bin": {
+          "bytes": 26171920,
+          "sha256": "2da1c4e984884ea5dacf9fbe1acbadd080afb50d26a421eabbc9f93afb3aa2c3"
+        },
+        "sdk-read-data.bin": {
+          "bytes": 32323104,
+          "sha256": "4009cd2722b49d7e44cc9e7941b252a87a7f2f9f321403db7b7d504cc6562063"
+        },
+        "sdk-read-summary.json": {
+          "bytes": 1120,
+          "sha256": "f4c162f973f5b7c4b112d6d724f5897e7a9c2b739223ad20a7c1219b3b2f1f11"
+        }
+      }
+    },
+    {
+      "label": "rebuilt",
+      "frames": 30000,
+      "run_inputs": {
+        "bytes": 199823,
+        "sha256": "6821498ff506664274b1060a53c71cf2f22158fa19c4cbe465d1905d4da547c8"
+      },
+      "host_binary": {
+        "bytes": 83456,
+        "sha256": "73a5d1f95b33bf5d64c89a8ba65499aa1fafcd9c9b0fbddc42cadeb2fc9174a1"
+      },
+      "submitted_SHA256": "33840c463d16127da851f11168f89497ec261670e5af83c0825f05d6820da6f4",
+      "boundary_observations": {
+        "sdk-reads.bin": {
+          "bytes": 26171920,
+          "sha256": "2da1c4e984884ea5dacf9fbe1acbadd080afb50d26a421eabbc9f93afb3aa2c3"
+        },
+        "sdk-read-data.bin": {
+          "bytes": 32323104,
+          "sha256": "4009cd2722b49d7e44cc9e7941b252a87a7f2f9f321403db7b7d504cc6562063"
+        },
+        "sdk-read-summary.json": {
+          "bytes": 1120,
+          "sha256": "f4c162f973f5b7c4b112d6d724f5897e7a9c2b739223ad20a7c1219b3b2f1f11"
+        }
+      }
+    },
+    {
+      "label": "distributed",
+      "frames": 30000,
+      "run_inputs": {
+        "bytes": 151466,
+        "sha256": "7463824016b2c37cf71fff660c839c7f3e51337b7fd9a5c9fd02250ed4992a36"
+      },
+      "host_binary": {
+        "bytes": 83456,
+        "sha256": "73a5d1f95b33bf5d64c89a8ba65499aa1fafcd9c9b0fbddc42cadeb2fc9174a1"
+      },
+      "submitted_SHA256": "33840c463d16127da851f11168f89497ec261670e5af83c0825f05d6820da6f4"
+    }
+  ],
+  "evidence": {
+    "cd-reset-comparison-20261018-final.json": {
+      "bytes": 12858521,
+      "sha256": "0464db72a516bba0db2ba4589b0f3b0b7f165db170f0b6d167bd7335b62a1372"
+    },
+    "cd-reset-observer-control-20261018-final.json": {
+      "bytes": 12858525,
+      "sha256": "523a1ad1ba27d110283fdc1ea79029b7d3401ff7dd5e5c15dab67e81a6939669"
+    },
+    "cd-reset-audit-20261018-first.json": {
+      "bytes": 4557,
+      "sha256": "7fae5cad3366c05fc5b80ae5173cef5485c5c72fccd53e654c996216dc07d6c6"
+    },
+    "hull-readonly-result-fields-20261018-first/report.json": {
+      "bytes": 8194,
+      "sha256": "ab55f1b23a07d4d818d60d53706555b0058f06c1d7e2e563ea1c5db34bf68c78"
+    },
+    "hull-readonly-result-fields-audit-20261018-first/report.json": {
+      "bytes": 4593,
+      "sha256": "ccb884b1b14e9bf4dbf075223128e68f5ee67807482aa985f19042a41fa283e3"
+    },
+    "cd-reset-earlier-SDK-compatibility-20261018-first.json": {
+      "bytes": 89600,
+      "sha256": "bc9d70975e7b7075d5c1cffb69ecd97af29c50d19a151ae225bab77456f88f28"
+    },
+    "cd-reset-earlier-heap-compatibility-20261018-first.json": {
+      "bytes": 6075825,
+      "sha256": "a7a9fe703d36359afa6451a036e26d47d76db8bda3b0aa357a67b07769627779"
+    },
+    "cd-reset-earlier-return-compatibility-20261018-first.json": {
+      "bytes": 14659,
+      "sha256": "a6f2dfd11118660c005769bb3be5139e7dd0634b9547944b90e36212baa438e8"
+    },
+    "cd-reset-tests-windows-20261018-final.log": {
+      "bytes": 186,
+      "sha256": "2930345b2248bb2bbdf6fb27d0f1622d90d420ce604dd4897406a53b0c4d46a1"
+    },
+    "cd-reset-tests-linux-20261018-final.log": {
+      "bytes": 186,
+      "sha256": "14cc05fbd529fd7e29ef2c296e88df73ccde30c2e4a6490320c8b2a43596d4ed"
+    },
+    "cd-reset-normal-build-20261018-first.log": {
+      "bytes": 23,
+      "sha256": "71aa391ec7d7e291b419a7f40fba91919e14ac2394ab4e8b66ed126e267d70f6"
+    },
+    "cd-reset-progress-20261018-first.json": {
+      "bytes": 55514,
+      "sha256": "7f08e8e665b19b35ae5f4c1289142e3eb75388da9a9f28479d00c1eaa175084b"
+    },
+    "cd-recovery-build-20261018-second/profile.json": {
+      "bytes": 45046,
+      "sha256": "e81ddb60f99d0865ae7ba2e691e71efe38efe6c4976400931f6c9ddd3be53458"
+    },
+    "cd-recovery-ranges-20261018-second/function-ranges.json": {
+      "bytes": 5963,
+      "sha256": "f1281f287adfd65decab2718af1e915847cdbffc64b2ef97292467d0dd16ec95"
+    }
+  },
+  "publication_producer_sha256": "3c32379b8aebf82a9a96dabc6d5fa85adba6486bf058b464c7e1796321a0018e",
+  "remaining_gates": [
+    "Two matching C collision functions",
+    "Three inherited storage explanations",
+    "Other CD/SDK error paths and blocking retries",
+    "Unobserved cleanup, debug/card routes and later object lifetimes",
+    "Complete original NPC encounters",
+    "Rare RNG, save/card and audio routes",
+    "Original hardware timing",
+    "Whole-feature and complete parity acceptance"
+  ]
+}

@@ -21,9 +21,9 @@ MASK=0x1FFFFFFF
 BASE_FILE_TABLE=0x8006D430
 sha=lambda data:hashlib.sha256(data).hexdigest()
 
-def analyze_file_heap(records,payload,entries,returns,transfers,program,base_table=BASE_FILE_TABLE):
+def analyze_file_heap(records,payload,entries,returns,transfers,program,base_table=BASE_FILE_TABLE,*,check_read_lifetimes=True):
     require(program['method_trace'].get('heap_lifetime') is True,'No original heap/file-view trace was selected.')
-    heap=[row for row in records if row['kind']>=5]
+    heap=[row for row in records if 5<=row['kind']<=10]
     require(heap,'No original heap/file-view boundaries were recorded.')
     snapshots={};allocations={};active={};unknown_frees=[];null_frees=0;failed_allocations=0;zero_size_requests=0
     free_events=[];constructors=[];releases=[];destructors=[]
@@ -120,7 +120,7 @@ def analyze_file_heap(records,payload,entries,returns,transfers,program,base_tab
             destructors.append(dict(id=row['entry_id'],address=row['a0'],native_free_id=nested[0]['entry_id']))
     # A destructor intentionally ends the backing allocation inside its call.
     # Its receiver cannot be treated as a live object at the return snapshot.
-    lifecycle=sdk.link_queued_reads(entries,returns,records,transfers)
+    lifecycle=sdk.link_queued_reads(entries,returns,records,transfers) if check_read_lifetimes else dict(pairs=[])
     bases={row['base_ordinal']:row for row in returns if row['kind']==1}
     by_id={row['entry_id']:row for row in records};reads=[];missing=[]
     for pair in lifecycle['pairs']:
@@ -150,6 +150,7 @@ def analyze_file_heap(records,payload,entries,returns,transfers,program,base_tab
         live_allocations_at_end=len(active),file_constructors=len(constructors),file_releases=len(releases),
         file_releases_freeing_buffers=sum(row['freed_buffer'] is not None for row in releases),file_destructors=len(destructors),
         file_cleanup_calls=sum(row['kind']==10 for row in heap),
+        queued_Read_lifetimes_checked=check_read_lifetimes,
         queued_Read_lifetime_windows_qualified=len(reads),queued_Read_lifetime_windows_unqualified=len(missing),
         complete_sector_bytes_with_qualified_lifetimes=sum(row['complete_sector_bytes'] for row in reads),
         relevant_backing_allocations=len(relevant),relevant_allocations_closed=sum(row['end'] is not None for row in relevant),
@@ -157,7 +158,10 @@ def analyze_file_heap(records,payload,entries,returns,transfers,program,base_tab
         reads=reads,unqualified=missing,constructors=constructors,releases=releases,destructors=destructors,
         relevant_allocation_generations=relevant,allocation_generations=all_allocations,
         whole_file_feature_accepted=False,all_object_lifetimes_accepted=False,whole_feature_groups_accepted=0,new_C_bytes=0,
-        scope='Original API allocation generations, constructor/release/destructor effects, and file-view/destination liveness through observed queued SDK completion. Open lifetimes and unknown storage remain explicit; address equality alone is not identity.')
+        scope='Original API allocation generations and constructor/release/destructor effects. '
+            +('File-view/destination liveness is checked through observed queued SDK completion. ' if check_read_lifetimes else
+              'Queued Read completion and liveness are not checked in this epoch and receive no credit. ')
+            +'Open lifetimes and unknown storage remain explicit; address equality alone is not identity.')
 
 def inspect_heap(folder):
     proof,retained=sdk.inspect_sdk(folder)

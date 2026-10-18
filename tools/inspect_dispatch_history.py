@@ -192,7 +192,8 @@ def inspect(folder):
         json.loads(return_raw) if return_raw else None,return_raw)
     sdk_selection=None
     if program['method_trace'].get('sdk_reads',False):
-        sdk_range_name='heap-function-ranges.json' if program['method_trace'].get('heap_lifetime',False) else 'sdk-function-ranges.json'
+        sdk_range_name='recovery-function-ranges.json' if program['method_trace'].get('cd_recovery',False) else \
+            'heap-function-ranges.json' if program['method_trace'].get('heap_lifetime',False) else 'sdk-function-ranges.json'
         require(sdk_range_name in frozen,'Missing retained SDK range qualification.')
         sdk_selection=verified_sdk_selection(program,executable,json.loads(frozen[sdk_range_name][0].read_bytes()))
         require(return_selection is not None,'SDK read observation requires original method returns.')

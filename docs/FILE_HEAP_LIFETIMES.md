@@ -148,3 +148,8 @@ and three inherited storage explanations still require recovery.
 
 [Validation metadata](file-heap-lifetime-checks.json) seals the source identities,
 counts, private evidence hashes and acceptance boundaries.
+
+The later [CD error/reset profile](CD_ERROR_RESET_RECOVERY.md) extends this
+tooling to actual failed reads and a controller-reset boundary. Its separate
+heap epochs preserve the distinction between actual frees and reset-censored
+allocations. The measurements above describe this earlier successful route.

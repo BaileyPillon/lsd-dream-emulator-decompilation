@@ -29,6 +29,11 @@ static uint32_t lsd_sdk_depth, lsd_sdk_max_depth, lsd_sdk_overflow, lsd_sdk_mism
 static uint32_t lsd_sdk_transfer, lsd_sdk_destination, lsd_sdk_sectors, lsd_sdk_mode;
 static uint32_t lsd_sdk_completions, lsd_sdk_failures, lsd_sdk_unassociated, lsd_sdk_overlaps;
 static LsdReturnContext lsd_sdk_previous, lsd_sdk_before_previous;
+static const uint32_t lsd_cd_driver_words[10] = {0x8008A864,0x8008A874,0x8008A878,0x8008A898,0x8008A870,
+    0x8008A8A0,0x8008A87C,0x8008A880,0x8008A884,0x8008A894};
+static void LsdCdDriverWords(uint32_t* words) {
+    for (unsigned i = 0; i < 10; ++i) words[i] = LsdDispatchRead(lsd_cd_driver_words[i]);
+}
 
 static uint32_t LsdSdkAppend(const void* data, uint32_t bytes) {
     uint32_t offset = lsd_sdk_data_bytes;
@@ -61,7 +66,16 @@ static void LsdSdkFinish(uint32_t pc, pscpu_timestamp_t timestamp, uint64_t sequ
     e.transfer_id = lsd_sdk_transfer; e.transfer_sectors = lsd_sdk_sectors; e.transfer_mode = lsd_sdk_mode;
     if (e.kind == 2 && (int32_t)e.v0 <= 0) {
         if (!lsd_sdk_transfer) { ++lsd_sdk_unassociated; e.buffer_status = 2; }
-        else if (e.v0) { ++lsd_sdk_failures; e.buffer_status = 5; }
+        else if (e.v0) {
+            ++lsd_sdk_failures; e.buffer_status = 5;
+            const uint32_t offset = lsd_sdk_destination & 0x1FFFFFFF;
+            e.buffer_address = lsd_sdk_destination;
+            if (!(e.sr & 0x10000) && lsd_sdk_mode == 0x80 && lsd_sdk_sectors &&
+                offset < 0x200000 && lsd_sdk_sectors <= (0x200000 - offset) / 2048) {
+                e.buffer_bytes = lsd_sdk_sectors * 2048;
+                e.buffer_offset = LsdSdkAppend(MainRAM.data8 + offset, e.buffer_bytes);
+            } else e.buffer_status = 4;
+        }
         else {
             const uint32_t offset = lsd_sdk_destination & 0x1FFFFFFF;
             e.buffer_address = lsd_sdk_destination;
@@ -74,7 +88,7 @@ static void LsdSdkFinish(uint32_t pc, pscpu_timestamp_t timestamp, uint64_t sequ
         }
         lsd_sdk_transfer = lsd_sdk_destination = lsd_sdk_sectors = lsd_sdk_mode = 0;
     }
-    if (e.kind >= 5) {
+    if (e.kind >= 5 && e.kind <= 10) {
         const uint32_t address = e.kind == 5 ? e.v0 : e.a0;
         const uint32_t offset = address & 0x1FFFFFFF;
         if (address && !(e.sr & 0x10000)) {
@@ -94,6 +108,13 @@ static void LsdSdkFinish(uint32_t pc, pscpu_timestamp_t timestamp, uint64_t sequ
             } else e.buffer_status = 4;
         } else if (address) e.buffer_status = 4;
     }
+    if (e.kind == 12 || e.kind == 13) {
+        if (!(e.sr & 0x10000)) {
+            uint32_t pair[20]; memcpy(pair,p.receiver_words,40); LsdCdDriverWords(pair+10);
+            e.buffer_address=lsd_cd_driver_words[0]; e.buffer_bytes=80; e.buffer_status=9;
+            e.buffer_offset=LsdSdkAppend(pair,sizeof(pair));
+        } else e.buffer_status=4;
+    }
     --lsd_sdk_depth;
 }
 static void LsdSdkPush(const LsdSdkTarget& target, pscpu_timestamp_t timestamp, uint64_t sequence) {
@@ -110,9 +131,10 @@ static void LsdSdkPush(const LsdSdkTarget& target, pscpu_timestamp_t timestamp, 
     e.entry_sr = CPU->GetRegister(PS_CPU::GSREG_SR, NULL, 0);
     const uint32_t receiver = e.a0 & 0x1FFFFFFF;
     if (!(e.entry_sr & 0x10000)) {
-        if (e.kind == 6 && e.a0 && receiver >= 4 && receiver <= 0x200000 - 12)
+        if (e.kind == 12 || e.kind == 13) LsdCdDriverWords(p.receiver_words);
+        else if (e.kind == 6 && e.a0 && receiver >= 4 && receiver <= 0x200000 - 12)
             memcpy(p.receiver_words, MainRAM.data8 + receiver - 4, 16);
-        else if (e.kind >= 7 && e.a0 && receiver <= 0x200000 - 44)
+        else if (e.kind >= 7 && e.kind <= 10 && e.a0 && receiver <= 0x200000 - 44)
             memcpy(p.receiver_words, MainRAM.data8 + receiver, 44);
     }
     e.entry_sequence_low = (uint32_t)sequence; e.entry_sequence_high = (uint32_t)(sequence >> 32);
@@ -156,7 +178,7 @@ ECL_EXPORT int LsdResetSdkReads() {
 }
 ECL_EXPORT int LsdAddSdkReadTarget(uint32_t pc, uint32_t bytes, uint32_t kind) {
     if (lsd_sdk_target_count == 16 || (pc & 3) || pc < 0x80010000 || pc >= 0x80200000 ||
-        !bytes || (bytes & 3) || bytes > 4096 || bytes > 0x80200000 - pc || kind < 1 || kind > 10) return 0;
+        !bytes || (bytes & 3) || bytes > 4096 || bytes > 0x80200000 - pc || kind < 1 || kind > 13) return 0;
     for (unsigned i = 0; i < lsd_sdk_target_count; ++i) if (pc == lsd_sdk_targets[i].pc) return 0;
     lsd_sdk_targets[lsd_sdk_target_count++] = {pc, bytes, kind};
     for (uint32_t at = pc; at < pc + bytes; at += 4) lsd_sdk_windows[(at - 0x80000000) >> 2] = 1;
