@@ -176,18 +176,24 @@ def verify_boundary(row, base, executable, before, after):
 def verify_policy(rows, entries, settings, summary):
     selected = {row['base_ordinal']: row for row in rows}
     counts, reasons, started, last_frame, pending = Counter(), Counter(), 0, None, None
+    ordinal_mode = 'ordinal_step' in settings
+    eligible_ordinal = 0
     for ordinal, entry in enumerate(entries, 1):
         if entry['pc'] != PC:
             continue
+        eligible_ordinal += 1
         now = entry['relative_frame'], entry['timestamp']
         if pending and (pending['frame'], pending['timestamp']) <= now:
             pending = None
         key = entry['transfer_pc'], entry['a0']
-        if pending:
+        if ordinal_mode and (eligible_ordinal < settings['ordinal_first'] or
+                             (eligible_ordinal - settings['ordinal_first']) % settings['ordinal_step']):
+            reason = 'ordinal_skips'
+        elif pending:
             reason = 'nested_skips'
         elif started == settings['max_samples']:
             reason = 'sample_limit_skips'
-        elif counts[key] == settings['per_key']:
+        elif not ordinal_mode and counts[key] == settings['per_key']:
             reason = 'duplicate_key_skips'
         elif last_frame == entry['relative_frame']:
             reason = 'frame_budget_skips'
@@ -200,26 +206,30 @@ def verify_policy(rows, entries, settings, summary):
             continue
         reasons[reason] += 1
         require(ordinal not in selected, 'Collision sample contradicts its actual bounded selection policy.')
+    counters = ('nested_skips', 'sample_limit_skips', 'duplicate_key_skips', 'frame_budget_skips')
+    if ordinal_mode:
+        counters += ('ordinal_skips',)
     require(started == len(rows) and sum(reasons.values()) + started == summary['eligible_entries']
-            and all(reasons[name] == summary[name] for name in
-                    ('nested_skips', 'sample_limit_skips', 'duplicate_key_skips', 'frame_budget_skips')),
+            and all(reasons[name] == summary[name] for name in counters),
             'Collision sample counters disagree with the complete primitive entry history.')
     return dict(selected_calls=started, eligible_entries=summary['eligible_entries'],
                 distinct_observed_caller_model_address_keys=len(counts),
-                **{name: reasons[name] for name in
-                   ('nested_skips', 'sample_limit_skips', 'duplicate_key_skips', 'frame_budget_skips')})
+                **{name: reasons[name] for name in counters})
 
 
 def validate_records(data, payload, summary, entries, program, executable):
     settings = selection(program)
     require(settings is not None, 'No primitive call snapshots were selected.')
+    ordinal_mode = 'ordinal_step' in settings
     numeric = ('protocol', 'event_bytes', 'returns', 'native_returns', 'native_started', 'eligible_entries',
                'native_overflow', 'pending_calls', 'payload_bytes', 'duplicate_key_skips', 'frame_budget_skips',
                'sample_limit_skips', 'nested_skips', 'frame_payload_limit', 'ram_snapshot_bytes',
                'CPU_register_words', 'GTE_architectural_register_words')
+    if ordinal_mode or (isinstance(summary, dict) and 'ordinal_skips' in summary):
+        numeric += ('ordinal_skips',)
     require(isinstance(summary, dict) and all(type(summary.get(key)) is int and summary[key] >= 0 for key in numeric),
             'Collision sample summary has missing or non-integer counters.')
-    require(summary['protocol'] == 1 and summary['event_bytes'] == EVENT_BYTES
+    require(summary['protocol'] == (2 if ordinal_mode else 1) and summary['event_bytes'] == EVENT_BYTES
             and summary.get('settings') == settings
             and all(type(value) is int for value in summary['settings'].values())
             and summary['native_overflow'] == summary['pending_calls'] == summary['nested_skips'] == 0
@@ -229,6 +239,8 @@ def validate_records(data, payload, summary, entries, program, executable):
                     ('original_game_RAM_injected', 'original_CPU_source_modified', 'observer_writes_GTE_registers',
                      'complete_state_parity_checked', 'opaque_internal_GTE_state_serialized')),
             'Unqualified collision sampler protocol, overflow, pending call or state claim.')
+    require(ordinal_mode or summary.get('ordinal_skips', 0) == 0,
+            'Legacy caller/model selection cannot skip ordinal entries.')
     count = len(data) // EVENT_BYTES
     require(len(data) % EVENT_BYTES == 0 and 1 <= count <= settings['max_samples']
             and count == summary['returns'] == summary['native_returns'] == summary['native_started']
@@ -287,7 +299,7 @@ def validate_records(data, payload, summary, entries, program, executable):
                       'hull returns, opaque CPU/GTE state and whole collision-feature parity remain unaccepted.')
 
 
-def inspect_calls(folder):
+def inspect_call_recording(folder):
     recording, retained = history.inspect(folder)
     require(retained['manifest']['runtime_kind'] == 'dispatch_observer', 'Require the separate collision observer.')
     folder = retained['folder']
@@ -309,9 +321,14 @@ def inspect_calls(folder):
     sources = ('tools/inspect_collision_calls.py', 'tools/collision_calls.py', 'tools/verify_collision.py',
                'tools/inspect_dispatch_history.py', 'tools/dispatch_returns.py', 'tools/inspect_sdk_reads.py',
                'tools/psx_image.py', 'tools/replay_cold_start_headless.py')
-    return dict(status='inspected_bounded_natural_primitive_calls', recording=recording,
+    report = dict(status='inspected_bounded_natural_primitive_calls', recording=recording,
                 collision_calls=calls, verifier_sources={name: sha((ROOT / name).read_bytes()) for name in sources},
                 new_C_bytes=0, whole_feature_groups_accepted=0)
+    return report, retained
+
+
+def inspect_calls(folder):
+    return inspect_call_recording(folder)[0]
 
 
 def compare_calls(reference, candidate, mode='same-runtime'):

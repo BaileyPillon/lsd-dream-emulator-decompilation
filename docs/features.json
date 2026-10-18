@@ -24304,6 +24304,65 @@
       "whole_NPC_encounters_accepted": 0,
       "geometry_allocation_ownership_accepted": false,
       "complete_state_parity_checked": false
+    },
+    "complete_observed_primitive_call_partition_20261018": {
+      "evidence": "docs/collision-ordinal-checks.json",
+      "guide": "docs/COLLISION_ORDINAL_CALLS.md",
+      "before": {
+        "c_bytes": 197172,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 2,
+        "inherited_storage_explanations": 3,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 38,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 40,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 197172,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 2,
+        "inherited_storage_explanations": 3,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 38,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 40,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "observation_frame_window": {
+        "first": 900,
+        "last": 6000
+      },
+      "original_route_primitive_entries": 643,
+      "primitive_calls_before": 52,
+      "primitive_calls_after": 643,
+      "hits": 206,
+      "misses": 437,
+      "observed_polygon_visits": 13924,
+      "original_rebuilt_pairs": 11,
+      "stock_control_recordings": 1,
+      "decoded_PNGs": 1196,
+      "rehashed_source_snapshots": 963,
+      "retained_data_controls_rejected": 20,
+      "original_rebuilt_complete_RAM_and_samples_equal": true,
+      "every_recorded_game_output_equal": true,
+      "whole_feature_groups_accepted": 0,
+      "whole_NPC_encounters_accepted": 0,
+      "new_C_bytes": 0,
+      "new_NPC_profiles": 0,
+      "original_game_modified": false,
+      "Bevy_port_modified": false,
+      "model_API_calls": 0,
+      "complete_state_parity_checked": false,
+      "hull_returns_verified": false,
+      "geometry_allocation_ownership_accepted": false
     }
   }
 }

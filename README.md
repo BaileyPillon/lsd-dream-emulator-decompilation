@@ -142,12 +142,13 @@ through their frees. Original/rebuilt and observer/stock recorded outputs agree.
 The retail asynchronous error path reseeks and ends those failed requests
 without reissuing their sector reads; automatic refill is not accepted.
 
-The [natural collision checks](docs/NATURAL_COLLISION_CALLS.md) record 194 hull
-and 643 primitive entries during the original opening route. Fifty-two sampled
-primitive calls agree with the recovered model on captured geometry, including
-19 hits and 33 misses. Original/rebuilt samples and observer/stock recorded
-outputs agree. Matching C for both routines, geometry ownership, other routes,
-and whole collision-feature acceptance remain open.
+The [ordinal collision checks](docs/COLLISION_ORDINAL_CALLS.md) extend the earlier
+52-call sample to all 643 primitive invocations observed from frames 900–6,000
+of the original opening route. Eleven original/rebuilt recording pairs verify
+206 hits, 437 misses, and complete captured geometry/RAM agreement. Recorded
+game outputs also agree across partitions and with the stock core. Matching C
+for both routines, hull returns, geometry ownership, other routes, and whole
+collision-feature acceptance remain open.
 
 The feature inventory has 40 provisional groups; an official exhaustive
 feature total is unknown. SDK and startup code are excluded from the C-byte

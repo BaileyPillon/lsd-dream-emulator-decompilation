@@ -27,7 +27,7 @@ from tools.build_dispatch_observer import SDK_EXPORTS
 from tools.build_npc_observer import UPSTREAM, MEDNAFEN, SOURCE_SHA256
 from research.compiler.compare_function import CANONICAL_SHA256
 from tools.psx_image import executable_offset
-from tools.collision_calls import selection as collision_selection,EXPORTS as COLLISION_EXPORTS,EVENT_BYTES as COLLISION_EVENT_BYTES,FRAME_BYTES as COLLISION_FRAME_BYTES
+from tools.collision_calls import selection as collision_selection,EXPORTS as COLLISION_EXPORTS,ORDINAL_EXPORTS as COLLISION_ORDINAL_EXPORTS,EVENT_BYTES as COLLISION_EVENT_BYTES,FRAME_BYTES as COLLISION_FRAME_BYTES
 
 HEX_FIELDS=('pc','a0','a1','a2','a3','ra','sp','instruction','transfer_pc','delay_pc','transfer_word','delay_word')
 ENTRY_FIELDS=('relative_frame','pc','a0','a1','a2','a3','ra','sp','timestamp','instruction',
@@ -224,6 +224,10 @@ def inspect(folder):
         require(bool(return_selection)==(profile.get('return_protocol')==1),'Return interface and observer protocol disagree.')
         require(bool(sdk_selection)==(profile.get('sdk_read_protocol')==1),'SDK interface and observer protocol disagree.')
         require(bool(collision_config)==(profile.get('collision_call_protocol')==1),'Primitive sample interface and observer protocol disagree.')
+        if collision_config and 'ordinal_step' in collision_config:
+            require(profile.get('collision_call_ordinal_selection') is True
+                    and set(COLLISION_ORDINAL_EXPORTS)<=set(profile.get('exported_functions',[])),
+                    'Recorded ordinal primitive selection lacks its native observer capability.')
         if collision_config:
             require({'CollisionCallTrace.cs','collision_call_observer.h','collision_calls.py'}<=set(frozen)
                     and profile.get('collision_call_event_bytes')==COLLISION_EVENT_BYTES
