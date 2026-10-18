@@ -93,8 +93,13 @@ sources and private qualification/control reports. [ILSpy](TOOL_ASSESSMENT.md)
 was used on the shipped managed adapter to identify its APIs and required
 database initialization. It does not decompile the original MIPS game.
 
+The later [CD error/reset profile](CD_ERROR_RESET_RECOVERY.md) records a
+controller-only tray interruption and original reset in fresh isolated cores,
+with matching original/rebuilt and observer/stock outputs. Its failed reads
+and heap epochs have separate verification from the successful opening routes.
+
 Matching C remains **197,172 / 199,912 bytes (98.63%)**, with two remaining
-assembly functions and two inherited storage explanations. The provisional
+assembly functions and three [identified inherited storage explanations](UNUSED_LOCAL_CENSUS.md). The provisional
 inventory remains 40 groups, 38 with listed core functions in C, 40 of 107
 callbacks with bounded native profiles, and zero accepted whole feature groups
 or NPC encounters. This replayer collects no callback instruction-entry trace;

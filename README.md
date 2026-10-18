@@ -134,6 +134,14 @@ reads against actual constructor and allocation generations, then observes all
 recorded outputs agree. Other file routes and whole-feature acceptance remain
 open.
 
+The [CD error/reset profile](docs/CD_ERROR_RESET_RECOVERY.md) exercises five
+actual failed reads through tray inputs, then verifies recovery through the
+original controller reset. It distinguishes failed RAM from 162 completed
+reads and follows all 35 backing allocations for 49 post-reset queued reads
+through their frees. Original/rebuilt and observer/stock recorded outputs agree.
+The retail asynchronous error path reseeks and ends those failed requests
+without reissuing their sector reads; automatic refill is not accepted.
+
 The feature inventory has 40 provisional groups; an official exhaustive
 feature total is unknown. SDK and startup code are excluded from the C-byte
 denominator. Bounded native and emulator comparisons have passed, including

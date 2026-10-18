@@ -15,7 +15,7 @@ sys.path.insert(0,str(ROOT))
 import configure
 from tools.build_dispatch_observer import OBSERVER, EXPORTS, FLOW_OBSERVER, FLOW_EXPORTS, RETURN_OBSERVER, RETURN_EXPORTS
 from tools.build_dispatch_observer import SDK_OBSERVER, SDK_EXPORTS
-from tools.sdk_reads import RANGES as SDK_RANGES, HEAP_RANGES, verified_sdk_selection
+from tools.sdk_reads import RANGES as SDK_RANGES, HEAP_RANGES, RECOVERY_RANGES, verified_sdk_selection
 from tools.dispatch_flow import flow_windows
 from tools.dispatch_returns import verified_return_selection
 from tools.build_npc_observer import UPSTREAM, MEDNAFEN, SOURCE_SHA256
@@ -100,7 +100,8 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
         supplemental,supplemental_provenance,supplemental_raw)
     return_provenance_raw=RETURN_PROVENANCE.read_bytes()
     return_selection=verified_return_selection(program,selected,game,json.loads(return_provenance_raw),return_provenance_raw)
-    sdk_range_file=HEAP_RANGES if program['method_trace'].get('heap_lifetime',False) else SDK_RANGES
+    sdk_range_file=RECOVERY_RANGES if program['method_trace'].get('cd_recovery',False) else \
+        HEAP_RANGES if program['method_trace'].get('heap_lifetime',False) else SDK_RANGES
     sdk_selection=verified_sdk_selection(program,game,json.loads(sdk_range_file.read_bytes()))
     if sdk_selection is not None:
         return_selection['sdk_targets']=sdk_selection
