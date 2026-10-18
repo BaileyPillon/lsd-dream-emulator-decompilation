@@ -1,5 +1,16 @@
 # Changelog
 
+## Natural Boatman approach history - 2026-10-18
+
+- Publish a fixed controller route with 87 original Boatman callback entries,
+  increasing compared natural callback histories from two types to three.
+- Compare three 9,000-step cold boots through original/rebuilt and explicit
+  stock/observer checks, including complete recorded PCM and 205 checkpoints.
+- Independently decode 615 PNGs, check all 87 stored movement steps and two
+  sound requests, and reject six native corruption controls.
+- Preserve matching C, original NPC behavior, whole-feature/encounter counts,
+  the playable build and the separate Bevy port.
+
 ## Compared multi-instance NPC history - 2026-10-18
 
 - Support explicit per-instance entry expectations and independent context

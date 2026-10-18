@@ -29,6 +29,11 @@ clocks. This brings compared natural instruction histories to two callback
 types. Expand those histories to other routes, seeds and activation cycles,
 then review visible effects and the remaining encounter requirements.
 
+The [Boatman approach history](NPC_BOATMAN.md) adds a third callback type
+with compared natural entries: 87 calls, matching stored movement and two
+sound-request records. Continue other routes, seeds, activation cycles and
+visible effects. This one history does not accept the whole NPC or a feature.
+
 The [isolated replay host](HEADLESS_REPLAY.md) now reproduces both retained
 opening profiles without controlling the user's EmuHawk session. The separate
 [NPC recorder](NPC_ENTRY_TRACE.md) extends that core interface to record
