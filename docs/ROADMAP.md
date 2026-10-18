@@ -23,6 +23,12 @@ loss of reachability. Continue natural histories for other NPCs and branches,
 including effects and visible output. Object reachability does not establish
 allocation lifetime or whole-encounter acceptance.
 
+The [multi-instance profile](NPC_MULTI_INSTANCE.md) adds a compared Corpse
+cohort: seven instances, 21 original entries and independently corroborated
+clocks. This brings compared natural instruction histories to two callback
+types. Expand those histories to other routes, seeds and activation cycles,
+then review visible effects and the remaining encounter requirements.
+
 The [isolated replay host](HEADLESS_REPLAY.md) now reproduces both retained
 opening profiles without controlling the user's EmuHawk session. The separate
 [NPC recorder](NPC_ENTRY_TRACE.md) extends that core interface to record

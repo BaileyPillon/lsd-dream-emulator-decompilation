@@ -44,6 +44,11 @@ history's last callback, later context shutdown and eventual loss of scene
 reachability. Closer original/rebuilt checkpoints agree, including the
 shutdown boundary at relative frame 22,580.
 
+A second [compared NPC history](docs/NPC_MULTI_INSTANCE.md) now covers seven
+Corpse instances through an original wall link. All 21 instruction entries,
+per-instance clocks, first-tick Y offsets and scene transitions agree between
+original and rebuilt runs; the observer's outputs also match the stock core.
+
 The verified local build reproduces the original Japanese executable byte for
 byte. **Full C recovery and independently reviewed gameplay coverage are still
 in progress.** The remaining assembly is regenerated from your own executable.

@@ -98,6 +98,11 @@ enabled registration, disabled contexts and scene reachability in verified
 recordings. Preserve sampled transition intervals; do not interpret disabled
 payload or former object storage as live behavior.
 
+For concurrent instances of one callback, declare every owner and entry window
+in the [multi-instance profile](docs/NPC_MULTI_INSTANCE.md). Each owner needs
+independent RAM clock evidence. Keep default single-instance checks strict;
+do not silently accept tick resets or omit an instance with an incomplete clock.
+
 ## Build and tooling changes
 
 ```bash

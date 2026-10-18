@@ -55,7 +55,9 @@ def fixture_program():
                    expected_entries=2, expected_first_frame=1, expected_last_frame=3, entity_id=42)), executable
 
 
-def fixture_run(folder, program, executable, context_state=None):
+def fixture_run(folder, program, executable, context_state=None, owners=None, clock_offsets=None):
+    owners = [0x80011000] if owners is None else owners
+    clock_offsets = {} if clock_offsets is None else clock_offsets
     folder.mkdir()
     for name in ('host/dll', 'sources', 'observations'):
         (folder / name).mkdir(parents=True)
@@ -119,8 +121,10 @@ def fixture_run(folder, program, executable, context_state=None):
         raw[0x10000:0x10004] = executable[0x800:0x804]
         entity_id = program['trace']['entity_id']
         state = entity_id + 1 if context_state is None else context_state
-        for offset, value in ((0, 0x80089AD4), (0x98, entity_id), (0x9C, state), (0xA0, tick), (0xA4, 0x80011000), (0xA8, 0x80010000)):
-            struct.pack_into('<I', raw, 0x11000 + offset, value)
+        for owner in owners:
+            for offset, value in ((0, 0x80089AD4), (0x98, entity_id), (0x9C, state),
+                                  (0xA0, tick + clock_offsets.get(owner, 0)), (0xA4, owner), (0xA8, 0x80010000)):
+                struct.pack_into('<I', raw, (owner & 0x1FFFFFFF) + offset, value)
         observed.append(dict(relative_frame=frame, core_frame=frame + 1, phase=('initial_neutral', 'press', 'release', 'release')[frame],
                              gpu_sha256=digest(gpu), sample_frames=1, total_sample_frames=frame + 1))
         memory.append(dict(relative_frame=frame, core_frame=frame + 1, RAM_sha256=digest(raw)))
@@ -133,13 +137,14 @@ def fixture_run(folder, program, executable, context_state=None):
     write_rows(folder / 'observations/frames.tsv', comparison.FRAME_FIELDS, observed)
     write_rows(folder / 'observations/ram-samples.tsv', comparison.RAM_FIELDS, memory)
     (folder / 'observations/audio.pcm').write_bytes(bytes(range(16)))
-    entries = [dict(relative_frame=frame, pc='80010000', entity='80011000', ra='80010018', sp='8001FF00',
-                    timestamp=10, instruction='27BDFFE0', context_tick=tick) for frame, tick in ((1, 0), (3, 1))]
+    entries = [dict(relative_frame=frame, pc='80010000', entity=f'{owner:08X}', ra='80010018', sp='8001FF00',
+                    timestamp=10 + index, instruction='27BDFFE0', context_tick=tick)
+               for frame, tick in ((1, 0), (3, 1)) for index, owner in enumerate(owners)]
     write_rows(folder / 'observations/npc-instructions.tsv', comparison.ENTRY_FIELDS, entries)
-    write_json(folder / 'observations/npc-trace-summary.json', dict(original_instruction_entries=2, watched_pc='80010000',
+    write_json(folder / 'observations/npc-trace-summary.json', dict(original_instruction_entries=len(entries), watched_pc='80010000',
         hook_enabled_relative_frame=0, hook_enabled=True, first_observed_entry_frame=1, last_observed_entry_frame=3))
     write_json(folder / 'observations/report.json', dict(status='recorded_static_NPC_history', frames_advanced=4, submitted_frames=3,
-        RAM_samples=4, checkpoints=checkpoints, all_PCM_sample_frames=4, instruction_entries=2,
+        RAM_samples=4, checkpoints=checkpoints, all_PCM_sample_frames=4, instruction_entries=len(entries),
         observer_enabled=True, observer_requested=True, restored_state=False, game_RAM_injected=False,
         emulator_UI_controlled=False, complete_state_parity_checked=False))
     return entries

@@ -1,0 +1,656 @@
+{
+  "schema_version": 1,
+  "name": "Corpse wall-link history",
+  "frames": 12000,
+  "description": "Fixed controller-only cold boot through a natural wall link into map 5, with 21 original Corpse callback entries across seven instances. Every instance has its own declared entry window and monotonic clock. No RAM injection, restored state or live adaptive control.",
+  "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "disc_track_sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61",
+  "edition_label": "Japanese-labelled",
+  "controller": {
+    "buttons": [
+      "Close Tray",
+      "Open Tray",
+      "P1 Analog",
+      "P1 D-Pad Down",
+      "P1 D-Pad Left",
+      "P1 D-Pad Right",
+      "P1 D-Pad Up",
+      "P1 L1",
+      "P1 L2",
+      "P1 Left Stick, Button",
+      "P1 R1",
+      "P1 R2",
+      "P1 Right Stick, Button",
+      "P1 Select",
+      "P1 Start",
+      "P1 X",
+      "P1 \u25a1",
+      "P1 \u25b3",
+      "P1 \u25cb",
+      "Power",
+      "Reset"
+    ],
+    "axes": {
+      "Disk Index": 0,
+      "P1 Left Stick Left / Right": 128,
+      "P1 Left Stick Up / Down": 128,
+      "P1 Right Stick Left / Right": 128,
+      "P1 Right Stick Up / Down": 128
+    },
+    "column_order": [
+      "Close Tray",
+      "Disk Index",
+      "Open Tray",
+      "P1 Analog",
+      "P1 D-Pad Down",
+      "P1 D-Pad Left",
+      "P1 D-Pad Right",
+      "P1 D-Pad Up",
+      "P1 L1",
+      "P1 L2",
+      "P1 Left Stick Left / Right",
+      "P1 Left Stick Up / Down",
+      "P1 Left Stick, Button",
+      "P1 R1",
+      "P1 R2",
+      "P1 Right Stick Left / Right",
+      "P1 Right Stick Up / Down",
+      "P1 Right Stick, Button",
+      "P1 Select",
+      "P1 Start",
+      "P1 X",
+      "P1 \u25a1",
+      "P1 \u25b3",
+      "P1 \u25cb",
+      "Power",
+      "Reset"
+    ]
+  },
+  "segments": [
+    {
+      "until": 59,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 71,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 179,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 191,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 299,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 311,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 419,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 431,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 539,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 551,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 659,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 671,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 779,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 791,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 899,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 911,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1019,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1031,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1139,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1151,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1259,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1271,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1379,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1391,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1499,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1511,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1619,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1631,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1739,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1751,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1859,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1871,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1979,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1991,
+      "phase": "select_dream_up",
+      "pressed": [
+        "P1 D-Pad Up"
+      ]
+    },
+    {
+      "until": 2099,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2111,
+      "phase": "start_dream",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 2219,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2231,
+      "phase": "wait_for_dream",
+      "pressed": []
+    },
+    {
+      "until": 2339,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2351,
+      "phase": "wait_for_dream",
+      "pressed": []
+    },
+    {
+      "until": 2459,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2471,
+      "phase": "wait_for_dream",
+      "pressed": []
+    },
+    {
+      "until": 2579,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2591,
+      "phase": "wait_for_dream",
+      "pressed": []
+    },
+    {
+      "until": 2689,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2779,
+      "phase": "neutral_in_dream",
+      "pressed": []
+    },
+    {
+      "until": 2839,
+      "phase": "turn_left",
+      "pressed": [
+        "P1 D-Pad Left"
+      ]
+    },
+    {
+      "until": 2899,
+      "phase": "release_left",
+      "pressed": []
+    },
+    {
+      "until": 2959,
+      "phase": "turn_right",
+      "pressed": [
+        "P1 D-Pad Right"
+      ]
+    },
+    {
+      "until": 3000,
+      "phase": "release_right",
+      "pressed": []
+    },
+    {
+      "until": 3846,
+      "phase": "first_wall",
+      "pressed": [
+        "P1 D-Pad Up"
+      ]
+    },
+    {
+      "until": 3966,
+      "phase": "adaptive_wait",
+      "pressed": []
+    },
+    {
+      "until": 4068,
+      "phase": "face_west_waypoint",
+      "pressed": [
+        "P1 D-Pad Right"
+      ]
+    },
+    {
+      "until": 4069,
+      "phase": "settle_heading",
+      "pressed": []
+    },
+    {
+      "until": 4140,
+      "phase": "settle_view_and_movement",
+      "pressed": []
+    },
+    {
+      "until": 5160,
+      "phase": "walk_west",
+      "pressed": [
+        "P1 D-Pad Up"
+      ]
+    },
+    {
+      "until": 5161,
+      "phase": "settle_at_waypoint",
+      "pressed": []
+    },
+    {
+      "until": 5232,
+      "phase": "settle_view_and_movement",
+      "pressed": []
+    },
+    {
+      "until": 5412,
+      "phase": "face_buddha",
+      "pressed": [
+        "P1 D-Pad Left"
+      ]
+    },
+    {
+      "until": 5544,
+      "phase": "turn_toward_tennyo",
+      "pressed": [
+        "P1 D-Pad Left"
+      ]
+    },
+    {
+      "until": 5616,
+      "phase": "settle_heading",
+      "pressed": []
+    },
+    {
+      "until": 7716,
+      "phase": "approach_tennyo",
+      "pressed": [
+        "P1 D-Pad Up"
+      ]
+    },
+    {
+      "until": 7788,
+      "phase": "settle_at_tennyo",
+      "pressed": []
+    },
+    {
+      "until": 12000,
+      "phase": "explore_tennyo_history",
+      "pressed": []
+    }
+  ],
+  "checkpoint_frames": [
+    0,
+    300,
+    600,
+    900,
+    1200,
+    1500,
+    1800,
+    2100,
+    2400,
+    2689,
+    2700,
+    3000,
+    3300,
+    3600,
+    3900,
+    3966,
+    4200,
+    4500,
+    4800,
+    5100,
+    5400,
+    5412,
+    5544,
+    5616,
+    5700,
+    5760,
+    5820,
+    5880,
+    5892,
+    5904,
+    5916,
+    5928,
+    5940,
+    5952,
+    5964,
+    5976,
+    5988,
+    6000,
+    6012,
+    6024,
+    6036,
+    6048,
+    6060,
+    6072,
+    6084,
+    6096,
+    6108,
+    6120,
+    6132,
+    6144,
+    6156,
+    6168,
+    6180,
+    6192,
+    6204,
+    6216,
+    6228,
+    6240,
+    6252,
+    6264,
+    6276,
+    6288,
+    6296,
+    6297,
+    6298,
+    6299,
+    6300,
+    6301,
+    6302,
+    6303,
+    6304,
+    6305,
+    6306,
+    6307,
+    6308,
+    6309,
+    6310,
+    6311,
+    6312,
+    6313,
+    6314,
+    6315,
+    6316,
+    6317,
+    6318,
+    6319,
+    6320,
+    6321,
+    6322,
+    6323,
+    6324,
+    6325,
+    6326,
+    6327,
+    6328,
+    6329,
+    6330,
+    6331,
+    6332,
+    6333,
+    6334,
+    6335,
+    6336,
+    6348,
+    6360,
+    6372,
+    6384,
+    6396,
+    6408,
+    6420,
+    6432,
+    6444,
+    6456,
+    6468,
+    6480,
+    6540,
+    6600,
+    6660,
+    6720,
+    6780,
+    6840,
+    6900,
+    6960,
+    7020,
+    7080,
+    7140,
+    7200,
+    7260,
+    7320,
+    7380,
+    7440,
+    7500,
+    7560,
+    7620,
+    7680,
+    7716,
+    7740,
+    7788,
+    7800,
+    8100,
+    8400,
+    8700,
+    9000,
+    9300,
+    9600,
+    9900,
+    10200,
+    10500,
+    10800,
+    11100,
+    11400,
+    11700,
+    12000
+  ],
+  "RAM_sample_interval": 6,
+  "trace": {
+    "watched_pc": "0x80061158",
+    "arm_frame": 3900,
+    "callback": "entity_corpse",
+    "function_bytes": 64,
+    "function_sha256": "b76170e6be60c4f185cd65dc537ff2099f0b7eea877b0cb77683e5ad052bd15c",
+    "expected_entries": 21,
+    "expected_first_frame": 6300,
+    "expected_last_frame": 6311,
+    "entity_id": 56,
+    "context_tick_offset": 160,
+    "expected_instances": [
+      {
+        "entity_address": "0x801C8888",
+        "expected_entries": 3,
+        "expected_first_frame": 6300,
+        "expected_last_frame": 6311
+      },
+      {
+        "entity_address": "0x801C8248",
+        "expected_entries": 3,
+        "expected_first_frame": 6300,
+        "expected_last_frame": 6311
+      },
+      {
+        "entity_address": "0x801C7C08",
+        "expected_entries": 3,
+        "expected_first_frame": 6300,
+        "expected_last_frame": 6311
+      },
+      {
+        "entity_address": "0x801C75C8",
+        "expected_entries": 3,
+        "expected_first_frame": 6300,
+        "expected_last_frame": 6311
+      },
+      {
+        "entity_address": "0x801C6F88",
+        "expected_entries": 3,
+        "expected_first_frame": 6300,
+        "expected_last_frame": 6311
+      },
+      {
+        "entity_address": "0x801C6948",
+        "expected_entries": 3,
+        "expected_first_frame": 6300,
+        "expected_last_frame": 6311
+      },
+      {
+        "entity_address": "0x801C631C",
+        "expected_entries": 3,
+        "expected_first_frame": 6300,
+        "expected_last_frame": 6311
+      }
+    ]
+  },
+  "expanded_submitted_sha256": "d0c235c67da7f660a08586cddd49bf63f66feaff162ba503b9843823516ff457"
+}

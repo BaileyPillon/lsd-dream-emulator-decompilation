@@ -1,5 +1,16 @@
 # Changelog
 
+## Compared multi-instance NPC history - 2026-10-18
+
+- Support explicit per-instance entry expectations and independent context
+  clocks; preserve strict single-instance profiles and default runtime checks.
+- Qualify a second natural callback history: seven Corpse instances, three
+  entries each, with matching original/rebuilt lifetimes and first-tick Y offsets.
+- Execute three 12,000-step runs, compare stock/observer and original/rebuilt
+  output, independently decode 459 PNGs and reject seven native fault controls.
+- Add 14 source-only test methods and retain the earlier Buddha observations.
+  Matching C and whole-feature/NPC acceptance counts are unchanged.
+
 ## Recorded NPC activation and shutdown - 2026-10-18
 
 - Add an offline inspector that follows the original game-flow and dream

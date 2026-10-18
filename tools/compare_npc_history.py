@@ -17,7 +17,7 @@ import zlib
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from tools.build_npc_observer import UPSTREAM, MEDNAFEN, SOURCE_SHA256
-from tools.record_npc_history import HOST_SOURCES, STOCK_RUNTIME, digest_text, expand_program, validate_program
+from tools.record_npc_history import HOST_SOURCES, STOCK_RUNTIME, digest_text, expand_program, instance_expectations, validate_program
 from tools.replay_cold_start_headless import require, write_json
 from tools.runtime_inputs import content_identity, record_file
 
@@ -143,8 +143,27 @@ def validate_entries(rows, program, frames, executable):
     elif frames >= target['expected_first_frame'] and target['expected_entries']:
         require(entries, 'No original entries were recorded in the expected active window.')
     if entries:
-        require(len({row['entity'] for row in entries}) == 1, 'This profile qualifies a single original entity history.')
-        require([row['context_tick'] for row in entries] == list(range(len(entries))), 'Original entry ticks are missing, repeated or reordered.')
+        expected = instance_expectations(target, program['frames'])
+        if expected is None:
+            require(len({row['entity'] for row in entries}) == 1, 'This profile qualifies a single original entity history.')
+            require([row['context_tick'] for row in entries] == list(range(len(entries))), 'Original entry ticks are missing, repeated or reordered.')
+        else:
+            require({row['entity'] for row in entries} <= set(expected), 'An undeclared original entity appears in this history.')
+            for address, instance in expected.items():
+                selected = [row for row in entries if row['entity'] == address]
+                first, last = instance['expected_first_frame'], instance['expected_last_frame']
+                if frames < first:
+                    require(not selected, 'An instance appears before its declared activation window.')
+                    continue
+                require(selected and selected[0]['relative_frame'] == first, 'An expected instance has a missing or incorrect first entry.')
+                require([row['context_tick'] for row in selected] == list(range(len(selected))),
+                        'An instance has missing, repeated or reordered original ticks.')
+                require(len(selected) <= instance['expected_entries'], 'A prefix exceeds an instance\'s complete entry count.')
+                if len(selected) == instance['expected_entries']:
+                    require(selected[-1]['relative_frame'] == last, 'An instance completes before its declared final boundary.')
+                if frames >= last:
+                    require(len(selected) == instance['expected_entries'] and selected[-1]['relative_frame'] == last,
+                            'An instance has a missing, extra or incorrect final entry.')
         require([(row['relative_frame'], row['timestamp']) for row in entries]
                 == sorted((row['relative_frame'], row['timestamp']) for row in entries), 'Native entry boundaries are out of order.')
         require(entries[0]['relative_frame'] == target['expected_first_frame'], 'The first original entry frame differs from the recorded profile.')
@@ -291,9 +310,12 @@ def inspect_run(folder, executable, *, context_clock_guard=None):
         require(native['instruction_entries'] == 0 and native['observer_enabled'] is False
                 and not (folder / 'observations/npc-instructions.tsv').exists(), 'The distributed run unexpectedly contains an enabled observer.')
     clock_checks = 0
+    clock_checks_by_entity = {}
     if entries:
-        event_frames = [row['relative_frame'] for row in entries]
-        address = entries[0]['entity'] & 0x1FFFFFFF
+        event_frames = {}
+        for entry in entries:
+            event_frames.setdefault(entry['entity'], []).append(entry['relative_frame'])
+        clock_checks_by_entity = {address: 0 for address in event_frames}
         pc = settings['watched_pc']
         code_at = pc - struct.unpack_from('<I', executable, 0x18)[0] + 0x800
         for frame, raw in raw_checkpoints.items():
@@ -302,21 +324,28 @@ def inspect_run(folder, executable, *, context_clock_guard=None):
             ram = raw['RAM'].read_bytes()
             require(ram[pc & 0x1FFFFFFF:(pc & 0x1FFFFFFF) + program['trace']['function_bytes']]
                     == executable[code_at:code_at + program['trace']['function_bytes']], 'The loaded original callback span differs from its executable.')
-            if context_clock_guard is not None:
-                reachable = context_clock_guard(ram, entries[0]['entity'], program['trace']['entity_id'], frame)
-                require(type(reachable) is bool, 'The context clock guard must return a Boolean.')
-                if not reachable:
+            for entity, observed_frames in event_frames.items():
+                if frame < observed_frames[0]:
                     continue
-            word = lambda offset: struct.unpack_from('<I', ram, address + offset)[0]
-            if (word(0) == 0x80089AD4 and word(0x98) == program['trace']['entity_id']
-                    and word(0x9C) == program['trace']['entity_id'] + 1):
-                require(word(0xA4) == entries[0]['entity'] and word(0xA8) == pc
-                        and word(0xA0) == bisect_right(event_frames, frame), 'Original callback registration or initialized tick history disagrees with its entries.')
-                clock_checks += 1
-        require(clock_checks > 0, 'No complete checkpoint corroborates the original entity registration and clock.')
+                if context_clock_guard is not None:
+                    reachable = context_clock_guard(ram, entity, program['trace']['entity_id'], frame)
+                    require(type(reachable) is bool, 'The context clock guard must return a Boolean.')
+                    if not reachable:
+                        continue
+                address = entity & 0x1FFFFFFF
+                word = lambda offset: struct.unpack_from('<I', ram, address + offset)[0]
+                if (word(0) == 0x80089AD4 and word(0x98) == program['trace']['entity_id']
+                        and word(0x9C) == program['trace']['entity_id'] + 1):
+                    require(word(0xA4) == entity and word(0xA8) == pc
+                            and word(0xA0) == bisect_right(observed_frames, frame), 'Original callback registration or initialized tick history disagrees with its entries.')
+                    clock_checks += 1
+                    clock_checks_by_entity[entity] += 1
+        require(all(count > 0 for count in clock_checks_by_entity.values()),
+                'No complete checkpoint corroborates the original entity registration and clock for every observed instance.')
     require(native['observer_requested'] == settings['trace_enabled'], 'Native observer selection differs from its input profile.')
     return dict(folder=folder, inputs=inputs, program=program, settings=settings, native=native,
         frames=rows, RAM_samples=memory, raw_checkpoints=raw_checkpoints, entries=entries, clock_checks=clock_checks,
+        clock_checks_by_entity=clock_checks_by_entity,
         source_identity=by_name, audio=audio)
 
 
@@ -362,6 +391,9 @@ def compare(reference, candidate, executable, mode='same-runtime'):
         complete_PCM_sha256=[record_file(run['audio'])['sha256'] for run in (left, right)],
         original_instruction_entries_per_run=[len(run['entries']) for run in (left, right)],
         original_entry_records_equal=entries_equal, original_clock_checkpoint_checks=[run['clock_checks'] for run in (left, right)],
+        original_entities_per_run=[len(run['clock_checks_by_entity']) for run in (left, right)],
+        original_clock_checks_by_entity=[{f'0x{address:08X}': count for address, count in run['clock_checks_by_entity'].items()}
+                                        for run in (left, right)],
         executable_sha256=sha(executable), program_sha256=record_file(left['folder'] / 'program.json')['sha256'],
         input_manifests=[record_file(run['folder'] / 'run-inputs.json') for run in (left, right)],
         PNG_containers_decoded=False, raw_RGB_pixels_compared=True, complete_state_parity_checked=False,

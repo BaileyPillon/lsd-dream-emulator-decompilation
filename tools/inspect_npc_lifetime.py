@@ -92,7 +92,7 @@ def inspect_history(folder):
 
     def context_clock_guard(raw, address, entity_id, frame):
         snapshot = inspect_checkpoint(raw, executable, audit, address, entity_id)
-        rooted_snapshots[frame] = snapshot
+        rooted_snapshots[frame, address] = snapshot
         return snapshot['target'] is not None
 
     run = inspect_run(folder, executable, context_clock_guard=context_clock_guard)
@@ -103,27 +103,36 @@ def inspect_history(folder):
     require(int(audit['records'][entity_id]['callback_address'], 16) == int(profile['watched_pc'], 0),
             'The watched instruction does not match this original entity binding.')
     target_address = run['entries'][0]['entity']
-    event_frames = [row['relative_frame'] for row in run['entries']]
+    target_addresses = list(dict.fromkeys(row['entity'] for row in run['entries']))
+    event_frames = {address: [row['relative_frame'] for row in run['entries'] if row['entity'] == address]
+                    for address in target_addresses}
     expected_RAM = {row['relative_frame']: row['RAM_sha256'] for row in run['native']['checkpoints']}
-    rows, checkpoints = [], []
+    rows_by_entity = {address: [] for address in target_addresses}
+    checkpoints = []
     for frame, paths in sorted(run['raw_checkpoints'].items()):
         if frame < profile['arm_frame']:
             continue
         path = paths['RAM']
         pin = record_file(path)
         require(pin['sha256'] == expected_RAM[frame], 'A RAM checkpoint differs from its verified native observation.')
-        row = rooted_snapshots.get(frame)
-        if row is None:
-            row = inspect_checkpoint(path.read_bytes(), executable, audit, target_address, entity_id)
-        if row['target'] is not None and row['target']['registered_context'] is not None:
-            context = row['target']['registered_context']
-            if context['matches_original_binding']:
-                require(context['tick'] == bisect_right(event_frames, frame),
-                        'An enabled original context clock differs from the observed instruction entries.')
+        for address in target_addresses:
+            row = rooted_snapshots.get((frame, address))
+            if row is None:
+                row = inspect_checkpoint(path.read_bytes(), executable, audit, address, entity_id)
+            if row['target'] is not None and row['target']['registered_context'] is not None:
+                context = row['target']['registered_context']
+                if context['matches_original_binding']:
+                    require(context['tick'] == bisect_right(event_frames[address], frame),
+                            'An enabled original context clock differs from this instance\'s instruction entries.')
+            rows_by_entity[address].append(dict(relative_frame=frame,
+                instruction_entries_through_frame=bisect_right(event_frames[address], frame), **row))
         require(record_file(path) == pin, 'A complete RAM checkpoint changed during inspection.')
         checkpoints.append(pin)
-        rows.append(dict(relative_frame=frame, instruction_entries_through_frame=bisect_right(event_frames, frame), **row))
+    rows = rows_by_entity[target_address]
     require(rows, 'No complete checkpoints lie in the armed observation window.')
+    instances = [dict(entity_address=address, instruction_entries=len(event_frames[address]),
+                      checked_snapshots=len(rows_by_entity[address]), rows=rows_by_entity[address],
+                      transition_windows=transition_windows(rows_by_entity[address])) for address in target_addresses]
     require([record_file(path) for path in source_paths] == before, 'An inspected source changed.')
     require(record_file(folder / 'run-inputs.json') == recording_pin, 'The recording manifest changed.')
     return dict(schema_version=1, status='inspected_recorded_NPC_lifetime',
@@ -132,6 +141,8 @@ def inspect_history(folder):
                 target_address=target_address, entity_id=entity_id, callback=profile['callback'],
                 instruction_entries=len(run['entries']), checked_snapshots=len(rows), rows=rows,
                 transition_windows=transition_windows(rows),
+                target_addresses=target_addresses, observed_instances=len(target_addresses), instances=instances,
+                checked_instance_snapshots=sum(item['checked_snapshots'] for item in instances),
                 game_RAM_modified=False, emulator_controlled=False, new_native_game_runs=0,
                 new_C_bytes=0, whole_NPC_encounters_accepted=0, whole_feature_groups_accepted=0,
                 complete_state_parity_checked=False, original_hardware_timing_verified=False,
@@ -153,7 +164,8 @@ def main(argv=None):
         json.dump(report, stream, indent=2)
         stream.write('\n')
     print(json.dumps({key: report[key] for key in
-                     ('status', 'checked_snapshots', 'instruction_entries', 'transition_windows', 'new_C_bytes')}))
+                     ('status', 'checked_snapshots', 'checked_instance_snapshots', 'observed_instances',
+                      'instruction_entries', 'transition_windows', 'new_C_bytes')}))
     return 0
 
 
