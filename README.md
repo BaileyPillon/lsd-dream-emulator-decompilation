@@ -115,6 +115,11 @@ destination and helper signatures explicit and removes thirteen implicit
 internal declarations. Ordinary compiler warnings in that unit fall from
 64 to three, while a fresh complete build remains canonical.
 
+The [display callback check](docs/DISPLAY_CD_CALLBACK.md) now aligns its type
+with the original CD tick and removes that callback warning. A read-only
+inspector also pairs the retained 98 framed Read entries into 49 queued
+origin/dispatch pairs, preserving the gap between handoff and SDK completion.
+
 The feature inventory has 40 provisional groups; an official exhaustive
 feature total is unknown. SDK and startup code are excluded from the C-byte
 denominator. Bounded native and emulator comparisons have passed, including

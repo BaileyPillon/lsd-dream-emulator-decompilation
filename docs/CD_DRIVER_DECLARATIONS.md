@@ -31,6 +31,10 @@ The three remaining warnings are retained:
 - the frame-setup callback has an incompatible pointer-type diagnostic;
 - the synchronous reader's inherited 2 KB `sector` array is unused.
 
+The later [display callback check](DISPLAY_CD_CALLBACK.md) resolves the
+callback type diagnostic, leaving the other two warnings. The counts here
+retain this declaration checkpoint's original before/after scope.
+
 They require further source and call-site investigation. No initialization,
 callback cast or replacement storage is added to silence them. The array
 remains one of the [three known storage explanations](UNUSED_LOCAL_CENSUS.md).

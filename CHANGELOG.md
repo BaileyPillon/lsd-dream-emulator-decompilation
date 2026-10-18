@@ -1,5 +1,17 @@
 # Changelog
 
+## Display callback type and queued read lifecycle - 2026-10-18
+
+- Share the original CD tick's signed-word callback view across the display
+  field, setter and invocation. Preserve both complete matching builds.
+- Check 25 initialized native callback cases through compiled C callers,
+  with three executed faults and three rejected header controls.
+- Pair 98 retained framed Read entries into 49 original FIFO handoffs;
+  keep driver-busy returns separate from SDK completion and transferred bytes.
+- Add fourteen source-only lifecycle tests and reject eight retained-data
+  faults. Ten further primitive-source comparisons yield no C promotion.
+  Source coverage and whole-feature acceptance remain unchanged.
+
 ## Matching CD driver declarations - 2026-10-18
 
 - Declare thirteen internal functions before use and give the blocking read

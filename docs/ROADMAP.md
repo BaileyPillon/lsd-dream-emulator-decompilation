@@ -163,6 +163,13 @@ bytes. Investigate its remaining request-initialization and callback-signature
 diagnostics alongside the unresolved sector buffer; whole-file-driver
 acceptance and the wider source gates remain open.
 
+The later [display callback check](DISPLAY_CD_CALLBACK.md) resolves the display
+callback type view and pairs 49 queued Read origins with their recorded FIFO
+dispatches. All dispatch returns still show the driver busy. Continue actual
+SDK request/polling and position progression through completed destination
+data, other frame modes and errors; the guarded callback fixture does not
+execute natural VSync or active CD phases.
+
 Two game functions remain in assembly after the
 [sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md): the
 796-byte hull/face query (`func_8001DDF4`) and the 1,944-byte primitive-face query
