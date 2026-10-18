@@ -64,7 +64,7 @@ internal sealed class SdkReadTrace : IDisposable {
     }
     public void Drain(int frame) {
         uint count=Count(),size=DataBytes();
-        if(count>1024 || size>8*1024*1024 || Overflow()!=0)
+        if(count>32768 || size>32*1024*1024 || Overflow()!=0)
             throw new Exception("Native SDK trace overflow");
         int[] words=new int[checked((int)count*Words)];
         if(count!=0) Marshal.Copy(Events(),words,0,words.Length);
@@ -94,7 +94,7 @@ internal sealed class SdkReadTrace : IDisposable {
             protocol=1,event_bytes=Words*4,returns=Total,native_returns=NativeTotal(),native_entries=Entries(),
             native_overflow=Overflow(),pending_calls=Pending(),max_depth=MaxDepth(),pending_transfer=Transfer(),
             completions=Completions(),failed_transfers=Failures(),unassociated_polls=Unassociated(),overlapping_requests=Overlaps(),
-            payload_bytes=bytes,targets=Targets,frame_payload_limit=8*1024*1024,
+            payload_bytes=bytes,targets=Targets,frame_payload_limit=32*1024*1024,
             original_game_RAM_injected=false,original_CPU_source_modified=false,
             buffer_scope="Complete sector-count times 2048 RAM at a successful zero-valued SDK poll return; disc identity requires separate verification."}));
     }

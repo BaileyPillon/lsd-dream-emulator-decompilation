@@ -131,6 +131,11 @@ the complete file feature. Whole-feature acceptance remains zero. Original NPC
 behavior, optional AI-assisted tools and the separate Bevy port retain their
 existing measurements and scope.
 
+The later [natural file-lifetime profile](FILE_HEAP_LIFETIMES.md) closes the
+observed lifetimes of the 35 allocations backing these 49 queued reads, using
+a longer capture and original allocator/file-view boundaries. The earlier
+SDK-only checker retains the narrower scope described here.
+
 Twelve new callable/member-address collision forms plus two controls were
 independently GNU-qualified. None improved the hull's 26 differing bytes, and
 none was promoted. Two assembly functions and three inherited storage

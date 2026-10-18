@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "kind": "original_LSD_SDK_heap_boundaries",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "rows": [
+    {
+      "function": "func_80029274",
+      "pc": "0x80029274",
+      "bytes": 128,
+      "kind": 1,
+      "sha256": "a9c4c9570f034fea9da3b8749ef789dfe2f4646163393d2164b025ec4b19c477"
+    },
+    {
+      "function": "CdReadSync",
+      "pc": "0x80029254",
+      "bytes": 32,
+      "kind": 2,
+      "sha256": "531926ac58b4d3f5ae76b148a9536c8e75824b3d268d8213f6abe8b02239fe65"
+    },
+    {
+      "function": "CdControl",
+      "pc": "0x80028df0",
+      "bytes": 328,
+      "kind": 3,
+      "sha256": "c5c87715e428b375dbfcf0f6a616b29c61dcf337f4b4eb861604edff249df144"
+    },
+    {
+      "function": "CdControlF",
+      "pc": "0x80028f38",
+      "bytes": 316,
+      "kind": 3,
+      "sha256": "594d850a3d39a10617befeb3e020eabae11b2fd738c71fcca7aa2af87dd5fb94"
+    },
+    {
+      "function": "CdControlB",
+      "pc": "0x80029074",
+      "bytes": 340,
+      "kind": 3,
+      "sha256": "c7585ff8a9cd468c3d1ec0cfb19e78819743642f187e164a8a7e67a55ca5a60a"
+    },
+    {
+      "function": "CdSync",
+      "pc": "0x80028d68",
+      "bytes": 32,
+      "kind": 4,
+      "sha256": "b200a0633cce42f29297751fe9d6919db54c297aeed77dde493daae190868da0"
+    },
+    {
+      "function": "memory_allocate_mem",
+      "pc": "0x80017b34",
+      "bytes": 456,
+      "kind": 5,
+      "sha256": "a55ec79ff9c1252fd41968bf5abca2a74f3658b6c400df80289d51d943fc5ef9"
+    },
+    {
+      "function": "memory_free_mem",
+      "pc": "0x80017cfc",
+      "bytes": 428,
+      "kind": 6,
+      "sha256": "590fb6e594883e9fcaa7105de18de7b9a9c0df2322e07feb5e081f66da15a052"
+    },
+    {
+      "function": "file_buf_construct",
+      "pc": "0x80026a50",
+      "bytes": 100,
+      "kind": 7,
+      "sha256": "171ee11b6227d3dda49ebb27a20a4dbc8cecba9b1cb5cbb64599d65c66844624"
+    },
+    {
+      "function": "file_buf_destroy",
+      "pc": "0x800269f0",
+      "bytes": 96,
+      "kind": 8,
+      "sha256": "a80ae629ccafae124ecabbc63aeaffe1903df3972d686d11be1436f325102685"
+    },
+    {
+      "function": "file_buf_release",
+      "pc": "0x80026c20",
+      "bytes": 96,
+      "kind": 9,
+      "sha256": "8613b4e33420189dc58508a10c57f966f8ceda5386364744aecbe6f4ada76a18"
+    },
+    {
+      "function": "file_buf_cleanup",
+      "pc": "0x80026ab4",
+      "bytes": 84,
+      "kind": 10,
+      "sha256": "f5704d5ff5363fda498ef6c54d5de9eb57756383fb9eb4d269145dd2bd27f035"
+    }
+  ],
+  "object_count": 306,
+  "canonical_symbolic_elf_sha256": "c0746d3982c314079a5a24f2d88072c43464032f969eeac5f172c7646df833a7",
+  "GNU_symbol_table_sha256": "799952f7601b0d5d3f8b0e51b8d3289c53b2cb9a2f18a9b8d769ebdb43b7e7d6",
+  "independent_GNU_sized_function_extents_equal": true,
+  "complete_canonical_image_equal": true,
+  "diagnostic": {
+    "diagnostic_image_matches_candidate": true,
+    "candidate_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "diagnostic_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "original_link_flags": [
+      "--no-check-sections",
+      "-nostdlib",
+      "-s"
+    ],
+    "diagnostic_link_flags": [
+      "--no-check-sections",
+      "-nostdlib"
+    ],
+    "removed_symbol_strip_flag": "-s"
+  },
+  "producer_sha256": "bb53b80c13bd60e8da5f6eeb2be254e49ffc47f2e8d11ec0e7341507e2383cf0"
+}

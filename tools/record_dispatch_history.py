@@ -15,7 +15,7 @@ sys.path.insert(0,str(ROOT))
 import configure
 from tools.build_dispatch_observer import OBSERVER, EXPORTS, FLOW_OBSERVER, FLOW_EXPORTS, RETURN_OBSERVER, RETURN_EXPORTS
 from tools.build_dispatch_observer import SDK_OBSERVER, SDK_EXPORTS
-from tools.sdk_reads import RANGES as SDK_RANGES, verified_sdk_selection
+from tools.sdk_reads import RANGES as SDK_RANGES, HEAP_RANGES, verified_sdk_selection
 from tools.dispatch_flow import flow_windows
 from tools.dispatch_returns import verified_return_selection
 from tools.build_npc_observer import UPSTREAM, MEDNAFEN, SOURCE_SHA256
@@ -62,7 +62,7 @@ def load_observer_profile(path):
                 'Rebuild the optional original-return observer with the current source and protocol.')
     if 'sdk_read_protocol' in profile:
         require(profile['sdk_read_protocol']==1 and profile.get('return_protocol')==1
-                and profile.get('sdk_read_event_bytes')==464 and profile.get('sdk_read_frame_payload_bytes')==8*1024*1024
+                and profile.get('sdk_read_event_bytes')==464 and profile.get('sdk_read_frame_payload_bytes')==32*1024*1024
                 and profile.get('sdk_read_header_sha256')==record_file(SDK_OBSERVER)['sha256']
                 and set(SDK_EXPORTS)<=set(profile.get('exported_functions',[])),
                 'Rebuild the optional SDK read observer with the current source and protocol.')
@@ -100,7 +100,8 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
         supplemental,supplemental_provenance,supplemental_raw)
     return_provenance_raw=RETURN_PROVENANCE.read_bytes()
     return_selection=verified_return_selection(program,selected,game,json.loads(return_provenance_raw),return_provenance_raw)
-    sdk_selection=verified_sdk_selection(program,game,json.loads(SDK_RANGES.read_bytes()))
+    sdk_range_file=HEAP_RANGES if program['method_trace'].get('heap_lifetime',False) else SDK_RANGES
+    sdk_selection=verified_sdk_selection(program,game,json.loads(sdk_range_file.read_bytes()))
     if sdk_selection is not None:
         return_selection['sdk_targets']=sdk_selection
     symbols = parse_symbols((ROOT / configure.MAP_FILE).read_text(),
@@ -140,7 +141,7 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
     dotnet = str(dotnet or shutil.which('dotnet') or Path(os.environ.get('ProgramFiles', 'C:/Program Files')) / 'dotnet/dotnet.exe')
     compiler = select_compiler(subprocess.check_output([dotnet, '--list-sdks'], text=True))
     framework = Path(os.environ['WINDIR']) / 'Microsoft.NET/Framework64/v4.0.30319'
-    source_paths = [*host_sources,OBSERVER,FLOW_OBSERVER,RETURN_OBSERVER,SDK_OBSERVER,SDK_RANGES,ROOT/'tools/sdk_reads.py',ROOT/'tools/dispatch_flow.py',
+    source_paths = [*host_sources,OBSERVER,FLOW_OBSERVER,RETURN_OBSERVER,SDK_OBSERVER,sdk_range_file,ROOT/'tools/sdk_reads.py',ROOT/'tools/dispatch_flow.py',
         ROOT/'tools/dispatch_returns.py',RETURN_PROVENANCE,program_file,Path(__file__).resolve(),
         ROOT/'tools/build_dispatch_observer.py',ROOT/'tools/build_npc_observer.py',ROOT/'tools/dispatch_trace.py',
         ROOT/'tools/record_npc_history.py',ROOT/'tools/replay_cold_start_headless.py',ROOT/'tools/runtime_inputs.py',

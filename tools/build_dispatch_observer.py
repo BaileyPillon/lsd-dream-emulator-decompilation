@@ -135,7 +135,7 @@ def build(source_root, output, *, flow=False, returns=False, sdk_reads=False):
         profile.update(return_protocol=1,return_event_bytes=600,return_frame_payload_bytes=8*1024*1024,
             return_header_sha256=record_file(RETURN_OBSERVER)['sha256'])
     if sdk_reads:
-        profile.update(sdk_read_protocol=1,sdk_read_event_bytes=464,sdk_read_frame_payload_bytes=8*1024*1024,
+        profile.update(sdk_read_protocol=1,sdk_read_event_bytes=464,sdk_read_frame_payload_bytes=32*1024*1024,
             sdk_read_header_sha256=record_file(SDK_OBSERVER)['sha256'])
     write_json(output / 'profile.json', profile)
     return profile

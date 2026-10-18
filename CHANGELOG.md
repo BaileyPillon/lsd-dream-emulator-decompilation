@@ -1,5 +1,19 @@
 # Changelog
 
+## Natural file-view allocation lifetimes - 2026-10-18
+
+- Trace original allocation/free and file constructor/release/destructor
+  boundaries alongside SDK calls, preserving complete code and tagged snapshots.
+- Follow all 35 allocations backing 49 queued reads through their actual frees
+  in a 30,000-frame replay ending at Day 002. Compare 40,890 call/return records
+  and complete recorded game outputs against rebuilt and distributed controls.
+- Check 117 completed SDK reads against 5,328,896 disc-sector bytes. Keep 414
+  unrelated live allocations, unobserved cleanup, errors and other routes open.
+- Add nineteen owned lifetime tests and four transfer-context tests. Both
+  platform suites pass 1,113 tests; reject twenty contradictory-evidence controls.
+- Preserve the canonical playable executable and all 392 game build inputs.
+  Six further source forms and two controls yield no matching C promotion.
+
 ## Original SDK completions and queued read destinations - 2026-10-18
 
 - Add an optional read-only SDK observer and complete ELF/GNU range exporter.
