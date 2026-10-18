@@ -1,4 +1,5 @@
 #include "common.h"
+#include "base/object_math.h"
 #include "dream/dream_sys.h"
 #include "file/object_model_list.h"
 #include "scene/entity.h"
@@ -8,8 +9,6 @@ void *g_LinkScene = NULL;
 dream_sys_t *g_LinkDreamSys = NULL;
 s32 g_EntityHelper = 0;
 void *g_LinkSceneData = NULL;
-
-void transform_local_to_world(void *arg0, void *arg1, void *arg2, s32 arg3);
 
 void func_8001EACC(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4);
 s32 link_find_teleport(s16 *arg0);

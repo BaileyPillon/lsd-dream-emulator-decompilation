@@ -170,3 +170,11 @@ tools/replay_cold_start_headless.py text eol=lf
 tests/test_headless_replay.py text eol=lf
 docs/HEADLESS_REPLAY.md text eol=lf
 docs/headless-replay-checks.json text eol=lf
+
+# Keep the shared point-transform interface identical in qualified builds.
+src/base/object_math.c text eol=lf
+src/base/object_math.h text eol=lf
+src/dream/dream_sys.c text eol=lf
+src/scene/link.c text eol=lf
+docs/POINT_TRANSFORM_API.md text eol=lf
+docs/point-transform-api-checks.json text eol=lf

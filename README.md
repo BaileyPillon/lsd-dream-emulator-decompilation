@@ -94,6 +94,9 @@ Rendered playback, enabled callbacks and natural encounters remain open.
 The [collision query interface](docs/COLLISION_API.md) now declares the original
 pointer roles and output sizes. A compiled C caller passes 12,696 bounded inputs;
 the complete matching executable and source-recovery counts are unchanged.
+The [point-transform interface](docs/POINT_TRANSFORM_API.md) shares one typed
+declaration across the original definition and both callers. Regular and fresh
+complete builds remain canonical; source-recovery counts are unchanged.
 The matching game can be launched with the [play helper](docs/PLAYING.md),
 which verifies local inputs and creates an isolated emulator profile.
 The [NPC state and cycle checks](docs/STATE_CYCLE_SCRIPTS.md) extend the scripted

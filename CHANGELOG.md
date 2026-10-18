@@ -1,5 +1,14 @@
 # Changelog
 
+## Shared point-transform interface - 2026-10-17
+
+- Replace conflicting local declarations with one shared header for the
+  original point transform, dream target query and link activation.
+- Express the three-word vector output and borrowed input while retaining
+  both callers' ignored fourth argument and the original operation order.
+- Qualify four isolated complete images and ordinary/fresh 306-object builds.
+  Matching C, NPC/feature acceptance and the separate Bevy port are unchanged.
+
 ## Headless PS1 replay - 2026-10-17
 
 - Add an isolated Windows PS1 replay host and source-pinned Python build,

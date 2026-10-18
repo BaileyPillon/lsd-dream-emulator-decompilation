@@ -26,16 +26,16 @@ void func_8001E58C(void *arg0, s32 *arg1, s16 *arg2) {
 
 /* Transforms a local point by the object's matrix and adds the object's world
    position, writing the result to arg1. */
-void transform_local_to_world(void *arg0, s32 *arg1, void *arg2) {
+void transform_local_to_world(void *arg0, vec3d_t *arg1, const void *arg2, s32 unused) {
     s32 buf[8];
     void (*method)(void *, void *, s32);
 
     method = *(void (**)(void *, void *, s32))((u8 *) *(void **) arg0 + 0x84);
     method(arg0, buf, 0);
     func_8001EE98((u8 *) arg1, (u8 *) arg2, 1, (u8 *) buf);
-    arg1[0] += ((vec3d_t *) (*(s32 *) ((u8 *) arg0 + 0xC) ? (u8 *) *(void **) ((u8 *) arg0 + 0x14) + 0x38 : 0))->x;
-    arg1[1] += ((vec3d_t *) (*(s32 *) ((u8 *) arg0 + 0xC) ? (u8 *) *(void **) ((u8 *) arg0 + 0x14) + 0x38 : 0))->y;
-    arg1[2] += ((vec3d_t *) (*(s32 *) ((u8 *) arg0 + 0xC) ? (u8 *) *(void **) ((u8 *) arg0 + 0x14) + 0x38 : 0))->z;
+    arg1->x += ((vec3d_t *) (*(s32 *) ((u8 *) arg0 + 0xC) ? (u8 *) *(void **) ((u8 *) arg0 + 0x14) + 0x38 : 0))->x;
+    arg1->y += ((vec3d_t *) (*(s32 *) ((u8 *) arg0 + 0xC) ? (u8 *) *(void **) ((u8 *) arg0 + 0x14) + 0x38 : 0))->y;
+    arg1->z += ((vec3d_t *) (*(s32 *) ((u8 *) arg0 + 0xC) ? (u8 *) *(void **) ((u8 *) arg0 + 0x14) + 0x38 : 0))->z;
 }
 
 /* Reads the object's Euler rotation, converting GTE angle units (4096/rev) to

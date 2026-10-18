@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "status": "qualified_shared_point_transform_API",
+  "recorded_utc": "2026-10-18T01:29:28.615664+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "d0a34c3cf7170164dd231a763fecde8281ffdcb1",
+  "before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "canonical_executable": {
+    "bytes": 505856,
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+  },
+  "problem": "Definition declared three arguments with an s32 pointer output; both callers declared four arguments with a void pointer output.",
+  "contract": {
+    "object": "opaque object with transform method at vtable offset 0x84",
+    "world_point": "vec3d_t writable three-word result",
+    "local_point": "const void pointer to borrowed three-word input",
+    "unused": "original fourth caller argument; both pass zero and the body ignores it"
+  },
+  "source_sha256": {
+    "src/base/object_math.c": "f4e17f6d44d413b63cc677e7a1ec6b9952eaf2f0431ecf7655ec0b6df7c3959e",
+    "src/base/object_math.h": "b466ef758003fb2ad5c6fcffe40f6454753ad1a09856ced82c5ce5d2c8237946",
+    "src/dream/dream_sys.c": "130453762f783d2e8c2f4af237a0a62322fec91480e7570e5ebbd21d9ca006bf",
+    "src/scene/link.c": "2639465b5d1d24f463afaa730adf4a51f2eddc7432057bf7ad1b88a035d2a3ed"
+  },
+  "isolated_complete_images": [
+    {
+      "name": "fourth-parameter-control",
+      "source_unit": "src/base/object_math.c",
+      "candidate_sha256": "0fdb6261e0a4b31a624e0d7c1d56ad1354d31324b87b1fb5d1ab437d1006a5e7",
+      "complete_image_equal": true
+    },
+    {
+      "name": "typed-vector-definition",
+      "source_unit": "src/base/object_math.c",
+      "candidate_sha256": "f4e17f6d44d413b63cc677e7a1ec6b9952eaf2f0431ecf7655ec0b6df7c3959e",
+      "complete_image_equal": true
+    },
+    {
+      "name": "typed-dream-caller",
+      "source_unit": "src/dream/dream_sys.c",
+      "candidate_sha256": "3f8dbc9ea701f0337e418feb86d9c7b269fef01daf643f50d75ecfa098c79e31",
+      "complete_image_equal": true
+    },
+    {
+      "name": "typed-link-caller",
+      "source_unit": "src/scene/link.c",
+      "candidate_sha256": "f5468e6f60fdd4efd369937407824454ae93d2193789edec19ae9d6f7f2229c2",
+      "complete_image_equal": true
+    }
+  ],
+  "build_qualification": {
+    "ordinary_complete_image_equal": true,
+    "ordinary_objects": 306,
+    "independently_configured_fresh_complete_image_equal": true,
+    "fresh_objects": 306,
+    "copied_existing_objects": false,
+    "protected_inputs_unchanged_during_builds": 392,
+    "changed_build_inputs": [
+      "src/base/object_math.c",
+      "src/base/object_math.h",
+      "src/dream/dream_sys.c",
+      "src/scene/link.c"
+    ],
+    "ordinary_log_sha256": "2a0f021359427210fb568bd65c3a17d2edea1aa1bd1f67dbff5af231001f03c1",
+    "fresh_log_sha256": "24419bf08637a0f7d6555178db89517276dfad88bc238038b05ce87ee8927d7b"
+  },
+  "tooling_tests": {
+    "platform": "Windows",
+    "python": "3.14",
+    "tests": 860,
+    "skipped": 2,
+    "result": "passed",
+    "log_sha256": "ccbcf77b8f076ef35e333a510e1441c0af07a37af31a6cc036c4d79edff18e82"
+  },
+  "private_evidence": [
+    {
+      "path": ".decomp-lab/transform-projection-interface-20261017-first/report.json",
+      "sha256": "311d243b2865888e11486d84a165dfa284d6e1e4fbdc721cb7fae23c8b97cab5"
+    },
+    {
+      "path": ".decomp-lab/projection-source-study-audit-20261017-first/report.json",
+      "sha256": "03953d0ae49163040d027f7d625ca5a787aa6a4f8956e41d2871cef982edbfa4"
+    },
+    {
+      "path": ".decomp-lab/point-transform-fresh-build-20261017-first.json",
+      "sha256": "b8580838bf1d54129138b9c0e1197dc8bf14fa229e50858e7142cd405e0a017f"
+    }
+  ],
+  "new_C_bytes": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_whole_feature_groups_accepted": 0,
+  "source_padding_added": false,
+  "compiler_or_assembler_changed": false,
+  "Bevy_port_modified": false,
+  "model_API_called": false,
+  "limits": [
+    "The point transform was already recovered in C; this changes its shared type contract.",
+    "Complete executable equality does not establish exhaustive gameplay parity.",
+    "The 40 feature groups are provisional; an official exhaustive feature total is unknown.",
+    "Original game inputs, generated objects and raw private evidence are excluded from publication."
+  ]
+}
