@@ -127,6 +127,13 @@ sequential position history. Original/rebuilt SDK records and all recorded game
 outputs agree; the observer also matches the distributed core's game outputs.
 Errors, object lifetime and complete feature acceptance remain open.
 
+The [natural file-lifetime profile](docs/FILE_HEAP_LIFETIMES.md) now extends that
+history through 30,000 frames and the Day 002 menu. It checks the 49 queued
+reads against actual constructor and allocation generations, then observes all
+35 backing allocations being freed. Original/rebuilt and observer/distributed
+recorded outputs agree. Other file routes and whole-feature acceptance remain
+open.
+
 The feature inventory has 40 provisional groups; an official exhaustive
 feature total is unknown. SDK and startup code are excluded from the C-byte
 denominator. Bounded native and emulator comparisons have passed, including

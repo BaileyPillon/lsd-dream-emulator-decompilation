@@ -11,8 +11,11 @@ shared/debug Open and Read views with their original arguments and result.
 Bounded debug/CD guard paths and original slot copying pass without output
 stubs. The [SDK completion profile](SDK_READ_COMPLETIONS.md) now compares 102
 actual completed reads, including all 49 queued handoffs in its controller
-history. Extend this evidence to SDK errors, object lifetime and other natural
-file histories. Both inherited empty debug frames still need
+history. The [natural file-lifetime profile](FILE_HEAP_LIFETIMES.md) now follows
+their 35 backing allocations through the Day 002 menu, with actual constructor,
+release and free observations. Extend these checks to SDK errors, other object
+lifetimes and other natural file histories. Both inherited empty debug frames
+still need
 source explanations; the remaining two assembly functions are unchanged.
 
 The [declared dispatch catalogue](DISPATCH_CATALOGUE.md) now qualifies all

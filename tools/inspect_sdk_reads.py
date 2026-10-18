@@ -63,7 +63,7 @@ def validate_records(data,payload,summary,targets,executable,program):
             and summary.get('returns')==summary.get('native_returns')==summary.get('native_entries')==len(records)
             and summary.get('payload_bytes')==len(payload) and summary.get('targets')==targets
             and summary.get('native_overflow')==0 and summary.get('pending_calls')==0
-            and summary.get('pending_transfer')==0 and summary.get('frame_payload_limit')==8*1024*1024
+            and summary.get('pending_transfer')==0 and summary.get('frame_payload_limit') in (8*1024*1024,32*1024*1024)
             and summary.get('original_game_RAM_injected') is False
             and summary.get('original_CPU_source_modified') is False,
             'Incomplete SDK native totals, transport, call stack or transfer state.')
@@ -97,9 +97,16 @@ def validate_records(data,payload,summary,targets,executable,program):
         for part in ('entry_jump','entry_delay'):
             _instruction(executable,*(row[part+'_'+name] for name in ('pc','ram','fetch','flags','sr')))
         word=row['entry_jump_fetch'];pc=row['entry_jump_pc']
-        require(word>>26==3 and row['entry_delay_pc']==pc+4 and row['entry_ra']==pc+8
-                and ((pc+4)&0xF0000000)|((word&0x03FFFFFF)<<2)==row['entry_pc'],
-                'SDK entry lacks its actual original JAL and delay context.')
+        direct=word>>26==3 and row['entry_ra']==pc+8 and \
+            (((pc+4)&0xF0000000)|((word&0x03FFFFFF)<<2))==row['entry_pc']
+        indirect=False;tail=False
+        if program['method_trace'].get('heap_lifetime',False):
+            indirect=(word&0xFC1F07FF)==9 and (word>>11)&31==31 and \
+                row['entry_jump_rs']==row['entry_pc'] and row['entry_ra']==pc+8
+            tail=(word>>26==2 and (((pc+4)&0xF0000000)|((word&0x03FFFFFF)<<2))==row['entry_pc']) or \
+                ((word&0xFC1FFFFF)==8 and row['entry_jump_rs']==row['entry_pc'])
+        require(row['entry_delay_pc']==pc+4 and (direct or indirect or tail),
+                'SDK/heap entry lacks its actual original transfer and delay context.')
         _stack_after_delay(row,'entry_',row['entry_sp'])
         _jump_return(row,executable,target=row['entry_ra'],span=(row['entry_pc'],row['code_bytes']))
         _stack_after_delay(row,'',row['return_sp'])
@@ -193,7 +200,7 @@ def verify_transfers(records,payload,summary,stream):
                 sectors=active['sectors'],bytes=row['buffer_bytes'],destination=f"0x{active['destination']:08X}",
                 complete_buffer_sha256=sha(actual),containing_ISO_paths=paths))
             cursor=active['lba']+active['sectors'];pending=None
-        else:
+        elif row['kind']<=4:
             require(row['buffer_status']==row['buffer_bytes']==row['buffer_address']==0,
                     'A request/control/sync return cannot claim completed read RAM.')
     require(pending is None and requests==len(completions)==summary.get('completions')
@@ -220,6 +227,8 @@ def inspect_sdk(folder):
     output=folder/'observations'
     payload=(output/'sdk-read-data.bin').read_bytes()
     summary=json.loads((output/'sdk-read-summary.json').read_bytes())
+    require(summary.get('frame_payload_limit')==manifest['observer_profile'].get('sdk_read_frame_payload_bytes'),
+            'SDK payload capacity differs from its recorded native build.')
     report,records=validate_records((output/'sdk-reads.bin').read_bytes(),payload,summary,
         manifest['settings']['return_trace']['sdk_targets'],executable,program)
     track=manifest['source_manifest']['disc']['tracks'][0]

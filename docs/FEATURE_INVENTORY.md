@@ -20,6 +20,12 @@ outputs agree. This adds no C bytes, original-game feature, NPC profile or
 whole-feature acceptance. SDK errors, object lifetime and other file routes
 remain open; the exhaustive original-game feature total is still unknown.
 
+The later [natural file-lifetime profile](FILE_HEAP_LIFETIMES.md) follows those
+49 queued reads through allocation generations and actual frees of all 35
+backing allocations. Its 30,000-frame replay reaches Day 002 with matching
+recorded original/rebuilt and observer/distributed outputs. It adds no C byte,
+original-game feature, NPC profile or whole-feature acceptance.
+
 The [complete software movie decode](MOVIE_DECODE.md) adds payload evidence
 for all **39** routed movies: **22,382** video frames and **27,921** XA audio
 packets, independently hashed again as raw decoded bytes. It adds no C bytes,

@@ -192,8 +192,9 @@ def inspect(folder):
         json.loads(return_raw) if return_raw else None,return_raw)
     sdk_selection=None
     if program['method_trace'].get('sdk_reads',False):
-        require('sdk-function-ranges.json' in frozen,'Missing retained SDK range qualification.')
-        sdk_selection=verified_sdk_selection(program,executable,json.loads(frozen['sdk-function-ranges.json'][0].read_bytes()))
+        sdk_range_name='heap-function-ranges.json' if program['method_trace'].get('heap_lifetime',False) else 'sdk-function-ranges.json'
+        require(sdk_range_name in frozen,'Missing retained SDK range qualification.')
+        sdk_selection=verified_sdk_selection(program,executable,json.loads(frozen[sdk_range_name][0].read_bytes()))
         require(return_selection is not None,'SDK read observation requires original method returns.')
         return_selection['sdk_targets']=sdk_selection
     require(settings.get('return_trace')==return_selection,'Return settings differ from qualified original methods.')
@@ -219,9 +220,9 @@ def inspect(folder):
         require(bool(return_selection)==(profile.get('return_protocol')==1),'Return interface and observer protocol disagree.')
         require(bool(sdk_selection)==(profile.get('sdk_read_protocol')==1),'SDK interface and observer protocol disagree.')
         if sdk_selection:
-            require({'SdkReadTrace.cs','sdk_read_observer.h','sdk_reads.py','sdk-function-ranges.json'}<=set(frozen)
+            require({'SdkReadTrace.cs','sdk_read_observer.h','sdk_reads.py',sdk_range_name}<=set(frozen)
                     and profile.get('sdk_read_event_bytes')==464
-                    and profile.get('sdk_read_frame_payload_bytes')==8*1024*1024
+                    and profile.get('sdk_read_frame_payload_bytes') in (8*1024*1024,32*1024*1024)
                     and profile.get('sdk_read_header_sha256')==frozen['sdk_read_observer.h'][1]['sha256']
                     and set(SDK_EXPORTS)<=set(profile['exported_functions']),
                     'Incomplete original SDK read observer source or transport provenance.')

@@ -178,5 +178,29 @@ class SdkReadTests(unittest.TestCase):
         self.f['records'][1]['buffer_status']=1
         with self.assertRaisesRegex(ValueError,'request/control'):self.transfers()
 
+    def indirect_entry(self,word=0x0040F809):
+        row=self.f['records'][1];row['entry_jump_ram']=row['entry_jump_fetch']=word
+        row['entry_jump_rs']=row['entry_pc']
+        image=bytearray(self.f['image']);struct.pack_into('<I',image,row['entry_jump_pc']-0x80010000+0x800,word)
+        self.f['image']=bytes(image)
+
+    def test_original_read_only_profile_keeps_its_direct_call_requirement(self):
+        self.indirect_entry()
+        with self.assertRaisesRegex(ValueError,'transfer and delay'):self.validate()
+
+    def test_heap_profile_accepts_actual_canonical_JALR_target_and_link(self):
+        self.f['program']['method_trace']['heap_lifetime']=True
+        self.indirect_entry();self.validate()
+
+    def test_heap_indirect_entry_requires_its_actual_target_operand(self):
+        self.f['program']['method_trace']['heap_lifetime']=True
+        self.indirect_entry();self.f['records'][1]['entry_jump_rs']+=4
+        with self.assertRaisesRegex(ValueError,'transfer and delay'):self.validate()
+
+    def test_heap_tail_transfer_does_not_invent_a_new_return_link(self):
+        self.f['program']['method_trace']['heap_lifetime']=True
+        self.indirect_entry(word=0x08000000|((self.f['records'][1]['entry_pc']>>2)&0x03FFFFFF))
+        self.validate()
+
 
 if __name__=='__main__':unittest.main()

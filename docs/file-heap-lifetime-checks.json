@@ -1,0 +1,347 @@
+{
+  "schema_version": 1,
+  "status": "verified_bounded_natural_file_heap_lifetimes",
+  "repository": "https://github.com/BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "e3618c59cd7f8a27ee0b50ecd310c570a12419ca",
+  "canonical_executable": {
+    "bytes": 505856,
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+  },
+  "frozen_objective_sha256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+  "all_392_game_build_inputs_preserved": true,
+  "original_game_behavior_modified": false,
+  "source_counts_before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "matching_C_percentage": 98.62939693465124,
+  "new_C_bytes": 0,
+  "new_C_functions_accepted": 0,
+  "game_objects": 306,
+  "known_game_assembly_functions_remaining": 2,
+  "known_unexplained_storage_functions": 3,
+  "provisional_feature_groups": 40,
+  "listed_core_function_groups_in_C": 38,
+  "exhaustive_original_feature_count_known": false,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "original_NPC_callbacks_in_C": 107,
+  "bounded_original_NPC_callback_profiles": 40,
+  "developer_tool_categories_before": 10,
+  "developer_tool_categories_after": 10,
+  "optional_mod_categories_before": 3,
+  "optional_mod_categories_after": 3,
+  "AI_model_API_called": false,
+  "natural_profile_before": {
+    "controller_frames": 6000,
+    "completed_SDK_reads": 102,
+    "queued_Read_chains": 49,
+    "qualified_Read_lifetime_windows": 0,
+    "backing_allocations_followed_through_free": 0
+  },
+  "natural_profile_after": {
+    "status": "verified_bounded_original_file_heap_history",
+    "boundary_calls": 40890,
+    "heap_and_file_boundary_calls": 39624,
+    "successful_allocations": 19717,
+    "failed_allocations": 0,
+    "zero_size_allocation_requests": 0,
+    "matched_frees": 19303,
+    "null_frees": 15,
+    "unobserved_allocation_frees": 0,
+    "live_allocations_at_end": 414,
+    "file_constructors": 187,
+    "file_releases": 221,
+    "file_releases_freeing_buffers": 39,
+    "file_destructors": 181,
+    "file_cleanup_calls": 0,
+    "queued_Read_lifetime_windows_qualified": 49,
+    "queued_Read_lifetime_windows_unqualified": 0,
+    "complete_sector_bytes_with_qualified_lifetimes": 3506176,
+    "relevant_backing_allocations": 35,
+    "relevant_allocations_closed": 35,
+    "relevant_allocations_still_live": 0,
+    "whole_file_feature_accepted": false,
+    "all_object_lifetimes_accepted": false,
+    "whole_feature_groups_accepted": 0,
+    "new_C_bytes": 0,
+    "scope": "Original API allocation generations, constructor/release/destructor effects, and file-view/destination liveness through observed queued SDK completion. Open lifetimes and unknown storage remain explicit; address equality alone is not identity."
+  },
+  "shorter_lifetime_diagnostic": {
+    "controller_frames": 6000,
+    "closed_relevant_allocations": 19,
+    "still_live_relevant_allocations": 16
+  },
+  "original_6000_frame_prefix_identical": true,
+  "first_6000_controller_inputs_preserved": true,
+  "final_16_backing_allocation_free_frames": {
+    "first": 23018,
+    "last": 23029
+  },
+  "SDK_completed_transfers": 117,
+  "complete_sector_RAM_bytes_compared": 5328896,
+  "distinct_disc_sectors_compared": 2108,
+  "SDK_request_poll_control_sync_calls": 1266,
+  "SDK_poll_returns": 927,
+  "busy_SDK_polls": 810,
+  "observed_successful_Setlocs": 120,
+  "completed_requests_by_call": {
+    "0x8002BFE4": 37,
+    "0x80028AF4": 28,
+    "0x800287CC": 3,
+    "0x8002866C": 49
+  },
+  "recorded_game_output_scope": {
+    "input_frames": 30000,
+    "GPU_observations": 30001,
+    "RAM_observations": 5149,
+    "complete_checkpoints": 226,
+    "PCM_bytes": 88457172
+  },
+  "original_rebuilt_raw_records_and_RAM_equal": true,
+  "original_rebuilt_lifetime_models_equal": true,
+  "every_recorded_original_rebuilt_game_output_equal": true,
+  "every_recorded_observer_distributed_game_output_equal": true,
+  "decoded_PNGs": 678,
+  "rehashed_source_snapshots": 114,
+  "contradictory_retained_data_controls_rejected": 20,
+  "negative_controls_were_executed_game_faults": false,
+  "final_screen_review": {
+    "relative_frame": 30000,
+    "observed_screen": "Day 002 menu",
+    "manually_reviewed": true,
+    "RGB_equal_across_three_runs": true,
+    "PNG": {
+      "bytes": 36155,
+      "sha256": "79a41ffc84c94094d3617d26ff8e8d08dcd2227df63dfd57208d3f7033896e84"
+    }
+  },
+  "native_protocol": 1,
+  "native_event_bytes": 464,
+  "native_targets_qualified": 12,
+  "native_targets_positively_observed": 11,
+  "frame_event_capacity": 32768,
+  "frame_payload_capacity_bytes": 33554432,
+  "peak_events_in_one_frame": 1201,
+  "peak_payload_bytes_in_one_frame": 551356,
+  "native_lost_overflow_pending_calls_pending_SDK_transfers": 0,
+  "hook_arm_frame": 900,
+  "native_profile": {
+    "upstream_commit": "bdddf4a58aa1a022afb11dc73294a81a5aa7bbd5",
+    "mednafen_commit": "382ff1b8d293c9a862497706808cbb79b2cecbfb",
+    "sdk_read_header_sha256": "d0bcd5f5c3fbe0cd60b3505be84fadbb4e39bd893c6b8b39889b9d07fe6742f3",
+    "core": {
+      "file": "shock.wbx",
+      "bytes": 3415256,
+      "sha256": "1a96c2eb4218b31ce98dc672c7a8bfd1d4627bd62b5b4f7f479013b289b72d9d"
+    },
+    "compressed_core": {
+      "file": "shock.wbx.zst",
+      "bytes": 831238,
+      "sha256": "e2de27b2b10b9ac4c634dc8c80d607cde7cb39fcc95771c94cf0837afbed855e"
+    },
+    "existing_CPU_source_modified": false,
+    "original_game_RAM_written_by_observer": false,
+    "build_scope": "One new adapter object linked with the recorded pinned cached native objects; not a fresh full-core rebuild."
+  },
+  "owned_file_lifetime_tests": 19,
+  "additional_transfer_context_tests": 4,
+  "tooling_tests_each_platform": 1113,
+  "expected_skips_each_platform": 2,
+  "earlier_SDK_completion_buffers_revalidated": 102,
+  "earlier_original_returns_revalidated": 190,
+  "qualified_collision_source_comparisons": 8,
+  "new_collision_source_forms": 6,
+  "repeated_source_controls": 2,
+  "source_candidates_promoted": false,
+  "best_hull_differing_bytes": 26,
+  "best_primitive_differing_bytes": 22,
+  "full_file_feature_accepted": false,
+  "all_object_lifetimes_accepted": false,
+  "file_cleanup_runtime_accepted": false,
+  "SDK_error_retry_paths_accepted": false,
+  "complete_state_parity_checked": false,
+  "original_hardware_timing_verified": false,
+  "earlier_frame_zero_observer_discrepancy_resolved": false,
+  "playable_launcher_preserved": true,
+  "playable_launcher_sha256": "83d516c292694ebf64f568c8025b69a8161a05c51b564c6a2501857804cc4179",
+  "user_emulator_controls_touched": false,
+  "Bevy_repository_modified": false,
+  "source_file_SHA256": {
+    "research/runtime_state/sdk_read_observer.h": "d0bcd5f5c3fbe0cd60b3505be84fadbb4e39bd893c6b8b39889b9d07fe6742f3",
+    "research/headless/SdkReadTrace.cs": "f28b4257c49baa5b26489f15a70f960aa6aa054b1d0853a5ad856ff1a2e6b205",
+    "research/headless/file-driver-heap-route.json": "cada8d83309a3c2562af9eb81047aa8e03e4f9289081ad583aa7c70c48daaa59",
+    "research/headless/file-driver-heap-cycle-route.json": "cac657ccd7a120b77b1f15d4018f308a9be78af2ee113f549abd9eb8e61ac41e",
+    "research/sdk_reads/heap-function-ranges.json": "a5139df4a5685f2e91fa8fbed7f35cd8bb082b04a47d37ca6026ca84f6b18d50",
+    "tools/sdk_reads.py": "bb53b80c13bd60e8da5f6eeb2be254e49ffc47f2e8d11ec0e7341507e2383cf0",
+    "tools/inspect_sdk_reads.py": "beb3477326f3608a804e126185776a051025da50576db2c857793061e61e68d6",
+    "tools/inspect_file_heap.py": "cd1bfc1e6e6417a503e5074eb9a99a8166bc02a100e35a20c60991c93808382b",
+    "tools/build_dispatch_observer.py": "de7e34f50995d21e16305844b4cb973d06412c52bbe51b832196d79c42413151",
+    "tools/record_dispatch_history.py": "690cbd0b94aa93fae3207003b43977f5a5ef773f2a372643064275b81b8d3c6a",
+    "tools/inspect_dispatch_history.py": "2b38bbb1fa8175642bb5a395ef6deba44800452815c6d612d2d6ce948c2ce806",
+    "tests/test_file_heap.py": "811a48b942e14791010e3c2eaf917bc686c44d05fa85f5a21155ae15acb97d57",
+    "tests/test_sdk_reads.py": "07871c12573541ec371b9646faa5431f6c41e01fae1d17eea0316858b44d4918"
+  },
+  "captures": [
+    {
+      "label": "original",
+      "frames": 30000,
+      "run_inputs": {
+        "bytes": 197000,
+        "sha256": "363e51727f5952ad9c6b960cbbfa6b8e21a8d3c2fc2ccfa99a11d8ef5285d78a"
+      },
+      "host_binary": {
+        "bytes": 83456,
+        "sha256": "73a5d1f95b33bf5d64c89a8ba65499aa1fafcd9c9b0fbddc42cadeb2fc9174a1"
+      },
+      "submitted_SHA256": "6c42be9f5f00b27b04eb0d3ecd0dbf94cb91837e5c8bf68cbc7e1344620dae89",
+      "boundary_observations": {
+        "sdk-reads.bin": {
+          "bytes": 18972960,
+          "sha256": "26f652ad5510ab755d42008ec6d0e8bc8ea0bd33fca9127562a736e408058857"
+        },
+        "sdk-read-data.bin": {
+          "bytes": 23723408,
+          "sha256": "37de96f3eed510af510d3ed370adaf0d57621b5576f9b8fc041ffe1c808c5373"
+        },
+        "sdk-read-summary.json": {
+          "bytes": 1003,
+          "sha256": "c32ae10801bfbfb76a8208d95ad1c97490057a9030e9353a19186cbfc28faa1f"
+        }
+      }
+    },
+    {
+      "label": "rebuilt",
+      "frames": 30000,
+      "run_inputs": {
+        "bytes": 196805,
+        "sha256": "d50bf22c687d83373782e3c38aed80104befa1a58bd4dc1f1f276bdef55a1aa7"
+      },
+      "host_binary": {
+        "bytes": 83456,
+        "sha256": "73a5d1f95b33bf5d64c89a8ba65499aa1fafcd9c9b0fbddc42cadeb2fc9174a1"
+      },
+      "submitted_SHA256": "6c42be9f5f00b27b04eb0d3ecd0dbf94cb91837e5c8bf68cbc7e1344620dae89",
+      "boundary_observations": {
+        "sdk-reads.bin": {
+          "bytes": 18972960,
+          "sha256": "26f652ad5510ab755d42008ec6d0e8bc8ea0bd33fca9127562a736e408058857"
+        },
+        "sdk-read-data.bin": {
+          "bytes": 23723408,
+          "sha256": "37de96f3eed510af510d3ed370adaf0d57621b5576f9b8fc041ffe1c808c5373"
+        },
+        "sdk-read-summary.json": {
+          "bytes": 1003,
+          "sha256": "c32ae10801bfbfb76a8208d95ad1c97490057a9030e9353a19186cbfc28faa1f"
+        }
+      }
+    },
+    {
+      "label": "distributed",
+      "frames": 30000,
+      "run_inputs": {
+        "bytes": 148471,
+        "sha256": "83c11641c928e37f48e3e5e0b330b8b7e9bbe2f7284574cd033bfe6f14741927"
+      },
+      "host_binary": {
+        "bytes": 83456,
+        "sha256": "73a5d1f95b33bf5d64c89a8ba65499aa1fafcd9c9b0fbddc42cadeb2fc9174a1"
+      },
+      "submitted_SHA256": "6c42be9f5f00b27b04eb0d3ecd0dbf94cb91837e5c8bf68cbc7e1344620dae89"
+    }
+  ],
+  "evidence": {
+    "file-heap-cycle-paired-comparison-20261018-first.json": {
+      "bytes": 6565845,
+      "sha256": "87126b42f4cd28d4c36ebc5701276315f93e58013d9c54fe1801edd6fb1f12c1"
+    },
+    "file-heap-cycle-stock-comparison-20261018-first.json": {
+      "bytes": 6565849,
+      "sha256": "3256665a54a0afaada047884eec5d5eaa8f8b2d78207ec9ee19ad7e6da1ce0fd"
+    },
+    "file-heap-cycle-audit-20261018-second.json": {
+      "bytes": 4438,
+      "sha256": "acf07b083b5a328b95e0b2a81b27f111632041065018170bc68e22fa9c3c2c8c"
+    },
+    "file-heap-cycle-prefix-20261018-first.json": {
+      "bytes": 1569,
+      "sha256": "0d37af8e08be2feca867ebee389f17efd42c6c4ff39226820f1534f9d1d605e0"
+    },
+    "file-heap-lifetime-diagnostic-20261018-third.json": {
+      "bytes": 5426881,
+      "sha256": "e67057ca80f3a4c843a4674ce8ef18d4307f767f574f588285de6e225ed7c726"
+    },
+    "primitive-bound-length-audit-20261018-first.json": {
+      "bytes": 1507,
+      "sha256": "e63361fbe3c3e0ca4c50e27e5ce57cffcc7ce7ccaa0bebbad25e7a32a5e87c66"
+    },
+    "file-heap-earlier-SDK-compatibility-20261018-first.json": {
+      "bytes": 89600,
+      "sha256": "050b2d5538e2ba67161b06ea150fa8a57fc04e3fdf297458b4dd5ebe2c7fe6af"
+    },
+    "file-heap-earlier-return-compatibility-20261018-first.json": {
+      "bytes": 14659,
+      "sha256": "e955ccb713897d05deb3a36c037d70e8018936ff5b6b273b3591778e896def42"
+    },
+    "file-heap-tests-windows-20261018-final.log": {
+      "bytes": 1301,
+      "sha256": "040ffb47ee510320e414e7dd1c58d84eca8d08513c38bd3fd47731286dcfa2f2"
+    },
+    "file-heap-tests-linux-20261018-final.log": {
+      "bytes": 1301,
+      "sha256": "996468b921da31b89b13c8283af2ce75de28e66567c13e93eaea3236e711c148"
+    },
+    "file-heap-normal-build-20261018-first.log": {
+      "bytes": 56,
+      "sha256": "5c7a395f9de6fe8a15a3fdd7ef8138d2d539ef029ba91b1495caee27a268e8bf"
+    },
+    "file-heap-progress-20261018-first.json": {
+      "bytes": 55514,
+      "sha256": "7f08e8e665b19b35ae5f4c1289142e3eb75388da9a9f28479d00c1eaa175084b"
+    },
+    "file-heap-build-20261018-third/profile.json": {
+      "bytes": 45034,
+      "sha256": "9723051fd23bed5824738ed2d52fb5fcfc5f348ad400498c5a10c11702d71369"
+    },
+    "file-heap-ranges-20261018-first/function-ranges.json": {
+      "bytes": 3421,
+      "sha256": "a5139df4a5685f2e91fa8fbed7f35cd8bb082b04a47d37ca6026ca84f6b18d50"
+    }
+  },
+  "publication_producer_sha256": "b849c04a52f60a2ffca059723e7c60ebad2655c468da5e6e46f1ab5afb5e81f8",
+  "remaining_gates": [
+    "Two matching C collision functions",
+    "Three inherited storage explanations",
+    "Unobserved cleanup, other file/driver routes and later lifetimes",
+    "SDK error/retry histories",
+    "Complete original NPC encounters",
+    "Rare RNG, save/card and audio routes",
+    "Original hardware timing",
+    "Whole-feature and complete parity acceptance"
+  ]
+}
