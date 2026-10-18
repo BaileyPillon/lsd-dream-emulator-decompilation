@@ -204,3 +204,8 @@ research/headless/corpse-wall-link-route.json text eol=lf
 tests/test_npc_multi_instance.py text eol=lf
 docs/NPC_MULTI_INSTANCE.md text eol=lf
 docs/npc-multi-instance-checks.json text eol=lf
+
+# Preserve the executed Boatman controller program and its evidence summary.
+research/headless/boatman-approach-route.json text eol=lf
+docs/NPC_BOATMAN.md text eol=lf
+docs/npc-boatman-checks.json text eol=lf

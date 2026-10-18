@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "status": "qualified_compared_natural_Boatman_history",
+  "recorded_utc": "2026-10-18T06:35:57.473179+00:00",
+  "baseline_commit": "d1b057834a9359940105bf21dcd833b04205c3c7",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "source_sha256": {
+    ".gitattributes": "0cc0ebebb0c742d64a9ccd5c5b1a5a8b565f1b4f228087e73e31ab7c90624c40",
+    "README.md": "076994a8a8b3a37e0f145c5dcf92796c8470896ae5445fbda14cc80cf885fe8f",
+    "CHANGELOG.md": "3aa1fa8b196469621f15d9db93b974636a2956a8ef5f42224b21c555e74c8111",
+    "docs/ROADMAP.md": "54f3b9d490a9c26c9ad611dd54037fd4c545c14687f4ffee0c2075e169ee57c5",
+    "docs/NPC_BOATMAN.md": "571ce864df7983588bca3b386c6d3e403efafa9069dfa0890613a53987f26ec3",
+    "research/headless/boatman-approach-route.json": "3130db81ceb43b2deea074f7f0b3392167ff3e38b8654cdef7b53b151a67521d",
+    "tools/record_npc_history.py": "18e055b126201d6e6a23d2e8550b6a6d98f39e5f4cafea9ae9d45d4bdf8b345c",
+    "tools/compare_npc_history.py": "b5b43f82671d4a76af24753604a2f2d7ee66deff9d4d35b2585bbe5f4bd1851e",
+    "tools/inspect_npc_lifetime.py": "f06a116290cc82613accad946ca32fb0ca7f7934d6f93f2141e41eb6eacc9f69",
+    "tools/inventory_runtime_scene.py": "f76a06710daf5255c7888dd1e6548143f7224367a0dc2273ef1a3e989c309940",
+    "research/headless/RecordNpcHistory.cs": "64fb9082092a7ca3163b679809834e40f73b887ef647a59825cc2183bed2e2b5",
+    "research/headless/NpcInstructionTrace.cs": "c24326d9ef4d445302d51e3945573b5413951d17ea90af26dcb5deea9314260f",
+    "src/scene/entity.c": "42b79fe2e6463d01213b8be552e94132dd912212ace0171219466b2e1650c751",
+    "src/scene/entity.h": "3dd0c265059b0566aca0f0934bbc5b85b5de9a1e1ef27e410985129e2c0ed2b4",
+    "src/scene/scene_node.c": "3347001427b604329f39729925fc3ca0312d166674007870bdf1d54cf4c33c3d",
+    "src/sound/sound.c": "c3174cf04aeb55867cd70fa681edc6146121551a27d9e7ca9ad5b4dd1697dc10"
+  },
+  "local_file_sha256": {
+    ".gitattributes": "0cc0ebebb0c742d64a9ccd5c5b1a5a8b565f1b4f228087e73e31ab7c90624c40",
+    "README.md": "076994a8a8b3a37e0f145c5dcf92796c8470896ae5445fbda14cc80cf885fe8f",
+    "CHANGELOG.md": "3aa1fa8b196469621f15d9db93b974636a2956a8ef5f42224b21c555e74c8111",
+    "docs/ROADMAP.md": "6444efe826ce3ae05ca054db60e21a774103661524af1f4459d4d8d3da16727b",
+    "docs/NPC_BOATMAN.md": "571ce864df7983588bca3b386c6d3e403efafa9069dfa0890613a53987f26ec3",
+    "research/headless/boatman-approach-route.json": "3130db81ceb43b2deea074f7f0b3392167ff3e38b8654cdef7b53b151a67521d",
+    "tools/record_npc_history.py": "18e055b126201d6e6a23d2e8550b6a6d98f39e5f4cafea9ae9d45d4bdf8b345c",
+    "tools/compare_npc_history.py": "b5b43f82671d4a76af24753604a2f2d7ee66deff9d4d35b2585bbe5f4bd1851e",
+    "tools/inspect_npc_lifetime.py": "f06a116290cc82613accad946ca32fb0ca7f7934d6f93f2141e41eb6eacc9f69",
+    "tools/inventory_runtime_scene.py": "f76a06710daf5255c7888dd1e6548143f7224367a0dc2273ef1a3e989c309940",
+    "research/headless/RecordNpcHistory.cs": "64fb9082092a7ca3163b679809834e40f73b887ef647a59825cc2183bed2e2b5",
+    "research/headless/NpcInstructionTrace.cs": "c24326d9ef4d445302d51e3945573b5413951d17ea90af26dcb5deea9314260f",
+    "src/scene/entity.c": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811",
+    "src/scene/entity.h": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f",
+    "src/scene/scene_node.c": "4c9802ade32e9cd08fbb89c94db1694e737814b5a0a922c45bd3abb1afe73ea9",
+    "src/sound/sound.c": "c3174cf04aeb55867cd70fa681edc6146121551a27d9e7ca9ad5b4dd1697dc10"
+  },
+  "hash_scope": "source_sha256 hashes staged Git blobs; local_file_sha256 hashes working-tree bytes. Legacy game files can have different CRLF working bytes. Private paths retain exact observed bytes.",
+  "private_evidence_sha256": {
+    ".decomp-lab/boatman-original-rebuilt-20261018-first.json": "58c8b2c29816cc4ae3c7ca3eae7552bd6bc3e014b361985bfd696aa80c607029",
+    ".decomp-lab/boatman-stock-observer-20261018-first.json": "d41a77c9495e6bbe3b4ffb349bde81444e4c01a94c38915f8ca8d409a7bef36b",
+    ".decomp-lab/boatman-lifetimes-original-20261018-first.json": "ca886b56025b0a5c9f670e4cf67f9aa0a378281b7bef3df5656cf9b5b9189a31",
+    ".decomp-lab/boatman-lifetimes-rebuilt-20261018-first.json": "de40df051d811d05fe1ac81d515f10d4bee68e15bb3d0917a723d3a8e26b1825",
+    ".decomp-lab/boatman-natural-history-review-20261018-first/report.json": "acf6e805a3cf9e8809bb5921ade2b7e79d95204f65355ae8e4130113f73d3a9a",
+    ".decomp-lab/audit_boatman_history_20261018_first.py": "3ff9b35fa3f97db883399ba13b1b403e7e86e030b1c2ed79e5ecc7816364e516",
+    ".decomp-lab/boatman-exploratory-preparation-20261018-first.json": "772698803d0bfeceeba5d72946d464bf1bbfc090eed28795587e34de80f64b1e",
+    ".decomp-lab/hull-current-wide-midpoints-audit-20261018-first/report.json": "5980b700ef474ba8df086a008d906c9b67fd18bb69f8b61e06ef5a07cc585eb8",
+    ".decomp-lab/boatman-tests-20261018-first/windows.json": "daf26df8a3cf0124eac7229c7f63eb38746b6a72f283fe5cbdeb175fd0dc61f7",
+    ".decomp-lab/boatman-tests-20261018-first/windows.log": "eb5d7c36c1018d4916959b028313854a6c881abb344f1daba26e9608df4fb010",
+    ".decomp-lab/boatman-tests-20261018-first/linux.json": "c9982350b9d3cafcab1f69124ae7cce92b30b534280fb40159cfe8ecabc3f788",
+    ".decomp-lab/boatman-tests-20261018-first/linux.log": "4585a9908b773df22e2696c61c89d3ecbaab6c02260eefd14876be71299dd70a"
+  },
+  "callback": {
+    "name": "entity_boatman",
+    "entity_table_ID": 14,
+    "PC": "0x8005EC98",
+    "bytes": 120,
+    "instance": "0x801D056C",
+    "caller_return_address": "0x8002CD88",
+    "entries_per_traced_run": 87,
+    "first_entry_frame": 4577,
+    "last_entry_frame": 5069,
+    "entry_context_ticks": [
+      0,
+      86
+    ],
+    "context_clock_corroborations_per_run": 111
+  },
+  "native_recordings": {
+    "qualified_cold_boots": 3,
+    "earlier_unqualified_explorations": 1,
+    "controller_steps_per_run": 9000,
+    "native_observations_per_run": 9001,
+    "complete_RAM_hash_samples_per_run": 1614,
+    "selected_complete_checkpoints_per_run": 205,
+    "complete_PCM_bytes_per_run": 26537652,
+    "strict_original_rebuilt_comparison_passed": true,
+    "explicit_stock_observer_output_comparison_passed": true,
+    "complete_PCM_equal": true,
+    "complete_traced_entry_records_equal": true
+  },
+  "rooted_lifecycle": {
+    "snapshots_per_traced_run": 191,
+    "transition_windows": [
+      {
+        "from_state": "disabled",
+        "to_state": "enabled",
+        "after_relative_frame": 4576,
+        "through_relative_frame": 4577,
+        "consecutive_core_advances": true
+      },
+      {
+        "from_state": "enabled",
+        "to_state": "not_reachable",
+        "after_relative_frame": 5073,
+        "through_relative_frame": 5074,
+        "consecutive_core_advances": true
+      }
+    ],
+    "original_rebuilt_instance_rows_equal": true
+  },
+  "stored_effects": {
+    "entry_advance_checks_per_traced_run": 87,
+    "stored_translation_X": 32768,
+    "stored_translation_Y": 0,
+    "stored_Z_before": -41984,
+    "stored_Z_after": -42854,
+    "stored_Z_delta_per_entry": -10,
+    "observed_model_frame_cycle": 45,
+    "sound_slot_0_requests": [
+      {
+        "frame": 4633,
+        "entry_tick": 10,
+        "model_frame_after_advance": 11,
+        "sound_slot_0_id": 13
+      },
+      {
+        "frame": 4891,
+        "entry_tick": 55,
+        "model_frame_after_advance": 11,
+        "sound_slot_0_id": 13
+      }
+    ],
+    "original_rebuilt_effects_equal": true
+  },
+  "independent_checks": {
+    "PNG_images_decoded": 615,
+    "all_decoded_pixels_equal_raw_RGB": true,
+    "changed_entry_controls_rejected": 5,
+    "missing_clock_controls_rejected": 1
+  },
+  "local_tooling_tests": {
+    "windows": {
+      "exit_code": 0,
+      "python": "3.14.2",
+      "tests_run": 916,
+      "expected_skips": 2,
+      "log_sha256": "eb5d7c36c1018d4916959b028313854a6c881abb344f1daba26e9608df4fb010",
+      "producer_sha256": "d12ab546a812712f187962d5f592d7138fa86459603051cec39f23b7755c12ec"
+    },
+    "linux": {
+      "exit_code": 0,
+      "python": "3.13.5",
+      "tests_run": 916,
+      "expected_skips": 2,
+      "log_sha256": "4585a9908b773df22e2696c61c89d3ecbaab6c02260eefd14876be71299dd70a",
+      "producer_sha256": "d12ab546a812712f187962d5f592d7138fa86459603051cec39f23b7755c12ec"
+    }
+  },
+  "source_counts_before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "compared_natural_callback_types_before": 2,
+  "compared_natural_callback_types_after": 3,
+  "new_C_bytes": 0,
+  "new_bounded_callback_profiles": 0,
+  "new_whole_feature_groups_accepted": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "original_game_AI_modified": false,
+  "game_RAM_injected": false,
+  "saved_state_restored": false,
+  "emulator_UI_controlled": false,
+  "complete_state_parity_checked": false,
+  "original_hardware_timing_verified": false,
+  "visibility_or_physical_allocation_lifetime_proved": false,
+  "specific_sound_audibility_or_instrument_attributed": false,
+  "model_API_called": false,
+  "Bevy_port_modified": false,
+  "compiler_source_research": {
+    "independently_checked_compilations": 26,
+    "proposed_source_forms": 24,
+    "controls": 2,
+    "exact_function_matches": 0,
+    "new_C_bytes": 0
+  },
+  "scope": "One fixed cold-boot controller history with original Boatman instruction entries, stored effects and output comparisons. Original behavior, matching C, provisional features, optional mods and AI-assisted tools remain distinct. No whole NPC, feature or game is accepted.",
+  "producer_sha256": "3c42a984e8780bd352adbe3352c9b9f17c1093dbaa78675b0b453ef09307d6c2"
+}

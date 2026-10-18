@@ -49,6 +49,12 @@ Corpse instances through an original wall link. All 21 instruction entries,
 per-instance clocks, first-tick Y offsets and scene transitions agree between
 original and rebuilt runs; the observer's outputs also match the stock core.
 
+The [Boatman approach history](docs/NPC_BOATMAN.md) adds a third callback type
+with compared natural instruction entries. All 87 entries, stored movement,
+two sound requests and selected lifecycle boundaries agree. Three 9,000-step
+cold boots also agree on recorded GPU, RAM, RGB and complete PCM output.
+Whole-NPC and whole-feature acceptance remain open.
+
 The verified local build reproduces the original Japanese executable byte for
 byte. **Full C recovery and independently reviewed gameplay coverage are still
 in progress.** The remaining assembly is regenerated from your own executable.
@@ -57,7 +63,7 @@ distributed here.
 
 ## Current status
 
-The current verified snapshot is dated October 17, 2026. These are
+The current verified snapshot is dated October 18, 2026. These are
 separate measures, not a whole-game completion percentage. The initial
 publication and subsequent evidence are retained separately.
 
