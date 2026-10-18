@@ -46,3 +46,33 @@ Compiler-observer outputs belong in fresh `.decomp-lab` directories. Unsupported
 identities, changed outputs and incomplete traces are rejected. These tools
 load no game executable. The function comparator reads the canonical executable;
 none of these tools executes gameplay or makes model API calls.
+
+The stack and temporary-lifetime tracers also accept `--lab-root` for an
+existing absolute private artifact directory on another drive. External roots
+must be outside Git worktrees; output must be a fresh child directory. The
+checkout's `.decomp-lab` remains the default. For example, from the checkout in
+WSL, with `/mnt/d/CodexArtifacts/LSD/working` already created:
+
+```bash
+python research/collision/trace_compiler_lifetimes.py \
+  --source /mnt/d/CodexArtifacts/LSD/working/candidate.c \
+  --function func_8001DDF4 \
+  --lab-root /mnt/d/CodexArtifacts/LSD/working \
+  --output /mnt/d/CodexArtifacts/LSD/working/new-lifetime-trace
+```
+
+Only these two tracers support this option. Keep private game-derived data and
+closed comparison evidence outside published repositories. Relocating an
+artifact directory does not change the matching executable or any source or
+runtime acceptance gate.
+
+The [recorded off-drive checks](../../docs/compiler-artifact-storage-checks.json)
+include four real compiler observations with this option and 1,229 tooling tests
+on each local platform. A related hull study qualifies 14 complete standalone
+functions from 14 C sources: two calibrations and twelve caller-owned input
+record forms. Independent GNU extraction agrees with every raw comparison.
+Three pointer-pair records reserve the early 24-byte region, but their generated
+copies grow the function to 896 bytes versus the original 796. They are rejected.
+The existing candidate remains 26 bytes away; matching game C stays at
+197,172 / 199,912 bytes (98.63%). No source, original feature, or NPC encounter is
+accepted from this study.

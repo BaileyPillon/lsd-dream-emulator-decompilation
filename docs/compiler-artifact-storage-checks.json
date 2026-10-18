@@ -1,0 +1,543 @@
+{
+  "status": "qualified_private_artifact_root_and_rejected_hull_input_record_study",
+  "recorded_utc": "2026-10-18T23:42:32Z",
+  "repository": "https://github.com/BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "59736ab035185aac13219e06c61b02e7d8b874d8",
+  "source_coverage_before": {
+    "C_bytes": 197172,
+    "game_text_bytes": 199912,
+    "percent": 98.62939693465124
+  },
+  "source_coverage_after": {
+    "C_bytes": 197172,
+    "game_text_bytes": 199912,
+    "percent": 98.62939693465124
+  },
+  "remaining_game_assembly_functions": 2,
+  "inherited_storage_explanations": 3,
+  "provisional_original_feature_groups": 40,
+  "exhaustive_feature_denominator_known": false,
+  "original_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "artifact_root_support": {
+    "tools": [
+      "research/collision/trace_compiler_stack.py",
+      "research/collision/trace_compiler_lifetimes.py"
+    ],
+    "option": "--lab-root",
+    "default": ".decomp-lab",
+    "explicit_root_absolute_and_existing": true,
+    "external_Git_worktrees_rejected": true,
+    "nested_Git_worktrees_rejected": true,
+    "resolved_path_escapes_rejected": true,
+    "retained_and_dangling_output_links_rejected": true,
+    "source_checkout_and_its_ancestors_rejected": true,
+    "new_guard_tests": 13
+  },
+  "source_study": {
+    "qualified_observations": 14,
+    "new_input_record_forms": 12,
+    "calibrations": 2,
+    "distinct_complete_sources": 14,
+    "distinct_function_images": 10,
+    "independent_GNU_extraction_agrees": true,
+    "best_raw_differing_bytes": 26,
+    "exact_raw_functions": 0,
+    "exact_complete_candidate_images": 0,
+    "new_candidates_requiring_complete_unit_comparison": 0,
+    "complete_unit_scope": "No new form improves the retained 26-byte function candidate; no new form is promoted or reported as a complete-image match.",
+    "caller_pair_record_counterevidence": {
+      "owned_input_payload_bytes": 24,
+      "function_bytes": 896,
+      "original_function_bytes": 796,
+      "explanation": "Three eight-byte pointer-pair objects allocate before addressed outputs, but real copies and spills change the instruction stream."
+    },
+    "rows": [
+      {
+        "name": "published-control",
+        "bytes": 796,
+        "differing_bytes": 26,
+        "source_sha256": "901d92d76462ea5fc3be6762e43a9a80f396471e882e6db3c71851b252d42121",
+        "function_sha256": "8adaf33db14a15c6c2fb7fb95277c729a44d28fd65b7a7e99b7d99b17d937291",
+        "exact": false
+      },
+      {
+        "name": "direct-control",
+        "bytes": 796,
+        "differing_bytes": 48,
+        "source_sha256": "4387a58a0723f0034275f58a6352669e600ee3595c9ce3ad06ba1ee5306c9dc8",
+        "function_sha256": "46c4f6a2314d25d2e3bd60ca4af8fc8e449871c21984f145182c60885a170f02",
+        "exact": false
+      },
+      {
+        "name": "lookup-single-value",
+        "bytes": 976,
+        "differing_bytes": 816,
+        "source_sha256": "3bf23963ffc1c7f7840c29d37864e25fa99a2459bccc62f73c7ae5d14ee8f60a",
+        "function_sha256": "ae5a34571a1fc28a4643e860be976a176d7e042ba656514ba6babbc73b245bfc",
+        "exact": false
+      },
+      {
+        "name": "lookup-three-pairs-value",
+        "bytes": 944,
+        "differing_bytes": 774,
+        "source_sha256": "fd9091398977802a99d72742afcf504970a5a4902ed0a250f132829df9cf7f4c",
+        "function_sha256": "5af62c1ee6420fb8c4416c35e7a15b825219230f4da69a813414bdf92b3a2978",
+        "exact": false
+      },
+      {
+        "name": "lookup-single-const-value",
+        "bytes": 976,
+        "differing_bytes": 816,
+        "source_sha256": "6ae803cbba302ed9481188005ecfae4b4ac000bf06f290358af8a16e38201498",
+        "function_sha256": "ae5a34571a1fc28a4643e860be976a176d7e042ba656514ba6babbc73b245bfc",
+        "exact": false
+      },
+      {
+        "name": "lookup-three-pairs-const-value",
+        "bytes": 944,
+        "differing_bytes": 774,
+        "source_sha256": "acd19f00823bd1100ec52c45c233fa2b15c5816913c14f735fc6e2b332b7b335",
+        "function_sha256": "5af62c1ee6420fb8c4416c35e7a15b825219230f4da69a813414bdf92b3a2978",
+        "exact": false
+      },
+      {
+        "name": "lookup-single-reference",
+        "bytes": 928,
+        "differing_bytes": 755,
+        "source_sha256": "59e0d1d965e09a58d8eea0cc3916ad1dc818aeadb40925474f478c615b1fd68c",
+        "function_sha256": "bcf4153f273c25aa799876c0ec29f6cb38a58d6da43ef344fbd194d1ed6899a4",
+        "exact": false
+      },
+      {
+        "name": "lookup-three-pairs-reference",
+        "bytes": 896,
+        "differing_bytes": 729,
+        "source_sha256": "aad65acdc752ed02a061e723655433b2e43d997214ce733a4f8201e3e521951f",
+        "function_sha256": "b38fd66f7569f5c87426da0f8da4297121b3f481040fe391a8d26cc77a731697",
+        "exact": false
+      },
+      {
+        "name": "direct-single-value",
+        "bytes": 976,
+        "differing_bytes": 815,
+        "source_sha256": "7ddbd8606e8eced91718dee97839401a7b17bca37f002e80bd77796e79c01bf6",
+        "function_sha256": "e0ce80fcc9bafa56c634bec9da57b856f06f49ada9b32b60cd362022413adef3",
+        "exact": false
+      },
+      {
+        "name": "direct-three-pairs-value",
+        "bytes": 944,
+        "differing_bytes": 773,
+        "source_sha256": "352c691417ccc4f5919725eb9eab4c5f5a6f1154936ee50409914c3a316cf547",
+        "function_sha256": "82fb3742c4449c1505b90adbc9139d8603e6fed0dad4c7c1521cab5039302321",
+        "exact": false
+      },
+      {
+        "name": "direct-single-const-value",
+        "bytes": 976,
+        "differing_bytes": 815,
+        "source_sha256": "e7158f5cea9685e5879ce810b5aae875d39529e841701726a0c826c2337beb4d",
+        "function_sha256": "e0ce80fcc9bafa56c634bec9da57b856f06f49ada9b32b60cd362022413adef3",
+        "exact": false
+      },
+      {
+        "name": "direct-three-pairs-const-value",
+        "bytes": 944,
+        "differing_bytes": 773,
+        "source_sha256": "509559979f91ca00acd9beb19eb306b03f147de29a806fb36668a4c6922483db",
+        "function_sha256": "82fb3742c4449c1505b90adbc9139d8603e6fed0dad4c7c1521cab5039302321",
+        "exact": false
+      },
+      {
+        "name": "direct-single-reference",
+        "bytes": 928,
+        "differing_bytes": 755,
+        "source_sha256": "113dc8a90888d2ae9d36489ead257090fbb8083cf128ef13507d87981b6a78c3",
+        "function_sha256": "50ac6b6d581c84ab7fddce47e0be58fd258bc0e5bfc6e08bb1c56e1cf7558585",
+        "exact": false
+      },
+      {
+        "name": "direct-three-pairs-reference",
+        "bytes": 896,
+        "differing_bytes": 730,
+        "source_sha256": "f299bae9b1acc843753a652aa3553552b3fbb37515386fc5e5b2308e6a0ace72",
+        "function_sha256": "a7e4f0b6982572f126c28546eb773857efe37cd92f802f920c3553f291aea397",
+        "exact": false
+      }
+    ]
+  },
+  "actual_compiler_observations": {
+    "final_traces": 4,
+    "earlier_calibration_traces": 4,
+    "normal_and_observed_complete_assembly_equal": true,
+    "normal_GDB_breakpoint_machinery": true,
+    "extra_explicit_inferior_memory_writes_or_opcode_substitutions": false,
+    "extra_inferior_functions_invoked": false,
+    "final_trace_fingerprints": [
+      {
+        "case": "published-control",
+        "mode": "stack",
+        "normal_assembly_sha256": "7381661b26b61101b352dc5ffd861dc95c0c80738cfd76216a6c2e57d4f073ee",
+        "report_sha256": "c949444f3846cbe3173e18dd473a73d528b499476282f342cbd69e53ee66a390",
+        "named_function_allocations": [
+          {
+            "bytes": 12,
+            "before": 0,
+            "after": 16,
+            "callers": [
+              "assign_stack_temp",
+              "expand_decl",
+              "start_decl"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 16,
+            "after": 20,
+            "callers": [
+              "put_reg_into_stack",
+              "put_var_into_stack",
+              "mark_addressable"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 20,
+            "after": 24,
+            "callers": [
+              "put_reg_into_stack",
+              "put_var_into_stack",
+              "mark_addressable"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 24,
+            "after": 32,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 32,
+            "after": 40,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 40,
+            "after": 48,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 48,
+            "after": 56,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 56,
+            "after": 64,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 64,
+            "after": 72,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 72,
+            "after": 80,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 80,
+            "after": 88,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 88,
+            "after": 96,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 96,
+            "after": 104,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 104,
+            "after": 112,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 0,
+            "before": 112,
+            "after": 112,
+            "callers": [
+              "reload",
+              "global_alloc",
+              "rest_of_compilation"
+            ]
+          }
+        ]
+      },
+      {
+        "case": "published-control",
+        "mode": "lifetimes",
+        "normal_assembly_sha256": "7381661b26b61101b352dc5ffd861dc95c0c80738cfd76216a6c2e57d4f073ee",
+        "report_sha256": "7110aff9ac485c1574b65bc181a4f78e1e1e28736e4b0ffc76732bc4986ecb5d",
+        "lifetime_events": 245
+      },
+      {
+        "case": "lookup-three-pairs-reference",
+        "mode": "stack",
+        "normal_assembly_sha256": "4090ca2b5511aadbe235e05da1e935d337a227f84f0f0f6ac031496086245a04",
+        "report_sha256": "301db276664fbbcb9418324acae4e41cc465274d9078417180750bc23116d561",
+        "named_function_allocations": [
+          {
+            "bytes": 12,
+            "before": 0,
+            "after": 16,
+            "callers": [
+              "assign_stack_temp",
+              "expand_decl",
+              "start_decl"
+            ]
+          },
+          {
+            "bytes": 8,
+            "before": 16,
+            "after": 24,
+            "callers": [
+              "assign_stack_temp",
+              "expand_decl",
+              "start_decl"
+            ]
+          },
+          {
+            "bytes": 8,
+            "before": 24,
+            "after": 32,
+            "callers": [
+              "assign_stack_temp",
+              "expand_decl",
+              "start_decl"
+            ]
+          },
+          {
+            "bytes": 8,
+            "before": 32,
+            "after": 40,
+            "callers": [
+              "assign_stack_temp",
+              "expand_decl",
+              "start_decl"
+            ]
+          },
+          {
+            "bytes": 8,
+            "before": 40,
+            "after": 48,
+            "callers": [
+              "assign_stack_temp",
+              "expand_expr",
+              "store_expr"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 48,
+            "after": 56,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 56,
+            "after": 64,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 64,
+            "after": 72,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 72,
+            "after": 80,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 80,
+            "after": 88,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 88,
+            "after": 96,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 96,
+            "after": 104,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 4,
+            "before": 104,
+            "after": 112,
+            "callers": [
+              "alter_reg",
+              "reload",
+              "global_alloc"
+            ]
+          },
+          {
+            "bytes": 0,
+            "before": 112,
+            "after": 112,
+            "callers": [
+              "reload",
+              "global_alloc",
+              "rest_of_compilation"
+            ]
+          }
+        ]
+      },
+      {
+        "case": "lookup-three-pairs-reference",
+        "mode": "lifetimes",
+        "normal_assembly_sha256": "4090ca2b5511aadbe235e05da1e935d337a227f84f0f0f6ac031496086245a04",
+        "report_sha256": "9280ba7727adfba8337431ca7ea538073ff7a414e931cdea48cbf0282849fee7",
+        "lifetime_events": 27
+      }
+    ]
+  },
+  "tooling_tests": {
+    "windows": {
+      "tests": 1229,
+      "skips": 2,
+      "passed": true,
+      "log_sha256": "4a2921dea14becef65e8ae74f8ad93ab523d578ab639d82a97c7c1613fc20720"
+    },
+    "wsl": {
+      "tests": 1229,
+      "skips": 2,
+      "passed": true,
+      "log_sha256": "be4445c65991f7cce56e25b6ebf202408ee05b86a2d2946760abf138ebeef77d"
+    }
+  },
+  "public_source_sha256": {
+    "research/collision/trace_compiler_stack.py": "768bdc4d71ce3b669b4f11d3a34567ae764ddd00b8ad15fb266169de55531054",
+    "research/collision/trace_compiler_lifetimes.py": "42ed75dd80c2a039957967fcfb558128d6ef56b82a7cdaa9c179f52cff59791b",
+    "research/compiler/README.md": "eed690fbebe6de31a8329498026bcdcffa10a3d24b1e55fd4e4b654e2a94bcc7",
+    "tests/test_compiler_private_root.py": "9089f6bf93279aac7f4311dd1cdbf2e909e58a31e1b89de309415ae2a546e0ce"
+  },
+  "private_evidence_sha256": {
+    "baseline.json": "7fcdc1d7fce5aa0fb0276d1124d3c01e30631f7f9ebb0dcedd665269020b7555",
+    "progress-before.json": "ac98c01a0239abcee21751b21d91d0193443ed45fd3c3a5a7df677ab20515670",
+    "source_study.py": "497ce5582f65b6189b15b3fb51800ecf62cc79a5489026f4fe1c5d9384a911c4",
+    "study_input_records.py": "60a8d9883129b0a1bb96f0c53aca2a25e8fc2e2d2c92338185ef42f7db39ce0d",
+    "hull-caller-owned-inputs-20261018-first/report.json": "576b92f20775fd20e6cde65b7572a6742e85f242e0826ad4d46cbfa6d00f2f40",
+    "actual-traces-final.json": "c64d2f43811a5095552d64a936728fc29713d5e22fac9a8701c339a1c7f6a768",
+    "independent-source-audit.json": "b3a7747c7d25e8b8cace969aa888e89a9986a762d26311fe623d55ca6e4b2783",
+    "audit_sources.py": "d23e79e2d85682e1b1d7243eb20c3d4ccaf5bb5f074255f781ee0562664133d6",
+    "run_traces_final.py": "fb0b0434a80a9cfb2a68e9be5ceaa47a0c42e467a872a822752667af7c712884"
+  },
+  "all_392_game_build_inputs_preserved": true,
+  "canonical_executable_preserved": true,
+  "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "game_objects": 306,
+  "source_promoted": false,
+  "new_matching_C_bytes": 0,
+  "new_gameplay_fixture_inputs": 0,
+  "original_game_behavior_modified": false,
+  "AI_model_API_called": false,
+  "Bevy_port_modified": false,
+  "user_emulator_controlled": false,
+  "goal_complete": false
+}
