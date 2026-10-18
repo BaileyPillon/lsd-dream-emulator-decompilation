@@ -47,6 +47,36 @@ def clean_name(value):
     return isinstance(value, str) and bool(value) and not any(char in value for char in '\t\r\n')
 
 
+def instance_expectations(trace, frames):
+    """Optional complete per-instance expectations for one original callback."""
+    if 'expected_instances' not in trace:
+        return None
+    rows = trace['expected_instances']
+    require(isinstance(rows, list) and 1 <= len(rows) <= 8192,
+            'Declare a nonempty bounded list of expected NPC instances.')
+    expected = {}
+    fields = {'entity_address', 'expected_entries', 'expected_first_frame', 'expected_last_frame'}
+    for row in rows:
+        require(isinstance(row, dict) and set(row) == fields, 'Invalid per-instance expectation fields.')
+        text = row['entity_address']
+        require(isinstance(text, str) and re.fullmatch(r'0x[0-9A-Fa-f]{8}', text),
+                'An expected instance needs its complete hexadecimal entity address.')
+        address = int(text, 16)
+        require(address % 4 == 0 and 0x80010000 <= address <= 0x80200000 - 0x108
+                and address not in expected, 'Expected entity addresses must be valid and unique.')
+        first, last, count = (row[key] for key in
+                              ('expected_first_frame', 'expected_last_frame', 'expected_entries'))
+        require(type(count) is int and count > 0 and type(first) is int and type(last) is int
+                and trace['arm_frame'] <= first <= last <= frames,
+                'Invalid per-instance entry count or observation window.')
+        expected[address] = row
+    require(sum(row['expected_entries'] for row in rows) == trace['expected_entries']
+            and min(row['expected_first_frame'] for row in rows) == trace['expected_first_frame']
+            and max(row['expected_last_frame'] for row in rows) == trace['expected_last_frame'],
+            'Per-instance counts and boundaries must agree with the complete callback profile.')
+    return expected
+
+
 def validate_program(program):
     require(isinstance(program, dict) and program.get('schema_version') == 1, 'Unsupported controller program schema.')
     frames = program.get('frames')
@@ -101,7 +131,8 @@ def validate_program(program):
             ((0 <= first <= last <= frames) if trace['expected_entries'] else first == last == -1),
             'Invalid expected entry observation window.')
     require(type(trace.get('entity_id')) is int and 0 <= trace['entity_id'] < 2**31,
-            'Identify the original entity ID for this single-entity history.')
+            'Identify the original entity table ID for this callback history.')
+    instance_expectations(trace, frames)
     if 'expanded_submitted_sha256' in program:
         require(digest_text(program['expanded_submitted_sha256']), 'Invalid expanded-input checksum.')
     return program

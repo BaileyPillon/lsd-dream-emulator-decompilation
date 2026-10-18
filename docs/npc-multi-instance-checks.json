@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "status": "qualified_compared_multi_instance_callback_history",
+  "recorded_utc": "2026-10-18T05:55:32.027743+00:00",
+  "baseline_commit": "69793dbe9fd50986fd6c445770b73010da2538ef",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "source_sha256": {
+    "tools/record_npc_history.py": "18e055b126201d6e6a23d2e8550b6a6d98f39e5f4cafea9ae9d45d4bdf8b345c",
+    "tools/compare_npc_history.py": "b5b43f82671d4a76af24753604a2f2d7ee66deff9d4d35b2585bbe5f4bd1851e",
+    "tools/inspect_npc_lifetime.py": "f06a116290cc82613accad946ca32fb0ca7f7934d6f93f2141e41eb6eacc9f69",
+    "tests/test_npc_entry_trace.py": "594c536dd1e85caba50b34bac66aa23a09738ade41f9dc90bbb3d7de977ba17e",
+    "tests/test_npc_multi_instance.py": "30cea4c8d774a25e0ec1ce1e466892afa3c213bb8967e23b6d9cab7bea3b369a",
+    "research/headless/corpse-wall-link-route.json": "815628c49f7213eba6093ef8f613f75144c65f6fbe592119e4f7a00f7a338cbf",
+    "docs/NPC_MULTI_INSTANCE.md": "bb85ca2d48a22104f5a35da60cdd0165fcc1f87e3f531dd7a146dd7be3ec494d",
+    "src/scene/entity.c": "42b79fe2e6463d01213b8be552e94132dd912212ace0171219466b2e1650c751",
+    "src/scene/entity.h": "3dd0c265059b0566aca0f0934bbc5b85b5de9a1e1ef27e410985129e2c0ed2b4",
+    "src/scene/scene_node.c": "3347001427b604329f39729925fc3ca0312d166674007870bdf1d54cf4c33c3d"
+  },
+  "private_evidence_sha256": {
+    ".decomp-lab/corpse-original-rebuilt-20261018-second.json": "72220de5ccd3385b5bdef29272661b32ab80586948c1d3b7991c0cd0f0a81269",
+    ".decomp-lab/corpse-stock-observer-20261018-second.json": "4ca7d75b441f66aa7a65a3ef0c6dcb38f180c021185685bb38d27f1309cbf29c",
+    ".decomp-lab/corpse-lifetimes-original-20261018-second.json": "23be94deb61fa92b872016d845e7c767563348623cbf9b5948093090a544a3e3",
+    ".decomp-lab/corpse-lifetimes-rebuilt-20261018-second.json": "b002d0fed02552583783212fb9d7602b7861994298a75eca99f3327284f04730",
+    ".decomp-lab/corpse-multi-instance-review-20261018-second/report.json": "c1ec1761eae9c0abc273f80a5193437a725e8487435ec022e1ca391084765efc",
+    ".decomp-lab/audit_corpse_history_20261018_second.py": "55fc975270fc8ff72baa210674c63ae86abd4db8c9c2e905c16503b4d6ab751e",
+    ".decomp-lab/buddha-multi-instance-regression-20261018-second.json": "e27cef6337f475a19a91e3b3e5df58ade5973dfbdf1b05e035d1642d97758b92",
+    ".decomp-lab/multi-instance-tests-20261018-first/windows-final.json": "2c223f3a1618f1bee1e29b390339bdc927004161e0fdba2ea71abdac7d84dfaf",
+    ".decomp-lab/multi-instance-tests-20261018-first/windows-final.log": "023269edbf167eaf62818f156bfd573385647850b6684fbbcca625db00f987e8",
+    ".decomp-lab/multi-instance-tests-20261018-first/linux-final.json": "cd44bcc5eea62d2fe2b595e980bf39d3106a0462646017523f387762b67fe0cf",
+    ".decomp-lab/multi-instance-tests-20261018-first/linux-final.log": "74b2acfe087688b50dd974a540904e3cfe985ade027242f6d30a3fecbee7b670"
+  },
+  "callback": {
+    "name": "entity_corpse",
+    "entity_table_ID": 56,
+    "PC": "0x80061158",
+    "bytes": 64,
+    "instances": 7,
+    "entries_per_instance": 3,
+    "entries_per_traced_run": 21,
+    "entry_frames": [
+      6300,
+      6306,
+      6311
+    ],
+    "context_ticks": [
+      0,
+      1,
+      2
+    ],
+    "clock_corroborations_per_instance": 12
+  },
+  "native_recordings": {
+    "cold_boots": 3,
+    "controller_steps_per_run": 12000,
+    "native_observations_per_run": 12001,
+    "RAM_hash_samples_per_run": 2036,
+    "selected_complete_checkpoints_per_run": 153,
+    "complete_PCM_bytes_per_run": 35383300,
+    "strict_original_rebuilt_comparison_passed": true,
+    "explicit_stock_observer_output_comparison_passed": true,
+    "complete_PCM_equal": true,
+    "all_traced_entry_records_equal": true
+  },
+  "rooted_lifetimes": {
+    "distinct_snapshots_per_traced_run": 139,
+    "instance_snapshots_per_traced_run": 973,
+    "first_reachable_and_enabled": {
+      "6298": 2,
+      "6299": 5
+    },
+    "first_instruction_entry": 6300,
+    "last_instruction_entry": 6311,
+    "all_not_reachable_by": 6312,
+    "all_original_rebuilt_instance_rows_equal": true
+  },
+  "observed_first_tick_effect": {
+    "instances": 7,
+    "stored_transform_Y_before": -200,
+    "stored_transform_Y_after": -400,
+    "first_tick_delta": -200,
+    "later_Y_unchanged": true,
+    "X_and_Z_unchanged": true,
+    "entity_and_context_ticks": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "independent_checks": {
+    "PNG_images_decoded": 459,
+    "all_decoded_pixels_equal_raw_RGB": true,
+    "native_entry_fault_controls_rejected": 5,
+    "missing_native_instance_clock_controls_rejected": 2,
+    "earlier_Buddha_rows_and_transition_windows_unchanged": true,
+    "new_source_only_test_methods": 14
+  },
+  "source_counts_before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "instruction_traced_callback_types_in_compared_natural_histories_before": 1,
+  "instruction_traced_callback_types_in_compared_natural_histories_after": 2,
+  "new_C_bytes": 0,
+  "new_bounded_callback_profiles": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_whole_feature_groups_accepted": 0,
+  "exhaustive_original_feature_total": null,
+  "game_RAM_injected": false,
+  "emulator_UI_controlled": false,
+  "complete_state_parity_checked": false,
+  "original_hardware_timing_verified": false,
+  "scope": "Three cold boots compare one fixed controller history with seven concurrent instances of one callback type. Per-instance clocks, original entries, rooted lifetime snapshots and first-tick stored Y offsets agree. Instruction-traced callback-type counts describe these retained natural histories, not whole-NPC acceptance. Other routes, seeds, repeated activations, visible effects, complete state and hardware timing remain open.",
+  "local_file_sha256": {
+    "tools/record_npc_history.py": "18e055b126201d6e6a23d2e8550b6a6d98f39e5f4cafea9ae9d45d4bdf8b345c",
+    "tools/compare_npc_history.py": "b5b43f82671d4a76af24753604a2f2d7ee66deff9d4d35b2585bbe5f4bd1851e",
+    "tools/inspect_npc_lifetime.py": "f06a116290cc82613accad946ca32fb0ca7f7934d6f93f2141e41eb6eacc9f69",
+    "tests/test_npc_entry_trace.py": "594c536dd1e85caba50b34bac66aa23a09738ade41f9dc90bbb3d7de977ba17e",
+    "tests/test_npc_multi_instance.py": "30cea4c8d774a25e0ec1ce1e466892afa3c213bb8967e23b6d9cab7bea3b369a",
+    "research/headless/corpse-wall-link-route.json": "815628c49f7213eba6093ef8f613f75144c65f6fbe592119e4f7a00f7a338cbf",
+    "docs/NPC_MULTI_INSTANCE.md": "bb85ca2d48a22104f5a35da60cdd0165fcc1f87e3f531dd7a146dd7be3ec494d",
+    "src/scene/entity.c": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811",
+    "src/scene/entity.h": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f",
+    "src/scene/scene_node.c": "4c9802ade32e9cd08fbb89c94db1694e737814b5a0a922c45bd3abb1afe73ea9"
+  },
+  "hash_scope": "source_sha256 identifies committed Git blobs; local_file_sha256 identifies exact local snapshot bytes, preserving inherited game-source line endings.",
+  "local_tooling_tests": {
+    "windows-final": {
+      "python": "3.14.2",
+      "tests": 916,
+      "expected_skips": 2,
+      "exit_code": 0
+    },
+    "linux-final": {
+      "python": "3.13.5",
+      "tests": 916,
+      "expected_skips": 2,
+      "exit_code": 0
+    }
+  }
+}

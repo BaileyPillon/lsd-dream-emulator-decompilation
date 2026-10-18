@@ -198,3 +198,9 @@ tests/test_npc_lifetime.py text eol=lf
 research/headless/buddha-lifetime-route.json text eol=lf
 docs/NPC_LIFETIME.md text eol=lf
 docs/npc-lifetime-checks.json text eol=lf
+
+# Preserve declared multi-instance histories and their executed analysis inputs.
+research/headless/corpse-wall-link-route.json text eol=lf
+tests/test_npc_multi_instance.py text eol=lf
+docs/NPC_MULTI_INSTANCE.md text eol=lf
+docs/npc-multi-instance-checks.json text eol=lf
