@@ -144,7 +144,7 @@ void display_move_image(display_t *This, s16 *Rect, s16 X, s16 Y) {
 }
 
 void display_do_vsync_internal(display_t *This) {
-    void (*vsync_callback)();
+    display_vsync_callback_t vsync_callback;
 
     while (This->m_VSyncCount) {
         VSync(This->m_NextVBlank);
@@ -214,7 +214,7 @@ void display_set_sync_mode(display_t *This, s32 Mode) {
     This->m_SyncMode = Mode;
 }
 
-void display_set_vsync_callback(display_t *This, void (*Callback)()) {
+void display_set_vsync_callback(display_t *This, display_vsync_callback_t Callback) {
     This->m_VsyncCallback = Callback;
 }
 

@@ -16,6 +16,9 @@ typedef struct vram_rect {
 typedef struct display display_t;
 typedef struct display_vtable display_vtable_t;
 
+/* The installed CD tick returns a native status word; display ignores it. */
+typedef s32 (*display_vsync_callback_t)(void);
+
 struct display_vtable {
     /* 0x000 8006c070 */ u32 type_id;
     /* 0x004 8006c074 */ base_class_t *(*Destroy)(base_class_t *);
@@ -50,7 +53,7 @@ struct display_vtable {
     /* 0x078 8006c0e8 */ void (*display_clear_image)(display_t *, unsigned char *, void *);
     /* 0x07C 8006c0ec */ void *(*display_get_screen_size)(display_t *, void *);
     /* 0x080 8006c0f0 */ void (*display_set_sync_mode)(display_t *, s32);
-    /* 0x084 8006c0f4 */ void (*display_set_vsync_callback)(display_t *, void (*Callback)(void));
+    /* 0x084 8006c0f4 */ void (*display_set_vsync_callback)(display_t *, display_vsync_callback_t Callback);
 };
 
 struct display {
@@ -65,7 +68,7 @@ struct display {
     /* 0x24 */ s32 m_TimerCount; // incremented by display_update_timer
     /* 0x28 */ s32 m_Unk8;
     /* 0x2C */ s32 m_SyncMode; // draw-sync mode used by load/store_image
-    /* 0x30 */ void (*m_VsyncCallback)(void);
+    /* 0x30 */ display_vsync_callback_t m_VsyncCallback;
 };
 
 display_t *display_create(void);
@@ -92,6 +95,6 @@ s32 display_get_vblanks(display_t *This);
 void display_clear_image(display_t *This, unsigned char *Color, void *Rect);
 void *display_get_screen_size(display_t *This, void *OutRect);
 void display_set_sync_mode(display_t *This, s32 Mode);
-void display_set_vsync_callback(display_t *This, void (*Callback)(void));
+void display_set_vsync_callback(display_t *This, display_vsync_callback_t Callback);
 
 #endif
