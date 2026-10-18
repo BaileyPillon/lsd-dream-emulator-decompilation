@@ -338,3 +338,12 @@ tools/inspect_collision_calls.py text eol=lf
 tests/test_collision_calls.py text eol=lf
 docs/collision-call-checks.json text eol=lf
 docs/NATURAL_COLLISION_CALLS.md text eol=lf
+
+# Preserve ordinal selection, batch verification and their published evidence.
+tools/collision_call_batches.py text eol=lf
+tools/inspect_collision_call_batches.py text eol=lf
+tests/test_collision_call_ordinals.py text eol=lf
+tests/test_collision_call_batches.py text eol=lf
+research/headless/collision-ordinal-opening-route.json text eol=lf
+docs/COLLISION_ORDINAL_CALLS.md text eol=lf
+docs/collision-ordinal-checks.json text eol=lf

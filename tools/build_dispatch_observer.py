@@ -16,7 +16,7 @@ sys.path.insert(0, str(ROOT))
 from tools.build_npc_observer import UPSTREAM, MEDNAFEN, SOURCE_SHA256, MEDIA_SHA256, VARIABLES, parse_make_variables, artifact
 from tools.replay_cold_start_headless import require, write_json
 from tools.runtime_inputs import record_file
-from tools.collision_calls import EXPORTS as COLLISION_EXPORTS,EVENT_BYTES as COLLISION_EVENT_BYTES,FRAME_BYTES as COLLISION_FRAME_BYTES
+from tools.collision_calls import EXPORTS as COLLISION_EXPORTS,ORDINAL_EXPORTS as COLLISION_ORDINAL_EXPORTS,EVENT_BYTES as COLLISION_EVENT_BYTES,FRAME_BYTES as COLLISION_FRAME_BYTES
 OBSERVER = ROOT / 'research/runtime_state/dispatch_entry_observer.h'
 FLOW_OBSERVER = ROOT / 'research/runtime_state/dispatch_flow_observer.h'
 RETURN_OBSERVER = ROOT / 'research/runtime_state/dispatch_return_observer.h'
@@ -85,13 +85,15 @@ def build(source_root, output, *, flow=False, returns=False, sdk_reads=False, co
         exports += SDK_EXPORTS
     if collision_calls:
         headers += (COLLISION_OBSERVER,)
-        exports += COLLISION_EXPORTS
+        exports += COLLISION_EXPORTS + COLLISION_ORDINAL_EXPORTS
     inputs = [Path(__file__).resolve(), ROOT / "tools/build_npc_observer.py", *headers, Path(settings['CC']), Path(clang).resolve(),
               nyma / 'shock.cpp', nyma / 'cdrom.cpp', nyma / 'common.mak', nyma / 'shock.mak',
               source / 'waterbox/common.mak', source / 'waterbox/linkscript.T',
               nyma / 'mednafen/src/psx/cpu.cpp', nyma / 'mednafen/src/psx/cpu.h',
               Path(settings['TARGET_RELEASE']), *map(Path, objects),
               *map(Path, shlex.split(settings['EMULIBC_OBJS']))]
+    if collision_calls:
+        inputs.append(ROOT / 'tools/collision_calls.py')
     # Deduplicate the adapter object while preserving a stable manifest order.
     inputs = list(dict.fromkeys(path.resolve(strict=True) for path in inputs))
     before = [record_file(path) for path in inputs]
@@ -146,7 +148,8 @@ def build(source_root, output, *, flow=False, returns=False, sdk_reads=False, co
     if collision_calls:
         profile.update(collision_call_protocol=1,collision_call_event_bytes=COLLISION_EVENT_BYTES,
             collision_call_frame_payload_bytes=COLLISION_FRAME_BYTES,
-            collision_call_header_sha256=record_file(COLLISION_OBSERVER)['sha256'])
+            collision_call_header_sha256=record_file(COLLISION_OBSERVER)['sha256'],
+            collision_call_ordinal_selection=True)
     write_json(output / 'profile.json', profile)
     return profile
 

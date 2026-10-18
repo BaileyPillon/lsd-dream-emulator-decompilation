@@ -25,6 +25,7 @@ static LsdCollisionContext lsd_collision_previous, lsd_collision_before_previous
 static uint32_t lsd_collision_count, lsd_collision_total, lsd_collision_started, lsd_collision_eligible;
 static uint32_t lsd_collision_overflow, lsd_collision_data_bytes, lsd_collision_key_count;
 static uint32_t lsd_collision_duplicates, lsd_collision_frame_skips, lsd_collision_limit_skips, lsd_collision_nested_skips;
+static uint32_t lsd_collision_ordinal_first, lsd_collision_ordinal_step, lsd_collision_ordinal_skips;
 static uint32_t lsd_collision_pc, lsd_collision_bytes, lsd_collision_limit, lsd_collision_start_frame;
 static uint64_t lsd_collision_sequence;
 static bool lsd_collision_active;
@@ -52,19 +53,28 @@ static void LsdCollisionFinish(uint32_t pc,pscpu_timestamp_t timestamp) {
 }
 static void LsdCollisionPush(pscpu_timestamp_t timestamp) {
     ++lsd_collision_eligible;
+    if(lsd_collision_ordinal_step && (lsd_collision_eligible<lsd_collision_ordinal_first ||
+       (lsd_collision_eligible-lsd_collision_ordinal_first)%lsd_collision_ordinal_step)) {
+        ++lsd_collision_ordinal_skips;return;
+    }
     if(lsd_collision_active) {++lsd_collision_nested_skips;return;}
     if(lsd_collision_started==lsd_collision_limit) {++lsd_collision_limit_skips;return;}
     const uint32_t caller=lsd_collision_before_previous.pc,model=CPU->GetRegister(4,NULL,0);
     unsigned key=0;
-    for(;key<lsd_collision_key_count;++key)
-        if(lsd_collision_keys[key].caller==caller && lsd_collision_keys[key].model==model) break;
-    if(key<lsd_collision_key_count && lsd_collision_keys[key].count==2) {++lsd_collision_duplicates;return;}
-    if(lsd_collision_start_frame==lsd_dispatch_frame) {++lsd_collision_frame_skips;return;}
-    if(key==lsd_collision_key_count) {
-        if(key==64) {++lsd_collision_overflow;return;}
-        lsd_collision_keys[key]={caller,model,0};++lsd_collision_key_count;
+    if(!lsd_collision_ordinal_step) {
+        for(;key<lsd_collision_key_count;++key)
+            if(lsd_collision_keys[key].caller==caller && lsd_collision_keys[key].model==model) break;
+        if(key<lsd_collision_key_count && lsd_collision_keys[key].count==2) {++lsd_collision_duplicates;return;}
     }
-    ++lsd_collision_keys[key].count;lsd_collision_start_frame=lsd_dispatch_frame;
+    if(lsd_collision_start_frame==lsd_dispatch_frame) {++lsd_collision_frame_skips;return;}
+    if(!lsd_collision_ordinal_step) {
+        if(key==lsd_collision_key_count) {
+            if(key==64) {++lsd_collision_overflow;return;}
+            lsd_collision_keys[key]={caller,model,0};++lsd_collision_key_count;
+        }
+        ++lsd_collision_keys[key].count;
+    }
+    lsd_collision_start_frame=lsd_dispatch_frame;
     memset(&lsd_collision_pending,0,sizeof(lsd_collision_pending));
     LsdCollisionCall& e=lsd_collision_pending;
     e.entry_id=++lsd_collision_started;e.base_ordinal=lsd_dispatch_total;
@@ -94,6 +104,7 @@ ECL_EXPORT int LsdResetCollisionCalls() {
     lsd_collision_count=lsd_collision_total=lsd_collision_started=lsd_collision_eligible=0;
     lsd_collision_overflow=lsd_collision_data_bytes=lsd_collision_key_count=0;
     lsd_collision_duplicates=lsd_collision_frame_skips=lsd_collision_limit_skips=lsd_collision_nested_skips=0;
+    lsd_collision_ordinal_first=lsd_collision_ordinal_step=lsd_collision_ordinal_skips=0;
     lsd_collision_pc=lsd_collision_bytes=lsd_collision_limit=0;lsd_collision_start_frame=0xFFFFFFFF;
     lsd_collision_sequence=0;lsd_collision_active=false;lsd_collision_previous={};lsd_collision_before_previous={};
     memset(lsd_collision_windows,0,sizeof(lsd_collision_windows));return 1;
@@ -101,6 +112,7 @@ ECL_EXPORT int LsdResetCollisionCalls() {
 ECL_EXPORT int LsdConfigureCollisionCalls(uint32_t pc,uint32_t bytes,uint32_t limit) {
     if(pc!=0x8001F8B8 || bytes!=1944 || !limit || limit>64) return 0;
     lsd_collision_pc=pc;lsd_collision_bytes=bytes;lsd_collision_limit=limit;
+    lsd_collision_ordinal_first=lsd_collision_ordinal_step=0;
     for(uint32_t at=pc;at<pc+bytes;at+=4) lsd_collision_windows[(at-0x80000000)>>2]=1;
     for(uint32_t at=0x80010000;at<0x801FFFFC;at+=4) {
         const uint32_t word=LsdDispatchRead(at);
@@ -109,6 +121,10 @@ ECL_EXPORT int LsdConfigureCollisionCalls(uint32_t pc,uint32_t bytes,uint32_t li
         }
     }
     return 1;
+}
+ECL_EXPORT int LsdConfigureCollisionCallOrdinals(uint32_t pc,uint32_t bytes,uint32_t limit,uint32_t first,uint32_t step) {
+    if(!first || first>step || step>64 || !LsdConfigureCollisionCalls(pc,bytes,limit)) return 0;
+    lsd_collision_ordinal_first=first;lsd_collision_ordinal_step=step;return 1;
 }
 ECL_EXPORT int LsdStartCollisionCalls() {
     if(!CPU || !lsd_collision_pc || !lsd_dispatch_target_count) return 0;
@@ -125,6 +141,7 @@ ECL_EXPORT uint32_t LsdGetCollisionCallDuplicateSkips() {return lsd_collision_du
 ECL_EXPORT uint32_t LsdGetCollisionCallFrameSkips() {return lsd_collision_frame_skips;}
 ECL_EXPORT uint32_t LsdGetCollisionCallLimitSkips() {return lsd_collision_limit_skips;}
 ECL_EXPORT uint32_t LsdGetCollisionCallNestedSkips() {return lsd_collision_nested_skips;}
+ECL_EXPORT uint32_t LsdGetCollisionCallOrdinalSkips() {return lsd_collision_ordinal_skips;}
 ECL_EXPORT uint32_t LsdGetCollisionCallDataBytes() {return lsd_collision_data_bytes;}
 ECL_EXPORT const LsdCollisionCall* LsdGetCollisionCallEvents() {return lsd_collision_events;}
 ECL_EXPORT const uint8_t* LsdGetCollisionCallData() {return lsd_collision_data;}

@@ -10,6 +10,7 @@ EXPORTS=('LsdResetCollisionCalls','LsdConfigureCollisionCalls','LsdStartCollisio
  'LsdGetCollisionCallOverflow','LsdGetCollisionCallPending','LsdGetCollisionCallDuplicateSkips',
  'LsdGetCollisionCallFrameSkips','LsdGetCollisionCallLimitSkips','LsdGetCollisionCallNestedSkips',
  'LsdGetCollisionCallDataBytes','LsdGetCollisionCallEvents','LsdGetCollisionCallData')
+ORDINAL_EXPORTS=('LsdConfigureCollisionCallOrdinals','LsdGetCollisionCallOrdinalSkips')
 CPU_FIELDS=tuple('gpr_'+str(i) for i in range(32))+('lo','hi','sr','cause','epc')
 CONTEXT=('pc','ram','fetch','rs','sp','flags','sr')
 FIELDS=('frame','ordinal','entry_id','base_ordinal','entry_frame','entry_timestamp','entry_pc','return_pc','timestamp',
@@ -25,11 +26,20 @@ assert len(FIELDS)*4==EVENT_BYTES
 def selection(program):
     trace=program.get('method_trace',{});config=trace.get('collision_calls')
     if config is None:return None
-    require(isinstance(config,dict) and set(config)=={'max_samples','per_key'}
-            and type(config['max_samples']) is int and 1<=config['max_samples']<=64
-            and type(config['per_key']) is int and config['per_key']==2,
-            'Select 1..64 collision snapshots and exactly two per observed caller/model-address key.')
+    require(isinstance(config,dict) and type(config.get('max_samples')) is int
+            and 1<=config['max_samples']<=64,
+            'Select 1..64 collision snapshots.')
+    if set(config)=={'max_samples','per_key'}:
+        require(type(config['per_key']) is int and config['per_key']==2,
+                'Select exactly two snapshots per observed caller/model-address key.')
+        policy=dict(per_key=2)
+    else:
+        require(set(config)=={'max_samples','ordinal_first','ordinal_step'}
+                and type(config['ordinal_first']) is int and type(config['ordinal_step']) is int
+                and 1<=config['ordinal_first']<=config['ordinal_step']<=64,
+                'Ordinal selection requires an integer first and step with 1 <= first <= step <= 64.')
+        policy=dict(ordinal_first=config['ordinal_first'],ordinal_step=config['ordinal_step'])
     require(trace.get('range_family')=='collision' and trace.get('targets')==['func_8001DDF4','func_8001F8B8']
             and not trace.get('flow_sites') and not trace.get('return_trace') and not trace.get('sdk_reads'),
             'Collision snapshots require the declared entry-only collision family.')
-    return dict(pc=PC,bytes=FUNCTION_BYTES,max_samples=config['max_samples'],per_key=2)
+    return dict(pc=PC,bytes=FUNCTION_BYTES,max_samples=config['max_samples'],**policy)
