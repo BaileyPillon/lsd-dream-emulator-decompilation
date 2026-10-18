@@ -30,6 +30,13 @@ nonnull bindings against original words. Its 1,174 indirect-transfer sites
 are static instructions awaiting runtime classification; they do not close
 the wider dynamic-dispatch or signature review.
 
+The [method-entry recorder](DISPATCH_ENTRY_TRACE.md) now compares 176 natural
+CD Open/Read entries at ten original indirect-call pairs. It retains complete
+callee code, arguments and raw receiver/table windows. All six observed
+resource tables contain installed CD methods at their Open/Read slots;
+accepted receiver/slot edges remain separate. The CD raw table is outside
+the 57 typed bindings and uses the prior file-driver range qualification.
+
 The partial `game_flow_screen_vtable_t` interface has a byte-array gap between
 its declared Destroy and Run callbacks. It has no bound concrete table symbol
 and is explicitly listed as an unsupported type view; it is excluded from the

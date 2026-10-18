@@ -1,0 +1,386 @@
+{
+  "status": "qualified_bounded_original_CD_method_entry_history",
+  "recorded_date": "2026-10-18",
+  "baseline_commit": "17b0d41e6829fbf007d515df9138f09a93ef17df",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "all_392_game_inputs_preserved": true,
+  "original_objective_preserved": true,
+  "game_source_or_executable_modified": false,
+  "program": "research/headless/file-driver-boot-route.json",
+  "input_frames": 6000,
+  "native_observations_per_run": 6001,
+  "observer_arm_frame": 900,
+  "first_observed_method_frame": 967,
+  "RAM_hashes_per_run": 1117,
+  "complete_checkpoints_per_run": 178,
+  "complete_PCM_bytes_per_run": 17692008,
+  "independently_decoded_PNGs": 534,
+  "pillow_version": "12.3.0",
+  "traced_entry_observations_per_run": 176,
+  "method_entry_counts": {
+    "cd_file_driver_open": 64,
+    "cd_file_driver_read": 112
+  },
+  "observed_frame_windows": {
+    "cd_file_driver_open": [
+      967,
+      5400
+    ],
+    "cd_file_driver_read": [
+      1002,
+      5430
+    ]
+  },
+  "paths": [
+    {
+      "function": "cd_file_driver_open",
+      "mode": "framed_direct",
+      "entries": 25
+    },
+    {
+      "function": "cd_file_driver_open",
+      "mode": "framed_queued",
+      "entries": 25
+    },
+    {
+      "function": "cd_file_driver_open",
+      "mode": "synchronous",
+      "entries": 14
+    },
+    {
+      "function": "cd_file_driver_read",
+      "mode": "framed_direct",
+      "entries": 49
+    },
+    {
+      "function": "cd_file_driver_read",
+      "mode": "framed_queued",
+      "entries": 49
+    },
+    {
+      "function": "cd_file_driver_read",
+      "mode": "synchronous",
+      "entries": 14
+    }
+  ],
+  "observed_original_JALR_source_destination_pairs": [
+    {
+      "source": "0x80026b48",
+      "function": "cd_file_driver_open",
+      "entries": 14
+    },
+    {
+      "source": "0x80026bb0",
+      "function": "cd_file_driver_read",
+      "entries": 14
+    },
+    {
+      "source": "0x80027ab0",
+      "function": "cd_file_driver_open",
+      "entries": 25
+    },
+    {
+      "source": "0x80027b0c",
+      "function": "cd_file_driver_read",
+      "entries": 49
+    },
+    {
+      "source": "0x80043168",
+      "function": "cd_file_driver_open",
+      "entries": 3
+    },
+    {
+      "source": "0x80043184",
+      "function": "cd_file_driver_read",
+      "entries": 3
+    },
+    {
+      "source": "0x80043460",
+      "function": "cd_file_driver_read",
+      "entries": 12
+    },
+    {
+      "source": "0x80048b3c",
+      "function": "cd_file_driver_open",
+      "entries": 22
+    },
+    {
+      "source": "0x80048b58",
+      "function": "cd_file_driver_read",
+      "entries": 22
+    },
+    {
+      "source": "0x80048c6c",
+      "function": "cd_file_driver_read",
+      "entries": 12
+    }
+  ],
+  "receiver_table_snapshots": [
+    {
+      "function": "cd_file_driver_open",
+      "address": "0x8006da34",
+      "label": "g_SOUND_VTABLE",
+      "entries": 6
+    },
+    {
+      "function": "cd_file_driver_open",
+      "address": "0x8006e558",
+      "label": "g_TIM_IMAGE_VTABLE",
+      "entries": 5
+    },
+    {
+      "function": "cd_file_driver_open",
+      "address": "0x8006f0b8",
+      "label": "D_8006F0B8",
+      "entries": 6
+    },
+    {
+      "function": "cd_file_driver_open",
+      "address": "0x8006f13c",
+      "label": "D_8006F13C",
+      "entries": 2
+    },
+    {
+      "function": "cd_file_driver_open",
+      "address": "0x8006f384",
+      "label": "D_8006F384",
+      "entries": 1
+    },
+    {
+      "function": "cd_file_driver_open",
+      "address": "0x80081940",
+      "label": "D_80081940",
+      "entries": 44
+    },
+    {
+      "function": "cd_file_driver_read",
+      "address": "0x8006da34",
+      "label": "g_SOUND_VTABLE",
+      "entries": 6
+    },
+    {
+      "function": "cd_file_driver_read",
+      "address": "0x8006e558",
+      "label": "g_TIM_IMAGE_VTABLE",
+      "entries": 5
+    },
+    {
+      "function": "cd_file_driver_read",
+      "address": "0x8006f0b8",
+      "label": "D_8006F0B8",
+      "entries": 30
+    },
+    {
+      "function": "cd_file_driver_read",
+      "address": "0x8006f13c",
+      "label": "D_8006F13C",
+      "entries": 2
+    },
+    {
+      "function": "cd_file_driver_read",
+      "address": "0x8006f384",
+      "label": "D_8006F384",
+      "entries": 1
+    },
+    {
+      "function": "cd_file_driver_read",
+      "address": "0x80081940",
+      "label": "D_80081940",
+      "entries": 68
+    }
+  ],
+  "installed_slot_word_observations": [
+    {
+      "function": "cd_file_driver_open",
+      "state": "differs_from_static_image",
+      "entries": 64
+    },
+    {
+      "function": "cd_file_driver_read",
+      "state": "differs_from_static_image",
+      "entries": 112
+    }
+  ],
+  "all_176_entries_have_original_complete_loaded_callee_bytes": true,
+  "retained_distinct_complete_callee_bytes": 736,
+  "watched_debug_methods_observed": false,
+  "entry_counts_are_not_completed_file_transfer_counts": true,
+  "raw_CD_table_outside_57_declared_tables": true,
+  "declared_dispatch_catalogue_targets_unchanged": 838,
+  "virtual_receiver_slot_edges_accepted": 0,
+  "original_and_rebuilt_entry_records_equal": true,
+  "all_recorded_game_outputs_equal_in_both_comparisons": true,
+  "stock_observer_runtime_files_changed": [
+    "dll/shock.wbx",
+    "dll/shock.wbx.zst"
+  ],
+  "original_CPU_source_modified": false,
+  "game_RAM_injected": false,
+  "restored_state": false,
+  "emulator_UI_controlled": false,
+  "native_build_scope": "One new adapter object linked with the recorded pinned cached native objects; not a fresh full-core rebuild.",
+  "native_core_sha256": "1d00d2f6eba829d90efd59dad5b9c47a233373fbfb280e5b5b865bc514b0d115",
+  "native_header_sha256": "309de47e704ee37f58682237532bfaebeecae51e54ad1b0a288c3337edfb5925",
+  "native_limits": {
+    "targets": 16,
+    "maximum_target_bytes": 4096,
+    "events_per_frame": 1024,
+    "event_bytes": 4356
+  },
+  "owned_host_warnings_are_errors": true,
+  "all_three_owned_host_compiler_logs_empty": true,
+  "early_hook_control": {
+    "status": "failed_strict_stock_RAM_comparison_retained",
+    "initial_6000_input_profile_differing_RAM_samples": [
+      216
+    ],
+    "control_input_frames": 300,
+    "control_native_observations": 301,
+    "frame_zero_hook_differing_RAM_frames": [
+      211,
+      215,
+      216,
+      218,
+      219,
+      220
+    ],
+    "checkpoint_216_differing_bytes": 7,
+    "frame_300_hook_RAM_differences": 0,
+    "GPU_and_complete_PCM_equal": true,
+    "specific_CPU_or_BIOS_cause_resolved": false,
+    "comparison_tolerance_changed": false,
+    "qualified_frame_900_comparison_includes_entire_boot": true
+  },
+  "retained_data_corruption_controls": [
+    {
+      "name": "omitted_native_entry",
+      "rejected": true,
+      "reason": "Method native totals, drained events or complete target settings disagree."
+    },
+    {
+      "name": "duplicated_native_entry",
+      "rejected": true,
+      "reason": "Duplicated original method entry."
+    },
+    {
+      "name": "changed_original_entry_word",
+      "rejected": true,
+      "reason": "Complete observed method bytes or entry instruction differ from original."
+    },
+    {
+      "name": "changed_original_caller_word",
+      "rejected": true,
+      "reason": "Recorded caller transfer/delay bytes differ from the canonical executable."
+    },
+    {
+      "name": "changed_complete_method_tail",
+      "rejected": true,
+      "reason": "Complete observed method bytes or entry instruction differ from original."
+    },
+    {
+      "name": "truncated_complete_code_body",
+      "rejected": true,
+      "reason": "Complete observed method span/hash differs from its selected original."
+    },
+    {
+      "name": "false_native_total",
+      "rejected": true,
+      "reason": "Method native totals, drained events or complete target settings disagree."
+    },
+    {
+      "name": "reported_native_overflow",
+      "rejected": true,
+      "reason": "Method native totals, drained events or complete target settings disagree."
+    },
+    {
+      "name": "changed_argument_comparison",
+      "rejected": true,
+      "reason": "Original/rebuilt method entry records differ."
+    },
+    {
+      "name": "changed_table_word_comparison",
+      "rejected": true,
+      "reason": "Original/rebuilt method entry records differ."
+    }
+  ],
+  "native_opcode_faults_executed": 0,
+  "source_only_tests_added": 31,
+  "test_suites": [
+    {
+      "platform": "windows",
+      "tests": 1003,
+      "expected_skips": 2,
+      "log_sha256": "d9ed26831d18defcf8d2ef29a670c91db000e05d7cbc0c9e1afcfbe5f70373f7"
+    },
+    {
+      "platform": "linux",
+      "tests": 1003,
+      "expected_skips": 2,
+      "log_sha256": "fc04d0068f6cc3078f32b58cc3344d5858e01eb4fb12802f58b7f0cbf574de62"
+    }
+  ],
+  "source_sha256": {
+    "research/runtime_state/dispatch_entry_observer.h": "309de47e704ee37f58682237532bfaebeecae51e54ad1b0a288c3337edfb5925",
+    "research/headless/RecordDispatchHistory.cs": "ff2535f5f7b3d209b35bd52fa873874ac958b4d91c5918536d5f8888bf931acc",
+    "research/headless/DispatchInstructionTrace.cs": "2889452a96df9b3c3de2e27c30b2623fb713574a1dfa918d469ca0f3cb896204",
+    "research/headless/file-driver-boot-route.json": "eed901b0cbc944ab440e2448bd32fec36eb7bb895ed5db1fc9f6b0a7540899be",
+    "tools/build_dispatch_observer.py": "e90573b11291d75f8fdaabe17e0be476c2e2664157584071b3d4a1a7235f76c1",
+    "tools/record_dispatch_history.py": "c4778585607947aab2ad517ceccb0482261547494bf5cabfcb5f6d1e199792ff",
+    "tools/dispatch_trace.py": "00f1d120f6e5d9c00012638cf9fd1eef6d4ad6e8a1f869671affa92226275b3f",
+    "tools/inspect_dispatch_history.py": "15aa72ab8ddf3e7c1fe8cb876cd5e6153ca575aaed69560ed157fd7e2de2fef4",
+    "tools/compare_npc_history.py": "e5736472438d0a966edb2bc81039da12490d5276e039ff918a9f7ab145a051ce",
+    "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+    "tools/runtime_inputs.py": "a1e0865b13801414bfad30f31ce00ffd13840b2a836dbc527e138d89d6d877e4",
+    "tests/test_dispatch_trace.py": "15a2bc6a3f733c9eeec4abffd9f7317c2cd29d2a6d962bf4af026dd0ce936e89"
+  },
+  "private_evidence_sha256": {
+    ".decomp-lab/dispatch-paired-comparison-20261018-third.json": "ad79c0dc3f50d61f25d7215e7c59b96df3b728ef4d33bdcaf1c9d0fedb51a914",
+    ".decomp-lab/dispatch-stock-comparison-20261018-third.json": "0bfb4f740e15d51e8768b2ca943df0e158e08834d6991ee6d0190887a2805c31",
+    ".decomp-lab/dispatch-entry-history-audit-20261018-second.json": "da347b282d7aaafd7d4778be74c914b05c4cf1df9be5a7ae85e3326cabb069ec",
+    ".decomp-lab/dispatch-stock-comparison-20261018-first.log": "95648eeea6357c14380421e5484c97142b3c2f15b60faf1eb4986346b3c74987",
+    ".decomp-lab/method-bios-control-audit-20261018-first.json": "30a761dd2a685a47b0795347553f24ecadf81871090c3c016ae32854198b1993",
+    ".decomp-lab/dispatch-observer-build-20261018-second/profile.json": "38ff29d1b65be279641593ab05037d1712a7d90d4fea2454f4dac8a244275838"
+  },
+  "qualified_run_manifest_sha256": {
+    "distributed": "141dab107fcddcd47341482615e46e68509df7e7c7e76ea0026b592953abce7c",
+    "original": "c117e553d23df4ea11d7c930509a991014f2549117a6de72149e9e9030277f42",
+    "rebuilt": "434da9a1c32af5c75a4cf65c35e4fff2971a33171a3171b442ed1795af6c869e"
+  },
+  "before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "natural_NPC_callback_types_before": 5,
+  "natural_NPC_callback_types_after": 5,
+  "new_C_bytes": 0,
+  "model_API_calls": 0,
+  "Bevy_port_modified": false,
+  "user_game_controlled": false,
+  "complete_state_parity_checked": false,
+  "original_hardware_timing_verified": false,
+  "scope": "Natural original CD method entry observations with complete loaded callee bytes, argument/receiver windows and actual preceding transfer PCs. Standard and rebuilt records agree, and stock/observer recorded outputs agree only for the qualified frame-900 profile. Retained early-hook RAM differences prevent a general noninterference claim. No complete file/error behavior, return/completion, receiver-slot data-flow closure, hardware timing, exhaustive feature count or whole-feature/NPC acceptance."
+}

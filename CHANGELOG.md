@@ -1,5 +1,19 @@
 # Changelog
 
+## Original CD method-entry observations - 2026-10-18
+
+- Add a separate method observer and recorder with complete callee-code,
+  argument, preceding-transfer and raw receiver/table snapshots.
+- Compare 64 CD Open and 112 CD Read entries across ten original `JALR`
+  source/destination pairs, covering synchronous and framed queue paths.
+- Preserve the CD raw-table scope outside the 838 declared targets. Check
+  its methods through the prior complete file-driver range qualification.
+- Qualify the frame-900 observer against stock output for the entire
+  6,000-input boot; retain the failed frame-zero hook and isolating controls.
+- Add 31 source-only tests and ten retained-data corruption controls.
+  C recovery, original game code, NPC coverage, whole-feature acceptance
+  and the separate Bevy port remain unchanged.
+
 ## Complete declared dispatch targets - 2026-10-18
 
 - Export complete original ranges and hashes for all 838 distinct targets
