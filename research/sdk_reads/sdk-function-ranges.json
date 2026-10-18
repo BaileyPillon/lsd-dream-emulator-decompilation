@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "kind": "original_LSD_SDK_read_boundaries",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "rows": [
+    {
+      "function": "func_80029274",
+      "pc": "0x80029274",
+      "bytes": 128,
+      "kind": 1,
+      "sha256": "a9c4c9570f034fea9da3b8749ef789dfe2f4646163393d2164b025ec4b19c477"
+    },
+    {
+      "function": "CdReadSync",
+      "pc": "0x80029254",
+      "bytes": 32,
+      "kind": 2,
+      "sha256": "531926ac58b4d3f5ae76b148a9536c8e75824b3d268d8213f6abe8b02239fe65"
+    },
+    {
+      "function": "CdControl",
+      "pc": "0x80028df0",
+      "bytes": 328,
+      "kind": 3,
+      "sha256": "c5c87715e428b375dbfcf0f6a616b29c61dcf337f4b4eb861604edff249df144"
+    },
+    {
+      "function": "CdControlF",
+      "pc": "0x80028f38",
+      "bytes": 316,
+      "kind": 3,
+      "sha256": "594d850a3d39a10617befeb3e020eabae11b2fd738c71fcca7aa2af87dd5fb94"
+    },
+    {
+      "function": "CdControlB",
+      "pc": "0x80029074",
+      "bytes": 340,
+      "kind": 3,
+      "sha256": "c7585ff8a9cd468c3d1ec0cfb19e78819743642f187e164a8a7e67a55ca5a60a"
+    },
+    {
+      "function": "CdSync",
+      "pc": "0x80028d68",
+      "bytes": 32,
+      "kind": 4,
+      "sha256": "b200a0633cce42f29297751fe9d6919db54c297aeed77dde493daae190868da0"
+    }
+  ],
+  "object_count": 306,
+  "canonical_symbolic_elf_sha256": "c0746d3982c314079a5a24f2d88072c43464032f969eeac5f172c7646df833a7",
+  "GNU_symbol_table_sha256": "799952f7601b0d5d3f8b0e51b8d3289c53b2cb9a2f18a9b8d769ebdb43b7e7d6",
+  "independent_GNU_sized_function_extents_equal": true,
+  "complete_canonical_image_equal": true,
+  "diagnostic": {
+    "diagnostic_image_matches_candidate": true,
+    "candidate_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "diagnostic_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "original_link_flags": [
+      "--no-check-sections",
+      "-nostdlib",
+      "-s"
+    ],
+    "diagnostic_link_flags": [
+      "--no-check-sections",
+      "-nostdlib"
+    ],
+    "removed_symbol_strip_flag": "-s"
+  },
+  "producer_sha256": "d918869430d5b4776df3e63e5659d6986101a56cd4c3abd43b058284e664efba"
+}

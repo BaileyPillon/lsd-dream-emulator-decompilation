@@ -82,6 +82,11 @@ start position is insufficient to validate later sequential reads; capture
 SDK requests, polling results and position progression before accepting their
 completed buffers.
 
+The later [SDK completion profile](SDK_READ_COMPLETIONS.md) supplies those
+request/poll boundaries and position history for a new 6,000-frame capture,
+linking all 49 queued pairs to matching full-sector destination data. The
+handoff-only checker above retains its narrower scope.
+
 ## Remaining source and parity gates
 
 The source change touches only the display C unit and its header. Ordinary

@@ -8,6 +8,7 @@ using BizHawk.Emulation.Cores.Waterbox;
 
 namespace Lsd.Research.Headless {
 public sealed class DispatchReturnSettings {
+    public SdkReadTarget[] sdk_targets { get; set; }
     public uint read_pc { get; set; }
     public uint helper_pc { get; set; }
     public uint helper_bytes { get; set; }
