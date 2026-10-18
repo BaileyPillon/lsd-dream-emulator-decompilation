@@ -257,3 +257,12 @@ tools/inspect_dispatch_history.py text eol=lf
 tests/test_dispatch_trace.py text eol=lf
 docs/DISPATCH_ENTRY_TRACE.md text eol=lf
 docs/dispatch-entry-trace-checks.json text eol=lf
+
+# Caller-load context is separate from original game and NPC build inputs.
+research/runtime_state/dispatch_flow_observer.h text eol=lf
+research/headless/DispatchFlowTrace.cs text eol=lf
+research/headless/file-driver-flow-route.json text eol=lf
+tools/dispatch_flow.py text eol=lf
+tests/test_dispatch_flow.py text eol=lf
+docs/DISPATCH_SLOT_FLOW.md text eol=lf
+docs/dispatch-slot-flow-checks.json text eol=lf

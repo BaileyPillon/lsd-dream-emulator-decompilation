@@ -35,6 +35,7 @@ internal static class RecordDispatchHistory {
         public int arm_frame { get; set; }
         public DispatchTarget[] dispatch_targets { get; set; }
         public uint[] dispatch_words { get; set; }
+        public uint[] flow_sites { get; set; }
     }
     static object SaveImage(Nymashock core, string output, int frame) {
         int width = core.BufferWidth, height = core.BufferHeight;
@@ -110,7 +111,7 @@ internal static class RecordDispatchHistory {
                 var checkpointRows = new List<object>();
                 DispatchInstructionTrace observer = settings.trace_enabled ?
                     new DispatchInstructionTrace(core, output, settings.dispatch_targets,
-                        settings.dispatch_words, settings.arm_frame) : null;
+                        settings.dispatch_words, settings.arm_frame, settings.flow_sites) : null;
                 using (observer)
                 using (var frames = new StreamWriter(File.Open(Path.Combine(output, "frames.tsv"), FileMode.CreateNew)))
                 using (var memory = new StreamWriter(File.Open(Path.Combine(output, "ram-samples.tsv"), FileMode.CreateNew)))

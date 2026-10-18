@@ -20,6 +20,7 @@ from tools.compare_npc_history import owned_file, verify_file, read_rows, inspec
 from tools.replay_cold_start_headless import require, write_json
 from tools.runtime_inputs import content_identity, record_file
 from tools.build_dispatch_observer import EXPORTS
+from tools.dispatch_flow import FLOW_EXPORTS, flow_sites, flow_windows, validate_flow
 from tools.build_npc_observer import UPSTREAM, MEDNAFEN, SOURCE_SHA256
 from research.compiler.compare_function import CANONICAL_SHA256
 from tools.psx_image import executable_offset
@@ -178,6 +179,8 @@ def inspect(folder):
     executable=frozen['SLPS_015.56'][0].read_bytes()
     selected=verified_selection(program,json.loads(raw),json.loads(owned_file(folder,'dispatch-provenance.json').read_bytes()),raw,
         executable,json.loads(supplemental),json.loads(owned_file(folder,'method-ranges-provenance.json').read_bytes()),supplemental)
+    sites=flow_sites(program,executable)
+    require(settings.get('flow_sites',[])==flow_windows(program,executable),'Flow settings differ from declared canonical sites.')
     require(manifest['dispatch']['targets']==list(selected.values())
             and settings['dispatch_targets']==[dict(pc=pc,bytes=row['function_bytes']) for pc,row in selected.items()]
             and settings['dispatch_words']==list(manifest['dispatch']['memory_symbols'].values()),
@@ -196,6 +199,13 @@ def inspect(folder):
         require(profile['observer_header_sha256']==frozen['dispatch_entry_observer.h'][1]['sha256']
                 and profile['producer_sha256']==frozen['build_dispatch_observer.py'][1]['sha256']
                 and set(EXPORTS)<=set(profile['exported_functions']),'Method observer producer identity differs.')
+        require(bool(sites)==(profile.get('flow_protocol')==1),'Flow sites and observer protocol disagree.')
+        if sites:
+            require({'DispatchFlowTrace.cs','dispatch_flow_observer.h','dispatch_flow.py'}<=set(frozen)
+                    and profile.get('flow_event_bytes')==664 and profile.get('flow_history_instructions')==16
+                    and profile.get('flow_header_sha256')==frozen['dispatch_flow_observer.h'][1]['sha256']
+                    and set(FLOW_EXPORTS)<=set(profile['exported_functions']),
+                    'Incomplete native flow source or transport provenance.')
         for key,name in (('core','dll/shock.wbx'),('compressed_core','dll/shock.wbx.zst')):
             require(content_identity(profile[key])==content_identity(manifest['actual_runtime_files'][name]),
                     'Loaded method core differs from its build profile.')
@@ -244,9 +254,21 @@ def inspect(folder):
             selected,(output/'method-code.bin').read_bytes(),executable)
         summary=json.loads((output/'method-trace-summary.json').read_text(encoding='utf-8-sig'))
         validate_native_summary(summary,native,settings,entries)
+        if sites:
+            flow_report,flow_edges=validate_flow((output/'method-flow.bin').read_bytes(),
+                json.loads((output/'method-flow-summary.json').read_text(encoding='utf-8-sig')),
+                entries,effective,executable)
+            observed_receivers=len({(edge['receiver'],edge['table'],edge['slot'],edge['target']) for edge in flow_edges})
+            flow_report['distinct_receiver_table_slot_edges']=observed_receivers
+            entry_report['virtual_slot_flow']=flow_report
+            entry_report['virtual_receiver_slot_edges_accepted']=observed_receivers
+        else:
+            require(not (output/'method-flow.bin').exists() and not (output/'method-flow-summary.json').exists(),
+                    'Entry-only recordings cannot supply undeclared caller-flow data.')
     else:
         require(native['instruction_entries']==0 and not (output/'method-instructions.tsv').exists()
-                and not (output/'method-code.bin').exists(),'Distributed core unexpectedly supplied method entries.')
+                and not (output/'method-code.bin').exists() and not (output/'method-flow.bin').exists()
+                and not (output/'method-flow-summary.json').exists(),'Distributed core unexpectedly supplied method entries.')
     result=dict(status='inspected_bounded_original_method_history',runtime_kind=kind,input_frames=frames,
         GPU_observations=len(observations),RAM_observations=len(memory),complete_checkpoints=len(checkpoints),
         PCM_bytes=total*4,**entry_report,complete_state_parity_checked=False,original_hardware_timing_verified=False,
@@ -278,6 +300,10 @@ def compare(reference,candidate,mode):
         require(a['runtime_kind']==b['runtime_kind'] and not changed,'Same-runtime method comparison has different cores.')
         require(not source_difference,'Same-runtime method producer sources or compiler identities differ.')
         require(left['entries']==right['entries'],'Original/rebuilt method entry records differ.')
+        if a['runtime_kind']=='dispatch_observer' and left['program']['method_trace'].get('flow_sites'):
+            for name in ('method-flow.bin','method-flow-summary.json'):
+                require(files_equal(left['folder']/'observations'/name,right['folder']/'observations'/name),
+                        'Original/rebuilt native caller-flow records differ.')
     else:
         require({a['runtime_kind'],b['runtime_kind']}=={'distributed','dispatch_observer'} and changed
                 and set(changed)<=CORE_FILES,'Observer-output comparison permits only declared core artifacts to differ.')
@@ -312,7 +338,7 @@ def main(argv=None):
         report=compare(args.reference,args.candidate,args.mode) if args.candidate else inspect(args.reference)[0]
         report['verification_source_sha256']={name:sha((ROOT/name).read_bytes()) for name in
             ('tools/inspect_dispatch_history.py','tools/dispatch_trace.py','tools/compare_npc_history.py',
-             'tools/psx_image.py','tools/runtime_inputs.py')}
+             'tools/psx_image.py','tools/runtime_inputs.py','tools/dispatch_flow.py')}
         write_json(output,report)
         print(json.dumps(report),flush=True)
         return 0

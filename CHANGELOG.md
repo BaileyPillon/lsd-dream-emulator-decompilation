@@ -1,5 +1,17 @@
 # Changelog
 
+## Observed original virtual slot loads - 2026-10-18
+
+- Add optional before-instruction caller context to the separate method
+  observer. Qualify all 176 CD Open/Read entries through actual receiver,
+  table and slot loads, including an original shared-tail jump.
+- Resolve eleven executed load paths at ten call sites, twelve table-slot
+  bindings and 36 observed receiver/table/slot combinations.
+- Compare complete original/rebuilt traces and stock/observer game outputs;
+  retain the first cohort's three missing-context failures.
+- Add 21 source-only tests and sixteen retained-data corruption controls.
+  Matching C, whole-feature acceptance and original game behavior are unchanged.
+
 ## Original CD method-entry observations - 2026-10-18
 
 - Add a separate method observer and recorder with complete callee-code,

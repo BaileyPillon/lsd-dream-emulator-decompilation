@@ -1,5 +1,9 @@
 # Original method-entry recording
 
+The later [caller-context extension](DISPATCH_SLOT_FLOW.md) supplies executed
+load-chain evidence for a fresh recording of this route. This page preserves
+the entry-only checkpoint and its zero accepted receiver/slot edge count.
+
 The separate method observer records original CD Open and Read entries during
 a fixed 6,000-input cold boot. Original and rebuilt recordings agree on all
 **176 entries**: 64 Open and 112 Read observations at ten original `JALR`

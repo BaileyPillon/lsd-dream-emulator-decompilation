@@ -1,0 +1,609 @@
+{
+  "schema_version": 1,
+  "name": "Original file-driver entry history",
+  "frames": 6000,
+  "description": "Fixed controller-only cold boot using the first 6000 inputs of the published Boatman route. The separate method observer arms at frame 900, before the first recorded original CD Open at frame 967. It retains complete method code and arguments, preceding transfers and raw receiver/table windows. Full output comparisons include early boot. The retained frame-zero-hook control changes transient early RAM; no comparison tolerance is relaxed. This does not accept complete file I/O, signatures or a whole feature.",
+  "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "disc_track_sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61",
+  "edition_label": "Japanese-labelled",
+  "controller": {
+    "buttons": [
+      "Close Tray",
+      "Open Tray",
+      "P1 Analog",
+      "P1 D-Pad Down",
+      "P1 D-Pad Left",
+      "P1 D-Pad Right",
+      "P1 D-Pad Up",
+      "P1 L1",
+      "P1 L2",
+      "P1 Left Stick, Button",
+      "P1 R1",
+      "P1 R2",
+      "P1 Right Stick, Button",
+      "P1 Select",
+      "P1 Start",
+      "P1 X",
+      "P1 \u25a1",
+      "P1 \u25b3",
+      "P1 \u25cb",
+      "Power",
+      "Reset"
+    ],
+    "axes": {
+      "Disk Index": 0,
+      "P1 Left Stick Left / Right": 128,
+      "P1 Left Stick Up / Down": 128,
+      "P1 Right Stick Left / Right": 128,
+      "P1 Right Stick Up / Down": 128
+    },
+    "column_order": [
+      "Close Tray",
+      "Disk Index",
+      "Open Tray",
+      "P1 Analog",
+      "P1 D-Pad Down",
+      "P1 D-Pad Left",
+      "P1 D-Pad Right",
+      "P1 D-Pad Up",
+      "P1 L1",
+      "P1 L2",
+      "P1 Left Stick Left / Right",
+      "P1 Left Stick Up / Down",
+      "P1 Left Stick, Button",
+      "P1 R1",
+      "P1 R2",
+      "P1 Right Stick Left / Right",
+      "P1 Right Stick Up / Down",
+      "P1 Right Stick, Button",
+      "P1 Select",
+      "P1 Start",
+      "P1 X",
+      "P1 \u25a1",
+      "P1 \u25b3",
+      "P1 \u25cb",
+      "Power",
+      "Reset"
+    ]
+  },
+  "segments": [
+    {
+      "until": 59,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 71,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 179,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 191,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 299,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 311,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 419,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 431,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 539,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 551,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 659,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 671,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 779,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 791,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 899,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 911,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1019,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1031,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1139,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1151,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1259,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1271,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1379,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1391,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1499,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1511,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1619,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1631,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1739,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1751,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1859,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1871,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1979,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1991,
+      "phase": "select_dream_up",
+      "pressed": [
+        "P1 D-Pad Up"
+      ]
+    },
+    {
+      "until": 2099,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2111,
+      "phase": "start_dream",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 2219,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2231,
+      "phase": "wait_for_dream",
+      "pressed": []
+    },
+    {
+      "until": 2339,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2351,
+      "phase": "wait_for_dream",
+      "pressed": []
+    },
+    {
+      "until": 2459,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2471,
+      "phase": "wait_for_dream",
+      "pressed": []
+    },
+    {
+      "until": 2579,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2591,
+      "phase": "wait_for_dream",
+      "pressed": []
+    },
+    {
+      "until": 2689,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2779,
+      "phase": "neutral_in_dream",
+      "pressed": []
+    },
+    {
+      "until": 2839,
+      "phase": "turn_left",
+      "pressed": [
+        "P1 D-Pad Left"
+      ]
+    },
+    {
+      "until": 2899,
+      "phase": "release_left",
+      "pressed": []
+    },
+    {
+      "until": 2959,
+      "phase": "turn_right",
+      "pressed": [
+        "P1 D-Pad Right"
+      ]
+    },
+    {
+      "until": 3000,
+      "phase": "release_right",
+      "pressed": []
+    },
+    {
+      "until": 3846,
+      "phase": "first_wall",
+      "pressed": [
+        "P1 D-Pad Up"
+      ]
+    },
+    {
+      "until": 3966,
+      "phase": "adaptive_wait",
+      "pressed": []
+    },
+    {
+      "until": 4128,
+      "phase": "face_northeast_from_spawn",
+      "pressed": [
+        "P1 D-Pad Left"
+      ]
+    },
+    {
+      "until": 4200,
+      "phase": "settle_heading",
+      "pressed": []
+    },
+    {
+      "until": 4920,
+      "phase": "approach_recorded_boatman",
+      "pressed": [
+        "P1 D-Pad Up"
+      ]
+    },
+    {
+      "until": 6000,
+      "phase": "observe_natural_boatman_registration",
+      "pressed": []
+    }
+  ],
+  "checkpoint_frames": [
+    0,
+    216,
+    300,
+    600,
+    899,
+    900,
+    901,
+    966,
+    967,
+    1002,
+    1008,
+    1200,
+    1500,
+    1800,
+    2100,
+    2400,
+    2689,
+    2700,
+    3000,
+    3300,
+    3600,
+    3900,
+    3966,
+    4128,
+    4200,
+    4260,
+    4320,
+    4380,
+    4440,
+    4500,
+    4560,
+    4568,
+    4569,
+    4570,
+    4571,
+    4572,
+    4573,
+    4574,
+    4575,
+    4576,
+    4577,
+    4578,
+    4579,
+    4580,
+    4581,
+    4582,
+    4583,
+    4584,
+    4587,
+    4593,
+    4598,
+    4604,
+    4609,
+    4615,
+    4620,
+    4621,
+    4627,
+    4633,
+    4639,
+    4644,
+    4649,
+    4654,
+    4659,
+    4665,
+    4670,
+    4676,
+    4680,
+    4681,
+    4687,
+    4692,
+    4697,
+    4702,
+    4707,
+    4713,
+    4719,
+    4725,
+    4731,
+    4737,
+    4740,
+    4743,
+    4748,
+    4753,
+    4759,
+    4765,
+    4771,
+    4777,
+    4783,
+    4789,
+    4795,
+    4800,
+    4801,
+    4807,
+    4813,
+    4819,
+    4825,
+    4831,
+    4837,
+    4843,
+    4849,
+    4855,
+    4860,
+    4861,
+    4867,
+    4873,
+    4879,
+    4885,
+    4891,
+    4897,
+    4903,
+    4909,
+    4915,
+    4920,
+    4921,
+    4927,
+    4932,
+    4937,
+    4942,
+    4947,
+    4953,
+    4958,
+    4963,
+    4968,
+    4973,
+    4979,
+    4980,
+    4985,
+    4991,
+    4997,
+    5003,
+    5009,
+    5015,
+    5021,
+    5027,
+    5033,
+    5039,
+    5040,
+    5045,
+    5051,
+    5057,
+    5062,
+    5063,
+    5064,
+    5065,
+    5066,
+    5067,
+    5068,
+    5069,
+    5070,
+    5071,
+    5072,
+    5073,
+    5074,
+    5075,
+    5076,
+    5077,
+    5078,
+    5079,
+    5080,
+    5081,
+    5082,
+    5083,
+    5084,
+    5100,
+    5160,
+    5220,
+    5280,
+    5340,
+    5400,
+    5460,
+    5520,
+    5580,
+    5640,
+    5700,
+    5760,
+    5820,
+    5880,
+    5940,
+    6000
+  ],
+  "RAM_sample_interval": 6,
+  "method_trace": {
+    "arm_frame": 900,
+    "targets": [
+      "cd_file_driver_open",
+      "cd_file_driver_read",
+      "debug_file_driver_open",
+      "debug_file_driver_read"
+    ],
+    "memory_symbols": [
+      "g_CdFrameActive",
+      "g_CdFrameParam",
+      "g_CdReadBusy",
+      "g_CdLocked"
+    ],
+    "flow_sites": [
+      "0x80026B48",
+      "0x80026BB0",
+      "0x80027AB0",
+      "0x80027B0C",
+      "0x80043168",
+      "0x80043184",
+      "0x80043460",
+      "0x80048B3C",
+      "0x80048B58",
+      "0x80048C6C"
+    ],
+    "flow_context_sites": [
+      "0x80043378"
+    ]
+  },
+  "expanded_submitted_sha256": "ad15b9e5828c01886d73ba8b0eff18f092450853f87e4dfae4ad6a39539db61e"
+}

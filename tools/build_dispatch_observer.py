@@ -17,12 +17,16 @@ from tools.build_npc_observer import UPSTREAM, MEDNAFEN, SOURCE_SHA256, MEDIA_SH
 from tools.replay_cold_start_headless import require, write_json
 from tools.runtime_inputs import record_file
 OBSERVER = ROOT / 'research/runtime_state/dispatch_entry_observer.h'
+FLOW_OBSERVER = ROOT / 'research/runtime_state/dispatch_flow_observer.h'
+FLOW_EXPORTS = ('LsdResetDispatchFlow', 'LsdAddDispatchFlowSite', 'LsdStartDispatchFlow',
+    'LsdBeginDispatchFlowFrame', 'LsdGetDispatchFlowCount', 'LsdGetDispatchFlowTotal',
+    'LsdGetDispatchFlowOverflow', 'LsdGetDispatchFlowEvents')
 EXPORTS = ('LsdResetDispatchTrace', 'LsdAddDispatchTarget', 'LsdConfigureDispatchWords',
     'LsdStartDispatchTrace', 'LsdBeginDispatchFrame', 'LsdGetDispatchCount',
     'LsdGetDispatchTotal', 'LsdGetDispatchOverflow', 'LsdGetDispatchEvents', 'LsdDisableDispatchTrace')
 
 
-def build(source_root, output):
+def build(source_root, output, *, flow=False):
     output = Path(output).resolve()
     require(not output.exists(), 'Choose a new output directory; existing builds are preserved.')
     require(sys.platform == 'linux', 'Build the native observer in Linux/WSL.')
@@ -57,8 +61,8 @@ def build(source_root, output):
     require(clang is not None, 'Clang 18 is required by the pinned Waterbox build.')
     compiler_version = subprocess.check_output([clang, '--version'], text=True, env=env)
     require('clang version 18.' in compiler_version, 'Use Clang 18 with the pinned native objects.')
-    headers = (OBSERVER,)
-    exports = EXPORTS
+    headers = (OBSERVER, FLOW_OBSERVER) if flow else (OBSERVER,)
+    exports = EXPORTS + FLOW_EXPORTS if flow else EXPORTS
     inputs = [Path(__file__).resolve(), ROOT / "tools/build_npc_observer.py", *headers, Path(settings['CC']), Path(clang).resolve(),
               nyma / 'shock.cpp', nyma / 'cdrom.cpp', nyma / 'common.mak', nyma / 'shock.mak',
               source / 'waterbox/common.mak', source / 'waterbox/linkscript.T',
@@ -73,7 +77,7 @@ def build(source_root, output):
         shutil.copyfile(source_header, output / source_header.name)
     header = output / OBSERVER.name
     adapter = output / 'observer-adapter.cpp'
-    include = OBSERVER.name
+    include = FLOW_OBSERVER.name if flow else OBSERVER.name
     adapter.write_bytes((nyma / 'shock.cpp').read_bytes() + ('\n#include "' + include + '"\n').encode('ascii'))
     obj, core = output / 'observer-adapter.o', output / 'shock.wbx'
     compile_command = [settings['CC'], '-c', '-o', str(obj), str(adapter), '-I' + str(nyma),
@@ -107,6 +111,9 @@ def build(source_root, output):
         observer_uses_existing_DebugMode_hook=True, original_game_RAM_written_by_observer=False,
         exported_functions=list(exports), observer_mode='method_entries',
         producer_sha256=record_file(Path(__file__).resolve())['sha256'])
+    if flow:
+        profile.update(flow_protocol=1, flow_event_bytes=664, flow_history_instructions=16,
+            flow_header_sha256=record_file(FLOW_OBSERVER)['sha256'])
     write_json(output / 'profile.json', profile)
     return profile
 
@@ -115,9 +122,10 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source-root', required=True, type=Path)
     parser.add_argument('--output', required=True, type=Path)
+    parser.add_argument('--flow', action='store_true', help='Add read-only caller load-chain context; keep the entry-only core separate.')
     args = parser.parse_args(argv)
     try:
-        profile = build(args.source_root, args.output)
+        profile = build(args.source_root, args.output, flow=args.flow)
         print(profile['status'])
         return 0
     except (ValueError, OSError, subprocess.CalledProcessError) as error:
