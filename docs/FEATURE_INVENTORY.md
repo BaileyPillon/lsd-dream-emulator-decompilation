@@ -30,6 +30,13 @@ checkpoints. Their sampled behavior contexts are disabled. Loaded objects and
 declared callback labels add no bounded callback profile or encounter acceptance;
 the inspector leaves inactive context payload uninterpreted.
 
+The [headless replay host](HEADLESS_REPLAY.md) reproduces the recorded 6,000-
+and 30,000-frame opening routes on original and rebuilt discs in isolated PS1
+cores. Complete selected RAM/GPU, every full GPU hash, RGB images and the
+declared PCM windows agree. PNG density metadata and the extra observer-frame
+audio remain explicit. This extends developer verification without increasing
+C bytes, bounded callback profiles or whole-feature/encounter acceptance.
+
 The [locomotive script checks](LOCOMOTIVE_SCRIPTS.md) extend bounded original
 callback coverage from **36 to 39 / 107** through 70,345 distinct fixtures.
 Those three callbacks already had matching C bodies. C bytes, the 40-group

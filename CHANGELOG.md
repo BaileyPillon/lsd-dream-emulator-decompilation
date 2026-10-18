@@ -1,5 +1,16 @@
 # Changelog
 
+## Headless PS1 replay - 2026-10-17
+
+- Add an isolated Windows PS1 replay host and source-pinned Python build,
+  launch and verification workflow. Preserve existing emulator sessions,
+  captures, supplied runtime files and saves.
+- Verify original/rebuilt 6,000- and 30,000-frame controller histories,
+  including 72,004 full GPU observations and 154 complete RAM/GPU/RGB checkpoints.
+  Retain PNG density differences and all extra-observer PCM explicitly.
+- Add seventeen synthetic tests and five wrong-output controls. Record actual
+  ILSpy use on the managed adapter; matching C and feature acceptance stay unchanged.
+
 ## Recorded dream-scene inventory - 2026-10-17
 
 - Add a read-only inspector for owner-qualified cold-start RAM checkpoints,

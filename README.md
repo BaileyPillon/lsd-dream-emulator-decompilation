@@ -13,7 +13,8 @@ The [Bevy/Rust port](https://github.com/BaileyPillon/lsd-dream-emulator-bevy)
 is a separate project with its own roadmap and progress measurements.
 
 [Build](#build-the-matching-executable) · [Play the matching build](docs/PLAYING.md) ·
-[Status and roadmap](docs/ROADMAP.md) · [Contribute](CONTRIBUTING.md)
+[Status and roadmap](docs/ROADMAP.md) · [Headless replay](docs/HEADLESS_REPLAY.md) ·
+[Contribute](CONTRIBUTING.md)
 
 The [cold-start comparison](docs/COLD_START.md) now exercises the original
 title menu into a playable dream, with recorded turning, walking and audio.

@@ -163,3 +163,10 @@ tools/inventory_runtime_scene.py text eol=lf
 tests/test_inventory_runtime_scene.py text eol=lf
 docs/RUNTIME_SCENE_INVENTORY.md text eol=lf
 docs/runtime-scene-checks.json text eol=lf
+
+# Preserve the compiled headless recorder and verifier evidence on every checkout.
+research/headless/*.cs text eol=lf
+tools/replay_cold_start_headless.py text eol=lf
+tests/test_headless_replay.py text eol=lf
+docs/HEADLESS_REPLAY.md text eol=lf
+docs/headless-replay-checks.json text eol=lf

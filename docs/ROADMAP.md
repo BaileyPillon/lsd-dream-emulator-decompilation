@@ -13,6 +13,12 @@ to record activation and actual callback execution, then compare the relevant
 effects, animation and lifetime. Reachability and registration remain separate
 from encounter acceptance.
 
+The [isolated replay host](HEADLESS_REPLAY.md) now reproduces both retained
+opening profiles without controlling the user's EmuHawk session. Extend that
+core interface to record controller-only NPC activation routes and actual
+callback execution. The current replayer consumes validated captures; it does
+not provide an instruction-entry trace or accept a whole encounter.
+
 The [software movie decoder audit](MOVIE_DECODE.md) now checks all 39 routed
 movie payloads, including every encoded tail frame and XA packet. A separate
 raw-byte hashing pass agrees throughout. Extend this content evidence to
