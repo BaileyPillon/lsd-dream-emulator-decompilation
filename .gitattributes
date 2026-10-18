@@ -237,3 +237,10 @@ research/file_driver/* text eol=lf
 tests/test_file_driver_interfaces.py text eol=lf
 docs/FILE_DRIVER_INTERFACES.md text eol=lf
 docs/file-driver-interface-checks.json text eol=lf
+
+# Preserve the executed declared-dispatch exporter and its metadata.
+tools/export_dispatch_catalogue.py text eol=lf
+tests/test_dispatch_catalogue.py text eol=lf
+research/dispatch/target-catalogue.json text eol=lf linguist-generated=true
+docs/DISPATCH_CATALOGUE.md text eol=lf
+docs/dispatch-catalogue-checks.json text eol=lf

@@ -478,7 +478,7 @@ For bugs and research findings, use the repository's issue templates.
 - [Play the matching game](docs/PLAYING.md)
 - [Model enumeration and callback interfaces](docs/MODEL_ENUMERATION.md)
 - [Feature inventory and before/after measurements](docs/FEATURE_INVENTORY.md)
-- [Original NPC behavior](docs/NATIVE_AI.md), [native dispatch](docs/NATIVE_DISPATCH.md) and [animation structures](docs/NATIVE_ANIMATIONS.md)
+- [Original NPC behavior](docs/NATIVE_AI.md), [native dispatch](docs/NATIVE_DISPATCH.md), [target catalogue](docs/DISPATCH_CATALOGUE.md) and [animation structures](docs/NATIVE_ANIMATIONS.md)
 - [Nine additional original scripted callback checks](docs/SCRIPTED_AI.md)
 - [Factory, Kyoto and Natural locomotive checks](docs/LOCOMOTIVE_SCRIPTS.md)
 - [Asset inventory](docs/ASSET_INVENTORY.md) and [runtime comparison](docs/RUNTIME_COMPARISON.md)

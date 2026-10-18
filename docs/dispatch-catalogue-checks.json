@@ -1,0 +1,112 @@
+{
+  "status": "verified_complete_declared_dispatch_catalogue",
+  "recorded_date": "2026-10-18",
+  "baseline_commit": "ca0a79a9b183efe085d4fd5ab79ff1050c31afd0",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "complete_symbolic_image_equal": true,
+  "cached_objects": 306,
+  "compiler_flags_changed": false,
+  "all_392_game_build_inputs_preserved": true,
+  "original_objective_preserved": true,
+  "catalogue": {
+    "path": "research/dispatch/target-catalogue.json",
+    "bytes": 1046092,
+    "sha256": "99093a997cc2e43b46f9c1c22c014c221547c10f976e6d1766696dce421b23e4"
+  },
+  "declared_tables": 57,
+  "declared_callback_slots": 2463,
+  "nonnull_callback_bindings": 2205,
+  "null_callback_bindings": 258,
+  "complete_target_function_ranges": 838,
+  "complete_target_function_bytes": 108300,
+  "indirect_transfer_instructions": 1174,
+  "JALR_linking_through_RA": 1163,
+  "nonreturn_JR": 11,
+  "every_complete_function_byte_verified": true,
+  "independent_GNU_section_audit_passed": true,
+  "all_prior_declared_callback_bindings_equal": true,
+  "every_transfer_record_independently_reconstructed": true,
+  "runtime_indirect_destinations_observed": 0,
+  "all_dynamic_dispatch_resolved": false,
+  "source_study": {
+    "function": "func_8001DDF4",
+    "source_attempts": 16,
+    "new_source_forms": 14,
+    "repeated_controls": 2,
+    "qualified_complete_functions": 16,
+    "exact_functions": 0,
+    "exact_complete_images": 0,
+    "best_differing_bytes_before": 26,
+    "best_differing_bytes_after": 26,
+    "source_promoted": false
+  },
+  "source_only_tests_added": 16,
+  "test_suites": [
+    {
+      "platform": "windows",
+      "tests": 972,
+      "expected_skips": 2,
+      "log_sha256": "01ff88867566c035617759f7afa6f99fd5ebcc1ce26edb4252abf965e7a6c5e2"
+    },
+    {
+      "platform": "linux",
+      "tests": 972,
+      "expected_skips": 2,
+      "log_sha256": "5cb131fa424158884db0213a3051ad836521a1a03683cb8cb153dc40096616c2"
+    }
+  ],
+  "producer_sha256": {
+    "tools/export_dispatch_catalogue.py": "5d1cb9eb89cdf3bad600cbf720a9a95623781978fac0190326ff5598a735cdc0",
+    "tests/test_dispatch_catalogue.py": "7ffdde55074130164f4aad2c2fc467173af7fdcf9be40541f3e0b3d60c488f1a",
+    "tools/export_npc_catalogue.py": "a71c42dd2c539d07c74e44eabf8363e53d7af35e289ec792f4e305321ac461d9",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/decomp_workbench.py": "894f17166b4e0f286c6abbcae0ff84988e95347579d192ceadf8f1c3757a44f7",
+    "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+    "tools/progress.py": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+    "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+    "tools/runtime_inputs.py": "a1e0865b13801414bfad30f31ce00ffd13840b2a836dbc527e138d89d6d877e4",
+    "tools/replay_cold_start_headless.py": "7dedf37e0fceb035fed90f359779df7f79234dc0ab2d4ef559fb2edffa885595"
+  },
+  "retained_private_report_sha256": {
+    ".decomp-lab/dispatch-catalogue-20261018-first/report.json": "76ee3eb8ad3507b7eeb21533b5826bc59d71b4d1787d335b48e2b68ad88069c1",
+    ".decomp-lab/dispatch-catalogue-audit-20261018-first/report.json": "3c77c44daaa8a90b24f7e773f7634fdd3bd268b9c9343fa33377bc15a1adbb89",
+    ".decomp-lab/overlap-formal-word-views-20261018-first/report.json": "d53921eab382486de173589fbb20622057efce9c1b03e9e88be798bae298ea83",
+    ".decomp-lab/overlap-formal-word-views-audit-20261018-first/report.json": "48b5ed7072781560f5f1e1238c3b033167ca74a9b106bdb5766f9d08740249bc"
+  },
+  "before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "natural_callback_types_in_compared_histories_before": 5,
+  "natural_callback_types_in_compared_histories_after": 5,
+  "new_C_bytes": 0,
+  "original_behavior_modified": false,
+  "model_API_calls": 0,
+  "Bevy_port_modified": false,
+  "user_game_controlled": false,
+  "scope": "Complete declared vtable target ownership and original bytes, plus static JR/JALR sites only within those 838 bodies. This is not all game code, signatures, observed virtual-call edges, new C recovery, an exhaustive feature denominator, natural behavior or timing acceptance. The separate NPC catalogue and recorder retain their original scope and limits."
+}
