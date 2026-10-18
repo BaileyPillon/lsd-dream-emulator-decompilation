@@ -9,8 +9,10 @@ boundary of the published snapshot.
 The [file-driver interface repair](FILE_DRIVER_INTERFACES.md) aligns the
 shared/debug Open and Read views with their original arguments and result.
 Bounded debug/CD guard paths and original slot copying pass without output
-stubs. Extend this evidence to actual disc requests, destinations, SDK errors
-and natural file histories. Both inherited empty debug frames still need
+stubs. The [SDK completion profile](SDK_READ_COMPLETIONS.md) now compares 102
+actual completed reads, including all 49 queued handoffs in its controller
+history. Extend this evidence to SDK errors, object lifetime and other natural
+file histories. Both inherited empty debug frames still need
 source explanations; the remaining two assembly functions are unchanged.
 
 The [declared dispatch catalogue](DISPATCH_CATALOGUE.md) now qualifies all
@@ -25,7 +27,9 @@ The [original method-entry profile](DISPATCH_ENTRY_TRACE.md) now supplies
 framed paths, with strict full-boot stock/observer output checks. The later
 [slot-load](DISPATCH_SLOT_FLOW.md) and [return](DISPATCH_RETURNS.md) extensions
 add observed receiver/slot paths and synchronous destination data. Continue
-asynchronous completion, other raw tables, error cases and natural histories.
+other raw tables, error cases and natural histories; the later
+[SDK completion profile](SDK_READ_COMPLETIONS.md) supplies bounded asynchronous
+destination data without accepting the complete file feature.
 The retained early-hook
 RAM difference remains an observer limitation; the qualified profile arms
 before the first watched method while comparing the whole boot sequence.
@@ -370,7 +374,7 @@ and 191 initial source trials found no exact match. The subsequent
 
 - Resolve asset/command inventory gaps and runtime reachability.
 - Close virtual-call dependencies and verify semantic callback signatures.
-- Extend native fixtures beyond the 39 currently checked callbacks and their
+- Extend native fixtures beyond the 40 currently checked callbacks and their
   documented scopes; see the [proximity composition](NPC_PROXIMITY.md) and
   [Hoop Girl script checks](HOOP_SCRIPTS.md). Complete natural encounters and
   actual movement/facing/scaling dependencies remain separate gates.

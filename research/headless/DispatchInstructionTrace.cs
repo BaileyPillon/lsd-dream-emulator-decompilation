@@ -37,6 +37,7 @@ internal sealed class DispatchInstructionTrace : IDisposable {
     readonly int ArmFrame;
     readonly DispatchFlowTrace Flow;
     readonly DispatchReturnTrace Returns;
+    readonly SdkReadTrace SdkReads;
     readonly Dictionary<uint, int> Sizes = new Dictionary<uint, int>();
     readonly Dictionary<string, long> StoredBodies = new Dictionary<string, long>();
     readonly Dictionary<string, uint> Counts = new Dictionary<string, uint>();
@@ -74,6 +75,7 @@ internal sealed class DispatchInstructionTrace : IDisposable {
             if (returns != null) {
                 if (Flow == null) throw new Exception("Return observation requires original caller-flow context");
                 Returns = new DispatchReturnTrace(Host, output, returns);
+                if (returns.sdk_targets != null) SdkReads = new SdkReadTrace(Host, output, returns.sdk_targets);
             }
         } finally { Host.Exit(); }
         Writer = new StreamWriter(File.Open(Path.Combine(output,"method-instructions.tsv"),FileMode.CreateNew));
@@ -99,6 +101,7 @@ internal sealed class DispatchInstructionTrace : IDisposable {
             BeginNativeFrame((uint)frame);
             if (Flow != null) Flow.Begin(frame, ArmFrame);
             if (Returns != null) Returns.Begin(frame, ArmFrame);
+            if (SdkReads != null) SdkReads.Begin(frame, ArmFrame);
         } finally { Host.Exit(); }
     }
     public void Drain(int frame) {
@@ -134,6 +137,7 @@ internal sealed class DispatchInstructionTrace : IDisposable {
             if (Total!=NativeTotal()) throw new Exception("Native method observations were lost");
             if (Flow != null) Flow.Drain(frame, count, Total);
             if (Returns != null) Returns.Drain(frame);
+            if (SdkReads != null) SdkReads.Drain(frame);
             if (frame%300==0) { Writer.Flush(); Bodies.Flush(); }
         } finally { Host.Exit(); }
     }
@@ -143,6 +147,7 @@ internal sealed class DispatchInstructionTrace : IDisposable {
             nativeTotal=NativeTotal(); overflow=Overflow(); Disable();
             if (Flow != null) Flow.Dispose();
             if (Returns != null) Returns.Dispose();
+            if (SdkReads != null) SdkReads.Dispose();
         } finally { Host.Exit(); }
         Writer.Dispose(); Bodies.Dispose();
         File.WriteAllText(Path.Combine(Output,"method-trace-summary.json"),new JavaScriptSerializer().Serialize(new {

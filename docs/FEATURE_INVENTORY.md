@@ -13,6 +13,13 @@ collision query. The bounds predicate is now matching C. This promotion adds
 whole-feature acceptance. Earlier inventory snapshots and publication
 supplements retain their original scope.
 
+The [SDK completion profile](SDK_READ_COMPLETIONS.md) adds 102 observed completed
+reads with full-sector RAM matching the disc, including all 49 queued handoffs
+in its 6,000-frame history. Original/rebuilt and observer/distributed recorded
+outputs agree. This adds no C bytes, original-game feature, NPC profile or
+whole-feature acceptance. SDK errors, object lifetime and other file routes
+remain open; the exhaustive original-game feature total is still unknown.
+
 The [complete software movie decode](MOVIE_DECODE.md) adds payload evidence
 for all **39** routed movies: **22,382** video frames and **27,921** XA audio
 packets, independently hashed again as raw decoded bytes. It adds no C bytes,

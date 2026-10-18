@@ -19,6 +19,12 @@ from tools.runtime_inputs import record_file
 OBSERVER = ROOT / 'research/runtime_state/dispatch_entry_observer.h'
 FLOW_OBSERVER = ROOT / 'research/runtime_state/dispatch_flow_observer.h'
 RETURN_OBSERVER = ROOT / 'research/runtime_state/dispatch_return_observer.h'
+SDK_OBSERVER = ROOT / 'research/runtime_state/sdk_read_observer.h'
+SDK_EXPORTS = ('LsdResetSdkReads','LsdAddSdkReadTarget','LsdStartSdkReads','LsdBeginSdkReadFrame',
+    'LsdGetSdkReadCount','LsdGetSdkReadTotal','LsdGetSdkReadEntries','LsdGetSdkReadOverflow',
+    'LsdGetSdkReadPending','LsdGetSdkReadMaxDepth','LsdGetSdkReadTransfer','LsdGetSdkReadCompletions',
+    'LsdGetSdkReadFailures','LsdGetSdkReadUnassociated','LsdGetSdkReadOverlaps',
+    'LsdGetSdkReadEvents','LsdGetSdkReadData','LsdGetSdkReadDataBytes')
 RETURN_EXPORTS = ('LsdResetDispatchReturns','LsdConfigureDispatchReturns','LsdConfigureDispatchReturnIO','LsdStartDispatchReturns',
     'LsdBeginDispatchReturnFrame','LsdGetDispatchReturnCount','LsdGetDispatchReturnTotal',
     'LsdGetDispatchReturnEntries','LsdGetDispatchReturnOverflow','LsdGetDispatchReturnMismatches',
@@ -32,7 +38,7 @@ EXPORTS = ('LsdResetDispatchTrace', 'LsdAddDispatchTarget', 'LsdConfigureDispatc
     'LsdGetDispatchTotal', 'LsdGetDispatchOverflow', 'LsdGetDispatchEvents', 'LsdDisableDispatchTrace')
 
 
-def build(source_root, output, *, flow=False, returns=False):
+def build(source_root, output, *, flow=False, returns=False, sdk_reads=False):
     output = Path(output).resolve()
     require(not output.exists(), 'Choose a new output directory; existing builds are preserved.')
     require(sys.platform == 'linux', 'Build the native observer in Linux/WSL.')
@@ -67,9 +73,13 @@ def build(source_root, output, *, flow=False, returns=False):
     require(clang is not None, 'Clang 18 is required by the pinned Waterbox build.')
     compiler_version = subprocess.check_output([clang, '--version'], text=True, env=env)
     require('clang version 18.' in compiler_version, 'Use Clang 18 with the pinned native objects.')
+    returns = returns or sdk_reads
     flow = flow or returns
     headers = (OBSERVER, FLOW_OBSERVER, RETURN_OBSERVER) if returns else (OBSERVER, FLOW_OBSERVER) if flow else (OBSERVER,)
     exports = EXPORTS + (FLOW_EXPORTS if flow else ()) + (RETURN_EXPORTS if returns else ())
+    if sdk_reads:
+        headers += (SDK_OBSERVER,)
+        exports += SDK_EXPORTS
     inputs = [Path(__file__).resolve(), ROOT / "tools/build_npc_observer.py", *headers, Path(settings['CC']), Path(clang).resolve(),
               nyma / 'shock.cpp', nyma / 'cdrom.cpp', nyma / 'common.mak', nyma / 'shock.mak',
               source / 'waterbox/common.mak', source / 'waterbox/linkscript.T',
@@ -84,7 +94,7 @@ def build(source_root, output, *, flow=False, returns=False):
         shutil.copyfile(source_header, output / source_header.name)
     header = output / OBSERVER.name
     adapter = output / 'observer-adapter.cpp'
-    include = RETURN_OBSERVER.name if returns else FLOW_OBSERVER.name if flow else OBSERVER.name
+    include = SDK_OBSERVER.name if sdk_reads else RETURN_OBSERVER.name if returns else FLOW_OBSERVER.name if flow else OBSERVER.name
     adapter.write_bytes((nyma / 'shock.cpp').read_bytes() + ('\n#include "' + include + '"\n').encode('ascii'))
     obj, core = output / 'observer-adapter.o', output / 'shock.wbx'
     compile_command = [settings['CC'], '-c', '-o', str(obj), str(adapter), '-I' + str(nyma),
@@ -124,6 +134,9 @@ def build(source_root, output, *, flow=False, returns=False):
     if returns:
         profile.update(return_protocol=1,return_event_bytes=600,return_frame_payload_bytes=8*1024*1024,
             return_header_sha256=record_file(RETURN_OBSERVER)['sha256'])
+    if sdk_reads:
+        profile.update(sdk_read_protocol=1,sdk_read_event_bytes=464,sdk_read_frame_payload_bytes=8*1024*1024,
+            sdk_read_header_sha256=record_file(SDK_OBSERVER)['sha256'])
     write_json(output / 'profile.json', profile)
     return profile
 
@@ -134,9 +147,10 @@ def main(argv=None):
     parser.add_argument('--output', required=True, type=Path)
     parser.add_argument('--flow', action='store_true', help='Add read-only caller load-chain context; keep the entry-only core separate.')
     parser.add_argument('--returns', action='store_true', help='Add original returns and bounded read buffers; implies --flow.')
+    parser.add_argument('--sdk-reads', action='store_true', help='Observe original SDK requests, polling and completed RAM; implies --returns.')
     args = parser.parse_args(argv)
     try:
-        profile = build(args.source_root, args.output, flow=args.flow, returns=args.returns)
+        profile = build(args.source_root, args.output, flow=args.flow, returns=args.returns, sdk_reads=args.sdk_reads)
         print(profile['status'])
         return 0
     except (ValueError, OSError, subprocess.CalledProcessError) as error:

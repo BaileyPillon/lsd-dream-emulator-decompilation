@@ -1,5 +1,19 @@
 # Changelog
 
+## Original SDK completions and queued read destinations - 2026-10-18
+
+- Add an optional read-only SDK observer and complete ELF/GNU range exporter.
+- Verify 1,199 SDK calls and 102 completed transfers against 4,593,664 original
+  disc-sector bytes. Link all 49 queued Read pairs to their actual completion.
+- Match original/rebuilt SDK payloads and complete recorded game outputs;
+  match observer/distributed game outputs through the same 6,000-frame boot.
+- Add twenty owned SDK tests and two return-only compatibility tests; reject
+  twenty retained-data faults. Keep the
+  18,832 requested queued tail bytes outside the full-sector data claim.
+- Retain twelve unsuccessful collision-source forms and two qualified controls.
+  Preserve all 392 game inputs, the canonical executable and playable launcher.
+  C coverage and whole-feature acceptance are unchanged.
+
 ## Display callback type and queued read lifecycle - 2026-10-18
 
 - Share the original CD tick's signed-word callback view across the display

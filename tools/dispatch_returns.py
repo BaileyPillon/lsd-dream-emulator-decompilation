@@ -129,8 +129,14 @@ def _frame(executable,pc,size):
 
 def validate_returns(data,payload,summary,entries,settings,selected,executable,program):
     require(settings is not None,'No original return settings were selected.')
+    recorded_settings=summary.get('settings')
+    # The optional SDK host adds this nullable property to the existing C# type.
+    # Preserve old return-only selections while rejecting undeclared SDK targets.
+    if (isinstance(recorded_settings,dict) and isinstance(settings,dict)
+            and 'sdk_targets' not in settings and recorded_settings.get('sdk_targets',False) is None):
+        recorded_settings={key:value for key,value in recorded_settings.items() if key!='sdk_targets'}
     require(summary.get('protocol')==1 and summary.get('event_bytes')==EVENT_BYTES
-            and summary.get('settings')==settings and summary.get('frame_payload_limit')==8*1024*1024
+            and recorded_settings==settings and summary.get('frame_payload_limit')==8*1024*1024
             and summary.get('native_overflow')==summary.get('native_mismatches')==summary.get('pending_entries')==0
             and summary.get('original_game_RAM_injected') is False and summary.get('original_CPU_source_modified') is False
             and summary.get('return_values_are_not_transfer_counts') is True,

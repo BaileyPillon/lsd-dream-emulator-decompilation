@@ -95,6 +95,16 @@ def disc_fixture(size=3):
 
 class OriginalReturnTests(unittest.TestCase):
     def setUp(self):self.f=fixture()
+    def test_optional_null_SDK_targets_preserve_return_only_host_compatibility(self):
+        self.f['summary']['settings']=deepcopy(self.f['settings'])
+        self.f['summary']['settings']['sdk_targets']=None
+        self.validate()
+
+    def test_undeclared_SDK_targets_cannot_be_hidden_in_return_only_summary(self):
+        self.f['summary']['settings']=deepcopy(self.f['settings'])
+        self.f['summary']['settings']['sdk_targets']=[]
+        with self.assertRaisesRegex(ValueError,'protocol'):self.validate()
+
     def validate(self):
         f=self.f
         return tool.validate_returns(encoded(f['records']),f['payload'],f['summary'],f['entries'],

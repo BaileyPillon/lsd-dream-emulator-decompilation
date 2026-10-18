@@ -107,8 +107,8 @@ change to the executable.
 
 The [original return trace](docs/DISPATCH_RETURNS.md) now compares all 176
 recorded CD Open/Read returns and 14 nested synchronous reads. Their complete
-requested buffers match 1,007,616 disc bytes, including trailing data; queued
-completion and broader file-driver acceptance remain open.
+requested buffers match 1,007,616 disc bytes, including trailing data. Broader
+file-driver acceptance remains open.
 
 The [CD declaration repair](docs/CD_DRIVER_DECLARATIONS.md) makes the read
 destination and helper signatures explicit and removes thirteen implicit
@@ -118,7 +118,14 @@ internal declarations. Ordinary compiler warnings in that unit fall from
 The [display callback check](docs/DISPLAY_CD_CALLBACK.md) now aligns its type
 with the original CD tick and removes that callback warning. A read-only
 inspector also pairs the retained 98 framed Read entries into 49 queued
-origin/dispatch pairs, preserving the gap between handoff and SDK completion.
+origin/dispatch pairs.
+
+The [SDK completion profile](docs/SDK_READ_COMPLETIONS.md) follows all 49 queued
+pairs to actual successful SDK returns. Its 102 completed reads match 4,593,664
+full-sector RAM bytes against the original disc, using observed Setloc and
+sequential position history. Original/rebuilt SDK records and all recorded game
+outputs agree; the observer also matches the distributed core's game outputs.
+Errors, object lifetime and complete feature acceptance remain open.
 
 The feature inventory has 40 provisional groups; an official exhaustive
 feature total is unknown. SDK and startup code are excluded from the C-byte
