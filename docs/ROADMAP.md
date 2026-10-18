@@ -17,6 +17,12 @@ original/rebuilt logs and independently checked recorded outputs. Extend that
 history to other NPCs, branches, effects and lifetimes before accepting whole
 encounters.
 
+The [lifetime inspector](NPC_LIFETIME.md) now resolves the Buddha history's
+activation and shutdown to consecutive core advances, and bounds its later
+loss of reachability. Continue natural histories for other NPCs and branches,
+including effects and visible output. Object reachability does not establish
+allocation lifetime or whole-encounter acceptance.
+
 The [isolated replay host](HEADLESS_REPLAY.md) now reproduces both retained
 opening profiles without controlling the user's EmuHawk session. The separate
 [NPC recorder](NPC_ENTRY_TRACE.md) extends that core interface to record

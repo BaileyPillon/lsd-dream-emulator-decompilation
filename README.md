@@ -39,6 +39,11 @@ natural Buddha callback entries in one fixed controller history. Original and
 rebuilt traces agree; a separate distributed-core comparison checks the
 observer's recorded game outputs. Whole-encounter acceptance remains open.
 
+The [NPC lifetime inspector](docs/NPC_LIFETIME.md) now distinguishes that
+history's last callback, later context shutdown and eventual loss of scene
+reachability. Closer original/rebuilt checkpoints agree, including the
+shutdown boundary at relative frame 22,580.
+
 The verified local build reproduces the original Japanese executable byte for
 byte. **Full C recovery and independently reviewed gameplay coverage are still
 in progress.** The remaining assembly is regenerated from your own executable.

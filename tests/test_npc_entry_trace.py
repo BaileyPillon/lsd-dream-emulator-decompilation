@@ -55,7 +55,7 @@ def fixture_program():
                    expected_entries=2, expected_first_frame=1, expected_last_frame=3, entity_id=42)), executable
 
 
-def fixture_run(folder, program, executable):
+def fixture_run(folder, program, executable, context_state=None):
     folder.mkdir()
     for name in ('host/dll', 'sources', 'observations'):
         (folder / name).mkdir(parents=True)
@@ -117,7 +117,9 @@ def fixture_run(folder, program, executable):
     for frame, tick in enumerate((0, 1, 1, 2)):
         raw = bytearray(0x200000)
         raw[0x10000:0x10004] = executable[0x800:0x804]
-        for offset, value in ((0, 0x80089AD4), (0x98, 42), (0x9C, 21), (0xA0, tick), (0xA4, 0x80011000), (0xA8, 0x80010000)):
+        entity_id = program['trace']['entity_id']
+        state = entity_id + 1 if context_state is None else context_state
+        for offset, value in ((0, 0x80089AD4), (0x98, entity_id), (0x9C, state), (0xA0, tick), (0xA4, 0x80011000), (0xA8, 0x80010000)):
             struct.pack_into('<I', raw, 0x11000 + offset, value)
         observed.append(dict(relative_frame=frame, core_frame=frame + 1, phase=('initial_neutral', 'press', 'release', 'release')[frame],
                              gpu_sha256=digest(gpu), sample_frames=1, total_sample_frames=frame + 1))
@@ -228,6 +230,39 @@ class FrozenHistoryTests(unittest.TestCase):
         self.assertEqual(result['original_instruction_entries_per_run'], [2, 2])
         self.assertEqual(result['original_clock_checkpoint_checks'], [1, 1])
         self.assertFalse(result['complete_state_parity_checked'])
+
+    def test_clock_guard_observes_the_native_context_before_accepting_it(self):
+        calls = []
+
+        def guard(raw, address, entity_id, frame):
+            self.assertIsInstance(raw, bytes)
+            calls.append((address, entity_id, frame))
+            return True
+
+        run = comparison.inspect_run(self.left, self.executable, context_clock_guard=guard)
+        self.assertEqual(run['clock_checks'], 1)
+        self.assertEqual(calls, [(0x80011000, 42, 3)])
+
+    def test_clock_guard_cannot_accept_a_history_without_any_corroborating_context(self):
+        with self.assertRaisesRegex(ValueError, 'No complete checkpoint corroborates'):
+            comparison.inspect_run(self.left, self.executable, context_clock_guard=lambda *args: False)
+
+    def test_clock_guard_rejects_non_boolean_results(self):
+        with self.assertRaisesRegex(ValueError, 'must return a Boolean'):
+            comparison.inspect_run(self.left, self.executable, context_clock_guard=lambda *args: 'yes')
+
+    def test_another_entity_id_has_its_own_native_context_state(self):
+        program = copy.deepcopy(self.program)
+        program['trace']['entity_id'] = 7
+        folder = self.root / 'another-entity'
+        fixture_run(folder, program, self.executable)
+        self.assertEqual(comparison.inspect_run(folder, self.executable)['clock_checks'], 1)
+
+    def test_buddha_state_does_not_corroborate_another_entity_id(self):
+        folder = self.root / 'wrong-state'
+        fixture_run(folder, self.program, self.executable, context_state=21)
+        with self.assertRaisesRegex(ValueError, 'No complete checkpoint corroborates'):
+            comparison.inspect_run(folder, self.executable)
 
     def test_all_distinct_wrong_trace_controls_are_rejected(self):
         for name, change in (

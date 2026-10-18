@@ -153,7 +153,14 @@ def validate_entries(rows, program, frames, executable):
     return entries
 
 
-def inspect_run(folder, executable):
+def inspect_run(folder, executable, *, context_clock_guard=None):
+    """Validate a frozen run, optionally requiring rooted clock corroboration.
+
+    The guard can exclude detached storage from clock evidence. At least one
+    accepted original context must still corroborate the instruction history.
+    All input, output, instruction and provenance checks remain mandatory.
+    """
+    require(context_clock_guard is None or callable(context_clock_guard), 'Invalid context clock guard.')
     folder = Path(folder).resolve(strict=True)
     inputs = json.loads((folder / 'run-inputs.json').read_text(encoding='utf-8-sig'))
     require(inputs.get('schema_version') == 1 and inputs.get('runtime_kind') in ('distributed', 'npc_observer'),
@@ -295,8 +302,14 @@ def inspect_run(folder, executable):
             ram = raw['RAM'].read_bytes()
             require(ram[pc & 0x1FFFFFFF:(pc & 0x1FFFFFFF) + program['trace']['function_bytes']]
                     == executable[code_at:code_at + program['trace']['function_bytes']], 'The loaded original callback span differs from its executable.')
+            if context_clock_guard is not None:
+                reachable = context_clock_guard(ram, entries[0]['entity'], program['trace']['entity_id'], frame)
+                require(type(reachable) is bool, 'The context clock guard must return a Boolean.')
+                if not reachable:
+                    continue
             word = lambda offset: struct.unpack_from('<I', ram, address + offset)[0]
-            if word(0) == 0x80089AD4 and word(0x98) == program['trace']['entity_id'] and word(0x9C) == 21:
+            if (word(0) == 0x80089AD4 and word(0x98) == program['trace']['entity_id']
+                    and word(0x9C) == program['trace']['entity_id'] + 1):
                 require(word(0xA4) == entries[0]['entity'] and word(0xA8) == pc
                         and word(0xA0) == bisect_right(event_frames, frame), 'Original callback registration or initialized tick history disagrees with its entries.')
                 clock_checks += 1

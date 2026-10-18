@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "status": "qualified_recorded_NPC_lifetime_observations",
+  "recorded_utc": "2026-10-18T05:02:56.375684+00:00",
+  "baseline_commit": "69ad781bf628afc222c5b0aedd255e346727d225",
+  "original_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "observer_core_sha256": "2272e6e36f634e9c52ad3a630b456d9fb36784674e1cdc4950330c241194d06c",
+  "source_sha256": {
+    "tools/inspect_npc_lifetime.py": "f5b3e99c72808946e12a69c932f57e4f27617eea3109788715270717fb804208",
+    "tests/test_npc_lifetime.py": "4b49719f916075d9a504e344a5a874dbe36a557773399d644c6445e7da75b44b",
+    "research/headless/buddha-lifetime-route.json": "8306b31a26315dee43d83b0a72f5c80d1d659e7416702df804361a7ace1147d7",
+    "docs/NPC_LIFETIME.md": "cbcc556f64419bf52a0404085f50700fe5fb106acbeae37f97a61a9e7c6fbe57",
+    "tools/compare_npc_history.py": "fe9e5f98f4a67a1733bece2bed88d510e1c3e368319a22d2ef6a729c2a81a402",
+    "tools/inventory_runtime_scene.py": "f76a06710daf5255c7888dd1e6548143f7224367a0dc2273ef1a3e989c309940",
+    "tools/inventory_entities.py": "02836f67899a0079ef0a357525ec16295082ebfb51b0e9abc9a66dc73bb230d5",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/runtime_inputs.py": "a1e0865b13801414bfad30f31ce00ffd13840b2a836dbc527e138d89d6d877e4",
+    "src/game/game_flow.h": "b350588fc09d92cd8b66405e171402c6a9d098b52a752a73465c3ac40fe39498",
+    "src/dream/dream_sys.h": "0c5e29a07f133924a7d2eda9e7425e2b3bcbf6c3b9cb905c097e6eb879d45657",
+    "src/scene/entity.h": "3dd0c265059b0566aca0f0934bbc5b85b5de9a1e1ef27e410985129e2c0ed2b4",
+    "src/scene/entity.c": "42b79fe2e6463d01213b8be552e94132dd912212ace0171219466b2e1650c751",
+    "tests/test_npc_entry_trace.py": "b16194f876172b4b799300abb6bb88965cdd001ba5be6372f18168d7f9f7c9d6"
+  },
+  "private_evidence_sha256": {
+    ".decomp-lab/npc-lifetime-native-pair-20261018-second.json": "7f7c26549dd6c2dc7a6a7a94670347ef4a777d6c8d43bc48170dafb40968e8cd",
+    ".decomp-lab/npc-lifetime-original-20261018-second.json": "76413a2630216fb307e9473685fda9b4326c393f960d40e686dbc239074b7b1e",
+    ".decomp-lab/npc-lifetime-rebuilt-20261018-second.json": "c968e2160033f6d27e54edb295652b793d08bdab8c16963334578c835c54d8ac",
+    ".decomp-lab/npc-lifetime-audit-20261018-third/report.json": "4ab1bd82ddc46cd0bf7d99f74905bda2cb34de7f719ec8c65970b99f1efca540",
+    ".decomp-lab/audit_npc_lifetime_20261018_third.py": "19376bcd0208486242e31a227608a74379e182fffa30c6b2ff10539604419251",
+    ".decomp-lab/npc-lifetime-tests-20261018-first/windows-final.json": "2166db600a90b636664e9326d157bcf87d3009030f795c7d043c79ac3953c5f9",
+    ".decomp-lab/npc-lifetime-tests-20261018-first/windows-final.log": "f5191d3759074540b082744b3fdb03bf656dc52d7a8446d27a3ff937a8a0845f",
+    ".decomp-lab/npc-lifetime-tests-20261018-first/linux-final.json": "964e1cbf97dc89d0f9ecf396fbd247f0e0b531b9be28090e5d1199116da91025",
+    ".decomp-lab/npc-lifetime-tests-20261018-first/linux-final.log": "3c7b5ec9c3a39ea754031e7612e0668328b88bd91208738c4fe72c62788d1593"
+  },
+  "original_and_rebuilt": {
+    "cold_boots": 2,
+    "controller_steps_per_run": 30000,
+    "native_observations_per_run": 30001,
+    "RAM_hash_samples_per_run": 5033,
+    "selected_complete_checkpoints_per_run": 158,
+    "complete_stereo_PCM_bytes_per_run": 88457172,
+    "original_callback_entries_per_run": 2700,
+    "lifecycle_snapshots_per_run": 130,
+    "all_compared_outputs_equal": true,
+    "entry_logs_equal": true,
+    "decoded_PNG_images": 316,
+    "decoded_PNG_pixels_equal_raw_RGB": true
+  },
+  "transition_windows": [
+    {
+      "from_state": "disabled",
+      "to_state": "enabled",
+      "after_relative_frame": 5406,
+      "through_relative_frame": 5407,
+      "consecutive_core_advances": true
+    },
+    {
+      "from_state": "enabled",
+      "to_state": "disabled",
+      "after_relative_frame": 22579,
+      "through_relative_frame": 22580,
+      "consecutive_core_advances": true
+    },
+    {
+      "from_state": "disabled",
+      "to_state": "not_reachable",
+      "after_relative_frame": 24600,
+      "through_relative_frame": 24664,
+      "consecutive_core_advances": false
+    }
+  ],
+  "previous_recording_comparison": {
+    "same_expanded_controller_TSV": true,
+    "all_native_frame_observations_equal": true,
+    "shared_RAM_samples_equal": 5003,
+    "shared_complete_raw_checkpoints_equal": 125,
+    "complete_PCM_equal": true,
+    "new_controller_routes": 0,
+    "new_seeds": 0
+  },
+  "native_offline_controls": {
+    "rejected_corruptions": 8,
+    "accepted_uninterpreted_storage_changes": 2,
+    "original_captures_preserved": true
+  },
+  "new_source_only_test_methods": 22,
+  "source_counts_before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "new_C_bytes": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_whole_feature_groups_accepted": 0,
+  "game_RAM_injected": false,
+  "emulator_UI_controlled": false,
+  "complete_state_parity_checked": false,
+  "original_hardware_timing_verified": false,
+  "whole_encounter_accepted": false,
+  "exhaustive_original_feature_total": null,
+  "scope": "Two new native cold boots repeat one retained controller/seed history with closer complete checkpoints. Static rooted graph inspection distinguishes enabled, disabled and unreachable states, with explicit sampled transition intervals. This does not prove physical allocation lifetime, visibility, other seeds or paths, complete emulator state, hardware timing or whole encounters.",
+  "inspector_test_methods": 17,
+  "shared_validator_test_methods": 5,
+  "rooted_clock_corroboration": true,
+  "context_state_matches_recorded_entity_ID_plus_one": true,
+  "local_tooling_tests": {
+    "windows-final": {
+      "python": "3.14.2",
+      "tests": 902,
+      "expected_skips": 2,
+      "exit_code": 0
+    },
+    "linux-final": {
+      "python": "3.13.5",
+      "tests": 902,
+      "expected_skips": 2,
+      "exit_code": 0
+    }
+  },
+  "local_file_sha256": {
+    "tools/inspect_npc_lifetime.py": "f5b3e99c72808946e12a69c932f57e4f27617eea3109788715270717fb804208",
+    "tests/test_npc_lifetime.py": "4b49719f916075d9a504e344a5a874dbe36a557773399d644c6445e7da75b44b",
+    "research/headless/buddha-lifetime-route.json": "8306b31a26315dee43d83b0a72f5c80d1d659e7416702df804361a7ace1147d7",
+    "docs/NPC_LIFETIME.md": "cbcc556f64419bf52a0404085f50700fe5fb106acbeae37f97a61a9e7c6fbe57",
+    "tools/compare_npc_history.py": "fe9e5f98f4a67a1733bece2bed88d510e1c3e368319a22d2ef6a729c2a81a402",
+    "tools/inventory_runtime_scene.py": "f76a06710daf5255c7888dd1e6548143f7224367a0dc2273ef1a3e989c309940",
+    "tools/inventory_entities.py": "02836f67899a0079ef0a357525ec16295082ebfb51b0e9abc9a66dc73bb230d5",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/runtime_inputs.py": "a1e0865b13801414bfad30f31ce00ffd13840b2a836dbc527e138d89d6d877e4",
+    "src/game/game_flow.h": "3e376fa5c4ffde37c4979f187fc350946a4a835950c282dc93bc08fda6a34302",
+    "src/dream/dream_sys.h": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507",
+    "src/scene/entity.h": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f",
+    "src/scene/entity.c": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811",
+    "tests/test_npc_entry_trace.py": "b16194f876172b4b799300abb6bb88965cdd001ba5be6372f18168d7f9f7c9d6"
+  },
+  "hash_scope": "source_sha256 identifies committed Git blobs; local_file_sha256 identifies exact local snapshot bytes, including inherited game-source line endings. No original game build input is rewritten."
+}

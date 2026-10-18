@@ -191,3 +191,10 @@ tests/test_npc_entry_trace.py text eol=lf
 tests/__init__.py text eol=lf
 docs/NPC_ENTRY_TRACE.md text eol=lf
 docs/npc-entry-trace-checks.json text eol=lf
+
+# Preserve the executed offline lifecycle inspector and checkpoint program.
+tools/inspect_npc_lifetime.py text eol=lf
+tests/test_npc_lifetime.py text eol=lf
+research/headless/buddha-lifetime-route.json text eol=lf
+docs/NPC_LIFETIME.md text eol=lf
+docs/npc-lifetime-checks.json text eol=lf
