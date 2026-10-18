@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "status": "passed_bounded_headless_replay_qualification",
+  "recorded_utc": "2026-10-18T00:02:13.106592+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "e54c6b2e060d930fa1bc32dcaca3b2b9f7c787c7",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "private_report": {
+    "path": ".decomp-lab/headless-public-qualification-20261017-first/report.json",
+    "sha256": "82bf6c5e49dfcf070e704d269f725cde420cf0e459e77b8c883310138049ae1e"
+  },
+  "private_controls": {
+    "path": "D:\\CodexRuntimes\\lsd-emulator\\qa-c-headless-native-controls-20261017-first\\report.json",
+    "sha256": "721eec070f33078350aeff5f864292bb8d4b434449fe147b5522b92b3da98720"
+  },
+  "private_producer_sha256": "c56b50fbd3cd96f6781e6257e0b33674606734ab407241a4633df9ec2cd4afec",
+  "private_qualification_producer_sha256": "357d5bd32743ad2dffe096036064171b53ccab2cbaca05fc6344fbafb0ff9ecf",
+  "private_control_producer_sha256": "ec8a8b9b809463e23df7029ef13ce9e675c2ec8439c8a22c419d9ba39521f94a",
+  "executed_source_sha256": {
+    "research/headless/ReplayColdStart.cs": "a1fb4ac51614e889f931a4dac94f0d23a3d3ba882393b17058b575176614c8a4",
+    "tools/replay_cold_start_headless.py": "7dedf37e0fceb035fed90f359779df7f79234dc0ab2d4ef559fb2edffa885595",
+    "tests/test_headless_replay.py": "f96efecb7d25cd8de881f870ed801b5ab8faaf44cc836ad018522a49ee2d18d5"
+  },
+  "source_counts_before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "protected_build_inputs_preserved": 392,
+  "canonical_complete_image_preserved": true,
+  "profiles": [
+    {
+      "profile": "cold-start",
+      "image": "original",
+      "submitted_frames": 6000,
+      "native_observations": 6001,
+      "checkpoints": 16,
+      "GUI_dump_PCM_sample_frames": 4422265,
+      "full_headless_PCM_sample_frames": 4423002,
+      "retained_extra_observer_PCM_sample_frames": 737,
+      "independent_full_buffers_RGB_and_recorded_PCM_equal": true,
+      "changed_PNG_chunk_types": {
+        "pHYs": 16
+      },
+      "headless_comparison": {
+        "path": "D:\\CodexRuntimes\\lsd-emulator\\qa-c-headless-public-20261017-first\\original\\comparison.json",
+        "sha256": "0cc69569b815edb04db6000f64c743f292b189416b311a53a1abb039f17ea075"
+      }
+    },
+    {
+      "profile": "cold-start",
+      "image": "rebuilt",
+      "submitted_frames": 6000,
+      "native_observations": 6001,
+      "checkpoints": 16,
+      "GUI_dump_PCM_sample_frames": 4422265,
+      "full_headless_PCM_sample_frames": 4423002,
+      "retained_extra_observer_PCM_sample_frames": 737,
+      "independent_full_buffers_RGB_and_recorded_PCM_equal": true,
+      "changed_PNG_chunk_types": {
+        "pHYs": 16
+      },
+      "headless_comparison": {
+        "path": "D:\\CodexRuntimes\\lsd-emulator\\qa-c-headless-public-20261017-first\\rebuilt\\comparison.json",
+        "sha256": "f0bdccd863453c59fa7a881db7c319b2a54203db56a4b70a61c5b8d70660fd34"
+      }
+    },
+    {
+      "profile": "first-dream",
+      "image": "original",
+      "submitted_frames": 30000,
+      "native_observations": 30001,
+      "checkpoints": 61,
+      "GUI_dump_PCM_sample_frames": 22113556,
+      "full_headless_PCM_sample_frames": 22114293,
+      "retained_extra_observer_PCM_sample_frames": 737,
+      "independent_full_buffers_RGB_and_recorded_PCM_equal": true,
+      "changed_PNG_chunk_types": {
+        "pHYs": 61
+      },
+      "headless_comparison": {
+        "path": "D:\\CodexRuntimes\\lsd-emulator\\qa-c-headless-cycle-public-20261017-first\\original\\comparison.json",
+        "sha256": "8bca425ce7c1c29cca6e924cff90677a5242edb72870f2f43aef1e5b9e54a938"
+      }
+    },
+    {
+      "profile": "first-dream",
+      "image": "rebuilt",
+      "submitted_frames": 30000,
+      "native_observations": 30001,
+      "checkpoints": 61,
+      "GUI_dump_PCM_sample_frames": 22113556,
+      "full_headless_PCM_sample_frames": 22114293,
+      "retained_extra_observer_PCM_sample_frames": 737,
+      "independent_full_buffers_RGB_and_recorded_PCM_equal": true,
+      "changed_PNG_chunk_types": {
+        "pHYs": 61
+      },
+      "headless_comparison": {
+        "path": "D:\\CodexRuntimes\\lsd-emulator\\qa-c-headless-cycle-public-20261017-first\\rebuilt\\comparison.json",
+        "sha256": "b4dd71b3e892b05ad79de9898097524617831812270a23f8aaa77359eee3ebc2"
+      }
+    }
+  ],
+  "original_rebuilt_headless_pairs": [
+    {
+      "profile": "cold-start",
+      "all_headless_trace_rows_equal": true,
+      "complete_headless_PCM_equal": true,
+      "all_complete_MainRAM_checkpoints_equal": true,
+      "headless_PNG_file_bytes_equal": true
+    },
+    {
+      "profile": "first-dream",
+      "all_headless_trace_rows_equal": true,
+      "complete_headless_PCM_equal": true,
+      "all_complete_MainRAM_checkpoints_equal": true,
+      "headless_PNG_file_bytes_equal": true
+    }
+  ],
+  "native_GPU_observations_across_four_runs": 72004,
+  "complete_RAM_GPU_RGB_checkpoints_across_four_runs": 154,
+  "route_scope": "Two lengths of the same opening controller route, each replayed on original and matching discs.",
+  "PNG_comparison": {
+    "dimensions_and_RGB_equal": true,
+    "raw_PNG_file_bytes_equal": false,
+    "only_differing_chunk": "pHYs",
+    "GUI_density_DPI": 120,
+    "headless_density_DPI": 96,
+    "other_chunks_including_IDAT_equal": true,
+    "independent_decoder": "Pillow",
+    "all_PNG_chunks_and_CRCs_checked": true
+  },
+  "audio_comparison": {
+    "complete_declared_GUI_WAV_PCM_equal": true,
+    "window_derived_from": "GUI --dump-length and native per-frame sample counts",
+    "all_headless_PCM_retained": true,
+    "extra_observer_stereo_sample_frames_per_run": 737,
+    "complete_original_rebuilt_headless_PCM_including_tail_equal": true,
+    "arbitrary_window_trimming_allowed": false
+  },
+  "rejection_controls": [
+    {
+      "name": "wrong-RGB-pixel",
+      "rejected": true,
+      "observed": {
+        "differing_RGB_pixels": 1
+      },
+      "actual_native_first_frame_executed": true
+    },
+    {
+      "name": "wrong-GPU-hash",
+      "rejected": true,
+      "observed": {
+        "differing_GPU_observations": 1
+      },
+      "actual_native_first_frame_executed": true
+    },
+    {
+      "name": "wrong-RAM-byte",
+      "rejected": true,
+      "observed": {
+        "differing_MainRAM_bytes": 1
+      },
+      "actual_native_first_frame_executed": true
+    },
+    {
+      "name": "wrong-input-core-frame",
+      "rejected": true,
+      "observed": {
+        "rejected_before_second_advance": true
+      },
+      "actual_native_first_frame_executed": true
+    },
+    {
+      "name": "wrong-reference-PCM",
+      "rejected": true,
+      "observed": {
+        "equal": false,
+        "complete_headless_PCM_preserved": true
+      },
+      "actual_native_first_frame_executed": false
+    }
+  ],
+  "actual_control_core_cold_boots": 4,
+  "actual_control_native_frame_advances": 4,
+  "synthetic_test_methods": 17,
+  "full_tooling_tests": {
+    "Windows": {
+      "tests": 860,
+      "expected_skips": 2,
+      "seconds": 22.587,
+      "private_log": ".decomp-lab/headless-tests-windows-20261017-first.log"
+    },
+    "WSL": {
+      "tests": 860,
+      "expected_skips": 2,
+      "seconds": 13.316,
+      "evidence": "Observed terminal run; no separate log retained."
+    }
+  },
+  "toolchain": {
+    "core": "BizHawk 2.11.1 Nymashock",
+    "managed_compiler": ".NET SDK 8.0.424 Roslyn",
+    "target": ".NET Framework 4.8 x64",
+    "managed_adapter_analysis": "ILSpy CLI 9.1.0.7988"
+  },
+  "game_RAM_injected": false,
+  "saved_state_restored": false,
+  "user_emulator_controlled": false,
+  "game_or_emulator_instructions_modified": false,
+  "callback_instruction_entry_trace_collected": false,
+  "complete_state_parity_checked": false,
+  "new_C_bytes": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_whole_feature_groups_accepted": 0,
+  "exhaustive_original_feature_total": null,
+  "remaining_gates": [
+    "Two unmatched C collision functions and two inherited storage explanations.",
+    "Controller-only natural NPC activation and actual callback-entry evidence.",
+    "Complete content and branch coverage, complete emulator-state parity and original hardware timing."
+  ]
+}
