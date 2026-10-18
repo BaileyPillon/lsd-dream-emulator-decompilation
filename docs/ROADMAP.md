@@ -13,6 +13,13 @@ stubs. Extend this evidence to actual disc requests, destinations, SDK errors
 and natural file histories. Both inherited empty debug frames still need
 source explanations; the remaining two assembly functions are unchanged.
 
+The [declared dispatch catalogue](DISPATCH_CATALOGUE.md) now qualifies all
+838 table targets and their 2,205 nonnull bindings using complete original
+function ranges. Use these checked spans to select general runtime targets
+and recover actual receiver, slot and argument relationships. Its 1,174
+indirect-transfer instructions are unobserved; the NPC-only recorder and
+the wider dynamic-dispatch completion gate remain separate.
+
 The [recorded scene inspector](RUNTIME_SCENE_INVENTORY.md) now follows the
 actual captured dream's object links. Five loaded entity instances have disabled
 behavior contexts at the sampled later checkpoints. Extend the controller route

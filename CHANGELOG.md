@@ -1,5 +1,16 @@
 # Changelog
 
+## Complete declared dispatch targets - 2026-10-18
+
+- Export complete original ranges and hashes for all 838 distinct targets
+  across 57 declared virtual tables, retaining 2,205 nonnull and 258 null bindings.
+- Index 1,174 unobserved indirect-transfer instructions within those bodies;
+  keep instruction locations separate from actual virtual-call edges.
+- Require a complete canonical symbolic link and independent ELF/GNU extents.
+  Add 16 source-only corruption and ownership tests.
+- Retain 16 unsuccessful formal-argument source comparisons separately.
+  C recovery, original behavior, feature acceptance and the Bevy port are unchanged.
+
 ## File-driver Open and Read interfaces - 2026-10-18
 
 - Align shared/debug Open arguments and the signed Read result, retaining

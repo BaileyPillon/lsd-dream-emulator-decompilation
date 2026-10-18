@@ -24,6 +24,12 @@ These numbers describe static dispatch bindings. They are separate from the
 They do not establish exhaustive call-site coverage, correct inferred C
 signatures, or independent runtime acceptance.
 
+The [complete target catalogue](DISPATCH_CATALOGUE.md) now maps all 838
+addresses to unique complete ELF/GNU function ranges and checks all 2,205
+nonnull bindings against original words. Its 1,174 indirect-transfer sites
+are static instructions awaiting runtime classification; they do not close
+the wider dynamic-dispatch or signature review.
+
 The partial `game_flow_screen_vtable_t` interface has a byte-array gap between
 its declared Destroy and Run callbacks. It has no bound concrete table symbol
 and is explicitly listed as an unsupported type view; it is excluded from the
