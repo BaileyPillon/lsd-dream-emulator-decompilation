@@ -6,6 +6,13 @@ tools have separate deliverables. See [PROJECT_OBJECTIVE.md](../PROJECT_OBJECTIV
 for the completion requirements and [provenance](PROVENANCE.md) for the evidence
 boundary of the published snapshot.
 
+The [file-driver interface repair](FILE_DRIVER_INTERFACES.md) aligns the
+shared/debug Open and Read views with their original arguments and result.
+Bounded debug/CD guard paths and original slot copying pass without output
+stubs. Extend this evidence to actual disc requests, destinations, SDK errors
+and natural file histories. Both inherited empty debug frames still need
+source explanations; the remaining two assembly functions are unchanged.
+
 The [recorded scene inspector](RUNTIME_SCENE_INVENTORY.md) now follows the
 actual captured dream's object links. Five loaded entity instances have disabled
 behavior contexts at the sampled later checkpoints. Extend the controller route

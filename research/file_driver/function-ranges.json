@@ -1,0 +1,44 @@
+[
+  {
+    "function": "cd_file_driver_open",
+    "address": "0x800272D0",
+    "bytes": 432,
+    "sha256": "978004e28e9af2f1d5b7d2efba5df09b409b1be9c408f84b78c2b4908a159bb1"
+  },
+  {
+    "function": "cd_file_driver_read",
+    "address": "0x800276D0",
+    "bytes": 304,
+    "sha256": "6bb266832017fd810e74181e015d4be2cb485a81a6bdded1ff4559a83847a538"
+  },
+  {
+    "function": "cd_file_driver_lock",
+    "address": "0x800280D0",
+    "bytes": 16,
+    "sha256": "6ce6d06b7fd5d7e8817765906a0559950d6851ff65253b8fbde1dc9d37ae8da5"
+  },
+  {
+    "function": "cd_file_driver_unlock",
+    "address": "0x800280E0",
+    "bytes": 12,
+    "sha256": "a599122794c784b68272d3a0c173ef69373214a21e1ce14a9810f90a3292a315"
+  },
+  {
+    "function": "debug_file_driver_open",
+    "address": "0x8002C3E0",
+    "bytes": 16,
+    "sha256": "887dd8f3bf5edd5fe7c97b79ecc7cd0e23bfaefde06e8e4ddfd3818cadf5fe34"
+  },
+  {
+    "function": "debug_file_driver_read",
+    "address": "0x8002C408",
+    "bytes": 8,
+    "sha256": "207819bf4ebe30789debac4affc1a07c833e14f530eef04dc87a6cf369209b43"
+  },
+  {
+    "function": "file_driver_copy_vtable_slots",
+    "address": "0x80026D88",
+    "bytes": 132,
+    "sha256": "2a95346ba68b44a16a9d0f2d5203247b835129775904cb6fd1d2c9e29fcea458"
+  }
+]

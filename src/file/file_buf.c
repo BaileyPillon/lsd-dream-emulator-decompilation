@@ -119,7 +119,7 @@ void file_buf_load(file_buf_t *This, s32 Unk) {
 
         if (mem) {
             This->vtable->Seek(This, 0, 0);
-            This->vtable->Read(This, mem, size);
+            This->vtable->Read(This, (s32) mem, (u32) size);
             This->vtable->Close(This);
             This->m_Buffer = mem;
             This->m_Size = size;

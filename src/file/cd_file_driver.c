@@ -352,7 +352,7 @@ void cd_file_driver_unk25(void) {
         buf->vtable->Seek(buf, req->m_Unk5, req->m_Unk6);
         break;
     case 5:
-        ((s32 (*)(void *, s32, s32))buf->vtable->Read)(buf, req->m_Unk5, req->m_Unk6);
+        buf->vtable->Read(buf, req->m_Unk5, (u32) req->m_Unk6);
         break;
     case 7:
         buf->vtable->file_buf_load(buf, (void *)cd_file_driver_get_disc_record(type = req->m_Unk4));
