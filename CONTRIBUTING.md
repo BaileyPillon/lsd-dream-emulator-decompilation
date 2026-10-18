@@ -87,6 +87,12 @@ replay inputs and compare frames, GPU memory, state payloads and PCM audio.
 Use new output directories for each run and comparison; retain failed runs
 as evidence. A matching replay establishes only the recorded scenario.
 
+For controller-only NPC histories, use the optional
+[instruction-entry workflow](docs/NPC_ENTRY_TRACE.md). Keep its observer build
+and explicit cross-core output comparison separate from the matching game
+and default strict runtime comparisons. Retain source snapshots and failed
+controls; report one recorded history without counting it as a whole NPC class.
+
 ## Build and tooling changes
 
 ```bash

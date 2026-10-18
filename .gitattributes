@@ -178,3 +178,16 @@ src/dream/dream_sys.c text eol=lf
 src/scene/link.c text eol=lf
 docs/POINT_TRANSFORM_API.md text eol=lf
 docs/point-transform-api-checks.json text eol=lf
+
+# Keep the optional native NPC observer and replay program reproducible.
+research/runtime_state/npc_entry_observer.h text eol=lf
+research/headless/NpcInstructionTrace.cs text eol=lf
+research/headless/RecordNpcHistory.cs text eol=lf
+research/headless/buddha-timed-route.json text eol=lf
+tools/build_npc_observer.py text eol=lf
+tools/record_npc_history.py text eol=lf
+tools/compare_npc_history.py text eol=lf
+tests/test_npc_entry_trace.py text eol=lf
+tests/__init__.py text eol=lf
+docs/NPC_ENTRY_TRACE.md text eol=lf
+docs/npc-entry-trace-checks.json text eol=lf

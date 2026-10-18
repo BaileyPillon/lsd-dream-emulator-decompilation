@@ -11,13 +11,18 @@ actual captured dream's object links. Five loaded entity instances have disabled
 behavior contexts at the sampled later checkpoints. Extend the controller route
 to record activation and actual callback execution, then compare the relevant
 effects, animation and lifetime. Reachability and registration remain separate
-from encounter acceptance.
+from encounter acceptance. The later [NPC entry trace](NPC_ENTRY_TRACE.md)
+records 2,700 natural Buddha entries in one fixed history, with matching
+original/rebuilt logs and independently checked recorded outputs. Extend that
+history to other NPCs, branches, effects and lifetimes before accepting whole
+encounters.
 
 The [isolated replay host](HEADLESS_REPLAY.md) now reproduces both retained
-opening profiles without controlling the user's EmuHawk session. Extend that
-core interface to record controller-only NPC activation routes and actual
-callback execution. The current replayer consumes validated captures; it does
-not provide an instruction-entry trace or accept a whole encounter.
+opening profiles without controlling the user's EmuHawk session. The separate
+[NPC recorder](NPC_ENTRY_TRACE.md) extends that core interface to record
+controller-only activation and actual callback execution. Its first
+qualified route covers one timed Buddha history. The original cold-start
+replayer consumes validated captures; neither command accepts a whole encounter.
 
 The [software movie decoder audit](MOVIE_DECODE.md) now checks all 39 routed
 movie payloads, including every encoded tail frame and XA packet. A separate

@@ -1,5 +1,19 @@
 # Changelog
 
+## Original NPC entry recording - 2026-10-17
+
+- Add a separate native observer build, fixed controller program and isolated
+  Windows recorder/comparer for original NPC instruction entries.
+- Qualify three 30,000-step runs: 90,003 GPU observations, 15,009 RAM samples,
+  375 complete RAM/GPU/RGB checkpoints and complete PCM. Both traced runs
+  record the same 2,700 natural Buddha callback entries.
+- Check all 375 PNGs with an independent decoder and preserve strict runtime
+  identity by default; cross-core output comparison requires an explicit mode.
+- Add 20 test methods and a test-package marker that prevents an installed
+  `tests` package from shadowing repository fixtures. All 880 tests pass on
+  Windows and WSL, with two expected skips. Matching C and whole-feature
+  acceptance counts are unchanged.
+
 ## Shared point-transform interface - 2026-10-17
 
 - Replace conflicting local declarations with one shared header for the
