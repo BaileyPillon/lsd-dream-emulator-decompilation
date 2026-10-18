@@ -266,3 +266,16 @@ tools/dispatch_flow.py text eol=lf
 tests/test_dispatch_flow.py text eol=lf
 docs/DISPATCH_SLOT_FLOW.md text eol=lf
 docs/dispatch-slot-flow-checks.json text eol=lf
+
+# Keep the executed compiler census and its correction reproducible.
+tools/audit_unused_locals.py text eol=lf
+tests/test_unused_locals.py text eol=lf
+docs/UNUSED_LOCAL_CENSUS.md text eol=lf
+docs/unused-local-census-checks.json text eol=lf
+src/menu/main_menu.c text eol=lf
+src/dream/generation_structure.c text eol=lf
+CONTRIBUTING.md text eol=lf
+docs/FEATURE_INVENTORY.md text eol=lf
+docs/PROVENANCE.md text eol=lf
+docs/ROADMAP.md text eol=lf
+docs/SOURCE_LAYOUT_EXPANDED.md text eol=lf

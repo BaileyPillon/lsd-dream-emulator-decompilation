@@ -115,7 +115,6 @@ void cd_file_driver_unk15(void) {
 void cd_file_driver_open(file_buf_t *This, s32 arg1, s32 arg2, s32 arg3) {
     s8 path[0x40];
     unk_disc_file_t file;
-    unk_disc_record_t *rec;
     s32 status;
 
     if (g_CdFrameActive == 0 && g_CdFrameParam == 0) {
@@ -950,9 +949,10 @@ void cd_file_driver_nullsub17(void) {
 
 /*
  * Reads `arg2` bytes of CD data into `arg1` using the frame-driven
- * control/sync path. The unused `sector[0x800]` local is required: gcc 2.6.3
- * keeps a declared array even when unreferenced, and it produces the target's
- * 0x838 frame. The goto-based retry loop (both the sync==5 and read==-1 paths)
+ * control/sync path. The inherited unused `sector[0x800]` keeps the target's
+ * 0x838 frame, but its original source purpose remains unexplained. It is
+ * tracked in docs/UNUSED_LOCAL_CENSUS.md, not credited as explained storage.
+ * The goto-based retry loop (both the sync==5 and read==-1 paths)
  * is required to keep `sectors = arg2 >> 11` and the CdSync call setup inside
  * the loop instead of hoisting them.
  */

@@ -43,10 +43,18 @@ Those three callbacks already had matching C bodies. C bytes, the 40-group
 inventory and zero whole-feature/encounter acceptances remained unchanged at
 that checkpoint. The source counts above include the later two-function recovery.
 
+The [compiler census](UNUSED_LOCAL_CENSUS.md) corrects the current known
+inherited storage remainder from **two to three**. An unused 2,048-byte CD
+sector buffer was outside the earlier selected audit. Compiled C remains
+197,172 / 199,912 bytes, including those existing functions; the 40-group
+inventory, listed-core C groups, original NPC profiles and whole-feature
+acceptance counts remain unchanged.
+
 The earlier [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md)
 reduced identified inherited storage explanations from **24 to 19** at that
-checkpoint. Later recoveries leave the two explanations reported in the current
-snapshot; these existing-C corrections did not add game features.
+checkpoint. Later recoveries left two explanations within that selected audit;
+the compiler census adds the separately missed CD reader. These existing-C
+corrections did not add game features.
 
 The later [constructor and actor storage recovery](CONSTRUCTOR_ACTOR_STORAGE.md)
 explains two more inherited functions, reducing the identified remainder from

@@ -45,6 +45,11 @@ these versions when comparing instructions.
 and loop structure reproduce all 23 original instructions, including GCC's
 stack allocation and register choices, without inline assembly.
 
+The [compiler census](docs/UNUSED_LOCAL_CENSUS.md) collects unused-local
+diagnostics across every configured game C unit using the normal compiler
+flags. Treat warnings as leads: verify complete removal builds before cleanup,
+and retain frame-dependent storage until its source explanation is recovered.
+
 For AI-assisted analysis, use an isolated evidence bundle and candidate:
 
 ```bash

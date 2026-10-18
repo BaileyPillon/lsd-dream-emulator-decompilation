@@ -1,5 +1,17 @@
 # Changelog
 
+## Canonical compiler census and storage correction - 2026-10-18
+
+- Audit all 79 configured game C files with the ordinary bundled compiler
+  flags. Qualify six unused-local leads through four canonical controls and
+  six complete removal builds with actual ELF/GNU extents.
+- Correct the known inherited storage remainder from two to three: the
+  earlier selected audit missed the 2 KB synchronous CD-reader buffer.
+- Remove three unrelated dead pointer declarations. Both ordinary and fresh
+  306-object builds retain the exact original executable; C bytes are unchanged.
+- Add ten source-only census guard tests. Preserve all failed array removals
+  and ten further nonmatching hull-source comparisons as private evidence.
+
 ## Observed original virtual slot loads - 2026-10-18
 
 - Add optional before-instruction caller context to the separate method

@@ -15,6 +15,8 @@
 > explains two further frames, leaving six identified explanations open.
 > The later [atlas and tile-buffer recovery](ATLAS_TILE_STORAGE.md) explains
 > four further frames, leaving two identified explanations open.
+> The later [compiler census](UNUSED_LOCAL_CENSUS.md) finds a previously missed
+> inherited CD-reader buffer, correcting the current known remainder to three.
 > Measurements below retain their original snapshot and scope.
 
 The earlier [five-function audit](SOURCE_QUALITY.md) inspected selected
