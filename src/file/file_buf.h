@@ -5,6 +5,8 @@
 
 #include "base/base.h"
 
+struct file_buf;
+
 typedef struct file_buf_vtable {
     /* 0x000 8006d430 */ u32 type_id;
     /* 0x004 8006d434 */ base_class_t *(*Destroy)(base_class_t *);
@@ -23,11 +25,11 @@ typedef struct file_buf_vtable {
     /* 0x038 8006d468 */ void (*OnNotify)(base_class_t *, base_class_t *, s32);
     /* 0x03C 8006d46c */ void (*Unk14)(void *);
     /* 0x040 8006d470 */ void (*Unk15)(void *);
-    /* 0x044 8006d474 */ void (*Open)(void *, s32, s32, s32);
+    /* 0x044 8006d474 */ void (*Open)(struct file_buf *, s32, s32, s32);
     /* 0x048 8006d478 */ void (*Close)(void *);
     /* 0x04C 8006d47c */ s32 (*Seek)(void *, s32, s32);
     /* 0x050 8006d480 */ void (*Unk19)(void *);
-    /* 0x054 8006d484 */ void (*Read)(void *, void *, s32);
+    /* 0x054 8006d484 */ s32 (*Read)(struct file_buf *, s32, u32);
     /* 0x058 8006d488 */ void (*file_buf_load)(void *, void *);
     /* 0x05C 8006d48c */ void (*file_buf_release)(void *);
     /* 0x060 8006d490 */ void (*Unk23)(void *);

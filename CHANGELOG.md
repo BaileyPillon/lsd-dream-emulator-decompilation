@@ -1,5 +1,17 @@
 # Changelog
 
+## File-driver Open and Read interfaces - 2026-10-18
+
+- Align shared/debug Open arguments and the signed Read result, retaining
+  the unsigned length and removing the queued-read function-pointer cast.
+- Check 600 bounded cases through original methods and four compiled C
+  callers, including 900 original slot-copy calls and no output stubs.
+- Detect five executed instruction faults, reject three incorrect header
+  variants and add nine source-only observation tests.
+- Reproduce the complete original executable with ordinary and fresh
+  306-object builds. C recovery, the two inherited debug-frame explanations,
+  whole-feature acceptance and the separate Bevy port are unchanged.
+
 ## Compared multi-target NPC recording - 2026-10-18
 
 - Add an optional catalogue observer for all 107 checked original callback

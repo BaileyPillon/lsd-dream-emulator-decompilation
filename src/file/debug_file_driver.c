@@ -14,11 +14,11 @@ void file_buf_set_flag(void *);
 void debug_file_driver_construct(void *);
 void debug_file_driver_cleanup(void *);
 void debug_file_driver_unk15(void *);
-void debug_file_driver_open(void *);
+void debug_file_driver_open(file_buf_t *, s32, s32, s32);
 void debug_file_driver_close(void *);
 void debug_file_driver_seek(void *);
 void debug_file_driver_unk19(void *);
-s32 debug_file_driver_read(void);
+s32 debug_file_driver_read(file_buf_t *, s32, u32);
 void debug_file_driver_unk21(void *);
 void debug_file_driver_unk25(void *);
 void debug_file_driver_unk26(void *);
@@ -47,7 +47,7 @@ debug_file_driver_vtable_t g_DEBUG_FILE_DRIVER_VTABLE = {
     debug_file_driver_close,
     debug_file_driver_seek,
     debug_file_driver_unk19,
-    (void (*)(void *)) debug_file_driver_read,
+    debug_file_driver_read,
     debug_file_driver_unk21,
     file_buf_release,
     nullsub13,
@@ -72,7 +72,7 @@ void debug_file_driver_unk15(void * unused0) {
     s8 pad[0x40];
 }
 
-void debug_file_driver_open(void * unused0) {
+void debug_file_driver_open(file_buf_t *unused0, s32 unused1, s32 unused2, s32 unused3) {
     s8 pad[0x40];
 }
 
@@ -85,7 +85,7 @@ void debug_file_driver_seek(void * unused0) {
 void debug_file_driver_unk19(void * unused0) {
 }
 
-s32 debug_file_driver_read(void) {
+s32 debug_file_driver_read(file_buf_t *unused0, s32 unused1, u32 unused2) {
     return 0;
 }
 

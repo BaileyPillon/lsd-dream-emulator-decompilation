@@ -204,6 +204,10 @@ adds 668 matching C bytes from reviewed, attributed source. Both functions and
 the combined ordinary/fresh builds match the original executable, leaving two
 game assembly functions. The original compiler and assembler are unchanged.
 C-byte coverage does not certify original source quality or whole-game parity.
+The [file-driver interface checks](docs/FILE_DRIVER_INTERFACES.md) correct the
+shared/debug Open arguments and Read result while preserving the unsigned
+length. Original methods and slot copying pass 600 bounded cases without
+output stubs. Full disc I/O and the two inherited debug frames remain open.
 The [overlap control-flow study](docs/OVERLAP_CONTROL_FLOW.md) reduces that
 unaccepted candidate's complete-image difference from 148 to 26 bytes. All
 remaining differences are stack displacements; 6,912 existing native graph

@@ -226,3 +226,14 @@ tools/npc_catalogue_trace.py text eol=lf
 tests/test_npc_catalogue_trace.py text eol=lf
 docs/NPC_CATALOGUE_TRACE.md text eol=lf
 docs/npc-catalogue-trace-checks.json text eol=lf
+
+# Keep the recovered file interfaces and their executed verifier reproducible.
+src/file/file_buf.c text eol=lf
+src/file/file_buf.h text eol=lf
+src/file/debug_file_driver.c text eol=lf
+src/file/debug_file_driver.h text eol=lf
+src/file/cd_file_driver.c text eol=lf
+research/file_driver/* text eol=lf
+tests/test_file_driver_interfaces.py text eol=lf
+docs/FILE_DRIVER_INTERFACES.md text eol=lf
+docs/file-driver-interface-checks.json text eol=lf

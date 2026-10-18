@@ -1,0 +1,269 @@
+{
+  "status": "verified_bounded_file_driver_interface_repair",
+  "recorded_date": "2026-10-18",
+  "baseline_commit": "cc0a9c6a6e7e507f8ff5348400ab7c82d0700bf3",
+  "canonical_executable_bytes": 505856,
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "original_and_rebuilt_equal": true,
+  "ordinary_build_equal": true,
+  "fresh_build_objects": 306,
+  "every_object_compiled_fresh": true,
+  "exact_changed_game_inputs": {
+    "src/file/cd_file_driver.c": "8ec4dc209afaa8c5dcc3a51947988433e32324bef8c6deeb9e7cb84196039c5e",
+    "src/file/debug_file_driver.c": "489d1a364e31f9224233abd449e3ebad72a6e98bc56a17b79a24580371df19a2",
+    "src/file/debug_file_driver.h": "42a5541896beeac1accd40148663dbb35ac4ab76b46770605a40977c3d20d820",
+    "src/file/file_buf.c": "bde1cebd69ff84ed3e2eec4a12933569620117b195f54110323f642f26a03170",
+    "src/file/file_buf.h": "6d10a7d9b2eacdce4875c07d3318122253da0397e4364d2622b72990add84caf"
+  },
+  "other_game_build_inputs_preserved": 387,
+  "original_objective_preserved": true,
+  "original_symbol_diagnostic": {
+    "elf_sha256": "c0746d3982c314079a5a24f2d88072c43464032f969eeac5f172c7646df833a7",
+    "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "object_count": 306,
+    "original_link_flags": [
+      "--no-check-sections",
+      "-nostdlib",
+      "-s"
+    ],
+    "diagnostic_link_flags": [
+      "--no-check-sections",
+      "-nostdlib"
+    ],
+    "complete_canonical_image_equal": true,
+    "independent_GNU_sized_function_extents_equal": true
+  },
+  "original_function_ranges": "research/file_driver/function-ranges.json",
+  "original_function_range_count": 7,
+  "original_slot_bindings": [
+    {
+      "table": "g_CD_FILE_DRIVER_VTABLE",
+      "slot": "0x44",
+      "function": "cd_file_driver_open",
+      "address": "0x800272d0"
+    },
+    {
+      "table": "g_CD_FILE_DRIVER_VTABLE",
+      "slot": "0x54",
+      "function": "cd_file_driver_read",
+      "address": "0x800276d0"
+    },
+    {
+      "table": "g_DEBUG_FILE_DRIVER_VTABLE",
+      "slot": "0x44",
+      "function": "debug_file_driver_open",
+      "address": "0x8002c3e0"
+    },
+    {
+      "table": "g_DEBUG_FILE_DRIVER_VTABLE",
+      "slot": "0x54",
+      "function": "debug_file_driver_read",
+      "address": "0x8002c408"
+    }
+  ],
+  "target_ABI_assertions": 10,
+  "compiled_analysis_callers": [
+    {
+      "function": "file_open_common",
+      "address": "0x180000",
+      "bytes": 48,
+      "sha256": "20136277720953071828604723a2fc50da7514570373f7b6e4e78864664bfc6f"
+    },
+    {
+      "function": "file_read_common",
+      "address": "0x180030",
+      "bytes": 48,
+      "sha256": "0c1e8467e62c7a54dae5ed7d60c168b26c016d9fb8700d9206867bdc94df8401"
+    },
+    {
+      "function": "file_open_debug",
+      "address": "0x180060",
+      "bytes": 48,
+      "sha256": "20136277720953071828604723a2fc50da7514570373f7b6e4e78864664bfc6f"
+    },
+    {
+      "function": "file_read_debug",
+      "address": "0x180090",
+      "bytes": 48,
+      "sha256": "0c1e8467e62c7a54dae5ed7d60c168b26c016d9fb8700d9206867bdc94df8401"
+    }
+  ],
+  "analysis_caller_warnings_are_errors": true,
+  "initialized_interface_cases": 600,
+  "positive_method_runs": 1200,
+  "case_groups": {
+    "common/cd/open/busy": 125,
+    "common/cd/open/state": 125,
+    "common/debug/open/empty": 125,
+    "debug/debug/open/empty": 125,
+    "common/cd/read/busy": 25,
+    "common/cd/read/state": 25,
+    "common/debug/read/empty": 25,
+    "debug/debug/read/empty": 25
+  },
+  "original_entry_counts": {
+    "file_driver_copy_vtable_slots": 900,
+    "cd_file_driver_open": 500,
+    "cd_file_driver_lock": 600,
+    "cd_file_driver_unlock": 600,
+    "file_open_common": 375,
+    "debug_file_driver_open": 500,
+    "file_open_debug": 125,
+    "cd_file_driver_read": 100,
+    "file_read_common": 75,
+    "debug_file_driver_read": 100,
+    "file_read_debug": 25
+  },
+  "copied_slot_indices": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    26,
+    27,
+    28,
+    29
+  ],
+  "dependency_output_stubs": 0,
+  "argument_boundary_words": [
+    "0x00000000",
+    "0x00000001",
+    "0x7FFFFFFF",
+    "0x80000000",
+    "0xFFFFFFFF"
+  ],
+  "negative_controls": [
+    {
+      "name": "native_read_result",
+      "address": "0x8002c40c",
+      "executed": 1,
+      "rejected": true,
+      "reason": "Read result word differs from the scoped original path."
+    },
+    {
+      "name": "wrong_read_slot",
+      "address": "0x180040",
+      "executed": 1,
+      "rejected": true,
+      "reason": "Execution escaped the qualified original graph and owned callers."
+    },
+    {
+      "name": "lost_argument_2",
+      "address": "0x18004c",
+      "executed": 1,
+      "rejected": true,
+      "reason": "Driver entry arguments changed."
+    },
+    {
+      "name": "lost_argument_3",
+      "address": "0x18001c",
+      "executed": 1,
+      "rejected": true,
+      "reason": "Driver entry arguments changed."
+    },
+    {
+      "name": "omitted_copied_read_slot",
+      "address": "0x80026dcc",
+      "executed": 1,
+      "rejected": true,
+      "reason": "Original slot copier changed a slot, guard or preserved ABI."
+    }
+  ],
+  "negative_compiler_controls": [
+    {
+      "name": "common_read_void",
+      "rejected": true,
+      "diagnostic_contains": "void",
+      "diagnostic_sha256": "1fd02586eb21d2ab15eecdb504249a64c828173d8b3c2824fb2f5670bef43061"
+    },
+    {
+      "name": "debug_read_void",
+      "rejected": true,
+      "diagnostic_contains": "void",
+      "diagnostic_sha256": "92879cdd8e0aff84614f0080e5b83e636fd4845801f73950f52b7ce9e28e548b"
+    },
+    {
+      "name": "debug_open_receiver_only",
+      "rejected": true,
+      "diagnostic_contains": "arguments",
+      "diagnostic_sha256": "d7bede3dcf512d95aaa0b7a315e781de2101c9ea1999f622848bd286ae70f3a9"
+    }
+  ],
+  "observations_sha256": "0d2a6a2a490dbab63ff61ed7f9d4e18d568e85810c267f9b08b8bac77aaff540",
+  "backend_identity": {
+    "package_version": "2.1.2",
+    "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+    "binding_sha256": "2e6670f03fdba580ad812b13258a74f376884e884e843c54ea305f4f7eaf05bc"
+  },
+  "producer_dependencies": {
+    "research/file_driver/verify.py": "e94f12d681dbbf73ed34753b4923dffa3d91c7f911af3557a181b19db9d086ea",
+    "research/file_driver/consumer.c": "71ea53f1246238683720ce4a80beb7279cbdadd1aef9e2509bb9fecc0dd9db72",
+    "research/file_driver/abi_checks.h": "90ee4bcc764e873f67b9a7214d13961cf43cdd74b30b9fe8d8992e4afd46deda",
+    "research/file_driver/function-ranges.json": "6817dbde0ea9efc0fea419b06682cdc5c71369fc0ab397264092a2061094b9be",
+    "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+    "tools/decomp_workbench.py": "894f17166b4e0f286c6abbcae0ff84988e95347579d192ceadf8f1c3757a44f7",
+    "tools/verify_native_ai.py": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697",
+    "tools/verify_actor_children.py": "09b3beef12fe216bde9dc43840b35bf027ad174935f8a34a9e998465943cd356",
+    "tools/compile_c.py": "ab5217c43e9dca1fff7092d75e8a0ac407b3dd65b256b5c29b3ff29a4fc1afe7",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/progress.py": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+    "configure.py": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+    "requirements.txt": "bcd34abbb33438c8a7e18a9165b8ea5c503a179b23738ccf72dbd659ce174cde",
+    "requirements-card-heap.txt": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212"
+  },
+  "source_only_tests_added": 9,
+  "test_suites": [
+    {
+      "platform": "windows",
+      "tests": 956,
+      "expected_skips": 2,
+      "log_sha256": "d57c4f414a6ea00d234e0c61721ff32a8b30825a7389eb951b2f971a5426ec79"
+    },
+    {
+      "platform": "linux",
+      "tests": 956,
+      "expected_skips": 2,
+      "log_sha256": "61152127522e6d91c585118eff3a3ab44d09d1836415126f6c27832f8f0ea927"
+    }
+  ],
+  "static_vtable_inventory": {
+    "tables": 57,
+    "declared_slots": 2463,
+    "nonnull_slots": 2205,
+    "distinct_targets": 838
+  },
+  "before": {
+    "matching_C_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "bounded_NPC_callbacks": 40,
+    "compared_natural_callback_types": 5,
+    "whole_NPC_encounters_accepted": 0,
+    "whole_feature_groups_accepted": 0
+  },
+  "after": {
+    "matching_C_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "bounded_NPC_callbacks": 40,
+    "compared_natural_callback_types": 5,
+    "whole_NPC_encounters_accepted": 0,
+    "whole_feature_groups_accepted": 0
+  },
+  "new_game_function_C_bytes": 0,
+  "original_behavior_modified": false,
+  "model_API_calls": 0,
+  "Bevy_port_modified": false,
+  "user_game_controlled": false,
+  "retained_private_report_sha256": {
+    ".decomp-lab/file-driver-interfaces-20261018-third/report.json": "dff2a228bc8b0ba0b6250315908b89de2c11c104404d38e0e9718299ae1d8db4",
+    ".decomp-lab/file-driver-fresh-build-20261018-first.json": "46d203c7e5ffec733eea608621d7451573abddb7a37e9ac68adf690ecb3547d6",
+    ".decomp-lab/file-driver-vtables-20261018-first.json": "fcfbfc634d702a62ad5a2bf5867a3ba3c873bce08f6b0932366ed91a6d5c78a3"
+  },
+  "scope": "Boundary-word arguments, result words, guarded objects/tables, copied slots, CD lock transitions and preserved ABI on original debug methods and two CD guard paths per method. No dependency output stubs, actual disc/SDK I/O, destination writes, natural history, CPU timing, complete file behavior or whole-feature acceptance. The two inherited empty debug frames remain unexplained."
+}

@@ -46,6 +46,12 @@ interface. Compiler layout checks, a complete matching rebuild and the bounded
 Gunman replay preserve the original dispatch words; natural attachment graphs
 and complete encounter acceptance remain open.
 
+The [file-driver interface check](FILE_DRIVER_INTERFACES.md) corrects the
+shared/debug Open arguments and signed Read result, retaining the unsigned
+length. Compiled callers, original CD/debug methods and the original slot
+copier pass bounded guard-path checks without output stubs. Full disc/SDK I/O,
+other file callbacks and the two inherited debug frames remain open.
+
 ## Original animation decoder chain
 
 A private execution check resolves the animation record path through its real
