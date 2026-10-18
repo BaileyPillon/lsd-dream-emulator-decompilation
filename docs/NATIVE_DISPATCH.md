@@ -37,6 +37,13 @@ resource tables contain installed CD methods at their Open/Read slots;
 accepted receiver/slot edges remain separate. The CD raw table is outside
 the 57 typed bindings and uses the prior file-driver range qualification.
 
+The optional [caller-context extension](DISPATCH_SLOT_FLOW.md) now proves the
+actual receiver/table/slot loads for those 176 entries. Eleven executed paths
+cover twelve table-slot bindings and 36 observed receiver/table/slot
+combinations. Original/rebuilt traces and stock/observer recorded outputs
+agree. This closes those bounded entry edges; returns, completed transfers
+and the wider dispatch graph remain open.
+
 The partial `game_flow_screen_vtable_t` interface has a byte-array gap between
 its declared Destroy and Run callbacks. It has no bound concrete table symbol
 and is explicitly listed as an unsupported type view; it is excluded from the

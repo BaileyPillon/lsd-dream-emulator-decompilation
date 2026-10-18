@@ -146,6 +146,11 @@ function or whole-feature gate; continue the source work below.
   instead resolves the packed-word and matrix-stream functions through real
   input views. Continue the remaining source gates below.
 
+The [original slot-load trace](DISPATCH_SLOT_FLOW.md) establishes actual
+receiver/table/slot chains for all 176 recorded CD Open/Read entries, including
+the TIM loader's shared tail. Continue return/completion and destination-data
+verification, other dispatch paths, and the full source and gameplay gates.
+
 Two game functions remain in assembly after the
 [sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md): the
 796-byte hull/face query (`func_8001DDF4`) and the 1,944-byte primitive-face query

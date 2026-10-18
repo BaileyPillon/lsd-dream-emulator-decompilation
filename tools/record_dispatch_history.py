@@ -13,7 +13,8 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 import configure
-from tools.build_dispatch_observer import OBSERVER, EXPORTS
+from tools.build_dispatch_observer import OBSERVER, EXPORTS, FLOW_OBSERVER, FLOW_EXPORTS
+from tools.dispatch_flow import flow_windows
 from tools.build_npc_observer import UPSTREAM, MEDNAFEN, SOURCE_SHA256
 from tools.record_npc_history import STOCK_RUNTIME, digest_text, sha256
 from tools.dispatch_trace import validate_program, expand_program, verified_selection
@@ -22,7 +23,7 @@ from tools.replay_cold_start_headless import require, select_compiler, write_jso
 from tools.runtime_inputs import load_verified_manifest, record_file
 DEFAULT_PROGRAM = ROOT / 'research/headless/file-driver-boot-route.json'
 HOST_SOURCES = tuple(ROOT / 'research/headless' / name for name in
-    ('ReplayColdStart.cs','RecordDispatchHistory.cs','DispatchInstructionTrace.cs'))
+    ('ReplayColdStart.cs','RecordDispatchHistory.cs','DispatchInstructionTrace.cs','DispatchFlowTrace.cs'))
 CATALOGUE_FILE = ROOT / 'research/dispatch/target-catalogue.json'
 CATALOGUE_PROVENANCE = ROOT / 'docs/dispatch-catalogue-checks.json'
 SUPPLEMENTAL_FILE = ROOT / 'research/file_driver/function-ranges.json'
@@ -43,6 +44,12 @@ def load_observer_profile(path):
             'Rebuild the observer profile with the current published source.')
     require(profile.get('observer_mode') == 'method_entries' and set(EXPORTS) <= set(profile.get('exported_functions', [])),
             'Use the separate complete-method observer profile.')
+    if 'flow_protocol' in profile:
+        require(profile['flow_protocol'] == 1 and profile.get('flow_event_bytes') == 664
+                and profile.get('flow_history_instructions') == 16
+                and profile.get('flow_header_sha256') == record_file(FLOW_OBSERVER)['sha256']
+                and set(FLOW_EXPORTS) <= set(profile.get('exported_functions', [])),
+                'Rebuild the optional caller-flow observer with the current source and protocol.')
     files = []
     for key, filename in (('core', 'shock.wbx'), ('compressed_core', 'shock.wbx.zst')):
         item = profile.get(key, {})
@@ -66,6 +73,7 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
     frames = program['frames'] if frames is None else frames
     host_sources = HOST_SOURCES
     game = (ROOT / configure.ROM).read_bytes()
+    sites = flow_windows(program, game)
     catalogue_raw = CATALOGUE_FILE.read_bytes()
     catalogue_data = json.loads(catalogue_raw)
     catalogue_provenance = json.loads(CATALOGUE_PROVENANCE.read_bytes())
@@ -102,10 +110,12 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
         observer_profile = Path(observer_profile).resolve(strict=True)
         require(not workspace.is_relative_to(observer_profile.parent), 'Keep recording output outside the observer build.')
         profile, core_files = load_observer_profile(observer_profile)
+        require(bool(sites) == (profile.get('flow_protocol') == 1),
+                'Flow call sites and the optional observer protocol must agree.')
     dotnet = str(dotnet or shutil.which('dotnet') or Path(os.environ.get('ProgramFiles', 'C:/Program Files')) / 'dotnet/dotnet.exe')
     compiler = select_compiler(subprocess.check_output([dotnet, '--list-sdks'], text=True))
     framework = Path(os.environ['WINDIR']) / 'Microsoft.NET/Framework64/v4.0.30319'
-    source_paths = [*host_sources,OBSERVER,program_file,Path(__file__).resolve(),
+    source_paths = [*host_sources,OBSERVER,FLOW_OBSERVER,ROOT/'tools/dispatch_flow.py',program_file,Path(__file__).resolve(),
         ROOT/'tools/build_dispatch_observer.py',ROOT/'tools/build_npc_observer.py',ROOT/'tools/dispatch_trace.py',
         ROOT/'tools/record_npc_history.py',ROOT/'tools/replay_cold_start_headless.py',ROOT/'tools/runtime_inputs.py',
         ROOT/'tools/inventory_vtables.py',ROOT/'tools/psx_image.py',ROOT/'research/compiler/compare_function.py',
@@ -146,7 +156,7 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
         RAM_sample_interval=program['RAM_sample_interval'],trace_enabled=profile is not None,
         arm_frame=program['method_trace']['arm_frame'],
         dispatch_targets=[dict(pc=pc,bytes=row['function_bytes']) for pc,row in selected.items()],
-        dispatch_words=[symbols[name] for name in memory_symbols])
+        dispatch_words=[symbols[name] for name in memory_symbols], flow_sites=sites)
     shutil.copyfile(CATALOGUE_FILE,workspace/'dispatch-catalogue.json')
     shutil.copyfile(CATALOGUE_PROVENANCE,workspace/'dispatch-provenance.json')
     shutil.copyfile(SUPPLEMENTAL_FILE,workspace/'method-ranges.json')
