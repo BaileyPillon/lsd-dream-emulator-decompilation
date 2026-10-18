@@ -1,5 +1,16 @@
 # Changelog
 
+## Matching CD driver declarations - 2026-10-18
+
+- Declare thirteen internal functions before use and give the blocking read
+  helper and SDK destination their explicit types. Preserve the original
+  word-address boundary, requests, retries and polling operations.
+- Reduce ordinary compiler warnings in the CD unit from 64 to three.
+  Ordinary and fresh 306-object builds reproduce the original executable.
+- Repeat existing file-driver ABI checks and retain sixteen independently
+  qualified hull-source comparisons without promoting a collision candidate.
+  C recovery and whole-feature acceptance remain unchanged.
+
 ## Original method returns and synchronous disc buffers - 2026-10-18
 
 - Add an optional return observer with original caller, stack, instruction

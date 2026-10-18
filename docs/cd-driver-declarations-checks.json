@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "status": "verified_matching_CD_driver_declaration_repair",
+  "recorded_utc": "2026-10-18T13:03:31.566248+00:00",
+  "repository": "https://github.com/BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "635b37f757cb9e793071c75e2797648f62053417",
+  "canonical_executable": {
+    "bytes": 505856,
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+  },
+  "source_counts_before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "original_feature_total": null,
+  "current_C_bytes": 197172,
+  "game_text_bytes": 199912,
+  "current_compiled_C_percentage": 98.62939693465124,
+  "original_corrected_C_bytes": 169540,
+  "C_bytes_added_since_original": 27632,
+  "new_C_bytes": 0,
+  "new_C_functions_accepted": 0,
+  "modified_game_source": "src/file/cd_file_driver.c",
+  "source_before_sha256": "ac0751c57a143be3d061c34cec38670fe54af4b4a0471a6944cb5065af6b63b6",
+  "source_after_sha256": "bf4e2923548db83c1a1aaa7bdc8bee0c3285521263aa5175c3280ca9712a1241",
+  "added_forward_declarations": [
+    "cd_file_driver_get_vtable",
+    "cd_file_driver_init",
+    "cd_file_driver_begin_read",
+    "cd_file_driver_find_disc_record",
+    "cd_file_driver_build_path",
+    "cd_file_driver_end_read",
+    "cd_file_driver_queue_request",
+    "cd_file_driver_find_disc_record_index",
+    "cd_file_driver_reset_cache",
+    "cd_file_driver_get_aligned_size",
+    "cd_file_driver_get_disc_record",
+    "cd_file_driver_free_request",
+    "cd_file_driver_alloc_request"
+  ],
+  "added_forward_declaration_count": 13,
+  "blocking_helper_has_complete_prototype": true,
+  "SDK_request_destination_is_pointer": true,
+  "original_word_address_boundary_conversions_explicit": true,
+  "ordinary_compiler_warnings_before": 64,
+  "ordinary_compiler_warnings_after": 3,
+  "compiler_warnings_removed": 61,
+  "warning_scope": "One configured C translation unit with unchanged ordinary -Wall options; exclude the separate linker RWX warning.",
+  "remaining_compiler_warnings": [
+    "`request' might be used uninitialized in this function",
+    "passing arg 2 from incompatible pointer type",
+    "unused variable `sector'"
+  ],
+  "compiler_flags_changed": false,
+  "unused_storage_changed": false,
+  "source_before_control_and_three_candidate_complete_images": [
+    {
+      "stage": "baseline-build",
+      "comparison": {
+        "bytes": 739,
+        "sha256": "1e09c90b2eda68af5227cbbfa55537e4a59282aa522130c82333267b533f9cda"
+      },
+      "candidate_source_sha256": "ac0751c57a143be3d061c34cec38670fe54af4b4a0471a6944cb5065af6b63b6"
+    },
+    {
+      "stage": "typed-build",
+      "comparison": {
+        "bytes": 742,
+        "sha256": "c53d3c2431489bcb9df5c8aa59f8c26c3bbb8a8d754124f772bf186dd31e6693"
+      },
+      "candidate_source_sha256": "b474ee5c773e6022ac0d3bee29d282c758eb518e32f84fa0a304724ae6703a26"
+    },
+    {
+      "stage": "declared-build",
+      "comparison": {
+        "bytes": 754,
+        "sha256": "df4deb65caa758c0f8fe2b755d3be7cd6b4282b2c3950250b2ace6fb7526aaac"
+      },
+      "candidate_source_sha256": "a0c453ed7791a292dd39344a456987090e83d81a404617920698bf1f33930a2a"
+    },
+    {
+      "stage": "final-build",
+      "comparison": {
+        "bytes": 748,
+        "sha256": "61f8e08ce911e9ddab2735f8fe3db52914e231f0dafb92c04de89a2c3008374d"
+      },
+      "candidate_source_sha256": "44e8b40d61baebff16ba5cb5d7c10db711c83034551000d735d1c262953d58f4"
+    }
+  ],
+  "normal_complete_image_equal": true,
+  "fresh_complete_image_equal": true,
+  "all_306_objects_absent_before_fresh_build": true,
+  "complete_build_objects": 306,
+  "protected_build_inputs": 392,
+  "modified_build_input_count": 1,
+  "other_391_build_inputs_preserved": true,
+  "normal_build_log": {
+    "bytes": 708,
+    "sha256": "85fec748fb1610852b09a26f9cce204c90c5565ed3454a533d363e2465384287"
+  },
+  "fresh_build_report": {
+    "bytes": 108687,
+    "sha256": "b46e11a8f0018499902080ce0aca1498b9ff27d54cce31fcf1f715a4079eefb8"
+  },
+  "repeated_file_driver_ABI": {
+    "report": {
+      "bytes": 47865,
+      "sha256": "bdaa8b80093307e8012ff58418dfec8181b0e9ca701c4ceca72680295c4d6638"
+    },
+    "initialized_cases": 600,
+    "positive_method_runs": 1200,
+    "original_function_ranges": 7,
+    "compiled_C_callers": 4,
+    "executed_fault_controls": 5,
+    "rejected_header_controls": 3,
+    "dependency_output_stubs": 0,
+    "backend": {
+      "package_version": "2.1.2",
+      "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+      "binding_sha256": "2e6670f03fdba580ad812b13258a74f376884e884e843c54ea305f4f7eaf05bc"
+    },
+    "new_distinct_input_domain": false,
+    "disc_IO_accepted": false
+  },
+  "tooling_tests": {
+    "windows": {
+      "tests": 1054,
+      "expected_skips": 2,
+      "result": "passed",
+      "log": {
+        "bytes": 172432,
+        "sha256": "40978954ea66a304182e5e3526abb80690beec77230d4194687b093da6b26da3"
+      }
+    },
+    "linux": {
+      "tests": 1054,
+      "expected_skips": 2,
+      "result": "passed",
+      "log": {
+        "bytes": 172432,
+        "sha256": "9e978e5b2d8061f5f3b167e5db3a7d209690253fc1ef33522405f745c66d1fc6"
+      }
+    }
+  },
+  "new_source_only_tests": 0,
+  "hull_source_study": {
+    "report": {
+      "bytes": 10774,
+      "sha256": "42763cfc9f3b14f0e24eb98a0a54cd3b53f1beb170f4fe950dee97f290738d22"
+    },
+    "qualified_comparisons": 16,
+    "new_qualified_forms": 12,
+    "repeated_controls": 4,
+    "legacy_C89_compile_rejections_retained": 4,
+    "original_function_bytes": 796,
+    "best_differing_bytes": 26,
+    "exact_matches": 0,
+    "source_promoted": false,
+    "new_game_runtime_cases": 0
+  },
+  "upstream_check": {
+    "repository": "https://github.com/brian-oblivion/lsddecomp",
+    "commit": "90a398e4f429b4371be05648605fc198b9efb395",
+    "commit_metadata": {
+      "bytes": 35474,
+      "sha256": "f2acb63cbb5a0c1926a24ee10922ecf7cd19aab7b40b72d9940abb9a30e9d217"
+    },
+    "files": {
+      "scene_node.c": {
+        "bytes": 42911,
+        "sha256": "977b3d966aebc44e33b2757a00d531a6c12aab01e053c3df8fa60d3ae12c2d9c"
+      },
+      "tmd_model.c": {
+        "bytes": 23449,
+        "sha256": "9a4dfdd9fdad6571b4e534132801c05e958df85856c63658e2990aa6347dfe35"
+      },
+      "cd_driver.c": {
+        "bytes": 34419,
+        "sha256": "673314e0931184c4d4d1d728d80433a3d04fe74484526d2f8e42b549747e0582"
+      },
+      "LICENSE": {
+        "bytes": 8459,
+        "sha256": "1fe639e0de723261f4dc33a3c43b53773b5873c0f5b3071e319d7c0a8f009fa0"
+      }
+    },
+    "complete_recovery_claim_does_not_close_our_source_gates": true,
+    "unused_hull_array_bytes": 24,
+    "unused_primitive_vector": true,
+    "unused_primitive_distance_element": true,
+    "new_source_imported": false
+  },
+  "canonical_disc_track": {
+    "bytes": 648088896,
+    "sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61"
+  },
+  "playable_launcher_sha256": "83d516c292694ebf64f568c8025b69a8161a05c51b564c6a2501857804cc4179",
+  "Bevy_unchanged": true,
+  "Bevy_commit": "0610f776185e8e25d9bc8c39150fa69b90395293",
+  "frozen_objective_sha256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+  "original_game_behavior_changed": false,
+  "user_emulator_UI_controlled": false,
+  "new_natural_controller_histories": 0,
+  "earlier_method_return_evidence": "docs/dispatch-return-checks.json",
+  "new_original_feature_groups": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "complete_state_parity_checked": false,
+  "original_hardware_timing_verified": false,
+  "AI_model_API_called": false,
+  "original_NPC_behavior_added": false,
+  "remaining_gates": [
+    "Two collision routines still require matching C without padding or instruction tricks.",
+    "Three inherited storage functions still require source explanations; other source-quality issues are not certified exhausted.",
+    "The request-initialization and frame-callback diagnostics require source/call-site investigation.",
+    "Asynchronous disc completion, SDK errors, wider dispatch, natural encounters and full original-game scenario review remain open.",
+    "Complete emulator-state and original hardware timing acceptance remain unproven."
+  ],
+  "producer_sha256": "5e0032174115e6c23c6fdb74da2b97f35af917e0517da6401e941bc139a20f36",
+  "scope": "Matching C declaration and pointer-role repair with unchanged executable, source coverage and gameplay acceptance."
+}
