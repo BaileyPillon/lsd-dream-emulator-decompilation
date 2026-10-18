@@ -8,6 +8,7 @@ from tools.record_npc_history import clean_name, digest_text
 from tools.psx_image import executable_offset
 from tools.replay_cold_start_headless import require
 from research.compiler.compare_function import CANONICAL_SHA256
+from tools.collision_calls import selection as collision_selection
 
 SUPPLEMENTAL_FAMILIES={
     'file_driver':('research/file_driver/function-ranges.json','docs/file-driver-interface-checks.json',
@@ -65,6 +66,7 @@ def validate_program(program):
     require(type(interval) is int and 1 <= interval <= frames, 'Invalid RAM observation interval.')
     trace = program.get('method_trace', {})
     supplemental_profile(program)
+    collision_selection(program)
     names = trace.get('targets')
     require(isinstance(names, list) and 1 <= len(names) <= 16
             and all(isinstance(name,str) and re.fullmatch(r'[A-Za-z_]\w*',name) for name in names)

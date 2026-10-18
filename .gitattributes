@@ -329,3 +329,12 @@ research/headless/collision-opening-route.json text eol=lf
 docs/collision-boundary-checks.json text eol=lf
 docs/collision-entry-checks.json text eol=lf
 docs/NATURAL_COLLISION_ENTRIES.md text eol=lf
+
+# Preserve raw-byte provenance for the executed primitive call sampler.
+research/runtime_state/collision_call_observer.h text eol=lf
+research/headless/collision-call-opening-route.json text eol=lf
+tools/collision_calls.py text eol=lf
+tools/inspect_collision_calls.py text eol=lf
+tests/test_collision_calls.py text eol=lf
+docs/collision-call-checks.json text eol=lf
+docs/NATURAL_COLLISION_CALLS.md text eol=lf

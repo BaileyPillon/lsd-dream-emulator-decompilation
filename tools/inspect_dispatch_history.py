@@ -27,6 +27,7 @@ from tools.build_dispatch_observer import SDK_EXPORTS
 from tools.build_npc_observer import UPSTREAM, MEDNAFEN, SOURCE_SHA256
 from research.compiler.compare_function import CANONICAL_SHA256
 from tools.psx_image import executable_offset
+from tools.collision_calls import selection as collision_selection,EXPORTS as COLLISION_EXPORTS,EVENT_BYTES as COLLISION_EVENT_BYTES,FRAME_BYTES as COLLISION_FRAME_BYTES
 
 HEX_FIELDS=('pc','a0','a1','a2','a3','ra','sp','instruction','transfer_pc','delay_pc','transfer_word','delay_word')
 ENTRY_FIELDS=('relative_frame','pc','a0','a1','a2','a3','ra','sp','timestamp','instruction',
@@ -148,6 +149,7 @@ def inspect(folder):
     require(result.get('status')=='recorded_pinned_dispatch_history' and result.get('input_files_preserved') is True
             and exit_record.get('exit_code')==0,'The owned method recorder did not finish and preserve its inputs.')
     program=validate_program(manifest['program'])
+    collision_config=collision_selection(program)
     require(manifest['runtime_kind'] in ('distributed','dispatch_observer'),'Unsupported method runtime kind.')
     frozen={}
     for item in manifest['source_snapshots']:
@@ -199,6 +201,7 @@ def inspect(folder):
         require(return_selection is not None,'SDK read observation requires original method returns.')
         return_selection['sdk_targets']=sdk_selection
     require(settings.get('return_trace')==return_selection,'Return settings differ from qualified original methods.')
+    require(settings.get('collision_calls')==collision_config,'Primitive sample settings differ from the declared program.')
     require(manifest['dispatch']['targets']==list(selected.values())
             and settings['dispatch_targets']==[dict(pc=pc,bytes=row['function_bytes']) for pc,row in selected.items()]
             and settings['dispatch_words']==list(manifest['dispatch']['memory_symbols'].values()),
@@ -220,6 +223,14 @@ def inspect(folder):
         require(bool(sites)==(profile.get('flow_protocol')==1),'Flow sites and observer protocol disagree.')
         require(bool(return_selection)==(profile.get('return_protocol')==1),'Return interface and observer protocol disagree.')
         require(bool(sdk_selection)==(profile.get('sdk_read_protocol')==1),'SDK interface and observer protocol disagree.')
+        require(bool(collision_config)==(profile.get('collision_call_protocol')==1),'Primitive sample interface and observer protocol disagree.')
+        if collision_config:
+            require({'CollisionCallTrace.cs','collision_call_observer.h','collision_calls.py'}<=set(frozen)
+                    and profile.get('collision_call_event_bytes')==COLLISION_EVENT_BYTES
+                    and profile.get('collision_call_frame_payload_bytes')==COLLISION_FRAME_BYTES
+                    and profile.get('collision_call_header_sha256')==frozen['collision_call_observer.h'][1]['sha256']
+                    and set(COLLISION_EXPORTS)<=set(profile['exported_functions']),
+                    'Incomplete primitive sampler source or transport provenance.')
         if sdk_selection:
             require({'SdkReadTrace.cs','sdk_read_observer.h','sdk_reads.py',sdk_range_name}<=set(frozen)
                     and profile.get('sdk_read_event_bytes')==464
@@ -245,6 +256,12 @@ def inspect(folder):
     else:
         require(profile is None and settings['trace_enabled'] is False,'A distributed run cannot claim method observation.')
     output=folder/'observations'
+    if not collision_config or kind=='distributed':
+        require(all(not (output/name).exists() for name in ('collision-calls.bin','collision-call-ram.bin','collision-call-summary.json')),
+                'Undeclared primitive sample data cannot be accepted.')
+    else:
+        require(all((output/name).is_file() for name in ('collision-calls.bin','collision-call-ram.bin','collision-call-summary.json')),
+                'Declared primitive sample output is incomplete; use its dedicated verifier for payload acceptance.')
     native=json.loads((output/'report.json').read_text(encoding='utf-8-sig'))
     require(native['status']=='recorded_static_method_history' and native['frames_advanced']==frames+1
             and native['submitted_frames']==frames and native['game_RAM_injected'] is False

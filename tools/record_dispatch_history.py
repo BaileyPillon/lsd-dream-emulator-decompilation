@@ -15,6 +15,8 @@ sys.path.insert(0,str(ROOT))
 import configure
 from tools.build_dispatch_observer import OBSERVER, EXPORTS, FLOW_OBSERVER, FLOW_EXPORTS, RETURN_OBSERVER, RETURN_EXPORTS
 from tools.build_dispatch_observer import SDK_OBSERVER, SDK_EXPORTS
+from tools.build_dispatch_observer import COLLISION_OBSERVER
+from tools.collision_calls import selection as collision_selection,EXPORTS as COLLISION_EXPORTS,EVENT_BYTES as COLLISION_EVENT_BYTES,FRAME_BYTES as COLLISION_FRAME_BYTES
 from tools.sdk_reads import RANGES as SDK_RANGES, HEAP_RANGES, RECOVERY_RANGES, verified_sdk_selection
 from tools.dispatch_flow import flow_windows
 from tools.dispatch_returns import verified_return_selection
@@ -26,7 +28,7 @@ from tools.replay_cold_start_headless import require, select_compiler, write_jso
 from tools.runtime_inputs import load_verified_manifest, record_file
 DEFAULT_PROGRAM = ROOT / 'research/headless/file-driver-boot-route.json'
 HOST_SOURCES = tuple(ROOT / 'research/headless' / name for name in
-    ('ReplayColdStart.cs','RecordDispatchHistory.cs','DispatchInstructionTrace.cs','DispatchFlowTrace.cs','DispatchReturnTrace.cs','SdkReadTrace.cs'))
+    ('ReplayColdStart.cs','RecordDispatchHistory.cs','DispatchInstructionTrace.cs','DispatchFlowTrace.cs','DispatchReturnTrace.cs','SdkReadTrace.cs','CollisionCallTrace.cs'))
 CATALOGUE_FILE = ROOT / 'research/dispatch/target-catalogue.json'
 CATALOGUE_PROVENANCE = ROOT / 'docs/dispatch-catalogue-checks.json'
 SUPPLEMENTAL_FILE = ROOT / 'research/file_driver/function-ranges.json'
@@ -66,6 +68,12 @@ def load_observer_profile(path):
                 and profile.get('sdk_read_header_sha256')==record_file(SDK_OBSERVER)['sha256']
                 and set(SDK_EXPORTS)<=set(profile.get('exported_functions',[])),
                 'Rebuild the optional SDK read observer with the current source and protocol.')
+    if 'collision_call_protocol' in profile:
+        require(profile['collision_call_protocol']==1 and profile.get('collision_call_event_bytes')==COLLISION_EVENT_BYTES
+                and profile.get('collision_call_frame_payload_bytes')==COLLISION_FRAME_BYTES
+                and profile.get('collision_call_header_sha256')==record_file(COLLISION_OBSERVER)['sha256']
+                and set(COLLISION_EXPORTS)<=set(profile.get('exported_functions',[])),
+                'Rebuild the separate primitive sampler with its current source and transport.')
     files = []
     for key, filename in (('core', 'shock.wbx'), ('compressed_core', 'shock.wbx.zst')):
         item = profile.get(key, {})
@@ -85,6 +93,7 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
     require(os.name == 'nt' and sys.maxsize > 2**32, 'The qualified recorder requires 64-bit Windows.')
     program_file = Path(program_file).resolve(strict=True)
     program = validate_program(json.loads(program_file.read_text(encoding='utf-8-sig')))
+    collision_config=collision_selection(program)
     submitted = expand_program(program, frames)
     frames = program['frames'] if frames is None else frames
     host_sources = HOST_SOURCES
@@ -141,11 +150,13 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
                 'Return interface selection and observer protocol must agree.')
         require(bool(sdk_selection)==(profile.get('sdk_read_protocol')==1),
                 'SDK read interface selection and observer protocol must agree.')
+        require(bool(collision_config)==(profile.get('collision_call_protocol')==1),
+                'Primitive snapshot selection and observer protocol must agree.')
     dotnet = str(dotnet or shutil.which('dotnet') or Path(os.environ.get('ProgramFiles', 'C:/Program Files')) / 'dotnet/dotnet.exe')
     compiler = select_compiler(subprocess.check_output([dotnet, '--list-sdks'], text=True))
     framework = Path(os.environ['WINDIR']) / 'Microsoft.NET/Framework64/v4.0.30319'
     source_paths = [*host_sources,OBSERVER,FLOW_OBSERVER,RETURN_OBSERVER,SDK_OBSERVER,sdk_range_file,ROOT/'tools/sdk_reads.py',ROOT/'tools/dispatch_flow.py',
-        ROOT/'tools/dispatch_returns.py',RETURN_PROVENANCE,program_file,Path(__file__).resolve(),
+        ROOT/'tools/dispatch_returns.py',RETURN_PROVENANCE,COLLISION_OBSERVER,ROOT/'tools/collision_calls.py',program_file,Path(__file__).resolve(),
         ROOT/'tools/build_dispatch_observer.py',ROOT/'tools/build_npc_observer.py',ROOT/'tools/dispatch_trace.py',
         ROOT/'tools/record_npc_history.py',ROOT/'tools/replay_cold_start_headless.py',ROOT/'tools/runtime_inputs.py',
         ROOT/'tools/inventory_vtables.py',ROOT/'tools/psx_image.py',ROOT/'research/compiler/compare_function.py',
@@ -186,7 +197,8 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
         RAM_sample_interval=program['RAM_sample_interval'],trace_enabled=profile is not None,
         arm_frame=program['method_trace']['arm_frame'],
         dispatch_targets=[dict(pc=pc,bytes=row['function_bytes']) for pc,row in selected.items()],
-        dispatch_words=[symbols[name] for name in memory_symbols], flow_sites=sites, return_trace=return_selection)
+        dispatch_words=[symbols[name] for name in memory_symbols], flow_sites=sites, return_trace=return_selection,
+        collision_calls=collision_config)
     shutil.copyfile(CATALOGUE_FILE,workspace/'dispatch-catalogue.json')
     shutil.copyfile(CATALOGUE_PROVENANCE,workspace/'dispatch-provenance.json')
     shutil.copyfile(supplemental_file,workspace/'method-ranges.json')

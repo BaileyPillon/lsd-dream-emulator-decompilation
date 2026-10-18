@@ -24253,6 +24253,57 @@
       "original_game_modified": false,
       "Bevy_port_modified": false,
       "model_API_calls": 0
+    },
+    "natural_primitive_collision_calls_20261018": {
+      "evidence": "docs/collision-call-checks.json",
+      "guide": "docs/NATURAL_COLLISION_CALLS.md",
+      "before": {
+        "c_bytes": 197172,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 2,
+        "inherited_storage_explanations": 3,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 38,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 40,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 197172,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 2,
+        "inherited_storage_explanations": 3,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 38,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 40,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "eligible_primitive_entries": 643,
+      "completed_samples": 52,
+      "hits": 19,
+      "misses": 33,
+      "sampled_polygon_visits": 924,
+      "complete_main_RAM_payload_bytes_each_observer": 218103808,
+      "decoded_PNGs": 156,
+      "retained_data_controls_rejected": 14,
+      "original_rebuilt_samples_and_RAM_equal": true,
+      "every_recorded_game_output_equal": true,
+      "original_game_modified": false,
+      "Bevy_port_modified": false,
+      "model_API_calls": 0,
+      "new_C_bytes": 0,
+      "new_NPC_profiles": 0,
+      "whole_feature_groups_accepted": 0,
+      "whole_NPC_encounters_accepted": 0,
+      "geometry_allocation_ownership_accepted": false,
+      "complete_state_parity_checked": false
     }
   }
 }
