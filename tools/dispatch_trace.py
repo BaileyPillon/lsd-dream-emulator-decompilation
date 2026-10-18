@@ -9,6 +9,20 @@ from tools.psx_image import executable_offset
 from tools.replay_cold_start_headless import require
 from research.compiler.compare_function import CANONICAL_SHA256
 
+SUPPLEMENTAL_FAMILIES={
+    'file_driver':('research/file_driver/function-ranges.json','docs/file-driver-interface-checks.json',
+                   'verified_bounded_file_driver_interface_repair','file_driver_interface_ranges'),
+    'collision':('research/collision/function-ranges.json','docs/collision-boundary-checks.json',
+                 'verified_complete_original_collision_boundaries','collision_boundary_ranges'),
+}
+
+
+def supplemental_profile(program):
+    family=program.get('method_trace',{}).get('range_family','file_driver')
+    require(isinstance(family,str) and family in SUPPLEMENTAL_FAMILIES,
+            'Select a declared complete-method range family.')
+    return SUPPLEMENTAL_FAMILIES[family]
+
 
 def sha256(data):
     return hashlib.sha256(data).hexdigest()
@@ -50,6 +64,7 @@ def validate_program(program):
     interval = program.get('RAM_sample_interval')
     require(type(interval) is int and 1 <= interval <= frames, 'Invalid RAM observation interval.')
     trace = program.get('method_trace', {})
+    supplemental_profile(program)
     names = trace.get('targets')
     require(isinstance(names, list) and 1 <= len(names) <= 16
             and all(isinstance(name,str) and re.fullmatch(r'[A-Za-z_]\w*',name) for name in names)
@@ -109,14 +124,15 @@ def verified_selection(program, catalogue, provenance, catalogue_raw, executable
     owners={int(row['pc'],16):row['function'] for row in targets}
     require(len(owners)==len(targets),'Ambiguous original target function addresses.')
     if supplemental is not None:
+        range_path,_proof_path,range_status,range_source=supplemental_profile(program)
         require(supplemental_provenance is not None and supplemental_raw is not None
-                and supplemental_provenance.get('status')=='verified_bounded_file_driver_interface_repair'
+                and supplemental_provenance.get('status')==range_status
                 and supplemental_provenance.get('canonical_executable_sha256')==CANONICAL_SHA256
                 and supplemental_provenance.get('original_symbol_diagnostic',{}).get('complete_canonical_image_equal') is True
                 and supplemental_provenance.get('original_symbol_diagnostic',{}).get('independent_GNU_sized_function_extents_equal') is True,
                 'Supplemental method ranges need their complete canonical ELF/GNU qualification.')
         require(hashlib.sha256(supplemental_raw).hexdigest()==supplemental_provenance.get('producer_dependencies',{}).get(
-                    'research/file_driver/function-ranges.json')
+                    range_path)
                 and isinstance(supplemental,list) and len(supplemental)==supplemental_provenance.get('original_function_range_count'),
                 'Supplemental range bytes differ from their published provenance.')
         names=set()
@@ -132,7 +148,7 @@ def verified_selection(program, catalogue, provenance, catalogue_raw, executable
             require(hashlib.sha256(code).hexdigest()==record['sha256'],'Complete supplemental method differs from original.')
             row=dict(function=name,pc=f'0x{pc:08X}',function_bytes=length,function_sha256=record['sha256'],
                 entry_instruction_sha256=hashlib.sha256(code[:4]).hexdigest(),
-                range_source='file_driver_interface_ranges',bindings=[item for item in
+                range_source=range_source,bindings=[item for item in
                     supplemental_provenance.get('original_slot_bindings',[]) if item['function']==name])
             if name in by_name:
                 require(all(row[key]==by_name[name][key] for key in

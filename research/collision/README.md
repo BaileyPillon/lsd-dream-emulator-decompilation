@@ -1,5 +1,10 @@
 # Collision recovery research
 
+The [natural entry profile](../../docs/NATURAL_COLLISION_ENTRIES.md) records
+both original routines in the opening route, including both hull-owned
+primitive call sites and their register/stack-role relationships. It supplies
+bounded natural evidence without accepting returns or complete input geometry.
+
 The [shared accessor declaration](../../docs/COLLISION_API.md#shared-bounds-accessor-declaration)
 keeps the canonical caller and getter compatible. The overlap research recipe
 uses the same primitive pointer interface. The latest

@@ -33,6 +33,13 @@ read lifetime windows, with 35 backing allocations actually freed. Failed RAM,
 reset-censored generations and automatic read recovery remain separate. This
 adds no C bytes, original feature, NPC profile or whole-feature acceptance.
 
+The [natural collision entry trace](NATURAL_COLLISION_ENTRIES.md) adds compared
+observations of both remaining assembly functions in populated geometry: 194
+hull entries and 643 primitive entries, including both hull call sites. It
+checks 484 observed argument relationships without claiming returns, collision
+results or complete geometry ownership. C, NPC and whole-feature counts are
+unchanged.
+
 The [complete software movie decode](MOVIE_DECODE.md) adds payload evidence
 for all **39** routed movies: **22,382** video frames and **27,921** XA audio
 packets, independently hashed again as raw decoded bytes. It adds no C bytes,

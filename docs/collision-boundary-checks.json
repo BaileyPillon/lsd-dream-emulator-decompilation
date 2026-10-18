@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "status": "verified_complete_original_collision_boundaries",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "original_function_range_count": 2,
+  "object_count": 306,
+  "original_symbol_diagnostic": {
+    "complete_canonical_image_equal": true,
+    "independent_GNU_sized_function_extents_equal": true,
+    "canonical_symbolic_elf_sha256": "c0746d3982c314079a5a24f2d88072c43464032f969eeac5f172c7646df833a7",
+    "GNU_symbol_table_sha256": "799952f7601b0d5d3f8b0e51b8d3289c53b2cb9a2f18a9b8d769ebdb43b7e7d6",
+    "diagnostic": {
+      "diagnostic_image_matches_candidate": true,
+      "candidate_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+      "diagnostic_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+      "original_link_flags": [
+        "--no-check-sections",
+        "-nostdlib",
+        "-s"
+      ],
+      "diagnostic_link_flags": [
+        "--no-check-sections",
+        "-nostdlib"
+      ],
+      "removed_symbol_strip_flag": "-s"
+    }
+  },
+  "producer_dependencies": {
+    "research/collision/function-ranges.json": "eefd513aaa80e3b9c2345c485afa6a4f32ab86a2d0aa4ef4e424eb4b96ee220c",
+    "tools/collision_boundaries.py": "b1d2ffadc9891c009cb9606d89c4964e93dd2841321aebe44dde7cb1edf36bfb"
+  },
+  "original_slot_bindings": [],
+  "range_selection_supplies_runtime_execution_evidence": false,
+  "original_declared_dispatch_catalogue_modified": false,
+  "new_C_bytes": 0,
+  "whole_feature_groups_accepted": 0
+}

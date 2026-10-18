@@ -1,5 +1,12 @@
 # Roadmap
 
+The [natural collision entry profile](NATURAL_COLLISION_ENTRIES.md) now records
+both remaining assembly functions in the original opening route. Original and
+rebuilt entries agree on 194 hull and 643 primitive calls, with 484 checked
+argument/stack relationships. Capture the missing call-time geometry, extra
+stack arguments and returns, extend scenes and branches, and require exact
+complete-executable equality before promoting either C reconstruction.
+
 The goal is readable C recovery of the original game, followed by reviewed
 comparison evidence for its behavior and content. Optional mods and analysis
 tools have separate deliverables. See [PROJECT_OBJECTIVE.md](../PROJECT_OBJECTIVE.md)

@@ -142,6 +142,12 @@ through their frees. Original/rebuilt and observer/stock recorded outputs agree.
 The retail asynchronous error path reseeks and ends those failed requests
 without reissuing their sector reads; automatic refill is not accepted.
 
+The [natural collision trace](docs/NATURAL_COLLISION_ENTRIES.md) records both
+remaining assembly functions during the original opening route: 194 hull and
+643 primitive entries. Original/rebuilt entries agree, and 484 hull-to-primitive
+argument relationships match the original stack layout. Returns, complete
+geometry ownership and collision-feature acceptance remain separate gates.
+
 The feature inventory has 40 provisional groups; an official exhaustive
 feature total is unknown. SDK and startup code are excluded from the C-byte
 denominator. Bounded native and emulator comparisons have passed, including
