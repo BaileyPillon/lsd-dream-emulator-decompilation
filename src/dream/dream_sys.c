@@ -2,6 +2,7 @@
 #include <psx/rand.h>
 
 #include "base/base.h"
+#include "base/object_math.h"
 #include "scene/scene_node.h"
 #include "scene/stage_grid.h"
 #include "sound/sound.h"
@@ -455,7 +456,6 @@ void dream_sys_run_callbacks(dream_sys_t *This) {
 
 extern s32 g_LinkTargetPos[];
 
-void transform_local_to_world(void *arg0, void *arg1, void *arg2, s32 arg3);
 s32 is_point_within_radius(s32 *arg0, s32 arg1, s32 *arg2);
 
 s32 dream_sys_resolve_target_position(dream_sys_t *This, vec3d_t *arg1, s32 arg2, s32 *arg3, s32 arg4) {
