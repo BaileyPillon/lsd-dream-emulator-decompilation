@@ -37,6 +37,8 @@ The two complete entry logs are byte-identical. They identify the original
 context tick zero; the last is at **22,574**, with context tick 2,699. These
 frames label individual core advances, rather than wall time. The last entry
 does not by itself identify the frame when the game disables the context.
+The later [lifetime observations](NPC_LIFETIME.md) independently locate that
+shutdown at relative frame 22,580 using closer original/rebuilt checkpoints.
 Sixty-one selected RAM checkpoints per traced run corroborate the original
 callback registration, context owner and clock.
 

@@ -1,5 +1,20 @@
 # Changelog
 
+## Recorded NPC activation and shutdown - 2026-10-18
+
+- Add an offline inspector that follows the original game-flow and dream
+  object graph, separating enabled contexts, disabled entities and unreachable
+  former storage. Disabled payload is left uninterpreted.
+- Repeat the same controller history on original and rebuilt discs with 158
+  checkpoints per run. Both locate Buddha activation at frame 5,407 and
+  context shutdown at 22,580, after its last callback at 22,574.
+- Verify all frame observations, sampled RAM, selected buffers and complete
+  PCM; independently decode 316 PNGs and check eight native corruption
+  controls, two uninterpreted-storage controls and 17 inspector tests.
+- Require rooted clock corroboration in the lifetime inspector and use each
+  entity's own context state in the shared validator, with five further tests.
+- Preserve matching C, feature/NPC acceptance counts and the playable build.
+
 ## Original NPC entry recording - 2026-10-17
 
 - Add a separate native observer build, fixed controller program and isolated

@@ -1,0 +1,598 @@
+{
+  "schema_version": 1,
+  "name": "Buddha activation and shutdown boundaries",
+  "frames": 30000,
+  "description": "Repeat of the pinned controller-only Buddha history with additional complete RAM/GPU/RGB checkpoints around activation, context shutdown and scene unlinking. No new seed, controller route, RAM injection or saved-state restore.",
+  "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "disc_track_sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61",
+  "edition_label": "Japanese-labelled",
+  "controller": {
+    "buttons": [
+      "Close Tray",
+      "Open Tray",
+      "P1 Analog",
+      "P1 D-Pad Down",
+      "P1 D-Pad Left",
+      "P1 D-Pad Right",
+      "P1 D-Pad Up",
+      "P1 L1",
+      "P1 L2",
+      "P1 Left Stick, Button",
+      "P1 R1",
+      "P1 R2",
+      "P1 Right Stick, Button",
+      "P1 Select",
+      "P1 Start",
+      "P1 X",
+      "P1 \u25a1",
+      "P1 \u25b3",
+      "P1 \u25cb",
+      "Power",
+      "Reset"
+    ],
+    "axes": {
+      "Disk Index": 0,
+      "P1 Left Stick Left / Right": 128,
+      "P1 Left Stick Up / Down": 128,
+      "P1 Right Stick Left / Right": 128,
+      "P1 Right Stick Up / Down": 128
+    },
+    "column_order": [
+      "Close Tray",
+      "Disk Index",
+      "Open Tray",
+      "P1 Analog",
+      "P1 D-Pad Down",
+      "P1 D-Pad Left",
+      "P1 D-Pad Right",
+      "P1 D-Pad Up",
+      "P1 L1",
+      "P1 L2",
+      "P1 Left Stick Left / Right",
+      "P1 Left Stick Up / Down",
+      "P1 Left Stick, Button",
+      "P1 R1",
+      "P1 R2",
+      "P1 Right Stick Left / Right",
+      "P1 Right Stick Up / Down",
+      "P1 Right Stick, Button",
+      "P1 Select",
+      "P1 Start",
+      "P1 X",
+      "P1 \u25a1",
+      "P1 \u25b3",
+      "P1 \u25cb",
+      "Power",
+      "Reset"
+    ]
+  },
+  "segments": [
+    {
+      "until": 59,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 71,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 179,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 191,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 299,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 311,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 419,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 431,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 539,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 551,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 659,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 671,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 779,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 791,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 899,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 911,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1019,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1031,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1139,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1151,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1259,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1271,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1379,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1391,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1499,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1511,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1619,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1631,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1739,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1751,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1859,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1871,
+      "phase": "skip_startup",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 1979,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 1991,
+      "phase": "select_dream_up",
+      "pressed": [
+        "P1 D-Pad Up"
+      ]
+    },
+    {
+      "until": 2099,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2111,
+      "phase": "start_dream",
+      "pressed": [
+        "P1 \u25cb"
+      ]
+    },
+    {
+      "until": 2219,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2231,
+      "phase": "wait_for_dream",
+      "pressed": []
+    },
+    {
+      "until": 2339,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2351,
+      "phase": "wait_for_dream",
+      "pressed": []
+    },
+    {
+      "until": 2459,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2471,
+      "phase": "wait_for_dream",
+      "pressed": []
+    },
+    {
+      "until": 2579,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2591,
+      "phase": "wait_for_dream",
+      "pressed": []
+    },
+    {
+      "until": 2689,
+      "phase": "menu_release",
+      "pressed": []
+    },
+    {
+      "until": 2779,
+      "phase": "neutral_in_dream",
+      "pressed": []
+    },
+    {
+      "until": 2839,
+      "phase": "turn_left",
+      "pressed": [
+        "P1 D-Pad Left"
+      ]
+    },
+    {
+      "until": 2899,
+      "phase": "release_left",
+      "pressed": []
+    },
+    {
+      "until": 2959,
+      "phase": "turn_right",
+      "pressed": [
+        "P1 D-Pad Right"
+      ]
+    },
+    {
+      "until": 3000,
+      "phase": "release_right",
+      "pressed": []
+    },
+    {
+      "until": 3846,
+      "phase": "first_wall",
+      "pressed": [
+        "P1 D-Pad Up"
+      ]
+    },
+    {
+      "until": 3966,
+      "phase": "adaptive_wait",
+      "pressed": []
+    },
+    {
+      "until": 4068,
+      "phase": "face_west_waypoint",
+      "pressed": [
+        "P1 D-Pad Right"
+      ]
+    },
+    {
+      "until": 4069,
+      "phase": "settle_heading",
+      "pressed": []
+    },
+    {
+      "until": 4140,
+      "phase": "settle_view_and_movement",
+      "pressed": []
+    },
+    {
+      "until": 5160,
+      "phase": "walk_west",
+      "pressed": [
+        "P1 D-Pad Up"
+      ]
+    },
+    {
+      "until": 5161,
+      "phase": "settle_at_waypoint",
+      "pressed": []
+    },
+    {
+      "until": 5232,
+      "phase": "settle_view_and_movement",
+      "pressed": []
+    },
+    {
+      "until": 5412,
+      "phase": "face_buddha",
+      "pressed": [
+        "P1 D-Pad Left"
+      ]
+    },
+    {
+      "until": 12000,
+      "phase": "observe_original_callback_context",
+      "pressed": []
+    },
+    {
+      "until": 30000,
+      "phase": "observe_natural_lifetime",
+      "pressed": []
+    }
+  ],
+  "checkpoint_frames": [
+    0,
+    300,
+    600,
+    900,
+    1008,
+    1200,
+    1500,
+    1800,
+    1968,
+    2100,
+    2154,
+    2382,
+    2388,
+    2400,
+    2694,
+    2700,
+    2718,
+    2742,
+    3000,
+    3300,
+    3342,
+    3498,
+    3504,
+    3600,
+    3846,
+    3858,
+    3864,
+    3876,
+    3900,
+    4200,
+    4500,
+    4800,
+    5100,
+    5400,
+    5401,
+    5402,
+    5403,
+    5404,
+    5405,
+    5406,
+    5407,
+    5408,
+    5409,
+    5410,
+    5412,
+    5700,
+    6000,
+    6300,
+    6600,
+    6900,
+    7200,
+    7500,
+    7800,
+    8100,
+    8400,
+    8700,
+    9000,
+    9300,
+    9600,
+    9900,
+    10200,
+    10500,
+    10800,
+    11100,
+    11400,
+    11700,
+    12000,
+    12300,
+    12600,
+    12900,
+    13200,
+    13500,
+    13800,
+    14100,
+    14400,
+    14700,
+    15000,
+    15300,
+    15600,
+    15672,
+    15900,
+    16200,
+    16500,
+    16800,
+    17100,
+    17400,
+    17700,
+    18000,
+    18300,
+    18600,
+    18900,
+    19200,
+    19500,
+    19800,
+    20100,
+    20400,
+    20700,
+    21000,
+    21300,
+    21600,
+    21900,
+    22200,
+    22500,
+    22574,
+    22575,
+    22576,
+    22577,
+    22578,
+    22579,
+    22580,
+    22581,
+    22582,
+    22583,
+    22584,
+    22800,
+    23100,
+    23400,
+    23700,
+    24000,
+    24300,
+    24600,
+    24664,
+    24665,
+    24666,
+    24667,
+    24668,
+    24669,
+    24670,
+    24671,
+    24672,
+    24673,
+    24674,
+    24675,
+    24676,
+    24677,
+    24678,
+    24679,
+    24680,
+    24900,
+    25200,
+    25500,
+    25536,
+    25800,
+    26100,
+    26268,
+    26400,
+    26700,
+    27000,
+    27300,
+    27600,
+    27900,
+    28200,
+    28500,
+    28800,
+    29100,
+    29400,
+    29700,
+    30000
+  ],
+  "RAM_sample_interval": 6,
+  "trace": {
+    "watched_pc": "0x8005EFF4",
+    "arm_frame": 3900,
+    "callback": "entity_buddha",
+    "function_bytes": 228,
+    "function_sha256": "0df584f37e1a9ce253307a3a5310a8b59e1ed7ddded13619db86b9b01db3824a",
+    "expected_entries": 2700,
+    "expected_first_frame": 5407,
+    "expected_last_frame": 22574,
+    "entity_id": 20,
+    "context_tick_offset": 160
+  },
+  "expanded_submitted_sha256": "c33fdd031c9a04809c1093067d7d197adf0270d8baa6c6f737c7c7504b23672b"
+}
