@@ -16,10 +16,12 @@ sys.path.insert(0, str(ROOT))
 from tools.build_npc_observer import UPSTREAM, MEDNAFEN, SOURCE_SHA256, MEDIA_SHA256, VARIABLES, parse_make_variables, artifact
 from tools.replay_cold_start_headless import require, write_json
 from tools.runtime_inputs import record_file
+from tools.collision_calls import EXPORTS as COLLISION_EXPORTS,EVENT_BYTES as COLLISION_EVENT_BYTES,FRAME_BYTES as COLLISION_FRAME_BYTES
 OBSERVER = ROOT / 'research/runtime_state/dispatch_entry_observer.h'
 FLOW_OBSERVER = ROOT / 'research/runtime_state/dispatch_flow_observer.h'
 RETURN_OBSERVER = ROOT / 'research/runtime_state/dispatch_return_observer.h'
 SDK_OBSERVER = ROOT / 'research/runtime_state/sdk_read_observer.h'
+COLLISION_OBSERVER = ROOT / 'research/runtime_state/collision_call_observer.h'
 SDK_EXPORTS = ('LsdResetSdkReads','LsdAddSdkReadTarget','LsdStartSdkReads','LsdBeginSdkReadFrame',
     'LsdGetSdkReadCount','LsdGetSdkReadTotal','LsdGetSdkReadEntries','LsdGetSdkReadOverflow',
     'LsdGetSdkReadPending','LsdGetSdkReadMaxDepth','LsdGetSdkReadTransfer','LsdGetSdkReadCompletions',
@@ -38,7 +40,7 @@ EXPORTS = ('LsdResetDispatchTrace', 'LsdAddDispatchTarget', 'LsdConfigureDispatc
     'LsdGetDispatchTotal', 'LsdGetDispatchOverflow', 'LsdGetDispatchEvents', 'LsdDisableDispatchTrace')
 
 
-def build(source_root, output, *, flow=False, returns=False, sdk_reads=False):
+def build(source_root, output, *, flow=False, returns=False, sdk_reads=False, collision_calls=False):
     output = Path(output).resolve()
     require(not output.exists(), 'Choose a new output directory; existing builds are preserved.')
     require(sys.platform == 'linux', 'Build the native observer in Linux/WSL.')
@@ -73,6 +75,7 @@ def build(source_root, output, *, flow=False, returns=False, sdk_reads=False):
     require(clang is not None, 'Clang 18 is required by the pinned Waterbox build.')
     compiler_version = subprocess.check_output([clang, '--version'], text=True, env=env)
     require('clang version 18.' in compiler_version, 'Use Clang 18 with the pinned native objects.')
+    require(not collision_calls or not (flow or returns or sdk_reads),'Collision snapshots use a separate entry-only observer.')
     returns = returns or sdk_reads
     flow = flow or returns
     headers = (OBSERVER, FLOW_OBSERVER, RETURN_OBSERVER) if returns else (OBSERVER, FLOW_OBSERVER) if flow else (OBSERVER,)
@@ -80,6 +83,9 @@ def build(source_root, output, *, flow=False, returns=False, sdk_reads=False):
     if sdk_reads:
         headers += (SDK_OBSERVER,)
         exports += SDK_EXPORTS
+    if collision_calls:
+        headers += (COLLISION_OBSERVER,)
+        exports += COLLISION_EXPORTS
     inputs = [Path(__file__).resolve(), ROOT / "tools/build_npc_observer.py", *headers, Path(settings['CC']), Path(clang).resolve(),
               nyma / 'shock.cpp', nyma / 'cdrom.cpp', nyma / 'common.mak', nyma / 'shock.mak',
               source / 'waterbox/common.mak', source / 'waterbox/linkscript.T',
@@ -94,7 +100,7 @@ def build(source_root, output, *, flow=False, returns=False, sdk_reads=False):
         shutil.copyfile(source_header, output / source_header.name)
     header = output / OBSERVER.name
     adapter = output / 'observer-adapter.cpp'
-    include = SDK_OBSERVER.name if sdk_reads else RETURN_OBSERVER.name if returns else FLOW_OBSERVER.name if flow else OBSERVER.name
+    include = COLLISION_OBSERVER.name if collision_calls else SDK_OBSERVER.name if sdk_reads else RETURN_OBSERVER.name if returns else FLOW_OBSERVER.name if flow else OBSERVER.name
     adapter.write_bytes((nyma / 'shock.cpp').read_bytes() + ('\n#include "' + include + '"\n').encode('ascii'))
     obj, core = output / 'observer-adapter.o', output / 'shock.wbx'
     compile_command = [settings['CC'], '-c', '-o', str(obj), str(adapter), '-I' + str(nyma),
@@ -137,6 +143,10 @@ def build(source_root, output, *, flow=False, returns=False, sdk_reads=False):
     if sdk_reads:
         profile.update(sdk_read_protocol=1,sdk_read_event_bytes=464,sdk_read_frame_payload_bytes=32*1024*1024,
             sdk_read_header_sha256=record_file(SDK_OBSERVER)['sha256'])
+    if collision_calls:
+        profile.update(collision_call_protocol=1,collision_call_event_bytes=COLLISION_EVENT_BYTES,
+            collision_call_frame_payload_bytes=COLLISION_FRAME_BYTES,
+            collision_call_header_sha256=record_file(COLLISION_OBSERVER)['sha256'])
     write_json(output / 'profile.json', profile)
     return profile
 
@@ -148,9 +158,10 @@ def main(argv=None):
     parser.add_argument('--flow', action='store_true', help='Add read-only caller load-chain context; keep the entry-only core separate.')
     parser.add_argument('--returns', action='store_true', help='Add original returns and bounded read buffers; implies --flow.')
     parser.add_argument('--sdk-reads', action='store_true', help='Observe original SDK requests, polling and completed RAM; implies --returns.')
+    parser.add_argument('--collision-calls',action='store_true',help='Add separate sampled primitive entry/return RAM and architectural registers.')
     args = parser.parse_args(argv)
     try:
-        profile = build(args.source_root, args.output, flow=args.flow, returns=args.returns, sdk_reads=args.sdk_reads)
+        profile = build(args.source_root, args.output, flow=args.flow, returns=args.returns, sdk_reads=args.sdk_reads,collision_calls=args.collision_calls)
         print(profile['status'])
         return 0
     except (ValueError, OSError, subprocess.CalledProcessError) as error:
