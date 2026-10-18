@@ -1,0 +1,503 @@
+{
+  "schema_version": 1,
+  "status": "verified_all_observed_hull_returns_in_one_original_route",
+  "repository": "https://github.com/BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "11285a9f25a2aff637e07d4c8c74a6eeb82d9311",
+  "canonical_executable": {
+    "bytes": 505856,
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+  },
+  "source_counts_before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "natural_hull_calls_before": 0,
+  "natural_hull_calls_after": 194,
+  "phases": [
+    {
+      "first": 1,
+      "completed_hull_calls": 49,
+      "ordinal_skips": 145
+    },
+    {
+      "first": 2,
+      "completed_hull_calls": 49,
+      "ordinal_skips": 145
+    },
+    {
+      "first": 3,
+      "completed_hull_calls": 48,
+      "ordinal_skips": 146
+    },
+    {
+      "first": 4,
+      "completed_hull_calls": 48,
+      "ordinal_skips": 146
+    }
+  ],
+  "return_counts": {
+    "0": 173,
+    "1": 21
+  },
+  "hull_calls_crossing_a_frame": 20,
+  "observation_frame_window": {
+    "first": 900,
+    "last": 6000
+  },
+  "modeled_query_phases": {
+    "midpoint": 159,
+    "fallback": 325
+  },
+  "correlated_nested_primitive_entries": 484,
+  "primitive_entries_outside_hulls": 159,
+  "outside_primitive_callers": {
+    "0x8001EA0C": 156,
+    "0x8001EA3C": 3
+  },
+  "observed_polygon_visits": 11333,
+  "original_rebuilt_recording_pairs": 4,
+  "stock_control_recordings": 1,
+  "complete_hull_records_and_RAM_equal": true,
+  "every_recorded_game_output_equal": true,
+  "per_run": {
+    "controller_frames": 6000,
+    "GPU_observations": 6001,
+    "RAM_observations": 1001,
+    "complete_checkpoints": 52,
+    "PCM_bytes": 17692008
+  },
+  "independent_audit": {
+    "decoded_PNGs": 468,
+    "rehashed_source_snapshots": 375,
+    "contradictory_retained_data_controls_rejected": 10,
+    "separately_recorded_primitive_queries_correlated": 484,
+    "executed_game_faults": 0
+  },
+  "legacy_compatibility": {
+    "existing_ordinal_primitive_calls_reverified": 643,
+    "new_native_core_primitive_samples": 52,
+    "raw_events_and_complete_RAM_byte_equal": true,
+    "semantic_summary_counters_equal": true,
+    "added_optional_zero_counter": "ordinal_skips",
+    "decoded_PNGs": 52,
+    "rehashed_source_snapshots": 42,
+    "recordings_new": 1
+  },
+  "native_build": {
+    "profile_sha256": "81ffc304aa8c47d7a3ddff7c6447d4e875f9563b5def78708342a41c974331f0",
+    "current_adapter_with_pinned_cached_objects": true,
+    "fresh_full_native_rebuild": false,
+    "runtime_verified": false,
+    "indirect_entry_context": true,
+    "game_CPU_source_modified": false
+  },
+  "source_investigation": {
+    "qualified_function_observations": 45,
+    "distinct_complete_C_sources": 39,
+    "named_allocation_traces": 6,
+    "exact_raw_function_matches": 0,
+    "best_hull_raw_differing_bytes": 26,
+    "new_C_bytes": 0
+  },
+  "tests": {
+    "Windows": {
+      "tests": 1216,
+      "skips": 2,
+      "passed": true,
+      "private_log": {
+        "bytes": 1404,
+        "sha256": "741a642b6c84eafef0fcd341f673ca40bd9cb6e0cb19f5204873bb0aa4f6c924"
+      }
+    },
+    "Linux_WSL": {
+      "tests": 1216,
+      "skips": 2,
+      "passed": true,
+      "private_log": {
+        "bytes": 1404,
+        "sha256": "cf89b9a9a40d074a01fc86117869a27072ed5272000cf8f063d7b072ac351a7c"
+      }
+    }
+  },
+  "public_sources": {
+    "README.md": {
+      "bytes": 35560,
+      "sha256": "5b7504b3583930d7bbe9e15341abbd3978fe4747e929d5313a7a7d34b836b848"
+    },
+    "docs/HULL_CALLS.md": {
+      "bytes": 6165,
+      "sha256": "302b996754456222ffbea623b09591f81360ca292ac24516b93bb51c590680d4"
+    },
+    "docs/COLLISION_ORDINAL_CALLS.md": {
+      "bytes": 7306,
+      "sha256": "de3046cd27188b8b6f29fa23a26c28d3406854c1ca2ed87ca920b453e62a6bb0"
+    },
+    "tools/collision_calls.py": {
+      "bytes": 3704,
+      "sha256": "0274012e2d13d0907102cb9ce70ab4b04d0a6aaa6e9d8f1c57e88f5d1c756658"
+    },
+    "tools/inspect_collision_calls.py": {
+      "bytes": 24050,
+      "sha256": "522ade2f2e60c4ae3e8337d5333fd4f4048789ab625ad975301219b0d5fa793a"
+    },
+    "tools/inspect_hull_calls.py": {
+      "bytes": 10445,
+      "sha256": "8c5a64c6f8294c5d99b4cc06f49cf522aae8370a4a0a01329c94743b9bcea513"
+    },
+    "tools/collision_call_batches.py": {
+      "bytes": 3077,
+      "sha256": "fa1fe28eeba33cf4159ad384e9e4e39d61cb9557c7d43846be30f203887d60e9"
+    },
+    "tools/inspect_collision_call_batches.py": {
+      "bytes": 18117,
+      "sha256": "817b213a8b3bedcaf8c2f585d3357623235e1d9b1b56538cbaadd7cc094d6780"
+    },
+    "tools/verify_collision.py": {
+      "bytes": 33171,
+      "sha256": "bc1b5779be9ff60a70011d30263821bf17429c1f094b58528f1a930823e20bff"
+    },
+    "tools/build_dispatch_observer.py": {
+      "bytes": 12687,
+      "sha256": "d7db79aceff9c0fb8c0c99632ead87d72e39ff4edbdfb6f8095f588fe124f046"
+    },
+    "tools/record_dispatch_history.py": {
+      "bytes": 23504,
+      "sha256": "b193923fa646305c3b4a36d5a62ade5d7a09dd7456fed0e17a0c6122e4c4d526"
+    },
+    "tools/inspect_dispatch_history.py": {
+      "bytes": 30892,
+      "sha256": "7cf7b040d30d818e89cf22124d073a329cac90f1861d6c3d62c3cf7a7b497c96"
+    },
+    "research/runtime_state/collision_call_observer.h": {
+      "bytes": 9810,
+      "sha256": "ac7e37a7824f10de62fcda458d89c08a8c100e191b9325d9e67214d555599e58"
+    },
+    "research/headless/CollisionCallTrace.cs": {
+      "bytes": 8881,
+      "sha256": "b9d47a969846999334299ac58a6f2b38ce51d40d0522e3b9a6673a7bd62532a3"
+    },
+    "research/headless/collision-hull-opening-route.json": {
+      "bytes": 8648,
+      "sha256": "dfd98200220cca45d0b403f11f8761e20f0d44a6f7142a5078b041107f783f96"
+    },
+    "tests/test_hull_calls.py": {
+      "bytes": 12264,
+      "sha256": "718054eb3477b862d4bcb3701e132dfa6e08ab3b365c7ab02f656beafec329c9"
+    },
+    ".gitattributes": {
+      "bytes": 15711,
+      "sha256": "6249b8170eddb9052c3251cc6a782e9821779a84f5c71d7cfeb9ad180c68de48"
+    }
+  },
+  "private_evidence": {
+    ".decomp-lab/hull-calls-verified-20261018-first.json": {
+      "bytes": 1681984,
+      "sha256": "b19d4967419df355c3c677bdcc573c716eb07fbb6c41b24ea2032e771d01765f"
+    },
+    ".decomp-lab/hull-calls-verified-20261018-second.json": {
+      "bytes": 1681984,
+      "sha256": "493527889a638e70c1d4ac35cb9d33b6e5a9d79b9ffc750bd87098d16224aab3"
+    },
+    ".decomp-lab/hull-calls-legacy-primitive-partition-20261018-second.json": {
+      "bytes": 1726887,
+      "sha256": "ef042c789363b09ca89ca2a48930f4e5dd59d680f8031c08882351002f53acce"
+    },
+    ".decomp-lab/hull-calls-independent-audit-20261018-first.json": {
+      "bytes": 3885,
+      "sha256": "1826cbafd10903144e889de7c590751b39cbf4e97c47240a5fef49acf24e5304"
+    },
+    ".decomp-lab/hull-calls-new-core-legacy-compat-20261018-second.json": {
+      "bytes": 15478,
+      "sha256": "f89c80d9282e8116d1d881c518b6beb5095ba970fede6fd060aac94de2da9a68"
+    },
+    ".decomp-lab/hull-calls-missing-indirect-context-20261018-first.json": {
+      "bytes": 666,
+      "sha256": "615a17c0fd441f715629e1214b4a7ffdb3f87cf0ff85581ba15de52ca14e463e"
+    },
+    ".decomp-lab/hull-calls-legacy-summary-control-20261018-first.json": {
+      "bytes": 596,
+      "sha256": "0c778cdce0d12ff595fe78d800cc2de703acee9ba3b2e617c23690f61e6428c7"
+    },
+    ".decomp-lab/hull-calls-canonical-check-20261018-first.json": {
+      "bytes": 640,
+      "sha256": "9b769ebe03128e35dff807552521e7b3434da9d7f690fb7b45581d48f11e3d4c"
+    },
+    ".decomp-lab/hull-calls-progress-20261018-first.json": {
+      "bytes": 55514,
+      "sha256": "7f08e8e665b19b35ae5f4c1289142e3eb75388da9a9f28479d00c1eaa175084b"
+    },
+    ".decomp-lab/hull-input-ownership-audit-20261018-first/report.json": {
+      "bytes": 17983,
+      "sha256": "05bd042ca6d8a655217d13021892bf7d03bba689a0d129b303dd464c758d619d"
+    },
+    ".decomp-lab/hull-calls-executed-template-20261018-first.json": {
+      "bytes": 9121,
+      "sha256": "29bae19b238b23655b01fc0031a0109b8d572a25875c23ca6cda0219ba226b71"
+    }
+  },
+  "retained_recordings": [
+    {
+      "recording": "original/phase-01",
+      "run_inputs": {
+        "bytes": 193249,
+        "sha256": "d46bedc029c72cb3fbaa72eebf531a98c55f84078d8175fcce20b962d6bb5be6"
+      },
+      "submitted_sha256": "ad15b9e5828c01886d73ba8b0eff18f092450853f87e4dfae4ad6a39539db61e",
+      "source_snapshots": 42,
+      "phase": 1,
+      "completed_hull_calls": 49,
+      "sample_files": {
+        "collision-calls.bin": {
+          "bytes": 48412,
+          "sha256": "ed1a877436d45fc0db2592e7b81f902d03e578e3e95011fb2bc75a71d7a7de23"
+        },
+        "collision-call-ram.bin": {
+          "bytes": 205520896,
+          "sha256": "36de1630bc7014879be57b3fed86598a373250756a583ae85af428bf89283eba"
+        },
+        "collision-call-summary.json": {
+          "bytes": 855,
+          "sha256": "5355142d5a59f09e0dbb197182ceaa4f6670abe28533bf4b14cc76534077bed2"
+        }
+      }
+    },
+    {
+      "recording": "original/phase-02",
+      "run_inputs": {
+        "bytes": 193249,
+        "sha256": "d297207278c04d6ffedc5f26934ff8560f4cabd957bc3fb3e0a6efb67f97cc3c"
+      },
+      "submitted_sha256": "ad15b9e5828c01886d73ba8b0eff18f092450853f87e4dfae4ad6a39539db61e",
+      "source_snapshots": 42,
+      "phase": 2,
+      "completed_hull_calls": 49,
+      "sample_files": {
+        "collision-calls.bin": {
+          "bytes": 48412,
+          "sha256": "fed66e8aace956da611231a57799437e587d1e182a339fa81684fd31b7c59d22"
+        },
+        "collision-call-ram.bin": {
+          "bytes": 205520896,
+          "sha256": "560640aa349cd9b06af8b49664d6ae4cf12becb72bf4a885b5a5e7519ffbbc8e"
+        },
+        "collision-call-summary.json": {
+          "bytes": 855,
+          "sha256": "5bda6203a5fec2cfd5528ba5974d1d15ad40f994b9d5a8cbbf8a33fc7a9bcba5"
+        }
+      }
+    },
+    {
+      "recording": "original/phase-03",
+      "run_inputs": {
+        "bytes": 193249,
+        "sha256": "6c7b0ff064322b3af9cac520bf7c0db1adf77b281bc528efdd75c0755983d687"
+      },
+      "submitted_sha256": "ad15b9e5828c01886d73ba8b0eff18f092450853f87e4dfae4ad6a39539db61e",
+      "source_snapshots": 42,
+      "phase": 3,
+      "completed_hull_calls": 48,
+      "sample_files": {
+        "collision-calls.bin": {
+          "bytes": 47424,
+          "sha256": "74529622c15a7e0950ddfe3e09e205aff1cd376e89b4fe2d1edb65c5d409e992"
+        },
+        "collision-call-ram.bin": {
+          "bytes": 201326592,
+          "sha256": "5aa7cd59665661fa723c726bbbe829f8010d52203b6eb7f4d80fffa04298cfab"
+        },
+        "collision-call-summary.json": {
+          "bytes": 855,
+          "sha256": "39be73396268091ea490a10ad77f73b5106a2570d3226b5a0f99d38aab24af23"
+        }
+      }
+    },
+    {
+      "recording": "original/phase-04",
+      "run_inputs": {
+        "bytes": 193249,
+        "sha256": "0792bd90ee041ed046aab0dd43f12e95f37a950d212531cc2a422c6abe292b82"
+      },
+      "submitted_sha256": "ad15b9e5828c01886d73ba8b0eff18f092450853f87e4dfae4ad6a39539db61e",
+      "source_snapshots": 42,
+      "phase": 4,
+      "completed_hull_calls": 48,
+      "sample_files": {
+        "collision-calls.bin": {
+          "bytes": 47424,
+          "sha256": "97308c6396bbee5f2b7b10c51d3c68a7548dc6d66e947dad48c8b8389b303fb4"
+        },
+        "collision-call-ram.bin": {
+          "bytes": 201326592,
+          "sha256": "d8882a1579d689df6329bbc705fdbbebbf929847699fe2d4b22ded6083cbe41a"
+        },
+        "collision-call-summary.json": {
+          "bytes": 855,
+          "sha256": "99e95fd233028a0b119464872f3c4c45bc414a5baf1591b3b79abe8884118fde"
+        }
+      }
+    },
+    {
+      "recording": "rebuilt/phase-01",
+      "run_inputs": {
+        "bytes": 193053,
+        "sha256": "89adbb060f0cb9475c9fc6b5e780e069f34a94c87c838f4da1942fc4f4c31979"
+      },
+      "submitted_sha256": "ad15b9e5828c01886d73ba8b0eff18f092450853f87e4dfae4ad6a39539db61e",
+      "source_snapshots": 42,
+      "phase": 1,
+      "completed_hull_calls": 49,
+      "sample_files": {
+        "collision-calls.bin": {
+          "bytes": 48412,
+          "sha256": "ed1a877436d45fc0db2592e7b81f902d03e578e3e95011fb2bc75a71d7a7de23"
+        },
+        "collision-call-ram.bin": {
+          "bytes": 205520896,
+          "sha256": "36de1630bc7014879be57b3fed86598a373250756a583ae85af428bf89283eba"
+        },
+        "collision-call-summary.json": {
+          "bytes": 855,
+          "sha256": "5355142d5a59f09e0dbb197182ceaa4f6670abe28533bf4b14cc76534077bed2"
+        }
+      }
+    },
+    {
+      "recording": "rebuilt/phase-02",
+      "run_inputs": {
+        "bytes": 193053,
+        "sha256": "d4e2941c71d7e2251f1fa18963eb3758ff122822fb12177e0bd4057bef4ffdfb"
+      },
+      "submitted_sha256": "ad15b9e5828c01886d73ba8b0eff18f092450853f87e4dfae4ad6a39539db61e",
+      "source_snapshots": 42,
+      "phase": 2,
+      "completed_hull_calls": 49,
+      "sample_files": {
+        "collision-calls.bin": {
+          "bytes": 48412,
+          "sha256": "fed66e8aace956da611231a57799437e587d1e182a339fa81684fd31b7c59d22"
+        },
+        "collision-call-ram.bin": {
+          "bytes": 205520896,
+          "sha256": "560640aa349cd9b06af8b49664d6ae4cf12becb72bf4a885b5a5e7519ffbbc8e"
+        },
+        "collision-call-summary.json": {
+          "bytes": 855,
+          "sha256": "5bda6203a5fec2cfd5528ba5974d1d15ad40f994b9d5a8cbbf8a33fc7a9bcba5"
+        }
+      }
+    },
+    {
+      "recording": "rebuilt/phase-03",
+      "run_inputs": {
+        "bytes": 193053,
+        "sha256": "a183cd3bd3635c3abfa23ef5b6fec5a6c24053eefb73941ddc9bbd527b0db141"
+      },
+      "submitted_sha256": "ad15b9e5828c01886d73ba8b0eff18f092450853f87e4dfae4ad6a39539db61e",
+      "source_snapshots": 42,
+      "phase": 3,
+      "completed_hull_calls": 48,
+      "sample_files": {
+        "collision-calls.bin": {
+          "bytes": 47424,
+          "sha256": "74529622c15a7e0950ddfe3e09e205aff1cd376e89b4fe2d1edb65c5d409e992"
+        },
+        "collision-call-ram.bin": {
+          "bytes": 201326592,
+          "sha256": "5aa7cd59665661fa723c726bbbe829f8010d52203b6eb7f4d80fffa04298cfab"
+        },
+        "collision-call-summary.json": {
+          "bytes": 855,
+          "sha256": "39be73396268091ea490a10ad77f73b5106a2570d3226b5a0f99d38aab24af23"
+        }
+      }
+    },
+    {
+      "recording": "rebuilt/phase-04",
+      "run_inputs": {
+        "bytes": 193053,
+        "sha256": "083a5b1dcc2c445b90bfec2073e9146c57c1c98ad527dc606a596353ee206b0f"
+      },
+      "submitted_sha256": "ad15b9e5828c01886d73ba8b0eff18f092450853f87e4dfae4ad6a39539db61e",
+      "source_snapshots": 42,
+      "phase": 4,
+      "completed_hull_calls": 48,
+      "sample_files": {
+        "collision-calls.bin": {
+          "bytes": 47424,
+          "sha256": "97308c6396bbee5f2b7b10c51d3c68a7548dc6d66e947dad48c8b8389b303fb4"
+        },
+        "collision-call-ram.bin": {
+          "bytes": 201326592,
+          "sha256": "d8882a1579d689df6329bbc705fdbbebbf929847699fe2d4b22ded6083cbe41a"
+        },
+        "collision-call-summary.json": {
+          "bytes": 855,
+          "sha256": "99e95fd233028a0b119464872f3c4c45bc414a5baf1591b3b79abe8884118fde"
+        }
+      }
+    },
+    {
+      "recording": "stock/phase-01",
+      "run_inputs": {
+        "bytes": 144834,
+        "sha256": "8b47ad500471a184928a6ca0b0ff87945335ecea7db373fc449d96054fe04a21"
+      },
+      "submitted_sha256": "ad15b9e5828c01886d73ba8b0eff18f092450853f87e4dfae4ad6a39539db61e",
+      "source_snapshots": 39
+    }
+  ],
+  "frozen_objective_sha256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+  "protected_game_inputs": 392,
+  "original_game_modified": false,
+  "Bevy_port_modified": false,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "new_C_bytes": 0,
+  "new_NPC_profiles": 0,
+  "model_API_calls": 0,
+  "complete_state_parity_checked": false,
+  "full_instruction_paths_accepted": false,
+  "geometry_allocation_ownership_accepted": false,
+  "original_hardware_timing_verified": false,
+  "virtual_slot_load_chains_verified": false,
+  "exhaustive_original_feature_count": null,
+  "source_promoted": false,
+  "scope": "All observed hull call boundaries in one armed opening history; other histories and whole features remain unaccepted.",
+  "template_source_identity": {
+    "retained_executed_template": {
+      "bytes": 9121,
+      "sha256": "29bae19b238b23655b01fc0031a0109b8d572a25875c23ca6cda0219ba226b71"
+    },
+    "published_template": {
+      "bytes": 8648,
+      "sha256": "dfd98200220cca45d0b403f11f8761e20f0d44a6f7142a5078b041107f783f96"
+    },
+    "JSON_content_equal": true,
+    "expanded_controller_inputs_unchanged": true,
+    "only_difference": "CRLF normalized to LF for reproducible Git checkouts"
+  }
+}

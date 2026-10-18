@@ -1,4 +1,4 @@
-// Optional sampled primitive call/return snapshots. Original CPU/GTE/RAM are read-only.
+// Optional sampled collision call/return snapshots. Original CPU/GTE/RAM are read-only.
 #ifndef LSD_COLLISION_CALL_OBSERVER_H
 #define LSD_COLLISION_CALL_OBSERVER_H
 #include "dispatch_entry_observer.h"
@@ -110,13 +110,18 @@ ECL_EXPORT int LsdResetCollisionCalls() {
     memset(lsd_collision_windows,0,sizeof(lsd_collision_windows));return 1;
 }
 ECL_EXPORT int LsdConfigureCollisionCalls(uint32_t pc,uint32_t bytes,uint32_t limit) {
-    if(pc!=0x8001F8B8 || bytes!=1944 || !limit || limit>64) return 0;
+    if(!((pc==0x8001F8B8 && bytes==1944) || (pc==0x8001DDF4 && bytes==796)) ||
+       !limit || limit>64) return 0;
     lsd_collision_pc=pc;lsd_collision_bytes=bytes;lsd_collision_limit=limit;
     lsd_collision_ordinal_first=lsd_collision_ordinal_step=0;
     for(uint32_t at=pc;at<pc+bytes;at+=4) lsd_collision_windows[(at-0x80000000)>>2]=1;
     for(uint32_t at=0x80010000;at<0x801FFFFC;at+=4) {
         const uint32_t word=LsdDispatchRead(at);
-        if(word>>26==3 && (((word&0x03FFFFFF)<<2)|0x80000000)==pc) {
+        const bool direct=word>>26==3 && (((word&0x03FFFFFF)<<2)|0x80000000)==pc;
+        // JALR's target is known only at execution; retain its register and delay context.
+        // A candidate window alone does not certify a transfer to the selected function.
+        const bool indirect=(word&0xFC1FFFFF)==0x0000F809;
+        if(direct || indirect) {
             lsd_collision_windows[(at-0x80000000)>>2]=1;lsd_collision_windows[(at+4-0x80000000)>>2]=1;
         }
     }

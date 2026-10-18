@@ -1,4 +1,4 @@
-// Optional sampled original primitive calls. No game RAM, CPU or GTE writes.
+// Optional sampled original collision calls. No game RAM, CPU or GTE writes.
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -38,8 +38,10 @@ internal sealed class CollisionCallTrace : IDisposable {
     public CollisionCallTrace(WaterboxHost host,string output,CollisionCallSettings settings) {
         bool legacy=settings.per_key==2 && settings.ordinal_first==0 && settings.ordinal_step==0;
         OrdinalMode=settings.per_key==0 && settings.ordinal_first>=1 && settings.ordinal_first<=settings.ordinal_step && settings.ordinal_step<=64;
-        if(settings.pc!=0x8001F8B8 || settings.bytes!=1944 || settings.max_samples<1 || settings.max_samples>64 || !(legacy || OrdinalMode))
-            throw new Exception("Unsupported original primitive sample selection");
+        bool primitive=settings.pc==0x8001F8B8 && settings.bytes==1944;
+        bool hull=settings.pc==0x8001DDF4 && settings.bytes==796;
+        if(!(primitive || hull) || (hull && !OrdinalMode) || settings.max_samples<1 || settings.max_samples>64 || !(legacy || OrdinalMode))
+            throw new Exception("Unsupported original collision sample selection");
         Settings=settings;Output=output;
         var adapter=CallingConventionAdapters.GetWaterboxUnsafeUnwrapped();
         Reset=adapter.GetDelegateForFunctionPointer<Result>(host.GetProcAddrOrThrow("LsdResetCollisionCalls"));
@@ -69,33 +71,33 @@ internal sealed class CollisionCallTrace : IDisposable {
     // The owner holds the Waterbox lock while configuring, draining and closing.
     public void Begin(int frame,int arm) {
         if(frame==arm) {
-            if(Reset()!=1) throw new Exception("Native primitive sampler reset failed");
+            if(Reset()!=1) throw new Exception("Native collision sampler reset failed");
             int configured=OrdinalMode
                 ? ConfigureOrdinalNative(Settings.pc,Settings.bytes,Settings.max_samples,Settings.ordinal_first,Settings.ordinal_step)
                 : ConfigureNative(Settings.pc,Settings.bytes,Settings.max_samples);
-            if(configured!=1 || Start()!=1) throw new Exception("Native primitive sampler setup failed");
+            if(configured!=1 || Start()!=1) throw new Exception("Native collision sampler setup failed");
         }
         BeginNative();
     }
     public void Drain(int frame) {
         uint count=Count(),bytes=DataBytes();
         if(count>2 || bytes>0x800000 || bytes!=count*0x400000 || Overflow()!=0)
-            throw new Exception("Native primitive sample transport overflow");
+            throw new Exception("Native collision sample transport overflow");
         int[] words=new int[checked((int)count*Words)];if(count!=0) Marshal.Copy(Events(),words,0,words.Length);
         byte[] data=new byte[bytes];if(bytes!=0) Marshal.Copy(Data(),data,0,data.Length);
         long start=Payload.BaseStream.Position;
         for(int i=0;i<count;++i) {
             int at=i*Words;
             if(words[at]!=frame || unchecked((uint)words[at+1])!=Total+(uint)i+1 || words[at+243]!=0x200000 || words[at+246]!=1)
-                throw new Exception("Native primitive sample frame, ordinal or extent differs");
+                throw new Exception("Native collision sample frame, ordinal or extent differs");
             foreach(int field in new[] {244,245}) {
                 uint relative=unchecked((uint)words[at+field]);
-                if((ulong)relative+0x200000>bytes) throw new Exception("Primitive RAM outside frame payload");
+                if((ulong)relative+0x200000>bytes) throw new Exception("Collision RAM outside frame payload");
                 words[at+field]=unchecked((int)checked((uint)(start+relative)));
             }
         }
         Payload.Write(data);byte[] encoded=new byte[words.Length*4];Buffer.BlockCopy(words,0,encoded,0,encoded.Length);Writer.Write(encoded);
-        Total+=count;if(Total!=NativeTotal()) throw new Exception("Native primitive samples were lost");
+        Total+=count;if(Total!=NativeTotal()) throw new Exception("Native collision samples were lost");
         if(frame%300==0) {Writer.Flush();Payload.Flush();}
     }
     public void Dispose() {
@@ -112,7 +114,7 @@ internal sealed class CollisionCallTrace : IDisposable {
             original_game_RAM_injected=false,original_CPU_source_modified=false,observer_writes_GTE_registers=false,
             complete_state_parity_checked=false,opaque_internal_GTE_state_serialized=false,
             sampling_policy=OrdinalMode
-                ? "Every step-th eligible primitive entry, starting at first; one start per frame, bounded total. Batch completeness requires independent verification."
+                ? "Every step-th eligible collision entry, starting at first; one start per frame, bounded total. Batch completeness requires independent verification."
                 : "First two invocations per observed caller/model-address pair; one start per frame, bounded total. Addresses are not lifetime identities."}));
     }
 }

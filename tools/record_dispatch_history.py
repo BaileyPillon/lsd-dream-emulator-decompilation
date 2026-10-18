@@ -16,7 +16,7 @@ import configure
 from tools.build_dispatch_observer import OBSERVER, EXPORTS, FLOW_OBSERVER, FLOW_EXPORTS, RETURN_OBSERVER, RETURN_EXPORTS
 from tools.build_dispatch_observer import SDK_OBSERVER, SDK_EXPORTS
 from tools.build_dispatch_observer import COLLISION_OBSERVER
-from tools.collision_calls import selection as collision_selection,EXPORTS as COLLISION_EXPORTS,ORDINAL_EXPORTS as COLLISION_ORDINAL_EXPORTS,EVENT_BYTES as COLLISION_EVENT_BYTES,FRAME_BYTES as COLLISION_FRAME_BYTES
+from tools.collision_calls import selection as collision_selection,EXPORTS as COLLISION_EXPORTS,ORDINAL_EXPORTS as COLLISION_ORDINAL_EXPORTS,EVENT_BYTES as COLLISION_EVENT_BYTES,FRAME_BYTES as COLLISION_FRAME_BYTES,FUNCTIONS as COLLISION_FUNCTIONS
 from tools.sdk_reads import RANGES as SDK_RANGES, HEAP_RANGES, RECOVERY_RANGES, verified_sdk_selection
 from tools.dispatch_flow import flow_windows
 from tools.dispatch_returns import verified_return_selection
@@ -72,11 +72,13 @@ def load_observer_profile(path):
         require(profile['collision_call_protocol']==1 and profile.get('collision_call_event_bytes')==COLLISION_EVENT_BYTES
                 and profile.get('collision_call_frame_payload_bytes')==COLLISION_FRAME_BYTES
                 and profile.get('collision_call_header_sha256')==record_file(COLLISION_OBSERVER)['sha256']
-                and set(COLLISION_EXPORTS)<=set(profile.get('exported_functions',[])),
-                'Rebuild the separate primitive sampler with its current source and transport.')
+                and set(COLLISION_EXPORTS)<=set(profile.get('exported_functions',[]))
+                and profile.get('collision_call_functions')=={name:dict(pc=pc,bytes=length) for name,(pc,length) in COLLISION_FUNCTIONS.items()}
+                and profile.get('collision_call_indirect_entry_context') is True,
+                'Rebuild the separate collision sampler with its current source, function spans and transport.')
         if profile.get('collision_call_ordinal_selection') is True:
             require(set(COLLISION_ORDINAL_EXPORTS)<=set(profile.get('exported_functions',[])),
-                    'Ordinal primitive selection requires its native configuration and counter exports.')
+                    'Ordinal collision selection requires its native configuration and counter exports.')
     files = []
     for key, filename in (('core', 'shock.wbx'), ('compressed_core', 'shock.wbx.zst')):
         item = profile.get(key, {})
@@ -154,10 +156,10 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
         require(bool(sdk_selection)==(profile.get('sdk_read_protocol')==1),
                 'SDK read interface selection and observer protocol must agree.')
         require(bool(collision_config)==(profile.get('collision_call_protocol')==1),
-                'Primitive snapshot selection and observer protocol must agree.')
+                'Collision snapshot selection and observer protocol must agree.')
         if collision_config and 'ordinal_step' in collision_config:
             require(profile.get('collision_call_ordinal_selection') is True,
-                    'Rebuild the separate observer with ordinal primitive selection support.')
+                    'Rebuild the separate observer with ordinal collision selection support.')
     dotnet = str(dotnet or shutil.which('dotnet') or Path(os.environ.get('ProgramFiles', 'C:/Program Files')) / 'dotnet/dotnet.exe')
     compiler = select_compiler(subprocess.check_output([dotnet, '--list-sdks'], text=True))
     framework = Path(os.environ['WINDIR']) / 'Microsoft.NET/Framework64/v4.0.30319'

@@ -1,5 +1,9 @@
 # Natural primitive calls across ordinal recordings
 
+The later [hull return comparison](HULL_CALLS.md) covers all 194 hull calls in
+this same observed route. This page preserves the primitive collection and its
+separate 643-call result.
+
 The opening-route comparison now checks all 643 primitive invocations observed
 between frames 900 and 6,000, extending the earlier
 [52-call sample](NATURAL_COLLISION_CALLS.md). Eleven separate recordings of each
@@ -24,7 +28,7 @@ no matching C bytes and accepts no whole feature or NPC encounter.
 
 The controller program still has 6,000 frames. Tracing is armed at frame 900;
 calls before arming are outside this evidence. The history also contains 194
-hull entries, whose returns remain unverified. Polygon visits and addresses
+hull entries, whose returns are outside this primitive collection. Polygon visits and addresses
 are observations, without unique-asset or allocation-lifetime claims. Packet
 codes `0x21`, `0x25`, `0x29`, `0x2C`, and `0x2D` occur.
 
@@ -139,7 +143,7 @@ recordings on a data drive; original game assets and private RAM stay outside Gi
 
 The two collision routines still require matching C, and three inherited C
 storage explanations remain unresolved. Broader original-feature coverage,
-other collision histories, complete NPC encounters, hull returns, geometry
+other collision histories, complete NPC encounters, geometry
 ownership, full instruction paths, opaque CPU/GTE state, and original-hardware
 timing remain open. The feature denominator is still 40 provisional groups;
 the exhaustive original feature count is unknown. This collection accepts zero
