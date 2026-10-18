@@ -1,0 +1,14 @@
+[
+  {
+    "function": "func_8001DDF4",
+    "address": "0x8001ddf4",
+    "bytes": 796,
+    "sha256": "e61be058229e5ecc97387ea9e246d7b578594f5d77495b56fc3f2900f2a6b193"
+  },
+  {
+    "function": "func_8001F8B8",
+    "address": "0x8001f8b8",
+    "bytes": 1944,
+    "sha256": "c23a87535a6a4949e414266f5a298b8d0409debb8be4ef6482e627fcc6269513"
+  }
+]

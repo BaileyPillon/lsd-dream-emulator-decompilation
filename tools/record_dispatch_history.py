@@ -20,7 +20,7 @@ from tools.dispatch_flow import flow_windows
 from tools.dispatch_returns import verified_return_selection
 from tools.build_npc_observer import UPSTREAM, MEDNAFEN, SOURCE_SHA256
 from tools.record_npc_history import STOCK_RUNTIME, digest_text, sha256
-from tools.dispatch_trace import validate_program, expand_program, verified_selection
+from tools.dispatch_trace import validate_program, expand_program, verified_selection, supplemental_profile
 from tools.inventory_vtables import parse_symbols
 from tools.replay_cold_start_headless import require, select_compiler, write_json
 from tools.runtime_inputs import load_verified_manifest, record_file
@@ -93,9 +93,11 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
     catalogue_raw = CATALOGUE_FILE.read_bytes()
     catalogue_data = json.loads(catalogue_raw)
     catalogue_provenance = json.loads(CATALOGUE_PROVENANCE.read_bytes())
-    supplemental_raw = SUPPLEMENTAL_FILE.read_bytes()
+    range_path,proof_path,_range_status,_range_source=supplemental_profile(program)
+    supplemental_file,supplemental_provenance_file=ROOT/range_path,ROOT/proof_path
+    supplemental_raw = supplemental_file.read_bytes()
     supplemental = json.loads(supplemental_raw)
-    supplemental_provenance = json.loads(SUPPLEMENTAL_PROVENANCE.read_bytes())
+    supplemental_provenance = json.loads(supplemental_provenance_file.read_bytes())
     selected = verified_selection(program,catalogue_data,catalogue_provenance,catalogue_raw,game,
         supplemental,supplemental_provenance,supplemental_raw)
     return_provenance_raw=RETURN_PROVENANCE.read_bytes()
@@ -148,7 +150,7 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
         ROOT/'tools/record_npc_history.py',ROOT/'tools/replay_cold_start_headless.py',ROOT/'tools/runtime_inputs.py',
         ROOT/'tools/inventory_vtables.py',ROOT/'tools/psx_image.py',ROOT/'research/compiler/compare_function.py',
         ROOT/'configure.py',ROOT/configure.MAP_FILE,ROOT/configure.UNDEF_FUNCS,ROOT/configure.UNDEF_SYMS,
-        ROOT/configure.ROM,CATALOGUE_FILE,CATALOGUE_PROVENANCE,SUPPLEMENTAL_FILE,SUPPLEMENTAL_PROVENANCE,compiler,
+        ROOT/configure.ROM,CATALOGUE_FILE,CATALOGUE_PROVENANCE,supplemental_file,supplemental_provenance_file,compiler,
         *(core_files+[observer_profile] if observer_profile else [])]
     source_pins = [record_file(path) for path in source_paths]
     runtime_paths = [path for name in ('dll', 'gamedb') for path in sorted((runtime / name).rglob('*')) if path.is_file()]
@@ -187,8 +189,8 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
         dispatch_words=[symbols[name] for name in memory_symbols], flow_sites=sites, return_trace=return_selection)
     shutil.copyfile(CATALOGUE_FILE,workspace/'dispatch-catalogue.json')
     shutil.copyfile(CATALOGUE_PROVENANCE,workspace/'dispatch-provenance.json')
-    shutil.copyfile(SUPPLEMENTAL_FILE,workspace/'method-ranges.json')
-    shutil.copyfile(SUPPLEMENTAL_PROVENANCE,workspace/'method-ranges-provenance.json')
+    shutil.copyfile(supplemental_file,workspace/'method-ranges.json')
+    shutil.copyfile(supplemental_provenance_file,workspace/'method-ranges-provenance.json')
     shutil.copyfile(RETURN_PROVENANCE,workspace/'return-helper-provenance.json')
     write_json(workspace / 'settings.json', settings)
     references = [framework / name for name in ('mscorlib.dll', 'System.dll', 'System.Core.dll',
