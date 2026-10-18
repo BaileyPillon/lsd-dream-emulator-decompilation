@@ -34,6 +34,11 @@ An optional [emulator media-initialization patch](docs/EMULATOR_LABEL_INITIALIZA
 passes that 30,000-frame first-dream profile with all 61 complete-state
 checkpoint pairs equal. The distributed profile retains its recorded failure.
 
+The optional [NPC entry tracer](docs/NPC_ENTRY_TRACE.md) now records 2,700
+natural Buddha callback entries in one fixed controller history. Original and
+rebuilt traces agree; a separate distributed-core comparison checks the
+observer's recorded game outputs. Whole-encounter acceptance remains open.
+
 The verified local build reproduces the original Japanese executable byte for
 byte. **Full C recovery and independently reviewed gameplay coverage are still
 in progress.** The remaining assembly is regenerated from your own executable.
@@ -90,7 +95,9 @@ to all 122 animation instances, with 1,952 explicit first-frame selections and
 24 completed wrong-output controls. The
 [actor tick checker](docs/ACTOR_PLAYBACK.md) now follows all 4,260 script frames
 through 37,008 original tick calls, including animation pause/resume and looping.
-Rendered playback, enabled callbacks and natural encounters remain open.
+That constructed profile leaves rendered playback and natural encounters open.
+The later [NPC entry trace](docs/NPC_ENTRY_TRACE.md) separately records one
+natural timed Buddha history with an enabled original callback.
 The [collision query interface](docs/COLLISION_API.md) now declares the original
 pointer roles and output sizes. A compiled C caller passes 12,696 bounded inputs;
 the complete matching executable and source-recovery counts are unchanged.
@@ -347,7 +354,7 @@ tap duration while preserving the canonical game and whole-feature gates.
 | Workflow | Purpose | Entry points |
 | --- | --- | --- |
 | Original game | Recover the existing game, including its original scripted NPC behavior, without changing the canonical executable. | `src/`, `ninja check`, [native NPC audit](docs/NATIVE_AI.md) |
-| Analysis and AI-assisted development | Export verified context, inspect assets and dispatch tables, test C candidates and compare recorded emulator runs. The supplied tools make no model API calls. | `tools/decomp_workbench.py`, [tool assessment](docs/TOOL_ASSESSMENT.md) |
+| Analysis and AI-assisted development | Export verified context, inspect assets and dispatch tables, test C candidates and compare recorded emulator runs. The supplied tools make no model API calls. | `tools/decomp_workbench.py`, [NPC entry tracing](docs/NPC_ENTRY_TRACE.md), [tool assessment](docs/TOOL_ASSESSMENT.md) |
 | Optional gameplay mods | Produce separate patched executables and discs for longer timers, endless timers or a passive Gray Man. | `tools/mod_executable.py`, [optional mods](docs/OPTIONAL_MODS.md) |
 
 The analysis tools and optional mods do not count as recovered original-game

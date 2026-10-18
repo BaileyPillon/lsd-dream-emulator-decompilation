@@ -28,7 +28,7 @@ internal static class ReplayColdStart {
         using (var hash = SHA256.Create())
             return BitConverter.ToString(hash.ComputeHash(value)).Replace("-", "").ToLowerInvariant();
     }
-    sealed class Files : ICoreFileProvider {
+    internal sealed class Files : ICoreFileProvider {
         readonly string[] Bios;
         readonly string Output;
         public Files(string[] bios, string output) { Bios = bios; Output = output; }
@@ -48,7 +48,7 @@ internal static class ReplayColdStart {
             return new ValueTuple<byte[], GameInfo>(GetFirmwareOrThrow(id, message), new GameInfo());
         }
     }
-    sealed class DiscAsset : IDiscAsset {
+    internal sealed class DiscAsset : IDiscAsset {
         public Disc DiscData { get; private set; }
         public DiscType DiscType { get; private set; }
         public string DiscName { get; set; }
@@ -56,7 +56,7 @@ internal static class ReplayColdStart {
             DiscData = disc; DiscName = name; DiscType = new DiscIdentifier(disc).DetectDiscType();
         }
     }
-    sealed class Input : IController {
+    internal sealed class Input : IController {
         public ControllerDefinition Definition { get; private set; }
         public readonly Dictionary<string, bool> Buttons = new Dictionary<string, bool>();
         public readonly Dictionary<string, int> Axes = new Dictionary<string, int>();

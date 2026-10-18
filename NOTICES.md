@@ -21,6 +21,7 @@ Repository visibility is not a substitute for a license grant.
 | Python dependencies | Pinned in `requirements.txt` and `requirements-analysis.txt`; each package retains its own license. |
 | MASPSX | Downloaded during setup from [mkst/maspsx](https://github.com/mkst/maspsx) at the pinned revision; its checkout and license remain separate. |
 | Optional analysis/emulator tools | Referenced in the documentation and supplied by their respective authors. They are not bundled with this repository. |
+| Optional NPC observer | Project analysis source for the existing CPU hook in [BizHawk 2.11.1](https://github.com/TASEmulators/BizHawk/tree/2.11.1) and its pinned Mednafen submodule. Build inputs and their upstream notices remain in a separate checkout; no emulator binary is bundled. |
 
 The repository does not distribute original game discs, executable files,
 extracted game assets, PlayStation BIOS files, save states or emulator captures.

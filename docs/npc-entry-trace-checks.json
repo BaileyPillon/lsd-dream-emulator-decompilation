@@ -1,0 +1,374 @@
+{
+  "schema_version": 1,
+  "status": "qualified_original_NPC_instruction_entry_workflow",
+  "recorded_utc": "2026-10-18T03:05:55.909725+00:00",
+  "repository": "BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "d26c7f5e50f72bf255e2ebb413b3ce8b243f83fa",
+  "canonical_executable": {
+    "bytes": 505856,
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+  },
+  "source_counts_before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 2,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "matching_C_percentage": 98.62939693465125,
+  "new_C_bytes": 0,
+  "new_bounded_NPC_callbacks": 0,
+  "new_natural_timed_Buddha_histories": 0,
+  "previous_natural_timed_Buddha_histories": 1,
+  "current_natural_timed_Buddha_histories": 1,
+  "new_whole_NPC_encounters_accepted": 0,
+  "new_whole_feature_groups_accepted": 0,
+  "official_exhaustive_feature_total": "unknown; 40 provisional feature groups remain the comparison denominator",
+  "executed_source_sha256": {
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/RecordNpcHistory.cs": "64fb9082092a7ca3163b679809834e40f73b887ef647a59825cc2183bed2e2b5",
+    "research/headless/NpcInstructionTrace.cs": "c24326d9ef4d445302d51e3945573b5413951d17ea90af26dcb5deea9314260f",
+    "research/runtime_state/npc_entry_observer.h": "33abb17d6a3dc4cad71763f19e28c1576c6922a78b79d7f1389e53263b357c8b",
+    "research/headless/buddha-timed-route.json": "7f53f7b728316a2f2aee982a20d82ecfb8b4df357c5f15823195b25a03bb31f4",
+    "tools/build_npc_observer.py": "a3cf000f67ca20f89d3c3e4cda6f4811d2da667162a3b957e7f4fda61fb66cb8",
+    "tools/record_npc_history.py": "51cb6cde042242c6297d953900a1725617e2d6f4d0905625b3b15c87de72020e",
+    "tools/compare_npc_history.py": "f0c71063421c11909106d31b4da979774862f1527057b2748d89797ec3a59ce6",
+    "tools/replay_cold_start_headless.py": "7dedf37e0fceb035fed90f359779df7f79234dc0ab2d4ef559fb2edffa885595",
+    "tools/runtime_inputs.py": "a1e0865b13801414bfad30f31ce00ffd13840b2a836dbc527e138d89d6d877e4",
+    "tests/test_npc_entry_trace.py": "e841bf2a619a9f07cdf261b85c9bcd8803d75148cdd779583e9980bcf4a547c8",
+    "tests/__init__.py": "c441e09731a8ff4bc4093f818f884f101621e51e3a856b644d79c8433e01d517"
+  },
+  "guide_sha256": "9d3a66256c65bd38fcf4c8ca1e0a0e2ea8a49b567ec51bcb4379b4b8411af1a0",
+  "observer_build": {
+    "upstream_commit": "bdddf4a58aa1a022afb11dc73294a81a5aa7bbd5",
+    "mednafen_commit": "382ff1b8d293c9a862497706808cbb79b2cecbfb",
+    "scope": "One new adapter object linked with the recorded pinned cached native objects; not a fresh full-core rebuild.",
+    "compiler": "Debian clang version 18.1.8 (18+b1)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /root/lsd-nymashock-media-record-research/tools",
+    "core": {
+      "file": "shock.wbx",
+      "bytes": 3390824,
+      "sha256": "2272e6e36f634e9c52ad3a630b456d9fb36784674e1cdc4950330c241194d06c"
+    },
+    "compressed_core": {
+      "file": "shock.wbx.zst",
+      "bytes": 824109,
+      "sha256": "753c2a1ad641522eab31f2fad2a2ff886dd7ab40164b68ee470a6a583aef99c6"
+    },
+    "supplied_inputs_preserved": true,
+    "CPU_source_modified": false,
+    "existing_DebugMode_hook_used": true,
+    "private_profile": {
+      "path": ".decomp-lab/npc-observer-public-build-20261017-first/profile.json",
+      "bytes": 42137,
+      "sha256": "d9fdc8e726005c447b0963974d0f7d6ffb156613c271d42dd28d96c55c6b408c"
+    }
+  },
+  "controller_program": {
+    "frames": 30000,
+    "segments": 61,
+    "checkpoints": 125,
+    "RAM_interval": 6,
+    "expanded_submitted_sha256": "c33fdd031c9a04809c1093067d7d197adf0270d8baa6c6f737c7c7504b23672b",
+    "canonical_disc_track_sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61",
+    "trace": {
+      "watched_pc": "0x8005EFF4",
+      "arm_frame": 3900,
+      "callback": "entity_buddha",
+      "function_bytes": 228,
+      "function_sha256": "0df584f37e1a9ce253307a3a5310a8b59e1ed7ddded13619db86b9b01db3824a",
+      "expected_entries": 2700,
+      "expected_first_frame": 5407,
+      "expected_last_frame": 22574,
+      "entity_id": 20,
+      "context_tick_offset": 160
+    }
+  },
+  "native_profiles": [
+    {
+      "profile": "stock",
+      "disc": "original",
+      "controller_steps": 30000,
+      "native_GPU_observations": 30001,
+      "complete_RAM_hash_samples": 5003,
+      "complete_RAM_GPU_raw_RGB_checkpoints": 125,
+      "complete_PCM_bytes": 88457172,
+      "stereo_PCM_sample_frames": 22114293,
+      "original_callback_entries": 0,
+      "input_manifest": {
+        "path": "D:/CodexRuntimes/lsd-emulator/qa-c-npc-public-30000-20261017-first-stock/run-inputs.json",
+        "bytes": 119927,
+        "sha256": "83230f75860f2c95c8c0058d05b267422aca844eb4e1a7e053af228f348866c1"
+      },
+      "native_report": {
+        "path": "D:/CodexRuntimes/lsd-emulator/qa-c-npc-public-30000-20261017-first-stock/observations/report.json",
+        "bytes": 40154,
+        "sha256": "15c9b88460df170005298b8d56843d2c12574098d5e50e2c9ad9ce039095c3eb"
+      }
+    },
+    {
+      "profile": "observer-original",
+      "disc": "original",
+      "controller_steps": 30000,
+      "native_GPU_observations": 30001,
+      "complete_RAM_hash_samples": 5003,
+      "complete_RAM_GPU_raw_RGB_checkpoints": 125,
+      "complete_PCM_bytes": 88457172,
+      "stereo_PCM_sample_frames": 22114293,
+      "original_callback_entries": 2700,
+      "input_manifest": {
+        "path": "D:/CodexRuntimes/lsd-emulator/qa-c-npc-public-30000-20261017-first-observer-original/run-inputs.json",
+        "bytes": 168569,
+        "sha256": "c531661588768cfaedf3828cb3d638d279ba27dec3c096fba37c7b490cb181ad"
+      },
+      "native_report": {
+        "path": "D:/CodexRuntimes/lsd-emulator/qa-c-npc-public-30000-20261017-first-observer-original/observations/report.json",
+        "bytes": 40155,
+        "sha256": "032110c00477536b1d37d62c57df5e097244357455f30319719652c52b3758e7"
+      }
+    },
+    {
+      "profile": "observer-rebuilt",
+      "disc": "rebuilt",
+      "controller_steps": 30000,
+      "native_GPU_observations": 30001,
+      "complete_RAM_hash_samples": 5003,
+      "complete_RAM_GPU_raw_RGB_checkpoints": 125,
+      "complete_PCM_bytes": 88457172,
+      "stereo_PCM_sample_frames": 22114293,
+      "original_callback_entries": 2700,
+      "input_manifest": {
+        "path": "D:/CodexRuntimes/lsd-emulator/qa-c-npc-public-30000-20261017-first-observer-rebuilt/run-inputs.json",
+        "bytes": 168382,
+        "sha256": "e60efee656dd9f2638b262ab889156bee9b60df67a70b7c2d6d1e505a419fe01"
+      },
+      "native_report": {
+        "path": "D:/CodexRuntimes/lsd-emulator/qa-c-npc-public-30000-20261017-first-observer-rebuilt/observations/report.json",
+        "bytes": 40155,
+        "sha256": "032110c00477536b1d37d62c57df5e097244357455f30319719652c52b3758e7"
+      }
+    }
+  ],
+  "native_GPU_observations": 90003,
+  "complete_RAM_hash_observations": 15009,
+  "complete_RAM_GPU_raw_RGB_observations": 375,
+  "comparisons": [
+    {
+      "mode": "observer-output",
+      "status": "passed_NPC_history_output_comparison",
+      "runtime_differences": [
+        {
+          "file": "dll/shock.wbx",
+          "reference": null,
+          "candidate": {
+            "bytes": 3390824,
+            "sha256": "2272e6e36f634e9c52ad3a630b456d9fb36784674e1cdc4950330c241194d06c"
+          }
+        },
+        {
+          "file": "dll/shock.wbx.zst",
+          "reference": {
+            "bytes": 705813,
+            "sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126"
+          },
+          "candidate": {
+            "bytes": 824109,
+            "sha256": "753c2a1ad641522eab31f2fad2a2ff886dd7ab40164b68ee470a6a583aef99c6"
+          }
+        }
+      ],
+      "native_observation_pairs": 30001,
+      "complete_RAM_hash_sample_pairs": 5003,
+      "complete_RAM_GPU_raw_RGB_pairs": 125,
+      "differing_frame_observations": 0,
+      "differing_RAM_samples": 0,
+      "differing_raw_checkpoints": 0,
+      "differing_PNG_containers": 0,
+      "complete_PCM_equal": true,
+      "complete_PCM_sha256": "91698786420ff910e713c902eacb92b7ea9cef010c70f8ccf74bf90ae3b144c5",
+      "PCM_bytes_per_run": 88457172,
+      "original_callback_entries_per_run": [
+        0,
+        2700
+      ],
+      "original_entry_records_equal": null,
+      "original_clock_checkpoint_checks": [
+        0,
+        61
+      ],
+      "private_report": {
+        "path": ".decomp-lab/npc-public-observer-output-20261017-second.json",
+        "bytes": 23988,
+        "sha256": "841a3fa56dcf723a156592c1ce2976ee654fc49bd98e3aea8c5a54d190818d86"
+      }
+    },
+    {
+      "mode": "same-runtime",
+      "status": "passed_NPC_history_output_comparison",
+      "runtime_differences": [],
+      "native_observation_pairs": 30001,
+      "complete_RAM_hash_sample_pairs": 5003,
+      "complete_RAM_GPU_raw_RGB_pairs": 125,
+      "differing_frame_observations": 0,
+      "differing_RAM_samples": 0,
+      "differing_raw_checkpoints": 0,
+      "differing_PNG_containers": 0,
+      "complete_PCM_equal": true,
+      "complete_PCM_sha256": "91698786420ff910e713c902eacb92b7ea9cef010c70f8ccf74bf90ae3b144c5",
+      "PCM_bytes_per_run": 88457172,
+      "original_callback_entries_per_run": [
+        2700,
+        2700
+      ],
+      "original_entry_records_equal": true,
+      "original_clock_checkpoint_checks": [
+        61,
+        61
+      ],
+      "private_report": {
+        "path": ".decomp-lab/npc-public-original-rebuilt-20261017-second.json",
+        "bytes": 23462,
+        "sha256": "fb9ed0d497b2d618fcb9e79748d7ecf72415f0397d481eb9f6eb2bbadd8dff4e"
+      }
+    }
+  ],
+  "direct_entry_history": {
+    "callback": "entity_buddha",
+    "pc": "0x8005EFF4",
+    "entity_id": 20,
+    "entity": "0x801CF954",
+    "return_address": "0x8002CD88",
+    "instruction": "0x27BDFFE0",
+    "entries_per_traced_run": 2700,
+    "first_relative_frame": 5407,
+    "last_relative_frame": 22574,
+    "context_tick_first": 0,
+    "context_tick_last": 2699,
+    "original_rebuilt_entry_bytes_equal": true,
+    "last_entry_is_not_a_stop_frame": true,
+    "independent_clock_checkpoints_per_traced_run": 61
+  },
+  "independent_audit": {
+    "Pillow": "12.3.0",
+    "decoded_public_RGB_checkpoints": 375,
+    "prior_uninstrumented_complete_RAM_GPU_RGB_checks": 369,
+    "prior_RAM_hash_samples": 15003,
+    "all_native_GPU_histories_equal_prior_uninstrumented_history": true,
+    "all_complete_PCM_equal_prior_uninstrumented_history": true,
+    "raw_RGB_matches_decoded_PNG": true,
+    "public_entry_traces_equal_previous_private_traces": true,
+    "private_report": {
+      "path": ".decomp-lab/npc-public-independent-audit-20261017-first.json",
+      "bytes": 2477,
+      "sha256": "4f7c5eaf6b035cf16ed7c1a69512198219eb80b193fed642c322e4971e15dd61"
+    },
+    "private_producer_sha256": "b90d4d2de3d53544d461b3e62bedba56f29d3cf0cf056b94844f4fd115e51d89"
+  },
+  "default_strict_mode_control": {
+    "rejected": true,
+    "exit_code": 2,
+    "comparison_record_written": false,
+    "private_report": {
+      "path": ".decomp-lab/npc-entry-cross-runtime-control-20261017-second/report.json",
+      "bytes": 1147,
+      "sha256": "a2ef304d0566f342478a7605e0606e0dd8b59f08fe7b7cdf9fe7b2851dabed41"
+    }
+  },
+  "default_cold_start_regression": {
+    "submitted_frames": 6000,
+    "native_observations": 6001,
+    "complete_checkpoints": 16,
+    "differing_GPU_observations": 0,
+    "differing_RAM_bytes": 0,
+    "differing_RGB_pixels": 0,
+    "differing_PNG_containers": 16,
+    "complete_recorded_GUI_PCM_window_equal": true,
+    "extra_headless_PCM_preserved": true,
+    "private_report": {
+      "path": "D:/CodexRuntimes/lsd-emulator/qa-c-headless-shared-types-20261017-first/comparison.json",
+      "bytes": 6077,
+      "sha256": "86ec06cf998f4e1ae7466aa9d42ebaa7f44ff9b45f277054f7bdd5c6d59382d8"
+    }
+  },
+  "matching_game": {
+    "protected_build_inputs": 392,
+    "all_inputs_preserved": true,
+    "complete_executable_equal": true,
+    "canonical_objects": 306,
+    "build_current": true,
+    "ninja_check_passed": true,
+    "private_report": {
+      "path": ".decomp-lab/npc-entry-public-build-state-20261017-first/report.json",
+      "bytes": 807,
+      "sha256": "ba7bdc71be5e27a1546f2a8f14068757dfd836c31e5bb0852c7fd9fecd9811a9"
+    }
+  },
+  "tooling_tests": [
+    {
+      "platform": "windows",
+      "Python": "3.14",
+      "tests": 880,
+      "expected_skips": 2,
+      "result": "passed",
+      "seconds": 27.757,
+      "private_log": {
+        "path": ".decomp-lab/npc-entry-public-tests-windows-20261017-second.log",
+        "bytes": 143886,
+        "sha256": "2fa1481dff37dc29c73a160bc834fdae1a3b6c5c582c7828c00ac501b5093abc"
+      }
+    },
+    {
+      "platform": "wsl",
+      "Python": "3.13.5",
+      "tests": 880,
+      "expected_skips": 2,
+      "result": "passed",
+      "seconds": 16.597,
+      "private_log": {
+        "path": ".decomp-lab/npc-entry-public-tests-wsl-20261017-second.log",
+        "bytes": 143000,
+        "sha256": "732b06bb299647fbc75b95b741c2cb55794650fe88111a66ec936b815a770803"
+      }
+    }
+  ],
+  "new_test_methods": 20,
+  "distinct_wrong_trace_controls": 7,
+  "test_package_marker": "tests/__init__.py prevents installed tests packages from shadowing repository fixtures.",
+  "original_NPC_AI_changed": false,
+  "model_API_called": false,
+  "controller_inputs_adaptive": false,
+  "game_RAM_injected": false,
+  "saved_state_restored": false,
+  "user_emulator_controlled": false,
+  "Bevy_port_modified": false,
+  "public_PNG_comparer_decodes_pixels": false,
+  "complete_state_parity_checked": false,
+  "original_hardware_timing_verified": false,
+  "producer_sha256": "e004155ef2972f888d30e31a3fa4a185eff5cd5a7f15dab7492b6c2dbef67cfe",
+  "limits": [
+    "Three runs of one fixed history; repetitions do not add independently accepted feature scenarios.",
+    "The hook changes the existing CPU execution mode. Observed output preservation is qualified only for the recorded route.",
+    "Complete-state, original-hardware timing and whole-NPC/feature acceptance remain open.",
+    "No game media, BIOS, emulator binary, extracted assets or raw captures are published."
+  ]
+}
