@@ -156,6 +156,13 @@ their complete requested destination data against disc sectors and earlier
 extracted files. Continue asynchronous completion, SDK/disc errors, other
 dispatch paths and file histories, and the full source and gameplay gates.
 
+The [CD declaration repair](CD_DRIVER_DECLARATIONS.md) removes thirteen
+implicit internal declarations and types the blocking read boundary, reducing
+that unit's ordinary compiler warnings from 64 to three with identical game
+bytes. Investigate its remaining request-initialization and callback-signature
+diagnostics alongside the unresolved sector buffer; whole-file-driver
+acceptance and the wider source gates remain open.
+
 Two game functions remain in assembly after the
 [sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md): the
 796-byte hull/face query (`func_8001DDF4`) and the 1,944-byte primitive-face query

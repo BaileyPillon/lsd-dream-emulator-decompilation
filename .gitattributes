@@ -286,3 +286,5 @@ tools/dispatch_returns.py text eol=lf
 tests/test_dispatch_returns.py text eol=lf
 docs/DISPATCH_RETURNS.md text eol=lf
 docs/dispatch-return-checks.json text eol=lf
+docs/CD_DRIVER_DECLARATIONS.md text eol=lf
+docs/cd-driver-declarations-checks.json text eol=lf

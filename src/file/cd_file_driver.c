@@ -52,7 +52,21 @@ extern s32 CdPosToInt(u8 *);
 extern void CdIntToPos(s32, u8 *);
 extern s32 CdSearchFile(void *, char *);
 extern u8 D_8006D574[];
-extern s32 func_80029274(s32, s32, s32);
+extern s32 func_80029274(s32 sectors, void *destination, s32 mode);
+
+void *cd_file_driver_get_vtable(void);
+void cd_file_driver_init(void);
+void cd_file_driver_begin_read(s32 arg0, s32 arg1);
+s32 cd_file_driver_find_disc_record(s32 arg0);
+s8 *cd_file_driver_build_path(s8 *arg0, s8 *arg1);
+void cd_file_driver_end_read(void);
+void cd_file_driver_queue_request(file_buf_t *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
+s32 cd_file_driver_find_disc_record_index(s32 arg0);
+void cd_file_driver_reset_cache(file_buf_t *This);
+s32 cd_file_driver_get_aligned_size(file_buf_t *This);
+s32 cd_file_driver_get_disc_record(s32 arg0);
+void cd_file_driver_free_request(cd_file_request_t *node);
+cd_file_request_t *cd_file_driver_alloc_request(void);
 
 s32 cd_file_driver_tick(void);
 void cd_file_driver_lookup_file(file_buf_t *This, s8 *arg1);
@@ -62,7 +76,7 @@ void cd_file_driver_stop_read(void);
 void cd_file_driver_read_state1(void);
 void cd_file_driver_read_state2(void);
 void cd_file_driver_set_read_result(s32 arg0);
-s32 cd_file_driver_read_sectors();
+s32 cd_file_driver_read_sectors(file_buf_t *file, void *destination, u32 bytes);
 
 extern s32 g_CdInitialized;
 extern s32 g_CdCallbackInstalled;
@@ -229,7 +243,7 @@ s32 cd_file_driver_read(file_buf_t *This, s32 arg1, u32 arg2) {
     s32 status;
 
     if (g_CdFrameActive == 0 && g_CdFrameParam == 0) {
-        cd_file_driver_read_sectors(This, arg1, arg2);
+        cd_file_driver_read_sectors(This, (void *)arg1, arg2);
         return 0;
     }
     cd_file_driver_lock();
@@ -242,7 +256,7 @@ s32 cd_file_driver_read(file_buf_t *This, s32 arg1, u32 arg2) {
                 g_CdReadPhase = 1;
             } else {
             retry2:
-                func_80029274(arg2 >> 11, arg1, 0x80);
+                func_80029274(arg2 >> 11, (void *)arg1, 0x80);
                 do {
                     status = CdReadSync(0, 0);
                 } while (status > 0);
@@ -307,7 +321,7 @@ sync_read:
                         status = CdSync(0, 0);
                     } while (status == 0);
                 } while (status == 5);
-                func_80029274(g_CdReadDest, (s32)arg0->m_Buffer, 0x80);
+                func_80029274(g_CdReadDest, arg0->m_Buffer, 0x80);
                 do { status = CdReadSync(0, 0); } while (status > 0);
                 if (status == -1) {
                     goto sync_read;
@@ -775,7 +789,7 @@ check_timeout:
         }
         break;
     case 7:
-        if (func_80029274(g_CdReadDest, g_CdReadLba, 0x80) != 0) {
+        if (func_80029274(g_CdReadDest, (void *)g_CdReadLba, 0x80) != 0) {
             result = 8;
             goto set_result;
         }
@@ -838,7 +852,7 @@ check_timeout:
         }
         break;
     case 7:
-        if (func_80029274(g_CdReadDest, g_CdReadLba, 0x80) != 0) {
+        if (func_80029274(g_CdReadDest, (void *)g_CdReadLba, 0x80) != 0) {
             result = 8;
             goto set_result;
         }
@@ -948,24 +962,24 @@ void cd_file_driver_nullsub17(void) {
 }
 
 /*
- * Reads `arg2` bytes of CD data into `arg1` using the frame-driven
- * control/sync path. The inherited unused `sector[0x800]` keeps the target's
- * 0x838 frame, but its original source purpose remains unexplained. It is
+ * Reads `bytes` bytes of CD data into `destination` through the blocking
+ * control/read polling path. The inherited unused `sector[0x800]` keeps the
+ * target's 0x838 frame, but its original source purpose remains unexplained. It is
  * tracked in docs/UNUSED_LOCAL_CENSUS.md, not credited as explained storage.
  * The goto-based retry loop (both the sync==5 and read==-1 paths)
- * is required to keep `sectors = arg2 >> 11` and the CdSync call setup inside
+ * is required to keep `sectors = bytes >> 11` and the CdSync call setup inside
  * the loop instead of hoisting them.
  */
-s32 cd_file_driver_read_sectors(file_buf_t *arg0, void *arg1, u32 arg2) {
+s32 cd_file_driver_read_sectors(file_buf_t *file, void *destination, u32 bytes) {
     u8 sector[0x800];
     s32 result[4];
     s32 status;
     u32 sectors;
 
-    if (arg0->m_Unk2 != 0) {
+    if (file->m_Unk2 != 0) {
     retry:
-        sectors = arg2 >> 11;
-        CdControl(2, (u8 *) &arg0->m_Unk5, 0);
+        sectors = bytes >> 11;
+        CdControl(2, (u8 *) &file->m_Unk5, 0);
     syncloop:
         status = CdSync(0, (u8 *) result);
         if (status == 0) {
@@ -977,7 +991,7 @@ s32 cd_file_driver_read_sectors(file_buf_t *arg0, void *arg1, u32 arg2) {
         if (sectors == 0) {
             goto done;
         }
-        func_80029274(sectors, arg1, 0x80);
+        func_80029274(sectors, destination, 0x80);
         do {
             status = CdReadSync(0, 0);
         } while (status > 0);
@@ -986,7 +1000,7 @@ s32 cd_file_driver_read_sectors(file_buf_t *arg0, void *arg1, u32 arg2) {
         }
     done:;
     } else {
-        arg0->vtable->Close(arg0);
+        file->vtable->Close(file);
     }
     return 0;
 }

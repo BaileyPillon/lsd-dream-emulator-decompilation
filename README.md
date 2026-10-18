@@ -110,6 +110,11 @@ recorded CD Open/Read returns and 14 nested synchronous reads. Their complete
 requested buffers match 1,007,616 disc bytes, including trailing data; queued
 completion and broader file-driver acceptance remain open.
 
+The [CD declaration repair](docs/CD_DRIVER_DECLARATIONS.md) makes the read
+destination and helper signatures explicit and removes thirteen implicit
+internal declarations. Ordinary compiler warnings in that unit fall from
+64 to three, while a fresh complete build remains canonical.
+
 The feature inventory has 40 provisional groups; an official exhaustive
 feature total is unknown. SDK and startup code are excluded from the C-byte
 denominator. Bounded native and emulator comparisons have passed, including
