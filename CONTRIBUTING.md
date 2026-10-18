@@ -93,6 +93,11 @@ and explicit cross-core output comparison separate from the matching game
 and default strict runtime comparisons. Retain source snapshots and failed
 controls; report one recorded history without counting it as a whole NPC class.
 
+The [original NPC catalogue](docs/NPC_CATALOGUE.md) exports complete verified
+callback ranges from a current matching build. Use its actual ELF/GNU extents
+and original hashes for observer targets; preserve the full-image check and
+keep the generated executable and ELF private.
+
 Use the offline [NPC lifetime inspector](docs/NPC_LIFETIME.md) to distinguish
 enabled registration, disabled contexts and scene reachability in verified
 recordings. Preserve sampled transition intervals; do not interpret disabled

@@ -55,6 +55,11 @@ two sound requests and selected lifecycle boundaries agree. Three 9,000-step
 cold boots also agree on recorded GPU, RAM, RGB and complete PCM output.
 Whole-NPC and whole-feature acceptance remain open.
 
+The [original NPC catalogue](docs/NPC_CATALOGUE.md) now exports all 107
+callback PCs, complete function ranges and hashes from a matching symbolic
+link. It supplies checked observer targets and analysis metadata; it adds no
+game behavior or runtime acceptance.
+
 The verified local build reproduces the original Japanese executable byte for
 byte. **Full C recovery and independently reviewed gameplay coverage are still
 in progress.** The remaining assembly is regenerated from your own executable.

@@ -209,3 +209,11 @@ docs/npc-multi-instance-checks.json text eol=lf
 research/headless/boatman-approach-route.json text eol=lf
 docs/NPC_BOATMAN.md text eol=lf
 docs/npc-boatman-checks.json text eol=lf
+
+# Preserve the complete-symbol diagnostic and original NPC catalogue workflow.
+tools/decomp_workbench.py text eol=lf
+tools/export_npc_catalogue.py text eol=lf
+tests/test_npc_catalogue.py text eol=lf
+research/headless/npc-callback-catalogue.json text eol=lf
+docs/NPC_CATALOGUE.md text eol=lf
+docs/npc-catalogue-checks.json text eol=lf
