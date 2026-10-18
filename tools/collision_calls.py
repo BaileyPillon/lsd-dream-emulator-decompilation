@@ -1,7 +1,11 @@
-"""Fixed transport and opt-in selection for read-only primitive snapshots."""
+"""Fixed transport and opt-in selection for read-only collision snapshots."""
 from tools.replay_cold_start_headless import require
 PC=0x8001F8B8
 FUNCTION_BYTES=1944
+HULL_PC=0x8001DDF4
+HULL_FUNCTION_BYTES=796
+FUNCTIONS={'func_8001F8B8': (PC, FUNCTION_BYTES),
+           'func_8001DDF4': (HULL_PC, HULL_FUNCTION_BYTES)}
 EVENT_BYTES=988
 RAM_BYTES=0x200000
 FRAME_BYTES=0x800000
@@ -26,6 +30,11 @@ assert len(FIELDS)*4==EVENT_BYTES
 def selection(program):
     trace=program.get('method_trace',{});config=trace.get('collision_calls')
     if config is None:return None
+    require(isinstance(config,dict), 'Collision-call settings must be an object.')
+    function=config.get('function','func_8001F8B8')
+    require(isinstance(function,str) and function in FUNCTIONS,
+            'Select a declared original collision function.')
+    config={key:value for key,value in config.items() if key!='function'}
     require(isinstance(config,dict) and type(config.get('max_samples')) is int
             and 1<=config['max_samples']<=64,
             'Select 1..64 collision snapshots.')
@@ -39,7 +48,10 @@ def selection(program):
                 and 1<=config['ordinal_first']<=config['ordinal_step']<=64,
                 'Ordinal selection requires an integer first and step with 1 <= first <= step <= 64.')
         policy=dict(ordinal_first=config['ordinal_first'],ordinal_step=config['ordinal_step'])
+    require(function!='func_8001DDF4' or 'ordinal_step' in policy,
+            'Hull snapshots require ordinal selection; the primitive caller/model policy is separate.')
     require(trace.get('range_family')=='collision' and trace.get('targets')==['func_8001DDF4','func_8001F8B8']
             and not trace.get('flow_sites') and not trace.get('return_trace') and not trace.get('sdk_reads'),
             'Collision snapshots require the declared entry-only collision family.')
-    return dict(pc=PC,bytes=FUNCTION_BYTES,max_samples=config['max_samples'],**policy)
+    pc,length=FUNCTIONS[function]
+    return dict(pc=pc,bytes=length,max_samples=config['max_samples'],**policy)

@@ -1,7 +1,8 @@
-"""Verify every primitive call in one route through disjoint ordinal recordings.
+"""Verify selected collision calls in one route through disjoint ordinal recordings.
 
-This does not accept hull returns, full instruction paths, opaque CPU/GTE state,
-allocation ownership, other input histories, or whole-feature parity.
+Primitive and hull collections retain their separate targets and output models.
+This does not accept full instruction paths, opaque CPU/GTE state, allocation
+ownership, other input histories, or whole-feature parity.
 """
 import argparse
 from collections import Counter
@@ -15,17 +16,20 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from tools import inspect_dispatch_history as history
 from tools.collision_call_batches import PROGRAM_NAME
-from tools.collision_calls import PC, selection
+from tools.collision_calls import PC, FUNCTIONS, selection
 from tools.inspect_collision_calls import compare_calls, inspect_call_recording
 from tools.replay_cold_start_headless import require, write_json
 from tools.runtime_inputs import content_identity
 from research.compiler.compare_function import CANONICAL_SHA256
 
 
-def verify_partition_coverage(entries, batches):
+def verify_partition_coverage(entries, batches, *, function='func_8001F8B8'):
+    require(isinstance(function,str) and function in FUNCTIONS,'Select a declared original collision function.')
+    pc,_=FUNCTIONS[function]
+    label='primitive' if function=='func_8001F8B8' else 'hull'
     require(isinstance(batches, list) and batches, 'Require a nonempty ordinal batch collection.')
-    eligible = [index for index, row in enumerate(entries, 1) if row['pc'] == PC]
-    require(eligible, 'The route has no original primitive entries.')
+    eligible = [index for index, row in enumerate(entries, 1) if row['pc'] == pc]
+    require(eligible, f'The route has no original {label} entries.')
     step = batches[0]['settings'].get('ordinal_step')
     require(type(step) is int and 1 <= step <= 64 and len(batches) == step,
             'The collection must contain every ordinal phase exactly once.')
@@ -39,7 +43,7 @@ def verify_partition_coverage(entries, batches):
         phases.add(first)
         require(all(type(verification['policy'].get(key)) is int and verification['policy'][key] == 0 for key in
                     ('nested_skips', 'sample_limit_skips', 'duplicate_key_skips', 'frame_budget_skips')),
-                'A complete ordinal partition cannot drop primitive calls.')
+                f'A complete ordinal partition cannot drop {label} calls.')
         expected = set(eligible[first - 1::step])
         actual = [row['base_ordinal'] for row in verification['calls']]
         require(all(type(value) is int for value in actual) and len(actual) == len(set(actual))
@@ -56,21 +60,32 @@ def verify_partition_coverage(entries, batches):
             and all(count == 1 for count in covered.values()),
             'The route primitive-entry partition is incomplete or overlapping.')
     calls.sort(key=lambda row: row['base_ordinal'])
-    return dict(status='verified_complete_primitive_entry_partition_for_one_route',
-                original_primitive_entries=len(eligible), completed_primitive_calls=len(calls),
-                phases=step, every_observed_route_primitive_call_verified=True,
+    report=dict(status=f'verified_complete_{label}_entry_partition_for_one_route',function=function,
+                **{f'original_{label}_entries':len(eligible),f'completed_{label}_calls':len(calls),
+                   f'every_observed_route_{label}_call_verified':True},phases=step,
                 result_counts=dict(sorted(Counter(str(row['result']) for row in calls).items())),
-                polygon_visits=sum(row['primitive_count'] for row in calls),
+                polygon_visits=sum(row.get('polygon_visits',row['primitive_count']) for row in calls),
                 observed_model_addresses=len({row['model_address'] for row in calls}),
-                observed_geometry_addresses=len({row['geometry_address'] for row in calls}),
+                observed_geometry_addresses=len({row['geometry_address'] for row in calls if row.get('geometry_decoded',True)}),
                 calls_crossing_a_frame=sum(row['entry_frame'] != row['return_frame'] for row in calls),
                 base_ordinals=[row['base_ordinal'] for row in calls],
                 calls=calls, complete_state_parity_checked=False, whole_feature_groups_accepted=0, new_C_bytes=0)
+    if label=='hull':
+        nested_ordinals=[ordinal for call in calls for ordinal in call['nested_primitive_base_ordinals']]
+        require(all(type(ordinal) is int for ordinal in nested_ordinals),'Nested primitive ordinals must be integers.')
+        nested=Counter(nested_ordinals)
+        primitives={index for index,row in enumerate(entries,1) if row['pc']==PC}
+        require(set(nested)<=primitives and all(value==1 for value in nested.values()),
+                'Hull partition repeats or misidentifies nested primitive entries.')
+        report.update(observed_nested_primitive_entries=sum(nested.values()),
+            every_observed_primitive_entry_attributed_to_a_hull=set(nested)==primitives,
+            unattributed_primitive_entries=len(primitives-set(nested)),primitive_returns_verified_in_this_collection=False)
+    return report
 
 
 def _program_without_phase(program):
     selected = selection(program)
-    require(selected is not None and 'ordinal_step' in selected, 'Require the declared ordinal primitive policy.')
+    require(selected is not None and 'ordinal_step' in selected, 'Require the declared ordinal collision policy.')
     normalized = copy.deepcopy(program)
     del normalized['method_trace']['collision_calls']['ordinal_first']
     return normalized
@@ -151,6 +166,13 @@ def inspect_collection(manifest_file):
     root = manifest_file.parent
     original_manifest = manifest_file.read_bytes()
     collection = json.loads(original_manifest)
+    function=collection.get('function','func_8001F8B8')
+    require(isinstance(function,str) and function in FUNCTIONS,'Unknown ordinal collection function.')
+    label='primitive' if function=='func_8001F8B8' else 'hull'
+    inspect_recording,compare_stock=inspect_call_recording,compare_calls
+    if label=='hull':
+        from tools import inspect_hull_calls
+        inspect_recording,compare_stock=inspect_hull_calls.inspect_call_recording,inspect_hull_calls.compare_calls
     require(type(collection.get('schema_version')) is int and collection['schema_version'] == 1
             and collection.get('type') == 'ordinal_collision_recording_collection'
             and isinstance(collection.get('reference'), list) and isinstance(collection.get('candidate'), list)
@@ -182,8 +204,8 @@ def inspect_collection(manifest_file):
     source_reports = []
     for reference, candidate in zip(collection['reference'], collection['candidate']):
         reference_path, candidate_path = _capture(root, reference), _capture(root, candidate)
-        before, left = inspect_call_recording(reference_path)
-        after, right = inspect_call_recording(candidate_path)
+        before, left = inspect_recording(reference_path)
+        after, right = inspect_recording(candidate_path)
         selected = selection(left['program'])
         require('ordinal_step' in selected and selected == selection(right['program']),
                 'A recording pair uses different or nonordinal selection.')
@@ -204,25 +226,27 @@ def inspect_collection(manifest_file):
             candidate_manifest_sha256=hashlib.sha256((candidate_path/'run-inputs.json').read_bytes()).hexdigest(),
             records_sha256=before['collision_calls']['binary_records_sha256'],
             complete_RAM_payload_sha256=before['collision_calls']['complete_RAM_payload_sha256']))
-    coverage = verify_partition_coverage(anchor['entries'], batches)
-    candidate_coverage = verify_partition_coverage(anchor['entries'], candidate_batches)
+    coverage = verify_partition_coverage(anchor['entries'], batches,function=function)
+    candidate_coverage = verify_partition_coverage(anchor['entries'], candidate_batches,function=function)
     require(coverage == candidate_coverage, 'Original/rebuilt complete route collision partitions differ.')
     require(coverage['phases'] == collection['ordinal_step'], 'Observed and declared ordinal partition sizes differ.')
     coverage['observation_frame_window'] = dict(first=anchor['program']['method_trace']['arm_frame'],
                                               last=anchor['manifest']['settings']['frames'])
-    stock = compare_calls(_capture(root, collection['reference'][0]), _capture(root, collection['stock']), 'observer-output')
+    stock = compare_stock(_capture(root, collection['reference'][0]), _capture(root, collection['stock']), 'observer-output')
     require(manifest_file.read_bytes() == original_manifest and plan_path.read_bytes() == plan_bytes,
             'The ordinal collection or preparation plan changed during verification.')
     sources = ['tools/inspect_collision_call_batches.py', 'tools/inspect_collision_calls.py',
-               'tools/collision_calls.py', 'tools/collision_call_batches.py', 'tools/inspect_dispatch_history.py']
-    return dict(status='verified_all_observed_primitive_calls_in_one_original_route',
+               'tools/collision_calls.py', 'tools/collision_call_batches.py', 'tools/inspect_dispatch_history.py','tools/verify_collision.py']
+    if label=='hull':sources.append('tools/inspect_hull_calls.py')
+    return dict(status=f'verified_all_observed_{label}_calls_in_one_original_route',
                 manifest_sha256=hashlib.sha256(original_manifest).hexdigest(), coverage=coverage,
                 preparation_plan_sha256=hashlib.sha256(plan_bytes).hexdigest(),
                 original_rebuilt_complete_samples_and_RAM_equal=True, every_recorded_game_output_equal=True,
                 all_partitions_preserve_the_same_entry_history=True, comparisons=comparisons,
                 stock_control=stock, retained_recordings=source_reports,
                 verifier_sources={name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sources},
-                original_game_behavior_modified=False, hull_returns_verified=False,
+                original_game_behavior_modified=False,hull_returns_verified=label=='hull',
+                hull_return_scope='observed ordinal partition only' if label=='hull' else None,
                 complete_state_parity_checked=False, full_instruction_paths_accepted=False,
                 geometry_allocation_ownership_accepted=False, original_hardware_timing_verified=False,
                 whole_feature_groups_accepted=0, new_C_bytes=0)
@@ -238,7 +262,8 @@ def main(argv=None):
         require(output.is_relative_to(ROOT/'.decomp-lab') and not output.exists(), 'Choose a fresh private ordinal collection report.')
         report = inspect_collection(args.manifest)
         write_json(output, report)
-        print(json.dumps(dict(status=report['status'], primitive_calls=report['coverage']['completed_primitive_calls'])))
+        label='hull' if report['coverage'].get('function')=='func_8001DDF4' else 'primitive'
+        print(json.dumps(dict(status=report['status'],**{label+'_calls':report['coverage']['completed_'+label+'_calls']})))
         return 0
     except (OSError, ValueError, KeyError, TypeError) as error:
         print(str(error), file=sys.stderr)

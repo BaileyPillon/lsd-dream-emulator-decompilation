@@ -16,7 +16,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from tools import inspect_dispatch_history as history
-from tools.collision_calls import EVENT_BYTES, FIELDS, FRAME_BYTES, FUNCTION_BYTES, PC, RAM_BYTES, selection
+from tools.collision_calls import EVENT_BYTES, FIELDS, FRAME_BYTES, FUNCTION_BYTES, FUNCTIONS, PC, RAM_BYTES, selection
 from tools.dispatch_returns import _instruction, _jump_return, sequence
 from tools.inspect_sdk_reads import _stack_after_delay
 from tools.psx_image import executable_offset
@@ -140,16 +140,19 @@ def verify_geometry_result(row, before, after):
                                for label, address, size in geometry['ranges']])
 
 
-def verify_boundary(row, base, executable, before, after):
+def verify_boundary(row, base, executable, before, after, *, function='func_8001F8B8'):
+    pc,function_bytes=FUNCTIONS[function]
+    label='primitive' if function=='func_8001F8B8' else 'hull'
     entry_sp, entry_ra = row['entry_cpu_gpr_29'], row['entry_cpu_gpr_31']
-    require(row['entry_pc'] == base['pc'] == PC
+    require(row['entry_pc'] == base['pc'] == pc
             and (row['entry_frame'], row['entry_timestamp']) == (base['relative_frame'], base['timestamp'])
             and [row[f'entry_cpu_gpr_{n}'] for n in (4, 5, 6, 7, 29, 31)] ==
                 [base[name] for name in ('a0', 'a1', 'a2', 'a3', 'sp', 'ra')]
             and (row['entry_jump_pc'], row['entry_delay_pc']) == (base['transfer_pc'], base['delay_pc'])
             and (row['entry_jump_ram'], row['entry_delay_ram']) == (base['transfer_word'], base['delay_word'])
-            and base['transfer_classification']['kind'] == 'observed_direct_JAL',
-            'Sample entry does not identify its complete original primitive entry.')
+            and base['transfer_classification']['kind'] in
+                (('observed_direct_JAL','observed_indirect_JALR') if function=='func_8001DDF4' else ('observed_direct_JAL',)),
+            f'Sample entry does not identify its complete original {label} entry.')
     require(row['entry_cpu_gpr_0'] == row['cpu_gpr_0'] == 0
             and not (row['entry_cpu_sr'] | row['cpu_sr']) & 0x10000
             and row['return_pc'] == entry_ra
@@ -163,23 +166,26 @@ def verify_boundary(row, base, executable, before, after):
                     'Captured transfer RAM word disagrees with its complete snapshot.')
         _stack_after_delay(row, prefix, entry_sp)
     call = row['entry_jump_fetch']
-    require(call >> 26 == 3 and
-            (((row['entry_jump_pc'] + 4) & 0xF0000000) | ((call & 0x03FFFFFF) << 2)) == PC
-            and entry_ra == row['entry_jump_pc'] + 8,
-            'Sample does not observe the original direct primitive call and link.')
-    _jump_return(row, executable, target=entry_ra, span=(PC, FUNCTION_BYTES))
-    at = executable_offset(executable, PC, FUNCTION_BYTES)
-    require(ram(before, PC, FUNCTION_BYTES) == ram(after, PC, FUNCTION_BYTES) == executable[at:at + FUNCTION_BYTES],
-            'Complete primitive code changed at the captured entry or return.')
+    direct=(call>>26==3 and (((row['entry_jump_pc']+4)&0xF0000000)|((call&0x03FFFFFF)<<2))==pc
+            and base['transfer_classification']['kind']=='observed_direct_JAL')
+    indirect=(function=='func_8001DDF4' and (call&0xFC1FFFFF)==0x0000F809 and row['entry_jump_rs']==pc
+              and base['transfer_classification']['kind']=='observed_indirect_JALR')
+    transfer_label='direct primitive' if label=='primitive' else 'hull'
+    require((direct or indirect) and entry_ra == row['entry_jump_pc'] + 8,
+            f'Sample does not observe the original {transfer_label} call and link.')
+    _jump_return(row, executable, target=entry_ra, span=(pc, function_bytes))
+    at = executable_offset(executable, pc, function_bytes)
+    require(ram(before, pc, function_bytes) == ram(after, pc, function_bytes) == executable[at:at + function_bytes],
+            f'Complete {label} code changed at the captured entry or return.')
 
 
-def verify_policy(rows, entries, settings, summary):
+def verify_policy(rows, entries, settings, summary, *, pc=PC):
     selected = {row['base_ordinal']: row for row in rows}
     counts, reasons, started, last_frame, pending = Counter(), Counter(), 0, None, None
     ordinal_mode = 'ordinal_step' in settings
     eligible_ordinal = 0
     for ordinal, entry in enumerate(entries, 1):
-        if entry['pc'] != PC:
+        if entry['pc'] != pc:
             continue
         eligible_ordinal += 1
         now = entry['relative_frame'], entry['timestamp']
@@ -211,15 +217,22 @@ def verify_policy(rows, entries, settings, summary):
         counters += ('ordinal_skips',)
     require(started == len(rows) and sum(reasons.values()) + started == summary['eligible_entries']
             and all(reasons[name] == summary[name] for name in counters),
-            'Collision sample counters disagree with the complete primitive entry history.')
+            'Collision sample counters disagree with the complete selected entry history.')
     return dict(selected_calls=started, eligible_entries=summary['eligible_entries'],
                 distinct_observed_caller_model_address_keys=len(counts),
                 **{name: reasons[name] for name in counters})
 
 
-def validate_records(data, payload, summary, entries, program, executable):
+def validate_records(data, payload, summary, entries, program, executable, *,
+                     function='func_8001F8B8', inspect_result=verify_geometry_result):
     settings = selection(program)
-    require(settings is not None, 'No primitive call snapshots were selected.')
+    require(function in FUNCTIONS and settings is not None,
+            'Select a declared original collision snapshot function.')
+    pc,function_bytes=FUNCTIONS[function]
+    require((settings['pc'],settings['bytes'])==(pc,function_bytes)
+            and (function=='func_8001F8B8' or inspect_result is not verify_geometry_result),
+            'Collision snapshot selection and result inspector target differ.')
+    label='primitive' if function=='func_8001F8B8' else 'hull'
     ordinal_mode = 'ordinal_step' in settings
     numeric = ('protocol', 'event_bytes', 'returns', 'native_returns', 'native_started', 'eligible_entries',
                'native_overflow', 'pending_calls', 'payload_bytes', 'duplicate_key_skips', 'frame_budget_skips',
@@ -266,8 +279,8 @@ def validate_records(data, payload, summary, entries, program, executable):
         before = payload[row['before_offset']:row['before_offset'] + RAM_BYTES]
         after = payload[row['after_offset']:row['after_offset'] + RAM_BYTES]
         base = entries[row['base_ordinal'] - 1]
-        verify_boundary(row, base, executable, before, after)
-        geometry = verify_geometry_result(row, before, after)
+        verify_boundary(row, base, executable, before, after,function=function)
+        geometry = inspect_result(row, before, after)
         modes.update(geometry['packet_mode_counts'])
         callers[f"0x{row['entry_jump_pc']:08X}"] += 1
         results[str(geometry['result'])] += 1
@@ -277,29 +290,36 @@ def validate_records(data, payload, summary, entries, program, executable):
                           entry_instruction_sequence=sequence(row, 'entry_'), return_instruction_sequence=sequence(row),
                           caller=f"0x{row['entry_jump_pc']:08X}", stack_address=row['entry_cpu_gpr_29'],
                           before_RAM_sha256=sha(before), after_RAM_sha256=sha(after), **geometry))
-    require(summary['eligible_entries'] == sum(row['pc'] == PC for row in entries),
+    require(summary['eligible_entries'] == sum(row['pc'] == pc for row in entries),
             'Sampler eligible count differs from the complete original entry stream.')
-    policy = verify_policy(rows, entries, settings, summary)
-    return dict(status='verified_bounded_natural_primitive_calls', completed_samples=count,
+    policy = verify_policy(rows, entries, settings, summary,pc=pc)
+    return dict(status=f'verified_bounded_natural_{label}_calls', function=function,completed_samples=count,
                 policy=policy, caller_counts=dict(sorted(callers.items())), result_counts=dict(sorted(results.items())),
-                sampled_polygon_visits=sum(call['primitive_count'] for call in calls),
+                sampled_polygon_visits=sum(call.get('polygon_visits',call['primitive_count']) for call in calls),
                 packet_mode_counts=dict(sorted(modes.items())),
                 distinct_sampled_model_addresses=len({call['model_address'] for call in calls}),
-                distinct_sampled_geometry_addresses=len({call['geometry_address'] for call in calls}),
+                distinct_sampled_geometry_addresses=len({call['geometry_address'] for call in calls
+                                                        if call.get('geometry_decoded',True)}),
                 calls_crossing_a_frame=sum(call['entry_frame'] != call['return_frame'] for call in calls),
                 binary_records_sha256=sha(data), complete_RAM_payload_sha256=sha(payload), calls=calls,
                 architectural_CPU_words_per_boundary=37, architectural_GTE_words_per_boundary=64,
                 complete_state_parity_checked=False, opaque_internal_GTE_state_serialized=False,
                 every_RAM_change_attributed_to_callee=False, full_instruction_paths_accepted=False,
                 geometry_allocation_ownership_accepted=False, whole_feature_groups_accepted=0, new_C_bytes=0,
-                scope='Sampled original call/return boundaries, complete main RAM, declared geometry buffers, '
+                scope=('Sampled original hull call/return boundaries, complete main RAM, captured shared bounds, '
+                      'modeled midpoint/fallback queries and declared mask/contact outputs in one input history. '
+                      'Receiver/model addresses are observations, not allocation generations or asset identities. '
+                      'Interrupt and frame activity can change other RAM during a call. Unselected calls, '
+                      'other histories, opaque CPU/GTE state and whole collision-feature parity remain unaccepted.'
+                      if label=='hull' else
+                      'Sampled original call/return boundaries, complete main RAM, declared geometry buffers, '
                       'and algebraic hit/distance/contact/optional-height agreement in this one input history. '
                       'Caller/model addresses are observations, not allocation generations or asset identities. '
                       'Interrupt and frame activity can change other RAM during a call. Unselected calls, '
-                      'hull returns, opaque CPU/GTE state and whole collision-feature parity remain unaccepted.')
+                      'hull returns, opaque CPU/GTE state and whole collision-feature parity remain unaccepted.'))
 
 
-def inspect_call_recording(folder):
+def inspect_call_recording(folder, *, validator=validate_records, extra_sources=()):
     recording, retained = history.inspect(folder)
     require(retained['manifest']['runtime_kind'] == 'dispatch_observer', 'Require the separate collision observer.')
     folder = retained['folder']
@@ -313,15 +333,15 @@ def inspect_call_recording(folder):
     payload_path = history.owned_file(output, 'collision-call-ram.bin')
     original = payload_path.stat()
     with payload_path.open('rb') as stream, mmap.mmap(stream.fileno(), 0, access=mmap.ACCESS_READ) as payload:
-        calls = validate_records(data, payload, summary, retained['entries'],
-                                 dict(retained['program'], frames=recording['input_frames']), executable)
+        calls = validator(data, payload, summary, retained['entries'],
+                          dict(retained['program'], frames=recording['input_frames']), executable)
     current = payload_path.stat()
     require((original.st_size, original.st_mtime_ns) == (current.st_size, current.st_mtime_ns),
             'Collision RAM payload changed during inspection.')
     sources = ('tools/inspect_collision_calls.py', 'tools/collision_calls.py', 'tools/verify_collision.py',
                'tools/inspect_dispatch_history.py', 'tools/dispatch_returns.py', 'tools/inspect_sdk_reads.py',
-               'tools/psx_image.py', 'tools/replay_cold_start_headless.py')
-    report = dict(status='inspected_bounded_natural_primitive_calls', recording=recording,
+               'tools/psx_image.py', 'tools/replay_cold_start_headless.py',*extra_sources)
+    report = dict(status=calls['status'].replace('verified_','inspected_',1), recording=recording,
                 collision_calls=calls, verifier_sources={name: sha((ROOT / name).read_bytes()) for name in sources},
                 new_C_bytes=0, whole_feature_groups_accepted=0)
     return report, retained

@@ -147,8 +147,14 @@ The [ordinal collision checks](docs/COLLISION_ORDINAL_CALLS.md) extend the earli
 of the original opening route. Eleven original/rebuilt recording pairs verify
 206 hits, 437 misses, and complete captured geometry/RAM agreement. Recorded
 game outputs also agree across partitions and with the stock core. Matching C
-for both routines, hull returns, geometry ownership, other routes, and whole
+for both routines, geometry ownership, other routes, and whole
 collision-feature acceptance remain open.
+
+The [hull return comparison](docs/HULL_CALLS.md) adds all 194 observed hull
+completions in the same route. Four original/rebuilt pairs agree on complete
+sample records and RAM, and the model agrees on returns, masks, contacts, and
+484 nested primitive queries. Another 159 primitive entries occur outside those
+hull intervals. This extends bounded runtime evidence without raising C coverage.
 
 The feature inventory has 40 provisional groups; an official exhaustive
 feature total is unknown. SDK and startup code are excluded from the C-byte

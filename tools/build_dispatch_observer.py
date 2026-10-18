@@ -16,7 +16,7 @@ sys.path.insert(0, str(ROOT))
 from tools.build_npc_observer import UPSTREAM, MEDNAFEN, SOURCE_SHA256, MEDIA_SHA256, VARIABLES, parse_make_variables, artifact
 from tools.replay_cold_start_headless import require, write_json
 from tools.runtime_inputs import record_file
-from tools.collision_calls import EXPORTS as COLLISION_EXPORTS,ORDINAL_EXPORTS as COLLISION_ORDINAL_EXPORTS,EVENT_BYTES as COLLISION_EVENT_BYTES,FRAME_BYTES as COLLISION_FRAME_BYTES
+from tools.collision_calls import EXPORTS as COLLISION_EXPORTS,ORDINAL_EXPORTS as COLLISION_ORDINAL_EXPORTS,EVENT_BYTES as COLLISION_EVENT_BYTES,FRAME_BYTES as COLLISION_FRAME_BYTES,FUNCTIONS as COLLISION_FUNCTIONS
 OBSERVER = ROOT / 'research/runtime_state/dispatch_entry_observer.h'
 FLOW_OBSERVER = ROOT / 'research/runtime_state/dispatch_flow_observer.h'
 RETURN_OBSERVER = ROOT / 'research/runtime_state/dispatch_return_observer.h'
@@ -149,7 +149,9 @@ def build(source_root, output, *, flow=False, returns=False, sdk_reads=False, co
         profile.update(collision_call_protocol=1,collision_call_event_bytes=COLLISION_EVENT_BYTES,
             collision_call_frame_payload_bytes=COLLISION_FRAME_BYTES,
             collision_call_header_sha256=record_file(COLLISION_OBSERVER)['sha256'],
-            collision_call_ordinal_selection=True)
+            collision_call_ordinal_selection=True,
+            collision_call_indirect_entry_context=True,
+            collision_call_functions={name:dict(pc=pc,bytes=length) for name,(pc,length) in COLLISION_FUNCTIONS.items()})
     write_json(output / 'profile.json', profile)
     return profile
 
@@ -161,7 +163,7 @@ def main(argv=None):
     parser.add_argument('--flow', action='store_true', help='Add read-only caller load-chain context; keep the entry-only core separate.')
     parser.add_argument('--returns', action='store_true', help='Add original returns and bounded read buffers; implies --flow.')
     parser.add_argument('--sdk-reads', action='store_true', help='Observe original SDK requests, polling and completed RAM; implies --returns.')
-    parser.add_argument('--collision-calls',action='store_true',help='Add separate sampled primitive entry/return RAM and architectural registers.')
+    parser.add_argument('--collision-calls',action='store_true',help='Add separate sampled collision entry/return RAM and architectural registers.')
     args = parser.parse_args(argv)
     try:
         profile = build(args.source_root, args.output, flow=args.flow, returns=args.returns, sdk_reads=args.sdk_reads,collision_calls=args.collision_calls)
