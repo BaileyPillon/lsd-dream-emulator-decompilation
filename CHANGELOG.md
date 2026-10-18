@@ -1,5 +1,16 @@
 # Changelog
 
+## Verified original NPC catalogue - 2026-10-18
+
+- Export all 107 original callback ranges and 111 nonnull entity bindings,
+  with full-function hashes and independently checked ELF/GNU extents.
+- Reuse the 306-object canonical build for a private symbolic relink and
+  require complete executable equality before exporting function metadata.
+- Share that complete-image diagnostic with the existing function checker,
+  and preserve earlier diagnostic files instead of overwriting them.
+- Add 13 source-only guard tests. Matching C, original behavior, runtime
+  acceptance, the playable build and the separate Bevy port are unchanged.
+
 ## Natural Boatman approach history - 2026-10-18
 
 - Publish a fixed controller route with 87 original Boatman callback entries,

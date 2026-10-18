@@ -34,6 +34,12 @@ with compared natural entries: 87 calls, matching stored movement and two
 sound-request records. Continue other routes, seeds, activation cycles and
 visible effects. This one history does not accept the whole NPC or a feature.
 
+The [callback catalogue](NPC_CATALOGUE.md) verifies all 107 original callback
+ranges and 111 nonnull bindings through a complete matching symbolic link.
+Use its checked targets to extend observation to several callback types in
+one route, with per-instance clocks, activation histories and independent
+runtime-output qualification. The current recorder still selects one callback.
+
 The [isolated replay host](HEADLESS_REPLAY.md) now reproduces both retained
 opening profiles without controlling the user's EmuHawk session. The separate
 [NPC recorder](NPC_ENTRY_TRACE.md) extends that core interface to record

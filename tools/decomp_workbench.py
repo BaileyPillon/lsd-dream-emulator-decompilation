@@ -192,6 +192,32 @@ def candidate_link_command(elf, map_path, ldscript, objects, flags):
             *flags, *map(str, objects)]
 
 
+def diagnostic_image(output, ldscript, objects, binary, log=None):
+    """Retain link symbols and require the complete allocated image to agree."""
+    stripped = [flag for flag in configure.LD_FLAGS if flag in ("-s", "--strip-all")]
+    if len(stripped) != 1:
+        raise ValueError("Function diagnostics require exactly one symbol-strip flag.")
+    flags = [flag for flag in configure.LD_FLAGS if flag not in stripped]
+    elf = output / "candidate-symbols.elf"
+    diagnostic_binary = output / "candidate-symbols.exe"
+    if any(path.exists() for path in (elf, output / "candidate-symbols.map", diagnostic_binary)):
+        raise ValueError("Existing symbol diagnostics must be preserved; choose a new output.")
+    subprocess.run(candidate_link_command(
+        elf, output / "candidate-symbols.map", ldscript, objects, flags), check=True,
+        stdout=log, stderr=log)
+    subprocess.run([configure.CROSS + "objcopy", "-O", "binary",
+                    str(elf), str(diagnostic_binary)], check=True, stdout=log, stderr=log)
+    expected, actual = binary.read_bytes(), diagnostic_binary.read_bytes()
+    if expected != actual:
+        raise ValueError("Retaining function symbols changed the complete candidate image.")
+    return elf, {"diagnostic_image_matches_candidate": True,
+                   "candidate_executable_sha256": hashlib.sha256(expected).hexdigest(),
+                   "diagnostic_executable_sha256": hashlib.sha256(actual).hexdigest(),
+                   "original_link_flags": list(configure.LD_FLAGS),
+                   "diagnostic_link_flags": flags,
+                   "removed_symbol_strip_flag": stripped[0]}
+
+
 def diagnostic_function(entry, original, output, ldscript, objects, binary):
     """Retain real function symbols without accepting a changed allocated image."""
     from research.compiler.compare_function import compare
@@ -200,26 +226,9 @@ def diagnostic_function(entry, original, output, ldscript, objects, binary):
     reference = original[start:start + entry["bytes"]]
     if hashlib.sha256(reference).hexdigest() != entry["sha256"]:
         raise ValueError("Original function evidence changed before comparison.")
-    stripped = [flag for flag in configure.LD_FLAGS if flag in ("-s", "--strip-all")]
-    if len(stripped) != 1:
-        raise ValueError("Function diagnostics require exactly one symbol-strip flag.")
-    flags = [flag for flag in configure.LD_FLAGS if flag not in stripped]
-    elf = output / "candidate-symbols.elf"
-    subprocess.run(candidate_link_command(
-        elf, output / "candidate-symbols.map", ldscript, objects, flags), check=True)
-    diagnostic_binary = output / "candidate-symbols.exe"
-    subprocess.run([configure.CROSS + "objcopy", "-O", "binary",
-                    str(elf), str(diagnostic_binary)], check=True)
-    expected, actual = binary.read_bytes(), diagnostic_binary.read_bytes()
-    if expected != actual:
-        raise ValueError("Retaining function symbols changed the complete candidate image.")
+    elf, image = diagnostic_image(output, ldscript, objects, binary)
     result = compare(elf.read_bytes(), reference, entry["function"], int(entry["address"], 16))
-    result.update({"diagnostic_image_matches_candidate": True,
-                   "candidate_executable_sha256": hashlib.sha256(expected).hexdigest(),
-                   "diagnostic_executable_sha256": hashlib.sha256(actual).hexdigest(),
-                   "original_link_flags": list(configure.LD_FLAGS),
-                   "diagnostic_link_flags": flags,
-                   "removed_symbol_strip_flag": stripped[0]})
+    result.update(image)
     return result
 
 
