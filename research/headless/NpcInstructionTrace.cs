@@ -11,7 +11,16 @@ using BizHawk.Emulation.Cores.Sony.PSX;
 using BizHawk.Emulation.Cores.Waterbox;
 
 namespace Lsd.Research.Headless {
-internal sealed class NpcInstructionTrace : IDisposable {
+public interface INpcTrace : IDisposable {
+    void Begin(int frame);
+    void Drain(int frame);
+    uint Total { get; }
+    bool Enabled { get; }
+}
+public interface INpcTraceFactory {
+    INpcTrace Create(object core, string output, uint watch, int armFrame);
+}
+internal sealed class NpcInstructionTrace : INpcTrace {
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)] delegate int ConfigureTrace(uint pc);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)] delegate void BeginTraceFrame(uint frame);
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)] delegate uint TraceNumber();

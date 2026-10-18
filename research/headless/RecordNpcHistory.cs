@@ -34,6 +34,7 @@ internal static class RecordNpcHistory {
         public bool trace_enabled;
         public uint watched_pc;
         public int arm_frame;
+        public uint[] catalogue_pcs;
     }
     static object SaveImage(Nymashock core, string output, int frame) {
         int width = core.BufferWidth, height = core.BufferHeight;
@@ -60,6 +61,9 @@ internal static class RecordNpcHistory {
         return new {width = width, height = height, RGB_sha256 = Hash(rgb)};
     }
     public static int Main(string[] args) {
+        return MainWithFactory(args, null);
+    }
+    public static int MainWithFactory(string[] args, INpcTraceFactory factory) {
         try {
             if (args.Length != 8) throw new Exception("Expected runtime, cue, three BIOS files, inputs, settings and new output");
             DllRoot = Path.Combine(args[0], "dll");
@@ -68,10 +72,10 @@ internal static class RecordNpcHistory {
                 return File.Exists(path) ? Assembly.LoadFrom(path) : null;
             };
             if (!SetDllDirectory(DllRoot)) throw new Exception("SetDllDirectory failed");
-            return Run(args);
+            return Run(args, factory);
         } catch (Exception error) { Console.Error.WriteLine(error); return 2; }
     }
-    static int Run(string[] args) {
+    static int Run(string[] args, INpcTraceFactory factory) {
         var serializer = new JavaScriptSerializer();
         var settings = serializer.Deserialize<Settings>(File.ReadAllText(args[6]));
         string output = args[7];
@@ -107,8 +111,9 @@ internal static class RecordNpcHistory {
                 long totalSamples = 0;
                 int ramSamples = 0;
                 var checkpointRows = new List<object>();
-                NpcInstructionTrace observer = settings.trace_enabled ?
-                    new NpcInstructionTrace(core, output, settings.watched_pc, settings.arm_frame) : null;
+                INpcTrace observer = settings.trace_enabled ?
+                    (factory == null ? new NpcInstructionTrace(core, output, settings.watched_pc, settings.arm_frame) :
+                     factory.Create(core, output, settings.watched_pc, settings.arm_frame)) : null;
                 using (observer)
                 using (var frames = new StreamWriter(File.Open(Path.Combine(output, "frames.tsv"), FileMode.CreateNew)))
                 using (var memory = new StreamWriter(File.Open(Path.Combine(output, "ram-samples.tsv"), FileMode.CreateNew)))

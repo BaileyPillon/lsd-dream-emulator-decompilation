@@ -18,13 +18,17 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from tools.build_npc_observer import OBSERVER, SOURCE_SHA256, UPSTREAM, MEDNAFEN
+from tools.build_npc_observer import OBSERVER, CATALOGUE_OBSERVER, CATALOGUE_EXPORTS, SOURCE_SHA256, UPSTREAM, MEDNAFEN
 from tools.replay_cold_start_headless import require, select_compiler, write_json
 from tools.runtime_inputs import load_verified_manifest, record_file
 
 DEFAULT_PROGRAM = ROOT / 'research/headless/buddha-timed-route.json'
 HOST_SOURCES = tuple(ROOT / 'research/headless' / name for name in
                      ('ReplayColdStart.cs', 'RecordNpcHistory.cs', 'NpcInstructionTrace.cs'))
+CATALOGUE_HOST_SOURCES = HOST_SOURCES + tuple(ROOT / 'research/headless' / name for name in
+                                             ('RecordNpcCatalogue.cs', 'NpcCatalogueTrace.cs'))
+CATALOGUE_FILE = ROOT / 'research/headless/npc-callback-catalogue.json'
+CATALOGUE_PROVENANCE = ROOT / 'docs/npc-catalogue-checks.json'
 STOCK_RUNTIME = {
     'dll/shock.wbx.zst': '5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126',
     'dll/BizHawk.Common.dll': '15ebdf860bc1d8d9efcaabefe1df69de0b24f31d431b558621df353882f386b9',
@@ -162,7 +166,7 @@ def expand_program(program, frames=None):
     return data
 
 
-def load_observer_profile(path):
+def load_observer_profile(path, catalogue=False):
     path = Path(path).resolve(strict=True)
     profile = json.loads(path.read_text(encoding='utf-8-sig'))
     require(profile.get('schema_version') == 1 and profile.get('status') == 'built_separate_NPC_observer_core',
@@ -174,6 +178,12 @@ def load_observer_profile(path):
     require(profile.get('observer_header_sha256') == record_file(OBSERVER)['sha256']
             and profile.get('producer_sha256') == record_file(ROOT / 'tools/build_npc_observer.py')['sha256'],
             'Rebuild the observer profile with the current published source.')
+    require(profile.get('observer_mode', 'single') == ('catalogue' if catalogue else 'single'),
+            'The observer build mode differs from the requested recording mode.')
+    if catalogue:
+        require(profile.get('catalogue_header_sha256') == record_file(CATALOGUE_OBSERVER)['sha256']
+                and set(CATALOGUE_EXPORTS) <= set(profile.get('exported_functions', [])),
+                'Rebuild the catalogue observer with the current published header.')
     files = []
     for key, filename in (('core', 'shock.wbx'), ('compressed_core', 'shock.wbx.zst')):
         item = profile.get(key, {})
@@ -188,7 +198,8 @@ def load_observer_profile(path):
     return profile, files
 
 
-def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_profile=None, frames=None, dotnet=None):
+def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_profile=None, frames=None, dotnet=None,
+           catalogue=False):
     workspace = Path(workspace).resolve()
     require(not workspace.exists(), 'Choose a new workspace; existing evidence is preserved.')
     require(os.name == 'nt' and sys.maxsize > 2**32, 'The qualified recorder requires 64-bit Windows.')
@@ -196,6 +207,17 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
     program = validate_program(json.loads(program_file.read_text(encoding='utf-8-sig')))
     submitted = expand_program(program, frames)
     frames = program['frames'] if frames is None else frames
+    catalogue_data, catalogue_provenance, target_pcs = None, None, None
+    host_sources = CATALOGUE_HOST_SOURCES if catalogue else HOST_SOURCES
+    if catalogue:
+        from tools.npc_catalogue_trace import verified_catalogue
+        catalogue_raw = CATALOGUE_FILE.read_bytes()
+        catalogue_data = json.loads(catalogue_raw)
+        catalogue_provenance = json.loads(CATALOGUE_PROVENANCE.read_bytes())
+        game = (ROOT / 'rom/SLPS_015.56').read_bytes()
+        require(sha256(game) == program['executable_sha256'], 'Catalogue and controller program use different executables.')
+        target_pcs = sorted(verified_catalogue(catalogue_data, catalogue_provenance, catalogue_raw, game))
+        require(int(program['trace']['watched_pc'], 0) in target_pcs, 'The selected PC is absent from the original catalogue.')
     capture = Path(capture_folder).resolve(strict=True)
     manifest = load_verified_manifest(capture)
     require(manifest is not None and manifest['schema_version'] == 2 and manifest['selected_core'] == 'Nymashock'
@@ -218,13 +240,16 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
     if observer_profile is not None:
         observer_profile = Path(observer_profile).resolve(strict=True)
         require(not workspace.is_relative_to(observer_profile.parent), 'Keep recording output outside the observer build.')
-        profile, core_files = load_observer_profile(observer_profile)
+        profile, core_files = load_observer_profile(observer_profile, catalogue)
     dotnet = str(dotnet or shutil.which('dotnet') or Path(os.environ.get('ProgramFiles', 'C:/Program Files')) / 'dotnet/dotnet.exe')
     compiler = select_compiler(subprocess.check_output([dotnet, '--list-sdks'], text=True))
     framework = Path(os.environ['WINDIR']) / 'Microsoft.NET/Framework64/v4.0.30319'
-    source_paths = [*HOST_SOURCES, OBSERVER, program_file, Path(__file__).resolve(), ROOT / 'tools/build_npc_observer.py',
+    source_paths = [*host_sources, OBSERVER, program_file, Path(__file__).resolve(), ROOT / 'tools/build_npc_observer.py',
                     ROOT / 'tools/replay_cold_start_headless.py', ROOT / 'tools/runtime_inputs.py', compiler,
                     *(core_files + [observer_profile] if observer_profile else [])]
+    if catalogue:
+        source_paths += [CATALOGUE_OBSERVER, CATALOGUE_FILE, CATALOGUE_PROVENANCE,
+                         ROOT / 'tools/npc_catalogue_trace.py']
     source_pins = [record_file(path) for path in source_paths]
     runtime_paths = [path for name in ('dll', 'gamedb') for path in sorted((runtime / name).rglob('*')) if path.is_file()]
     runtime_paths.append(runtime / 'EmuHawk.exe.config')
@@ -238,9 +263,9 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
         shutil.copyfile(path, host / 'dll' / path.name)
     executable = host / 'RecordNpcHistory.exe'
     shutil.copyfile(runtime / 'EmuHawk.exe.config', executable.with_suffix('.exe.config'))
-    for path in HOST_SOURCES:
+    for path in host_sources:
         shutil.copyfile(path, host / path.name)
-    copied_host_sources = {path.name: record_file(host / path.name) for path in HOST_SOURCES}
+    copied_host_sources = {path.name: record_file(host / path.name) for path in host_sources}
     sources = workspace / 'sources'
     sources.mkdir()
     source_snapshots = []
@@ -258,6 +283,10 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
     settings = dict(frames=frames, checkpoint_frames=checkpoint_frames,
         RAM_sample_interval=program['RAM_sample_interval'], trace_enabled=profile is not None,
         watched_pc=int(program['trace']['watched_pc'], 0), arm_frame=program['trace']['arm_frame'])
+    if catalogue:
+        settings['catalogue_pcs'] = target_pcs
+        shutil.copyfile(CATALOGUE_FILE, workspace / 'npc-catalogue.json')
+        shutil.copyfile(CATALOGUE_PROVENANCE, workspace / 'npc-catalogue-provenance.json')
     write_json(workspace / 'settings.json', settings)
     references = [framework / name for name in ('mscorlib.dll', 'System.dll', 'System.Core.dll',
         'System.Web.Extensions.dll', 'System.Drawing.dll', 'netstandard.dll')]
@@ -265,9 +294,9 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
         'BizHawk.Emulation.Common.dll', 'BizHawk.Emulation.Cores.dll', 'BizHawk.Emulation.DiscSystem.dll', 'System.ValueTuple.dll')]
     require(all(path.is_file() for path in references), 'Required framework/core reference assemblies are absent.')
     command = [dotnet, 'exec', str(compiler), '/nologo', '/target:exe', '/platform:x64', '/langversion:12',
-        '/main:Lsd.Research.Headless.RecordNpcHistory', '/nostdlib+', '/deterministic+',
+        '/main:Lsd.Research.Headless.' + ('RecordNpcCatalogue' if catalogue else 'RecordNpcHistory'), '/nostdlib+', '/deterministic+',
         *('/reference:' + str(path) for path in references), '/out:' + str(executable),
-        *(str(host / path.name) for path in HOST_SOURCES)]
+        *(str(host / path.name) for path in host_sources)]
     write_json(workspace / 'compile-command.json', command)
     with (workspace / 'compiler.log').open('xb') as log:
         built = subprocess.run(command, stdout=log, stderr=log)
@@ -288,6 +317,10 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
         host_configuration=record_file(executable.with_suffix('.exe.config')),
         observer_profile=profile, runtime_kind='npc_observer' if profile else 'distributed',
         command=launch, game_RAM_injected=False, restored_state=False, emulator_UI_controlled=False)
+    if catalogue:
+        run_inputs['catalogue'] = dict(value=catalogue_data,
+            catalogue_file=record_file(workspace / 'npc-catalogue.json'),
+            provenance_file=record_file(workspace / 'npc-catalogue-provenance.json'))
     write_json(workspace / 'run-inputs.json', run_inputs)
     with (workspace / 'host.out.log').open('xb') as stdout, (workspace / 'host.err.log').open('xb') as stderr:
         process = subprocess.Popen(launch, cwd=host, stdout=stdout, stderr=stderr,
@@ -344,8 +377,10 @@ def main(argv=None):
     parser.add_argument('--observer-profile', type=Path, help='Optional profile.json from the separate native observer build.')
     parser.add_argument('--frames', type=int, help='Optional prefix of the static program.')
     parser.add_argument('--dotnet', type=Path)
+    parser.add_argument('--catalogue', action='store_true', help='Record all verified original callback PCs in a second log.')
     args = parser.parse_args(argv)
-    result = record(args.capture_folder, args.workspace, args.program, args.observer_profile, args.frames, args.dotnet)
+    result = record(args.capture_folder, args.workspace, args.program, args.observer_profile, args.frames, args.dotnet,
+                    args.catalogue)
     print(json.dumps(result))
     return 0
 

@@ -217,3 +217,12 @@ tests/test_npc_catalogue.py text eol=lf
 research/headless/npc-callback-catalogue.json text eol=lf
 docs/NPC_CATALOGUE.md text eol=lf
 docs/npc-catalogue-checks.json text eol=lf
+
+# Preserve the optional multi-target observer and its executed host/validator.
+research/runtime_state/npc_catalogue_observer.h text eol=lf
+research/headless/NpcCatalogueTrace.cs text eol=lf
+research/headless/RecordNpcCatalogue.cs text eol=lf
+tools/npc_catalogue_trace.py text eol=lf
+tests/test_npc_catalogue_trace.py text eol=lf
+docs/NPC_CATALOGUE_TRACE.md text eol=lf
+docs/npc-catalogue-trace-checks.json text eol=lf

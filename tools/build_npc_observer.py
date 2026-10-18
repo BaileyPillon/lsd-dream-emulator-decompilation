@@ -22,6 +22,7 @@ from tools.runtime_inputs import record_file
 UPSTREAM = 'bdddf4a58aa1a022afb11dc73294a81a5aa7bbd5'
 MEDNAFEN = '382ff1b8d293c9a862497706808cbb79b2cecbfb'
 OBSERVER = ROOT / 'research/runtime_state/npc_entry_observer.h'
+CATALOGUE_OBSERVER = ROOT / 'research/runtime_state/npc_catalogue_observer.h'
 SOURCE_SHA256 = {
     'shock.cpp': '70d0193ac5081b486ae52b3930a5c4e60ddef0481c4bb9c495d65ae3918d94ea',
     'mednafen/src/psx/cpu.cpp': '4ddd7b0192db03ed1ce81bb9b83bd92a14a0c64e6e3c1633d05cf0e7b127aad7',
@@ -33,6 +34,9 @@ MEDIA_SHA256 = {
 }
 EXPORTS = ('LsdConfigureNpcTrace', 'LsdBeginNpcTraceFrame', 'LsdGetNpcTraceCount',
            'LsdGetNpcTraceTotal', 'LsdGetNpcTraceOverflow', 'LsdGetNpcTraceEvents', 'LsdDisableNpcTrace')
+CATALOGUE_EXPORTS = ('LsdResetNpcCatalogue', 'LsdAddNpcCatalogueTarget', 'LsdStartNpcCatalogue',
+    'LsdBeginNpcCatalogueFrame', 'LsdGetNpcCatalogueCount', 'LsdGetNpcCatalogueTotal',
+    'LsdGetNpcCatalogueOverflow', 'LsdGetNpcCatalogueEvents')
 VARIABLES = ('CC', 'CXXFLAGS', 'CXXFLAGS_RELEASE', 'LDFLAGS', 'LDFLAGS_RELEASE',
              'CCFLAGS', 'CCFLAGS_RELEASE', 'OBJS', 'EMULIBC_OBJS', 'EXTRA_LIBS', 'TARGET_RELEASE')
 
@@ -54,7 +58,7 @@ def artifact(path):
     return dict(file=Path(path).name, bytes=item['bytes'], sha256=item['sha256'])
 
 
-def build(source_root, output):
+def build(source_root, output, catalogue=False):
     output = Path(output).resolve()
     require(not output.exists(), 'Choose a new output directory; existing builds are preserved.')
     require(sys.platform == 'linux', 'Build the native observer in Linux/WSL.')
@@ -89,7 +93,9 @@ def build(source_root, output):
     require(clang is not None, 'Clang 18 is required by the pinned Waterbox build.')
     compiler_version = subprocess.check_output([clang, '--version'], text=True, env=env)
     require('clang version 18.' in compiler_version, 'Use Clang 18 with the pinned native objects.')
-    inputs = [Path(__file__).resolve(), OBSERVER, Path(settings['CC']), Path(clang).resolve(),
+    headers = (OBSERVER, CATALOGUE_OBSERVER) if catalogue else (OBSERVER,)
+    exports = EXPORTS + CATALOGUE_EXPORTS if catalogue else EXPORTS
+    inputs = [Path(__file__).resolve(), *headers, Path(settings['CC']), Path(clang).resolve(),
               nyma / 'shock.cpp', nyma / 'cdrom.cpp', nyma / 'common.mak', nyma / 'shock.mak',
               source / 'waterbox/common.mak', source / 'waterbox/linkscript.T',
               nyma / 'mednafen/src/psx/cpu.cpp', nyma / 'mednafen/src/psx/cpu.h',
@@ -99,10 +105,12 @@ def build(source_root, output):
     inputs = list(dict.fromkeys(path.resolve(strict=True) for path in inputs))
     before = [record_file(path) for path in inputs]
     output.mkdir(parents=True, exist_ok=False)
+    for source_header in headers:
+        shutil.copyfile(source_header, output / source_header.name)
     header = output / OBSERVER.name
-    shutil.copyfile(OBSERVER, header)
     adapter = output / 'observer-adapter.cpp'
-    adapter.write_bytes((nyma / 'shock.cpp').read_bytes() + b'\n#include "npc_entry_observer.h"\n')
+    include = CATALOGUE_OBSERVER.name if catalogue else OBSERVER.name
+    adapter.write_bytes((nyma / 'shock.cpp').read_bytes() + ('\n#include "' + include + '"\n').encode('ascii'))
     obj, core = output / 'observer-adapter.o', output / 'shock.wbx'
     compile_command = [settings['CC'], '-c', '-o', str(obj), str(adapter), '-I' + str(nyma),
                        *shlex.split(settings['CXXFLAGS']), *shlex.split(settings['CXXFLAGS_RELEASE'])]
@@ -115,12 +123,13 @@ def build(source_root, output):
         subprocess.run(compile_command, cwd=nyma, env=env, stdout=log, stderr=log, check=True)
         subprocess.run(link_command, cwd=nyma, env=env, stdout=log, stderr=log, check=True)
     symbols = subprocess.check_output(['nm', '--defined-only', str(core)], text=True)
-    require(all(any(line.split()[-1] == name for line in symbols.splitlines() if line.split()) for name in EXPORTS),
+    require(all(any(line.split()[-1] == name for line in symbols.splitlines() if line.split()) for name in exports),
             'The linked observer is missing a required export.')
     compressed = output / 'shock.wbx.zst'
     subprocess.run(['zstd', '-q', '-T1', str(core), '-o', str(compressed)], check=True)
     require([record_file(path) for path in inputs] == before, 'A supplied source, cached object or build input changed.')
-    require(header.read_bytes() == OBSERVER.read_bytes(), 'Observer source changed during the build.')
+    require(all((output / source_header.name).read_bytes() == source_header.read_bytes() for source_header in headers),
+            'Observer source changed during the build.')
     profile = dict(schema_version=1, status='built_separate_NPC_observer_core',
         upstream_commit=UPSTREAM, mednafen_commit=MEDNAFEN,
         observer_header_sha256=hashlib.sha256(header.read_bytes()).hexdigest(),
@@ -132,7 +141,10 @@ def build(source_root, output):
         supplied_runtime_modified=False, game_inputs_loaded=False, runtime_verified=False,
         build_scope='One new adapter object linked with the recorded pinned cached native objects; not a fresh full-core rebuild.',
         observer_uses_existing_DebugMode_hook=True, original_game_RAM_written_by_observer=False,
-        exported_functions=list(EXPORTS), producer_sha256=record_file(Path(__file__).resolve())['sha256'])
+        exported_functions=list(exports), observer_mode='catalogue' if catalogue else 'single',
+        producer_sha256=record_file(Path(__file__).resolve())['sha256'])
+    if catalogue:
+        profile['catalogue_header_sha256'] = record_file(CATALOGUE_OBSERVER)['sha256']
     write_json(output / 'profile.json', profile)
     return profile
 
@@ -141,8 +153,9 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source-root', type=Path, required=True, help='Ready pinned native BizHawk checkout, without spaces.')
     parser.add_argument('--output', type=Path, required=True, help='New observer build directory outside that checkout.')
+    parser.add_argument('--catalogue', action='store_true', help='Add the optional multi-target catalogue observer.')
     args = parser.parse_args(argv)
-    profile = build(args.source_root, args.output)
+    profile = build(args.source_root, args.output, args.catalogue)
     print(json.dumps(dict(status=profile['status'], core=profile['core'], runtime_verified=False)))
     return 0
 
