@@ -244,3 +244,16 @@ tests/test_dispatch_catalogue.py text eol=lf
 research/dispatch/target-catalogue.json text eol=lf linguist-generated=true
 docs/DISPATCH_CATALOGUE.md text eol=lf
 docs/dispatch-catalogue-checks.json text eol=lf
+
+# Preserve the separate method observer and its owned host programs.
+research/runtime_state/dispatch_entry_observer.h text eol=lf
+research/headless/DispatchInstructionTrace.cs text eol=lf
+research/headless/RecordDispatchHistory.cs text eol=lf
+research/headless/file-driver-boot-route.json text eol=lf
+tools/build_dispatch_observer.py text eol=lf
+tools/record_dispatch_history.py text eol=lf
+tools/dispatch_trace.py text eol=lf
+tools/inspect_dispatch_history.py text eol=lf
+tests/test_dispatch_trace.py text eol=lf
+docs/DISPATCH_ENTRY_TRACE.md text eol=lf
+docs/dispatch-entry-trace-checks.json text eol=lf

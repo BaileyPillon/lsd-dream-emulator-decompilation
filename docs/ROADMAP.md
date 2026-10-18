@@ -20,6 +20,14 @@ and recover actual receiver, slot and argument relationships. Its 1,174
 indirect-transfer instructions are unobserved; the NPC-only recorder and
 the wider dynamic-dispatch completion gate remain separate.
 
+The [original method-entry profile](DISPATCH_ENTRY_TRACE.md) now supplies
+176 compared CD Open/Read observations through synchronous, queued and direct
+framed paths, with strict full-boot stock/observer output checks. Extend this
+to call-site receiver/slot data flow, return/completion evidence, destinations,
+other raw tables, error cases and natural histories. The retained early-hook
+RAM difference remains an observer limitation; the qualified profile arms
+before the first watched method while comparing the whole boot sequence.
+
 The [recorded scene inspector](RUNTIME_SCENE_INVENTORY.md) now follows the
 actual captured dream's object links. Five loaded entity instances have disabled
 behavior contexts at the sampled later checkpoints. Extend the controller route
