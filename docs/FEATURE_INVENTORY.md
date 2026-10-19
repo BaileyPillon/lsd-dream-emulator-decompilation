@@ -47,7 +47,14 @@ packets, independently hashed again as raw decoded bytes. It adds no C bytes,
 NPC callback profiles or whole-feature acceptance. Native movie playback,
 mixing, controller paths and timing remain open; the Bevy port is unchanged.
 
-The [Shark and Hopscotch Girl profiles](SHARK_HOPSCOTCH.md) raise bounded original
+The [Hanged Woman profile](HANGED_WOMAN.md) raises bounded original callback
+coverage from **43 to 44 / 107** through real mood, control, movement and held-node
+dependencies: 2,514 fixtures, 1,106 constructed history calls and 30 original
+routines. It adds no C bytes or gameplay feature. Natural callback types remain
+five; whole-NPC and whole-feature acceptance remain zero. Its supplied clocks
+and recipient-free notification graph do not prove a natural encounter.
+
+The earlier [Shark and Hopscotch Girl profiles](SHARK_HOPSCOTCH.md) raise bounded original
 callback coverage from **41 to 43 / 107**. They execute original MIPS helpers and
 native GTE with embedded owner/callback contexts in 1,535 distinct fixtures and
 1,044 constructed history calls. Tick, timer and frame injection does not prove

@@ -1,0 +1,628 @@
+{
+  "schema_version": 1,
+  "title": "Original Hanged Woman mood, control lock, motion and held-node verification",
+  "recorded_utc": "2026-10-19T22:34:27.863035+00:00",
+  "verified_base_commit": "1d2ed08957eb2f08499ed4fba5d4fd0960deec2c",
+  "before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 43,
+    "natural_callback_types": 5,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3,
+    "external_model_API_calls": 0
+  },
+  "after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 44,
+    "natural_callback_types": 5,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3,
+    "external_model_API_calls": 0
+  },
+  "verification": {
+    "status": "passed_bounded_original_hanged_woman",
+    "callbacks": [
+      "entity_hanged_woman"
+    ],
+    "distinct_fixture_cases": 2514,
+    "duplicate_initialized_inputs_skipped": 0,
+    "cases_by_group": {
+      "initial_mood_rng_and_control": 432,
+      "strict_distance_and_control_modes": 480,
+      "timed_motion_pose_and_word_wrap": 690,
+      "signed_periodic_clock_and_radius": 900,
+      "held_object_flag_polarity": 12
+    },
+    "histories": [
+      {
+        "name": "yellow_control_lock_mode_1",
+        "calls": 502,
+        "final_state": 13,
+        "final_rng_seed": 0
+      },
+      {
+        "name": "yellow_control_lock_mode_2",
+        "calls": 502,
+        "final_state": 13,
+        "final_rng_seed": 0
+      },
+      {
+        "name": "rng_lift_roll_and_held_object",
+        "calls": 102,
+        "final_state": 1,
+        "final_rng_seed": 12345
+      }
+    ],
+    "native_history_calls": 1106,
+    "independent_native_hand_checks": [
+      {
+        "name": "yellow_arms_without_rng",
+        "passed": true
+      },
+      {
+        "name": "non_yellow_zero_seed_selects_twelve",
+        "passed": true
+      },
+      {
+        "name": "non_yellow_one_seed_preserves_zero",
+        "passed": true
+      },
+      {
+        "name": "strict_1024_boundary_1023",
+        "passed": true
+      },
+      {
+        "name": "strict_1024_boundary_1024",
+        "passed": true
+      },
+      {
+        "name": "move_mode_two_resets_view_activity_only",
+        "passed": true
+      },
+      {
+        "name": "tick_49_player_y_minus_twenty",
+        "passed": true
+      },
+      {
+        "name": "tick_50_player_x_minus_five",
+        "passed": true
+      },
+      {
+        "name": "tick_60_player_x_plus_five",
+        "passed": true
+      },
+      {
+        "name": "tick_500_requests_end",
+        "passed": true
+      },
+      {
+        "name": "tick_501_does_not_repeat_end",
+        "passed": true
+      },
+      {
+        "name": "tick_nine_entity_y_plus_two_hundred",
+        "passed": true
+      },
+      {
+        "name": "tick_ten_roll_motion_and_commands",
+        "passed": true
+      },
+      {
+        "name": "held_flag_preserves_other_bits_0",
+        "passed": true
+      },
+      {
+        "name": "held_flag_preserves_other_bits_4294967295",
+        "passed": true
+      }
+    ],
+    "property_binding": {
+      "index": 58,
+      "proximity": 30,
+      "record_sha256": "9f3c0d04364cbea8771e9131030e33e7c85651e2c44921360a228c7610df5d79"
+    },
+    "property_table_sha256": "209e6f5d82ab17604cbf2ad16ef1bec624f89c61bdf9d1a3d24905527c47424a",
+    "native_functions": [
+      {
+        "function": "ApplyMatrixLV",
+        "address": "0x80015618",
+        "bytes": 352,
+        "sha256": "b5cca44ff50bf0ca0e5996e8f5cf1b954740710e6773d57827b764a47fee082e"
+      },
+      {
+        "function": "RotMatrix",
+        "address": "0x800160B0",
+        "bytes": 652,
+        "sha256": "cab8838ded03b3b2a50a32cc279811d7fb6a1ee23cfe640c1ac4d7c1d9eee443"
+      },
+      {
+        "function": "base_class_notify",
+        "address": "0x800182cc",
+        "bytes": 132,
+        "sha256": "93c69c638a65d12953fb79d42cf86d92b2017cafc03ed424e791a0ad697eab44"
+      },
+      {
+        "function": "calc_dream_color",
+        "address": "0x8005b518",
+        "bytes": 140,
+        "sha256": "5bb1be3cc5febfd1f3946d000d740df866e053555e9b8fb97330c76f20d5f3c9"
+      },
+      {
+        "function": "calc_mood_axis",
+        "address": "0x8005b66c",
+        "bytes": 116,
+        "sha256": "15e18dfbad1b1dedd93c563b107c36fbfe34418af9cab5653f3f28dd3696c5c5"
+      },
+      {
+        "function": "dream_sys_clear_callbacks",
+        "address": "0x800595a8",
+        "bytes": 104,
+        "sha256": "fedcd6413050a1e563cb90214529e50b9a045b6f47e0f1dc93dd3a84f424422b"
+      },
+      {
+        "function": "dream_sys_get_dream_color",
+        "address": "0x8005b4e0",
+        "bytes": 56,
+        "sha256": "0659f6160b44a19f6341cee66ea9d18e54c72b45a9ff90b9a43e17beaf62a20c"
+      },
+      {
+        "function": "dream_sys_get_mood_average",
+        "address": "0x8005b5f0",
+        "bytes": 124,
+        "sha256": "902ddc0df776d947022e19d909a27dab5d657d2a2747b0479707a57d1c910162"
+      },
+      {
+        "function": "dream_sys_set_move_callback",
+        "address": "0x800596e8",
+        "bytes": 216,
+        "sha256": "e0911b100ce2b5e6a7ea7d27d2516f24c0bd02b0c26cd3acecebdb3925323b78"
+      },
+      {
+        "function": "dream_sys_set_view_mode",
+        "address": "0x8005a134",
+        "bytes": 52,
+        "sha256": "72d3ee63800701f2a93f94297d166183be0fcc9775ce13a37c19f532d7294345"
+      },
+      {
+        "function": "dream_sys_update_dream_chart",
+        "address": "0x8005b420",
+        "bytes": 192,
+        "sha256": "591c42e8751cf26f45b5000174b01636877328dc334d52ef2a62e7e71cbd0a9a"
+      },
+      {
+        "function": "entity_get_distance",
+        "address": "0x8005d7fc",
+        "bytes": 104,
+        "sha256": "f9aea2cd8da082454563fad7b8f4e87382786ba3dfdfe396510482cec65fd58c"
+      },
+      {
+        "function": "entity_get_trigger_ratio",
+        "address": "0x8005d864",
+        "bytes": 224,
+        "sha256": "e1d6cf893b07c3d54c0fb420ca3bda039ba14f0c4da8a462d32da917baeb9b4f"
+      },
+      {
+        "function": "entity_hanged_woman",
+        "address": "0x80061400",
+        "bytes": 888,
+        "sha256": "c3b01ae460cb517802015b53442a0ceb93cc8921838b30eb2209e091e30add4d"
+      },
+      {
+        "function": "func_8001CEB4",
+        "address": "0x8001ceb4",
+        "bytes": 340,
+        "sha256": "722d79cf1f8c109300d4a56aa1d421442a2b5c424a7f3f1e16ad27d281432217"
+      },
+      {
+        "function": "func_8001D344",
+        "address": "0x8001d344",
+        "bytes": 48,
+        "sha256": "ff5d0290554c6476f831e69e135c146bc2efe1921f80df09eb4d8b262011d661"
+      },
+      {
+        "function": "func_8001D4DC",
+        "address": "0x8001d4dc",
+        "bytes": 140,
+        "sha256": "66d6016ba623639a9f3c1e4d2ad39782f05a3eedaa2d4658e9aeaa0d634f950f"
+      },
+      {
+        "function": "func_8001E58C",
+        "address": "0x8001e58c",
+        "bytes": 116,
+        "sha256": "d0f977e8df4d270bfd57647ce4d42f81641736d27383f8916fce2439796c34c2"
+      },
+      {
+        "function": "func_8001EC84",
+        "address": "0x8001ec84",
+        "bytes": 120,
+        "sha256": "7c14d23868ee93933886ecd2477e4e60c6200bef1982963f671e2d76e6d7caaf"
+      },
+      {
+        "function": "func_8001EDAC",
+        "address": "0x8001edac",
+        "bytes": 88,
+        "sha256": "685cff5de3228050301baf2343de332f6b5d8f6e3792817177b649ff16605923"
+      },
+      {
+        "function": "func_8001EE98",
+        "address": "0x8001ee98",
+        "bytes": 124,
+        "sha256": "2569a9b916b6606e7e75e70b4397a0c3b0a4d08781d858570dd43e384b3217ab"
+      },
+      {
+        "function": "func_800573A8",
+        "address": "0x800573a8",
+        "bytes": 36,
+        "sha256": "cb98f20f55e4915c70de0cd5ec85346bad6f0c06c72aa4c2ff968b5327149cda"
+      },
+      {
+        "function": "func_800573CC",
+        "address": "0x800573cc",
+        "bytes": 120,
+        "sha256": "c1a99e64390fec4e8dcf12a0a17942c6c30f55d6703dc08a78cd5e1111b8ad19"
+      },
+      {
+        "function": "func_80057444",
+        "address": "0x80057444",
+        "bytes": 72,
+        "sha256": "f733da4527460b28cca35c365edb865d3612c61b47356ff8500d430a5bc7d680"
+      },
+      {
+        "function": "func_800574C4",
+        "address": "0x800574c4",
+        "bytes": 56,
+        "sha256": "29303f176ed3d04daf35423bed542cbae4fafeaff90abdf8182d51eb31613f55"
+      },
+      {
+        "function": "func_800574FC",
+        "address": "0x800574fc",
+        "bytes": 56,
+        "sha256": "e22cf1c7265259493c587b72e18fdd9cf18a600fcf0189cc6bed5784078fef66"
+      },
+      {
+        "function": "func_80057534",
+        "address": "0x80057534",
+        "bytes": 124,
+        "sha256": "6bfcd219c77dc157668f2ca054b8ae40423b9bf2cc61552577216917aa6b37da"
+      },
+      {
+        "function": "func_800662B4",
+        "address": "0x800662b4",
+        "bytes": 8,
+        "sha256": "9551f2e22426c0ef38657b0ae7289d100e7d495c6f17cd81cbc78cddb68f81ee"
+      },
+      {
+        "function": "linked_list_next",
+        "address": "0x800183a0",
+        "bytes": 60,
+        "sha256": "034754e625b4fc389accea2200d19a117d17dadd5bb3401a406390d356fcbd73"
+      },
+      {
+        "function": "rand",
+        "address": "0x80049480",
+        "bytes": 40,
+        "sha256": "4c54a1210ed147afe9b02657c9b12bdec5bb62c5584a2a9fef212567d0e04c0c"
+      }
+    ],
+    "executed_native_entry_counts": {
+      "entity_hanged_woman": 3635,
+      "dream_sys_get_dream_color": 468,
+      "dream_sys_update_dream_chart": 468,
+      "dream_sys_get_mood_average": 936,
+      "calc_dream_color": 468,
+      "entity_get_distance": 1656,
+      "dream_sys_clear_callbacks": 210,
+      "dream_sys_set_move_callback": 210,
+      "func_800574FC": 1040,
+      "func_80057534": 2153,
+      "func_80057444": 2153,
+      "func_8001E58C": 2153,
+      "func_8001D4DC": 2153,
+      "RotMatrix": 2153,
+      "func_8001EE98": 2153,
+      "ApplyMatrixLV": 2153,
+      "func_800573A8": 2153,
+      "func_800573CC": 2153,
+      "dream_sys_set_view_mode": 81,
+      "rand": 429,
+      "func_800662B4": 255,
+      "calc_mood_axis": 216,
+      "entity_get_trigger_ratio": 524,
+      "func_800574C4": 1113,
+      "base_class_notify": 48,
+      "linked_list_next": 48,
+      "func_8001CEB4": 61,
+      "func_8001EC84": 183,
+      "func_8001D344": 61,
+      "func_8001EDAC": 61
+    },
+    "native_gte_commands": 4306,
+    "native_gte_control_commands": 12,
+    "dependency_output_stubs": 0,
+    "initialized_inputs_sha256": "b17dc29fb4aa36a2cbe0527774f43a3380ac3c9b686cecaa6603735f556df1a6",
+    "checked_buffers_sha256": "a6941a720717b7f5093dc216d25b2328f64e244153b35ae1fd4dd1e573aa1308",
+    "negative_controls_detected": [
+      {
+        "name": "wrong_distance_boundary",
+        "function": "entity_hanged_woman",
+        "address": "0x8006152c",
+        "executions": 1,
+        "differing_outputs": [
+          "entity",
+          "dream",
+          "player_coordinate",
+          "trace"
+        ]
+      },
+      {
+        "name": "wrong_fifty_tick_boundary",
+        "function": "entity_hanged_woman",
+        "address": "0x800615c8",
+        "executions": 1,
+        "differing_outputs": [
+          "dream",
+          "player_coordinate",
+          "trace"
+        ]
+      },
+      {
+        "name": "late_end_request",
+        "function": "entity_hanged_woman",
+        "address": "0x80061654",
+        "executions": 1,
+        "differing_outputs": [
+          "trace"
+        ]
+      },
+      {
+        "name": "wrong_rotated_lateral_distance",
+        "function": "entity_hanged_woman",
+        "address": "0x800616fc",
+        "executions": 1,
+        "differing_outputs": [
+          "coordinate",
+          "trace"
+        ]
+      },
+      {
+        "name": "wrong_held_flag_polarity",
+        "function": "func_8001D344",
+        "address": "0x8001d34c",
+        "executions": 1,
+        "differing_outputs": [
+          "held_object"
+        ]
+      },
+      {
+        "name": "wrong_rng_increment",
+        "function": "rand",
+        "address": "0x80049494",
+        "executions": 1,
+        "differing_outputs": [
+          "rng_seed"
+        ]
+      },
+      {
+        "name": "escaped_command_store",
+        "detected": true,
+        "instruction": 398384,
+        "observed_at": 398384,
+        "address": 1061020,
+        "bytes": 4
+      }
+    ],
+    "backend_identity": {
+      "package_version": "2.1.4",
+      "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+      "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+    },
+    "bridge_executable_sha256": "c36770c552a557c06d94c0902e88c34cfab8122073fec4455e3246a65ad23ca5",
+    "nymashock_compressed_core_sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126",
+    "preserved_dependencies": [
+      {
+        "path": "tools/verify_native_ai.py",
+        "sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697"
+      },
+      {
+        "path": "tools/inventory_vtables.py",
+        "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+      },
+      {
+        "path": "tools/progress.py",
+        "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+      },
+      {
+        "path": "configure.py",
+        "sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2"
+      },
+      {
+        "path": "requirements-analysis.txt",
+        "sha256": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911"
+      },
+      {
+        "path": "build/SLPS01556.map",
+        "sha256": "0c8ad7a8e09678102951c5456175dc8ef7bb15a242b51ce2bbf6d62ab1e39f41"
+      },
+      {
+        "path": "build/undefined_funcs_auto.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "build/undefined_syms_auto.txt",
+        "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+      },
+      {
+        "path": "src/scene/entity.c",
+        "sha256": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811"
+      },
+      {
+        "path": "src/scene/entity.h",
+        "sha256": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f"
+      },
+      {
+        "path": "src/dream/dream_sys.c",
+        "sha256": "130453762f783d2e8c2f4af237a0a62322fec91480e7570e5ebbd21d9ca006bf"
+      },
+      {
+        "path": "src/dream/dream_sys.h",
+        "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507"
+      },
+      {
+        "path": "src/scene/actor.c",
+        "sha256": "4a0c1f29434123834c3725cd12cad91a8b68cb39dbd927af1e46325a31113c3c"
+      },
+      {
+        "path": "src/base/transform.c",
+        "sha256": "0166d95088d3476bf1cf8c2a760627f0c12640e68a1f8294a973acb91c09004d"
+      },
+      {
+        "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+        "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+      },
+      {
+        "path": "tools/verify_hanged_woman.py",
+        "sha256": "649140c06cb96c375b166d1cbee8efc2c173d1fc300c73c157765a23d8e97571"
+      },
+      {
+        "path": "docs/hanged-woman-function-ranges.json",
+        "sha256": "387bd2c60cf3b663e1c45d5cfe21b9346a2adffc97c59354915985786691da8a"
+      },
+      {
+        "path": "tools/verify_astronaut.py",
+        "sha256": "1f4cfbf4edffa800790c0ff4d5cff80f5b64aad2762b947adc58ff85c6ecd2aa"
+      },
+      {
+        "path": "tools/verify_npc_proximity.py",
+        "sha256": "50fa5bf1a77a2ec7904949e6c0833b90c2271b5577c37b7fe7aef768fca61c00"
+      },
+      {
+        "path": "tools/verify_npc_spatial.py",
+        "sha256": "e25422dddcbcd445bdaabacf200ba0e418336e0a161648403ae08084d006983f"
+      },
+      {
+        "path": "tools/verify_scripted_ai.py",
+        "sha256": "2edefddc727441c0066a48375efd882c80035af99db3b3990a2c674eedddb2c1"
+      },
+      {
+        "path": "tools/verify_locomotive_scripts.py",
+        "sha256": "2b1aa4a0577353cee5774318b948ef55cd8006cb4c7189e6529a076bd542c2e8"
+      },
+      {
+        "path": "tools/verify_render_gte.py",
+        "sha256": "624a607b167be932702501fb6e07a04595992773bacc8d4344b2200a8c2784b0"
+      },
+      {
+        "path": "tools/verify_render_rotation.py",
+        "sha256": "2ce32389c8e158692dff7663a9fb0aa700b7e3bb7204254d402b0ae45f956e8f"
+      },
+      {
+        "path": "tools/nymashock_gte_bridge.cs",
+        "sha256": "969e0af3b030e5b2eafedad032b68173ac76e41b089a28b4d4fc1084e33fedd9"
+      },
+      {
+        "path": "src/scene/scene_node.c",
+        "sha256": "4c9802ade32e9cd08fbb89c94db1694e737814b5a0a922c45bd3abb1afe73ea9"
+      },
+      {
+        "path": "src/base/object_math.c",
+        "sha256": "f4e17f6d44d413b63cc677e7a1ec6b9952eaf2f0431ecf7655ec0b6df7c3959e"
+      },
+      {
+        "path": "PROJECT_OBJECTIVE.md",
+        "sha256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5"
+      }
+    ],
+    "embedded_context_address": "0x10009c",
+    "embedded_context_bytes": 84,
+    "externally_supplied_history_fields": [
+      "tick_incremented_from_previous_native_tick",
+      "command_timer"
+    ],
+    "canonical_original_and_build_equal": true,
+    "source_promoted": false,
+    "new_bounded_callbacks": 1,
+    "bounded_callback_total_before": 43,
+    "bounded_callback_total_after": 44,
+    "whole_callback_acceptances": 0,
+    "whole_feature_groups_accepted": 0,
+    "model_api_calls": 0,
+    "original_game_behavior_modified": false,
+    "elapsed_seconds": 14.592,
+    "scope": "One original callback with embedded owner context, real property/mood/control/motion/held-node helpers and native GTE. Constructed meshless/colliderless graphs; no notification recipients. Clocks supplied outside engine dispatch. Player world-coordinate propagation is outside this profile. No natural encounter, delivered day-end event, rendering/audio or PS1 timing acceptance."
+  },
+  "independent_audit": {
+    "complete_native_ranges": 30,
+    "all_ranges_entered": true,
+    "retained_GNU_complete_extents_sha256": "799952f7601b0d5d3f8b0e51b8d3289c53b2cb9a2f18a9b8d769ebdb43b7e7d6",
+    "retained_symbolic_allocated_image_matches_current_ROM": true,
+    "all_392_protected_build_inputs_preserved": true,
+    "distinct_initialized_fixture_count": 2514,
+    "initialized_inputs_sha256": "b17dc29fb4aa36a2cbe0527774f43a3380ac3c9b686cecaa6603735f556df1a6",
+    "embedded_context_aliases_checked": 2514,
+    "property_binding": 58,
+    "original_property_radius": 30,
+    "tightened_native_guard_preserves_all_observations": true,
+    "independent_native_hand_checks": 15,
+    "executed_corruption_controls_detected": 7
+  },
+  "private_evidence": {
+    ".decomp-lab/hanged-woman-native-20261019-third/report.json": "6f1409e5e8647ecf8b789b569c8692bd70f7b5e0d94623da818092934513b023",
+    "working/npc-hanged-woman-20261019-first/independent-audit.json": "e15fb5342d4441948bb1d00ae24aae95aba3e9c84640cb2addde808063f402da",
+    "working/npc-hanged-woman-20261019-first/audit.py": "b7e71cf3ae0a3808e09e8728c83063f77cd69086cec2d595524fce76268e7907"
+  },
+  "public_source_sha256": {
+    "tools/verify_hanged_woman.py": "649140c06cb96c375b166d1cbee8efc2c173d1fc300c73c157765a23d8e97571",
+    "tests/test_hanged_woman.py": "5f2641eab686b9734237f76af6a39ff72faf1349bb509f05a88ffa2db1c9ad02",
+    "docs/hanged-woman-function-ranges.json": "387bd2c60cf3b663e1c45d5cfe21b9346a2adffc97c59354915985786691da8a",
+    "docs/HANGED_WOMAN.md": "f4177beba4e2191125dd476c4839a9396ac8d17c351e024668e81e12f07b2e5a"
+  },
+  "local_tooling_suites": {
+    "windows": {
+      "tests": 1382,
+      "skipped": 7,
+      "passed": true,
+      "receipt_sha256": "ff5d155fe6a1d0930c4bb121fd5a3cb2722831eb5854192492f8390c51ce77d0"
+    },
+    "wsl": {
+      "tests": 1382,
+      "skipped": 8,
+      "passed": true,
+      "receipt_sha256": "b84ea7f225cb03843b6de2c46f941ad73bf564ba161944f43e5da71a1397eadb"
+    }
+  },
+  "new_source_only_test_methods": 10,
+  "original_game_behavior_modified": false,
+  "new_source_functions_promoted": 0,
+  "new_C_bytes": 0,
+  "new_original_game_features": 0,
+  "new_optional_mods": 0,
+  "new_developer_capability_categories": 0,
+  "model_API_calls": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "whole_feature_groups_accepted": 0,
+  "published_original_instruction_bytes_buffers_images_or_GTE_logs": false,
+  "scope": "One original callback with embedded owner context, real property/mood/control/motion/held-node helpers and native GTE. Constructed meshless/colliderless graphs; no notification recipients. Clocks supplied outside engine dispatch. Player world-coordinate propagation is outside this profile. No natural encounter, delivered day-end event, rendering/audio or PS1 timing acceptance.",
+  "source_hash_scope": "public_source_sha256 and preserved_dependencies identify bytes executed in the verified local workspace. Git may normalize text line endings; normalized Git blob hashes are recorded separately below.",
+  "normalized_git_source_sha256": {
+    "tools/verify_hanged_woman.py": "0244ee794fedea51b70fb2eaa3ffe072d6a18a0e99d8677ccdccf33e0f623a62",
+    "tests/test_hanged_woman.py": "5f2641eab686b9734237f76af6a39ff72faf1349bb509f05a88ffa2db1c9ad02",
+    "docs/hanged-woman-function-ranges.json": "98d0f718f44b6d5aff1ccfbb6817426964436b243db30f51213dd0ff52749c10",
+    "docs/HANGED_WOMAN.md": "f4177beba4e2191125dd476c4839a9396ac8d17c351e024668e81e12f07b2e5a"
+  }
+}
