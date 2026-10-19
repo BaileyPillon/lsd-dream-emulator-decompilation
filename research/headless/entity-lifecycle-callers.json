@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "source": "src/scene/entity.c",
+  "methods": [
+    {
+      "name": "entity_init",
+      "address": 2147865208,
+      "bytes": 156,
+      "sha256": "763e9464843838c6e2ab282a88fffcd4890b5824cef4d6dfb954a7f1732a2e85"
+    },
+    {
+      "name": "entity_start",
+      "address": 2147865364,
+      "bytes": 260,
+      "sha256": "da57e9c1407b13009117a3341b32b35de0c883fbcbb5adad17b56e58bc1e053c"
+    },
+    {
+      "name": "entity_stop",
+      "address": 2147865624,
+      "bytes": 104,
+      "sha256": "2dae66d1c1a6f32ac06dbe24b7a389bfc883a957827b3beb6ea8bc2334549cfd"
+    },
+    {
+      "name": "entity_update",
+      "address": 2147865728,
+      "bytes": 224,
+      "sha256": "1b5fc42774d538b0f80f0a7c58c8d99506667ddc68807f2fb8e2b644d9469e46"
+    }
+  ],
+  "scope": "Reviewed return-address caller ranges for original entity lifecycle interpretation. These are metadata only, not additional observer targets or NPC callbacks."
+}

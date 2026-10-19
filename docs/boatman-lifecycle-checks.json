@@ -1,0 +1,578 @@
+{
+  "schema_version": 1,
+  "status": "qualified_bounded_original_Boatman_stop_and_Fish_initialization",
+  "baseline_commit": "7aa6368ba85aa121355827eb27a35f989748961d",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "source_sha256": {
+    ".gitattributes": "d0ed4015f9b2bc1c7a9886abc5f976cfde8a22031721880feeee97c70637ae2b",
+    "README.md": "802e09278b29bfca0dbdbe1cd7bacc04e369a2c7291df39f9c3fe528ebdeb624",
+    "CHANGELOG.md": "1632d2e91471ed0001e9b87f08dc65942db77c87e0c6afe130bb48f5bd60eac6",
+    "docs/features.json": "cc2a0b647c7f2b6008e7e3345389c96d95e2e8c71e894652da7815150ea77331",
+    "docs/BOATMAN_LIFECYCLE.md": "dddd868c7c6bdec735705bf9377102fed885c18da8ee24a339f8ff1d91d56c62",
+    "tools/npc_engine_entries.py": "060cda0a15ee46113e9aded3ea2ef17c326cb8a18c971ef657c2d0888ccc0eca",
+    "tests/test_npc_engine_entries.py": "fbcec40f68aab20dba773650c1f5265840250c523aeaab456f2f467668744604",
+    "research/headless/entity-lifecycle-callers.json": "4b87b0c1d2f671f99519086e725118b97d33ccc21f8fce0c9bf844f6f61bb3ef",
+    "tools/record_npc_activation.py": "fc38845572f0df14865deeb6df6ca3558b5390d375d7e0afc1e54f485584d36b",
+    "research/headless/entity-lifecycle-methods.json": "d0afae84520212d7ed1940f13e4cd646309f497018356b92454c5d26534e2caf",
+    "research/headless/compact/RecordNpcHistory.cs": "bdaf0775a8addb2dc404094c1d936269853776ebe7b26b994ca386b1a0406395",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/NpcInstructionTrace.cs": "f30e6939a4c95df586b83e36acc71a2fd4aa2d6ba55140909672fb0a96e63a6e",
+    "research/headless/NpcCatalogueTrace.cs": "1a315617f2f17971349a3e31a4c4475b5586ea1ffa8ebe716fc43f52d0be3082",
+    "research/headless/RecordNpcCatalogue.cs": "0272062d0a11817a054bb6ad5b0126520255ada478f165246ebfbe1f5ce9ed8c",
+    "src/scene/entity.c": "42b79fe2e6463d01213b8be552e94132dd912212ace0171219466b2e1650c751",
+    "src/scene/entity.h": "3dd0c265059b0566aca0f0934bbc5b85b5de9a1e1ef27e410985129e2c0ed2b4",
+    "src/sound/sound.c": "c3174cf04aeb55867cd70fa681edc6146121551a27d9e7ca9ad5b4dd1697dc10"
+  },
+  "local_file_sha256": {
+    ".gitattributes": "d0ed4015f9b2bc1c7a9886abc5f976cfde8a22031721880feeee97c70637ae2b",
+    "README.md": "802e09278b29bfca0dbdbe1cd7bacc04e369a2c7291df39f9c3fe528ebdeb624",
+    "CHANGELOG.md": "1632d2e91471ed0001e9b87f08dc65942db77c87e0c6afe130bb48f5bd60eac6",
+    "docs/features.json": "cc2a0b647c7f2b6008e7e3345389c96d95e2e8c71e894652da7815150ea77331",
+    "docs/BOATMAN_LIFECYCLE.md": "dddd868c7c6bdec735705bf9377102fed885c18da8ee24a339f8ff1d91d56c62",
+    "tools/npc_engine_entries.py": "060cda0a15ee46113e9aded3ea2ef17c326cb8a18c971ef657c2d0888ccc0eca",
+    "tests/test_npc_engine_entries.py": "fbcec40f68aab20dba773650c1f5265840250c523aeaab456f2f467668744604",
+    "research/headless/entity-lifecycle-callers.json": "4b87b0c1d2f671f99519086e725118b97d33ccc21f8fce0c9bf844f6f61bb3ef",
+    "tools/record_npc_activation.py": "fc38845572f0df14865deeb6df6ca3558b5390d375d7e0afc1e54f485584d36b",
+    "research/headless/entity-lifecycle-methods.json": "d0afae84520212d7ed1940f13e4cd646309f497018356b92454c5d26534e2caf",
+    "research/headless/compact/RecordNpcHistory.cs": "bdaf0775a8addb2dc404094c1d936269853776ebe7b26b994ca386b1a0406395",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/NpcInstructionTrace.cs": "f30e6939a4c95df586b83e36acc71a2fd4aa2d6ba55140909672fb0a96e63a6e",
+    "research/headless/NpcCatalogueTrace.cs": "1a315617f2f17971349a3e31a4c4475b5586ea1ffa8ebe716fc43f52d0be3082",
+    "research/headless/RecordNpcCatalogue.cs": "0272062d0a11817a054bb6ad5b0126520255ada478f165246ebfbe1f5ce9ed8c",
+    "src/scene/entity.c": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811",
+    "src/scene/entity.h": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f",
+    "src/sound/sound.c": "c3174cf04aeb55867cd70fa681edc6146121551a27d9e7ca9ad5b4dd1697dc10"
+  },
+  "hash_scope": "source_sha256 pins staged Git blobs; local_file_sha256 pins exact inspected working bytes. This metadata excludes its own circular hash.",
+  "native_observation": {
+    "status": "qualified_bounded_original_Boatman_stop_and_Fish_initialization",
+    "all_recorded_outputs_equal_retained_reference": true,
+    "original_rebuilt_engine_logs_equal": true,
+    "raw_observer_entries": 15697,
+    "engine_entries": 13230,
+    "registered_callback_entries": 2467,
+    "qualified_engine_entries_for_five_observed_instances": 10217,
+    "registered_callback_types_this_route": 3,
+    "natural_callback_types_before": 5,
+    "natural_callback_types_after": 5,
+    "Boatman_start": {
+      "relative_frame": 4577,
+      "timestamp": 48902,
+      "method": "entity_start_behaviour",
+      "entity": 2149385580,
+      "entity_id": 14,
+      "original_callsite": 2147868540,
+      "call_kind": "JALR",
+      "reviewed_caller": "entity_check_link_trigger",
+      "context_enabled": false,
+      "disabled_payload_ignored": true,
+      "context_tick": null,
+      "context_owner": null,
+      "context_callback": null,
+      "registered_callback_dispatch": false,
+      "whole_encounter_accepted": false
+    },
+    "Boatman_disable": {
+      "relative_frame": 5074,
+      "timestamp": 441483,
+      "method": "entity_disable_link",
+      "entity": 2149385580,
+      "entity_id": 14,
+      "original_callsite": 2147865672,
+      "call_kind": "JALR",
+      "reviewed_caller": "entity_stop",
+      "context_enabled": true,
+      "disabled_payload_ignored": false,
+      "context_tick": 87,
+      "context_owner": 2149385580,
+      "context_callback": 2147871896,
+      "registered_callback_dispatch": false,
+      "whole_encounter_accepted": false
+    },
+    "Boatman_stop": {
+      "relative_frame": 5074,
+      "timestamp": 441649,
+      "method": "entity_stop_behaviour",
+      "entity": 2149385580,
+      "entity_id": 14,
+      "original_callsite": 2147867252,
+      "call_kind": "JALR",
+      "reviewed_caller": "entity_disable_link",
+      "context_enabled": true,
+      "disabled_payload_ignored": false,
+      "context_tick": 87,
+      "context_owner": 2149385580,
+      "context_callback": 2147871896,
+      "registered_callback_dispatch": false,
+      "whole_encounter_accepted": false
+    },
+    "Boatman_interaction_stop_rule": {
+      "source_consumer": "entity_check_interaction_range",
+      "stored_s8": 120,
+      "consumer_u8": 120,
+      "requires_link_enabled": true,
+      "disable_link_when": "timer_equals",
+      "timer_equals_updates": 1800
+    },
+    "Fish_initialization": [
+      {
+        "entity": "0x801c9abc",
+        "entity_id": 35,
+        "events": [
+          {
+            "relative_frame": 5431,
+            "timestamp": 270410,
+            "method": "entity_disable_link",
+            "entity": 2149358268,
+            "entity_id": 35,
+            "original_callsite": 2147865336,
+            "call_kind": "JALR",
+            "reviewed_caller": "entity_init",
+            "context_enabled": false,
+            "disabled_payload_ignored": true,
+            "context_tick": null,
+            "context_owner": null,
+            "context_callback": null,
+            "registered_callback_dispatch": false,
+            "whole_encounter_accepted": false
+          },
+          {
+            "relative_frame": 5431,
+            "timestamp": 271471,
+            "method": "entity_stop_behaviour",
+            "entity": 2149358268,
+            "entity_id": 35,
+            "original_callsite": 2147867252,
+            "call_kind": "JALR",
+            "reviewed_caller": "entity_disable_link",
+            "context_enabled": false,
+            "disabled_payload_ignored": true,
+            "context_tick": null,
+            "context_owner": null,
+            "context_callback": null,
+            "registered_callback_dispatch": false,
+            "whole_encounter_accepted": false
+          },
+          {
+            "relative_frame": 5431,
+            "timestamp": 280896,
+            "method": "entity_enable_link",
+            "entity": 2149358268,
+            "entity_id": 35,
+            "original_callsite": 2147865516,
+            "call_kind": "JALR",
+            "reviewed_caller": "entity_start",
+            "context_enabled": false,
+            "disabled_payload_ignored": true,
+            "context_tick": null,
+            "context_owner": null,
+            "context_callback": null,
+            "registered_callback_dispatch": false,
+            "whole_encounter_accepted": false
+          },
+          {
+            "relative_frame": 5431,
+            "timestamp": 281997,
+            "method": "entity_start_behaviour",
+            "entity": 2149358268,
+            "entity_id": 35,
+            "original_callsite": 2147865580,
+            "call_kind": "JALR",
+            "reviewed_caller": "entity_start",
+            "context_enabled": false,
+            "disabled_payload_ignored": true,
+            "context_tick": null,
+            "context_owner": null,
+            "context_callback": null,
+            "registered_callback_dispatch": false,
+            "whole_encounter_accepted": false
+          }
+        ]
+      },
+      {
+        "entity": "0x801ca6ec",
+        "entity_id": 35,
+        "events": [
+          {
+            "relative_frame": 5431,
+            "timestamp": 344388,
+            "method": "entity_disable_link",
+            "entity": 2149361388,
+            "entity_id": 35,
+            "original_callsite": 2147865336,
+            "call_kind": "JALR",
+            "reviewed_caller": "entity_init",
+            "context_enabled": false,
+            "disabled_payload_ignored": true,
+            "context_tick": null,
+            "context_owner": null,
+            "context_callback": null,
+            "registered_callback_dispatch": false,
+            "whole_encounter_accepted": false
+          },
+          {
+            "relative_frame": 5431,
+            "timestamp": 345389,
+            "method": "entity_stop_behaviour",
+            "entity": 2149361388,
+            "entity_id": 35,
+            "original_callsite": 2147867252,
+            "call_kind": "JALR",
+            "reviewed_caller": "entity_disable_link",
+            "context_enabled": false,
+            "disabled_payload_ignored": true,
+            "context_tick": null,
+            "context_owner": null,
+            "context_callback": null,
+            "registered_callback_dispatch": false,
+            "whole_encounter_accepted": false
+          },
+          {
+            "relative_frame": 5431,
+            "timestamp": 361943,
+            "method": "entity_enable_link",
+            "entity": 2149361388,
+            "entity_id": 35,
+            "original_callsite": 2147865516,
+            "call_kind": "JALR",
+            "reviewed_caller": "entity_start",
+            "context_enabled": false,
+            "disabled_payload_ignored": true,
+            "context_tick": null,
+            "context_owner": null,
+            "context_callback": null,
+            "registered_callback_dispatch": false,
+            "whole_encounter_accepted": false
+          },
+          {
+            "relative_frame": 5431,
+            "timestamp": 363015,
+            "method": "entity_start_behaviour",
+            "entity": 2149361388,
+            "entity_id": 35,
+            "original_callsite": 2147865580,
+            "call_kind": "JALR",
+            "reviewed_caller": "entity_start",
+            "context_enabled": false,
+            "disabled_payload_ignored": true,
+            "context_tick": null,
+            "context_owner": null,
+            "context_callback": null,
+            "registered_callback_dispatch": false,
+            "whole_encounter_accepted": false
+          }
+        ]
+      },
+      {
+        "entity": "0x801cb32c",
+        "entity_id": 35,
+        "events": [
+          {
+            "relative_frame": 5431,
+            "timestamp": 425392,
+            "method": "entity_disable_link",
+            "entity": 2149364524,
+            "entity_id": 35,
+            "original_callsite": 2147865336,
+            "call_kind": "JALR",
+            "reviewed_caller": "entity_init",
+            "context_enabled": false,
+            "disabled_payload_ignored": true,
+            "context_tick": null,
+            "context_owner": null,
+            "context_callback": null,
+            "registered_callback_dispatch": false,
+            "whole_encounter_accepted": false
+          },
+          {
+            "relative_frame": 5431,
+            "timestamp": 426393,
+            "method": "entity_stop_behaviour",
+            "entity": 2149364524,
+            "entity_id": 35,
+            "original_callsite": 2147867252,
+            "call_kind": "JALR",
+            "reviewed_caller": "entity_disable_link",
+            "context_enabled": false,
+            "disabled_payload_ignored": true,
+            "context_tick": null,
+            "context_owner": null,
+            "context_callback": null,
+            "registered_callback_dispatch": false,
+            "whole_encounter_accepted": false
+          },
+          {
+            "relative_frame": 5431,
+            "timestamp": 442947,
+            "method": "entity_enable_link",
+            "entity": 2149364524,
+            "entity_id": 35,
+            "original_callsite": 2147865516,
+            "call_kind": "JALR",
+            "reviewed_caller": "entity_start",
+            "context_enabled": false,
+            "disabled_payload_ignored": true,
+            "context_tick": null,
+            "context_owner": null,
+            "context_callback": null,
+            "registered_callback_dispatch": false,
+            "whole_encounter_accepted": false
+          },
+          {
+            "relative_frame": 5431,
+            "timestamp": 444019,
+            "method": "entity_start_behaviour",
+            "entity": 2149364524,
+            "entity_id": 35,
+            "original_callsite": 2147865580,
+            "call_kind": "JALR",
+            "reviewed_caller": "entity_start",
+            "context_enabled": false,
+            "disabled_payload_ignored": true,
+            "context_tick": null,
+            "context_owner": null,
+            "context_callback": null,
+            "registered_callback_dispatch": false,
+            "whole_encounter_accepted": false
+          }
+        ]
+      },
+      {
+        "entity": "0x801cbf6c",
+        "entity_id": 118,
+        "events": [
+          {
+            "relative_frame": 5431,
+            "timestamp": 507057,
+            "method": "entity_disable_link",
+            "entity": 2149367660,
+            "entity_id": 118,
+            "original_callsite": 2147865336,
+            "call_kind": "JALR",
+            "reviewed_caller": "entity_init",
+            "context_enabled": false,
+            "disabled_payload_ignored": true,
+            "context_tick": null,
+            "context_owner": null,
+            "context_callback": null,
+            "registered_callback_dispatch": false,
+            "whole_encounter_accepted": false
+          },
+          {
+            "relative_frame": 5431,
+            "timestamp": 508093,
+            "method": "entity_stop_behaviour",
+            "entity": 2149367660,
+            "entity_id": 118,
+            "original_callsite": 2147867252,
+            "call_kind": "JALR",
+            "reviewed_caller": "entity_disable_link",
+            "context_enabled": false,
+            "disabled_payload_ignored": true,
+            "context_tick": null,
+            "context_owner": null,
+            "context_callback": null,
+            "registered_callback_dispatch": false,
+            "whole_encounter_accepted": false
+          },
+          {
+            "relative_frame": 5431,
+            "timestamp": 513350,
+            "method": "entity_enable_link",
+            "entity": 2149367660,
+            "entity_id": 118,
+            "original_callsite": 2147865516,
+            "call_kind": "JALR",
+            "reviewed_caller": "entity_start",
+            "context_enabled": false,
+            "disabled_payload_ignored": true,
+            "context_tick": null,
+            "context_owner": null,
+            "context_callback": null,
+            "registered_callback_dispatch": false,
+            "whole_encounter_accepted": false
+          },
+          {
+            "relative_frame": 5431,
+            "timestamp": 514422,
+            "method": "entity_start_behaviour",
+            "entity": 2149367660,
+            "entity_id": 118,
+            "original_callsite": 2147865580,
+            "call_kind": "JALR",
+            "reviewed_caller": "entity_start",
+            "context_enabled": false,
+            "disabled_payload_ignored": true,
+            "context_tick": null,
+            "context_owner": null,
+            "context_callback": null,
+            "registered_callback_dispatch": false,
+            "whole_encounter_accepted": false
+          }
+        ]
+      }
+    ],
+    "rooted_boundary_snapshots": [
+      {
+        "relative_frame": 4576,
+        "Boatman_state": "disabled",
+        "dream_map_selector": 2,
+        "interaction_timer": 116,
+        "link_enabled": 1,
+        "behavior_active": 0,
+        "context_tick": null
+      },
+      {
+        "relative_frame": 4577,
+        "Boatman_state": "enabled",
+        "dream_map_selector": 2,
+        "interaction_timer": 117,
+        "link_enabled": 1,
+        "behavior_active": 1,
+        "context_tick": 1
+      },
+      {
+        "relative_frame": 5069,
+        "Boatman_state": "enabled",
+        "dream_map_selector": 3,
+        "interaction_timer": 203,
+        "link_enabled": 1,
+        "behavior_active": 1,
+        "context_tick": 87
+      },
+      {
+        "relative_frame": 5073,
+        "Boatman_state": "enabled",
+        "dream_map_selector": 3,
+        "interaction_timer": 203,
+        "link_enabled": 1,
+        "behavior_active": 1,
+        "context_tick": 87
+      },
+      {
+        "relative_frame": 5074,
+        "Boatman_state": "not_reachable",
+        "dream_map_selector": 3
+      },
+      {
+        "relative_frame": 5075,
+        "Boatman_state": "not_reachable",
+        "dream_map_selector": 3
+      },
+      {
+        "relative_frame": 5084,
+        "Boatman_state": "not_reachable",
+        "dream_map_selector": 3
+      },
+      {
+        "relative_frame": 5400,
+        "Boatman_state": "not_reachable",
+        "dream_map_selector": 3
+      },
+      {
+        "relative_frame": 5460,
+        "Boatman_state": "not_reachable",
+        "dream_map_selector": 3
+      },
+      {
+        "relative_frame": 9000,
+        "Boatman_state": "not_reachable",
+        "dream_map_selector": 3
+      }
+    ],
+    "owned_native_entry_corruption_controls": [
+      {
+        "field": "context_owner",
+        "rejected": true,
+        "reason": "Enabled context differs from its original owner or callback binding."
+      },
+      {
+        "field": "context_callback",
+        "rejected": true,
+        "reason": "Enabled context differs from its original owner or callback binding."
+      },
+      {
+        "field": "context_state",
+        "rejected": true,
+        "reason": "Enabled context differs from its original owner or callback binding."
+      },
+      {
+        "field": "instruction",
+        "rejected": true,
+        "reason": "Original engine entry instruction differs."
+      }
+    ],
+    "disabled_initialization_stops_are_live_shutdowns": false,
+    "new_matching_C_bytes": 0,
+    "bounded_callback_profiles_before": 41,
+    "bounded_callback_profiles_after": 41,
+    "whole_NPC_encounters_accepted": 0,
+    "whole_feature_groups_accepted": 0,
+    "new_model_API_calls": 0
+  },
+  "full_run_comparisons": [
+    {
+      "name": "original",
+      "controller_steps": 9000,
+      "GPU_frame_observations": 9001,
+      "complete_RAM_hashes": 1614,
+      "complete_RAM_GPU_RGB_checkpoints": 205,
+      "complete_PCM_bytes": 26537652,
+      "complete_PCM_sha256": "0c3ca84b4cb623266e81e5830781b6ff2a62fd8c20f204c8f4cc50acd83bad51"
+    },
+    {
+      "name": "rebuilt",
+      "controller_steps": 9000,
+      "GPU_frame_observations": 9001,
+      "complete_RAM_hashes": 1614,
+      "complete_RAM_GPU_RGB_checkpoints": 205,
+      "complete_PCM_bytes": 26537652,
+      "complete_PCM_sha256": "0c3ca84b4cb623266e81e5830781b6ff2a62fd8c20f204c8f4cc50acd83bad51"
+    },
+    {
+      "name": "stock",
+      "controller_steps": 9000,
+      "GPU_frame_observations": 9001,
+      "complete_RAM_hashes": 1614,
+      "complete_RAM_GPU_RGB_checkpoints": 205,
+      "complete_PCM_bytes": 26537652,
+      "complete_PCM_sha256": "0c3ca84b4cb623266e81e5830781b6ff2a62fd8c20f204c8f4cc50acd83bad51"
+    }
+  ],
+  "full_tooling_suites": {
+    "windows": {
+      "tests": 1302,
+      "skipped": 7,
+      "log_sha256": "72c70a14c3b2d91720e7a8171badb8ee48e62774836c15b92f1ebd1ccfbf010d"
+    },
+    "linux": {
+      "tests": 1302,
+      "skipped": 2,
+      "log_sha256": "f5e04aade773a83bacde29c5bb2c161db16747496aa016e1fca2637ee5e50d9b"
+    }
+  },
+  "GNU_caller_symbol_export_sha256": "3d64ba588b359ede324edeeceddc1c4e3344f6ac9b60d3ec37a41097daa2c9cc",
+  "private_evidence_sha256": {
+    "native-lifecycle-audit.json": "af94aab37cf2ffa89a31fe0b41f7d989846eff892c3fba33200c6f5f9dfa4286",
+    "audit_native.py": "fab7abfbd22ee5fbbc41b5f0a207df4b30d31ab7d20e9f8b31b69ddd37c4ab6b",
+    "export_callers.py": "e8f8e47ba6d5f4a6a148343140ab32a273b91bc2f9f178c1e5b5a76dd1875523",
+    "prepare.py": "7054c97327205aa6766a25d59c71a4f85a571b344d95dc00aad42ece355628c0",
+    "original-property-records.json": "4b04cd8ad7d326b9303cbf95cd3ae92f4f0f09da3c6c0a7fbefa20495282fc65"
+  },
+  "run_input_manifest_sha256": {
+    "original": "69f2ac2458ec084c76f632db5f0014f9f4608fc720436e14fd05bdc163a1b893",
+    "rebuilt": "6dabddf9283f4405bb79b673291b85a20ccd333c61a7d6e7de6936afff59f47b",
+    "stock": "0e427ec378c23611b5b18df1cfa6a0eb6e2780bda23e14d18761ec260caf6a96"
+  },
+  "recording_source_unchanged_from_PR95": true,
+  "native_auditor_assertions_reexecuted": true,
+  "protected_game_build_inputs_unchanged": 392,
+  "matching_C_build_check": "ninja check passed in LSD-Decomp WSL",
+  "new_matching_C_bytes": 0,
+  "new_original_game_features": 0,
+  "new_model_API_calls": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "whole_feature_groups_accepted": 0,
+  "scope": "One retained Boatman/Fish route. Checked original return-address callsites, enabled context bindings, selected rooted boundaries and measured outputs; no heap lifetime, all routes, audiovisual causality, complete emulator state or original hardware timing acceptance.",
+  "storage": "Existing libraries and reference buffers are shared/read; all three successful new runs save no raw RAM/GPU/RGB/PNG/PCM duplicates."
+}
