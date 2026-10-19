@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "source": "src/scene/entity.c",
+  "methods": [
+    {
+      "name": "entity_tick",
+      "address": 2147866324,
+      "bytes": 64,
+      "sha256": "59c5b639258a4d6980458dab3b6849ad759eb7c8cd7977585c82084cb324edb1",
+      "first_word": 666763240
+    },
+    {
+      "name": "entity_check_interaction",
+      "address": 2147867632,
+      "bytes": 296,
+      "sha256": "c443fee53fb8f2d5a1b80b97ad992bc93606edc2863cd35f01b6c3f9ef1aeba4",
+      "first_word": 666763224
+    },
+    {
+      "name": "entity_check_interaction_range",
+      "address": 2147867928,
+      "bytes": 256,
+      "sha256": "4fa8d87fcc63c0589849513596f6c69c6f854b035ee514f8c3cfa80325e4ab90",
+      "first_word": 666763232
+    },
+    {
+      "name": "entity_check_link_trigger",
+      "address": 2147868384,
+      "bytes": 188,
+      "sha256": "4b035916ba18c88617af41a79fbe0fc8a4333adcee7eb8c5543d63fbfbdd551e",
+      "first_word": 666763240
+    },
+    {
+      "name": "entity_enable_link",
+      "address": 2147867124,
+      "bytes": 72,
+      "sha256": "bd5559607fd4d93a9e7f48de982dd05e75c14fcf74a89b01649e78f84d318c92",
+      "first_word": 666763240
+    },
+    {
+      "name": "entity_disable_link",
+      "address": 2147867196,
+      "bytes": 112,
+      "sha256": "730e458b8fcbb0fbdd92a20f7825c109697c11b5c02e57668ba54d424df14efd",
+      "first_word": 666763240
+    },
+    {
+      "name": "entity_start_behaviour",
+      "address": 2147867388,
+      "bytes": 144,
+      "sha256": "02ba2f74d4281a6350ef763d44ffe77c18cfc9d95dc662f1f36b5fbe25ba3476",
+      "first_word": 666763232
+    },
+    {
+      "name": "entity_stop_behaviour",
+      "address": 2147867532,
+      "bytes": 100,
+      "sha256": "4fa7621002bfabe6bf1c105adc34415e5f321cde133ecbc8dc1a00aee60dcaf0",
+      "first_word": 666763240
+    }
+  ],
+  "scope": "Complete original function ranges for optional engine instruction-entry observation. These are engine methods, not additional NPC callbacks."
+}

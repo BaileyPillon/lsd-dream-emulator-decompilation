@@ -1,5 +1,17 @@
 # Changelog
 
+## Native NPC activation and compact observations - 2026-10-19
+
+- Record eight original engine methods alongside the 107 callback targets.
+  Original/rebuilt and distributed controls agree through the retained
+  30,000-step Buddha route, including the enable/start and disable/stop chains.
+- Export the unsigned interaction-stop consumer alongside unchanged signed
+  property bytes: Buddha's stored -76 is read as 180, giving an equality
+  threshold of 2,700 engine updates.
+- Add a compact Windows recorder that shares runtime libraries and compares
+  existing captures without duplicating successful raw buffers or audio.
+  Matching C and whole-feature/encounter acceptance counts are unchanged.
+
 ## Natural collision replay calibration - 2026-10-19
 
 - Replay 194 retained original hull calls through reviewed MIPS ranges and

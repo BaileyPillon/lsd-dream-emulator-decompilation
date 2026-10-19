@@ -72,6 +72,86 @@ published sources and retained private evidence. Game data is not published.
 The record distinguishes committed Git-source hashes from exact local file
 hashes; inherited game-source line endings are preserved.
 
+## Engine entries and stop timer
+
+The compact observer now watches all 107 original callback PCs and eight
+separate engine methods. The original and rebuilt discs each produce 68,030
+entries in the retained 30,000-step route: 65,330 engine-method entries and
+the same 2,700 registered Buddha callbacks. These are observations of existing
+code, not new callbacks or gameplay features.
+
+At step 5,407 the original instruction trace enters `entity_enable_link` from
+`entity_check_interaction`, then `entity_start_behaviour` from
+`entity_check_link_trigger`, followed by the tick and first callback. At step
+22,580 it enters `entity_disable_link` from `entity_check_interaction_range`
+and `entity_stop_behaviour` from that disable method. The original indirect
+call instructions and all eight complete method spans are checked against
+the executable. Disabled context payload remains uninterpreted.
+
+The stop predicate reads property byte four through an unsigned-byte pointer.
+The source table stores Buddha's value as signed `-76`; its consumer reads
+`180`. Types at least ten request a stop when the interaction timer **equals**
+the unsigned value times 15. Thus this instance stops at timer 2,700. The
+preceding rooted checkpoint has timer 2,700 and an enabled context; the next
+has timer 2,701 and a disabled context. These units are engine updates, not
+rendered frames or seconds.
+
+`tools/inventory_entities.py` keeps every original signed property and adds
+`consumer_views.interaction_stop` to each of the 130 byte-checked records.
+The view distinguishes timer equality, nonzero/zero proximity results with a
+nonzero range field, and types that make no direct disable request in this
+predicate. It does not model the separate event-video check or other shutdown
+paths. No game declaration, property byte, callback or instruction changes.
+
+Three new cold runs compare original/observer, rebuilt/observer and
+original/distributed outputs against the retained recording. Each checks
+30,001 GPU/frame observations, 5,033 complete RAM hashes, all 158 selected
+complete RAM/GPU/RGB checkpoints and the complete 88,457,172-byte PCM stream.
+The two observer entry logs also agree byte for byte. Four actual native
+control runs reject one-bit changes to owned reference GPU, RAM, RGB and PCM
+data; original reference files remain unchanged.
+
+The published compact C# source has exactly the bytes used by the full runs.
+The packaged Python entry point also passes a 6,000-step replay, with the same
+89 original callbacks and engine log as the independently prepared prefix.
+These are two lengths of one route and seed history. Complete emulator state,
+unseen branches, all content, visibility and audio causality, and hardware
+timing remain open. Whole NPC encounter and whole feature acceptance stay zero.
+
+### Compact recording
+
+Use 64-bit Windows, .NET Framework 4.8, a stable .NET SDK, an existing verified
+NPC history and a compatible catalogue-observer runtime/profile. The ordinary
+matching-C build and its freshness checks stay in the supported Linux/WSL
+workflow. This Windows tool checks the canonical complete image and original
+table/target bytes; it accepts no C source promotion.
+
+```powershell
+python tools/record_npc_activation.py `
+  --reference D:/QA/verified-npc-original `
+  --runtime D:/QA/catalogue-runtime/host `
+  --observer-profile .decomp-lab/catalogue-observer/profile.json `
+  --workspace D:/QA/compact-activation-original
+```
+
+Use `--cue` for a rebuilt disc with identical complete track bytes and layout.
+For a distributed control, supply the qualified stock runtime and `--stock`
+instead of an observer profile. An optional `--frames` prefix must end at a
+retained raw checkpoint.
+
+Each workspace has an owned small host and directory junctions to the supplied
+runtime's `dll` and `gamedb` directories. Passing runs write entry logs, hashes
+and reports; they save no duplicate audio, PNGs or raw RAM/GPU/RGB. A failed
+byte comparison retains its actual buffer. A 64 MiB output review threshold
+stops only the owned process and retains partial evidence. Existing output is
+never overwritten. Supplied sources, reference files, game/BIOS inputs and
+runtime libraries are fully hashed before and after execution.
+
+This is optional developer analysis, separate from original NPC AI and gameplay
+mods. It calls no model service. The
+[validation metadata](npc-native-activation-checks.json) records source pins,
+native observations, controls and unchanged C/feature counts.
+
 ## Reproduce
 
 Prepare your own verified launch captures and separate observer profile with
@@ -112,8 +192,8 @@ state. This one recorded history does not qualify other seeds, NPCs, branches,
 effects or complete-state and hardware-timing parity.
 
 Matching C stays **197,172 / 199,912 bytes (98.63%)**: two assembly functions
-and two inherited storage explanations remain. The inventory stays at 40
-provisional feature groups, 38 with listed core C, and 40 of 107 callbacks
+and three identified inherited storage explanations remain. The inventory stays at 40
+provisional feature groups, 38 with listed core C, and 41 of 107 callbacks
 with bounded profiles. The exhaustive feature total remains unknown. No whole
 NPC encounter or feature group is accepted; the 10 developer-capability
 categories and three optional mods are unchanged. This strengthens one natural

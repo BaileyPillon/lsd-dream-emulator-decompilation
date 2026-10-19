@@ -120,6 +120,13 @@ enabled registration, disabled contexts and scene reachability in verified
 recordings. Preserve sampled transition intervals; do not interpret disabled
 payload or former object storage as live behavior.
 
+The [compact engine observer](docs/NPC_LIFETIME.md#engine-entries-and-stop-timer)
+can compare another controller replay with that verified history while sharing
+the installed runtime. It retains entry logs and comparison hashes rather
+than duplicate raw buffers or audio. Build freshness remains a separate WSL
+check. Keep signed property storage distinct from the native consumer views
+exported by `tools/inventory_entities.py`.
+
 For concurrent instances of one callback, declare every owner and entry window
 in the [multi-instance profile](docs/NPC_MULTI_INSTANCE.md). Each owner needs
 independent RAM clock evidence. Keep default single-instance checks strict;

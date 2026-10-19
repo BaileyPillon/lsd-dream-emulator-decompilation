@@ -44,6 +44,10 @@ history's last callback, later context shutdown and eventual loss of scene
 reachability. Closer original/rebuilt checkpoints agree, including the
 shutdown boundary at relative frame 22,580.
 
+The [compact engine observer](docs/NPC_LIFETIME.md#engine-entries-and-stop-timer)
+records the original enable/start/stop call chain and explains the unsigned
+2,700-update stop timer. It reuses existing libraries and reference captures.
+
 A second [compared NPC history](docs/NPC_MULTI_INSTANCE.md) now covers seven
 Corpse instances through an original wall link. All 21 instruction entries,
 per-instance clocks, first-tick Y offsets and scene transitions agree between

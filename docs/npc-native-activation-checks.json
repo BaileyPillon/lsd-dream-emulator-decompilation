@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "status": "qualified_bounded_original_engine_activation_history",
+  "baseline_commit": "86b7033412a11ffdf0af8c548d9425dfb1b02c36",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "source_sha256": {
+    ".gitattributes": "b9ff959bc9608c0cd9ad2e48b98acebf8ec933bdba73ea5e76e298910e84cbcf",
+    "CHANGELOG.md": "05278ef9e02364b867ed422f0c28488a27af5f2c1abbd123b932a4ec3dd911fd",
+    "CONTRIBUTING.md": "93a6912035828f57260ed064aae6d2c715d6336172aae6ea5c80ae615aec96cd",
+    "README.md": "39fe3823190e7c5958e3295b730253def51334ab1f7dda83646869b01406569a",
+    "docs/NPC_LIFETIME.md": "c92cba95d4042749f6275d4c35671a6268197c87726a90c8c371c2f0640d2041",
+    "docs/features.json": "464915bb006a0589754bc4bc316d060336463a7ef4f49d63fc6d494f5afd6ea1",
+    "tools/inventory_entities.py": "46ae27f38b92168e88a000a82322524c63dcb4c67152d09e32c925754da64ddd",
+    "tools/record_npc_activation.py": "fc38845572f0df14865deeb6df6ca3558b5390d375d7e0afc1e54f485584d36b",
+    "tests/test_inventory_entities.py": "50ff06469938345c532356a6812e698997647061f8ef53464afbd343e89c99d1",
+    "tests/test_npc_activation.py": "ab06bc0ff169c14e9175a029121246ad55c0441979f49c6df06689677fe2c8bc",
+    "research/headless/compact/RecordNpcHistory.cs": "bdaf0775a8addb2dc404094c1d936269853776ebe7b26b994ca386b1a0406395",
+    "research/headless/entity-lifecycle-methods.json": "d0afae84520212d7ed1940f13e4cd646309f497018356b92454c5d26534e2caf",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/NpcInstructionTrace.cs": "f30e6939a4c95df586b83e36acc71a2fd4aa2d6ba55140909672fb0a96e63a6e",
+    "research/headless/NpcCatalogueTrace.cs": "1a315617f2f17971349a3e31a4c4475b5586ea1ffa8ebe716fc43f52d0be3082",
+    "research/headless/RecordNpcCatalogue.cs": "0272062d0a11817a054bb6ad5b0126520255ada478f165246ebfbe1f5ce9ed8c",
+    "src/scene/entity.c": "42b79fe2e6463d01213b8be552e94132dd912212ace0171219466b2e1650c751",
+    "src/scene/entity.h": "3dd0c265059b0566aca0f0934bbc5b85b5de9a1e1ef27e410985129e2c0ed2b4"
+  },
+  "local_file_sha256": {
+    ".gitattributes": "b9ff959bc9608c0cd9ad2e48b98acebf8ec933bdba73ea5e76e298910e84cbcf",
+    "CHANGELOG.md": "05278ef9e02364b867ed422f0c28488a27af5f2c1abbd123b932a4ec3dd911fd",
+    "CONTRIBUTING.md": "93a6912035828f57260ed064aae6d2c715d6336172aae6ea5c80ae615aec96cd",
+    "README.md": "39fe3823190e7c5958e3295b730253def51334ab1f7dda83646869b01406569a",
+    "docs/NPC_LIFETIME.md": "c92cba95d4042749f6275d4c35671a6268197c87726a90c8c371c2f0640d2041",
+    "docs/features.json": "464915bb006a0589754bc4bc316d060336463a7ef4f49d63fc6d494f5afd6ea1",
+    "tools/inventory_entities.py": "46ae27f38b92168e88a000a82322524c63dcb4c67152d09e32c925754da64ddd",
+    "tools/record_npc_activation.py": "fc38845572f0df14865deeb6df6ca3558b5390d375d7e0afc1e54f485584d36b",
+    "tests/test_inventory_entities.py": "50ff06469938345c532356a6812e698997647061f8ef53464afbd343e89c99d1",
+    "tests/test_npc_activation.py": "ab06bc0ff169c14e9175a029121246ad55c0441979f49c6df06689677fe2c8bc",
+    "research/headless/compact/RecordNpcHistory.cs": "bdaf0775a8addb2dc404094c1d936269853776ebe7b26b994ca386b1a0406395",
+    "research/headless/entity-lifecycle-methods.json": "02190371877484b8e3897fb421768926f62d803b2d0fc54c189ff5a2224c996c",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/NpcInstructionTrace.cs": "f30e6939a4c95df586b83e36acc71a2fd4aa2d6ba55140909672fb0a96e63a6e",
+    "research/headless/NpcCatalogueTrace.cs": "1a315617f2f17971349a3e31a4c4475b5586ea1ffa8ebe716fc43f52d0be3082",
+    "research/headless/RecordNpcCatalogue.cs": "0272062d0a11817a054bb6ad5b0126520255ada478f165246ebfbe1f5ce9ed8c",
+    "src/scene/entity.c": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811",
+    "src/scene/entity.h": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f"
+  },
+  "hash_scope": "source_sha256 pins staged Git blobs; local_file_sha256 pins executed/read working bytes. Legacy game source line endings are preserved. This evidence file excludes its own circular hash.",
+  "private_evidence_sha256": {
+    "private/native-activation-audit.json": "b2c4f4955a7194f5e53d490da1a640943158d8348cc090988a174f93d9c92153",
+    "private/native-reference-controls.json": "6a84f2edb3505f43fe5d98c9065d4dd2d47c35306c752c41573b5767bb97185d",
+    "private/engine-targets.json": "b4bab7dd57b74850bd54545e1fe0a5caecebf9bf0980e9ce6f300e0f245e4291",
+    "private/input-pins.json": "3f8e5365e653c4ab5267d4bbe059e757f9e7d9815d2acd2d8e84bccda0a3f94b",
+    "private/runtime-pins.json": "9d8eb659cc83a8c7ae60d423fb792b71a6e74f4d7b90c6a59233bd197fbdc4ab",
+    "private/original-full-exit.json": "747b6ffd369f9a64d78b189adba79a1540c883113ec640b8beb3637c8d782c89",
+    "private/rebuilt-full-exit.json": "3ae3da449c722ac83b3937a9754066f7cbc3331de421a5ee81f7aefe030feca7",
+    "private/stock-control-exit.json": "53bab426462c605d71b8387879409c271fede88a6c21c2bc2d28e1938ba00fb1",
+    "private/prepare_probe.py": "404f6e247016b067a6b2a4714ae5c7928b7c888d586b9a87b3d9956c29c60079",
+    "private/run_full.py": "0737af50658cceb27dcd8d5e76fc604beaf1e121c1bb9e810974ba28b9ab5d8a",
+    "private/audit_native.py": "d30080810d6baf17aba0a77d5cd0bee9e1e8d69b247ebb8792643af1f572a2f9",
+    "private/reference_controls.py": "92d56d56634c31358dcaee5a853c830d8a161226b41bbe3f801480e5e88df2dc"
+  },
+  "native_observation": {
+    "status": "passed_bounded_natural_engine_activation_history",
+    "all_original_rebuilt_and_stock_recorded_outputs_equal": true,
+    "catalogue_events_per_observer_run": 68030,
+    "engine_events_per_observer_run": 65330,
+    "registered_NPC_dispatches_per_observer_run": 2700,
+    "registered_callback_types": [
+      "entity_buddha"
+    ],
+    "Buddha_original_dispatches": 2700,
+    "Buddha_activation_frame": 5407,
+    "Buddha_shutdown_frame": 22580,
+    "Buddha_last_callback_frame": 22574,
+    "original_indirect_callsites": {
+      "enable_from_interaction": "0x8005dcec",
+      "start_from_link_trigger": "0x8005df7c",
+      "disable_from_timer_check": "0x8005ddf0",
+      "stop_from_disable_link": "0x8005da74"
+    },
+    "rooted_boundary_snapshots": [
+      {
+        "frame": 5406,
+        "timer": 255,
+        "link_enabled": 0,
+        "behavior_active": 0,
+        "context_state": 0,
+        "context_tick": null,
+        "rooted_state": "disabled"
+      },
+      {
+        "frame": 5407,
+        "timer": 1,
+        "link_enabled": 1,
+        "behavior_active": 1,
+        "context_state": 21,
+        "context_tick": 1,
+        "rooted_state": "enabled"
+      },
+      {
+        "frame": 22574,
+        "timer": 2700,
+        "link_enabled": 1,
+        "behavior_active": 1,
+        "context_state": 21,
+        "context_tick": 2700,
+        "rooted_state": "enabled"
+      },
+      {
+        "frame": 22579,
+        "timer": 2700,
+        "link_enabled": 1,
+        "behavior_active": 1,
+        "context_state": 21,
+        "context_tick": 2700,
+        "rooted_state": "enabled"
+      },
+      {
+        "frame": 22580,
+        "timer": 2701,
+        "link_enabled": 0,
+        "behavior_active": 0,
+        "context_state": 0,
+        "context_tick": null,
+        "rooted_state": "disabled"
+      }
+    ],
+    "Buddha_stop_consumer_view": {
+      "source_consumer": "entity_check_interaction_range",
+      "stored_s8": -76,
+      "consumer_u8": 180,
+      "requires_link_enabled": true,
+      "disable_link_when": "timer_equals",
+      "timer_equals_updates": 2700
+    },
+    "native_corrupt_reference_controls_rejected": 4,
+    "published_source_bytes_equal_full_run_source": true,
+    "published_wrapper_prefix_steps": 6000,
+    "new_matching_C_bytes": 0,
+    "new_bounded_NPC_callback_profiles": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "whole_feature_groups_accepted": 0
+  },
+  "full_run_comparisons": [
+    {
+      "name": "original-full",
+      "frames": 30000,
+      "observations": 30001,
+      "complete_RAM_hash_samples": 5033,
+      "full_RAM_GPU_RGB_checkpoints_compared": 158,
+      "complete_PCM_sha256": "91698786420ff910e713c902eacb92b7ea9cef010c70f8ccf74bf90ae3b144c5"
+    },
+    {
+      "name": "rebuilt-full",
+      "frames": 30000,
+      "observations": 30001,
+      "complete_RAM_hash_samples": 5033,
+      "full_RAM_GPU_RGB_checkpoints_compared": 158,
+      "complete_PCM_sha256": "91698786420ff910e713c902eacb92b7ea9cef010c70f8ccf74bf90ae3b144c5"
+    },
+    {
+      "name": "stock-control",
+      "frames": 30000,
+      "observations": 30001,
+      "complete_RAM_hash_samples": 5033,
+      "full_RAM_GPU_RGB_checkpoints_compared": 158,
+      "complete_PCM_sha256": "91698786420ff910e713c902eacb92b7ea9cef010c70f8ccf74bf90ae3b144c5"
+    }
+  ],
+  "recording_lengths_are_independent_scenarios": false,
+  "published_wrapper_native_prefix": {
+    "steps": 6000,
+    "Buddha_entries": 89,
+    "all_recorded_outputs_and_entry_logs_equal_private_prefix": true
+  },
+  "compiled_source_bytes_equal_full_run_host": true,
+  "new_matching_C_bytes": 0,
+  "new_original_game_features": 0,
+  "bounded_original_callback_profiles": 41,
+  "whole_NPC_encounters_accepted": 0,
+  "whole_feature_groups_accepted": 0,
+  "source_recovery_and_full_game_parity_claimed": false,
+  "new_external_model_API_calls": 0,
+  "scope": "One retained route and seed history. Exact recorded activation/stop method entries, unsigned timer predicate, selected rooted snapshots and measured outputs. No complete CPU/device-state, unseen branch, all-content, visibility/audio-causality or original hardware timing acceptance.",
+  "storage": "Existing libraries and verified reference buffers are shared/read. Successful runs duplicate no raw RAM/GPU/RGB/PNG/PCM. Failure controls retain owned diagnostic buffers only.",
+  "repository_validation": {
+    "canonical_build_check": "ninja check passed in LSD-Decomp WSL",
+    "progress": {
+      "objects_expected": 306,
+      "objects_found": 306,
+      "complete_objects": true,
+      "build_current": true,
+      "c_bytes": 197172,
+      "game_text_bytes": 199912,
+      "c_coverage_percent": 98.62939693465124,
+      "binary_match": "verified"
+    },
+    "full_tooling_suites": {
+      "windows": {
+        "tests": 1292,
+        "skipped": 7,
+        "log_sha256": "ba4b39c21094d87a721c9250a4cd0e16b9212ff641b8f29b96734a5d8fff9cca"
+      },
+      "linux": {
+        "tests": 1292,
+        "skipped": 2,
+        "log_sha256": "9ad2823c5ba54af3c63cca4ad4ce6993f2ea15e5f33d6c860bb008ebb08bc768"
+      }
+    },
+    "additional_WSL_functional_backend_tests_executed": [
+      "test_executed_hidden_stack_write_is_detected (test_collision_replay.FunctionalMipsReplayTests.test_executed_hidden_stack_write_is_detected)",
+      "test_kernel_scratch_register_is_compared (test_collision_replay.FunctionalMipsReplayTests.test_kernel_scratch_register_is_compared)",
+      "test_unfinished_call_is_not_a_return (test_collision_replay.FunctionalMipsReplayTests.test_unfinished_call_is_not_a_return)",
+      "test_unreviewed_control_transfer_is_rejected (test_collision_replay.FunctionalMipsReplayTests.test_unreviewed_control_transfer_is_rejected)",
+      "test_virtual_PC_survives_COP2_and_nested_JAL (test_collision_replay.FunctionalMipsReplayTests.test_virtual_PC_survives_COP2_and_nested_JAL)"
+    ],
+    "GNU_nm_independent_method_size_checks": 8,
+    "retained_native_auditor_assertions_reexecuted": true,
+    "protected_game_build_inputs_unchanged": 392,
+    "frozen_objective_unchanged": true,
+    "private_validation_script_sha256": "ec5493d45b483f64be41e13d7bd697dd12ef7691375a8d12f1b3951e38a0029c",
+    "scope": "Tool tests are synthetic; native evidence remains the one bounded route documented above. Source recovery and complete gameplay parity remain unfinished."
+  }
+}

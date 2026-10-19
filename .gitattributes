@@ -1,6 +1,15 @@
 # Preserve the bundled compiler binaries without text conversion.
 tools/gcc263/* binary
 
+# Keep compact native observations and signed-storage consumer views reproducible.
+tools/inventory_entities.py text eol=lf
+tools/record_npc_activation.py text eol=lf
+tests/test_inventory_entities.py text eol=lf
+tests/test_npc_activation.py text eol=lf
+research/headless/compact/RecordNpcHistory.cs text eol=lf
+research/headless/entity-lifecycle-methods.json text eol=lf
+docs/npc-native-activation-checks.json text eol=lf
+
 # Keep the original-model Apartment Bear verifier and evidence pins identical.
 tools/verify_apartment_bear.py text eol=lf
 tests/test_apartment_bear.py text eol=lf
