@@ -15,7 +15,8 @@ from research.compiler.trace_allocation import COMPILER_SHA256, require_output, 
 FUNCTION = 'func_8004C6A8'
 STAGES = ('rtl', 'combine', 'sched', 'lreg', 'greg', 'sched2', 'dbr')
 REG = r'\(reg(?:/[A-Za-z]+)?:SI (\d+)(?: [^)]*)?\)'
-FORM = r'^\((?:note|insn|call_insn|jump_insn|barrier|code_label)(?::[A-Z]+)?\s+\d+\b'
+# Inline and other RTL attributes precede an optional mode, e.g. insn/i:QI.
+FORM = r'^\((?:note|insn|call_insn|jump_insn|barrier|code_label)(?:/[A-Za-z]+)*(?::[A-Z]+)?\s+\d+\b'
 
 
 def digest(path):
