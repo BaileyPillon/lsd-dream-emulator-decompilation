@@ -76,7 +76,7 @@ distributed here.
 
 ## Current status
 
-The current verified snapshot is dated October 18, 2026. These are
+The current verified snapshot is dated October 19, 2026. These are
 separate measures, not a whole-game completion percentage. The initial
 publication and subsequent evidence are retained separately.
 
@@ -98,6 +98,11 @@ skip/error branches, and complete feature acceptance remain open.
 | Original callback types with compared natural instruction histories | 5 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 38 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
+
+The [natural collision replayer](docs/NATURAL_COLLISION_REPLAY.md) now executes
+the 194 retained hull calls. Full RAM, measured CPU/GTE views and instruction
+counts agree for 174 calls; 20 frame-boundary differences remain in the strict
+result. It reuses existing recordings and adds no matching C or feature acceptance.
 
 The [compiler census](docs/UNUSED_LOCAL_CENSUS.md) corrects the storage
 remainder from two to three: the earlier selected audit missed an inherited

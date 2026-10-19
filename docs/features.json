@@ -24474,6 +24474,47 @@
       "native_core_profile_runtime_verified": false,
       "whole_feature_groups_accepted": 0,
       "whole_NPC_encounters_accepted": 0
+    },
+    "natural_collision_replay_calibration_20261019": {
+      "evidence": "docs/natural-collision-replay-checks.json",
+      "guide": "docs/NATURAL_COLLISION_REPLAY.md",
+      "before": {
+        "c_bytes": 197172,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 2,
+        "inherited_storage_explanations": 3,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 38,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 40,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 197172,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 2,
+        "inherited_storage_explanations": 3,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 38,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 40,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "original_hull_calls": 194,
+      "equal_measured_calls": 174,
+      "retained_failures": 20,
+      "full_native_GTE_state_restored": false,
+      "full_game_parity_accepted": false,
+      "new_C_bytes": 0,
+      "whole_feature_groups_accepted": 0,
+      "original_game_modified": false,
+      "Bevy_port_modified": false
     }
   }
 }
