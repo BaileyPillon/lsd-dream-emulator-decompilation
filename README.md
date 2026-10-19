@@ -47,6 +47,8 @@ shutdown boundary at relative frame 22,580.
 The [compact engine observer](docs/NPC_LIFETIME.md#engine-entries-and-stop-timer)
 records the original enable/start/stop call chain and explains the unsigned
 2,700-update stop timer. It reuses existing libraries and reference captures.
+A [second engine history](docs/BOATMAN_LIFECYCLE.md) checks Boatman's stop path
+and the disabled contexts observed during Fish initialization.
 
 A second [compared NPC history](docs/NPC_MULTI_INSTANCE.md) now covers seven
 Corpse instances through an original wall link. All 21 instruction entries,

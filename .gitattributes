@@ -9,6 +9,11 @@ tests/test_npc_activation.py text eol=lf
 research/headless/compact/RecordNpcHistory.cs text eol=lf
 research/headless/entity-lifecycle-methods.json text eol=lf
 docs/npc-native-activation-checks.json text eol=lf
+tools/npc_engine_entries.py text eol=lf
+tests/test_npc_engine_entries.py text eol=lf
+research/headless/entity-lifecycle-callers.json text eol=lf
+docs/BOATMAN_LIFECYCLE.md text eol=lf
+docs/boatman-lifecycle-checks.json text eol=lf
 
 # Keep the original-model Apartment Bear verifier and evidence pins identical.
 tools/verify_apartment_bear.py text eol=lf

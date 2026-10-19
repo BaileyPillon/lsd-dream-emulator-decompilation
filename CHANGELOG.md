@@ -1,5 +1,17 @@
 # Changelog
 
+## Boatman lifecycle and Fish initialization - 2026-10-19
+
+- Corroborate Boatman's original `entity_stop` path at step 5,074, after 87
+  callbacks and before its 1,800-update interaction threshold. Adjacent rooted
+  checkpoints show loss of scene reachability.
+- Distinguish four Fish/Giant Fish initialization stop calls from active NPC
+  shutdowns. A checked entry qualifier validates original callsites and
+  bindings while leaving signed nonpositive context payload uninterpreted.
+- Original/rebuilt and distributed controls agree across the retained
+  9,000-step route. C recovery, callback-profile and whole-encounter counts
+  remain unchanged; successful captures duplicate no raw buffers or audio.
+
 ## Native NPC activation and compact observations - 2026-10-19
 
 - Record eight original engine methods alongside the 107 callback targets.
