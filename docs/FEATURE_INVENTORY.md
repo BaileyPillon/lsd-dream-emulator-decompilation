@@ -983,3 +983,25 @@ Matching C remains 195,844 / 199,912 bytes (97.97%), with five assembly function
 and two inherited storage explanations. Listed-core C groups remain 37 / 40,
 bounded NPC callbacks 36 / 107, and accepted whole features and encounters zero.
 The additive machine inventory preserves every earlier measurement.
+
+## Serialized emulator checkpoint supplement
+
+The [serialized-state comparison](SERIALIZED_CORE_STATES.md) adds opt-in raw
+`IStatable` recording and byte comparisons. Original/rebuilt and repeated-original
+cold starts agree at all 52 checkpoints of the retained 6,000-input-frame route.
+Serialization also preserves every recorded game output against a fourth run
+with capture disabled. Independent checks decode 208 PNGs, rehash 156 retained
+states and 172 producer snapshots, and verify 156 unique same-frame repeat checks.
+
+The earlier eight-byte cold-boot differences are mapped to unused native media
+label storage in all twelve failed checkpoint pairs; no bytes are masked and
+the failed records remain preserved. Invisible Waterbox regions, other game
+scenarios, whole features, and original-hardware timing remain outside acceptance.
+
+This pass adds zero C bytes, original feature groups, NPC profiles, gameplay mods,
+or developer capability categories. Current matching C remains 197,172 / 199,912
+(98.63%), with two assembly functions, three inherited storage explanations,
+38 / 40 listed-core C groups, 107 original NPC callback bodies, and 40 bounded
+callback profiles. Whole-feature and whole-encounter acceptance remain zero.
+The [machine evidence](serialized-core-state-checks.json) records the unchanged
+before/after counts and the separate 24-form nonmatching primitive source study.

@@ -156,6 +156,12 @@ sample records and RAM, and the model agrees on returns, masks, contacts, and
 484 nested primitive queries. Another 159 primitive entries occur outside those
 hull intervals. This extends bounded runtime evidence without raising C coverage.
 
+The [serialized-state comparison](docs/SERIALIZED_CORE_STATES.md) verifies every
+raw state byte at 52 checkpoints in the opening route, including a repeated
+original cold start. A run without state capture also agrees on recorded game
+outputs. Earlier eight-byte cold-boot differences are mapped to unused media-label
+storage; their failed records remain preserved. Whole-game parity remains open.
+
 The feature inventory has 40 provisional groups; an official exhaustive
 feature total is unknown. SDK and startup code are excluded from the C-byte
 denominator. Bounded native and emulator comparisons have passed, including

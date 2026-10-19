@@ -28,7 +28,7 @@ from tools.replay_cold_start_headless import require, select_compiler, write_jso
 from tools.runtime_inputs import load_verified_manifest, record_file
 DEFAULT_PROGRAM = ROOT / 'research/headless/file-driver-boot-route.json'
 HOST_SOURCES = tuple(ROOT / 'research/headless' / name for name in
-    ('ReplayColdStart.cs','RecordDispatchHistory.cs','DispatchInstructionTrace.cs','DispatchFlowTrace.cs','DispatchReturnTrace.cs','SdkReadTrace.cs','CollisionCallTrace.cs'))
+    ('ReplayColdStart.cs','RecordDispatchHistory.cs','DispatchInstructionTrace.cs','DispatchFlowTrace.cs','DispatchReturnTrace.cs','SdkReadTrace.cs','CollisionCallTrace.cs','SerializedCoreStateTrace.cs'))
 CATALOGUE_FILE = ROOT / 'research/dispatch/target-catalogue.json'
 CATALOGUE_PROVENANCE = ROOT / 'docs/dispatch-catalogue-checks.json'
 SUPPLEMENTAL_FILE = ROOT / 'research/file_driver/function-ranges.json'
@@ -92,7 +92,9 @@ def load_observer_profile(path):
         files.append(candidate)
     return profile, files
 
-def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_profile=None, frames=None, dotnet=None):
+def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_profile=None, frames=None, dotnet=None,
+           *, serialized_state=False, enable_trace=True):
+    require(type(serialized_state) is bool and type(enable_trace) is bool, 'Recorder mode flags must be booleans.')
     workspace = Path(workspace).resolve()
     require(not workspace.exists(), 'Choose a new workspace; existing evidence is preserved.')
     require(os.name == 'nt' and sys.maxsize > 2**32, 'The qualified recorder requires 64-bit Windows.')
@@ -202,11 +204,13 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
     shutil.copyfile(program_file, workspace / 'program.json')
     checkpoint_frames = sorted({value for value in program['checkpoint_frames'] if value <= frames} | {0, frames})
     settings = dict(frames=frames,checkpoint_frames=checkpoint_frames,
-        RAM_sample_interval=program['RAM_sample_interval'],trace_enabled=profile is not None,
+        RAM_sample_interval=program['RAM_sample_interval'],trace_enabled=profile is not None and enable_trace,
         arm_frame=program['method_trace']['arm_frame'],
         dispatch_targets=[dict(pc=pc,bytes=row['function_bytes']) for pc,row in selected.items()],
         dispatch_words=[symbols[name] for name in memory_symbols], flow_sites=sites, return_trace=return_selection,
         collision_calls=collision_config)
+    if serialized_state:
+        settings['serialized_state'] = True
     shutil.copyfile(CATALOGUE_FILE,workspace/'dispatch-catalogue.json')
     shutil.copyfile(CATALOGUE_PROVENANCE,workspace/'dispatch-provenance.json')
     shutil.copyfile(supplemental_file,workspace/'method-ranges.json')
@@ -241,7 +245,8 @@ def record(capture_folder, workspace, program_file=DEFAULT_PROGRAM, observer_pro
         settings_file=record_file(workspace / 'settings.json'), host_binary=record_file(executable),
         host_configuration=record_file(executable.with_suffix('.exe.config')),
         observer_profile=profile, runtime_kind='dispatch_observer' if profile else 'distributed',
-        command=launch, game_RAM_injected=False, restored_state=False, emulator_UI_controlled=False)
+        command=launch, game_RAM_injected=False, restored_state=False, emulator_UI_controlled=False,
+        instruction_observer_enabled=settings['trace_enabled'])
     run_inputs['dispatch'] = dict(targets=list(selected.values()),
         memory_symbols=dict(zip(memory_symbols,settings['dispatch_words'])),
         catalogue_file=record_file(workspace/'dispatch-catalogue.json'),
@@ -305,9 +310,12 @@ def main(argv=None):
     parser.add_argument('--observer-profile',type=Path)
     parser.add_argument('--frames',type=int)
     parser.add_argument('--dotnet',type=Path)
+    parser.add_argument('--serialized-state',action='store_true',help='Retain raw IStatable checkpoints with same-frame repeat and memory-stability checks.')
+    parser.add_argument('--disable-instruction-observer',action='store_true',help='Use the selected core without arming instruction observation.')
     args=parser.parse_args(argv)
     try:
-        result=record(args.capture_folder,args.workspace,args.program,args.observer_profile,args.frames,args.dotnet)
+        result=record(args.capture_folder,args.workspace,args.program,args.observer_profile,args.frames,args.dotnet,
+                      serialized_state=args.serialized_state,enable_trace=not args.disable_instruction_observer)
         print(json.dumps(result),flush=True)
         return 0
     except (ValueError,OSError,subprocess.CalledProcessError) as error:
