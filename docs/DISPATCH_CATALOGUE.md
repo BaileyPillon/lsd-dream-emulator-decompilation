@@ -55,12 +55,18 @@ records its scope.
 
 ## Remaining requirements
 
-The partial `game_flow_screen_vtable_t` view still has no concrete audited
-binding and is retained explicitly as unsupported. Other callback tables,
+The partial `game_flow_screen_vtable_t` view contains undeclared inherited
+members and remains unsupported by the declaration-only inventory. Other callback tables,
 code outside these target bodies, actual indirect destinations, receiver
 ownership, signatures and natural call histories remain part of the wider
 dispatch review. This catalogue cannot be passed to the NPC-only recorder;
 its 107-target validation and observation limits remain unchanged.
+
+The later [screen lifecycle profile](SCREEN_LIFECYCLE.md) supplies bounded
+original factory/Run/Destroy observations for main-menu and dream-chart
+receivers. It keeps constructor and cleanup contracts explicit. The common
+view is not a separate complete table, and its inherited undeclared members
+and the broader dynamic-call closure remain unresolved.
 
 The contemporaneous source study also compared 14 new incoming one-word
 argument views plus two controls for `func_8001DDF4`. All 16 complete linked
