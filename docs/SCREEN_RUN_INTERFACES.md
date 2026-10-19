@@ -66,3 +66,9 @@ before/after counts. Matching C remains **196,504 / 199,912 bytes (98.30%)**,
 with four assembly functions and two inherited storage explanations. Bounded
 NPC profiles remain 39 / 107; whole-feature and whole-encounter acceptance
 remain zero. The separate Bevy repository is unchanged.
+
+The later [screen lifecycle profile](SCREEN_LIFECYCLE.md) executes the original
+factories, runner, destructor and allocator together. It retains explicit
+constructor, graphics-initializer and cleanup contracts; natural setup and
+resource cleanup are still open. Its separate campaign and current source
+counts are recorded in [lifecycle metadata](screen-lifecycle-checks.json).

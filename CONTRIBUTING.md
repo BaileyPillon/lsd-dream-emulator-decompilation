@@ -74,6 +74,12 @@ source hashes. [Native dispatch](docs/NATIVE_DISPATCH.md) distinguishes static
 bindings from inferred signatures and remaining call-site closure. Preserve
 original callback bindings when improving names and types.
 
+The [screen lifecycle checker](research/screen_lifecycle/README.md) composes
+original factories, Run methods, destruction and pool release. It records the
+explicit setup/cleanup contracts and stops at the original runner's observed
+zero-receiver access on exhaustion. Keep these bounded observations separate
+from natural screen histories and accepted PS1 fault behavior.
+
 The optional [return and buffer observer](docs/DISPATCH_RETURNS.md) follows
 original method returns and checks synchronous destinations against a verified
 private disc. Keep recorded returns, asynchronous completion and whole-feature

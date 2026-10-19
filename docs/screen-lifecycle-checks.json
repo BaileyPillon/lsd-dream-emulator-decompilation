@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "status": "qualified_bounded_original_screen_lifecycle",
+  "timestamp_utc": "2026-10-19T19:46:38.443159+00:00",
+  "source_main_commit_before": "6337d6d64915d7a00b2280213a00b141b5dcce86",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "matching_build_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "canonical_objects": 306,
+  "protected_game_build_inputs": 392,
+  "all_game_build_input_hashes_unchanged": true,
+  "game_build_input_digest": "f5121c8d3bcefdb98171ae4305d25efa47a7a2a07265852c684f5cc0ec469772",
+  "frozen_objective_SHA256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+  "counts_before": {
+    "matching_C_bytes": 197172,
+    "game_text_bytes": 199912,
+    "matching_C_percent": 98.62939693465124,
+    "game_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_feature_groups": 38,
+    "original_NPC_callback_C_bodies": 107,
+    "bounded_NPC_profiles": 43,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_gameplay_mods": 3,
+    "model_API_calls": 0
+  },
+  "counts_after": {
+    "matching_C_bytes": 197172,
+    "game_text_bytes": 199912,
+    "matching_C_percent": 98.62939693465124,
+    "game_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_feature_groups": 38,
+    "original_NPC_callback_C_bodies": 107,
+    "bounded_NPC_profiles": 43,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_gameplay_mods": 3,
+    "model_API_calls": 0
+  },
+  "input_profiles": 2052,
+  "completed_lifecycles": 2016,
+  "allocation_exhaustion_profiles": 36,
+  "groups": {
+    "main_exhausted": 18,
+    "main_returned": 504,
+    "chart_exhausted": 18,
+    "chart_returned": 1512
+  },
+  "original_functions_executed": [
+    {
+      "function": "memory_set_manager",
+      "address": "0x80017A9C",
+      "bytes": 12,
+      "sha256": "31e1fb7ee27c6d0a7e8bce6222ebe7d15d003b63a0bcdffc60e62cb98dc28ade"
+    },
+    {
+      "function": "memory_setup_manager",
+      "address": "0x80017AC8",
+      "bytes": 108,
+      "sha256": "22d9cb67eacb97f1f65887bec8fd406a6d25dd69511540ee811296e9445987ba"
+    },
+    {
+      "function": "memory_allocate_mem",
+      "address": "0x80017B34",
+      "bytes": 456,
+      "sha256": "a55ec79ff9c1252fd41968bf5abca2a74f3658b6c400df80289d51d943fc5ef9"
+    },
+    {
+      "function": "memory_free_mem",
+      "address": "0x80017CFC",
+      "bytes": 428,
+      "sha256": "590fb6e594883e9fcaa7105de18de7b9a9c0df2322e07feb5e081f66da15a052"
+    },
+    {
+      "function": "memory_set_lock",
+      "address": "0x8001844C",
+      "bytes": 12,
+      "sha256": "d8fd53b2b7699e2b6135872ecc381394dea73cd963daff560ff6aa8342f3e80e"
+    },
+    {
+      "function": "func_8003C1DC",
+      "address": "0x8003C1DC",
+      "bytes": 92,
+      "sha256": "f203459fa2735cf984809aeb5243d874c54c14711e5de4b22ef779f9bcc37431"
+    },
+    {
+      "function": "func_80058390",
+      "address": "0x80058390",
+      "bytes": 116,
+      "sha256": "3d199adb45140134173d8a6aeb5775f38ffeea4f4a374805cc885ddced7ec105"
+    },
+    {
+      "function": "timer_get_vtable",
+      "address": "0x8003E5C8",
+      "bytes": 16,
+      "sha256": "d238fa5daeb891fd90dea2848259a29f0a9430e25a55d881feaa6fe21a19fea4"
+    },
+    {
+      "function": "func_8003DFBC",
+      "address": "0x8003DFBC",
+      "bytes": 16,
+      "sha256": "8a93f3c1cad0692ba38e1b86f054de0165974eb7aebff4cea42d988cfd2b098b"
+    },
+    {
+      "function": "run_screen",
+      "address": "0x80026518",
+      "bytes": 116,
+      "sha256": "97a2e226e9d3a15f018dd24a23996cfaf3740bb862ff225d4bc223334870075d"
+    },
+    {
+      "function": "main_menu_create",
+      "address": "0x8004D518",
+      "bytes": 96,
+      "sha256": "d3a6577bec3dd1a5c88685f8b19e2e8526e6cb1bb365808807ffe79991a41508"
+    },
+    {
+      "function": "graph_screen_create",
+      "address": "0x80057F68",
+      "bytes": 96,
+      "sha256": "738215418abb2b2c70afa78d1d923cd54a449a782883560c43eda3d76ef5bb9a"
+    },
+    {
+      "function": "base_class_destructor",
+      "address": "0x80017EB0",
+      "bytes": 72,
+      "sha256": "fd5282c0412fa43d662ba2cba64b4f45ca230658938d657a58c04e0789bb86d6"
+    },
+    {
+      "function": "main_menu_get_vtable",
+      "address": "0x8004E2D0",
+      "bytes": 16,
+      "sha256": "3c6e2a09a65a76b8d73c9c498b006deaccb9857c2a83a4352fc37f89fe9d2ce9"
+    },
+    {
+      "function": "func_80058764",
+      "address": "0x80058764",
+      "bytes": 16,
+      "sha256": "be73e90b4176d0260e08507b418f5ccea4eb189953146ad3aab08b8cb90a1a3d"
+    }
+  ],
+  "contracted_original_bodies": [
+    {
+      "function": "func_8004D578",
+      "address": "0x8004D578",
+      "bytes": 256,
+      "sha256": "1179ba8a9041818d37a7d23739abc8ee1a0677f1e398aeb35b84ca1c707e9e76"
+    },
+    {
+      "function": "func_8004D704",
+      "address": "0x8004D704",
+      "bytes": 132,
+      "sha256": "00a9b6bc652cdd1817a70d022697ff22510cec276030063c44abf3565c5d612d"
+    },
+    {
+      "function": "func_80057FC8",
+      "address": "0x80057FC8",
+      "bytes": 176,
+      "sha256": "84a8a6bd94ba3a63ba96a8f97c57566f5ef7098a3fd700cf6242e24ee4a65137"
+    },
+    {
+      "function": "func_8003C008",
+      "address": "0x8003C008",
+      "bytes": 276,
+      "sha256": "9475cc032683980745141fdca1bf2eed75c4e97eda75803afa393cde9f1d0db1"
+    },
+    {
+      "function": "func_8003E10C",
+      "address": "0x8003E10C",
+      "bytes": 372,
+      "sha256": "511d8d2c031c5905ef4852f4d428929181499d3da8f70423994ea68695b40fed"
+    }
+  ],
+  "original_contract_bodies_executed": false,
+  "contract_types": [
+    "construct",
+    "graphics_initialize",
+    "cleanup"
+  ],
+  "table_prefixes": [
+    {
+      "address": "0x80086B60",
+      "bytes": 72,
+      "sha256": "0c6ca11f3389f78f05b63ee4e4f0be3dfeebd9810b44c058f88948445f3fb8c2"
+    },
+    {
+      "address": "0x80087AAC",
+      "bytes": 72,
+      "sha256": "b934f562f72a63e92c2ab08c70973ce671ee10b81634e7ce8ef5f662503f9979"
+    },
+    {
+      "address": "0x8006E730",
+      "bytes": 72,
+      "sha256": "914a1a084ed7c13dc2045bafc3f11823ef296c38ddd5ee2bc02ecdf9953fd6a6"
+    },
+    {
+      "address": "0x8006E878",
+      "bytes": 72,
+      "sha256": "fbfd19e0fafa86e9db9d35015edd7bc002370fc50a0f775137c3df9465a9fe9f"
+    }
+  ],
+  "expected_full_buffers_computed_before_guest_execution": true,
+  "JALR_pre_delay_and_actual_entry_arguments_recorded_separately": true,
+  "runner_Run_and_Destroy_destinations_independently_checked": true,
+  "original_exhausted_factory_returns_zero": true,
+  "observed_null_receiver_read": {
+    "pc": "0x80026540",
+    "address": "0x00000000",
+    "bytes": 4
+  },
+  "failure_execution_stops_at_observed_access": true,
+  "subsequent_PS1_failure_behavior_accepted": false,
+  "executed_game_instruction_faults": [
+    {
+      "fault": "discard_Run_result",
+      "executed_instruction": "0x8002656C",
+      "executed_hits": 1,
+      "rejection": "Run result did not survive destruction."
+    },
+    {
+      "fault": "skip_Destroy",
+      "executed_instruction": "0x80026568",
+      "executed_hits": 1,
+      "rejection": "complete lifetime complete-buffer mismatch in manager at offsets [72, 73, 76, 77]"
+    },
+    {
+      "fault": "change_Run_mode",
+      "executed_instruction": "0x80026554",
+      "executed_hits": 1,
+      "rejection": "Run argument mismatch."
+    }
+  ],
+  "positive_fault_witnesses": 3,
+  "independently_checked_complete_functions": 20,
+  "independently_checked_saved_cases": 2052,
+  "campaign_sha256": "1df2c476894c4dd213c848381a64c430ca1f1f69fafb1be51628572bd91deec8",
+  "private_report_sha256": "daa7dedb0aa932e42ecadc28ca2577a8da133f86105291e7ea09f5fb36e8d22a",
+  "independent_audit_sha256": "7a178ba732295e59cb18ba9b19f8cd2f7b73e2f24451d5b5e07162d3f0f79e96",
+  "backend": {
+    "package_version": "2.1.2",
+    "library_api": [
+      2,
+      1,
+      33620735
+    ],
+    "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+    "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+    "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+    "binding_source_count": 21,
+    "execution_hook": "UC_HOOK_CODE",
+    "fresh_cpu_per_host_call": true,
+    "all_emulated_ram_preserved_between_host_calls": true,
+    "uninterrupted_cpu_within_guest_cleanup_graph": true
+  },
+  "full_tests": {
+    "windows": {
+      "tests": 1368,
+      "skipped": 7,
+      "exit_code": 0,
+      "log_sha256": "3e146b5013507ca12e34d401e48cb4b9d155d768e63083ab8a3e2011ed7b4344"
+    },
+    "wsl": {
+      "tests": 1368,
+      "skipped": 8,
+      "exit_code": 0,
+      "log_sha256": "1f2606e6b76e5003cc84b26c247731829de8e0590a316368b61568ce2ce24b58"
+    }
+  },
+  "focused_source_only_tests": 11,
+  "previous_pre_delay_only_draft_superseded": true,
+  "prior_draft_inputs_added_to_current_count": 0,
+  "new_C_bytes": 0,
+  "new_original_game_features": 0,
+  "new_NPC_profiles": 0,
+  "new_developer_capability_categories": 0,
+  "new_model_API_calls": 0,
+  "native_screen_construction_accepted": false,
+  "native_screen_resource_cleanup_accepted": false,
+  "source_inventory_scope_U003_resolved": false,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "original_runtime_modified": false,
+  "player_session_controlled": false,
+  "new_discs_or_runtime_clones": 0,
+  "source_sha256": {
+    "research/screen_lifecycle/verify.py": "6d648c32bbbaf49e596fb1e9eb5a1851dc1a73ef5a443b248a6f9546035bb17c",
+    "research/screen_lifecycle/README.md": "c478fb0ee77e91986addd941049ad207475db8ebec9b3f17510658728893971e",
+    "tests/test_screen_lifecycle.py": "fc77c1a71e90386c16d455a7a3e449e903baf07dfcb1b453615b8797285db8ac",
+    "docs/SCREEN_LIFECYCLE.md": "d27dc9474c4bbc476d8567d27f7fdffa9e69cc4a47b6c9c6ba46d6c2ff513262",
+    "docs/SCREEN_RUN_INTERFACES.md": "29c903fc15c5d033d317cd4b5a6f67bd5ade808340f6e3152afcfc399f7bc5b2",
+    "docs/DISPATCH_CATALOGUE.md": "c367cf465c545add4dd60933dbc7cc72812eb1177bdce8e5419df4962bc1a648",
+    "CONTRIBUTING.md": "8d78adbd465cc1d8ba8da6e671eb45c10f70c83933719577213d286ceda2eaeb"
+  },
+  "scope": "Original create/run/destroy and pool allocation/free with five pinned output-contract bodies. Exhaustion stops at the observed zero-address receiver load. Natural constructors, resource cleanup, graphics, hardware timing, full failure continuation and whole-screen acceptance remain open.",
+  "feature_inventory_previous_fields_preserved": true,
+  "feature_inventory_before_SHA256": "738d5875700154064158a18a1f8f24f26bf6d3e606fae3c6896f27ebc105b7ce",
+  "feature_inventory_after_SHA256": "5a950b898ae8266938041cea1d90f7d7c55fdc1a8a5768eb3cf770e92a98c59b"
+}
