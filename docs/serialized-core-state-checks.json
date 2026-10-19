@@ -1,0 +1,638 @@
+{
+  "schema_version": 1,
+  "status": "qualified_bounded_raw_serialized_core_checkpoints",
+  "recorded_utc": "2026-10-19T01:13:06.764082+00:00",
+  "repository": "https://github.com/BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "07eba6fabbe19bedd7caaf883161dd85eab577b6",
+  "before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "matching_C_percent": 98.62939693465125,
+  "exhaustive_original_feature_denominator_known": false,
+  "new_C_bytes": 0,
+  "source_promoted": false,
+  "new_original_gameplay_features": 0,
+  "new_NPC_profiles": 0,
+  "model_API_calls": 0,
+  "original_game_modified": false,
+  "Bevy_port_modified": false,
+  "recordings": [
+    {
+      "run": "original",
+      "input_frames": 6000,
+      "GPU_frames": 6001,
+      "RAM_samples": 1001,
+      "complete_checkpoints": 52,
+      "PCM_stereo_sample_frames": 4423002,
+      "PCM_bytes": 17692008,
+      "PCM_sha256": "3699ad6655a363af8680080abe47993e6c0f81978dfe2ea101c94cc1195b68df",
+      "serialized_checkpoints": 52,
+      "source_snapshots": 43
+    },
+    {
+      "run": "rebuilt",
+      "input_frames": 6000,
+      "GPU_frames": 6001,
+      "RAM_samples": 1001,
+      "complete_checkpoints": 52,
+      "PCM_stereo_sample_frames": 4423002,
+      "PCM_bytes": 17692008,
+      "PCM_sha256": "3699ad6655a363af8680080abe47993e6c0f81978dfe2ea101c94cc1195b68df",
+      "serialized_checkpoints": 52,
+      "source_snapshots": 43
+    },
+    {
+      "run": "repeat-original",
+      "input_frames": 6000,
+      "GPU_frames": 6001,
+      "RAM_samples": 1001,
+      "complete_checkpoints": 52,
+      "PCM_stereo_sample_frames": 4423002,
+      "PCM_bytes": 17692008,
+      "PCM_sha256": "3699ad6655a363af8680080abe47993e6c0f81978dfe2ea101c94cc1195b68df",
+      "serialized_checkpoints": 52,
+      "source_snapshots": 43
+    },
+    {
+      "run": "no-state-control",
+      "input_frames": 6000,
+      "GPU_frames": 6001,
+      "RAM_samples": 1001,
+      "complete_checkpoints": 52,
+      "PCM_stereo_sample_frames": 4423002,
+      "PCM_bytes": 17692008,
+      "PCM_sha256": "3699ad6655a363af8680080abe47993e6c0f81978dfe2ea101c94cc1195b68df",
+      "serialized_checkpoints": 0,
+      "source_snapshots": 43
+    }
+  ],
+  "comparisons": [
+    {
+      "kind": "original_rebuilt",
+      "raw_checkpoints": 52,
+      "every_serialized_byte_equal": true
+    },
+    {
+      "kind": "original_repeated_original",
+      "raw_checkpoints": 52,
+      "every_serialized_byte_equal": true
+    },
+    {
+      "kind": "serialization_disabled_control",
+      "every_recorded_game_output_equal": true,
+      "raw_checkpoints": 0
+    }
+  ],
+  "independent_audit": {
+    "Pillow_decoded_PNGs": 208,
+    "retained_source_snapshots_rehashed": 172,
+    "raw_state_files_rehashed": 156,
+    "raw_state_bytes": 533546868,
+    "unique_same_frame_repeat_checks": 156,
+    "serializer_invocations": 312,
+    "all_recorded_original_rebuilt_repeat_states_byte_equal": true,
+    "recorded_outputs_equal_with_no_serialization_control": true,
+    "normalization_applied": false,
+    "state_restored": false,
+    "game_RAM_injected": false,
+    "emulator_UI_controlled": false,
+    "complete_state_parity_checked": false,
+    "original_hardware_timing_verified": false,
+    "new_C_bytes": 0,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0
+  },
+  "capture_contract": {
+    "service": "BizHawk.IStatable.SaveStateBinary",
+    "raw_bytes_compared": true,
+    "serializations_per_checkpoint": 2,
+    "unique_same_frame_repeat_checks": 156,
+    "serializer_invocations": 312,
+    "second_full_byte_array_retained_on_mismatch": true,
+    "RAM_and_GPU_recaptured_after_serialization": true,
+    "frame_counter_rechecked": true,
+    "instruction_observer_enabled": false,
+    "instruction_entries": 0,
+    "state_restored": false,
+    "game_RAM_injected": false,
+    "emulator_UI_controlled": false,
+    "normalization_applied": false,
+    "max_state_bytes": 268435456,
+    "observed_DeterministicEmulation_values": [
+      false
+    ]
+  },
+  "earlier_cold_boot_variation": {
+    "historical_decoded_states_rehashed": 36,
+    "historical_checkpoint_pairs": 18,
+    "historical_failed_pairs_mapped": 12,
+    "historical_equal_pairs_preserved": 6,
+    "owner": "MDFNGameInfo.RMD.MediaTypes[0].Name",
+    "logical_name": "CD",
+    "logical_length": 2,
+    "string_object_bytes": 24,
+    "terminator_object_offset": 3,
+    "different_object_offsets": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "RMD_pointer_offset": 344,
+    "pilot_ownership_observations": 6,
+    "mapped_guest_addresses": {
+      "first": "0x36f0080fc10",
+      "last": "0x36f0080fc17"
+    },
+    "explanation": "Unused short-string capacity in the distributed native media-label record; existing complete-record initialization removes the observed variation.",
+    "earlier_failed_evidence_preserved": true,
+    "masked_bytes": 0,
+    "historical_saved_states_modified": false
+  },
+  "native_core_profile": {
+    "profile": {
+      "file": "profile.json",
+      "bytes": 43939,
+      "sha256": "81ffc304aa8c47d7a3ddff7c6447d4e875f9563b5def78708342a41c974331f0"
+    },
+    "upstream_commit": "bdddf4a58aa1a022afb11dc73294a81a5aa7bbd5",
+    "mednafen_commit": "382ff1b8d293c9a862497706808cbb79b2cecbfb",
+    "core": {
+      "file": "shock.wbx",
+      "bytes": 3406840,
+      "sha256": "bb092bc932cda059c71e6145003cce1d228c9bf892321cea8f1c6afdb195cce6"
+    },
+    "compressed_core": {
+      "file": "shock.wbx.zst",
+      "bytes": 827271,
+      "sha256": "3c1f08c83c01449c37eaeff4509dfe81fdcbd21ec1a571c6a311a8ddccd8e3ba"
+    },
+    "media_adapter": "complete-record initialization patch",
+    "media_adapter_sha256": "e35995cf92baabd13c4bb9216c9c2ef7405db38202d0aff0d6fb55d9e06d7c6a",
+    "runtime_verified": false,
+    "fresh_native_core_build_this_pass": false,
+    "build_scope": "One new adapter object linked with the recorded pinned cached native objects; not a fresh full-core rebuild.",
+    "native_CPU_source_modified_this_pass": false
+  },
+  "emulator_contract_source_audit": {
+    "status": "all_downloaded_emulator_sources_match_pinned_Git_blobs",
+    "upstream_commit": "bdddf4a58aa1a022afb11dc73294a81a5aa7bbd5",
+    "retained_source_tree_sha256": "52c2b2889b48398bd61daf6e4c98d63e4b71b2d722ac5f0aaca9e13d8b1c16ab",
+    "source_count": 17,
+    "rows": [
+      {
+        "source": "waterbox/waterboxhost/src/bin.rs",
+        "local_file": "bin.rs",
+        "git_blob_sha1": "42a8ef7d8419932d6c19804ac262e6163738ebd2",
+        "bytes": 1755,
+        "sha256": "30f3f3c0bdd514fa1117cb4f5f34a3c0576b36205214420b499f0161a031332b"
+      },
+      {
+        "source": "waterbox/waterboxhost/src/cinterface.rs",
+        "local_file": "cinterface.rs",
+        "git_blob_sha1": "dccf2dae9559c565fc70b0155891bca43a0f06c8",
+        "bytes": 14261,
+        "sha256": "6f1160baab1ba2f429e746e9fed8af081925d076c245f08354152e3cff8c6711"
+      },
+      {
+        "source": "waterbox/waterboxhost/src/context/mod.rs",
+        "local_file": "context-mod.rs",
+        "git_blob_sha1": "ca7f13a5ffd6e791d0b1a06405006cf7e53df0ca",
+        "bytes": 5124,
+        "sha256": "fdd46ba98049e32cb85850d71e14cf537b9dcef962fba14de0b96b091c522a9f"
+      },
+      {
+        "source": "waterbox/waterboxhost/src/elf.rs",
+        "local_file": "elf.rs",
+        "git_blob_sha1": "6595d770cae8ce6e212d598a1d9b1e908b6fbd3c",
+        "bytes": 6901,
+        "sha256": "3b3db0d3c119cf6c460cbe563d4183e15624d460436af4ad959f0a1996dc88e8"
+      },
+      {
+        "source": "waterbox/waterboxhost/src/fs/mod.rs",
+        "local_file": "fs-mod.rs",
+        "git_blob_sha1": "c5f973cde26acc43f95a7d02ba07c2daded1cd37",
+        "bytes": 13146,
+        "sha256": "b0054daeeee6c504ebe1279241f1dfe5ec1b31fc4ca48ae0f2e4fa965bc3ee57"
+      },
+      {
+        "source": "waterbox/waterboxhost/src/fs/regular_file.rs",
+        "local_file": "fs-regular_file.rs",
+        "git_blob_sha1": "ee61f082cba836c9be5bd67cbe305c739d6a64ee",
+        "bytes": 3295,
+        "sha256": "15273f2a9a2a51b49f28321cedb2f2b92760f72e9e4350c9f28aac7cfc2a1164"
+      },
+      {
+        "source": "waterbox/waterboxhost/src/host.rs",
+        "local_file": "host.rs",
+        "git_blob_sha1": "b755bc8ef1931c20bfbcf9a44e27c01f65ad0fcc",
+        "bytes": 12035,
+        "sha256": "c3c74b5a340a7ccf2950034fcda5a78e32208688e80b858ed4939ce6640d8dfe"
+      },
+      {
+        "source": "src/BizHawk.Emulation.Common/Interfaces/Services/IStatable.cs",
+        "local_file": "IStatable.cs",
+        "git_blob_sha1": "2e5e380d1be0fb37684271a0e9fd33e51b127eca",
+        "bytes": 2765,
+        "sha256": "4d01b1da72d43a00abc64b135a764490e49c722eb0a350f1b3666f85503f7835"
+      },
+      {
+        "source": "waterbox/waterboxhost/src/lib.rs",
+        "local_file": "lib.rs",
+        "git_blob_sha1": "5db3e428e26314649e362ebd8457711f79c85ebd",
+        "bytes": 3054,
+        "sha256": "9f88f40794cea6382bbdce3b2698968de22c279a2c6c46cb84f5016bfe10472c"
+      },
+      {
+        "source": "waterbox/waterboxhost/src/memory_block/mod.rs",
+        "local_file": "memory_block-mod.rs",
+        "git_blob_sha1": "2d01276111594cc4ac823904fedcaccb012a2b8e",
+        "bytes": 27989,
+        "sha256": "9d5280f5cc8bf9f22f9c7da6bf4f2c8e4c8c359ee8dc36fb933a5f7c8a58d853"
+      },
+      {
+        "source": "src/BizHawk.Emulation.Cores/Waterbox/NymaCore.Controller.cs",
+        "local_file": "NymaCore.Controller.cs",
+        "git_blob_sha1": "bca24ade8b78ba78f251cc310de6ae1136099401",
+        "bytes": 13955,
+        "sha256": "d6163e63f20a7b506bee2daedae72eada598ce35a6a8b941307a29c8de00839e"
+      },
+      {
+        "source": "src/BizHawk.Emulation.Cores/Waterbox/NymaCore.cs",
+        "local_file": "NymaCore.cs",
+        "git_blob_sha1": "c66b72d929bf78fa01beef2870afc5d140aaaa99",
+        "bytes": 12859,
+        "sha256": "d33047cdf2a3ca7d33ce0bd7759ae4a0a011f38976eb810cbf4b7acc60d8ae87"
+      },
+      {
+        "source": "src/BizHawk.Emulation.Cores/Consoles/Sony/PSX/Nymashock.cs",
+        "local_file": "Nymashock.cs",
+        "git_blob_sha1": "532d781c795befd18c0e5e650da6edd9364d6b99",
+        "bytes": 5007,
+        "sha256": "02f71003aa8fb5f57b4abc5930872ff82b76ed0b09f5dc4c7e0d31e7aa1deb2c"
+      },
+      {
+        "source": "waterbox/waterboxhost/src/threading.rs",
+        "local_file": "threading.rs",
+        "git_blob_sha1": "c319764604a5613bbf1ac318a79c44714d8216f3",
+        "bytes": 9977,
+        "sha256": "741c53235460ba8d58878bc48c86c15b38841aaf20e3fc44e5f2de95dbfa9b33"
+      },
+      {
+        "source": "src/BizHawk.Emulation.Cores/Waterbox/WaterboxCore.cs",
+        "local_file": "WaterboxCore.cs",
+        "git_blob_sha1": "64745ad64d6e180bbb91b638b04086094b8930b2",
+        "bytes": 11353,
+        "sha256": "4e66e1e6f5c98903b4199c1bea2c23c36b1583ddf043eb41bf78bce2e1d5fe6c"
+      },
+      {
+        "source": "src/BizHawk.Emulation.Cores/Waterbox/WaterboxHost.cs",
+        "local_file": "WaterboxHost.cs",
+        "git_blob_sha1": "4779521bf3336736ba437b2672bb17a8e94f570d",
+        "bytes": 12926,
+        "sha256": "b28e34bb04b4f1b2ff783fec0564678e0a869398774c3f2fb82f1ec08f5e3b4c"
+      },
+      {
+        "source": "src/BizHawk.Emulation.Cores/Waterbox/WaterboxHostNative.cs",
+        "local_file": "WaterboxHostNative.cs",
+        "git_blob_sha1": "65a345db7a111900080ed5e2e2496e39573d52e8",
+        "bytes": 10916,
+        "sha256": "272c6654b36b23778c9e652212fff91fd75b14641f8512549a7456351c5b2e9c"
+      }
+    ]
+  },
+  "serialization_exclusions": [
+    "Waterbox main and alternate stacks",
+    "invisible heap",
+    "ELF .invis section",
+    "other state outside the selected serialization contract"
+  ],
+  "saved_data_controls": {
+    "status": "passed_saved_serialized_data_controls",
+    "saved_data_controls_rejected": 6,
+    "valid_envelope_changed_native_payload_detected_by_raw_comparison": 1,
+    "executed_game_faults": 0,
+    "source_recordings_preserved": true,
+    "normalization_applied": false,
+    "rows": [
+      {
+        "case": "stale-digest",
+        "rejected": true,
+        "error": "Retained serialized bytes differ from their observation."
+      },
+      {
+        "case": "truncated",
+        "rejected": true,
+        "error": "Retained serialized size differs from its observation."
+      },
+      {
+        "case": "resigned-controller",
+        "rejected": true,
+        "error": "Invalid Nyma controller signature or retained switch-buffer length."
+      },
+      {
+        "case": "resigned-frame",
+        "rejected": true,
+        "error": "Serialized managed counters disagree with recorded output."
+      },
+      {
+        "case": "false-memory-digest",
+        "rejected": true,
+        "error": "Serialized observer memory stability differs from the native checkpoint."
+      },
+      {
+        "case": "unreported-repeat",
+        "rejected": true,
+        "error": "Unexpected or repeated serialized-state files."
+      },
+      {
+        "case": "resigned-native-byte",
+        "format_validation_passed": true,
+        "raw_comparison_rejected_equality": true,
+        "differing_bytes": 1
+      }
+    ]
+  },
+  "source_study": {
+    "status": "passed_independent_GNU_primitive_vertex_source_audit",
+    "qualified_observations": 28,
+    "distinct_source_texts": 26,
+    "distinct_function_images": 6,
+    "new_source_forms": 24,
+    "best_raw_differing_bytes": 22,
+    "exact_matches": 0,
+    "compiler_traces": 2,
+    "complete_image_controls": 2,
+    "all_392_game_inputs_preserved": true,
+    "canonical_image_preserved": true,
+    "source_promoted": false,
+    "new_C_bytes": 0,
+    "complete_controls": [
+      {
+        "name": "published",
+        "differing_complete_image_bytes": 22,
+        "candidate_image_sha256": "879b0bfb1cbcbbcbbb96214528f5bfa28ff90cebbd94d280086b2c64b93e88ac",
+        "candidate_source_sha256": "d1fb5de281b20be610ce7073bdcad76b2f85a1c3177d71489e43e63b8d350c8e",
+        "whole_image_gate_passed": false
+      },
+      {
+        "name": "shared",
+        "differing_complete_image_bytes": 117,
+        "candidate_image_sha256": "24cd47b0beea9efef9220c78c555bb41845c71de948c18406607d98c39304581",
+        "candidate_source_sha256": "a076ace209a8901ba4c8d1d5060c2c2833d7ff91481e420646c80aab6e89a6ec",
+        "whole_image_gate_passed": false
+      }
+    ]
+  },
+  "source_study_scope": "Twenty-four new function-source forms plus repeated controls; complete executable comparison performed for the two retained calibration forms. No exact source or complete-image match.",
+  "source_study_evidence": [
+    {
+      "file": "independent-source-audit.json",
+      "bytes": 16113,
+      "sha256": "667c96864ae12bdcc1f04c85a8cb0489c9e44c6a7f0181f5027ac52d5c0dc66f"
+    },
+    {
+      "file": "complete-unit-controls.json",
+      "bytes": 729,
+      "sha256": "c724a68871c8359c5e3cc543101c8255f3ef43671b3e450cc19541f47c3c2481"
+    },
+    {
+      "file": "study_primitive_vertex_words.py",
+      "bytes": 4684,
+      "sha256": "21ce5388f38d9b95519b8891ca3e5983dcdd7a08fea9227e6e09ddeac7cd0941"
+    },
+    {
+      "file": "study_vertex_formal_slots.py",
+      "bytes": 3603,
+      "sha256": "fcfb9348e7574b5315b096d0a45362003db47d549e2fed63f28fb513c9eb8ed0"
+    },
+    {
+      "file": "trace_declarations.py",
+      "bytes": 3159,
+      "sha256": "13bc347d6b6421d496f52f2cee29412243f92d0f3bb86ca9feb9744b3d5dc622"
+    },
+    {
+      "file": "source_study.py",
+      "bytes": 8808,
+      "sha256": "497ce5582f65b6189b15b3fb51800ecf62cc79a5489026f4fe1c5d9384a911c4"
+    },
+    {
+      "file": "source_study_formals.py",
+      "bytes": 8818,
+      "sha256": "9d00b740c7cc2cb45f9742320d24dc3974679de55c25125e26060643b754efe8"
+    },
+    {
+      "file": "offdrive_check.py",
+      "bytes": 1676,
+      "sha256": "defda4142e00383f64d001f9b7314c23522d03e2d2a93e3ae92b2e385abc665a"
+    },
+    {
+      "file": "audit_sources.py",
+      "bytes": 4476,
+      "sha256": "7a85d7f8f8c51436d63bfb282460094918c3e7cc52604840f5d7c8e45a663bcd"
+    }
+  ],
+  "private_evidence": [
+    {
+      "file": "opening-original-rebuilt-validated.json",
+      "bytes": 16471,
+      "sha256": "501824fb2dcdd57e18db5d553ec6f6f1fb7a6bf965514825a63fe59b943e315b"
+    },
+    {
+      "file": "opening-original-repeat.json",
+      "bytes": 16479,
+      "sha256": "2856196875b4f37a11ec2fbddb0e2b2179cbdca767f5a1b1a656aab90af4f89a"
+    },
+    {
+      "file": "opening-serialization-control.json",
+      "bytes": 1862,
+      "sha256": "6e0fd3f5205e250eede129a0aa9d70d7a89c3f93462dfdb80ff323b35d81677d"
+    },
+    {
+      "file": "opening-comparisons-completed.json",
+      "bytes": 935,
+      "sha256": "8d228c84e11153a8d2e6eb73503fd6540eb5c44ecf91e7ba63f1a7a05f5032de"
+    },
+    {
+      "file": "independent-recording-audit.json",
+      "bytes": 2372,
+      "sha256": "90dfc305ad5304f464f98b0430293b53ea2d1c300770bcd44632bf55f821ec93"
+    },
+    {
+      "file": "historical-state-owner-audit.json",
+      "bytes": 6764,
+      "sha256": "f6f3d109b27ba7b8ff807357258d744eb0bc19eb860e89a7a0aae763c218543a"
+    },
+    {
+      "file": "retained-state-controls.json",
+      "bytes": 1375,
+      "sha256": "bea0e949aee85cc1687c37a60fd8c7a90581cec2b2dd1d8db7b3b83aeb6d17e5"
+    },
+    {
+      "file": "pilot-cold-comparison.json",
+      "bytes": 1727,
+      "sha256": "eb77e738afb74fdff9288596e4dacc4ebdaef763a48413f5dff61069616fe104"
+    },
+    {
+      "file": "pilot-difference-addresses.json",
+      "bytes": 3652,
+      "sha256": "470caa17820cf96e906918dea16f2f1d8f9c2fb19c96dcd913df5129139c0d91"
+    },
+    {
+      "file": "media-string-owner.json",
+      "bytes": 4604,
+      "sha256": "1462f2123b50aa9991ead1433110ac5cd8a5787ce355489ed5fa6de503698e0d"
+    },
+    {
+      "file": "existing-media-patch-pilots.json",
+      "bytes": 1683,
+      "sha256": "ad4824ef26a79de2d2a460755609582e37ea6c73a98195b7fc3cea9d9496cd0d"
+    },
+    {
+      "file": "audit_recordings.py",
+      "bytes": 5050,
+      "sha256": "7df798ed1efe1806372a51f379558dc449fdec41fe6599d2d158cf93aa62f801"
+    },
+    {
+      "file": "audit_historical_states.py",
+      "bytes": 3483,
+      "sha256": "8244fea478b7fec00fe6dd8ae93804125f3b50cf063259d612b26510f0327f48"
+    },
+    {
+      "file": "check_retained_controls.py",
+      "bytes": 3118,
+      "sha256": "d7a4dba2b6cf33f55de22788fbbdd48b3c5e5817f817c047594a77abce9862bd"
+    },
+    {
+      "file": "inspect_media_string.py",
+      "bytes": 3643,
+      "sha256": "196a1ccdb9c5d5243def9c72ef555bbd846d696733206cac09c04a2aeb9a32eb"
+    },
+    {
+      "file": "map_pilot_pages.py",
+      "bytes": 3157,
+      "sha256": "7d43c3008b6ac3e68e903ebfa20dcc04a920f173e3690df8bf42c088cee2e391"
+    },
+    {
+      "file": "legacy-mode-checks.json",
+      "bytes": 492,
+      "sha256": "72c40c67426ffbb7bb525aecf41e13860f54341b56bef81f2393c9f99b95dbaf"
+    },
+    {
+      "file": "cli-inspect-original.json",
+      "bytes": 861,
+      "sha256": "3459262541ae0029fc44985b401dad8fa39b2a8298dcb1a58cd994eae0374503"
+    }
+  ],
+  "public_source_sha256": {
+    "research/headless/RecordDispatchHistory.cs": "1f19239a85a33a145d64fe208023fd0b3f8ed1579c151b2c3b95afb1f7232c21",
+    "research/headless/SerializedCoreStateTrace.cs": "ac37890b3fcc7a5bde2e407008340e0e17cc06e9ea0eda40df99bf94b8a3e08a",
+    "tools/record_dispatch_history.py": "05b99f6223c882e866d97bdc7debd038be706fdb82670cde44b5f4cc397e527e",
+    "tools/inspect_dispatch_history.py": "dd927c7ed3fb0e1d0607f74114db081dcf03e878b37b45ccf08dfd9c10aa4b1d",
+    "tools/inspect_serialized_core_states.py": "8bea23ee72d72154e2a35f91f3c6d5b1c116c30639be95ab69745d794450d268",
+    "tests/test_serialized_core_states.py": "ad2c8214f0eb7b0c41cb649ea8f20aba4b2b5091ea7482b7021d152c5e0a3353"
+  },
+  "local_tests": [
+    {
+      "host": "windows",
+      "tests_run": 1252,
+      "skipped": 2,
+      "passed": true,
+      "log": {
+        "file": "tests-windows-final.log",
+        "bytes": 205888,
+        "sha256": "70cf5a0f848c35fced40d7bfde85fe203f343c7249834e665f58e25b6990e774"
+      }
+    },
+    {
+      "host": "linux",
+      "tests_run": 1252,
+      "skipped": 2,
+      "passed": true,
+      "log": {
+        "file": "tests-linux-final.log",
+        "bytes": 205888,
+        "sha256": "a552992c322465f437f37f48263dbf6eb4e97294c63ee4cb4f04c3185f3fa65c"
+      }
+    }
+  ],
+  "new_unit_tests": 23,
+  "canonical_executable": {
+    "bytes": 505856,
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "matching_rebuild_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "protected_game_build_inputs": 392,
+    "all_protected_inputs_unchanged": true
+  },
+  "limits": {
+    "one_existing_opening_route": true,
+    "new_gameplay_scenarios": 0,
+    "state_load_or_replay_tested": false,
+    "complete_state_parity_checked": false,
+    "original_hardware_timing_verified": false,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "independent_human_acceptance": false
+  },
+  "storage": {
+    "new_large_artifacts_outside_C": true,
+    "recordings_and_evidence_on_D": true,
+    "private_raw_game_or_BIOS_bytes_published": false
+  },
+  "legacy_recording_compatibility": {
+    "status": "passed_actual_legacy_recording_inspection",
+    "rows": [
+      {
+        "kind": "distributed",
+        "legacy_explicit_mode_missing": true,
+        "trace_enabled": false,
+        "native_entries": 0,
+        "input_frames": 6000,
+        "inspected": true
+      },
+      {
+        "kind": "dispatch_observer",
+        "legacy_explicit_mode_missing": true,
+        "trace_enabled": true,
+        "native_entries": 837,
+        "input_frames": 6000,
+        "inspected": true
+      }
+    ]
+  },
+  "public_cli_checks": {
+    "actual_serialized_inspection_passed": true,
+    "serialized_checkpoints": 52,
+    "existing_report_rejected_before_input_loading": true,
+    "existing_output_exit_code": 2
+  }
+}

@@ -84,14 +84,23 @@ cold-boot original/rebuild pair also agrees at all six checkpoints and across
 The earlier 1,800-frame cold-boot pair is a separate failed state comparison.
 Its images, GPU memory, traces and audio agree, but eight bytes differ in each
 decoded Waterbox core snapshot. These are actual decoded differences, not ZIP
-metadata or compression differences. Their field and cause remain unresolved;
-no state bytes are masked. A further cold boot of the same original disc, with
+metadata or compression differences. At that checkpoint, the field and cause
+were unresolved; no state bytes were masked. A further cold boot of the same original disc, with
 the complete schema-two launch identities equal, also differs in eight decoded
 bytes at each checkpoint while its visual, GPU, trace and audio outputs agree.
-This demonstrates variation across the recorded original-only cold boots; it
-does not identify the field, establish that it is harmless or explain its cause.
+This demonstrated variation across the recorded original-only cold boots without
+identifying the field or establishing its behavior implications.
 The successful original/rebuild cold pair and shared-state replay remain
 separate from that investigation.
+
+The later [serialized-state investigation](SERIALIZED_CORE_STATES.md) rehashes
+and decodes all 36 saved states from these three comparisons. Every differing
+byte in the twelve failed checkpoint pairs maps to unused short-string capacity
+in the native emulator's `MediaTypes[0].Name` media label. The six equal pairs
+remain equal. New runs with the existing complete-record initialization profile
+agree at all 52 serialized checkpoints in the 6,000-frame opening route, including
+an original-only cold repeat. This adds bounded evidence without accepting all
+emulator state, hardware timing, or whole features.
 
 Full scene/NPC/branch coverage, independent scenario review, memory-card errors,
 audio/movie event coverage and original-hardware timing remain open. Whole

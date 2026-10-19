@@ -141,6 +141,15 @@ def validate_native_summary(summary,native,settings,entries):
             'Method native totals, drained events or complete target settings disagree.')
 
 
+def observer_requested(manifest, settings):
+    kind = manifest['runtime_kind']
+    requested = manifest.get('instruction_observer_enabled', kind == 'dispatch_observer')
+    require(type(requested) is bool and type(settings.get('trace_enabled')) is bool
+            and requested is settings['trace_enabled'] and (not requested or kind == 'dispatch_observer'),
+            'Recorded instruction-observer mode is inconsistent.')
+    return requested
+
+
 def inspect(folder):
     folder=Path(folder).resolve(strict=True)
     manifest=json.loads(owned_file(folder,'run-inputs.json').read_text(encoding='utf-8-sig'))
@@ -168,6 +177,7 @@ def inspect(folder):
             and owned_file(folder,'submitted.tsv').read_bytes()==expand_program(program,manifest['settings']['frames']),
             'Retained method program or submitted controller bytes disagree.')
     settings=manifest['settings']
+    observing=observer_requested(manifest,settings)
     require(json.loads(owned_file(folder,'settings.json').read_text())==settings,'Retained method settings disagree.')
     frames=settings['frames']
     require(result['input_frames']==frames and result['runtime_kind']==manifest['runtime_kind'],
@@ -212,7 +222,7 @@ def inspect(folder):
     profile=manifest['observer_profile']
     if kind=='dispatch_observer':
         require(profile is not None and profile.get('status')=='built_separate_dispatch_observer_core'
-                and profile.get('observer_mode')=='method_entries' and settings['trace_enabled'] is True
+                and profile.get('observer_mode')=='method_entries'
                 and profile.get('upstream_commit')==UPSTREAM and profile.get('mednafen_commit')==MEDNAFEN
                 and profile.get('original_adapter_sha256')==SOURCE_SHA256['shock.cpp']
                 and profile.get('existing_CPU_source_modified') is False and profile.get('input_files_preserved') is True,
@@ -260,7 +270,7 @@ def inspect(folder):
     else:
         require(profile is None and settings['trace_enabled'] is False,'A distributed run cannot claim method observation.')
     output=folder/'observations'
-    if not collision_config or kind=='distributed':
+    if not collision_config or not observing:
         require(all(not (output/name).exists() for name in ('collision-calls.bin','collision-call-ram.bin','collision-call-summary.json')),
                 'Undeclared primitive sample data cannot be accepted.')
     else:
@@ -270,7 +280,8 @@ def inspect(folder):
     require(native['status']=='recorded_static_method_history' and native['frames_advanced']==frames+1
             and native['submitted_frames']==frames and native['game_RAM_injected'] is False
             and native['restored_state'] is False
-            and native['observer_enabled']==(kind=='dispatch_observer' and settings['arm_frame']<=frames),
+            and native.get('observer_requested') is observing
+            and native['observer_enabled']==(observing and settings['arm_frame']<=frames),
             'Incomplete method recording or unexpected execution mode.')
     observations=read_rows(output/'frames.tsv',FRAME_FIELDS)
     submitted=list(csv.DictReader(owned_file(folder,'submitted.tsv').read_text().splitlines(),delimiter='\t'))
@@ -303,7 +314,7 @@ def inspect(folder):
                 'Complete checkpoint RAM/GPU/RGB differs from its native observation.')
         inspect_png((output/f'frame-{frame}.png').read_bytes(),image['width'],image['height'])
     entries=[];entry_report=dict(method_entry_observations=0,function_entry_counts={})
-    if kind=='dispatch_observer':
+    if observing:
         entries,entry_report=validate_entries(read_rows(output/'method-instructions.tsv',ENTRY_FIELDS),effective,
             selected,(output/'method-code.bin').read_bytes(),executable)
         summary=json.loads((output/'method-trace-summary.json').read_text(encoding='utf-8-sig'))
@@ -340,7 +351,7 @@ def inspect(folder):
                 and not (output/'method-code.bin').exists() and not (output/'method-flow.bin').exists()
                 and not (output/'method-flow-summary.json').exists() and all(not (output/name).exists() for name in
                     ('method-returns.bin','method-return-data.bin','method-return-summary.json')),
-                'Distributed core unexpectedly supplied method entries.')
+                'A run without instruction observation unexpectedly supplied method entries.')
     result=dict(status='inspected_bounded_original_method_history',runtime_kind=kind,input_frames=frames,
         GPU_observations=len(observations),RAM_observations=len(memory),complete_checkpoints=len(checkpoints),
         PCM_bytes=total*4,**entry_report,complete_state_parity_checked=False,original_hardware_timing_verified=False,
@@ -370,13 +381,15 @@ def compare(reference,candidate,mode):
     changed=sorted(name for name in set(ar)|set(br) if ar.get(name)!=br.get(name))
     if mode=='same-runtime':
         require(a['runtime_kind']==b['runtime_kind'] and not changed,'Same-runtime method comparison has different cores.')
+        require(a['settings']['trace_enabled'] is b['settings']['trace_enabled'],
+                'Same-runtime method comparisons require the same instruction-observer mode.')
         require(not source_difference,'Same-runtime method producer sources or compiler identities differ.')
         require(left['entries']==right['entries'],'Original/rebuilt method entry records differ.')
-        if a['runtime_kind']=='dispatch_observer' and left['program']['method_trace'].get('flow_sites'):
+        if a['settings']['trace_enabled'] and left['program']['method_trace'].get('flow_sites'):
             for name in ('method-flow.bin','method-flow-summary.json'):
                 require(files_equal(left['folder']/'observations'/name,right['folder']/'observations'/name),
                         'Original/rebuilt native caller-flow records differ.')
-        if a['runtime_kind']=='dispatch_observer' and left['program']['method_trace'].get('return_trace'):
+        if a['settings']['trace_enabled'] and left['program']['method_trace'].get('return_trace'):
             for name in ('method-returns.bin','method-return-data.bin','method-return-summary.json'):
                 require(files_equal(left['folder']/'observations'/name,right['folder']/'observations'/name),
                         'Original/rebuilt method return/data observations differ.')

@@ -38,6 +38,7 @@ internal static class RecordDispatchHistory {
         public uint[] flow_sites { get; set; }
         public DispatchReturnSettings return_trace { get; set; }
         public CollisionCallSettings collision_calls { get; set; }
+        public bool serialized_state { get; set; }
     }
     static object SaveImage(Nymashock core, string output, int frame) {
         int width = core.BufferWidth, height = core.BufferHeight;
@@ -111,6 +112,7 @@ internal static class RecordDispatchHistory {
                 long totalSamples = 0;
                 int ramSamples = 0;
                 var checkpointRows = new List<object>();
+                var serialized = settings.serialized_state ? new SerializedCoreStateTrace(output) : null;
                 DispatchInstructionTrace observer = settings.trace_enabled ?
                     new DispatchInstructionTrace(core, output, settings.dispatch_targets,
                         settings.dispatch_words, settings.arm_frame, settings.flow_sites, settings.return_trace, settings.collision_calls) : null;
@@ -152,6 +154,7 @@ internal static class RecordDispatchHistory {
                             File.WriteAllBytes(Path.Combine(output, "mainram-" + frame + ".bin"), ram);
                             File.WriteAllBytes(Path.Combine(output, "gpu-" + frame + ".bin"), gpuRaw);
                             object image = SaveImage(core, output, frame);
+                            if (serialized != null) serialized.Capture(core, domains, gpu, frame, ram, gpuRaw);
                             checkpointRows.Add(new {relative_frame = frame, core_frame = core.Frame,
                                 RAM_sha256 = Hash(ram), GPU_sha256 = gpuHash, image = image});
                         }
@@ -161,6 +164,7 @@ internal static class RecordDispatchHistory {
                         }
                     }
                 }
+                if (serialized != null) serialized.Complete(settings.frames);
                 File.WriteAllText(Path.Combine(output, "report.json"), serializer.Serialize(new {
                     status = "recorded_static_method_history", frames_advanced = settings.frames + 1,
                     submitted_frames = settings.frames, RAM_samples = ramSamples, checkpoints = checkpointRows.ToArray(),

@@ -361,3 +361,13 @@ research/collision/trace_compiler_lifetimes.py text eol=lf
 research/compiler/README.md text eol=lf
 tests/test_compiler_private_root.py text eol=lf
 docs/compiler-artifact-storage-checks.json text eol=lf
+
+# Preserve serialized-state capture and inspection source identities.
+research/headless/RecordDispatchHistory.cs text eol=lf
+research/headless/SerializedCoreStateTrace.cs text eol=lf
+tools/record_dispatch_history.py text eol=lf
+tools/inspect_dispatch_history.py text eol=lf
+tools/inspect_serialized_core_states.py text eol=lf
+tests/test_serialized_core_states.py text eol=lf
+docs/SERIALIZED_CORE_STATES.md text eol=lf
+docs/serialized-core-state-checks.json text eol=lf
