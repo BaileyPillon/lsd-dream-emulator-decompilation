@@ -46,7 +46,12 @@ packets, independently hashed again as raw decoded bytes. It adds no C bytes,
 NPC callback profiles or whole-feature acceptance. Native movie playback,
 mixing, controller paths and timing remain open; the Bevy port is unchanged.
 
-The [Astronaut profile](ASTRONAUT_BEHAVIOR.md) increases bounded original
+The [Apartment Bear profile](APARTMENT_BEAR.md) raises bounded original callback
+coverage from **40 to 41 / 107**. It uses the bound original model for animation
+selection and runs native proximity, RNG, movement and stopping methods.
+Matching C and whole-feature/encounter acceptance counts are unchanged.
+
+The earlier [Astronaut profile](ASTRONAUT_BEHAVIOR.md) increases bounded original
 callback coverage from **39 to 40 / 107**. It executes the original mood,
 proximity, transform and animation-stop methods, with no dependency-output
 stubs. It adds no C bytes or whole-feature/encounter acceptance.
