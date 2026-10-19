@@ -1,0 +1,401 @@
+{
+  "schema_version": 1,
+  "status": "qualified_bounded_original_blocking_CD_retry",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "matching_build_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "canonical_objects": 306,
+  "protected_game_build_inputs": 392,
+  "game_build_input_digest": "f5121c8d3bcefdb98171ae4305d25efa47a7a2a07265852c684f5cc0ec469772",
+  "frozen_objective_SHA256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+  "counts_before": {
+    "matching_C_bytes": 197172,
+    "game_text_bytes": 199912,
+    "matching_C_percent": 98.62939693465124,
+    "game_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_feature_groups": 38,
+    "original_NPC_callback_C_bodies": 107,
+    "bounded_NPC_profiles": 43,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_gameplay_mods": 3,
+    "model_API_calls": 0
+  },
+  "counts_after": {
+    "matching_C_bytes": 197172,
+    "game_text_bytes": 199912,
+    "matching_C_percent": 98.62939693465124,
+    "game_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_feature_groups": 38,
+    "original_NPC_callback_C_bodies": 107,
+    "bounded_NPC_profiles": 43,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_gameplay_mods": 3,
+    "model_API_calls": 0
+  },
+  "source_main_commit_before": "89b59805d2491ef8b4c2ee769dbc4edb3464defc",
+  "controller_program": "research/headless/blocking-cd-retry-route.json",
+  "input_frames": 2000,
+  "native_observations": 2001,
+  "open_frame": 1020,
+  "close_frame": 1070,
+  "disc_index": 0,
+  "Reset_inputs": 0,
+  "SDK_call_returns": 848,
+  "original_method_helper_returns": 9,
+  "blocking_helper_returns": 3,
+  "successful_SDK_transfers": 38,
+  "successful_sector_bytes_compared": 385024,
+  "failed_SDK_transfers": 74,
+  "failed_written_prefix_bytes_compared": 28672,
+  "rejected_Setloc_CdSync_pairs": 210,
+  "error_to_Setloc_edges": 284,
+  "helpers": [
+    {
+      "entry_id": 3,
+      "entry_frame": 1002,
+      "return_frame": 1008,
+      "request_count": 1,
+      "poll_count": 1,
+      "failed_transfers": 0,
+      "first_request_id": 13,
+      "successful_request_id": 13,
+      "completion_id": 14,
+      "completion_frame": 1008,
+      "lba": 20855,
+      "sectors": 1,
+      "bytes": 2048,
+      "final_data_sha256": "5777d3958ca0281616c7cf233d2cc6ac82ae956c4763b979044322da9839e8ca"
+    },
+    {
+      "entry_id": 6,
+      "entry_frame": 1008,
+      "return_frame": 1163,
+      "request_count": 75,
+      "poll_count": 75,
+      "failed_transfers": 74,
+      "first_request_id": 17,
+      "successful_request_id": 733,
+      "completion_id": 734,
+      "completion_frame": 1163,
+      "lba": 20680,
+      "sectors": 76,
+      "bytes": 155648,
+      "final_data_sha256": "4d337a8b549cc224b05dd8cfc252840bd63c27bd490d7322398f5e6f4fd0f360"
+    },
+    {
+      "entry_id": 9,
+      "entry_frame": 1550,
+      "return_frame": 1584,
+      "request_count": 1,
+      "poll_count": 1,
+      "failed_transfers": 0,
+      "first_request_id": 790,
+      "successful_request_id": 790,
+      "completion_id": 791,
+      "completion_frame": 1584,
+      "lba": 20884,
+      "sectors": 76,
+      "bytes": 155648,
+      "final_data_sha256": "289b2a5395caae24be3893b6f800b04ebd0fb42ee63a6f35f17c4f10f021f671"
+    }
+  ],
+  "canonical_helper_call_sites": {
+    "3": "0x80028AC0",
+    "4": "0x80028ACC",
+    "1": "0x80028AF4",
+    "2": "0x80028B00"
+  },
+  "original_helper_frame_bytes": 2104,
+  "Setloc_receiver_offset": 24,
+  "failed_buffer_tails_accepted": false,
+  "status_words_treated_as_byte_counts": false,
+  "interrupted_read_completion_frame": 1163,
+  "original_rebuilt_native_streams_equal": true,
+  "original_rebuilt_outputs": {
+    "status": "compact_output_windows_equal",
+    "comparison": "original-rebuilt",
+    "output_observations": 2001,
+    "RAM_samples": 336,
+    "decoded_RGB_checkpoints": 3,
+    "complete_PCM_bytes": 5897812,
+    "complete_PCM_sha256": "db87febd96ba17a774f5605ca8f9b3079e8a4c633f2860f160d8552dddd52f6b",
+    "all_equal": true,
+    "complete_state_parity_checked": false,
+    "original_hardware_timing_verified": false,
+    "new_C_bytes": 0,
+    "whole_feature_groups_accepted": 0
+  },
+  "observer_stock_outputs": {
+    "status": "compact_output_windows_equal",
+    "comparison": "observer-stock",
+    "output_observations": 2001,
+    "RAM_samples": 336,
+    "decoded_RGB_checkpoints": 3,
+    "complete_PCM_bytes": 5897812,
+    "complete_PCM_sha256": "db87febd96ba17a774f5605ca8f9b3079e8a4c633f2860f160d8552dddd52f6b",
+    "all_equal": true,
+    "complete_state_parity_checked": false,
+    "original_hardware_timing_verified": false,
+    "new_C_bytes": 0,
+    "whole_feature_groups_accepted": 0
+  },
+  "reused_native_profile": {
+    "upstream_commit": "bdddf4a58aa1a022afb11dc73294a81a5aa7bbd5",
+    "mednafen_commit": "382ff1b8d293c9a862497706808cbb79b2cecbfb",
+    "sdk_read_header_sha256": "9a693965ed852df1fa5640ee5ad86becb79f2bf48329d08cb257cd9f3310c9fd",
+    "core": {
+      "file": "shock.wbx",
+      "bytes": 3415256,
+      "sha256": "f87afed999256a067d9aa58c7546035e73a727e5abe21b972351c3c4983a0d2b"
+    },
+    "compressed_core": {
+      "file": "shock.wbx.zst",
+      "bytes": 831807,
+      "sha256": "3a263f9a3e5f3a4a9887c034abfb435ac69cfa9f550b3e1b93e9fc8bfbd935a5"
+    },
+    "existing_CPU_source_modified": false,
+    "original_game_RAM_written_by_observer": false,
+    "build_scope": "One new adapter object linked with the recorded pinned cached native objects; not a fresh full-core rebuild."
+  },
+  "reused_native_producer_SHA256": "de7e34f50995d21e16305844b4cb973d06412c52bbe51b832196d79c42413151",
+  "current_native_producer_SHA256": "d7db79aceff9c0fb8c0c99632ead87d72e39ff4edbdfb6f8095f588fe124f046",
+  "historical_core_relabelled_as_current_producer": false,
+  "current_producer_loader_relaxed": false,
+  "captured_host_source_SHA256": {
+    "ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "RecordDispatchHistory.cs": "6ce5e522f0133f93ed38070c6cf00d8a63ad00f38e05cfb823a2d7cb0830dce6",
+    "DispatchInstructionTrace.cs": "eb8462e9b9a80c03d6790b58d512a2f44d387ed453b795da9664c60032a56008",
+    "DispatchFlowTrace.cs": "ecf13ac065113ef2ddd6fd1474210d9dec044d56d6edc5d824dedad6f69bc7d1",
+    "DispatchReturnTrace.cs": "aa09b0cc1fc47f917d65602e29d04304190e8ba59940e9b6e0b2c923b4bb19fc",
+    "SdkReadTrace.cs": "8097daf543c8929968325079a8516a43e160cd4a1343afcc392dcd2d1afba32a",
+    "CollisionCallTrace.cs": "a939e920b5a21aa4d0d2c0a380317dd876e71e0b60773ce21931b8dafdfbada2",
+    "SerializedCoreStateTrace.cs": "b550eb2cfeb61e4dfef29043ba70d33aaf3ff1296f1be705a41d1b99872f42fe",
+    "BoundedCapture.cs": "d39f8f232497d95a5a7bdd58425f08da7a460e506c105c42ab6449967bd30d40"
+  },
+  "captures": {
+    "original": {
+      "managed_host_bytes": 116736,
+      "managed_host_sha256": "251834f3bd9fd79928803f7d6b0c6a6a9ff5edf412dc91082e877f046decc553",
+      "source_snapshot_count": 38,
+      "compiled_CSharp_source_count": 9,
+      "controller_SHA256": "fb1b8683ed734611b2f325f381facd9ce1d4a73c4368605576ab8d100ef271cf",
+      "settings_SHA256": "bc0eaa4882ab1b260431f199f90cf6b34fd295e88f2eee516e376adf446bb8d4",
+      "retained_observation_logical_bytes": 729030,
+      "complete_PCM_bytes": 5897812,
+      "complete_PCM_sha256": "db87febd96ba17a774f5605ca8f9b3079e8a4c633f2860f160d8552dddd52f6b",
+      "retained_stream_bytes_before_lossless_archiving": 13300106,
+      "stream_limit": 67108864,
+      "runtime_copies": 0,
+      "disc_copies": 0,
+      "asset_tree_copies": 0,
+      "game_RAM_injected": false,
+      "restored_state": false,
+      "emulator_UI_controlled": false,
+      "archive_transaction_recovery_recorded": true
+    },
+    "rebuilt": {
+      "managed_host_bytes": 116736,
+      "managed_host_sha256": "251834f3bd9fd79928803f7d6b0c6a6a9ff5edf412dc91082e877f046decc553",
+      "source_snapshot_count": 38,
+      "compiled_CSharp_source_count": 9,
+      "controller_SHA256": "fb1b8683ed734611b2f325f381facd9ce1d4a73c4368605576ab8d100ef271cf",
+      "settings_SHA256": "bc0eaa4882ab1b260431f199f90cf6b34fd295e88f2eee516e376adf446bb8d4",
+      "retained_observation_logical_bytes": 729014,
+      "complete_PCM_bytes": 5897812,
+      "complete_PCM_sha256": "db87febd96ba17a774f5605ca8f9b3079e8a4c633f2860f160d8552dddd52f6b",
+      "retained_stream_bytes_before_lossless_archiving": 13300106,
+      "stream_limit": 67108864,
+      "runtime_copies": 0,
+      "disc_copies": 0,
+      "asset_tree_copies": 0,
+      "game_RAM_injected": false,
+      "restored_state": false,
+      "emulator_UI_controlled": false,
+      "archive_transaction_recovery_recorded": false
+    },
+    "stock": {
+      "managed_host_bytes": 116736,
+      "managed_host_sha256": "251834f3bd9fd79928803f7d6b0c6a6a9ff5edf412dc91082e877f046decc553",
+      "source_snapshot_count": 31,
+      "compiled_CSharp_source_count": 9,
+      "controller_SHA256": "fb1b8683ed734611b2f325f381facd9ce1d4a73c4368605576ab8d100ef271cf",
+      "settings_SHA256": "fb8b3fbb7617b6ba1e1eb2405147ea23cd413402587384ffd0aa1b8db2c7403a",
+      "retained_observation_logical_bytes": 278620,
+      "complete_PCM_bytes": 5897812,
+      "complete_PCM_sha256": "db87febd96ba17a774f5605ca8f9b3079e8a4c633f2860f160d8552dddd52f6b",
+      "retained_stream_bytes_before_lossless_archiving": 223714,
+      "stream_limit": 67108864,
+      "runtime_copies": 0,
+      "disc_copies": 0,
+      "asset_tree_copies": 0,
+      "game_RAM_injected": false,
+      "restored_state": false,
+      "emulator_UI_controlled": false,
+      "archive_transaction_recovery_recorded": false
+    }
+  },
+  "retained_data_negative_controls_rejected": 19,
+  "negative_control_results": [
+    {
+      "name": "complete_SDK_code_byte",
+      "rejected": true,
+      "reason": "Complete SDK entry code or payload coverage differs from the original."
+    },
+    {
+      "name": "effective_fetch_word",
+      "rejected": true,
+      "reason": "Observed effective/RAM return instruction differs from the original."
+    },
+    {
+      "name": "returned_SDK_stack",
+      "rejected": true,
+      "reason": "SDK return target, saved stack or cache-isolation state disagrees."
+    },
+    {
+      "name": "lost_SDK_record",
+      "rejected": true,
+      "reason": "Incomplete SDK native totals, transport, call stack or transfer state."
+    },
+    {
+      "name": "failed_prefix_byte",
+      "rejected": true,
+      "reason": "SDK written prefix differs from the observed disc sectors."
+    },
+    {
+      "name": "successful_data_byte",
+      "rejected": true,
+      "reason": "SDK written prefix differs from the observed disc sectors."
+    },
+    {
+      "name": "failure_mislabeled_success",
+      "rejected": true,
+      "reason": "Successful/failed RAM snapshots are confused."
+    },
+    {
+      "name": "unassociated_transfer_id",
+      "rejected": true,
+      "reason": "SDK pending transfer identity differs."
+    },
+    {
+      "name": "nonsector_write_cursor",
+      "rejected": true,
+      "reason": "SDK written prefix escapes its sector window."
+    },
+    {
+      "name": "payload_offset_escape",
+      "rejected": true,
+      "reason": "Completed SDK RAM payload is truncated, overlaps or has a gap."
+    },
+    {
+      "name": "failed_seek_receiver_pointer",
+      "rejected": true,
+      "reason": "Helper Setloc invocation or acknowledgement is unqualified."
+    },
+    {
+      "name": "helper_request_count",
+      "rejected": true,
+      "reason": "Helper and SDK request/poll counts differ."
+    },
+    {
+      "name": "helper_final_poll_sequence",
+      "rejected": true,
+      "reason": "Final helper request/poll identity differs."
+    },
+    {
+      "name": "Read_status_word_as_count",
+      "rejected": true,
+      "reason": "Original synchronous request arguments or final SDK polling result disagree."
+    },
+    {
+      "name": "native_overflow",
+      "rejected": true,
+      "reason": "Incomplete SDK native totals, transport, call stack or transfer state."
+    },
+    {
+      "name": "pending_native_call",
+      "rejected": true,
+      "reason": "Incomplete SDK native totals, transport, call stack or transfer state."
+    },
+    {
+      "name": "native_RAM_injection_flag",
+      "rejected": true,
+      "reason": "Incomplete SDK native totals, transport, call stack or transfer state."
+    },
+    {
+      "name": "CPU_source_modification_flag",
+      "rejected": true,
+      "reason": "Incomplete SDK native totals, transport, call stack or transfer state."
+    },
+    {
+      "name": "changed_captured_host_source",
+      "rejected": true,
+      "reason": "Compact host source set is neither current nor a published qualified version."
+    }
+  ],
+  "unwritten_tail_boundary_control_passed": true,
+  "executed_game_instruction_faults": 0,
+  "Windows_CSharp_budget_digest_controls_executed": 6,
+  "focused_tests": 43,
+  "full_tests": {
+    "windows": {
+      "tests": 1357,
+      "exit_code": 0,
+      "log_SHA256": "50dc048adc0687120a17240f9571c2f4219a2873c18723ece256d28e96d892a0"
+    },
+    "wsl": {
+      "tests": 1357,
+      "exit_code": 0,
+      "log_SHA256": "00a3fc43e958f41103679249a7e4bdf7d870a876a2515a5443eddadadce3e70f"
+    }
+  },
+  "full_test_skips": {
+    "windows": 7,
+    "wsl": 8
+  },
+  "synthetic_Unicorn_backend_executed_on_WSL": true,
+  "feature_inventory_previous_fields_preserved": true,
+  "feature_inventory_before_SHA256": "6250cf7f3b1b5e0490cd533213fbf7cbf359d10c38060cd59fb3df70190d8b9d",
+  "feature_inventory_after_SHA256": "738d5875700154064158a18a1f8f24f26bf6d3e606fae3c6896f27ebc105b7ce",
+  "new_C_bytes": 0,
+  "new_original_game_features": 0,
+  "new_NPC_profiles": 0,
+  "new_developer_capability_categories": 0,
+  "new_model_API_calls": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "complete_state_parity_checked": false,
+  "original_hardware_timing_verified": false,
+  "private_game_data_distributed": false,
+  "source_file_SHA256": {
+    "README.md": "db1ce3105e1539fe551f8e47dbc8e2d8ee5b119f77dc67e17ccb2738a52ead18",
+    "docs/BLOCKING_CD_RETRY.md": "6fdcf27383ed11b65912117d279757aa7fe03773cc01ccda4cb7e253789583f1",
+    "docs/CD_ERROR_RESET_RECOVERY.md": "82709a7065f22b6b7fcbc7607c0f44b445d60bd89c2dcc070e8f58d54b74286d",
+    "docs/FEATURE_INVENTORY.md": "1bcd73ba5ecb12b1bb3b787aeff2bcf4690887664c83b842747b7aa9f4cf96d0",
+    "docs/features.json": "738d5875700154064158a18a1f8f24f26bf6d3e606fae3c6896f27ebc105b7ce",
+    "research/headless/BoundedCapture.cs": "d39f8f232497d95a5a7bdd58425f08da7a460e506c105c42ab6449967bd30d40",
+    "research/headless/CollisionCallTrace.cs": "a939e920b5a21aa4d0d2c0a380317dd876e71e0b60773ce21931b8dafdfbada2",
+    "research/headless/DispatchFlowTrace.cs": "ecf13ac065113ef2ddd6fd1474210d9dec044d56d6edc5d824dedad6f69bc7d1",
+    "research/headless/DispatchInstructionTrace.cs": "eb8462e9b9a80c03d6790b58d512a2f44d387ed453b795da9664c60032a56008",
+    "research/headless/DispatchReturnTrace.cs": "aa09b0cc1fc47f917d65602e29d04304190e8ba59940e9b6e0b2c923b4bb19fc",
+    "research/headless/RecordDispatchHistory.cs": "6ce5e522f0133f93ed38070c6cf00d8a63ad00f38e05cfb823a2d7cb0830dce6",
+    "research/headless/SdkReadTrace.cs": "8097daf543c8929968325079a8516a43e160cd4a1343afcc392dcd2d1afba32a",
+    "research/headless/SerializedCoreStateTrace.cs": "b550eb2cfeb61e4dfef29043ba70d33aaf3ff1296f1be705a41d1b99872f42fe",
+    "research/headless/blocking-cd-retry-route.json": "9984989860de6fffcffb9f81560628831a09cfc4adef9018a0e19e1cf438707d",
+    "tests/test_blocking_cd_retry.py": "69791570b272c4d4aa5a1f30461d71c1c252b09e1f00c0dc87b53310d029608f",
+    "tests/test_compact_dispatch.py": "fb707e5e002024700483d7cf5f246797db89457a2936aebf1306bd1aade3d6a7",
+    "tools/compact_dispatch.py": "f38737d15b0bd5fb7c49d7b5d9173179c476140c90fa985e72d0a807c7ac1886",
+    "tools/compact_dispatch_inputs.py": "92ad08259557bcdbcc43f1445e3b456f36f4817b34d0a32b4a849421d2a0211c",
+    "tools/inspect_compact_dispatch.py": "922078d390a41597e97bd4f138c6550a685a1c1675b31e27bf45c60bb9187a0f",
+    "tools/record_compact_dispatch.py": "f1fd456f273dde510af7643e06108bcf483682ea153c8c1b9e8c5b37ead8f1d4",
+    "tools/record_dispatch_history.py": "f8b3b12d98a4a37b07ef53bf89b261e36bcb291ca20bb10036ce9223f923b140",
+    "tools/verify_blocking_cd_retry.py": "622548fe236d0a80ee2b78877cdd77980fa80be024a8a52ad271ef7f140f8519"
+  },
+  "scope": "Bounded canonical original blocking retry episode. No entire-method, whole-game, full-state or hardware-timing acceptance; no storage-explanation promotion."
+}

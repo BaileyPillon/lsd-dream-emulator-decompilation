@@ -28,7 +28,7 @@ from tools.replay_cold_start_headless import require, select_compiler, write_jso
 from tools.runtime_inputs import load_verified_manifest, record_file
 DEFAULT_PROGRAM = ROOT / 'research/headless/file-driver-boot-route.json'
 HOST_SOURCES = tuple(ROOT / 'research/headless' / name for name in
-    ('ReplayColdStart.cs','RecordDispatchHistory.cs','DispatchInstructionTrace.cs','DispatchFlowTrace.cs','DispatchReturnTrace.cs','SdkReadTrace.cs','CollisionCallTrace.cs','SerializedCoreStateTrace.cs'))
+    ('ReplayColdStart.cs','RecordDispatchHistory.cs','DispatchInstructionTrace.cs','DispatchFlowTrace.cs','DispatchReturnTrace.cs','SdkReadTrace.cs','CollisionCallTrace.cs','SerializedCoreStateTrace.cs','BoundedCapture.cs'))
 CATALOGUE_FILE = ROOT / 'research/dispatch/target-catalogue.json'
 CATALOGUE_PROVENANCE = ROOT / 'docs/dispatch-catalogue-checks.json'
 SUPPLEMENTAL_FILE = ROOT / 'research/file_driver/function-ranges.json'

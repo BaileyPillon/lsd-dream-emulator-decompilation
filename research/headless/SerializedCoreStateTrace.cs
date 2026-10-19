@@ -35,11 +35,11 @@ internal sealed class SerializedCoreStateTrace {
         int beforeFrame = core.Frame;
         byte[] first = Save(core), second = Save(core);
         string file = "core-state-" + frame + ".bin";
-        using (var stream = File.Open(Path.Combine(Output, file), FileMode.CreateNew))
+        using (var stream = CaptureBudget.Open(Path.Combine(Output, file), FileMode.CreateNew))
             stream.Write(first, 0, first.Length);
         bool repeated = first.SequenceEqual(second);
         if (!repeated) {
-            using (var stream = File.Open(Path.Combine(Output, "core-state-repeat-" + frame + ".bin"), FileMode.CreateNew))
+            using (var stream = CaptureBudget.Open(Path.Combine(Output, "core-state-repeat-" + frame + ".bin"), FileMode.CreateNew))
                 stream.Write(second, 0, second.Length);
         }
         byte[] afterRAM = new byte[beforeRAM.Length], afterGPU = new byte[beforeGPU.Length];

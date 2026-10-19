@@ -37,8 +37,9 @@ request at frame 2,544. The other four end at 2,552, 2,560, 2,568 and 2,579.
 All five completions clear the original busy/state fields. **None reissues an
 SDK sector read before ending that failed driver request.** This is the
 observed retail error path, not a successful refill or automatic read recovery.
-It differs from the blocking reader's separate retry loop; that loop's executed
-error coverage remains open. The ignored return register from `CdFlush` is
+The separate [blocking-reader profile](BLOCKING_CD_RETRY.md) now executes its
+own seek/sync and sector-request retry loop through recovery without Reset.
+Other timings and branches remain open. The ignored return register from `CdFlush` is
 retained as opaque data and is not treated as a success flag.
 
 | Evidence, per observer run | Result |

@@ -153,6 +153,14 @@ through their frees. Original/rebuilt and observer/stock recorded outputs agree.
 The retail asynchronous error path reseeks and ends those failed requests
 without reissuing their sector reads; automatic refill is not accepted.
 
+The separate [blocking CD retry profile](docs/BLOCKING_CD_RETRY.md) verifies
+recovery without Reset: the original helper retries the same 76-sector request
+75 times and returns the complete disc-matched buffer at frame 1,163. The
+original/rebuilt and observer/stock output windows agree. Its compact recorder
+reuses existing runtimes and hashes continuous PCM instead of retaining dumps.
+This adds bounded error-path evidence; matching-C coverage and whole-feature
+acceptance are unchanged.
+
 The [ordinal collision checks](docs/COLLISION_ORDINAL_CALLS.md) extend the earlier
 52-call sample to all 643 primitive invocations observed from frames 900–6,000
 of the original opening route. Eleven original/rebuilt recording pairs verify

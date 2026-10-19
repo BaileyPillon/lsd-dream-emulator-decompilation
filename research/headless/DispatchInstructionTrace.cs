@@ -83,8 +83,8 @@ internal sealed class DispatchInstructionTrace : IDisposable {
                 CollisionCalls=new CollisionCallTrace(Host,output,collisionCalls);
             }
         } finally { Host.Exit(); }
-        Writer = new StreamWriter(File.Open(Path.Combine(output,"method-instructions.tsv"),FileMode.CreateNew));
-        Bodies = new BinaryWriter(File.Open(Path.Combine(output,"method-code.bin"),FileMode.CreateNew));
+        Writer = new StreamWriter(CaptureBudget.Open(Path.Combine(output,"method-instructions.tsv"),FileMode.CreateNew));
+        Bodies = new BinaryWriter(CaptureBudget.Open(Path.Combine(output,"method-code.bin"),FileMode.CreateNew));
         var fields = new List<string> {"relative_frame","pc","a0","a1","a2","a3","ra","sp","timestamp",
             "instruction","transfer_pc","delay_pc","transfer_word","delay_word"};
         for (int i=0;i<11;i++) fields.Add("a0_word_"+(i*4).ToString("X2",CultureInfo.InvariantCulture));

@@ -65,8 +65,8 @@ internal sealed class CollisionCallTrace : IDisposable {
         DataBytes=adapter.GetDelegateForFunctionPointer<Number>(host.GetProcAddrOrThrow("LsdGetCollisionCallDataBytes"));
         Events=adapter.GetDelegateForFunctionPointer<Pointer>(host.GetProcAddrOrThrow("LsdGetCollisionCallEvents"));
         Data=adapter.GetDelegateForFunctionPointer<Pointer>(host.GetProcAddrOrThrow("LsdGetCollisionCallData"));
-        Writer=new BinaryWriter(File.Open(Path.Combine(output,"collision-calls.bin"),FileMode.CreateNew));
-        Payload=new BinaryWriter(File.Open(Path.Combine(output,"collision-call-ram.bin"),FileMode.CreateNew));
+        Writer=new BinaryWriter(CaptureBudget.Open(Path.Combine(output,"collision-calls.bin"),FileMode.CreateNew));
+        Payload=new BinaryWriter(CaptureBudget.Open(Path.Combine(output,"collision-call-ram.bin"),FileMode.CreateNew));
     }
     // The owner holds the Waterbox lock while configuring, draining and closing.
     public void Begin(int frame,int arm) {

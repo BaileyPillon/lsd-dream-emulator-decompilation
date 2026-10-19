@@ -39,6 +39,7 @@ internal static class RecordDispatchHistory {
         public DispatchReturnSettings return_trace { get; set; }
         public CollisionCallSettings collision_calls { get; set; }
         public bool serialized_state { get; set; }
+        public bool compact_capture { get; set; }
     }
     static object SaveImage(Nymashock core, string output, int frame) {
         int width = core.BufferWidth, height = core.BufferHeight;
@@ -61,7 +62,7 @@ internal static class RecordDispatchHistory {
             } finally { image.UnlockBits(data); }
             image.Save(Path.Combine(output, "frame-" + frame + ".png"), ImageFormat.Png);
         }
-        File.WriteAllBytes(Path.Combine(output, "rgb-" + frame + ".bin"), rgb);
+        if (!CaptureBudget.Enabled) File.WriteAllBytes(Path.Combine(output, "rgb-" + frame + ".bin"), rgb);
         return new {width = width, height = height, RGB_sha256 = Hash(rgb)};
     }
     public static int Main(string[] args) {
@@ -87,9 +88,12 @@ internal static class RecordDispatchHistory {
         var checkpoints = new HashSet<int>(settings.checkpoint_frames);
         if (checkpoints.Count != settings.checkpoint_frames.Length || !checkpoints.Contains(0) || !checkpoints.Contains(settings.frames))
             throw new Exception("Incomplete or repeated checkpoint boundaries");
+        if (settings.compact_capture && (checkpoints.Count > 4 || settings.serialized_state))
+            throw new Exception("Compact capture supports at most four checkpoints and no serialized state");
         string[][] submitted = File.ReadAllLines(args[5]).Select(line => line.Split('\t')).ToArray();
         if (submitted.Length != settings.frames + 1) throw new Exception("Incomplete controller program");
         Directory.CreateDirectory(output);
+        CaptureBudget.Initialize(output, settings.compact_capture);
         Database.InitializeDatabase(Path.Combine(args[0], "gamedb"), output, true);
         var comm = new CoreComm(message => Console.Error.WriteLine(message),
             (message, duration) => Console.Error.WriteLine(message),
@@ -110,6 +114,7 @@ internal static class RecordDispatchHistory {
                     throw new Exception("Unsupported native domains or controller definition");
                 byte[] ram = new byte[0x200000], gpuRaw = new byte[0x100000];
                 long totalSamples = 0;
+                var pcmDigest = settings.compact_capture ? new PcmDigestStream() : null;
                 int ramSamples = 0;
                 var checkpointRows = new List<object>();
                 var serialized = settings.serialized_state ? new SerializedCoreStateTrace(output) : null;
@@ -117,9 +122,9 @@ internal static class RecordDispatchHistory {
                     new DispatchInstructionTrace(core, output, settings.dispatch_targets,
                         settings.dispatch_words, settings.arm_frame, settings.flow_sites, settings.return_trace, settings.collision_calls) : null;
                 using (observer)
-                using (var frames = new StreamWriter(File.Open(Path.Combine(output, "frames.tsv"), FileMode.CreateNew)))
-                using (var memory = new StreamWriter(File.Open(Path.Combine(output, "ram-samples.tsv"), FileMode.CreateNew)))
-                using (var pcm = new BinaryWriter(File.Open(Path.Combine(output, "audio.pcm"), FileMode.CreateNew))) {
+                using (var frames = new StreamWriter(CaptureBudget.Open(Path.Combine(output, "frames.tsv"), FileMode.CreateNew)))
+                using (var memory = new StreamWriter(CaptureBudget.Open(Path.Combine(output, "ram-samples.tsv"), FileMode.CreateNew)))
+                using (var pcm = new BinaryWriter(settings.compact_capture ? (Stream)pcmDigest : File.Open(Path.Combine(output, "audio.pcm"), FileMode.CreateNew))) {
                     frames.WriteLine("relative_frame\tcore_frame\tphase\tgpu_sha256\tsample_frames\ttotal_sample_frames");
                     memory.WriteLine("relative_frame\tcore_frame\tRAM_sha256");
                     for (int frame = 0; frame <= settings.frames; frame++) {
@@ -151,8 +156,10 @@ internal static class RecordDispatchHistory {
                             memory.WriteLine(String.Join("\t", frame, core.Frame, Hash(ram))); ramSamples++;
                         }
                         if (checkpoints.Contains(frame)) {
-                            File.WriteAllBytes(Path.Combine(output, "mainram-" + frame + ".bin"), ram);
-                            File.WriteAllBytes(Path.Combine(output, "gpu-" + frame + ".bin"), gpuRaw);
+                            if (!settings.compact_capture) {
+                                File.WriteAllBytes(Path.Combine(output, "mainram-" + frame + ".bin"), ram);
+                                File.WriteAllBytes(Path.Combine(output, "gpu-" + frame + ".bin"), gpuRaw);
+                            }
                             object image = SaveImage(core, output, frame);
                             if (serialized != null) serialized.Capture(core, domains, gpu, frame, ram, gpuRaw);
                             checkpointRows.Add(new {relative_frame = frame, core_frame = core.Frame,
@@ -165,13 +172,24 @@ internal static class RecordDispatchHistory {
                     }
                 }
                 if (serialized != null) serialized.Complete(settings.frames);
-                File.WriteAllText(Path.Combine(output, "report.json"), serializer.Serialize(new {
+                object report = new {
                     status = "recorded_static_method_history", frames_advanced = settings.frames + 1,
                     submitted_frames = settings.frames, RAM_samples = ramSamples, checkpoints = checkpointRows.ToArray(),
                     all_PCM_sample_frames = totalSamples, instruction_entries = observer == null ? 0 : observer.Total,
                     observer_requested = settings.trace_enabled, observer_enabled = observer != null && observer.Enabled,
                     restored_state = false, game_RAM_injected = false, emulator_UI_controlled = false,
-                    complete_state_parity_checked = false, original_hardware_timing_verified = false}));
+                    complete_state_parity_checked = false, original_hardware_timing_verified = false};
+                if (settings.compact_capture) {
+                    var compact = serializer.Deserialize<Dictionary<string, object>>(serializer.Serialize(report));
+                    compact["status"] = "recorded_compact_method_history";
+                    compact["compact_capture"] = true;
+                    compact["complete_PCM_bytes"] = pcmDigest.Bytes;
+                    compact["complete_PCM_sha256"] = pcmDigest.Digest;
+                    compact["retained_stream_bytes"] = CaptureBudget.Bytes;
+                    compact["retained_stream_limit"] = CaptureBudget.Limit;
+                    report = compact;
+                }
+                File.WriteAllText(Path.Combine(output, "report.json"), serializer.Serialize(report));
                 return 0;
             }
         }
