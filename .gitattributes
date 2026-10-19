@@ -402,3 +402,11 @@ tests/test_collision_replay.py text eol=lf
 .github/workflows/tools.yml text eol=lf
 docs/NATURAL_COLLISION_REPLAY.md text eol=lf
 docs/natural-collision-replay-checks.json text eol=lf
+
+# Keep embedded-context callback checks and their executed source pins portable.
+tools/verify_astronaut.py text eol=lf
+tools/verify_shark_hopscotch.py text eol=lf
+tests/test_shark_hopscotch.py text eol=lf
+docs/shark-hopscotch-function-ranges.json text eol=lf
+docs/shark-hopscotch-checks.json text eol=lf
+docs/SHARK_HOPSCOTCH.md text eol=lf

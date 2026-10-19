@@ -46,8 +46,15 @@ packets, independently hashed again as raw decoded bytes. It adds no C bytes,
 NPC callback profiles or whole-feature acceptance. Native movie playback,
 mixing, controller paths and timing remain open; the Bevy port is unchanged.
 
-The [Apartment Bear profile](APARTMENT_BEAR.md) raises bounded original callback
-coverage from **40 to 41 / 107**. It uses the bound original model for animation
+The [Shark and Hopscotch Girl profiles](SHARK_HOPSCOTCH.md) raise bounded original
+callback coverage from **41 to 43 / 107**. They execute original MIPS helpers and
+native GTE with embedded owner/callback contexts in 1,535 distinct fixtures and
+1,044 constructed history calls. Tick, timer and frame injection does not prove
+engine scheduling. Matching C, natural callback types and whole-feature/encounter
+acceptance counts are unchanged.
+
+The earlier [Apartment Bear profile](APARTMENT_BEAR.md) raised bounded original
+callback coverage from **40 to 41 / 107**. It uses the bound original model for animation
 selection and runs native proximity, RNG, movement and stopping methods.
 Matching C and whole-feature/encounter acceptance counts are unchanged.
 
