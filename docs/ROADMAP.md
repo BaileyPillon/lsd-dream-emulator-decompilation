@@ -100,7 +100,14 @@ native MDEC/GPU and audio output, natural playback of every movie, skip/error
 paths and timing. Software decoding changes no source-recovery or runtime
 feature-acceptance count.
 
-The [Shark and Hopscotch Girl profiles](SHARK_HOPSCOTCH.md) raise bounded original
+The [Hanged Woman profile](HANGED_WOMAN.md) brings bounded original callback
+coverage to 44 / 107, including native mood, player-control lock, timed motion
+and held-object flags. Its three constructed histories do not accept natural
+encounters, recipient delivery, populated collision, animation/audio or timing.
+Recover the two remaining C functions and extend original engine/runtime evidence;
+matching C and whole-feature acceptance counts are separate gates.
+
+The earlier [Shark and Hopscotch Girl profiles](SHARK_HOPSCOTCH.md) raise bounded original
 callback coverage to 43 / 107 through embedded command contexts, original
 native helpers and GTE. Supplied ticks, timers and animation frames are separate
 from engine scheduling. Continue into naturally reached encounters and active

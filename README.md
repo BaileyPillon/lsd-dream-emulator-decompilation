@@ -100,7 +100,7 @@ skip/error branches, and complete feature acceptance remain open.
 | Known remaining game assembly functions | 2 |
 | Known C functions with unresolved unused local storage | 3 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
-| Original callbacks with bounded native comparisons | 43 / 107 |
+| Original callbacks with bounded native comparisons | 44 / 107 |
 | Original callback types with compared natural instruction histories | 5 / 107 |
 | Provisional behavior/system groups with listed core functions in C | 38 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
@@ -187,9 +187,13 @@ denominator. Bounded native and emulator comparisons have passed, including
 a 6,000-frame sequence with matching frame, GPU, state and PCM audio output.
 Their scope and remaining gaps are documented in the
 [feature inventory](docs/FEATURE_INVENTORY.md) and [roadmap](docs/ROADMAP.md).
-The [Shark and Hopscotch Girl checks](docs/SHARK_HOPSCOTCH.md) cover original
+The [Hanged Woman check](docs/HANGED_WOMAN.md) adds original mood, player-control,
+motion and held-node paths through 30 native routines in 2,514 fixtures and
+1,106 constructed history calls. Bounded callback coverage is 44 / 107;
+natural encounters and whole-feature acceptance remain open.
+The earlier [Shark and Hopscotch Girl checks](docs/SHARK_HOPSCOTCH.md) cover original
 movement, stopping, proximity and frame commands through embedded entity
-contexts and 28 native functions. Bounded callback coverage is 43 / 107.
+contexts and 28 native functions, reaching 43 / 107 at that checkpoint.
 The [Apartment Bear check](docs/APARTMENT_BEAR.md) covers original model-bound
 animation selection, RNG, movement and stopping through 30 native functions.
 The [Astronaut behavior check](docs/ASTRONAUT_BEHAVIOR.md) exercises its

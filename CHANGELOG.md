@@ -1,5 +1,15 @@
 # Changelog
 
+## Original Hanged Woman behavior verification - 2026-10-19
+
+- Verify mood/RNG selection, strict proximity, player-control lock, timed
+  movement and held-node flags through 30 actual original routines and native GTE.
+- Compare 2,514 distinct fixtures and 1,106 constructed history calls, with 15
+  literal native checks and seven detected corruptions. Bounded callback coverage
+  rises from 43 to 44 / 107; matching C remains 98.63%.
+- Keep supplied clocks, recipient-free notifications and meshless graphs
+  separate from natural encounters and whole-feature acceptance.
+
 ## Boatman lifecycle and Fish initialization - 2026-10-19
 
 - Corroborate Boatman's original `entity_stop` path at step 5,074, after 87

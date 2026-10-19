@@ -5,7 +5,13 @@ optional mods have separate commands and outputs. The original game does not
 call any added analysis tool; those tools currently make zero external model
 API calls.
 
-The [Shark and Hopscotch Girl profiles](SHARK_HOPSCOTCH.md) bring bounded native
+The [Hanged Woman profile](HANGED_WOMAN.md) brings bounded native callback
+coverage to **44 / 107**, with 2,514 distinct fixtures, 1,106 constructed history
+calls, 15 literal output checks and seven detected corruption controls. Original
+mood, control lock, motion and held-node helpers execute without output stubs.
+This adds no C bytes, natural callback type or whole-encounter acceptance.
+
+The earlier [Shark and Hopscotch Girl profiles](SHARK_HOPSCOTCH.md) brought bounded native
 callback coverage to **43 / 107**, following [Apartment Bear](APARTMENT_BEAR.md).
 They compare 1,535 distinct fixtures and 1,044 constructed history calls using
 embedded command contexts, original native helpers and GTE. Supplied ticks,
