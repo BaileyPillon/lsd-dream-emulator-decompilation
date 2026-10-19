@@ -1,5 +1,12 @@
 # Source and evidence provenance
 
+The [natural collision replayer](NATURAL_COLLISION_REPLAY.md) calibrates original
+MIPS execution against 194 retained hull calls. Complete RAM, 35 exposed CPU
+registers, 64 architectural GTE views and instruction counts agree for 174;
+20 frame-boundary failures remain visible. Its [metadata](natural-collision-replay-checks.json)
+records actual native-command fault controls, source qualification and unchanged
+C/feature counts. Opaque state, interrupt scheduling and PS1 timing remain open.
+
 The [Astronaut profile](ASTRONAUT_BEHAVIOR.md) compares 2,748 distinct standalone
 fixtures and 17 scheduled script calls through 21 original functions and the
 native GTE backend, with no dependency-output stubs. An independent audit

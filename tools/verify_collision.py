@@ -223,19 +223,21 @@ class CollisionBridge(gte.NativeGteBridge):
 
 
 class CollisionCop2:
-    def __init__(self, bridge):
+    def __init__(self, bridge, *, backend=None):
         self.bridge, self.counts = bridge, Counter()
+        self.backend = native if backend is None else backend
         self.reset()
 
     def reset(self, cr=(0,0,0,0,0)):
         self.cr = [native.u32(v) & (0xFFFF if i == 4 else 0xFFFFFFFF) for i,v in enumerate(cr)]
         self.ir, self.mac, self.lzcs, self.lzcr = [0]*3, [0]*3, 0, 32
+        self.flags = 0
 
     def step(self, cpu, address):
         word = int.from_bytes(cpu.mem_read(address, 4), 'little')
         opcode, rt = word >> 26, (word >> 16) & 31
-        get = lambda number: cpu.reg_read(getattr(native.reg, 'UC_MIPS_REG_'+str(number)))
-        put = lambda number, value: cpu.reg_write(getattr(native.reg, 'UC_MIPS_REG_'+str(number)), native.u32(value))
+        get = lambda number: cpu.reg_read(getattr(self.backend.reg, 'UC_MIPS_REG_'+str(number)))
+        put = lambda number, value: cpu.reg_write(getattr(self.backend.reg, 'UC_MIPS_REG_'+str(number)), native.u32(value))
         if opcode in (0x32, 0x3A):
             pointer = (get((word >> 21) & 31)+signed(word,16)) & native.MASK
             if opcode == 0x32 and rt in (9,10,11):
@@ -254,6 +256,7 @@ class CollisionCop2:
                 if observed != expected:
                     raise ValueError('Native collision GTE command differs: ' + repr((self.cr,self.ir,word,observed,expected)))
                 self.ir, self.mac = observed['ir'][:], observed['mac'][:]
+                self.flags = observed['flags']
                 self.counts['command'] += 1
             elif word & 0x7FF:
                 raise ValueError('Unreviewed COP2 encoding.')
@@ -274,7 +277,7 @@ class CollisionCop2:
                 raise ValueError('Unreviewed COP2 register transfer.')
         else:
             return False
-        cpu.reg_write(native.reg.UC_MIPS_REG_PC, address+4)
+        cpu.reg_write(self.backend.reg.UC_MIPS_REG_PC, address+4)
         return True
 
 

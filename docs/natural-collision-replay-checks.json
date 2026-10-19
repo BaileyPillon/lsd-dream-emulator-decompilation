@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "status": "qualified_bounded_natural_collision_replay_with_retained_failures",
+  "repository": "https://github.com/BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_game_commit": "c122a5719b8cc3d48ac8ebdbb925c3361309073f",
+  "canonical_executable": {
+    "bytes": 505856,
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+  },
+  "source_counts_before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "source_counts_after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "original_hull_calls": 194,
+  "equal_full_RAM_exposed_CPU_GTE_views_and_instruction_count": 174,
+  "retained_call_failures": 20,
+  "all_retained_failures_cross_frame": true,
+  "failure_CPU_register": "K0",
+  "failure_K0_equals_captured_EPC": true,
+  "failure_attribution": "Consistent with interrupt activity; device/interrupt scheduling is not replayed.",
+  "GTE_view_matches": 194,
+  "exposed_CPU_words": 35,
+  "captured_CPU_words": 37,
+  "architectural_GTE_view_words": 64,
+  "nested_original_primitive_calls": 484,
+  "native_operations": {
+    "OP": 11333,
+    "SQR": 5714,
+    "LZCS": 5714
+  },
+  "whole_native_GTE_state_restored": false,
+  "opaque_CPU_state_replayed": false,
+  "CAUSE_EPC_replayed": false,
+  "interrupt_and_device_timing_replayed": false,
+  "original_hardware_timing_verified": false,
+  "raw_RAM_exclusions": [],
+  "register_exclusions_from_measured_35": [],
+  "executed_private_instruction_faults": 3,
+  "all_faults_detected_beyond_known_patch_bytes": true,
+  "contradictory_analysis_data_rejected": 3,
+  "compiler_source_comparisons": 21,
+  "new_source_forms": 18,
+  "repeated_source_controls": 3,
+  "exact_source_promotions": 0,
+  "compiler_observations": [
+    {
+      "name": "short-decoder",
+      "events": 428,
+      "report_sha256": "ebc544e0ca3425e130282e3571dc4e9674aedb470790762077d7d763eca44443"
+    },
+    {
+      "name": "shared-square",
+      "events": 439,
+      "report_sha256": "586138d5a9f2b5e8eea67cb059f75996c00c570aca37a7a9ddcfff5377c67595"
+    },
+    {
+      "name": "expression-lifetimes",
+      "events": 432,
+      "report_sha256": "9a996d5458b060212ec7e8d3cee883ad2504d8bc19a6e62c2631aa731d416f02"
+    }
+  ],
+  "complete_normal_observed_assembly_equal": true,
+  "candidate_pointer_store_stack_offset": 108,
+  "source_hypothesis_rejected": true,
+  "tests": [
+    {
+      "host": "windows",
+      "tests": 1264,
+      "skipped": 7,
+      "passed": true,
+      "log_sha256": "e4fd7cae6837f7540db83eba5d253158bbdb7933ca911f47171a834f976e9d77"
+    },
+    {
+      "host": "linux",
+      "tests": 1264,
+      "skipped": 2,
+      "passed": true,
+      "log_sha256": "79f99b571b7d2a3ef8825be24460781bb27e353f16d1e460b0cd6267f562470f"
+    }
+  ],
+  "new_tests": 12,
+  "synthetic_MIPS_tests": 5,
+  "required_synthetic_MIPS_CI_job": "ubuntu-latest / Python 3.13",
+  "backend": {
+    "package_version": "2.1.4",
+    "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+  },
+  "verifier_sources": {
+    "tools/replay_collision_calls.py": "1aca8d4d483eca2805d60e9414e2388ba99f9c936f4fd84d2f27a788b6120996",
+    "tools/verify_collision.py": "7fa33978db7d8f9c0f9c45f5475c02a9b04d36992810a9156fdc5c8d0d927818",
+    "tests/test_collision_replay.py": "1db7bf68c4fe38bd87421d668d5293f38126f5af8cff8719e9d2489894420aed",
+    "tools/nymashock_gte_bridge.cs": "969e0af3b030e5b2eafedad032b68173ac76e41b089a28b4d4fc1084e33fedd9",
+    ".github/workflows/tools.yml": "0d83964b094332e9f3fac8305abf8879fdb6a10dbe838693bf4eb440b634d4d6",
+    "docs/NATURAL_COLLISION_REPLAY.md": "86621171f1a6765683069804a2a190bfa7af7f48ca4d61aa06dff5289f1f8c87"
+  },
+  "private_replay_report_sha256": "7d5670399af656368fb4edc00cbf630e54a3ce6c816103c75e7f2747565cbdda",
+  "private_native_fault_report_sha256": "21c2162a0b436ee9556a0ce7df3a04d4552bc5b50f2ed27b91c261bb9ff1b51b",
+  "compiler_source_report_sha256": "e983b374c6f3351935c797775dfd9ed5c0260d37b0874b806ec7c796c6b0aa91",
+  "new_original_recordings": 0,
+  "new_gameplay_scenarios": 0,
+  "new_C_bytes": 0,
+  "new_NPC_profiles": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "original_game_modified": false,
+  "Bevy_port_modified": false,
+  "model_API_calls": 0,
+  "full_game_parity_accepted": false,
+  "private_artifacts_distributed": false,
+  "tooling_category_note": "Extends existing native analysis/replay tooling; original-game feature counts are unchanged.",
+  "private_publication_audit_sha256": "45a754d6f9a0b96281a198b1d7a59cc467f1ac3c3bcffce4e1daee75d0e1bfeb"
+}

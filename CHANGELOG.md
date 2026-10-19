@@ -1,5 +1,17 @@
 # Changelog
 
+## Natural collision replay calibration - 2026-10-19
+
+- Replay 194 retained original hull calls through reviewed MIPS ranges and
+  checked native GTE operations. Preserve 174 measured-state matches and all
+  20 frame-boundary failures, with complete RAM comparison and explicit limits
+  for CAUSE/EPC, opaque state, interrupts and PS1 timing.
+- Add twelve synthetic tests, including actual MIPS execution without game
+  data, and exercise the pinned optional backend in Ubuntu/Python 3.13 CI.
+- Retain three detected private instruction faults and 21 unsuccessful C
+  source comparisons. Preserve the canonical build, original assets and
+  separate Bevy port; matching C remains 98.6294%.
+
 ## Natural file-view allocation lifetimes - 2026-10-18
 
 - Trace original allocation/free and file constructor/release/destructor
