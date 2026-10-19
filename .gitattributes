@@ -371,3 +371,12 @@ tools/inspect_serialized_core_states.py text eol=lf
 tests/test_serialized_core_states.py text eol=lf
 docs/SERIALIZED_CORE_STATES.md text eol=lf
 docs/serialized-core-state-checks.json text eol=lf
+
+# Preserve the exact natural-collision checker bytes qualified in its evidence.
+tools/replay_collision_calls.py text eol=lf
+tools/verify_collision.py text eol=lf
+tools/nymashock_gte_bridge.cs text eol=lf
+tests/test_collision_replay.py text eol=lf
+.github/workflows/tools.yml text eol=lf
+docs/NATURAL_COLLISION_REPLAY.md text eol=lf
+docs/natural-collision-replay-checks.json text eol=lf
