@@ -9,6 +9,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import sys
@@ -73,6 +74,42 @@ def compiler_profile(compiler):
             'pointer_bytes': 4, 'sha256': digest(compiler)}
 
 
+def validate_outer_allocations(trace):
+    """Keep enclosing-frame slots separate from the active function's frame."""
+    required = trace.get('schema_version') == 3
+    events = trace.get('outer_allocation_events', None if required else [])
+    errors = trace.get('outer_allocation_errors', None if required else [])
+    if not isinstance(events, list) or not isinstance(errors, list) or errors:
+        raise ValueError('GDB omitted or failed outer-scope allocation observations.')
+
+    def integer(value, low=-0x80000000, high=0x7fffffff):
+        return type(value) is int and low <= value <= high
+
+    def pointer(value):
+        return (isinstance(value, str) and re.fullmatch(r'0x[0-9a-f]+', value)
+                and 0 < int(value, 16) <= 0xffffffff)
+
+    for i, event in enumerate(events):
+        if not isinstance(event, dict):
+            raise ValueError('GDB reported an invalid outer-scope allocation record.')
+        slot = event.get('returned_slot')
+        frames = event.get('call_stack')
+        if (not integer(event.get('sequence'), 0) or event['sequence'] != i
+                or event.get('completed') is not True
+                or event.get('allocator') != 'assign_outer_stack_local'
+                or not isinstance(event.get('active_function'), str) or not event['active_function']
+                or not pointer(event.get('owner_context')) or not pointer(event.get('returned_rtx'))
+                or not integer(event.get('mode_number'), 0, 255)
+                or not integer(event.get('size'), 0) or not integer(event.get('alignment'))
+                or not integer(event.get('active_function_frame_before'))
+                or not integer(event.get('active_function_frame_after'))
+                or not isinstance(frames, list) or not frames or frames[0] != 'assign_outer_stack_local'
+                or not isinstance(slot, dict) or not integer(slot.get('base_register'), 0, 65535)
+                or not integer(slot.get('offset'))):
+            raise ValueError('GDB reported an incomplete or invalid outer-scope allocation.')
+    return events
+
+
 def validate_trace(trace):
     if not trace.get('compiler_exited') or trace.get('compiler_exit_code') != 0:
         raise ValueError('The traced compiler did not exit successfully.')
@@ -84,7 +121,7 @@ def validate_trace(trace):
                 or event.get('allocator') not in ('assign_stack_local', 'assign_stack_temp')
                 or 'frame_offset_after' not in event):
             raise ValueError('GDB reported an incomplete or invalid stack allocation event.')
-        if trace.get('schema_version') == 2:
+        if trace.get('schema_version') in (2, 3):
             frames = event.get('call_stack')
             context = event.get('alter_reg_context')
             if not isinstance(frames, list) or ('alter_reg' in frames and context is None):
@@ -95,6 +132,7 @@ def validate_trace(trace):
                     or type(context.get('pseudo')) is not int or not 71 <= context['pseudo'] < 65536
                     or type(context.get('from_pseudo')) is not int or not -1 <= context['from_pseudo'] < 65536):
                 raise ValueError('GDB reported an incomplete or invalid reload caller context.')
+    validate_outer_allocations(trace)
     return events
 
 
@@ -145,9 +183,10 @@ def trace_candidate(source, output, compiler_mode='g8', *, lab_root=None):
     run('gdb-compiler', [gdb, '--batch', '--quiet', '-x', str(backend), '--args',
                         str(compiler), *flags, '-o', str(traced_assembly), str(preprocessed)], env)
     trace = json.loads((output / 'allocations.json').read_text(encoding='utf-8'))
-    if trace.get('schema_version') != 2:
-        raise ValueError('The stack observer omitted the reload caller schema.')
+    if trace.get('schema_version') != 3:
+        raise ValueError('The stack observer omitted the outer-scope allocation schema.')
     events = validate_trace(trace)
+    outer_events = trace['outer_allocation_events']
     assembly_equal = normal_assembly.read_bytes() == traced_assembly.read_bytes()
     inputs_preserved = all(digest(path) == expected for path, expected in baseline.items())
     report = {
@@ -160,9 +199,11 @@ def trace_candidate(source, output, compiler_mode='g8', *, lab_root=None):
         'configuration_sha256': baseline[str(configuration)],
         'gdb_version': subprocess.check_output([gdb, '--version'], text=True).splitlines()[0],
         'allocation_events': len(events),
-        'trace_schema_version': 2,
+        'trace_schema_version': 3,
+        'outer_scope_allocation_events': len(outer_events),
         'reload_caller_contexts': sum(event.get('alter_reg_context') is not None for event in events),
-        'functions': sorted({event['function'] for event in events}),
+        'functions': sorted({event['function'] for event in events}
+                            | {event['active_function'] for event in outer_events}),
         'complete_assembly_equal': assembly_equal,
         'normal_assembly_sha256': digest(normal_assembly),
         'traced_assembly_sha256': digest(traced_assembly),
@@ -186,7 +227,7 @@ def main(argv=None):
     parser.add_argument('--compiler-mode', choices=('g0', 'g8'), default='g8')
     args = parser.parse_args(argv)
     report = trace_candidate(args.source, args.output, args.compiler_mode, lab_root=args.lab_root)
-    print(json.dumps({key: report[key] for key in ('status', 'allocation_events', 'functions',
+    print(json.dumps({key: report[key] for key in ('status', 'allocation_events', 'outer_scope_allocation_events', 'functions',
                                                  'complete_assembly_equal', 'source_promoted')}, indent=2))
     return 0
 
