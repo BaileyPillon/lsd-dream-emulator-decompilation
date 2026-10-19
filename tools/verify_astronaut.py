@@ -180,8 +180,10 @@ def expected(case, previous=None):
 
 
 class Machine(proximity.Machine):
-    def __init__(self, bridge, patches=None):
-        super().__init__(CALLBACK, bridge, patches, native_functions=FUNCTIONS, fixture_factory=fixtures)
+    def __init__(self, bridge, patches=None, *, callback=CALLBACK, native_functions=FUNCTIONS,
+                 fixture_factory=fixtures, case_validator=validate_case, context_address=n.CONTEXT):
+        self.case_validator, self.context_address = case_validator, context_address
+        super().__init__(callback, bridge, patches, native_functions=native_functions, fixture_factory=fixture_factory)
         self.changed_addresses.update(address & n.MASK for address in (patches or {}))
         self.observed = {
             'dream_sys_get_dream_color': ('read_dream_color', 1),
@@ -257,8 +259,8 @@ class Machine(proximity.Machine):
         super().hook(cpu, address, size, unused)
 
     def run(self, case, reset=True):
-        validate_case(case)
-        self.initial = fixtures(case)
+        self.case_validator(case)
+        self.initial = self.fixture_factory(case)
         self.trace, self.pending_returns, self.rng_trace, self.events = [], {}, [], []
         self.hits.clear()
         self.rejected_store = None
@@ -271,7 +273,7 @@ class Machine(proximity.Machine):
             cpu.mem_write(n.h.symbols['D_8008ABA4'] & n.MASK, bytes(8))
         else:
             cpu.mem_write(n.ENTITY + 0xfc, struct.pack('<I', n.u32(case['tick'])))
-            cpu.mem_write(n.CONTEXT + 4, struct.pack('<I', n.u32(case['timer'])))
+            cpu.mem_write(self.context_address + 4, struct.pack('<I', n.u32(case['timer'])))
         cpu.mem_write(n.STACK - 0x800, bytes([0xcc]) * 0x900)
         saved = [n.u32(0xab000000 + index * 0x10203) for index in range(len(n.SAVED))]
         for register, value in zip(n.SAVED, saved):
@@ -279,7 +281,7 @@ class Machine(proximity.Machine):
         for index, register in enumerate(n.VOLATILE):
             cpu.reg_write(register, n.u32(0xda000000 + index * 0x10203))
         for register, value in ((n.reg.UC_MIPS_REG_SP, n.STACK), (n.reg.UC_MIPS_REG_GP, 0x8008a808),
-                (n.reg.UC_MIPS_REG_RA, n.END), (n.reg.UC_MIPS_REG_A0, n.ENTITY), (n.reg.UC_MIPS_REG_A1, n.CONTEXT)):
+                (n.reg.UC_MIPS_REG_RA, n.END), (n.reg.UC_MIPS_REG_A0, n.ENTITY), (n.reg.UC_MIPS_REG_A1, self.context_address)):
             cpu.reg_write(register, value)
         cpu.emu_start(self.start, n.END, count=100000)
         if (cpu.reg_read(n.reg.UC_MIPS_REG_PC) != n.END or cpu.reg_read(n.reg.UC_MIPS_REG_SP) != n.STACK

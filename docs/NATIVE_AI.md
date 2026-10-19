@@ -5,10 +5,15 @@ optional mods have separate commands and outputs. The original game does not
 call any added analysis tool; those tools currently make zero external model
 API calls.
 
-The latest [Astronaut profile](ASTRONAUT_BEHAVIOR.md) brings bounded native
-callback coverage to **40 / 107**, with actual mood, proximity, movement and
-GTE execution. Its 2,748 standalone fixtures, 17 history calls and 14 additional
-hand-predicted cases remain separate measurements. The earlier
+The [Shark and Hopscotch Girl profiles](SHARK_HOPSCOTCH.md) bring bounded native
+callback coverage to **43 / 107**, following [Apartment Bear](APARTMENT_BEAR.md).
+They compare 1,535 distinct fixtures and 1,044 constructed history calls using
+embedded command contexts, original native helpers and GTE. Supplied ticks,
+timers and animation frames remain distinct from natural engine scheduling.
+The earlier [Astronaut profile](ASTRONAUT_BEHAVIOR.md) reached 40 / 107 with
+actual mood, proximity, movement and GTE execution. Its 2,748 standalone
+fixtures, 17 history calls and 14 additional hand-predicted cases remain
+separate measurements. The earlier
 [locomotive profiles](LOCOMOTIVE_SCRIPTS.md) brought the count to 39, following the
 [Gunman profiles](GUNMAN_SCRIPTS.md). The earlier
 [state and cycle profiles](STATE_CYCLE_SCRIPTS.md) retain their scripted suite's 278,115

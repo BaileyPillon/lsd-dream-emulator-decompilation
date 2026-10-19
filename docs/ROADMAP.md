@@ -100,8 +100,14 @@ native MDEC/GPU and audio output, natural playback of every movie, skip/error
 paths and timing. Software decoding changes no source-recovery or runtime
 feature-acceptance count.
 
-The [Apartment Bear profile](APARTMENT_BEAR.md) raises bounded original callback
-coverage to 41 / 107 through the bound original model and native animation,
+The [Shark and Hopscotch Girl profiles](SHARK_HOPSCOTCH.md) raise bounded original
+callback coverage to 43 / 107 through embedded command contexts, original
+native helpers and GTE. Supplied ticks, timers and animation frames are separate
+from engine scheduling. Continue into naturally reached encounters and active
+collision/sound graphs; matching C and whole-feature acceptance are unchanged.
+
+The earlier [Apartment Bear profile](APARTMENT_BEAR.md) raised bounded original
+callback coverage to 41 / 107 through the bound original model and native animation,
 proximity, RNG, movement and stopping dependencies. Its first-frame animation
 switch fixture is complete; natural encounters and later playback remain open.
 The earlier [Astronaut profile](ASTRONAUT_BEHAVIOR.md) reached 40 / 107 through
