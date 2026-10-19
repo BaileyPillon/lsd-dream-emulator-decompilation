@@ -17,8 +17,9 @@ The [SDK completion profile](SDK_READ_COMPLETIONS.md) adds 102 observed complete
 reads with full-sector RAM matching the disc, including all 49 queued handoffs
 in its 6,000-frame history. Original/rebuilt and observer/distributed recorded
 outputs agree. This adds no C bytes, original-game feature, NPC profile or
-whole-feature acceptance. SDK errors, object lifetime and other file routes
-remain open; the exhaustive original-game feature total is still unknown.
+whole-feature acceptance. Later lifetime and error profiles extend that evidence;
+other file routes and complete feature acceptance remain open. The exhaustive
+original-game feature total is still unknown.
 
 The later [natural file-lifetime profile](FILE_HEAP_LIFETIMES.md) follows those
 49 queued reads through allocation generations and actual frees of all 35
@@ -1017,3 +1018,27 @@ or developer capability categories. Current matching C remains 197,172 / 199,912
 callback profiles. Whole-feature and whole-encounter acceptance remain zero.
 The [machine evidence](serialized-core-state-checks.json) records the unchanged
 before/after counts and the separate 24-form nonmatching primitive source study.
+
+## Original blocking CD retry supplement
+
+The [blocking-reader profile](BLOCKING_CD_RETRY.md) covers its separate retry
+loop during a controller-only tray interruption. Its 210 rejected Setloc calls
+reach observed CdSync errors and retry. Its 76-sector request fails 74 times,
+then returns all 155,648 disc-matched bytes at frame 1,163 without Reset.
+Full failed destinations are retained privately; only their actual written
+prefixes are accepted as transferred disc data.
+
+All 848 SDK call/return boundaries and nine method/helper returns are balanced.
+Original/rebuilt native streams agree, and both original/rebuilt and
+observer/stock comparisons agree on 2,001 GPU observations, 336 complete sampled
+RAM digests, three independently decoded RGB checkpoints and the full
+5,897,812-byte PCM digest. Compact recording reuses the existing runtime and
+losslessly archives large data streams instead of retaining repeated dumps.
+
+Before and after this supplement, matching C remains 197,172 / 199,912 bytes
+(98.63%), with two assembly functions, three inherited storage explanations,
+38 / 40 listed-core C groups, 107 original callback C bodies and 43 bounded NPC
+profiles. Accepted whole features and encounters remain zero. There are no new
+original features, mods, developer capability categories or model API calls.
+The additive [machine evidence](blocking-cd-retry-checks.json) preserves the
+earlier inventory and distinguishes analysis tooling from original game behavior.

@@ -36,7 +36,7 @@ internal sealed class DispatchFlowTrace : IDisposable {
         NativeTotal=adapter.GetDelegateForFunctionPointer<Number>(host.GetProcAddrOrThrow("LsdGetDispatchFlowTotal"));
         Overflow=adapter.GetDelegateForFunctionPointer<Number>(host.GetProcAddrOrThrow("LsdGetDispatchFlowOverflow"));
         Events=adapter.GetDelegateForFunctionPointer<Pointer>(host.GetProcAddrOrThrow("LsdGetDispatchFlowEvents"));
-        Writer=new BinaryWriter(File.Open(Path.Combine(output,"method-flow.bin"),FileMode.CreateNew));
+        Writer=new BinaryWriter(CaptureBudget.Open(Path.Combine(output,"method-flow.bin"),FileMode.CreateNew));
     }
     // Called while the owning method trace holds the Waterbox host lock.
     public void Begin(int frame, int arm) {

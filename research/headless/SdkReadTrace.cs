@@ -49,8 +49,8 @@ internal sealed class SdkReadTrace : IDisposable {
         DataBytes=adapter.GetDelegateForFunctionPointer<Number>(host.GetProcAddrOrThrow("LsdGetSdkReadDataBytes"));
         Events=adapter.GetDelegateForFunctionPointer<Pointer>(host.GetProcAddrOrThrow("LsdGetSdkReadEvents"));
         Data=adapter.GetDelegateForFunctionPointer<Pointer>(host.GetProcAddrOrThrow("LsdGetSdkReadData"));
-        Writer=new BinaryWriter(File.Open(Path.Combine(output,"sdk-reads.bin"),FileMode.CreateNew));
-        Payload=new BinaryWriter(File.Open(Path.Combine(output,"sdk-read-data.bin"),FileMode.CreateNew));
+        Writer=new BinaryWriter(CaptureBudget.Open(Path.Combine(output,"sdk-reads.bin"),FileMode.CreateNew));
+        Payload=new BinaryWriter(CaptureBudget.Open(Path.Combine(output,"sdk-read-data.bin"),FileMode.CreateNew));
     }
     // The owner holds the native host lock for all three methods.
     public void Begin(int frame, int arm) {

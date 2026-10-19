@@ -53,8 +53,8 @@ internal sealed class DispatchReturnTrace : IDisposable {
         DataBytes=adapter.GetDelegateForFunctionPointer<Number>(host.GetProcAddrOrThrow("LsdGetDispatchReturnDataBytes"));
         Events=adapter.GetDelegateForFunctionPointer<Pointer>(host.GetProcAddrOrThrow("LsdGetDispatchReturnEvents"));
         Data=adapter.GetDelegateForFunctionPointer<Pointer>(host.GetProcAddrOrThrow("LsdGetDispatchReturnData"));
-        Writer=new BinaryWriter(File.Open(Path.Combine(output,"method-returns.bin"),FileMode.CreateNew));
-        Payload=new BinaryWriter(File.Open(Path.Combine(output,"method-return-data.bin"),FileMode.CreateNew));
+        Writer=new BinaryWriter(CaptureBudget.Open(Path.Combine(output,"method-returns.bin"),FileMode.CreateNew));
+        Payload=new BinaryWriter(CaptureBudget.Open(Path.Combine(output,"method-return-data.bin"),FileMode.CreateNew));
     }
     // The owner holds the native host lock for all three methods.
     public void Begin(int frame, int arm) {
