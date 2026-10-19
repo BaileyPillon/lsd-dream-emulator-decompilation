@@ -1,6 +1,13 @@
 # Preserve the bundled compiler binaries without text conversion.
 tools/gcc263/* binary
 
+# Keep the original-model Apartment Bear verifier and evidence pins identical.
+tools/verify_apartment_bear.py text eol=lf
+tests/test_apartment_bear.py text eol=lf
+docs/apartment-bear-function-ranges.json text eol=lf
+docs/apartment-bear-checks.json text eol=lf
+docs/APARTMENT_BEAR.md text eol=lf
+
 # Preserve the executed shared collision interface and compatible research source.
 src/base/transform.c text eol=lf
 src/file/tmd_prim.h text eol=lf

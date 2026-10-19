@@ -1,0 +1,500 @@
+{
+  "schema_version": 1,
+  "title": "Original Apartment Bear model-bound callback",
+  "recorded_utc": "2026-10-19T09:57:18Z",
+  "verified_base_commit": "8b9ad09c65aa5d5c509bed779c2d9ce20697cfa3",
+  "before": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 40,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "after": {
+    "c_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks": 107,
+    "bounded_NPC_callbacks": 41,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mods": 3
+  },
+  "private_reference": ".decomp-lab/apartment-bear-native-20261019-third/report.json",
+  "private_reference_sha256": "af208dccac238fb025faaa47aada5af93f38a4b16f06dc9de5aff6eff67dcec4",
+  "independent_hand_evidence_sha256": "a694caa3b78995013a77256bdd8760c6f4159c348fbc2d179a7181624d9af7d8",
+  "independent_hand_checks": 13,
+  "hand_checks_call_producer_expected_or_actions": false,
+  "qualified_original_functions": [
+    {
+      "function": "ApplyMatrixLV",
+      "address": "0x80015618",
+      "bytes": 352,
+      "sha256": "b5cca44ff50bf0ca0e5996e8f5cf1b954740710e6773d57827b764a47fee082e"
+    },
+    {
+      "function": "RotMatrix",
+      "address": "0x800160B0",
+      "bytes": 652,
+      "sha256": "cab8838ded03b3b2a50a32cc279811d7fb6a1ee23cfe640c1ac4d7c1d9eee443"
+    },
+    {
+      "function": "func_8001CEB4",
+      "address": "0x8001ceb4",
+      "bytes": 340,
+      "sha256": "722d79cf1f8c109300d4a56aa1d421442a2b5c424a7f3f1e16ad27d281432217"
+    },
+    {
+      "function": "func_8001D0EC",
+      "address": "0x8001d0ec",
+      "bytes": 184,
+      "sha256": "4b990f15427dd61e15b48537e78e15d6614669ee87a1d00b497c8240818a9844"
+    },
+    {
+      "function": "func_8001D4DC",
+      "address": "0x8001d4dc",
+      "bytes": 140,
+      "sha256": "66d6016ba623639a9f3c1e4d2ad39782f05a3eedaa2d4658e9aeaa0d634f950f"
+    },
+    {
+      "function": "func_8001E58C",
+      "address": "0x8001e58c",
+      "bytes": 116,
+      "sha256": "d0f977e8df4d270bfd57647ce4d42f81641736d27383f8916fce2439796c34c2"
+    },
+    {
+      "function": "func_8001EC84",
+      "address": "0x8001ec84",
+      "bytes": 120,
+      "sha256": "7c14d23868ee93933886ecd2477e4e60c6200bef1982963f671e2d76e6d7caaf"
+    },
+    {
+      "function": "func_8001EE98",
+      "address": "0x8001ee98",
+      "bytes": 124,
+      "sha256": "2569a9b916b6606e7e75e70b4397a0c3b0a4d08781d858570dd43e384b3217ab"
+    },
+    {
+      "function": "sound_entity_stop",
+      "address": "0x8002cc84",
+      "bytes": 132,
+      "sha256": "c6f4076782c64045103290ab510c5ba5581a700a9fd0fde8b6a8cbd12538e1e1"
+    },
+    {
+      "function": "func_8004416C",
+      "address": "0x8004416c",
+      "bytes": 56,
+      "sha256": "48eb43f08ad38f0030c293a703e6421aa3906f38f68a70c143ca4c413271b67c"
+    },
+    {
+      "function": "func_800449B8",
+      "address": "0x800449b8",
+      "bytes": 68,
+      "sha256": "ddfca67fbff65ab961c5bb82a49b5713f22e49b3226333de8b3d276454d67e94"
+    },
+    {
+      "function": "rand",
+      "address": "0x80049480",
+      "bytes": 40,
+      "sha256": "4c54a1210ed147afe9b02657c9b12bdec5bb62c5584a2a9fef212567d0e04c0c"
+    },
+    {
+      "function": "func_800573A8",
+      "address": "0x800573a8",
+      "bytes": 36,
+      "sha256": "cb98f20f55e4915c70de0cd5ec85346bad6f0c06c72aa4c2ff968b5327149cda"
+    },
+    {
+      "function": "func_800573CC",
+      "address": "0x800573cc",
+      "bytes": 120,
+      "sha256": "c1a99e64390fec4e8dcf12a0a17942c6c30f55d6703dc08a78cd5e1111b8ad19"
+    },
+    {
+      "function": "func_80057444",
+      "address": "0x80057444",
+      "bytes": 72,
+      "sha256": "f733da4527460b28cca35c365edb865d3612c61b47356ff8500d430a5bc7d680"
+    },
+    {
+      "function": "func_8005748C",
+      "address": "0x8005748c",
+      "bytes": 56,
+      "sha256": "56c4b7f4e13cde1be03d9e0f549a37ad158f8194a73c986e003153ea0acfe087"
+    },
+    {
+      "function": "func_80057534",
+      "address": "0x80057534",
+      "bytes": 124,
+      "sha256": "6bfcd219c77dc157668f2ca054b8ae40423b9bf2cc61552577216917aa6b37da"
+    },
+    {
+      "function": "func_800575B0",
+      "address": "0x800575b0",
+      "bytes": 48,
+      "sha256": "44a71bba6d7de19ba1bae29cd06592439cbb2ca2e100b66c4c0c0070cb5382f8"
+    },
+    {
+      "function": "func_80057618",
+      "address": "0x80057618",
+      "bytes": 80,
+      "sha256": "ef60e801e3fc8b996abf317a07ea00cb8e51b4375269d28d46e9453cdbf9286e"
+    },
+    {
+      "function": "func_80057668",
+      "address": "0x80057668",
+      "bytes": 284,
+      "sha256": "8976835b3b01ef8b9c796e38d720fe8d0ccb0711fca311f1e73c06625ec6d39e"
+    },
+    {
+      "function": "entity_get_distance",
+      "address": "0x8005d7fc",
+      "bytes": 104,
+      "sha256": "f9aea2cd8da082454563fad7b8f4e87382786ba3dfdfe396510482cec65fd58c"
+    },
+    {
+      "function": "entity_get_trigger_ratio",
+      "address": "0x8005d864",
+      "bytes": 224,
+      "sha256": "e1d6cf893b07c3d54c0fb420ca3bda039ba14f0c4da8a462d32da917baeb9b4f"
+    },
+    {
+      "function": "entity_stop_behaviour",
+      "address": "0x8005DB8C",
+      "bytes": 100,
+      "sha256": "4fa7621002bfabe6bf1c105adc34415e5f321cde133ecbc8dc1a00aee60dcaf0"
+    },
+    {
+      "function": "entity_bear_apartment",
+      "address": "0x80062a40",
+      "bytes": 536,
+      "sha256": "90e4e5d644e537808499abd690d1b6fe0a0d8e41f887fdd3d672230fea41107d"
+    },
+    {
+      "function": "func_80065D64",
+      "address": "0x80065d64",
+      "bytes": 88,
+      "sha256": "c8c122340e97762853a9ed0a19a5745b7a4b9007af16d58a7aac2eaa24420dee"
+    },
+    {
+      "function": "func_80066148",
+      "address": "0x80066148",
+      "bytes": 8,
+      "sha256": "d9dfabd9e6747c7995e1c7196bfc94f3f7afbb7969fabd491b62b77a117875e4"
+    },
+    {
+      "function": "func_80066214",
+      "address": "0x80066214",
+      "bytes": 148,
+      "sha256": "cb038063db52b5edfe9953c294e6e98e858accd493fe820da7427af6c2fbdfcf"
+    },
+    {
+      "function": "func_800662B4",
+      "address": "0x800662b4",
+      "bytes": 8,
+      "sha256": "9551f2e22426c0ef38657b0ae7289d100e7d495c6f17cd81cbc78cddb68f81ee"
+    },
+    {
+      "function": "func_800662BC",
+      "address": "0x800662bc",
+      "bytes": 132,
+      "sha256": "ea7984ab42b23eb25b1bab2f045f11d9cce8e59aa881fd05c9a32bf6f7c450ca"
+    },
+    {
+      "function": "func_80066340",
+      "address": "0x80066340",
+      "bytes": 1032,
+      "sha256": "25c43f5f4a4d1fb5a5a67967c3353c6aec85fadea8b9c0250c91db6d89533742"
+    }
+  ],
+  "native_entry_counts": {
+    "entity_bear_apartment": 634,
+    "entity_get_trigger_ratio": 634,
+    "entity_get_distance": 618,
+    "func_80066214": 74,
+    "func_800662BC": 74,
+    "func_80066340": 3774,
+    "func_800449B8": 3774,
+    "func_8004416C": 3774,
+    "func_80065D64": 4662,
+    "func_8001D0EC": 962,
+    "rand": 74,
+    "func_800575B0": 243,
+    "func_80057618": 243,
+    "func_8005748C": 243,
+    "func_80057534": 243,
+    "func_80057444": 243,
+    "func_8001E58C": 243,
+    "func_8001D4DC": 243,
+    "RotMatrix": 243,
+    "func_8001EE98": 243,
+    "ApplyMatrixLV": 243,
+    "func_800573A8": 243,
+    "func_800573CC": 243,
+    "func_80057668": 243,
+    "func_8001CEB4": 79,
+    "func_8001EC84": 237,
+    "entity_stop_behaviour": 7,
+    "sound_entity_stop": 7,
+    "func_800662B4": 7,
+    "func_80066148": 7
+  },
+  "source_sha256": {
+    "asm/nonmatchings/psyq/libc/rand/rand.s": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7",
+    "build/SLPS01556.map": "0c8ad7a8e09678102951c5456175dc8ef7bb15a242b51ce2bbf6d62ab1e39f41",
+    "build/undefined_funcs_auto.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/undefined_syms_auto.txt": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f",
+    "configure.py": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2",
+    "docs/actor-child-construction-function-ranges.json": "917010a67a4398af6137fc3a180a0a6d5d06e18ab151ddd21890078733b8da22",
+    "docs/actor-child-lifetime-function-ranges.json": "16e676914cb87df4990a8dc6db9efa64779a810f3f9824e9fbaf691c261317df",
+    "docs/actor-factory-function-ranges.json": "1c7223ddeb1b0f440461e350e08184f383f5468b506496924c6b789f16c36611",
+    "docs/apartment-bear-function-ranges.json": "dc17947cc1f4d33a1fc0ebb76fed719a48561b089464714741efcd9d7ea21489",
+    "requirements-analysis.txt": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911",
+    "requirements-card-heap.txt": "a6175ba56aa6e19806a0010b9300bcdf76a46e7192e49054b7fbf79ef0011212",
+    "requirements.txt": "bcd34abbb33438c8a7e18a9165b8ea5c503a179b23738ccf72dbd659ce174cde",
+    "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+    "src/base/transform.c": "0166d95088d3476bf1cf8c2a760627f0c12640e68a1f8294a973acb91c09004d",
+    "src/dream/dream_sys.c": "130453762f783d2e8c2f4af237a0a62322fec91480e7570e5ebbd21d9ca006bf",
+    "src/dream/dream_sys.h": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507",
+    "src/scene/actor.c": "4a0c1f29434123834c3725cd12cad91a8b68cb39dbd927af1e46325a31113c3c",
+    "src/scene/entity.c": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811",
+    "src/scene/entity.h": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f",
+    "src/scene/scene_node.c": "4c9802ade32e9cd08fbb89c94db1694e737814b5a0a922c45bd3abb1afe73ea9",
+    "src/sound/sound.c": "c3174cf04aeb55867cd70fa681edc6146121551a27d9e7ca9ad5b4dd1697dc10",
+    "tools/actor_animation_model.py": "fca3f6956613ada1ae3a385e0f640eb7975422a049182f6f02d59d39ea426bcf",
+    "tools/actor_child_model.py": "40980e4c0518acc7785bcd79bfc9a48274e09579c4ab05c8ea93f611ed3372f7",
+    "tools/actor_factory_model.py": "fb40720bc913c2a7d3957c5b65c1232d19b2f24a355bce3cdabe39dc6cb7489a",
+    "tools/actor_payload_model.py": "53c243e67e3e6eb9b33ea5683985a956e247a748c649c00391fd366d9dcb7ff5",
+    "tools/decomp_workbench.py": "894f17166b4e0f286c6abbcae0ff84988e95347579d192ceadf8f1c3757a44f7",
+    "tools/heap_model.py": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e",
+    "tools/inventory_animations.py": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+    "tools/inventory_disc.py": "71319a4c51b50885753998fe9afb7a00b71acf0fa03167b9a63c48651e36aebf",
+    "tools/inventory_vtables.py": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2",
+    "tools/model_mapping_model.py": "d3f0866a0c2e1ec4fe0fe2dde7b07a094a98b8ebb09e560472a36592cd70fe9e",
+    "tools/model_payload_model.py": "d2ab054ea8dd848cb78c4eacbf0750e00c967474405173d72d917506e01909e6",
+    "tools/progress.py": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+    "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+    "tools/verify_actor_children.py": "09b3beef12fe216bde9dc43840b35bf027ad174935f8a34a9e998465943cd356",
+    "tools/verify_actor_factory.py": "5775e55cc6868807e09fa069507804ca76dee636ba1dd947a8d0eb62b398d571",
+    "tools/verify_apartment_bear.py": "32d4fa586254117eb23dbd8d56502173c65a17165f84def0de7750f5664a539a",
+    "tools/verify_astronaut.py": "514d32f0dfc79f3bdc47e9a6aa6cd55661c8cb2b42a89ea4578eddca9ab7d90c",
+    "tools/verify_card_cleanup.py": "5eec21f9fe0afa2549f10eb890c1dbf9984f5f1541611102afd9fa995d58d6c0",
+    "tools/verify_card_heap.py": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5",
+    "tools/verify_gunman_scripts.py": "6bb82b12a0570ec7448edf11f45c50f1f93e0de7622ea404bde22b11cfcce5d5",
+    "tools/verify_native_ai.py": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697",
+    "tools/verify_npc_proximity.py": "50fa5bf1a77a2ec7904949e6c0833b90c2271b5577c37b7fe7aef768fca61c00",
+    "tools/verify_npc_spatial.py": "e25422dddcbcd445bdaabacf200ba0e418336e0a161648403ae08084d006983f",
+    "tools/verify_render_gte.py": "624a607b167be932702501fb6e07a04595992773bacc8d4344b2200a8c2784b0",
+    "tools/verify_render_rotation.py": "2ce32389c8e158692dff7663a9fb0aa700b7e3bb7204254d402b0ae45f956e8f",
+    "tools/verify_scripted_ai.py": "2edefddc727441c0066a48375efd882c80035af99db3b3990a2c674eedddb2c1"
+  },
+  "executed_working_tree_newline_differences": [
+    {
+      "path": "src/dream/dream_sys.h",
+      "executed_working_sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507",
+      "repository_blob_sha256": "0c5e29a07f133924a7d2eda9e7425e2b3bcbf6c3b9cb905c097e6eb879d45657",
+      "difference": "CRLF versus LF only"
+    },
+    {
+      "path": "src/scene/entity.c",
+      "executed_working_sha256": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811",
+      "repository_blob_sha256": "42b79fe2e6463d01213b8be552e94132dd912212ace0171219466b2e1650c751",
+      "difference": "CRLF versus LF only"
+    },
+    {
+      "path": "src/scene/entity.h",
+      "executed_working_sha256": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f",
+      "repository_blob_sha256": "3dd0c265059b0566aca0f0934bbc5b85b5de9a1e1ef27e410985129e2c0ed2b4",
+      "difference": "CRLF versus LF only"
+    },
+    {
+      "path": "src/scene/scene_node.c",
+      "executed_working_sha256": "4c9802ade32e9cd08fbb89c94db1694e737814b5a0a922c45bd3abb1afe73ea9",
+      "repository_blob_sha256": "3347001427b604329f39729925fc3ca0312d166674007870bdf1d54cf4c33c3d",
+      "difference": "CRLF versus LF only"
+    },
+    {
+      "path": "tools/verify_native_ai.py",
+      "executed_working_sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697",
+      "repository_blob_sha256": "6094e565bdb4e6701055f08d0428d059b54c6183818170ae1a671610c53b40a0",
+      "difference": "CRLF versus LF only"
+    }
+  ],
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "resource_sha256": "6da66f8769eaebaa57fa4c6ef37228aa353bbe25f10a3b2a72f5870272610e80",
+  "model_sha256": "af4834af69970858e9287ffd56222648388c0e082b631e3e5d0c3fc3f2719ce1",
+  "resource": "CDI/STG00/M001.LBD",
+  "model_offset": 36960,
+  "model_bytes": 9820,
+  "animation_frame_counts": [
+    10,
+    30
+  ],
+  "binding_index": 77,
+  "binding_record_sha256": "1b8a0ea21a1d4ce5748207d72673f505cd20b56ad72e1852d38a7dda67cfb4a1",
+  "standalone_native_cases": 604,
+  "distinct_initialized_inputs": 602,
+  "residue_patterns": [
+    "poison",
+    "distinct"
+  ],
+  "histories": [
+    {
+      "initial_seed": 1,
+      "script_invocations": 15,
+      "injected_ticks": [
+        8,
+        9,
+        10,
+        59,
+        60,
+        139,
+        140,
+        173,
+        174,
+        175,
+        212,
+        290,
+        320,
+        398,
+        399
+      ],
+      "final_state": 0
+    },
+    {
+      "initial_seed": 3,
+      "script_invocations": 15,
+      "injected_ticks": [
+        8,
+        9,
+        10,
+        59,
+        60,
+        139,
+        140,
+        173,
+        174,
+        175,
+        212,
+        290,
+        320,
+        398,
+        399
+      ],
+      "final_state": 1
+    }
+  ],
+  "history_invocations": 30,
+  "wrong_output_controls": [
+    {
+      "name": "periodic-command",
+      "address": "0x80062a9c",
+      "old": "0x34020011",
+      "replacement": "0x34020012",
+      "executed_hits": 1,
+      "mismatched_outputs": [
+        "context"
+      ]
+    },
+    {
+      "name": "rng-state",
+      "address": "0x80062af8",
+      "old": "0x3402000b",
+      "replacement": "0x3402000c",
+      "executed_hits": 1,
+      "mismatched_outputs": [
+        "pool"
+      ]
+    },
+    {
+      "name": "quarter-turn-boundary",
+      "address": "0x80062b10",
+      "old": "0x3402003c",
+      "replacement": "0x3402003d",
+      "executed_hits": 1,
+      "mismatched_outputs": [
+        "pool",
+        "call_trace",
+        "native_gte_commands"
+      ]
+    },
+    {
+      "name": "movement-distance",
+      "address": "0x80062b90",
+      "old": "0x2405ffce",
+      "replacement": "0x2405ffcd",
+      "executed_hits": 1,
+      "mismatched_outputs": [
+        "pool",
+        "call_trace",
+        "native_gte_commands"
+      ]
+    },
+    {
+      "name": "stop-active-flag",
+      "address": "0x8005dbd8",
+      "old": "0xae0000f8",
+      "replacement": "0x0",
+      "executed_hits": 1,
+      "mismatched_outputs": [
+        "pool"
+      ]
+    },
+    {
+      "name": "animation-selection",
+      "address": "0x80066220",
+      "old": "0xac85007c",
+      "replacement": "0x0",
+      "executed_hits": 1,
+      "mismatched_outputs": [
+        "pool"
+      ]
+    },
+    {
+      "name": "animation-duration",
+      "address": "0x80066250",
+      "old": "0xac820080",
+      "replacement": "0xac800080",
+      "executed_hits": 1,
+      "mismatched_outputs": [
+        "pool"
+      ]
+    }
+  ],
+  "escaped_store_control": {
+    "instruction": "0x80062aa0",
+    "rejected_before_write": true,
+    "detail": {
+      "instruction": 404128,
+      "observed_at": 404128,
+      "address": 1061120,
+      "bytes": 4
+    }
+  },
+  "native_gte_commands": 490,
+  "backend": {
+    "package_version": "2.1.4",
+    "loaded_library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_sha256": "62ffe84341f4288e309040e06555b81798031817d32fd19a945e250813f872f0"
+  },
+  "bridge_sha256": "c36770c552a557c06d94c0902e88c34cfab8122073fec4455e3246a65ad23ca5",
+  "dependency_output_stubs": 0,
+  "external_model_API_calls": 0,
+  "new_C_bytes": 0,
+  "scope": "Constructed original-model entity, no collision-stage target or active sound slots; injected callback ticks and command timers. Immediate first-frame selection, not animation playback or engine-driven encounters.",
+  "natural_encounter_verified": false,
+  "whole_NPC_encounters_accepted": 0,
+  "whole_feature_groups_accepted": 0,
+  "raw_game_data_distributed": false
+}

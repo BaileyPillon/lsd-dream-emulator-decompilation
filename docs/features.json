@@ -15032,6 +15032,18 @@
       "callback_runtime_accepted": false,
       "original_feature_groups_accepted": 0,
       "scope": "Constructed meshless poses, original mood/proximity/transform/RNG-preservation checks and injected script histories. All executed code uses the original image and native GTE backend. No natural encounters, complete animation playback, rendering, audio, full-engine scheduling or original-hardware timing acceptance."
+    },
+    {
+      "function": "entity_bear_apartment",
+      "reference": ".decomp-lab/apartment-bear-native-20261019-third/report.json",
+      "reference_sha256": "af208dccac238fb025faaa47aada5af93f38a4b16f06dc9de5aff6eff67dcec4",
+      "evidence": "docs/apartment-bear-checks.json",
+      "native_cases": 604,
+      "distinct_initialized_inputs": 602,
+      "original_functions_entered": 30,
+      "callback_runtime_accepted": false,
+      "original_feature_groups_accepted": 0,
+      "scope": "Constructed original-model entity, no collision-stage target or active sound slots; injected callback ticks and command timers. Immediate first-frame selection, not animation playback or engine-driven encounters."
     }
   ],
   "publication": {
@@ -24515,6 +24527,44 @@
       "whole_feature_groups_accepted": 0,
       "original_game_modified": false,
       "Bevy_port_modified": false
+    },
+    "original_apartment_bear_native_20261019": {
+      "evidence": "docs/apartment-bear-checks.json",
+      "before": {
+        "c_bytes": 197172,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 2,
+        "inherited_storage_explanations": 3,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 38,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 40,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "after": {
+        "c_bytes": 197172,
+        "game_text_bytes": 199912,
+        "remaining_assembly_functions": 2,
+        "inherited_storage_explanations": 3,
+        "provisional_feature_groups": 40,
+        "listed_core_C_groups": 38,
+        "original_NPC_callbacks": 107,
+        "bounded_NPC_callbacks": 41,
+        "whole_feature_groups_accepted": 0,
+        "whole_NPC_encounters_accepted": 0,
+        "developer_capability_categories": 10,
+        "optional_mods": 3
+      },
+      "standalone_native_cases": 604,
+      "distinct_initialized_inputs": 602,
+      "history_invocations": 30,
+      "independent_hand_checks": 13,
+      "executed_wrong_output_controls": 7,
+      "raw_game_data_distributed": false,
+      "scope": "Constructed original-model entity, no collision-stage target or active sound slots; injected callback ticks and command timers. Immediate first-frame selection, not animation playback or engine-driven encounters."
     }
   }
 }
