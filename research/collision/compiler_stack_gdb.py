@@ -18,6 +18,8 @@ if hashlib.sha256(compiler.read_bytes()).hexdigest() != COMPILER_SHA256:
     raise RuntimeError('Unsupported compiler for reload argument decoding.')
 
 events = []
+outer_events = []
+outer_errors = []
 exit_code = None
 active_alter_calls = []
 
@@ -43,6 +45,29 @@ def call_stack():
         frames.append(frame.name())
         frame = frame.older()
     return frames
+
+
+def rtl_name(address):
+    table = int(gdb.parse_and_eval('(char *)&rtx_name'))
+    name = word(table + 4 * (word(address) & 65535)) & 0xffffffff
+    return gdb.parse_and_eval('(char *)' + str(name)).string()
+
+
+def returned_stack_slot(address):
+    """Decode the exact compiler's MEM(REG + byte offset), without calling it."""
+    if rtl_name(address) != 'mem':
+        raise ValueError('Outer allocator did not return a memory slot.')
+    base = word(address + 4) & 0xffffffff
+    offset = 0
+    if rtl_name(base) == 'plus':
+        left = word(base + 4) & 0xffffffff
+        right = word(base + 8) & 0xffffffff
+        if rtl_name(left) != 'reg' or rtl_name(right) != 'const_int':
+            raise ValueError('Unsupported outer stack-slot address.')
+        base, offset = left, word(right + 4)
+    if rtl_name(base) != 'reg':
+        raise ValueError('Outer stack slot has no virtual base register.')
+    return {'base_register': word(base + 4), 'offset': offset}
 
 
 class AlterReturned(gdb.FinishBreakpoint):
@@ -102,6 +127,47 @@ class AllocationEntered(gdb.Breakpoint):
         return False
 
 
+class OuterReturned(gdb.FinishBreakpoint):
+    def __init__(self, event):
+        super().__init__(internal=True)
+        self.event = event
+
+    def stop(self):
+        try:
+            result = int(gdb.parse_and_eval('$eax')) & 0xffffffff
+            self.event['returned_rtx'] = hex(result)
+            self.event['returned_slot'] = returned_stack_slot(result)
+            self.event['active_function_frame_after'] = symbol_word('frame_offset')
+            self.event['completed'] = True
+        except Exception as error:
+            outer_errors.append(str(error))
+        return False
+
+    def out_of_scope(self):
+        outer_errors.append('Outer allocator did not return.')
+
+
+class OuterEntered(gdb.Breakpoint):
+    def __init__(self):
+        super().__init__('*assign_outer_stack_local', internal=True)
+
+    def stop(self):
+        stack = int(gdb.parse_and_eval('$esp'))
+        event = {
+            'sequence': len(outer_events), 'allocator': 'assign_outer_stack_local',
+            'active_function': function_name(),
+            'owner_context': hex(word(stack + 16) & 0xffffffff),
+            'mode_number': word(stack + 4), 'size': word(stack + 8),
+            'alignment': word(stack + 12),
+            # This global describes the active nested function, not the owner.
+            'active_function_frame_before': symbol_word('frame_offset'),
+            'call_stack': call_stack(), 'completed': False,
+        }
+        outer_events.append(event)
+        OuterReturned(event)
+        return False
+
+
 def compiler_exited(event):
     global exit_code
     exit_code = getattr(event, 'exit_code', None)
@@ -113,13 +179,17 @@ gdb.events.exited.connect(compiler_exited)
 AlterEntered()
 AllocationEntered('assign_stack_local')
 AllocationEntered('assign_stack_temp')
+OuterEntered()
 gdb.execute('run')
 with open(os.environ['LSD_STACK_TRACE_REPORT'], 'x', encoding='utf-8') as destination:
-    json.dump({'schema_version': 2,
+    json.dump({'schema_version': 3,
                'compiler_exited': gdb.selected_inferior().pid == 0,
                'compiler_exit_code': exit_code, 'allocation_events': events,
+               'outer_allocation_events': outer_events,
+               'outer_allocation_errors': outer_errors,
                'normal_debugger_breakpoint_machinery': True,
                'explicit_inferior_memory_writes_or_opcode_substitutions': False,
                'extra_inferior_functions_invoked': False}, destination, indent=2)
     destination.write('\n')
 print('Observed stack allocation events:', len(events))
+print('Observed outer-scope allocation events:', len(outer_events))

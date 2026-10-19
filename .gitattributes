@@ -46,6 +46,7 @@ research/ui_scale/*.c text eol=lf
 research/ui_scale/*.py text eol=lf
 research/collision/compiler_stack_gdb.py text eol=lf
 research/collision/trace_compiler_stack.py text eol=lf
+docs/COMPILER_LAYOUT.md text eol=lf
 research/collision/primitive_candidate.c text eol=lf
 tests/test_compiler_stack_trace.py text eol=lf
 tools/verify_scripted_ai.py text eol=lf

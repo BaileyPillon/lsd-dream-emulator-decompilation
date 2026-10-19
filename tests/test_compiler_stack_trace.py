@@ -49,6 +49,71 @@ class CompilerStackTraceTests(unittest.TestCase):
         event['alter_reg_context'] = None
         self.assertEqual(tracer.validate_trace(trace), [event])
 
+    def outer_trace(self):
+        trace = self.reload_trace()
+        trace.update(schema_version=3, outer_allocation_errors=[], outer_allocation_events=[{
+            'sequence': 0, 'allocator': 'assign_outer_stack_local',
+            'active_function': 'nested_midpoint', 'owner_context': '0x8300370',
+            'mode_number': 4, 'size': 4, 'alignment': 0,
+            'active_function_frame_before': 4, 'active_function_frame_after': 4,
+            'returned_rtx': '0x8320100', 'returned_slot': {'base_register': 54, 'offset': 16},
+            'call_stack': ['assign_outer_stack_local', 'put_reg_into_stack'], 'completed': True,
+        }])
+        return trace
+
+    def test_outer_owner_slot_is_not_the_active_nested_function_frame(self):
+        trace = self.outer_trace()
+        self.assertIs(tracer.validate_trace(trace), trace['allocation_events'])
+        outer = tracer.validate_outer_allocations(trace)
+        self.assertIs(outer, trace['outer_allocation_events'])
+        self.assertEqual(outer[0]['returned_slot']['offset'], 16)
+        self.assertEqual(outer[0]['active_function_frame_after'], 4)
+
+    def test_legacy_trace_does_not_invent_outer_observations(self):
+        self.assertEqual(tracer.validate_outer_allocations(self.reload_trace()), [])
+
+    def test_new_schema_requires_explicit_outer_observation_results(self):
+        for key in ('outer_allocation_events', 'outer_allocation_errors'):
+            trace = self.outer_trace()
+            del trace[key]
+            with self.subTest(missing=key), self.assertRaisesRegex(ValueError, 'outer-scope'):
+                tracer.validate_trace(trace)
+
+    def test_outer_allocator_errors_and_unfinished_returns_are_rejected(self):
+        trace = self.outer_trace()
+        trace['outer_allocation_errors'] = ['outer allocator did not return']
+        with self.assertRaisesRegex(ValueError, 'outer-scope'):
+            tracer.validate_trace(trace)
+        for key, value in (('completed', False), ('owner_context', '0x0'),
+                           ('owner_context', '0x100000000'), ('size', True),
+                           ('size', -1), ('returned_rtx', None), ('returned_slot', None),
+                           ('sequence', 1), ('sequence', False), ('active_function', None), ('call_stack', [])):
+            trace = self.outer_trace()
+            trace['outer_allocation_events'][0][key] = value
+            with self.subTest(key=key, value=value), self.assertRaisesRegex(ValueError, 'outer-scope'):
+                tracer.validate_trace(trace)
+
+    def test_non_record_outer_events_are_rejected(self):
+        for event in (None, [], 'incomplete'):
+            trace = self.outer_trace()
+            trace['outer_allocation_events'] = [event]
+            with self.subTest(event=event), self.assertRaisesRegex(ValueError, 'outer-scope'):
+                tracer.validate_trace(trace)
+
+    def test_invalid_returned_slots_are_rejected(self):
+        for slot in ({'base_register': True, 'offset': 16}, {'base_register': 65536, 'offset': 16},
+                     {'base_register': 54, 'offset': True}, {'base_register': 54, 'offset': 0x80000000}):
+            trace = self.outer_trace()
+            trace['outer_allocation_events'][0]['returned_slot'] = slot
+            with self.subTest(slot=slot), self.assertRaisesRegex(ValueError, 'outer-scope'):
+                tracer.validate_trace(trace)
+
+    def test_new_schema_still_requires_completed_reload_contexts(self):
+        trace = self.outer_trace()
+        trace['allocation_events'][0]['alter_reg_context'] = None
+        with self.assertRaisesRegex(ValueError, 'reload caller context'):
+            tracer.validate_trace(trace)
+
     def test_unpinned_i386_compiler_is_rejected_before_debugger(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder).resolve()
@@ -144,8 +209,9 @@ class CompilerStackTraceTests(unittest.TestCase):
                     Path(argv[argv.index('-o') + 1]).write_bytes(b'li $2,2\n' if '--batch' in argv else b'li $2,1\n')
                 if '--batch' in argv:
                     Path(kwargs['env']['LSD_STACK_TRACE_REPORT']).write_text(json.dumps({
-                        'schema_version': 2, 'compiler_exited': True, 'compiler_exit_code': 0,
-                        'allocation_events': []}), encoding='utf-8')
+                        'schema_version': 3, 'compiler_exited': True, 'compiler_exit_code': 0,
+                        'allocation_events': [], 'outer_allocation_events': [],
+                        'outer_allocation_errors': []}), encoding='utf-8')
                 return SimpleNamespace(returncode=0, stdout=b'preprocessed', stderr=b'')
 
             before = source.read_bytes(), compiler.read_bytes()

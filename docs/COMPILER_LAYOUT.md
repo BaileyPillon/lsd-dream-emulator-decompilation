@@ -39,6 +39,17 @@ local area, not PS1 addresses. An allocation can reuse storage without growing
 that area. Nested `assign_stack_temp`/`assign_stack_local` calls are both observed;
 the event count is not a count of distinct locals.
 
+Schema 3 also records `assign_outer_stack_local` calls separately in
+`outer_allocation_events`. These calls allocate a captured variable in an
+enclosing function while a nested function is active. Each event retains the
+opaque owner-context identity and the returned slot's virtual base register and
+byte offset. Its `active_function_frame_before/after` values describe the active
+nested function, not the enclosing owner; they must not be treated as the
+owner's frame size. Missing results, unfinished returns and decoder errors fail
+validation. Earlier schema-2 traces remain readable, without inventing outer
+allocation observations. New compiler runs require schema 3 and retain the
+same complete-assembly equality gate.
+
 ## Observations and limits
 
 Six diagnostic compilation runs pass with **199 observed allocator calls**:
