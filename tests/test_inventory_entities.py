@@ -1,7 +1,7 @@
 import struct
 import unittest
 
-from tools.inventory_entities import audit_entities, entity_initializers, signed_byte_literal, verify_layout
+from tools.inventory_entities import audit_entities, entity_initializers, interaction_stop_view, signed_byte_literal, verify_layout
 
 
 class EntityInventoryTests(unittest.TestCase):
@@ -82,6 +82,47 @@ class EntityInventoryTests(unittest.TestCase):
         verify_layout(header)
         with self.assertRaisesRegex(ValueError, 'Unsupported entity_prop_t layout'):
             verify_layout(header.replace('s8 unlock', 's32 unlock'))
+
+    def test_unsigned_timer_view_preserves_original_signed_property_and_bytes(self):
+        source = self.source.replace('-1, 4, 2, -3', '-1, 4, -76, -3')
+        self.executable[0x814] = 180
+        original = bytes(self.executable)
+        report = audit_entities(self.executable, source, self.symbols)
+        record = report['records'][0]
+        self.assertEqual(record['properties']['interaction_type'], -76)
+        self.assertEqual(record['consumer_views']['interaction_stop'], {
+            'source_consumer': 'entity_check_interaction_range', 'stored_s8': -76,
+            'consumer_u8': 180, 'requires_link_enabled': True,
+            'disable_link_when': 'timer_equals', 'timer_equals_updates': 2700})
+        self.assertEqual(bytes(self.executable), original)
+        self.assertFalse(report['original_behavior_modified'])
+
+    def test_unsigned_timer_boundaries_are_update_counts_not_signed_durations(self):
+        # Hand values from byte-width conversion and the native *15 rule.
+        for stored, unsigned, threshold in [(10, 10, 150), (127, 127, 1905),
+                                             (-128, 128, 1920), (-76, 180, 2700), (-1, 255, 3825)]:
+            with self.subTest(stored=stored):
+                result = interaction_stop_view(stored)
+                self.assertEqual(result['consumer_u8'], unsigned)
+                self.assertEqual(result['timer_equals_updates'], threshold)
+                self.assertEqual(result['disable_link_when'], 'timer_equals')
+
+    def test_proximity_and_non_disabling_types_remain_separate_from_timers(self):
+        for value, condition in [(1, 'proximity_nonzero'), (2, 'proximity_zero')]:
+            result = interaction_stop_view(value)
+            self.assertEqual(result['disable_link_when'], condition)
+            self.assertTrue(result['requires_nonzero_interaction_range'])
+            self.assertNotIn('timer_equals_updates', result)
+        for value in (0, 3, 4, 9):
+            result = interaction_stop_view(value)
+            self.assertEqual(result['disable_link_when'], 'never_from_this_type')
+            self.assertEqual(result['proximity_may_still_be_evaluated'], value in (4, 9))
+            self.assertNotIn('timer_equals_updates', result)
+
+    def test_consumer_view_rejects_unverified_storage_values(self):
+        for value in (True, False, -129, 128, 180, None, '180', 1.0):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                interaction_stop_view(value)
 
 
 if __name__ == '__main__':

@@ -32,6 +32,29 @@ PROPERTY_NAMES = ("mood_x", "mood_y", "unlock", "behaviour", "interaction_type",
                   "event_video_id", "interaction_param", "proximity", "link_flag")
 
 
+def interaction_stop_view(stored):
+    """Describe the unsigned consumer without changing signed source storage.
+
+    entity_check_interaction_range reads byte four through u8*, even though
+    entity_prop_t stores s8. This describes that function's direct disable
+    predicate, not every shutdown path or the side effects of its video check.
+    """
+    if type(stored) is not int or not -128 <= stored <= 127:
+        raise ValueError('Supply the verified signed-byte interaction type.')
+    value = stored & 0xFF
+    result = dict(source_consumer='entity_check_interaction_range', stored_s8=stored,
+                  consumer_u8=value, requires_link_enabled=True)
+    if value >= 10:
+        result.update(disable_link_when='timer_equals', timer_equals_updates=value * 15)
+    elif value in (1, 2):
+        result.update(disable_link_when='proximity_nonzero' if value == 1 else 'proximity_zero',
+                      requires_nonzero_interaction_range=True)
+    else:
+        result.update(disable_link_when='never_from_this_type',
+                      proximity_may_still_be_evaluated=4 <= value <= 9)
+    return result
+
+
 def signed_byte_literal(expression):
     """Accept native s8 literals, including C octal, without executing C."""
     if not re.fullmatch(r'-?(?:0[xX][0-9a-fA-F]+|0[0-7]*|[1-9][0-9]*)', expression):
@@ -126,6 +149,8 @@ def audit_entities(executable, source, symbols):
         output = {key: value for key, value in record.items() if key != 'bytes'}
         output['callback_address'] = f"0x{callback_address:08X}"
         output['initializer_matches_native'] = True
+        output['consumer_views'] = {
+            'interaction_stop': interaction_stop_view(record['properties']['interaction_type'])}
         serializable.append(output)
     nonnull = sum(bool(record['callback_address']) for record in records)
     return {
