@@ -170,5 +170,448 @@
     "Video/RAM/GPU checkpoints are sampled rather than observations at every frame",
     "No original instruction-entry/return trace, full year, ending, hardware timing, alternate seeds or complete memory-card scenario",
     "No C promotion or whole-feature acceptance follows from equal recorded outputs"
-  ]
+  ],
+  "recorded_utc": "2026-10-20T03:46:01.414881+00:00",
+  "current_source_inventory": {
+    "recorded_utc": "2026-10-20T03:46:01.414881+00:00",
+    "scope": "Current configured-source inventory; frozen before/initial-pass snapshots and their byte/source facts are preserved",
+    "algorithm": "tools/feature_inventory.py configured manifest, definition locator, active assembly catalogue and explicit shared-support closure",
+    "algorithm_sha256": "0d3472040ca5008cf5cca18797ae8a1ba42bd90f274d999fc73acdffb34560ec",
+    "frozen_before_prompt_counts": {
+      "catalogued_feature_groups": 40,
+      "original_feature_groups_present_in_matching_c_plus_assembly": 40,
+      "core_logic_recovered_c": 16,
+      "known_core_and_support_recovered_c": 0,
+      "runtime_accepted_feature_groups": 0,
+      "new_gameplay_features_implemented": 0,
+      "native_behavior_callbacks_recovered_c": 105
+    },
+    "frozen_initial_inventory_pass_timestamp": "2026-10-11T04:38:49.950521+00:00",
+    "frozen_initial_inventory_pass_counts": {
+      "catalogued_feature_groups": 40,
+      "original_feature_groups_present_in_matching_c_plus_assembly": 40,
+      "core_logic_recovered_c": 35,
+      "known_core_and_support_recovered_c": 6,
+      "runtime_accepted_feature_groups": 0,
+      "new_gameplay_features_implemented": 0,
+      "native_behavior_callbacks_recovered_c": 107
+    },
+    "current_verified_source_counts": {
+      "catalogued_feature_groups": 40,
+      "original_feature_groups_present_in_matching_c_plus_assembly": 40,
+      "core_logic_recovered_c": 38,
+      "known_core_and_support_recovered_c": 6,
+      "runtime_accepted_feature_groups": 0,
+      "new_gameplay_features_implemented": 0,
+      "native_behavior_callbacks_recovered_c": 107
+    },
+    "current_verified_assembly_functions": 2,
+    "current_verified_build_objects": 306,
+    "current_C_bytes": 197172,
+    "current_game_text_bytes": 199912,
+    "current_C_percent": 98.62939693465124,
+    "official_exhaustive_feature_total_known": false,
+    "exhaustive_call_graph_closure_proven": false,
+    "new_C_bytes_this_study": 0,
+    "historical_snapshot_fields_rewritten": false,
+    "private_complete_source_inventory_sha256": "1bfa5b6d3b1cef1c6bb01fcfcc897ad150a550ff1c0eb0c1eefe2d72cb1cf606",
+    "configured_source_hash_catalogue_sha256": "2431681dd29caa669f93aa43366f8c51b63d676bb2a3d90081c000f5dd5a509a",
+    "feature_statuses": [
+      {
+        "id": "F001",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F032",
+          "F035"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F002",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F035",
+          "F036"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F003",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F032"
+        ],
+        "known_core_and_support_complete": true
+      },
+      {
+        "id": "F004",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F040"
+        ],
+        "known_core_and_support_complete": true
+      },
+      {
+        "id": "F005",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F009",
+          "F014",
+          "F024",
+          "F025",
+          "F027",
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F006",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F008"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F007",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F006"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F008",
+        "core_complete": false,
+        "retained_assembly_functions": [
+          "func_8001DDF4"
+        ],
+        "shared_support_features": [
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F009",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F033",
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F010",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F008",
+          "F014"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F011",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F006",
+          "F014"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F012",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F009",
+          "F014"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F013",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F006",
+          "F014"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F014",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F034"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F015",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F014"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F016",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F028"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F017",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F035",
+          "F034"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F018",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F009"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F019",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F028"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F020",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F027",
+          "F014"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F021",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F032",
+          "F035"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F022",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F017",
+          "F032"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F023",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F033",
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F024",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F033",
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F025",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F024",
+          "F031",
+          "F034"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F026",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F029",
+          "F031"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F027",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F026",
+          "F029",
+          "F031",
+          "F034"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F028",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F027"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F029",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F008",
+          "F033",
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F030",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F040"
+        ],
+        "known_core_and_support_complete": true
+      },
+      {
+        "id": "F031",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F040"
+        ],
+        "known_core_and_support_complete": true
+      },
+      {
+        "id": "F032",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F040"
+        ],
+        "known_core_and_support_complete": true
+      },
+      {
+        "id": "F033",
+        "core_complete": false,
+        "retained_assembly_functions": [
+          "func_8001F8B8"
+        ],
+        "shared_support_features": [
+          "F008",
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F034",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F033"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F035",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F033",
+          "F036",
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F036",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F033",
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F037",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F038",
+          "F039"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F038",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F035",
+          "F036"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F039",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F035",
+          "F036"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F040",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [],
+        "known_core_and_support_complete": true
+      }
+    ]
+  }
 }

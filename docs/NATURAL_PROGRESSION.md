@@ -12,6 +12,13 @@ and three inherited storage explanations remain. Whole-feature acceptance
 remains **zero**. [Machine-readable evidence](natural-progression-pilot-checks.json)
 binds the producer, inputs, measurements and limits.
 
+The feature file's October 11 before/initial-pass snapshots remain frozen. A
+dated supplement uses the current configured sources and active assembly
+catalogue: **38 of 40 catalogued core groups** have C, and **6 of 40** have all
+their listed shared support in C. The frozen initial-pass core count was 35.
+These are provisional source groups, not an exhaustive count of the game's
+features or a runtime-parity percentage. This study promotes no new C.
+
 ## Observed route
 
 Each isolated Nymashock instance advances 120,001 emulator frames, including its
