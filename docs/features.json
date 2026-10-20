@@ -24808,5 +24808,33 @@
     "whole_feature_groups_accepted": 0,
     "documentation": "docs/HANGED_WOMAN.md",
     "evidence": "docs/hanged-woman-checks.json"
+  },
+  "original_natural_progression_20261019": {
+    "recorded_utc": "2026-10-20T03:46:01.414881+00:00",
+    "reference": "docs/natural-progression-pilot-checks.json",
+    "feature": "F003",
+    "status": "recorded_subset_compared_complete_state_failure_retained",
+    "completed_days": 7,
+    "MainRAM_GPURAM_RGB_checkpoint_pairs_equal": 209,
+    "complete_PCM_windows_equal": 201,
+    "complete_serialized_state_hash_pairs": 9,
+    "complete_serialized_state_hash_pairs_equal": 0,
+    "requested_eighth_day_reached": false,
+    "year_ending_observed": false,
+    "whole_feature_groups_accepted": 0,
+    "new_C_bytes": 0,
+    "historical_before_and_initial_inventory_snapshots_preserved": true,
+    "current_verified_source_counts": {
+      "catalogued_feature_groups": 40,
+      "original_feature_groups_present_in_matching_c_plus_assembly": 40,
+      "core_logic_recovered_c": 38,
+      "known_core_and_support_recovered_c": 6,
+      "runtime_accepted_feature_groups": 0,
+      "new_gameplay_features_implemented": 0,
+      "native_behavior_callbacks_recovered_c": 107
+    },
+    "current_verified_C_percent": 98.62939693465124,
+    "current_remaining_assembly_functions": 2,
+    "scope": "Seven completed natural days; F003 full-year/ending acceptance remains open. Current configured-source counts supplement the frozen initial source snapshot; no new C is promoted."
   }
 }

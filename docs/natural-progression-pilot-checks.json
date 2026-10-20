@@ -1,0 +1,617 @@
+{
+  "schema_version": 1,
+  "status": "recorded_natural_progression_subset_with_complete_state_differences",
+  "baseline_commit": "a55265754f14d77d78f41712937446793f1f2183",
+  "game": "LSD: Dream Emulator, Japanese-labelled original and matching reconstruction",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "complete_disc_track_sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61",
+  "matching_C": {
+    "before_c_bytes": 197172,
+    "after_c_bytes": 197172,
+    "denominator": 199912,
+    "new_C_bytes": 0,
+    "retained_assembly_functions": 2,
+    "inherited_storage_explanations": 3
+  },
+  "scenario": {
+    "start": "Cold boot; no loaded state",
+    "frame_ceiling": 120000,
+    "observations_per_run": 120001,
+    "requested_completed_days": 8,
+    "completed_days_per_run": 7,
+    "requested_target_reached": false,
+    "observed_zero_based_days": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "year_rollover_observed": false,
+    "ending_observed": false,
+    "input_policy": "Startup confirm/up sequence, then release inputs during ordinary dream timers and use ordinary menu confirm/up inputs; rebuild replays exact original run-length inputs",
+    "controller_changes_per_run": 169,
+    "game_RAM_injected": false,
+    "state_restored": false,
+    "emulator_UI_controlled": false,
+    "runtime_copies": 0,
+    "disc_copies": 0,
+    "asset_tree_copies": 0
+  },
+  "compared_outputs": {
+    "native_day_transitions_equal": true,
+    "controller_histories_equal": true,
+    "complete_MainRAM_hash_pairs": 209,
+    "complete_MainRAM_hash_pairs_equal": 209,
+    "complete_GPURAM_hash_pairs": 209,
+    "complete_GPURAM_hash_pairs_equal": 209,
+    "complete_RGB_hash_pairs": 209,
+    "complete_RGB_hash_pairs_equal": 209,
+    "complete_returned_PCM_windows": 201,
+    "complete_returned_PCM_windows_equal": 201,
+    "PCM_stereo_sample_frames_per_run": 88456635,
+    "PNG_file_equal": true
+  },
+  "complete_serialized_state": {
+    "non_null_hash_pairs": 9,
+    "equal_hash_pairs": 0,
+    "different_frames": [
+      1080,
+      23691,
+      24459,
+      47207,
+      69281,
+      91369,
+      113448,
+      114221,
+      120000
+    ],
+    "raw_complete_state_parity_passed": false,
+    "same_frame_repeat_hashes_equal_in_each_run": true,
+    "same_frame_RAM_GPU_and_frame_counter_preserved": true,
+    "raw_state_bytes_retained": false,
+    "new_differing_byte_ownership_proven": false,
+    "known_related_diagnosis": "NYMASHOCK_STATE.md documents varying unused media-label capacity in this distributed core; hashes alone do not prove that ownership for these nine new states."
+  },
+  "core": {
+    "name": "BizHawk 2.11.1 Nymashock, distributed stock core",
+    "compressed_core_sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126",
+    "native_instruction_observer_enabled": false,
+    "native_core_rebuilt": false,
+    "DeterministicEmulation_requested": false,
+    "complete_state_includes_opaque_emulator_memory": true
+  },
+  "acceptance": {
+    "whole_feature_groups_accepted_before": 0,
+    "whole_feature_groups_accepted_after": 0,
+    "F003_365_day_ending_accepted": false,
+    "whole_NPC_encounters_accepted": 0,
+    "original_hardware_timing_verified": false,
+    "new_original_gameplay_features": 0,
+    "new_NPC_profiles": 0,
+    "model_API_calls": 0,
+    "Bevy_port_modified": false
+  },
+  "sources": {
+    "research/headless/RecordProgressionHistory.cs": "0e40e4baa15fb9f9b638e88fb052f3385d93e44f31d73fa2ef55061657e03496",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0"
+  },
+  "private_evidence": {
+    "root_label": "year-progression-native-20261019-first",
+    "bounded_output_audit_sha256": "a1cbbf63e94177aaa7adda6b8e6a6c2a59d671a6fcb766b801c5b24bf99ca0a4",
+    "strict_verifier_sha256": "633187db7ba2b741d91279931ebed1fa9e9bc9c9a4dc896744e20eca6e89fa4f",
+    "run_inputs_sha256": "40319cf184a526ad0bbfac07e7ab76beaba65f6b20ff8d1d160a7467dcceb4ec",
+    "host_executable_sha256": "c3eeabcd6dc1b3b8be255e4050a7cedb56f8b57b44b6cd748c0846b0579d5459",
+    "retained_output_files": {
+      "original/audio.tsv": {
+        "bytes": 17153,
+        "sha256": "188f14fdd7ea1492e5d39b8b5b4307eebe96b027fd8f8ced1dca5c0a5f799b20"
+      },
+      "original/checkpoints.jsonl": {
+        "bytes": 108050,
+        "sha256": "48c193d28e2f4b38ffb73d73fd24fe8a60bca1433d06bdbfd3840e89f5d8e3e7"
+      },
+      "original/days.jsonl": {
+        "bytes": 1792,
+        "sha256": "f0e39d2d3b14cc900e2720d983a972998ae681ee80374a7422e497dbcdbcdf93"
+      },
+      "original/final.png": {
+        "bytes": 34036,
+        "sha256": "21e4d36f7c5891178424b3a54eda49a8e23ebcfbda18d9a7b02652810c299149"
+      },
+      "original/inputs.tsv": {
+        "bytes": 1517,
+        "sha256": "255962770c63f096acead68c64ae402324df3bd8ada41cdc56db2f33e4867077"
+      },
+      "original/progress.json": {
+        "bytes": 277,
+        "sha256": "265434e53e1e409be7c332a84794d475b8b0032f3f4a301b01ba49c0adf09771"
+      },
+      "original/report.json": {
+        "bytes": 1005,
+        "sha256": "659ea58f95ace7a8d75cea6f50e2efd540f00edd2cc29d34abd8d51d10cf4987"
+      },
+      "rebuilt/audio.tsv": {
+        "bytes": 17153,
+        "sha256": "188f14fdd7ea1492e5d39b8b5b4307eebe96b027fd8f8ced1dca5c0a5f799b20"
+      },
+      "rebuilt/checkpoints.jsonl": {
+        "bytes": 108050,
+        "sha256": "263cfcef72eaffe03a3aa9307e9b45027be1bf127963d1747b70138aecc0fd1a"
+      },
+      "rebuilt/days.jsonl": {
+        "bytes": 1792,
+        "sha256": "f0e39d2d3b14cc900e2720d983a972998ae681ee80374a7422e497dbcdbcdf93"
+      },
+      "rebuilt/final.png": {
+        "bytes": 34036,
+        "sha256": "21e4d36f7c5891178424b3a54eda49a8e23ebcfbda18d9a7b02652810c299149"
+      },
+      "rebuilt/inputs.tsv": {
+        "bytes": 1517,
+        "sha256": "255962770c63f096acead68c64ae402324df3bd8ada41cdc56db2f33e4867077"
+      },
+      "rebuilt/progress.json": {
+        "bytes": 277,
+        "sha256": "b8232e504498b3643af10a32c3c592aa390979d00fbf9dfccea3f62135f87234"
+      },
+      "rebuilt/report.json": {
+        "bytes": 1005,
+        "sha256": "8236d4017456b540585cc8c4d246b577b62b1c07ce2a4138e6f828fc8fee9c23"
+      }
+    }
+  },
+  "limits": [
+    "Seven completed days, with the requested eighth day outside this capture budget",
+    "All nine recorded complete serialized-state pairs differ; the strict comparison fails",
+    "Video/RAM/GPU checkpoints are sampled rather than observations at every frame",
+    "No original instruction-entry/return trace, full year, ending, hardware timing, alternate seeds or complete memory-card scenario",
+    "No C promotion or whole-feature acceptance follows from equal recorded outputs"
+  ],
+  "recorded_utc": "2026-10-20T03:46:01.414881+00:00",
+  "current_source_inventory": {
+    "recorded_utc": "2026-10-20T03:46:01.414881+00:00",
+    "scope": "Current configured-source inventory; frozen before/initial-pass snapshots and their byte/source facts are preserved",
+    "algorithm": "tools/feature_inventory.py configured manifest, definition locator, active assembly catalogue and explicit shared-support closure",
+    "algorithm_sha256": "0d3472040ca5008cf5cca18797ae8a1ba42bd90f274d999fc73acdffb34560ec",
+    "frozen_before_prompt_counts": {
+      "catalogued_feature_groups": 40,
+      "original_feature_groups_present_in_matching_c_plus_assembly": 40,
+      "core_logic_recovered_c": 16,
+      "known_core_and_support_recovered_c": 0,
+      "runtime_accepted_feature_groups": 0,
+      "new_gameplay_features_implemented": 0,
+      "native_behavior_callbacks_recovered_c": 105
+    },
+    "frozen_initial_inventory_pass_timestamp": "2026-10-11T04:38:49.950521+00:00",
+    "frozen_initial_inventory_pass_counts": {
+      "catalogued_feature_groups": 40,
+      "original_feature_groups_present_in_matching_c_plus_assembly": 40,
+      "core_logic_recovered_c": 35,
+      "known_core_and_support_recovered_c": 6,
+      "runtime_accepted_feature_groups": 0,
+      "new_gameplay_features_implemented": 0,
+      "native_behavior_callbacks_recovered_c": 107
+    },
+    "current_verified_source_counts": {
+      "catalogued_feature_groups": 40,
+      "original_feature_groups_present_in_matching_c_plus_assembly": 40,
+      "core_logic_recovered_c": 38,
+      "known_core_and_support_recovered_c": 6,
+      "runtime_accepted_feature_groups": 0,
+      "new_gameplay_features_implemented": 0,
+      "native_behavior_callbacks_recovered_c": 107
+    },
+    "current_verified_assembly_functions": 2,
+    "current_verified_build_objects": 306,
+    "current_C_bytes": 197172,
+    "current_game_text_bytes": 199912,
+    "current_C_percent": 98.62939693465124,
+    "official_exhaustive_feature_total_known": false,
+    "exhaustive_call_graph_closure_proven": false,
+    "new_C_bytes_this_study": 0,
+    "historical_snapshot_fields_rewritten": false,
+    "private_complete_source_inventory_sha256": "1bfa5b6d3b1cef1c6bb01fcfcc897ad150a550ff1c0eb0c1eefe2d72cb1cf606",
+    "configured_source_hash_catalogue_sha256": "2431681dd29caa669f93aa43366f8c51b63d676bb2a3d90081c000f5dd5a509a",
+    "feature_statuses": [
+      {
+        "id": "F001",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F032",
+          "F035"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F002",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F035",
+          "F036"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F003",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F032"
+        ],
+        "known_core_and_support_complete": true
+      },
+      {
+        "id": "F004",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F040"
+        ],
+        "known_core_and_support_complete": true
+      },
+      {
+        "id": "F005",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F009",
+          "F014",
+          "F024",
+          "F025",
+          "F027",
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F006",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F008"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F007",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F006"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F008",
+        "core_complete": false,
+        "retained_assembly_functions": [
+          "func_8001DDF4"
+        ],
+        "shared_support_features": [
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F009",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F033",
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F010",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F008",
+          "F014"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F011",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F006",
+          "F014"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F012",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F009",
+          "F014"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F013",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F006",
+          "F014"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F014",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F034"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F015",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F014"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F016",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F028"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F017",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F035",
+          "F034"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F018",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F009"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F019",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F028"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F020",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F027",
+          "F014"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F021",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F032",
+          "F035"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F022",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F017",
+          "F032"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F023",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F033",
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F024",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F033",
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F025",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F024",
+          "F031",
+          "F034"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F026",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F029",
+          "F031"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F027",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F026",
+          "F029",
+          "F031",
+          "F034"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F028",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F027"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F029",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F008",
+          "F033",
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F030",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F040"
+        ],
+        "known_core_and_support_complete": true
+      },
+      {
+        "id": "F031",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F040"
+        ],
+        "known_core_and_support_complete": true
+      },
+      {
+        "id": "F032",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F040"
+        ],
+        "known_core_and_support_complete": true
+      },
+      {
+        "id": "F033",
+        "core_complete": false,
+        "retained_assembly_functions": [
+          "func_8001F8B8"
+        ],
+        "shared_support_features": [
+          "F008",
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F034",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F033"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F035",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F033",
+          "F036",
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F036",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F033",
+          "F040"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F037",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F038",
+          "F039"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F038",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F035",
+          "F036"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F039",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [
+          "F035",
+          "F036"
+        ],
+        "known_core_and_support_complete": false
+      },
+      {
+        "id": "F040",
+        "core_complete": true,
+        "retained_assembly_functions": [],
+        "shared_support_features": [],
+        "known_core_and_support_complete": true
+      }
+    ]
+  }
+}

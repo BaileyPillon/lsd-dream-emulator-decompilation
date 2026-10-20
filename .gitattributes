@@ -1,6 +1,9 @@
 # Preserve the bundled compiler binaries without text conversion.
 tools/gcc263/* binary
 
+# Preserve the exact executed natural-progression research producer.
+research/headless/RecordProgressionHistory.cs text eol=lf
+
 # Keep compact native observations and signed-storage consumer views reproducible.
 tools/inventory_entities.py text eol=lf
 tools/record_npc_activation.py text eol=lf

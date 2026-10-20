@@ -17,6 +17,13 @@ tools have separate deliverables. See [PROJECT_OBJECTIVE.md](../PROJECT_OBJECTIV
 for the completion requirements and [provenance](PROVENANCE.md) for the evidence
 boundary of the published snapshot.
 
+The [natural progression pilot](NATURAL_PROGRESSION.md) compares seven completed
+days: 209 sampled RAM/GPU/RGB pairs and all 201 returned-PCM windows agree.
+All nine complete serialized-state hash pairs differ, so that strict comparison
+fails. The requested eighth day is beyond this pilot's frame budget. Extend the
+route through days 364/365 and the ending using a qualified existing core,
+preserve every state difference, and keep whole-feature acceptance separate.
+
 The [file-driver interface repair](FILE_DRIVER_INTERFACES.md) aligns the
 shared/debug Open and Read views with their original arguments and result.
 Bounded debug/CD guard paths and original slot copying pass without output
