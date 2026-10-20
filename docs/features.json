@@ -1501,10 +1501,15 @@
         "new_gameplay_feature": false
       },
       "runtime_validation": {
-        "status": "not_observed",
+        "status": "recorded_subset_compared",
         "scenario": "Replay days 364, 365 and new-year day 1; compare counters, history and ending trigger.",
         "acceptance": "Compare original/canonical reconstructed PS1 builds from identical state, assets, seed and input trace; check relevant state/events/video/audio/card outputs.",
-        "evidence": []
+        "evidence": [
+          {
+            "reference": "docs/natural-progression-pilot-checks.json",
+            "scope": "Seven natural completed days from two 120001-frame cold runs; 209 RAM/GPU/RGB checkpoint pairs and all 201 PCM windows agree. All nine complete serialized-state hashes differ. Days 364/365, year wrap and ending remain unobserved here; no whole-feature acceptance."
+          }
+        ]
       }
     },
     {
