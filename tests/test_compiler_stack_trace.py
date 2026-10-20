@@ -1,5 +1,6 @@
 """Evidence and output guards for the canonical compiler tracing diagnostic."""
 import contextlib
+import copy
 import hashlib
 import io
 import json
@@ -114,6 +115,132 @@ class CompilerStackTraceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'reload caller context'):
             tracer.validate_trace(trace)
 
+    def inline_trace(self, local=False):
+        kind, number, pc = ('inlined_local_frame', 68, '0x80edfa5') if local else ('incoming_argument_block', 67, '0x80ee093')
+        return {'schema_version': 4, 'compiler_sha256': tracer.COMPILER_SHA256,
+            'compiler_exited': True, 'compiler_exit_code': 0,
+            'normal_debugger_breakpoint_machinery': True,
+            'explicit_inferior_memory_writes_or_opcode_substitutions': False,
+            'extra_inferior_functions_invoked': False,
+            'outer_allocation_events': [], 'outer_allocation_errors': [], 'inline_allocation_errors': [],
+            'allocation_events': [{'sequence': 0, 'function': 'caller', 'allocator': 'assign_stack_temp',
+                'size': 12 if local else 16, 'frame_offset_before': 72, 'frame_offset_after': 88,
+                'returned_rtx': '0x830469c', 'call_stack': ['assign_stack_temp', 'copy_rtx_and_substitute'],
+                'alter_reg_context': None,
+                'inline_storage_origin': {'kind': kind, 'virtual_register': number, 'caller_return_pc': pc,
+                    'callee': 'helper', 'callee_frame_size': 12, 'callee_argument_size': 16},
+                'inline_storage_slot': {'base_register': 68, 'offset': 72}}]}
+
+    def test_parameter_buffer_is_not_a_copied_local_frame(self):
+        for local in (False, True):
+            trace = self.inline_trace(local)
+            self.assertIs(tracer.validate_trace(trace), trace['allocation_events'])
+            row = tracer.validate_inline_storage(trace)[0]
+            self.assertEqual(row['kind'], 'inlined_local_frame' if local else 'incoming_argument_block')
+            self.assertEqual(row['requested_bytes'], 12 if local else 16)
+            self.assertEqual(row['returned_slot'], {'base_register': 68, 'offset': 72})
+
+    def test_equal_callee_frame_and_argument_sizes_still_need_the_correct_origin(self):
+        for local in (False, True):
+            trace = self.inline_trace(local)
+            event = trace['allocation_events'][0]
+            event['inline_storage_origin']['callee_frame_size'] = 16
+            event['size'] = 16
+            tracer.validate_trace(trace)
+            row = tracer.validate_inline_storage(trace)[0]
+            self.assertEqual(row['kind'], 'inlined_local_frame' if local else 'incoming_argument_block')
+            event['inline_storage_origin']['virtual_register'] = 67 if local else 68
+            with self.subTest(local=local), self.assertRaisesRegex(ValueError, 'Inline-storage'):
+                tracer.validate_trace(trace)
+
+    def test_inline_summary_rejects_incomplete_input_without_a_separate_validation_call(self):
+        for events in (None, [None], [{}]):
+            trace = self.inline_trace();trace['allocation_events'] = events
+            with self.subTest(events=events), self.assertRaises(ValueError):
+                tracer.validate_inline_storage(trace)
+        trace = self.inline_trace();trace['allocation_events'][0]['sequence'] = 3
+        with self.assertRaises(ValueError):
+            tracer.validate_inline_storage(trace)
+
+    def test_repeated_inline_requests_can_reuse_a_slot_without_frame_growth(self):
+        trace = self.inline_trace()
+        repeated = copy.deepcopy(trace['allocation_events'][0])
+        repeated.update(sequence=1, frame_offset_before=88)
+        trace['allocation_events'].append(repeated)
+        tracer.validate_trace(trace)
+        rows = tracer.validate_inline_storage(trace)
+        self.assertEqual([r['frame_offset_after']-r['frame_offset_before'] for r in rows], [16, 0])
+        self.assertEqual(rows[0]['returned_slot'], rows[1]['returned_slot'])
+
+    def test_legacy_traces_do_not_invent_inline_storage_origins(self):
+        for trace in (self.reload_trace(), self.outer_trace()):
+            self.assertEqual(tracer.validate_inline_storage(trace), [])
+
+    def test_inline_origin_needs_matching_branch_register_kind_and_size(self):
+        for key, value in (('kind', 'inlined_local_frame'), ('virtual_register', 68),
+                           ('virtual_register', True), ('caller_return_pc', '0x80edfa5'),
+                           ('caller_return_pc', '0x12345678'), ('callee_argument_size', 12),
+                           ('callee_argument_size', True), ('callee_frame_size', -1), ('callee', None)):
+            trace = self.inline_trace()
+            trace['allocation_events'][0]['inline_storage_origin'][key] = value
+            with self.subTest(key=key, value=value), self.assertRaisesRegex(ValueError, 'inline-storage|Inline-storage'):
+                tracer.validate_trace(trace)
+
+    def test_inline_allocator_return_and_slot_must_be_complete(self):
+        for key, value in (('inline_storage_origin', None), ('inline_storage_slot', None),
+                           ('returned_rtx', None), ('returned_rtx', '0x0'), ('returned_rtx', '0x100000000'),
+                           ('frame_offset_before', None), ('frame_offset_after', True), ('size', True),
+                           ('sequence', False), ('function', 42)):
+            trace = self.inline_trace()
+            trace['allocation_events'][0][key] = value
+            with self.subTest(key=key, value=value), self.assertRaisesRegex(ValueError, 'inline-storage|Inline-storage'):
+                tracer.validate_trace(trace)
+        for slot in ({'base_register': 67, 'offset': 72}, {'base_register': True, 'offset': 72},
+                     {'base_register': 68, 'offset': False}):
+            trace = self.inline_trace()
+            trace['allocation_events'][0]['inline_storage_slot'] = slot
+            with self.subTest(slot=slot), self.assertRaisesRegex(ValueError, 'Inline-storage'):
+                tracer.validate_trace(trace)
+
+    def test_nested_allocator_wrapper_is_not_counted_twice_as_inline_storage(self):
+        trace = self.inline_trace()
+        event = trace['allocation_events'][0]
+        event['allocator'] = 'assign_stack_local'
+        event['call_stack'] = ['assign_stack_local', 'assign_stack_temp', 'copy_rtx_and_substitute']
+        with self.assertRaisesRegex(ValueError, 'different allocator caller'):
+            tracer.validate_trace(trace)
+        event.update(inline_storage_origin=None, inline_storage_slot=None)
+        self.assertEqual(tracer.validate_inline_storage(trace), [])
+        tracer.validate_trace(trace)
+
+    def test_missing_new_observer_fields_or_errors_fail_closed(self):
+        for key in ('compiler_sha256', 'inline_allocation_errors', 'outer_allocation_events', 'outer_allocation_errors'):
+            trace = self.inline_trace()
+            del trace[key]
+            with self.subTest(missing=key), self.assertRaises(ValueError):
+                tracer.validate_trace(trace)
+        trace = self.inline_trace()
+        trace['inline_allocation_errors'] = ['unknown allocation branch']
+        with self.assertRaisesRegex(ValueError, 'inline-storage'):
+            tracer.validate_trace(trace)
+
+    def test_unpinned_or_mutating_inline_observers_are_rejected(self):
+        for key, value in (('compiler_sha256', '0'*64), ('normal_debugger_breakpoint_machinery', False),
+                           ('explicit_inferior_memory_writes_or_opcode_substitutions', True),
+                           ('extra_inferior_functions_invoked', True)):
+            trace = self.inline_trace();trace[key] = value
+            with self.subTest(key=key), self.assertRaisesRegex(ValueError, 'inline-storage'):
+                tracer.validate_trace(trace)
+
+    def test_unknown_schema_and_non_record_allocations_are_rejected(self):
+        for schema in (True, 5, '4'):
+            trace = self.inline_trace();trace['schema_version'] = schema
+            with self.subTest(schema=schema), self.assertRaisesRegex(ValueError, 'schema'):
+                tracer.validate_trace(trace)
+        trace = self.inline_trace();trace['allocation_events'] = [None]
+        with self.assertRaises(ValueError):
+            tracer.validate_trace(trace)
+
     def test_unpinned_i386_compiler_is_rejected_before_debugger(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder).resolve()
@@ -209,9 +336,13 @@ class CompilerStackTraceTests(unittest.TestCase):
                     Path(argv[argv.index('-o') + 1]).write_bytes(b'li $2,2\n' if '--batch' in argv else b'li $2,1\n')
                 if '--batch' in argv:
                     Path(kwargs['env']['LSD_STACK_TRACE_REPORT']).write_text(json.dumps({
-                        'schema_version': 3, 'compiler_exited': True, 'compiler_exit_code': 0,
+                        'schema_version': 4, 'compiler_sha256': tracer.COMPILER_SHA256,
+                        'compiler_exited': True, 'compiler_exit_code': 0,
                         'allocation_events': [], 'outer_allocation_events': [],
-                        'outer_allocation_errors': []}), encoding='utf-8')
+                        'outer_allocation_errors': [], 'inline_allocation_errors': [],
+                        'normal_debugger_breakpoint_machinery': True,
+                        'explicit_inferior_memory_writes_or_opcode_substitutions': False,
+                        'extra_inferior_functions_invoked': False}), encoding='utf-8')
                 return SimpleNamespace(returncode=0, stdout=b'preprocessed', stderr=b'')
 
             before = source.read_bytes(), compiler.read_bytes()
@@ -223,6 +354,8 @@ class CompilerStackTraceTests(unittest.TestCase):
             report = json.loads((output/'report.json').read_text(encoding='utf-8'))
             self.assertEqual(report['status'], 'failed')
             self.assertFalse(report['complete_assembly_equal'])
+            self.assertTrue(report['gdb_initialization_files_disabled'])
+            self.assertTrue(any('--nx' in command['argv'] for command in report['commands'] if command['stage']=='gdb-compiler'))
             self.assertEqual((source.read_bytes(), compiler.read_bytes()), before)
 
 

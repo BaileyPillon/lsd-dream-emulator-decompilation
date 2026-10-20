@@ -20,6 +20,7 @@ if hashlib.sha256(compiler.read_bytes()).hexdigest() != COMPILER_SHA256:
 events = []
 outer_events = []
 outer_errors = []
+inline_errors = []
 exit_code = None
 active_alter_calls = []
 
@@ -70,6 +71,49 @@ def returned_stack_slot(address):
     return {'base_register': word(base + 4), 'offset': offset}
 
 
+def inline_storage_origin(allocator, requested_size):
+    """Decode the two pinned copy_rtx_and_substitute allocation branches."""
+    if allocator != 'assign_stack_temp':
+        return None
+    older = gdb.newest_frame().older()
+    if older is None:
+        return None
+    pc = int(older.pc())
+    branches = {0x080EE093: ('incoming_argument_block', 67),
+                0x080EDFA5: ('inlined_local_frame', 68)}
+    if older.name() != 'copy_rtx_and_substitute':
+        if pc in branches:
+            raise ValueError('Inline allocation return PC has an unexpected caller.')
+        return None
+    if pc not in branches:
+        raise ValueError('Unknown inline stack allocation branch.')
+    frame = int(older.read_register('ebp'))
+    original = word(frame + 8) & 0xffffffff
+    if rtl_name(original) != 'reg':
+        raise ValueError('Inline allocation source is not a virtual register.')
+    kind, number = branches[pc]
+    incoming = symbol_word('virtual_incoming_args_rtx') & 0xffffffff
+    local = symbol_word('virtual_stack_vars_rtx') & 0xffffffff
+    if (rtl_name(incoming) != 'reg' or rtl_name(local) != 'reg'
+            or word(incoming + 4) != 67 or word(local + 4) != 68
+            or word(original + 4) != number):
+        raise ValueError('Inline allocation branch and virtual-register identity disagree.')
+    mapping = word(frame + 12) & 0xffffffff
+    declaration = word(mapping + 4) & 0xffffffff
+    identifier = word(declaration + 0x20) & 0xffffffff
+    if not identifier:
+        raise ValueError('Inline allocation has no callee name.')
+    callee = gdb.parse_and_eval('(char *)' + str(word(identifier + 0x10) & 0xffffffff)).string()
+    saved = word(declaration + 0x48) & 0xffffffff
+    frame_size, argument_size = word(declaration + 0x44), word(saved + 0x24)
+    expected_size = argument_size if kind == 'incoming_argument_block' else frame_size
+    if min(frame_size, argument_size) < 0 or requested_size != expected_size:
+        raise ValueError('Inline allocation size disagrees with callee metadata.')
+    return {'kind': kind, 'virtual_register': number, 'caller_return_pc': hex(pc),
+            'callee': callee, 'callee_frame_size': frame_size,
+            'callee_argument_size': argument_size}
+
+
 class AlterReturned(gdb.FinishBreakpoint):
     def __init__(self, context):
         super().__init__(internal=True)
@@ -103,7 +147,13 @@ class AllocationReturned(gdb.FinishBreakpoint):
 
     def stop(self):
         self.event['frame_offset_after'] = symbol_word('frame_offset')
-        self.event['returned_rtx'] = hex(int(gdb.parse_and_eval('$eax')))
+        result = int(gdb.parse_and_eval('$eax')) & 0xffffffff
+        self.event['returned_rtx'] = hex(result)
+        if self.event['inline_storage_origin'] is not None:
+            try:
+                self.event['inline_storage_slot'] = returned_stack_slot(result)
+            except Exception as error:
+                inline_errors.append(str(error))
         return False
 
 
@@ -121,7 +171,12 @@ class AllocationEntered(gdb.Breakpoint):
             'frame_offset_before': symbol_word('frame_offset'),
             'temp_slot_level': symbol_word('temp_slot_level'), 'call_stack': call_stack(),
             'alter_reg_context': active_alter_calls[-1] if active_alter_calls else None,
+            'inline_storage_origin': None, 'inline_storage_slot': None,
         }
+        try:
+            event['inline_storage_origin'] = inline_storage_origin(self.name, event['size'])
+        except Exception as error:
+            inline_errors.append(str(error))
         events.append(event)
         AllocationReturned(event)
         return False
@@ -182,11 +237,12 @@ AllocationEntered('assign_stack_temp')
 OuterEntered()
 gdb.execute('run')
 with open(os.environ['LSD_STACK_TRACE_REPORT'], 'x', encoding='utf-8') as destination:
-    json.dump({'schema_version': 3,
+    json.dump({'schema_version': 4, 'compiler_sha256': COMPILER_SHA256,
                'compiler_exited': gdb.selected_inferior().pid == 0,
                'compiler_exit_code': exit_code, 'allocation_events': events,
                'outer_allocation_events': outer_events,
                'outer_allocation_errors': outer_errors,
+               'inline_allocation_errors': inline_errors,
                'normal_debugger_breakpoint_machinery': True,
                'explicit_inferior_memory_writes_or_opcode_substitutions': False,
                'extra_inferior_functions_invoked': False}, destination, indent=2)
