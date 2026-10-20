@@ -1,11 +1,15 @@
 # Roadmap
 
-The [natural collision entry profile](NATURAL_COLLISION_ENTRIES.md) now records
-both remaining assembly functions in the original opening route. Original and
-rebuilt entries agree on 194 hull and 643 primitive calls, with 484 checked
-argument/stack relationships. Capture the missing call-time geometry, extra
-stack arguments and returns, extend scenes and branches, and require exact
-complete-executable equality before promoting either C reconstruction.
+The [natural collision entries](NATURAL_COLLISION_ENTRIES.md) and subsequent
+[hull call/return collection](HULL_CALLS.md) already retain geometry, stack
+inputs and returns for the opening route. The
+[functional replay](NATURAL_COLLISION_REPLAY.md) matches 174 of 194 hull calls
+on full RAM, exposed CPU/GTE state and instruction count. The other 20 retain
+cross-frame failures. Their [exception contexts](COLLISION_EXCEPTIONS.md)
+now agree with the pinned core's interrupt encoding and functional PC paths,
+but do not identify a unique interrupt cycle or replay intervening device
+activity. Recover that execution, extend scenes and branches, and require
+exact complete-executable equality before promoting either C reconstruction.
 
 The goal is readable C recovery of the original game, followed by reviewed
 comparison evidence for its behavior and content. Optional mods and analysis

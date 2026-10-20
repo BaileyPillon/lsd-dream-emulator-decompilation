@@ -30,6 +30,14 @@ spans are longer, and kernel RAM differs. These observations are consistent
 with interrupt activity that the functional replayer does not schedule. The
 failures are retained; those RAM regions and registers are never excluded.
 
+The later [exception-context investigation](COLLISION_EXCEPTIONS.md) checks
+the pinned core's CAUSE encoding and original instruction PCs for all 20
+affected calls. One branch context has 144 compatible taken occurrences and
+48 alternative fallthrough occurrences. All 20 also have RAM differences
+beyond low kernel memory. The diagnostic preserves the same strict failures;
+interrupt delivery, callback execution and device scheduling still require
+recovery.
+
 The earlier geometry inspector independently reconstructs the same 484 nested
 queries and 11,333 polygon visits. Addresses and visits are observations in one
 history, rather than unique assets, NPCs or game features.
@@ -80,6 +88,11 @@ repeat `--recording /path/to/recording` for individual captures.
 `--max-calls N` limits execution and reports how many captured calls were
 skipped. All declared recordings are still inspected. A limited passing result
 establishes calibration only for its selected calls.
+
+`--trace-exceptions` adds pinned-core CP0 interpretation and bounded functional
+PC observations. It rejects unsupported observer CPU-source provenance and
+does not alter the state comparison or deliver interrupts. See
+[captured exception contexts](COLLISION_EXCEPTIONS.md) for the verified scope.
 
 The command writes per-call differences, capture-inspection summaries, an
 ordered native-command log and a pinned aggregate report. Exit codes are:

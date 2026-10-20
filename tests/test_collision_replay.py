@@ -9,6 +9,7 @@ from unittest.mock import patch
 
 from tools import replay_collision_calls as replay
 from tools.collision_calls import CPU_FIELDS, FIELDS, RAM_BYTES
+from tools.collision_exception_context import CORE_COMMIT, CPU_SOURCE_SHA256, CPU_HEADER_SHA256
 
 
 def row_fixture():
@@ -90,7 +91,8 @@ class ReplayInputTests(unittest.TestCase):
                          'tools/verify_render_gte.py', 'tools/collision_calls.py', 'tools/inspect_collision_calls.py',
                          'tools/inspect_hull_calls.py', 'tools/inspect_dispatch_history.py', 'tools/inspect_sdk_reads.py',
                          'tools/dispatch_returns.py', 'tools/psx_image.py', 'tools/nymashock_gte_bridge.cs',
-                         'research/collision/trace_compiler_stack.py', 'rom/SLPS_015.56', 'build/SLPS015.56']:
+                         'research/collision/trace_compiler_stack.py', 'tools/collision_exception_context.py',
+                         'rom/SLPS_015.56', 'build/SLPS015.56']:
                 path = source_root/name
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text('synthetic runner fixture', encoding='utf-8')
@@ -120,6 +122,8 @@ class ReplayInputTests(unittest.TestCase):
             class FakeMachine:
                 def __init__(self, *args, **kwargs):
                     self.instructions, self.entries, self.adapter = 1, {}, SimpleNamespace(counts={})
+                    self.exception_trace = SimpleNamespace(report=lambda: dict(
+                        compatible_PC_occurrences=0, interrupts_replayed=False, full_game_parity_accepted=False))
                 def invoke(self):
                     return bytes(RAM_BYTES), dict.fromkeys(CPU_FIELDS[:-2], 0), [0]*32, [0]*32
                 def close(self):
@@ -134,6 +138,19 @@ class ReplayInputTests(unittest.TestCase):
                  patch.object(replay, 'NaturalMachine', FakeMachine), \
                  patch.object(replay.hull, 'inspect_call_recording', return_value=(inspection, {})):
                 report = replay.run(recordings, output, bridge_file, 'unused', lab_root=root, max_calls=1)
+                profile = dict(mednafen_commit=CORE_COMMIT, existing_CPU_source_modified=False,
+                               inputs=[dict(path='/synthetic/cpu.cpp', sha256=CPU_SOURCE_SHA256),
+                                       dict(path='/synthetic/cpu.h', sha256=CPU_HEADER_SHA256)])
+                with patch.object(replay.hull, 'inspect_call_recording', return_value=(
+                        inspection, dict(manifest=dict(observer_profile=profile)))):
+                    diagnostic = replay.run(recordings, root/'diagnostic', bridge_file, 'unused',
+                                            lab_root=root, max_calls=1, trace_exceptions=True)
+                self.assertTrue(diagnostic['exception_provenance_requested'])
+                self.assertEqual(len(list((root/'diagnostic').glob('recording-*-inspection.json'))), 4)
+                observed = json.loads((root/'diagnostic/call-0001.json').read_text())
+                self.assertEqual(observed['exception_provenance']['native_core_source_qualification']['CPU_source_sha256'],
+                                 CPU_SOURCE_SHA256)
+                self.assertFalse(observed['exception_provenance']['interrupts_replayed'])
                 wrong_collection = root/'wrong-function.json'
                 wrong_collection.write_text(json.dumps(dict(function='func_8001F8B8')), encoding='utf-8')
                 with self.assertRaisesRegex(ValueError, 'declared collection function'):
@@ -152,8 +169,10 @@ except ValueError:
 
 @unittest.skipIf(BACKEND is None, 'Optional Unicorn backend is not installed.')
 class FunctionalMipsReplayTests(unittest.TestCase):
-    def machine(self):
+    def machine(self, *, trace_exceptions=False, exception_context=False):
         row = row_fixture()
+        if exception_context:
+            row.update(cpu_epc=0x80010000, cpu_gpr_26=0x80010000, cpu_cause=0x10000000)
         memory = bytearray(RAM_BYTES)
         # Generic MIPS: save RA; transfer LZCS/LZCR; call a child that copies
         # its actual link; restore the original caller. No original game bytes.
@@ -171,9 +190,30 @@ class FunctionalMipsReplayTests(unittest.TestCase):
                     raise AssertionError('Unexpected synthetic GTE input')
                 return 23
 
-        machine = replay.NaturalMachine(LeadingOnlyBridge(), functions, row, bytes(memory), backend=BACKEND)
+        machine = replay.NaturalMachine(LeadingOnlyBridge(), functions, row, bytes(memory), backend=BACKEND,
+                                        trace_exceptions=trace_exceptions)
         self.addCleanup(machine.close)
         return machine, row, bytes(memory)
+
+    def test_exception_PC_observation_preserves_execution_and_full_state(self):
+        ordinary, _, _ = self.machine(exception_context=True)
+        observed, _, _ = self.machine(trace_exceptions=True, exception_context=True)
+        self.assertEqual(ordinary.invoke(), observed.invoke())
+        self.assertEqual(ordinary.instructions, observed.instructions)
+        self.assertEqual(ordinary.entries, observed.entries)
+        self.assertEqual(ordinary.adapter.counts, observed.adapter.counts)
+        evidence = observed.exception_trace.report()
+        self.assertEqual(evidence['compatible_PC_occurrences'], 1)
+        self.assertFalse(evidence['interrupts_replayed'])
+
+    def test_compatible_exception_context_cannot_turn_a_strict_failure_into_a_pass(self):
+        machine, row, _ = self.machine(trace_exceptions=True, exception_context=True)
+        actual, cpu, data, control = machine.invoke()
+        row['sequence_low'] = machine.instructions
+        result = replay.compare_state(row, actual, actual, cpu, data, control, machine.instructions)
+        self.assertEqual(machine.exception_trace.report()['compatible_PC_occurrences'], 1)
+        self.assertFalse(result['equal_measured_call'])
+        self.assertIn('gpr_26', result['CPU_differences'])
 
     def test_virtual_PC_survives_COP2_and_nested_JAL(self):
         machine, row, before = self.machine()

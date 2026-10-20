@@ -25,6 +25,7 @@ from tools import verify_collision as collision
 from tools import verify_native_ai as native
 from tools.collision_calls import CPU_FIELDS, EVENT_BYTES, FIELDS, FUNCTIONS, RAM_BYTES
 from tools.dispatch_returns import sequence
+from tools.collision_exception_context import ExceptionTrace, inspect_context, qualify_core_profile
 
 
 def digest(path):
@@ -108,7 +109,7 @@ def pending_caller_load(word):
 
 class NaturalMachine:
     """Execute captured code and state in a new isolated Unicorn instance."""
-    def __init__(self, bridge, functions, row, before, *, backend=None):
+    def __init__(self, bridge, functions, row, before, *, backend=None, trace_exceptions=False):
         if len(before) != RAM_BYTES:
             raise ValueError('Require one complete 2 MiB entry snapshot.')
         if pending_caller_load(row['entry_delay_fetch']):
@@ -129,6 +130,7 @@ class NaturalMachine:
         self.ranges = [(int(f['address'], 16) & native.MASK, f['bytes']) for f in functions]
         self.native_entries = {int(f['address'], 16) & native.MASK: f['function'] for f in functions}
         self.instructions, self.entries, self.recent = 0, Counter(), deque(maxlen=16)
+        self.exception_trace = ExceptionTrace(inspect_context(row, before, functions)) if trace_exceptions else None
         self._hook = self.cpu.hook_add(self.backend.UC_HOOK_CODE, self.hook)
 
     def close(self):
@@ -143,6 +145,8 @@ class NaturalMachine:
         if not any(start <= physical < start + length for start, length in self.ranges):
             raise ValueError('Replay left the reviewed original function ranges: ' + hex(address))
         self.instructions += 1
+        if self.exception_trace is not None:
+            self.exception_trace.observe(address, self.instructions)
         if physical in self.native_entries:
             self.entries[self.native_entries[physical]] += 1
         self.adapter.step_virtual(cpu, address)
@@ -223,7 +227,8 @@ def collection_recordings(manifest, side='reference'):
     return recordings
 
 
-def run(recordings, output, bridge_executable, runtime, *, lab_root=None, max_calls=None, collection=None):
+def run(recordings, output, bridge_executable, runtime, *, lab_root=None, max_calls=None, collection=None,
+        trace_exceptions=False):
     if max_calls is not None and (type(max_calls) is not int or max_calls < 1):
         raise ValueError('max_calls must be a positive integer, or omitted for every captured call.')
     folders = [Path(folder).resolve(strict=True) for folder in recordings]
@@ -239,7 +244,8 @@ def run(recordings, output, bridge_executable, runtime, *, lab_root=None, max_ca
                     'tools/verify_render_gte.py', 'tools/collision_calls.py', 'tools/inspect_collision_calls.py',
                     'tools/inspect_hull_calls.py', 'tools/inspect_dispatch_history.py', 'tools/inspect_sdk_reads.py',
                     'tools/dispatch_returns.py', 'tools/psx_image.py', 'tools/nymashock_gte_bridge.cs',
-                    'research/collision/trace_compiler_stack.py', 'docs/collision-function-ranges.json']
+                    'research/collision/trace_compiler_stack.py', 'docs/collision-function-ranges.json',
+                    'tools/collision_exception_context.py']
     pins = {str(ROOT/name): digest(ROOT/name) for name in source_names}
     bridge_executable = Path(bridge_executable).resolve(strict=True)
     pins[str(bridge_executable)] = digest(bridge_executable)
@@ -269,6 +275,7 @@ def run(recordings, output, bridge_executable, runtime, *, lab_root=None, max_ca
                 raise ValueError('Recording disagrees with the declared collection function.')
             inspector = hull if selected == 'func_8001DDF4' else primitive
             checked, retained = inspector.inspect_call_recording(folder)
+            core_qualification = qualify_core_profile(retained['manifest']['observer_profile']) if trace_exceptions else None
             with (output/('recording-' + str(recording_index) + '-inspection.json')).open('x', encoding='utf-8') as stream:
                 json.dump(dict(recording=str(folder), function=selected,
                     captured_calls=checked['collision_calls']['completed_samples'],
@@ -292,10 +299,14 @@ def run(recordings, output, bridge_executable, runtime, *, lab_root=None, max_ca
                                   entry_frame=row['entry_frame'], return_frame=row['frame'])
                     machine = None
                     try:
-                        machine = NaturalMachine(bridge, functions, row, before, backend=backend)
+                        machine = NaturalMachine(bridge, functions, row, before, backend=backend,
+                                                 trace_exceptions=trace_exceptions)
                         actual, cpu, gte_data, gte_control = machine.invoke()
                         result.update(compare_state(row, actual, expected, cpu, gte_data, gte_control, machine.instructions),
                                       executed_functions=dict(machine.entries), adapter_counts=dict(machine.adapter.counts))
+                        if trace_exceptions:
+                            result['exception_provenance'] = machine.exception_trace.report()
+                            result['exception_provenance']['native_core_source_qualification'] = core_qualification
                     except Exception as error:
                         result.update(equal_measured_call=False, error=str(error))
                         if machine:
@@ -321,6 +332,9 @@ def run(recordings, output, bridge_executable, runtime, *, lab_root=None, max_ca
         exposed_35_CPU_register_matches=sum('CPU_differences' in call and not call['CPU_differences'] for call in calls),
         architectural_64_GTE_view_matches=sum('GTE_view_differences' in call and not call['GTE_view_differences'] for call in calls),
         instruction_count_matches=sum(call.get('instruction_count_equal', False) for call in calls),
+        exception_provenance_requested=trace_exceptions,
+        exception_contexts_with_compatible_functional_PC=sum(
+            call.get('exception_provenance', {}).get('compatible_PC_occurrences', 0) > 0 for call in calls),
         native_OP_SQR_commands=bridge.count, native_LZCS_operations=bridge.lz_count,
         backend=backend.identity, input_sha256=pins, all_pinned_inputs_preserved=True,
         canonical_build_preserved=True, game_RAM_or_running_emulator_modified=False,
@@ -346,13 +360,15 @@ def main(argv=None):
     parser.add_argument('--output', type=Path, required=True, help='Fresh private result directory.')
     parser.add_argument('--lab-root', type=Path, help='Existing dedicated private artifact directory outside Git worktrees.')
     parser.add_argument('--max-calls', type=int, help='Optional global selection limit; omitted means all captured calls.')
+    parser.add_argument('--trace-exceptions', action='store_true',
+                        help='Correlate captured CP0 exception fields with functional PCs; does not schedule interrupts or alter comparisons.')
     args = parser.parse_args(argv)
     try:
         if args.recording and args.side != 'reference':
             raise ValueError('--side selects a collection side; omit it for individual recordings.')
         folders = collection_recordings(args.collection, args.side) if args.collection else args.recording
         report = run(folders, args.output, args.bridge, args.runtime, lab_root=args.lab_root,
-                     max_calls=args.max_calls, collection=args.collection)
+                     max_calls=args.max_calls, collection=args.collection, trace_exceptions=args.trace_exceptions)
         print(json.dumps({key: report[key] for key in ('status', 'captured_calls_available', 'calls_replayed',
               'equal_measured_calls', 'failed_measured_calls', 'full_game_parity_accepted', 'new_C_bytes')}))
         return 0 if not report['failed_measured_calls'] else 1

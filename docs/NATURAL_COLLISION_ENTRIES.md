@@ -124,9 +124,14 @@ extracted with GNU tools. The best new form differs in 112 bytes; none improves
 the published hull control's 26. Both collision assembly functions and three
 inherited storage explanations remain required.
 
-Next, capture the missing call-time geometry/stack inputs and returns, extend
-natural scenes and branches, and recover source that passes the complete
-canonical executable gate. Original NPC behavior and optional AI-assisted
-tools retain separate counts; this profile calls no model API and adds no mod.
+Later [primitive snapshots](COLLISION_ORDINAL_CALLS.md) and
+[hull call/return records](HULL_CALLS.md) supply the geometry, stack inputs and
+returns missing from this entry-only profile. The
+[functional replay](NATURAL_COLLISION_REPLAY.md) and
+[exception-context investigation](COLLISION_EXCEPTIONS.md) retain 20 cross-frame
+failures that require intervening interrupt/device execution. Extend natural
+scenes and branches, and recover source that passes the complete canonical
+executable gate. Original NPC behavior and optional AI-assisted tools retain
+separate counts; this profile calls no model API and adds no mod.
 [Validation metadata](collision-entry-checks.json) preserves the source,
 before/after measurements and private evidence identities.
