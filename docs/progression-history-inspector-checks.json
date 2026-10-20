@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "status": "qualified_saved_progression_inspector_with_strict_state_differences_preserved",
+  "recorded_utc": "2026-10-20T04:27:32.336171+00:00",
+  "baseline_commit": "319b797445e9fa02f587ee6667e3a9e8d6478ba3",
+  "tool": "tools/inspect_progression_history.py",
+  "source_sha256": "0b2e7cf5f97107072adcd191745230e6e1485e7ed5736337bdb19e4f02cdf625",
+  "test_source": "tests/test_progression_history.py",
+  "test_source_sha256": "fa8963728f329afcb6bf79ac9f4fd53ff5c6dbb2f6754411daa5135d8fbbbb0e",
+  "focused_unit_tests": 29,
+  "unit_fixture_scope": "Synthetic file/calendar/PNG/archive data; no unit fixture is native execution evidence",
+  "real_qualification": {
+    "native_recaptures": 0,
+    "existing_source_capture_preserved": true,
+    "archive_journals_expanded": false,
+    "sealed_and_raw_decoded_observations_equal": true,
+    "actual_compared_frames_per_run": 120001,
+    "actual_compared_completed_days_per_run": 7,
+    "actual_compared_RAM_GPU_RGB_checkpoints": 209,
+    "actual_compared_PCM_windows": 201,
+    "actual_non_null_complete_state_pairs": 9,
+    "actual_complete_state_pair_differences": 9,
+    "complete_state_comparison_passed": false,
+    "decoded_final_PNGs_equal": true,
+    "CLI_difference_exit_code": 1,
+    "archive_bytes": 19956,
+    "archive_sha256": "47a99a7e85e2594ef085de8e22938d568532c8407226983446ef2914004746b9",
+    "empty_ending_member_is_only_a_format_adapter": true,
+    "declared_and_actual_retained_stream_bytes_equal": true,
+    "retained_stream_bytes_per_real_run": 128512
+  },
+  "decoder_terminal_contract": {
+    "vtable": "0x8006f614",
+    "verified_native_slots": [
+      {
+        "slot": "0x48",
+        "target": "0x80045948",
+        "function": "func_80045948",
+        "code_sha256": "7129f14d093604953c4b169e644a627e8ac3bb8a9e8b350f5db112c7dbe24ff0"
+      },
+      {
+        "slot": "0x68",
+        "target": "0x80045cfc",
+        "function": "func_80045CFC",
+        "code_sha256": "1a74f215b651c520df6e2a3016453898eb4d17597f74395ebdcbccc49d66673f"
+      },
+      {
+        "slot": "0x64",
+        "target": "0x80045c94",
+        "function": "func_80045C94",
+        "code_sha256": "2eefe7eebef7f896de7c7ac41287bd8ec5f3e8a00320c71404cd8495bbf97995"
+      },
+      {
+        "slot": "0x58",
+        "target": "0x80045ad8",
+        "function": "func_80045AD8",
+        "code_sha256": "b7c2ae82526841a74884aba91e47332d5387d07e3be319d4716bfc58045b28f5"
+      }
+    ],
+    "source_sha256": "80ad6b55ed2a1923e1c00491565b16032a4b2fdc0cf25848f0b902f2f68b3019",
+    "terminal_contract": "Movie screen reads slot 0x48 (func_80045948), which can forward slot 0x68. The frame/stop chain includes unspecified-return paths. Nonzero is an observed screen terminal signal, not a successful full-decode result enum.",
+    "stream_helper_limit": "The separate slot-0x58 helper func_80045AD8 returns 1 for stopped or missing-next-frame cases. It is not the directly called slot-0x48 wrapper.",
+    "complete_ending_decode_proven_by_terminal_flag": false
+  },
+  "private_evidence": {
+    "study": "year-progression-verifier-20261019-first",
+    "qualification_sha256": "547704b63ccc4c28d2419b1befcdd28e9baf805ae5cf38efa4e9461b8358b2ef",
+    "comparison_sha256": "e8b806a549d8dc8650a13136c2747acd4c1f209a16f43223a1e51c5b120af1b4",
+    "qualifier_sha256": "e13cd507473087dc55434d77b1d95574a1b7409bf76394ff30bda0b831681e15",
+    "original_pilot_file_sha256": {
+      "audio.tsv": "188f14fdd7ea1492e5d39b8b5b4307eebe96b027fd8f8ced1dca5c0a5f799b20",
+      "checkpoints.jsonl": "48c193d28e2f4b38ffb73d73fd24fe8a60bca1433d06bdbfd3840e89f5d8e3e7",
+      "days.jsonl": "f0e39d2d3b14cc900e2720d983a972998ae681ee80374a7422e497dbcdbcdf93",
+      "final.png": "21e4d36f7c5891178424b3a54eda49a8e23ebcfbda18d9a7b02652810c299149",
+      "inputs.tsv": "255962770c63f096acead68c64ae402324df3bd8ada41cdc56db2f33e4867077",
+      "progress.json": "265434e53e1e409be7c332a84794d475b8b0032f3f4a301b01ba49c0adf09771",
+      "report.json": "659ea58f95ace7a8d75cea6f50e2efd540f00edd2cc29d34abd8d51d10cf4987"
+    }
+  },
+  "acceptance": {
+    "new_C_bytes": 0,
+    "original_game_modified": false,
+    "new_original_gameplay_features": 0,
+    "new_NPC_profiles": 0,
+    "whole_feature_groups_accepted": 0,
+    "complete_ending_decode_verified": false,
+    "original_hardware_timing_verified": false,
+    "complete_emulator_or_game_parity_accepted": false,
+    "year_route_native_validation_performed_by_this_study": false,
+    "model_API_calls": 0,
+    "Bevy_port_modified": false,
+    "tooling_scope": "Extension of existing recorded-runtime analysis; capability categories are not increased for each tool."
+  },
+  "limits": [
+    "Saved-data validation does not authenticate the producer or replace runtime/BIOS/disc/source pin checks",
+    "Only present complete-state hashes are compared; no byte masking or normalization",
+    "The year option checks a defined counter/object/image/audio/state window, not complete ending decode or all-frame/hardware parity",
+    "The independently running full-year producer remains a separate unaccepted capture until terminal results are compared"
+  ]
+}
