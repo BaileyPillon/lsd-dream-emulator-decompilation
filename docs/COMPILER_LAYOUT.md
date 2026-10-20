@@ -39,7 +39,7 @@ local area, not PS1 addresses. An allocation can reuse storage without growing
 that area. Nested `assign_stack_temp`/`assign_stack_local` calls are both observed;
 the event count is not a count of distinct locals.
 
-Schema 3 also records `assign_outer_stack_local` calls separately in
+Schema 3 and later also record `assign_outer_stack_local` calls separately in
 `outer_allocation_events`. These calls allocate a captured variable in an
 enclosing function while a nested function is active. Each event retains the
 opaque owner-context identity and the returned slot's virtual base register and
@@ -47,8 +47,34 @@ byte offset. Its `active_function_frame_before/after` values describe the active
 nested function, not the enclosing owner; they must not be treated as the
 owner's frame size. Missing results, unfinished returns and decoder errors fail
 validation. Earlier schema-2 traces remain readable, without inventing outer
-allocation observations. New compiler runs require schema 3 and retain the
-same complete-assembly equality gate.
+allocation observations.
+
+Schema 4 distinguishes an **incoming argument buffer** from an **inlined local
+frame**. Both reach `assign_stack_temp`; their requested sizes can even be equal.
+The decoder checks the exact compiler SHA-256, allocation branch return PC,
+original virtual register, and callee frame/argument sizes together. It records
+the returned virtual slot separately from frame growth, so repeated requests
+that reuse storage remain visible. Unknown branches, inconsistent sizes, missing
+returns, or decoder errors fail validation. Schema-2/3 traces remain readable
+without inventing inline-origin observations. New runs require schema 4, disable
+GDB initialization files, and retain the complete-assembly equality gate.
+
+The report exposes `inline_storage_reservations`, `inline_argument_allocations`,
+and `inline_local_frame_allocations`. These describe compiler storage, not
+recovered game objects. They do not change the matching-C or gameplay gates.
+
+For a small calibration without a game executable:
+
+```bash
+python research/collision/trace_compiler_stack.py \
+  --source research/compiler/examples/inline_storage.c \
+  --output .decomp-lab/compiler-storage-example-new
+```
+
+The synthetic example includes parameter storage, an addressable local, and an
+enclosing-function allocation. Its local helper has equal 16-byte frame and
+argument sizes, demonstrating why size alone cannot establish the origin. It is
+compiler test code and does not add original-game coverage.
 
 ## Observations and limits
 

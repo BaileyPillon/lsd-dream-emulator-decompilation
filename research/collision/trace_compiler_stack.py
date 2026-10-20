@@ -76,7 +76,7 @@ def compiler_profile(compiler):
 
 def validate_outer_allocations(trace):
     """Keep enclosing-frame slots separate from the active function's frame."""
-    required = trace.get('schema_version') == 3
+    required = trace.get('schema_version') in (3, 4)
     events = trace.get('outer_allocation_events', None if required else [])
     errors = trace.get('outer_allocation_errors', None if required else [])
     if not isinstance(events, list) or not isinstance(errors, list) or errors:
@@ -110,18 +110,90 @@ def validate_outer_allocations(trace):
     return events
 
 
+def validate_inline_storage(trace):
+    """Distinguish incoming-argument buffers from copied inline local frames."""
+    schema = trace.get('schema_version')
+    if schema is None or (type(schema) is int and schema in (1, 2, 3)):
+        return []  # Older schemas did not observe these origins.
+    if type(schema) is not int or schema != 4:
+        raise ValueError('Unsupported inline-storage trace schema.')
+    if (trace.get('compiler_sha256') != COMPILER_SHA256
+            or trace.get('normal_debugger_breakpoint_machinery') is not True
+            or trace.get('explicit_inferior_memory_writes_or_opcode_substitutions') is not False
+            or trace.get('extra_inferior_functions_invoked') is not False
+            or trace.get('inline_allocation_errors') != []):
+        raise ValueError('Unsupported or incomplete inline-storage observation policy.')
+
+    def integer(value, low=-0x80000000, high=0x7fffffff):
+        return type(value) is int and low <= value <= high
+
+    branches = {67: ('incoming_argument_block', 0x080EE093, 'callee_argument_size'),
+                68: ('inlined_local_frame', 0x080EDFA5, 'callee_frame_size')}
+    events = trace.get('allocation_events')
+    if not isinstance(events, list):
+        raise ValueError('Missing inline-storage allocation events.')
+    reservations = []
+    for index, event in enumerate(events):
+        if not isinstance(event, dict) or event.get('allocator') not in ('assign_stack_temp', 'assign_stack_local'):
+            raise ValueError('Invalid inline-storage allocation event.')
+        frames = event.get('call_stack')
+        origin, slot = event.get('inline_storage_origin'), event.get('inline_storage_slot')
+        returned = event.get('returned_rtx')
+        if (not isinstance(frames, list) or not frames or frames[0] != event['allocator']
+                or not integer(event.get('sequence'), 0)
+                or event['sequence'] != index
+                or not isinstance(event.get('function'), str) or not event['function']
+                or not integer(event.get('size'), 0)
+                or not integer(event.get('frame_offset_before')) or not integer(event.get('frame_offset_after'))
+                or not isinstance(returned, str) or not re.fullmatch(r'0x[0-9a-f]{1,8}', returned)
+                or int(returned, 16) == 0
+                or 'inline_storage_origin' not in event or 'inline_storage_slot' not in event):
+            raise ValueError('Missing inline-storage allocation context.')
+        expected = (event['allocator'] == 'assign_stack_temp' and len(frames) > 1
+                    and frames[1] == 'copy_rtx_and_substitute')
+        if not expected:
+            if origin is not None or slot is not None:
+                raise ValueError('Inline-storage origin attached to a different allocator caller.')
+            continue
+        if not isinstance(origin, dict) or not isinstance(slot, dict):
+            raise ValueError('Missing inline-storage branch or returned slot.')
+        number = origin.get('virtual_register')
+        if type(number) is not int or number not in branches:
+            raise ValueError('Unsupported inline-storage virtual register.')
+        kind, pc, size_key = branches[number]
+        address = origin.get('caller_return_pc')
+        if (not isinstance(address, str) or not re.fullmatch(r'0x[0-9a-f]{1,8}', address)
+                or int(address, 16) != pc or origin.get('kind') != kind
+                or not isinstance(origin.get('callee'), str) or not origin['callee']
+                or not integer(origin.get('callee_frame_size'), 0)
+                or not integer(origin.get('callee_argument_size'), 0)
+                or not integer(event.get('size'), 0) or event['size'] != origin[size_key]
+                or not integer(event.get('frame_offset_before')) or not integer(event.get('frame_offset_after'))
+                or type(slot.get('base_register')) is not int or slot['base_register'] != 68
+                or not integer(slot.get('offset'))):
+            raise ValueError('Inline-storage branch, size or returned slot disagrees with the pinned profile.')
+        reservations.append({'sequence': event['sequence'], 'function': event['function'],
+            **origin, 'requested_bytes': event['size'],
+            'frame_offset_before': event['frame_offset_before'], 'frame_offset_after': event['frame_offset_after'],
+            'returned_slot': slot})
+    return reservations
+
+
 def validate_trace(trace):
+    schema = trace.get('schema_version')
+    if schema is not None and (type(schema) is not int or schema not in (1, 2, 3, 4)):
+        raise ValueError('Unsupported compiler trace schema.')
     if not trace.get('compiler_exited') or trace.get('compiler_exit_code') != 0:
         raise ValueError('The traced compiler did not exit successfully.')
     events = trace.get('allocation_events')
     if not isinstance(events, list):
         raise ValueError('GDB did not report stack allocation events.')
     for i, event in enumerate(events):
-        if (event.get('sequence') != i or not event.get('function')
+        if (not isinstance(event, dict) or event.get('sequence') != i or not event.get('function')
                 or event.get('allocator') not in ('assign_stack_local', 'assign_stack_temp')
                 or 'frame_offset_after' not in event):
             raise ValueError('GDB reported an incomplete or invalid stack allocation event.')
-        if trace.get('schema_version') in (2, 3):
+        if schema in (2, 3, 4):
             frames = event.get('call_stack')
             context = event.get('alter_reg_context')
             if not isinstance(frames, list) or ('alter_reg' in frames and context is None):
@@ -133,6 +205,7 @@ def validate_trace(trace):
                     or type(context.get('from_pseudo')) is not int or not -1 <= context['from_pseudo'] < 65536):
                 raise ValueError('GDB reported an incomplete or invalid reload caller context.')
     validate_outer_allocations(trace)
+    validate_inline_storage(trace)
     return events
 
 
@@ -180,13 +253,14 @@ def trace_candidate(source, output, compiler_mode='g8', *, lab_root=None):
     run('normal-compiler', [str(compiler), *flags, '-o', str(normal_assembly), str(preprocessed)])
     env = os.environ.copy()
     env['LSD_STACK_TRACE_REPORT'] = str(output / 'allocations.json')
-    run('gdb-compiler', [gdb, '--batch', '--quiet', '-x', str(backend), '--args',
+    run('gdb-compiler', [gdb, '--nx', '--batch', '--quiet', '-x', str(backend), '--args',
                         str(compiler), *flags, '-o', str(traced_assembly), str(preprocessed)], env)
     trace = json.loads((output / 'allocations.json').read_text(encoding='utf-8'))
-    if trace.get('schema_version') != 3:
-        raise ValueError('The stack observer omitted the outer-scope allocation schema.')
+    if trace.get('schema_version') != 4:
+        raise ValueError('The stack observer omitted the inline-storage origin schema.')
     events = validate_trace(trace)
     outer_events = trace['outer_allocation_events']
+    inline_storage = validate_inline_storage(trace)
     assembly_equal = normal_assembly.read_bytes() == traced_assembly.read_bytes()
     inputs_preserved = all(digest(path) == expected for path, expected in baseline.items())
     report = {
@@ -198,8 +272,12 @@ def trace_candidate(source, output, compiler_mode='g8', *, lab_root=None):
         'producer_sha256': baseline[str(producer)],
         'configuration_sha256': baseline[str(configuration)],
         'gdb_version': subprocess.check_output([gdb, '--version'], text=True).splitlines()[0],
+        'gdb_initialization_files_disabled': True,
         'allocation_events': len(events),
-        'trace_schema_version': 3,
+        'trace_schema_version': 4,
+        'inline_storage_reservations': inline_storage,
+        'inline_argument_allocations': sum(e['kind'] == 'incoming_argument_block' for e in inline_storage),
+        'inline_local_frame_allocations': sum(e['kind'] == 'inlined_local_frame' for e in inline_storage),
         'outer_scope_allocation_events': len(outer_events),
         'reload_caller_contexts': sum(event.get('alter_reg_context') is not None for event in events),
         'functions': sorted({event['function'] for event in events}
@@ -227,7 +305,8 @@ def main(argv=None):
     parser.add_argument('--compiler-mode', choices=('g0', 'g8'), default='g8')
     args = parser.parse_args(argv)
     report = trace_candidate(args.source, args.output, args.compiler_mode, lab_root=args.lab_root)
-    print(json.dumps({key: report[key] for key in ('status', 'allocation_events', 'outer_scope_allocation_events', 'functions',
+    print(json.dumps({key: report[key] for key in ('status', 'allocation_events', 'outer_scope_allocation_events',
+                                                 'inline_argument_allocations', 'inline_local_frame_allocations', 'functions',
                                                  'complete_assembly_equal', 'source_promoted')}, indent=2))
     return 0
 
