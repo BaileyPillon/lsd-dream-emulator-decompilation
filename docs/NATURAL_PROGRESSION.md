@@ -19,6 +19,11 @@ their listed shared support in C. The frozen initial-pass core count was 35.
 These are provisional source groups, not an exhaustive count of the game's
 features or a runtime-parity percentage. This study promotes no new C.
 
+The independent [progression-history checker](PROGRESSION_HISTORY.md) now
+reproduces the recorded results from either expanded or sealed journals,
+including all nine complete-state failures. Its year-window option does not
+establish complete ending decode or whole-feature parity.
+
 ## Observed route
 
 Each isolated Nymashock instance advances 120,001 emulator frames, including its
