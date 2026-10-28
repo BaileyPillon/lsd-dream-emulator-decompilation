@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "status": "passed_bounded_original_screen_resource_cleanup",
+  "baseline_commit": "fe9bdaedde12249e2d3a596235a370843f5b78b8",
+  "canonical_complete_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "original_and_rebuilt_complete_images_identical": true,
+  "chart_layout": {
+    "factory_allocation_bytes": 580,
+    "before_declared_size_bytes": 588,
+    "after_declared_size_bytes": 580,
+    "removed_unreferenced_fields": [
+      "m_Unk144 at 0x244",
+      "m_Unk145 at 0x248"
+    ],
+    "size_checked_by_target_compiler": true,
+    "event_buffer_offset": "0x240"
+  },
+  "initialized_profiles": 144,
+  "groups": {
+    "main/borrowed": 24,
+    "main/owned_no_bank": 24,
+    "main/owned_bank": 24,
+    "chart/borrowed": 24,
+    "chart/owned_no_bank": 24,
+    "chart/owned_bank": 24
+  },
+  "original_bodies_executed": 51,
+  "complete_function_pins": "research/screen_lifecycle/cleanup-functions.json",
+  "original_entry_counts": {
+    "memory_set_manager": 144,
+    "file_driver_copy_vtable_slots": 576,
+    "base_class_destructor": 7956,
+    "func_8004D704": 72,
+    "func_8003DFBC": 216,
+    "func_8003C008": 144,
+    "func_8001CBA4": 7776,
+    "func_8001D1A4": 7704,
+    "func_8001D204": 7776,
+    "func_8001D280": 7776,
+    "linked_list_next": 28968,
+    "func_8001D33C": 7776,
+    "memory_free_mem": 33756,
+    "memory_set_lock": 67512,
+    "base_class_get_vtable": 16116,
+    "base_class_cleanup": 8448,
+    "base_class_notify": 8448,
+    "func_8001CD20": 7776,
+    "func_8001E7B0": 7776,
+    "base_class_detach_all": 8448,
+    "base_class_clear_parents": 8448,
+    "linked_list_clear": 8448,
+    "file_buf_destroy": 492,
+    "func_80044DC8": 144,
+    "get_file_driver": 492,
+    "cd_file_driver_get_vtable": 492,
+    "cd_file_driver_cleanup": 492,
+    "cd_file_driver_unk28": 492,
+    "cd_file_driver_lock": 492,
+    "cd_file_driver_unlock": 492,
+    "file_buf_release": 492,
+    "func_8004500C": 144,
+    "func_8004DC08": 72,
+    "text_line_cleanup": 72,
+    "destroy_list": 72,
+    "glyph_get_vtable": 72,
+    "func_80040C00": 72,
+    "func_8003D050": 144,
+    "timer_get_vtable": 144,
+    "sound_close": 96,
+    "SsVabClose": 96,
+    "SpuFree": 48,
+    "_spu_gcSPU": 48,
+    "base_class_on_notify": 4224,
+    "base_class_detach": 4296,
+    "linked_list_remove": 8592,
+    "base_class_remove_parent": 4296,
+    "func_8004E40C": 36,
+    "func_8004E588": 36,
+    "func_8003B470": 108,
+    "func_80058308": 72
+  },
+  "release_count_range": [
+    22,
+    533
+  ],
+  "instruction_count_range": [
+    3858,
+    138753
+  ],
+  "charts": {
+    "cells_per_profile": 100,
+    "profiles": 72,
+    "distinct_cell_instances_across_cases": 7200
+  },
+  "typed_title_glyph_counts": [
+    3,
+    7
+  ],
+  "RAM_aliases": [
+    "physical",
+    "KSEG0",
+    "KSEG1"
+  ],
+  "initial_patterns": 2,
+  "dependency_output_contracts": [],
+  "initialization": "Supplied independently modeled owned graph and SDK RAM; no constructors claimed.",
+  "fixture_limits": [
+    "Hidden detached render objects with real owned coordinate buffers; secondary menu panels absent.",
+    "CD request queue empty; no queued cancellation or physical disc/card operation claimed.",
+    "Two sound instances supplied; destruction leaves one and does not enter final hardware shutdown.",
+    "VAB/SPU ownership RAM supplied explicitly; no DMA, playback, natural bank-opening or timing claimed."
+  ],
+  "negative_controls": [
+    {
+      "fault": "skip_last_chart_cell",
+      "pc": "0x80058350",
+      "original_word": "0x2a220064",
+      "changed_word": "0x2a220063",
+      "executed_hits": 99,
+      "returned": 0,
+      "rejection": "Original cleanup release order differs from the ownership model."
+    },
+    {
+      "fault": "retain_file_NoFree",
+      "pc": "0x80026a04",
+      "original_word": "0xa6000020",
+      "changed_word": "0x0",
+      "executed_hits": 4,
+      "returned": 0,
+      "rejection": "Original cleanup release order differs from the ownership model."
+    },
+    {
+      "fault": "skip_SPU_interval_free",
+      "pc": "0x80038d2c",
+      "original_word": "0xaca80000",
+      "changed_word": "0x0",
+      "executed_hits": 1,
+      "returned": 0,
+      "rejection": "screen cleanup complete-buffer mismatch in object at offsets [67, 68, 69, 70]"
+    }
+  ],
+  "independent_audit": {
+    "independent_ownership_walk": true,
+    "producer_oracle_imported": false,
+    "complete_original_spans": 51,
+    "cases": 144,
+    "indirect_edges": 104184,
+    "three_executed_controls_verified": true,
+    "all_full_buffers_and_sdk_states_match": true,
+    "corpus_sha256": "418d3085dfbb3e374730c44cf48e07ac5fb85b0dbea3c034b2a83d5b808b879d",
+    "auditor_sha256": "131da8d74d4a116adedee2ea40aaa5997fcb38dba4f4d40267495b1a5273a43c"
+  },
+  "private_corpus": {
+    "journal_bytes": 411396,
+    "journal_sha256": "75351a6f1a80d2795f23f103920e0123166d9c7d22f802964b54c18af87dcf02",
+    "input_output_sha256": "418d3085dfbb3e374730c44cf48e07ac5fb85b0dbea3c034b2a83d5b808b879d",
+    "raw_buffers_and_execution_journal_published": false
+  },
+  "backend": {
+    "package_version": "2.1.2",
+    "library_api": [
+      2,
+      1,
+      33620735
+    ],
+    "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+    "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+    "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+    "binding_source_count": 21,
+    "execution_hook": "UC_HOOK_CODE",
+    "fresh_cpu_per_host_call": true,
+    "all_emulated_ram_preserved_between_host_calls": true,
+    "uninterrupted_cpu_within_guest_cleanup_graph": true
+  },
+  "qualified_producer_files": [
+    {
+      "path": "research/screen_lifecycle/cleanup-functions.json",
+      "bytes": 8789,
+      "sha256": "0899d10c24c16b7be71b0787a85c289e42c768b3ededf25380a8ce3a74ea4f3a",
+      "LF_normalized_sha256": "0899d10c24c16b7be71b0787a85c289e42c768b3ededf25380a8ce3a74ea4f3a"
+    },
+    {
+      "path": "research/screen_lifecycle/verify.py",
+      "bytes": 22025,
+      "sha256": "6d648c32bbbaf49e596fb1e9eb5a1851dc1a73ef5a443b248a6f9546035bb17c",
+      "LF_normalized_sha256": "6d648c32bbbaf49e596fb1e9eb5a1851dc1a73ef5a443b248a6f9546035bb17c"
+    },
+    {
+      "path": "research/screen_lifecycle/verify_cleanup.py",
+      "bytes": 28401,
+      "sha256": "5a1968fe878d147e13d5948a60af35dc36aad800c3a029e3d6a15f2c17f620af",
+      "LF_normalized_sha256": "5a1968fe878d147e13d5948a60af35dc36aad800c3a029e3d6a15f2c17f620af"
+    },
+    {
+      "path": "src/menu/graph_screen.h",
+      "bytes": 5745,
+      "sha256": "cf023a9dea0555efdc1e0351ab1805ae3a9e3d32ba31539ef7f2d34cf0fcf130",
+      "LF_normalized_sha256": "cf023a9dea0555efdc1e0351ab1805ae3a9e3d32ba31539ef7f2d34cf0fcf130"
+    },
+    {
+      "path": "tools/heap_model.py",
+      "bytes": 10708,
+      "sha256": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e",
+      "LF_normalized_sha256": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e"
+    },
+    {
+      "path": "tools/verify_card_heap.py",
+      "bytes": 30024,
+      "sha256": "9bc61e62783f50d67c7ce5cd394de6d13e6e6931260ea6d5912a876dd234ef0e",
+      "LF_normalized_sha256": "9bc61e62783f50d67c7ce5cd394de6d13e6e6931260ea6d5912a876dd234ef0e"
+    },
+    {
+      "path": "tools/verify_native_ai.py",
+      "bytes": 20911,
+      "sha256": "6094e565bdb4e6701055f08d0428d059b54c6183818170ae1a671610c53b40a0",
+      "LF_normalized_sha256": "6094e565bdb4e6701055f08d0428d059b54c6183818170ae1a671610c53b40a0"
+    }
+  ],
+  "source_hash_convention": "Executed working-tree bytes are recorded separately from LF-normalized public text.",
+  "tests": {
+    "Windows": {
+      "skipped": 9,
+      "tests_run": 1490,
+      "result": "OK"
+    },
+    "WSL": {
+      "skipped": 8,
+      "tests_run": 1490,
+      "result": "OK"
+    }
+  },
+  "new_game_C_bytes": 0,
+  "current_game_C_bytes": 197172,
+  "current_game_text_bytes": 199912,
+  "remaining_game_ASM_functions": 2,
+  "remaining_inherited_storage_explanations": 3,
+  "new_original_features_accepted": 0,
+  "new_NPC_encounters_accepted": 0,
+  "model_api_calls": 0,
+  "remaining": [
+    "natural construction and controller histories",
+    "populated secondary menu panels",
+    "pending CD requests and final sound-instance hardware shutdown",
+    "natural audio/video output and timing",
+    "whole-feature acceptance"
+  ]
+}

@@ -1,5 +1,13 @@
 # Roadmap
 
+The [screen resource cleanup profile](SCREEN_RESOURCE_CLEANUP.md) now executes
+51 original bodies in 144 initialized title-menu/chart contexts, including
+all 100 chart cells, parent links, owned file buffers and VAB/SPU release.
+Three executed leak controls are rejected and the chart struct now matches
+its 0x244-byte factory allocation. Continue natural construction, populated
+secondary panels, pending I/O and final sound shutdown; these bounded checks
+accept no whole feature and add no recovered game C bytes.
+
 The [natural collision entries](NATURAL_COLLISION_ENTRIES.md) and subsequent
 [hull call/return collection](HULL_CALLS.md) already retain geometry, stack
 inputs and returns for the opening route. The
