@@ -62,7 +62,7 @@ typedef struct game_flow_screen_vtable game_flow_screen_vtable_t;
 
 struct game_flow_screen_vtable {
     /* 0x00 */ u32 type_id;
-    /* 0x04 */ void (*Destroy)(void *);
+    /* 0x04 */ base_class_t *(*Destroy)(base_class_t *);
     /* 0x08 */ u8 pad[0x44 - 0x08];
     /* 0x44 */ s32 (*Run)(void *, void *, s32);
 };

@@ -1,0 +1,450 @@
+{
+  "schema_version": 1,
+  "status": "passed_bounded_destroy_interfaces",
+  "baseline_commit": "23d19286814d7fd8b8133c8c5de997cfe5de6f42",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "original_and_rebuilt_complete_images_identical": true,
+  "before_common_return_type": "void (*Destroy)(void *)",
+  "after_common_return_type": "base_class_t *(*Destroy)(base_class_t *)",
+  "before_consumer_compile": {
+    "void_value_diagnostic": true,
+    "failed_with_original_common_view": true
+  },
+  "positive_initialized_typed_profiles": 96,
+  "profile_groups": {
+    "screen_destroy_common/main": 24,
+    "screen_destroy_common/chart": 24,
+    "screen_destroy_main/main": 24,
+    "screen_destroy_chart/chart": 24
+  },
+  "compiled_analysis_callers": [
+    {
+      "function": "screen_destroy_common",
+      "address": "0x180000",
+      "bytes": 48,
+      "sha256": "122a9a1cb7e556953624fd924a1841315a71322d2a545b5b2ad8dbad4385c94d"
+    },
+    {
+      "function": "screen_destroy_main",
+      "address": "0x180030",
+      "bytes": 48,
+      "sha256": "122a9a1cb7e556953624fd924a1841315a71322d2a545b5b2ad8dbad4385c94d"
+    },
+    {
+      "function": "screen_destroy_chart",
+      "address": "0x180060",
+      "bytes": 48,
+      "sha256": "122a9a1cb7e556953624fd924a1841315a71322d2a545b5b2ad8dbad4385c94d"
+    }
+  ],
+  "target_ABI_assertions": 4,
+  "consumer_warnings_are_errors": true,
+  "original_complete_functions_qualified": [
+    {
+      "function": "memory_set_manager",
+      "address": "0x80017A9C",
+      "bytes": 12,
+      "sha256": "31e1fb7ee27c6d0a7e8bce6222ebe7d15d003b63a0bcdffc60e62cb98dc28ade"
+    },
+    {
+      "function": "memory_setup_manager",
+      "address": "0x80017AC8",
+      "bytes": 108,
+      "sha256": "22d9cb67eacb97f1f65887bec8fd406a6d25dd69511540ee811296e9445987ba"
+    },
+    {
+      "function": "memory_allocate_mem",
+      "address": "0x80017B34",
+      "bytes": 456,
+      "sha256": "a55ec79ff9c1252fd41968bf5abca2a74f3658b6c400df80289d51d943fc5ef9"
+    },
+    {
+      "function": "memory_free_mem",
+      "address": "0x80017CFC",
+      "bytes": 428,
+      "sha256": "590fb6e594883e9fcaa7105de18de7b9a9c0df2322e07feb5e081f66da15a052"
+    },
+    {
+      "function": "memory_set_lock",
+      "address": "0x8001844C",
+      "bytes": 12,
+      "sha256": "d8fd53b2b7699e2b6135872ecc381394dea73cd963daff560ff6aa8342f3e80e"
+    },
+    {
+      "function": "func_8003C1DC",
+      "address": "0x8003C1DC",
+      "bytes": 92,
+      "sha256": "f203459fa2735cf984809aeb5243d874c54c14711e5de4b22ef779f9bcc37431"
+    },
+    {
+      "function": "func_80058390",
+      "address": "0x80058390",
+      "bytes": 116,
+      "sha256": "3d199adb45140134173d8a6aeb5775f38ffeea4f4a374805cc885ddced7ec105"
+    },
+    {
+      "function": "timer_get_vtable",
+      "address": "0x8003E5C8",
+      "bytes": 16,
+      "sha256": "d238fa5daeb891fd90dea2848259a29f0a9430e25a55d881feaa6fe21a19fea4"
+    },
+    {
+      "function": "func_8003DFBC",
+      "address": "0x8003DFBC",
+      "bytes": 16,
+      "sha256": "8a93f3c1cad0692ba38e1b86f054de0165974eb7aebff4cea42d988cfd2b098b"
+    },
+    {
+      "function": "run_screen",
+      "address": "0x80026518",
+      "bytes": 116,
+      "sha256": "97a2e226e9d3a15f018dd24a23996cfaf3740bb862ff225d4bc223334870075d"
+    },
+    {
+      "function": "main_menu_create",
+      "address": "0x8004D518",
+      "bytes": 96,
+      "sha256": "d3a6577bec3dd1a5c88685f8b19e2e8526e6cb1bb365808807ffe79991a41508"
+    },
+    {
+      "function": "graph_screen_create",
+      "address": "0x80057F68",
+      "bytes": 96,
+      "sha256": "738215418abb2b2c70afa78d1d923cd54a449a782883560c43eda3d76ef5bb9a"
+    },
+    {
+      "function": "base_class_destructor",
+      "address": "0x80017EB0",
+      "bytes": 72,
+      "sha256": "fd5282c0412fa43d662ba2cba64b4f45ca230658938d657a58c04e0789bb86d6"
+    },
+    {
+      "function": "main_menu_get_vtable",
+      "address": "0x8004E2D0",
+      "bytes": 16,
+      "sha256": "3c6e2a09a65a76b8d73c9c498b006deaccb9857c2a83a4352fc37f89fe9d2ce9"
+    },
+    {
+      "function": "func_80058764",
+      "address": "0x80058764",
+      "bytes": 16,
+      "sha256": "be73e90b4176d0260e08507b418f5ccea4eb189953146ad3aab08b8cb90a1a3d"
+    }
+  ],
+  "original_contracted_function_spans_qualified": [
+    {
+      "function": "func_8004D578",
+      "address": "0x8004D578",
+      "bytes": 256,
+      "sha256": "1179ba8a9041818d37a7d23739abc8ee1a0677f1e398aeb35b84ca1c707e9e76"
+    },
+    {
+      "function": "func_8004D704",
+      "address": "0x8004D704",
+      "bytes": 132,
+      "sha256": "00a9b6bc652cdd1817a70d022697ff22510cec276030063c44abf3565c5d612d"
+    },
+    {
+      "function": "func_80057FC8",
+      "address": "0x80057FC8",
+      "bytes": 176,
+      "sha256": "84a8a6bd94ba3a63ba96a8f97c57566f5ef7098a3fd700cf6242e24ee4a65137"
+    },
+    {
+      "function": "func_8003C008",
+      "address": "0x8003C008",
+      "bytes": 276,
+      "sha256": "9475cc032683980745141fdca1bf2eed75c4e97eda75803afa393cde9f1d0db1"
+    },
+    {
+      "function": "func_8003E10C",
+      "address": "0x8003E10C",
+      "bytes": 372,
+      "sha256": "511d8d2c031c5905ef4852f4d428929181499d3da8f70423994ea68695b40fed"
+    }
+  ],
+  "original_native_entry_counts": {
+    "memory_set_manager": 96,
+    "memory_setup_manager": 96,
+    "main_menu_create": 48,
+    "memory_allocate_mem": 96,
+    "memory_set_lock": 384,
+    "main_menu_get_vtable": 48,
+    "base_class_destructor": 96,
+    "memory_free_mem": 96,
+    "graph_screen_create": 48,
+    "func_80058764": 48
+  },
+  "dependency_output_contracts": [
+    "main/chart constructor",
+    "main/chart cleanup"
+  ],
+  "contract_limit": "Constructor and cleanup bodies do not execute. Graphics initialization is not reached.",
+  "executed_wrong_slot_negative_controls": [
+    {
+      "view": "screen_destroy_common",
+      "case": {
+        "kind": "main",
+        "segment": 0,
+        "seed": 0,
+        "pool_size": 200,
+        "create_arg": 1081408,
+        "graphics": 1081472,
+        "result": 2147483647,
+        "flag": 0
+      },
+      "changed_instruction_hits": 1,
+      "returned": 3735879683,
+      "release_trace": [],
+      "events": [
+        "screen_destroy_common",
+        "cleanup:contract"
+      ],
+      "rejected": true
+    },
+    {
+      "view": "screen_destroy_main",
+      "case": {
+        "kind": "main",
+        "segment": 0,
+        "seed": 0,
+        "pool_size": 200,
+        "create_arg": 1081408,
+        "graphics": 1081472,
+        "result": 2147483647,
+        "flag": 0
+      },
+      "changed_instruction_hits": 1,
+      "returned": 3735879683,
+      "release_trace": [],
+      "events": [
+        "screen_destroy_main",
+        "cleanup:contract"
+      ],
+      "rejected": true
+    },
+    {
+      "view": "screen_destroy_chart",
+      "case": {
+        "kind": "chart",
+        "segment": 0,
+        "seed": 0,
+        "pool_size": 584,
+        "create_arg": 1081408,
+        "graphics": 1081472,
+        "result": 2147483647,
+        "flag": 2147483648
+      },
+      "changed_instruction_hits": 1,
+      "returned": 3735879683,
+      "release_trace": [],
+      "events": [
+        "screen_destroy_chart",
+        "cleanup:contract"
+      ],
+      "rejected": true
+    }
+  ],
+  "independent_audit": {
+    "status": "passed_independent_destroy_interface_audit",
+    "supported_typed_profiles": 96,
+    "profile_groups": {
+      "screen_destroy_common/main": 24,
+      "screen_destroy_common/chart": 24,
+      "screen_destroy_main/main": 24,
+      "screen_destroy_chart/chart": 24
+    },
+    "original_complete_functions_GNU_audited": 20,
+    "compiled_callers_GNU_audited": 3,
+    "analysis_caller_complete_bytes": 144,
+    "caller_bodies_identical": true,
+    "three_executed_wrong_slot_faults_rejected": true,
+    "all_published_producer_hashes_match_working_sources": true,
+    "earlier_CRLF_supported_observations_identical": true,
+    "earlier_cross_concrete_type_prefix_only_rows_excluded": 48,
+    "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "new_game_C_bytes": 0,
+    "new_whole_feature_acceptance": 0
+  },
+  "all_expected_buffer_hashes_independently_reconstructed": true,
+  "input_output_sha256": "6cb87c47074d6cd092fe49b38d145a861b9faa263775cb32e0df7ddfe6701c88",
+  "backend_identity": {
+    "package_version": "2.1.2",
+    "library_api": [
+      2,
+      1,
+      33620735
+    ],
+    "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+    "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+    "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3",
+    "binding_source_count": 21,
+    "execution_hook": "UC_HOOK_CODE",
+    "fresh_cpu_per_host_call": true,
+    "all_emulated_ram_preserved_between_host_calls": true,
+    "uninterrupted_cpu_within_guest_cleanup_graph": true
+  },
+  "producer_dependencies": [
+    {
+      "path": "tools/verify_native_ai.py",
+      "sha256": "6094e565bdb4e6701055f08d0428d059b54c6183818170ae1a671610c53b40a0"
+    },
+    {
+      "path": "tools/inventory_vtables.py",
+      "sha256": "a41a1a21f96e969ace8032a86c2362b6529c7b7c336f9d3abdcca764f923aac2"
+    },
+    {
+      "path": "tools/progress.py",
+      "sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+    },
+    {
+      "path": "configure.py",
+      "sha256": "8bb956388e955219afe80324642abde8e32eb9ec2bc8f4c41951320b156ba8c2"
+    },
+    {
+      "path": "requirements-analysis.txt",
+      "sha256": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911"
+    },
+    {
+      "path": "build/SLPS01556.map",
+      "sha256": "0c8ad7a8e09678102951c5456175dc8ef7bb15a242b51ce2bbf6d62ab1e39f41"
+    },
+    {
+      "path": "build/undefined_funcs_auto.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "build/undefined_syms_auto.txt",
+      "sha256": "9fc14a1832a5fc3fd089ee8c99ac4f91d282ec30a03d7aacfea5a1a5a4e5411f"
+    },
+    {
+      "path": "src/scene/entity.c",
+      "sha256": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811",
+      "git_blob_sha256": "42b79fe2e6463d01213b8be552e94132dd912212ace0171219466b2e1650c751",
+      "working_to_git_difference": "CRLF to LF only"
+    },
+    {
+      "path": "src/scene/entity.h",
+      "sha256": "f961d4187386ca8f71ab39497ff98eff2646351cd4418ad4f74b797243cfdc4f",
+      "git_blob_sha256": "3dd0c265059b0566aca0f0934bbc5b85b5de9a1e1ef27e410985129e2c0ed2b4",
+      "working_to_git_difference": "CRLF to LF only"
+    },
+    {
+      "path": "src/dream/dream_sys.c",
+      "sha256": "130453762f783d2e8c2f4af237a0a62322fec91480e7570e5ebbd21d9ca006bf"
+    },
+    {
+      "path": "src/dream/dream_sys.h",
+      "sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507",
+      "git_blob_sha256": "0c5e29a07f133924a7d2eda9e7425e2b3bcbf6c3b9cb905c097e6eb879d45657",
+      "working_to_git_difference": "CRLF to LF only"
+    },
+    {
+      "path": "src/scene/actor.c",
+      "sha256": "4a0c1f29434123834c3725cd12cad91a8b68cb39dbd927af1e46325a31113c3c"
+    },
+    {
+      "path": "src/base/transform.c",
+      "sha256": "0166d95088d3476bf1cf8c2a760627f0c12640e68a1f8294a973acb91c09004d"
+    },
+    {
+      "path": "asm/nonmatchings/psyq/libc/rand/rand.s",
+      "sha256": "42e20e9ae71040ed11c5c6c3bb644d4aad985d284c46d6fe9da943ef48bbb5d7"
+    },
+    {
+      "path": "research/screen_lifecycle/verify_destroy.py",
+      "sha256": "03046307ccd82971679c6d5a3c3730d6551a573c5976dacca6e6746302ce98c5"
+    },
+    {
+      "path": "research/screen_lifecycle/destroy_consumer.c",
+      "sha256": "8997f761b45cc0d1153f373c938f4c3e5e763a6e8f15e686e3ea1ff809c46264"
+    },
+    {
+      "path": "research/screen_lifecycle/verify.py",
+      "sha256": "6d648c32bbbaf49e596fb1e9eb5a1851dc1a73ef5a443b248a6f9546035bb17c"
+    },
+    {
+      "path": "src/game/game_flow.c",
+      "sha256": "b8412d1d3207da21ae29a5fc1d3293eedbf8c50f6f780b5b191ea330df1ba305"
+    },
+    {
+      "path": "src/game/game_flow.h",
+      "sha256": "262c06d8cc8fd69e0e0b7e5b2a8b334529ccf829ea72af21bee4d41ec4bdbf62"
+    },
+    {
+      "path": "src/base/base.c",
+      "sha256": "23f9ddac6d6e960eb2d0c40e6b8598d68aac401ea2d3031804d70c4309243722",
+      "git_blob_sha256": "f91c0abd9d4abd17e37fbbf472d190c8bd83a89bccfb832b02181d8afc6be145",
+      "working_to_git_difference": "CRLF to LF only"
+    },
+    {
+      "path": "src/base/base.h",
+      "sha256": "aec74fef6d427a2242f2387894fd7374be4d092d313fed1fc02fa94578e6bfab",
+      "git_blob_sha256": "8d6f99479b259072955b0b0ff8527f36039fb2fff2348c8291460c8ad42ac52e",
+      "working_to_git_difference": "CRLF to LF only"
+    },
+    {
+      "path": "src/menu/main_menu.h",
+      "sha256": "030a7153cf0a3e36c6aec04fcb58bfbe7fd3c260ece4f955c0cc5810c33c0471",
+      "git_blob_sha256": "03b76e6e26f8a7b49d7a624bcc94db8f60c61d433c29798b2a53592bffb0b7f1",
+      "working_to_git_difference": "CRLF to LF only"
+    },
+    {
+      "path": "src/menu/graph_screen.h",
+      "sha256": "7b4cdaeea3844eced8f9339823e4040921966d0036423b0932a4a698632a0748",
+      "git_blob_sha256": "e317966b7dbf14933bbb667164881506d1f6f29491c57336537c5f7ec9fd1e0c",
+      "working_to_git_difference": "CRLF to LF only"
+    },
+    {
+      "path": "tools/verify_card_heap.py",
+      "sha256": "08f1cbcaa3ba81d719e91eb304ae8f6bc653923be0495034d7fe0bde154744c5"
+    },
+    {
+      "path": "tools/heap_model.py",
+      "sha256": "e29b7e48bd072112357e4539de98bd84971c532efa6ae19d4107df6826f8094e"
+    },
+    {
+      "path": "tools/compile_c.py",
+      "sha256": "ab5217c43e9dca1fff7092d75e8a0ac407b3dd65b256b5c29b3ff29a4fc1afe7"
+    },
+    {
+      "path": "tools/decomp_workbench.py",
+      "sha256": "894f17166b4e0f286c6abbcae0ff84988e95347579d192ceadf8f1c3757a44f7"
+    },
+    {
+      "path": "research/compiler/compare_function.py",
+      "sha256": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff"
+    },
+    {
+      "path": "tools/gcc263/cc1",
+      "sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab"
+    }
+  ],
+  "new_game_C_bytes": 0,
+  "compiled_C_before_bytes": 197172,
+  "compiled_C_after_bytes": 197172,
+  "game_text_bytes": 199912,
+  "remaining_game_ASM_functions": 2,
+  "remaining_inherited_unused_storage_explanations": 3,
+  "provisional_feature_groups": 40,
+  "new_whole_features_accepted": 0,
+  "new_NPC_profiles": 0,
+  "model_api_calls": 0,
+  "scope": "Typed common/main/chart callers consume the real base destructor NULL return and free one valid receiver through the original pool. Full expected manager/pool/argument buffers, saved ABI and stack guards are checked. Natural screen construction/resource cleanup and whole-feature acceptance remain open.",
+  "reproduce": "python research/screen_lifecycle/verify_destroy.py --output .decomp-lab/screen-destroy-new",
+  "unit_tests": {
+    "Windows": {
+      "python": "3.14.2",
+      "tests": 1483,
+      "skipped": 9,
+      "result": "OK"
+    },
+    "Linux_WSL": {
+      "python": "3.13.5",
+      "tests": 1483,
+      "skipped": 8,
+      "result": "OK"
+    }
+  },
+  "producer_hash_scope": "sha256 records the executed working bytes. Seven unchanged baseline C/header dependencies have CRLF working bytes and byte-identical LF text in Git; their Git blob hashes are recorded separately. New and modified executed producers match their staged Git blobs exactly."
+}

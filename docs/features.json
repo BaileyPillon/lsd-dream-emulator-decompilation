@@ -24904,5 +24904,20 @@
     "SPU_DMA_completion_verified": false,
     "complete_audio_playback_verified": false,
     "scope": "Original sound corpus, bounded SDK access and stage-music selection; U002/U003 and whole-feature parity remain open."
+  },
+  "original_screen_destroy_interface_20261028": {
+    "reference": "docs/screen-destroy-interface-checks.json",
+    "documentation": "docs/SCREEN_DESTROY_INTERFACE.md",
+    "scope": "Common screen Destroy callback return and receiver types agree with both known concrete tables; bounded typed callers execute original destruction and pool release.",
+    "supported_initialized_typed_profiles": 96,
+    "compiled_analysis_callers": 3,
+    "executed_wrong_slot_controls_rejected": 3,
+    "constructor_cleanup_output_contracts": 4,
+    "canonical_complete_executable_preserved": true,
+    "new_game_C_bytes": 0,
+    "new_original_features_accepted": 0,
+    "new_NPC_profiles": 0,
+    "model_api_calls": 0,
+    "natural_screen_lifecycle_accepted": false
   }
 }

@@ -51,3 +51,15 @@ the delay slot; using the earlier register snapshot would misreport its mode.
 
 See [the findings](../../docs/SCREEN_LIFECYCLE.md) for the recorded campaign
 and its remaining evidence limits.
+
+The separate [typed Destroy check](../../docs/SCREEN_DESTROY_INTERFACE.md)
+compiles three pointer-returning consumers with warnings treated as errors:
+
+```bash
+python research/screen_lifecycle/verify_destroy.py --output .decomp-lab/screen-destroy-new
+```
+
+It checks 96 supported initialized profiles through the original factories,
+destructor and pool release, with constructor/cleanup output contracts and
+three executed wrong-slot controls. It uses the same isolated backend and
+does not count cross-concrete-type prefix probes as supported C calls.

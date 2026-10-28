@@ -170,7 +170,7 @@ s32 game_flow_execute_main_menu(game_flow_t *This) {
 s32 run_screen(game_flow_screen_t *(*create)(s32), s32 createArg, void *runArg) {
     game_flow_screen_t *screen = create(createArg);
     s32 run_result = screen->vtable->Run(screen, runArg, 0);
-    screen->vtable->Destroy(screen);
+    screen->vtable->Destroy((base_class_t *)screen);
     return run_result;
 }
 
