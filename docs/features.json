@@ -24935,5 +24935,22 @@
     "new_NPC_profiles": 0,
     "model_api_calls": 0,
     "natural_screen_lifecycle_accepted": false
+  },
+  "original_menu_panel_ownership_20261028": {
+    "reference": "docs/menu-panel-ownership-checks.json",
+    "documentation": "docs/MENU_PANEL_OWNERSHIP.md",
+    "scope": "Unified original 40-byte title descriptor and initialized populated/empty/mixed panel destruction with real nested text and texture release.",
+    "recovered_data_records": 1,
+    "initialized_profiles": 216,
+    "original_bodies_executed": 51,
+    "executed_ownership_controls_rejected": 4,
+    "dependency_output_contracts": 0,
+    "prior_cleanup_144_case_corpus_exactly_preserved": true,
+    "canonical_complete_executable_preserved": true,
+    "new_game_C_bytes": 0,
+    "new_original_features_accepted": 0,
+    "new_NPC_profiles": 0,
+    "model_api_calls": 0,
+    "natural_screen_construction_accepted": false
   }
 }

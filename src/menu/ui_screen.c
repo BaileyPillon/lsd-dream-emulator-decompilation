@@ -16,14 +16,14 @@ ui_screen_t *ui_screen_create(u32 Unk1, u32 Unk2, u32 Unk3) {
     ui_screen_t *allocated = ALLOCATE_STRUCT(ui_screen_t);
 
     if (allocated) {
-        func_8003DFBC()->Construct(allocated, Unk1, Unk2, Unk3);
+        func_8003DFBC()->Construct(allocated, (ui_screen_panel_t *) Unk1, Unk2, Unk3);
         return allocated;
     }
 
     return NULL;
 }
 
-void func_8003BF10(ui_screen_t *This, s32 Unk2, s32 Unk3, sound_t *Unk4) {
+void func_8003BF10(ui_screen_t *This, ui_screen_panel_t *Unk2, s32 Unk3, sound_t *Unk4) {
     timer_get_vtable()->Construct(This);
     This->vtable = func_8003DFBC();
     This->vtable->Unk53(This, Unk2);
@@ -511,19 +511,10 @@ void func_8003CDE0(ui_screen_t *This, s8 *Unk2, s32 Unk3) {
 extern s32 D_8008A8E8[];
 extern char D_8008A8F0[];
 extern void *effect_base_create(u32, u32, u32);
-extern int strlen(char *);
+extern int strlen(const char *);
 
-typedef struct func_8003CE98_arg {
-    /* 0x00 */ char *path;
-    /* 0x04 */ tim_image_t *tex;
-    /* 0x08 */ u8 pad[0x14];
-    /* 0x1C */ char **strings;
-    /* 0x20 */ s32 pad2;
-    /* 0x24 */ void **table;
-} func_8003CE98_arg_t;
-
-void func_8003CE98(ui_screen_t *This, func_8003CE98_arg_t *arg) {
-    char **cursor;
+void func_8003CE98(ui_screen_t *This, ui_screen_panel_t *arg) {
+    const char **cursor;
     s32 n;
     s32 bytes;
     text_line_t **out;
@@ -732,7 +723,7 @@ void func_8003D2CC(ui_screen_t *This, s32 Unk2) {
 
                 line->vtable->Unk45(line, ui_text_callback_data((char *) Unk2));
 
-                if (((func_8003CE98_arg_t *) This->m_Unk18)->table[i] != NULL) {
+                if (((ui_screen_panel_t *) This->m_Unk18)->table[i] != NULL) {
                     This->m_Unk21 = i;
                     This->vtable->Unk64(This, Unk2);
                 }
@@ -885,7 +876,7 @@ void func_8003D73C(ui_screen_t *This, s32 Unk2, s32 Unk3) {
 
     idx = This->m_Unk21;
     row = (text_line_t **) This->m_Unk24[idx];
-    v9 = ((s32 *) ((func_8003CE98_arg_t *) This->m_Unk18)->table[idx])[1];
+    v9 = ((s32 *) ((ui_screen_panel_t *) This->m_Unk18)->table[idx])[1];
     count = This->m_Unk22[idx];
 
     i = 0;
@@ -897,7 +888,7 @@ void func_8003D73C(ui_screen_t *This, s32 Unk2, s32 Unk3) {
         } while (i < count);
     }
 
-    entry = (s32 *) ((func_8003CE98_arg_t *) This->m_Unk18)->table[idx];
+    entry = (s32 *) ((ui_screen_panel_t *) This->m_Unk18)->table[idx];
     __builtin_memcpy(pos, entry + 4, sizeof(pos));
     pos[1] -= v9 * 10;
 
@@ -983,7 +974,7 @@ void func_8003DAD4(ui_screen_t *This) {
 
     idx = This->m_Unk21;
     sel = This->m_Unk23[idx];
-    entry = (s32 *) ((func_8003CE98_arg_t *) This->m_Unk18)->table[idx];
+    entry = (s32 *) ((ui_screen_panel_t *) This->m_Unk18)->table[idx];
     __builtin_memcpy(pos, entry + 4, sizeof(pos));
     pos[1] -= sel * 10;
 
@@ -1005,7 +996,7 @@ void func_8003DAD4(ui_screen_t *This) {
         obj->vtable->Unk23(obj, 1);
         obj->vtable->Unk45(obj, (char *)This->m_Unk18 + 0x10);
     }
-    ((s32 *) ((func_8003CE98_arg_t *) This->m_Unk18)->table[idx])[1] = sel;
+    ((s32 *) ((ui_screen_panel_t *) This->m_Unk18)->table[idx])[1] = sel;
     effect = (effect_base_t *)This->m_Unk25;
     effect->vtable->Unk19(effect);
     This->m_HasIdleTimeout = 1;

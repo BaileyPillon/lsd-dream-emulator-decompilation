@@ -122,11 +122,14 @@ class Fixture:
                 self.put(self.root, 0xA8 + i * 4, pointer)
             self.events = self.alloc(4) if case['buffers'] else 0
             self.put(self.root, 0x240, self.events)
+        self.extra_owned_objects, self.extra_retained_pointers = [], set()
+        self.initialize_extra_resources()
         self.owned_objects = [self.root, self.sprite, self.tile, self.atlas]
         if case['sound'] != 'borrowed':
             self.owned_objects.append(self.sound)
         self.owned_objects += [p for p in (self.texture, self.card, self.card_texture, self.title) if p]
         self.owned_objects += self.cells + (self.glyphs if self.title else [])
+        self.owned_objects += self.extra_owned_objects
         if self.observer:
             for pointer in self.owned_objects:
                 self.attach(self.observer, pointer)
@@ -161,11 +164,18 @@ class Fixture:
         expected_live = {self.observer, self.borrowed_child} - {0}
         if case['sound'] == 'borrowed':
             expected_live.add(self.sound)
+        expected_live.update(self.extra_retained_pointers)
         actual_live = {self.model.block_pointer(b.offset) + 4 for b in self.model.blocks if not b.free}
         require(actual_live == expected_live, 'Cleanup oracle leaked an owned allocation.')
 
     def offset(self, pointer):
         return (pointer & native.MASK) - heap.BASES['pool']
+
+    def initialize_extra_resources(self):
+        """Companion profiles can supply additional owned content before setup."""
+
+    def predict_extra_cleanup(self):
+        """Predict a companion's content release before the root is released."""
 
     def get(self, pointer, offset=0):
         return self.model.get('pool', self.offset(pointer) + offset)
@@ -287,6 +297,7 @@ class Fixture:
             self.free(self.events)
             for pointer in self.cells:
                 self.destroy_transform(pointer)
+        self.predict_extra_cleanup()
         self.base_cleanup(self.root)
         self.free(self.root)
 

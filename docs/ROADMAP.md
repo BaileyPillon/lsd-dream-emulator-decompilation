@@ -1,5 +1,12 @@
 # Roadmap
 
+The [panel ownership profile](MENU_PANEL_OWNERSHIP.md) recovers the original
+40-byte title descriptor as one typed C record and checks populated menu
+cleanup in 216 initialized contexts, including all six title rows and the
+SHAKE choices. Four ownership faults are rejected; the earlier 144-case
+resource corpus is exactly unchanged. Extend this to original construction,
+content loading, allocation failures and natural controller/render histories.
+
 The [screen resource cleanup profile](SCREEN_RESOURCE_CLEANUP.md) now executes
 51 original bodies in 144 initialized title-menu/chart contexts, including
 all 100 chart cells, parent links, owned file buffers and VAB/SPU release.
