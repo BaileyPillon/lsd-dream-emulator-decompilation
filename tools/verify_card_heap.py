@@ -124,6 +124,8 @@ def initial_model(pool_size, segment, seed=0):
 
 
 class Machine(native.Machine):
+    INSTRUCTION_LIMIT = 20000
+
     def __init__(self, globals_, code=None, patches=None):
         self.entries = Counter()
         self.data_accesses = Counter()
@@ -187,7 +189,7 @@ class Machine(native.Machine):
             cpu.reg_write(getattr(native.reg, 'UC_MIPS_REG_A' + str(i)),
                           arguments[i] if i < len(arguments) else 0xBA000000 + i)
         try:
-            cpu.emu_start(native.h.symbols[name] & native.MASK, native.END, count=20000)
+            cpu.emu_start(native.h.symbols[name] & native.MASK, native.END, count=self.INSTRUCTION_LIMIT)
         except native.unicorn.UcError as error:
             raise ValueError('Native backend failed in ' + name + ': ' + str(error)
                              + '; last PCs=' + repr([hex(pc) for pc in self.instructions[-12:]])) from error

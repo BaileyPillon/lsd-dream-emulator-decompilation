@@ -63,3 +63,16 @@ It checks 96 supported initialized profiles through the original factories,
 destructor and pool release, with constructor/cleanup output contracts and
 three executed wrong-slot controls. It uses the same isolated backend and
 does not count cross-concrete-type prefix probes as supported C calls.
+
+The [resource cleanup profile](../../docs/SCREEN_RESOURCE_CLEANUP.md) executes
+the original main-menu/chart Cleanup bodies and their resource/allocator
+dependencies without output contracts:
+
+```bash
+python -B research/screen_lifecycle/verify_cleanup.py --output .decomp-lab/screen-cleanup-new
+```
+
+Its 144 initialized cases include 100 chart cells, title glyphs, file buffers,
+reciprocal ownership lists and supplied SDK sound ownership RAM. Natural
+construction, populated secondary panels, pending I/O, hardware shutdown
+and whole-feature acceptance remain open.

@@ -24919,5 +24919,21 @@
     "new_NPC_profiles": 0,
     "model_api_calls": 0,
     "natural_screen_lifecycle_accepted": false
+  },
+  "original_screen_resource_cleanup_20261028": {
+    "reference": "docs/screen-resource-cleanup-checks.json",
+    "documentation": "docs/SCREEN_RESOURCE_CLEANUP.md",
+    "scope": "Original main-menu/chart destruction with owned objects, parent links, glyphs, file buffers and supplied VAB/SPU allocation state.",
+    "initialized_profiles": 144,
+    "original_bodies_executed": 51,
+    "executed_leak_controls_rejected": 3,
+    "dependency_output_contracts": 0,
+    "chart_struct_corrected_bytes": 580,
+    "canonical_complete_executable_preserved": true,
+    "new_game_C_bytes": 0,
+    "new_original_features_accepted": 0,
+    "new_NPC_profiles": 0,
+    "model_api_calls": 0,
+    "natural_screen_lifecycle_accepted": false
   }
 }

@@ -126,12 +126,13 @@ typedef struct graph_screen {
     /* 0xA0 */ s32 m_Unk39;
     /* 0xA4 */ void *m_DreamSys;
     /* 0xA8 */ void *m_DreamCells[100]; /* one per stored dream day */
-    s32 m_VideoReelReady;
-    s32 m_EventCellIndex;
-    void *m_EventCellIndices;
-    s32 m_Unk144;
-    s32 m_Unk145;
+    /* 0x238 */ s32 m_VideoReelReady;
+    /* 0x23C */ s32 m_EventCellIndex;
+    /* 0x240 */ void *m_EventCellIndices;
 } graph_screen_t;
+
+/* The original factory allocates 0x244 bytes, ending at the event buffer. */
+typedef char checked_graph_screen_size[(sizeof(graph_screen_t) == 0x244) ? 1 : -1];
 
 graph_screen_t *graph_screen_create(s32 Unk1);
 graph_screen_vtable_t *func_80058764(void);

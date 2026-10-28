@@ -52,3 +52,8 @@ the common view's pointer-returning Destroy callback and verifies three typed
 consumers in 96 supported initialized profiles. Its separate source and
 native checks preserve the canonical executable; the natural-screen and
 contract boundaries above remain open.
+
+The separate [resource cleanup check](SCREEN_RESOURCE_CLEANUP.md) executes
+both original Cleanup bodies and their release dependencies in 144 supplied
+owned graphs, without dependency output contracts. Its different inputs do
+not remove this earlier profile's contracts or establish natural setup.
