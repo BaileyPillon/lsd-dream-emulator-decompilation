@@ -11,6 +11,8 @@
 #include "menu/text_line.h"
 #include "sound/sound.h"
 
+struct ui_screen_panel;
+
 typedef struct main_menu_vtable {
     /* 0x000 80086b60 */ u32 type_id;
     /* 0x004 80086b64 */ base_class_t *(*Destroy)(base_class_t *);
@@ -66,7 +68,7 @@ typedef struct main_menu_vtable {
     /* 0x0CC 80086c2c */ u32 pad8;
     /* 0x0D0 80086c30 */ u32 pad9;
     /* 0x0D4 80086c34 */ void (*Unk52)(void *, char *, s32);
-    /* 0x0D8 80086c38 */ void (*Unk53)(void *, char **);
+    /* 0x0D8 80086c38 */ void (*Unk53)(void *, struct ui_screen_panel *);
     /* 0x0DC 80086c3c */ void (*Unk54)(void *);
     /* 0x0E0 80086c40 */ void (*Unk55)(void *, void *);
     /* 0x0E4 80086c44 */ void (*Unk56)(void *);

@@ -97,3 +97,8 @@ Neither profile accepts a complete natural lifecycle or an original feature.
 C recovery stays at **197,172 / 199,912 bytes (98.63%)**, with two game
 assembly functions and three inherited storage explanations remaining.
 No new original feature, NPC encounter or model-service call is counted.
+
+The later [panel profile](MENU_PANEL_OWNERSHIP.md) supplies populated title
+rows and nested choices in a separate 216-case campaign. It retains this
+profile's exact 144-case corpus and leaves natural construction and hardware
+requirements separate.

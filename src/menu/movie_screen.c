@@ -159,7 +159,7 @@ movie_screen_t *movie_screen_create(s32 Unk1, s32 Unk2, s32 Unk3, s32 Unk4) {
 }
 
 void movie_screen_construct(movie_screen_t *This, s32 Unk1, s32 Unk2, s32 Unk3, s32 *arg4) {
-    func_8003DFBC()->Construct(This, (char **) Unk1, (char *) Unk2, Unk3);
+    func_8003DFBC()->Construct(This, (ui_screen_panel_t *) Unk1, (char *) Unk2, Unk3);
     This->vtable = movie_screen_get_vtable();
     if (arg4 != NULL) {
         __builtin_memcpy(&This->m_Unk41, arg4, 12);

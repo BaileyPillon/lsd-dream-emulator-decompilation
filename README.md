@@ -567,6 +567,7 @@ For bugs and research findings, use the repository's issue templates.
 
 - [Roadmap and remaining work](docs/ROADMAP.md)
 - [Original screen resource cleanup](docs/SCREEN_RESOURCE_CLEANUP.md)
+- [Title-menu panel structure and ownership](docs/MENU_PANEL_OWNERSHIP.md)
 - [Play the matching game](docs/PLAYING.md)
 - [Model enumeration and callback interfaces](docs/MODEL_ENUMERATION.md)
 - [Feature inventory and before/after measurements](docs/FEATURE_INVENTORY.md)

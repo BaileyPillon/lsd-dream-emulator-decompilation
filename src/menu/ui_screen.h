@@ -11,10 +11,27 @@
 #include "menu/ui_sprite.h"
 #include "sound/sound.h"
 
+/* Mutable descriptor shared by menu construction, layout and cleanup. */
+typedef struct ui_screen_panel {
+    /* 0x00 */ const char *path;
+    /* 0x04 */ tim_image_t *tex;
+    /* 0x08 */ u32 unk08;
+    /* 0x0C */ u32 unk0C;
+    /* 0x10 */ u8 color[3];
+    /* 0x13 */ u8 selected_color[3];
+    /* 0x16 */ u16 unk16;
+    /* 0x18 */ u32 *disabled_rows;
+    /* 0x1C */ const char **strings;
+    /* 0x20 */ s32 (*positions)[2];
+    /* 0x24 */ void **table;
+} ui_screen_panel_t;
+
+typedef char checked_ui_screen_panel_size[(sizeof(ui_screen_panel_t) == 0x28) ? 1 : -1];
+
 typedef struct ui_screen_vtable {
     /* 0x000 8006e730 */ u32 type_id;
     /* 0x004 8006e734 */ base_class_t *(*Destroy)(base_class_t *);
-    /* 0x008 8006e738 */ void (*Construct)(void *, char **, char *, s32);
+    /* 0x008 8006e738 */ void (*Construct)(void *, ui_screen_panel_t *, char *, s32);
     /* 0x00C 8006e73c */ void (*Cleanup)(base_class_t *);
     /* 0x010 8006e740 */ void (*Attach)(base_class_t *, base_class_t *);
     /* 0x014 8006e744 */ void (*Detach)(base_class_t *, base_class_t *);
@@ -66,7 +83,7 @@ typedef struct ui_screen_vtable {
     /* 0x0CC 8006e7fc */ void (*Unk50)(void *);
     /* 0x0D0 8006e800 */ void (*Unk51)(void *);
     /* 0x0D4 8006e804 */ void (*SetTexture)(void *, char *, s32);
-    /* 0x0D8 8006e808 */ void (*Unk53)(void *, s32);
+    /* 0x0D8 8006e808 */ void (*Unk53)(void *, ui_screen_panel_t *);
     /* 0x0DC 8006e80c */ void (*Unk54)(void *);
     /* 0x0E0 8006e810 */ void (*Unk55)(void *, s32);
     /* 0x0E4 8006e814 */ void (*Unk56)(void *, char *);

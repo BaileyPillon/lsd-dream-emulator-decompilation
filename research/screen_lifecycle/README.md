@@ -76,3 +76,14 @@ Its 144 initialized cases include 100 chart cells, title glyphs, file buffers,
 reciprocal ownership lists and supplied SDK sound ownership RAM. Natural
 construction, populated secondary panels, pending I/O, hardware shutdown
 and whole-feature acceptance remain open.
+
+The [panel ownership extension](../../docs/MENU_PANEL_OWNERSHIP.md) adds
+populated title rows and choices, plus borrowed and owned font textures:
+
+```bash
+python -B research/screen_lifecycle/verify_panel.py --output .decomp-lab/panel-cleanup-new
+```
+
+It checks 216 initialized contexts and four executed ownership faults.
+Source construction types and descriptor layout are recovered in matching C;
+constructor execution and natural menu acceptance remain separate.

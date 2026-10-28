@@ -34,7 +34,7 @@ void func_8003CC2C(void);
 void func_8003CCDC(void);
 void func_8003CD48(void);
 void func_8003CDE0(void);
-void func_8004DB18(main_menu_t *This, void *Unk);
+void func_8004DB18(main_menu_t *This, ui_screen_panel_t *panel);
 void func_8004DC08(main_menu_t *This);
 void func_8004DC64(void);
 void func_8004DCD0(main_menu_t *This, char *Unk_arg_s0);
@@ -115,7 +115,7 @@ main_menu_vtable_t g_MAIN_MENU_VTABLE = {
     0,
     0,
     (void (*)(void *)) func_8003CDE0,
-    (void (*)(void *)) func_8004DB18,
+    (void (*)(void *, ui_screen_panel_t *)) func_8004DB18,
     (void (*)(void *)) func_8004DC08,
     (void (*)(void *)) func_8004DC64,
     (void (*)(void *)) func_8004DCD0,
@@ -162,12 +162,11 @@ static u32 D_8008A9CC = 0xFFFF;
 
 static s32 D_80086D14[6][2] = { { 8, -3 }, { 8, 9 }, { 8, 21 }, { 8, 33 }, { 8, 45 }, { 8, 57 } };
 
-/* 4-entry table: only the first TIM path is used; the trailing NULLs make the
- * object 16 bytes so it lands in .data (the original build kept it there). */
-static char *g_FONT_ICON_PATH[4] = { "ETC\\FONTICON.TIM" };
-
-static const void *D_80086D54[6] = { (void *) 0x80505050, (void *) 0x80, &D_80086CE0,
-                                     &g_MENU_ITEMS,       &D_80086D14,   &D_80086CC4 };
+static ui_screen_panel_t g_TITLE_MENU_PANEL = {
+    "ETC\\FONTICON.TIM", NULL, 0, 0,
+    { 0x50, 0x50, 0x50 }, { 0x80, 0x80, 0 }, 0,
+    D_80086CE0, g_MENU_ITEMS, D_80086D14, D_80086CC4
+};
 
 char *D_80011454 = "BISLPS-01556";
 
@@ -201,8 +200,8 @@ main_menu_t *main_menu_create(u32 Unk1) {
 }
 
 void func_8004D578(main_menu_t *This, dream_sys_t *DreamSys) {
-    char *font_icon_path = &g_FONT_ICON_PATH;
-    func_8003DFBC()->Construct(This, font_icon_path, "ETC\\ETCSE", 0);
+    ui_screen_panel_t *panel = &g_TITLE_MENU_PANEL;
+    func_8003DFBC()->Construct(This, panel, "ETC\\ETCSE", 0);
     This->vtable = main_menu_get_vtable();
     This->m_Sound->vtable->sound_set_volume_offset(This->m_Sound, -1);
     This->m_DreamSys = DreamSys;
@@ -210,7 +209,7 @@ void func_8004D578(main_menu_t *This, dream_sys_t *DreamSys) {
     This->m_RegionCode = DreamSys->vtable->dream_sys_get_save_data(DreamSys, &This->m_RegionCodeParam);
     write_day_digits(DreamSys->vtable->get_day_number(DreamSys, 0));
 
-    This->vtable->Unk53(This, font_icon_path);
+    This->vtable->Unk53(This, panel);
     This->vtable->show_title(This, DreamSys);
 }
 
@@ -366,11 +365,11 @@ void func_8004DABC(main_menu_t *This) {
     This->m_DreamSys->vtable->dream_sys_get_set_screen_shake(This->m_DreamSys, &unk);
 }
 
-void func_8004DB18(main_menu_t *This, void *Unk) {
+void func_8004DB18(main_menu_t *This, ui_screen_panel_t *panel) {
     s32 len;
     void *mem;
 
-    if (Unk) {
+    if (panel) {
         if (This->m_DreamSys->vtable->dream_sys_is_new_game(This->m_DreamSys)) {
             strcpy(g_DAY_STR + 0x18, g_SPACES);
             func_800507F8(g_DAY_STR, 0);
@@ -380,7 +379,7 @@ void func_8004DB18(main_menu_t *This, void *Unk) {
         mem = memory_allocate_mem(len);
         func_80040FC0(mem, g_DAY_STR);
 
-        This->m_Unk43 = text_line_create(*((u32 *) Unk + 1), len, mem);
+        This->m_Unk43 = text_line_create((s32) panel->tex, len, mem);
         This->m_Unk43->m_Length = 8;
         This->m_Unk43->m_StartIndex = 4;
         This->m_Unk43->m_GapPosition = 9;
