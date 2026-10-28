@@ -1,0 +1,1558 @@
+{
+  "schema_version": 1,
+  "status": "bounded_original_sound_audit_with_preserved_sequence_exception",
+  "recorded_utc": "2026-10-28T18:45:31.770849+00:00",
+  "source_main_before": "9f2756010826bc2a4ecab66570892ff10284adf6",
+  "sources_sha256": {
+    "tools/inventory_sound.py": "f50fd31186674339957d5ac0233c5886bd9faa91a3b0742745a58d2269d3d79c",
+    "research/sound_assets/native_profile.py": "a39856628cff03f59c61dccfdaf906ac88b2f23a9c999c8d9fec4ca85fab9fee",
+    "research/sound_assets/verify.py": "9be9f774b6f9f6c9209580805de48856b68514c0ee69053620e6161cb2f43bae",
+    "research/sound_assets/selection.py": "727c47af5fadee2e45c7e4ce970edbe9167cdeb290d3bddcbcd9d3aaabd2cc82",
+    "research/sound_assets/qualify_disc.py": "7123aef2e20a6adaf0828176835a065bbc98cc180ec2ad4e282eea7ec5b4da55",
+    "tests/test_inventory_sound.py": "78804867366101cee4650bc8234bf88b906f859878ac468447fca5aaa8889818",
+    "tools/inventory_disc.py": "71319a4c51b50885753998fe9afb7a00b71acf0fa03167b9a63c48651e36aebf",
+    "tools/verify_native_ai.py": "6094e565bdb4e6701055f08d0428d059b54c6183818170ae1a671610c53b40a0",
+    "tools/export_npc_catalogue.py": "a71c42dd2c539d07c74e44eabf8363e53d7af35e289ec792f4e305321ac461d9",
+    "research/compiler/compare_function.py": "01b6bb903aff067169a6e36f4704b886956f48d51d1903dc35b1b07e4eaba6ff",
+    "tools/runtime_inputs.py": "a1e0865b13801414bfad30f31ce00ffd13840b2a836dbc527e138d89d6d877e4"
+  },
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "raw_disc_sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61",
+  "raw_disc_bytes": 648088896,
+  "structural_inventory": {
+    "layout_audio_files": 88,
+    "parsed_banks": 9,
+    "parsed_sequences": 70,
+    "programs": 102,
+    "tones": 351,
+    "samples": 255,
+    "distinct_sample_payloads": 232,
+    "ADPCM_blocks": 126210,
+    "first_end_repeat_flagged_samples": 111,
+    "encoded_sequence_events": 38976,
+    "zero_initial_tempo_sequences": 1,
+    "zero_rhythm_numerator_sequences": 1,
+    "native_header_review_sequences": 1,
+    "unresolved_files": 0
+  },
+  "complete_audio_payload_bytes": 2235032,
+  "audio_inputs": [
+    {
+      "path": "/CDI/ETC/ETCSE.VB",
+      "bytes": 5776,
+      "sha256": "d3c6a3dcbdfe52e8bbddf2922d21bc0481a586e4c531e37bde2abe0d1e5c2e20"
+    },
+    {
+      "path": "/CDI/ETC/ETCSE.VH",
+      "bytes": 3616,
+      "sha256": "d34fbb166c66d5f8f5b05e613208fbdbab886d20b56b7c173e2ddbdfa4d584d4"
+    },
+    {
+      "path": "/CDI/SND/AMBIENT.VB",
+      "bytes": 266272,
+      "sha256": "af159f3d5dffd2a4525c22d744f4aee1352d9cc06b3bd0ae9aea47edc6604c65"
+    },
+    {
+      "path": "/CDI/SND/AMBIENT.VH",
+      "bytes": 7200,
+      "sha256": "d2a06007a59626ec3380b59e267509b199642bbbab875c90aa6cd784a7cdfc50"
+    },
+    {
+      "path": "/CDI/SND/CARTOON.VB",
+      "bytes": 271920,
+      "sha256": "3803a1a2ab7b957fe2ad5251aa3ea64cba1ad0f565e91450d32f23ea33443ffd"
+    },
+    {
+      "path": "/CDI/SND/CARTOON.VH",
+      "bytes": 7712,
+      "sha256": "b5824fbe4809529297b819d4d1689edf616a03c2772657d29692eba70db58ba9"
+    },
+    {
+      "path": "/CDI/SND/ELECTRO.VB",
+      "bytes": 233840,
+      "sha256": "46eaf47c8b5e71898a5b7efa2f53df27703a4d189a78d8efee0b12b2cfe34402"
+    },
+    {
+      "path": "/CDI/SND/ELECTRO.VH",
+      "bytes": 7712,
+      "sha256": "f3e544b1dec6a673ac1659fe71e2e41fe2eddf4d658688facffac4ad5b4ca16b"
+    },
+    {
+      "path": "/CDI/SND/ETHNOVA.VB",
+      "bytes": 287088,
+      "sha256": "8aed1d3bd339c83e1872b624f819c0ad77133c06ff2302dd24c85482c1727842"
+    },
+    {
+      "path": "/CDI/SND/ETHNOVA.VH",
+      "bytes": 7712,
+      "sha256": "8b7b012bc6a3ae06672f4670968597004b681ac2f9a556aca2e35f3a3b18ef05"
+    },
+    {
+      "path": "/CDI/SND/HUMAN.VB",
+      "bytes": 271680,
+      "sha256": "a6a10c36ca1534fb30cbd8c9f185443706df0d1091085483027b1b6bba45509b"
+    },
+    {
+      "path": "/CDI/SND/HUMAN.VH",
+      "bytes": 7712,
+      "sha256": "4a24eabe70bdd7abacc566c49f7139c9f09ce9078cad54fa37a980d8ffbc97c4"
+    },
+    {
+      "path": "/CDI/SND/LOVELY.VB",
+      "bytes": 249936,
+      "sha256": "44e5dcec9f38389857519fd4cbebd96c8cbde40154209a61c248f97f2c03efe5"
+    },
+    {
+      "path": "/CDI/SND/LOVELY.VH",
+      "bytes": 7712,
+      "sha256": "927999b8577ad41c2288c6f3d9526c991eea36d5d9974be40e761c138a34a301"
+    },
+    {
+      "path": "/CDI/SND/SE.VB",
+      "bytes": 158944,
+      "sha256": "61f654f1d0f216a267d9e20d7d7d491cfb6307d336a46433cff5d9e5ec0d1409"
+    },
+    {
+      "path": "/CDI/SND/SE.VH",
+      "bytes": 18464,
+      "sha256": "a5834011cf096bd534ca814abfeb6cf2cbe6e7abd1da3efe3be8192926f2c4fd"
+    },
+    {
+      "path": "/CDI/SND/STANDERD.VB",
+      "bytes": 273904,
+      "sha256": "c28fe27ff88c051c91d47499c8481d9ef73d8367c6e3490f83ea95f28d59e9f4"
+    },
+    {
+      "path": "/CDI/SND/STANDERD.VH",
+      "bytes": 7712,
+      "sha256": "d2946e60cff867f801ea2732bd0ed7cb87b7b975a994c5230dff4112dd24cdfd"
+    },
+    {
+      "path": "/CDI/STG00/BGA.SEQ",
+      "bytes": 2887,
+      "sha256": "d2738687acc8ea53e6d2ec3e5aa6348b9462cde426d08c345d415651a74216b1"
+    },
+    {
+      "path": "/CDI/STG00/BGB.SEQ",
+      "bytes": 910,
+      "sha256": "b279ea05f520a0aa3a889cb8c6bc98d85c51ce00357e48c77238dee7ecae3aa5"
+    },
+    {
+      "path": "/CDI/STG00/BGC.SEQ",
+      "bytes": 1897,
+      "sha256": "27dfa4665722de78400875f7cbbf5e64c7d958a7e2e597fc6088a18829d005e8"
+    },
+    {
+      "path": "/CDI/STG00/BGD.SEQ",
+      "bytes": 38,
+      "sha256": "50b78037ae98186120cdae4b9e2d22a553334e961c5b182731342af421133fd3"
+    },
+    {
+      "path": "/CDI/STG00/BGE.SEQ",
+      "bytes": 1983,
+      "sha256": "ee591a16a44b0b8ccc465e04b727d2380c97eb5f8778c35dc7a369e1404a9712"
+    },
+    {
+      "path": "/CDI/STG01/BGA.SEQ",
+      "bytes": 7757,
+      "sha256": "634ff0e41ba86231d77708ce3fb802ec57adc71f09d722ba932291079a5180ac"
+    },
+    {
+      "path": "/CDI/STG01/BGB.SEQ",
+      "bytes": 4438,
+      "sha256": "d6e97497103a7d0e0749ad72c2fd13cefe82e1c895c569fe89dac3ae415e7ee9"
+    },
+    {
+      "path": "/CDI/STG01/BGC.SEQ",
+      "bytes": 1046,
+      "sha256": "f50ad6e2cf799fedbd168972945f7d881fa13adebca027d5a4e7d8c76869f73a"
+    },
+    {
+      "path": "/CDI/STG01/BGD.SEQ",
+      "bytes": 2337,
+      "sha256": "6e877de685828e946ef7780fef531487f6d05a6470ef5d2578cd8a37deb11a78"
+    },
+    {
+      "path": "/CDI/STG01/BGE.SEQ",
+      "bytes": 1368,
+      "sha256": "8f4ecd2a0524e6b87f9c9c490726ab9d61efbf6cfcb196fe20448c4cd0e902e5"
+    },
+    {
+      "path": "/CDI/STG02/BGA.SEQ",
+      "bytes": 3098,
+      "sha256": "7ae1f7974a468e6cb2f3976c1fdfd55066ff309a6b3f65d0df19ac92f02902dd"
+    },
+    {
+      "path": "/CDI/STG02/BGB.SEQ",
+      "bytes": 625,
+      "sha256": "96fe72ba53e4d71437f572eea0a0cfda0c4797f5ddd80076a70767b562c62a5a"
+    },
+    {
+      "path": "/CDI/STG02/BGC.SEQ",
+      "bytes": 1113,
+      "sha256": "befcc3f64d05ccf59a5becacfc1d562761c54f2e9fe1459c2f445b2ae984d620"
+    },
+    {
+      "path": "/CDI/STG02/BGD.SEQ",
+      "bytes": 1179,
+      "sha256": "4f3290fa3e1ba408d2582d88f6bebaa069bf42033738611d634b6a3b9a70525f"
+    },
+    {
+      "path": "/CDI/STG02/BGE.SEQ",
+      "bytes": 1944,
+      "sha256": "c49efcdf4f908abd9ae5888110eeafe8f2e19f9376b82490146e450e38075756"
+    },
+    {
+      "path": "/CDI/STG03/BGA.SEQ",
+      "bytes": 1577,
+      "sha256": "ec6989107e94f38b1c98e410e34362b67643e5f3682c3a626cc1d4d9880d17cc"
+    },
+    {
+      "path": "/CDI/STG03/BGB.SEQ",
+      "bytes": 1911,
+      "sha256": "b0635490d5c63d9a344e13108424c5e5ca4acfe6909f715361e7fff1d191a992"
+    },
+    {
+      "path": "/CDI/STG03/BGC.SEQ",
+      "bytes": 941,
+      "sha256": "570110279dd03d9a7756201c5b19e19de6f90f44bbe119dff569ba68fed9e1f6"
+    },
+    {
+      "path": "/CDI/STG03/BGD.SEQ",
+      "bytes": 38,
+      "sha256": "50b78037ae98186120cdae4b9e2d22a553334e961c5b182731342af421133fd3"
+    },
+    {
+      "path": "/CDI/STG03/BGE.SEQ",
+      "bytes": 1817,
+      "sha256": "f6d62dddbaef37ad3b1fb29eba5eb22777b836a7bef77eadf6a8c018f84f8483"
+    },
+    {
+      "path": "/CDI/STG04/BGA.SEQ",
+      "bytes": 1586,
+      "sha256": "d15fdaa0509b7105a0aabd679d268224e35312a9aef8b92dd25b8cdb8c25eae0"
+    },
+    {
+      "path": "/CDI/STG04/BGB.SEQ",
+      "bytes": 2186,
+      "sha256": "da047bc8a6b7b7b1b3fef969b562c912e6a025d8383520bc5be8b8bec5662e77"
+    },
+    {
+      "path": "/CDI/STG04/BGC.SEQ",
+      "bytes": 776,
+      "sha256": "d6f93392de10f2ed78c112e1665dbf5717dba1e78f683cc654e66ccf2f8b05b1"
+    },
+    {
+      "path": "/CDI/STG04/BGD.SEQ",
+      "bytes": 1012,
+      "sha256": "bc932abc41d3088048260ce8834decbaaa4a3ec0879a759c424dcbaf7ff2dded"
+    },
+    {
+      "path": "/CDI/STG04/BGE.SEQ",
+      "bytes": 1349,
+      "sha256": "044268800e7b0bcb425c9993a35137d77fb911537d15aae0e42f0e7b201a1d3c"
+    },
+    {
+      "path": "/CDI/STG05/BGA.SEQ",
+      "bytes": 5416,
+      "sha256": "8030f061884879235ad6645e77cf45c967c44d4106bd4bec440433de4dec6ab3"
+    },
+    {
+      "path": "/CDI/STG05/BGB.SEQ",
+      "bytes": 7399,
+      "sha256": "786d675617c52c5c2a84883b9f9a1b8889cf3f884adcb217de8b03df717d02c0"
+    },
+    {
+      "path": "/CDI/STG05/BGC.SEQ",
+      "bytes": 38,
+      "sha256": "50b78037ae98186120cdae4b9e2d22a553334e961c5b182731342af421133fd3"
+    },
+    {
+      "path": "/CDI/STG05/BGD.SEQ",
+      "bytes": 4517,
+      "sha256": "ca464e94d6909fff97cac7efd9df8cc2e69ddf3f86ba943688d01b26fb32f8fb"
+    },
+    {
+      "path": "/CDI/STG05/BGE.SEQ",
+      "bytes": 2447,
+      "sha256": "c105dfe114ae2d97738c48beb82c8329c509cb594ebce14d5027f423fff42ea9"
+    },
+    {
+      "path": "/CDI/STG06/BGA.SEQ",
+      "bytes": 2223,
+      "sha256": "cd5d52cab672ada2326689e3a012234902c233cd6cb9afe62c0e6484ae8a5713"
+    },
+    {
+      "path": "/CDI/STG06/BGB.SEQ",
+      "bytes": 1304,
+      "sha256": "f358c54d8a8946b3b30fa6539bd36b69b27db901c65b30800c70f3d7e640b8f0"
+    },
+    {
+      "path": "/CDI/STG06/BGC.SEQ",
+      "bytes": 764,
+      "sha256": "eefe3f76a3dd0988545c7a7db751f5e7c976d15b11435a3c08b2bc36c79cf88a"
+    },
+    {
+      "path": "/CDI/STG06/BGD.SEQ",
+      "bytes": 777,
+      "sha256": "bcce32bb24e05c24537ce779b236cebec91f75c744fdc1e4800b7045fe6f75c4"
+    },
+    {
+      "path": "/CDI/STG06/BGE.SEQ",
+      "bytes": 2672,
+      "sha256": "aba76f740f82ab02fb2878f1bab7a7ec61590b5894f374b6ce91b791cc2f49d4"
+    },
+    {
+      "path": "/CDI/STG07/BGA.SEQ",
+      "bytes": 1881,
+      "sha256": "7a598b80d3b0f13a3ae36e2e88e9d0274f1fa83a26d5d03d7c84fc7436a87e3a"
+    },
+    {
+      "path": "/CDI/STG07/BGB.SEQ",
+      "bytes": 4403,
+      "sha256": "8e1c845c091aa0d468f60c99a1755eb7f2eb6b0775007789541084b0e2eed8ef"
+    },
+    {
+      "path": "/CDI/STG07/BGC.SEQ",
+      "bytes": 1783,
+      "sha256": "e25cce6ac4001b1dca823caeeff8f227b100bfb44eaae44aa7f1ede426247d25"
+    },
+    {
+      "path": "/CDI/STG07/BGD.SEQ",
+      "bytes": 2279,
+      "sha256": "e6b73568526b51d695cd87275db870cd2eda3c288bf4c86d18e48c894c4518dc"
+    },
+    {
+      "path": "/CDI/STG07/BGE.SEQ",
+      "bytes": 1818,
+      "sha256": "f90e2552c53b8c4c89ac79673cb45b5cc60b91961c635505acdfc81f25ae9ee4"
+    },
+    {
+      "path": "/CDI/STG08/BGA.SEQ",
+      "bytes": 932,
+      "sha256": "cfaaabfe2714557c3188aafcbbb1dea43aa3b419be00ea5f66b37907b62f1382"
+    },
+    {
+      "path": "/CDI/STG08/BGB.SEQ",
+      "bytes": 2315,
+      "sha256": "56119a23a60565ee46593f10a384386e8f6b079ae5a063013525d0c4d1afe07b"
+    },
+    {
+      "path": "/CDI/STG08/BGC.SEQ",
+      "bytes": 1301,
+      "sha256": "22117da549d6dfdcac3d9bc96cea1d975185a302628163c3d491d12a8b0d7e32"
+    },
+    {
+      "path": "/CDI/STG08/BGD.SEQ",
+      "bytes": 2500,
+      "sha256": "7de76532113f712b8d526a7ceae6e336ffedc57eb5aff81a50365d38c8a407d8"
+    },
+    {
+      "path": "/CDI/STG08/BGE.SEQ",
+      "bytes": 1349,
+      "sha256": "077bb40608d028f7fd375f17412cf1ef85258a5d875cc46d805e7014636aa5e7"
+    },
+    {
+      "path": "/CDI/STG09/BGA.SEQ",
+      "bytes": 1073,
+      "sha256": "21008bfc3cf30ed34865cc4e7129ef7986bc2d7ea45fdb9f8e5a1099a2580801"
+    },
+    {
+      "path": "/CDI/STG09/BGB.SEQ",
+      "bytes": 2773,
+      "sha256": "99bd1ed3dff4c036bce313302f5a84ff923dbe74681e1aa869a33bcb08201c02"
+    },
+    {
+      "path": "/CDI/STG09/BGC.SEQ",
+      "bytes": 1500,
+      "sha256": "e0173bc0924dc69c73923bb054b9ceaa0ae37ea033ac6e5ec52a86c5ffe8f5c7"
+    },
+    {
+      "path": "/CDI/STG09/BGD.SEQ",
+      "bytes": 1319,
+      "sha256": "a689f4db97af982abac3234e3b265da170ace9d32c706ef9e3232bda03646f63"
+    },
+    {
+      "path": "/CDI/STG09/BGE.SEQ",
+      "bytes": 1803,
+      "sha256": "4c3b7c7b7d56afe6ac13dba840ecf2ee5ba3c72522fa36b60d4c91dd14d1fbe4"
+    },
+    {
+      "path": "/CDI/STG10/BGA.SEQ",
+      "bytes": 1146,
+      "sha256": "1b59c0df97290e29a40e7e505f9d213df06962eb32f6ca43f8bd1102c19c86f4"
+    },
+    {
+      "path": "/CDI/STG10/BGB.SEQ",
+      "bytes": 2463,
+      "sha256": "a118136289d8eeacd54d4d2eeff76bf1d0f7d6411b3811d4c16c52252a7711dc"
+    },
+    {
+      "path": "/CDI/STG10/BGC.SEQ",
+      "bytes": 872,
+      "sha256": "edf23eec893dfec46e63c063d26cefc2dd51235ac5835fc8c920fdbd5dbe373f"
+    },
+    {
+      "path": "/CDI/STG10/BGD.SEQ",
+      "bytes": 1509,
+      "sha256": "563b7062dd23a7b517db49d5fdf4fd020a6335fd5222fb7512e23dd3760508a3"
+    },
+    {
+      "path": "/CDI/STG10/BGE.SEQ",
+      "bytes": 935,
+      "sha256": "0845682a1e4d497e28504ce45d6791b05baf6a317ad73fef044551c00e482467"
+    },
+    {
+      "path": "/CDI/STG11/BGA.SEQ",
+      "bytes": 784,
+      "sha256": "57f3e714b4084cb6834c401c4548baf7e5f14a626adb1c8b5b4dd3301bf4894a"
+    },
+    {
+      "path": "/CDI/STG11/BGB.SEQ",
+      "bytes": 1040,
+      "sha256": "ff31efd255166396d777e361d5638e62fded94680341efdc8a392687646c776b"
+    },
+    {
+      "path": "/CDI/STG11/BGC.SEQ",
+      "bytes": 1744,
+      "sha256": "f299a25e9260b9f68997aafc28b82841ced1b3c51c8fa6885314ef3fcb8b43b5"
+    },
+    {
+      "path": "/CDI/STG11/BGD.SEQ",
+      "bytes": 4317,
+      "sha256": "0f2e6f06d12ea47592bb976e1e95affc4597c401c3f52c46285d4f66303624b1"
+    },
+    {
+      "path": "/CDI/STG11/BGE.SEQ",
+      "bytes": 1635,
+      "sha256": "432132e4ac52d9552758d271f89f84bdd886e4d208e6573b3a496c9159efde81"
+    },
+    {
+      "path": "/CDI/STG12/BGA.SEQ",
+      "bytes": 1879,
+      "sha256": "f52863b6572ff372aadab45bbe5f683dc7f72f1c19db945f61af19fc6e0a5c3c"
+    },
+    {
+      "path": "/CDI/STG12/BGB.SEQ",
+      "bytes": 1515,
+      "sha256": "4c55a660ca6dceef80de04bb8d08fcd6c13dd0e4a84cc70efde5428789b0a72e"
+    },
+    {
+      "path": "/CDI/STG12/BGC.SEQ",
+      "bytes": 1385,
+      "sha256": "a1be339e30084d973647251de8052c2145bb807de7fbac15aabb667334b0e3c2"
+    },
+    {
+      "path": "/CDI/STG12/BGD.SEQ",
+      "bytes": 4856,
+      "sha256": "e7f6f2c777015410930e6ab5274391c36a631551df5c36766b83e696888689ca"
+    },
+    {
+      "path": "/CDI/STG12/BGE.SEQ",
+      "bytes": 1259,
+      "sha256": "edd22463cee4ab456d996669879b990997d5ec14f06081c99eaf965a405c1c25"
+    },
+    {
+      "path": "/CDI/STG13/BGA.SEQ",
+      "bytes": 865,
+      "sha256": "5b46204e29c00e31bdb14301d9c34dcb6c7239b3935a12858935cec18385582d"
+    },
+    {
+      "path": "/CDI/STG13/BGB.SEQ",
+      "bytes": 3255,
+      "sha256": "c2ec97ad791d7d922c2ab26e8d8af3dc057feae7d7fe9d1ba6233cea54a94316"
+    },
+    {
+      "path": "/CDI/STG13/BGC.SEQ",
+      "bytes": 2681,
+      "sha256": "34eb534b36352c3a9ab35835309adf8817c319f5eaa8506d16fe8d4c36630be8"
+    },
+    {
+      "path": "/CDI/STG13/BGD.SEQ",
+      "bytes": 1645,
+      "sha256": "01e0955fffd18e096d16377d4aa9b062f7f4a6f5df8dfa62db309a03726dbf66"
+    },
+    {
+      "path": "/CDI/STG13/BGE.SEQ",
+      "bytes": 1936,
+      "sha256": "1b4837db27e50f600ca3dde6e8f59408be1143ca8452c05c8790fe74a3e44ab8"
+    }
+  ],
+  "banks": [
+    {
+      "path": "/CDI/ETC/ETCSE.VH",
+      "body_path": "/CDI/ETC/ETCSE.VB",
+      "declared_programs": 2,
+      "native_program_ids": [
+        0,
+        1
+      ],
+      "declared_tones": 2,
+      "declared_samples": 2,
+      "active_program_ids_outside_count_prefix": []
+    },
+    {
+      "path": "/CDI/SND/AMBIENT.VH",
+      "body_path": "/CDI/SND/AMBIENT.VB",
+      "declared_programs": 9,
+      "native_program_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9
+      ],
+      "declared_tones": 41,
+      "declared_samples": 11,
+      "active_program_ids_outside_count_prefix": [
+        9
+      ]
+    },
+    {
+      "path": "/CDI/SND/CARTOON.VH",
+      "body_path": "/CDI/SND/CARTOON.VB",
+      "declared_programs": 10,
+      "native_program_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "declared_tones": 42,
+      "declared_samples": 34,
+      "active_program_ids_outside_count_prefix": []
+    },
+    {
+      "path": "/CDI/SND/ELECTRO.VH",
+      "body_path": "/CDI/SND/ELECTRO.VB",
+      "declared_programs": 10,
+      "native_program_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "declared_tones": 47,
+      "declared_samples": 34,
+      "active_program_ids_outside_count_prefix": []
+    },
+    {
+      "path": "/CDI/SND/ETHNOVA.VH",
+      "body_path": "/CDI/SND/ETHNOVA.VB",
+      "declared_programs": 10,
+      "native_program_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "declared_tones": 47,
+      "declared_samples": 34,
+      "active_program_ids_outside_count_prefix": []
+    },
+    {
+      "path": "/CDI/SND/HUMAN.VH",
+      "body_path": "/CDI/SND/HUMAN.VB",
+      "declared_programs": 10,
+      "native_program_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "declared_tones": 48,
+      "declared_samples": 37,
+      "active_program_ids_outside_count_prefix": []
+    },
+    {
+      "path": "/CDI/SND/LOVELY.VH",
+      "body_path": "/CDI/SND/LOVELY.VB",
+      "declared_programs": 10,
+      "native_program_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "declared_tones": 44,
+      "declared_samples": 36,
+      "active_program_ids_outside_count_prefix": []
+    },
+    {
+      "path": "/CDI/SND/SE.VH",
+      "body_path": "/CDI/SND/SE.VB",
+      "declared_programs": 31,
+      "native_program_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "declared_tones": 32,
+      "declared_samples": 32,
+      "active_program_ids_outside_count_prefix": []
+    },
+    {
+      "path": "/CDI/SND/STANDERD.VH",
+      "body_path": "/CDI/SND/STANDERD.VB",
+      "declared_programs": 10,
+      "native_program_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "declared_tones": 48,
+      "declared_samples": 35,
+      "active_program_ids_outside_count_prefix": []
+    }
+  ],
+  "raw_disc_qualification": {
+    "independently_walked_ISO_files": 683,
+    "audio_files_verified": 88,
+    "audio_payload_bytes": 2235032,
+    "all_read_Mode2_Form1_sectors_valid": true,
+    "no_payload_extracted_to_disk": true,
+    "producer_sha256": "7123aef2e20a6adaf0828176835a065bbc98cc180ec2ad4e282eea7ec5b4da55",
+    "layout_sha256": "cf93cc690c83baa91e7f54d57bc160007ceee859dc566333105124bf126ed1bc"
+  },
+  "native_function_qualification": {
+    "metadata": {
+      "ELF_sha256": "c0746d3982c314079a5a24f2d88072c43464032f969eeac5f172c7646df833a7",
+      "GNU_symbol_output_sha256": "799952f7601b0d5d3f8b0e51b8d3289c53b2cb9a2f18a9b8d769ebdb43b7e7d6",
+      "complete_spans_original_byte_equal": true,
+      "functions": [
+        {
+          "function": "printf",
+          "address": "0x80012c20",
+          "bytes": 60,
+          "sha256": "bdcc73ef59ec39808cb80749a1730204451140bf7c35fa76aa3b92bdb508021d"
+        },
+        {
+          "function": "prnt",
+          "address": "0x80012c5c",
+          "bytes": 1692,
+          "sha256": "ce70521998ea990401aa36306b3a744b3f21274435f764fd02b596a4b987282b"
+        },
+        {
+          "function": "memchr",
+          "address": "0x800132f8",
+          "bytes": 80,
+          "sha256": "3ac33d237c6803cfd262515d2bb2994ef94e2b0bf51b4a8fc1ae39332a24a3bc"
+        },
+        {
+          "function": "strlen",
+          "address": "0x80013348",
+          "bytes": 48,
+          "sha256": "687b44978ea1acc29ad6ef4a72daa81c0db610cf13febf8030f3203e01478b3e"
+        },
+        {
+          "function": "putchar",
+          "address": "0x800133e0",
+          "bytes": 168,
+          "sha256": "778f7b22b3c63e73bad9a5b603946fc0a01bf022d88b0bb1cfb490b02d1cc27f"
+        },
+        {
+          "function": "write",
+          "address": "0x80013488",
+          "bytes": 12,
+          "sha256": "47b66a3af6776c605fd2d505596f37a217dc08fd35788f7884bafaf8e4434dbd"
+        },
+        {
+          "function": "SpuVmVSetUp",
+          "address": "0x80032148",
+          "bytes": 212,
+          "sha256": "503920b76e1d66b2ed401f452ef7f22183ba74a427a82e04301c85456ef8ad20"
+        },
+        {
+          "function": "func_800323A8",
+          "address": "0x800323a8",
+          "bytes": 480,
+          "sha256": "3aeb3c45124386f48f0312c89c3dbcee9e55ad95c8ae5590e299b859c7b70f93"
+        },
+        {
+          "function": "SsVabOpenHead",
+          "address": "0x80032c98",
+          "bytes": 52,
+          "sha256": "5cac84f55dafa32991d8e024cfe9d4a50bbb818c5dfdbb6a2ecc59303f658d00"
+        },
+        {
+          "function": "SsVabOpenHeadWithMode",
+          "address": "0x80032d34",
+          "bytes": 1096,
+          "sha256": "b256adce392ea6a5eec4185a5c13d03efa197a1b404546f9fcec0530bced2779"
+        },
+        {
+          "function": "SsUtGetVabHdr",
+          "address": "0x8003317c",
+          "bytes": 228,
+          "sha256": "4a77e626620db7daf374c3b87f8607a438844177a7bddc1e16772fb511400886"
+        },
+        {
+          "function": "SsUtGetVagAtr",
+          "address": "0x80033260",
+          "bytes": 576,
+          "sha256": "10f42415b62623eccf01b0228f0b257b133cdfad5e5109927d50b0a96bd8da83"
+        },
+        {
+          "function": "SsUtGetProgAtr",
+          "address": "0x800334f0",
+          "bytes": 268,
+          "sha256": "c25d5435c7156df6c74034bde49563ff5b88d0ca3bd54df0b87b417ef3f114c8"
+        },
+        {
+          "function": "_SsReadDeltaValue",
+          "address": "0x80035e80",
+          "bytes": 188,
+          "sha256": "a7360391aac6bbc78ec6fd7750f00fe8a04a9c7cc9e744deaa76fb7a894f19b6"
+        },
+        {
+          "function": "SpuInitMalloc",
+          "address": "0x80039104",
+          "bytes": 84,
+          "sha256": "bc293ad25ecb2b79e8bd4cce2de50603d8c1726d96711a4ade03f27149b7c3d9"
+        },
+        {
+          "function": "_spu_setInTransfer",
+          "address": "0x80039228",
+          "bytes": 44,
+          "sha256": "16dcad4449b8912a8d474ae841e00c0836013ce35482a3a4fdcf9b705947c748"
+        },
+        {
+          "function": "_spu_getInTransfer",
+          "address": "0x80039254",
+          "bytes": 16,
+          "sha256": "61bf71bb7ec922f1c76ddf492ba4a70861e868ca546665b14585f7f70d30db93"
+        },
+        {
+          "function": "SpuMalloc",
+          "address": "0x80039264",
+          "bytes": 712,
+          "sha256": "9a62f1640c58cb483b4ec749b68e08b4350fa9efcef37db37a61f17a7b5aa5b2"
+        },
+        {
+          "function": "_spu_gcSPU",
+          "address": "0x8003952c",
+          "bytes": 768,
+          "sha256": "bd0c2d0781a944226e2e1e6ec271b52098484d6c8ef540ae62f70911f363c978"
+        },
+        {
+          "function": "bgm_get_sequence_work",
+          "address": "0x8003a068",
+          "bytes": 16,
+          "sha256": "79335f9ec485f70521b6a55929839b0930fe635c687a2018c0e3d0b0b885356f"
+        },
+        {
+          "function": "_SsInitSoundSeq",
+          "address": "0x8003a670",
+          "bytes": 812,
+          "sha256": "4db7d001b72a4ec132e884ed06c272640c535b83f2c0c597bd196cf91c28aedb"
+        },
+        {
+          "function": "SsSeqOpen",
+          "address": "0x8003a99c",
+          "bytes": 204,
+          "sha256": "f596c24413b07a24ba60273168f64948741db2d5ba2b69668e5a68b5b743dfe3"
+        }
+      ],
+      "unqualified_static_external_transfers": []
+    },
+    "selection": {
+      "ELF_sha256": "c0746d3982c314079a5a24f2d88072c43464032f969eeac5f172c7646df833a7",
+      "GNU_symbol_output_sha256": "799952f7601b0d5d3f8b0e51b8d3289c53b2cb9a2f18a9b8d769ebdb43b7e7d6",
+      "complete_spans_original_byte_equal": true,
+      "functions": [
+        {
+          "function": "get_seeded_random",
+          "address": "0x80048cfc",
+          "bytes": 44,
+          "sha256": "d6a663de736ac83d8fe70a47d4746484004b201fe4cb02c18939cc0e022d418d"
+        },
+        {
+          "function": "set_audio_path_override",
+          "address": "0x80048d28",
+          "bytes": 32,
+          "sha256": "eb47b08dd0b11641cd83c888b2cc40a4469c4c6fd0a77d5d79ea04d67ce33206"
+        },
+        {
+          "function": "get_path_table",
+          "address": "0x80048d48",
+          "bytes": 28,
+          "sha256": "daf17bc0c637610f5ecc894afa83dbaba43df82e2f000c003c1d70c0fdfb777d"
+        },
+        {
+          "function": "get_stage_paths",
+          "address": "0x80048e2c",
+          "bytes": 84,
+          "sha256": "cc4419b61861d3f1f93e046c615c172b007ea01e2f9e7e9851ef72aa81a8d10e"
+        },
+        {
+          "function": "get_stage_music_paths",
+          "address": "0x80048f60",
+          "bytes": 36,
+          "sha256": "e23b1a2c951d5ec1d06b80067c1a244da8b8512093528cea8e89a9a7d17085dd"
+        },
+        {
+          "function": "get_stage_music_path",
+          "address": "0x80048f84",
+          "bytes": 184,
+          "sha256": "1940cbbb8448ea71069d4935374bf440c27bab83af72a172af75498364298fae"
+        },
+        {
+          "function": "rand",
+          "address": "0x80049480",
+          "bytes": 40,
+          "sha256": "4c54a1210ed147afe9b02657c9b12bdec5bb62c5584a2a9fef212567d0e04c0c"
+        },
+        {
+          "function": "srand",
+          "address": "0x800494a8",
+          "bytes": 12,
+          "sha256": "41e2537527158d69ebbd13e2205b03816cf27c981266d1f3683a978930beb94a"
+        }
+      ],
+      "unqualified_static_external_transfers": []
+    },
+    "distinct_complete_original_functions": 30,
+    "original_output_stubs": 0,
+    "every_executed_PC_bounded_to_original_qualified_span": true
+  },
+  "pending_header_calls": {
+    "/CDI/ETC/ETCSE.VH": {
+      "programs": 2,
+      "tones": 2,
+      "samples": 2,
+      "pending_flag": 2,
+      "allocated_SPU_address": 4112,
+      "allocated_SPU_bytes": 5776,
+      "complete_mutated_VH_sha256": "33cfacbe6922f30e888d1f1d408a4f020fc84905ac5361adec0cf73a64d3d40f",
+      "all_header_bytes_and_guards_equal": true,
+      "pending_getter_rejections": 3,
+      "entered_original_functions": {
+        "SpuInitMalloc": 1,
+        "SsVabOpenHead": 1,
+        "SsVabOpenHeadWithMode": 1,
+        "_spu_getInTransfer": 1,
+        "_spu_setInTransfer": 1,
+        "SpuMalloc": 1,
+        "_spu_gcSPU": 1,
+        "SsUtGetVabHdr": 1,
+        "SsUtGetProgAtr": 1,
+        "SsUtGetVagAtr": 1
+      },
+      "native_output_stubs": 0,
+      "SPU_transfer_executed": false,
+      "audible_playback_verified": false
+    },
+    "/CDI/SND/AMBIENT.VH": {
+      "programs": 9,
+      "tones": 41,
+      "samples": 11,
+      "pending_flag": 2,
+      "allocated_SPU_address": 4112,
+      "allocated_SPU_bytes": 266272,
+      "complete_mutated_VH_sha256": "3c86a1e65013303691cb73844ea3c10538ebc18eff73dc780046557bc51b29d9",
+      "all_header_bytes_and_guards_equal": true,
+      "pending_getter_rejections": 3,
+      "entered_original_functions": {
+        "SpuInitMalloc": 1,
+        "SsVabOpenHead": 1,
+        "SsVabOpenHeadWithMode": 1,
+        "_spu_getInTransfer": 1,
+        "_spu_setInTransfer": 1,
+        "SpuMalloc": 1,
+        "_spu_gcSPU": 1,
+        "SsUtGetVabHdr": 1,
+        "SsUtGetProgAtr": 1,
+        "SsUtGetVagAtr": 1
+      },
+      "native_output_stubs": 0,
+      "SPU_transfer_executed": false,
+      "audible_playback_verified": false
+    },
+    "/CDI/SND/CARTOON.VH": {
+      "programs": 10,
+      "tones": 42,
+      "samples": 34,
+      "pending_flag": 2,
+      "allocated_SPU_address": 4112,
+      "allocated_SPU_bytes": 271920,
+      "complete_mutated_VH_sha256": "0ef070fa4dac29463dc396d398efe63aa640ac90e057d0c3a1406562c8885a73",
+      "all_header_bytes_and_guards_equal": true,
+      "pending_getter_rejections": 3,
+      "entered_original_functions": {
+        "SpuInitMalloc": 1,
+        "SsVabOpenHead": 1,
+        "SsVabOpenHeadWithMode": 1,
+        "_spu_getInTransfer": 1,
+        "_spu_setInTransfer": 1,
+        "SpuMalloc": 1,
+        "_spu_gcSPU": 1,
+        "SsUtGetVabHdr": 1,
+        "SsUtGetProgAtr": 1,
+        "SsUtGetVagAtr": 1
+      },
+      "native_output_stubs": 0,
+      "SPU_transfer_executed": false,
+      "audible_playback_verified": false
+    },
+    "/CDI/SND/ELECTRO.VH": {
+      "programs": 10,
+      "tones": 47,
+      "samples": 34,
+      "pending_flag": 2,
+      "allocated_SPU_address": 4112,
+      "allocated_SPU_bytes": 233840,
+      "complete_mutated_VH_sha256": "6d4dc198d9ec01d1fd31fe2b46c15d49de64d28b7d50f195489426cd37ce7fe1",
+      "all_header_bytes_and_guards_equal": true,
+      "pending_getter_rejections": 3,
+      "entered_original_functions": {
+        "SpuInitMalloc": 1,
+        "SsVabOpenHead": 1,
+        "SsVabOpenHeadWithMode": 1,
+        "_spu_getInTransfer": 1,
+        "_spu_setInTransfer": 1,
+        "SpuMalloc": 1,
+        "_spu_gcSPU": 1,
+        "SsUtGetVabHdr": 1,
+        "SsUtGetProgAtr": 1,
+        "SsUtGetVagAtr": 1
+      },
+      "native_output_stubs": 0,
+      "SPU_transfer_executed": false,
+      "audible_playback_verified": false
+    },
+    "/CDI/SND/ETHNOVA.VH": {
+      "programs": 10,
+      "tones": 47,
+      "samples": 34,
+      "pending_flag": 2,
+      "allocated_SPU_address": 4112,
+      "allocated_SPU_bytes": 287088,
+      "complete_mutated_VH_sha256": "4c80d96e6a732a4fa5d1d3f71fa1dc69f8f90bea61bed41b7387b4258f3bcac9",
+      "all_header_bytes_and_guards_equal": true,
+      "pending_getter_rejections": 3,
+      "entered_original_functions": {
+        "SpuInitMalloc": 1,
+        "SsVabOpenHead": 1,
+        "SsVabOpenHeadWithMode": 1,
+        "_spu_getInTransfer": 1,
+        "_spu_setInTransfer": 1,
+        "SpuMalloc": 1,
+        "_spu_gcSPU": 1,
+        "SsUtGetVabHdr": 1,
+        "SsUtGetProgAtr": 1,
+        "SsUtGetVagAtr": 1
+      },
+      "native_output_stubs": 0,
+      "SPU_transfer_executed": false,
+      "audible_playback_verified": false
+    },
+    "/CDI/SND/HUMAN.VH": {
+      "programs": 10,
+      "tones": 48,
+      "samples": 37,
+      "pending_flag": 2,
+      "allocated_SPU_address": 4112,
+      "allocated_SPU_bytes": 271680,
+      "complete_mutated_VH_sha256": "12ddcba7471620ec1d75d616548505aceb0f3ed18672489e95df2d0b6baef20e",
+      "all_header_bytes_and_guards_equal": true,
+      "pending_getter_rejections": 3,
+      "entered_original_functions": {
+        "SpuInitMalloc": 1,
+        "SsVabOpenHead": 1,
+        "SsVabOpenHeadWithMode": 1,
+        "_spu_getInTransfer": 1,
+        "_spu_setInTransfer": 1,
+        "SpuMalloc": 1,
+        "_spu_gcSPU": 1,
+        "SsUtGetVabHdr": 1,
+        "SsUtGetProgAtr": 1,
+        "SsUtGetVagAtr": 1
+      },
+      "native_output_stubs": 0,
+      "SPU_transfer_executed": false,
+      "audible_playback_verified": false
+    },
+    "/CDI/SND/LOVELY.VH": {
+      "programs": 10,
+      "tones": 44,
+      "samples": 36,
+      "pending_flag": 2,
+      "allocated_SPU_address": 4112,
+      "allocated_SPU_bytes": 249936,
+      "complete_mutated_VH_sha256": "a896d5a7a7736c5b738820ab48830b28376872cf4d14767a50171e94265bf2dc",
+      "all_header_bytes_and_guards_equal": true,
+      "pending_getter_rejections": 3,
+      "entered_original_functions": {
+        "SpuInitMalloc": 1,
+        "SsVabOpenHead": 1,
+        "SsVabOpenHeadWithMode": 1,
+        "_spu_getInTransfer": 1,
+        "_spu_setInTransfer": 1,
+        "SpuMalloc": 1,
+        "_spu_gcSPU": 1,
+        "SsUtGetVabHdr": 1,
+        "SsUtGetProgAtr": 1,
+        "SsUtGetVagAtr": 1
+      },
+      "native_output_stubs": 0,
+      "SPU_transfer_executed": false,
+      "audible_playback_verified": false
+    },
+    "/CDI/SND/SE.VH": {
+      "programs": 31,
+      "tones": 32,
+      "samples": 32,
+      "pending_flag": 2,
+      "allocated_SPU_address": 4112,
+      "allocated_SPU_bytes": 158944,
+      "complete_mutated_VH_sha256": "1929a3c9d6992bd1c01ca082243788b8de05fe0133b00ebf9d7ccfefd2a0db3e",
+      "all_header_bytes_and_guards_equal": true,
+      "pending_getter_rejections": 3,
+      "entered_original_functions": {
+        "SpuInitMalloc": 1,
+        "SsVabOpenHead": 1,
+        "SsVabOpenHeadWithMode": 1,
+        "_spu_getInTransfer": 1,
+        "_spu_setInTransfer": 1,
+        "SpuMalloc": 1,
+        "_spu_gcSPU": 1,
+        "SsUtGetVabHdr": 1,
+        "SsUtGetProgAtr": 1,
+        "SsUtGetVagAtr": 1
+      },
+      "native_output_stubs": 0,
+      "SPU_transfer_executed": false,
+      "audible_playback_verified": false
+    },
+    "/CDI/SND/STANDERD.VH": {
+      "programs": 10,
+      "tones": 48,
+      "samples": 35,
+      "pending_flag": 2,
+      "allocated_SPU_address": 4112,
+      "allocated_SPU_bytes": 273904,
+      "complete_mutated_VH_sha256": "c1551b03406bed693afe4aa520bda53d0894a1bcbf73de573982c3f5a855e526",
+      "all_header_bytes_and_guards_equal": true,
+      "pending_getter_rejections": 3,
+      "entered_original_functions": {
+        "SpuInitMalloc": 1,
+        "SsVabOpenHead": 1,
+        "SsVabOpenHeadWithMode": 1,
+        "_spu_getInTransfer": 1,
+        "_spu_setInTransfer": 1,
+        "SpuMalloc": 1,
+        "_spu_gcSPU": 1,
+        "SsUtGetVabHdr": 1,
+        "SsUtGetProgAtr": 1,
+        "SsUtGetVagAtr": 1
+      },
+      "native_output_stubs": 0,
+      "SPU_transfer_executed": false,
+      "audible_playback_verified": false
+    }
+  },
+  "pending_getter_rejections": 27,
+  "ready_metadata": {
+    "status": "paired_retained_ready_RAM_queries_match_complete_expected_memory",
+    "original": {
+      "ready_banks": [
+        {
+          "bank_id": 0,
+          "path": "/CDI/SND/SE.VH",
+          "header_address": "0x8009203c",
+          "SPU_address": "0x1010",
+          "programs": 31,
+          "tones": 32
+        },
+        {
+          "bank_id": 1,
+          "path": "/CDI/SND/STANDERD.VH",
+          "header_address": "0x80098f7c",
+          "SPU_address": "0x27cf0",
+          "programs": 10,
+          "tones": 48
+        }
+      ],
+      "complete_RAM_comparisons": 123,
+      "complete_RAM_bytes_per_comparison": 2097152,
+      "result_chain_sha256": "d090861939a05fd5f78f24be7981bae419c3343283eb4c5a49ca8083aa6f68f3",
+      "entered_original_functions": {
+        "SsUtGetVabHdr": 2,
+        "SsUtGetProgAtr": 41,
+        "SpuVmVSetUp": 121,
+        "SsUtGetVagAtr": 80
+      },
+      "original_output_stubs": 0,
+      "source_RAM_digest": "4a7e07d8264af965277a44eb9f32bb56f8d01e15cff66934312eb68ad8e9bf05",
+      "natural_method_entry_trace": false,
+      "SPU_transfer_completion_verified": false,
+      "audible_playback_verified": false
+    },
+    "rebuilt": {
+      "ready_banks": [
+        {
+          "bank_id": 0,
+          "path": "/CDI/SND/SE.VH",
+          "header_address": "0x8009203c",
+          "SPU_address": "0x1010",
+          "programs": 31,
+          "tones": 32
+        },
+        {
+          "bank_id": 1,
+          "path": "/CDI/SND/STANDERD.VH",
+          "header_address": "0x80098f7c",
+          "SPU_address": "0x27cf0",
+          "programs": 10,
+          "tones": 48
+        }
+      ],
+      "complete_RAM_comparisons": 123,
+      "complete_RAM_bytes_per_comparison": 2097152,
+      "result_chain_sha256": "d090861939a05fd5f78f24be7981bae419c3343283eb4c5a49ca8083aa6f68f3",
+      "entered_original_functions": {
+        "SsUtGetVabHdr": 2,
+        "SsUtGetProgAtr": 41,
+        "SpuVmVSetUp": 121,
+        "SsUtGetVagAtr": 80
+      },
+      "original_output_stubs": 0,
+      "source_RAM_digest": "4a7e07d8264af965277a44eb9f32bb56f8d01e15cff66934312eb68ad8e9bf05",
+      "natural_method_entry_trace": false,
+      "SPU_transfer_completion_verified": false,
+      "audible_playback_verified": false
+    },
+    "complete_RAM_comparisons_per_context": 123,
+    "combined_complete_RAM_comparisons": 246,
+    "original_rebuilt_complete_source_RAM_sha256": "4a7e07d8264af965277a44eb9f32bb56f8d01e15cff66934312eb68ad8e9bf05",
+    "original_rebuilt_outputs_and_expected_full_RAM_equal": true,
+    "native_helper_sha256": "a39856628cff03f59c61dccfdaf906ac88b2f23a9c999c8d9fec4ca85fab9fee",
+    "new_native_capture": false
+  },
+  "capture_input_qualification": {
+    "schema_version": 2,
+    "selected_core": "Nymashock",
+    "scenario": "boot",
+    "frames": 30000,
+    "disc_layout": [
+      "FILE <track-1> BINARY",
+      "TRACK 01 MODE2/2352",
+      "INDEX 01 00:00:00"
+    ],
+    "disc_tracks": [
+      {
+        "bytes": 648088896,
+        "sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61"
+      }
+    ],
+    "emulator_files": {
+      "EmuHawk.exe": {
+        "bytes": 5376512,
+        "sha256": "f8cdb93551a544f680bf3876d9d8d72643859e7a44a23b04e1a25b92e48f80cd"
+      },
+      "EmuHawk.exe.config": {
+        "bytes": 3266,
+        "sha256": "00146088ad19747e601d09dee0ead7bf75b27fccf23e3cf7809a5e7dede129cf"
+      },
+      "dll/BizHawk.Emulation.Cores.dll": {
+        "bytes": 10832896,
+        "sha256": "444bc157418e9b5df5d07e987fc7ad1d2d1c6993676f5b864368027cb4f054d5"
+      },
+      "dll/BizHawk.Emulation.Common.dll": {
+        "bytes": 413184,
+        "sha256": "f557d94912b12bde18413b60d25b3e61332b7bbfc7184349d1289d6ba9f350ee"
+      },
+      "dll/octoshock.dll": {
+        "bytes": 1259008,
+        "sha256": "466a6a1f9d958a4d365b10fcf9b4bde5aeb80cc9c4d4fd00da9ad05930569b41"
+      },
+      "dll/shock.wbx.zst": {
+        "bytes": 821437,
+        "sha256": "402a9033598018aae0faa14cb8c193242415a3329bc8571e9d22d2d1a3155d59"
+      },
+      "dll/waterboxhost.dll": {
+        "bytes": 406016,
+        "sha256": "e8e47426941a710c7ceea98fb0833b8387de1952f54ca0fa40001cd494507cee"
+      }
+    },
+    "bios": {
+      "J": {
+        "bytes": 524288,
+        "sha256": "9c0421858e217805f4abe18698afea8d5aa36ff0727eb8484944e00eb5e7eadb"
+      },
+      "U": {
+        "bytes": 524288,
+        "sha256": "11052b6499e466bbf0a709b1f9cb6834a9418e66680387912451e971cf8a1fef"
+      },
+      "E": {
+        "bytes": 524288,
+        "sha256": "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+      }
+    },
+    "configuration": {
+      "normalized_json_sha256": "88a51d66ffadd3391d41c89619282abbc72c930516919c36cf6e37c30c97ebf5"
+    },
+    "script": {
+      "bytes": 8158,
+      "sha256": "ec61b5804771bc54ad0859195107d89371c86ac10a72b979fe7376298a394ffe"
+    },
+    "start_kind": "cold_boot",
+    "start_state": null,
+    "audio_output_requested": true,
+    "audio_writer": "wave"
+  },
+  "retained_RAM_members": [
+    {
+      "context": "original",
+      "archive": "bundle-002.tar.xz",
+      "archive_sha256": "8a23fad6d3c4930cb2388786ecc58b75a6b2d9de32b2813c68720dc11bb2cd62",
+      "index_sha256": "4f07af5683447a356afb7fcc76d9cd1b858bf1993345ce7345fe61949470ed97",
+      "member": "payloads/00030.bin",
+      "payload_bytes": 2097152,
+      "payload_sha256": "4a7e07d8264af965277a44eb9f32bb56f8d01e15cff66934312eb68ad8e9bf05"
+    },
+    {
+      "context": "rebuilt",
+      "archive": "bundle-004.tar.xz",
+      "archive_sha256": "6aa42dc99fbae625cb88aae73e98bd6d635e1738fa009d96ff37494d9418714f",
+      "index_sha256": "8c1f6f9293960c3abd9a19429cbfa70cc434817c41f922e8bf567f9d469afb27",
+      "member": "payloads/00026.bin",
+      "payload_bytes": 2097152,
+      "payload_sha256": "4a7e07d8264af965277a44eb9f32bb56f8d01e15cff66934312eb68ad8e9bf05"
+    }
+  ],
+  "retained_RAM_frame": {
+    "relative": 3000,
+    "core": 3001,
+    "scenario": "boot",
+    "start_kind": "cold_boot",
+    "source_manifest_schema": 2,
+    "natural_getter_method_entry_trace": false
+  },
+  "sequence_initialization": {
+    "calls": 70,
+    "normal_returns_1": 69,
+    "original_exceptions": [
+      {
+        "path": "/CDI/STG09/BGC.SEQ",
+        "initial_tempo_word": 0,
+        "returned": false,
+        "Unicorn_exception": "Unhandled CPU exception (UC_ERR_EXCEPTION)",
+        "last_PC": "0x3a800",
+        "last_instruction": "0d000700",
+        "architectural_PC": "0x0",
+        "entered_original_functions": {
+          "bgm_get_sequence_work": 1,
+          "func_800323A8": 1,
+          "SsSeqOpen": 1,
+          "_SsInitSoundSeq": 1
+        },
+        "source_sequence_sha256": "e0173bc0924dc69c73923bb054b9ceaa0ae37ea033ac6e5ec52a86c5ffe8f5c7",
+        "original_output_stubs": 0,
+        "natural_file_reachability_verified": false,
+        "BIOS_exception_handling_verified": false,
+        "audible_playback_verified": false
+      }
+    ],
+    "private_tempo_controls": [
+      {
+        "path": "/CDI/STG09/BGC.SEQ",
+        "changed_only_private_tempo_bytes": true,
+        "original_payload_preserved": true,
+        "returned": true,
+        "result": 1,
+        "entered_original_functions": {
+          "bgm_get_sequence_work": 1,
+          "func_800323A8": 1,
+          "SsSeqOpen": 1,
+          "_SsInitSoundSeq": 1,
+          "_SsReadDeltaValue": 1
+        },
+        "source_sequence_sha256": "d991fa52e7ad710e847c01e2431a2a45c107a4bfb45c60e867e8d310bc54585b",
+        "original_output_stubs": 0,
+        "natural_file_reachability_verified": false,
+        "BIOS_exception_handling_verified": false,
+        "audible_playback_verified": false
+      }
+    ],
+    "BIOS_exception_handling_verified": false
+  },
+  "stage_music_selection": {
+    "matrix_case_count": 420,
+    "seeds_by_residue": {
+      "3": {
+        "seed": 1,
+        "original_rand_result": 16838,
+        "RNG_after": "a67ec641"
+      },
+      "2": {
+        "seed": 3,
+        "original_rand_result": 17747,
+        "RNG_after": "801b53c5"
+      },
+      "0": {
+        "seed": 5,
+        "original_rand_result": 18655,
+        "RNG_after": "5ab8df48"
+      },
+      "1": {
+        "seed": 6,
+        "original_rand_result": 2726,
+        "RNG_after": "c706a68a"
+      },
+      "4": {
+        "seed": 7,
+        "original_rand_result": 19564,
+        "RNG_after": "34556ccc"
+      }
+    },
+    "stage_9_selected_C_cases": 0,
+    "stored_override_history": [
+      {
+        "stage": 9,
+        "random_residue": 2,
+        "forced_track": 3,
+        "selected_track_index": 3,
+        "selected_path": "STG09\\BGD.SEQ"
+      },
+      {
+        "stage": 8,
+        "random_residue": null,
+        "forced_track": 4,
+        "selected_track_index": 3,
+        "selected_path": "STG08\\BGD.SEQ"
+      }
+    ],
+    "negative_override_preserves_stored_choice": true,
+    "entered_original_functions": {
+      "srand": 428,
+      "get_seeded_random": 429,
+      "rand": 429,
+      "set_audio_path_override": 422,
+      "get_stage_music_paths": 844,
+      "get_stage_paths": 844,
+      "get_path_table": 844,
+      "get_stage_music_path": 422
+    },
+    "executed_instruction_faults": [
+      {
+        "name": "random_track_C_remap_removed",
+        "PC": "0x80048fd4",
+        "original_word": "0x34100003",
+        "changed_word": "0x34100002",
+        "instruction_executed": true,
+        "wrong_original_path_detected": true
+      },
+      {
+        "name": "stored_override_remap_removed",
+        "PC": "0x80048fe8",
+        "original_word": "0xaf820160",
+        "changed_word": "0x0",
+        "instruction_executed": true,
+        "wrong_original_path_detected": true
+      }
+    ],
+    "original_RNG_executed": true,
+    "original_output_stubs": 0,
+    "natural_gameplay_route_verified": false
+  },
+  "metadata_instruction_faults": [
+    {
+      "name": "header_population_from_tone_count",
+      "PC": "0x800331dc",
+      "original_word": "0x94620012",
+      "changed_word": "0x94620014",
+      "instruction_executed": true,
+      "full_RAM_disagreement_detected": true
+    },
+    {
+      "name": "wrong_dense_program_byte",
+      "PC": "0x80032204",
+      "original_word": "0x90430008",
+      "changed_word": "0x90430009",
+      "instruction_executed": true,
+      "full_RAM_disagreement_detected": true
+    },
+    {
+      "name": "tone_sample_store_to_owner_field",
+      "PC": "0x80033484",
+      "original_word": "0xa6030016",
+      "changed_word": "0xa6030014",
+      "instruction_executed": true,
+      "full_RAM_disagreement_detected": true
+    }
+  ],
+  "source_RAM_sha256": "4a7e07d8264af965277a44eb9f32bb56f8d01e15cff66934312eb68ad8e9bf05",
+  "counts_before": {
+    "matching_C_bytes": 197172,
+    "game_text_bytes": 199912,
+    "matching_C_percent": 98.62939693465124,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "bounded_NPC_profiles": 44,
+    "natural_callback_types": 5,
+    "optional_gameplay_mods": 3,
+    "developer_capability_categories": 10,
+    "model_API_calls": 0,
+    "catalogued_feature_groups": 40,
+    "original_feature_groups_present_in_matching_c_plus_assembly": 40,
+    "core_logic_recovered_c": 38,
+    "known_core_and_support_recovered_c": 6,
+    "runtime_accepted_feature_groups": 0,
+    "new_gameplay_features_implemented": 0,
+    "native_behavior_callbacks_recovered_c": 107
+  },
+  "counts_after": {
+    "matching_C_bytes": 197172,
+    "game_text_bytes": 199912,
+    "matching_C_percent": 98.62939693465124,
+    "remaining_assembly_functions": 2,
+    "inherited_storage_explanations": 3,
+    "bounded_NPC_profiles": 44,
+    "natural_callback_types": 5,
+    "optional_gameplay_mods": 3,
+    "developer_capability_categories": 10,
+    "model_API_calls": 0,
+    "catalogued_feature_groups": 40,
+    "original_feature_groups_present_in_matching_c_plus_assembly": 40,
+    "core_logic_recovered_c": 38,
+    "known_core_and_support_recovered_c": 6,
+    "runtime_accepted_feature_groups": 0,
+    "new_gameplay_features_implemented": 0,
+    "native_behavior_callbacks_recovered_c": 107
+  },
+  "new_C_bytes": 0,
+  "new_original_game_features": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "model_API_calls": 0,
+  "SPU_waveform_transfer_executed": false,
+  "DMA_completion_verified": false,
+  "audible_playback_verified": false,
+  "original_game_modified": false,
+  "private_evidence_sha256": {
+    "sound-corpus-final.json": "6f8e4e2b0890fe5003006b3f921d54253419e714a7413fd6b82a8641eaadc53a",
+    "original-disc-final.json": "f5510a3bf8270e1b772afe8306472c20a24fe10ac6a8a1a2dbfad8b8ea0ba69a",
+    "capture-inputs-reverification-20261028.json": "9cb6cb8de6048d3335ef137bcc314684ea139af9f190a5f3f05c92e8af44c2e3",
+    "native-campaign-LF.json": "bcd1e2e2a4ecfbc0facd698769262fef62c60f435f3ea49314e4efbfcae0363c",
+    "paired-ready-LF.json": "80a4dbbc02c87c7d066d78c548153f81deb57dcafa177c1fce448a78aa9ff13a",
+    "original-music-selection-LF.json": "c769625bb51a71966eb52b55b5718d15880333e30a5d5b90046da31dc10a567f"
+  },
+  "scope_limits": [
+    "Encoded records, callbacks, cases and hashes are evidence components, not player feature counts.",
+    "The original stage-9 selector avoids C in the bounded residue/override matrix; alternate direct opening routes remain to audit.",
+    "The zero-tempo initializer exception is retained, not repaired or accepted as a natural gameplay crash.",
+    "SDK pending/ready bookkeeping does not prove waveform DMA completion or heard playback.",
+    "Natural method reachability, full MIDI/control semantics, voices/envelopes/reverb, timing and independent hardware remain open.",
+    "All earlier inventory fields, including baseline and initial snapshots, are preserved."
+  ],
+  "verifier_line_ending_qualification": {
+    "path": "tools/verify_native_ai.py",
+    "previous_working_source_sha256": "52f69e08cab6adc458459df4e00bb22f61cd5efb3978a914b8a4be60aef7d697",
+    "current_and_Git_blob_sha256": "6094e565bdb4e6701055f08d0428d059b54c6183818170ae1a671610c53b40a0",
+    "compiled_complete_module_code_objects_identical": true,
+    "only_CRLF_to_LF_changed": true,
+    "previous_full_source_losslessly_retained": true,
+    "retained_archive_sha256": "65b2a0fda51472c53dd8602f46029161598db7b14eaa1ba1b009bf3be454a0b2",
+    "complete_metadata_and_selector_results_identical_except_recording_time": true,
+    "staged_Git_source_identity_matches_qualified_dependency": true
+  },
+  "validation": {
+    "focused_synthetic_tests": 35,
+    "whole_original_game_acceptance_inferred": false,
+    "local_suites": [
+      {
+        "host": "windows",
+        "python": "3.14.2",
+        "tests_run": 1478,
+        "skipped": 9,
+        "exit_code": 0
+      },
+      {
+        "host": "linux",
+        "python": "3.13.5",
+        "tests_run": 1478,
+        "skipped": 8,
+        "exit_code": 0
+      }
+    ],
+    "matching_build": {
+      "ninja_version": "1.13.2.git.kitware.jobserver-pipe-1",
+      "exit_code": 0,
+      "protected_inputs_unchanged": 392,
+      "matching_C_bytes": 197172,
+      "game_text_bytes": 199912,
+      "binary_match": "verified",
+      "complete_objects": 306
+    }
+  }
+}

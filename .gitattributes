@@ -415,3 +415,14 @@ tests/test_shark_hopscotch.py text eol=lf
 docs/shark-hopscotch-function-ranges.json text eol=lf
 docs/shark-hopscotch-checks.json text eol=lf
 docs/SHARK_HOPSCOTCH.md text eol=lf
+
+# Preserve sound inspectors and their qualified producer identities.
+tools/inventory_sound.py text eol=lf
+tools/verify_native_ai.py text eol=lf
+research/sound_assets/*.py text eol=lf
+research/sound_assets/README.md text eol=lf
+tests/test_inventory_sound.py text eol=lf
+docs/SOUND_ASSETS.md text eol=lf
+docs/sound-asset-checks.json text eol=lf
+docs/ASSET_INVENTORY.md text eol=lf
+docs/FEATURE_INVENTORY.md text eol=lf
