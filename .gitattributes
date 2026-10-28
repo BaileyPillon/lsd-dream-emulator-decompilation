@@ -1,6 +1,17 @@
 # Preserve the bundled compiler binaries without text conversion.
 tools/gcc263/* binary
 
+# Preserve the executed common-screen destruction interface and checker.
+src/game/game_flow.c text eol=lf
+src/game/game_flow.h text eol=lf
+research/screen_lifecycle/destroy_consumer.c text eol=lf
+research/screen_lifecycle/verify_destroy.py text eol=lf
+docs/SCREEN_DESTROY_INTERFACE.md text eol=lf
+docs/screen-destroy-interface-checks.json text eol=lf
+docs/SCREEN_LIFECYCLE.md text eol=lf
+research/screen_lifecycle/README.md text eol=lf
+tests/test_screen_destroy.py text eol=lf
+
 # Preserve the exact executed natural-progression research producer.
 research/headless/RecordProgressionHistory.cs text eol=lf
 tools/inspect_progression_history.py text eol=lf

@@ -46,3 +46,9 @@ API call. Natural factories and cleanup, complete screen histories, rendering,
 controller reachability, hardware timing and full failure continuation remain
 required for whole-feature acceptance. The [validation metadata](screen-lifecycle-checks.json)
 records the executed campaign and current before/after counts.
+
+The later [destruction interface check](SCREEN_DESTROY_INTERFACE.md) corrects
+the common view's pointer-returning Destroy callback and verifies three typed
+consumers in 96 supported initialized profiles. Its separate source and
+native checks preserve the canonical executable; the natural-screen and
+contract boundaries above remain open.
