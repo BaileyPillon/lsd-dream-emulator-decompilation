@@ -1049,3 +1049,22 @@ profiles. Accepted whole features and encounters remain zero. There are no new
 original features, mods, developer capability categories or model API calls.
 The additive [machine evidence](blocking-cd-retry-checks.json) preserves the
 earlier inventory and distinguishes analysis tooling from original game behavior.
+
+## Original sound supplement, 2026-10-28
+
+The [sound audit](SOUND_ASSETS.md) binds all 88 sound payloads to the retained
+Japanese disc and accounts for nine banks, 102 populated programs, 351 tones,
+255 samples and 70 sequences. It adds 246 complete-RAM getter comparisons and
+420 original stage-music selection cases. A zero-tempo original initializer
+exception remains recorded; stage 9's separate selector avoidance is checked
+with original RNG and two executed guard faults.
+
+These are content and behavior evidence components. Before and after this
+audit, matching C remains 197,172 / 199,912 bytes (98.6294%), with two assembly
+functions, three inherited storage explanations, 38 listed-core C groups and
+six listed core-plus-support C groups out of 40 provisional groups. All 107
+original NPC callback bodies and 44 bounded NPC profiles are unchanged.
+Accepted whole features and encounters remain zero. The additive
+[machine evidence](sound-asset-checks.json) preserves every earlier inventory
+value; no gameplay feature, mod, developer-capability category or model API call
+is added. Full audio playback and U002/U003 acceptance remain open.

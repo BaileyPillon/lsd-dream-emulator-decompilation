@@ -573,6 +573,7 @@ For bugs and research findings, use the repository's issue templates.
 - [Nine additional original scripted callback checks](docs/SCRIPTED_AI.md)
 - [Factory, Kyoto and Natural locomotive checks](docs/LOCOMOTIVE_SCRIPTS.md)
 - [Asset inventory](docs/ASSET_INVENTORY.md) and [runtime comparison](docs/RUNTIME_COMPARISON.md)
+- [Original sound banks, sequence initialization and stage-9 music selection](docs/SOUND_ASSETS.md)
 - [Saved-state replay boundary and synchronous capture](docs/STATE_REPLAY_BOUNDARY.md)
 - [Optional exploration mods](docs/OPTIONAL_MODS.md)
 - [Local tool setup](docs/LOCAL_TOOLS.md), [tool applicability](docs/TOOL_ASSESSMENT.md) and [provenance](docs/PROVENANCE.md)

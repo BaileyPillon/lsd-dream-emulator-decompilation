@@ -67,3 +67,14 @@ tracked deliverables. LBD/MOM structures, model commands, audio/movie decoding
 and content-to-runtime coverage still need semantic auditing.
 The edition label is caller-supplied and defaults to `unspecified`; executable
 identity alone does not establish the asset edition.
+
+## Japanese sound supplement, 2026-10-28
+
+The [sound audit](SOUND_ASSETS.md) independently binds all nine VH/VB pairs and
+70 SEQ files to the Japanese raw disc. It accounts for 102 populated program
+IDs, 351 tones, 255 samples and 38,976 encoded sequence events. Original SDK
+metadata access and stage-9 track avoidance are checked separately from audio
+transfer and heard playback. The original zero-tempo STG09/BGC.SEQ is preserved.
+These content records add no game features; the original English snapshot above
+remains unchanged. [Machine evidence](sound-asset-checks.json) records the
+complete input identities, original-code qualification and remaining gates.
