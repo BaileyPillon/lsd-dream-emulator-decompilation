@@ -119,13 +119,13 @@ UPDATES_ONLY:
 }
 
 void func_8004DE08(main_menu_t *This) {
-    s32 saved_unk21;
+    s32 saved_row;
     void *mem;
     s32 shake[2];
     u8 size;
 
     size = This->m_Unk43->m_GlyphCount;
-    saved_unk21 = This->m_Unk21;
+    saved_row = This->m_SelectedRow;
     mem = memory_allocate_mem(size);
     func_80040FC0(mem, g_DAY_STR);
     This->m_Unk43->vtable->Unk50(This->m_Unk43, mem);
@@ -133,11 +133,11 @@ void func_8004DE08(main_menu_t *This) {
     func_8004D678(This, This->m_Unk18, This->m_DreamSys);
     This->vtable->Unk55(This, (void *) This->m_Unk4);
     This->m_DreamSys->vtable->dream_sys_get_set_screen_shake(This->m_DreamSys, shake);
-    This->m_Unk21 = 5;
+    This->m_SelectedRow = 5;
     This->vtable->Unk23(This, 11);
     This->vtable->Unk70(This, shake[0], 1);
     This->vtable->Unk23(This, 15);
-    This->vtable->Unk59(This, saved_unk21, 0);
+    This->vtable->Unk59(This, saved_row, 0);
     This->m_DreamSys->vtable->dream_sys_get_set_screen_shake(This->m_DreamSys, shake);
 }
 

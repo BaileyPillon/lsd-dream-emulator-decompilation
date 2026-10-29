@@ -1,0 +1,359 @@
+{
+  "schema_version": 1,
+  "status": "verified_bounded_natural_menu_generations",
+  "verified_at": "2026-10-29T00:19:48.621283+00:00",
+  "repository": "https://github.com/BaileyPillon/lsd-dream-emulator-decompilation",
+  "baseline_commit": "81292e6807b45d07cc4a4482e8e8c96c92f9a575",
+  "canonical_executable": {
+    "bytes": 505856,
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+  },
+  "frozen_objective_sha256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+  "original_behavior_modified": false,
+  "renamed_original_fields": [
+    "m_RowCount",
+    "m_SelectedRow"
+  ],
+  "renamed_original_field_offsets": [
+    "0x50",
+    "0x58"
+  ],
+  "protected_build_inputs_checked": 392,
+  "changed_build_inputs": [
+    "src/menu/main_menu.c",
+    "src/menu/main_menu.h",
+    "src/menu/main_menu_post.c",
+    "src/menu/ui_screen.c",
+    "src/menu/ui_screen.h"
+  ],
+  "source_counts_before": {
+    "game_C_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_game_ASM_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks_in_C": 107,
+    "bounded_NPC_callback_profiles": 44,
+    "naturally_compared_NPC_callback_types": 5,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mod_categories": 3
+  },
+  "source_counts_after": {
+    "game_C_bytes": 197172,
+    "game_text_bytes": 199912,
+    "remaining_game_ASM_functions": 2,
+    "inherited_storage_explanations": 3,
+    "provisional_feature_groups": 40,
+    "listed_core_C_groups": 38,
+    "original_NPC_callbacks_in_C": 107,
+    "bounded_NPC_callback_profiles": 44,
+    "naturally_compared_NPC_callback_types": 5,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "developer_capability_categories": 10,
+    "optional_mod_categories": 3
+  },
+  "matching_C_percentage": 98.62939693465125,
+  "new_game_C_bytes": 0,
+  "new_game_C_functions": 0,
+  "original_feature_inventory_exhaustive": false,
+  "related_provisional_groups": [
+    "F002"
+  ],
+  "this_profile_before": {
+    "natural_menu_checkpoints_inspected": 0,
+    "distinct_menu_generations_inspected": 0,
+    "selected_owned_generations_followed_through_free": 0
+  },
+  "this_profile_after": {
+    "natural_menu_checkpoints_inspected": 6,
+    "live_menu_checkpoints": 4,
+    "distinct_menu_generations_inspected": 3,
+    "closed_menu_generations": 2,
+    "open_menu_generations": 1,
+    "selected_owned_generations": 294,
+    "selected_owned_generations_followed_through_free": 196,
+    "selected_owned_generations_still_open": 98,
+    "selected_owned_allocations_per_menu": 98,
+    "row_text_objects": 6,
+    "choice_text_objects": 2,
+    "day_text_objects": 1,
+    "panel_glyphs_per_menu": 37,
+    "day_glyphs_per_menu": 35,
+    "released_font_backing_bytes_per_menu": 34816,
+    "released_font_extent_reuses_by_selected_allocations_per_menu": 92
+  },
+  "original_native_trace": {
+    "controller_frames": 30000,
+    "boundary_records": 40890,
+    "complete_callee_bytes_rechecked": 17409512,
+    "successful_allocations": 19717,
+    "matched_nonnull_frees": 19303,
+    "unobserved_allocation_frees": 0,
+    "original_rebuilt_records_and_payload_equal": true,
+    "allocation_generations_equal": true,
+    "menu_constructor_entry_boundaries_observed": 0,
+    "SDK_record_sha256": "26f652ad5510ab755d42008ec6d0e8bc8ea0bd33fca9127562a736e408058857",
+    "SDK_payload_sha256": "37de96f3eed510af510d3ed370adaf0d57621b5576f9b8fc041ffe1c808c5373",
+    "all_runtime_files_reaudited": false,
+    "all_queued_Read_lifetimes_rechecked": false
+  },
+  "root_generations": [
+    {
+      "allocation_id": 587,
+      "address": "0x80091F70",
+      "allocation_frame": 1911,
+      "free_frame": 2150
+    },
+    {
+      "allocation_id": 38619,
+      "address": "0x80091F70",
+      "allocation_frame": 23865,
+      "free_frame": 24622
+    },
+    {
+      "allocation_id": 40394,
+      "address": "0x80091F70",
+      "allocation_frame": 29736,
+      "free_frame": null
+    }
+  ],
+  "checkpoint_outputs": {
+    "checkpoint_pairs": 6,
+    "complete_streams_rehashed": 18,
+    "complete_stream_bytes": 20386368,
+    "decoded_PNGs": 12,
+    "full_RAM_GPU_RGB_and_decoded_pixels_equal": true,
+    "masks_used": false,
+    "checkpoints": [
+      {
+        "frame": 2100,
+        "width": 350,
+        "height": 240,
+        "mainram": "fbe98c1e7b0a3e303af502f45e2f803e044c9eca41dbb677a1cf13bae1a20f6c",
+        "gpu": "054a8fb92c112b912dfb149c6fe5ae6ff5ade5cd054efdf03980ad2a1be900f4",
+        "rgb": "b23f053f35e6dc5c49be15ab073cb4a23f9d61ebde97e4d567a9cc09d642ea43"
+      },
+      {
+        "frame": 2400,
+        "width": 350,
+        "height": 240,
+        "mainram": "af27e0997c87d04e1eea57135bae10f6bd48c2a3e87f67a49b0c98448de242b2",
+        "gpu": "4360fb976694f01f8257f118c7890065a200803147e32c05df408c4236cbca74",
+        "rgb": "4a625927e9bd6a6f322d0e217a4569d6a2c54a03d164082724af5b795804931c"
+      },
+      {
+        "frame": 24000,
+        "width": 350,
+        "height": 240,
+        "mainram": "d1b02d180aef91b67e766aa0eb6774fa4d2071184395a882f7ce07962b44e2cb",
+        "gpu": "b5983078e3854db2b61dfc9397d7d03d686df2382c5c6e473df063173943767a",
+        "rgb": "0bff94b4b688d8ac0ac4432e30a955087ade32e6dd52cfe65f17a3c7237f6c62"
+      },
+      {
+        "frame": 24500,
+        "width": 350,
+        "height": 240,
+        "mainram": "444766ede4a24a33c4af80e1fd246ddcd1e84e9f2dc51ec3bb4277f0f6720831",
+        "gpu": "b5983078e3854db2b61dfc9397d7d03d686df2382c5c6e473df063173943767a",
+        "rgb": "0bff94b4b688d8ac0ac4432e30a955087ade32e6dd52cfe65f17a3c7237f6c62"
+      },
+      {
+        "frame": 25000,
+        "width": 350,
+        "height": 240,
+        "mainram": "68fef1e185383ac6b884198f6d7fcf51e4c29e2a6a4d147d5e2118f408fca4e8",
+        "gpu": "c6023bb84e2e4a19fdabf44b454ded5a26b4da7fbf119c1e0c64d8c44653fef9",
+        "rgb": "a3b6db1a25d92177630148cd6b5f259cd54b42b8ea0f11804e0f54faad7994de"
+      },
+      {
+        "frame": 30000,
+        "width": 350,
+        "height": 240,
+        "mainram": "e72c71852fd0d994b6911bdf0db30ce3afbe4f7dca3ad627032eadbdb3a94383",
+        "gpu": "b5983078e3854db2b61dfc9397d7d03d686df2382c5c6e473df063173943767a",
+        "rgb": "0bff94b4b688d8ac0ac4432e30a955087ade32e6dd52cfe65f17a3c7237f6c62"
+      }
+    ],
+    "visible_frames_reviewed": [
+      2100,
+      30000
+    ],
+    "PCM_reaudited": false
+  },
+  "corpus_sha256": "5ec39e7e18a12d7e65da29e88f34b07341f020e97fc20e781b240ae23376503f",
+  "compressed_corpus_sha256": "27a4582d74e68841726574634c0cd32f797b5d4b1d95697271a3d4121c911805",
+  "separate_audit": {
+    "producer_oracle_imported": false,
+    "shared_native_heap_validator": true,
+    "source_sha256": "fc7a57e99cb896f4f029b13e180553ebf42af1fd8fe5ce49d7936867b59ef747",
+    "distinct_selected_generations": 294,
+    "naturally_closed_selected_generations": 196
+  },
+  "offline_corruption_controls": {
+    "rejected": 14,
+    "names": [
+      "descriptor_unknown_word",
+      "wrong_font_allocation",
+      "wrong_row_count",
+      "disabled_selected_row",
+      "wrong_glyph_character",
+      "wrong_glyph_font_view",
+      "aliased_owned_arrays",
+      "resurrected_file_buffer",
+      "foreign_TIM_pixel_view",
+      "freed_native_heap_header",
+      "wrong_native_TIM_release_view",
+      "wrong_original_allocation_callsite",
+      "leaked_selected_owned_generation",
+      "reversed_native_font_cursor_release"
+    ],
+    "source_sha256": "a4c9b850aefe429b323c8629554405180a004febab586767f627c19de5b4efce",
+    "stale_vtable_without_live_generation_receives_no_credit": true,
+    "unused_choice_bytes_preserved_and_not_dereferenced": true,
+    "game_RAM_injected": false,
+    "model_or_RAM_copy_mutations": true,
+    "executed_game_instruction_faults": 0
+  },
+  "verification_kind": "offline reanalysis of retained natural original/rebuilt recordings",
+  "new_emulator_recording": false,
+  "expanded_payloads_written": false,
+  "new_disc_or_runtime_created": false,
+  "full_menu_feature_accepted": false,
+  "new_original_features_accepted": 0,
+  "new_NPC_encounters_accepted": 0,
+  "model_API_calls": 0,
+  "complete_serialized_state_parity_checked": false,
+  "hardware_timing_verified": false,
+  "sources": [
+    {
+      "path": "tools/inspect_runtime_menu.py",
+      "bytes": 24373,
+      "sha256": "7c801b781491d51773c4f5eda50322997360275f232a912068da1b2d413b352b"
+    },
+    {
+      "path": "tests/test_inspect_runtime_menu.py",
+      "bytes": 10485,
+      "sha256": "929f05fefe56b078e72e23b51d20a874c7017e53d538830605a47eee9fa85f53"
+    },
+    {
+      "path": "tools/inspect_file_heap.py",
+      "bytes": 14013,
+      "sha256": "106d423c7824706213e5bb4d5e182211878ca7b39ca3543d5b32812d4695ea63"
+    },
+    {
+      "path": "tools/inspect_sdk_reads.py",
+      "bytes": 21651,
+      "sha256": "beb3477326f3608a804e126185776a051025da50576db2c857793061e61e68d6"
+    },
+    {
+      "path": "tools/dispatch_returns.py",
+      "bytes": 24236,
+      "sha256": "fd9fd27fa94b4420f2bfc22483069f2e9cc8d080fcb899cfb87b2ca9f4bbf453"
+    },
+    {
+      "path": "tools/compact_dispatch.py",
+      "bytes": 12267,
+      "sha256": "f38737d15b0bd5fb7c49d7b5d9173179c476140c90fa985e72d0a807c7ac1886"
+    },
+    {
+      "path": "tools/compare_cold_start.py",
+      "bytes": 17933,
+      "sha256": "e3711b19ba14f7cfe1df6f775c8d98134e5e850f8ea92090b9c3f81a341f10c5"
+    },
+    {
+      "path": "tools/compare_npc_history.py",
+      "bytes": 35280,
+      "sha256": "e5736472438d0a966edb2bc81039da12490d5276e039ff918a9f7ab145a051ce"
+    },
+    {
+      "path": "tools/inventory_runtime_scene.py",
+      "bytes": 10784,
+      "sha256": "f76a06710daf5255c7888dd1e6548143f7224367a0dc2273ef1a3e989c309940"
+    },
+    {
+      "path": "tools/psx_image.py",
+      "bytes": 3453,
+      "sha256": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3"
+    },
+    {
+      "path": "src/menu/main_menu.c",
+      "bytes": 11840,
+      "sha256": "35e64ecf1541b05af23f8d283d388dd883b68c54e256bb0608739db4cb05b830"
+    },
+    {
+      "path": "src/menu/main_menu.h",
+      "bytes": 6136,
+      "sha256": "91a5f80024e04bbd19e8e24ff15f0937e9228df0f02ddec4954106f37930e793"
+    },
+    {
+      "path": "src/menu/main_menu_post.c",
+      "bytes": 6659,
+      "sha256": "1e05aaf348347812ab43c9c81603cbcaa3306efcabf810d52feab26dd14d365b"
+    },
+    {
+      "path": "src/menu/ui_screen.c",
+      "bytes": 28220,
+      "sha256": "e88b6362146d22059c237c06c6cf691effb0d1bcf60030f8076ce7e0941311ff"
+    },
+    {
+      "path": "src/menu/ui_screen.h",
+      "bytes": 6429,
+      "sha256": "c19d0b453ad5f8c14d88b3f356f7f85fbdaa0ea5e9b9f8cde87229036ba5fbab"
+    }
+  ],
+  "private_evidence": [
+    {
+      "name": "natural-final/report.json",
+      "bytes": 22163,
+      "sha256": "bb78ffa77e0da82cf44d5ca8794454ab12f17834dbf2a644bbbd9ad3d100f756"
+    },
+    {
+      "name": "natural-final/snapshots.jsonl.xz",
+      "bytes": 9720,
+      "sha256": "27a4582d74e68841726574634c0cd32f797b5d4b1d95697271a3d4121c911805"
+    },
+    {
+      "name": "independent-audit-final.json",
+      "bytes": 1499,
+      "sha256": "737c6977e1933dbe1c9c4eb9230fa080f599f60c3eb744bd95e9fb40f1c8fdfb"
+    },
+    {
+      "name": "offline-controls-final.json",
+      "bytes": 3028,
+      "sha256": "f66fc2851ff288e9a7e75330fa62fd32a717216028e3cd6d476b4b6f6c8401a5"
+    },
+    {
+      "name": "checkpoint-output-verification.json",
+      "bytes": 225266,
+      "sha256": "867bedcc7cb8556acd1bd51ac9c950b55546c12f5affad5802318f0b97ae2c29"
+    },
+    {
+      "name": "baseline-after.json",
+      "bytes": 40104,
+      "sha256": "3b856e6c3965f5d1447aaedbd3de5265af18d72855a9fd3a80b745c026fc2fa4"
+    }
+  ],
+  "remaining": [
+    "Both game ASM functions and three inherited storage explanations.",
+    "Complete constructor paths and allocation-failure continuation.",
+    "Third menu release, remaining menu/controller routes and pending I/O.",
+    "Final sound shutdown, complete gameplay and ending comparison."
+  ],
+  "tests": {
+    "Windows": {
+      "tests_run": 1518,
+      "skipped": 9,
+      "result": "OK"
+    },
+    "WSL": {
+      "tests_run": 1518,
+      "skipped": 8,
+      "result": "OK"
+    }
+  },
+  "source_byte_identity_note": "The existing PNG decoder was normalized to its unchanged Git LF bytes, then its complete checkpoint output check and 45 relevant tests were repeated."
+}

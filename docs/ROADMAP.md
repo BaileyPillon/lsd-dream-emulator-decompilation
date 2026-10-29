@@ -1,5 +1,12 @@
 # Roadmap
 
+The [natural menu lifetime check](NATURAL_MENU_LIFETIMES.md) now distinguishes
+three menu generations at a reused address and verifies 196 selected allocations
+through two natural releases. Six retained checkpoint pairs have complete
+RAM/GPU/RGB equality and twelve decoded PNG checks. The third menu remains
+live. Extend constructor-path coverage, allocation failures, remaining routes
+and sound/I/O shutdown; this does not accept the entire menu feature.
+
 The [panel ownership profile](MENU_PANEL_OWNERSHIP.md) recovers the original
 40-byte title descriptor as one typed C record and checks populated menu
 cleanup in 216 initialized contexts, including all six title rows and the

@@ -93,3 +93,8 @@ pending I/O, final sound shutdown and timing remain open. These comparisons
 accept no whole original feature or NPC encounter and make no model-service
 calls. Matching C remains **197,172 / 199,912 bytes (98.63%)**, with two game
 assembly functions and three inherited storage explanations remaining.
+
+The later [natural menu lifetime check](NATURAL_MENU_LIFETIMES.md) separately
+binds this descriptor and its populated resources to three recorded allocation
+generations. It checks two natural releases while keeping this initialized
+profile's construction and whole-feature boundaries intact.

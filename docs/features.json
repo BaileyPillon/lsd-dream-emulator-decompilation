@@ -24952,5 +24952,24 @@
     "new_NPC_profiles": 0,
     "model_api_calls": 0,
     "natural_screen_construction_accepted": false
+  },
+  "original_natural_menu_lifetimes_20261028": {
+    "reference": "docs/natural-menu-lifetime-checks.json",
+    "documentation": "docs/NATURAL_MENU_LIFETIMES.md",
+    "scope": "Generation-qualified natural title-menu state, selected ownership release order and complete retained checkpoint outputs.",
+    "original_fields_named": 2,
+    "natural_checkpoints_inspected": 6,
+    "distinct_menu_generations": 3,
+    "selected_owned_generations": 294,
+    "naturally_closed_selected_generations": 196,
+    "selected_generations_still_open": 98,
+    "decoded_PNGs": 12,
+    "offline_corruptions_rejected": 14,
+    "canonical_complete_executable_preserved": true,
+    "new_game_C_bytes": 0,
+    "new_original_features_accepted": 0,
+    "new_NPC_profiles": 0,
+    "model_API_calls": 0,
+    "complete_natural_menu_construction_accepted": false
   }
 }
