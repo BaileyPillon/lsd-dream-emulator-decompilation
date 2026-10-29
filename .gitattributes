@@ -14,6 +14,10 @@ tests/test_screen_destroy.py text eol=lf
 
 # Preserve the exact executed natural-progression research producer.
 research/headless/RecordProgressionHistory.cs text eol=lf
+tests/test_streamed_state_hashes.py text eol=lf
+docs/STATE_HASH_STREAMING.md text eol=lf
+docs/state-hash-streaming-checks.json text eol=lf
+docs/NATURAL_PROGRESSION.md text eol=lf
 tools/inspect_progression_history.py text eol=lf
 tests/test_progression_history.py text eol=lf
 

@@ -78,13 +78,17 @@ opening-state comparisons do not retroactively change this stock-core failure.
 ## Producer and remaining gates
 
 [RecordProgressionHistory.cs](../research/headless/RecordProgressionHistory.cs)
-is the exact managed producer body used by the pilot. It is research source,
-separate from game logic and from AI/model tooling. It uses the shared
+is the maintained managed producer. The pilot's evidence pins its earlier
+executed body; the later [streaming-hash update](STATE_HASH_STREAMING.md) removes
+duplicate state buffers and adds resource telemetry without changing that
+historical result. It is research source, separate from game logic and from
+AI/model tooling. It uses the shared
 [headless host definitions](../research/headless/ReplayColdStart.cs), distributed
 BizHawk 2.11.1 assemblies and existing local disc/BIOS inputs. The retained private
 manifest records the full compiler command and input identities. Runtime, disc
-and asset-tree copies are zero; PCM and complete native states are hashed in
-memory rather than dumped to disk.
+and asset-tree copies are zero; PCM and complete native states are hashed rather
+than dumped to disk. Compile the maintained producer with
+`BoundedSha256Stream.cs` as well as the shared host definitions.
 
 The prototype's positional arguments are runtime directory, cue, Japanese/US/EU
 BIOS paths, new output directory, maximum input frames, target completed days,

@@ -1,0 +1,445 @@
+{
+  "schema_version": 1,
+  "status": "bounded_native_state_hash_equivalence_verified",
+  "verified_at": "2026-10-29",
+  "baseline_commit": "5a03bcd73584b3d7635334f2fcb92ddc40510816",
+  "canonical_executable": {
+    "bytes": 505856,
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f"
+  },
+  "protected_game_build_inputs_checked": 392,
+  "game_build_inputs_modified": 0,
+  "matching_C_bytes": 197172,
+  "tracked_game_function_bytes": 199912,
+  "matching_C_percentage": 98.62939693465124,
+  "remaining_game_assembly_functions": 2,
+  "remaining_inherited_storage_explanations": 3,
+  "new_game_C_bytes": 0,
+  "new_original_features_accepted": 0,
+  "new_NPC_profiles": 0,
+  "model_API_calls": 0,
+  "hash_sink": {
+    "maximum_state_bytes": 268435456,
+    "own_WriteByte_input_buffer_bytes": 1,
+    "hash_provider_and_emulator_internal_allocations_are_separate": true,
+    "retains_complete_serialized_state": false,
+    "compares_two_same_frame_hashes_and_lengths": true,
+    "verifies_unchanged_core_frame": true
+  },
+  "new_progress_resource_fields": [
+    "working_set_bytes",
+    "private_bytes",
+    "handles",
+    "managed_heap_bytes",
+    "last_serialized_state_bytes"
+  ],
+  "native_probes": [
+    {
+      "name": "hash-integrated-probe",
+      "progression_wrapper": "Lsd.Research.Headless.YearProgression",
+      "serialized_calls": 20,
+      "checkpoints": [
+        {
+          "frame": 0,
+          "integrated_progression_wrapper_checked": true,
+          "state_sha256": "ff9e8b719d3b6b4106af2e2b2a483d700b2359cd9f685452c0f626368ca0c2fd",
+          "state_bytes": 127067,
+          "buffered_state_array_bytes": 364999,
+          "stream_own_input_buffer_bytes": 1,
+          "full_RAM_sha256": "5647f05ec18958947d32874eeb788fa396a05d0bab7c1b71f112ceb7e9b31eee",
+          "full_GPU_sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58",
+          "resources": {
+            "working_set_bytes": 180957184,
+            "private_bytes": 171016192,
+            "handles": 304,
+            "managed_heap_bytes": 103619592,
+            "last_serialized_state_bytes": 127067
+          }
+        },
+        {
+          "frame": 1,
+          "integrated_progression_wrapper_checked": true,
+          "state_sha256": "69bc92beddc432bd69f03ecb0bc238b6e404ea7f827a5ce7d36d31a995d03dcd",
+          "state_bytes": 270427,
+          "buffered_state_array_bytes": 746291,
+          "stream_own_input_buffer_bytes": 1,
+          "full_RAM_sha256": "72f6c51dfd6f3f386c455eebfaa51e2da6e86882a5e03591d84afe7e05a0c004",
+          "full_GPU_sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58",
+          "resources": {
+            "last_serialized_state_bytes": 270427,
+            "working_set_bytes": 186961920,
+            "private_bytes": 174264320,
+            "handles": 315,
+            "managed_heap_bytes": 111810592
+          }
+        },
+        {
+          "frame": 60,
+          "integrated_progression_wrapper_checked": true,
+          "state_sha256": "65bd807c75755c17a11ba2590daf96483e2d6861b30d32ceadb5eeaa7480bba4",
+          "state_bytes": 749659,
+          "buffered_state_array_bytes": 1701387,
+          "stream_own_input_buffer_bytes": 1,
+          "full_RAM_sha256": "c3348ace92d6b8c7b099bc6d50f4d1c0eae7a4da674c9778d4050dbe0a3d4ddd",
+          "full_GPU_sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58",
+          "resources": {
+            "last_serialized_state_bytes": 749659,
+            "working_set_bytes": 195923968,
+            "private_bytes": 182784000,
+            "handles": 315,
+            "managed_heap_bytes": 121234632
+          }
+        },
+        {
+          "frame": 300,
+          "integrated_progression_wrapper_checked": true,
+          "state_sha256": "60d80d471262a082fc78f3626ab6a171a719fc1eb8e257af5e9b4b89989e1130",
+          "state_bytes": 1822811,
+          "buffered_state_array_bytes": 3726267,
+          "stream_own_input_buffer_bytes": 1,
+          "full_RAM_sha256": "5ea4f29c043e11b7e182b873a1acf1e3421832f7d6432c483cfe93ecd933fc10",
+          "full_GPU_sha256": "281cda576b5b1d7b7e4b3421a3ec5cf999f2273b58495b76177f598e85b1f1e7",
+          "resources": {
+            "last_serialized_state_bytes": 1822811,
+            "working_set_bytes": 212299776,
+            "private_bytes": 196247552,
+            "handles": 315,
+            "managed_heap_bytes": 133692744
+          }
+        }
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.0103620999725536,
+      "peak_observed_private_bytes": 187428864,
+      "compiler_sha256": "fc4fc82205936fa57670f9ebe4b1ddb2fd74da3240eef04c21e2123d584bdc76",
+      "qualified_sources": [
+        {
+          "name": "BoundedSha256Stream.cs",
+          "bytes": 2982,
+          "sha256": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e"
+        },
+        {
+          "name": "StateHashCompatibility.cs",
+          "bytes": 6942,
+          "sha256": "ff8703ce32fc3637757acbf5de53cbb443a17dc08a952862f7911b0354d5ca34"
+        },
+        {
+          "name": "RecordProgressionHistory.cs",
+          "bytes": 15267,
+          "sha256": "4b497c690497895c0f46ef829d20f86e82645b7d8a0b4e45f2c0e30d8baf1db3"
+        },
+        {
+          "name": "ReplayColdStart.cs",
+          "bytes": 16154,
+          "sha256": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0"
+        }
+      ]
+    },
+    {
+      "name": "hash-ending-probe",
+      "progression_wrapper": "Lsd.Research.Headless.YearProgressionEnding",
+      "serialized_calls": 20,
+      "checkpoints": [
+        {
+          "frame": 0,
+          "integrated_progression_wrapper_checked": true,
+          "state_sha256": "ff9e8b719d3b6b4106af2e2b2a483d700b2359cd9f685452c0f626368ca0c2fd",
+          "state_bytes": 127067,
+          "buffered_state_array_bytes": 364999,
+          "stream_own_input_buffer_bytes": 1,
+          "full_RAM_sha256": "5647f05ec18958947d32874eeb788fa396a05d0bab7c1b71f112ceb7e9b31eee",
+          "full_GPU_sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58",
+          "resources": {
+            "working_set_bytes": 185147392,
+            "private_bytes": 177565696,
+            "handles": 304,
+            "managed_heap_bytes": 127489824,
+            "last_serialized_state_bytes": 127067
+          }
+        },
+        {
+          "frame": 1,
+          "integrated_progression_wrapper_checked": true,
+          "state_sha256": "69bc92beddc432bd69f03ecb0bc238b6e404ea7f827a5ce7d36d31a995d03dcd",
+          "state_bytes": 270427,
+          "buffered_state_array_bytes": 746291,
+          "stream_own_input_buffer_bytes": 1,
+          "full_RAM_sha256": "72f6c51dfd6f3f386c455eebfaa51e2da6e86882a5e03591d84afe7e05a0c004",
+          "full_GPU_sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58",
+          "resources": {
+            "last_serialized_state_bytes": 270427,
+            "working_set_bytes": 191021056,
+            "private_bytes": 180748288,
+            "handles": 314,
+            "managed_heap_bytes": 99885056
+          }
+        },
+        {
+          "frame": 60,
+          "integrated_progression_wrapper_checked": true,
+          "state_sha256": "65bd807c75755c17a11ba2590daf96483e2d6861b30d32ceadb5eeaa7480bba4",
+          "state_bytes": 749659,
+          "buffered_state_array_bytes": 1701387,
+          "stream_own_input_buffer_bytes": 1,
+          "full_RAM_sha256": "c3348ace92d6b8c7b099bc6d50f4d1c0eae7a4da674c9778d4050dbe0a3d4ddd",
+          "full_GPU_sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58",
+          "resources": {
+            "last_serialized_state_bytes": 749659,
+            "working_set_bytes": 194035712,
+            "private_bytes": 181231616,
+            "handles": 314,
+            "managed_heap_bytes": 109307368
+          }
+        },
+        {
+          "frame": 300,
+          "integrated_progression_wrapper_checked": true,
+          "state_sha256": "60d80d471262a082fc78f3626ab6a171a719fc1eb8e257af5e9b4b89989e1130",
+          "state_bytes": 1822811,
+          "buffered_state_array_bytes": 3726267,
+          "stream_own_input_buffer_bytes": 1,
+          "full_RAM_sha256": "5ea4f29c043e11b7e182b873a1acf1e3421832f7d6432c483cfe93ecd933fc10",
+          "full_GPU_sha256": "281cda576b5b1d7b7e4b3421a3ec5cf999f2273b58495b76177f598e85b1f1e7",
+          "resources": {
+            "last_serialized_state_bytes": 1822811,
+            "working_set_bytes": 199016448,
+            "private_bytes": 182927360,
+            "handles": 314,
+            "managed_heap_bytes": 120108744
+          }
+        }
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.463614200009033,
+      "peak_observed_private_bytes": 182927360,
+      "compiler_sha256": "fc4fc82205936fa57670f9ebe4b1ddb2fd74da3240eef04c21e2123d584bdc76",
+      "qualified_sources": [
+        {
+          "name": "BoundedSha256Stream.cs",
+          "bytes": 2982,
+          "sha256": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e"
+        },
+        {
+          "name": "StateHashCompatibility.cs",
+          "bytes": 7052,
+          "sha256": "2de6e20cf18f913c483acf18aa4c1ddcda060df72d1bfc9aa7bd1d71865df209"
+        },
+        {
+          "name": "RecordProgressionHistory.cs",
+          "bytes": 15267,
+          "sha256": "4b497c690497895c0f46ef829d20f86e82645b7d8a0b4e45f2c0e30d8baf1db3"
+        },
+        {
+          "name": "ReplayColdStart.cs",
+          "bytes": 16154,
+          "sha256": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0"
+        },
+        {
+          "name": "YearProgressionEndingStreaming.cs",
+          "bytes": 18937,
+          "sha256": "361d45045ce210c829685a33eae71d9ba686d5900ca25963c5448fabc55bf65c"
+        }
+      ]
+    }
+  ],
+  "native_profile": {
+    "managed_runtime": "BizHawk 2.11.1",
+    "initialized_media_core_sha256": "bb092bc932cda059c71e6145003cce1d228c9bf892321cea8f1c6afdb195cce6",
+    "maximum_core_frame_per_probe": 300,
+    "maximum_wall_seconds_per_probe": 90,
+    "maximum_owned_private_bytes_per_probe": 4294967296,
+    "maximum_retained_output_bytes_per_probe": 2097152,
+    "new_runtime_copies": 0,
+    "new_disc_copies": 0,
+    "new_native_core_builds": 0,
+    "game_RAM_injected": false,
+    "state_loaded": false,
+    "player_UI_controlled": false
+  },
+  "historical_year_failure": {
+    "completed_days": 153,
+    "last_frame": 2831400,
+    "failure_kind": "Windows IO resource exception during original disc sector read",
+    "root_cause_established": false,
+    "failure_fixed_claimed": false,
+    "old_producer_and_outputs_modified": false,
+    "full_year_restarted": false,
+    "ending_candidate_changes_exactly_limited_to_hash_and_telemetry": true,
+    "old_logs": [
+      {
+        "name": "exit-original.json",
+        "bytes": 84,
+        "sha256": "69db36f4c7976b494954ef08839edc46d58b6c34097cc6164cffe6201d4a07db"
+      },
+      {
+        "name": "original.err.log",
+        "bytes": 1138,
+        "sha256": "8445cdcfbb25d65382d247b3835013409b42750f416eb99b9abdd495dfbcdbcf"
+      },
+      {
+        "name": "original.out.log",
+        "bytes": 2328,
+        "sha256": "5061bb7d68c61c0a8172a4ff272b819d6c037055e74aa0793b28374095073e16"
+      },
+      {
+        "name": "progress.json",
+        "bytes": 289,
+        "sha256": "6095e3e54165220069a8f41a7e795564e24b5b18c9f33b8ab494b5116c87ab21"
+      }
+    ]
+  },
+  "data_free_checks": {
+    "runner": "python -B -m unittest tests.test_streamed_state_hashes -v",
+    "tests": 5,
+    "largest_stream_bytes": 67108864,
+    "reference": "independent Python hashlib incremental SHA-256",
+    "dependency_install_or_restore": false,
+    "no_SDK_behavior": "explicit skip"
+  },
+  "sources": [
+    {
+      "path": "research/headless/BoundedSha256Stream.cs",
+      "bytes": 2982,
+      "sha256": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e"
+    },
+    {
+      "path": "research/headless/RecordProgressionHistory.cs",
+      "bytes": 15267,
+      "sha256": "4b497c690497895c0f46ef829d20f86e82645b7d8a0b4e45f2c0e30d8baf1db3"
+    },
+    {
+      "path": "research/headless/StateHashCompatibility.cs",
+      "bytes": 7052,
+      "sha256": "2de6e20cf18f913c483acf18aa4c1ddcda060df72d1bfc9aa7bd1d71865df209"
+    },
+    {
+      "path": "research/headless/HashStreamChecks.cs",
+      "bytes": 4172,
+      "sha256": "bdf714a9519347055d09b0a6c33c88c0f349af0bd08d290265f21104756bbc21"
+    },
+    {
+      "path": "research/headless/ReplayColdStart.cs",
+      "bytes": 16154,
+      "sha256": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0"
+    },
+    {
+      "path": "tests/test_streamed_state_hashes.py",
+      "bytes": 5929,
+      "sha256": "89dcbefd6c324f8b16efab78ece502fdf27fcf955169d159d97bf489ad4a3777"
+    }
+  ],
+  "private_evidence": [
+    {
+      "path": "matching-c-20261028-seventh/hash-integrated-probe-output/report.json",
+      "bytes": 2549,
+      "sha256": "16ce1422a5bfe1a49dc6291192dca2712adefd33e6516646d32495d7757619a4"
+    },
+    {
+      "path": "matching-c-20261028-seventh/hash-integrated-probe-inputs.json",
+      "bytes": 5086,
+      "sha256": "32e7c37253521b7401d97d701abc0bc259332a54196a0df8fe69038a0f1b1fd6"
+    },
+    {
+      "path": "matching-c-20261028-seventh/hash-integrated-probe-exit.json",
+      "bytes": 241,
+      "sha256": "3536190cf0d837203e1f02129f8a708ce61b6adde333b54ed8cb0eaf62254ec6"
+    },
+    {
+      "path": "matching-c-20261028-seventh/hash-integrated-probe-plan.json",
+      "bytes": 674,
+      "sha256": "f055784ed3aa97aae39a146347ee91e61fc9f0a5e86125ccb3f29a4971f3fd19"
+    },
+    {
+      "path": "matching-c-20261028-seventh/hash-integrated-probe-compile-command.json",
+      "bytes": 2019,
+      "sha256": "c81be0e52c8aa938a512dd1b9d6dd8c21e439919559dc6b880f49b90c48b477c"
+    },
+    {
+      "path": "matching-c-20261028-seventh/hash-ending-probe-output/report.json",
+      "bytes": 2618,
+      "sha256": "ea9b38f770b05a3f4d40dc5413a3ca2b6f9c9ade929334c8ea3a03ba7299c000"
+    },
+    {
+      "path": "matching-c-20261028-seventh/hash-ending-probe-inputs.json",
+      "bytes": 5355,
+      "sha256": "84c29437a4d74b98278c9954bc423e33e42e5594f297cbc39a92294f6ada8f2b"
+    },
+    {
+      "path": "matching-c-20261028-seventh/hash-ending-probe-exit.json",
+      "bytes": 240,
+      "sha256": "caabc37db4593484cab160d118cf29454b1eb3fab5d90833a155955490f7fea8"
+    },
+    {
+      "path": "matching-c-20261028-seventh/hash-ending-probe-plan.json",
+      "bytes": 674,
+      "sha256": "f055784ed3aa97aae39a146347ee91e61fc9f0a5e86125ccb3f29a4971f3fd19"
+    },
+    {
+      "path": "matching-c-20261028-seventh/hash-ending-probe-compile-command.json",
+      "bytes": 2118,
+      "sha256": "f138bcbadf3680765752bdd3211a76571ccb409497b8040940fe9ff80d502f79"
+    },
+    {
+      "path": "matching-c-20261028-seventh/year-streaming-derivation.json",
+      "bytes": 719,
+      "sha256": "0bb5e24c516d901acb47d4d826e06475afb0119bf4cee315082340b81e5273f4"
+    },
+    {
+      "path": "matching-c-20261028-seventh/year-failure-investigation.json",
+      "bytes": 1352,
+      "sha256": "54d1bd573d3a4590acac073410eb93c63a36ed66f193768903d5a9c98f9a8718"
+    },
+    {
+      "path": "matching-c-20261028-seventh/YearProgressionEndingStreaming.cs",
+      "bytes": 18937,
+      "sha256": "361d45045ce210c829685a33eae71d9ba686d5900ca25963c5448fabc55bf65c"
+    },
+    {
+      "path": "matching-c-20261028-seventh/source-study-summary.json",
+      "bytes": 950,
+      "sha256": "c61458c09088b1666d6d0dcde995e0bc298f5855c802e68eb041fdded3f339a4"
+    },
+    {
+      "path": "matching-c-20261028-seventh/source-candidates-audited.jsonl.xz",
+      "bytes": 4492,
+      "sha256": "9489844491b92d9fc94ccf1458d230f61d288710ac3446ce7c2a5d8ec155bf65"
+    },
+    {
+      "path": "matching-c-20261028-seventh/tests-windows.log",
+      "bytes": 251695,
+      "sha256": "d8e58aceae59b47d1abea01d0e177fb4f78ed5cf4b046c0987bd6ae079307820"
+    },
+    {
+      "path": "matching-c-20261028-seventh/tests-wsl.log",
+      "bytes": 251113,
+      "sha256": "0fab3ff8a705354acc053bf351fb39b99fd2182f6e2700d628b55782c81b33e6"
+    }
+  ],
+  "remaining": [
+    "Two matching-C collision functions",
+    "Three inherited unused-storage explanations",
+    "Historical day-153 IO resource exception root cause",
+    "Successful natural full-year paired run",
+    "Year boundary and complete ending playback",
+    "Remaining content, encounter, continuous-output and timing gates"
+  ],
+  "source_byte_identity_note": "Published research/headless/*.cs and the new test are LF-pinned; each probe binds its exact diagnostic version.",
+  "tests": [
+    {
+      "platform": "windows",
+      "tests_run": 1523,
+      "skipped": 9,
+      "elapsed_seconds": 54.437,
+      "status": "passed",
+      "log_sha256": "d8e58aceae59b47d1abea01d0e177fb4f78ed5cf4b046c0987bd6ae079307820"
+    },
+    {
+      "platform": "wsl",
+      "tests_run": 1518,
+      "skipped": 9,
+      "elapsed_seconds": 37.458,
+      "status": "passed",
+      "log_sha256": "0fab3ff8a705354acc053bf351fb39b99fd2182f6e2700d628b55782c81b33e6"
+    }
+  ]
+}
