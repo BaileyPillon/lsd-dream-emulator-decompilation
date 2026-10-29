@@ -292,34 +292,34 @@ void func_8004D90C(main_menu_t *This, s32 Unk) {
 // TODO messy function
 void func_8004D9D4(main_menu_t *This) {
     ui_screen_vtable_t *obj_from_bc;
-    int m_Unk21_val;
+    int selected_row;
     void (*method_to_call_ptr)(main_menu_t *);
 
     obj_from_bc = func_8003DFBC();
     obj_from_bc->Unk35(This);
 
-    m_Unk21_val = This->m_Unk21;
+    selected_row = This->m_SelectedRow;
 
-    if (m_Unk21_val == 2) {
+    if (selected_row == 2) {
         goto L_case2_Unk75;
     }
 
-    if (m_Unk21_val >= 3) {
+    if (selected_row >= 3) {
         goto L_handle_ge3;
     }
 
-    if (m_Unk21_val == 1) {
+    if (selected_row == 1) {
         goto L_case1_Unk59_Unk36;
     }
 
     goto L_epilogue;
 
 L_handle_ge3:
-    if (m_Unk21_val == 3) {
+    if (selected_row == 3) {
         goto L_case3_Unk76;
     }
 
-    if (m_Unk21_val == 4) {
+    if (selected_row == 4) {
         goto L_case4_setUnk13_Unk36;
     }
 

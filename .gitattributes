@@ -453,3 +453,12 @@ docs/SOUND_ASSETS.md text eol=lf
 docs/sound-asset-checks.json text eol=lf
 docs/ASSET_INVENTORY.md text eol=lf
 docs/FEATURE_INVENTORY.md text eol=lf
+
+# Preserve natural-menu analysis, evidence and named source-field identities.
+src/menu/main_menu_post.c text eol=lf
+tools/inspect_runtime_menu.py text eol=lf
+tests/test_inspect_runtime_menu.py text eol=lf
+docs/NATURAL_MENU_LIFETIMES.md text eol=lf
+docs/natural-menu-lifetime-checks.json text eol=lf
+tools/compact_dispatch.py text eol=lf
+tools/psx_image.py text eol=lf

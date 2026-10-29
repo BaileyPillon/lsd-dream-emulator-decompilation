@@ -362,7 +362,7 @@ void func_8003CA1C(ui_screen_t *This) {
     void (*func_to_call)(ui_screen_t *, void *, s32);
 
     ptr1 = This->m_Unk18;
-    index = This->m_Unk21;
+    index = This->m_SelectedRow;
 
     if (*(int *) (*(char **) ((char *) ptr1 + 0x24) + index * 4) != 0) {
         func_to_call = (void (*)(ui_screen_t *, void *, s32)) This->vtable->Unk65;
@@ -543,7 +543,7 @@ func_8003CE98_count:
     This->m_Unk22 = memory_allocate_mem(bytes);
     This->m_Unk23 = memory_allocate_mem(bytes);
     This->m_Unk24 = memory_allocate_mem(bytes);
-    This->m_Unk19 = n;
+    This->m_RowCount = n;
     if (arg->path != NULL) {
         tex = tim_image_create(arg->path);
         tex->vtable->Unk14(tex);
@@ -560,7 +560,7 @@ func_8003CE98_count:
             *out = text_line_create((s32) tex, len, (s32) *cursor);
             out += 1;
             if (entry != NULL) {
-                This->m_Unk21 = i;
+                This->m_SelectedRow = i;
                 This->vtable->Unk61(This, entry, tex);
             }
             cursor += 1;
@@ -605,13 +605,13 @@ void func_8003D050(ui_screen_t *This) {
 
         s1 = 0;
 
-        unk19 = This->m_Unk19;
+        unk19 = This->m_RowCount;
         s2 = (void **) This->m_Unk20;
 
         if (unk19 > 0) {
             do {
                 if (*(void **) ((char *) *(void **) ((char *) (void *) This->m_Unk18 + 0x24) + s1 * 4)) {
-                    This->m_Unk21 = s1;
+                    This->m_SelectedRow = s1;
                     ui_screen_read_cleanup_step(This)(This);
                 }
 
@@ -620,7 +620,7 @@ void func_8003D050(ui_screen_t *This) {
 
                 s1++;
                 s2++;
-            } while (s1 < This->m_Unk19);
+            } while (s1 < This->m_RowCount);
         }
 
         memory_free_mem(This->m_Unk24);
@@ -715,24 +715,24 @@ void func_8003D2CC(ui_screen_t *This, s32 Unk2) {
 
     if (This->m_Unk18 != 0) {
         list = (text_line_t **) This->m_Unk20;
-        saved = This->m_Unk21;
+        saved = This->m_SelectedRow;
         i = 0;
-        if (This->m_Unk19 > 0) {
+        if (This->m_RowCount > 0) {
             do {
                 text_line_t *line = *list;
 
                 line->vtable->Unk45(line, ui_text_callback_data((char *) Unk2));
 
                 if (((ui_screen_panel_t *) This->m_Unk18)->table[i] != NULL) {
-                    This->m_Unk21 = i;
+                    This->m_SelectedRow = i;
                     This->vtable->Unk64(This, Unk2);
                 }
                 i++;
                 list++;
-                count = This->m_Unk19;
+                count = This->m_RowCount;
             } while (i < count);
         }
-        This->m_Unk21 = saved;
+        This->m_SelectedRow = saved;
     }
 }
 
@@ -741,14 +741,14 @@ void func_8003D3B0(ui_screen_t *This) {
     s32 n;
 
     if (This->m_Unk18) {
-        v1 = This->m_Unk21;
-        n = This->m_Unk19;
+        v1 = This->m_SelectedRow;
+        n = This->m_RowCount;
         v1 += 1;
         while (1) {
             if (v1 >= n) {
                 v1 = 0;
             }
-            if (v1 == This->m_Unk21) {
+            if (v1 == This->m_SelectedRow) {
                 break;
             }
             if (!(*(s32 **) ((char *) This->m_Unk18 + 0x18))[v1++]) {
@@ -764,13 +764,13 @@ void func_8003D444(ui_screen_t *This) {
     s32 v1;
 
     if (This->m_Unk18) {
-        v1 = This->m_Unk21;
+        v1 = This->m_SelectedRow;
         v1 -= 1;
         while (1) {
             if (v1 < 0) {
-                v1 = This->m_Unk19 - 1;
+                v1 = This->m_RowCount - 1;
             }
-            if (v1 == This->m_Unk21) {
+            if (v1 == This->m_SelectedRow) {
                 break;
             }
             if (!(*(s32 **) ((char *) This->m_Unk18 + 0x18))[v1--]) {
@@ -787,13 +787,13 @@ void func_8003D4DC(ui_screen_t *This, s32 arg1, s32 arg2) {
     void *new_obj;
 
     if (This->m_Unk18) {
-        cur_obj = ((void **) This->m_Unk20)[This->m_Unk21];
+        cur_obj = ((void **) This->m_Unk20)[This->m_SelectedRow];
         new_obj = ((void **) This->m_Unk20)[arg1];
-        if (This->m_Unk21 >= 0) {
+        if (This->m_SelectedRow >= 0) {
             (*(void (**)(void *, char *))(*(u32 *) cur_obj + 0xB8))(cur_obj, (char *) This->m_Unk18 + 0x10);
         }
         (*(void (**)(void *, char *))(*(u32 *) new_obj + 0xB8))(new_obj, (char *) This->m_Unk18 + 0x13);
-        This->m_Unk21 = arg1;
+        This->m_SelectedRow = arg1;
         if (arg2) {
             This->vtable->Unk27(This, 0);
         }
@@ -802,7 +802,7 @@ void func_8003D4DC(ui_screen_t *This, s32 arg1, s32 arg2) {
 }
 
 s32 func_8003D5C0(ui_screen_t *This) {
-    return This->m_Unk21;
+    return This->m_SelectedRow;
 }
 
 typedef struct {
@@ -819,7 +819,7 @@ void func_8003D5CC(ui_screen_t *This, ui_screen_name_list_t *list, s32 ctx) {
     text_line_t **dest;
     s32 len;
 
-    idx = This->m_Unk21;
+    idx = This->m_SelectedRow;
     cursor = list->names;
     count = 0;
     while (*cursor++ != 0) {
@@ -841,8 +841,8 @@ void func_8003D5CC(ui_screen_t *This, ui_screen_name_list_t *list, s32 ctx) {
 }
 
 void func_8003D6D4(ui_screen_t *This) {
-    destroy_list(This->m_Unk24[This->m_Unk21], This->m_Unk22[This->m_Unk21]);
-    memory_free_mem((void *) This->m_Unk24[This->m_Unk21]);
+    destroy_list(This->m_Unk24[This->m_SelectedRow], This->m_Unk22[This->m_SelectedRow]);
+    memory_free_mem((void *) This->m_Unk24[This->m_SelectedRow]);
 }
 
 /* Each initialized four-byte snapshot supplies its actual scalar callback. */
@@ -874,7 +874,7 @@ void func_8003D73C(ui_screen_t *This, s32 Unk2, s32 Unk3) {
     s32 tmp[2];
     effect_base_t *effect;
 
-    idx = This->m_Unk21;
+    idx = This->m_SelectedRow;
     row = (text_line_t **) This->m_Unk24[idx];
     v9 = ((s32 *) ((ui_screen_panel_t *) This->m_Unk18)->table[idx])[1];
     count = This->m_Unk22[idx];
@@ -929,8 +929,8 @@ void func_8003D980(ui_screen_t *This, char *arg1) {
     s32 i;
     text_line_t *obj;
 
-    list = (text_line_t **) This->m_Unk24[This->m_Unk21];
-    count = This->m_Unk22[This->m_Unk21];
+    list = (text_line_t **) This->m_Unk24[This->m_SelectedRow];
+    count = This->m_Unk22[This->m_SelectedRow];
     for (i = 0; i < count; i++) {
         obj = *list++;
         obj->vtable->Unk45(obj, arg1);
@@ -943,7 +943,7 @@ void func_8003DA10(ui_screen_t *This) {
     s32 *table;
 
     if (This->m_HasIdleTimeout == 1) {
-        idx = This->m_Unk21;
+        idx = This->m_SelectedRow;
         This->vtable->Unk63(This, This->m_Unk4, 1);
         obj = ((void **) This->m_Unk24[idx])[This->m_Unk23[idx]];
         table = *(s32 **) ((char *) This->m_Unk18 + 0x24);
@@ -972,7 +972,7 @@ void func_8003DAD4(ui_screen_t *This) {
         return;
     }
 
-    idx = This->m_Unk21;
+    idx = This->m_SelectedRow;
     sel = This->m_Unk23[idx];
     entry = (s32 *) ((ui_screen_panel_t *) This->m_Unk18)->table[idx];
     __builtin_memcpy(pos, entry + 4, sizeof(pos));
@@ -1015,7 +1015,7 @@ void func_8003DCAC(ui_screen_t *This) {
     if (This->m_HasIdleTimeout != 2) {
         return;
     }
-    idx = This->m_Unk21;
+    idx = This->m_SelectedRow;
     sel = This->m_Unk23[idx];
     This->vtable->Unk63(This, This->m_Unk4, 0);
     row = (text_line_t **) This->m_Unk24[idx];
@@ -1033,10 +1033,10 @@ void func_8003DCAC(ui_screen_t *This) {
 void func_8003DDC8(ui_screen_t *This) {
     s32 value;
 
-    value = This->m_Unk23[This->m_Unk21];
+    value = This->m_Unk23[This->m_SelectedRow];
     value++;
 
-    if (value >= This->m_Unk22[This->m_Unk21]) {
+    if (value >= This->m_Unk22[This->m_SelectedRow]) {
         value = 0;
     }
 
@@ -1046,11 +1046,11 @@ void func_8003DDC8(ui_screen_t *This) {
 void func_8003DE30(ui_screen_t *This) {
     s32 value;
 
-    value = This->m_Unk23[This->m_Unk21];
+    value = This->m_Unk23[This->m_SelectedRow];
     value--;
 
     if (value < 0) {
-        value = This->m_Unk22[This->m_Unk21] - 1;
+        value = This->m_Unk22[This->m_SelectedRow] - 1;
     }
 
     This->vtable->Unk70(This, value, 1);
@@ -1064,7 +1064,7 @@ void func_8003DE9C(ui_screen_t *This, s32 arg1, s32 arg2) {
     text_line_t *other;
     s32 *words;
 
-    idx = This->m_Unk21;
+    idx = This->m_SelectedRow;
     sel = This->m_Unk23[idx];
     row = (text_line_t **) This->m_Unk24[idx];
     cur = row[sel];
@@ -1080,7 +1080,7 @@ void func_8003DE9C(ui_screen_t *This, s32 arg1, s32 arg2) {
 }
 
 s32 func_8003DFA0(ui_screen_t *This) {
-    return This->m_Unk23[This->m_Unk21];
+    return This->m_Unk23[This->m_SelectedRow];
 }
 
 ui_screen_vtable_t *func_8003DFBC(void) {

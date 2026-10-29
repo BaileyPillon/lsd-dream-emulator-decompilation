@@ -57,3 +57,8 @@ The separate [resource cleanup check](SCREEN_RESOURCE_CLEANUP.md) executes
 both original Cleanup bodies and their release dependencies in 144 supplied
 owned graphs, without dependency output contracts. Its different inputs do
 not remove this earlier profile's contracts or establish natural setup.
+
+The subsequent [natural title-menu history](NATURAL_MENU_LIFETIMES.md) inspects
+three recorded menu generations and two selected ownership closures. It reuses
+retained RAM/GPU/RGB outputs and does not remove the contracts in this earlier
+execution profile or accept an entire screen feature.

@@ -125,9 +125,9 @@ typedef struct ui_screen {
     /* 0x44 */ s32 m_Unk16;
     /* 0x48 */ sound_t *m_Unk17;
     /* 0x4C */ s32 m_Unk18;
-    /* 0x50 */ s32 m_Unk19;
+    /* 0x50 */ s32 m_RowCount;
     /* 0x54 */ s32 m_Unk20;
-    /* 0x58 */ s32 m_Unk21;
+    /* 0x58 */ s32 m_SelectedRow;
     /* 0x5C */ s32 *m_Unk22;
     /* 0x60 */ s32 *m_Unk23;
     /* 0x64 */ s32 *m_Unk24;
