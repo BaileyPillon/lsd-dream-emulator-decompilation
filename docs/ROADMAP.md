@@ -1,5 +1,12 @@
 # Roadmap
 
+The [streaming state-hash check](STATE_HASH_STREAMING.md) removes duplicate
+serialized-state buffers from the progression recorder and adds resource
+telemetry. Two integrated native probes preserve hashes, byte counts, full
+RAM/GPU memory and frame counters at four checkpoints each. The historical
+day-153 disc-read resource failure still has no established cause; a successful
+full-year comparison, year boundary and ending remain required.
+
 The [natural menu lifetime check](NATURAL_MENU_LIFETIMES.md) now distinguishes
 three menu generations at a reused address and verifies 196 selected allocations
 through two natural releases. Six retained checkpoint pairs have complete

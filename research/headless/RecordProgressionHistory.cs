@@ -25,6 +25,7 @@ internal static class YearProgression {
     const long OutputLimit = 16L * 1024 * 1024;
     static string DllRoot, Output;
     static long RetainedBytes;
+    static long LastSerializedStateBytes;
     static readonly JavaScriptSerializer Json = new JavaScriptSerializer();
     [DllImport("kernel32.dll", CharSet=CharSet.Unicode, SetLastError=true)]
     static extern bool SetDllDirectory(string path);
@@ -88,17 +89,26 @@ internal static class YearProgression {
         return value;
     }
     static string StateHash(Nymashock core) {
-        Func<byte[]> save = () => {
-            using (var memory = new MemoryStream()) {
-                using (var writer = new BinaryWriter(memory, Encoding.UTF8, true)) { ((IStatable)core).SaveStateBinary(writer); writer.Flush(); }
-                if (memory.Length < 1 || memory.Length > 256L*1024*1024) throw new Exception("Serialized state outside bounded memory envelope");
-                return memory.ToArray();
+        Func<Tuple<string,long>> save = () => {
+            using (var stream = new BoundedSha256Stream(256L*1024*1024)) {
+                using (var writer = new BinaryWriter(stream, Encoding.UTF8, true)) { ((IStatable)core).SaveStateBinary(writer); writer.Flush(); }
+                if (stream.Length < 1) throw new Exception("Serialized state is empty");
+                return Tuple.Create(stream.CompleteHash(),stream.Length);
             }
         };
         int frame = core.Frame;
-        string first=Hash(save()), second=Hash(save());
-        if (first != second || core.Frame != frame) throw new Exception("Repeated same-frame serialization differs");
-        return first;
+        var first=save(); var second=save();
+        if (first.Item1 != second.Item1 || first.Item2 != second.Item2 || core.Frame != frame) throw new Exception("Repeated same-frame serialization differs");
+        LastSerializedStateBytes=first.Item2;
+        return first.Item1;
+    }
+    static object ResourceUsage() {
+        using (var process=Process.GetCurrentProcess()) {
+            process.Refresh();
+            return new {working_set_bytes=process.WorkingSet64,private_bytes=process.PrivateMemorySize64,
+                handles=process.HandleCount,managed_heap_bytes=GC.GetTotalMemory(false),
+                last_serialized_state_bytes=LastSerializedStateBytes};
+        }
     }
     static void Image(Nymashock core, string file) {
         int w=core.BufferWidth, h=core.BufferHeight;
@@ -185,7 +195,7 @@ internal static class YearProgression {
                             pcm.TransformFinalBlock(new byte[0],0,0);
                             Line(audio,String.Join("\t",windowStart,frame,windowSamples,BitConverter.ToString(pcm.Hash).Replace("-","").ToLowerInvariant()));
                             pcm.Dispose();pcm=SHA256.Create();windowStart=frame+1;windowSamples=0;audio.Flush();inputs.Flush();
-                            File.WriteAllText(Path.Combine(Output,"progress.json"),Json.Serialize(new {frame=frame,core_frame=core.Frame,state=observed,completed_days=transitions,elapsed_ms=timer.ElapsedMilliseconds,retained_stream_bytes=RetainedBytes}));
+                            File.WriteAllText(Path.Combine(Output,"progress.json"),Json.Serialize(new {frame=frame,core_frame=core.Frame,state=observed,completed_days=transitions,elapsed_ms=timer.ElapsedMilliseconds,retained_stream_bytes=RetainedBytes,resources=ResourceUsage()}));
                         }
                         if(transitions>=target) {outcome="completed_requested_natural_days";finishedFrame=frame;break;}
                         if(File.Exists(Path.Combine(Output,"STOP"))) {outcome="owned_host_stop_requested";finishedFrame=frame;break;}

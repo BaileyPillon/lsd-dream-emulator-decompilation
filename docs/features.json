@@ -24971,5 +24971,23 @@
     "new_NPC_profiles": 0,
     "model_API_calls": 0,
     "complete_natural_menu_construction_accepted": false
+  },
+  "developer_state_hash_streaming_20261029": {
+    "reference": "docs/state-hash-streaming-checks.json",
+    "documentation": "docs/STATE_HASH_STREAMING.md",
+    "scope": "Developer verification only: bounded same-frame streaming hashes and process-resource observations.",
+    "integrated_native_probes": 2,
+    "native_serializations": 40,
+    "checkpoints_per_probe": 4,
+    "data_free_tests": 5,
+    "largest_data_free_stream_bytes": 67108864,
+    "canonical_complete_executable_preserved": true,
+    "new_game_C_bytes": 0,
+    "new_original_features_accepted": 0,
+    "new_NPC_profiles": 0,
+    "model_API_calls": 0,
+    "historical_year_failure_root_cause_established": false,
+    "full_year_restarted": false,
+    "ending_accepted": false
   }
 }
