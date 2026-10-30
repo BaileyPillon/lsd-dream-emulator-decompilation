@@ -1,7 +1,19 @@
 # LSD feature inventory
 
-The latest [sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md)
-brings matching C to **197,172 / 199,912 bytes (98.63%)**, with **two** game
+## Matching game C, October 30, 2026
+
+The [current matching-C milestone](MATCHING_GAME_C.md) reaches
+199,912 / 199,912 counted game-function bytes, zero game assembly fallbacks and
+40 / 40 groups with listed core and shared-support functions in C. The owner
+approved documented compiler-layout padding; five functions retain explicit
+compatibility storage, without a claim to their original declarations.
+All 306 objects were rebuilt and the complete executable remains canonical.
+The additive [source overlay](matching-game-c-completion-checks.json) preserves
+all earlier inventory values and before statuses. Forty remains provisional;
+whole-feature and whole-NPC encounter acceptances remain zero.
+
+The earlier [sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md)
+brought matching C to **197,172 / 199,912 bytes (98.63%)**, with **two** game
 assembly fallbacks and **38 / 40** groups whose listed core functions are in C.
 F035 now has all its listed core functions in C. Whole-feature runtime
 acceptance remains separate. The historical measurements below retain their

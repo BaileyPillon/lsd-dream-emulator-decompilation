@@ -1,0 +1,751 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "status": "all_counted_game_functions_compile_to_matching_C",
+  "source_rule": {
+    "user_instruction": "Allow documented upstream stack-layout padding",
+    "frozen_objective_retained": true,
+    "frozen_objective_sha256": "60692a3fb7eb3aa1aa3ff716471ffcfe7cc6dec264dd3bd70ba59e9d67b708f5",
+    "documented_compiler_layout_padding_allowed": true,
+    "original_declarations_claimed": false,
+    "instruction_substitution_or_embedded_original_assembly_allowed": false,
+    "gameplay_gates_unchanged": true
+  },
+  "before_this_integration": {
+    "matching_C_bytes": 197172,
+    "game_text_bytes": 199912,
+    "game_assembly_functions": 2,
+    "listed_core_C_groups": 38,
+    "listed_core_and_support_C_groups": 6,
+    "provisional_feature_groups": 40,
+    "original_feature_groups_present_in_C_plus_assembly": 40,
+    "whole_feature_groups_accepted": 0,
+    "original_NPC_callbacks_in_C": 107,
+    "bounded_NPC_callback_profiles": 44,
+    "naturally_compared_NPC_callback_types": 5
+  },
+  "after_this_integration": {
+    "matching_C_bytes": 199912,
+    "game_text_bytes": 199912,
+    "game_assembly_functions": 0,
+    "listed_core_C_groups": 40,
+    "listed_core_and_support_C_groups": 40,
+    "provisional_feature_groups": 40,
+    "original_feature_groups_present_in_C_plus_assembly": 40,
+    "whole_feature_groups_accepted": 0,
+    "original_NPC_callbacks_in_C": 107,
+    "bounded_NPC_callback_profiles": 44,
+    "naturally_compared_NPC_callback_types": 5
+  },
+  "before_prompt_corrected": {
+    "matching_C_bytes": 169540,
+    "game_text_bytes": 199912,
+    "C_percent": 84.80731521869623,
+    "game_assembly_functions": 63,
+    "listed_core_C_groups": 16,
+    "listed_core_and_support_C_groups": 0,
+    "original_NPC_callbacks_in_C": 105,
+    "provisional_feature_groups": 40,
+    "original_features_present_in_C_plus_assembly": 40,
+    "whole_feature_groups_accepted": 0
+  },
+  "game_C_bytes_added_this_integration": 2740,
+  "game_C_bytes_added_since_prompt": 30372,
+  "canonical_executable_bytes": 505856,
+  "canonical_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "canonical_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "C_coverage_percent": 100.0,
+  "excluded_SDK_text_bytes": 147880,
+  "excluded_handwritten_startup_bytes": 188,
+  "qualified_functions": [
+    {
+      "function": "func_8001DDF4",
+      "source": "src/base/transform.c",
+      "address": "0x8001DDF4",
+      "bytes": 796,
+      "original_function_sha256": "e61be058229e5ecc97387ea9e246d7b578594f5d77495b56fc3f2900f2a6b193",
+      "compiled_function_sha256": "e61be058229e5ecc97387ea9e246d7b578594f5d77495b56fc3f2900f2a6b193",
+      "source_sha256": "d8aea6bd348d5c405460e2026ed0b40fedd1fe55ffc1d39c8cb452d284bb7a4d",
+      "compiler_layout_compatibility_bytes": 24,
+      "complete_candidate_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+      "whole_executable_differences": 0,
+      "private_comparison_sha256": "f0e092262e3c5c17f84ac1289653f48b9802cf6962c19842139af9a34d29b11e"
+    },
+    {
+      "function": "func_8001F8B8",
+      "source": "src/file/tmd_prim_geom.c",
+      "address": "0x8001F8B8",
+      "bytes": 1944,
+      "original_function_sha256": "c23a87535a6a4949e414266f5a298b8d0409debb8be4ef6482e627fcc6269513",
+      "compiled_function_sha256": "c23a87535a6a4949e414266f5a298b8d0409debb8be4ef6482e627fcc6269513",
+      "source_sha256": "26be6856c99b287eeea723d1516ae341ea5f183330fa4dbb615d371e61cc09f3",
+      "compiler_layout_compatibility_bytes": 20,
+      "complete_candidate_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+      "whole_executable_differences": 0,
+      "private_comparison_sha256": "2414af55239eca220c48bf32bf17aea500736c05476f3db70f942a4faaa76bdd"
+    }
+  ],
+  "compiler_layout_compatibility": [
+    {
+      "function": "func_8001DDF4",
+      "source": "src/base/transform.c",
+      "unused_bytes": 24,
+      "declaration": "u8 matching_stack_layout[24]",
+      "inherited": false,
+      "original_frame_bytes": 176
+    },
+    {
+      "function": "func_8001F8B8",
+      "source": "src/file/tmd_prim_geom.c",
+      "unused_bytes": 20,
+      "declaration": "sdk_vector_t unused; s32 dist[2] (dist[1] unused)",
+      "inherited": false,
+      "original_frame_bytes": 352
+    },
+    {
+      "function": "debug_file_driver_unk15",
+      "source": "src/file/debug_file_driver.c",
+      "unused_bytes": 64,
+      "declaration": "s8 pad[0x40]",
+      "inherited": true
+    },
+    {
+      "function": "debug_file_driver_open",
+      "source": "src/file/debug_file_driver.c",
+      "unused_bytes": 64,
+      "declaration": "s8 pad[0x40]",
+      "inherited": true
+    },
+    {
+      "function": "cd_file_driver_read_sectors",
+      "source": "src/file/cd_file_driver.c",
+      "unused_bytes": 2048,
+      "declaration": "u8 sector[0x800]",
+      "inherited": true
+    }
+  ],
+  "unique_original_source_reconstruction_proven": false,
+  "clean_build": {
+    "objects_rebuilt": 306,
+    "elapsed_seconds": 69.090373573,
+    "clean_rules": [
+      "asm",
+      "cc",
+      "cc_g8",
+      "link",
+      "objcopy"
+    ],
+    "source_generation_rules_excluded": true,
+    "tracked_assembly_preserved": true,
+    "log_sha256": "86c91450668f9c2819d5754a5a8fe48853d49d458aaab7abaabcf9d534b4310f",
+    "compiler_sha256": "3a7378955ab79dbe06cc413cc10b757777fd07b7b72bce76faf432d255da7fab"
+  },
+  "upstream": {
+    "repository": "https://github.com/brian-oblivion/lsddecomp",
+    "commit": "90a398e4f429b4371be05648605fc198b9efb395",
+    "license": "CC0-1.0",
+    "source_files": [
+      {
+        "repository": "brian-oblivion/lsddecomp",
+        "commit": "90a398e4f429b4371be05648605fc198b9efb395",
+        "path": "src/graphics/scene_node.c",
+        "sha256": "977b3d966aebc44e33b2757a00d531a6c12aab01e053c3df8fa60d3ae12c2d9c",
+        "bytes": 42911
+      },
+      {
+        "repository": "brian-oblivion/lsddecomp",
+        "commit": "90a398e4f429b4371be05648605fc198b9efb395",
+        "path": "src/graphics/tmd_model.c",
+        "sha256": "9a4dfdd9fdad6571b4e534132801c05e958df85856c63658e2990aa6347dfe35",
+        "bytes": 23449
+      },
+      {
+        "repository": "brian-oblivion/lsddecomp",
+        "commit": "90a398e4f429b4371be05648605fc198b9efb395",
+        "path": "src/graphics/model_data.c",
+        "sha256": "8cb45676ba442039fd1f6c87209a34a2052f70309b406a8ecc5cf620b7a83073",
+        "bytes": 6580
+      },
+      {
+        "repository": "brian-oblivion/lsddecomp",
+        "commit": "90a398e4f429b4371be05648605fc198b9efb395",
+        "path": "LICENSE",
+        "sha256": "1fe639e0de723261f4dc33a3c43b53773b5873c0f5b3071e319d7c0a8f009fa0",
+        "bytes": 8459
+      }
+    ]
+  },
+  "current_feature_source_overlay": {
+    "catalogued_groups": 40,
+    "remaining_game_assembly_functions": [],
+    "private_complete_anchor_overlay_sha256": "d02d4e9b65e2fc4958a36c26c9b4e9a52abca214201d5f61cc040e24b54f6ae3",
+    "source_hashes": {
+      "src/dream/dream_session_path.c": "de7e72a1a8694521ad9243731b3c9c1e39d07873846b75864fc8a032b95ca1d2",
+      "src/game/game_flow.c": "b8412d1d3207da21ae29a5fc1d3293eedbf8c50f6f780b5b191ea330df1ba305",
+      "src/utils/cd_paths.c": "380f325eb63bfcee49f4bfee8fc8917ce04d99bf7121dea427b1f6a6bccb9eae",
+      "src/menu/main_menu_post.c": "1e05aaf348347812ab43c9c81603cbcaa3306efcabf810d52feab26dd14d365b",
+      "src/menu/main_menu.c": "35e64ecf1541b05af23f8d283d388dd883b68c54e256bb0608739db4cb05b830",
+      "src/menu/main_menu_entry.c": "8d4a3df0953217d5a3127ba403071ae912e3c65feef9641ebf148b696776cedd",
+      "src/dream/dream_sys.c": "130453762f783d2e8c2f4af237a0a62322fec91480e7570e5ebbd21d9ca006bf",
+      "src/dream/dream_session.c": "78490500b752b0a27cb7b0f5ce0f58f0cd8641b59780949987cc58c5679d69e4",
+      "src/scene/map_scene.c": "d420d380e2f7758f495202851deffe1bf70f2bf6a556ced0f5d30fa301705ad1",
+      "src/scene/scene.c": "14f76edee3d96e3410ff84a291de830953c159091aa49c99646d392cb4228f6d",
+      "src/sys/pad.c": "ec916a708e64a0ef201e42587fccc48ea69786e8606a43c5bbdea93e11d7aa43",
+      "src/base/transform.c": "d8aea6bd348d5c405460e2026ed0b40fedd1fe55ffc1d39c8cb452d284bb7a4d",
+      "src/scene/scene_node.c": "4c9802ade32e9cd08fbb89c94db1694e737814b5a0a922c45bd3abb1afe73ea9",
+      "src/scene/link.c": "2639465b5d1d24f463afaa730adf4a51f2eddc7432057bf7ad1b88a035d2a3ed",
+      "src/scene/map_scene_post.c": "34ed1e0240e53b9a1682af1b083628dd91c4955a3fb6735492ae983faa5a4040",
+      "src/scene/stage_grid.c": "a13290b8ffce8ef9bc3519f9dd2c2649777751811ae5d729ff0c723a36c6cdda",
+      "src/menu/graph_screen.c": "cbf99cff532d9231936f82f423769a4f16a5920d2d744afd68d6db40af3c6bf7",
+      "src/scene/entity.c": "3b80a498977752f4e812fd1d0bd87965ff5a1f637b25d8d41b0545eae752e811",
+      "src/scene/stage_texture.c": "0edc3fb88c5a829398bf265e954c42c3290f060670ca22da3a3726e5758a7033",
+      "src/dream/dream_generation.c": "d61bfd4f5774cf3ffc214183a805e714d2f1ab08690da6b1d569a919dd4e80b8",
+      "src/dream/dream_generation_post.c": "2574f75419c746443d0dbaf3de3bac38a28702559a9d620f8cb1f8d91d0ac094",
+      "src/dream/dream_generation_palette.c": "4e34baa66a9b6e2b5201cd1146ce230e083c46a68eb5eb63ee264785458a2579",
+      "src/dream/generation_apply.c": "d7ef6bcdd664b56b9175485bb124fe9529070d0703f4b92829313284f55c74c1",
+      "src/dream/generation_sprite.c": "22b4e4a8b78528c3140441d8d31164572aa9983bbe18ff74391b332acd2ad2de",
+      "src/dream/generation_structure.c": "e5d0089714fda5b344b6a21bf38e5ec6ac73db90ae85566614cd6b11c791c0bd",
+      "src/base/object_math.c": "f4e17f6d44d413b63cc677e7a1ec6b9952eaf2f0431ecf7655ec0b6df7c3959e",
+      "src/sound/sound.c": "c3174cf04aeb55867cd70fa681edc6146121551a27d9e7ca9ad5b4dd1697dc10",
+      "src/file/model_part.c": "f3081189fe234cc1c6c4bbdd6630ff13ddf46cd34344c1d46157e04fbf372910",
+      "src/file/model_part_list.c": "9370262e505966e9789303c3519e24ae822143d3d1375fb5e4eb3c2d92b196e9",
+      "src/file/object_model.c": "2e42b3565a2ca339d52e9c81e32689fa4eba98e3e369ad89d6d4ae5a5c04d1dd",
+      "src/file/object_model_list.c": "4b5ec072ec690bee65ca11e1dd18ef06f2d2bc7f23fb017e0de64a2e25e0f381",
+      "src/scene/actor.c": "4a0c1f29434123834c3725cd12cad91a8b68cb39dbd927af1e46325a31113c3c",
+      "src/sound/bgm.c": "3ffdfd45c801b41c13a7a8c0b02092d3c0767587cc5e7d6a6ea76d87592049d5",
+      "src/sound/seq_file.c": "a2629304ccb5ba7ae5bf2b842c6661da920086ff134e8d5a781069f604e8cddf",
+      "src/file/cd_stream.c": "3854a23209749cac99c0bd95cb8339b6f119bbaedcf6b1b7f7747fe577554621",
+      "src/file/str_stream.c": "788cc2ed6ef4794485bb5dbae52c702d090faa279ab67d4ba471e798344a3acc",
+      "src/menu/mdec_movie.c": "80ad6b55ed2a1923e1c00491565b16032a4b2fdc0cf25848f0b902f2f68b3019",
+      "src/menu/movie_screen.c": "8b18f976e7867226380e54f81daad133247eded4b4af54a526a88b4304d792de",
+      "src/base/render_sort.c": "5efe8d4164db19f17454c4a836f2961b8bd3ab6dc5a8824b5513e004e1b9b28e",
+      "src/file/tmd_model.c": "2779130f4fef1ddca4c04b026c2d99073f52481a47c5a24e27afa3bea0bec800",
+      "src/file/tmd_prim.c": "413959dcc32bbf0e2167e6b4fa4d38d5ef28968e749455e38ab62bf2abb731fa",
+      "src/file/tmd_prim_geom.c": "26be6856c99b287eeea723d1516ae341ea5f183330fa4dbb615d371e61cc09f3",
+      "src/graphics/display.c": "2e01791ca8961934e2b137dd9c656378f0343dd5a7fd834d56de610729bd6adf",
+      "src/graphics/flat_light.c": "75425fc08412345366519f057f3d5716bd90e26fee38a326e661d6ed1206e801",
+      "src/graphics/light.c": "65770c94ed20e7022105d9b1621dd2b181aa84b367c9790d1c003d9df7f4b127",
+      "src/graphics/renderer.c": "05f5df81189993155faf5774eeb7bc95b01e632d11cb1a2a945bbf616ef082b6",
+      "src/graphics/scene_renderer.c": "0bedf8011534af573483cc66fd026577eddd9cfeed28e59e545d05d6e42e957d",
+      "src/scene/render_context.c": "84fe64d7aa657c8c860c43890ed3be4ea0df26cf94efde75fdf306509fe526e6",
+      "src/graphics/effect.c": "289a3df01dd4e5b7ce4085f7aa0f9ecf8237a610fc0a205449824bc5aca632dd",
+      "src/graphics/effect_base.c": "0239e7c0da74d2640ec2610d9c2f2a90b5a3994585a84f78a75d59d15a562289",
+      "src/sys/display_border.c": "b07a3fdd56b7712ff8f312ecd200888faf27ecdf4b6ba2be1a68bc849073b96b",
+      "src/menu/sprite.c": "0973193945ceb627c7169f6a44031ddd35ba41d101ff48e1248d0a9166987303",
+      "src/menu/sprite_atlas.c": "72b12db645fbe47ec10a0a2457daaa7b4d19e5b57d886d12e6bba35c8f798b61",
+      "src/menu/sprite_node.c": "74c5d3d3d6fa2729c848e37b54707d91479191e717622e4859380ac3fce22803",
+      "src/menu/tile_buffer.c": "f16a751e09ff13976fe7d6c6b21354c406da24785bd2e4dcf5149e8a9df8127e",
+      "src/menu/ui_screen.c": "e88b6362146d22059c237c06c6cf691effb0d1bcf60030f8076ce7e0941311ff",
+      "src/menu/ui_sprite.c": "0535fa683faa1727b87916c156532ceda9f85850c797054bb3b59a134526c675",
+      "src/menu/glyph.c": "74ee55ff95c90ed03f36596b0602b0d35bd06bbf504150f175ae40057a355f04",
+      "src/menu/text_line.c": "f276526740b26d0e356c2446a72469889a90b7f3fc4447ce7ef7f2302e0fe550",
+      "src/menu/card/memory_card.c": "b7845621a18392ce05c778086638e0e92969ea0e6432102a633f21b3bcc84669",
+      "src/menu/card/select_menu.c": "af92a00e83c0a116ed2fcc861279f79a31489343fb82572771a2863eb9ab8c2e",
+      "src/menu/card/comment_input.c": "304f8e786e9f8037523af6409e713a95234a2e3c3195dd91439fe9d9f940d805",
+      "src/menu/card/comment_input_cursor.c": "9a3ff973247caa5cefd691e19c8ef4755f9b13226ca5b674d97fe1bff86f57ce",
+      "src/file/cd_file_driver.c": "bf4e2923548db83c1a1aaa7bdc8bee0c3285521263aa5175c3280ca9712a1241",
+      "src/file/file_buf.c": "bde1cebd69ff84ed3e2eec4a12933569620117b195f54110323f642f26a03170",
+      "src/file/file_object.c": "e393e4267c289f1190d2e2cb7ab52df34dc3a4f4ece7de200b62cb26c4320a2c",
+      "src/file/tim_image.c": "a570350e90b685c00add499cf2a118e854d755ff4f89230107d8d57718e31dc1",
+      "src/file/tim_list.c": "de5a635683bf12f60f9bdb27bf72a7159010f3f5eac1ef120af428fc9a6d114f"
+    },
+    "groups": [
+      {
+        "id": "F001",
+        "required_function_anchors_checked": 8,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F032",
+          "F035"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F002",
+        "required_function_anchors_checked": 24,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F035",
+          "F036"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F003",
+        "required_function_anchors_checked": 7,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F032"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F004",
+        "required_function_anchors_checked": 5,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F040"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F005",
+        "required_function_anchors_checked": 39,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F009",
+          "F014",
+          "F024",
+          "F025",
+          "F027",
+          "F040"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F006",
+        "required_function_anchors_checked": 27,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F008"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F007",
+        "required_function_anchors_checked": 16,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F006"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F008",
+        "required_function_anchors_checked": 76,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F040"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F009",
+        "required_function_anchors_checked": 22,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F033",
+          "F040"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F010",
+        "required_function_anchors_checked": 10,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F008",
+          "F014"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F011",
+        "required_function_anchors_checked": 6,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F006",
+          "F014"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F012",
+        "required_function_anchors_checked": 12,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F009",
+          "F014"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F013",
+        "required_function_anchors_checked": 6,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F006",
+          "F014"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F014",
+        "required_function_anchors_checked": 18,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F034"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F015",
+        "required_function_anchors_checked": 9,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F014"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F016",
+        "required_function_anchors_checked": 14,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F028"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F017",
+        "required_function_anchors_checked": 14,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F035",
+          "F034"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F018",
+        "required_function_anchors_checked": 6,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F009"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F019",
+        "required_function_anchors_checked": 6,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F028"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F020",
+        "required_function_anchors_checked": 13,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F027",
+          "F014"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F021",
+        "required_function_anchors_checked": 9,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F032",
+          "F035"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F022",
+        "required_function_anchors_checked": 6,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F017",
+          "F032"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F023",
+        "required_function_anchors_checked": 12,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F033",
+          "F040"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F024",
+        "required_function_anchors_checked": 45,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F033",
+          "F040"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F025",
+        "required_function_anchors_checked": 28,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F024",
+          "F031",
+          "F034"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F026",
+        "required_function_anchors_checked": 27,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F029",
+          "F031"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F027",
+        "required_function_anchors_checked": 107,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F026",
+          "F029",
+          "F031",
+          "F034"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F028",
+        "required_function_anchors_checked": 11,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F027"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F029",
+        "required_function_anchors_checked": 66,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F008",
+          "F033",
+          "F040"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F030",
+        "required_function_anchors_checked": 27,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F040"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F031",
+        "required_function_anchors_checked": 20,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F040"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F032",
+        "required_function_anchors_checked": 79,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F040"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F033",
+        "required_function_anchors_checked": 174,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F008",
+          "F040"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F034",
+        "required_function_anchors_checked": 33,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F033"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F035",
+        "required_function_anchors_checked": 88,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F033",
+          "F036",
+          "F040"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F036",
+        "required_function_anchors_checked": 26,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F033",
+          "F040"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F037",
+        "required_function_anchors_checked": 16,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F038",
+          "F039"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F038",
+        "required_function_anchors_checked": 85,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F035",
+          "F036"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F039",
+        "required_function_anchors_checked": 27,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [
+          "F035",
+          "F036"
+        ],
+        "exhaustive_call_graph_proven": false
+      },
+      {
+        "id": "F040",
+        "required_function_anchors_checked": 105,
+        "all_listed_core_functions_in_C": true,
+        "all_listed_shared_support_in_C": true,
+        "dependencies": [],
+        "exhaustive_call_graph_proven": false
+      }
+    ]
+  },
+  "tests": {
+    "windows": {
+      "exit_code": 0,
+      "log_sha256": "2741ba5ae6f7e1570e930994373e81543c276bfbffa8e0a22de66aecc72e47bc",
+      "summary": "Ran 1538 tests in 39.433s\n\nOK (skipped=9)"
+    },
+    "wsl": {
+      "exit_code": 0,
+      "log_sha256": "766a910e478c0d9d075cc3868b6f30533236d5427723e1b1ee946edbe942b946",
+      "summary": "Ran 1523 tests in 31.909s\n\nOK (skipped=11)"
+    }
+  },
+  "prior_feature_inventory_values_preserved": 37,
+  "game_executable_or_assets_changed": false,
+  "new_gameplay_features": 0,
+  "new_NPC_profiles": 0,
+  "new_mods": 0,
+  "new_developer_capability_categories": 0,
+  "model_API_calls": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "full_year_and_ending_verified": false,
+  "all_frame_video_verified": false,
+  "original_hardware_timing_verified": false,
+  "scope": "All counted game-function text is matching C under the user-approved documented-layout rule. SDK/startup exclusions, original-source uncertainty, assets and enumerated runtime gates remain explicit.",
+  "independent_GNU_audit": {
+    "status": "independent_GNU_function_and_complete_ELF_audit_passed",
+    "functions": [
+      {
+        "function": "func_8001DDF4",
+        "address": "0x8001ddf4",
+        "bytes": 796,
+        "stack_adjustments": [
+          -176,
+          176
+        ],
+        "function_sha256": "e61be058229e5ecc97387ea9e246d7b578594f5d77495b56fc3f2900f2a6b193",
+        "GNU_symbol_size_verified": true,
+        "full_ELF_payload_matches_original": true,
+        "ELF_sha256": "26c40606c70535f9c1ce903301a259490b83f11599c03a7e0b8c52d9a978e4c3"
+      },
+      {
+        "function": "func_8001F8B8",
+        "address": "0x8001f8b8",
+        "bytes": 1944,
+        "stack_adjustments": [
+          -352,
+          352
+        ],
+        "function_sha256": "c23a87535a6a4949e414266f5a298b8d0409debb8be4ef6482e627fcc6269513",
+        "GNU_symbol_size_verified": true,
+        "full_ELF_payload_matches_original": true,
+        "ELF_sha256": "21477e82d0fb8f57bdc5ad43a5fc749eef326c28a6ac536064fb5eab928c1c8c"
+      }
+    ],
+    "combined_clean_ELF_payload_matches_original": true,
+    "canonical_complete_executable_preserved": true
+  },
+  "existing_playable_disc_binding": {
+    "original_and_rebuilt_executables_equal_clean_all_C_executable": true,
+    "executable_bytes": 505856,
+    "sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "existing_discs_read_only": true,
+    "new_disc_copies_or_repacking": 0
+  }
+}

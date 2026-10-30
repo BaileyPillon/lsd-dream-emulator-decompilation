@@ -21,6 +21,9 @@ tests/test_cooperative_frame_wait.py text eol=lf
 tests/test_capture_storage.py text eol=lf
 docs/COOPERATIVE_FRAME_WAITS.md text eol=lf
 docs/cooperative-frame-wait-checks.json text eol=lf
+docs/MATCHING_GAME_C.md text eol=lf
+docs/matching-game-c-completion-checks.json text eol=lf linguist-generated=true
+LICENSES/CC0-1.0.txt text eol=lf
 tests/test_streamed_state_hashes.py text eol=lf
 docs/STATE_HASH_STREAMING.md text eol=lf
 docs/state-hash-streaming-checks.json text eol=lf

@@ -1,5 +1,14 @@
 # Roadmap
 
+The [matching game-C milestone](MATCHING_GAME_C.md) completes all counted game
+functions under the owner's revised rule allowing documented upstream stack
+layout padding. All 306 configured objects rebuild to the canonical executable;
+game C is 199,912 / 199,912 bytes with zero game assembly fallbacks. Five functions
+retain explicit compatibility storage whose original source purpose is unknown.
+The frozen old no-padding restriction is superseded; all other completion
+requirements remain. Continue the year/ending pair, asset/dispatch closure,
+natural behavior scenarios and reviewed runtime acceptance.
+
 The [cooperative frame-wait qualification](COOPERATIVE_FRAME_WAITS.md) now
 preserves observed native state across acknowledged host waits. Original and
 rebuilt 6,001-frame recordings agree, and a 186-second wait crosses the unchanged

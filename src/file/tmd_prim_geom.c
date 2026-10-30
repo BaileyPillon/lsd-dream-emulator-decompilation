@@ -159,7 +159,192 @@ void func_8001F66C(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     }
 }
 
-INCLUDE_ASM("asm/nonmatchings/file/tmd_prim_geom", func_8001F8B8);
+/* Adapted from brian-oblivion/lsddecomp (CC0),
+ *90a398e4f429b4371be05648605fc198b9efb395, TmdModel__RaycastFaces.
+ * The unused VECTOR and second distance slot reproduce the retail frame.
+ * They are compiler-layout compatibility storage, not game behavior. */
+typedef vec3s_t model_point_t;
+typedef struct {s16 x,y,z,pad;} sdk_svector_t;
+typedef struct {s32 x,y,z,pad;} sdk_vector_t;
+typedef struct {model_point_t org,dir;} collision_ray_t;
+typedef struct {model_point_t min,max;} collision_bounds_t;
+typedef union {sdk_vector_t v;collision_bounds_t b;} collision_scratch_t;
+enum {COLLISION_RAY_MISS=0,COLLISION_RAY_HIT=1,COLLISION_RAY_PARALLEL=2};
+extern u8 *func_80020050(tmd_prim_t *,u8 *,s32 *,vec3s_t *,u32 *);
+extern void OuterProduct10(sdk_vector_t *,sdk_vector_t *,sdk_vector_t *);
+extern void Square0(sdk_vector_t *,sdk_vector_t *);
+extern s32 SquareRoot0(s32);
+#define collision_abs(x) ((x)<0?~(x)+1:(x))
+s32 func_8001F8B8(void *self, s32 *best, model_point_t *hitOut, s32 *height,
+    const model_point_t *origin, const model_point_t *end) {
+    model_point_t tri[4];
+    sdk_vector_t plane;
+    collision_ray_t ray;
+    model_point_t hit;
+    s32 nverts;
+    u32 count;
+    u8 *p;
+    s32 found;
+
+    count = 0;
+    *best = 0x7FFFFFFF;
+    ray.org.x = origin->x;
+    ray.org.y = origin->y;
+    ray.org.z = origin->z;
+    ray.dir.x = end->x - origin->x;
+    ray.dir.y = end->y - origin->y;
+    ray.dir.z = end->z - origin->z;
+    found = 0;
+    while ((p = func_80020050((tmd_prim_t *)self, p, &nverts, tri, &count)) != NULL) {
+        /* MATCHING: these are declared in the loop body, which puts them on
+         * the stack after nverts and count. */
+        sdk_vector_t unused; /* MATCHING: never read; keeps retail's stack layout */
+        sdk_svector_t e1;
+        sdk_svector_t e2;
+        sdk_vector_t cross;
+        sdk_vector_t edge1;
+        sdk_vector_t edge2;
+        sdk_vector_t quot;
+        sdk_vector_t work;
+        sdk_vector_t dirVec;
+        sdk_vector_t dirSq;
+        collision_scratch_t scratch;
+        s32 dist[2]; /* MATCHING: an array, so it lives on the stack (dist[1] unused) */
+        s32 frac;
+        s32 q;
+        s32 hi;
+        s32 t;
+        s16 *minx; /* MATCHING: the six box-field pointers give retail's stack size */
+        s16 *miny;
+        s16 *minz;
+        s16 *maxx;
+        s16 *maxy;
+        s16 *maxz;
+        model_point_t *v;
+        s32 i;
+
+        e1.x = tri[1].x - tri[0].x;
+        e1.y = tri[1].y - tri[0].y;
+        e1.z = tri[1].z - tri[0].z;
+        e2.x = tri[2].x - tri[0].x;
+        e2.y = tri[2].y - tri[0].y;
+        e2.z = tri[2].z - tri[0].z;
+        edge1.x = e1.x;
+        edge1.y = e1.y;
+        edge1.z = e1.z;
+        edge2.x = e2.x;
+        edge2.y = e2.y;
+        edge2.z = e2.z;
+        OuterProduct10(&edge1, &edge2, &cross);
+        plane.x = cross.x;
+        plane.y = cross.y;
+        plane.z = cross.z;
+        plane.x /= 4096;
+        plane.y /= 4096;
+        plane.z /= 4096;
+        plane.pad = -(tri[0].x * plane.x + tri[0].y * plane.y + tri[0].z * plane.z);
+        work.x = ray.dir.x * plane.x + ray.dir.y * plane.y + ray.dir.z * plane.z;
+        if (collision_abs(work.x) <= 0) {
+            work.y = COLLISION_RAY_PARALLEL;
+        } else {
+            work.z = ray.org.x * plane.x + ray.org.y * plane.y + ray.org.z * plane.z;
+            work.z += plane.pad;
+            cross.x = work.x;
+            cross.y = 1;
+            quot.x = -work.z;
+            quot.y = 1;
+            quot.z = quot.x * cross.y;
+            quot.pad = quot.y * cross.x;
+            if (collision_abs(quot.pad) >= 4096) {
+                quot.z /= 4096;
+                quot.pad /= 4096;
+            }
+            frac = collision_abs(quot.z % quot.pad) << 16;
+            q = quot.z / quot.pad;
+            if (q != 0) {
+                hi = q << 16;
+            } else {
+                hi = (quot.z * quot.pad) & 0x80000000;
+            }
+            t = hi | (frac / collision_abs(quot.pad));
+            if (t < 0) {
+                work.y = COLLISION_RAY_MISS;
+            } else {
+                dirVec.x = ray.dir.x;
+                dirVec.y = ray.dir.y;
+                dirVec.z = ray.dir.z;
+                edge2.x = (ray.dir.x * t) >> 16;
+                edge1.x = ray.org.x + edge2.x;
+                edge2.x = edge1.x - ray.org.x;
+                edge2.y = (ray.dir.y * t) >> 16;
+                edge1.y = ray.org.y + edge2.y;
+                edge2.y = edge1.y - ray.org.y;
+                edge2.z = (ray.dir.z * t) >> 16;
+                edge1.z = ray.org.z + edge2.z;
+                edge2.z = edge1.z - ray.org.z;
+                Square0(&dirVec, &dirSq);
+                work.x = dirSq.x + dirSq.y + dirSq.z;
+                work.x = SquareRoot0(work.x);
+                Square0(&edge2, &scratch.v);
+                work.z = scratch.v.x + scratch.v.y + scratch.v.z;
+                work.z = SquareRoot0(work.z);
+                if (work.x >= work.z) {
+                    dist[0] = work.z;
+                    work.y = COLLISION_RAY_HIT;
+                    hit.x = edge1.x;
+                    hit.y = edge1.y;
+                    hit.z = edge1.z;
+                } else {
+                    work.y = COLLISION_RAY_MISS;
+                }
+            }
+        }
+        if (work.y != COLLISION_RAY_HIT) {
+            continue;
+        }
+        minx = &scratch.b.min.x;
+        miny = &scratch.b.min.y;
+        minz = &scratch.b.min.z;
+        maxx = &scratch.b.max.x;
+        maxy = &scratch.b.max.y;
+        maxz = &scratch.b.max.z;
+        v = tri;
+        scratch.b.min = *v;
+        scratch.b.max = scratch.b.min;
+        for (i = 0; i < nverts - 1; i++) {
+            v++;
+            if (v->x < *minx)
+                *minx = v->x;
+            if (v->y < *miny)
+                *miny = v->y;
+            if (v->z < *minz)
+                *minz = v->z;
+            if (*maxx < v->x)
+                *maxx = v->x;
+            if (*maxy < v->y)
+                *maxy = v->y;
+            if (*maxz < v->z)
+                *maxz = v->z;
+        }
+        if (hit.x < scratch.b.min.x - 24 || hit.y < scratch.b.min.y - 24 ||
+            hit.z < scratch.b.min.z - 24 || scratch.b.max.x + 24 < hit.x ||
+            scratch.b.max.y + 24 < hit.y || scratch.b.max.z + 24 < hit.z) {
+            continue;
+        }
+        found = 1;
+        if (dist[0] < *best) {
+            *best = dist[0];
+            *hitOut = hit;
+            if (height != NULL) {
+                *height = hit.y - scratch.b.min.y;
+            }
+        }
+    }
+    return found;
+}
+
+#undef collision_abs
+
 
 typedef struct {
     u8 *vertices;
