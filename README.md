@@ -12,6 +12,11 @@ and preserves that project's Git history and contributor attribution.
 The [Bevy/Rust port](https://github.com/BaileyPillon/lsd-dream-emulator-bevy)
 is a separate project with its own roadmap and progress measurements.
 
+**Matching game C is complete: 199,912 / 199,912 bytes (100%).** All 306 build
+objects reproduce the original executable in a clean build, using documented
+compiler-layout compatibility storage. [Evidence and scope](docs/MATCHING_GAME_C.md)
+distinguish this source milestone from the remaining gameplay-verification gates.
+
 [Build](#build-the-matching-executable) · [Play the matching build](docs/PLAYING.md) ·
 [Status and roadmap](docs/ROADMAP.md) · [Headless replay](docs/HEADLESS_REPLAY.md) ·
 [Contribute](CONTRIBUTING.md)
@@ -75,14 +80,16 @@ bounded observations of the original game, separate from C recovery and
 whole-encounter acceptance.
 
 The verified local build reproduces the original Japanese executable byte for
-byte. **Full C recovery and independently reviewed gameplay coverage are still
-in progress.** The remaining assembly is regenerated from your own executable.
+byte. **All counted game-function text now compiles from matching C**, with
+[documented compiler-layout compatibility storage](docs/MATCHING_GAME_C.md).
+Independently reviewed gameplay coverage remains in progress. SDK and startup
+assembly remain explicitly outside the game-C denominator.
 Game discs, executables, extracted assets and PlayStation BIOS files are not
 distributed here.
 
 ## Current status
 
-The current verified snapshot is dated October 19, 2026. These are
+The current C-recovery snapshot is dated October 30, 2026. These are
 separate measures, not a whole-game completion percentage. The initial
 publication and subsequent evidence are retained separately.
 
@@ -96,13 +103,13 @@ skip/error branches, and complete feature acceptance remain open.
 
 | Measure | Verified snapshot |
 | --- | ---: |
-| Matching game-function bytes compiled from C | 197,172 / 199,912 (98.63%) |
-| Known remaining game assembly functions | 2 |
-| Known C functions with unresolved unused local storage | 3 |
+| Matching game-function bytes compiled from C | 199,912 / 199,912 (100%) |
+| Remaining game assembly functions | 0 |
+| Functions with documented layout compatibility storage | 5 |
 | Original NPC/behavior callbacks with C bodies | 107 / 107 |
 | Original callbacks with bounded native comparisons | 44 / 107 |
 | Original callback types with compared natural instruction histories | 5 / 107 |
-| Provisional behavior/system groups with listed core functions in C | 38 / 40 |
+| Provisional behavior/system groups with listed core functions in C | 40 / 40 |
 | Entire feature groups independently accepted at runtime | 0 / 40 |
 
 The [natural collision replayer](docs/NATURAL_COLLISION_REPLAY.md) now executes
@@ -331,16 +338,17 @@ The earlier [overlap source recovery](docs/OVERLAP_RECOVERY.md) checks a two-poi
 twelve-byte collision candidate in 6,912 native graph pairs with matching caller
 buffers and ordered GTE results. Its 170-byte nonmatch remains historical
 evidence; the later control-flow study above supersedes that candidate. The
-canonical game retains assembly and whole-feature acceptance remains open.
+snapshot retained assembly; the current matching-C milestone supersedes its
+source gate. Whole-feature acceptance remains open.
 The [save-title recovery](docs/SAVE_LABEL.md) documents an earlier matching C
 promotion, its native checks and the correction to SDK/game classification.
 The [SDK and sound API audit](docs/SDK_SIGNATURE_AUDIT.md) documents corrected
 volume-function names and an external signature workflow with explicit ambiguity.
-The [render-context bounds checks](docs/RENDER_BOUNDS.md) recover the smallest
-remaining assembly function's bounded behavior; its C candidate still needs
-an exact code match.
+The historical [render-context bounds checks](docs/RENDER_BOUNDS.md) recover
+bounded behavior and retain a then-nonmatching C candidate. Their source gate
+has been superseded by the current matching game C.
 The [bounds source recipe](research/render_bounds/README.md) reproduces the
-current 21-byte-different candidate and its explicitly failed matching gate.
+historical 21-byte-different candidate and its explicitly failed matching gate.
 The [stream exclusion recovery](docs/STREAM_EXCLUSION.md) puts the original
 twelve-byte bounds record in matching C and corrects its typed setter. The
 actual cached-position and row-selection path passes 9,252 constructed fixtures

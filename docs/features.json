@@ -25007,5 +25007,45 @@
     "model_API_calls": 0,
     "full_year_or_ending_accepted": false,
     "historical_year_failure_root_cause_established": false
+  },
+  "matching_game_C_completion_20261030": {
+    "reference": "docs/matching-game-c-completion-checks.json",
+    "documentation": "docs/MATCHING_GAME_C.md",
+    "source_rule": "Owner-approved documented compiler-layout padding",
+    "before": {
+      "matching_C_bytes": 197172,
+      "game_text_bytes": 199912,
+      "game_assembly_functions": 2,
+      "listed_core_C_groups": 38,
+      "listed_core_and_support_C_groups": 6,
+      "provisional_feature_groups": 40,
+      "original_feature_groups_present_in_C_plus_assembly": 40,
+      "whole_feature_groups_accepted": 0,
+      "original_NPC_callbacks_in_C": 107,
+      "bounded_NPC_callback_profiles": 44,
+      "naturally_compared_NPC_callback_types": 5
+    },
+    "after": {
+      "matching_C_bytes": 199912,
+      "game_text_bytes": 199912,
+      "game_assembly_functions": 0,
+      "listed_core_C_groups": 40,
+      "listed_core_and_support_C_groups": 40,
+      "provisional_feature_groups": 40,
+      "original_feature_groups_present_in_C_plus_assembly": 40,
+      "whole_feature_groups_accepted": 0,
+      "original_NPC_callbacks_in_C": 107,
+      "bounded_NPC_callback_profiles": 44,
+      "naturally_compared_NPC_callback_types": 5
+    },
+    "game_C_coverage_percent": 100.0,
+    "complete_clean_build_objects": 306,
+    "documented_layout_compatibility_functions": 5,
+    "canonical_complete_executable_preserved": true,
+    "new_original_features_accepted": 0,
+    "new_gameplay_features": 0,
+    "new_NPC_profiles": 0,
+    "model_API_calls": 0,
+    "full_year_or_ending_accepted": false
   }
 }

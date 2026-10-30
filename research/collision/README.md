@@ -1,5 +1,11 @@
 # Collision recovery research
 
+The two canonical game functions are now matching C under the owner's
+documented-padding decision; see the [current milestone](../../docs/MATCHING_GAME_C.md).
+The padding-free fragments and recipes below are historical, unaccepted
+research. Recipes that replace `INCLUDE_ASM` require their pre-completion
+source snapshot; the current game no longer contains those inclusions.
+
 The [natural entry profile](../../docs/NATURAL_COLLISION_ENTRIES.md) records
 both original routines in the opening route, including both hull-owned
 primitive call sites and their register/stack-role relationships. It supplies

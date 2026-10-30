@@ -12,6 +12,23 @@ repository-wide license. No MIT, GPL or other blanket license is assigned to
 the inherited game decompilation, SDK reconstruction or headers here.
 Repository visibility is not a substitute for a license grant.
 
+## Matching C contributions
+
+Two matching collision reconstructions are adapted from
+[brian-oblivion/lsddecomp](https://github.com/brian-oblivion/lsddecomp), commit
+`90a398e4f429b4371be05648605fc198b9efb395`:
+
+- `src/graphics/scene_node.c`, `SceneNode__RaycastHullAgainstFaces`, adapted as
+  `func_8001DDF4` in this project's `src/base/transform.c`.
+- `src/graphics/tmd_model.c`, `TmdModel__RaycastFaces`, adapted as
+  `func_8001F8B8` in this project's `src/file/tmd_prim_geom.c`.
+
+That upstream project dedicates its own work under CC0-1.0. Its complete
+[license text](LICENSES/CC0-1.0.txt) is retained here. Adaptations use this
+project's existing types, symbols and interfaces; documented compiler-layout
+storage preserves the original executable. This attribution does not assign a
+blanket license to the inherited decompilation, SDK material or game assets.
+
 ## Third-party tools
 
 | Component | Provenance and notices |
