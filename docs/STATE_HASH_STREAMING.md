@@ -81,3 +81,8 @@ Run the data-free checks with
 `python -B -m unittest tests.test_streamed_state_hashes -v`. They skip explicitly
 when no suitable SDK/reference pack is installed; the native checks require
 separate local game, BIOS and emulator inputs.
+
+The later [cooperative frame-wait qualification](COOPERATIVE_FRAME_WAITS.md)
+publishes a natural-year host using this sink and compares acknowledged waits
+against a retained run without waits. Its new supervised attempts are separate
+from the historical year failure and do not establish full-year or ending parity.

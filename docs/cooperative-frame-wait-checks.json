@@ -1,0 +1,601 @@
+{
+  "schema_version": 1,
+  "status": "qualified_cooperative_host_waits",
+  "date": "2026-10-30",
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "disc_sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61",
+  "native_core_pins": {
+    "shock.wbx": {
+      "bytes": 3406840,
+      "sha256": "bb092bc932cda059c71e6145003cce1d228c9bf892321cea8f1c6afdb195cce6"
+    },
+    "shock.wbx.zst": {
+      "bytes": 827271,
+      "sha256": "3c1f08c83c01449c37eaeff4509dfe81fdcbd21ec1a571c6a311a8ddccd8e3ba"
+    }
+  },
+  "qualified_public_sources": [
+    {
+      "name": "RecordYearProgression.cs",
+      "bytes": 22862,
+      "sha256": "475154b5c6dc38916ca542b6f2f443fcb7f46a6556020020a36e3b75a9bfcb5a"
+    },
+    {
+      "name": "ReplayColdStart.cs",
+      "bytes": 16154,
+      "sha256": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0"
+    },
+    {
+      "name": "BoundedSha256Stream.cs",
+      "bytes": 2982,
+      "sha256": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e"
+    },
+    {
+      "name": "CooperativeFrameWait.cs",
+      "bytes": 4213,
+      "sha256": "c239ef58d3e84c3372b4e2f91ea560e49a89c4a627e29aee0732855c9feaf551"
+    }
+  ],
+  "public_supervision_helper": {
+    "name": "capture_storage.py",
+    "bytes": 1042,
+    "sha256": "02122767a6adbad4c01e9933a2453250ebc56c202ee2afc06aa686b533fbf5b0"
+  },
+  "executed_year_host_filename": "YearProgressionEndingCooperative.cs",
+  "executed_year_source_sha256": "475154b5c6dc38916ca542b6f2f443fcb7f46a6556020020a36e3b75a9bfcb5a",
+  "published_year_source_bytes_equal_executed": true,
+  "host_derivation": {
+    "exact_original_source_reverse_reconstruction_passed": true,
+    "original_policy_and_game_reads_unchanged": true,
+    "game_code_changed": false
+  },
+  "native_qualifications": [
+    {
+      "name": "qualification-v2-original",
+      "exit_code": 3,
+      "stop_reason": null,
+      "peak_observed_private_bytes": 212873216,
+      "report": {
+        "name": "report.json",
+        "bytes": 1281,
+        "sha256": "c20434d1390bce27a8eb3bc8b00d234bf07e64a9003e0c07be33c27fe6b870ae"
+      },
+      "closed_journal_archive": {
+        "name": "retained-journals.tar.xz",
+        "bytes": 2240,
+        "sha256": "8344f69813f69866fc23ceebf92cb95cde8261049c46cf09c4b20adf69026720"
+      },
+      "wait_journal": {
+        "name": "host-waits.jsonl",
+        "bytes": 1031,
+        "sha256": "08672bd0ab6c3c848bd5cd1f4265a6f071f35247b3a8e8da45e44615e2ff67bb"
+      },
+      "scope": {
+        "frames": 6001,
+        "completed_days": 0,
+        "checkpoints": 12,
+        "complete_state_observations": 2,
+        "PCM_windows": 11,
+        "PCM_stereo_sample_frames": 4423002,
+        "controller_changes": 37,
+        "year_boundary_frame": -1,
+        "ending_pending_objects": 0,
+        "ending_terminal_objects": 0,
+        "year_route_observed": false,
+        "retained_stream_byte_count_verified": true,
+        "complete_ending_decode_verified": false,
+        "whole_feature_groups_accepted": 0,
+        "original_hardware_timing_verified": false
+      },
+      "wait_boundary_before_and_after": {
+        "core_frame": 3001,
+        "MainRAM_sha256": "4ac10c2d8ee8c5fd3888759b729b6c1981cf4d8bec88807173a698c8d16946c0",
+        "GPURAM_sha256": "31bc32d832cedf71aa9d1d92a7474fc8859b1a484825c0b896c7d6a426c22a89",
+        "RGB_sha256": "f83cfeaa50098007f1fac54c4a204efc12fad98f50d1ad3e283b40794bd09d12",
+        "serialized_state_sha256": "01a212f7f98bbf3899a5caed6968c05c1404e9c370fb63ab1b63e37c48059b1f",
+        "PCM_sample_frames": 2211590
+      },
+      "host_wait_milliseconds": 2473,
+      "stop_during_wait": false,
+      "all_members_full_sha256_verified": true,
+      "exact_original_path_restore_roundtrip_passed": true
+    },
+    {
+      "name": "qualification-v2-rebuilt",
+      "exit_code": 3,
+      "stop_reason": null,
+      "peak_observed_private_bytes": 208949248,
+      "report": {
+        "name": "report.json",
+        "bytes": 1281,
+        "sha256": "07154662e0646de5471b8c37fb8f0f155f1b5585e6cc73f28cee2af7e9def749"
+      },
+      "closed_journal_archive": {
+        "name": "retained-journals.tar.xz",
+        "bytes": 2244,
+        "sha256": "ddfa70f3f18b5b3abc20783b7af5567d0ac24bc2a1252c5c0f9afcd3dc11312d"
+      },
+      "wait_journal": {
+        "name": "host-waits.jsonl",
+        "bytes": 1031,
+        "sha256": "a90ce61c0ad4ddc0387e01fa865d44cca1177fbfcc118dcbf0d08a7827dd7eae"
+      },
+      "scope": {
+        "frames": 6001,
+        "completed_days": 0,
+        "checkpoints": 12,
+        "complete_state_observations": 2,
+        "PCM_windows": 11,
+        "PCM_stereo_sample_frames": 4423002,
+        "controller_changes": 37,
+        "year_boundary_frame": -1,
+        "ending_pending_objects": 0,
+        "ending_terminal_objects": 0,
+        "year_route_observed": false,
+        "retained_stream_byte_count_verified": true,
+        "complete_ending_decode_verified": false,
+        "whole_feature_groups_accepted": 0,
+        "original_hardware_timing_verified": false
+      },
+      "wait_boundary_before_and_after": {
+        "core_frame": 3001,
+        "MainRAM_sha256": "4ac10c2d8ee8c5fd3888759b729b6c1981cf4d8bec88807173a698c8d16946c0",
+        "GPURAM_sha256": "31bc32d832cedf71aa9d1d92a7474fc8859b1a484825c0b896c7d6a426c22a89",
+        "RGB_sha256": "f83cfeaa50098007f1fac54c4a204efc12fad98f50d1ad3e283b40794bd09d12",
+        "serialized_state_sha256": "01a212f7f98bbf3899a5caed6968c05c1404e9c370fb63ab1b63e37c48059b1f",
+        "PCM_sample_frames": 2211590
+      },
+      "host_wait_milliseconds": 2145,
+      "stop_during_wait": false,
+      "all_members_full_sha256_verified": true,
+      "exact_original_path_restore_roundtrip_passed": true
+    },
+    {
+      "name": "qualification-v2-stop",
+      "exit_code": 3,
+      "stop_reason": "qualification_stop_during_acknowledged_wait",
+      "peak_observed_private_bytes": 188850176,
+      "report": {
+        "name": "report.json",
+        "bytes": 1284,
+        "sha256": "3b64e2b166d33d17eb1f6be936539d83a2bebc041d20d0bb70d1bac696f0f576"
+      },
+      "closed_journal_archive": {
+        "name": "retained-journals.tar.xz",
+        "bytes": 1812,
+        "sha256": "1f5840241f9bb83dee9ea03c6ffadcf31fb2d8a270a392860f5b4e870fe85e8d"
+      },
+      "wait_journal": {
+        "name": "host-waits.jsonl",
+        "bytes": 1030,
+        "sha256": "2585eb71fd3a33dafe0ba15b9107c417ebee7b73e8c95737c41bb1414249092a"
+      },
+      "scope": {
+        "frames": 3001,
+        "completed_days": 0,
+        "checkpoints": 7,
+        "complete_state_observations": 2,
+        "PCM_windows": 6,
+        "PCM_stereo_sample_frames": 2211590,
+        "controller_changes": 37,
+        "year_boundary_frame": -1,
+        "ending_pending_objects": 0,
+        "ending_terminal_objects": 0,
+        "year_route_observed": false,
+        "retained_stream_byte_count_verified": true,
+        "complete_ending_decode_verified": false,
+        "whole_feature_groups_accepted": 0,
+        "original_hardware_timing_verified": false
+      },
+      "wait_boundary_before_and_after": {
+        "core_frame": 3001,
+        "MainRAM_sha256": "4ac10c2d8ee8c5fd3888759b729b6c1981cf4d8bec88807173a698c8d16946c0",
+        "GPURAM_sha256": "31bc32d832cedf71aa9d1d92a7474fc8859b1a484825c0b896c7d6a426c22a89",
+        "RGB_sha256": "f83cfeaa50098007f1fac54c4a204efc12fad98f50d1ad3e283b40794bd09d12",
+        "serialized_state_sha256": "01a212f7f98bbf3899a5caed6968c05c1404e9c370fb63ab1b63e37c48059b1f",
+        "PCM_sample_frames": 2211590
+      },
+      "host_wait_milliseconds": 2048,
+      "stop_during_wait": true,
+      "all_members_full_sha256_verified": true,
+      "exact_original_path_restore_roundtrip_passed": true
+    },
+    {
+      "name": "qualification-v2-watchdog",
+      "exit_code": 3,
+      "stop_reason": null,
+      "peak_observed_private_bytes": 203534336,
+      "report": {
+        "name": "report.json",
+        "bytes": 1284,
+        "sha256": "e4bfe263c3e85432cd1efa87f561d0536796c53d9bf1d6433da1d7afec4139c9"
+      },
+      "closed_journal_archive": {
+        "name": "retained-journals.tar.xz",
+        "bytes": 2244,
+        "sha256": "a517f012253446b367f0f1fb6f2e3878663b3961b5922244a6f73ceaf011916e"
+      },
+      "wait_journal": {
+        "name": "host-waits.jsonl",
+        "bytes": 1033,
+        "sha256": "d1c10156e01bec1d0c2bf05a218460d21889c15b1b424ea35291a61a7601d798"
+      },
+      "scope": {
+        "frames": 6001,
+        "completed_days": 0,
+        "checkpoints": 12,
+        "complete_state_observations": 2,
+        "PCM_windows": 11,
+        "PCM_stereo_sample_frames": 4423002,
+        "controller_changes": 37,
+        "year_boundary_frame": -1,
+        "ending_pending_objects": 0,
+        "ending_terminal_objects": 0,
+        "year_route_observed": false,
+        "retained_stream_byte_count_verified": true,
+        "complete_ending_decode_verified": false,
+        "whole_feature_groups_accepted": 0,
+        "original_hardware_timing_verified": false
+      },
+      "wait_boundary_before_and_after": {
+        "core_frame": 3001,
+        "MainRAM_sha256": "4ac10c2d8ee8c5fd3888759b729b6c1981cf4d8bec88807173a698c8d16946c0",
+        "GPURAM_sha256": "31bc32d832cedf71aa9d1d92a7474fc8859b1a484825c0b896c7d6a426c22a89",
+        "RGB_sha256": "f83cfeaa50098007f1fac54c4a204efc12fad98f50d1ad3e283b40794bd09d12",
+        "serialized_state_sha256": "01a212f7f98bbf3899a5caed6968c05c1404e9c370fb63ab1b63e37c48059b1f",
+        "PCM_sample_frames": 2211590
+      },
+      "host_wait_milliseconds": 186313,
+      "stop_during_wait": false,
+      "all_members_full_sha256_verified": true,
+      "exact_original_path_restore_roundtrip_passed": true
+    }
+  ],
+  "paired_original_rebuilt": {
+    "schema_version": 1,
+    "status": "equal_for_recorded_scope",
+    "passed": true,
+    "requested_year_gate": false,
+    "year_gate_observed": false,
+    "original": {
+      "frames": 6001,
+      "completed_days": 0,
+      "checkpoints": 12,
+      "complete_state_observations": 2,
+      "PCM_windows": 11,
+      "PCM_stereo_sample_frames": 4423002,
+      "controller_changes": 37,
+      "year_boundary_frame": -1,
+      "ending_pending_objects": 0,
+      "ending_terminal_objects": 0,
+      "year_route_observed": false,
+      "retained_stream_byte_count_verified": true,
+      "complete_ending_decode_verified": false,
+      "whole_feature_groups_accepted": 0,
+      "original_hardware_timing_verified": false
+    },
+    "rebuilt": {
+      "frames": 6001,
+      "completed_days": 0,
+      "checkpoints": 12,
+      "complete_state_observations": 2,
+      "PCM_windows": 11,
+      "PCM_stereo_sample_frames": 4423002,
+      "controller_changes": 37,
+      "year_boundary_frame": -1,
+      "ending_pending_objects": 0,
+      "ending_terminal_objects": 0,
+      "year_route_observed": false,
+      "retained_stream_byte_count_verified": true,
+      "complete_ending_decode_verified": false,
+      "whole_feature_groups_accepted": 0,
+      "original_hardware_timing_verified": false
+    },
+    "checkpoint_comparisons": {
+      "state": {
+        "compared": 12,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "MainRAM_sha256": {
+        "compared": 12,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "GPURAM_sha256": {
+        "compared": 12,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "RGB_sha256": {
+        "compared": 12,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "PCM_sample_frames": {
+        "compared": 12,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "serialized_state_sha256": {
+        "compared": 2,
+        "different": 0,
+        "first_different_frames": []
+      }
+    },
+    "decoded_PNGs_equal": true,
+    "differences": {},
+    "whole_feature_groups_accepted": 0,
+    "original_hardware_timing_verified": false,
+    "complete_emulator_or_game_parity_accepted": false
+  },
+  "no_wait_baseline_comparison": {
+    "schema_version": 1,
+    "status": "equal_for_recorded_scope",
+    "passed": true,
+    "requested_year_gate": false,
+    "year_gate_observed": false,
+    "original": {
+      "frames": 6001,
+      "completed_days": 0,
+      "checkpoints": 12,
+      "complete_state_observations": 2,
+      "PCM_windows": 11,
+      "PCM_stereo_sample_frames": 4423002,
+      "controller_changes": 37,
+      "year_boundary_frame": -1,
+      "ending_pending_objects": 0,
+      "ending_terminal_objects": 0,
+      "year_route_observed": false,
+      "retained_stream_byte_count_verified": true,
+      "complete_ending_decode_verified": false,
+      "whole_feature_groups_accepted": 0,
+      "original_hardware_timing_verified": false
+    },
+    "rebuilt": {
+      "frames": 6001,
+      "completed_days": 0,
+      "checkpoints": 12,
+      "complete_state_observations": 2,
+      "PCM_windows": 11,
+      "PCM_stereo_sample_frames": 4423002,
+      "controller_changes": 37,
+      "year_boundary_frame": -1,
+      "ending_pending_objects": 0,
+      "ending_terminal_objects": 0,
+      "year_route_observed": false,
+      "retained_stream_byte_count_verified": true,
+      "complete_ending_decode_verified": false,
+      "whole_feature_groups_accepted": 0,
+      "original_hardware_timing_verified": false
+    },
+    "checkpoint_comparisons": {
+      "state": {
+        "compared": 12,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "MainRAM_sha256": {
+        "compared": 12,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "GPURAM_sha256": {
+        "compared": 12,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "RGB_sha256": {
+        "compared": 12,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "PCM_sample_frames": {
+        "compared": 12,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "serialized_state_sha256": {
+        "compared": 2,
+        "different": 0,
+        "first_different_frames": []
+      }
+    },
+    "decoded_PNGs_equal": true,
+    "differences": {},
+    "whole_feature_groups_accepted": 0,
+    "original_hardware_timing_verified": false,
+    "complete_emulator_or_game_parity_accepted": false
+  },
+  "long_wait_no_wait_baseline_comparison": {
+    "schema_version": 1,
+    "status": "equal_for_recorded_scope",
+    "passed": true,
+    "requested_year_gate": false,
+    "year_gate_observed": false,
+    "original": {
+      "frames": 6001,
+      "completed_days": 0,
+      "checkpoints": 12,
+      "complete_state_observations": 2,
+      "PCM_windows": 11,
+      "PCM_stereo_sample_frames": 4423002,
+      "controller_changes": 37,
+      "year_boundary_frame": -1,
+      "ending_pending_objects": 0,
+      "ending_terminal_objects": 0,
+      "year_route_observed": false,
+      "retained_stream_byte_count_verified": true,
+      "complete_ending_decode_verified": false,
+      "whole_feature_groups_accepted": 0,
+      "original_hardware_timing_verified": false
+    },
+    "rebuilt": {
+      "frames": 6001,
+      "completed_days": 0,
+      "checkpoints": 12,
+      "complete_state_observations": 2,
+      "PCM_windows": 11,
+      "PCM_stereo_sample_frames": 4423002,
+      "controller_changes": 37,
+      "year_boundary_frame": -1,
+      "ending_pending_objects": 0,
+      "ending_terminal_objects": 0,
+      "year_route_observed": false,
+      "retained_stream_byte_count_verified": true,
+      "complete_ending_decode_verified": false,
+      "whole_feature_groups_accepted": 0,
+      "original_hardware_timing_verified": false
+    },
+    "checkpoint_comparisons": {
+      "state": {
+        "compared": 12,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "MainRAM_sha256": {
+        "compared": 12,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "GPURAM_sha256": {
+        "compared": 12,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "RGB_sha256": {
+        "compared": 12,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "PCM_sample_frames": {
+        "compared": 12,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "serialized_state_sha256": {
+        "compared": 2,
+        "different": 0,
+        "first_different_frames": []
+      }
+    },
+    "decoded_PNGs_equal": true,
+    "differences": {},
+    "whole_feature_groups_accepted": 0,
+    "original_hardware_timing_verified": false,
+    "complete_emulator_or_game_parity_accepted": false
+  },
+  "watchdog_seconds": 180,
+  "longest_qualified_host_wait_milliseconds": 186313,
+  "retained_supervisor_failure": {
+    "native_exit_code": 1,
+    "qualified": false,
+    "original_coordinator_sha256": "b43e4e19957b4601b64c0771173c8c7e5000f6eb7256fa398dfce01f22fa6a58",
+    "corrected_coordinator_sha256": "4b0868cf143e0eefb34ed4da942eb21d684e46fe4bb7a4e46628cc44da2a2b8c",
+    "erroneous_counted_bytes": 152307344,
+    "root_causes": [
+      "stat followed NTFS runtime junctions; scandir uses nonfollowing entry stat in v2",
+      "v1 set stop_at before output creation and did not retry STOP delivery"
+    ],
+    "corrected_with_nonfollowing_link_inspection_and_stop_delivery_retries": true,
+    "old_executed_sources_and_manifests_retained": true,
+    "game_or_player_changed": false
+  },
+  "historical_october29_year_stop": {
+    "completed_days": 16,
+    "frames_advanced": 293018,
+    "stop_reason": "system_commit_headroom_bound",
+    "peak_private_bytes": 230637568,
+    "rebuilt_year_started": false,
+    "full_year_accepted": false
+  },
+  "resource_plan": {
+    "schema_version": 2,
+    "qualification_frames": 6000,
+    "forced_wait_after_frame": 3000,
+    "qualification_wait_minimum_seconds": 2,
+    "qualification_wait_limit_ms": 30000,
+    "max_frames_per_year_run": 8000000,
+    "target_completed_days": 365,
+    "post_year_neutral_frames": 12000,
+    "max_wall_seconds_per_run": 43200,
+    "max_owned_private_bytes": 1073741824,
+    "request_wait_below_commit_headroom_bytes": 2147483648,
+    "critical_stop_below_commit_headroom_bytes": 536870912,
+    "resume_at_commit_headroom_bytes": 8589934592,
+    "stable_resume_seconds": 60,
+    "year_preflight_stable_seconds": 60,
+    "maximum_host_wait_ms": 3600000,
+    "wait_acknowledgment_timeout_seconds": 15,
+    "wait_resume_timeout_seconds": 30,
+    "max_seconds_without_frame_progress": 180,
+    "stop_grace_seconds": 30,
+    "resource_sample_seconds": 1,
+    "retained_resource_journal_seconds": 30,
+    "native_stream_limit_per_run": 16777216,
+    "native_wait_journal_limit_per_run": 262144,
+    "total_owned_output_limit_bytes": 41943040,
+    "root_logs_included_in_output_bound": true,
+    "runtime_disc_and_native_core_copies": 0,
+    "game_RAM_injected": false,
+    "state_loaded": false,
+    "player_UI_or_saves_accessed": false,
+    "original_failed_runs_restarted": false,
+    "historical_resource_exception_root_cause_established": false,
+    "process_supervision": "Only the new Popen-owned process handle may be stopped",
+    "watchdog_exclusion": "Only an observed matching token acknowledgment excludes elapsed host-wait time",
+    "independent_gates_open": [
+      "All-frame video",
+      "Complete ending decode",
+      "Original hardware timing",
+      "Other seeds and branches",
+      "Whole-feature acceptance",
+      "Two matching-C functions and three storage explanations"
+    ]
+  },
+  "tests": {
+    "windows": {
+      "exit_code": 0,
+      "log": {
+        "name": "tests-windows.log",
+        "bytes": 1726,
+        "sha256": "e874c5f51df87f279f08befa273a57b74bed73ba9c3bfb69a1f7b327626d5ac7"
+      },
+      "summary": "Ran 1538 tests in 38.031s\n\nOK (skipped=9)"
+    },
+    "wsl": {
+      "exit_code": 0,
+      "log": {
+        "name": "tests-wsl.log",
+        "bytes": 1708,
+        "sha256": "3396d02f633a130588164e59e9028fd2c766c718e1f0e0e336c9a7b17c4cad0a"
+      },
+      "summary": "Ran 1523 tests in 29.929s\n\nOK (skipped=11)"
+    }
+  },
+  "inventory_before_after": {
+    "before_matching_C_bytes": 197172,
+    "after_matching_C_bytes": 197172,
+    "denominator": 199912,
+    "game_assembly_functions_before": 2,
+    "game_assembly_functions_after": 2,
+    "unresolved_unused_storage_before": 3,
+    "unresolved_unused_storage_after": 3,
+    "provisional_feature_groups_before": 40,
+    "provisional_feature_groups_after": 40,
+    "whole_feature_groups_accepted_before": 0,
+    "whole_feature_groups_accepted_after": 0,
+    "new_original_features_accepted": 0,
+    "new_NPC_profiles": 0,
+    "new_gameplay_features": 0,
+    "model_API_calls": 0
+  },
+  "preserved_existing_feature_values": 36,
+  "protected_game_build_inputs_preserved": 392,
+  "historical_day153_IO_failure_root_cause_established": false,
+  "full_year_or_ending_accepted": false,
+  "complete_ending_decode_verified": false,
+  "original_hardware_timing_verified": false,
+  "scope": "Host-side developer verification. These bounded runs do not accept an original game feature, a year boundary, the full ending or a native PC port."
+}
