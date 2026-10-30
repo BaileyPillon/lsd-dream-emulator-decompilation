@@ -25047,5 +25047,23 @@
     "new_NPC_profiles": 0,
     "model_API_calls": 0,
     "full_year_or_ending_accepted": false
+  },
+  "model_packet_decoding_audit": {
+    "date": "2026-10-30",
+    "document": "docs/MODEL_PACKET_DECODING.md",
+    "evidence": "docs/model-packet-decoding-checks.json",
+    "raw_disc_sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61",
+    "model_files": 422,
+    "TMD_tables": 531,
+    "object_descriptors": 13627,
+    "polygons": 119458,
+    "vertex_references": 459671,
+    "original_decoder_calls": 133085,
+    "original_decoder_instructions": 14309500,
+    "all_compared_vertex_outputs_and_cursor_guards_equal": true,
+    "rendering_normal_texture_lighting_and_hardware_timing_verified": false,
+    "original_feature_groups_accepted": 0,
+    "new_gameplay_features": 0,
+    "new_matching_C_bytes": 0
   }
 }
