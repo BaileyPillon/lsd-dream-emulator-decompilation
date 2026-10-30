@@ -22,6 +22,11 @@ polygon packets in 422 model-bearing files with the original PS1 decoder.
 Signed coordinates, enumeration cursors, saved registers and memory guards
 agree. Rendering, lighting, textures and whole-feature acceptance remain open.
 
+The [SDK mapping and linking audit](docs/MODEL_SDK_MAPPING.md) extends that
+evidence to original pointer relocation and primitive-run construction across
+all 531 TMD tables and 13,627 objects. Complete outputs, cursor walks, reentry,
+saved registers and memory guards agree with independent predictions.
+
 [Recovered-C analysis context](docs/RECOVERED_C_CONTEXT.md) exports verified
 original instructions and current source without an old private assembly
 catalog. Its public function metadata includes SDK routines; candidate changes

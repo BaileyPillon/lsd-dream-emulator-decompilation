@@ -1,5 +1,9 @@
 # Original model-data mapping
 
+The later [full-corpus SDK audit](MODEL_SDK_MAPPING.md) separately executes the
+original mapper and linker across all 531 TMD tables. This factory/ownership
+profile retains its original allocation, animation and lifetime boundaries.
+
 The optional `--model-data` mode of the
 [factory checker](../tools/verify_actor_factory.py) compares every byte of the
 guarded, writable MOM copy against an

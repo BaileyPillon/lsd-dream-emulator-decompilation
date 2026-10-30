@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "status": "original_tmd_sdk_matches",
+  "generated_at": "2026-10-30T22:27:42.473218+00:00",
+  "elapsed_seconds": 143.519628834,
+  "raw_disc_sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61",
+  "inventory_sha256": "02ccc9af91ebcb322323fc8495a612ef05c9c9768341a8e82e3609dd95bfcf63",
+  "original_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "functions": {
+    "map": {
+      "address": 2147616072,
+      "bytes": 120,
+      "sha256": "f2ebf166974181360c8d2ef9e5c2188a85a0c01d99a9be4959145a57a4809e41",
+      "frame": 8
+    },
+    "link": {
+      "address": 2147610480,
+      "bytes": 344,
+      "sha256": "6fdd4c9c7f41b05ce3cb2afe03cce52971b77d7020b923a8dba730dc056fbb02",
+      "frame": 56
+    }
+  },
+  "linker_jump_table": {
+    "address": "0x102dc",
+    "bytes": 120,
+    "sha256": "165fdb60c6fd143866f1abf32f0958dc6a61632e44e4abda2bb07b286acae90c"
+  },
+  "backend": {
+    "package_version": "2.1.4",
+    "library_api": [
+      2,
+      1,
+      33621247
+    ],
+    "library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+    "binding_sources_sha256": "1c69249859bd4f1d789df6dcb4d8b757c0a1e46b37424b05352c2366f7058507",
+    "binding_source_count": 21
+  },
+  "synthetic": {
+    "mode_flag_alias_fixtures": 192,
+    "zero_or_signed_negative_count_fixtures": 6,
+    "mixed_runs_and_zero_primitive_fixtures": 2,
+    "native_calls": {
+      "map": 398,
+      "link": 392
+    },
+    "original_instructions": 32358,
+    "literal_fixture_sha256": "c8ee8764c271e651f0ccbc850695143a324853eab0c28dae45b81f4d3f32e7e8",
+    "controls": [
+      {
+        "name": "map-wrong-pointer-base",
+        "operation": "map",
+        "address": 2147616140,
+        "original": 8523809,
+        "replacement": 608305156,
+        "instruction_executions": 1,
+        "returned_with_ABI_and_full_VM_guards_intact": true,
+        "output_disagreement_detected": true,
+        "cursor_walk_equal": true,
+        "crash_count": 0
+      },
+      {
+        "name": "link-wrong-run-count",
+        "operation": "link",
+        "address": 2147610776,
+        "original": 640745473,
+        "replacement": 640745474,
+        "instruction_executions": 6,
+        "returned_with_ABI_and_full_VM_guards_intact": true,
+        "output_disagreement_detected": true,
+        "cursor_walk_equal": true,
+        "crash_count": 0
+      },
+      {
+        "name": "link-suppressed-mode-boundary",
+        "operation": "link",
+        "address": 2147610584,
+        "original": 306315269,
+        "replacement": 268435461,
+        "instruction_executions": 5,
+        "returned_with_ABI_and_full_VM_guards_intact": true,
+        "output_disagreement_detected": true,
+        "cursor_walk_equal": true,
+        "crash_count": 0
+      }
+    ]
+  },
+  "model_files": 422,
+  "counts": {
+    "objects": 13627,
+    "packets": 119458,
+    "primitive_runs": 28056,
+    "zero_primitive_objects": 0,
+    "TMD_tables": 531,
+    "embedded_MOM_occurrences": 109,
+    "embedded_MOM_references": 109
+  },
+  "native_calls": {
+    "map": 1062,
+    "link": 27254
+  },
+  "original_instructions": 6885916,
+  "object_journal": {
+    "file": "objects.jsonl.xz",
+    "bytes": 324664,
+    "sha256": "c85a98cb095c025c4c256d581798692a3eca036a6bd470b72070b931922d015d",
+    "decoded_bytes": 5154549,
+    "decoded_sha256": "a2b11f2dda1872fe931063da5dc884f08250e02df78169610d88b91a4692af71"
+  },
+  "source_dependencies": {
+    "tools/verify_tmd_sdk.py": "277c874d2e2411f397176d36199a6c57fde4958bc32aade6fd5b00c3d2ef076c",
+    "tools/tmd_sdk_model.py": "93569516c8309d675d4d33e8b9fec273d6aad88f10ba7133ef211614dc44d5fe",
+    "research/model_packets/sdk-link-fixtures.json": "c8ee8764c271e651f0ccbc850695143a324853eab0c28dae45b81f4d3f32e7e8",
+    "tools/verify_model_packets.py": "012af2b5135f01ab182cff4ad44dd6ef5ebac8fbe6dbd8ba00e8b8d18d6a18b6",
+    "tools/inventory_model_packets.py": "11fe2063f0d6bd0c121dc05de9cfabfb7a27ecd88a3b792f3f2ff8da2b51c346",
+    "tools/tmd_packets.py": "260fcef209c1378d0a15ae24ca1a1ba52aed4b436d465d7855513c0830dfcfc1",
+    "tools/disc_files.py": "e98b679c3b9f8381da518b97ce0f934d2aa50d40bc67fab29e5994832b154372",
+    "tools/inventory_animations.py": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+    "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+    "requirements-analysis.txt": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911"
+  },
+  "complete_model_target_cursor_ABI_and_full_VM_compared_at_each_call": true,
+  "mapping_and_linking_idempotence_checked": true,
+  "corpus_data_alias": "physical",
+  "synthetic_data_aliases": [
+    "physical",
+    "KSEG0"
+  ],
+  "no_original_output_stubs": true,
+  "no_asset_payload_written": true,
+  "source_bytes_modified": false,
+  "whole_feature_groups_accepted": 0,
+  "rendered_output_verified": false,
+  "normal_index_semantics_verified": false,
+  "texture_palette_and_lighting_verified": false,
+  "complete_PS1_timing_verified": false,
+  "scope": "Original SDK pointer mapping, descriptor binding, packet cursor walks and run header mutations only."
+}
