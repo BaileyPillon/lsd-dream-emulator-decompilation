@@ -476,3 +476,10 @@ docs/NATURAL_MENU_LIFETIMES.md text eol=lf
 docs/natural-menu-lifetime-checks.json text eol=lf
 tools/compact_dispatch.py text eol=lf
 tools/psx_image.py text eol=lf
+
+# Preserve the exact static model corpus reader and its fixtures.
+tools/disc_files.py text eol=lf
+tools/tmd_packets.py text eol=lf
+tools/inventory_model_packets.py text eol=lf
+tests/test_disc_files.py text eol=lf
+tests/test_tmd_packets.py text eol=lf
