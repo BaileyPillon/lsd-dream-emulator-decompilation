@@ -24989,5 +24989,23 @@
     "historical_year_failure_root_cause_established": false,
     "full_year_restarted": false,
     "ending_accepted": false
+  },
+  "developer_cooperative_frame_waits_20261030": {
+    "reference": "docs/cooperative-frame-wait-checks.json",
+    "documentation": "docs/COOPERATIVE_FRAME_WAITS.md",
+    "scope": "Developer verification only: acknowledged waits between emulated frames, exact boundary comparisons and owned-output accounting.",
+    "successful_native_qualifications": 4,
+    "paired_replay_frames_per_disc": 6001,
+    "longest_qualified_host_wait_milliseconds": 186313,
+    "progress_watchdog_seconds": 180,
+    "data_free_tests": 15,
+    "retained_failed_qualification_attempts": 1,
+    "canonical_complete_executable_preserved": true,
+    "new_game_C_bytes": 0,
+    "new_original_features_accepted": 0,
+    "new_NPC_profiles": 0,
+    "model_API_calls": 0,
+    "full_year_or_ending_accepted": false,
+    "historical_year_failure_root_cause_established": false
   }
 }

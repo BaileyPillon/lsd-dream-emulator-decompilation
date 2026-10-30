@@ -14,6 +14,13 @@ tests/test_screen_destroy.py text eol=lf
 
 # Preserve the exact executed natural-progression research producer.
 research/headless/RecordProgressionHistory.cs text eol=lf
+research/headless/RecordYearProgression.cs text eol=lf
+research/headless/CooperativeFrameWait.cs text eol=lf
+tools/capture_storage.py text eol=lf
+tests/test_cooperative_frame_wait.py text eol=lf
+tests/test_capture_storage.py text eol=lf
+docs/COOPERATIVE_FRAME_WAITS.md text eol=lf
+docs/cooperative-frame-wait-checks.json text eol=lf
 tests/test_streamed_state_hashes.py text eol=lf
 docs/STATE_HASH_STREAMING.md text eol=lf
 docs/state-hash-streaming-checks.json text eol=lf

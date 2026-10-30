@@ -1,5 +1,14 @@
 # Roadmap
 
+The [cooperative frame-wait qualification](COOPERATIVE_FRAME_WAITS.md) now
+preserves observed native state across acknowledged host waits. Original and
+rebuilt 6,001-frame recordings agree, and a 186-second wait crosses the unchanged
+180-second progress watchdog before completing with the same recorded outputs
+as the retained run without waits. Stop-during-wait and NTFS output-accounting
+checks pass; the first failed supervisor attempt remains documented. Apply the
+qualified host to a separately supervised full-year cold start and exact-input
+rebuilt replay. Year/ending and whole-feature acceptance remain open.
+
 The [streaming state-hash check](STATE_HASH_STREAMING.md) removes duplicate
 serialized-state buffers from the progression recorder and adds resource
 telemetry. Two integrated native probes preserve hashes, byte counts, full
