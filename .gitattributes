@@ -488,3 +488,14 @@ research/model_packets/layout-fixtures.json text eol=lf
 research/model_packets/README.md text eol=lf
 docs/MODEL_PACKET_DECODING.md text eol=lf
 docs/model-packet-decoding-checks.json text eol=lf linguist-generated=true
+
+# Keep verified original-function metadata and context tools portable.
+tools/original_functions.py text eol=lf
+tools/export_function_ranges.py text eol=lf
+tools/decomp_workbench.py text eol=lf
+tests/test_original_functions.py text eol=lf
+tests/test_decomp_workbench.py text eol=lf
+research/original-functions.json text eol=lf linguist-generated=true
+docs/RECOVERED_C_CONTEXT.md text eol=lf
+docs/recovered-c-context-checks.json text eol=lf
+CONTRIBUTING.md text eol=lf

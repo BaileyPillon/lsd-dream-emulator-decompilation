@@ -25,21 +25,31 @@ The supported executable SHA-1 is
 MASPSX's ASPSX 2.21 mode, and the pinned disassembler dependencies. Reuse
 these versions when comparing instructions.
 
-## Matching a function
+## Studying and refining recovered C
 
-1. Choose an active `INCLUDE_ASM` in `src/`. Its generated assembly is under
-   the folder named by the macro. Comments may contain earlier attempts;
-   these remain unverified until a new build passes.
-2. Translate the original instructions into C. Preserve function boundaries,
-   data placement, signedness, and observable behaviour. Correct the forward
-   declaration when adding typed arguments.
-3. Replace that function's `INCLUDE_ASM` with C and run `python configure.py`
-   to update assembly dependencies, then `ninja check`.
-4. Accept the change only when the complete executable hash passes. For a
-   failed match, compare the object with the generated original assembly:
-   `mipsel-linux-gnu-objdump -dr build/src/scene/stage_texture.c.o`.
-5. Run the tooling tests and report the function, verified hash, and coverage
-   change. Do not count assembly wrappers or near matches as decompiled C.
+All counted game functions now have matching C bodies. Start with an open
+behavior, asset, type or source-explanation question from the roadmap, then
+identify its function in `src/`. The [original function index](research/original-functions.json)
+provides verified names, extents and hashes for context export. Its 2,082
+entries include SDK routines and are not a count of game functions or features.
+
+1. Establish the canonical baseline above and export context for the selected
+   function. Recovered C needs no old private assembly catalog.
+2. Check original instructions, callees, types, signed widths, field offsets
+   and ownership. Comments and pseudocode are analysis, not original declarations.
+3. Refine the complete translation unit in an isolated candidate. Preserve
+   other functions, original control flow and data placement.
+4. Use the candidate check below, optionally with `--function FUNCTION` for
+   complete linked-function diagnostics. Accept only a whole-executable match;
+   a matching individual function cannot override a changed executable.
+5. Run the tooling tests, refresh the standard build and retain the comparison
+   evidence. Report source understanding and runtime observations separately;
+   a refinement of existing C does not add recovered bytes or game features.
+
+The owner's [current source policy](docs/MATCHING_GAME_C.md) allows documented
+upstream stack-layout compatibility storage. Preserve its annotations and
+provenance. Arbitrary unused padding, inline assembly, embedded instruction
+bytes and instruction substitution are not a route to an accepted C change.
 
 `func_800434DC` is a small matching example. Its unsigned entry comparison
 and loop structure reproduce all 23 original instructions, including GCC's
@@ -48,17 +58,21 @@ stack allocation and register choices, without inline assembly.
 The [compiler census](docs/UNUSED_LOCAL_CENSUS.md) collects unused-local
 diagnostics across every configured game C unit using the normal compiler
 flags. Treat warnings as leads: verify complete removal builds before cleanup,
-and retain frame-dependent storage until its source explanation is recovered.
+and preserve the explicitly documented compatibility storage unless a reviewed
+replacement retains the complete executable match.
 
 For AI-assisted analysis, use an isolated evidence bundle and candidate:
 
 ```bash
-python tools/decomp_workbench.py context --function FUNCTION --output .decomp-lab/context-new
-python tools/decomp_workbench.py check --source src/unit.c --candidate .decomp-lab/context-new/candidate.c --output .decomp-lab/check-new
+python tools/decomp_workbench.py context --function func_80020050 --output .decomp-lab/context-new
+python tools/decomp_workbench.py check --source src/file/tmd_prim_geom.c --candidate .decomp-lab/context-new/candidate.c --function func_80020050 --output .decomp-lab/check-new
 ```
 
 The context command exports verified original bytes, headers, optional native
-Ghidra evidence and a prompt; it does not invoke a model. The check command
+Ghidra evidence and a prompt; it does not invoke a model. For recovered C it
+uses the public index and GNU MIPS objdump, checking every printed instruction
+word against the original executable. [The recovered-C workflow](docs/RECOVERED_C_CONTEXT.md)
+describes its evidence and limits. The check command
 uses the unit's configured compiler mode and preserves the standard build.
 Promote a candidate only after the complete executable matches. The
 AI-assisted tools do not change the canonical game or count as NPC features.

@@ -9,6 +9,12 @@ The frozen old no-padding restriction is superseded; all other completion
 requirements remain. Continue the year/ending pair, asset/dispatch closure,
 natural behavior scenarios and reviewed runtime acceptance.
 
+The [recovered-C analysis workflow](RECOVERED_C_CONTEXT.md) now supports
+original-range context and function diagnostics after assembly fallbacks reach
+zero. Use it for open type, ownership, content and behavior questions while
+preserving the complete-executable gate. Its metadata and tools do not close
+the independent runtime requirements.
+
 The [model vertex audit](MODEL_PACKET_DECODING.md) now compares every one of the
 119,458 polygon packets in 422 model-bearing files with the original decoder.
 All signed points, cursors, ABI and guards agree, including two detected

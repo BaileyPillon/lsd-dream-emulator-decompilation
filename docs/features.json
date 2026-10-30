@@ -25065,5 +25065,24 @@
     "original_feature_groups_accepted": 0,
     "new_gameplay_features": 0,
     "new_matching_C_bytes": 0
+  },
+  "developer_recovered_C_context_20261030": {
+    "document": "docs/RECOVERED_C_CONTEXT.md",
+    "evidence": "docs/recovered-c-context-checks.json",
+    "existing_capabilities_repaired": [
+      "A001",
+      "A002"
+    ],
+    "original_function_ranges_including_SDK": 2082,
+    "recovered_C_context_without_private_baseline": true,
+    "complete_candidate_executable_equal": true,
+    "executed_neighbor_fault_rejected_despite_selected_function_match": true,
+    "new_developer_capability_count": 0,
+    "new_matching_C_bytes": 0,
+    "new_original_game_features": 0,
+    "new_NPC_profiles": 0,
+    "whole_feature_acceptances": 0,
+    "whole_NPC_encounter_acceptances": 0,
+    "model_API_calls": 0
   }
 }

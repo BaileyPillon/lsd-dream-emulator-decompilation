@@ -12,6 +12,13 @@ The additive [source overlay](matching-game-c-completion-checks.json) preserves
 all earlier inventory values and before statuses. Forty remains provisional;
 whole-feature and whole-NPC encounter acceptances remain zero.
 
+The [recovered-C context workflow](RECOVERED_C_CONTEXT.md) repairs existing
+developer capabilities A001/A002 after game assembly fallbacks reach zero.
+Its 2,082-range metadata index includes SDK routines. A real neighboring
+one-byte fault fails the complete-image gate even though the selected recovered
+function still matches. The nine-capability baseline, all feature groups,
+source counts and runtime acceptance totals are unchanged.
+
 The [model vertex decoding audit](MODEL_PACKET_DECODING.md) compares 119,458
 polygons and 459,671 vertex references across 422 model-bearing files with
 the original instruction reader. All compared points, enumeration cursors,

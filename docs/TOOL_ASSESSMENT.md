@@ -65,3 +65,11 @@ executable bytes. Its [source-interface guide](SOURCE_INTERFACE_DIAGNOSTICS.md)
 records actual use on two nonmatching collision units and an unchanged bounds
 control, plus the remaining ABI and source gates. These are analysis results;
 they add no recovered C bytes or accepted game features.
+
+The [recovered-C context repair](RECOVERED_C_CONTEXT.md) removes the need for
+active assembly or a historical private catalog after 100% game C. A public
+2,082-range ELF/GNU index supplies exact original extents, including SDK entries;
+the context tool checks each disassembled word against the original executable.
+Both context export and isolated complete-image/function diagnostics were
+exercised on the already-recovered model decoder. This repairs existing
+capabilities A001/A002, makes no model API calls and accepts no new game feature.
