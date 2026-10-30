@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "status": "retained_original_year_recording_validated_after_lifecycle_repair",
+  "prior_failure": {
+    "native_exit_code": 0,
+    "validator_error": "Invalid ending completion flag."
+  },
+  "native_original_validation": {
+    "frames": 7184806,
+    "completed_days": 365,
+    "checkpoints": 12345,
+    "complete_state_observations": 371,
+    "PCM_windows": 11976,
+    "PCM_stereo_sample_frames": 5296186767,
+    "controller_changes": 6399,
+    "year_boundary_frame": 7172805,
+    "ending_pending_objects": 1,
+    "ending_terminal_objects": 1,
+    "year_route_observed": true,
+    "ending_pre_pending_raw_flag_observations": 1,
+    "retained_stream_byte_count_verified": true,
+    "complete_ending_decode_verified": false,
+    "whole_feature_groups_accepted": 0,
+    "original_hardware_timing_verified": false
+  },
+  "native_producer_source_sha256": "475154b5c6dc38916ca542b6f2f443fcb7f46a6556020020a36e3b75a9bfcb5a",
+  "native_producer_binary_sha256": "66f342c08a442825068baed4b22c77b0c0dc0e1bd8df1bf6e22379dc64cf7c7e",
+  "native_producer_or_game_modified": false,
+  "original_year_capture_repeated": false,
+  "completion_field": {
+    "offset": "0xd8",
+    "first_raw_value": 177408,
+    "later_pending_value": 0,
+    "later_completion_value": 1,
+    "constructor_initializes_field": false,
+    "initializing_event": 5,
+    "completing_event": 7
+  },
+  "canonical_function_ranges": [
+    {
+      "function": "movie_screen_construct",
+      "address": "0x8003B8E4",
+      "file_offset": 180452,
+      "bytes": 248,
+      "sha256": "88501bc2191571f3f158b5aed907cfb728c7fe14ed4882519d5a42f54f9e2648"
+    },
+    {
+      "function": "func_8003BC14",
+      "address": "0x8003BC14",
+      "file_offset": 181268,
+      "bytes": 224,
+      "sha256": "e5650bcdca8d63317656b72b4dd4fa34711a7b7cfb429c7bf24a048f15743925"
+    }
+  ],
+  "repaired_validator_sha256": "a3f888ea32368392f9416f7b600ccd50b248a32eb1781d800d05ed8d29d7a486",
+  "source_sha256": {
+    "src/menu/movie_screen.c": "8b18f976e7867226380e54f81daad133247eded4b4af54a526a88b4304d792de",
+    "src/menu/movie_screen.h": "0caedce56b25ebe087e3cbbc5ff78b27bb8b3c5caecaffb79b873ba024f67eff"
+  },
+  "original_journal_sha256": {
+    "checkpoints.jsonl": "05d6cb449369cf3499b9f85545e68df413ef7b82185ad3fb4b57f55ca77617e4",
+    "days.jsonl": "2237a392cccbc63c359d12a1395c3aa0517018e33618aa65e0161c39ab764b67",
+    "audio.tsv": "46eae17415602eda7802dcf7b713660ef4ae334516c17169122a407badf7d507",
+    "inputs.tsv": "178e86e67dffd39cf4c7887cc7d7bd8bb9f97466b4e7ea6431b9649250ddfb8b",
+    "ending.jsonl": "d1eaff641775a7648ef5773601f7f98680052638f8aadcda2f9875dd7600fe3f"
+  },
+  "raw_initial_observation_retained_and_strictly_compared": true,
+  "controls": [
+    {
+      "kind": "strict_raw_initial_field_difference",
+      "detected": true,
+      "mutated_only_an_analysis_copy": true,
+      "runtime_instructions_mutated": false
+    },
+    {
+      "kind": "missing_pending_zero",
+      "detected": true,
+      "error": "Reported pending ending differs.",
+      "mutated_only_an_analysis_copy": true,
+      "runtime_instructions_mutated": false
+    },
+    {
+      "kind": "nonboolean_after_pending",
+      "detected": true,
+      "error": "Nonboolean ending completion flag after pending.",
+      "mutated_only_an_analysis_copy": true,
+      "runtime_instructions_mutated": false
+    }
+  ],
+  "original_runtime_input_records_unchanged": 171,
+  "old_analysis_source_retained_in_git": "10594bfca3c95c4ef3ef552b4051aabfe31db55f",
+  "rebuilt_year_replay_and_strict_comparison_accepted": false,
+  "full_ending_decode_or_hardware_timing_verified": false,
+  "new_matching_C_bytes": 0,
+  "whole_features_or_NPC_encounters_accepted": 0,
+  "scope": "One original native year/ending-object recording; lifecycle-aware analysis only. Rebuilt comparison is separate."
+}

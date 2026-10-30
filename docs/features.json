@@ -25106,5 +25106,25 @@
     "original_feature_groups_accepted": 0,
     "whole_NPC_encounter_acceptances": 0,
     "model_API_calls": 0
+  },
+  "developer_ending_field_lifecycle_20261030": {
+    "document": "docs/YEAR_ENDING_FIELD_LIFECYCLE.md",
+    "evidence": "docs/year-ending-field-lifecycle-checks.json",
+    "original_natural_days_observed": 365,
+    "original_frames_observed": 7184806,
+    "post_year_frames_observed": 12000,
+    "raw_initial_completion_value_preserved": 177408,
+    "pre_pending_raw_observations": 1,
+    "pending_then_terminal_objects": 1,
+    "strict_raw_field_comparison_retained": true,
+    "native_producer_changed": false,
+    "original_capture_repeated": false,
+    "new_matching_C_bytes": 0,
+    "new_gameplay_features": 0,
+    "whole_feature_acceptances": 0,
+    "whole_NPC_encounter_acceptances": 0,
+    "full_ending_decode_verified": false,
+    "rebuilt_year_comparison_accepted": false,
+    "model_API_calls": 0
   }
 }

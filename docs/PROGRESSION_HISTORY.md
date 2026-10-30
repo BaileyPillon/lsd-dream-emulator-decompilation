@@ -1,5 +1,10 @@
 # Inspecting progression recordings
 
+The [completion-field lifecycle repair](YEAR_ENDING_FIELD_LIFECYCLE.md) retains
+raw observations before an ending movie's pending state. The preserved
+365-day original recording validates without repeating the capture; strict
+rebuilt-disc comparison and full movie decoding remain separate requirements.
+
 `tools/inspect_progression_history.py` independently checks the retained
 controller-only progression journals, including journals sealed in lossless
 archives. It reads archives in memory and never launches an emulator, restores a

@@ -303,6 +303,7 @@ def validate(data):
     extended = 'year_boundary_frame' in report
     wrap = next((r['frame'] for r in data['days'] if r['state']['AbsoluteDay'] == 365), -1)
     ending_frames, pending, terminal = set(), {}, set()
+    pre_pending_raw_flags = 0
     last_ending = -1
     for row in data['ending']:
         require(extended and set(row) == {'frame', 'core_frame', 'state', 'movies'}, 'Wrong ending fields.')
@@ -322,8 +323,14 @@ def validate(data):
                     and movie['encoded_frame_threshold'] == 474
                     and type(movie.get('play_flags')) is int and movie['play_flags'] == 1,
                     'Ending path/threshold/flags contract differs.')
-            flag = integer(movie.get('completion_flag'), 0, 1, 'ending completion flag')
+            flag = integer(movie.get('completion_flag'), -(2**31), 2**31 - 1, 'ending completion flag')
             result = integer(movie.get('decoder_result'), -(2**31), 2**31 - 1, 'decoder result')
+            # movie_screen_construct does not initialize +0xd8. Event 5 writes
+            # zero and event 7 writes one (func_8003BC14). Retain raw pre-start
+            # observations, but never count them as pending or completion.
+            if flag not in (0, 1):
+                require(address not in pending, 'Nonboolean ending completion flag after pending.')
+                pre_pending_raw_flags += 1
             if flag == 0:
                 pending.setdefault(address, last_ending)
             if flag == 1 and result != 0 and address in pending and pending[address] < last_ending:
@@ -412,6 +419,7 @@ def validate(data):
                 PCM_stereo_sample_frames=total_samples, controller_changes=len(changes),
                 year_boundary_frame=wrap, ending_pending_objects=len(pending),
                 ending_terminal_objects=len(terminal), year_route_observed=year_complete,
+                ending_pre_pending_raw_flag_observations=pre_pending_raw_flags,
                 retained_stream_byte_count_verified='actual_retained_stream_bytes' in data,
                 complete_ending_decode_verified=False, whole_feature_groups_accepted=0,
                 original_hardware_timing_verified=False)
