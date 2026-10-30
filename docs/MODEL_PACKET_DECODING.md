@@ -104,6 +104,11 @@ python -B -m unittest tests.test_disc_files tests.test_tmd_packets -v
 
 ## Remaining work
 
+The separate [SDK mapping/linking audit](MODEL_SDK_MAPPING.md) now verifies
+original pointer relocation, descriptor binding, primitive cursor walks and
+mode-run headers across all 531 TMD tables. It preserves this decoder
+profile's scope and its remaining rendering requirements.
+
 This is functional decoder agreement on supplied mapped geometry. Native
 normal-index, UV/palette, lighting, material and GPU packet semantics remain
 open, as do full scene loading, rendering, PS1 device timing and natural

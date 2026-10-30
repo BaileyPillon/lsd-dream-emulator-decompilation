@@ -26,6 +26,13 @@ ABI and memory guards agree. This adds content evidence for F008/F029/F033/F040,
 zero C bytes, zero new gameplay features and zero whole-feature acceptances.
 Rendering, normal/texture/light semantics and natural scene coverage remain open.
 
+The [original SDK mapping/linking audit](MODEL_SDK_MAPPING.md) checks all
+531 TMD tables, 13,627 descriptors and 119,458 packets against independently
+predicted pointers, target bindings, mode runs and cursor walks. Repeated calls
+preserve the complete model and target, with ABI and full-memory guards.
+This adds bounded content evidence for F029/F040, with zero recovered C bytes,
+new gameplay features, whole-feature acceptances or NPC encounter acceptances.
+
 The earlier [sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md)
 brought matching C to **197,172 / 199,912 bytes (98.63%)**, with **two** game
 assembly fallbacks and **38 / 40** groups whose listed core functions are in C.

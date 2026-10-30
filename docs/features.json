@@ -25084,5 +25084,27 @@
     "whole_feature_acceptances": 0,
     "whole_NPC_encounter_acceptances": 0,
     "model_API_calls": 0
+  },
+  "model_sdk_mapping_audit": {
+    "date": "2026-10-30",
+    "document": "docs/MODEL_SDK_MAPPING.md",
+    "evidence": "docs/model-sdk-mapping-checks.json",
+    "model_files": 422,
+    "TMD_tables": 531,
+    "object_descriptors": 13627,
+    "primitive_packets": 119458,
+    "primitive_runs": 28056,
+    "original_mapper_calls": 1062,
+    "original_linker_calls": 27254,
+    "original_instructions": 6885916,
+    "complete_model_target_cursor_ABI_and_full_VM_equal": true,
+    "mapping_and_linking_idempotence_checked": true,
+    "executed_clean_return_wrong_output_controls": 3,
+    "rendering_normal_texture_lighting_and_hardware_timing_verified": false,
+    "new_matching_C_bytes": 0,
+    "new_gameplay_features": 0,
+    "original_feature_groups_accepted": 0,
+    "whole_NPC_encounter_acceptances": 0,
+    "model_API_calls": 0
   }
 }
