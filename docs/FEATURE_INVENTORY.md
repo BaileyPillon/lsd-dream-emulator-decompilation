@@ -1,5 +1,11 @@
 # LSD feature inventory
 
+The [ending-field lifecycle repair](YEAR_ENDING_FIELD_LIFECYCLE.md) validates
+the preserved original recording of 365 natural days and a 12,000-frame
+ending-object window. It retains raw pre-pending values and strict comparison
+of them. The rebuilt replay, full movie decode, whole-feature and NPC encounter
+acceptances remain separate; this analysis repair adds zero C bytes or features.
+
 ## Matching game C, October 30, 2026
 
 The [current matching-C milestone](MATCHING_GAME_C.md) reaches

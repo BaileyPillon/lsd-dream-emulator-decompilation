@@ -95,6 +95,26 @@ def encode_capture(folder, data, extended=True):
     (folder / 'report.json').write_text(json.dumps(report))
 
 
+def pre_pending_fixture(raw_flag=177408):
+    """Keep the raw first observation before the required zero/one transition."""
+    data = fixture(True)
+    raw = copy.deepcopy(data['ending'][0])
+    raw['movies'][0]['completion_flag'] = raw_flag
+    for row in data['ending']:
+        row['frame'] += 30
+        row['core_frame'] += 30
+    terminal_frame = data['ending'][-1]['frame']
+    checkpoint = copy.deepcopy(data['checkpoints'][-1])
+    checkpoint.update(frame=terminal_frame, core_frame=terminal_frame+1,
+        state=native_state(terminal_frame, True), PCM_sample_frames=terminal_frame+1,
+        serialized_state_sha256=history.sha(str(terminal_frame).encode()))
+    data['checkpoints'].append(checkpoint)
+    data['checkpoints'].sort(key=lambda row: row['frame'])
+    data['ending'].insert(0, raw)
+    data['report']['ending_object_observations'] = 3
+    return data
+
+
 def seal(folder, members=None):
     members = list(history.JOURNALS) if members is None else members
     archive = folder / 'retained-journals.tar.xz'
@@ -273,6 +293,38 @@ class ProgressionHistoryTests(unittest.TestCase):
         result = history.validate(data)
         self.assertEqual(result['ending_terminal_objects'], 1)
         self.assertFalse(result['complete_ending_decode_verified'])
+
+    def test_raw_flag_before_first_pending_is_retained_without_completion_credit(self):
+        for value in (177408, -1, -(2**31), 2**31-1):
+            data = pre_pending_fixture(value)
+            result = history.validate(data)
+            self.assertEqual(result['ending_pre_pending_raw_flag_observations'], 1)
+            self.assertEqual(result['ending_pending_objects'], 1)
+            self.assertEqual(result['ending_terminal_objects'], 1)
+            self.assertEqual(data['ending'][0]['movies'][0]['completion_flag'], value)
+            self.assertFalse(result['complete_ending_decode_verified'])
+            self.assertEqual(result['whole_feature_groups_accepted'], 0)
+
+    def test_raw_flag_difference_still_fails_strict_recording_comparison(self):
+        original, rebuilt = pre_pending_fixture(), pre_pending_fixture(177409)
+        result = history.compare_data(original, rebuilt, True)
+        self.assertFalse(result['passed'])
+        self.assertIn('ending', result['differences'])
+
+    def test_nonboolean_flag_after_pending_and_invalid_raw_types_are_rejected(self):
+        data = fixture(True)
+        data['ending'][-1]['movies'][0]['completion_flag'] = 177408
+        with self.assertRaisesRegex(ValueError, 'after pending'):
+            history.validate(data)
+        for value in (True, 2**31, -(2**31)-1, 1.5, '177408'):
+            with self.subTest(value=value), self.assertRaisesRegex(ValueError, 'completion flag'):
+                history.validate(pre_pending_fixture(value))
+
+    def test_pre_pending_raw_flag_cannot_replace_required_zero_transition(self):
+        data = fixture(True)
+        data['ending'][0]['movies'][0]['completion_flag'] = 177408
+        with self.assertRaisesRegex(ValueError, 'pending'):
+            history.validate(data)
 
     def test_short_neutral_window_and_missing_movie_do_not_satisfy_year(self):
         for data in (fixture(True, post=11999), fixture(True, movie=False)):
