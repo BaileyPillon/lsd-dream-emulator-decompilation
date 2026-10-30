@@ -96,6 +96,21 @@ class CooperativeFrameWaitTests(unittest.TestCase):
         self.assertEqual(error, '')
         return output.strip().split('\t')
 
+    def change_request(self, child, operation):
+        # File.ReadAllText briefly opens HOST-WAIT without Windows delete sharing.
+        # Keep the mutation atomic; retry only that transient host-side conflict.
+        deadline = time.monotonic() + 2
+        while True:
+            self.assertIsNone(child.poll(), 'Managed host ended before request mutation.')
+            try:
+                operation()
+                return
+            except PermissionError as error:
+                if (os.name != 'nt' or error.winerror not in (5, 32)
+                        or time.monotonic() >= deadline):
+                    raise
+                time.sleep(.01)
+
     def test_absent_request_has_no_wait_or_callbacks(self):
         with self.host() as child:
             self.assertEqual(self.result(child), ['none'])
@@ -108,7 +123,7 @@ class CooperativeFrameWaitTests(unittest.TestCase):
             time.sleep(.15)
             self.assertIsNone(child.poll())
             self.assertFalse((self.folder / 'resumed.txt').exists())
-            (self.folder / 'HOST-WAIT').unlink()
+            self.change_request(child, (self.folder / 'HOST-WAIT').unlink)
             row = self.result(child)
         self.assertEqual(row[:2], ['waited', 'case-1'])
         self.assertGreaterEqual(int(row[2]), 140)
@@ -136,7 +151,7 @@ class CooperativeFrameWaitTests(unittest.TestCase):
             self.acknowledgment(child)
             replacement = self.folder / 'replacement'
             replacement.write_bytes(b'case-2')
-            os.replace(replacement, self.folder / 'HOST-WAIT')
+            self.change_request(child, lambda: os.replace(replacement, self.folder / 'HOST-WAIT'))
             self.assertEqual(self.result(child), ['error', 'IOException'])
         self.assertFalse((self.folder / 'resumed.txt').exists())
         self.assertFalse((self.folder / 'HOST-WAIT-ACK').exists())
