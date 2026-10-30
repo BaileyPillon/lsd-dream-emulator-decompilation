@@ -17,6 +17,11 @@ objects reproduce the original executable in a clean build, using documented
 compiler-layout compatibility storage. [Evidence and scope](docs/MATCHING_GAME_C.md)
 distinguish this source milestone from the remaining gameplay-verification gates.
 
+The [model vertex audit](docs/MODEL_PACKET_DECODING.md) compares all 119,458
+polygon packets in 422 model-bearing files with the original PS1 decoder.
+Signed coordinates, enumeration cursors, saved registers and memory guards
+agree. Rendering, lighting, textures and whole-feature acceptance remain open.
+
 [Build](#build-the-matching-executable) · [Play the matching build](docs/PLAYING.md) ·
 [Status and roadmap](docs/ROADMAP.md) · [Headless replay](docs/HEADLESS_REPLAY.md) ·
 [Contribute](CONTRIBUTING.md)

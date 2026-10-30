@@ -12,6 +12,13 @@ The additive [source overlay](matching-game-c-completion-checks.json) preserves
 all earlier inventory values and before statuses. Forty remains provisional;
 whole-feature and whole-NPC encounter acceptances remain zero.
 
+The [model vertex decoding audit](MODEL_PACKET_DECODING.md) compares 119,458
+polygons and 459,671 vertex references across 422 model-bearing files with
+the original instruction reader. All compared points, enumeration cursors,
+ABI and memory guards agree. This adds content evidence for F008/F029/F033/F040,
+zero C bytes, zero new gameplay features and zero whole-feature acceptances.
+Rendering, normal/texture/light semantics and natural scene coverage remain open.
+
 The earlier [sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md)
 brought matching C to **197,172 / 199,912 bytes (98.63%)**, with **two** game
 assembly fallbacks and **38 / 40** groups whose listed core functions are in C.

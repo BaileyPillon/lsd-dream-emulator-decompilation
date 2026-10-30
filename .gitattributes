@@ -483,3 +483,8 @@ tools/tmd_packets.py text eol=lf
 tools/inventory_model_packets.py text eol=lf
 tests/test_disc_files.py text eol=lf
 tests/test_tmd_packets.py text eol=lf
+tools/verify_model_packets.py text eol=lf
+research/model_packets/layout-fixtures.json text eol=lf
+research/model_packets/README.md text eol=lf
+docs/MODEL_PACKET_DECODING.md text eol=lf
+docs/model-packet-decoding-checks.json text eol=lf linguist-generated=true

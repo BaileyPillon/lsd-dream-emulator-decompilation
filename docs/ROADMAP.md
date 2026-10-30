@@ -9,6 +9,13 @@ The frozen old no-padding restriction is superseded; all other completion
 requirements remain. Continue the year/ending pair, asset/dispatch closure,
 natural behavior scenarios and reviewed runtime acceptance.
 
+The [model vertex audit](MODEL_PACKET_DECODING.md) now compares every one of the
+119,458 polygon packets in 422 model-bearing files with the original decoder.
+All signed points, cursors, ABI and guards agree, including two detected
+clean-return fault controls. Extend this to native normal/texture/material and
+rendering semantics, original loading and natural collision histories. No whole
+feature group is accepted by vertex decoding alone.
+
 The [cooperative frame-wait qualification](COOPERATIVE_FRAME_WAITS.md) now
 preserves observed native state across acknowledged host waits. Original and
 rebuilt 6,001-frame recordings agree, and a 186-second wait crosses the unchanged
@@ -83,7 +90,8 @@ now covers five actual failed reads, the original reseek/end-request behavior
 and controller-reset recovery. Extend these checks to other error paths,
 object lifetimes and natural file histories. The two inherited empty debug
 frames and the blocking reader's unused sector buffer still need source
-explanations; the remaining two assembly functions are unchanged.
+explanations at that profile's source checkpoint. Their current authorized
+compatibility status is recorded in the matching-C milestone above.
 
 The [declared dispatch catalogue](DISPATCH_CATALOGUE.md) now qualifies all
 838 table targets and their 2,205 nonnull bindings using complete original
@@ -162,8 +170,8 @@ The [Hanged Woman profile](HANGED_WOMAN.md) brings bounded original callback
 coverage to 44 / 107, including native mood, player-control lock, timed motion
 and held-object flags. Its three constructed histories do not accept natural
 encounters, recipient delivery, populated collision, animation/audio or timing.
-Recover the two remaining C functions and extend original engine/runtime evidence;
-matching C and whole-feature acceptance counts are separate gates.
+Extend original engine/runtime evidence; the later matching-C milestone closes
+source recovery separately from whole-feature acceptance.
 
 The earlier [Shark and Hopscotch Girl profiles](SHARK_HOPSCOTCH.md) raise bounded original
 callback coverage to 43 / 107 through embedded command contexts, original
@@ -259,25 +267,27 @@ SDK request/polling and position progression through completed destination
 data, other frame modes and errors; the guarded callback fixture does not
 execute natural VSync or active CD phases.
 
-Two game functions remain in assembly after the
-[sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md): the
+At the historical checkpoint following the
+[sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md), the
 796-byte hull/face query (`func_8001DDF4`) and the 1,944-byte primitive-face query
-(`func_8001F8B8`). Matching C covers 197,172 / 199,912 bytes (98.63%). The
+(`func_8001F8B8`) remained in assembly. Matching C then covered
+197,172 / 199,912 bytes (98.63%). Both are now matching C under the revised
+documented-padding rule; see the current milestone above. The
 [compiler census](UNUSED_LOCAL_CENSUS.md) corrects the separate inherited
 storage remainder to three: both debug-driver frames and the CD sector buffer.
 
 The [earlier bounds candidate](BOUNDS_NARROW_COMPARISON.md) retains its
 19-byte difference and 4,648-input comparison as historical research. The later
 recovery uses a signed cell record and the inclusive in-range predicate; its
-complete executable matches. Continue the two collision queries and natural
-runtime coverage rather than revisiting the superseded bounds candidate.
+complete executable matches. Continue natural collision coverage using the
+current matching C; the superseded bounds candidate remains historical.
 
 The expanded audit identified 28 unused-storage functions and withdrew four
 padded promotions. Twenty-four inherited explanations remained at that snapshot;
 the correction's historical count was 194,212 / 199,912 (97.15%). The two
 generation and two menu recoveries raised it to 195,844 / 199,912 (97.97%).
 The grid-window recovery raised it to 196,504 / 199,912 (98.30%); sprite scaling
-and the bounds predicate subsequently raise it to 197,172 / 199,912 (98.63%).
+and the bounds predicate subsequently raised it to 197,172 / 199,912 (98.63%).
 The [callback storage recovery](CALLBACK_STORAGE_RECOVERY.md) now explains five
 inherited functions. The subsequent
 [constructor and actor storage recovery](CONSTRUCTOR_ACTOR_STORAGE.md) explains
@@ -285,12 +295,12 @@ two more. The [accessor recovery](ACCESSOR_STORAGE_RECOVERY.md) explains another
 three. The [input storage recovery](INPUT_STORAGE_RECOVERY.md) explains six
 more. The [text and render callback recovery](TEXT_CALLBACK_STORAGE.md) explains
 another two. The [atlas and tile-buffer recovery](ATLAS_TILE_STORAGE.md) explains
-four more. Recover the real storage and helper lifetimes for the remaining two
-identified functions.
+four more. The current milestone documents the three remaining inherited
+reservations as authorized compatibility storage.
 
-Those two are empty debug-driver stubs with unexplained 64-byte reservations.
-Keep them explicit while recovering the two remaining game assembly functions;
-unused fields or discarded identity chains do not explain those stubs.
+Two are empty debug-driver stubs with unexplained 64-byte reservations; the
+third is the CD reader's sector buffer. Keep their compatibility status explicit.
+Their original declarations remain unknown.
 
 All four withdrawn functions have replacement matching C; the earlier
 [source-layout candidates](../research/source_layout/README.md) remain
@@ -459,7 +469,7 @@ and 191 initial source trials found no exact match. The subsequent
 
 - Resolve asset/command inventory gaps and runtime reachability.
 - Close virtual-call dependencies and verify semantic callback signatures.
-- Extend native fixtures beyond the 40 currently checked callbacks and their
+- Extend native fixtures beyond the 44 currently checked callbacks and their
   documented scopes; see the [proximity composition](NPC_PROXIMITY.md) and
   [Hoop Girl script checks](HOOP_SCRIPTS.md). Complete natural encounters and
   actual movement/facing/scaling dependencies remain separate gates.
@@ -478,7 +488,7 @@ and 191 initial source trials found no exact match. The subsequent
 
 The catalogue currently has 40 provisional groups. None has been accepted for
 all required runtime scenarios. The [inventory](FEATURE_INVENTORY.md) lists the
-remaining scenario for each group; 98.63% describes current game C bytes only.
+remaining scenario for each group; 100% describes current game C bytes only.
 
 ## Developer tools and optional mods
 
@@ -488,8 +498,9 @@ remaining scenario for each group; 98.63% describes current game C bytes only.
 - Extend emulator checks for duration multipliers and passive Gray Man.
 - Keep all optional patched executables and discs outside the canonical build.
 
-After the matching generation recoveries, 37 / 40 groups have all listed core
-functions in C. The [NPC spatial composition](NPC_SPATIAL.md) checks seven
+After the historical matching generation recoveries, 37 / 40 groups had all
+listed core functions in C; the current milestone reaches 40 / 40 core and
+listed-support groups. The [NPC spatial composition](NPC_SPATIAL.md) checks seven
 callbacks through actual transform/SDK/GTE dependencies in 26,194 fixtures;
 natural histories, encounters and timing remain open. These overlapping
 source groups retain zero whole-feature acceptances.

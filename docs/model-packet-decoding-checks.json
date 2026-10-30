@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "status": "original_model_vertex_decoder_matches",
+  "generated_at": "2026-10-30T18:20:50.401441+00:00",
+  "elapsed_seconds": 159.017869169,
+  "raw_disc_sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61",
+  "inventory_sha256": "02ccc9af91ebcb322323fc8495a612ef05c9c9768341a8e82e3609dd95bfcf63",
+  "original_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "function": {
+    "address": "0x80020050",
+    "bytes": 1152,
+    "sha256": "d58160f9ae8a3adcc81dfda474988896476e823a614afd7f686896ec64677469",
+    "stack_frame_bytes": 24
+  },
+  "backend": {
+    "package_version": "2.1.4",
+    "library_api": [
+      2,
+      1,
+      33621247
+    ],
+    "library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+    "binding_sources_sha256": "1c69249859bd4f1d789df6dcb4d8b757c0a1e46b37424b05352c2366f7058507",
+    "binding_source_count": 21
+  },
+  "synthetic": {
+    "end_guard_calls": 576,
+    "mode_flag_alias_fixtures": 192,
+    "zero_count_guard_calls": 6,
+    "native_calls": 774,
+    "instructions": 32382,
+    "literal_fixture_sha256": "1dd4c27531518f92986c55881db769df7744719393f9d1b51078acf536b2489a",
+    "controls": [
+      {
+        "name": "first-vertex-offset",
+        "address": 2147614984,
+        "original": 2499936266,
+        "replacement": 2499936268,
+        "instruction_executions": 1,
+        "returned_with_ABI_and_input_guards_intact": true,
+        "output_disagreement_detected": true,
+        "crash_count": 0
+      },
+      {
+        "name": "vertex-record-stride",
+        "address": 2147615872,
+        "original": 135360,
+        "replacement": 135296,
+        "instruction_executions": 3,
+        "returned_with_ABI_and_input_guards_intact": true,
+        "output_disagreement_detected": true,
+        "crash_count": 0
+      }
+    ]
+  },
+  "model_files": 422,
+  "counts": {
+    "packets": 119458,
+    "triangles": 18161,
+    "quads": 101297,
+    "vertex_references": 459671,
+    "objects": 13627,
+    "vertices": 191582,
+    "normals": 134340,
+    "TMD_tables": 531,
+    "embedded_MOM_occurrences": 109,
+    "embedded_MOM_references": 109
+  },
+  "modes": {
+    "0x20": 75,
+    "0x21": 607,
+    "0x22": 43,
+    "0x23": 128,
+    "0x24": 407,
+    "0x25": 10701,
+    "0x27": 515,
+    "0x28": 228,
+    "0x29": 21675,
+    "0x2a": 32,
+    "0x2b": 198,
+    "0x2c": 4444,
+    "0x2d": 59846,
+    "0x2f": 5908,
+    "0x30": 2,
+    "0x31": 5634,
+    "0x33": 36,
+    "0x35": 13,
+    "0x38": 33,
+    "0x39": 8746,
+    "0x3b": 143,
+    "0x3c": 8,
+    "0x3d": 36
+  },
+  "flags": {
+    "0x00": 5268,
+    "0x01": 114186,
+    "0x04": 4
+  },
+  "native_calls": 133085,
+  "original_instructions": 14309500,
+  "object_journal": {
+    "file": "objects.jsonl.xz",
+    "bytes": 94028,
+    "sha256": "c1991ce6644242b65cd11de8858338c1dc5e68a85c6db82bf2750e0ed2281127",
+    "decoded_bytes": 3669379,
+    "decoded_sha256": "656402d6422b2fdd98cf832b417db99c666f6dd630d24d15380343fca38df648"
+  },
+  "source_dependencies": {
+    "tools/verify_model_packets.py": "012af2b5135f01ab182cff4ad44dd6ef5ebac8fbe6dbd8ba00e8b8d18d6a18b6",
+    "research/model_packets/layout-fixtures.json": "1dd4c27531518f92986c55881db769df7744719393f9d1b51078acf536b2489a",
+    "tools/tmd_packets.py": "260fcef209c1378d0a15ae24ca1a1ba52aed4b436d465d7855513c0830dfcfc1",
+    "tools/disc_files.py": "e98b679c3b9f8381da518b97ce0f934d2aa50d40bc67fab29e5994832b154372",
+    "tools/inventory_model_packets.py": "11fe2063f0d6bd0c121dc05de9cfabfb7a27ecd88a3b792f3f2ff8da2b51c346",
+    "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+    "tools/inventory_animations.py": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+    "requirements-analysis.txt": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911"
+  },
+  "complete_point_buffers_cursor_index_ABI_and_guards_equal": true,
+  "full_immutable_VM_compared_at_every_object_boundary": true,
+  "actual_geometry_alias": "physical",
+  "synthetic_geometry_aliases": [
+    "physical",
+    "KSEG0"
+  ],
+  "zero_count_and_EOF_leave_outputs_unchanged": true,
+  "invalid_initial_cursor_ignored": true,
+  "no_original_output_stubs": true,
+  "no_asset_payload_written": true,
+  "source_bytes_modified": false,
+  "rendered_output_verified": false,
+  "normal_index_semantics_verified": false,
+  "texture_palette_and_lighting_verified": false,
+  "complete_PS1_timing_verified": false,
+  "whole_feature_groups_accepted": 0,
+  "scope": "Original instruction execution on mapped per-object fixtures; signed vertex output and cursor semantics only.",
+  "date": "2026-10-30",
+  "private_evidence": {
+    "static_report_sha256": "02ccc9af91ebcb322323fc8495a612ef05c9c9768341a8e82e3609dd95bfcf63",
+    "native_report_sha256": "5ac1cf0b3e304ec7389ec8621bf90c3c5415225423669455eb8425f07db3152d",
+    "independent_review_sha256": "dfc465e39c94405acffaef4bdf2d01db6edec23ec98f054aa8c7697ef4aebb8b",
+    "execution_log_sha256": "60a4ea62a4665174c6c81ab4e27962488d132ce1dcc2b1ae69fbe4c35c592af1"
+  },
+  "original_function_range_evidence": {
+    "catalogue": "docs/collision-function-ranges.json",
+    "catalogue_sha256": "9bfc8bdb864e7f1529adb7cde9c0be5313c5161b460e0ba31db51c59c58c3dd8",
+    "independently_rechecked": true
+  },
+  "data_free_tests": {
+    "count": 27,
+    "corpus_or_game_binary_required": false,
+    "modules": [
+      "tests.test_disc_files",
+      "tests.test_tmd_packets"
+    ]
+  },
+  "feature_counts": {
+    "provisional_original_groups_before": 40,
+    "provisional_original_groups_after": 40,
+    "whole_original_groups_accepted_before": 0,
+    "whole_original_groups_accepted_after": 0,
+    "original_NPC_callback_C_bodies": 107,
+    "bounded_NPC_callback_profiles": 44,
+    "naturally_compared_NPC_callback_types": 5,
+    "new_gameplay_features": 0,
+    "new_matching_C_bytes": 0
+  }
+}

@@ -78,3 +78,14 @@ transfer and heard playback. The original zero-tempo STG09/BGC.SEQ is preserved.
 These content records add no game features; the original English snapshot above
 remains unchanged. [Machine evidence](sound-asset-checks.json) records the
 complete input identities, original-code qualification and remaining gates.
+
+## Japanese model vertex supplement, 2026-10-30
+
+The [model packet audit](MODEL_PACKET_DECODING.md) reads all 418 LBD, two MOM
+and two TMD files directly from the qualified Japanese disc. It accounts for
+531 TMD tables, 13,627 object descriptors and 119,458 polygons. All 459,671
+vertex references agree with the original instruction decoder on signed XYZ
+output and cursor semantics, with checked ABI and memory guards. The full
+per-object journal is retained as compact lossless evidence, without another
+extracted asset tree. Rendering, normal, palette, lighting and hardware timing
+remain separate; these content occurrences are not additional game features.
