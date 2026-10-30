@@ -1060,3 +1060,23 @@ NPC/feature counts and whole-gameplay acceptance remain unchanged. This work
 adds no gameplay scenario, modifies no user emulator session or Bevy source,
 and invokes no model API. The new census is a diagnostic lead generator,
 not a certificate that every other source declaration is original.
+
+## Recovered-C analysis context
+
+[Recovered-C context checks](recovered-c-context-checks.json) qualify the
+existing A001/A002 developer workflow after game assembly fallbacks reach zero.
+The public metadata index records 2,082 unique sized text functions, including
+SDK routines. Each extent agrees with actual ELF and GNU symbols; all complete
+function bytes and the complete diagnostic executable match the canonical game.
+No neighboring-label size inference or instruction bytes are included in the
+public index. The private export pins 710 source/header/object/tool inputs.
+
+The original model decoder's 288 disassembled instruction words and ten bundled
+source/header/byte evidence files pass their respective checks without a saved
+private catalog. Its unchanged full-unit candidate reproduces the canonical
+executable and its complete selected function. An executed private neighboring
+one-byte fault is rejected even though the selected function still matches.
+Original declarations, gameplay and feature acceptance are not established by
+these compiler/tooling results. Existing inventory snapshots, nine developer
+capabilities and all runtime counts are preserved. The generated prompt follows
+the owner-approved documented upstream compatibility-storage rule.

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "status": "qualified_recovered_C_context_and_candidate_workflow",
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "index": {
+    "path": "research/original-functions.json",
+    "sha256": "6c5a8f8a95c51b2dd5c19a071e62d8a366e1d83609598272e44ef7f3c4aea5fc",
+    "unique_sized_text_functions_including_SDK": 2082,
+    "ambiguous_names": 0,
+    "full_diagnostic_image_equals_original": true,
+    "ELF_and_GNU_extents_agree_for_every_indexed_function": true
+  },
+  "regression": {
+    "function": "func_80020050",
+    "source": "src/file/tmd_prim_geom.c",
+    "original_function_bytes": 1152,
+    "original_function_sha256": "d58160f9ae8a3adcc81dfda474988896476e823a614afd7f686896ec64677469",
+    "before_context_exit_status": 2,
+    "before_context_output_created": false,
+    "after_context_exit_status": 0,
+    "reference_route": "verified_function_index",
+    "source_state": "recovered_C",
+    "private_baseline_required": false,
+    "verified_disassembly_words": 288,
+    "hashed_context_files": 10,
+    "compiler_mode": "G8"
+  },
+  "candidate": {
+    "complete_executable_equal": true,
+    "selected_complete_function_equal": true,
+    "selected_function_differing_bytes": 0,
+    "CLI_exit_status": 0
+  },
+  "executed_neighbor_fault_control": {
+    "private_candidate_only": true,
+    "mutation": "func_80020510 shift amount changed from 6 to 5; selected function untouched",
+    "complete_executable_equal": false,
+    "executable_differing_bytes": 1,
+    "selected_complete_function_equal": true,
+    "CLI_exit_status": 1,
+    "rejected_despite_selected_function_match": true
+  },
+  "data_free_regressions": {
+    "new_test_methods": 11,
+    "targeted_test_methods": 19,
+    "status": "passed",
+    "controls": [
+      "Foreign original executable",
+      "Changed function tail with unchanged entry",
+      "Missing, duplicate or incorrect GNU extent",
+      "Zero-sized labels are not extended to neighboring symbols",
+      "Ambiguous local symbol names",
+      "Wrong file offset, size, alignment and digest",
+      "Omitted zero word, wrong address, wrong endianness and extra instruction",
+      "No active assembly or historical private catalog",
+      "Ambiguous current C definition",
+      "Missing disassembler preserves an uncreated output path"
+    ]
+  },
+  "source_rule": "Owner-approved documented upstream stack-layout compatibility storage; no arbitrary padding, inline assembly, embedded instructions, instruction substitution or changed behavior",
+  "capabilities_repaired": [
+    "A001",
+    "A002"
+  ],
+  "new_developer_capability_count": 0,
+  "new_game_C_bytes": 0,
+  "new_original_game_features": 0,
+  "new_original_NPC_profiles": 0,
+  "whole_feature_acceptances": 0,
+  "whole_NPC_encounter_acceptances": 0,
+  "model_API_calls": 0,
+  "native_game_runs": 0,
+  "scope": "Developer analysis and isolated compiler verification. This does not establish original declarations, gameplay acceptance, asset semantics, NPC encounters or full-year/ending parity.",
+  "full_synthetic_suites": {
+    "windows": {
+      "status": "passed",
+      "tests": 1576,
+      "skipped": 9,
+      "log_sha256": "49c89f58a22c1521acdee1bc79a9e34eaf5dea172d535d42716f023eb066a75c"
+    },
+    "wsl": {
+      "status": "passed",
+      "tests": 1561,
+      "skipped": 11,
+      "log_sha256": "0ec972ce016a7b8e5049a5e8fe01bce57c2c447c6b07ccaa058b558374c43cca"
+    }
+  },
+  "standard_matching_build": {
+    "command": "/opt/lsd-decomp-venv/bin/ninja check",
+    "status": "passed",
+    "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "game_inputs_changed": 0
+  },
+  "executed_source_sha256": {
+    "tools/decomp_workbench.py": "327ace4d4ff33fe32dbbc47b1d5bb3eeebd43c2fd92dcc8b37282b91c5c3280d",
+    "tools/original_functions.py": "b13a037043b4fe49be5f812e5002c5e9a2404c6a997d718994065d985b86b24c",
+    "tools/export_function_ranges.py": "439d9f2aa8bd4b4c3cff6d0f7ae1eb468f6185385b53185a6903ef164d688078",
+    "tests/test_original_functions.py": "1908cfb558530f9fe18d45f1891847b206159dc4a9a86639920799d80679c36d"
+  }
+}

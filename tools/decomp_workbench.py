@@ -12,7 +12,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import configure
 from tools.compile_c import run_stages
-from tools.progress import build_manifest
+from tools.progress import build_manifest, find_objdump
+from tools.original_functions import INDEX, IDENTIFIER, instruction_listing, read_reference
+from tools.psx_image import executable_offset
 
 INCLUDES = re.compile(r'\bINCLUDE_ASM\s*\(\s*"([^"\n]+)"\s*,\s*(\w+)\s*\)')
 COMMENTS = re.compile(r'/\*.*?\*/|//[^\n]*', re.S)
@@ -69,33 +71,61 @@ def compare_bytes(expected, actual):
             "actual_sha1": hashlib.sha1(actual).hexdigest()}
 
 
-def context_bundle(function, output):
-    """Prepare byte-grounded context for an AI or human matching attempt."""
+def function_entry(function):
+    """Resolve active ASM or recovered C without requiring a private baseline."""
+    if not IDENTIFIER.fullmatch(function):
+        raise ValueError('Select a C function identifier.')
     entries = catalog()
     matches = [item for item in entries if item["function"] == function]
+    if len(matches) > 1:
+        raise ValueError('The active function has ambiguous configured definitions.')
+    if matches:
+        return dict(matches[0], evidence_kind='active_assembly', source_state='assembly_fallback')
+    original = (ROOT / configure.ROM).read_bytes()
+    index = ROOT / INDEX
+    if index.is_file():
+        entry = read_reference(index, function, original)
+        entry['reference_index'] = INDEX
+        entry['reference_index_sha256'] = hashlib.sha256(index.read_bytes()).hexdigest()
+        matches = [entry]
     if not matches:
         baseline = ROOT / ".decomp-lab/remaining-game-functions.json"
         if baseline.is_file():
-            matches = [item for item in json.loads(baseline.read_text())
+            matches = [dict(item, evidence_kind='saved_assembly_catalog')
+                       for item in json.loads(baseline.read_text(encoding='utf-8'))
                        if item["function"] == function]
     if len(matches) != 1:
-        raise ValueError("Select a function from the current or saved baseline catalog.")
+        raise ValueError("Select one function from the active, public original-function or saved baseline catalog.")
     entry = dict(matches[0])
-    if not any(item["function"] == function for item in entries):
-        definition = re.compile(r'\b' + re.escape(function) + r'\s*\([^;{}]*\)\s*\{', re.S)
-        sources = [source for source, kind in build_manifest() if kind == "C"
-                   and definition.search(COMMENTS.sub("", (ROOT / source).read_text()))]
-        if len(sources) != 1:
-            raise ValueError("The recovered function must have exactly one configured definition.")
+    definition = re.compile(r'\b' + re.escape(function) + r'\s*\([^;{}]*\)\s*\{', re.S)
+    sources = [source for source, kind in build_manifest() if kind == "C"
+               and definition.search(COMMENTS.sub("", (ROOT / source).read_text(encoding='utf-8')))]
+    if len(sources) != 1:
+        raise ValueError("The recovered function must have exactly one configured definition.")
+    if 'source' in entry:
         entry["original_source"] = entry["source"]
-        entry["source"] = sources[0]
-    assembly = ROOT / entry["assembly"]
+    entry["source"], entry['source_state'] = sources[0], 'recovered_C'
+    return entry
+
+
+def context_bundle(function, output):
+    """Prepare byte-grounded context for an AI or human matching attempt."""
+    entry = function_entry(function)
     original = (ROOT / configure.ROM).read_bytes()
+    expected = (ROOT / configure.EXE_HASH).read_text(encoding='utf-8').split()[0]
+    if hashlib.sha1(original).hexdigest() != expected:
+        raise ValueError('The original executable does not have the expected hash.')
     data = original[entry["file_offset"]:entry["file_offset"] + entry["bytes"]]
-    if hashlib.sha256(data).hexdigest() != entry["sha256"]:
+    if (len(data) != entry['bytes'] or hashlib.sha256(data).hexdigest() != entry["sha256"] or
+            executable_offset(original, int(entry['address'], 16), entry['bytes']) != entry['file_offset']):
         raise ValueError("Saved catalog disagrees with the original function bytes.")
-    if assembly_evidence(assembly.read_text(), function, original)["sha256"] != entry["sha256"]:
-        raise ValueError("Saved assembly disagrees with the catalog's original function bytes.")
+    assembly = ROOT / entry['assembly'] if 'assembly' in entry else None
+    disassembler = None
+    if assembly is not None:
+        if assembly_evidence(assembly.read_text(encoding='utf-8'), function, original)["sha256"] != entry["sha256"]:
+            raise ValueError("Saved assembly disagrees with the catalog's original function bytes.")
+    else:
+        disassembler = find_objdump()
     output = new_output_directory(output)
     evidence = []
 
@@ -108,7 +138,22 @@ def context_bundle(function, output):
                          "interpretation": interpretation})
 
     save(ROOT / entry["source"], "candidate.c", "Current complete translation unit; may contain legacy incorrect types.")
-    save(assembly, "original.s", "Original disassembly; its function byte range was verified against the canonical executable.")
+    if assembly is not None:
+        save(assembly, "original.s", "Original disassembly; its function byte range was verified against the canonical executable.")
+    else:
+        binary = output / 'original-function.bin'
+        binary.write_bytes(data)
+        result = subprocess.run([disassembler, '-D', '-z', '-b', 'binary', '-m', 'mips:3000', '-EL',
+            f"--adjust-vma={entry['address']}", str(binary)], check=True, capture_output=True, text=True)
+        listing = instruction_listing(result.stdout, entry, original)
+        (output / 'original.s').write_bytes(listing.encode('utf-8'))
+        assembly_evidence(listing, function, original)
+        evidence.extend([
+            dict(source=configure.ROM, file_offset=entry['file_offset'], bytes=entry['bytes'],
+                 bundle_file='original-function.bin', sha256=hashlib.sha256(data).hexdigest(),
+                 interpretation='Complete original function range qualified by the public ELF/GNU extent index.'),
+            dict(source=INDEX, bundle_file='original.s', sha256=hashlib.sha256(listing.encode('utf-8')).hexdigest(),
+                 interpretation='GNU disassembly; every printed address and word checked against the canonical original. Mnemonics are analysis; this is not an assembly build input.')])
     pending = [ROOT / entry["source"]]
     visited = set()
     unresolved = set()
@@ -117,7 +162,7 @@ def context_bundle(function, output):
         if source in visited:
             continue
         visited.add(source)
-        for header in re.findall(r'^\s*#\s*include\s*[<"]([^>"\n]+)[>"]', source.read_text(), re.M):
+        for header in re.findall(r'^\s*#\s*include\s*[<"]([^>"\n]+)[>"]', source.read_text(encoding='utf-8'), re.M):
             choices = [source.parent / header, ROOT / "include" / header,
                        ROOT / "src" / header, ROOT / "include/asm" / header]
             resolved = next((p.resolve() for p in choices if p.is_file()
@@ -133,23 +178,29 @@ def context_bundle(function, output):
     if pseudocode.is_file():
         save(pseudocode, "ghidra.c", "Ghidra analysis, not original source or matching proof; indirect-call arguments may be missing.")
     inventory_path = ROOT / "docs/features.json"
-    features = json.loads(inventory_path.read_text())["features"] if inventory_path.is_file() else []
+    features = json.loads(inventory_path.read_text(encoding='utf-8'))["features"] if inventory_path.is_file() else []
     feature_ids = [item["id"] for item in features
                    if any(anchor["function"] == function for anchor in item["required_functions"])]
     report = {"function": entry, "canonical_sha1": hashlib.sha1(original).hexdigest(),
               "source_compiler_mode": "G8" if configure.c_source_uses_g8(entry["source"]) else "G0",
               "feature_ids": feature_ids, "evidence": evidence,
+              "disassembler": disassembler,
               "unresolved_includes": sorted(unresolved), "ai_model_invoked": False,
               "matching_proof": False, "gameplay_tested": False}
-    (output / "context.json").write_text(json.dumps(report, indent=2) + "\n")
-    prompt = f"""Recover `{function}` in maintainable C using this evidence bundle.
+    (output / "context.json").write_text(json.dumps(report, indent=2) + "\n", encoding='utf-8')
+    prompt = f"""Analyze or refine `{function}` in maintainable matching C using this evidence bundle.
 
 The canonical executable SHA-1 is {report['canonical_sha1']}.
 Read context.json, original.s, candidate.c and headers. Treat ghidra.c as
 fallible analysis. Check actual callee signatures, signed widths, field offsets,
 virtual-call argument forwarding, and the configured {report['source_compiler_mode']} compiler mode.
-Do not add padding, inline assembly, hardcoded instruction bytes, or alter the
-original behavior to obtain a match. Preserve other functions and data ownership.
+Current source state: {entry['source_state']}. Recovered C already exists when
+this is recovered_C; do not count a refinement as newly recovered C or gameplay.
+The documented upstream compatibility storage allowed in docs/MATCHING_GAME_C.md
+supersedes the historical no-padding rule. Preserve its provenance and annotations;
+do not invent arbitrary unused storage or claim original declarations are proven.
+Do not use inline assembly, hardcoded instruction bytes, instruction substitution
+or altered behavior to obtain a match. Preserve other functions and data ownership.
 
 Make the attempt in candidate.c. In the repository's Linux/WSL build environment:
 
@@ -243,11 +294,9 @@ def check_candidate(source, candidate, output, function=None):
         raise ValueError("Select one of the configured game C source files.")
     entry = None
     if function is not None:
-        entries = [item for item in catalog()
-                   if item["function"] == function and item["source"] == source]
-        if len(entries) != 1:
-            raise ValueError("Select a current assembly function in the candidate's source file.")
-        entry = entries[0]
+        entry = function_entry(function)
+        if entry['source'] != source:
+            raise ValueError("Select a function in the candidate's source file.")
     candidate = Path(candidate).resolve(strict=True)
     output = new_output_directory(output)
     obj = output / "candidate.o"
@@ -288,7 +337,7 @@ def main(argv=None):
     check.add_argument("--source", required=True)
     check.add_argument("--candidate", required=True)
     check.add_argument("--output", required=True)
-    check.add_argument("--function", help="Also qualify and compare one current assembly function; the whole-image gate is unchanged.")
+    check.add_argument("--function", help="Also compare one active ASM or recovered C function; the whole-image gate is unchanged.")
     context = commands.add_parser("context", help="Prepare original bytes, source, headers and AI matching instructions.")
     context.add_argument("--function", required=True)
     context.add_argument("--output", required=True)
