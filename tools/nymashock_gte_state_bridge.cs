@@ -147,7 +147,7 @@ public static class NymashockGteStateBridge {
         if ((command & 0xFE000000u) != 0x4A000000u) return false;
         switch (command & 63) {
             case 1: case 6: case 0x10: case 0x12: case 0x13: case 0x16:
-            case 0x1B: case 0x2D: case 0x2E: case 0x30: case 0x3F: return true;
+            case 0x1B: case 0x2A: case 0x2D: case 0x2E: case 0x30: case 0x3F: return true;
             default: return false;
         }
     }

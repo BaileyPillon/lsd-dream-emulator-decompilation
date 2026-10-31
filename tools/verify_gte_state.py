@@ -30,7 +30,7 @@ def matrix(index, values=IDENTITY):
     return [(0, 8*index+i, word) for i, word in enumerate(matrix_registers(values))]
 
 
-def cases():
+def cases(include_dpct=False):
     for kind in (0, 1):
         for register in range(32):
             for value in EDGES:
@@ -66,6 +66,13 @@ def cases():
                          (1, 2, 256), (1, 3, 4096), (1, 4, 256 << 16), (1, 5, 4096)], command=command_word(0x30))
     for code in (6, 0x2D):
         yield dict(kind='composed_projection_area_depth', reset=False, writes=[], command=command_word(code))
+    if include_dpct:
+        for shift in (0, 1):
+            for limit in (0, 1):
+                for _ in range(32):
+                    yield dict(kind='packet_DPCT_flags', reset=True,
+                        writes=[(kind, register, rng.getrandbits(32)) for kind in (0, 1) for register in range(32)],
+                        command=command_word(0x2A, shift=shift, limit=limit))
 
 
 def differences(expected, observed):
@@ -91,7 +98,7 @@ def control_case(fault):
     return matrix(0)+[(0, 26, 256), (1, 0, 256), (1, 1, 4096)], command_word(1)
 
 
-def verify(bridge_path, runtime, destination):
+def verify(bridge_path, runtime, destination, include_dpct=False):
     require(not destination.exists() and destination.parent.is_dir(), 'Choose a fresh bounded output directory.')
     destination.mkdir()
     started, totals, commands = time.monotonic(), Counter(), Counter()
@@ -110,7 +117,7 @@ def verify(bridge_path, runtime, destination):
             journal.write(encoded)
         bridge, oracle = NativeStateBridge(bridge_path, runtime, destination/'native-stderr.log', exchange=retain), GteState()
         try:
-            for ordinal, case in enumerate(cases()):
+            for ordinal, case in enumerate(cases(include_dpct)):
                 require(time.monotonic()-started < 900, 'Register qualification exceeded its 15-minute bound.')
                 expected = oracle.request(case['reset'], case['writes'], case['command'])
                 observed = bridge.request(case['reset'], case['writes'], case['command'])
@@ -147,6 +154,7 @@ def verify(bridge_path, runtime, destination):
     report = dict(schema_version=1, status='native_gte_state_matches', generated_at=datetime.now(timezone.utc).isoformat(),
         elapsed_seconds=time.monotonic()-started, case_counts=dict(totals), total_cases=sum(totals.values()),
         command_counts=dict(commands), native_data_writes=oracle.data_writes, native_commands=oracle.commands,
+        DPCT_packet_extension_qualified=include_dpct,
         all_64_architectural_words_and_cycles_compared_each_request=True,
         native_WriteDR_and_commands_executed=True, native_reciprocal_table_initialized=True,
         CR_cache_transfer_and_register_reads_are_reviewed_host_code=True,
@@ -169,9 +177,10 @@ def main(argv=None):
     parser.add_argument('--bridge', type=Path, required=True)
     parser.add_argument('--runtime', required=True, help='Runtime path as understood by the Windows bridge.')
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--include-dpct', action='store_true', help='Also qualify the packet renderer RGB FIFO command.')
     args = parser.parse_args(argv)
     try:
-        report = verify(args.bridge, args.runtime, args.output)
+        report = verify(args.bridge, args.runtime, args.output, args.include_dpct)
         print(json.dumps({key:report[key] for key in ('status', 'total_cases', 'native_commands', 'case_counts')}))
         return 0
     except (OSError, ValueError, KeyError) as error:

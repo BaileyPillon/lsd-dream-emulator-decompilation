@@ -33,6 +33,12 @@ stateful GTE boundary qualified in 3,205 native cases. CI covers literal
 arithmetic and synthetic memory guards without game assets. Full drawing,
 natural scenes and PS1 timing remain open.
 
+The [draw-entry profile](docs/TMD_RENDERER.md) advances into the original
+drawer in 884 constructed calls, comparing colors, UVs, transparency, fog,
+scratchpad data and ordering-table links. Its extended native GTE boundary
+passes 3,333 cases. Recursive clipping, multi-primitive runs, natural scenes
+and GPU/hardware acceptance remain open.
+
 [Recovered-C analysis context](docs/RECOVERED_C_CONTEXT.md) exports verified
 original instructions and current source without an old private assembly
 catalog. Its public function metadata includes SDK routines; candidate changes
