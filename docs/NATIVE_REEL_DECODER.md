@@ -12,7 +12,7 @@ host, canonical ranges, source hashes, captures and analysis controls.
 The first nineteen films reach every encoded frame ID at VLC and MDEC input
 entry. The final film has 500 encoded frames: IDs 1–492 reach VLC, IDs 1–491
 reach MDEC input, and IDs 493–500 never reach either entry before the timed stop.
-Its last decoded work buffer has no subsequent MDEC input call. This cutoff is
+Its last VLC destination has no subsequent MDEC input call. This cutoff is
 observed in the original game and reproduced by the rebuilt disc.
 
 These are **function-entry and buffer-association observations**. They do not
@@ -61,6 +61,9 @@ is then associated with the later `DecDCTin` input pointer, mode 2 and command
 header. Reuse without submission, missing pairs, changed callers, invalid
 pointers and source-prefix mismatches are rejected. In the JSON, the historical
 field name `MDEC_submissions` counts **entries to `DecDCTin`**, not completed DMA.
+Likewise, `unsubmitted_decoded_buffers` identifies pending VLC destinations by
+entry association; it does not certify completed output-buffer contents or a
+recorded VLC function return.
 
 All 39 movie extents are read directly from the original disc. Their complete
 mixed-sector hashes, frame/chunk ordering, sizes, sector types and subheaders
@@ -95,9 +98,11 @@ separately and are not used to force an identity.
 
 The observer arms before input frame 21,884. Actual entries span frames 21,929
 through 62,347; the existing native journal observes reel removal at 62,349.
-Input IDs are contiguous from one in each segment. There is one pending decoded
-buffer at the end: final-film ID 492. The first nineteen segments reach their
-source endpoints and have matching MDEC input counts.
+Input IDs are contiguous from one in each segment. There is one pending VLC
+destination at the end: final-film ID 492. The first nineteen segments reach their
+source endpoints and have matching MDEC input counts. The final pending record
+identifies the destination associated with VLC input ID 492; its completed
+contents were not captured.
 
 ## Qualification and retained limits
 
