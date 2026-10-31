@@ -33,12 +33,13 @@ stateful GTE boundary qualified in 3,205 native cases. CI covers literal
 arithmetic and synthetic memory guards without game assets. Full drawing,
 natural scenes and PS1 timing remain open.
 
-The [renderer profiles](docs/TMD_SUBDIVISION.md) enter the original drawer in
-1,147 constructed calls, including all eight recursive subdivision families
-through depth 5. Colors, UVs, transparency, fog, workspaces and OT links agree;
-the native GTE boundary passes 3,333 cases. Primitive runs, original-model and
-natural-scene rendering, replacement matrices and GPU/hardware acceptance
-remain open.
+The [renderer profiles](docs/TMD_PRIMITIVE_RUNS.md) enter the original drawer in
+1,521 constructed calls. The latest 374 calls check 2,122 polygons across 1,159
+mode runs, retaining shared GTE state, cull history and recursive workspaces.
+The earlier 1,147 calls still pass, including all eight subdivision families
+through depth 5. Colors, UVs, transparency, fog and OT links agree; the native
+GTE boundary passes 3,333 cases. Original-model and natural-scene drawing,
+replacement matrices and GPU/hardware acceptance remain open.
 
 [Recovered-C analysis context](docs/RECOVERED_C_CONTEXT.md) exports verified
 original instructions and current source without an old private assembly

@@ -2,9 +2,10 @@
 
 This repository builds the original PlayStation executable. The matching game
 can be played in a PlayStation emulator with your own complete disc and BIOS.
-The two remaining assembly functions are included in that executable; their
-source recovery is still unfinished. See [the roadmap](ROADMAP.md) for the
-remaining C and original-behavior verification work.
+All counted game functions are now in matching C; SDK/startup accounting and
+documented compiler-layout storage are explained in the
+[matching-C milestone](MATCHING_GAME_C.md). See [the roadmap](ROADMAP.md) for
+the remaining original-behavior verification work.
 
 ## Requirements
 

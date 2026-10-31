@@ -35,7 +35,7 @@ FUNCTIONS={
 }
 
 
-def subdivide(case,result,state,commands,data,positions,color_offsets,uv_offsets,payload_words):
+def subdivide(case,result,state,commands,data,positions,color_offsets,uv_offsets,payload_words,gpu_address=GPU):
     count=len(positions)
     textured,gouraud=bool(uv_offsets),len(color_offsets)>1
     kind=('GT' if textured and gouraud else 'G' if gouraud else 'FT' if textured else 'F')+str(count)
@@ -58,7 +58,8 @@ def subdivide(case,result,state,commands,data,positions,color_offsets,uv_offsets
     put(arena,0x14,get(context,0x30))
     nodes=[0x18+0x18*i for i in range(count)]
     for i,node in enumerate(nodes):
-        arena[node:node+8]=data[VERTEX-BUFFER+8*i:VERTEX-BUFFER+8*i+8]
+        source=VERTEX-BUFFER+8*case.get('indices',tuple(range(count)))[i]
+        arena[node:node+8]=data[source:source+8]
         put(arena,node+0x10,positions[i])
         if gouraud:
             put(arena,node+0xC,get(packet,color_offsets[i]))
@@ -104,7 +105,7 @@ def subdivide(case,result,state,commands,data,positions,color_offsets,uv_offsets
         bucket=(get(arena,0x14)&0x1FFFFFFF)-ORDER
         require(0<=bucket<len(result[ORDER])-3,'Recursive OT pointer left its arena.')
         put(packet,cursor,get(result[ORDER],bucket)|(payload_words<<24))
-        put(result[ORDER],bucket,(GPU+cursor)&0xFFFFFF)
+        put(result[ORDER],bucket,(gpu_address+cursor)&0xFFFFFF)
         cursor+=size
         stats['packets']+=1
     def recurse(group,frame,level,return_address):

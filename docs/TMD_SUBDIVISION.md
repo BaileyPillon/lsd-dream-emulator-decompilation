@@ -7,10 +7,11 @@ Complete packet, ordering-table, context and supplied workspace buffers agree
 with scalar predictions, along with GTE state, commands and saved registers.
 
 This advances renderer verification without changing game C or the player.
-It accepts **zero** whole gameplay features or NPC encounters. Multiple-primitive
-and mode runs, original model-corpus drawing, replacement matrices, natural
-scenes, GPU rasterization and PS1 timing remain open. The fixtures do not
-establish the full input domain of every recursive routine.
+It accepts **zero** whole gameplay features or NPC encounters. The later
+[primitive-run profile](TMD_PRIMITIVE_RUNS.md) adds bounded shared-state runs.
+Original model-corpus drawing, replacement matrices, natural scenes, GPU
+rasterization and PS1 timing remain open. The fixtures do not establish the full
+input domain of every recursive routine.
 
 ## Executed results
 
