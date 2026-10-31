@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "status": "passed_common_screen_prefix_layout_binding_and_entry_checks",
+  "baseline_commit": "4ec900364bedf666aa31719b9a16ad49b98d3412",
+  "canonical_complete_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "complete_matching_build": {
+    "objects_found": 306,
+    "objects_expected": 306,
+    "complete_objects": true,
+    "build_current": true,
+    "c_bytes": 199912,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 100.0,
+    "sdk_text_bytes": 147880,
+    "handwritten_text_bytes": 188,
+    "binary_match": "verified",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "build_command": [
+      "wsl.exe",
+      "-d",
+      "LSD-Decomp",
+      "--cd",
+      "/mnt/d/CodexArtifacts/LSD/private-workspaces-20261018/lsd-recovered",
+      "--",
+      "env",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "/opt/lsd-decomp-venv/bin/ninja",
+      "check"
+    ],
+    "progress_command": [
+      "wsl.exe",
+      "-d",
+      "LSD-Decomp",
+      "--cd",
+      "/mnt/d/CodexArtifacts/LSD/private-workspaces-20261018/lsd-recovered",
+      "--",
+      "env",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "/opt/lsd-decomp-venv/bin/python",
+      "-B",
+      "tools/progress.py",
+      "--json"
+    ],
+    "elapsed_seconds": 18.241181135177612,
+    "complete_image_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "progress_raw_sha256": "24c148e919e4d08b4b203182a80fdf6493fb75f95055c80f207c28e6fd1387b3",
+    "build_log_raw_sha256": "f4323142eebc1858a171c30377f38c84c4e7b339cfd8498a4bb68ffacd06de69",
+    "affected_C_translation_units": 3,
+    "existing_other_current_objects_reused": 303
+  },
+  "before": {
+    "callable_common_slots": 2,
+    "opaque_gap_bytes": 60,
+    "common_view_supported_by_inventory": false
+  },
+  "after": {
+    "callable_common_slots": 12,
+    "newly_exposed_shared_callbacks": 10,
+    "opaque_gap_bytes": 0,
+    "common_view_supported_by_inventory": true,
+    "common_view_is_concrete_table": false,
+    "explicit_screen_specific_address_slots": 4,
+    "screen_specific_signatures_accepted": 0,
+    "common_prefix_bytes": 72,
+    "concrete_prefixes": 2,
+    "concrete_callback_bindings": 32,
+    "complete_original_target_functions": 21,
+    "complete_original_target_bytes": 2376
+  },
+  "declaration_inventory": {
+    "concrete_tables": 57,
+    "declared_callback_slots": 2463,
+    "nonnull_bindings": 2205,
+    "distinct_targets": 838,
+    "unbound_views_inflate_no_counts": true,
+    "current_unsupported_common_view": false,
+    "historical_catalogue_metadata_preserved": true
+  },
+  "target_layout_assertions": 44,
+  "compiler_warnings_are_errors": true,
+  "noncallable_address_compile_rejections": [
+    "ConstructAddress",
+    "CleanupAddress",
+    "OnNotifyAddress",
+    "InitializeAddress"
+  ],
+  "compiled_analysis_callers": [
+    {
+      "function": "screen_prefix_attach",
+      "address": 1572864,
+      "bytes": 48,
+      "sha256": "0cb290c94c36fc084b9ec511c85983c3a7a2733ac2d6d97f2eea383c4abb7254"
+    },
+    {
+      "function": "screen_prefix_detach",
+      "address": 1572912,
+      "bytes": 48,
+      "sha256": "9d3badff5c2584c9e3010fabcc476c055456cf6af999847c3070f2d8ad5bb5f8"
+    },
+    {
+      "function": "screen_prefix_detach_all",
+      "address": 1572960,
+      "bytes": 48,
+      "sha256": "f0083a35c3577603d917306fd1e4c4b46fd1f90566fdd791c249681c593447c1"
+    },
+    {
+      "function": "screen_prefix_iter_children",
+      "address": 1573008,
+      "bytes": 48,
+      "sha256": "079c50bec1a9c996c3681b7a42dcc40ddfe7dbf40edc85940abe4a70ca82be66"
+    },
+    {
+      "function": "screen_prefix_add_parent",
+      "address": 1573056,
+      "bytes": 48,
+      "sha256": "ac6a00a6afd5b0233aa6c775c0eb9db02f7f10be16f2f01e71d33e82216b29dd"
+    },
+    {
+      "function": "screen_prefix_remove_parent",
+      "address": 1573104,
+      "bytes": 48,
+      "sha256": "3abe012731653e900aeeb27f16b5bc8345bdeec9cd02bf9515e175d9819dd0e4"
+    },
+    {
+      "function": "screen_prefix_clear_parents",
+      "address": 1573152,
+      "bytes": 48,
+      "sha256": "52631a0b17db2ce0b79465c4afd6ecc057829261ff77b1123f8e95493e90a121"
+    },
+    {
+      "function": "screen_prefix_iter_parents",
+      "address": 1573200,
+      "bytes": 48,
+      "sha256": "9155015aa0cd89aabc6a7f110743abfb28941572717a08febc826e5e7d0911a3"
+    },
+    {
+      "function": "screen_prefix_notify",
+      "address": 1573248,
+      "bytes": 48,
+      "sha256": "e99f6262019e39633cd77705ac4da37b6942e0f2fd56fc9e1828919e18c45e6b"
+    },
+    {
+      "function": "screen_prefix_nop",
+      "address": 1573296,
+      "bytes": 48,
+      "sha256": "a5d9de4bdc2c0817fca29163efc7c70150aa468f4bcc4b658b708e0a64d2aaa4"
+    },
+    {
+      "function": "screen_prefix_typecheck",
+      "address": 1573344,
+      "bytes": 124,
+      "sha256": "1710512a83f8ff4f4578e8529db830ec18c42490d215fbb0abc042b66fc4bf0a"
+    }
+  ],
+  "original_table_entry_profiles": 180,
+  "all_receiver_table_alias_pairs": true,
+  "all_three_way_argument_alias_combinations": false,
+  "actual_entry_PCs_exact_original": true,
+  "independent_journal_review": true,
+  "entry_journal_raw_sha256": "f9095c9e1b9fbdd5acecf8d44d957e0f77d2860d1ab6f8e0ca087a2689fd33ab",
+  "executed_wrong_slot_controls_rejected": 10,
+  "backend": {
+    "package_version": "2.1.2",
+    "library_api": [
+      2,
+      1,
+      33620735
+    ],
+    "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+    "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+    "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3"
+  },
+  "incomplete_first_attempt": {
+    "status": "not_qualified",
+    "positive_entries_retained": 180,
+    "reason": "Fault selector confused a same-offset stack restore with the callback load; no completed report or end-of-run input qualification.",
+    "counted_as_accepted_profiles": false
+  },
+  "original_method_body_instructions_executed": 0,
+  "original_method_returns_verified": false,
+  "native_gameplay_runs": 0,
+  "new_C_bytes": 0,
+  "new_gameplay_features": 0,
+  "model_API_calls": 0,
+  "provisional_feature_groups": 40,
+  "original_NPC_callbacks_in_C": 107,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "all_dynamic_dispatch_resolved": false,
+  "screen_specific_signature_review_complete": false,
+  "private_audit_raw_sha256": "47a63342621c6fd9d050902f3e0af73073083bfaa85e4f6c21bd927eaed078b7",
+  "private_entry_report_raw_sha256": "1ceb17e32e89923db5dda846d8c8aceee14015dc090e866ed1158c67b1f2edd5",
+  "target_catalogue_sha256": "99093a997cc2e43b46f9c1c22c014c221547c10f976e6d1766696dce421b23e4",
+  "source_sha256": {
+    "src/game/game_flow.h": "f82ab88ac1064b34a76728637bff57475f8906882f2abe9a69e29f4f5cbd219f",
+    "tools/inventory_vtables.py": "3fc62ee25987bca1a112e03c74090f99cfb3af905bbe23575942f6b6b6e6a440",
+    "tools/feature_inventory.py": "cb8900a291444fb36a0c8df71255f1a59bbd70f982eb7b6e080552a66c541715",
+    "tools/inspect_screen_prefix.py": "89699d8be179fb398f8190462a57c4b8eb65671580eb33b49f3a67f4e0df400e",
+    "tests/test_inventory_vtables.py": "f185b80487ab4a6c82ea7a79dc0b6eb464dc6821cae31a3ec96381525cb08c8b",
+    "tests/test_screen_prefix.py": "6cbccb6bafe594dc6303631a9f93d00ea319daf59dc4ae64ff20958c40a46a62",
+    "research/screen_lifecycle/prefix_consumer.c": "8a23bf7d98e9637d6303a960c0feded8c2d830631bab5e8b8b1cb6632271f761",
+    "research/screen_lifecycle/verify_prefix.py": "975471a0d69d4b2d28d3e82dabee9709b0f286b15eb7f7baaa950c14c346724a"
+  },
+  "scope": "Known shared main-menu/chart prefix and ten compiled consumer entries. Original callee bodies, returns, construction, attachment graphs, natural screens, other receiver families and whole-game parity remain open.",
+  "synthetic_suites": {
+    "windows": {
+      "exit_code": 0,
+      "tests": 1700,
+      "skipped": 16,
+      "log_raw_sha256": "e4437c69dad2adb371b832003c15acc0e81f1b00709003edbd0f69cd3316c445"
+    },
+    "wsl": {
+      "exit_code": 0,
+      "tests": 1697,
+      "skipped": 12,
+      "log_raw_sha256": "09df67a818832f5d9051755b0aa0e6ecb7d194cefdb3cc5ef2e02f443f24165d"
+    }
+  }
+}

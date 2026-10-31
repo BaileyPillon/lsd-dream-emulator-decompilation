@@ -568,3 +568,12 @@ frames and 272 unmasked complete states. The earlier three movie/skip routes
 remain separate preserved profiles. Continue the other 31 payloads, skip/disabled/
 error timings, ending presentation and whole-feature acceptance; this extension
 does not close those gates.
+
+## Shared screen-prefix extension
+
+The [current common view](COMMON_SCREEN_PREFIX.md) now describes every word
+through Run and exposes ten inherited base methods. Its two concrete
+prefixes and 21 complete original targets are checked; 180 compiled consumer
+entries pass. Continue the four screen-specific callback signatures, factory
+contracts, other receiver families and natural dispatch histories. Entry-only
+checks leave callee bodies, returns and whole-feature acceptance separate.

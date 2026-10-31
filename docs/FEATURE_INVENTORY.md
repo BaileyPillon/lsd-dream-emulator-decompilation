@@ -1250,3 +1250,21 @@ Matching C stays 199,912 / 199,912, the provisional inventory stays 40 groups,
 107 NPC callbacks remain in C, and whole-feature/whole-NPC acceptances remain zero.
 No gameplay feature, optional mod, developer-capability category or model API
 call is added. The other 31 movie payloads and remaining runtime gates stay open.
+
+## Shared screen-prefix supplement, 2026-10-31
+
+The [common-prefix audit](COMMON_SCREEN_PREFIX.md) replaces the shared menu/chart
+view's opaque gap with ten inherited callable methods, four screen-specific
+address words and the original null word. Both 72-byte prefixes, 32 concrete
+callback bindings and 21 complete original targets are checked. Forty-four
+target layout assertions, four noncallable compiler controls, 180 compiled
+consumer entries and ten executed wrong-slot controls pass. Original callee
+bodies and returns do not execute in this entry-only profile.
+
+The additive `common_screen_prefix_audit` preserves all earlier inventory
+values. Unbound supported views do not add to the 57 concrete tables or
+2,463 declared callback slots. Matching C stays 199,912 / 199,912 bytes; the
+40 provisional groups, 107 NPC C callbacks and zero whole-feature/encounter
+acceptances remain unchanged. U003 stays open for screen-specific signatures
+and wider dynamic-call closure. No gameplay, optional mod or model API call
+is added; the supported playable build and saves are preserved.

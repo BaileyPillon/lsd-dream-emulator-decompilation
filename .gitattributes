@@ -1,6 +1,17 @@
 # Preserve the bundled compiler binaries without text conversion.
 tools/gcc263/* binary
 
+# Keep the executed shared-screen declaration and compiler/entry tools exact.
+tools/inventory_vtables.py text eol=lf
+tools/feature_inventory.py text eol=lf
+tools/inspect_screen_prefix.py text eol=lf
+tests/test_inventory_vtables.py text eol=lf
+tests/test_screen_prefix.py text eol=lf
+research/screen_lifecycle/prefix_consumer.c text eol=lf
+research/screen_lifecycle/verify_prefix.py text eol=lf
+docs/COMMON_SCREEN_PREFIX.md text eol=lf
+docs/common-screen-prefix-checks.json text eol=lf
+
 # Preserve the executed common-screen destruction interface and checker.
 src/game/game_flow.c text eol=lf
 src/game/game_flow.h text eol=lf

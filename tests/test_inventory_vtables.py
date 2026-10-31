@@ -56,6 +56,32 @@ class NativeTableAuditTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'outside'):
             table_words(self.executable, 0x8001003C, 2)
 
+    def test_supported_unbound_view_does_not_add_a_table_or_callback_count(self):
+        baseline = audit_tables(self.executable, self.sources, self.headers, self.symbols)
+        self.headers['src/view.h'] = '''
+            typedef struct runnable_vtable {
+                u32 type_id;
+                u32 FamilySpecificAddress;
+                s32 (*Run)(void *, void *, s32);
+            } runnable_vtable_t;
+        '''
+        report = audit_tables(self.executable, self.sources, self.headers, self.symbols)
+        view, = report['unbound_type_views']
+        self.assertEqual(view['type'], 'runnable_vtable_t')
+        self.assertEqual(view['bytes'], 12)
+        self.assertFalse(view['concrete_table_binding_claimed'])
+        self.assertEqual([(s['offset'], s['declared_function_pointer']) for s in view['slots']],
+                         [(0, False), (4, False), (8, True)])
+        for key in ('declared_tables_audited', 'declared_function_slots',
+                    'nonnull_declared_function_slots', 'unique_declared_function_addresses'):
+            self.assertEqual(report[key], baseline[key])
+
+    def test_unsupported_unbound_view_keeps_its_layout_failure(self):
+        self.headers['src/view.h'] = 'typedef struct { u8 gap[60]; } opaque_vtable_t;'
+        report = audit_tables(self.executable, self.sources, self.headers, self.symbols)
+        self.assertEqual(report['unbound_type_views'], [])
+        self.assertEqual(report['unsupported_types'][0]['type'], 'opaque_vtable_t')
+
     def test_pointer_arithmetic_is_not_mistaken_for_a_symbol(self):
         with self.assertRaisesRegex(ValueError, 'Unresolved C initializer'):
             initializer_value('work + 4', self.symbols)

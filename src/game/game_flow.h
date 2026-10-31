@@ -55,15 +55,31 @@ struct game_flow {
     /* 0x28 */ dream_sys_t *m_DreamSys;
 };
 
-/* Common runnable-screen prefix shared by the screens run_screen() drives:
- * slot 0x04 is Destroy and slot 0x44 is Run. */
+/* Common prefix of the main-menu and dream-chart tables run_screen() drives.
+ * Only their shared callbacks have callable types here. The four family-specific
+ * callbacks remain native address words; use the concrete screen interface when
+ * calling those methods. This is a view, not an additional concrete table. */
 typedef struct game_flow_screen game_flow_screen_t;
 typedef struct game_flow_screen_vtable game_flow_screen_vtable_t;
 
 struct game_flow_screen_vtable {
     /* 0x00 */ u32 type_id;
     /* 0x04 */ base_class_t *(*Destroy)(base_class_t *);
-    /* 0x08 */ u8 pad[0x44 - 0x08];
+    /* 0x08 */ u32 ConstructAddress;
+    /* 0x0C */ u32 CleanupAddress;
+    /* 0x10 */ void (*Attach)(base_class_t *, base_class_t *);
+    /* 0x14 */ void (*Detach)(base_class_t *, base_class_t *);
+    /* 0x18 */ void (*DetachAll)(base_class_t *);
+    /* 0x1C */ void (*IterChildren)(base_class_t *, void **, void **);
+    /* 0x20 */ void (*AddParent)(base_class_t *, base_class_t *);
+    /* 0x24 */ void (*RemoveParent)(base_class_t *, base_class_t *);
+    /* 0x28 */ void (*ClearParents)(base_class_t *);
+    /* 0x2C */ void (*IterParents)(base_class_t *, void **, void **);
+    /* 0x30 */ void (*Notify)(base_class_t *, s32);
+    /* 0x34 */ void (*Nop)(base_class_t *);
+    /* 0x38 */ u32 OnNotifyAddress;
+    /* 0x3C */ u32 Reserved_3C; /* NULL in both supported screen tables. */
+    /* 0x40 */ u32 InitializeAddress;
     /* 0x44 */ s32 (*Run)(void *, void *, s32);
 };
 

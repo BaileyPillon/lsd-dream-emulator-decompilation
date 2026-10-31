@@ -51,13 +51,15 @@ Final polling results and original call/return boundaries are checked;
 asynchronous completion, SDK/disc errors and whole-feature acceptance remain
 open. The raw CD table and helper keep their separate qualified ranges.
 
-The partial `game_flow_screen_vtable_t` interface has a byte-array gap between
-its declared Destroy and Run callbacks. It has no bound concrete table symbol
-and is explicitly listed as an unsupported type view; it is excluded from the
-57 audited table bindings. The known main-menu and chart Run bindings now
-have [reviewed arguments and return ownership](SCREEN_RUN_INTERFACES.md).
-Factory construction, Destroy dispatch and other receiver paths remain part
-of the wider call-site review.
+The later [common-screen prefix audit](COMMON_SCREEN_PREFIX.md) replaces the
+shared view's byte-array gap with ten callable inherited base methods, four
+screen-specific address words and the original null word. The declaration
+inventory now exports this supported unbound view separately; it adds no
+concrete table to the 57 bindings. Both original 72-byte prefixes, 32 concrete
+callback bindings and 21 complete target bodies are checked. The four
+screen-specific signatures and wider dynamic-call closure remain open.
+The known main-menu and chart Run bindings have
+[reviewed arguments and return ownership](SCREEN_RUN_INTERFACES.md).
 
 The [screen Run interface check](SCREEN_RUN_INTERFACES.md) corrects the UI,
 main-menu and chart declarations at slot `0x44`. All three take a receiver,

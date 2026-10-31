@@ -411,6 +411,7 @@ def refresh(inventory, progress_path, runtime_path=None, assets_path=None, dispa
             'nonnull_declared_function_slots': dispatch['nonnull_declared_function_slots'],
             'unique_declared_function_addresses': dispatch['unique_declared_function_addresses'],
             'unbound_unsupported_type_views': dispatch['unsupported_types'],
+            'unbound_supported_type_views': dispatch.get('unbound_type_views', []),
             'all_dynamic_dispatch_resolved': False, 'semantic_signature_review_complete': False,
             'scope': dispatch['scope']}
         report['developer_tooling']['capabilities'].append({
