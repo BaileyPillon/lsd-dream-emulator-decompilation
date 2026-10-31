@@ -58,7 +58,7 @@ def subdivide(case,result,state,commands,data,positions,color_offsets,uv_offsets
     put(arena,0x14,get(context,0x30))
     nodes=[0x18+0x18*i for i in range(count)]
     for i,node in enumerate(nodes):
-        source=VERTEX-BUFFER+8*case.get('indices',tuple(range(count)))[i]
+        source=case.get('vertex_base',VERTEX)-BUFFER+8*case.get('indices',tuple(range(count)))[i]
         arena[node:node+8]=data[source:source+8]
         put(arena,node+0x10,positions[i])
         if gouraud:

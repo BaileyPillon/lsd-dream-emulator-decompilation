@@ -23,7 +23,7 @@ from tools.gte_state_model import require,unsigned,signed
 from tools.inventory_model_packets import file_sha
 from tools.psx_image import ORIGINAL_SHA1,executable_offset
 from tools.tmd_renderer_model import (BUFFER,OBJECT,OT,ORDER,GPU,CONTEXT,TRI,QUAD,OUT,
-    GLOBALS,FORMATS,GPU_BYTES,case_fixture,expected_draw,packet_specs)
+    GLOBALS,FORMATS,GPU_BYTES,BUFFER_BYTES,case_fixture,expected_draw,packet_specs)
 from tools.tmd_recursive_model import FUNCTIONS,RETURNS
 from tools.verify_model_packets import backend_identity
 
@@ -114,6 +114,7 @@ class DrawMachine(projection.Machine):
             self.cpu.mem_write(at,struct.pack('<I',fault['replacement']))
         self.fault=fault
         self.cpu.mem_map(CONTEXT,4096,self.u.UC_PROT_READ|self.u.UC_PROT_WRITE)
+        self.cpu.mem_protect(BUFFER,BUFFER_BYTES,self.u.UC_PROT_READ|self.u.UC_PROT_WRITE)
         for at,length in ((ORDER,4096),(GPU,GPU_BYTES),(projection.STACK-0x800,4096),
                 (0x8A000,8192),(0x8E000,4096),(0x90000,4096)):
             self.cpu.mem_protect(at,length,self.u.UC_PROT_READ|self.u.UC_PROT_WRITE)
@@ -128,11 +129,13 @@ class DrawMachine(projection.Machine):
         self.recursive_entries,self.recursive_packets,self.recursive_culls=Counter(),Counter(),Counter()
         self.recursive_roots=Counter()
         self.mode_runs=self.primitive_calls=0
+        self.unsupported_run_returns=0
 
     def instruction(self,cpu,address,size,unused):
         physical=address&MASK
         if physical==self.mode_run_at:self.mode_runs+=1
         if physical in self.primitive_at:self.primitive_calls+=1
+        if physical in (0x187C4,0x187E8,0x187FC,0x18828,0x1884C,0x18860):self.unsupported_run_returns+=1
         kind=self.recursive_root_at.get(physical)
         if kind:self.recursive_roots[kind]+=1
         kind=self.recursive_body_at.get(physical)
@@ -167,11 +170,16 @@ class DrawMachine(projection.Machine):
             if start<projection.RAM_BYTES:data[start:end]=bytes(end-start)
         return projection.sha(data)
 
+    def prepare_fixture(self,case,initial):
+        self.cpu.mem_write(BUFFER,initial)
+        return {}
+
     def draw(self,case,allow_mismatch=False):
         cpu,reg=self.cpu,self.r
         initial,values,writes=case_fixture(case)
         predicted,state,commands,outcome=expected_draw(case)
-        cpu.mem_write(BUFFER,initial)
+        self.read_ranges=[(BUFFER,BUFFER+len(initial)),*self.read_ranges[1:]]
+        preparation=self.prepare_fixture(case,initial)
         for at,value in values.items():cpu.mem_write(at,value)
         cpu.mem_write(0x8A82C,bytes((17,34,51,68)))
         cpu.mem_write(0x902E0,struct.pack('<I',case.get('light_mode',0)))
@@ -189,8 +197,9 @@ class DrawMachine(projection.Machine):
         self.recursive_entries,self.recursive_packets,self.recursive_culls=Counter(),Counter(),Counter()
         self.recursive_roots=Counter()
         self.mode_runs=self.primitive_calls=0
+        self.unsupported_run_returns=0
         steps_before=self.steps
-        self.label=json.dumps(case,sort_keys=True)
+        self.label=json.dumps({k:v for k,v in case.items() if k!='raw_tmd'},sort_keys=True)
         try:cpu.emu_start(START,projection.STOP|alias,count=1000000)
         except self.u.UcError as error:
             raise ValueError('Original draw failed at '+hex(cpu.reg_read(reg.UC_MIPS_REG_PC))+
@@ -223,12 +232,14 @@ class DrawMachine(projection.Machine):
             dict(self.recursive_roots)==draw_stats['recursive_roots'] and
             dict(self.recursive_culls)=={(kind,reason):count for kind,reasons in draw_stats['recursive_culls'].items()
                 for reason,count in reasons.items()})
-        run_equal=self.mode_runs==draw_stats['mode_runs'] and self.primitive_calls==draw_stats['primitive_calls']
+        run_equal=(self.mode_runs==draw_stats['mode_runs'] and self.primitive_calls==draw_stats['primitive_calls']
+            and self.unsupported_run_returns==draw_stats['unsupported_run_returns'])
         result=dict(outcome=outcome,equal=not differences and state_equal and command_equal and counters_equal and recursive_equal and run_equal,
             differences=differences,GTE_state_equal=state_equal,commands_equal=command_equal,
             native_counters_equal=counters_equal,complete_buffer_sha256=hashes,
             recursive_calls_and_packets_equal=recursive_equal,recursive_stats=recursion,
             mode_runs_and_primitive_calls_equal=run_equal,draw_stats=draw_stats,
+            input_preparation=preparation,
             instructions=self.steps-steps_before,native_commands=observed['native_commands']-before_gte['native_commands'],
             command_words=[hex(v) for v in self.command_words],saved_ABI_and_immutable_VM_preserved=True)
         if not allow_mismatch:require(result['equal'],'Original full draw differs: '+json.dumps(result))
