@@ -1,5 +1,12 @@
 # Roadmap
 
+The [native reel decoder pair](NATIVE_REEL_DECODER.md) now matches 30,374 entries
+and attributes all twenty reel films, including the original final-film cutoff.
+The next movie gates are full native encoded/RLE payload identity, individual
+frame presentation and other special-day/ending paths. Naturally earned chart
+histories and full gameplay/NPC acceptance also remain open. Earlier bounded
+profiles below retain their original scope and measurements.
+
 The [constructed-card history/reel pair](CARD_REEL_PLAYBACK.md) now agrees across
 62,530 frames, 105 unmasked complete states and four decoded images. Native Load,
 one ordinary dream, four-cell chart consumption and the configured reel interval

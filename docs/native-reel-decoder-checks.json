@@ -1,0 +1,1175 @@
+{
+  "native_comparison": {
+    "schema_version": 1,
+    "status": "equal_for_actual_native_reel_decoder_scope",
+    "passed": true,
+    "dimensions": {
+      "frames": 62530,
+      "complete_state_observations": 105,
+      "PCM_stereo_sample_frames": 46092627,
+      "MainRAM_bytes": 131134914560,
+      "GPURAM_bytes": 65567457280,
+      "RGB_payload_bytes": 16441937840
+    },
+    "native_decoder": {
+      "status": "actual_native_decoder_entries_inspected",
+      "entries": 30374,
+      "counts": {
+        "2147776432": 10125,
+        "2147771752": 10125,
+        "2147770244": 10124
+      },
+      "first_entry_frame": 21929,
+      "last_entry_frame": 62347,
+      "stream_VLC_pairs": 10125,
+      "canonical_encoded_prefix_matches": 10125,
+      "MDEC_submissions": 10124,
+      "callback_segments": 20,
+      "segments": [
+        {
+          "first_callback_frame": 21929,
+          "last_callback_frame": 23859,
+          "first_ID": 1,
+          "last_ID": 485,
+          "callback_count": 485,
+          "VLC_count": 485,
+          "MDEC_submissions": 485,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY01A.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY01A.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY01A.STR": 485
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 23866,
+          "last_callback_frame": 27359,
+          "first_ID": 1,
+          "last_ID": 877,
+          "callback_count": 877,
+          "VLC_count": 877,
+          "MDEC_submissions": 877,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY01B.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY01B.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY01B.STR": 877
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 27366,
+          "last_callback_frame": 29504,
+          "first_ID": 1,
+          "last_ID": 537,
+          "callback_count": 537,
+          "VLC_count": 537,
+          "MDEC_submissions": 537,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY02A.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY02A.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY02A.STR": 537
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 29510,
+          "last_callback_frame": 31321,
+          "first_ID": 1,
+          "last_ID": 455,
+          "callback_count": 455,
+          "VLC_count": 455,
+          "MDEC_submissions": 455,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY02B.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY02B.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY02B.STR": 455
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 31326,
+          "last_callback_frame": 32953,
+          "first_ID": 1,
+          "last_ID": 409,
+          "callback_count": 409,
+          "VLC_count": 409,
+          "MDEC_submissions": 409,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY03A.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY03A.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY03A.STR": 409
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 32959,
+          "last_callback_frame": 35304,
+          "first_ID": 1,
+          "last_ID": 589,
+          "callback_count": 589,
+          "VLC_count": 589,
+          "MDEC_submissions": 589,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY03B.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY03B.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY03B.STR": 589
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 35311,
+          "last_callback_frame": 36400,
+          "first_ID": 1,
+          "last_ID": 274,
+          "callback_count": 274,
+          "VLC_count": 274,
+          "MDEC_submissions": 274,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY04A.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY04A.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY04A.STR": 274
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 36408,
+          "last_callback_frame": 38602,
+          "first_ID": 1,
+          "last_ID": 551,
+          "callback_count": 551,
+          "VLC_count": 551,
+          "MDEC_submissions": 551,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY04B.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY04B.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY04B.STR": 551
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 38607,
+          "last_callback_frame": 40900,
+          "first_ID": 1,
+          "last_ID": 576,
+          "callback_count": 576,
+          "VLC_count": 576,
+          "MDEC_submissions": 576,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY05A.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY05A.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY05A.STR": 576
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 40907,
+          "last_callback_frame": 42239,
+          "first_ID": 1,
+          "last_ID": 335,
+          "callback_count": 335,
+          "VLC_count": 335,
+          "MDEC_submissions": 335,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY05B.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY05B.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY05B.STR": 335
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 42244,
+          "last_callback_frame": 44019,
+          "first_ID": 1,
+          "last_ID": 446,
+          "callback_count": 446,
+          "VLC_count": 446,
+          "MDEC_submissions": 446,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY06A.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY06A.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY06A.STR": 446
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 44028,
+          "last_callback_frame": 46154,
+          "first_ID": 1,
+          "last_ID": 534,
+          "callback_count": 534,
+          "VLC_count": 534,
+          "MDEC_submissions": 534,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY06B.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY06B.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY06B.STR": 534
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 46159,
+          "last_callback_frame": 48277,
+          "first_ID": 1,
+          "last_ID": 532,
+          "callback_count": 532,
+          "VLC_count": 532,
+          "MDEC_submissions": 532,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY07A.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY07A.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY07A.STR": 532
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 48281,
+          "last_callback_frame": 50402,
+          "first_ID": 1,
+          "last_ID": 533,
+          "callback_count": 533,
+          "VLC_count": 533,
+          "MDEC_submissions": 533,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY07B.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY07B.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY07B.STR": 533
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 50409,
+          "last_callback_frame": 53037,
+          "first_ID": 1,
+          "last_ID": 660,
+          "callback_count": 660,
+          "VLC_count": 660,
+          "MDEC_submissions": 660,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY08A.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY08A.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY08A.STR": 660
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 53041,
+          "last_callback_frame": 54876,
+          "first_ID": 1,
+          "last_ID": 461,
+          "callback_count": 461,
+          "VLC_count": 461,
+          "MDEC_submissions": 461,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY08B.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY08B.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY08B.STR": 461
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 54882,
+          "last_callback_frame": 56773,
+          "first_ID": 1,
+          "last_ID": 475,
+          "callback_count": 475,
+          "VLC_count": 475,
+          "MDEC_submissions": 475,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY09A.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY09A.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY09A.STR": 475
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 56778,
+          "last_callback_frame": 58700,
+          "first_ID": 1,
+          "last_ID": 483,
+          "callback_count": 483,
+          "VLC_count": 483,
+          "MDEC_submissions": 483,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY09B.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY09B.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY09B.STR": 483
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 58708,
+          "last_callback_frame": 60383,
+          "first_ID": 1,
+          "last_ID": 421,
+          "callback_count": 421,
+          "VLC_count": 421,
+          "MDEC_submissions": 421,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY10A.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [
+            "/CDI/FILM/SPDAY10A.STR"
+          ],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY10A.STR": 421
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        },
+        {
+          "first_callback_frame": 60389,
+          "last_callback_frame": 62347,
+          "first_ID": 1,
+          "last_ID": 492,
+          "callback_count": 492,
+          "VLC_count": 492,
+          "MDEC_submissions": 491,
+          "ID_gaps": [],
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY10B.STR"
+          ],
+          "candidate_paths_with_matching_encoded_endpoint": [],
+          "encoded_frame_count_for_each_candidate": {
+            "/CDI/FILM/SPDAY10B.STR": 500
+          },
+          "all_observed_IDs_contiguous_from_one": true
+        }
+      ],
+      "unsubmitted_decoded_buffers": [
+        {
+          "number": 492,
+          "segment": 19,
+          "first_word": 939525920,
+          "frame": 62347
+        }
+      ],
+      "input_pair_chain_sha256": "ada3f853e0962b15871b1e79609bd68aeb455ef1afbfa9ff8fc8aa6a5c323141",
+      "MDEC_submission_chain_sha256": "a68147aed11ae4fa5ac13c98ad3a6621b805863cb74def8f6388c98434db19eb",
+      "trace_file_sha256": "3ae3505b790126f9436fa11c318dc2da28cf31d4e625c27c9fd70053a9facdd3",
+      "all_native_function_bodies_checked_by_host": true,
+      "actual_callers_and_delay_slots_checked": true,
+      "full_encoded_or_RLE_payload_hashes_captured": false,
+      "complete_frame_presentation_acceptance": false
+    },
+    "source_corpus": {
+      "source_movies": 39,
+      "source_encoded_frames": 22382,
+      "encoded_prefix_bytes": 44,
+      "complete_source_mixed_movie_hashes_checked": true,
+      "source_frame_prefix_index_sha256": "72cc4c9e70dd7389a8be4ec1b2a0c0989a611bc7626b4492f4b8e2b0e1c6e2ae",
+      "encoded_prefix_keys": 21281,
+      "ambiguous_prefix_keys": 480,
+      "maximum_files_for_one_ID_and_prefix": 39,
+      "no_source_disc_or_movie_copy_created": true
+    },
+    "observer_original_rebuilt_unmasked_complete_states_equal": true,
+    "stock_observer_qualification": [
+      {
+        "all_complete_output_windows_equal": true,
+        "output_differences": [],
+        "complete_serialized_state_hashes_equal": false,
+        "complete_serialized_state_differing_windows": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104
+        ],
+        "full_unmasked_state_hashes_retained": true,
+        "state_equality_not_inferred_from_output_equality": true
+      },
+      {
+        "all_complete_output_windows_equal": true,
+        "output_differences": [],
+        "complete_serialized_state_hashes_equal": false,
+        "complete_serialized_state_differing_windows": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104
+        ],
+        "full_unmasked_state_hashes_retained": true,
+        "state_equality_not_inferred_from_output_equality": true
+      }
+    ],
+    "differences": {},
+    "source_films_uniquely_attributed": 20,
+    "earlier_films_with_all_source_IDs_at_VLC_and_MDEC_input_entry": 19,
+    "final_film_encoded_frames": 500,
+    "final_film_last_VLC_ID": 492,
+    "final_film_MDEC_input_calls": 491,
+    "final_film_encoded_IDs_not_reached": 8,
+    "prepared_history_not_naturally_earned": true,
+    "full_encoded_or_RLE_payload_hashes_captured": false,
+    "per_encoded_frame_GPU_presentation_accepted": false,
+    "original_hardware_timing_verified": false,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "new_matching_C_bytes": 0,
+    "new_gameplay_features": 0,
+    "model_API_calls": 0
+  },
+  "analysis_copy_controls": [
+    {
+      "name": "changed_event_ordinal",
+      "detected": true,
+      "error": "Wrong decoder event schedule/ordinal.",
+      "scope": "Changed parsed saved-analysis copy; all native capture and game bytes retained."
+    },
+    {
+      "name": "entry_outside_observed_reel",
+      "detected": true,
+      "error": "Wrong decoder event schedule/ordinal.",
+      "scope": "Changed parsed saved-analysis copy; all native capture and game bytes retained."
+    },
+    {
+      "name": "changed_original_entry_word",
+      "detected": true,
+      "error": "Observed decoder body/entry word differs.",
+      "scope": "Changed parsed saved-analysis copy; all native capture and game bytes retained."
+    },
+    {
+      "name": "truncated_original_body_size",
+      "detected": true,
+      "error": "Observed decoder body/entry word differs.",
+      "scope": "Changed parsed saved-analysis copy; all native capture and game bytes retained."
+    },
+    {
+      "name": "changed_actual_delay_instruction",
+      "detected": true,
+      "error": "Decoder entry lacks its original direct caller/delay slot.",
+      "scope": "Changed parsed saved-analysis copy; all native capture and game bytes retained."
+    },
+    {
+      "name": "changed_return_address",
+      "detected": true,
+      "error": "Decoder entry lacks its original direct caller/delay slot.",
+      "scope": "Changed parsed saved-analysis copy; all native capture and game bytes retained."
+    },
+    {
+      "name": "invalid_native_stack",
+      "detected": true,
+      "error": "Invalid native decoder receiver/stack/movie context.",
+      "scope": "Changed parsed saved-analysis copy; all native capture and game bytes retained."
+    },
+    {
+      "name": "changed_stream_vtable",
+      "detected": true,
+      "error": "Unpaired stream callback or wrong stream vtable.",
+      "scope": "Changed parsed saved-analysis copy; all native capture and game bytes retained."
+    },
+    {
+      "name": "VLC_input_not_accepted_ring_buffer",
+      "detected": true,
+      "error": "VLC input does not match the accepted ring buffer.",
+      "scope": "Changed parsed saved-analysis copy; all native capture and game bytes retained."
+    },
+    {
+      "name": "VLC_encoded_prefix_absent_from_disc",
+      "detected": true,
+      "error": "Actual VLC input ID/prefix/command word is absent from the canonical corpus.",
+      "scope": "Changed parsed saved-analysis copy; all native capture and game bytes retained."
+    },
+    {
+      "name": "changed_MDEC_input_mode",
+      "detected": true,
+      "error": "MDEC submission lacks its prior decoded buffer/mode.",
+      "scope": "Changed parsed saved-analysis copy; all native capture and game bytes retained."
+    },
+    {
+      "name": "changed_MDEC_command_header",
+      "detected": true,
+      "error": "MDEC command header differs from its encoded source command.",
+      "scope": "Changed parsed saved-analysis copy; all native capture and game bytes retained."
+    },
+    {
+      "name": "MDEC_input_without_decoded_buffer",
+      "detected": true,
+      "error": "MDEC submission lacks its prior decoded buffer/mode.",
+      "scope": "Changed parsed saved-analysis copy; all native capture and game bytes retained."
+    },
+    {
+      "name": "changed_rebuilt_decoder_trace",
+      "detected": true,
+      "differences": {
+        "actual_native_decoder_entries": true
+      },
+      "scope": "Changed comparison copy; no state masking, game changes or capture edits."
+    },
+    {
+      "name": "changed_rebuilt_complete_state",
+      "detected": true,
+      "differences": {
+        "original_rebuilt_full_recording": {
+          "windows": true
+        }
+      },
+      "scope": "Changed comparison copy; no state masking, game changes or capture edits."
+    },
+    {
+      "name": "changed_rebuilt_GPU_output",
+      "detected": true,
+      "differences": {
+        "original_rebuilt_full_recording": {
+          "windows": true
+        },
+        "stock_output_qualification": true
+      },
+      "scope": "Changed comparison copy; no state masking, game changes or capture edits."
+    },
+    {
+      "name": "changed_rebuilt_returned_PCM",
+      "detected": true,
+      "differences": {
+        "original_rebuilt_full_recording": {
+          "windows": true
+        },
+        "stock_output_qualification": true
+      },
+      "scope": "Changed comparison copy; no state masking, game changes or capture edits."
+    }
+  ],
+  "canonical_targets_and_actual_direct_call_sites": {
+    "targets": [
+      {
+        "function": "DecDCTin",
+        "address": "0x80045F84",
+        "file_offset": 223108,
+        "bytes": 124,
+        "sha256": "5e5051da7b9fa7a018b4a069c270b17280351ff0a9b41b1fa28ed826822d849d",
+        "entry_word": 666763240
+      },
+      {
+        "function": "func_80046568",
+        "address": "0x80046568",
+        "file_offset": 224616,
+        "bytes": 80,
+        "sha256": "49f5b92d676336f1872f3e6b0147e5b0a8bd7fec2792e83b8674743c1bf956d4",
+        "entry_word": 666763232
+      },
+      {
+        "function": "str_stream_invoke_callback",
+        "address": "0x800477B0",
+        "file_offset": 229296,
+        "bytes": 96,
+        "sha256": "5d72a19e175810669c685bd7c1231f86172780ff2bf620afc30dcc60c152073b",
+        "entry_word": 666763232
+      }
+    ],
+    "original_direct_call_sites": [
+      {
+        "caller": "func_80045AD8",
+        "pc": "0x80045b54",
+        "return_address": "0x80045b5c",
+        "target": "0x80046568",
+        "instruction": "0xc01195a",
+        "delay_word": "0x0"
+      },
+      {
+        "caller": "func_80045CFC",
+        "pc": "0x80045d70",
+        "return_address": "0x80045d78",
+        "target": "0x80045f84",
+        "instruction": "0xc0117e1",
+        "delay_word": "0x34050002"
+      },
+      {
+        "caller": "str_stream_get_next",
+        "pc": "0x80047760",
+        "return_address": "0x80047768",
+        "target": "0x800477b0",
+        "instruction": "0xc011dec",
+        "delay_word": "0x2202021"
+      },
+      {
+        "caller": "str_stream_get_next",
+        "pc": "0x80047784",
+        "return_address": "0x8004778c",
+        "target": "0x800477b0",
+        "instruction": "0xc011dec",
+        "delay_word": "0x2202021"
+      }
+    ],
+    "function_body_hash_is_not_complete_instruction_execution": true,
+    "entry_prefix_bytes": 44,
+    "full_encoded_or_RLE_payload_hashes_not_captured": true,
+    "stock_capture_preserved_and_reused": true,
+    "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+  },
+  "source_sha256": {
+    "research/headless/RecordCardDecodeCompactWindows.cs": "d33c26ae23244a7b076f618379283f0179446733fcdf2e2f811441d7ce54f3b8",
+    "research/headless/reel-decoder-targets.json": "de272ebe05c8d576238af9be00af9872d1b8c0b009f6e23a10f430cf2fcf937e",
+    "research/headless/RecordCardReelWindows.cs": "ec964fb24c751ca24f83c4ecc8b225a9b76ea55f281ea3355b7cec8cbe3c1955",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/BoundedSha256Stream.cs": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e",
+    "tools/inspect_reel_decoder.py": "ad0ccd67abeb7fda8218b34d8b0383134ae16d8fba3aa8ff280e55b167bd7ccd",
+    "tests/test_reel_decoder.py": "ea50a9db76740978beeaf9cf87f7ace31a91bac1b430ba661ed01e70dd9e4e19",
+    "tools/inspect_card_reel.py": "54a35b46aee6ea5752f0256f39a1ae75f393acb85a1ca86121b49d095c084c74",
+    "tools/inspect_opening_attract.py": "8462fa41b7e564381629d8b69c9b813fa8296d77a24a154c36b165f5e3ee6bc0",
+    "tools/inspect_movie_windows.py": "a7864cfad1133a63364be77dd1429192bf416d534fcaeeaff7a413ac2ab05f0e",
+    "tools/inspect_progression_history.py": "a3f888ea32368392f9416f7b600ccd50b248a32eb1781d800d05ed8d29d7a486",
+    "tools/compare_movie_playback.py": "6b7aa74d96822f46f890dd3f2dd5069eb74c12777ee5c08e6dd535ad877a7369",
+    "tools/inventory_movies.py": "c0c591a30e11eca32973fc3dbf60f34d970fdf42a0a808c6ebeca2131f8ec711",
+    "src/menu/mdec_movie.c": "80ad6b55ed2a1923e1c00491565b16032a4b2fdc0cf25848f0b902f2f68b3019",
+    "src/file/str_stream.c": "788cc2ed6ef4794485bb5dbae52c702d090faa279ab67d4ba471e798344a3acc",
+    "src/utils/cd_paths.c": "380f325eb63bfcee49f4bfee8fc8917ce04d99bf7121dea427b1f6a6bccb9eae",
+    "src/psyq/libpress/libpress.c": "651253b0dc4c34a4292ca6f113e770213ca8b952e7498f2e25b94b92e9b42e80",
+    "src/psyq/libpress/vlc.c": "fb5ff6314e82909289db5f56e45e764ec1286ecd039c63048e5b9b2d350ad269",
+    "src/psyq/libpress/vlc2.c": "85f8c4a76f582b06e1ea866f6e2b6daa4e8daa29e6c7977b5e8db5ebd71f94f0",
+    "research/original-functions.json": "6c5a8f8a95c51b2dd5c19a071e62d8a366e1d83609598272e44ef7f3c4aea5fc",
+    "docs/movie-inventory-checks.json": "8b450a19e27acebe77636bd785be0c9eb82cbe990a03e042d4026fa57c12180b"
+  },
+  "capture_files": {
+    "compact-original/card-store.json": {
+      "bytes": 919,
+      "sha256": "3069c670f80cbdc2bb4077c9f6fa046556ca5ae6a0181c40003f92410697a40c"
+    },
+    "compact-original/decoder-arm.json": {
+      "bytes": 486,
+      "sha256": "f295695f0b94ed6fbd85025141f894ae23cecd14598625f51e87f52e0bd97ad6"
+    },
+    "compact-original/decoder-entries.bin.gz": {
+      "bytes": 441973,
+      "sha256": "3ae3505b790126f9436fa11c318dc2da28cf31d4e625c27c9fd70053a9facdd3"
+    },
+    "compact-original/decoder-trace-summary.json": {
+      "bytes": 783,
+      "sha256": "75fc56111e8f731986460394fd04cd882227ed45c7838e863161a58087802f2f"
+    },
+    "compact-original/final.png": {
+      "bytes": 551,
+      "sha256": "6d27e6f6505d661bcb4b01efa3a06ba572d3025820c3d3cf5e35ac883683e4e1"
+    },
+    "compact-original/inputs.tsv": {
+      "bytes": 368,
+      "sha256": "b03462eb7dd39904cbe5a7f98adefb3b4a4208d8dfd2a6e97fbeef461e0e320e"
+    },
+    "compact-original/load-return.png": {
+      "bytes": 32061,
+      "sha256": "15e1a06520a5fc13b350a6afb35fd87f69059fa00c5735cf0e409e6e8249ed24"
+    },
+    "compact-original/native.tsv.gz": {
+      "bytes": 677199,
+      "sha256": "c2679efb0704899769b89b854237c25620a2408f8d3656809ab6c524e2be3f04"
+    },
+    "compact-original/progress.json": {
+      "bytes": 218,
+      "sha256": "b8f7c765268cef86fa45915de09913e53ce9d893d539de0b81ce23811790fbd6"
+    },
+    "compact-original/reel-plus-600.png": {
+      "bytes": 70035,
+      "sha256": "c5bd06c7b78cd45fdc08ac45433ac80c59c54ce983c319d634af9397b6ba2a42"
+    },
+    "compact-original/reel-start.png": {
+      "bytes": 374,
+      "sha256": "20c4defb2076779f6a5f3bda294d5a5e06a798ff524437b5418992b781360a90"
+    },
+    "compact-original/report.json": {
+      "bytes": 1411,
+      "sha256": "a91fd7ec9fd3214e4edc27bf2e4a2177116e9f800f16c3bcd2fdf20cd1628f4f"
+    },
+    "compact-original/windows.jsonl": {
+      "bytes": 109996,
+      "sha256": "bc52cf8147f8cb3fc537aaa47d592180a366d528f1f5c276a25700f920d5c145"
+    },
+    "compact-rebuilt/card-store.json": {
+      "bytes": 919,
+      "sha256": "3069c670f80cbdc2bb4077c9f6fa046556ca5ae6a0181c40003f92410697a40c"
+    },
+    "compact-rebuilt/decoder-arm.json": {
+      "bytes": 486,
+      "sha256": "f295695f0b94ed6fbd85025141f894ae23cecd14598625f51e87f52e0bd97ad6"
+    },
+    "compact-rebuilt/decoder-entries.bin.gz": {
+      "bytes": 441973,
+      "sha256": "3ae3505b790126f9436fa11c318dc2da28cf31d4e625c27c9fd70053a9facdd3"
+    },
+    "compact-rebuilt/decoder-trace-summary.json": {
+      "bytes": 783,
+      "sha256": "75fc56111e8f731986460394fd04cd882227ed45c7838e863161a58087802f2f"
+    },
+    "compact-rebuilt/final.png": {
+      "bytes": 551,
+      "sha256": "6d27e6f6505d661bcb4b01efa3a06ba572d3025820c3d3cf5e35ac883683e4e1"
+    },
+    "compact-rebuilt/inputs.tsv": {
+      "bytes": 368,
+      "sha256": "b03462eb7dd39904cbe5a7f98adefb3b4a4208d8dfd2a6e97fbeef461e0e320e"
+    },
+    "compact-rebuilt/load-return.png": {
+      "bytes": 32061,
+      "sha256": "15e1a06520a5fc13b350a6afb35fd87f69059fa00c5735cf0e409e6e8249ed24"
+    },
+    "compact-rebuilt/native.tsv.gz": {
+      "bytes": 677199,
+      "sha256": "c2679efb0704899769b89b854237c25620a2408f8d3656809ab6c524e2be3f04"
+    },
+    "compact-rebuilt/progress.json": {
+      "bytes": 218,
+      "sha256": "5a1dea5f2d3e570284f9884668721472b3c3f2f994ecd51090a490be55000017"
+    },
+    "compact-rebuilt/reel-plus-600.png": {
+      "bytes": 70035,
+      "sha256": "c5bd06c7b78cd45fdc08ac45433ac80c59c54ce983c319d634af9397b6ba2a42"
+    },
+    "compact-rebuilt/reel-start.png": {
+      "bytes": 374,
+      "sha256": "20c4defb2076779f6a5f3bda294d5a5e06a798ff524437b5418992b781360a90"
+    },
+    "compact-rebuilt/report.json": {
+      "bytes": 1410,
+      "sha256": "ac967efb9881db42d8e645ab9876319b6a152768ac0ccd26269d86b621f94f5f"
+    },
+    "compact-rebuilt/windows.jsonl": {
+      "bytes": 109996,
+      "sha256": "bc52cf8147f8cb3fc537aaa47d592180a366d528f1f5c276a25700f920d5c145"
+    }
+  },
+  "executed_host_source_sha256": "d33c26ae23244a7b076f618379283f0179446733fcdf2e2f811441d7ce54f3b8",
+  "executed_host_binary": {
+    "bytes": 90624,
+    "sha256": "83030a97234cf93c3c4dc567a732fd5333c3ba3fc260d1a7d497ff4fb45edcc8"
+  },
+  "frozen_input_manifest_sha256": "45c3ffdcd2663d7ce64bae0da1f4efbc910d15d164b227e96952f378221dcb49",
+  "frozen_runtime_records": 174,
+  "composed_observer_runtime_records": 193,
+  "all_frozen_inputs_rehashed_around_captures_and_audit": true,
+  "original_review": {
+    "review_file_sha256": "dc030a9eafc8a8bff7864adca9ecc0f5468681d2e0297a709fce3b08e4da173a",
+    "checked_unix": 1793436585.2827694,
+    "file_mtime_unix": 1793436585.283534,
+    "rebuilt_started_unix": 1793436785.7462318,
+    "completed_original_review_preceded_rebuilt": true,
+    "private_reader_retained": true,
+    "private_reader_sha256_at_publication": "4b8a30c19d7480b3282f6a4195ed97fc749277fd320340847efd23a69d27a86c",
+    "reader_hash_embedded_in_original_review": false,
+    "reader_mtime_precedes_review": true,
+    "final_public_reader_rechecked_both_saved_captures": true
+  },
+  "failed_attempts_retained": [
+    "original: owned stop after Windows exclusive-reader exception; 714 frames",
+    "observed-original: terminal exit 2 at the v1 compressed entry bound; 13730 partial entries"
+  ],
+  "incomplete_attempts_not_used_as_complete_parity_evidence": true,
+  "all_capture_attempts_aggregate_logical_bytes": 3435755,
+  "schema_version": 1,
+  "date": "2026-10-31",
+  "status": "native_reel_decoder_pair_and_analysis_controls_passed",
+  "baseline_commit": "e7198938fed744f5bd10ef7bd59eba1de65f2ab6",
+  "scope": "Actual stream/VLC/MDEC input function entries during the constructed-card timed reel; prefix identity is not full payload/presentation acceptance.",
+  "current_build": {
+    "objects_expected": 306,
+    "objects_found": 306,
+    "complete_objects": true,
+    "missing_objects": [],
+    "build_current": true,
+    "c_bytes": 199912,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 100.0,
+    "sdk_text_bytes": 147880,
+    "handwritten_text_bytes": 188,
+    "binary_match": "verified",
+    "expected_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "command": [
+      "wsl.exe",
+      "-d",
+      "LSD-Decomp",
+      "--cd",
+      "/mnt/d/CodexArtifacts/LSD/private-workspaces-20261018/lsd-recovered",
+      "--",
+      "env",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "/opt/lsd-decomp-venv/bin/python",
+      "-B",
+      "tools/progress.py",
+      "--json"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 14.940836906433105,
+    "full_progress_raw_sha256": "165efbf661dd31a81bdbd8dcb56a72be863e8c4691f92656a7d5bbcbc18f2ee2",
+    "progress_source_sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+    "pinned_python_selects_its_own_ninja": true
+  },
+  "before_after": {
+    "date": "2026-10-31",
+    "document": "docs/NATIVE_REEL_DECODER.md",
+    "evidence": "docs/native-reel-decoder-checks.json",
+    "features": [
+      "F022",
+      "F032"
+    ],
+    "completed_original_rebuilt_profiles_before": 0,
+    "completed_original_rebuilt_profiles_after": 1,
+    "paired_frames": 62530,
+    "complete_state_pairs": 105,
+    "native_entries_per_run": 30374,
+    "accepted_stream_callbacks_per_run": 10125,
+    "VLC_entries_per_run": 10125,
+    "MDEC_input_entries_per_run": 10124,
+    "reel_source_films_attributed_before": 0,
+    "reel_source_films_attributed_after": 20,
+    "reel_source_films_total": 20,
+    "films_with_all_source_IDs_at_VLC_and_MDEC_input_entry": 19,
+    "final_film_source_frames": 500,
+    "final_film_last_VLC_ID": 492,
+    "final_film_last_MDEC_input_ID": 491,
+    "final_film_unreached_encoded_IDs": 8,
+    "direct_native_movie_start_extents_before": 9,
+    "direct_native_movie_start_extents_after": 9,
+    "routed_movie_payloads": 39,
+    "actual_original_function_entry_events_recorded": true,
+    "full_original_body_checked_on_every_entry": true,
+    "encoded_source_prefix_bytes": 44,
+    "full_encoded_or_RLE_payload_hashes_captured": false,
+    "per_encoded_frame_GPU_presentation_accepted": false,
+    "original_hardware_timing_verified": false,
+    "constructed_history_not_naturally_earned": true,
+    "original_game_behavior_modified": false,
+    "prior_inventory_values_preserved": true,
+    "detected_analysis_copy_controls": 17,
+    "new_matching_C_bytes": 0,
+    "new_gameplay_features": 0,
+    "original_feature_groups_accepted": 0,
+    "whole_NPC_encounter_acceptances": 0,
+    "new_developer_capability_categories": 0,
+    "model_API_calls": 0
+  },
+  "preservation": {
+    "original_game_RAM_or_instruction_writes": 0,
+    "state_loads": 0,
+    "new_runtime_or_disc_copies": 0,
+    "existing_player_or_user_saves_accessed": false,
+    "original_game_source_and_prior_evidence_unchanged": true
+  },
+  "complete_goal_achieved": false,
+  "remaining_gates": [
+    "Full native encoded/RLE payload hashes and individual frame presentation",
+    "Naturally earned and repeated/disabled/missing-cell chart histories",
+    "Other special-day and ending branches",
+    "Complete asset/dispatch, gameplay and NPC encounter acceptance",
+    "Original-hardware timing and other seeds"
+  ],
+  "source_git_blob_sha256": {
+    "research/headless/RecordCardDecodeCompactWindows.cs": "d33c26ae23244a7b076f618379283f0179446733fcdf2e2f811441d7ce54f3b8",
+    "research/headless/reel-decoder-targets.json": "de272ebe05c8d576238af9be00af9872d1b8c0b009f6e23a10f430cf2fcf937e",
+    "research/headless/RecordCardReelWindows.cs": "ec964fb24c751ca24f83c4ecc8b225a9b76ea55f281ea3355b7cec8cbe3c1955",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/BoundedSha256Stream.cs": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e",
+    "tools/inspect_reel_decoder.py": "ad0ccd67abeb7fda8218b34d8b0383134ae16d8fba3aa8ff280e55b167bd7ccd",
+    "tests/test_reel_decoder.py": "ea50a9db76740978beeaf9cf87f7ace31a91bac1b430ba661ed01e70dd9e4e19",
+    "tools/inspect_card_reel.py": "54a35b46aee6ea5752f0256f39a1ae75f393acb85a1ca86121b49d095c084c74",
+    "tools/inspect_opening_attract.py": "8462fa41b7e564381629d8b69c9b813fa8296d77a24a154c36b165f5e3ee6bc0",
+    "tools/inspect_movie_windows.py": "a7864cfad1133a63364be77dd1429192bf416d534fcaeeaff7a413ac2ab05f0e",
+    "tools/inspect_progression_history.py": "a3f888ea32368392f9416f7b600ccd50b248a32eb1781d800d05ed8d29d7a486",
+    "tools/compare_movie_playback.py": "6b7aa74d96822f46f890dd3f2dd5069eb74c12777ee5c08e6dd535ad877a7369",
+    "tools/inventory_movies.py": "c0c591a30e11eca32973fc3dbf60f34d970fdf42a0a808c6ebeca2131f8ec711",
+    "src/menu/mdec_movie.c": "80ad6b55ed2a1923e1c00491565b16032a4b2fdc0cf25848f0b902f2f68b3019",
+    "src/file/str_stream.c": "399f850fda255ebc394807004857318efa366d1e7b5c16b498ad50f268a1edb4",
+    "src/utils/cd_paths.c": "b5cab6b884909fcb3e87923d3fcfba00af0afecc2eec3960bc2f0960e8ecd8ea",
+    "src/psyq/libpress/libpress.c": "fc162f1ace6351ac83d2ee5d23e860e576eea3021c225dac5f009a85c440ec3a",
+    "src/psyq/libpress/vlc.c": "3a22335b6b7ea72d1fbde57160405e4958b3f46c1bb9ca23091b2c2663d30809",
+    "src/psyq/libpress/vlc2.c": "d096a92944c1c701b6474ae8c5944342e1775012d17f6ea735465cc62a126c88",
+    "research/original-functions.json": "6c5a8f8a95c51b2dd5c19a071e62d8a366e1d83609598272e44ef7f3c4aea5fc",
+    "docs/movie-inventory-checks.json": "d04792ab65b99cc58af1717b0bddd14b66718dd5690fbb8c1fbb109cbb903d22"
+  },
+  "source_representation_notes": {
+    "src/file/str_stream.c": "Executed working file has CRLF; the Git blob has LF. Both complete hashes are retained.",
+    "src/utils/cd_paths.c": "Executed working file has CRLF; the Git blob has LF. Both complete hashes are retained.",
+    "src/psyq/libpress/libpress.c": "Executed working file has CRLF; the Git blob has LF. Both complete hashes are retained.",
+    "src/psyq/libpress/vlc.c": "Executed working file has CRLF; the Git blob has LF. Both complete hashes are retained.",
+    "src/psyq/libpress/vlc2.c": "Executed working file has CRLF; the Git blob has LF. Both complete hashes are retained.",
+    "docs/movie-inventory-checks.json": "Executed working file has CRLF; the Git blob has LF. Both complete hashes are retained."
+  }
+}

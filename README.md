@@ -55,6 +55,12 @@ complete states, with complete framed RAM/GPU/RGB/PCM/native/control hashes.
 Eight of 39 routed movie payloads are observed; the other payloads and remaining
 behavior/hardware acceptance gates stay open.
 
+The [native reel decoder study](docs/NATIVE_REEL_DECODER.md) identifies all
+twenty reel films from actual stream/VLC entries. Original and rebuilt discs agree
+on 30,374 entries, 62,530 frames and 105 unmasked complete states. Nineteen films
+reach all source IDs at VLC and MDEC input entry; the timed final-film cutoff also
+matches. Full native payload hashes and individual frame presentation remain open.
+
 The [history-triggered reel comparison](docs/CARD_REEL_PLAYBACK.md) adds a
 constructed external-card route through native Load, an ordinary dream, the
 four-cell chart event and the reel. All 62,530 paired frames, 105 complete states

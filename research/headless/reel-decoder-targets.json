@@ -1,0 +1,67 @@
+{
+  "targets": [
+    {
+      "function": "DecDCTin",
+      "address": "0x80045F84",
+      "file_offset": 223108,
+      "bytes": 124,
+      "sha256": "5e5051da7b9fa7a018b4a069c270b17280351ff0a9b41b1fa28ed826822d849d",
+      "entry_word": 666763240
+    },
+    {
+      "function": "func_80046568",
+      "address": "0x80046568",
+      "file_offset": 224616,
+      "bytes": 80,
+      "sha256": "49f5b92d676336f1872f3e6b0147e5b0a8bd7fec2792e83b8674743c1bf956d4",
+      "entry_word": 666763232
+    },
+    {
+      "function": "str_stream_invoke_callback",
+      "address": "0x800477B0",
+      "file_offset": 229296,
+      "bytes": 96,
+      "sha256": "5d72a19e175810669c685bd7c1231f86172780ff2bf620afc30dcc60c152073b",
+      "entry_word": 666763232
+    }
+  ],
+  "original_direct_call_sites": [
+    {
+      "caller": "func_80045AD8",
+      "pc": "0x80045b54",
+      "return_address": "0x80045b5c",
+      "target": "0x80046568",
+      "instruction": "0xc01195a",
+      "delay_word": "0x0"
+    },
+    {
+      "caller": "func_80045CFC",
+      "pc": "0x80045d70",
+      "return_address": "0x80045d78",
+      "target": "0x80045f84",
+      "instruction": "0xc0117e1",
+      "delay_word": "0x34050002"
+    },
+    {
+      "caller": "str_stream_get_next",
+      "pc": "0x80047760",
+      "return_address": "0x80047768",
+      "target": "0x800477b0",
+      "instruction": "0xc011dec",
+      "delay_word": "0x2202021"
+    },
+    {
+      "caller": "str_stream_get_next",
+      "pc": "0x80047784",
+      "return_address": "0x8004778c",
+      "target": "0x800477b0",
+      "instruction": "0xc011dec",
+      "delay_word": "0x2202021"
+    }
+  ],
+  "function_body_hash_is_not_complete_instruction_execution": true,
+  "entry_prefix_bytes": 44,
+  "full_encoded_or_RLE_payload_hashes_not_captured": true,
+  "stock_capture_preserved_and_reused": true,
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+}
