@@ -1183,3 +1183,23 @@ features/encounters are unchanged. Full renderer input coverage, original-model
 and natural-scene drawing, replacement matrices, GPU pixels and hardware timing
 remain open. No new gameplay feature, developer-capability category, optional
 mod or model API call is counted.
+
+## Original model-backed drawing supplement, 2026-10-31
+
+The [corpus renderer profile](TMD_CORPUS_RENDERING.md) composes original SDK
+mapping/linking and drawing in 27,254 calls across all 422 model files,
+531 tables, 13,627 descriptors and 119,458 source polygons. Two supplied
+inspection views retain complete original pools, indices, padding and packet
+payloads. Complete prepared inputs, output buffers, GTE state/counters, original
+dispatch counts, saved ABI and immutable VM agree. The 1,521 prior renderer
+regressions still pass. This adds zero game C bytes or whole-feature acceptances.
+
+The original drawer returns on 43 lit Gouraud source packets in eight objects,
+leaving 85 source-tail packets unvisited (170 occurrences across the views).
+The static inspector finds seven objects without present grid references and
+one with four references; natural routing and unused/collision-only roles are
+unproven. Thirty-two constructed early-return calls and two new executed
+original-code faults pass their checks. Inspection cameras, per-object buffer
+reset, corpus subdivision, natural scenes, rasterized pixels and hardware timing
+remain separate gates. Earlier inventory values and original-versus-optional-AI
+boundaries are preserved; all acceptance/feature increments remain zero.

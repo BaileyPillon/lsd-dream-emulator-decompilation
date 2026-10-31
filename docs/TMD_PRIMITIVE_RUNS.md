@@ -10,6 +10,11 @@ This closes a bounded verification gap between isolated polygons and shared-stat
 streams. It does not verify every renderer input, the original disc-model drawing
 corpus, natural scenes, replacement matrices, GPU pixels or hardware timing.
 
+The later [original-model profile](TMD_CORPUS_RENDERING.md) composes native
+mapping, linking and drawing across the complete source corpus under supplied
+inspection cameras. It preserves unsupported-format returns and leaves natural
+scene, rasterization and hardware acceptance separate.
+
 ## Executed evidence
 
 | New run-profile measurement | Result |
