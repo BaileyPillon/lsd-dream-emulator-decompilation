@@ -1,5 +1,12 @@
 # Roadmap
 
+The [constructed-card history/reel pair](CARD_REEL_PLAYBACK.md) now agrees across
+62,530 frames, 105 unmasked complete states and four decoded images. Native Load,
+one ordinary dream, four-cell chart consumption and the configured reel interval
+are compared. Continue natural history acquisition, repeated/disabled/missing-cell
+conditions and actual per-file reel decode/presentation. A ninth direct start-file
+binding does not establish completion of its twenty concatenated payloads.
+
 The [matching game-C milestone](MATCHING_GAME_C.md) completes all counted game
 functions under the owner's revised rule allowing documented upstream stack
 layout padding. All 306 configured objects rebuild to the canonical executable;

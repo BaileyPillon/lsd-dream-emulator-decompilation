@@ -1,5 +1,10 @@
 # Isolated PS1 replay host
 
+`RecordCardReelWindows.cs` cold-loads a separately prepared QA card through the
+supported SaveRAM service, then uses the native Load UI, dream and graph/reel
+route. Its [fixture and comparison guide](../../docs/CARD_REEL_PLAYBACK.md) keeps
+constructed history separate from naturally earned gameplay and all-film decode.
+
 `ReplayColdStart.cs` is the optional Windows frontend built by
 [`tools/replay_cold_start_headless.py`](../../tools/replay_cold_start_headless.py).
 It runs the supplied BizHawk PS1 core with recorded controller inputs and
