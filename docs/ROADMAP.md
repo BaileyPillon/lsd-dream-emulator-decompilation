@@ -6,8 +6,16 @@ layout padding. All 306 configured objects rebuild to the canonical executable;
 game C is 199,912 / 199,912 bytes with zero game assembly fallbacks. Five functions
 retain explicit compatibility storage whose original source purpose is unknown.
 The frozen old no-padding restriction is superseded; all other completion
-requirements remain. Continue the year/ending pair, asset/dispatch closure,
-natural behavior scenarios and reviewed runtime acceptance.
+requirements remain. The [natural-year pair](NATURAL_YEAR_ENDING.md) now passes
+its recorded 365-day and ending-window comparison. Continue full history/movie
+review, asset/dispatch closure, other natural behavior scenarios and reviewed
+runtime acceptance.
+
+The year pair agrees on all 12,345 sampled RAM/GPU/RGB checkpoints, all 371
+complete-state observations, 11,976 contiguous returned-PCM windows and seven
+decoded images. It reaches year 1/internal day 0 with the original ending path,
+threshold and pending-to-terminal lifecycle. Complete native ending playback,
+all movie/skip routes, other seeds and whole-feature acceptance remain open.
 
 The [recovered-C analysis workflow](RECOVERED_C_CONTEXT.md) now supports
 original-range context and function diagnostics after assembly fallbacks reach
@@ -27,16 +35,18 @@ preserves observed native state across acknowledged host waits. Original and
 rebuilt 6,001-frame recordings agree, and a 186-second wait crosses the unchanged
 180-second progress watchdog before completing with the same recorded outputs
 as the retained run without waits. Stop-during-wait and NTFS output-accounting
-checks pass; the first failed supervisor attempt remains documented. Apply the
-qualified host to a separately supervised full-year cold start and exact-input
-rebuilt replay. Year/ending and whole-feature acceptance remain open.
+checks pass; the first failed supervisor attempt remains documented. The
+qualified host subsequently completed the separately supervised full-year cold
+start and exact-input rebuilt replay linked above. No host wait was needed in
+either year recording; full movie and whole-feature acceptance remain open.
 
 The [streaming state-hash check](STATE_HASH_STREAMING.md) removes duplicate
 serialized-state buffers from the progression recorder and adds resource
 telemetry. Two integrated native probes preserve hashes, byte counts, full
 RAM/GPU memory and frame counters at four checkpoints each. The historical
-day-153 disc-read resource failure still has no established cause; a successful
-full-year comparison, year boundary and ending remain required.
+day-153 disc-read resource failure still has no established cause. The later
+full-year pair now passes its declared year-boundary and ending-window gate;
+complete native ending decode and other behavior gates remain required.
 
 The [natural menu lifetime check](NATURAL_MENU_LIFETIMES.md) now distinguishes
 three menu generations at a reused address and verifies 196 selected allocations
@@ -80,9 +90,10 @@ boundary of the published snapshot.
 The [natural progression pilot](NATURAL_PROGRESSION.md) compares seven completed
 days: 209 sampled RAM/GPU/RGB pairs and all 201 returned-PCM windows agree.
 All nine complete serialized-state hash pairs differ, so that strict comparison
-fails. The requested eighth day is beyond this pilot's frame budget. Extend the
-route through days 364/365 and the ending using a qualified existing core,
-preserve every state difference, and keep whole-feature acceptance separate.
+fails. The requested eighth day is beyond this pilot's frame budget. The later
+year pair covers days 364/365 and the new-year day 1 with a separately qualified
+core/input profile. Preserve the pilot's differences and keep full history,
+ending-decode and whole-feature acceptance separate.
 
 The [file-driver interface repair](FILE_DRIVER_INTERFACES.md) aligns the
 shared/debug Open and Read views with their original arguments and result.

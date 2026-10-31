@@ -84,10 +84,16 @@ replays with pinned discs, emulator/core, BIOS, configuration, script, and saved
 state. Comparisons cover frames, GPU memory, save-state payloads, native movement
 fields, and captured PCM where requested. These are bounded scenarios.
 
-A matching executable and a playable session do not finish the C recovery,
-exhaustive content inventory, natural NPC encounters, card error cases, or every
-other requirement in [the project objective](../PROJECT_OBJECTIVE.md). Original
-parity, optional mods, and AI-assisted developer tools retain separate evidence.
+The later [natural-year replay](NATURAL_YEAR_ENDING.md) completes all 365 days
+and a 12,000-frame ending window in separate original/rebuilt runs. Every
+retained memory/image/state and returned-audio comparison agrees. It extends
+runtime evidence for the playable matching game while leaving other seeds,
+complete native movie decode and whole-feature acceptance open.
+
+Exhaustive content inventory, natural NPC encounters, card error cases and the
+other behavior gates in [the project objective](../PROJECT_OBJECTIVE.md) remain
+independent requirements. Original parity, optional mods and AI-assisted
+developer tools retain separate evidence.
 
 A further [natural window-link replay](NATURAL_WINDOW_LINK.md) verifies one
 controller-driven activation, transition from map key 3 to 12, and continued

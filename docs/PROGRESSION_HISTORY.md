@@ -1,9 +1,10 @@
 # Inspecting progression recordings
 
 The [completion-field lifecycle repair](YEAR_ENDING_FIELD_LIFECYCLE.md) retains
-raw observations before an ending movie's pending state. The preserved
-365-day original recording validates without repeating the capture; strict
-rebuilt-disc comparison and full movie decoding remain separate requirements.
+raw observations before an ending movie's pending state. The later
+[natural-year result](NATURAL_YEAR_ENDING.md) now passes strict original/rebuilt
+comparison across 365 completed days and the declared ending window. Complete
+native movie decoding and whole-feature acceptance remain separate requirements.
 
 `tools/inspect_progression_history.py` independently checks the retained
 controller-only progression journals, including journals sealed in lossless

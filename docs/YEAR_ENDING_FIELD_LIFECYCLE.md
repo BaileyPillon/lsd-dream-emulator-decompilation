@@ -7,9 +7,10 @@ validation stopped because an ending movie's completion field initially held
 
 The validator now preserves this raw pre-pending observation and validates the
 later pending/completion transition. It does not discard the observation or
-count its arbitrary value as completion. **The rebuilt-disc year replay and
-strict comparison remain separate requirements.** Full movie decoding and
-whole-game parity are not accepted by this change.
+count its arbitrary value as completion. **The later
+[rebuilt-disc replay and strict comparison](NATURAL_YEAR_ENDING.md) now pass.**
+This document retains the earlier validator-repair evidence. Full native movie
+decoding and whole-game parity remain separate requirements.
 
 [Machine-readable evidence](year-ending-field-lifecycle-checks.json) records
 the original capture dimensions, canonical function hashes, source hashes,
