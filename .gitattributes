@@ -499,3 +499,10 @@ research/original-functions.json text eol=lf linguist-generated=true
 docs/RECOVERED_C_CONTEXT.md text eol=lf
 docs/recovered-c-context-checks.json text eol=lf
 CONTRIBUTING.md text eol=lf
+
+# Preserve native reel entry records and their executed verifier identities.
+research/headless/reel-decoder-targets.json text eol=lf
+tools/inspect_reel_decoder.py text eol=lf
+tests/test_reel_decoder.py text eol=lf
+docs/NATIVE_REEL_DECODER.md text eol=lf
+docs/native-reel-decoder-checks.json text eol=lf

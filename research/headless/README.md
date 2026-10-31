@@ -1,5 +1,10 @@
 # Isolated PS1 replay host
 
+`RecordCardDecodeCompactWindows.cs` extends the prepared-card host with lossless,
+bounded native stream/VLC/MDEC entry records, using an existing qualified observer.
+The [decoder guide](../../docs/NATIVE_REEL_DECODER.md) distinguishes source-prefix
+attribution, MDEC input calls, full native payload hashes and frame presentation.
+
 `RecordCardReelWindows.cs` cold-loads a separately prepared QA card through the
 supported SaveRAM service, then uses the native Load UI, dream and graph/reel
 route. Its [fixture and comparison guide](../../docs/CARD_REEL_PLAYBACK.md) keeps

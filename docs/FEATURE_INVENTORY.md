@@ -16,6 +16,14 @@ returned PCM, native fields and controls agree in framed windows, together with
 controller-skipped lifecycles. This extends F001/F032/F035 evidence without
 changing C, whole-feature/NPC acceptance or developer-capability category counts.
 
+The [native reel decoder profile](NATIVE_REEL_DECODER.md) extends F022/F032
+with 30,374 matching entries and uniquely attributes all twenty reel source films.
+The first nineteen reach all source IDs at VLC and MDEC input entry. The last
+reaches VLC ID 492 of 500 and MDEC input ID 491, matching the original timed stop.
+Full native payload hashes, individual frame presentation and natural acquisition
+remain open. Direct movie start-file bindings stay 9/39; whole-feature/NPC
+acceptance stays zero. Earlier values below remain historical measurements.
+
 The [prepared-card reel profile](CARD_REEL_PLAYBACK.md) extends F002/F003/F017/
 F022/F032/F035/F037 evidence with 62,530 paired frames and 105 complete states.
 It loads a constructed four-cell history through the original card UI, runs a
