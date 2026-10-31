@@ -25349,5 +25349,41 @@
     "original_feature_groups_accepted": 0,
     "whole_NPC_encounter_acceptances": 0,
     "model_API_calls": 0
+  },
+  "cold_movie_window_audit": {
+    "date": "2026-10-31",
+    "document": "docs/COLD_MOVIE_WINDOWS.md",
+    "evidence": "docs/cold-movie-window-checks.json",
+    "features": [
+      "F001",
+      "F032",
+      "F035"
+    ],
+    "cold_native_runs": 6,
+    "original_routes": 3,
+    "exact_input_rebuilt_routes": 3,
+    "paired_frames": 14995,
+    "complete_state_pairs": 27,
+    "paired_PCM_stereo_sample_frames": 11051696,
+    "original_movie_payloads": 2,
+    "routed_movie_payloads": 39,
+    "opening_choices": 1,
+    "total_opening_choices": 7,
+    "original_forced_skip_lifecycles": 2,
+    "original_function_ranges_checked": 4,
+    "original_vtable_bindings_checked": 4,
+    "detected_analysis_copy_controls": 9,
+    "all_framed_windows_and_native_observations_equal": true,
+    "prior_neutral_reader_and_recordings_unchanged": true,
+    "all_frame_native_instruction_trace_recorded": false,
+    "complete_ending_or_all_movie_playback_verified": false,
+    "original_hardware_timing_verified": false,
+    "original_game_behavior_modified": false,
+    "new_matching_C_bytes": 0,
+    "new_gameplay_features": 0,
+    "original_feature_groups_accepted": 0,
+    "whole_NPC_encounter_acceptances": 0,
+    "new_developer_capability_categories": 0,
+    "model_API_calls": 0
   }
 }

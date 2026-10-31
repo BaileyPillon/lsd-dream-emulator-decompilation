@@ -1,0 +1,544 @@
+{
+  "schema_version": 1,
+  "status": "three_cold_movie_routes_equal_for_recorded_scope",
+  "checked_unix": 1793424589.3505564,
+  "baseline": "9f701e5ed204558960b3247bea972ffb2c200874",
+  "host_binary_sha256": "94b45815fbe018f982cd562c991ec2ce0df9ecdaff5ffc6ea4550371d6b3c8e5",
+  "source_sha256": {
+    "research/headless/RecordMovieWindows.cs": "1f7b39686ad95def456111f1f63091be346536903c94393b76c55252c94a8e1e",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/BoundedSha256Stream.cs": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e",
+    "tools/inspect_movie_windows.py": "a7864cfad1133a63364be77dd1429192bf416d534fcaeeaff7a413ac2ab05f0e",
+    "tools/compare_movie_playback.py": "6b7aa74d96822f46f890dd3f2dd5069eb74c12777ee5c08e6dd535ad877a7369",
+    "tools/inspect_progression_history.py": "a3f888ea32368392f9416f7b600ccd50b248a32eb1781d800d05ed8d29d7a486",
+    "src/menu/mdec_movie.c": "80ad6b55ed2a1923e1c00491565b16032a4b2fdc0cf25848f0b902f2f68b3019",
+    "src/file/str_stream.c": "788cc2ed6ef4794485bb5dbae52c702d090faa279ab67d4ba471e798344a3acc",
+    "src/menu/movie_screen.c": "8b18f976e7867226380e54f81daad133247eded4b4af54a526a88b4304d792de",
+    "research/original-functions.json": "6c5a8f8a95c51b2dd5c19a071e62d8a366e1d83609598272e44ef7f3c4aea5fc",
+    "tests/test_movie_windows.py": "8b6a965e706c8fdb178b03cd8cc11e518524ca4793a06034efea3b560df0db8d"
+  },
+  "frozen_runtime_records_verified": 174,
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "native_processes": 6,
+  "all_native_processes_exited_zero": true,
+  "original_routes": 3,
+  "exact_input_rebuilt_routes": 3,
+  "paired_frames": 14995,
+  "paired_complete_state_observations": 27,
+  "paired_PCM_stereo_sample_frames": 11051696,
+  "native_recordings": {
+    "neutral": {
+      "schema_version": 1,
+      "status": "equal_for_recorded_movie_scope",
+      "passed": true,
+      "mode": "neutral",
+      "dimensions": {
+        "frames": 6324,
+        "windows": 11,
+        "complete_state_observations": 11,
+        "PCM_stereo_sample_frames": 4661097,
+        "MainRAM_bytes": 13262389248,
+        "GPURAM_bytes": 6631194624,
+        "RGB_payload_bytes": 2277576192,
+        "native_and_controller_hashes_independently_recomputed": true
+      },
+      "lifetimes": [
+        {
+          "sequence": 1,
+          "path": "/CDI/ETC/ASMK.STR",
+          "opened_file": {
+            "filename": "ASMK.STR;1",
+            "lba": 21120,
+            "logical_bytes": 2064384,
+            "sectors": 1008
+          },
+          "first_active_frame": 1251,
+          "last_active_frame": 1620,
+          "first_inactive_frame_after": 1621,
+          "requested_cutoff": 90,
+          "setup_thresholds": [
+            90,
+            100
+          ],
+          "setup_raw_frame_values": [
+            0,
+            4096
+          ],
+          "maximum_accepted_frame_id_while_streaming": 89,
+          "nonzero_frame_ids_sampled": 89,
+          "sampled_ids_contiguous_from_zero": true,
+          "movie_complete_flag_observed": true,
+          "decode_complete_flag_observed": true,
+          "observed_complete_lifetime": true,
+          "source_viewports_xy_width_height": [
+            [
+              640,
+              0,
+              320,
+              240
+            ]
+          ]
+        },
+        {
+          "sequence": 2,
+          "path": "/CDI/ETC/OPENINGG.STR",
+          "opened_file": {
+            "filename": "OPENINGG.STR;1",
+            "lba": 87656,
+            "logical_bytes": 21626880,
+            "sectors": 10560
+          },
+          "first_active_frame": 1933,
+          "last_active_frame": 6142,
+          "first_inactive_frame_after": 6143,
+          "requested_cutoff": 1046,
+          "setup_thresholds": [
+            1046,
+            1052
+          ],
+          "setup_raw_frame_values": [
+            0,
+            4096
+          ],
+          "maximum_accepted_frame_id_while_streaming": 1045,
+          "nonzero_frame_ids_sampled": 1045,
+          "sampled_ids_contiguous_from_zero": true,
+          "movie_complete_flag_observed": true,
+          "decode_complete_flag_observed": true,
+          "observed_complete_lifetime": true,
+          "source_viewports_xy_width_height": [
+            [
+              640,
+              0,
+              320,
+              240
+            ]
+          ]
+        }
+      ],
+      "skip_submitted_frame": -1,
+      "original_native_journal_sha256": "b6b1036cf4e513524b98186f523b0c44598e19f5c46b815728dff59fdc3ac90e",
+      "rebuilt_native_journal_sha256": "b6b1036cf4e513524b98186f523b0c44598e19f5c46b815728dff59fdc3ac90e",
+      "original_report_sha256": "c8fef8f904993db03085c1722dc8ccdaddcafc1fba805504f5b69343d6af19a7",
+      "rebuilt_report_sha256": "49cf5d4e34927569727a71526508911cdcb26382177ae10e2825567e289d7053",
+      "differences": {},
+      "whole_feature_groups_accepted": 0,
+      "hardware_timing_verified": false,
+      "complete_all_movie_or_ending_playback_verified": false
+    },
+    "skip-logo": {
+      "schema_version": 1,
+      "status": "equal_for_recorded_movie_scope",
+      "passed": true,
+      "mode": "skip-logo",
+      "dimensions": {
+        "frames": 6042,
+        "windows": 11,
+        "complete_state_observations": 11,
+        "PCM_stereo_sample_frames": 4453224,
+        "MainRAM_bytes": 12670992384,
+        "GPURAM_bytes": 6335496192,
+        "RGB_payload_bytes": 2206509936,
+        "native_and_controller_hashes_independently_recomputed": true
+      },
+      "lifetimes": [
+        {
+          "sequence": 1,
+          "path": "/CDI/ETC/ASMK.STR",
+          "opened_file": {
+            "filename": "ASMK.STR;1",
+            "lba": 21120,
+            "logical_bytes": 2064384,
+            "sectors": 1008
+          },
+          "first_active_frame": 1251,
+          "last_active_frame": 1338,
+          "first_inactive_frame_after": 1339,
+          "requested_cutoff": 90,
+          "setup_thresholds": [
+            90,
+            100
+          ],
+          "setup_raw_frame_values": [
+            0,
+            4096
+          ],
+          "maximum_accepted_frame_id_while_streaming": 20,
+          "nonzero_frame_ids_sampled": 20,
+          "sampled_ids_contiguous_from_zero": true,
+          "movie_complete_flag_observed": true,
+          "decode_complete_flag_observed": true,
+          "observed_complete_lifetime": false,
+          "source_viewports_xy_width_height": [
+            [
+              640,
+              0,
+              320,
+              240
+            ]
+          ]
+        },
+        {
+          "sequence": 2,
+          "path": "/CDI/ETC/OPENINGG.STR",
+          "opened_file": {
+            "filename": "OPENINGG.STR;1",
+            "lba": 87656,
+            "logical_bytes": 21626880,
+            "sectors": 10560
+          },
+          "first_active_frame": 1651,
+          "last_active_frame": 5860,
+          "first_inactive_frame_after": 5861,
+          "requested_cutoff": 1046,
+          "setup_thresholds": [
+            1046,
+            1052
+          ],
+          "setup_raw_frame_values": [
+            0,
+            4096
+          ],
+          "maximum_accepted_frame_id_while_streaming": 1045,
+          "nonzero_frame_ids_sampled": 1045,
+          "sampled_ids_contiguous_from_zero": true,
+          "movie_complete_flag_observed": true,
+          "decode_complete_flag_observed": true,
+          "observed_complete_lifetime": true,
+          "source_viewports_xy_width_height": [
+            [
+              640,
+              0,
+              320,
+              240
+            ]
+          ]
+        }
+      ],
+      "skip_submitted_frame": 1338,
+      "original_native_journal_sha256": "a5259ad4175d14a76b196aec7dcd0cb3fec1a44ec8d4ab70fabf8ab84b3ed07a",
+      "rebuilt_native_journal_sha256": "a5259ad4175d14a76b196aec7dcd0cb3fec1a44ec8d4ab70fabf8ab84b3ed07a",
+      "original_report_sha256": "be6c25afc445502d8cbe000b5895c63f78193a180dc053cf35de4fd8eca4d1fc",
+      "rebuilt_report_sha256": "e722716c7d922dec7245cd655d54039371d71e86c25773bbec293e857f0465a0",
+      "differences": {},
+      "whole_feature_groups_accepted": 0,
+      "hardware_timing_verified": false,
+      "complete_all_movie_or_ending_playback_verified": false
+    },
+    "skip-opening": {
+      "schema_version": 1,
+      "status": "equal_for_recorded_movie_scope",
+      "passed": true,
+      "mode": "skip-opening",
+      "dimensions": {
+        "frames": 2629,
+        "windows": 5,
+        "complete_state_observations": 5,
+        "PCM_stereo_sample_frames": 1937375,
+        "MainRAM_bytes": 5513412608,
+        "GPURAM_bytes": 2756706304,
+        "RGB_payload_bytes": 1346406632,
+        "native_and_controller_hashes_independently_recomputed": true
+      },
+      "lifetimes": [
+        {
+          "sequence": 1,
+          "path": "/CDI/ETC/ASMK.STR",
+          "opened_file": {
+            "filename": "ASMK.STR;1",
+            "lba": 21120,
+            "logical_bytes": 2064384,
+            "sectors": 1008
+          },
+          "first_active_frame": 1251,
+          "last_active_frame": 1620,
+          "first_inactive_frame_after": 1621,
+          "requested_cutoff": 90,
+          "setup_thresholds": [
+            90,
+            100
+          ],
+          "setup_raw_frame_values": [
+            0,
+            4096
+          ],
+          "maximum_accepted_frame_id_while_streaming": 89,
+          "nonzero_frame_ids_sampled": 89,
+          "sampled_ids_contiguous_from_zero": true,
+          "movie_complete_flag_observed": true,
+          "decode_complete_flag_observed": true,
+          "observed_complete_lifetime": true,
+          "source_viewports_xy_width_height": [
+            [
+              640,
+              0,
+              320,
+              240
+            ]
+          ]
+        },
+        {
+          "sequence": 2,
+          "path": "/CDI/ETC/OPENINGG.STR",
+          "opened_file": {
+            "filename": "OPENINGG.STR;1",
+            "lba": 87656,
+            "logical_bytes": 21626880,
+            "sectors": 10560
+          },
+          "first_active_frame": 1933,
+          "last_active_frame": 2447,
+          "first_inactive_frame_after": 2448,
+          "requested_cutoff": 1046,
+          "setup_thresholds": [
+            1046,
+            1052
+          ],
+          "setup_raw_frame_values": [
+            0,
+            4096
+          ],
+          "maximum_accepted_frame_id_while_streaming": 120,
+          "nonzero_frame_ids_sampled": 120,
+          "sampled_ids_contiguous_from_zero": true,
+          "movie_complete_flag_observed": true,
+          "decode_complete_flag_observed": true,
+          "observed_complete_lifetime": false,
+          "source_viewports_xy_width_height": [
+            [
+              640,
+              0,
+              320,
+              240
+            ]
+          ]
+        }
+      ],
+      "skip_submitted_frame": 2446,
+      "original_native_journal_sha256": "ea3095cdc8e66109e7a49f77cb2be9b9a08ad33f8e8b21f249fe0f5d43f4be3c",
+      "rebuilt_native_journal_sha256": "ea3095cdc8e66109e7a49f77cb2be9b9a08ad33f8e8b21f249fe0f5d43f4be3c",
+      "original_report_sha256": "fad6721e2f1e182bed626c57b4ad488c3647123f2dc20dd114f32f24275ed6a9",
+      "rebuilt_report_sha256": "b383ed87e44aaf53bbcbfd240312001fe0b5da7f3c0046b9d2206636b180b551",
+      "differences": {},
+      "whole_feature_groups_accepted": 0,
+      "hardware_timing_verified": false,
+      "complete_all_movie_or_ending_playback_verified": false
+    }
+  },
+  "complete_capture_output_bytes_including_logs_and_process_receipts": 494021,
+  "capture_file_sha256": {
+    "neutral-original/final.png": "379e6227002c84bfdeb932929abec38f5f6bedf61c93043d0597b07d2b57cd23",
+    "neutral-original/inputs.tsv": "64d223f3fd854a1d40cc905ffe98d6e53b4b9407ecb92eb7b321b8c45a0b6eca",
+    "neutral-original/native.tsv.gz": "84b033599c4dee750c7af779efa4df8bbf16646b7b2a475dc348e9ede6894ea1",
+    "neutral-original/progress.json": "530cb0dfa29ba5d808d4c2a82dd9b0d1e30ab255e778ff7aee670ca932da7016",
+    "neutral-original/report.json": "c8fef8f904993db03085c1722dc8ccdaddcafc1fba805504f5b69343d6af19a7",
+    "neutral-original/windows.jsonl": "087fc5d3de9ea8d44f165f710c83d2edd7c9abae9e094f8c55890473b0dfe550",
+    "neutral-rebuilt/final.png": "379e6227002c84bfdeb932929abec38f5f6bedf61c93043d0597b07d2b57cd23",
+    "neutral-rebuilt/inputs.tsv": "64d223f3fd854a1d40cc905ffe98d6e53b4b9407ecb92eb7b321b8c45a0b6eca",
+    "neutral-rebuilt/native.tsv.gz": "84b033599c4dee750c7af779efa4df8bbf16646b7b2a475dc348e9ede6894ea1",
+    "neutral-rebuilt/progress.json": "b83ee78ea3fe1a65ef3ae284278c2d387c8f28fc4d071e3f51abae47dd0276db",
+    "neutral-rebuilt/report.json": "49cf5d4e34927569727a71526508911cdcb26382177ae10e2825567e289d7053",
+    "neutral-rebuilt/windows.jsonl": "087fc5d3de9ea8d44f165f710c83d2edd7c9abae9e094f8c55890473b0dfe550",
+    "skip-logo-original/final.png": "379e6227002c84bfdeb932929abec38f5f6bedf61c93043d0597b07d2b57cd23",
+    "skip-logo-original/inputs.tsv": "632c72d7a3ba142af97b13939dff9bea66e8d649df8a78ab352f47eb2d4983f8",
+    "skip-logo-original/native.tsv.gz": "746dcb0717a9f7ab20c6b0b02b39390a038b343848f8444deede04e86455429b",
+    "skip-logo-original/progress.json": "53f7eee14313b4c378ad98a7451e2e573b98e56e8811cfe9a06826ec6e6139bd",
+    "skip-logo-original/report.json": "be6c25afc445502d8cbe000b5895c63f78193a180dc053cf35de4fd8eca4d1fc",
+    "skip-logo-original/windows.jsonl": "6faa7421c03e4d39090f069e23c692193fdf7d8b4dfad36cac1479ad96735a1b",
+    "skip-logo-rebuilt/final.png": "379e6227002c84bfdeb932929abec38f5f6bedf61c93043d0597b07d2b57cd23",
+    "skip-logo-rebuilt/inputs.tsv": "632c72d7a3ba142af97b13939dff9bea66e8d649df8a78ab352f47eb2d4983f8",
+    "skip-logo-rebuilt/native.tsv.gz": "746dcb0717a9f7ab20c6b0b02b39390a038b343848f8444deede04e86455429b",
+    "skip-logo-rebuilt/progress.json": "ae0c63c836d15e7218ad8a8660822cc48d9f84198cca2cfd872fc01fa42a4a99",
+    "skip-logo-rebuilt/report.json": "e722716c7d922dec7245cd655d54039371d71e86c25773bbec293e857f0465a0",
+    "skip-logo-rebuilt/windows.jsonl": "6faa7421c03e4d39090f069e23c692193fdf7d8b4dfad36cac1479ad96735a1b",
+    "skip-opening-original/final.png": "d3ad8b1d06d9da3d9645587394d778888aabb14653853afa335153f19705f2d2",
+    "skip-opening-original/inputs.tsv": "9fcdded91d4655daf461cc71b4e75b879f6ef97106483ea9a0f7052c912467e5",
+    "skip-opening-original/native.tsv.gz": "253fdcf97c11cef4a4366c4323430483f5c17857ec779d1dcbd499b570ff2073",
+    "skip-opening-original/progress.json": "5b05c3642d043aa55f99bfc531120fb38ea155f43d41f919c28a6a9e1c48358a",
+    "skip-opening-original/report.json": "fad6721e2f1e182bed626c57b4ad488c3647123f2dc20dd114f32f24275ed6a9",
+    "skip-opening-original/windows.jsonl": "db9bb6c6be8f198c4cc3c255de74597963d47380790ba1b6dc8368e9256d50e2",
+    "skip-opening-rebuilt/final.png": "d3ad8b1d06d9da3d9645587394d778888aabb14653853afa335153f19705f2d2",
+    "skip-opening-rebuilt/inputs.tsv": "9fcdded91d4655daf461cc71b4e75b879f6ef97106483ea9a0f7052c912467e5",
+    "skip-opening-rebuilt/native.tsv.gz": "253fdcf97c11cef4a4366c4323430483f5c17857ec779d1dcbd499b570ff2073",
+    "skip-opening-rebuilt/progress.json": "5ff085f344c068c9270ffcb2e51444ba2099dd3b1ec8a97bfa9e8047a25cd302",
+    "skip-opening-rebuilt/report.json": "b383ed87e44aaf53bbcbfd240312001fe0b5da7f3c0046b9d2206636b180b551",
+    "skip-opening-rebuilt/windows.jsonl": "db9bb6c6be8f198c4cc3c255de74597963d47380790ba1b6dc8368e9256d50e2",
+    "neutral-original.out.log": "6ef6f06ed9a971882ecd582bb3fe5ec4a496f7f378b085a5faf2dad3287c8e99",
+    "neutral-original.err.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "process-neutral-original.json": "b19eededa8978691488a34de2b42023669c2dc941f92e25e4fd2142f560fd6ca",
+    "exit-neutral-original.json": "2b0ef42cc19ae6dd7a43ef47c6dff38f9a34a7b6f3050e3985d334507c839026",
+    "neutral-rebuilt.out.log": "14003fbb0380dd6de005de4ef08b7949465eb7fceb8237780657cfd5d0b33999",
+    "neutral-rebuilt.err.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "process-neutral-rebuilt.json": "f8d62aa396059f17ac29c496c88d6b1f106072c911d5a8ff587a7210d81574be",
+    "exit-neutral-rebuilt.json": "f07dc9c2007f6e741ffdcc444f6e820835fda0cd1287ec498241fad11048c231",
+    "skip-logo-original.out.log": "70a458a819670a2b13ea9d916528c9a799b190f5c6cc6a93cbded46033447cbd",
+    "skip-logo-original.err.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "process-skip-logo-original.json": "30f2c60b10c90ac72aa9a69e0fc49ebb2a8d13d2edd5cf2e4496fa8049b3ee1f",
+    "exit-skip-logo-original.json": "32510d2993f34207a1db66fe3e46ad7096b88729ad9be873548d200f06887da7",
+    "skip-logo-rebuilt.out.log": "0ffde659462f74eabf26307252853080aee868fda7fce4c944c859426d68e6b0",
+    "skip-logo-rebuilt.err.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "process-skip-logo-rebuilt.json": "8505b0b36d3a84079bd787fd94fb8e03a9c8a0f2b52a9ffb8cc54e34c4f03a60",
+    "exit-skip-logo-rebuilt.json": "b87d77828c4c9d788bba84b0be23f3e0ca2c2b5b19554aec7072844c9677682c",
+    "skip-opening-original.out.log": "5e78373c397e8a171f9078dff319f458f0c2bc0eb3a46c4dd7197053cf0642d9",
+    "skip-opening-original.err.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "process-skip-opening-original.json": "3c5e585ecf32ba1bad5a526ba05b4d060ae9e5f2adeb65cb71c250dd3fcba5f7",
+    "exit-skip-opening-original.json": "b1dcffc2059c85245adf184984c01a3f1357e647ca63ca48620155d67fe3b2c4",
+    "skip-opening-rebuilt.out.log": "e1043215d0bc7b608a778a3e3a7978a9efb8fe8a10ed0a17abe1227bf7dab65d",
+    "skip-opening-rebuilt.err.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "process-skip-opening-rebuilt.json": "745c67a5c88f84e18d8a04eb8fe72fffc9fb6cf33dabf601a3a90af0d75d3f70",
+    "exit-skip-opening-rebuilt.json": "7583c10a1184ea2becf42461d4425763554bcfffaa27b6eb9226292e03ae8ac4"
+  },
+  "restored_state": false,
+  "game_RAM_or_instructions_written": false,
+  "player_UI_or_saves_accessed": false,
+  "new_matching_C_bytes": 0,
+  "new_gameplay_features": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounter_acceptances": 0,
+  "modern_model_API_calls": 0,
+  "complete_ending_or_all_movie_playback_verified": false,
+  "hardware_timing_verified": false,
+  "original_skip_chain": {
+    "schema_version": 1,
+    "status": "original_skip_chain_and_analysis_controls_verified",
+    "checked_unix": 1793424733.0221868,
+    "original_functions": [
+      {
+        "function": "func_80045A38",
+        "address": "0x80045A38",
+        "file_offset": 221752,
+        "bytes": 144,
+        "sha256": "ea4cc3956d4ed6c31a338e1edf3851eb2be71645c7e8ae293827cfd35793332f"
+      },
+      {
+        "function": "func_80045C94",
+        "address": "0x80045C94",
+        "file_offset": 222356,
+        "bytes": 104,
+        "sha256": "2eefe7eebef7f896de7c7ac41287bd8ec5f3e8a00320c71404cd8495bbf97995"
+      },
+      {
+        "function": "func_80045CFC",
+        "address": "0x80045CFC",
+        "file_offset": 222460,
+        "bytes": 228,
+        "sha256": "1a74f215b651c520df6e2a3016453898eb4d17597f74395ebdcbccc49d66673f"
+      },
+      {
+        "function": "str_stream_close",
+        "address": "0x8004728C",
+        "file_offset": 227980,
+        "bytes": 96,
+        "sha256": "195645695d4ffadab7d70f4ae4b0914eb7ff04e12f7a87174274af5a71ecafb5"
+      }
+    ],
+    "original_vtable_bindings": {
+      "MDEC forced-stop slot 0x4c": {
+        "table_word_address": "0x8006f660",
+        "target": "func_80045A38",
+        "target_address": "0x80045a38"
+      },
+      "MDEC terminal-clear slot 0x64": {
+        "table_word_address": "0x8006f678",
+        "target": "func_80045C94",
+        "target_address": "0x80045c94"
+      },
+      "MDEC update slot 0x68": {
+        "table_word_address": "0x8006f67c",
+        "target": "func_80045CFC",
+        "target_address": "0x80045cfc"
+      },
+      "STR close slot 0x48": {
+        "table_word_address": "0x80081828",
+        "target": "str_stream_close",
+        "target_address": "0x8004728c"
+      }
+    },
+    "analysis_copy_controls": [
+      {
+        "name": "skip-logo_missing_forced_decode_stop",
+        "detected": true,
+        "error": "Closed stream lacks original forced-stop fields.",
+        "scope": "Edited analysis copy; native recording and game unchanged."
+      },
+      {
+        "name": "skip-logo_closed_transition_in_neutral_profile",
+        "detected": true,
+        "error": "Neutral route has input.",
+        "scope": "Edited analysis copy; native recording and game unchanged."
+      },
+      {
+        "name": "skip-opening_missing_forced_decode_stop",
+        "detected": true,
+        "error": "Closed stream lacks original forced-stop fields.",
+        "scope": "Edited analysis copy; native recording and game unchanged."
+      },
+      {
+        "name": "skip-opening_closed_transition_in_neutral_profile",
+        "detected": true,
+        "error": "Neutral route has input.",
+        "scope": "Edited analysis copy; native recording and game unchanged."
+      },
+      {
+        "name": "missing_main_RAM_byte",
+        "detected": true,
+        "error": "Incomplete native buffer/audio coverage.",
+        "scope": "Edited analysis copy; native recording and game unchanged."
+      },
+      {
+        "name": "missing_complete_state_hash",
+        "detected": true,
+        "error": "Invalid complete_state_sha256 digest.",
+        "scope": "Edited analysis copy; native recording and game unchanged."
+      },
+      {
+        "name": "missing_last_native_frame",
+        "detected": true,
+        "error": "Native journal must contain every advanced frame.",
+        "scope": "Edited analysis copy; native recording and game unchanged."
+      },
+      {
+        "name": "changed_complete_state_sha256",
+        "detected": true,
+        "scope": "Edited comparison copy; all original hashes remain retained."
+      },
+      {
+        "name": "changed_framed_sha256",
+        "detected": true,
+        "scope": "Edited comparison copy; all original hashes remain retained."
+      }
+    ],
+    "original_game_or_runtime_mutated": false,
+    "original_function_entry_events_recorded": false,
+    "source_sha256": {
+      "src/menu/mdec_movie.c": "80ad6b55ed2a1923e1c00491565b16032a4b2fdc0cf25848f0b902f2f68b3019",
+      "src/file/str_stream.c": "788cc2ed6ef4794485bb5dbae52c702d090faa279ab67d4ba471e798344a3acc",
+      "src/menu/movie_screen.c": "8b18f976e7867226380e54f81daad133247eded4b4af54a526a88b4304d792de",
+      "research/original-functions.json": "6c5a8f8a95c51b2dd5c19a071e62d8a366e1d83609598272e44ef7f3c4aea5fc"
+    }
+  },
+  "limits": [
+    "Two of 39 movie payloads; one of seven opening choices.",
+    "Complete framed hashes for every advanced frame, with retained native fields; full buffer/media bytes not saved.",
+    "Whole-window state/output equality does not identify each displayed encoded STR frame.",
+    "Independent native/controller framing and analysis-copy faults; no native instruction-entry/fault injection claim.",
+    "Complete ending/all-movie, disabled/error/other skip timing and original hardware gates remain open.",
+    "Original NPC behavior unchanged; no whole-feature/NPC acceptance and no model API calls."
+  ],
+  "source_git_blob_sha256": {
+    "research/headless/RecordMovieWindows.cs": "1f7b39686ad95def456111f1f63091be346536903c94393b76c55252c94a8e1e",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/BoundedSha256Stream.cs": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e",
+    "tools/inspect_movie_windows.py": "a7864cfad1133a63364be77dd1429192bf416d534fcaeeaff7a413ac2ab05f0e",
+    "tools/compare_movie_playback.py": "6b7aa74d96822f46f890dd3f2dd5069eb74c12777ee5c08e6dd535ad877a7369",
+    "tools/inspect_progression_history.py": "a3f888ea32368392f9416f7b600ccd50b248a32eb1781d800d05ed8d29d7a486",
+    "src/menu/mdec_movie.c": "80ad6b55ed2a1923e1c00491565b16032a4b2fdc0cf25848f0b902f2f68b3019",
+    "src/file/str_stream.c": "399f850fda255ebc394807004857318efa366d1e7b5c16b498ad50f268a1edb4",
+    "src/menu/movie_screen.c": "8b18f976e7867226380e54f81daad133247eded4b4af54a526a88b4304d792de",
+    "research/original-functions.json": "6c5a8f8a95c51b2dd5c19a071e62d8a366e1d83609598272e44ef7f3c4aea5fc",
+    "tests/test_movie_windows.py": "8b6a965e706c8fdb178b03cd8cc11e518524ca4793a06034efea3b560df0db8d"
+  },
+  "source_representation_notes": {
+    "src/file/str_stream.c": "Unchanged CRLF working text and LF Git blob; complete text checked for that sole representation difference."
+  }
+}

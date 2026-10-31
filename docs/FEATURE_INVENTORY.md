@@ -9,6 +9,13 @@ whole-feature and NPC encounter acceptances remain open; no C bytes or gameplay
 features are added. The earlier [completion-field repair](YEAR_ENDING_FIELD_LIFECYCLE.md)
 and failed pilot remain preserved.
 
+The [cold movie and skip comparison](COLD_MOVIE_WINDOWS.md) adds three routes,
+six successful native runs and 14,995 paired frames. Complete RAM/GPU/RGB,
+returned PCM, native fields and controls agree in framed windows, together with
+27 complete-state pairs. The original logo and one opening exhibit normal and
+controller-skipped lifecycles. This extends F001/F032/F035 evidence without
+changing C, whole-feature/NPC acceptance or developer-capability category counts.
+
 ## Matching game C, October 30, 2026
 
 The [current matching-C milestone](MATCHING_GAME_C.md) reaches
