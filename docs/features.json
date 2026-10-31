@@ -25193,5 +25193,41 @@
     "whole_NPC_encounter_acceptances": 0,
     "new_developer_capability_categories": 0,
     "model_API_calls": 0
+  },
+  "renderer_recursive_subdivision_audit": {
+    "date": "2026-10-30",
+    "document": "docs/TMD_SUBDIVISION.md",
+    "evidence": "docs/tmd-subdivision-checks.json",
+    "original_draw_calls": 1147,
+    "added_recursive_cases": 263,
+    "original_MIPS_instructions": 1977904,
+    "actual_native_commands": 12356,
+    "recursive_node_entries": 5215,
+    "subdivided_packets": 15648,
+    "recursive_families": 8,
+    "tested_subdivision_limits": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "recursive_cases_submitted": 198,
+    "recursive_cases_culled": 65,
+    "original_code_fault_controls": 9,
+    "recursive_original_code_fault_controls": 5,
+    "complete_GPU_OT_context_and_workspace_buffers_equal": true,
+    "saved_workspace_return_addresses_independently_predicted": true,
+    "original_family_rounding_and_emission_order_preserved": true,
+    "multiple_primitive_mode_runs_original_models_and_natural_scenes_verified": false,
+    "replacement_matrices_GPU_pixels_and_PS1_timing_verified": false,
+    "full_recursive_input_domain_verified": false,
+    "original_game_behavior_modified": false,
+    "new_matching_C_bytes": 0,
+    "new_gameplay_features": 0,
+    "original_feature_groups_accepted": 0,
+    "whole_NPC_encounter_acceptances": 0,
+    "new_developer_capability_categories": 0,
+    "model_API_calls": 0
   }
 }

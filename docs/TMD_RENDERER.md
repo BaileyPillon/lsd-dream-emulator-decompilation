@@ -6,8 +6,9 @@ these calls execute original vertex loading, coordinate writing, normal/color
 processing, UV copying, fog-dependent palette adjustment and ordering-table
 submission together. No function result is stubbed.
 
-This remains a bounded renderer profile. It supplies one linked primitive per
-call, camera/light state and output storage. Recursive clipping, replacement
+The later [subdivision profile](TMD_SUBDIVISION.md) adds 263 recursive fixtures
+across all eight polygon families. This earlier bounded profile supplies one
+linked primitive per call, camera/light state and output storage. Replacement
 matrices, multiple-primitive runs, the disc-model corpus, GPU pixels, natural
 scenes and PS1 timing still need wider verification. It adds **zero** game C
 bytes, gameplay features, whole-feature acceptances or whole NPC encounters.

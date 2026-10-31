@@ -1,6 +1,6 @@
-"""Scalar predictions for constructed, unclipped calls to LSD's TMD drawer.
+"""Scalar predictions for constructed calls to LSD's original TMD drawer.
 
-This does not run original MIPS or predict recursive clipping/GPU pixels.
+This does not run original MIPS or predict GPU pixels.
 Register arithmetic is supplied by the separately native-qualified GTE oracle.
 """
 import struct
@@ -13,8 +13,9 @@ BUFFER = 0x120000
 OBJECT, OT, COORD, GEOM = BUFFER, BUFFER+0x100, BUFFER+0x200, BUFFER+0x300
 VERTEX, NORMAL, PRIM = BUFFER+0x400, BUFFER+0x480, BUFFER+0x600
 ORDER, GPU, CONTEXT = 0x150000, 0x160000, 0x1F800000
+GPU_BYTES=65536
 TRI, QUAD, OUT = 0x8ACD0, 0x8AEE8, 0x8E794
-GLOBALS = ((TRI,0xB4),(QUAD,0x100),(0x90C18,4),(0x8E248,12),(OUT,4))
+GLOBALS = ((TRI,0x218),(QUAD,0x400),(0x90C18,4),(0x8E248,12),(OUT,4))
 FORMATS = ((0x20,0),(0x20,4),(0x21,1),(0x24,0),(0x25,1),(0x28,0),
     (0x29,1),(0x2C,0),(0x2D,1),(0x31,1),(0x35,1),(0x39,1),(0x3D,1))
 COLORS = (0x44332211,0x88553377,0xCC997755,0xEE1199BB)
@@ -56,10 +57,13 @@ def case_fixture(case):
     for i in range(layout.color_records):put(data,at+4+4*layout.uv_records+4*i,colors[i])
     for offset in layout.normals:struct.pack_into('<H',data,at+offset,0)
     for i,offset in enumerate(layout.vertices):struct.pack_into('<H',data,at+offset,i)
-    values = {CONTEXT:bytes([0xA7])*4096,GPU:bytes([0xD3])*4096,
-        ORDER:struct.pack('<I',0xA1FFFFFF)*1024,TRI:bytes([0xC5])*0xB4,
-        QUAD:bytes([0xB6])*0x100,0x90C18:bytes([0x91])*4,
+    values = {CONTEXT:bytes([0xA7])*4096,GPU:bytes([0xD3])*GPU_BYTES,
+        ORDER:struct.pack('<I',case.get('ordering_head',0xA1FFFFFF))*1024,TRI:bytes([0xC5])*0x218,
+        QUAD:bytes([0xB6])*0x400,0x90C18:bytes([0x91])*4,
         0x8E248:bytes([0x92])*12,OUT:struct.pack('<I',GPU|alias)}
+    width,height=case.get('viewport',(512,480))
+    override=case.get('division_override')
+    values[0x8A824]=struct.pack('<II4BII',width,height,17,34,51,68,int(override is not None),override or 0)
     writes = matrix(0)+matrix(1)+matrix(2)+[(0,26,256),(0,27,0),
         (0,28,unsigned(case.get('fog',0)<<12)),(0,29,1365),(0,30,1024)]
     writes += [(0,13+i,value) for i,value in enumerate(case.get('background',(1024,2048,3072)))]
@@ -152,7 +156,6 @@ def expected_draw(case):
     ys=[signed(v>>16,16) for v in positions[:-1]]
     struct.pack_into('<4h',context,0x70,min(xs),min(ys),max(xs),max(ys))
     if max(xs)-min(xs)>256 or max(ys)-min(ys)>256:put(context,0x78,1)
-    require(get(context,0x78)==0,'Recursive clipping is not predicted by this profile.')
     colors=case.get('colors',COLORS)
     output_colors=[]
     if not unlit:
@@ -176,13 +179,16 @@ def expected_draw(case):
         command(DPCS)
         output_colors=[state.dr[22]]
     cursor=4
+    color_offsets,uv_offsets=[],[]
     for index,position in enumerate(positions):
         if index==0 or gouraud:
+            color_offsets.append(cursor)
             put(result[GPU],cursor,output_colors[index if gouraud else 0])
             cursor+=4
         put(result[GPU],cursor,position)
         cursor+=4
         if textured:
+            uv_offsets.append(cursor)
             put(result[GPU],cursor,UV[index])
             cursor+=4
     result[GPU][7]=output_mode
@@ -190,6 +196,11 @@ def expected_draw(case):
         clut=struct.unpack_from('<H',result[GPU],0xE)[0]
         struct.pack_into('<H',result[GPU],0xE,(clut+((signed(depth)>>material_shift)<<6))&65535)
     require(cursor==4+payload_words*4,'Predicted GPU packet size differs.')
+    if get(context,0x78):
+        from tools.tmd_recursive_model import subdivide
+        cursor=subdivide(case,result,state,commands,data,positions,color_offsets,uv_offsets,payload_words)
+        put(result[OUT],0,(GPU+cursor)|alias)
+        return result,state,commands,'subdivided' if cursor else 'recursive_culled'
     at=(bucket&0x1FFFFFFF)-ORDER
     put(result[GPU],0,(payload_words<<24)|(get(result[ORDER],at)&0xFFFFFF))
     put(result[ORDER],at,(get(result[ORDER],at)&0xFF000000)|(GPU&0xFFFFFF))
