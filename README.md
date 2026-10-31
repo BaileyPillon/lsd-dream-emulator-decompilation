@@ -48,6 +48,13 @@ the comparison uses two supplied inspection views per object. It retains the
 original drawer's unsupported-format early returns and identifies a specific
 STG04 runtime tracing target. Natural scene and GPU-pixel acceptance remain open.
 
+The [all-opening attract comparison](docs/OPENING_ATTRACT.md) now completes all
+seven normal opening choices through the original title-menu loop. Its original
+and exact-input rebuilt runs agree on 162,803 paired frames and 272 unmasked
+complete states, with complete framed RAM/GPU/RGB/PCM/native/control hashes.
+Eight of 39 routed movie payloads are observed; the other payloads and remaining
+behavior/hardware acceptance gates stay open.
+
 [Recovered-C analysis context](docs/RECOVERED_C_CONTEXT.md) exports verified
 original instructions and current source without an old private assembly
 catalog. Its public function metadata includes SDK routines; candidate changes
@@ -618,6 +625,7 @@ For bugs and research findings, use the repository's issue templates.
 - [Ending-field lifecycle validation and the retained 365-day recording](docs/YEAR_ENDING_FIELD_LIFECYCLE.md)
 - [Passing original/rebuilt 365-day and ending-window comparison](docs/NATURAL_YEAR_ENDING.md)
 - [Cold movie playback, native stop lifecycle and controller skips](docs/COLD_MOVIE_WINDOWS.md)
+- [All seven normal opening choices through the attract loop](docs/OPENING_ATTRACT.md)
 - [Play the matching game](docs/PLAYING.md)
 - [Model enumeration and callback interfaces](docs/MODEL_ENUMERATION.md)
 - [Feature inventory and before/after measurements](docs/FEATURE_INVENTORY.md)

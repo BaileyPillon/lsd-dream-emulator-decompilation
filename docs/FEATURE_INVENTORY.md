@@ -1213,3 +1213,18 @@ original-code faults pass their checks. Inspection cameras, per-object buffer
 reset, corpus subdivision, natural scenes, rasterized pixels and hardware timing
 remain separate gates. Earlier inventory values and original-versus-optional-AI
 boundaries are preserved; all acceptance/feature increments remain zero.
+
+## All-opening attract supplement, 2026-10-31
+
+The [natural attract-loop pair](OPENING_ATTRACT.md) extends normal opening coverage
+from one of seven choices to all seven, and distinct observed routed movies from
+two of 39 to eight of 39. 162,803 paired frames, 272 complete states and
+120,007,579 returned PCM stereo sample frames per side agree. A prior original
+attempt remains explicitly incomplete at its frame ceiling; its observed prefix
+was checked before accepting the later complete run.
+
+The additive `all_opening_attract_audit` preserves all earlier inventory values.
+Matching C stays 199,912 / 199,912, the provisional inventory stays 40 groups,
+107 NPC callbacks remain in C, and whole-feature/whole-NPC acceptances remain zero.
+No gameplay feature, optional mod, developer-capability category or model API
+call is added. The other 31 movie payloads and remaining runtime gates stay open.

@@ -1,0 +1,1876 @@
+{
+  "schema_version": 1,
+  "status": "all_seven_opening_attract_pair_and_analysis_controls_passed",
+  "date": "2026-10-31",
+  "baseline_commit": "7d0fc2714df675021b9a2a13b996f7b1564257fc",
+  "native_comparison": {
+    "schema_version": 1,
+    "status": "equal_for_all_opening_attract_scope",
+    "passed": true,
+    "dimensions": {
+      "frames": 162803,
+      "windows": 272,
+      "complete_state_observations": 272,
+      "PCM_stereo_sample_frames": 120007579,
+      "MainRAM_bytes": 341422637056,
+      "GPURAM_bytes": 170711318528,
+      "RGB_payload_bytes": 41711536024,
+      "native_and_controller_hashes_independently_recomputed": true,
+      "per_frame_native_rows_retained_in_reader": false,
+      "maximum_native_line_bytes": 4096
+    },
+    "lifetimes": [
+      {
+        "sequence": 1,
+        "path": "/CDI/ETC/ASMK.STR",
+        "opened_file": {
+          "filename": "ASMK.STR;1",
+          "lba": 21120,
+          "logical_bytes": 2064384,
+          "sectors": 1008
+        },
+        "first_active_frame": 1251,
+        "last_active_frame": 1620,
+        "first_inactive_frame_after": 1621,
+        "requested_cutoff": 90,
+        "setup_thresholds": [
+          90,
+          100
+        ],
+        "setup_raw_frame_values": [
+          0,
+          4096
+        ],
+        "maximum_accepted_frame_id_while_streaming": 89,
+        "distinct_accepted_frame_ids": 90,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 2,
+        "path": "/CDI/ETC/OPENINGG.STR",
+        "opened_file": {
+          "filename": "OPENINGG.STR;1",
+          "lba": 87656,
+          "logical_bytes": 21626880,
+          "sectors": 10560
+        },
+        "first_active_frame": 1933,
+        "last_active_frame": 6142,
+        "first_inactive_frame_after": 6143,
+        "requested_cutoff": 1046,
+        "setup_thresholds": [
+          1046,
+          1052
+        ],
+        "setup_raw_frame_values": [
+          0,
+          4096
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1045,
+        "distinct_accepted_frame_ids": 1046,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 3,
+        "path": "/CDI/ETC/OPENINGG.STR",
+        "opened_file": {
+          "filename": "OPENINGG.STR;1",
+          "lba": 87656,
+          "logical_bytes": 21626880,
+          "sectors": 10560
+        },
+        "first_active_frame": 6979,
+        "last_active_frame": 11188,
+        "first_inactive_frame_after": 11189,
+        "requested_cutoff": 1046,
+        "setup_thresholds": [
+          1046,
+          1052
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1045,
+        "distinct_accepted_frame_ids": 1046,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 4,
+        "path": "/CDI/ETC/OPENINGE.STR",
+        "opened_file": {
+          "filename": "OPENINGE.STR;1",
+          "lba": 65344,
+          "logical_bytes": 20267008,
+          "sectors": 9896
+        },
+        "first_active_frame": 12025,
+        "last_active_frame": 15962,
+        "first_inactive_frame_after": 15963,
+        "requested_cutoff": 979,
+        "setup_thresholds": [
+          979,
+          986
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 978,
+        "distinct_accepted_frame_ids": 979,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 5,
+        "path": "/CDI/ETC/OPENINGF.STR",
+        "opened_file": {
+          "filename": "OPENINGF.STR;1",
+          "lba": 75240,
+          "logical_bytes": 25427968,
+          "sectors": 12416
+        },
+        "first_active_frame": 16795,
+        "last_active_frame": 21739,
+        "first_inactive_frame_after": 21740,
+        "requested_cutoff": 1231,
+        "setup_thresholds": [
+          1231,
+          1237
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1230,
+        "distinct_accepted_frame_ids": 1231,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 6,
+        "path": "/CDI/ETC/OPENINGB.STR",
+        "opened_file": {
+          "filename": "OPENINGB.STR;1",
+          "lba": 32832,
+          "logical_bytes": 22495232,
+          "sectors": 10984
+        },
+        "first_active_frame": 22574,
+        "last_active_frame": 26940,
+        "first_inactive_frame_after": 26941,
+        "requested_cutoff": 1088,
+        "setup_thresholds": [
+          1088,
+          1095
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1087,
+        "distinct_accepted_frame_ids": 1088,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 7,
+        "path": "/CDI/ETC/OPENINGB.STR",
+        "opened_file": {
+          "filename": "OPENINGB.STR;1",
+          "lba": 32832,
+          "logical_bytes": 22495232,
+          "sectors": 10984
+        },
+        "first_active_frame": 27767,
+        "last_active_frame": 32133,
+        "first_inactive_frame_after": 32134,
+        "requested_cutoff": 1088,
+        "setup_thresholds": [
+          1088,
+          1095
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1087,
+        "distinct_accepted_frame_ids": 1088,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 8,
+        "path": "/CDI/ETC/OPENINGB.STR",
+        "opened_file": {
+          "filename": "OPENINGB.STR;1",
+          "lba": 32832,
+          "logical_bytes": 22495232,
+          "sectors": 10984
+        },
+        "first_active_frame": 32960,
+        "last_active_frame": 37326,
+        "first_inactive_frame_after": 37327,
+        "requested_cutoff": 1088,
+        "setup_thresholds": [
+          1088,
+          1095
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1087,
+        "distinct_accepted_frame_ids": 1088,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 9,
+        "path": "/CDI/ETC/OPENINGF.STR",
+        "opened_file": {
+          "filename": "OPENINGF.STR;1",
+          "lba": 75240,
+          "logical_bytes": 25427968,
+          "sectors": 12416
+        },
+        "first_active_frame": 38153,
+        "last_active_frame": 43097,
+        "first_inactive_frame_after": 43098,
+        "requested_cutoff": 1231,
+        "setup_thresholds": [
+          1231,
+          1237
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1230,
+        "distinct_accepted_frame_ids": 1231,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 10,
+        "path": "/CDI/ETC/OPENINGD.STR",
+        "opened_file": {
+          "filename": "OPENINGD.STR;1",
+          "lba": 53448,
+          "logical_bytes": 24363008,
+          "sectors": 11896
+        },
+        "first_active_frame": 43932,
+        "last_active_frame": 48665,
+        "first_inactive_frame_after": 48666,
+        "requested_cutoff": 1179,
+        "setup_thresholds": [
+          1179,
+          1186
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1178,
+        "distinct_accepted_frame_ids": 1179,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 11,
+        "path": "/CDI/ETC/OPENINGE.STR",
+        "opened_file": {
+          "filename": "OPENINGE.STR;1",
+          "lba": 65344,
+          "logical_bytes": 20267008,
+          "sectors": 9896
+        },
+        "first_active_frame": 49495,
+        "last_active_frame": 53432,
+        "first_inactive_frame_after": 53433,
+        "requested_cutoff": 979,
+        "setup_thresholds": [
+          979,
+          986
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 978,
+        "distinct_accepted_frame_ids": 979,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 12,
+        "path": "/CDI/ETC/OPENINGE.STR",
+        "opened_file": {
+          "filename": "OPENINGE.STR;1",
+          "lba": 65344,
+          "logical_bytes": 20267008,
+          "sectors": 9896
+        },
+        "first_active_frame": 54264,
+        "last_active_frame": 58201,
+        "first_inactive_frame_after": 58202,
+        "requested_cutoff": 979,
+        "setup_thresholds": [
+          979,
+          986
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 978,
+        "distinct_accepted_frame_ids": 979,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 13,
+        "path": "/CDI/ETC/OPENINGD.STR",
+        "opened_file": {
+          "filename": "OPENINGD.STR;1",
+          "lba": 53448,
+          "logical_bytes": 24363008,
+          "sectors": 11896
+        },
+        "first_active_frame": 59033,
+        "last_active_frame": 63766,
+        "first_inactive_frame_after": 63767,
+        "requested_cutoff": 1179,
+        "setup_thresholds": [
+          1179,
+          1186
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1178,
+        "distinct_accepted_frame_ids": 1179,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 14,
+        "path": "/CDI/ETC/OPENINGA.STR",
+        "opened_file": {
+          "filename": "OPENINGA.STR;1",
+          "lba": 22128,
+          "logical_bytes": 21921792,
+          "sectors": 10704
+        },
+        "first_active_frame": 64597,
+        "last_active_frame": 68833,
+        "first_inactive_frame_after": 68834,
+        "requested_cutoff": 1060,
+        "setup_thresholds": [
+          1060,
+          1067
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1059,
+        "distinct_accepted_frame_ids": 1060,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 15,
+        "path": "/CDI/ETC/OPENINGD.STR",
+        "opened_file": {
+          "filename": "OPENINGD.STR;1",
+          "lba": 53448,
+          "logical_bytes": 24363008,
+          "sectors": 11896
+        },
+        "first_active_frame": 69658,
+        "last_active_frame": 74391,
+        "first_inactive_frame_after": 74392,
+        "requested_cutoff": 1179,
+        "setup_thresholds": [
+          1179,
+          1186
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1178,
+        "distinct_accepted_frame_ids": 1179,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 16,
+        "path": "/CDI/ETC/OPENINGD.STR",
+        "opened_file": {
+          "filename": "OPENINGD.STR;1",
+          "lba": 53448,
+          "logical_bytes": 24363008,
+          "sectors": 11896
+        },
+        "first_active_frame": 75222,
+        "last_active_frame": 79955,
+        "first_inactive_frame_after": 79956,
+        "requested_cutoff": 1179,
+        "setup_thresholds": [
+          1179,
+          1186
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1178,
+        "distinct_accepted_frame_ids": 1179,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 17,
+        "path": "/CDI/ETC/OPENINGA.STR",
+        "opened_file": {
+          "filename": "OPENINGA.STR;1",
+          "lba": 22128,
+          "logical_bytes": 21921792,
+          "sectors": 10704
+        },
+        "first_active_frame": 80785,
+        "last_active_frame": 85021,
+        "first_inactive_frame_after": 85022,
+        "requested_cutoff": 1060,
+        "setup_thresholds": [
+          1060,
+          1067
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1059,
+        "distinct_accepted_frame_ids": 1060,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 18,
+        "path": "/CDI/ETC/OPENINGE.STR",
+        "opened_file": {
+          "filename": "OPENINGE.STR;1",
+          "lba": 65344,
+          "logical_bytes": 20267008,
+          "sectors": 9896
+        },
+        "first_active_frame": 85846,
+        "last_active_frame": 89783,
+        "first_inactive_frame_after": 89784,
+        "requested_cutoff": 979,
+        "setup_thresholds": [
+          979,
+          986
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 978,
+        "distinct_accepted_frame_ids": 979,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 19,
+        "path": "/CDI/ETC/OPENINGB.STR",
+        "opened_file": {
+          "filename": "OPENINGB.STR;1",
+          "lba": 32832,
+          "logical_bytes": 22495232,
+          "sectors": 10984
+        },
+        "first_active_frame": 90615,
+        "last_active_frame": 94981,
+        "first_inactive_frame_after": 94982,
+        "requested_cutoff": 1088,
+        "setup_thresholds": [
+          1088,
+          1095
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1087,
+        "distinct_accepted_frame_ids": 1088,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 20,
+        "path": "/CDI/ETC/OPENINGA.STR",
+        "opened_file": {
+          "filename": "OPENINGA.STR;1",
+          "lba": 22128,
+          "logical_bytes": 21921792,
+          "sectors": 10704
+        },
+        "first_active_frame": 95807,
+        "last_active_frame": 100043,
+        "first_inactive_frame_after": 100044,
+        "requested_cutoff": 1060,
+        "setup_thresholds": [
+          1060,
+          1067
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1059,
+        "distinct_accepted_frame_ids": 1060,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 21,
+        "path": "/CDI/ETC/OPENINGA.STR",
+        "opened_file": {
+          "filename": "OPENINGA.STR;1",
+          "lba": 22128,
+          "logical_bytes": 21921792,
+          "sectors": 10704
+        },
+        "first_active_frame": 100868,
+        "last_active_frame": 105104,
+        "first_inactive_frame_after": 105105,
+        "requested_cutoff": 1060,
+        "setup_thresholds": [
+          1060,
+          1067
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1059,
+        "distinct_accepted_frame_ids": 1060,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 22,
+        "path": "/CDI/ETC/OPENINGB.STR",
+        "opened_file": {
+          "filename": "OPENINGB.STR;1",
+          "lba": 32832,
+          "logical_bytes": 22495232,
+          "sectors": 10984
+        },
+        "first_active_frame": 105929,
+        "last_active_frame": 110295,
+        "first_inactive_frame_after": 110296,
+        "requested_cutoff": 1088,
+        "setup_thresholds": [
+          1088,
+          1095
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1087,
+        "distinct_accepted_frame_ids": 1088,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 23,
+        "path": "/CDI/ETC/OPENINGA.STR",
+        "opened_file": {
+          "filename": "OPENINGA.STR;1",
+          "lba": 22128,
+          "logical_bytes": 21921792,
+          "sectors": 10704
+        },
+        "first_active_frame": 111122,
+        "last_active_frame": 115358,
+        "first_inactive_frame_after": 115359,
+        "requested_cutoff": 1060,
+        "setup_thresholds": [
+          1060,
+          1067
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1059,
+        "distinct_accepted_frame_ids": 1060,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 24,
+        "path": "/CDI/ETC/OPENINGA.STR",
+        "opened_file": {
+          "filename": "OPENINGA.STR;1",
+          "lba": 22128,
+          "logical_bytes": 21921792,
+          "sectors": 10704
+        },
+        "first_active_frame": 116183,
+        "last_active_frame": 120419,
+        "first_inactive_frame_after": 120420,
+        "requested_cutoff": 1060,
+        "setup_thresholds": [
+          1060,
+          1067
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1059,
+        "distinct_accepted_frame_ids": 1060,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 25,
+        "path": "/CDI/ETC/OPENINGB.STR",
+        "opened_file": {
+          "filename": "OPENINGB.STR;1",
+          "lba": 32832,
+          "logical_bytes": 22495232,
+          "sectors": 10984
+        },
+        "first_active_frame": 121244,
+        "last_active_frame": 125610,
+        "first_inactive_frame_after": 125611,
+        "requested_cutoff": 1088,
+        "setup_thresholds": [
+          1088,
+          1095
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1087,
+        "distinct_accepted_frame_ids": 1088,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 26,
+        "path": "/CDI/ETC/OPENINGB.STR",
+        "opened_file": {
+          "filename": "OPENINGB.STR;1",
+          "lba": 32832,
+          "logical_bytes": 22495232,
+          "sectors": 10984
+        },
+        "first_active_frame": 126437,
+        "last_active_frame": 130803,
+        "first_inactive_frame_after": 130804,
+        "requested_cutoff": 1088,
+        "setup_thresholds": [
+          1088,
+          1095
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1087,
+        "distinct_accepted_frame_ids": 1088,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 27,
+        "path": "/CDI/ETC/OPENINGB.STR",
+        "opened_file": {
+          "filename": "OPENINGB.STR;1",
+          "lba": 32832,
+          "logical_bytes": 22495232,
+          "sectors": 10984
+        },
+        "first_active_frame": 131630,
+        "last_active_frame": 135996,
+        "first_inactive_frame_after": 135997,
+        "requested_cutoff": 1088,
+        "setup_thresholds": [
+          1088,
+          1095
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1087,
+        "distinct_accepted_frame_ids": 1088,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 28,
+        "path": "/CDI/ETC/OPENINGA.STR",
+        "opened_file": {
+          "filename": "OPENINGA.STR;1",
+          "lba": 22128,
+          "logical_bytes": 21921792,
+          "sectors": 10704
+        },
+        "first_active_frame": 136823,
+        "last_active_frame": 141059,
+        "first_inactive_frame_after": 141060,
+        "requested_cutoff": 1060,
+        "setup_thresholds": [
+          1060,
+          1067
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1059,
+        "distinct_accepted_frame_ids": 1060,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 29,
+        "path": "/CDI/ETC/OPENINGD.STR",
+        "opened_file": {
+          "filename": "OPENINGD.STR;1",
+          "lba": 53448,
+          "logical_bytes": 24363008,
+          "sectors": 11896
+        },
+        "first_active_frame": 141884,
+        "last_active_frame": 146617,
+        "first_inactive_frame_after": 146618,
+        "requested_cutoff": 1179,
+        "setup_thresholds": [
+          1179,
+          1186
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1178,
+        "distinct_accepted_frame_ids": 1179,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 30,
+        "path": "/CDI/ETC/OPENINGF.STR",
+        "opened_file": {
+          "filename": "OPENINGF.STR;1",
+          "lba": 75240,
+          "logical_bytes": 25427968,
+          "sectors": 12416
+        },
+        "first_active_frame": 147448,
+        "last_active_frame": 152392,
+        "first_inactive_frame_after": 152393,
+        "requested_cutoff": 1231,
+        "setup_thresholds": [
+          1231,
+          1237
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1230,
+        "distinct_accepted_frame_ids": 1231,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 31,
+        "path": "/CDI/ETC/OPENINGD.STR",
+        "opened_file": {
+          "filename": "OPENINGD.STR;1",
+          "lba": 53448,
+          "logical_bytes": 24363008,
+          "sectors": 11896
+        },
+        "first_active_frame": 153227,
+        "last_active_frame": 157960,
+        "first_inactive_frame_after": 157961,
+        "requested_cutoff": 1179,
+        "setup_thresholds": [
+          1179,
+          1186
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 1178,
+        "distinct_accepted_frame_ids": 1179,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      },
+      {
+        "sequence": 32,
+        "path": "/CDI/ETC/OPENINGC.STR",
+        "opened_file": {
+          "filename": "OPENINGC.STR;1",
+          "lba": 43816,
+          "logical_bytes": 19726336,
+          "sectors": 9632
+        },
+        "first_active_frame": 158791,
+        "last_active_frame": 162621,
+        "first_inactive_frame_after": 162622,
+        "requested_cutoff": 953,
+        "setup_thresholds": [
+          953,
+          960
+        ],
+        "setup_raw_frame_values": [
+          0
+        ],
+        "maximum_accepted_frame_id_while_streaming": 952,
+        "distinct_accepted_frame_ids": 953,
+        "sampled_ids_contiguous_from_zero": true,
+        "movie_complete_flag_observed": true,
+        "decode_complete_flag_observed": true,
+        "observed_complete_lifetime": true,
+        "source_viewports_xy_width_height": [
+          [
+            640,
+            0,
+            320,
+            240
+          ]
+        ]
+      }
+    ],
+    "distinct_opening_choices": 7,
+    "routed_movie_payloads_observed": 8,
+    "total_routed_movie_payloads": 39,
+    "opening_lifetimes_completed": 31,
+    "all_openings_cleared_frame": 162622,
+    "original_native_journal_sha256": "e6f3eeabd75998259ba2f5772bbc96ae3f3057f7de57f7b698148f5b4123104a",
+    "rebuilt_native_journal_sha256": "e6f3eeabd75998259ba2f5772bbc96ae3f3057f7de57f7b698148f5b4123104a",
+    "original_report_sha256": "1759c691c7e4ff3cdb02b975f6969d4831fc07696a2f779b11c868acdf966f0c",
+    "rebuilt_report_sha256": "884492b859b2b84ff834ddcf257d2850f550e26b9fc727fe8c3998eb3f78fd0f",
+    "differences": {},
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "hardware_timing_verified": false,
+    "complete_all_movie_or_ending_playback_verified": false
+  },
+  "current_build": {
+    "objects_expected": 306,
+    "objects_found": 306,
+    "complete_objects": true,
+    "missing_objects": [],
+    "build_current": true,
+    "c_bytes": 199912,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 100.0,
+    "sdk_text_bytes": 147880,
+    "handwritten_text_bytes": 188,
+    "binary_match": "verified",
+    "expected_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "exit_code": 0,
+    "elapsed_seconds": 17.445693254470825,
+    "full_progress_raw_sha256": "165efbf661dd31a81bdbd8dcb56a72be863e8c4691f92656a7d5bbcbc18f2ee2",
+    "progress_source_sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+    "pinned_python_selects_its_own_ninja": true
+  },
+  "original_function_ranges": [
+    {
+      "function": "game_flow_play_intro_movie",
+      "address": "0x80026348",
+      "file_offset": 93000,
+      "bytes": 200,
+      "sha256": "65b61f92a230858d1eb90219eb455fa1221daa3936fe80845db8c2de36629813"
+    },
+    {
+      "function": "game_flow_execute_phases",
+      "address": "0x8003B110",
+      "file_offset": 178448,
+      "bytes": 252,
+      "sha256": "ab4e01d312bc6351f4ae2ad1067401c95bc4ad082f4687bb3d2e6475cb7421ec"
+    },
+    {
+      "function": "get_seeded_random",
+      "address": "0x80048CFC",
+      "file_offset": 234748,
+      "bytes": 44,
+      "sha256": "d6a663de736ac83d8fe70a47d4746484004b201fe4cb02c18939cc0e022d418d"
+    },
+    {
+      "function": "get_random_opening_movie_path",
+      "address": "0x8004913C",
+      "file_offset": 235836,
+      "bytes": 144,
+      "sha256": "01dfa2133ac1575131024ed32e888b00457bd79df8c978456872bf044eebd857"
+    }
+  ],
+  "original_function_entry_events_recorded": false,
+  "analysis_copy_controls": [
+    {
+      "name": "closed_stream_is_not_a_neutral_lifetime",
+      "detected": true,
+      "error": "Unsupported neutral startup movie/state.",
+      "scope": "Edited saved-analysis copy only; native capture, runtime and original game unchanged."
+    },
+    {
+      "name": "opening_C_disc_extent_changed",
+      "detected": true,
+      "error": "Invalid BCD CD-file location.",
+      "scope": "Edited saved-analysis copy only; native capture, runtime and original game unchanged."
+    },
+    {
+      "name": "changed_native_RNG_keeps_old_framed_hash",
+      "detected": true,
+      "error": "Independent native/controller framed hash differs.",
+      "scope": "Edited saved-analysis copy only; native capture, runtime and original game unchanged."
+    },
+    {
+      "name": "missing_MainRAM_byte",
+      "detected": true,
+      "error": "Incomplete RAM/GPU/controller/PCM payload coverage.",
+      "scope": "Edited saved-analysis copy only; native capture, runtime and original game unchanged."
+    },
+    {
+      "name": "missing_GPURAM_byte",
+      "detected": true,
+      "error": "Incomplete RAM/GPU/controller/PCM payload coverage.",
+      "scope": "Edited saved-analysis copy only; native capture, runtime and original game unchanged."
+    },
+    {
+      "name": "missing_PCM_byte",
+      "detected": true,
+      "error": "Incomplete RAM/GPU/controller/PCM payload coverage.",
+      "scope": "Edited saved-analysis copy only; native capture, runtime and original game unchanged."
+    },
+    {
+      "name": "missing_controller_byte",
+      "detected": true,
+      "error": "Incomplete RAM/GPU/controller/PCM payload coverage.",
+      "scope": "Edited saved-analysis copy only; native capture, runtime and original game unchanged."
+    },
+    {
+      "name": "missing_unmasked_complete_state",
+      "detected": true,
+      "error": "Invalid complete_state_sha256 digest.",
+      "scope": "Edited saved-analysis copy only; native capture, runtime and original game unchanged."
+    },
+    {
+      "name": "incomplete_attract_cannot_pass_all_seven",
+      "detected": true,
+      "error": "Incomplete attract data cannot pass the all-seven comparison.",
+      "scope": "Edited saved-analysis copy only; native capture, runtime and original game unchanged."
+    },
+    {
+      "name": "changed_complete_state",
+      "detected": true,
+      "differences": {
+        "windows": [
+          0
+        ]
+      },
+      "scope": "Edited comparison copy only; all original buffer/state hashes retained unchanged."
+    },
+    {
+      "name": "changed_GPU",
+      "detected": true,
+      "differences": {
+        "windows": [
+          0
+        ]
+      },
+      "scope": "Edited comparison copy only; all original buffer/state hashes retained unchanged."
+    },
+    {
+      "name": "changed_returned_PCM",
+      "detected": true,
+      "differences": {
+        "windows": [
+          0
+        ]
+      },
+      "scope": "Edited comparison copy only; all original buffer/state hashes retained unchanged."
+    },
+    {
+      "name": "changed_final_decoded_image",
+      "detected": true,
+      "differences": {
+        "decoded_final_PNG": true
+      },
+      "scope": "Edited comparison copy only; all original buffer/state hashes retained unchanged."
+    }
+  ],
+  "source_sha256": {
+    "research/headless/RecordOpeningAttract.cs": "9f193a6fcbaca8b27cea77d886550c6092f8ea42f7d1094e2c8858a17e8974b8",
+    "research/headless/RecordMovieWindows.cs": "1f7b39686ad95def456111f1f63091be346536903c94393b76c55252c94a8e1e",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/BoundedSha256Stream.cs": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e",
+    "tools/inspect_opening_attract.py": "8462fa41b7e564381629d8b69c9b813fa8296d77a24a154c36b165f5e3ee6bc0",
+    "tests/test_opening_attract.py": "e2786dee5d240313d57f480bd03fddff2aa1d2ff6fc64544828806edfd697f44",
+    "tools/inspect_movie_windows.py": "a7864cfad1133a63364be77dd1429192bf416d534fcaeeaff7a413ac2ab05f0e",
+    "tools/compare_movie_playback.py": "6b7aa74d96822f46f890dd3f2dd5069eb74c12777ee5c08e6dd535ad877a7369",
+    "tools/inspect_progression_history.py": "a3f888ea32368392f9416f7b600ccd50b248a32eb1781d800d05ed8d29d7a486",
+    "src/sys/system.c": "e98f2953f0fe43512065e8855fee767c244e8b023911ceecc7f01fc2b26fe7f4",
+    "src/game/game_flow.c": "b8412d1d3207da21ae29a5fc1d3293eedbf8c50f6f780b5b191ea330df1ba305",
+    "src/utils/cd_paths.c": "380f325eb63bfcee49f4bfee8fc8917ce04d99bf7121dea427b1f6a6bccb9eae",
+    "src/menu/mdec_movie.c": "80ad6b55ed2a1923e1c00491565b16032a4b2fdc0cf25848f0b902f2f68b3019",
+    "src/menu/movie_screen.c": "8b18f976e7867226380e54f81daad133247eded4b4af54a526a88b4304d792de",
+    "src/file/str_stream.c": "788cc2ed6ef4794485bb5dbae52c702d090faa279ab67d4ba471e798344a3acc",
+    "research/original-functions.json": "6c5a8f8a95c51b2dd5c19a071e62d8a366e1d83609598272e44ef7f3c4aea5fc",
+    "docs/movie-inventory-checks.json": "8b450a19e27acebe77636bd785be0c9eb82cbe990a03e042d4026fa57c12180b",
+    "tools/progress.py": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+  },
+  "source_git_blob_sha256": {
+    "research/headless/RecordOpeningAttract.cs": "9f193a6fcbaca8b27cea77d886550c6092f8ea42f7d1094e2c8858a17e8974b8",
+    "research/headless/RecordMovieWindows.cs": "1f7b39686ad95def456111f1f63091be346536903c94393b76c55252c94a8e1e",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/BoundedSha256Stream.cs": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e",
+    "tools/inspect_opening_attract.py": "8462fa41b7e564381629d8b69c9b813fa8296d77a24a154c36b165f5e3ee6bc0",
+    "tests/test_opening_attract.py": "e2786dee5d240313d57f480bd03fddff2aa1d2ff6fc64544828806edfd697f44",
+    "tools/inspect_movie_windows.py": "a7864cfad1133a63364be77dd1429192bf416d534fcaeeaff7a413ac2ab05f0e",
+    "tools/compare_movie_playback.py": "6b7aa74d96822f46f890dd3f2dd5069eb74c12777ee5c08e6dd535ad877a7369",
+    "tools/inspect_progression_history.py": "a3f888ea32368392f9416f7b600ccd50b248a32eb1781d800d05ed8d29d7a486",
+    "src/sys/system.c": "9ecad0bb7f61622fd8b978f0f4b57a307c9a68fe5477a6a1e2d80dd593e910aa",
+    "src/game/game_flow.c": "b8412d1d3207da21ae29a5fc1d3293eedbf8c50f6f780b5b191ea330df1ba305",
+    "src/utils/cd_paths.c": "b5cab6b884909fcb3e87923d3fcfba00af0afecc2eec3960bc2f0960e8ecd8ea",
+    "src/menu/mdec_movie.c": "80ad6b55ed2a1923e1c00491565b16032a4b2fdc0cf25848f0b902f2f68b3019",
+    "src/menu/movie_screen.c": "8b18f976e7867226380e54f81daad133247eded4b4af54a526a88b4304d792de",
+    "src/file/str_stream.c": "399f850fda255ebc394807004857318efa366d1e7b5c16b498ad50f268a1edb4",
+    "research/original-functions.json": "6c5a8f8a95c51b2dd5c19a071e62d8a366e1d83609598272e44ef7f3c4aea5fc",
+    "docs/movie-inventory-checks.json": "d04792ab65b99cc58af1717b0bddd14b66718dd5690fbb8c1fbb109cbb903d22",
+    "tools/progress.py": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51"
+  },
+  "source_representation_notes": {
+    "src/sys/system.c": "Unchanged CRLF working bytes and LF Git blob; complete text checked for that sole representation difference.",
+    "src/utils/cd_paths.c": "Unchanged CRLF working bytes and LF Git blob; complete text checked for that sole representation difference.",
+    "src/file/str_stream.c": "Unchanged CRLF working bytes and LF Git blob; complete text checked for that sole representation difference.",
+    "docs/movie-inventory-checks.json": "Unchanged CRLF working bytes and LF Git blob; complete text checked for that sole representation difference."
+  },
+  "native_host": {
+    "bytes": 55296,
+    "sha256": "deaeac3e812fb649dac959a4138d0b806efa5ef249afa7f25333f03e5f491330"
+  },
+  "native_host_configuration_sha256": "00146088ad19747e601d09dee0ead7bf75b27fccf23e3cf7809a5e7dede129cf",
+  "frozen_runtime_record_count": 174,
+  "frozen_runtime_records_sha256": "3b5cfaadb8090dfc53ffed2997b4b07e69cce8842dac0fc91edf7c1db89139b4",
+  "all_frozen_runtime_records_rehashed_before_and_after": true,
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "canonical_Japanese_disc_sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61",
+  "runtime": "BizHawk 2.11.1 / Nymashock with the separately qualified initialized-media adapter",
+  "first_bounded_attempt": {
+    "frames": 160001,
+    "status": "frame_ceiling_reached",
+    "complete_all_seven_scope": false,
+    "distinct_completed_choices": 6,
+    "completed_opening_lifetimes": 30,
+    "unfinished_lifetime": {
+      "path": "/CDI/ETC/OPENINGC.STR",
+      "first_active_frame": 158791,
+      "last_active_frame": 160000,
+      "maximum_accepted_frame_id_while_streaming": 296,
+      "distinct_accepted_frame_ids": 297,
+      "observed_complete_lifetime": false
+    },
+    "report_sha256": "7567fa0fe5b1ab2d485659962358e2df3435d78a5af6a045bd021d906bc8e189",
+    "native_journal_sha256": "956b2f119782975e5378015d4ad0fa10273ced848f78deeb8bcbea38146829f1",
+    "native_reader_sha256": "10c5f90cf68697400feb224ae1390a7e83f825efd3cf8a7233826082ec40a38e",
+    "native_producer_source_sha256": "2ec185f698d970fae7fc2df9129ddf0fafce531ec1e91b9658162f8899cfc7c2",
+    "original_rebuilt_comparison_started": false,
+    "source_reconstruction": "Replace the sole ceiling>170000 literal in the published recorder with ceiling>160000; all other source bytes are identical."
+  },
+  "repeated_prefix": {
+    "native_frames": 160001,
+    "whole_native_prefix_sha256": "956b2f119782975e5378015d4ad0fa10273ced848f78deeb8bcbea38146829f1",
+    "native_prefix_bytes_including_header": 45489239,
+    "complete_buffer_state_windows": 266,
+    "complete_framed_buffer_frames": 159600,
+    "old_final_401_frame_partial_buffer_window_not_independently_compared": true
+  },
+  "independent_original_review_preceded_rebuilt_process": true,
+  "observed_movie_inventory": [
+    {
+      "sha256": "eecd39baf2e0d44f1fd70454e2c09a3849ca7de41b905d735cb6ed1e51857ca9",
+      "bytes": 2354688,
+      "sectors": 1008,
+      "sector_kinds": {
+        "video": 938,
+        "xa_audio": 63,
+        "zero_data_filler": 7
+      },
+      "frame_count": 100,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 7
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 938
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 0,
+          "sectors": 62
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 0,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/ASMK.STR",
+      "lba": 21120
+    },
+    {
+      "sha256": "b4ac2518bed7e87006c92b0b536f8dad688cb870b83f2f9e466d85ae30dd3b9a",
+      "bytes": 25004544,
+      "sectors": 10704,
+      "sector_kinds": {
+        "video": 9363,
+        "xa_audio": 1338,
+        "zero_data_filler": 3
+      },
+      "frame_count": 1070,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 3
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 9363
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 1337
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/OPENINGA.STR",
+      "lba": 22128
+    },
+    {
+      "sha256": "c77be8c50176c019deb8a9ca1914b99d12d8a53d89f3df7a2968c2ad29322615",
+      "bytes": 25658624,
+      "sectors": 10984,
+      "sector_kinds": {
+        "video": 9608,
+        "xa_audio": 1373,
+        "zero_data_filler": 3
+      },
+      "frame_count": 1098,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 3
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 9608
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 1372
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/OPENINGB.STR",
+      "lba": 32832
+    },
+    {
+      "sha256": "bce7dcd24a2794879a817a9d51ef540bb14da67f5aee56de8d61b43b922ccd18",
+      "bytes": 22500352,
+      "sectors": 9632,
+      "sector_kinds": {
+        "video": 8427,
+        "xa_audio": 1204,
+        "zero_data_filler": 1
+      },
+      "frame_count": 963,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 1
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 8427
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 1203
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/OPENINGC.STR",
+      "lba": 43816
+    },
+    {
+      "sha256": "7aea8683fff4d42d10f9233bfc589546a93c7838dcbb74a0acc5c8fe5d47beb6",
+      "bytes": 27789056,
+      "sectors": 11896,
+      "sector_kinds": {
+        "video": 10404,
+        "xa_audio": 1487,
+        "zero_data_filler": 5
+      },
+      "frame_count": 1189,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 10404
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 1486
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/OPENINGD.STR",
+      "lba": 53448
+    },
+    {
+      "sha256": "9baee1fcad8a513799389732c29ab4b3a66fb784ae54911e0ba72d4f77306377",
+      "bytes": 23117056,
+      "sectors": 9896,
+      "sector_kinds": {
+        "video": 8654,
+        "xa_audio": 1237,
+        "zero_data_filler": 5
+      },
+      "frame_count": 989,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 8654
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 1236
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/OPENINGE.STR",
+      "lba": 65344
+    },
+    {
+      "sha256": "f808feb6d7ba3365e4b968e7198ea2fd06fbb164dfda3d4ecc12895ac7d332be",
+      "bytes": 29003776,
+      "sectors": 12416,
+      "sector_kinds": {
+        "video": 10859,
+        "xa_audio": 1552,
+        "zero_data_filler": 5
+      },
+      "frame_count": 1241,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 0,
+          "flags": 0,
+          "coding": 0,
+          "sectors": 5
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 10859
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 1551
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/OPENINGF.STR",
+      "lba": 75240
+    },
+    {
+      "sha256": "93bcdccc2fa9f720ea1ac1d697e548ad916b3d89cbb7343bef439d0df98c117c",
+      "bytes": 24668160,
+      "sectors": 10560,
+      "sector_kinds": {
+        "video": 9240,
+        "xa_audio": 1320
+      },
+      "frame_count": 1056,
+      "subheaders": [
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 72,
+          "coding": 0,
+          "sectors": 9240
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 100,
+          "coding": 1,
+          "sectors": 1319
+        },
+        {
+          "file": 1,
+          "channel": 1,
+          "flags": 228,
+          "coding": 1,
+          "sectors": 1
+        }
+      ],
+      "path": "/CDI/ETC/OPENINGG.STR",
+      "lba": 87656
+    }
+  ],
+  "capture_files": {
+    "original/final.png": {
+      "bytes": 82500,
+      "sha256": "5cd05951e5daedf125c89806f7d999f01b58ae29d53d0bf529c39801897ba1c6"
+    },
+    "original/inputs.tsv": {
+      "bytes": 15,
+      "sha256": "64d223f3fd854a1d40cc905ffe98d6e53b4b9407ecb92eb7b321b8c45a0b6eca"
+    },
+    "original/native.tsv.gz": {
+      "bytes": 1318498,
+      "sha256": "a5b1fe9411314dc328e1b7025ed2dc39a55ebca50ba207d3ae4f40716c9438a6"
+    },
+    "original/progress.json": {
+      "bytes": 182,
+      "sha256": "a3015c330d32d6f6a569fe288a8b044923009d3f67e9a1882b691bdcfb85d3c7"
+    },
+    "original/report.json": {
+      "bytes": 1042,
+      "sha256": "7567fa0fe5b1ab2d485659962358e2df3435d78a5af6a045bd021d906bc8e189"
+    },
+    "original/windows.jsonl": {
+      "bytes": 279955,
+      "sha256": "66217b1d85481e05d7302140aa726e5c38f4ba2fdd458b1f7379456044d846b8"
+    },
+    "extended-original/final.png": {
+      "bytes": 35048,
+      "sha256": "866bb5e00f6a03e89974fb6433cb63841f9bf235c5dd036d9f9be6b551b2730f"
+    },
+    "extended-original/inputs.tsv": {
+      "bytes": 15,
+      "sha256": "64d223f3fd854a1d40cc905ffe98d6e53b4b9407ecb92eb7b321b8c45a0b6eca"
+    },
+    "extended-original/native.tsv.gz": {
+      "bytes": 1341980,
+      "sha256": "2ff6f16becc7036fb2840c79c54633f5c9a5d993281d7d472b262eac3030e7fc"
+    },
+    "extended-original/progress.json": {
+      "bytes": 186,
+      "sha256": "061060759d6a5ea0fb766f3fda2d319f0b0556ba15b23f0019a933f6acdc8f73"
+    },
+    "extended-original/report.json": {
+      "bytes": 1077,
+      "sha256": "1759c691c7e4ff3cdb02b975f6969d4831fc07696a2f779b11c868acdf966f0c"
+    },
+    "extended-original/windows.jsonl": {
+      "bytes": 285201,
+      "sha256": "f635c03be30404bc74f7ef3cd978606c1ef44dc261788d0799dd0574d33c8bd0"
+    },
+    "extended-rebuilt/final.png": {
+      "bytes": 35048,
+      "sha256": "866bb5e00f6a03e89974fb6433cb63841f9bf235c5dd036d9f9be6b551b2730f"
+    },
+    "extended-rebuilt/inputs.tsv": {
+      "bytes": 15,
+      "sha256": "64d223f3fd854a1d40cc905ffe98d6e53b4b9407ecb92eb7b321b8c45a0b6eca"
+    },
+    "extended-rebuilt/native.tsv.gz": {
+      "bytes": 1341980,
+      "sha256": "2ff6f16becc7036fb2840c79c54633f5c9a5d993281d7d472b262eac3030e7fc"
+    },
+    "extended-rebuilt/progress.json": {
+      "bytes": 186,
+      "sha256": "040ca29f41b34818946a29d294413bd72fda6e44f89b0014594c9ed7c9b82b3e"
+    },
+    "extended-rebuilt/report.json": {
+      "bytes": 1076,
+      "sha256": "884492b859b2b84ff834ddcf257d2850f550e26b9fc727fe8c3998eb3f78fd0f"
+    },
+    "extended-rebuilt/windows.jsonl": {
+      "bytes": 285201,
+      "sha256": "f635c03be30404bc74f7ef3cd978606c1ef44dc261788d0799dd0574d33c8bd0"
+    }
+  },
+  "native_capture_directories": 3,
+  "paired_complete_recordings": 2,
+  "partial_unpaired_recordings": 1,
+  "native_capture_and_logs_logical_bytes": 5026994,
+  "bounds": {
+    "maximum_frames_per_extended_run": 170001,
+    "raw_native_bytes_per_run": 100663296,
+    "gzip_native_bytes_per_run": 2097152,
+    "all_capture_outputs_bytes": 6291456,
+    "native_line_bytes": 4096,
+    "private_bytes_per_run": 1073741824,
+    "wall_seconds_per_run": 1800
+  },
+  "complete_buffer_channels": [
+    "MainRAM",
+    "GPURAM",
+    "RGB",
+    "PCM",
+    "native",
+    "controller"
+  ],
+  "serialized_state_bytes_masked": 0,
+  "restored_states": 0,
+  "game_RAM_or_instruction_writes": 0,
+  "player_UI_or_saves_accessed": false,
+  "new_matching_C_bytes": 0,
+  "new_gameplay_features": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "model_API_calls": 0,
+  "before_after": {
+    "counted_game_C_bytes": [
+      199912,
+      199912
+    ],
+    "game_C_denominator": 199912,
+    "provisional_feature_groups": [
+      40,
+      40
+    ],
+    "official_exhaustive_feature_total": null,
+    "NPC_callbacks_recovered_C": [
+      107,
+      107
+    ],
+    "normal_opening_choices_observed": [
+      1,
+      7
+    ],
+    "routed_movie_payloads_observed": [
+      2,
+      8
+    ],
+    "total_routed_movie_payloads": 39,
+    "whole_feature_groups_accepted": [
+      0,
+      0
+    ],
+    "whole_NPC_encounters_accepted": [
+      0,
+      0
+    ]
+  },
+  "open_gates": [
+    "Other 31 routed movie payloads",
+    "Every skip/disabled/error branch and other controller timings",
+    "Exact encoded-frame presentation and complete ending review",
+    "Asset/dispatch and whole-feature/NPC acceptance",
+    "Other seeds and natural scene/input histories",
+    "Original hardware timing"
+  ]
+}

@@ -25385,5 +25385,42 @@
     "whole_NPC_encounter_acceptances": 0,
     "new_developer_capability_categories": 0,
     "model_API_calls": 0
+  },
+  "all_opening_attract_audit": {
+    "date": "2026-10-31",
+    "document": "docs/OPENING_ATTRACT.md",
+    "evidence": "docs/opening-attract-checks.json",
+    "features": [
+      "F001",
+      "F032",
+      "F035"
+    ],
+    "cold_native_runs": 3,
+    "completed_original_rebuilt_pairs": 1,
+    "retained_partial_unpaired_attempts": 1,
+    "paired_frames": 162803,
+    "complete_state_pairs": 272,
+    "paired_PCM_stereo_sample_frames": 120007579,
+    "normal_opening_choices": 7,
+    "total_opening_choices": 7,
+    "original_movie_payloads": 8,
+    "routed_movie_payloads": 39,
+    "completed_opening_lifetimes_per_complete_run": 31,
+    "detected_analysis_copy_controls": 13,
+    "original_function_ranges_checked": 4,
+    "all_framed_windows_native_inputs_and_decoded_final_images_equal": true,
+    "original_partial_review_required_before_extension": true,
+    "original_complete_review_required_before_rebuilt": true,
+    "prior_inventory_values_and_cold_movie_profiles_preserved": true,
+    "original_function_entry_events_recorded": false,
+    "complete_ending_or_all_movie_playback_verified": false,
+    "original_hardware_timing_verified": false,
+    "original_game_behavior_modified": false,
+    "new_matching_C_bytes": 0,
+    "new_gameplay_features": 0,
+    "original_feature_groups_accepted": 0,
+    "whole_NPC_encounter_acceptances": 0,
+    "new_developer_capability_categories": 0,
+    "model_API_calls": 0
   }
 }

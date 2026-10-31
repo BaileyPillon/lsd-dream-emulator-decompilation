@@ -24,3 +24,9 @@ RAM/GPU/RGB/PCM each advanced frame and retains compressed native fields. See
 [cold movie playback and skips](../../docs/COLD_MOVIE_WINDOWS.md) for build
 inputs, argument order, bounds and the independent Python checker. The three
 qualified routes preserve the canonical game and existing player.
+
+`RecordOpeningAttract.cs` extends the neutral cold movie observation through
+repeated title-menu attract cycles, stopping after all seven opening choices
+clear and a 180-frame post window. Its streaming saved-data reader and explicit
+incomplete-attempt boundary are documented in
+[all seven opening choices](../../docs/OPENING_ATTRACT.md).
