@@ -25587,5 +25587,44 @@
     "model_API_calls": 0,
     "original_method_body_instructions_executed": 0,
     "all_dynamic_dispatch_resolved": false
+  },
+  "new_game_reset_audit": {
+    "reference": "docs/new-game-reset-checks.json",
+    "documentation": "docs/NEW_GAME_RESET.md",
+    "related_feature_groups": [
+      "F004"
+    ],
+    "before": {
+      "bounded_reset_profiles": 0,
+      "reset_store_footprint_accepted": false,
+      "retained_save_checkpoints_qualified_by_this_profile": 0
+    },
+    "after": {
+      "initialized_native_profiles": 1032,
+      "original_and_rebuilt_executions": 2064,
+      "complete_original_functions": 8,
+      "complete_original_function_bytes": 488,
+      "save_block_bytes": 1792,
+      "actual_reset_store_footprint_bytes": 576,
+      "preserved_save_block_bytes": 1216,
+      "original_native_body_entries_per_image": 1344,
+      "output_stubs": 0,
+      "target_layout_assertions": 27,
+      "executed_original_instruction_faults_rejected": 4,
+      "retained_natural_save_checkpoints": 5,
+      "retained_object_VM_executions": 20,
+      "additional_public_CLI_integration_executions": 4
+    },
+    "matching_C_bytes_before": 199912,
+    "matching_C_bytes_after": 199912,
+    "new_gameplay_features": 0,
+    "provisional_feature_groups": 40,
+    "original_NPC_callbacks_in_C": 107,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "new_developer_capability_categories": 0,
+    "model_API_calls": 0,
+    "natural_reset_event_proved": false,
+    "full_feature_F004_accepted": false
   }
 }

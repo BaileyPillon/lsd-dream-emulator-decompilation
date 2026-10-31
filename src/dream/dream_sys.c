@@ -27,8 +27,8 @@ extern u8 LEN_STAGE_SPAWNPOINTS[];
 extern s32 g_TeleportLinksEnabled;
 extern s32 g_ViolenceLinkTile;
 extern s32 g_DefaultLinkTransform[];
-extern s32 gpNavChallengesComplete;
-extern s32 gpDynamicLinkPenalty;
+extern s8 *gpNavChallengesComplete;
+extern s32 *gpDynamicLinkPenalty;
 extern s32 g_LinkSourceStage;
 extern s32 g_LinkSourceIndex;
 extern s32 g_LinkTargetStage;
@@ -71,7 +71,7 @@ s32 is_facing_angle(s16 *arg0, s32 arg1);
 s32 get_random_spawn_from_stage(void *dst, s32 chunk, s32 tick);
 s32 calc_navigation_score(void);
 void sound_entity_update(sound_t *This, void *Ctx);
-void init_nav_challenges_array(s32 *Unk1, s32 *Unk2);
+void init_nav_challenges_array(s8 *Unk1, s32 *Unk2);
 void *memset(void *s, int c, u32 n);
 
 typedef struct {
@@ -983,7 +983,7 @@ void dream_sys_init_new_game(dream_sys_t *This) {
     This->m_Reserved67C = 0;
     This->m_Reserved680 = 0;
     This->m_SaveDataMagic = temp_v1;
-    init_nav_challenges_array((s32 *) &This->m_NavChallenges, &This->m_DynamicLinkCount);
+    init_nav_challenges_array(This->m_NavChallenges, &This->m_DynamicLinkCount);
     memset(&This->m_Reserved684, 0, 0x1F4);
 }
 
@@ -1724,12 +1724,12 @@ dream_sys_vtable_t *dream_sys_get_vtable(void) {
     return &g_DREAM_SYS_VTABLE;
 }
 
-void init_nav_challenges_array(s32 *Unk1, s32 *Unk2) {
+void init_nav_challenges_array(s8 *Unk1, s32 *Unk2) {
     s32 var_v1;
     s8 *var_v0;
 
     var_v1 = 0x1D;
-    var_v0 = (char *) Unk1 + 0x1D;
+    var_v0 = Unk1 + 0x1D;
     do {
         *var_v0 = 0;
         var_v1 -= 1;
@@ -1748,7 +1748,7 @@ s32 calc_navigation_score(void) {
 
     score = 0;
     addend = 1000000;
-    var_v1 = (s8 *) gpNavChallengesComplete;
+    var_v1 = gpNavChallengesComplete;
     temp_a1 = var_v1 + 30;
     do {
         if (*var_v1 != 0) {
@@ -1759,7 +1759,7 @@ s32 calc_navigation_score(void) {
     if (score > 29999999) {
         score = 50000000;
     }
-    score -= *(s32 *) gpDynamicLinkPenalty * 0x2B10;
+    score -= *gpDynamicLinkPenalty * 0x2B10;
     if (score < 0) {
         score = 0;
     }
@@ -1797,7 +1797,7 @@ s32 get_random_spawn_from_stage(void *dst, s32 chunk, s32 tick) {
     *(dream_sys_pkt4_t *) dst = *(dream_sys_pkt4_t *) spawn;
     idx = spawn[4];
     *(dream_sys_pkt6_t *) ((u8 *) dst + 4) = *(dream_sys_pkt6_t *) ((u8 *) SPAWN_POS_ADJUST + idx * 6);
-    *(s32 *) gpDynamicLinkPenalty += 1;
+    *gpDynamicLinkPenalty += 1;
     return selected;
 }
 
@@ -1971,7 +1971,7 @@ s32 get_static_spawn(void *dst, s16 *key, s32 chunk, s32 *counts, s32 *records, 
                 *(dream_sys_pkt6_t *) ((u8 *) dst + 4) =
                     *(dream_sys_pkt6_t *) ((u8 *) SPAWN_POS_ADJUST + entry->m_Adjustment * 6);
                 if (flag != 0) {
-                    ((u8 *) gpNavChallengesComplete)[entry->m_NavChallenge] = 1;
+                    gpNavChallengesComplete[entry->m_NavChallenge] = 1;
                 }
                 return g_LinkTargetStage;
             }

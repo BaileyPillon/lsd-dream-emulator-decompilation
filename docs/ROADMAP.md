@@ -577,3 +577,14 @@ prefixes and 21 complete original targets are checked; 180 compiled consumer
 entries pass. Continue the four screen-specific callback signatures, factory
 contracts, other receiver families and natural dispatch histories. Entry-only
 checks leave callee bodies, returns and whole-feature acceptance separate.
+
+## New-game/reset extension
+
+The [reset component profile](NEW_GAME_RESET.md) now checks complete save
+buffers and original store footprints in 1,032 initialized contexts, plus
+five retained states and 20 copied-object VM executions. Continue F004 through
+the actual controller path: map callback notifications 0x0C (held index 10),
+0x16 (pressed index 4) and 0x2C (release/disarm) under the default pad table,
+with the original map/text-state guards. Observe both eligible/ineligible
+histories and ordinary/flashback resets. A checkpoint matching reset-written
+fields or a relocated object replay does not establish that event.

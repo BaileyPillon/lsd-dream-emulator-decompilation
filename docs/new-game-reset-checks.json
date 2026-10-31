@@ -1,0 +1,386 @@
+{
+  "schema_version": 1,
+  "status": "passed_bounded_original_reset_and_retained_save_checks",
+  "baseline_commit": "54cec386ad513db0c13d016eb77677bdbcddd120",
+  "canonical_complete_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "complete_candidate_executable_comparison": {
+    "exact_match": true,
+    "expected_bytes": 505856,
+    "actual_bytes": 505856,
+    "changed_bytes_in_common_range": 0,
+    "length_difference": 0,
+    "first_changed_offsets": [],
+    "expected_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "source": "src/dream/dream_sys.c",
+    "candidate": "/mnt/d/CodexArtifacts/LSD/private-workspaces-20261018/lsd-recovered/.decomp-lab/new-game-reset-20261031-first/candidate.c",
+    "candidate_sha256": "ec93779c5920234f6fee984c200a472c35832eeb71993cfa7695d4d839fbef7a",
+    "output": "/mnt/d/CodexArtifacts/LSD/private-workspaces-20261018/lsd-recovered/.decomp-lab/new-game-reset-20261031-first/candidate-check",
+    "gameplay_tested": false
+  },
+  "original_game_behavior_modified": false,
+  "new_game_C_bytes": 0,
+  "new_game_C_functions": 0,
+  "game_C_bytes_before": 199912,
+  "game_C_bytes_after": 199912,
+  "game_text_bytes": 199912,
+  "source_type_recovery": {
+    "navigation_flags": "s8 pointer and 30-byte array",
+    "dynamic_link_count": "s32 pointer",
+    "modified_game_translation_units": 1,
+    "game_header_unchanged": true
+  },
+  "before": {
+    "bounded_reset_profiles": 0,
+    "reset_store_footprint_accepted": false,
+    "retained_save_checkpoints_qualified_by_this_profile": 0
+  },
+  "after": {
+    "initialized_native_profiles": 1032,
+    "original_and_rebuilt_executions": 2064,
+    "complete_original_functions": 8,
+    "complete_original_function_bytes": 488,
+    "save_block_bytes": 1792,
+    "actual_reset_store_footprint_bytes": 576,
+    "preserved_save_block_bytes": 1216,
+    "original_native_body_entries_per_image": 1344,
+    "output_stubs": 0,
+    "target_layout_assertions": 27,
+    "executed_original_instruction_faults_rejected": 4,
+    "retained_natural_save_checkpoints": 5,
+    "retained_object_VM_executions": 20,
+    "additional_public_CLI_integration_executions": 4
+  },
+  "profile_groups": {
+    "reset": 12,
+    "end": 552,
+    "clear": 48,
+    "query": 48,
+    "save_view": 48,
+    "flag": 180,
+    "navigation": 144
+  },
+  "complete_original_functions": [
+    {
+      "function": "dream_sys_init_new_game",
+      "address": "0x8005A258",
+      "bytes": 120,
+      "sha256": "d42c03d722709c82096c503fd890a5cee3a084d6f40214bdb33d21c84a6db1c2"
+    },
+    {
+      "function": "init_nav_challenges_array",
+      "address": "0x8005BA50",
+      "bytes": 44,
+      "sha256": "b88104065d9636e4b2884cd0b113fcec14953c8c655f53a0dd1f3211ee80c86a"
+    },
+    {
+      "function": "dream_sys_end_day",
+      "address": "0x8005A41C",
+      "bytes": 204,
+      "sha256": "271ae7e5202da9233e53e1149f9d2085307324945dedea4e7f4748bca9e0aa75"
+    },
+    {
+      "function": "dream_sys_clear_new_game",
+      "address": "0x8005A33C",
+      "bytes": 8,
+      "sha256": "d0a1e1c7719dde734e11a93487bd1367d7158866e69f6c033d50e88a23f9ea32"
+    },
+    {
+      "function": "dream_sys_is_new_game",
+      "address": "0x8005A344",
+      "bytes": 12,
+      "sha256": "9c10c409be9e289af4765829c5c0a03c4e3f76cfedf1e4ffbc2761cd8c109cff"
+    },
+    {
+      "function": "dream_sys_get_save_data",
+      "address": "0x8005A350",
+      "bytes": 24,
+      "sha256": "db8fb328a5ace8c56070f303ddf482049b89a3ea9396edb7a321adc865f0f376"
+    },
+    {
+      "function": "dream_sys_get_set_flag",
+      "address": "0x8005BA20",
+      "bytes": 32,
+      "sha256": "7039e4446cb10ad74e76d0dc6b6b9812cb128ba4cf0536094020c312ba5f86c9"
+    },
+    {
+      "function": "memset",
+      "address": "0x8004117C",
+      "bytes": 44,
+      "sha256": "e04daae25e11c9daf3e473004392c5a2eb79da72e33948c77d23d9deadc8157b"
+    }
+  ],
+  "original_entry_counts_per_image": {
+    "dream_sys_init_new_game": 108,
+    "init_nav_challenges_array": 252,
+    "memset": 108,
+    "dream_sys_end_day": 552,
+    "dream_sys_clear_new_game": 48,
+    "dream_sys_is_new_game": 48,
+    "dream_sys_get_save_data": 48,
+    "dream_sys_get_set_flag": 180
+  },
+  "original_instruction_controls": [
+    {
+      "fault": "short_reserved_clear",
+      "function": "dream_sys_init_new_game",
+      "pc": "0x8005a2b8",
+      "old_word": "0x340601f4",
+      "changed_word": "0x340601f3",
+      "executed_hits": 1,
+      "rejection": "Complete initialized object buffer mismatch."
+    },
+    {
+      "fault": "long_reserved_clear",
+      "function": "dream_sys_init_new_game",
+      "pc": "0x8005a2b8",
+      "old_word": "0x340601f4",
+      "changed_word": "0x340601f5",
+      "executed_hits": 1,
+      "rejection": "Complete initialized object buffer mismatch."
+    },
+    {
+      "fault": "missing_navigation_first_byte",
+      "function": "init_nav_challenges_array",
+      "pc": "0x8005ba50",
+      "old_word": "0x3403001d",
+      "changed_word": "0x3403001c",
+      "executed_hits": 1,
+      "rejection": "Complete initialized aux buffer mismatch."
+    },
+    {
+      "fault": "misplaced_new_game_flag",
+      "function": "dream_sys_end_day",
+      "pc": "0x8005a4cc",
+      "old_word": "0xae020878",
+      "changed_word": "0xae020874",
+      "executed_hits": 1,
+      "rejection": "Complete initialized object buffer mismatch."
+    }
+  ],
+  "backend": {
+    "package_version": "2.1.2",
+    "library_api": [
+      2,
+      1,
+      33620735
+    ],
+    "loaded_library_sha256": "329ca6ea51c9ecac5cdaa230f23c52121a053899ec19d4fe6f7232c8e76f1061",
+    "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+    "binding_sources_sha256": "4208b390663f4c9785bb4f08e1b4796a8335d053c1059faf0e7e647dd61d2ca3"
+  },
+  "store_union_checked_independently_from_value_differences": true,
+  "independent_full_buffer_reconstruction": {
+    "status": "passed_separate_full_buffer_reconstruction",
+    "initialized_profiles": 1032,
+    "original_and_rebuilt_executions": 2064,
+    "unique_cases": 1032,
+    "groups": {
+      "reset": 12,
+      "end": 552,
+      "clear": 48,
+      "query": 48,
+      "save_view": 48,
+      "flag": 180,
+      "navigation": 144
+    },
+    "actual_save_write_union_independently_checked": true,
+    "reset_written_bytes": 576,
+    "preserved_save_bytes": 1216,
+    "all_original_complete_functions_checked": 8,
+    "complete_original_bytes": 488,
+    "original_native_entries_per_image": 1344,
+    "executed_original_instruction_faults_rejected": 4,
+    "retained_natural_checkpoints_rechecked": 5,
+    "retained_object_VM_executions": 20,
+    "original_callee_bodies_executed": true,
+    "output_stubs": 0,
+    "natural_reset_event_proved": false,
+    "new_live_emulator_recordings": 0,
+    "expanded_RAM_written": 0,
+    "independent_external_human_review": false
+  },
+  "natural_checkpoints": [
+    {
+      "frame": 1500,
+      "mainram_sha256": "523115f031c82e3c2c0a661a256f0ceaa5783be548a23f7ce6b9c425fa61c257",
+      "receiver": "0x80091530",
+      "object_sha256": "40afa716fe12d99f8ed13bd1b570fac33dc54237b317f2afc4408a94cb689388",
+      "save_block_sha256": "29fe13bc8cb7dc14b11becdfde24db68bd0f5e8724de79b322d5c2f85c64087e",
+      "year": 0,
+      "zero_based_day": 0,
+      "new_game_flag": 1,
+      "matches_reset_written_fields": true,
+      "preserved_nonzero_bytes": 0,
+      "preserved_bytes_sha256": "97d364e2d3d35f030a038c41bbadc42d0c15fa8d79ba569987e19fddb2e80f9a",
+      "complete_original_function_bodies_in_RAM_match": 8,
+      "retained_original_rebuilt_paths_share_this_fully_verified_member": true
+    },
+    {
+      "frame": 1800,
+      "mainram_sha256": "5c1c7bc4bfb8b6602008872c3955b21da9b5e1aa1c5799af69966794fb4eccdd",
+      "receiver": "0x80091530",
+      "object_sha256": "40afa716fe12d99f8ed13bd1b570fac33dc54237b317f2afc4408a94cb689388",
+      "save_block_sha256": "29fe13bc8cb7dc14b11becdfde24db68bd0f5e8724de79b322d5c2f85c64087e",
+      "year": 0,
+      "zero_based_day": 0,
+      "new_game_flag": 1,
+      "matches_reset_written_fields": true,
+      "preserved_nonzero_bytes": 0,
+      "preserved_bytes_sha256": "97d364e2d3d35f030a038c41bbadc42d0c15fa8d79ba569987e19fddb2e80f9a",
+      "complete_original_function_bodies_in_RAM_match": 8,
+      "retained_original_rebuilt_paths_share_this_fully_verified_member": true
+    },
+    {
+      "frame": 2100,
+      "mainram_sha256": "fbe98c1e7b0a3e303af502f45e2f803e044c9eca41dbb677a1cf13bae1a20f6c",
+      "receiver": "0x80091530",
+      "object_sha256": "40afa716fe12d99f8ed13bd1b570fac33dc54237b317f2afc4408a94cb689388",
+      "save_block_sha256": "29fe13bc8cb7dc14b11becdfde24db68bd0f5e8724de79b322d5c2f85c64087e",
+      "year": 0,
+      "zero_based_day": 0,
+      "new_game_flag": 1,
+      "matches_reset_written_fields": true,
+      "preserved_nonzero_bytes": 0,
+      "preserved_bytes_sha256": "97d364e2d3d35f030a038c41bbadc42d0c15fa8d79ba569987e19fddb2e80f9a",
+      "complete_original_function_bodies_in_RAM_match": 8,
+      "retained_original_rebuilt_paths_share_this_fully_verified_member": true
+    },
+    {
+      "frame": 24000,
+      "mainram_sha256": "d1b02d180aef91b67e766aa0eb6774fa4d2071184395a882f7ce07962b44e2cb",
+      "receiver": "0x80091530",
+      "object_sha256": "59948267a0240f23159d8818bdc0624a535868a8339189eb8ea2e18b5aefb57b",
+      "save_block_sha256": "ae456eed2cb62fc550fd36dd3495ea68a590ed5254b0cc844bde6b93a7010489",
+      "year": 0,
+      "zero_based_day": 1,
+      "new_game_flag": 1,
+      "matches_reset_written_fields": false,
+      "preserved_nonzero_bytes": 14,
+      "preserved_bytes_sha256": "10195277ad675e785facbe977d673e5992599e9a7ce5f36067a151a4d4050e46",
+      "complete_original_function_bodies_in_RAM_match": 8,
+      "retained_original_rebuilt_paths_share_this_fully_verified_member": true
+    },
+    {
+      "frame": 30000,
+      "mainram_sha256": "e72c71852fd0d994b6911bdf0db30ce3afbe4f7dca3ad627032eadbdb3a94383",
+      "receiver": "0x80091530",
+      "object_sha256": "59948267a0240f23159d8818bdc0624a535868a8339189eb8ea2e18b5aefb57b",
+      "save_block_sha256": "ae456eed2cb62fc550fd36dd3495ea68a590ed5254b0cc844bde6b93a7010489",
+      "year": 0,
+      "zero_based_day": 1,
+      "new_game_flag": 1,
+      "matches_reset_written_fields": false,
+      "preserved_nonzero_bytes": 14,
+      "preserved_bytes_sha256": "10195277ad675e785facbe977d673e5992599e9a7ce5f36067a151a4d4050e46",
+      "complete_original_function_bodies_in_RAM_match": 8,
+      "retained_original_rebuilt_paths_share_this_fully_verified_member": true
+    }
+  ],
+  "natural_capture_report_sha256": {
+    "original": "dd086c66bac0c871a47f2cf10aac465f54ee49e858a07a7a760de8e1ab039e3f",
+    "rebuilt": "dd086c66bac0c871a47f2cf10aac465f54ee49e858a07a7a760de8e1ab039e3f"
+  },
+  "retained_object_VM_scope": "Original reset and end-mode-two bodies act on a copy of the complete retained object in an isolated fixture. This is not a restored emulator state or a naturally reached reset event.",
+  "new_live_emulator_recordings": 0,
+  "expanded_RAM_files_written": 0,
+  "live_emulator_RAM_modified": false,
+  "natural_reset_event_proved": false,
+  "object_allocation_lifetime_proved": false,
+  "normal_nonflashback_score_chart_branch_executed": false,
+  "all_original_reset_inputs_exhausted": false,
+  "original_hardware_timing_verified": false,
+  "incomplete_first_native_attempt": {
+    "accepted": false,
+    "positive_journal_cases": 1032,
+    "reason": "Control selector assumed ADDIU; original positive constants use ORI.",
+    "exact_producer_retained_and_matches_start_input_hash": true
+  },
+  "provisional_feature_groups": 40,
+  "original_NPC_callbacks_in_C": 107,
+  "new_original_gameplay_features": 0,
+  "new_developer_capability_categories": 0,
+  "new_optional_mods": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "model_API_calls": 0,
+  "prior_inventory_nodes_preserved": 54,
+  "source_sha256": {
+    "src/dream/dream_sys.c": "ec93779c5920234f6fee984c200a472c35832eeb71993cfa7695d4d839fbef7a",
+    "tools/new_game_state.py": "015ba63a995c81b12d17e80228105f51b7da05beb01f980341683e9365c02f88",
+    "tools/verify_new_game_reset.py": "b80a459dd02c8c43fc7c9443a4b9f548aa552a14f62b671ae3d06fe7a4274bb1",
+    "tools/inspect_new_game_save.py": "e5ee175df8bef43c8cc654b6c791eb81600c4be4c6232a83e36d633647e589ca",
+    "tests/test_new_game_state.py": "7771e649ebf0365273791bd884a8ab7f6cf140fc031aae7962d4de87abd2b15e",
+    "tests/test_new_game_reset_profiles.py": "0f1064d5cdd0fa7b6972cd7366259e56d483b33de58d73172a407de497b64ca4",
+    "tests/test_inspect_new_game_save.py": "4cd892406859f5800fbddd4f81f22b0bc6c341da2f4bc7c88de872e6bf707ce0",
+    "research/new_game_reset/layout.c": "217b9750a31f7da9a60971fd5b4db72293385292a06cc84009614cbb497b3597",
+    "research/new_game_reset/functions.json": "ea2b075d257f2c4ea3d4b44a7c9c967185b6bb469a2eb72f962de022ed362fd0"
+  },
+  "unchanged_header_representation": {
+    "path": "src/dream/dream_sys.h",
+    "working_sha256": "9c7783f490413bb836625b7367b84f4f43f3af490b7e65ee164aeb3bb6d9f507",
+    "git_blob_sha256": "0c5e29a07f133924a7d2eda9e7425e2b3bcbf6c3b9cb905c097e6eb879d45657",
+    "note": "Unchanged working header is CRLF; Git blob is LF. Complete text differs only in line endings."
+  },
+  "private_evidence_sha256": {
+    "independent-audit.json": "d474fbe67ba4af970f09222c0f90889d2be6ef8d3a1e7f0c5e8c41797ff3dfa0",
+    "retained-save-contexts-final.json": "4500ace33988cfb33bf557f3ee91964cc0a3188dacd01f63a838263ae53fa0f0",
+    "retained-object-replays.json": "e3cd89a4a1328ac6fa4bdf2b4f7f2c4d3a9b0f2bdbef6a0259e6a9b7460d954e",
+    "public-cli-day2.json": "000fd4abc216df1e45d98dae428f0381bddfcc864801136e4343726c11cdeb73"
+  },
+  "private_native_report_sha256": "7c004e0655820536635cff608f49b95e451a88ff116c3abcaf460912a79a7da0",
+  "native_journal_raw_sha256": "16dc81c144142d9251653e95e3489eb8ade34d86445b3106971fa11bad897857",
+  "source_of_function_extents": "Fresh complete canonical diagnostic link, independent ELF extraction and GNU sized symbols.",
+  "remaining": [
+    "Natural controller/constructor/reset entry-return histories",
+    "Ordinary and flashback reset endings",
+    "Natural allocation lifetime",
+    "Associated audiovisual/card comparisons",
+    "Normal score/chart completion and hardware timing"
+  ],
+  "scope": "Complete initialized native reset buffers and five retained checkpoint states. Relocated copied-object VM resets are distinct from a naturally reached game reset. Whole F004 and whole-game parity remain unaccepted.",
+  "synthetic_suites": {
+    "windows": {
+      "tests": 1722,
+      "skipped": 16,
+      "exit_code": 0,
+      "log_raw_sha256": "e19a45ba0db85573996b662e92a5885d3626a965dd1d77925e390a2a7843b97a"
+    },
+    "wsl": {
+      "tests": 1719,
+      "skipped": 12,
+      "exit_code": 0,
+      "log_raw_sha256": "691f4326804f298d0deb594b0bc17be785bc07e0afb75488ab74c07b525f1252"
+    }
+  },
+  "current_complete_build": {
+    "objects_found": 306,
+    "objects_expected": 306,
+    "complete_objects": true,
+    "build_current": true,
+    "c_bytes": 199912,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 100.0,
+    "sdk_text_bytes": 147880,
+    "handwritten_text_bytes": 188,
+    "binary_match": "verified",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "command": [
+      "wsl.exe",
+      "-d",
+      "LSD-Decomp",
+      "--cd",
+      "/mnt/d/CodexArtifacts/LSD/private-workspaces-20261018/lsd-recovered",
+      "--",
+      "env",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "/opt/lsd-decomp-venv/bin/python",
+      "-B",
+      "tools/progress.py",
+      "--json"
+    ],
+    "full_report_raw_sha256": "3aa5b702131d7780252942e490efc44920fe2919e5a0d5fac2beb85d3eb89212",
+    "game_translation_units_recompiled": 1
+  },
+  "profile_count_scope": "Counts of this new reset profile; all earlier runtime studies retain their own scopes."
+}

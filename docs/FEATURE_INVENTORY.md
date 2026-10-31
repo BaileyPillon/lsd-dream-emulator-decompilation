@@ -1268,3 +1268,22 @@ values. Unbound supported views do not add to the 57 concrete tables or
 acceptances remain unchanged. U003 stays open for screen-specific signatures
 and wider dynamic-call closure. No gameplay, optional mod or model API call
 is added; the supported playable build and saves are preserved.
+
+## New-game/reset supplement, 2026-10-31
+
+The [original reset audit](NEW_GAME_RESET.md) checks eight complete original
+routines in 1,032 initialized contexts and 2,064 original/rebuilt executions.
+The actual store union covers 576 of the 1,792 save bytes; 1,216 inactive
+history/record/reserved bytes remain intact. Complete object, save, auxiliary
+and global buffers, original calls/returns and ABI checks pass without output
+stubs. Twenty-seven layout assertions and four executed instruction controls
+pass. Five retained natural checkpoint pairs are rechecked; copied objects
+also pass 20 relocated VM executions. Those tests do not prove a natural reset.
+
+The C corrects two global pointer declarations and the 30-byte navigation
+initializer argument without changing the complete executable. The additive
+`new_game_reset_audit` retains every previous inventory node. Matching C stays
+199,912 / 199,912; 40 provisional groups, 107 original NPC C callbacks and zero
+whole-feature/encounter acceptances remain unchanged. F004 still needs natural
+controller/reset endings and the related lifetime/audiovisual/card evidence.
+No gameplay feature, optional mod or model API call is added.

@@ -1,0 +1,50 @@
+[
+  {
+    "function": "dream_sys_init_new_game",
+    "address": "0x8005A258",
+    "bytes": 120,
+    "sha256": "d42c03d722709c82096c503fd890a5cee3a084d6f40214bdb33d21c84a6db1c2"
+  },
+  {
+    "function": "init_nav_challenges_array",
+    "address": "0x8005BA50",
+    "bytes": 44,
+    "sha256": "b88104065d9636e4b2884cd0b113fcec14953c8c655f53a0dd1f3211ee80c86a"
+  },
+  {
+    "function": "dream_sys_end_day",
+    "address": "0x8005A41C",
+    "bytes": 204,
+    "sha256": "271ae7e5202da9233e53e1149f9d2085307324945dedea4e7f4748bca9e0aa75"
+  },
+  {
+    "function": "dream_sys_clear_new_game",
+    "address": "0x8005A33C",
+    "bytes": 8,
+    "sha256": "d0a1e1c7719dde734e11a93487bd1367d7158866e69f6c033d50e88a23f9ea32"
+  },
+  {
+    "function": "dream_sys_is_new_game",
+    "address": "0x8005A344",
+    "bytes": 12,
+    "sha256": "9c10c409be9e289af4765829c5c0a03c4e3f76cfedf1e4ffbc2761cd8c109cff"
+  },
+  {
+    "function": "dream_sys_get_save_data",
+    "address": "0x8005A350",
+    "bytes": 24,
+    "sha256": "db8fb328a5ace8c56070f303ddf482049b89a3ea9396edb7a321adc865f0f376"
+  },
+  {
+    "function": "dream_sys_get_set_flag",
+    "address": "0x8005BA20",
+    "bytes": 32,
+    "sha256": "7039e4446cb10ad74e76d0dc6b6b9812cb128ba4cf0536094020c312ba5f86c9"
+  },
+  {
+    "function": "memset",
+    "address": "0x8004117C",
+    "bytes": 44,
+    "sha256": "e04daae25e11c9daf3e473004392c5a2eb79da72e33948c77d23d9deadc8157b"
+  }
+]
