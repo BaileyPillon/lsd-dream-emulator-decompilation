@@ -547,3 +547,12 @@ tests/test_movie_payload_observer.py text eol=lf
 tests/test_movie_payloads.py text eol=lf
 docs/FULL_MOVIE_PAYLOADS.md text eol=lf
 docs/full-movie-payload-checks.json text eol=lf
+
+# Preserve the native reset/card driver and evidence checker.
+research/headless/RecordNewGameResetWindows.cs text eol=lf
+research/headless/RecordResetCardRoundtripWindows.cs text eol=lf
+research/card_roundtrip/reset-controller-functions.json text eol=lf
+tools/verify_reset_card_roundtrip.py text eol=lf
+tests/test_reset_card_roundtrip.py text eol=lf
+docs/RESET_CARD_ROUNDTRIP.md text eol=lf
+docs/reset-card-roundtrip-checks.json text eol=lf

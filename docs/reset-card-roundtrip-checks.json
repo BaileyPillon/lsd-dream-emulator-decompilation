@@ -1,0 +1,856 @@
+{
+  "schema_version": 1,
+  "status": "ordinary_reset_native_Save_and_fresh_process_Load_paired_and_stock_verified",
+  "baseline_commit": "4cd426e3f6dcd533aeeb50712954c3d15805d78f",
+  "original_exe_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "qualified_cold_boots": 6,
+  "paired_original_rebuilt_frames": 13459,
+  "additional_stock_comparison_frames": 13459,
+  "all_qualified_cold_boot_frames": 40377,
+  "paired_windows": 45,
+  "complete_native_object_pairs": 45,
+  "native_entry_pairs": 2042,
+  "PCM_sample_frames_per_paired_side": 9920012,
+  "cases": {
+    "save": {
+      "qualified": true,
+      "runs": {
+        "original-observer": {
+          "passed": true,
+          "mode": "save",
+          "frames": 9594,
+          "windows": 32,
+          "complete_objects": 40,
+          "full_streamed_payload_bytes": {
+            "MainRAM": 20120076288,
+            "GPURAM": 10060038144,
+            "RGB": 3101642352,
+            "PCM": 28286140,
+            "native": 4313603,
+            "controller": 38376
+          },
+          "native_entries": 1741,
+          "target_filename": "BISLPS-01556-01",
+          "cold_load_idle_frame": 2744,
+          "initial_RAM_payload_differs_from_loaded_card": true,
+          "loaded_payload_bytes": 1792,
+          "successful_card_callback_frames": [
+            2744,
+            9473
+          ],
+          "registered_targets": 16,
+          "registered_body_bytes": 2576,
+          "complete_body_RAM_ranges_checked_at_entry": true,
+          "instruction_by_instruction_execution_coverage": false,
+          "whole_feature_groups_accepted": 0,
+          "whole_goal_complete": false,
+          "saved_filename": "BISLPS-01556-02",
+          "saved_card_sha256": "4e5d8af86ba9e5cbf77158ae39c2650da0d12663f64d4e0393c3793da6d205af",
+          "saved_payload_sha256": "79ba9e488e8f2325cdba18cc677fd272798d906a561344227f8d1aa936a1ecbf",
+          "active_card_files": [
+            "BISLPS-01556-01",
+            "BISLPS-01556-02"
+          ],
+          "unrelated_files_preserved": [
+            "BISLPS-01556-01"
+          ],
+          "reset_store_footprint_from_prior_VM": 576,
+          "preserved_payload_bytes": 1216,
+          "nonzero_preserved_payload_bytes": 15,
+          "save_idle_frame": 9473,
+          "core_virtual_auto_save_warning_count": 2,
+          "native_virtual_file_auto_flush_verified": false,
+          "supported_ISaveRam_export_is_the_persistence_path": true
+        },
+        "rebuilt-observer": {
+          "passed": true,
+          "mode": "save",
+          "frames": 9594,
+          "windows": 32,
+          "complete_objects": 40,
+          "full_streamed_payload_bytes": {
+            "MainRAM": 20120076288,
+            "GPURAM": 10060038144,
+            "RGB": 3101642352,
+            "PCM": 28286140,
+            "native": 4313603,
+            "controller": 38376
+          },
+          "native_entries": 1741,
+          "target_filename": "BISLPS-01556-01",
+          "cold_load_idle_frame": 2744,
+          "initial_RAM_payload_differs_from_loaded_card": true,
+          "loaded_payload_bytes": 1792,
+          "successful_card_callback_frames": [
+            2744,
+            9473
+          ],
+          "registered_targets": 16,
+          "registered_body_bytes": 2576,
+          "complete_body_RAM_ranges_checked_at_entry": true,
+          "instruction_by_instruction_execution_coverage": false,
+          "whole_feature_groups_accepted": 0,
+          "whole_goal_complete": false,
+          "saved_filename": "BISLPS-01556-02",
+          "saved_card_sha256": "4e5d8af86ba9e5cbf77158ae39c2650da0d12663f64d4e0393c3793da6d205af",
+          "saved_payload_sha256": "79ba9e488e8f2325cdba18cc677fd272798d906a561344227f8d1aa936a1ecbf",
+          "active_card_files": [
+            "BISLPS-01556-01",
+            "BISLPS-01556-02"
+          ],
+          "unrelated_files_preserved": [
+            "BISLPS-01556-01"
+          ],
+          "reset_store_footprint_from_prior_VM": 576,
+          "preserved_payload_bytes": 1216,
+          "nonzero_preserved_payload_bytes": 15,
+          "save_idle_frame": 9473,
+          "core_virtual_auto_save_warning_count": 2,
+          "native_virtual_file_auto_flush_verified": false,
+          "supported_ISaveRam_export_is_the_persistence_path": true
+        },
+        "original-stock": {
+          "passed": true,
+          "mode": "save",
+          "frames": 9594,
+          "windows": 32,
+          "complete_objects": 40,
+          "full_streamed_payload_bytes": {
+            "MainRAM": 20120076288,
+            "GPURAM": 10060038144,
+            "RGB": 3101642352,
+            "PCM": 28286140,
+            "native": 4313603,
+            "controller": 38376
+          },
+          "native_entries": 0,
+          "target_filename": "BISLPS-01556-01",
+          "cold_load_idle_frame": 2744,
+          "initial_RAM_payload_differs_from_loaded_card": true,
+          "loaded_payload_bytes": 1792,
+          "successful_card_callback_frames": [],
+          "registered_targets": 16,
+          "registered_body_bytes": 2576,
+          "complete_body_RAM_ranges_checked_at_entry": false,
+          "instruction_by_instruction_execution_coverage": false,
+          "whole_feature_groups_accepted": 0,
+          "whole_goal_complete": false,
+          "saved_filename": "BISLPS-01556-02",
+          "saved_card_sha256": "4e5d8af86ba9e5cbf77158ae39c2650da0d12663f64d4e0393c3793da6d205af",
+          "saved_payload_sha256": "79ba9e488e8f2325cdba18cc677fd272798d906a561344227f8d1aa936a1ecbf",
+          "active_card_files": [
+            "BISLPS-01556-01",
+            "BISLPS-01556-02"
+          ],
+          "unrelated_files_preserved": [
+            "BISLPS-01556-01"
+          ],
+          "reset_store_footprint_from_prior_VM": 576,
+          "preserved_payload_bytes": 1216,
+          "nonzero_preserved_payload_bytes": 15,
+          "save_idle_frame": 9473,
+          "core_virtual_auto_save_warning_count": 2,
+          "native_virtual_file_auto_flush_verified": false,
+          "supported_ISaveRam_export_is_the_persistence_path": true
+        }
+      },
+      "pair": {
+        "passed": true,
+        "frames": 9594,
+        "windows": 32,
+        "full_native_objects": 40,
+        "PCM_sample_frames": 7071535,
+        "all_framed_RAM_GPU_RGB_PCM_native_controller_hashes_equal": true,
+        "all_complete_save_objects_equal": true,
+        "final_memory_card_equal": true,
+        "serialized_whole_core_or_hardware_state_compared": false,
+        "full_native_written_card_bytes_equal": true,
+        "native_card_menu_transitions_equal": true,
+        "native_entry_records_compared": true,
+        "native_entry_pairs": 1741,
+        "stock_core_comparison": false
+      },
+      "stock_core_comparison": {
+        "passed": true,
+        "frames": 9594,
+        "windows": 32,
+        "full_native_objects": 40,
+        "PCM_sample_frames": 7071535,
+        "all_framed_RAM_GPU_RGB_PCM_native_controller_hashes_equal": true,
+        "all_complete_save_objects_equal": true,
+        "final_memory_card_equal": true,
+        "serialized_whole_core_or_hardware_state_compared": false,
+        "full_native_written_card_bytes_equal": true,
+        "native_card_menu_transitions_equal": true,
+        "native_entry_records_compared": false,
+        "native_entry_pairs": 0,
+        "stock_core_comparison": true
+      },
+      "analysis_record_controls": [
+        {
+          "kind": "wrong-reset-end-mode",
+          "rejected": true,
+          "reason": "Reset causal arguments differ",
+          "self_consistent_payload_hashes": false
+        },
+        {
+          "kind": "wrong-save-icon-count",
+          "rejected": true,
+          "reason": "Native write/success/idle ordering or icon count differs",
+          "self_consistent_payload_hashes": false
+        },
+        {
+          "kind": "wrong-save-success-code",
+          "rejected": true,
+          "reason": "Successful card callback cardinality",
+          "self_consistent_payload_hashes": false
+        },
+        {
+          "kind": "short-native-read",
+          "rejected": true,
+          "reason": "Native logical read target/size differs",
+          "self_consistent_payload_hashes": false
+        },
+        {
+          "kind": "missing-first-frame-window",
+          "rejected": true,
+          "reason": "Missing/overlapping streamed frames",
+          "self_consistent_payload_hashes": false
+        },
+        {
+          "kind": "one-preserved-history-byte-with-valid-hashes",
+          "rejected": true,
+          "reason": "Complete reset transform differs",
+          "object_offset": 400,
+          "before": 255,
+          "after": 254,
+          "changed_bytes": 1,
+          "self_consistent_payload_hashes": true
+        }
+      ],
+      "native_entry_counts": {
+        "func_80025D10": 1639,
+        "func_80053358": 35,
+        "func_80053458": 3,
+        "func_800541D4": 8,
+        "func_80054200": 3,
+        "func_80054208": 5,
+        "func_800542D0": 27,
+        "func_800543FC": 3,
+        "dream_session_on_link_code": 2,
+        "dream_sys_end_day": 2,
+        "dream_sys_init_new_game": 1,
+        "init_nav_challenges_array": 1,
+        "dream_sys_clear_new_game": 2,
+        "memory_card_read_data_impl": 1,
+        "memory_card_write_file": 1,
+        "func_8004E230": 8
+      },
+      "sequence_start": 8595,
+      "reset_frame": 8851,
+      "initial_load_idle_frame": 2744,
+      "save_seen_frame": 9181,
+      "save_idle_frame": 9473,
+      "post_dream_frame": -1
+    },
+    "load": {
+      "qualified": true,
+      "runs": {
+        "original-observer": {
+          "passed": true,
+          "mode": "load",
+          "frames": 3865,
+          "windows": 13,
+          "complete_objects": 5,
+          "full_streamed_payload_bytes": {
+            "MainRAM": 8105492480,
+            "GPURAM": 4052746240,
+            "RGB": 1657888520,
+            "PCM": 11393908,
+            "native": 1706501,
+            "controller": 15460
+          },
+          "native_entries": 301,
+          "target_filename": "BISLPS-01556-02",
+          "cold_load_idle_frame": 2746,
+          "initial_RAM_payload_differs_from_loaded_card": true,
+          "loaded_payload_bytes": 1792,
+          "successful_card_callback_frames": [
+            2746
+          ],
+          "registered_targets": 16,
+          "registered_body_bytes": 2576,
+          "complete_body_RAM_ranges_checked_at_entry": true,
+          "instruction_by_instruction_execution_coverage": false,
+          "whole_feature_groups_accepted": 0,
+          "whole_goal_complete": false,
+          "post_load_dream_frames": 180,
+          "input_card_unchanged": true,
+          "active_card_files": [
+            "BISLPS-01556-01",
+            "BISLPS-01556-02"
+          ],
+          "core_virtual_auto_save_warning_count": 0,
+          "native_virtual_file_auto_flush_verified": false,
+          "supported_ISaveRam_export_is_the_persistence_path": true
+        },
+        "rebuilt-observer": {
+          "passed": true,
+          "mode": "load",
+          "frames": 3865,
+          "windows": 13,
+          "complete_objects": 5,
+          "full_streamed_payload_bytes": {
+            "MainRAM": 8105492480,
+            "GPURAM": 4052746240,
+            "RGB": 1657888520,
+            "PCM": 11393908,
+            "native": 1706501,
+            "controller": 15460
+          },
+          "native_entries": 301,
+          "target_filename": "BISLPS-01556-02",
+          "cold_load_idle_frame": 2746,
+          "initial_RAM_payload_differs_from_loaded_card": true,
+          "loaded_payload_bytes": 1792,
+          "successful_card_callback_frames": [
+            2746
+          ],
+          "registered_targets": 16,
+          "registered_body_bytes": 2576,
+          "complete_body_RAM_ranges_checked_at_entry": true,
+          "instruction_by_instruction_execution_coverage": false,
+          "whole_feature_groups_accepted": 0,
+          "whole_goal_complete": false,
+          "post_load_dream_frames": 180,
+          "input_card_unchanged": true,
+          "active_card_files": [
+            "BISLPS-01556-01",
+            "BISLPS-01556-02"
+          ],
+          "core_virtual_auto_save_warning_count": 0,
+          "native_virtual_file_auto_flush_verified": false,
+          "supported_ISaveRam_export_is_the_persistence_path": true
+        },
+        "original-stock": {
+          "passed": true,
+          "mode": "load",
+          "frames": 3865,
+          "windows": 13,
+          "complete_objects": 5,
+          "full_streamed_payload_bytes": {
+            "MainRAM": 8105492480,
+            "GPURAM": 4052746240,
+            "RGB": 1657888520,
+            "PCM": 11393908,
+            "native": 1706501,
+            "controller": 15460
+          },
+          "native_entries": 0,
+          "target_filename": "BISLPS-01556-02",
+          "cold_load_idle_frame": 2746,
+          "initial_RAM_payload_differs_from_loaded_card": true,
+          "loaded_payload_bytes": 1792,
+          "successful_card_callback_frames": [],
+          "registered_targets": 16,
+          "registered_body_bytes": 2576,
+          "complete_body_RAM_ranges_checked_at_entry": false,
+          "instruction_by_instruction_execution_coverage": false,
+          "whole_feature_groups_accepted": 0,
+          "whole_goal_complete": false,
+          "post_load_dream_frames": 180,
+          "input_card_unchanged": true,
+          "active_card_files": [
+            "BISLPS-01556-01",
+            "BISLPS-01556-02"
+          ],
+          "core_virtual_auto_save_warning_count": 0,
+          "native_virtual_file_auto_flush_verified": false,
+          "supported_ISaveRam_export_is_the_persistence_path": true
+        }
+      },
+      "pair": {
+        "passed": true,
+        "frames": 3865,
+        "windows": 13,
+        "full_native_objects": 5,
+        "PCM_sample_frames": 2848477,
+        "all_framed_RAM_GPU_RGB_PCM_native_controller_hashes_equal": true,
+        "all_complete_save_objects_equal": true,
+        "final_memory_card_equal": true,
+        "serialized_whole_core_or_hardware_state_compared": false,
+        "native_card_menu_transitions_equal": true,
+        "native_entry_records_compared": true,
+        "native_entry_pairs": 301,
+        "stock_core_comparison": false
+      },
+      "stock_core_comparison": {
+        "passed": true,
+        "frames": 3865,
+        "windows": 13,
+        "full_native_objects": 5,
+        "PCM_sample_frames": 2848477,
+        "all_framed_RAM_GPU_RGB_PCM_native_controller_hashes_equal": true,
+        "all_complete_save_objects_equal": true,
+        "final_memory_card_equal": true,
+        "serialized_whole_core_or_hardware_state_compared": false,
+        "native_card_menu_transitions_equal": true,
+        "native_entry_records_compared": false,
+        "native_entry_pairs": 0,
+        "stock_core_comparison": true
+      },
+      "analysis_record_controls": [
+        {
+          "kind": "wrong-native-read-destination",
+          "rejected": true,
+          "reason": "Native logical read target/size differs",
+          "self_consistent_payload_hashes": false
+        },
+        {
+          "kind": "wrong-existing-logical-file",
+          "rejected": true,
+          "reason": "Pinned input payload differs",
+          "self_consistent_payload_hashes": false
+        },
+        {
+          "kind": "short-post-load-play",
+          "rejected": true,
+          "reason": "Incomplete playable cold-load continuation",
+          "self_consistent_payload_hashes": false
+        },
+        {
+          "kind": "wrong-clear-receiver",
+          "rejected": true,
+          "reason": "Success callback must execute the original flag clear",
+          "self_consistent_payload_hashes": false
+        },
+        {
+          "kind": "cold-RAM-already-contains-saved-payload",
+          "rejected": true,
+          "reason": "Cold RAM was already the requested payload",
+          "self_consistent_payload_hashes": true
+        }
+      ],
+      "native_entry_counts": {
+        "func_80025D10": 292,
+        "func_80053358": 3,
+        "func_80053458": 0,
+        "func_800541D4": 0,
+        "func_80054200": 0,
+        "func_80054208": 0,
+        "func_800542D0": 0,
+        "func_800543FC": 0,
+        "dream_session_on_link_code": 0,
+        "dream_sys_end_day": 0,
+        "dream_sys_init_new_game": 0,
+        "init_nav_challenges_array": 0,
+        "dream_sys_clear_new_game": 1,
+        "memory_card_read_data_impl": 1,
+        "memory_card_write_file": 0,
+        "func_8004E230": 4
+      },
+      "sequence_start": -1,
+      "reset_frame": -1,
+      "initial_load_idle_frame": 2746,
+      "save_seen_frame": -1,
+      "save_idle_frame": -1,
+      "post_dream_frame": 3684
+    }
+  },
+  "registered_functions": 16,
+  "registered_function_bytes": 2576,
+  "unique_observed_target_functions": 16,
+  "unique_observed_target_function_bytes": 2576,
+  "native_entry_observation_is_whole_body_execution_coverage": false,
+  "complete_state_serialization_or_hardware_compared": false,
+  "target_qualification": {
+    "status": "all16_targets_match_retained_canonical_full_link_symbols",
+    "symbol_snapshot_sha256": "51bd0e439c62af929f334bab944632fc97af0416862b2e1928ff68632af5bac1",
+    "bodies": 16,
+    "bytes": 2576,
+    "new_native_link_or_core_build": false
+  },
+  "target_manifest_sha256": "a21a70ed8482a2f08c6c9ddfd5dd02367e67522fb233660694bfa7592e6284c3",
+  "producer": {
+    "entry_point": "Lsd.Research.Headless.RecordResetCardRoundtripWindows",
+    "source_files": [
+      {
+        "path": "research/headless/RecordNewGameResetWindows.cs",
+        "bytes": 26170,
+        "sha256": "016ab3ca78d188ebf8e3b237a357333dd21c474a2baf9a446b20916bbccc3cbe"
+      },
+      {
+        "path": "research/headless/RecordResetCardRoundtripWindows.cs",
+        "bytes": 17658,
+        "sha256": "dd7d7a57fc151246fc68aab0e255f4f4b2a795d9ef61b38096d9ded06884586f"
+      },
+      {
+        "path": "research/headless/ReplayColdStart.cs",
+        "bytes": 16154,
+        "sha256": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0"
+      },
+      {
+        "path": "research/headless/BoundedSha256Stream.cs",
+        "bytes": 2982,
+        "sha256": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e"
+      }
+    ],
+    "host_binary_sha256": "045da227ebbb3694e41fd10b3455e0b5fc71dad0c03a44b112fdb743eb5015f7",
+    "host_binary_bytes": 113152,
+    "configuration_sha256": "00146088ad19747e601d09dee0ead7bf75b27fccf23e3cf7809a5e7dede129cf",
+    "compiler": "Roslyn from .NET SDK8.0.424, deterministic Framework4.8 x64, warnings as errors",
+    "executed_sources_lossless_archive_sha256": "589e7c260588bac61f0fe7fc1b33c2237768d226c8e2a8983b1910d639039b9c",
+    "input_manifest_sha256": "e34ca64ce473d33ec5afabd14a0b13b7e48c9839380ab89bcac12dcd26d05039",
+    "shared_legacy_driver_binary_qualification": {
+      "previous_driver_bytes": 76288,
+      "previous_and_partial_source_driver_sha256": "34d04ef7329283bc6e2d69861f9d261818c587a98b083564c7dbacbf65f603fe",
+      "partial_keyword_only_change": true,
+      "complete_binary_equal": true
+    },
+    "executed_verifier_lossless_archive_sha256": "ea55c9ce9e7931d22a4a076538e08696d84429f798e34109c838007e6f2460a9"
+  },
+  "runtime_identities": {
+    "observer": {
+      "file_count": 192,
+      "tree_sha256": "8e8c9e304bee149de1228a8b633020d931d4504846224f56649a25aed8219d0c",
+      "core_bytes": 828320,
+      "core_sha256": "40db2458b2c2b54141840b8ca3eb875f6b32c0a7b8c10009a277d3f14705869d"
+    },
+    "stock": {
+      "file_count": 192,
+      "tree_sha256": "3dcc6f7cd9fe43b1072aaa88405b7f6ed10fdb4765edce88ee4211eb47cac91a",
+      "core_bytes": 705813,
+      "core_sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126"
+    }
+  },
+  "BIOS_sha256": [
+    "9c0421858e217805f4abe18698afea8d5aa36ff0727eb8484944e00eb5e7eadb",
+    "11052b6499e466bbf0a709b1f9cb6834a9418e66680387912451e971cf8a1fef",
+    "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+  ],
+  "card_boundary": {
+    "initial_card_sha256": "e208a7263da45897ffff758e49687995fe139346b3a8c434245acdda914fd722",
+    "initial_file": "BISLPS-01556-01",
+    "native_saved_card_sha256": "4e5d8af86ba9e5cbf77158ae39c2650da0d12663f64d4e0393c3793da6d205af",
+    "native_saved_file": "BISLPS-01556-02",
+    "reset_and_native_saved_payload_sha256": "79ba9e488e8f2325cdba18cc677fd272798d906a561344227f8d1aa936a1ecbf",
+    "source_card_or_old_logical_file_changed": false,
+    "guest_RAM_or_instruction_writes": false,
+    "restored_state": false,
+    "initial_cold_RAM_payload_differs": true,
+    "full_payload_bytes": 1792,
+    "reset_store_footprint_from_prior_VM": 576,
+    "preserved_payload_bytes": 1216,
+    "nonzero_preserved_payload_bytes": 15,
+    "post_save_frames": 120,
+    "post_cold_load_dream_frames": 180,
+    "constructed_score_unlock_or_card_payload_edits": false,
+    "supported_ISaveRam_export_is_persistence_path": true
+  },
+  "virtual_file_warning": {
+    "path": "SAV:0.mcr",
+    "warning_count_per_Save_run": 2,
+    "total_observed_warnings": 6,
+    "warning_count_per_Load_run": 0,
+    "native_virtual_file_auto_flush_verified": false,
+    "source_diagnostic_sha256": "bfdd22675c970d2a289abab9e4c7a32e0e9b318ba9ac5ddd82a07bcdd19313d4",
+    "failed_auto_flush_distinguished_from_successful_frontend_card_export_and_cold_Load": true,
+    "core_or_user_player_changed": false
+  },
+  "evidence_files": {
+    "save-original-observer/after-save.png": {
+      "bytes": 32041,
+      "sha256": "e2aaa825b9b4d308fb2c2dd007f99121ea8aea4eee65a46f4f737557bb608395"
+    },
+    "save-original-observer/card-store.json": {
+      "bytes": 630,
+      "sha256": "ae1fb0699133b9daae4df20e840cb742dbda38cdae79c472db6862681b433997"
+    },
+    "save-original-observer/entries.jsonl.gz": {
+      "bytes": 21723,
+      "sha256": "069a3f8024a3042b061ad3ddcc8511292b1d232cf47e9d4f52b1c12e4301fd0c"
+    },
+    "save-original-observer/final.png": {
+      "bytes": 36189,
+      "sha256": "7f3fde15e9bf2d48d405c0b9f611541ae6f619dcdd08f49bccf50dc4480aafbf"
+    },
+    "save-original-observer/inputs.tsv": {
+      "bytes": 586,
+      "sha256": "f2b969bead4fcff8a06032dbfa094229d134389311647b0b7f53eb94b9bc985c"
+    },
+    "save-original-observer/report.json": {
+      "bytes": 2476,
+      "sha256": "51d9dcfc140e13a90a3f30b1538bc2e3763b9825877c91df322b183501a227ef"
+    },
+    "save-original-observer/save-blocks.jsonl.gz": {
+      "bytes": 2843,
+      "sha256": "41f604161c9afc31c999a5aab042deed4315030d6339c44c7dde7ebb65a5a5ab"
+    },
+    "save-original-observer/saved-card.SaveRAM": {
+      "bytes": 131072,
+      "sha256": "4e5d8af86ba9e5cbf77158ae39c2650da0d12663f64d4e0393c3793da6d205af"
+    },
+    "save-original-observer/transitions.jsonl.gz": {
+      "bytes": 1435,
+      "sha256": "5bcc1c765a66eaea899d017806fc248663c390c7b0fd81154f3417463e3a6a21"
+    },
+    "save-original-observer/windows.jsonl": {
+      "bytes": 21467,
+      "sha256": "200a6d22e9c5ffc672ae013876c0a081d1c246e024041eb38f93e47e4ba02a58"
+    },
+    "save-rebuilt-observer/card-store.json": {
+      "bytes": 630,
+      "sha256": "ae1fb0699133b9daae4df20e840cb742dbda38cdae79c472db6862681b433997"
+    },
+    "save-rebuilt-observer/entries.jsonl.gz": {
+      "bytes": 21723,
+      "sha256": "069a3f8024a3042b061ad3ddcc8511292b1d232cf47e9d4f52b1c12e4301fd0c"
+    },
+    "save-rebuilt-observer/inputs.tsv": {
+      "bytes": 586,
+      "sha256": "f2b969bead4fcff8a06032dbfa094229d134389311647b0b7f53eb94b9bc985c"
+    },
+    "save-rebuilt-observer/report.json": {
+      "bytes": 2476,
+      "sha256": "fb6b6e88c1791b777f086ec807109dcae7eaf287a27d09ead7cf5933cb4078df"
+    },
+    "save-rebuilt-observer/save-blocks.jsonl.gz": {
+      "bytes": 2843,
+      "sha256": "41f604161c9afc31c999a5aab042deed4315030d6339c44c7dde7ebb65a5a5ab"
+    },
+    "save-rebuilt-observer/saved-card.SaveRAM": {
+      "bytes": 131072,
+      "sha256": "4e5d8af86ba9e5cbf77158ae39c2650da0d12663f64d4e0393c3793da6d205af"
+    },
+    "save-rebuilt-observer/transitions.jsonl.gz": {
+      "bytes": 1435,
+      "sha256": "5bcc1c765a66eaea899d017806fc248663c390c7b0fd81154f3417463e3a6a21"
+    },
+    "save-rebuilt-observer/windows.jsonl": {
+      "bytes": 21467,
+      "sha256": "200a6d22e9c5ffc672ae013876c0a081d1c246e024041eb38f93e47e4ba02a58"
+    },
+    "save-original-stock/card-store.json": {
+      "bytes": 630,
+      "sha256": "ae1fb0699133b9daae4df20e840cb742dbda38cdae79c472db6862681b433997"
+    },
+    "save-original-stock/inputs.tsv": {
+      "bytes": 586,
+      "sha256": "f2b969bead4fcff8a06032dbfa094229d134389311647b0b7f53eb94b9bc985c"
+    },
+    "save-original-stock/report.json": {
+      "bytes": 2469,
+      "sha256": "146734fb3ce387254d2b0a8181494b9ebbaf37af7712676a3de4340d7453cd27"
+    },
+    "save-original-stock/save-blocks.jsonl.gz": {
+      "bytes": 2843,
+      "sha256": "41f604161c9afc31c999a5aab042deed4315030d6339c44c7dde7ebb65a5a5ab"
+    },
+    "save-original-stock/saved-card.SaveRAM": {
+      "bytes": 131072,
+      "sha256": "4e5d8af86ba9e5cbf77158ae39c2650da0d12663f64d4e0393c3793da6d205af"
+    },
+    "save-original-stock/transitions.jsonl.gz": {
+      "bytes": 1435,
+      "sha256": "5bcc1c765a66eaea899d017806fc248663c390c7b0fd81154f3417463e3a6a21"
+    },
+    "save-original-stock/windows.jsonl": {
+      "bytes": 21467,
+      "sha256": "200a6d22e9c5ffc672ae013876c0a081d1c246e024041eb38f93e47e4ba02a58"
+    },
+    "load-original-observer/card-store.json": {
+      "bytes": 630,
+      "sha256": "e0b3b52c7babcc1530d26bde21db424950ed820a1a8742fbb59b184b8a56dded"
+    },
+    "load-original-observer/entries.jsonl.gz": {
+      "bytes": 3963,
+      "sha256": "aa94e8abec47dc68509e930e2c368be6d9c39da7535f3a107e8d8c65d6c5a518"
+    },
+    "load-original-observer/final.png": {
+      "bytes": 32483,
+      "sha256": "e048cc73ad38fb6deb91f9550fd5c6af9bf26a226459fb010b62fad73f04a656"
+    },
+    "load-original-observer/inputs.tsv": {
+      "bytes": 368,
+      "sha256": "40b3d2e96aa8e85270493a0036479eaf07f2864bd9332f8279279583728a1ec6"
+    },
+    "load-original-observer/report.json": {
+      "bytes": 2297,
+      "sha256": "ff36f505e36af995e4fd5fd233bc47ee5448d2c286194b3f5baefdfcbf485c1f"
+    },
+    "load-original-observer/save-blocks.jsonl.gz": {
+      "bytes": 854,
+      "sha256": "30807c33f3724d244c9e00f57c38d0f9ef576a3aa12a23dae43ad9e50320893b"
+    },
+    "load-original-observer/transitions.jsonl.gz": {
+      "bytes": 979,
+      "sha256": "bc656e9485c611e0b5b2181ca57588e22ae4b55b1eb1648286436699cb0ab0b9"
+    },
+    "load-original-observer/windows.jsonl": {
+      "bytes": 8718,
+      "sha256": "1d0242789c32ba9993c7135146132e720e711e3906dd8427a38f56831ec7ccf7"
+    },
+    "load-rebuilt-observer/card-store.json": {
+      "bytes": 630,
+      "sha256": "e0b3b52c7babcc1530d26bde21db424950ed820a1a8742fbb59b184b8a56dded"
+    },
+    "load-rebuilt-observer/entries.jsonl.gz": {
+      "bytes": 3963,
+      "sha256": "aa94e8abec47dc68509e930e2c368be6d9c39da7535f3a107e8d8c65d6c5a518"
+    },
+    "load-rebuilt-observer/inputs.tsv": {
+      "bytes": 368,
+      "sha256": "40b3d2e96aa8e85270493a0036479eaf07f2864bd9332f8279279583728a1ec6"
+    },
+    "load-rebuilt-observer/report.json": {
+      "bytes": 2298,
+      "sha256": "d1a19e250953a4e9c5e9b4bffc6ccc3bd91e5837d357aff4215e3bd8f9aa8f46"
+    },
+    "load-rebuilt-observer/save-blocks.jsonl.gz": {
+      "bytes": 854,
+      "sha256": "30807c33f3724d244c9e00f57c38d0f9ef576a3aa12a23dae43ad9e50320893b"
+    },
+    "load-rebuilt-observer/transitions.jsonl.gz": {
+      "bytes": 979,
+      "sha256": "bc656e9485c611e0b5b2181ca57588e22ae4b55b1eb1648286436699cb0ab0b9"
+    },
+    "load-rebuilt-observer/windows.jsonl": {
+      "bytes": 8718,
+      "sha256": "1d0242789c32ba9993c7135146132e720e711e3906dd8427a38f56831ec7ccf7"
+    },
+    "load-original-stock/card-store.json": {
+      "bytes": 630,
+      "sha256": "e0b3b52c7babcc1530d26bde21db424950ed820a1a8742fbb59b184b8a56dded"
+    },
+    "load-original-stock/inputs.tsv": {
+      "bytes": 368,
+      "sha256": "40b3d2e96aa8e85270493a0036479eaf07f2864bd9332f8279279583728a1ec6"
+    },
+    "load-original-stock/report.json": {
+      "bytes": 2295,
+      "sha256": "86896de72c99befe360aa96051b915893481777d425e182b345ba27a82021262"
+    },
+    "load-original-stock/save-blocks.jsonl.gz": {
+      "bytes": 854,
+      "sha256": "30807c33f3724d244c9e00f57c38d0f9ef576a3aa12a23dae43ad9e50320893b"
+    },
+    "load-original-stock/transitions.jsonl.gz": {
+      "bytes": 979,
+      "sha256": "bc656e9485c611e0b5b2181ca57588e22ae4b55b1eb1648286436699cb0ab0b9"
+    },
+    "load-original-stock/windows.jsonl": {
+      "bytes": 8718,
+      "sha256": "1d0242789c32ba9993c7135146132e720e711e3906dd8427a38f56831ec7ccf7"
+    }
+  },
+  "private_audit_sha256": "c69d869b5a52f7b6406255f24ea24b285a18375dc92dccaa5aa13844b612dca1",
+  "private_audit_source_sha256": "daa341a191f865eaa614e91bf41cd40de40281d9f391cb70e4a1b9f4de6c8cfd",
+  "verifier_sha256": "f1bed5ed0be7d65562730ff9636a7c1bdb0e96019ea8b36b932d73efc33f6689",
+  "source_raw_capture_sha256": {
+    "research/headless/RecordNewGameResetWindows.cs": "016ab3ca78d188ebf8e3b237a357333dd21c474a2baf9a446b20916bbccc3cbe",
+    "research/headless/RecordResetCardRoundtripWindows.cs": "dd7d7a57fc151246fc68aab0e255f4f4b2a795d9ef61b38096d9ded06884586f",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/BoundedSha256Stream.cs": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e",
+    "research/card_roundtrip/reset-controller-functions.json": "a21a70ed8482a2f08c6c9ddfd5dd02367e67522fb233660694bfa7592e6284c3",
+    "tools/verify_reset_card_roundtrip.py": "f1bed5ed0be7d65562730ff9636a7c1bdb0e96019ea8b36b932d73efc33f6689",
+    "tools/verify_controller_reset_capture.py": "f817183d52afb552a9ee9ac3db89adf42d03237002ed2d452c97ee9186167dbb",
+    "tools/compare_card_roundtrip.py": "af8c2cf4ccd6a1635f904d188d6c42c39d302ebcb1e88b2182fc509564d5d703",
+    "tools/new_game_state.py": "015ba63a995c81b12d17e80228105f51b7da05beb01f980341683e9365c02f88",
+    "tests/test_reset_card_roundtrip.py": "2bea6abf41b351587f442a9d084f290a9236670596179e3df1c1394f01e1bc12",
+    "src/menu/card/select_menu.c": "af92a00e83c0a116ed2fcc861279f79a31489343fb82572771a2863eb9ab8c2e",
+    "src/menu/card/select_menu.h": "9550205947c5bcb2a05d0154cbc48c52012c9b8d35ba538139dc6b774f272437",
+    "src/menu/card/memory_card.c": "b7845621a18392ce05c778086638e0e92969ea0e6432102a633f21b3bcc84669",
+    "src/menu/main_menu_post.c": "1e05aaf348347812ab43c9c81603cbcaa3306efcabf810d52feab26dd14d365b",
+    "src/dream/dream_sys.c": "ec93779c5920234f6fee984c200a472c35832eeb71993cfa7695d4d839fbef7a",
+    "src/scene/map_scene_post.c": "34ed1e0240e53b9a1682af1b083628dd91c4955a3fb6735492ae983faa5a4040"
+  },
+  "source_git_LF_sha256": {
+    "research/headless/RecordNewGameResetWindows.cs": "016ab3ca78d188ebf8e3b237a357333dd21c474a2baf9a446b20916bbccc3cbe",
+    "research/headless/RecordResetCardRoundtripWindows.cs": "dd7d7a57fc151246fc68aab0e255f4f4b2a795d9ef61b38096d9ded06884586f",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/BoundedSha256Stream.cs": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e",
+    "research/card_roundtrip/reset-controller-functions.json": "a21a70ed8482a2f08c6c9ddfd5dd02367e67522fb233660694bfa7592e6284c3",
+    "tools/verify_reset_card_roundtrip.py": "f1bed5ed0be7d65562730ff9636a7c1bdb0e96019ea8b36b932d73efc33f6689",
+    "tools/verify_controller_reset_capture.py": "f817183d52afb552a9ee9ac3db89adf42d03237002ed2d452c97ee9186167dbb",
+    "tools/compare_card_roundtrip.py": "af8c2cf4ccd6a1635f904d188d6c42c39d302ebcb1e88b2182fc509564d5d703",
+    "tools/new_game_state.py": "015ba63a995c81b12d17e80228105f51b7da05beb01f980341683e9365c02f88",
+    "tests/test_reset_card_roundtrip.py": "2bea6abf41b351587f442a9d084f290a9236670596179e3df1c1394f01e1bc12",
+    "src/menu/card/select_menu.c": "af92a00e83c0a116ed2fcc861279f79a31489343fb82572771a2863eb9ab8c2e",
+    "src/menu/card/select_menu.h": "5ad7803b72aededf8baf527b4438c0d6c6c0590556d9025340bdb1241dc90609",
+    "src/menu/card/memory_card.c": "b7845621a18392ce05c778086638e0e92969ea0e6432102a633f21b3bcc84669",
+    "src/menu/main_menu_post.c": "1e05aaf348347812ab43c9c81603cbcaa3306efcabf810d52feab26dd14d365b",
+    "src/dream/dream_sys.c": "ec93779c5920234f6fee984c200a472c35832eeb71993cfa7695d4d839fbef7a",
+    "src/scene/map_scene_post.c": "1c0329e8411b0601844d43316e18a64c280d0675befe140fc2df707fca7e1970"
+  },
+  "source_hash_scope": "Raw Windows bytes are capture-time identities; Git source identities use LF normalization. Executed C# sources are also sealed losslessly.",
+  "synthetic_asset_free_tests_added": 15,
+  "analysis_record_controls_rejected": 11,
+  "original_game_instruction_faults_in_this_profile": 0,
+  "visually_inspected_original_frames": [
+    "save-original-observer/after-save.png",
+    "save-original-observer/final.png",
+    "load-original-observer/final.png"
+  ],
+  "matching_C_bytes_before": 199912,
+  "matching_C_bytes_after": 199912,
+  "provisional_feature_groups": 40,
+  "original_feature_total_known": false,
+  "original_NPC_callbacks_in_C": 107,
+  "original_NPC_AI_changed": false,
+  "original_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "new_gameplay_features": 0,
+  "new_developer_capability_categories": 0,
+  "model_API_calls": 0,
+  "optional_mods_added": 0,
+  "full_feature_F004_accepted": false,
+  "whole_goal_complete": false,
+  "full_objective_retained": true,
+  "remaining_gates": [
+    "Flashback reset persistence and other input histories",
+    "Original constructor entry/return and allocation lifetime",
+    "Inactive-link and nonzero-map-state guards",
+    "Native overwrite/full/missing-card/error scenarios",
+    "Naturally earned unlock progression",
+    "Remaining asset/dispatch/content scope gaps",
+    "Broader whole-feature and original NPC encounter acceptance",
+    "Other movie and ending presentation routes",
+    "Hardware and independent whole-game acceptance"
+  ],
+  "synthetic_tests": {
+    "windows": {
+      "tests": 1746,
+      "skipped": 16,
+      "exit_code": 0,
+      "log_raw_sha256": "25c9e604a86ff0981742c715fb9b173c209c2ec1119a3b12da20a3935b7bcaf2"
+    },
+    "wsl": {
+      "tests": 1743,
+      "skipped": 12,
+      "exit_code": 0,
+      "log_raw_sha256": "2766611f086ce2ccda2fd8a37a669e18e36d60e8974aabd4929e966686657005"
+    }
+  },
+  "current_build": {
+    "objects_found": 306,
+    "objects_expected": 306,
+    "complete_objects": true,
+    "build_current": true,
+    "c_bytes": 199912,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 100.0,
+    "sdk_text_bytes": 147880,
+    "handwritten_text_bytes": 188,
+    "binary_match": "verified",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+  },
+  "fresh_post_capture_preservation": {
+    "protected_files": 8,
+    "other_repositories": 2,
+    "full_runtime_fingerprints": 2,
+    "runtime_files_each": 192,
+    "canonical_bodies_and_retained_symbols_rechecked": 16,
+    "prior_inventory_nodes_preserved": 56,
+    "player_not_launched_or_reconfigured": true
+  }
+}

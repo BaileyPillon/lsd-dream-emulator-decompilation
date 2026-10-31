@@ -1,5 +1,14 @@
 # Roadmap
 
+The [reset/card roundtrip](RESET_CARD_ROUNDTRIP.md) now verifies native Save
+after an ordinary reset, fresh-process Load of the exact resulting card and
+resumed gameplay. Original/rebuilt and observer/stock outputs agree across
+13,459 frames each. All 56 prior inventory nodes are preserved; matching C,
+40 provisional groups, 107 original NPC callbacks and zero whole-feature/NPC
+acceptances are unchanged. Constructor/lifetime, other guarded/card states
+and broader behavior acceptance remain open. Earlier profiles below retain
+their original scope.
+
 The [controller reset pair](CONTROLLER_NEW_GAME_RESET.md) now verifies ordinary
 and flashback reset inputs across 14,915 paired frames, with matching stock-core
 outputs. Complete save blocks preserve the same inactive history bytes. The

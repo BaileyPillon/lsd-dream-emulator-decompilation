@@ -25658,5 +25658,41 @@
     "new_developer_capability_categories": 0,
     "model_API_calls": 0,
     "full_feature_F004_accepted": false
+  },
+  "reset_card_roundtrip_audit": {
+    "reference": "docs/reset-card-roundtrip-checks.json",
+    "documentation": "docs/RESET_CARD_ROUNDTRIP.md",
+    "related_feature_groups": [
+      "F004"
+    ],
+    "before": {
+      "reset_Save_fresh_process_Load_profiles_qualified_by_this_increment": 0,
+      "paired_frames": 0
+    },
+    "after": {
+      "qualified_phases": 2,
+      "qualified_cold_boots": 6,
+      "paired_frames": 13459,
+      "additional_stock_comparison_frames": 13459,
+      "complete_object_pairs": 45,
+      "native_entry_pairs": 2042,
+      "analysis_record_controls_rejected": 11,
+      "complete_native_saved_payload_bytes": 1792,
+      "preserved_payload_bytes": 1216,
+      "nonzero_preserved_payload_bytes": 15,
+      "existing_logical_file_unchanged": true,
+      "fresh_process_Load_and_gameplay_verified": true,
+      "native_virtual_file_auto_flush_verified": false
+    },
+    "matching_C_bytes_before": 199912,
+    "matching_C_bytes_after": 199912,
+    "provisional_feature_groups": 40,
+    "original_NPC_callbacks_in_C": 107,
+    "new_gameplay_features": 0,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "new_developer_capability_categories": 0,
+    "model_API_calls": 0,
+    "full_feature_F004_accepted": false
   }
 }

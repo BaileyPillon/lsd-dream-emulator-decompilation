@@ -17,6 +17,13 @@ objects reproduce the original executable in a clean build, using documented
 compiler-layout compatibility storage. [Evidence and scope](docs/MATCHING_GAME_C.md)
 distinguish this source milestone from the remaining gameplay-verification gates.
 
+The [reset/card roundtrip](docs/RESET_CARD_ROUNDTRIP.md) now follows native Save
+after reset, then loads that exact card in a fresh process and resumes a dream.
+Original, rebuilt and stock-core outputs agree across 13,459 frames per
+comparison, including the complete save payload and preserved earlier file.
+Frontend card export is verified; the core virtual-file auto-flush warning
+remains documented separately.
+
 The [controller reset comparison](docs/CONTROLLER_NEW_GAME_RESET.md) now follows
 the original pause/Select/Triangle route through ordinary and flashback resets.
 Original, rebuilt and stock-core runs agree across 14,915 frames per comparison.
