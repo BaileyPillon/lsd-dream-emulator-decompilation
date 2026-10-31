@@ -1107,3 +1107,19 @@ Accepted whole features and encounters remain zero. The additive
 [machine evidence](sound-asset-checks.json) preserves every earlier inventory
 value; no gameplay feature, mod, developer-capability category or model API call
 is added. Full audio playback and U002/U003 acceptance remain open.
+
+## TMD projection supplement, 2026-10-30
+
+The [projection profile](TMD_PROJECTION.md) adds 438 guarded calls to the
+original 232-byte prepass, with 945 native GTE commands and 15,308 original
+instructions. The separate stateful GTE boundary passes 3,205 cases across
+all 64 architectural register words and 11 command opcodes. Three original-code
+faults, four boundary faults, eight rejected memory accesses and four journal
+corruptions are detected in their respective checks.
+
+Matching game C remains 199,912 / 199,912 bytes before and after this analysis.
+The 40 provisional groups, 107 NPC callback C bodies, 44 bounded NPC profiles,
+zero accepted whole features and zero accepted whole encounters are unchanged.
+Constructed projection inputs do not establish full drawing, natural scenes,
+controller reachability or PS1 hardware timing. The additive machine evidence
+preserves earlier inventory values and adds no gameplay or modding feature.
