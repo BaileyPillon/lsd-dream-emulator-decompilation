@@ -16,6 +16,13 @@ returned PCM, native fields and controls agree in framed windows, together with
 controller-skipped lifecycles. This extends F001/F032/F035 evidence without
 changing C, whole-feature/NPC acceptance or developer-capability category counts.
 
+The [complete movie-buffer pair](FULL_MOVIE_PAYLOADS.md) extends F022/F032 with
+30,374 complete backing-RAM observations and 944,165,108 hashed bytes per run.
+Full encoded inputs match the original disc; completed VLC outputs match later
+MDEC inputs. Both runs reproduce the final completed 7,300-byte output with no
+later MDEC call. Whole-feature/NPC acceptance remains zero; prior values remain
+historical measurements. DMA completion and frame presentation are still open.
+
 The [native reel decoder profile](NATIVE_REEL_DECODER.md) extends F022/F032
 with 30,374 matching entries and uniquely attributes all twenty reel source films.
 The first nineteen reach all source IDs at VLC and MDEC input entry. The last

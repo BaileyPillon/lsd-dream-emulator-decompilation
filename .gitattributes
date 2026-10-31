@@ -506,3 +506,13 @@ tools/inspect_reel_decoder.py text eol=lf
 tests/test_reel_decoder.py text eol=lf
 docs/NATIVE_REEL_DECODER.md text eol=lf
 docs/native-reel-decoder-checks.json text eol=lf
+
+# Keep complete movie-payload capture and verification sources reproducible.
+research/runtime_state/movie_payload_observer.h text eol=lf
+tools/build_movie_payload_observer.py text eol=lf
+tools/inspect_movie_payloads.py text eol=lf
+tests/fixtures/movie_payload_harness.cpp text eol=lf
+tests/test_movie_payload_observer.py text eol=lf
+tests/test_movie_payloads.py text eol=lf
+docs/FULL_MOVIE_PAYLOADS.md text eol=lf
+docs/full-movie-payload-checks.json text eol=lf
