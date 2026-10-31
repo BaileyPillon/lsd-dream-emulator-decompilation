@@ -1,0 +1,438 @@
+{
+  "schema_version": 1,
+  "status": "original_tmd_projection_matches",
+  "generated_at": "2026-10-31T01:04:25.428747+00:00",
+  "elapsed_seconds": 5.985742847999999,
+  "original_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "function": {
+    "address": "0x800195ec",
+    "bytes": 232,
+    "sha256": "6e59588417cf13084d066a4c87d527c6f5f8e647092c956b07fdf34017fc8680"
+  },
+  "backend": {
+    "package_version": "2.1.4",
+    "library_api": [
+      2,
+      1,
+      33621247
+    ],
+    "library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+    "binding_sources_sha256": "1c69249859bd4f1d789df6dcb4d8b757c0a1e46b37424b05352c2366f7058507",
+    "binding_source_count": 21
+  },
+  "synthetic": {
+    "all_register_transfer_programs": 6,
+    "integer_branch_delay_slot_programs": 144,
+    "COP2_delay_slot_programs": 112,
+    "ordinary_memory_delay_slot_programs": 32
+  },
+  "synthetic_MIPS_program_calls": 150,
+  "original_projection_calls": 438,
+  "outcomes": {
+    "projected": 51,
+    "depth_cue_rejected": 22,
+    "backface_or_degenerate": 347,
+    "projected_with_clip_flag": 18
+  },
+  "original_and_synthetic_MIPS_instructions": 17196,
+  "COP2_transfers": {
+    "lwc2": 80,
+    "swc2": 885,
+    "ctc2": 80,
+    "cfc2": 518,
+    "mtc2": 80,
+    "mfc2": 80,
+    "cop2_delay_slots": 112,
+    "command": 961
+  },
+  "data_memory_guards": "Effective addresses checked in instruction hooks; native COP2 transfers checked in the adapter; complete buffer and full VM compared.",
+  "Unicorn_delay_slot_memory_hooks_avoided": true,
+  "controls": [
+    {
+      "name": "packet-length-source",
+      "address": 2147587580,
+      "original": 2426535956,
+      "replacement": 2426535957,
+      "instruction_executions": 1,
+      "output_disagreement_detected": true,
+      "returned_with_ABI_and_full_VM_guards_intact": true,
+      "native_commands": 3,
+      "crash_count": 0
+    },
+    {
+      "name": "fog-rejection-threshold",
+      "address": 2147587692,
+      "original": 675418112,
+      "replacement": 675416064,
+      "instruction_executions": 1,
+      "output_disagreement_detected": true,
+      "returned_with_ABI_and_full_VM_guards_intact": true,
+      "native_commands": 2,
+      "crash_count": 0
+    },
+    {
+      "name": "ordering-depth-shift",
+      "address": 2147587760,
+      "original": 8591367,
+      "replacement": 8591364,
+      "instruction_executions": 1,
+      "output_disagreement_detected": true,
+      "returned_with_ABI_and_full_VM_guards_intact": true,
+      "native_commands": 3,
+      "crash_count": 0
+    }
+  ],
+  "journal": {
+    "file": "cases.jsonl",
+    "sha256": "7cd7cfaefaca77f90cf8ec5d3bf48d4be53c0a4b658d1e0a801cd3fe2c7bb825"
+  },
+  "memory_guard_controls": [
+    {
+      "name": "outside-buffer-read",
+      "instruction": "0x8c820000",
+      "delay_slot": false,
+      "guard_rejected": true,
+      "complete_buffer_unchanged": true
+    },
+    {
+      "name": "outside-write-slots",
+      "instruction": "0xaca90080",
+      "delay_slot": false,
+      "guard_rejected": true,
+      "complete_buffer_unchanged": true
+    },
+    {
+      "name": "unaligned-store",
+      "instruction": "0xaca90001",
+      "delay_slot": false,
+      "guard_rejected": true,
+      "complete_buffer_unchanged": true
+    },
+    {
+      "name": "unreviewed-partial-load",
+      "instruction": "0x88820000",
+      "delay_slot": false,
+      "guard_rejected": true,
+      "complete_buffer_unchanged": true
+    },
+    {
+      "name": "outside-buffer-read",
+      "instruction": "0x8c820000",
+      "delay_slot": true,
+      "guard_rejected": true,
+      "complete_buffer_unchanged": true
+    },
+    {
+      "name": "outside-write-slots",
+      "instruction": "0xaca90080",
+      "delay_slot": true,
+      "guard_rejected": true,
+      "complete_buffer_unchanged": true
+    },
+    {
+      "name": "unaligned-store",
+      "instruction": "0xaca90001",
+      "delay_slot": true,
+      "guard_rejected": true,
+      "complete_buffer_unchanged": true
+    },
+    {
+      "name": "unreviewed-partial-load",
+      "instruction": "0x88820000",
+      "delay_slot": true,
+      "guard_rejected": true,
+      "complete_buffer_unchanged": true
+    }
+  ],
+  "compiled_bridge_sha256": "1aff1060f621f47be3dd9f8eabe5061f437bc3e805bc933be13ef885a645712f",
+  "source_sha256": {
+    "tools/verify_tmd_projection.py": "cfdf06c4bc2e84af93f9797b9856dfaabefd73caa29a6ffc5e8d765a9e1928f5",
+    "tools/verify_gte_state.py": "5c37f08da6b9c03daa6526ede8cffce3ffa9a03a81197ebc060d0ad3325bc70d",
+    "tools/gte_state_model.py": "fde11f5c52d626c13c7f392f8a6b91885d2f9acb6dc90537238c836ff6f1e503",
+    "tools/gte_state_bridge.py": "73251e82ce544d09b33a9680b5523218f8a7454e694916e6c5140f95fefd83b2",
+    "tools/nymashock_gte_state_bridge.cs": "7a06a3f5a63900cdefc0961b896036a102252472498dda2f7a701d1df5d9898e",
+    "tools/verify_model_packets.py": "012af2b5135f01ab182cff4ad44dd6ef5ebac8fbe6dbd8ba00e8b8d18d6a18b6",
+    "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+    "tools/inventory_model_packets.py": "11fe2063f0d6bd0c121dc05de9cfabfb7a27ecd88a3b792f3f2ff8da2b51c346",
+    "tools/disc_files.py": "e98b679c3b9f8381da518b97ce0f934d2aa50d40bc67fab29e5994832b154372",
+    "requirements-analysis.txt": "b2fd0c4c4f90fb1b515723f80b10202d3576cd7092eb83a7cdb4281bfb4a6911"
+  },
+  "complete_output_return_GTE_registers_ABI_and_full_VM_equal": true,
+  "original_executable_unmodified": true,
+  "COP2_lowered_to_NOP_or_guarded_SW_transport_only_in_analysis_VM": true,
+  "original_COP2_words_retained_and_native_semantics_executed": true,
+  "ordinary_MIPS_bytes_unchanged_except_private_fault_controls": true,
+  "no_function_output_stubs": true,
+  "fixture_camera_and_vertex_state_supplied": true,
+  "natural_scene_coverage_verified": false,
+  "normal_UV_material_packet_assembly_and_GPU_rasterization_verified": false,
+  "PS1_CPU_load_delays_and_hardware_timing_verified": false,
+  "whole_feature_groups_accepted": 0,
+  "new_matching_C_bytes": 0,
+  "scope": "Original 232-byte TMD projection/culling/depth prepass with native GTE commands; full draw composition remains separate.",
+  "independent_journal_audit": {
+    "status": "projection_journal_audit_passed",
+    "original_cases": 438,
+    "outcomes": {
+      "projected": 51,
+      "depth_cue_rejected": 22,
+      "backface_or_degenerate": 347,
+      "projected_with_clip_flag": 18
+    },
+    "native_commands": 945,
+    "original_MIPS_instructions": 15308,
+    "actual_journal_corruptions_detected": [
+      {
+        "changed_field": "return_value",
+        "detected": true
+      },
+      {
+        "changed_field": "output_sha256",
+        "detected": true
+      },
+      {
+        "changed_field": "full_VM_and_ABI_guards_intact",
+        "detected": true
+      },
+      {
+        "changed_field": "case",
+        "detected": true
+      }
+    ],
+    "source_dependencies_current": true,
+    "independent_scalar_buffer_reconstruction": true,
+    "shared_arithmetic_boundary": "The separately native-qualified GteState arithmetic oracle; producer expected()/fixture() are not used.",
+    "original_code_fault_controls": 3,
+    "rejected_memory_controls": 8,
+    "original_renderer_or_whole_feature_accepted": false,
+    "audit_source_sha256": "4bd1cbd527b0c9afb92249276549b70334c3f62c88a695403db76c2c57109a17"
+  },
+  "delay_slot_backend_reproduction": {
+    "unicorn_version": "2.1.4",
+    "cases": [
+      {
+        "delay": "nop",
+        "hooks": "none",
+        "trace": [
+          "0x800196c0",
+          "0x800196c4",
+          "0x800196cc",
+          "0x800196d0"
+        ],
+        "memory": [],
+        "traps": [],
+        "error": null,
+        "PC": "0x1ff000",
+        "returned": true,
+        "output": "0x0"
+      },
+      {
+        "delay": "nop",
+        "hooks": "read",
+        "trace": [
+          "0x800196c0",
+          "0x800196c4",
+          "0x800196cc",
+          "0x800196d0"
+        ],
+        "memory": [],
+        "traps": [],
+        "error": null,
+        "PC": "0x1ff000",
+        "returned": true,
+        "output": "0x0"
+      },
+      {
+        "delay": "nop",
+        "hooks": "write",
+        "trace": [
+          "0x800196c0",
+          "0x800196c4",
+          "0x800196cc",
+          "0x800196d0"
+        ],
+        "memory": [],
+        "traps": [],
+        "error": null,
+        "PC": "0x1ff000",
+        "returned": true,
+        "output": "0x0"
+      },
+      {
+        "delay": "nop",
+        "hooks": "both",
+        "trace": [
+          "0x800196c0",
+          "0x800196c4",
+          "0x800196cc",
+          "0x800196d0"
+        ],
+        "memory": [],
+        "traps": [],
+        "error": null,
+        "PC": "0x1ff000",
+        "returned": true,
+        "output": "0x0"
+      },
+      {
+        "delay": "sw",
+        "hooks": "none",
+        "trace": [
+          "0x800196c0",
+          "0x800196c4",
+          "0x800196cc",
+          "0x800196d0"
+        ],
+        "memory": [],
+        "traps": [],
+        "error": null,
+        "PC": "0x1ff000",
+        "returned": true,
+        "output": "0x150000"
+      },
+      {
+        "delay": "sw",
+        "hooks": "read",
+        "trace": [
+          "0x800196c0",
+          "0x800196c4",
+          "0x800196cc",
+          "0x800196d0"
+        ],
+        "memory": [],
+        "traps": [],
+        "error": null,
+        "PC": "0x1ff000",
+        "returned": true,
+        "output": "0x150000"
+      },
+      {
+        "delay": "sw",
+        "hooks": "write",
+        "trace": [
+          "0x800196c0",
+          "0x800196c4",
+          "0x800196cc"
+        ],
+        "memory": [
+          {
+            "kind": 17,
+            "address": "0x120130",
+            "size": 4
+          }
+        ],
+        "traps": [
+          20
+        ],
+        "error": null,
+        "PC": "0x0",
+        "returned": false,
+        "output": "0x150000"
+      },
+      {
+        "delay": "sw",
+        "hooks": "both",
+        "trace": [
+          "0x800196c0",
+          "0x800196c4",
+          "0x800196cc"
+        ],
+        "memory": [
+          {
+            "kind": 17,
+            "address": "0x120130",
+            "size": 4
+          }
+        ],
+        "traps": [
+          20
+        ],
+        "error": null,
+        "PC": "0x0",
+        "returned": false,
+        "output": "0x150000"
+      },
+      {
+        "delay": "lw",
+        "hooks": "none",
+        "trace": [
+          "0x800196c0",
+          "0x800196c4",
+          "0x800196cc",
+          "0x800196d0"
+        ],
+        "memory": [],
+        "traps": [],
+        "error": null,
+        "PC": "0x1ff000",
+        "returned": true,
+        "output": "0x0"
+      },
+      {
+        "delay": "lw",
+        "hooks": "read",
+        "trace": [
+          "0x800196c0",
+          "0x800196c4",
+          "0x800196cc"
+        ],
+        "memory": [
+          {
+            "kind": 16,
+            "address": "0x120100",
+            "size": 4
+          }
+        ],
+        "traps": [
+          20
+        ],
+        "error": null,
+        "PC": "0x0",
+        "returned": false,
+        "output": "0x0"
+      },
+      {
+        "delay": "lw",
+        "hooks": "write",
+        "trace": [
+          "0x800196c0",
+          "0x800196c4",
+          "0x800196cc",
+          "0x800196d0"
+        ],
+        "memory": [],
+        "traps": [],
+        "error": null,
+        "PC": "0x1ff000",
+        "returned": true,
+        "output": "0x0"
+      },
+      {
+        "delay": "lw",
+        "hooks": "both",
+        "trace": [
+          "0x800196c0",
+          "0x800196c4",
+          "0x800196cc"
+        ],
+        "memory": [
+          {
+            "kind": 16,
+            "address": "0x120100",
+            "size": 4
+          }
+        ],
+        "traps": [
+          20
+        ],
+        "error": null,
+        "PC": "0x0",
+        "returned": false,
+        "output": "0x0"
+      }
+    ],
+    "source_sha256": "18c2a2ae60e6afcb836fa90626b54c9981c963be2a3210dcbca3be7138f8b272",
+    "no_game_or_GTE_loaded": true
+  }
+}

@@ -27,6 +27,12 @@ evidence to original pointer relocation and primitive-run construction across
 all 531 TMD tables and 13,627 objects. Complete outputs, cursor walks, reentry,
 saved registers and memory guards agree with independent predictions.
 
+The [TMD projection profile](docs/TMD_PROJECTION.md) executes the original
+projection/culling helper in 438 fixtures through a separately qualified
+stateful GTE boundary qualified in 3,205 native cases. CI covers literal
+arithmetic and synthetic memory guards without game assets. Full drawing,
+natural scenes and PS1 timing remain open.
+
 [Recovered-C analysis context](docs/RECOVERED_C_CONTEXT.md) exports verified
 original instructions and current source without an old private assembly
 catalog. Its public function metadata includes SDK routines; candidate changes
