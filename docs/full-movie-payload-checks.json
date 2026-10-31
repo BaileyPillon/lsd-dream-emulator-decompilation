@@ -1,0 +1,1078 @@
+{
+  "full_comparison": {
+    "schema_version": 1,
+    "status": "equal_for_full_native_movie_payload_scope",
+    "passed": true,
+    "dimensions": {
+      "frames": 62530,
+      "complete_state_observations": 105,
+      "PCM_stereo_sample_frames": 46092627,
+      "MainRAM_bytes": 131134914560,
+      "GPURAM_bytes": 65567457280,
+      "RGB_payload_bytes": 16441937840
+    },
+    "full_payloads": {
+      "status": "actual_full_native_movie_buffers_inspected",
+      "entries": 30374,
+      "counts": [
+        10125,
+        10125,
+        10124
+      ],
+      "first_entry_frame": 21929,
+      "last_entry_frame": 62348,
+      "complete_payload_bytes_hashed": 944165108,
+      "encoded_chain_sha256": "7ed9bef4db1a499559fd93a0552a66eed2c1a0dd1cbe1129a0549556d21eb262",
+      "completed_RLE_chain_sha256": "fd7861c7077bb500b90748b75f29c608b540d29c021f42385e81369eb6be7421",
+      "numeric_and_full_payload_hash_chain_sha256": "bd98bb1220d1bf80f60f75643e052f4dfd6dccff2247cb45a37e11c368607fde",
+      "segments": [
+        {
+          "first_ID": 1,
+          "last_ID": 485,
+          "encoded_inputs": 485,
+          "RLE_returns": 485,
+          "MDEC_inputs": 485,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY01A.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 877,
+          "encoded_inputs": 877,
+          "RLE_returns": 877,
+          "MDEC_inputs": 877,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY01B.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 537,
+          "encoded_inputs": 537,
+          "RLE_returns": 537,
+          "MDEC_inputs": 537,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY02A.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 455,
+          "encoded_inputs": 455,
+          "RLE_returns": 455,
+          "MDEC_inputs": 455,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY02B.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 409,
+          "encoded_inputs": 409,
+          "RLE_returns": 409,
+          "MDEC_inputs": 409,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY03A.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 589,
+          "encoded_inputs": 589,
+          "RLE_returns": 589,
+          "MDEC_inputs": 589,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY03B.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 274,
+          "encoded_inputs": 274,
+          "RLE_returns": 274,
+          "MDEC_inputs": 274,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY04A.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 551,
+          "encoded_inputs": 551,
+          "RLE_returns": 551,
+          "MDEC_inputs": 551,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY04B.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 576,
+          "encoded_inputs": 576,
+          "RLE_returns": 576,
+          "MDEC_inputs": 576,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY05A.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 335,
+          "encoded_inputs": 335,
+          "RLE_returns": 335,
+          "MDEC_inputs": 335,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY05B.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 446,
+          "encoded_inputs": 446,
+          "RLE_returns": 446,
+          "MDEC_inputs": 446,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY06A.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 534,
+          "encoded_inputs": 534,
+          "RLE_returns": 534,
+          "MDEC_inputs": 534,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY06B.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 532,
+          "encoded_inputs": 532,
+          "RLE_returns": 532,
+          "MDEC_inputs": 532,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY07A.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 533,
+          "encoded_inputs": 533,
+          "RLE_returns": 533,
+          "MDEC_inputs": 533,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY07B.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 660,
+          "encoded_inputs": 660,
+          "RLE_returns": 660,
+          "MDEC_inputs": 660,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY08A.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 461,
+          "encoded_inputs": 461,
+          "RLE_returns": 461,
+          "MDEC_inputs": 461,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY08B.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 475,
+          "encoded_inputs": 475,
+          "RLE_returns": 475,
+          "MDEC_inputs": 475,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY09A.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 483,
+          "encoded_inputs": 483,
+          "RLE_returns": 483,
+          "MDEC_inputs": 483,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY09B.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 421,
+          "encoded_inputs": 421,
+          "RLE_returns": 421,
+          "MDEC_inputs": 421,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY10A.STR"
+          ]
+        },
+        {
+          "first_ID": 1,
+          "last_ID": 492,
+          "encoded_inputs": 492,
+          "RLE_returns": 492,
+          "MDEC_inputs": 491,
+          "candidate_paths": [
+            "/CDI/FILM/SPDAY10B.STR"
+          ]
+        }
+      ],
+      "final_completed_RLE_without_MDEC_input": [
+        {
+          "frame_id": 492,
+          "frame": 62348,
+          "source_bytes": 7300,
+          "payload_sha256": "fd0fd67cae204a46595ebde6e2f3f438e380f50fb066b15f5e3e7a561d7317dd",
+          "segment": 19
+        }
+      ],
+      "individual_frame_GPU_presentation_accepted": false
+    },
+    "stock_observer_qualification": [
+      {
+        "all_complete_output_windows_equal": true,
+        "output_differences": [],
+        "complete_serialized_state_hashes_equal": false,
+        "complete_serialized_state_differing_windows": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104
+        ],
+        "full_unmasked_state_hashes_retained": true,
+        "state_equality_not_inferred_from_output_equality": true
+      },
+      {
+        "all_complete_output_windows_equal": true,
+        "output_differences": [],
+        "complete_serialized_state_hashes_equal": false,
+        "complete_serialized_state_differing_windows": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104
+        ],
+        "full_unmasked_state_hashes_retained": true,
+        "state_equality_not_inferred_from_output_equality": true
+      }
+    ],
+    "differences": {},
+    "observer_original_rebuilt_complete_states_and_full_outputs_equal": true,
+    "rebuilt_journal_storage_mode": "all_generated_compressed_bytes_equal_then_immutable_link_reused",
+    "all_generated_rebuilt_payload_journal_bytes_compared": true,
+    "constructed_history_not_naturally_earned": true,
+    "individual_frame_GPU_presentation_accepted": false,
+    "original_hardware_timing_verified": false,
+    "new_matching_C_bytes": 0,
+    "new_gameplay_features": 0,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "model_API_calls": 0
+  },
+  "source_corpus": {
+    "source_movies": 39,
+    "source_encoded_frames": 22382,
+    "complete_source_movie_hashes_checked": true,
+    "original_disc_sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61",
+    "complete_encoded_frame_index_sha256": "560816beeafc052aa7e39716a04ff347f7b0f73ff5ee3a90351388cdafe41497",
+    "full_encoded_ID_hash_keys": 21288,
+    "ambiguous_full_encoded_ID_hash_keys": 476,
+    "source_movies_or_disc_copied": false
+  },
+  "analysis_copy_controls": [
+    {
+      "name": "complete_encoded_hash_absent_from_disc",
+      "detected": true,
+      "error": "Complete native encoded input hash/size is absent from the original disc.",
+      "scope": "Changed parsed saved-analysis copy only; capture, original game and source assets retained."
+    },
+    {
+      "name": "changed_encoded_size",
+      "detected": true,
+      "error": "Encoded input lacks its accepted native size/buffer association.",
+      "scope": "Changed parsed saved-analysis copy only; capture, original game and source assets retained."
+    },
+    {
+      "name": "changed_native_frame_ID",
+      "detected": true,
+      "error": "Accepted native frame header/command identity differs.",
+      "scope": "Changed parsed saved-analysis copy only; capture, original game and source assets retained."
+    },
+    {
+      "name": "changed_native_dimensions",
+      "detected": true,
+      "error": "Complete native encoded input hash/size is absent from the original disc.",
+      "scope": "Changed parsed saved-analysis copy only; capture, original game and source assets retained."
+    },
+    {
+      "name": "changed_actual_entry_stack",
+      "detected": true,
+      "error": "Entry context disagrees with itself.",
+      "scope": "Changed parsed saved-analysis copy only; capture, original game and source assets retained."
+    },
+    {
+      "name": "changed_native_return_jump_word",
+      "detected": true,
+      "error": "VLC completion lacks its actual return jump/delay and restored caller stack.",
+      "scope": "Changed parsed saved-analysis copy only; capture, original game and source assets retained."
+    },
+    {
+      "name": "changed_native_return_caller",
+      "detected": true,
+      "error": "VLC completion lacks its actual return jump/delay and restored caller stack.",
+      "scope": "Changed parsed saved-analysis copy only; capture, original game and source assets retained."
+    },
+    {
+      "name": "truncated_completed_RLE_range",
+      "detected": true,
+      "error": "VLC output size is invalid or its destination was reused before MDEC input.",
+      "scope": "Changed parsed saved-analysis copy only; capture, original game and source assets retained."
+    },
+    {
+      "name": "changed_completed_RLE_hash",
+      "detected": true,
+      "error": "Complete MDEC input differs from the completed VLC output, including bytes beyond the old prefix.",
+      "scope": "Changed parsed saved-analysis copy only; capture, original game and source assets retained."
+    },
+    {
+      "name": "changed_MDEC_full_payload",
+      "detected": true,
+      "error": "Complete MDEC input differs from the completed VLC output, including bytes beyond the old prefix.",
+      "scope": "Changed parsed saved-analysis copy only; capture, original game and source assets retained."
+    },
+    {
+      "name": "changed_MDEC_cached_source_header",
+      "detected": true,
+      "error": "MDEC input has changed accepted source/header provenance.",
+      "scope": "Changed parsed saved-analysis copy only; capture, original game and source assets retained."
+    },
+    {
+      "name": "changed_payload_transport_offset",
+      "detected": true,
+      "error": "Missing/reordered native per-frame payload extent.",
+      "scope": "Changed parsed saved-analysis copy only; capture, original game and source assets retained."
+    },
+    {
+      "name": "changed_actual_MDEC_mode",
+      "detected": true,
+      "error": "Full buffer does not identify its actual native entry: a1",
+      "scope": "Changed parsed saved-analysis copy only; capture, original game and source assets retained."
+    },
+    {
+      "name": "changed_native_payload_pointer",
+      "detected": true,
+      "error": "Invalid full native payload pointer, size or status.",
+      "scope": "Changed parsed saved-analysis copy only; capture, original game and source assets retained."
+    },
+    {
+      "name": "missing_final_completed_VLC_output",
+      "detected": true,
+      "error": "Missing full payload entries, returns or final pending output.",
+      "scope": "Saved-analysis copy; no native or game writes."
+    },
+    {
+      "name": "changed_complete_payload_hash_chain",
+      "detected": true,
+      "error": "Full payload summary differs from independently reconstructed records.",
+      "scope": "Saved-analysis copy; no native or game writes."
+    },
+    {
+      "name": "changed_full_payload_byte_total",
+      "detected": true,
+      "error": "Full payload summary differs from independently reconstructed records.",
+      "scope": "Saved-analysis copy; no native or game writes."
+    },
+    {
+      "name": "changed_rebuilt_complete_core_state",
+      "detected": true,
+      "differences": {
+        "original_rebuilt_recording": {
+          "windows": true
+        }
+      },
+      "scope": "Changed saved-comparison copy; native data/game/state hashes not masked or modified."
+    },
+    {
+      "name": "changed_rebuilt_full_GPU_output",
+      "detected": true,
+      "differences": {
+        "original_rebuilt_recording": {
+          "windows": true
+        },
+        "stock_output_qualification": true
+      },
+      "scope": "Changed saved-comparison copy; native data/game/state hashes not masked or modified."
+    },
+    {
+      "name": "changed_rebuilt_full_buffer_chain",
+      "detected": true,
+      "differences": {
+        "payloads": true
+      },
+      "scope": "Changed saved-comparison copy; native data/game/state hashes not masked or modified."
+    },
+    {
+      "name": "changed_rebuilt_full_journal_bytes",
+      "detected": true,
+      "differences": {
+        "payload_trace_sha256": true
+      },
+      "scope": "Changed saved-comparison copy; native data/game/state hashes not masked or modified."
+    }
+  ],
+  "native_buffer_stats": {
+    "1": {
+      "entries": 10125,
+      "full_payload_bytes": 144094224,
+      "minimum_buffer_bytes": 2712,
+      "maximum_buffer_bytes": 18144
+    },
+    "2": {
+      "entries": 10125,
+      "full_payload_bytes": 400039092,
+      "minimum_buffer_bytes": 7300,
+      "maximum_buffer_bytes": 64388
+    },
+    "3": {
+      "entries": 10124,
+      "full_payload_bytes": 400031792,
+      "minimum_buffer_bytes": 7300,
+      "maximum_buffer_bytes": 64388
+    }
+  },
+  "original_function_ranges": [
+    {
+      "function": "func_80045AD8",
+      "address": "0x80045AD8",
+      "file_offset": 221912,
+      "bytes": 232,
+      "sha256": "b7c2ae82526841a74884aba91e47332d5387d07e3be319d4716bfc58045b28f5"
+    },
+    {
+      "function": "DecDCTin",
+      "address": "0x80045F84",
+      "file_offset": 223108,
+      "bytes": 124,
+      "sha256": "5e5051da7b9fa7a018b4a069c270b17280351ff0a9b41b1fa28ed826822d849d"
+    },
+    {
+      "function": "MDEC_in",
+      "address": "0x800461B0",
+      "file_offset": 223664,
+      "bytes": 148,
+      "sha256": "042af775f505bbe6e693f41ce60ba747fb272adac853b7e230763f3f5b218672"
+    },
+    {
+      "function": "func_80046568",
+      "address": "0x80046568",
+      "file_offset": 224616,
+      "bytes": 80,
+      "sha256": "49f5b92d676336f1872f3e6b0147e5b0a8bd7fec2792e83b8674743c1bf956d4"
+    },
+    {
+      "function": "MDEC_vlc",
+      "address": "0x800465E8",
+      "file_offset": 224744,
+      "bytes": 820,
+      "sha256": "3e882051ef4cf3199b8cdc0d4f23b252aec334ecf184968b0d6f898f0a12a241"
+    },
+    {
+      "function": "MDEC_vlc2",
+      "address": "0x8004691C",
+      "file_offset": 225564,
+      "bytes": 988,
+      "sha256": "40918a0eb00eb831bd3c81ca1485cd9ecb49af0bd4cd5799c5cdb4611923e25e"
+    },
+    {
+      "function": "str_stream_get_next",
+      "address": "0x80047694",
+      "file_offset": 229012,
+      "bytes": 284,
+      "sha256": "81127bffd42135d6ca91e063e802d87969e2bd8e242f30d9bdf3b17f3282b0a5"
+    },
+    {
+      "function": "str_stream_invoke_callback",
+      "address": "0x800477B0",
+      "file_offset": 229296,
+      "bytes": 96,
+      "sha256": "5d72a19e175810669c685bd7c1231f86172780ff2bf620afc30dcc60c152073b"
+    },
+    {
+      "function": "StGetNext",
+      "address": "0x800486AC",
+      "file_offset": 233132,
+      "bytes": 196,
+      "sha256": "e23d180f7bdf60d9731c51e4378629c850950a3a1427c92fb0d077ce875746a0"
+    }
+  ],
+  "original_review": {
+    "checker_sha256": "6a294bb6c55fc82667908ba2913ea3602d0b4eca11dd7feca6e24aacdf45b9e8",
+    "checker_retained_losslessly": true,
+    "checked_unix": 1793440999.0917249,
+    "rebuilt_started_unix": 1793441391.2728474,
+    "completed_review_preceded_rebuilt": true
+  },
+  "source_sha256": {
+    "research/runtime_state/movie_payload_observer.h": "9616970d2891da7e27f3863369f6fab0d4bbc94541265dbc37b0bee135176dd1",
+    "research/runtime_state/dispatch_entry_observer.h": "309de47e704ee37f58682237532bfaebeecae51e54ad1b0a288c3337edfb5925",
+    "tools/build_movie_payload_observer.py": "ac928f0759132e3998b13c50634fd760317980650f9e0afa866ca11a2e76599b",
+    "tools/build_npc_observer.py": "35448a21dff5c31e64b765586d1da103dcc9e7a4b6429695ff0f134d92de006f",
+    "tools/runtime_inputs.py": "a1e0865b13801414bfad30f31ce00ffd13840b2a836dbc527e138d89d6d877e4",
+    "tools/replay_cold_start_headless.py": "7dedf37e0fceb035fed90f359779df7f79234dc0ab2d4ef559fb2edffa885595",
+    "research/headless/RecordCardPayloadWindows.cs": "2cb100d24110c10ea78badab7100164dd487207a514a7880a31db8f071eeb255",
+    "research/headless/MoviePayloadTrace.cs": "60f71f9df76b6d8a0107b87e9c14440ea4ec50e18349044768de59cd89049072",
+    "research/headless/RecordCardDecodeCompactWindows.cs": "d33c26ae23244a7b076f618379283f0179446733fcdf2e2f811441d7ce54f3b8",
+    "research/headless/BoundedSha256Stream.cs": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "tools/inspect_movie_payloads.py": "6a294bb6c55fc82667908ba2913ea3602d0b4eca11dd7feca6e24aacdf45b9e8",
+    "tools/inspect_reel_decoder.py": "ad0ccd67abeb7fda8218b34d8b0383134ae16d8fba3aa8ff280e55b167bd7ccd",
+    "tools/inventory_movies.py": "c0c591a30e11eca32973fc3dbf60f34d970fdf42a0a808c6ebeca2131f8ec711",
+    "tools/inspect_card_reel.py": "54a35b46aee6ea5752f0256f39a1ae75f393acb85a1ca86121b49d095c084c74",
+    "tools/inspect_opening_attract.py": "8462fa41b7e564381629d8b69c9b813fa8296d77a24a154c36b165f5e3ee6bc0",
+    "tools/inspect_movie_windows.py": "a7864cfad1133a63364be77dd1429192bf416d534fcaeeaff7a413ac2ab05f0e",
+    "tools/inspect_progression_history.py": "a3f888ea32368392f9416f7b600ccd50b248a32eb1781d800d05ed8d29d7a486",
+    "tools/compare_movie_playback.py": "6b7aa74d96822f46f890dd3f2dd5069eb74c12777ee5c08e6dd535ad877a7369",
+    "tools/compare_card_roundtrip.py": "af8c2cf4ccd6a1635f904d188d6c42c39d302ebcb1e88b2182fc509564d5d703",
+    "tests/test_movie_payload_observer.py": "1ae09fb38e88316aca4a58758228302eba5f01c9f44349e5219a55c772a6f83e",
+    "tests/fixtures/movie_payload_harness.cpp": "3ceb15aa1a0f7fa14d62ed7d8efc27302a174e5456c7306fd7459b56c7a6efe4",
+    "tests/test_movie_payloads.py": "0c5035f43411a2ab9924d5690a00446ce25b2fe4b26d2703961008422145cdbe",
+    "src/menu/mdec_movie.c": "80ad6b55ed2a1923e1c00491565b16032a4b2fdc0cf25848f0b902f2f68b3019",
+    "src/menu/mdec_movie.h": "8d6f4a803c6a6813b0ace280b7ed8409cc60a06bbd56f689ce7f256934e82b87",
+    "src/file/str_stream.c": "788cc2ed6ef4794485bb5dbae52c702d090faa279ab67d4ba471e798344a3acc",
+    "src/file/str_stream.h": "f7f3502ea3ccf9e7d999d357c827b037d9875a9d13e54895d644f40430fc2e06",
+    "src/psyq/libpress/libpress.c": "651253b0dc4c34a4292ca6f113e770213ca8b952e7498f2e25b94b92e9b42e80",
+    "src/psyq/libpress/vlc.c": "fb5ff6314e82909289db5f56e45e764ec1286ecd039c63048e5b9b2d350ad269",
+    "src/psyq/libpress/vlc2.c": "85f8c4a76f582b06e1ea866f6e2b6daa4e8daa29e6c7977b5e8db5ebd71f94f0",
+    "src/psyq/libc/exit.c": "15f4c34081bca269fb1d6f7aa64e151634d4f13b47d6e2e1842ac42fcc3c008c",
+    "research/original-functions.json": "6c5a8f8a95c51b2dd5c19a071e62d8a366e1d83609598272e44ef7f3c4aea5fc",
+    "research/headless/reel-decoder-targets.json": "de272ebe05c8d576238af9be00af9872d1b8c0b009f6e23a10f430cf2fcf937e",
+    "docs/movie-inventory-checks.json": "8b450a19e27acebe77636bd785be0c9eb82cbe990a03e042d4026fa57c12180b"
+  },
+  "capture_files": {
+    "original/card-store.json": {
+      "bytes": 919,
+      "sha256": "3069c670f80cbdc2bb4077c9f6fa046556ca5ae6a0181c40003f92410697a40c"
+    },
+    "original/decoder-arm.json": {
+      "bytes": 486,
+      "sha256": "f295695f0b94ed6fbd85025141f894ae23cecd14598625f51e87f52e0bd97ad6"
+    },
+    "original/decoder-entries.bin.gz": {
+      "bytes": 441973,
+      "sha256": "3ae3505b790126f9436fa11c318dc2da28cf31d4e625c27c9fd70053a9facdd3"
+    },
+    "original/decoder-trace-summary.json": {
+      "bytes": 783,
+      "sha256": "75fc56111e8f731986460394fd04cd882227ed45c7838e863161a58087802f2f"
+    },
+    "original/final.png": {
+      "bytes": 551,
+      "sha256": "6d27e6f6505d661bcb4b01efa3a06ba572d3025820c3d3cf5e35ac883683e4e1"
+    },
+    "original/inputs.tsv": {
+      "bytes": 368,
+      "sha256": "b03462eb7dd39904cbe5a7f98adefb3b4a4208d8dfd2a6e97fbeef461e0e320e"
+    },
+    "original/load-return.png": {
+      "bytes": 32061,
+      "sha256": "15e1a06520a5fc13b350a6afb35fd87f69059fa00c5735cf0e409e6e8249ed24"
+    },
+    "original/native.tsv.gz": {
+      "bytes": 677199,
+      "sha256": "c2679efb0704899769b89b854237c25620a2408f8d3656809ab6c524e2be3f04"
+    },
+    "original/payload-entries.bin.gz": {
+      "bytes": 1071864,
+      "sha256": "3fcc41b45cd658273c538a475d3f745d8edc500b0f32ea8ad52bb2f54163d555"
+    },
+    "original/payload-summary.json": {
+      "bytes": 1068,
+      "sha256": "6f33c0ea0f20031376ed4f136d4388363848f268eadc8f49dc05c0cba3917362"
+    },
+    "original/progress.json": {
+      "bytes": 218,
+      "sha256": "6372908593d7aa78a7a68f830a573d5dec90e7cd84a2fe53e008ff41f9f63277"
+    },
+    "original/reel-plus-600.png": {
+      "bytes": 70035,
+      "sha256": "c5bd06c7b78cd45fdc08ac45433ac80c59c54ce983c319d634af9397b6ba2a42"
+    },
+    "original/reel-start.png": {
+      "bytes": 374,
+      "sha256": "20c4defb2076779f6a5f3bda294d5a5e06a798ff524437b5418992b781360a90"
+    },
+    "original/report.json": {
+      "bytes": 1411,
+      "sha256": "441e001cf4b8861f964235c53c68b37bf2150b7d14fbfa0eb3e83670b6dc88db"
+    },
+    "original/windows.jsonl": {
+      "bytes": 109996,
+      "sha256": "039e771dea859ef056adabb33061aa5893995e4dced577938a9ee3cfa58f021a"
+    },
+    "rebuilt/card-store.json": {
+      "bytes": 919,
+      "sha256": "3069c670f80cbdc2bb4077c9f6fa046556ca5ae6a0181c40003f92410697a40c"
+    },
+    "rebuilt/decoder-arm.json": {
+      "bytes": 486,
+      "sha256": "f295695f0b94ed6fbd85025141f894ae23cecd14598625f51e87f52e0bd97ad6"
+    },
+    "rebuilt/decoder-entries.bin.gz": {
+      "bytes": 441973,
+      "sha256": "3ae3505b790126f9436fa11c318dc2da28cf31d4e625c27c9fd70053a9facdd3"
+    },
+    "rebuilt/decoder-trace-summary.json": {
+      "bytes": 783,
+      "sha256": "75fc56111e8f731986460394fd04cd882227ed45c7838e863161a58087802f2f"
+    },
+    "rebuilt/final.png": {
+      "bytes": 551,
+      "sha256": "6d27e6f6505d661bcb4b01efa3a06ba572d3025820c3d3cf5e35ac883683e4e1"
+    },
+    "rebuilt/inputs.tsv": {
+      "bytes": 368,
+      "sha256": "b03462eb7dd39904cbe5a7f98adefb3b4a4208d8dfd2a6e97fbeef461e0e320e"
+    },
+    "rebuilt/load-return.png": {
+      "bytes": 32061,
+      "sha256": "15e1a06520a5fc13b350a6afb35fd87f69059fa00c5735cf0e409e6e8249ed24"
+    },
+    "rebuilt/native.tsv.gz": {
+      "bytes": 677199,
+      "sha256": "c2679efb0704899769b89b854237c25620a2408f8d3656809ab6c524e2be3f04"
+    },
+    "rebuilt/payload-entries.bin.gz": {
+      "bytes": 1071864,
+      "sha256": "3fcc41b45cd658273c538a475d3f745d8edc500b0f32ea8ad52bb2f54163d555"
+    },
+    "rebuilt/payload-summary.json": {
+      "bytes": 1181,
+      "sha256": "f11e78c1c9336a701e9777a18a6d76c3cb77adffad00e308ac441dbc2cff69a2"
+    },
+    "rebuilt/progress.json": {
+      "bytes": 218,
+      "sha256": "e5f40e67a18595d9db41f30404ec164f4bebc35b83e4977fe7e0cbaf892a8b40"
+    },
+    "rebuilt/reel-plus-600.png": {
+      "bytes": 70035,
+      "sha256": "c5bd06c7b78cd45fdc08ac45433ac80c59c54ce983c319d634af9397b6ba2a42"
+    },
+    "rebuilt/reel-start.png": {
+      "bytes": 374,
+      "sha256": "20c4defb2076779f6a5f3bda294d5a5e06a798ff524437b5418992b781360a90"
+    },
+    "rebuilt/report.json": {
+      "bytes": 1410,
+      "sha256": "6d8067476974cafebbbfa331402321f66e63af65feb16c6d8b026b0016db95f6"
+    },
+    "rebuilt/windows.jsonl": {
+      "bytes": 109996,
+      "sha256": "039e771dea859ef056adabb33061aa5893995e4dced577938a9ee3cfa58f021a"
+    }
+  },
+  "executed_host_source_sha256": {
+    "research/headless/RecordCardPayloadWindows.cs": "2cb100d24110c10ea78badab7100164dd487207a514a7880a31db8f071eeb255",
+    "research/headless/MoviePayloadTrace.cs": "60f71f9df76b6d8a0107b87e9c14440ea4ec50e18349044768de59cd89049072",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/BoundedSha256Stream.cs": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e"
+  },
+  "executed_host_binary": {
+    "bytes": 108032,
+    "sha256": "1e1051b88c5d210b25705d62f2a518bd063d9c2b2e972725b6fec5918a6bd56f"
+  },
+  "input_manifest_sha256": "b29f17b8c39896a4a0587b29608c9a23e463055f469ac32f188a3871aa51f551",
+  "native_profile": {
+    "upstream_commit": "bdddf4a58aa1a022afb11dc73294a81a5aa7bbd5",
+    "mednafen_commit": "382ff1b8d293c9a862497706808cbb79b2cecbfb",
+    "compiler_version": "Debian clang version 18.1.8 (18+b1)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /root/lsd-nymashock-media-record-research/tools",
+    "core": {
+      "file": "shock.wbx",
+      "bytes": 3404816,
+      "sha256": "239e0e744620f54b50d8731888fe3e4b54de95bc8b1af31853bb7fb4df210f30"
+    },
+    "compressed_core": {
+      "file": "shock.wbx.zst",
+      "bytes": 828320,
+      "sha256": "40db2458b2c2b54141840b8ca3eb875f6b32c0a7b8c10009a277d3f14705869d"
+    },
+    "movie_payload_protocol": 1,
+    "event_bytes": 172,
+    "frame_event_limit": 16,
+    "frame_payload_limit_bytes": 1048576,
+    "original_adapter_sha256": "70d0193ac5081b486ae52b3930a5c4e60ddef0481c4bb9c495d65ae3918d94ea",
+    "media_adapter_sha256": "e35995cf92baabd13c4bb9216c9c2ef7405db38202d0aff0d6fb55d9e06d7c6a",
+    "entry_header_sha256": "309de47e704ee37f58682237532bfaebeecae51e54ad1b0a288c3337edfb5925",
+    "movie_header_sha256": "9616970d2891da7e27f3863369f6fab0d4bbc94541265dbc37b0bee135176dd1",
+    "producer_sha256": "ac928f0759132e3998b13c50634fd760317980650f9e0afa866ca11a2e76599b",
+    "input_files_preserved": true,
+    "original_CPU_source_modified": false,
+    "original_game_RAM_written_by_observer": false,
+    "supplied_runtime_modified": false,
+    "observer_uses_existing_DebugMode_hook": true,
+    "build_scope": "One separate adapter object linked with pinned cached native objects; not a fresh full-core rebuild."
+  },
+  "qualified_cached_native_inputs": 115,
+  "frozen_prior_runtime_records": 174,
+  "complete_linked_runtime_records": 192,
+  "all_frozen_native_and_capture_inputs_rehashed": true,
+  "all_command_word_counts_multiple_of_32": true,
+  "all_hashed_buffers_are_native_backing_MainRAM_ranges": true,
+  "effective_instruction_fetch_or_complete_instruction_execution_trace_claimed": false,
+  "complete_DMA_or_GPU_presentation_accepted": false,
+  "schema_version": 1,
+  "date": "2026-10-31",
+  "baseline_commit": "7da38f8c0535699ed3db5c6cd651b1e7a65829f1",
+  "status": "full_native_movie_payload_pair_and_controls_verified",
+  "scope": "Complete native backing-RAM encoded/VLC-return/MDEC-entry ranges during the constructed-card reel; completed DMA/presentation remains open.",
+  "current_build": {
+    "objects_expected": 306,
+    "objects_found": 306,
+    "complete_objects": true,
+    "missing_objects": [],
+    "build_current": true,
+    "c_bytes": 199912,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 100.0,
+    "sdk_text_bytes": 147880,
+    "handwritten_text_bytes": 188,
+    "binary_match": "verified",
+    "expected_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "command": [
+      "wsl.exe",
+      "-d",
+      "LSD-Decomp",
+      "--cd",
+      "/mnt/d/CodexArtifacts/LSD/private-workspaces-20261018/lsd-recovered",
+      "--",
+      "env",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "/opt/lsd-decomp-venv/bin/python",
+      "-B",
+      "tools/progress.py",
+      "--json"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 14.037274599075317,
+    "full_progress_raw_sha256": "165efbf661dd31a81bdbd8dcb56a72be863e8c4691f92656a7d5bbcbc18f2ee2",
+    "progress_source_sha256": "ef323a1826978b592d8c5ff7c88220de9664eb8ef38a542f485635fef8bf3a51",
+    "pinned_python_selects_its_own_ninja": true
+  },
+  "before_after": {
+    "date": "2026-10-31",
+    "document": "docs/FULL_MOVIE_PAYLOADS.md",
+    "evidence": "docs/full-movie-payload-checks.json",
+    "features": [
+      "F022",
+      "F032"
+    ],
+    "complete_native_buffers_compared_before": 0,
+    "complete_native_buffers_compared_after": 30374,
+    "complete_native_payload_bytes_hashed_before": 0,
+    "complete_native_payload_bytes_hashed_after_per_run": 944165108,
+    "encoded_input_buffers_per_run": 10125,
+    "completed_VLC_output_buffers_per_run": 10125,
+    "MDEC_input_buffers_per_run": 10124,
+    "full_encoded_input_bytes": 144094224,
+    "completed_VLC_output_bytes": 400039092,
+    "MDEC_input_bytes": 400031792,
+    "paired_frames": 62530,
+    "complete_state_pairs": 105,
+    "source_reel_film_identities_before": 20,
+    "source_reel_film_identities_after": 20,
+    "native_RLE_final_ID": 492,
+    "native_RLE_final_return_frame": 62348,
+    "native_RLE_final_bytes": 7300,
+    "final_MDEC_input_ID": 491,
+    "first_nineteen_source_ID_ranges_complete": true,
+    "complete_native_encoded_and_RLE_ranges_hashed": true,
+    "complete_DMA_or_individual_frame_GPU_presentation_accepted": false,
+    "actual_return_PC_stack_and_RAM_words_observed": true,
+    "effective_instruction_fetch_trace_claimed": false,
+    "constructed_history_not_naturally_earned": true,
+    "detected_actual_analysis_copy_controls": 21,
+    "native_synthetic_cases": 12,
+    "Python_journal_synthetic_tests": 9,
+    "original_behavior_modified": false,
+    "prior_inventory_values_preserved": true,
+    "new_matching_C_bytes": 0,
+    "new_gameplay_features": 0,
+    "original_feature_groups_accepted": 0,
+    "whole_NPC_encounter_acceptances": 0,
+    "new_developer_capability_categories": 0,
+    "model_API_calls": 0
+  },
+  "whole_goal_complete": false,
+  "preservation": {
+    "game_MainRAM_or_instruction_writes": 0,
+    "state_loads": 0,
+    "original_player_or_user_saves_accessed": false,
+    "runtime_or_disc_file_copies": 0,
+    "game_source_build_configuration_and_prior_evidence_preserved": true
+  },
+  "remaining_gates": [
+    "Hardware DMA completion and individual encoded-frame GPU presentation",
+    "Other movie/event and ending routes",
+    "Naturally earned and repeated/disabled/missing-cell history",
+    "Complete asset/dispatch, gameplay and NPC encounter acceptance",
+    "Original-hardware timing and other seeds"
+  ],
+  "source_git_blob_sha256": {
+    "research/runtime_state/movie_payload_observer.h": "9616970d2891da7e27f3863369f6fab0d4bbc94541265dbc37b0bee135176dd1",
+    "research/runtime_state/dispatch_entry_observer.h": "309de47e704ee37f58682237532bfaebeecae51e54ad1b0a288c3337edfb5925",
+    "tools/build_movie_payload_observer.py": "ac928f0759132e3998b13c50634fd760317980650f9e0afa866ca11a2e76599b",
+    "tools/build_npc_observer.py": "35448a21dff5c31e64b765586d1da103dcc9e7a4b6429695ff0f134d92de006f",
+    "tools/runtime_inputs.py": "a1e0865b13801414bfad30f31ce00ffd13840b2a836dbc527e138d89d6d877e4",
+    "tools/replay_cold_start_headless.py": "7dedf37e0fceb035fed90f359779df7f79234dc0ab2d4ef559fb2edffa885595",
+    "research/headless/RecordCardPayloadWindows.cs": "2cb100d24110c10ea78badab7100164dd487207a514a7880a31db8f071eeb255",
+    "research/headless/MoviePayloadTrace.cs": "60f71f9df76b6d8a0107b87e9c14440ea4ec50e18349044768de59cd89049072",
+    "research/headless/RecordCardDecodeCompactWindows.cs": "d33c26ae23244a7b076f618379283f0179446733fcdf2e2f811441d7ce54f3b8",
+    "research/headless/BoundedSha256Stream.cs": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "tools/inspect_movie_payloads.py": "6a294bb6c55fc82667908ba2913ea3602d0b4eca11dd7feca6e24aacdf45b9e8",
+    "tools/inspect_reel_decoder.py": "ad0ccd67abeb7fda8218b34d8b0383134ae16d8fba3aa8ff280e55b167bd7ccd",
+    "tools/inventory_movies.py": "c0c591a30e11eca32973fc3dbf60f34d970fdf42a0a808c6ebeca2131f8ec711",
+    "tools/inspect_card_reel.py": "54a35b46aee6ea5752f0256f39a1ae75f393acb85a1ca86121b49d095c084c74",
+    "tools/inspect_opening_attract.py": "8462fa41b7e564381629d8b69c9b813fa8296d77a24a154c36b165f5e3ee6bc0",
+    "tools/inspect_movie_windows.py": "a7864cfad1133a63364be77dd1429192bf416d534fcaeeaff7a413ac2ab05f0e",
+    "tools/inspect_progression_history.py": "a3f888ea32368392f9416f7b600ccd50b248a32eb1781d800d05ed8d29d7a486",
+    "tools/compare_movie_playback.py": "6b7aa74d96822f46f890dd3f2dd5069eb74c12777ee5c08e6dd535ad877a7369",
+    "tools/compare_card_roundtrip.py": "af8c2cf4ccd6a1635f904d188d6c42c39d302ebcb1e88b2182fc509564d5d703",
+    "tests/test_movie_payload_observer.py": "1ae09fb38e88316aca4a58758228302eba5f01c9f44349e5219a55c772a6f83e",
+    "tests/fixtures/movie_payload_harness.cpp": "3ceb15aa1a0f7fa14d62ed7d8efc27302a174e5456c7306fd7459b56c7a6efe4",
+    "tests/test_movie_payloads.py": "0c5035f43411a2ab9924d5690a00446ce25b2fe4b26d2703961008422145cdbe",
+    "src/menu/mdec_movie.c": "80ad6b55ed2a1923e1c00491565b16032a4b2fdc0cf25848f0b902f2f68b3019",
+    "src/menu/mdec_movie.h": "368f8615ca8d9095b176485cc1c1abf72df6a303584984e60d5e4995876abd4d",
+    "src/file/str_stream.c": "399f850fda255ebc394807004857318efa366d1e7b5c16b498ad50f268a1edb4",
+    "src/file/str_stream.h": "0b9610657c9237592f58db3a8583d99cdd81f16c8be430eb3a00dfc6c51ea746",
+    "src/psyq/libpress/libpress.c": "fc162f1ace6351ac83d2ee5d23e860e576eea3021c225dac5f009a85c440ec3a",
+    "src/psyq/libpress/vlc.c": "3a22335b6b7ea72d1fbde57160405e4958b3f46c1bb9ca23091b2c2663d30809",
+    "src/psyq/libpress/vlc2.c": "d096a92944c1c701b6474ae8c5944342e1775012d17f6ea735465cc62a126c88",
+    "src/psyq/libc/exit.c": "6db24f54685c4d2b998c80dfb21b625b3a6cbb92b711a58aa9e7ed189cdd03e6",
+    "research/original-functions.json": "6c5a8f8a95c51b2dd5c19a071e62d8a366e1d83609598272e44ef7f3c4aea5fc",
+    "research/headless/reel-decoder-targets.json": "de272ebe05c8d576238af9be00af9872d1b8c0b009f6e23a10f430cf2fcf937e",
+    "docs/movie-inventory-checks.json": "d04792ab65b99cc58af1717b0bddd14b66718dd5690fbb8c1fbb109cbb903d22"
+  },
+  "source_representation_notes": {
+    "src/menu/mdec_movie.h": "Executed working file has CRLF; the Git blob has LF. Both complete hashes are retained.",
+    "src/file/str_stream.c": "Executed working file has CRLF; the Git blob has LF. Both complete hashes are retained.",
+    "src/file/str_stream.h": "Executed working file has CRLF; the Git blob has LF. Both complete hashes are retained.",
+    "src/psyq/libpress/libpress.c": "Executed working file has CRLF; the Git blob has LF. Both complete hashes are retained.",
+    "src/psyq/libpress/vlc.c": "Executed working file has CRLF; the Git blob has LF. Both complete hashes are retained.",
+    "src/psyq/libpress/vlc2.c": "Executed working file has CRLF; the Git blob has LF. Both complete hashes are retained.",
+    "src/psyq/libc/exit.c": "Executed working file has CRLF; the Git blob has LF. Both complete hashes are retained.",
+    "docs/movie-inventory-checks.json": "Executed working file has CRLF; the Git blob has LF. Both complete hashes are retained."
+  }
+}

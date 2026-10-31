@@ -55,6 +55,12 @@ complete states, with complete framed RAM/GPU/RGB/PCM/native/control hashes.
 Eight of 39 routed movie payloads are observed; the other payloads and remaining
 behavior/hardware acceptance gates stay open.
 
+The [full native movie-buffer comparison](docs/FULL_MOVIE_PAYLOADS.md) extends
+that evidence to complete encoded inputs, completed VLC outputs and later MDEC
+inputs: 30,374 matching buffers and 944,165,108 hashed bytes per side. All 62,530
+frames and 105 unmasked complete states also agree. DMA completion and individual
+encoded-frame presentation remain separate gates.
+
 The [native reel decoder study](docs/NATIVE_REEL_DECODER.md) identifies all
 twenty reel films from actual stream/VLC entries. Original and rebuilt discs agree
 on 30,374 entries, 62,530 frames and 105 unmasked complete states. Nineteen films

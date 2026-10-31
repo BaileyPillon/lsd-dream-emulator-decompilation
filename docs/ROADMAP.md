@@ -1,5 +1,11 @@
 # Roadmap
 
+The [full native movie-buffer pair](FULL_MOVIE_PAYLOADS.md) now compares complete
+encoded inputs, VLC-return RLE ranges and later MDEC input ranges. All 30,374
+buffers and 944,165,108 hashed bytes per side agree. Continue hardware transfer/
+frame-presentation evidence, other movie and ending routes, natural progression
+and complete gameplay/NPC acceptance. Earlier profiles below retain their scope.
+
 The [native reel decoder pair](NATIVE_REEL_DECODER.md) now matches 30,374 entries
 and attributes all twenty reel films, including the original final-film cutoff.
 The next movie gates are full native encoded/RLE payload identity, individual

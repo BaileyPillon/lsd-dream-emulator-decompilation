@@ -1,5 +1,10 @@
 # Isolated PS1 replay host
 
+`RecordCardPayloadWindows.cs` and `MoviePayloadTrace.cs` add a bounded full-buffer
+sidecar to the prior host. The [full-payload guide](../../docs/FULL_MOVIE_PAYLOADS.md)
+explains the separate native observer, actual VLC returns, backing-RAM hashes,
+complete generated-journal comparison and remaining DMA/presentation gates.
+
 `RecordCardDecodeCompactWindows.cs` extends the prepared-card host with lossless,
 bounded native stream/VLC/MDEC entry records, using an existing qualified observer.
 The [decoder guide](../../docs/NATIVE_REEL_DECODER.md) distinguishes source-prefix
