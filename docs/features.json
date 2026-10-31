@@ -25314,5 +25314,40 @@
     "whole_NPC_encounter_acceptances": 0,
     "new_developer_capability_categories": 0,
     "model_API_calls": 0
+  },
+  "natural_year_ending_replay_audit": {
+    "date": "2026-10-31",
+    "document": "docs/NATURAL_YEAR_ENDING.md",
+    "evidence": "docs/natural-year-ending-checks.json",
+    "features": [
+      "F003",
+      "F032"
+    ],
+    "strict_recorded_comparison_passed": true,
+    "completed_days": 365,
+    "emulated_frames": 7184806,
+    "year_boundary_frame": 7172805,
+    "post_year_neutral_frames": 12000,
+    "RAM_GPU_RGB_checkpoint_pairs": 12345,
+    "complete_state_pairs": 371,
+    "PCM_windows": 11976,
+    "PCM_stereo_sample_frames": 5296186767,
+    "controller_changes": 6399,
+    "decoded_PNG_pairs": 7,
+    "ending_lifecycle_observations": 4,
+    "all_compared_observations_equal": true,
+    "frozen_input_records_reverified": 174,
+    "all_closed_journal_payload_hashes_equal": true,
+    "independent_complete_history_decode_verified": false,
+    "complete_native_ending_decode_verified": false,
+    "continuous_video_captured": false,
+    "other_seeds_and_branches_verified": false,
+    "original_hardware_timing_verified": false,
+    "original_game_behavior_modified": false,
+    "new_matching_C_bytes": 0,
+    "new_gameplay_features": 0,
+    "original_feature_groups_accepted": 0,
+    "whole_NPC_encounter_acceptances": 0,
+    "model_API_calls": 0
   }
 }

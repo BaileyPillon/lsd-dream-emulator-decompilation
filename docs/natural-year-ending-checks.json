@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "status": "completed_natural_year_equal_for_recorded_scope",
+  "checked_at_unix": 1793422951.8482342,
+  "source_checkpoint": "9565755ee76363c1b0f81efe407837e879f4f41c",
+  "source_sha256": {
+    "src/dream/dream_sys.c": "130453762f783d2e8c2f4af237a0a62322fec91480e7570e5ebbd21d9ca006bf",
+    "src/game/game_flow.c": "b8412d1d3207da21ae29a5fc1d3293eedbf8c50f6f780b5b191ea330df1ba305",
+    "src/menu/mdec_movie.c": "80ad6b55ed2a1923e1c00491565b16032a4b2fdc0cf25848f0b902f2f68b3019",
+    "src/menu/mdec_movie.h": "8d6f4a803c6a6813b0ace280b7ed8409cc60a06bbd56f689ce7f256934e82b87",
+    "src/menu/movie_screen.c": "8b18f976e7867226380e54f81daad133247eded4b4af54a526a88b4304d792de",
+    "src/menu/movie_screen.h": "0caedce56b25ebe087e3cbbc5ff78b27bb8b3c5caecaffb79b873ba024f67eff",
+    "tools/inspect_progression_history.py": "a3f888ea32368392f9416f7b600ccd50b248a32eb1781d800d05ed8d29d7a486"
+  },
+  "target": {
+    "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+    "canonical_executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+    "original_and_rebuilt_disc_sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61"
+  },
+  "provenance": {
+    "frozen_input_records_verified": 174,
+    "native_source_records_verified": 4,
+    "replay_manifest_sha256": "30df9afa2b657af57fcdc2ba07ba5d0aa38b2c42342096c8adf111fd2ebb50b4",
+    "host_binary_sha256": "66f342c08a442825068baed4b22c77b0c0dc0e1bd8df1bf6e22379dc64cf7c7e",
+    "original_native_exit_code": 0,
+    "rebuilt_native_exit_code": 0,
+    "cold_start": true,
+    "restored_state": false,
+    "game_RAM_injected": false,
+    "player_UI_or_saves_accessed": false,
+    "acknowledged_host_waits": 0,
+    "native_host_source_sha256": {
+      "YearProgressionEndingCooperative.cs": "475154b5c6dc38916ca542b6f2f443fcb7f46a6556020020a36e3b75a9bfcb5a",
+      "ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+      "BoundedSha256Stream.cs": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e",
+      "CooperativeFrameWait.cs": "c239ef58d3e84c3372b4e2f91ea560e49a89c4a627e29aee0732855c9feaf551"
+    }
+  },
+  "comparison": {
+    "schema_version": 1,
+    "status": "equal_for_recorded_scope",
+    "passed": true,
+    "requested_year_gate": true,
+    "year_gate_observed": true,
+    "original": {
+      "frames": 7184806,
+      "completed_days": 365,
+      "checkpoints": 12345,
+      "complete_state_observations": 371,
+      "PCM_windows": 11976,
+      "PCM_stereo_sample_frames": 5296186767,
+      "controller_changes": 6399,
+      "year_boundary_frame": 7172805,
+      "ending_pending_objects": 1,
+      "ending_terminal_objects": 1,
+      "year_route_observed": true,
+      "ending_pre_pending_raw_flag_observations": 1,
+      "retained_stream_byte_count_verified": true,
+      "complete_ending_decode_verified": false,
+      "whole_feature_groups_accepted": 0,
+      "original_hardware_timing_verified": false
+    },
+    "rebuilt": {
+      "frames": 7184806,
+      "completed_days": 365,
+      "checkpoints": 12345,
+      "complete_state_observations": 371,
+      "PCM_windows": 11976,
+      "PCM_stereo_sample_frames": 5296186767,
+      "controller_changes": 6399,
+      "year_boundary_frame": 7172805,
+      "ending_pending_objects": 1,
+      "ending_terminal_objects": 1,
+      "year_route_observed": true,
+      "ending_pre_pending_raw_flag_observations": 1,
+      "retained_stream_byte_count_verified": true,
+      "complete_ending_decode_verified": false,
+      "whole_feature_groups_accepted": 0,
+      "original_hardware_timing_verified": false
+    },
+    "checkpoint_comparisons": {
+      "state": {
+        "compared": 12345,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "MainRAM_sha256": {
+        "compared": 12345,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "GPURAM_sha256": {
+        "compared": 12345,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "RGB_sha256": {
+        "compared": 12345,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "PCM_sample_frames": {
+        "compared": 12345,
+        "different": 0,
+        "first_different_frames": []
+      },
+      "serialized_state_sha256": {
+        "compared": 371,
+        "different": 0,
+        "first_different_frames": []
+      }
+    },
+    "decoded_PNGs_equal": true,
+    "differences": {},
+    "whole_feature_groups_accepted": 0,
+    "original_hardware_timing_verified": false,
+    "complete_emulator_or_game_parity_accepted": false
+  },
+  "sealed_journals": {
+    "original": {
+      "bytes": 1034836,
+      "sha256": "83ff1462a90e38e2e4eb5848ef324bb225a12da615baaa476bd3513c698f2330",
+      "members": {
+        "checkpoints.jsonl": {
+          "bytes": 6506362,
+          "sha256": "05d6cb449369cf3499b9f85545e68df413ef7b82185ad3fb4b57f55ca77617e4"
+        },
+        "days.jsonl": {
+          "bytes": 85806,
+          "sha256": "2237a392cccbc63c359d12a1395c3aa0517018e33618aa65e0161c39ab764b67"
+        },
+        "audio.tsv": {
+          "bytes": 1062195,
+          "sha256": "46eae17415602eda7802dcf7b713660ef4ae334516c17169122a407badf7d507"
+        },
+        "ending.jsonl": {
+          "bytes": 1364,
+          "sha256": "d1eaff641775a7648ef5773601f7f98680052638f8aadcda2f9875dd7600fe3f"
+        }
+      }
+    },
+    "rebuilt": {
+      "bytes": 1032496,
+      "sha256": "68801321f87aab446c5976b6803ae0af1bec0e9f56df739f802d347aced09bab",
+      "members": {
+        "checkpoints.jsonl": {
+          "bytes": 6506362,
+          "sha256": "05d6cb449369cf3499b9f85545e68df413ef7b82185ad3fb4b57f55ca77617e4"
+        },
+        "days.jsonl": {
+          "bytes": 85806,
+          "sha256": "2237a392cccbc63c359d12a1395c3aa0517018e33618aa65e0161c39ab764b67"
+        },
+        "audio.tsv": {
+          "bytes": 1062195,
+          "sha256": "46eae17415602eda7802dcf7b713660ef4ae334516c17169122a407badf7d507"
+        },
+        "ending.jsonl": {
+          "bytes": 1364,
+          "sha256": "d1eaff641775a7648ef5773601f7f98680052638f8aadcda2f9875dd7600fe3f"
+        }
+      }
+    }
+  },
+  "final_day_observations": [
+    {
+      "frame": 7128641,
+      "completed_days": 363,
+      "internal_year": 0,
+      "internal_day": 363,
+      "displayed_day": 364,
+      "stored_day": 362
+    },
+    {
+      "frame": 7150730,
+      "completed_days": 364,
+      "internal_year": 0,
+      "internal_day": 364,
+      "displayed_day": 365,
+      "stored_day": 363
+    },
+    {
+      "frame": 7172805,
+      "completed_days": 365,
+      "internal_year": 1,
+      "internal_day": 0,
+      "displayed_day": 1,
+      "stored_day": 364
+    }
+  ],
+  "ending_observations": [
+    {
+      "frame": 7172820,
+      "movies": [
+        {
+          "path": "ETC\\ENDING.STR",
+          "encoded_frame_threshold": 474,
+          "play_flags": 1,
+          "completion_flag": 177408,
+          "decoder_result": 0
+        }
+      ]
+    },
+    {
+      "frame": 7172940,
+      "movies": [
+        {
+          "path": "ETC\\ENDING.STR",
+          "encoded_frame_threshold": 474,
+          "play_flags": 1,
+          "completion_flag": 0,
+          "decoder_result": 0
+        }
+      ]
+    },
+    {
+      "frame": 7174800,
+      "movies": [
+        {
+          "path": "ETC\\ENDING.STR",
+          "encoded_frame_threshold": 474,
+          "play_flags": 1,
+          "completion_flag": 1,
+          "decoder_result": 1
+        }
+      ]
+    },
+    {
+      "frame": 7174830,
+      "movies": []
+    }
+  ],
+  "compared_images": {
+    "final.png": {
+      "width": 350,
+      "height": 240,
+      "RGB_sha256": "0458f931a2c6f8088333921a3e040489c662862c1b48c0834cb17e6053482eb6"
+    },
+    "ending-0.png": {
+      "width": 350,
+      "height": 240,
+      "RGB_sha256": "f83cfeaa50098007f1fac54c4a204efc12fad98f50d1ad3e283b40794bd09d12"
+    },
+    "ending-11999.png": {
+      "width": 350,
+      "height": 240,
+      "RGB_sha256": "0458f931a2c6f8088333921a3e040489c662862c1b48c0834cb17e6053482eb6"
+    },
+    "ending-120.png": {
+      "width": 350,
+      "height": 240,
+      "RGB_sha256": "4a625927e9bd6a6f322d0e217a4569d6a2c54a03d164082724af5b795804931c"
+    },
+    "ending-1800.png": {
+      "width": 350,
+      "height": 240,
+      "RGB_sha256": "9c4c17d9dbda8c237a27b287e1e4651522ab5f6a1eeb6041ad6fdbd26741876a"
+    },
+    "ending-3600.png": {
+      "width": 350,
+      "height": 240,
+      "RGB_sha256": "2265a669af8201ff51a10ce8598f8fcfd294091cfc1b40a19cb1728d3029fe86"
+    },
+    "ending-600.png": {
+      "width": 350,
+      "height": 240,
+      "RGB_sha256": "51b92b8b614bec078d0719488521a6ac002414100a53d32952105c53ee04a110"
+    }
+  },
+  "new_recovered_C_bytes": 0,
+  "new_gameplay_features": 0,
+  "accepted_whole_feature_groups": 0,
+  "accepted_whole_NPC_encounters": 0,
+  "modern_model_API_calls": 0,
+  "limits": [
+    "One cold-start controller route and its exact-input replay; not every seed or branch.",
+    "RAM/GPU/RGB sampled at checkpoints; complete state sampled only at 371 declared observations.",
+    "All returned PCM covered by contiguous hashed windows; no original-hardware audio claim.",
+    "Seven decoded PNG pairs, not continuous native video or proof that every STR frame displayed.",
+    "Movie terminal value is opaque; complete native ending decode and all-movie playback remain open.",
+    "Whole-feature, whole-NPC, original hardware timing and complete game parity remain unaccepted."
+  ],
+  "source_git_blob_sha256": {
+    "src/dream/dream_sys.c": "130453762f783d2e8c2f4af237a0a62322fec91480e7570e5ebbd21d9ca006bf",
+    "src/game/game_flow.c": "b8412d1d3207da21ae29a5fc1d3293eedbf8c50f6f780b5b191ea330df1ba305",
+    "src/menu/mdec_movie.c": "80ad6b55ed2a1923e1c00491565b16032a4b2fdc0cf25848f0b902f2f68b3019",
+    "src/menu/mdec_movie.h": "368f8615ca8d9095b176485cc1c1abf72df6a303584984e60d5e4995876abd4d",
+    "src/menu/movie_screen.c": "8b18f976e7867226380e54f81daad133247eded4b4af54a526a88b4304d792de",
+    "src/menu/movie_screen.h": "03dc37d3e664529f75a3ea9aec3b3f0ab5ee31afceb70edf2b7ba48d5c3635ca",
+    "tools/inspect_progression_history.py": "a3f888ea32368392f9416f7b600ccd50b248a32eb1781d800d05ed8d29d7a486"
+  },
+  "source_representation_notes": {
+    "src/menu/mdec_movie.h": "Working file CRLF; Git blob LF; complete contents differ only in line endings.",
+    "src/menu/movie_screen.h": "Working file CRLF; Git blob LF; complete contents differ only in line endings."
+  }
+}

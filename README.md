@@ -616,6 +616,7 @@ For bugs and research findings, use the repository's issue templates.
 - [Streaming state hashes and progression resource measurements](docs/STATE_HASH_STREAMING.md)
 - [Cooperative frame waits and the natural-year verification host](docs/COOPERATIVE_FRAME_WAITS.md)
 - [Ending-field lifecycle validation and the retained 365-day recording](docs/YEAR_ENDING_FIELD_LIFECYCLE.md)
+- [Passing original/rebuilt 365-day and ending-window comparison](docs/NATURAL_YEAR_ENDING.md)
 - [Play the matching game](docs/PLAYING.md)
 - [Model enumeration and callback interfaces](docs/MODEL_ENUMERATION.md)
 - [Feature inventory and before/after measurements](docs/FEATURE_INVENTORY.md)

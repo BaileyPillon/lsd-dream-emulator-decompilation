@@ -1,10 +1,13 @@
 # LSD feature inventory
 
-The [ending-field lifecycle repair](YEAR_ENDING_FIELD_LIFECYCLE.md) validates
-the preserved original recording of 365 natural days and a 12,000-frame
-ending-object window. It retains raw pre-pending values and strict comparison
-of them. The rebuilt replay, full movie decode, whole-feature and NPC encounter
-acceptances remain separate; this analysis repair adds zero C bytes or features.
+The [natural-year comparison](NATURAL_YEAR_ENDING.md) now passes for the original
+and rebuilt discs: 365 completed days, 7,184,806 frames and a 12,000-frame ending
+window. All 12,345 RAM/GPU/RGB checkpoint pairs, 371 complete-state pairs,
+11,976 returned-PCM windows and seven decoded PNG pairs agree. This adds scoped
+evidence for F003/F032. Full dream-history review, complete native movie decode,
+whole-feature and NPC encounter acceptances remain open; no C bytes or gameplay
+features are added. The earlier [completion-field repair](YEAR_ENDING_FIELD_LIFECYCLE.md)
+and failed pilot remain preserved.
 
 ## Matching game C, October 30, 2026
 
@@ -262,7 +265,7 @@ The same audit bounded 418 of 418 LBD files, 167,200 grid cells and 270 addition
 | --- | --- | --- | --- | --- |
 | F001 | Startup logos and randomized opening | complete / complete | [src/dream/dream_session_path.c](../src/dream/dream_session_path.c#L13) | Cold boot each opening selection; compare frame order, skip behavior, timing and audio. |
 | F002 | Title menu, day display and mode selection | partial / complete | [src/game/game_flow.c](../src/game/game_flow.c#L139) | Exercise every menu item, confirm/back and disabled state from new and progressed saves. |
-| F003 | 365-day progression and year ending | complete / complete | [src/dream/dream_sys.c](../src/dream/dream_sys.c#L1003) | Replay days 364, 365 and new-year day 1; compare counters, history and ending trigger. |
+| F003 | 365-day progression and year ending | complete / complete | [src/dream/dream_sys.c](../src/dream/dream_sys.c#L1003) | Review complete dream-history records and native ending playback; extend beyond the passing [year-route replay](NATURAL_YEAR_ENDING.md) to other seeds and branches. |
 | F004 | New-game state and reset | complete / complete | [src/dream/dream_sys.c](../src/dream/dream_sys.c#L1015) | Create new games and trigger reset endings; compare the entire save block. |
 | F005 | Dream-session and map lifecycle | complete / complete | [src/dream/dream_session.c](../src/dream/dream_session.c#L101) | Run repeated dreams and stage changes; compare result codes and resource lifetimes. |
 | F006 | Walking, running, strafing and looking | complete / complete | [src/dream/dream_sys.c](../src/dream/dream_sys.c#L685) | Replay held/tapped inputs; compare positions, camera angles, step lengths and action edges frame by frame. |
