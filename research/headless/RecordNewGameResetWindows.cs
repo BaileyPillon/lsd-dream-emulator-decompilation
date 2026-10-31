@@ -21,7 +21,7 @@ using BizHawk.Emulation.Cores.Waterbox;
 using BizHawk.Emulation.DiscSystem;
 
 namespace Lsd.Research.Headless {
-internal static class RecordNewGameResetWindows {
+internal static partial class RecordNewGameResetWindows {
     static readonly JavaScriptSerializer Json=new JavaScriptSerializer();
     static string DllRoot;
     static bool MainSeen,LoadSeen,LoadReturned,ResetSeen,PostMenuSeen,PostDreamSeen;

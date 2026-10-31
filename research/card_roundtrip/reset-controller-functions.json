@@ -1,0 +1,98 @@
+[
+  {
+    "name": "func_80025D10",
+    "pc": 2147638544,
+    "bytes": 260,
+    "sha256": "493678c81760ffdf9e82c487910dd28b2d269e92dc49d92f630dd85777c77161"
+  },
+  {
+    "name": "func_80053358",
+    "pc": 2147824472,
+    "bytes": 152,
+    "sha256": "c8285ee274dab38f536219115667b8fa7d89245ad610853c39159ab81e7c818e"
+  },
+  {
+    "name": "func_80053458",
+    "pc": 2147824728,
+    "bytes": 104,
+    "sha256": "86ee180e73f8b66e520b4d9a314f08e76114617238eded8f0e08619395a524ce"
+  },
+  {
+    "name": "func_800541D4",
+    "pc": 2147828180,
+    "bytes": 44,
+    "sha256": "a583f637931bab819b7b89dd92a5fa1792ccb2f75082004542d753d5d3ff2f01"
+  },
+  {
+    "name": "func_80054200",
+    "pc": 2147828224,
+    "bytes": 8,
+    "sha256": "a7e1ed01713a06aeeb349ba67a547a50c3379e96d67f6eeef3401e2b2c950aa9"
+  },
+  {
+    "name": "func_80054208",
+    "pc": 2147828232,
+    "bytes": 100,
+    "sha256": "0add07c4a4d2d8e97513ff683661930af9456a215b2f5d89d9acec0476a7256a"
+  },
+  {
+    "name": "func_800542D0",
+    "pc": 2147828432,
+    "bytes": 300,
+    "sha256": "5af8d3fc68c75c263bc2a22e17aabcb4fd9f892908a6ad1d3340ec0af788f705"
+  },
+  {
+    "name": "func_800543FC",
+    "pc": 2147828732,
+    "bytes": 216,
+    "sha256": "793939228a82e2a49c027154d79926d3d953d2262898b11c989cefde14e7b025"
+  },
+  {
+    "name": "dream_session_on_link_code",
+    "pc": 2147786420,
+    "bytes": 428,
+    "sha256": "4fe12298945c9c85751e8b54fe77bac76371989f8c2305fd90b76d63ac22f26c"
+  },
+  {
+    "name": "dream_sys_end_day",
+    "pc": 2147853340,
+    "bytes": 204,
+    "sha256": "271ae7e5202da9233e53e1149f9d2085307324945dedea4e7f4748bca9e0aa75"
+  },
+  {
+    "name": "dream_sys_init_new_game",
+    "pc": 2147852888,
+    "bytes": 120,
+    "sha256": "d42c03d722709c82096c503fd890a5cee3a084d6f40214bdb33d21c84a6db1c2"
+  },
+  {
+    "name": "init_nav_challenges_array",
+    "pc": 2147859024,
+    "bytes": 44,
+    "sha256": "b88104065d9636e4b2884cd0b113fcec14953c8c655f53a0dd1f3211ee80c86a"
+  },
+  {
+    "name": "dream_sys_clear_new_game",
+    "pc": 2147853116,
+    "bytes": 8,
+    "sha256": "d0a1e1c7719dde734e11a93487bd1367d7158866e69f6c033d50e88a23f9ea32"
+  },
+  {
+    "name": "memory_card_read_data_impl",
+    "pc": 2147806656,
+    "bytes": 224,
+    "sha256": "b920f654fcb0b2f31b12da7c5ce625167ec048123cb0899f3c7b2127f7ed7d34"
+  },
+  {
+    "name": "memory_card_write_file",
+    "pc": 2147806880,
+    "bytes": 204,
+    "sha256": "4f275a5b9579eabc43e95de70bc41214ae0734de5ed7ea5c273b819ac791a313"
+  },
+  {
+    "name": "func_8004E230",
+    "pc": 2147803696,
+    "bytes": 160,
+    "sha256": "17616f73c809d323057cf5683a4138fe41f7df50eaf9422217583f79d3654027"
+  }
+]

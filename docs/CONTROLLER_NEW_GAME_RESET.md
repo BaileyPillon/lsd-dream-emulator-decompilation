@@ -1,5 +1,9 @@
 # Controller reset and resumed gameplay
 
+The subsequent [card roundtrip](RESET_CARD_ROUNDTRIP.md) verifies native Save
+after the ordinary reset and fresh-process Load of that exact card. This page
+retains the earlier ordinary/flashback controller profile and its limits.
+
 The original pause/Select/Triangle reset route now matches between the original
 and rebuilt games in both an ordinary dream and a flashback. Each run cold-boots,
 loads a separate QA memory card through the original menu, exercises the guards,
