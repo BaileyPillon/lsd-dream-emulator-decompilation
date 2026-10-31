@@ -103,12 +103,14 @@ executable is identical to the executable already stored in that immutable
 disc, so rebuilding or duplicating the disc is unnecessary. No assets, player
 saves, emulator UI, Bevy source or legacy checkout were changed.
 
-The [cooperative year recorder](COOPERATIVE_FRAME_WAITS.md) is conducting a
-separate original/rebuilt natural-year comparison. Its result is pending and
-is not supplied by the C percentage. Whole NPC encounters, all movie playback,
-rare input/card/error branches, content closure and original-hardware timing
-retain their existing gates. Original NPC behavior, separate AI-assisted
-development tools and optional mods remain distinct.
+The [cooperative year recorder](COOPERATIVE_FRAME_WAITS.md) subsequently completed
+the separate [original/rebuilt natural-year comparison](NATURAL_YEAR_ENDING.md).
+All retained observations agree across 365 completed days and the declared
+12,000-frame ending window. That scoped result has its own runtime evidence.
+Whole NPC encounters, complete native movie playback, rare input/card/error
+branches, full history/content review and original-hardware timing retain their
+existing gates. Original NPC behavior, separate AI-assisted development tools
+and optional mods remain distinct.
 
 The frozen objective's remaining completion requirements still apply. The
 overall reverse-engineering and parity goal is unfinished.
