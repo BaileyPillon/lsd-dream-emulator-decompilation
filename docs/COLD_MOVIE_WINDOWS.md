@@ -158,3 +158,7 @@ I/O failures, every skip timing, exact encoded-frame presentation and original
 hardware timing remain open. The [natural-year comparison](NATURAL_YEAR_ENDING.md)
 has its own ending observations. Original NPC behavior, optional mods and
 AI-assisted analysis remain separate; this work invokes no model API.
+
+The later [all-opening attract pair](OPENING_ATTRACT.md) extends normal opening
+coverage to all seven choices and eight of 39 routed movies. This page's three
+earlier route counts, inputs, sources and comparison records remain unchanged.

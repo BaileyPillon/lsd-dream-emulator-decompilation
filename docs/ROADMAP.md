@@ -20,10 +20,12 @@ all movie/skip routes, other seeds and whole-feature acceptance remain open.
 The [cold movie/skip profile](COLD_MOVIE_WINDOWS.md) now compares normal startup,
 logo skip and opening skip across 14,995 paired frames and 27 complete states.
 It retains complete framed RAM/GPU/RGB/PCM hashes and raw native observations,
-including the original closed-stream-before-pointer-clear transition. One of
-seven openings and two of 39 routed movie payloads are covered. Extend the
-other movie choices, timing/disabled/error branches and ending presentation;
-these three routes accept no whole feature.
+including the original closed-stream-before-pointer-clear transition. That
+profile covers one of seven openings and two of 39 routed movie payloads. The
+later [attract-loop pair](OPENING_ATTRACT.md) extends normal opening coverage to
+all seven and eight of 39 payloads. Continue the other 31 payloads,
+timing/disabled/error branches and ending presentation; these bounded routes
+accept no whole feature.
 
 The [recovered-C analysis workflow](RECOVERED_C_CONTEXT.md) now supports
 original-range context and function diagnostics after assembly fallbacks reach
@@ -537,3 +539,12 @@ checkpoint. The locomotive extension now brings it to 39 / 107. Complete engine
 frames, natural encounters, constructed attachment graphs, effect/render/audio lifetimes and
 controller reachability remain required; this bounded profile does not close
 F027. Current C recovery is measured separately above.
+
+## All-opening attract extension
+
+The [complete neutral attract pair](OPENING_ATTRACT.md) now covers all seven
+normal opening choices, eight of 39 routed movie payloads, 162,803 paired
+frames and 272 unmasked complete states. The earlier three movie/skip routes
+remain separate preserved profiles. Continue the other 31 payloads, skip/disabled/
+error timings, ending presentation and whole-feature acceptance; this extension
+does not close those gates.
