@@ -1123,3 +1123,21 @@ zero accepted whole features and zero accepted whole encounters are unchanged.
 Constructed projection inputs do not establish full drawing, natural scenes,
 controller reachability or PS1 hardware timing. The additive machine evidence
 preserves earlier inventory values and adds no gameplay or modding feature.
+
+## Original draw-entry supplement, 2026-10-30
+
+The [constructed draw-entry profile](TMD_RENDERER.md) enters the original
+3,816-byte drawer in 884 calls and compares complete GPU, OT, scratchpad and
+fixed-global buffers against scalar predictions. Original vertex loading,
+projection, colors, UVs, transparency, fog and packet submission execute
+together. The calls execute 410,977 original instructions and 3,444 actual
+native GTE commands. Four original-code output faults are detected; 32 literal
+partial-transfer programs pass and 32 forbidden transfers are rejected.
+The DPCT extension passes 3,333 native GTE qualification cases across 12
+opcodes. The original bounding-box endpoint quirk is retained.
+
+These supplied single-primitive fixtures do not establish multiple-primitive
+runs, disc-model rendering, recursive clipping, replacement matrices, GPU
+pixels, natural scenes, PS1 timing or whole encounters. All prior inventory
+values are preserved: this adds zero game C bytes, gameplay features,
+whole-feature acceptances, whole NPC encounters or model API calls.

@@ -23,7 +23,7 @@ def require(condition, message):
 
 def command_word(code, shift=1, matrix=0, vector=0, translation=3, limit=0):
     require(all(type(v) is int for v in (code, shift, matrix, vector, translation, limit))
-            and code in (1, 6, 0x10, 0x12, 0x13, 0x16, 0x1B, 0x2D, 0x2E, 0x30, 0x3F)
+            and code in (1, 6, 0x10, 0x12, 0x13, 0x16, 0x1B, 0x2A, 0x2D, 0x2E, 0x30, 0x3F)
             and shift in (0, 1) and matrix in range(4) and vector in range(4)
             and translation in range(4) and limit in (0, 1), 'Unreviewed GTE command fields.')
     return 0x4A000000 | shift << 19 | matrix << 17 | vector << 15 | translation << 13 | limit << 10 | code
@@ -180,10 +180,11 @@ class GteState:
         value = (self.dr[6] & 0xFF000000) | sum(c << (8*i) for i, c in enumerate(channels))
         self.dr[20:23] = self.dr[21:23]+[value]
 
-    def _depth(self, shift, limit, multiply):
+    def _depth(self, shift, limit, multiply, color_word=None):
         mac, ir = [], list(map(signed, self.dr[9:12]))
+        source = self.dr[6] if color_word is None else color_word
         for i in range(3):
-            color = ((self.dr[6] >> (8*i)) & 255) << 4
+            color = ((source >> (8*i)) & 255) << 4
             base = color*ir[i] if multiply else color << 12
             difference = signed(self._accumulate((signed(self.cr[21+i]) << 12)-base, i) >> shift)
             delta = self._ir(difference, i, 0)
@@ -197,7 +198,7 @@ class GteState:
         require(type(command) is int and 0 <= command <= 0xFFFFFFFF
                 and command & 0xFE000000 == 0x4A000000, 'Invalid COP2 command word.')
         code, shift, limit = command & 63, 12 if command & 1 << 19 else 0, command >> 10 & 1
-        require(code in (1, 6, 0x10, 0x12, 0x13, 0x16, 0x1B, 0x2D, 0x2E, 0x30, 0x3F), 'Unreviewed GTE opcode.')
+        require(code in (1, 6, 0x10, 0x12, 0x13, 0x16, 0x1B, 0x2A, 0x2D, 0x2E, 0x30, 0x3F), 'Unreviewed GTE opcode.')
         self.flags, self.commands = 0, self.commands+1
         if code == 0x12:
             matrix, vector, cv = command >> 17 & 3, command >> 15 & 3, command >> 13 & 3
@@ -222,6 +223,11 @@ class GteState:
                 self.dr[7] = self._limit(signed(self.dr[24]) >> 12, 0, 65535, 18)
         elif code == 0x10:
             self._depth(shift, limit, False)
+        elif code == 0x2A:
+            # Each step consumes the current FIFO head and appends its result.
+            # RGB's CODE byte is retained by _rgb; RGB itself is not changed.
+            for _ in range(3):
+                self._depth(shift, limit, False, self.dr[20])
         else:
             for index in range(3 if code in (0x16, 0x3F) else 1):
                 self._multiply(self._matrix(1), self._vector(index), [0]*3, shift, limit)
@@ -237,7 +243,7 @@ class GteState:
                     self._rgb()
         self.cr[31] = self.flags | (0x80000000 if self.flags & 0x7F87E000 else 0)
         return {1:14, 6:7, 0x10:7, 0x12:7, 0x13:18, 0x16:43, 0x1B:16,
-                0x2D:4, 0x2E:4, 0x30:22, 0x3F:38}[code]
+                0x2A:16, 0x2D:4, 0x2E:4, 0x30:22, 0x3F:38}[code]
 
     def request(self, reset, writes, command=None):
         require(type(reset) is bool and type(writes) in (list, tuple) and len(writes) <= 1024,

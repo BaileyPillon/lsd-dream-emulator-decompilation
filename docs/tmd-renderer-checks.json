@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "status": "constructed_original_full_draw_matches",
+  "generated_at": "2026-10-31T01:49:40.145884+00:00",
+  "elapsed_seconds": 10.855737372,
+  "original_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "function": {
+    "address": "0x80018464",
+    "bytes": 3816,
+    "sha256": "c6ff654e26c849115619693a6b1e84a8c68edfda4a0b5a5c8cd18f66aab18337"
+  },
+  "backend": {
+    "package_version": "2.1.4",
+    "library_api": [
+      2,
+      1,
+      33621247
+    ],
+    "library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+    "binding_sources_sha256": "1c69249859bd4f1d789df6dcb4d8b757c0a1e46b37424b05352c2366f7058507",
+    "binding_source_count": 21
+  },
+  "totals": {
+    "calls": 884,
+    "instructions": 410977,
+    "native_commands": 3444
+  },
+  "outcomes": {
+    "submitted": 624,
+    "depth_cue_rejected": 208,
+    "backface_or_degenerate": 26,
+    "hidden": 13,
+    "empty": 13
+  },
+  "formats": {
+    "0x20/0x00": 36,
+    "0x22/0x00": 32,
+    "0x20/0x04": 36,
+    "0x22/0x04": 32,
+    "0x21/0x01": 36,
+    "0x23/0x01": 32,
+    "0x24/0x00": 36,
+    "0x26/0x00": 32,
+    "0x25/0x01": 36,
+    "0x27/0x01": 32,
+    "0x28/0x00": 36,
+    "0x2a/0x00": 32,
+    "0x29/0x01": 36,
+    "0x2b/0x01": 32,
+    "0x2c/0x00": 36,
+    "0x2e/0x00": 32,
+    "0x2d/0x01": 36,
+    "0x2f/0x01": 32,
+    "0x31/0x01": 36,
+    "0x33/0x01": 32,
+    "0x35/0x01": 36,
+    "0x37/0x01": 32,
+    "0x39/0x01": 36,
+    "0x3b/0x01": 32,
+    "0x3d/0x01": 36,
+    "0x3f/0x01": 32
+  },
+  "compiled_bridge_sha256": "8b20af37816e1a7c2e6f6d64bdaabe841c7f2c3d80a7b4f179734270b0db0641",
+  "source_sha256": {
+    "tools/verify_tmd_renderer.py": "ae07137b63736e05543d634deb25df20edfd8d635f31b0d96905c48e70e756c6",
+    "tools/tmd_renderer_model.py": "9b7243fddc3fdd8c8c5e09003c6ce554d06c428f6bcc1438ad017b398bf880e9",
+    "tools/verify_tmd_projection.py": "cfdf06c4bc2e84af93f9797b9856dfaabefd73caa29a6ffc5e8d765a9e1928f5",
+    "tools/gte_state_model.py": "f8f2ca998c341a17d92b5bb86daee5d23cbcf319401a77822d8448803ce5882b",
+    "tools/gte_state_bridge.py": "73251e82ce544d09b33a9680b5523218f8a7454e694916e6c5140f95fefd83b2",
+    "tools/nymashock_gte_state_bridge.cs": "74a8317361c92cc3a62245c6ec3746a64773a1990facf600999962010c10b36d",
+    "tools/tmd_packets.py": "260fcef209c1378d0a15ae24ca1a1ba52aed4b436d465d7855513c0830dfcfc1",
+    "tools/verify_gte_state.py": "3c1de2c5f5c11d177e1e416e5f12ac8ab90cf4a27b9c3f89340834a292401421",
+    "tools/verify_model_packets.py": "012af2b5135f01ab182cff4ad44dd6ef5ebac8fbe6dbd8ba00e8b8d18d6a18b6",
+    "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3"
+  },
+  "partial_transfer_checks": {
+    "literal_partial_transfer_programs_passed": 32,
+    "forbidden_partial_transfers_rejected_without_memory_change": 32
+  },
+  "original_code_controls": [
+    {
+      "name": "packet-length",
+      "fault_hits": 1,
+      "detected": true,
+      "clean_original_return": true,
+      "saved_ABI_and_immutable_VM_preserved": true,
+      "differences": {
+        "0x1f800000": [
+          {
+            "offset": "0x14",
+            "expected": "0xa7a72004",
+            "observed": "0xa7a72005"
+          }
+        ],
+        "0x160000": [
+          {
+            "offset": "0x0",
+            "expected": "0x4ffffff",
+            "observed": "0x5ffffff"
+          }
+        ]
+      },
+      "native_commands": 4
+    },
+    {
+      "name": "raw-texture-flag",
+      "fault_hits": 1,
+      "detected": true,
+      "clean_original_return": true,
+      "saved_ABI_and_immutable_VM_preserved": true,
+      "differences": {
+        "0x1f800000": [
+          {
+            "offset": "0x14",
+            "expected": "0xa7a72507",
+            "observed": "0xa7a72407"
+          }
+        ],
+        "0x160000": [
+          {
+            "offset": "0x4",
+            "expected": "0x25332211",
+            "observed": "0x24332211"
+          }
+        ]
+      },
+      "native_commands": 4
+    },
+    {
+      "name": "bbox-final-vertex-endpoint",
+      "fault_hits": 1,
+      "detected": true,
+      "clean_original_return": true,
+      "saved_ABI_and_immutable_VM_preserved": true,
+      "differences": {
+        "0x1f800000": [
+          {
+            "offset": "0x74",
+            "expected": "0xfff80008",
+            "observed": "0x80008"
+          }
+        ]
+      },
+      "native_commands": 4
+    },
+    {
+      "name": "ordering-table-link-mask",
+      "fault_hits": 1,
+      "detected": true,
+      "clean_original_return": true,
+      "saved_ABI_and_immutable_VM_preserved": true,
+      "differences": {
+        "0x160000": [
+          {
+            "offset": "0x0",
+            "expected": "0x4ffffff",
+            "observed": "0x4fffff0"
+          }
+        ]
+      },
+      "native_commands": 4
+    }
+  ],
+  "journal": {
+    "file": "cases.jsonl",
+    "bytes": 919991,
+    "sha256": "e6006ad2d6fc05d2db15202be400df2ee49bd05c7efd6e4fe8ae2a4643d87546"
+  },
+  "complete_GPU_OT_context_and_global_buffers_compared": true,
+  "original_vertex_loading_projection_colors_UVs_and_OT_linking_executed": true,
+  "saved_ABI_and_all_VM_bytes_outside_declared_mutable_spans_checked": true,
+  "callee_stack_temporary_bytes_not_independently_predicted": true,
+  "scratchpad_physical_and_KSEG0_aliases_used": true,
+  "no_function_results_stubbed": true,
+  "original_executable_and_assets_unmodified": true,
+  "natural_scene_coverage_verified": false,
+  "recursive_clipping_and_replacement_matrix_branch_verified": false,
+  "GPU_rasterization_and_PS1_hardware_timing_verified": false,
+  "new_matching_C_bytes": 0,
+  "whole_feature_groups_accepted": 0,
+  "fixture_limits": {
+    "single_primitive_or_empty": true,
+    "multi_primitive_runs_verified": false,
+    "disc_model_corpus_verified": false,
+    "world_camera_and_light_setup_supplied": true
+  }
+}

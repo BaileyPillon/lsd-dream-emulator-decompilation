@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "status": "native_gte_state_matches",
+  "generated_at": "2026-10-31T01:40:48.923855+00:00",
+  "elapsed_seconds": 6.515169298999999,
+  "case_counts": {
+    "control_transfer": 448,
+    "data_transfer": 448,
+    "stateful_transfer": 512,
+    "MVMVA_field_combinations": 256,
+    "renderer_command_flags": 1280,
+    "projection_reciprocal_bins": 258,
+    "composed_projection_area_depth": 3,
+    "packet_DPCT_flags": 128
+  },
+  "total_cases": 3333,
+  "command_counts": {
+    "0x12": 256,
+    "0x1": 386,
+    "0x6": 129,
+    "0x10": 128,
+    "0x13": 128,
+    "0x16": 128,
+    "0x1b": 128,
+    "0x2d": 129,
+    "0x2e": 128,
+    "0x30": 129,
+    "0x3f": 128,
+    "0x2a": 128
+  },
+  "native_data_writes": 55345,
+  "native_commands": 1925,
+  "DPCT_packet_extension_qualified": true,
+  "all_64_architectural_words_and_cycles_compared_each_request": true,
+  "native_WriteDR_and_commands_executed": true,
+  "native_reciprocal_table_initialized": true,
+  "CR_cache_transfer_and_register_reads_are_reviewed_host_code": true,
+  "data_and_control_register_numbers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "controls": [
+    {
+      "name": "wrong-light-cache",
+      "detected": true,
+      "actual_native_data_writes": 2,
+      "actual_native_commands": 1,
+      "differences": {
+        "dr": [
+          {
+            "register": 9,
+            "expected": 1,
+            "observed": 0
+          },
+          {
+            "register": 10,
+            "expected": 2,
+            "observed": 0
+          },
+          {
+            "register": 11,
+            "expected": 3,
+            "observed": 0
+          },
+          {
+            "register": 25,
+            "expected": 1,
+            "observed": 0
+          },
+          {
+            "register": 26,
+            "expected": 2,
+            "observed": 0
+          },
+          {
+            "register": 27,
+            "expected": 3,
+            "observed": 0
+          }
+        ]
+      },
+      "native_original_game_instructions_modified": false
+    },
+    {
+      "name": "wrong-translation-cache",
+      "detected": true,
+      "actual_native_data_writes": 2,
+      "actual_native_commands": 1,
+      "differences": {
+        "dr": [
+          {
+            "register": 9,
+            "expected": 124,
+            "observed": 1
+          },
+          {
+            "register": 25,
+            "expected": 124,
+            "observed": 1
+          }
+        ]
+      },
+      "native_original_game_instructions_modified": false
+    },
+    {
+      "name": "wrong-screen-fifo",
+      "detected": true,
+      "actual_native_data_writes": 4,
+      "actual_native_commands": 0,
+      "differences": {
+        "dr": [
+          {
+            "register": 12,
+            "expected": 20,
+            "observed": 10
+          },
+          {
+            "register": 13,
+            "expected": 30,
+            "observed": 20
+          }
+        ]
+      },
+      "native_original_game_instructions_modified": false
+    },
+    {
+      "name": "skip-reciprocal-init",
+      "detected": true,
+      "actual_native_data_writes": 2,
+      "actual_native_commands": 1,
+      "differences": {
+        "dr": [
+          {
+            "register": 14,
+            "expected": 16,
+            "observed": 12
+          },
+          {
+            "register": 15,
+            "expected": 16,
+            "observed": 12
+          }
+        ]
+      },
+      "native_original_game_instructions_modified": false
+    }
+  ],
+  "compiled_bridge_sha256": "8b20af37816e1a7c2e6f6d64bdaabe841c7f2c3d80a7b4f179734270b0db0641",
+  "source_sha256": {
+    "tools/verify_gte_state.py": "3c1de2c5f5c11d177e1e416e5f12ac8ab90cf4a27b9c3f89340834a292401421",
+    "tools/gte_state_model.py": "f8f2ca998c341a17d92b5bb86daee5d23cbcf319401a77822d8448803ce5882b",
+    "tools/gte_state_bridge.py": "73251e82ce544d09b33a9680b5523218f8a7454e694916e6c5140f95fefd83b2",
+    "tools/nymashock_gte_state_bridge.cs": "74a8317361c92cc3a62245c6ec3746a64773a1990facf600999962010c10b36d",
+    "tools/build_nymashock_gte_state_bridge.ps1": "f5e3f54e14fb11698feb95119b65451890ec203610920663e2d74add7cbf6715"
+  },
+  "journal": {
+    "file": "transactions.jsonl.xz",
+    "bytes": 863424,
+    "sha256": "a3f326c7d527e353ed43988dcd7cf40589598390bc101779afaee68672651c95",
+    "decoded_bytes": 3932136,
+    "decoded_sha256": "ae6b9f89e693ced1b364e3d5d1fae49d7008087dc4404bc7d6d9f6d8e2e7eca5"
+  },
+  "game_or_BIOS_loaded": false,
+  "original_renderer_function_verified": false,
+  "full_scene_rasterization_or_hardware_timing_verified": false,
+  "whole_feature_groups_accepted": 0,
+  "new_matching_C_bytes": 0,
+  "scope": "Stateful GTE register/command boundary for the pinned emulator core; original draw-function composition is separate."
+}

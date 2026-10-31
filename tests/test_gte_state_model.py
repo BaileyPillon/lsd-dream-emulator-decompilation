@@ -89,6 +89,23 @@ class GteStateTests(unittest.TestCase):
         self.assertTrue(result['cr'][31] & (1 << 16))
         self.assertTrue(result['cr'][31] & (1 << 18))
 
+    def test_dpct_consumes_fifo_colors_and_retains_original_rgb_and_code(self):
+        state = GteState()
+        rgb = 0xA5EECCAA
+        result = state.request(True, [(1, 6, rgb), (1, 20, 0x12030201),
+            (1, 21, 0x34060504), (1, 22, 0x56090807)], command_word(0x2A))
+        self.assertEqual(result['dr'][20:23], [0xA5030201, 0xA5060504, 0xA5090807])
+        self.assertEqual(result['dr'][6], rgb)
+        self.assertEqual(result['command_cycles_minus_one'], 16)
+        self.assertEqual(result['cr'][31], 0)
+
+    def test_dpct_full_depth_blends_all_three_fifo_colors_to_the_far_color(self):
+        result = GteState().request(True, [(1, 6, 0xA5010203), (1, 8, 4096),
+            (1, 20, 0x030201), (1, 21, 0x060504), (1, 22, 0x090807),
+            (0, 21, 160), (0, 22, 320), (0, 23, 480)], command_word(0x2A))
+        self.assertEqual(result['dr'][20:23], [0xA51E140A]*3)
+        self.assertEqual(result['dr'][6], 0xA5010203)
+
     def test_invalid_types_and_unreviewed_commands_fail_closed(self):
         for operation in ((True, 0, 0), (0, 32, 0), (1, 0, True), (1, 0, -1)):
             with self.assertRaises(ValueError):
