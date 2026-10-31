@@ -55,6 +55,12 @@ complete states, with complete framed RAM/GPU/RGB/PCM/native/control hashes.
 Eight of 39 routed movie payloads are observed; the other payloads and remaining
 behavior/hardware acceptance gates stay open.
 
+The [history-triggered reel comparison](docs/CARD_REEL_PLAYBACK.md) adds a
+constructed external-card route through native Load, an ordinary dream, the
+four-cell chart event and the reel. All 62,530 paired frames, 105 complete states
+and four decoded images agree. This binds a ninth direct movie start extent;
+all twenty concatenated payloads and naturally earned history remain unverified.
+
 [Recovered-C analysis context](docs/RECOVERED_C_CONTEXT.md) exports verified
 original instructions and current source without an old private assembly
 catalog. Its public function metadata includes SDK routines; candidate changes

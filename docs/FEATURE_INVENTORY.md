@@ -16,6 +16,13 @@ returned PCM, native fields and controls agree in framed windows, together with
 controller-skipped lifecycles. This extends F001/F032/F035 evidence without
 changing C, whole-feature/NPC acceptance or developer-capability category counts.
 
+The [prepared-card reel profile](CARD_REEL_PLAYBACK.md) extends F002/F003/F017/
+F022/F032/F035/F037 evidence with 62,530 paired frames and 105 complete states.
+It loads a constructed four-cell history through the original card UI, runs a
+dream and compares the chart/reel route. Direct native movie start-file bindings
+increase from eight to nine; consumption of all twenty concatenated payloads and
+natural acquisition remain open. Whole-feature/NPC acceptance stays zero.
+
 ## Matching game C, October 30, 2026
 
 The [current matching-C milestone](MATCHING_GAME_C.md) reaches
