@@ -10,6 +10,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
+import random
 import struct
 import sys
 import time
@@ -22,7 +23,7 @@ from tools.gte_state_model import require,unsigned,signed
 from tools.inventory_model_packets import file_sha
 from tools.psx_image import ORIGINAL_SHA1,executable_offset
 from tools.tmd_renderer_model import (BUFFER,OBJECT,OT,ORDER,GPU,CONTEXT,TRI,QUAD,OUT,
-    GLOBALS,FORMATS,GPU_BYTES,case_fixture,expected_draw)
+    GLOBALS,FORMATS,GPU_BYTES,case_fixture,expected_draw,packet_specs)
 from tools.tmd_recursive_model import FUNCTIONS,RETURNS
 from tools.verify_model_packets import backend_identity
 
@@ -54,6 +55,14 @@ RECURSIVE_FAULTS=(
         case=dict(mode=0x21,flags=1,vertices=((-256,-256,96),(256,-256,96),
             (-256,256,96),(256,256,96)))),
 )
+RUN_FAULTS=(
+    dict(name='primitive-output-cursor',address=0x80018A70,original=0x00408021,replacement=0x02008021,
+        case=dict(packets=[dict(mode=0x21,flags=1)]*2)),
+    dict(name='primitive-loop-condition',address=0x80018A78,original=0x1680FFE6,replacement=0x1280FFE6,
+        case=dict(packets=[dict(mode=0x21,flags=1)]*2)),
+    dict(name='textured-run-RGB-reinitialization',address=0x80018B68,original=0x1680FFD0,replacement=0x1680FFCD,
+        case=dict(packets=[dict(mode=0x24,flags=0)]*2)),
+)
 
 
 class DrawMachine(projection.Machine):
@@ -73,6 +82,12 @@ class DrawMachine(projection.Machine):
         self.recursive_cull_at={}
         self.recursive_body_at={body&MASK:kind for kind,(_,body,_) in FUNCTIONS.items()}
         self.recursive_leaf_at={leaf&MASK:kind for kind,(_,_,leaf) in FUNCTIONS.items()}
+        self.recursive_root_at={entry&MASK:kind for kind,(entry,_,_) in FUNCTIONS.items()}
+        self.mode_run_at=0x18760
+        self.primitive_at={0x193C0,0x194A4}
+        for address,word in ((0x80018760,0x96620002),(0x800193C0,0x27BDFFE0),(0x800194A4,0x27BDFFD8)):
+            require(struct.unpack_from('<I',executable,executable_offset(executable,address,4))[0]==word,
+                'Original mode/primitive entry metadata differs.')
         for kind,addresses in FUNCTIONS.items():
             for address in addresses:
                 row=by_address[address]
@@ -111,9 +126,15 @@ class DrawMachine(projection.Machine):
         self.lower,self.upper=START&MASK,END&MASK
         self.access_counts=Counter()
         self.recursive_entries,self.recursive_packets,self.recursive_culls=Counter(),Counter(),Counter()
+        self.recursive_roots=Counter()
+        self.mode_runs=self.primitive_calls=0
 
     def instruction(self,cpu,address,size,unused):
         physical=address&MASK
+        if physical==self.mode_run_at:self.mode_runs+=1
+        if physical in self.primitive_at:self.primitive_calls+=1
+        kind=self.recursive_root_at.get(physical)
+        if kind:self.recursive_roots[kind]+=1
         kind=self.recursive_body_at.get(physical)
         if kind:self.recursive_entries[kind]+=1
         kind=self.recursive_leaf_at.get(physical)
@@ -166,6 +187,8 @@ class DrawMachine(projection.Machine):
         immutable=self.immutable_hash()
         self.command_words=[]
         self.recursive_entries,self.recursive_packets,self.recursive_culls=Counter(),Counter(),Counter()
+        self.recursive_roots=Counter()
+        self.mode_runs=self.primitive_calls=0
         steps_before=self.steps
         self.label=json.dumps(case,sort_keys=True)
         try:cpu.emu_start(START,projection.STOP|alias,count=1000000)
@@ -194,14 +217,18 @@ class DrawMachine(projection.Machine):
         counters_equal=observed['native_commands']-before_gte['native_commands']==state.commands and (
             observed['native_data_writes']-before_gte['native_data_writes']==state.data_writes)
         recursion=getattr(state,'recursive_stats',{})
-        recursive_equal=(not self.recursive_entries and not self.recursive_packets and not self.recursive_culls) if not recursion else (
-            dict(self.recursive_entries)=={recursion['kind']:recursion['nodes']} and
-            dict(self.recursive_packets)==({recursion['kind']:recursion['packets']} if recursion['packets'] else {}) and
-            dict(self.recursive_culls)=={(recursion['kind'],reason):count for reason,count in recursion['culled'].items()})
-        result=dict(outcome=outcome,equal=not differences and state_equal and command_equal and counters_equal and recursive_equal,
+        draw_stats=state.draw_stats
+        recursive_equal=(dict(self.recursive_entries)==draw_stats['recursive_entries'] and
+            dict(self.recursive_packets)==draw_stats['recursive_packets'] and
+            dict(self.recursive_roots)==draw_stats['recursive_roots'] and
+            dict(self.recursive_culls)=={(kind,reason):count for kind,reasons in draw_stats['recursive_culls'].items()
+                for reason,count in reasons.items()})
+        run_equal=self.mode_runs==draw_stats['mode_runs'] and self.primitive_calls==draw_stats['primitive_calls']
+        result=dict(outcome=outcome,equal=not differences and state_equal and command_equal and counters_equal and recursive_equal and run_equal,
             differences=differences,GTE_state_equal=state_equal,commands_equal=command_equal,
             native_counters_equal=counters_equal,complete_buffer_sha256=hashes,
             recursive_calls_and_packets_equal=recursive_equal,recursive_stats=recursion,
+            mode_runs_and_primitive_calls_equal=run_equal,draw_stats=draw_stats,
             instructions=self.steps-steps_before,native_commands=observed['native_commands']-before_gte['native_commands'],
             command_words=[hex(v) for v in self.command_words],saved_ABI_and_immutable_VM_preserved=True)
         if not allow_mismatch:require(result['equal'],'Original full draw differs: '+json.dumps(result))
@@ -242,6 +269,74 @@ def cases(include_recursive=False):
         yield dict(mode=mode,flags=flags,attributes=0x80000000)
         yield dict(mode=mode,flags=flags,primitives=0)
     if include_recursive:yield from recursive_cases()
+
+
+def primitive_run_cases():
+    """Linked runs with shared state, valid indices and bounded output arenas."""
+    rng=random.Random(0x4C534452)
+    normals=((256,768,4096),(-768,256,2048))
+    def packet(mode,flags,index=0,indices=None):
+        result=dict(mode=mode,flags=flags,normal_index=index%2,
+            colors=[rng.getrandbits(32) for _ in range(4)],uv=[rng.getrandbits(32) for _ in range(4)],
+            ignored_count=rng.randrange(65536))
+        if indices is not None:result['indices']=indices
+        return result
+    for mode,flags in FORMATS:
+        for count in (2,3,7):
+            for alias in (0,0x80000000):
+                for attrs in (0,0x48):
+                    yield dict(packets=[packet(mode,flags,i) for i in range(count)],normals=normals,
+                        alias=alias,attributes=attrs,ordering_head=0x00FFFFFF)
+        count=4 if mode&8 else 3
+        valid=tuple(range(count))
+        back=(0,2,1,3) if count==4 else (0,2,1)
+        for order in ((back,valid,valid),(valid,back,valid),(valid,valid,back),
+                ((0,)*count,valid,(0,)*count)):
+            yield dict(packets=[packet(mode,flags,i,indices) for i,indices in enumerate(order)],normals=normals)
+        yield dict(packets=[packet(mode,flags,i) for i in range(3)],normals=normals,fog=4096)
+        yield dict(packets=[packet(mode,flags,i) for i in range(3)],normals=normals,attributes=0x80000000)
+        # Exact mode-byte transitions split a linked run, including semi-transparency.
+        yield dict(packets=[packet(mode|semi,flags,i) for i,semi in enumerate((0,2,2,0))],normals=normals)
+    # Separate the two 0x20 flag variants with another mode: the SDK linker
+    # groups by mode byte, not flags. Unsupported same-mode flag mixtures fail validation.
+    mixed=(FORMATS[0],FORMATS[2],FORMATS[1],*FORMATS[3:])
+    for formats in (mixed,tuple(reversed(mixed))):
+        for alias in (0,0x80000000):
+            for attrs,light,fog in ((0,0,0),(0x40,0,2047),(0x20,1,4095),(0x48,0,0)):
+                yield dict(packets=[packet(mode,flags,i) for i,(mode,flags) in enumerate(formats)],
+                    normals=normals,alias=alias,attributes=attrs,light_mode=light,fog=fog)
+    # One run spans submitted, backface/degenerate and recursive-cull paths.
+    vertices=((-128,-128,4096),(128,-128,4096),(-128,128,4096),(128,128,4096),
+        (-1024,-1024,1024),(1024,-1024,1024),(-1024,1024,1024),(1024,1024,1024),
+        (-256,-256,64),(256,-256,64),(-256,256,64),(256,256,64))
+    for mode,flags in FORMATS:
+        count=4 if mode&8 else 3
+        groups=(tuple(range(count)),tuple(range(4,4+count)),tuple(range(8,8+count)),
+            (0,)*count,tuple(range(count)))
+        for alias in (0,0x80000000):
+            for depth in (1,2):
+                yield dict(packets=[packet(mode,flags,i,indices) for i,indices in enumerate(groups)],
+                    vertices=vertices,normals=normals,attributes=depth<<9,alias=alias,ordering_head=0x00FFFFFF)
+    large=vertices[4:8]
+    for formats in (mixed,tuple(reversed(mixed))):
+        for depth in (1,2):
+            for alias in (0,0x80000000):
+                yield dict(packets=[packet(mode,flags,i) for i,(mode,flags) in enumerate(formats)],
+                    vertices=large,normals=normals,attributes=depth<<9,alias=alias,ordering_head=0x00FFFFFF)
+    for _ in range(48):
+        specs=[]
+        for index in range(rng.randrange(2,25)):
+            mode,flags=rng.choice(FORMATS)
+            mode|=rng.choice((0,2))
+            if specs and mode==specs[-1]['mode']:flags=specs[-1]['flags']
+            count=4 if mode&8 else 3
+            indices=tuple(range(count)) if rng.randrange(4) else (0,2,1,3)[:count]
+            specs.append(packet(mode,flags,index,indices))
+        yield dict(packets=specs,normals=normals,alias=rng.choice((0,0x80000000)),
+            attributes=rng.choice((0,0x40,0x48)),fog=rng.choice((0,2047,4095)),ordering_head=0x00FFFFFF)
+    for alias in (0,0x80000000):
+        yield dict(packets=[packet(0x21,1,i) for i in range(64)],normals=normals,alias=alias)
+    yield dict(packets=[])
 
 
 def partial_transfer_checks():
@@ -300,7 +395,8 @@ def partial_transfer_checks():
     return dict(counts)
 
 
-def verify(executable_path,bridge_path,runtime,destination,include_recursive=False):
+def verify(executable_path,bridge_path,runtime,destination,include_recursive=False,include_runs=False):
+    require(not (include_recursive and include_runs),'Choose one bounded profile per output directory.')
     require(not destination.exists() and destination.parent.is_dir(),'Choose a fresh existing-parent destination.')
     executable=executable_path.read_bytes()
     require(hashlib.sha1(executable).hexdigest()==ORIGINAL_SHA1,'Canonical original executable differs.')
@@ -315,11 +411,13 @@ def verify(executable_path,bridge_path,runtime,destination,include_recursive=Fal
     bridge=NativeStateBridge(bridge_path,runtime,destination/'native-errors.log')
     totals,outcomes,formats=Counter(),Counter(),Counter()
     recursive_families,recursive_depths,recursive_culls=Counter(),Counter(),Counter()
+    member_outcomes,run_lengths=Counter(),Counter()
     journal=destination/'cases.jsonl'
     try:
         machine=DrawMachine(executable,bridge)
         with journal.open('x',encoding='utf-8',newline='\n') as stream:
-            for ordinal,case in enumerate(cases(include_recursive)):
+            selected_cases=primitive_run_cases() if include_runs else cases(include_recursive)
+            for ordinal,case in enumerate(selected_cases):
                 require(time.monotonic()-started<900,'Draw profile exceeded 15 minutes.')
                 result=machine.draw(case,allow_mismatch=True)
                 if not result['equal']:
@@ -328,14 +426,20 @@ def verify(executable_path,bridge_path,runtime,destination,include_recursive=Fal
                 stream.write(json.dumps(dict(ordinal=ordinal,case=case,observed=result),separators=(',',':'))+'\n')
                 require(stream.tell()<2*1024**2,'Draw journal exceeds 2 MiB.')
                 totals.update(calls=1,instructions=result['instructions'],native_commands=result['native_commands'])
-                recursion=result['recursive_stats']
-                if recursion:
-                    totals.update(recursive_nodes=recursion['nodes'],subdivided_packets=recursion['packets'])
-                    recursive_families[recursion['kind']]+=1
-                    recursive_depths[str(recursion['limit'])]+=1
-                    recursive_culls.update(recursion['culled'])
+                stats=result['draw_stats']
+                totals.update(mode_runs=stats['mode_runs'],primitive_calls=stats['primitive_calls'],
+                    recursive_nodes=sum(stats['recursive_entries'].values()),
+                    subdivided_packets=sum(stats['recursive_packets'].values()))
+                recursive_families.update(stats['recursive_roots'])
+                recursive_depths.update(stats['recursive_limits'])
+                for reasons in stats['recursive_culls'].values():recursive_culls.update(reasons)
+                member_outcomes.update(stats['outcomes'])
                 outcomes[result['outcome']]+=1
-                formats[f"0x{case['mode']:02x}/0x{case['flags']:02x}"]+=1
+                if include_runs:
+                    specs=packet_specs(case)
+                    run_lengths[str(len(specs))]+=1
+                    for spec in specs:formats[f"0x{spec['mode']:02x}/0x{spec['flags']:02x}"]+=1
+                else:formats[f"0x{case['mode']:02x}/0x{case['flags']:02x}"]+=1
         controls=[]
         for fault in FAULTS:
             control=DrawMachine(executable,bridge,fault)
@@ -361,15 +465,30 @@ def verify(executable_path,bridge_path,runtime,destination,include_recursive=Fal
                     clean_original_return=True,saved_ABI_and_immutable_VM_preserved=True,
                     differences=result['differences'],GTE_state_equal=result['GTE_state_equal'],
                     original_command_sequence_equal=result['commands_equal'],native_commands=result['native_commands']))
+        run_controls=[]
+        if include_runs:
+            for fault in RUN_FAULTS:
+                control=DrawMachine(executable,bridge,fault)
+                result=control.draw(fault['case'],allow_mismatch=True)
+                require(not result['equal'] and control.fault_hits>0,
+                    'Original primitive-run control was not detected: '+fault['name'])
+                run_controls.append(dict(name=fault['name'],fault_hits=control.fault_hits,detected=True,
+                    clean_original_return=True,saved_ABI_and_immutable_VM_preserved=True,
+                    differences=result['differences'],GTE_state_equal=result['GTE_state_equal'],
+                    original_command_sequence_equal=result['commands_equal'],
+                    native_counters_equal=result['native_counters_equal'],
+                    mode_runs_and_primitive_calls_equal=result['mode_runs_and_primitive_calls_equal']))
     finally:bridge.close()
     require(before=={name:file_sha(ROOT/name) for name in sources},'Executed renderer sources changed.')
     report=dict(schema_version=1,status='constructed_original_full_draw_matches',
         generated_at=datetime.now(timezone.utc).isoformat(),elapsed_seconds=time.monotonic()-started,
         original_executable_sha1=ORIGINAL_SHA1,function=dict(address=hex(START),bytes=PARENT_BYTES,sha256=PARENT_SHA),
         backend=backend_identity(),totals=dict(totals),outcomes=dict(outcomes),formats=dict(formats),
+        primitive_outcomes=dict(member_outcomes),supplied_primitive_counts=dict(run_lengths),
         recursive_families=dict(recursive_families),recursive_depths=dict(recursive_depths),
         observed_recursive_culling_returns=dict(recursive_culls),recursive_function_ranges=machine.recursive_ranges,
         recursive_original_code_controls=recursive_controls,
+        primitive_run_original_code_controls=run_controls,
         compiled_bridge_sha256=file_sha(bridge_path),source_sha256=before,
         partial_transfer_checks=partial_checks,original_code_controls=controls,
         journal=dict(file=journal.name,bytes=journal.stat().st_size,sha256=file_sha(journal)),
@@ -382,6 +501,8 @@ def verify(executable_path,bridge_path,runtime,destination,include_recursive=Fal
         recursive_clipping_and_replacement_matrix_branch_verified=False,
         GPU_rasterization_and_PS1_hardware_timing_verified=False,
         bounded_recursive_profile_requested=include_recursive,
+        bounded_primitive_run_profile_requested=include_runs,
+        original_mode_primitive_and_recursive_entry_counts_compared=True,
         new_matching_C_bytes=0,whole_feature_groups_accepted=0)
     with (destination/'comparison.json').open('x') as stream:json.dump(report,stream,indent=2)
     require(sum(p.stat().st_size for p in destination.iterdir())<2*1024**2,'Profile exceeds retained byte limit.')
@@ -394,10 +515,12 @@ def main(argv=None):
     parser.add_argument('--bridge',type=Path,required=True)
     parser.add_argument('--runtime',required=True)
     parser.add_argument('--output',type=Path,required=True)
-    parser.add_argument('--recursive',action='store_true',help='Add the bounded recursive subdivision fixtures.')
+    profiles=parser.add_mutually_exclusive_group()
+    profiles.add_argument('--recursive',action='store_true',help='Add the bounded recursive subdivision fixtures.')
+    profiles.add_argument('--primitive-runs',action='store_true',help='Use the separate bounded primitive/mode-run profile.')
     args=parser.parse_args(argv)
     try:
-        result=verify(args.executable,args.bridge,args.runtime,args.output,args.recursive)
+        result=verify(args.executable,args.bridge,args.runtime,args.output,args.recursive,args.primitive_runs)
         print(json.dumps({k:result[k] for k in ('status','totals','outcomes')}))
         return 0
     except (OSError,ValueError,KeyError) as error:

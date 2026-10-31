@@ -39,6 +39,12 @@ preserve the complete model and target, with ABI and full-memory guards.
 This adds bounded content evidence for F029/F040, with zero recovered C bytes,
 new gameplay features, whole-feature acceptances or NPC encounter acceptances.
 
+The [polygon/mode-run profile](TMD_PRIMITIVE_RUNS.md) adds 374 original draw
+calls with 2,122 polygons in 1,159 shared-state mode runs. All complete outputs,
+GTE transfers and observed original entry counts agree; the earlier 1,147
+single-primitive/recursive calls still pass. This extends renderer evidence
+without accepting whole features or changing the playable game.
+
 The earlier [sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md)
 brought matching C to **197,172 / 199,912 bytes (98.63%)**, with **two** game
 assembly fallbacks and **38 / 40** groups whose listed core functions are in C.
@@ -1157,3 +1163,23 @@ and natural-scene rendering, replacement matrices, GPU pixels, PS1 timing and
 the complete recursive input domain open. Prior inventory values are preserved:
 zero additional game C bytes, gameplay features, whole-feature acceptances,
 whole NPC encounters or model API calls are counted.
+
+## Polygon and mode-run supplement, 2026-10-30
+
+The [shared-state renderer profile](TMD_PRIMITIVE_RUNS.md) adds 374 constructed
+calls, 2,122 original polygon setup calls and 1,159 mode entries. It executes
+836,221 original MIPS instructions and 9,888 native GTE commands. Repeated and
+mixed modes, transparency transitions, selected normals, distinct colors/UVs,
+culled members, 64-member triangle runs and all eight recursive families at
+limits 1–2 retain their complete predicted buffers and GTE state. The earlier
+1,147-call regression also passes, for 1,521 calls across the two profiles.
+Three additional original-code faults are detected; one adds a native transfer
+while retaining equal final buffers, architectural words and command sequence.
+
+The additive `renderer_primitive_runs_audit` preserves every earlier inventory
+value. Matching C remains 199,912 / 199,912 bytes before and after this work;
+40 provisional groups, 107 NPC callback C bodies and zero accepted whole
+features/encounters are unchanged. Full renderer input coverage, original-model
+and natural-scene drawing, replacement matrices, GPU pixels and hardware timing
+remain open. No new gameplay feature, developer-capability category, optional
+mod or model API call is counted.
