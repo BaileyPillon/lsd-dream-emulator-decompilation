@@ -246,7 +246,16 @@ def audit_tables(executable, sources, headers, symbols, native_extents=None):
                        "c_initializer_verified": expressions is not None})
     callbacks = [slot for table in tables for slot in table['slots']
                  if slot['declared_function_pointer'] and slot['value'] != '0x00000000']
+    bound_types = {type_name for refs in declarations.values() for type_name, _ in refs}
+    unbound = [{"type": type_name, "header": header, "bytes": len(fields) * 4,
+                "slots": [{"offset": index * 4, "field": field['name'],
+                           "declared_function_pointer": field['function_pointer']}
+                          for index, field in enumerate(fields)],
+                "concrete_table_binding_claimed": False}
+               for type_name, (header, fields) in sorted(types.items())
+               if type_name not in bound_types]
     return {"tables": tables, "unsupported_types": unsupported, "unresolved_declarations": unresolved,
+            "unbound_type_views": unbound,
             "header_layout_issues": layout_issues,
             "assembly_extent_notes": extent_notes,
             "declared_tables_audited": len(tables),

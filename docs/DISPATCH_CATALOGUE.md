@@ -55,25 +55,30 @@ records its scope.
 
 ## Remaining requirements
 
-The partial `game_flow_screen_vtable_t` view contains undeclared inherited
-members and remains unsupported by the declaration-only inventory. Other callback tables,
-code outside these target bodies, actual indirect destinations, receiver
-ownership, signatures and natural call histories remain part of the wider
-dispatch review. This catalogue cannot be passed to the NPC-only recorder;
-its 107-target validation and observation limits remain unchanged.
+The catalogue retains its original unsupported-view metadata as historical
+evidence. The later [common-prefix audit](COMMON_SCREEN_PREFIX.md) qualifies the
+current `game_flow_screen_vtable_t` word layout separately and rechecks its 21
+complete original target bodies using this catalogue's ELF/GNU-qualified extents.
+The supported view has no concrete table binding. Four screen-specific address
+slots still have no common callable signature. Other callback tables, code
+outside these target bodies, actual indirect destinations, receiver ownership,
+signatures and natural histories remain part of the wider dispatch review.
+This catalogue cannot be passed to the NPC-only recorder; its 107-target
+validation and observation limits remain unchanged.
 
 The later [screen lifecycle profile](SCREEN_LIFECYCLE.md) supplies bounded
 original factory/Run/Destroy observations for main-menu and dream-chart
 receivers. It keeps constructor and cleanup contracts explicit. The common
-view is not a separate complete table, and its inherited undeclared members
-and the broader dynamic-call closure remain unresolved.
+view is not a separate complete table. Its later word-layout qualification
+does not close screen-specific signatures or the broader dynamic call graph.
 
 The contemporaneous source study also compared 14 new incoming one-word
 argument views plus two controls for `func_8001DDF4`. All 16 complete linked
 functions qualified, but none improved its 26-byte difference. That result
 is retained as unsuccessful research; no source is promoted.
 
-Matching C remains **197,172 / 199,912 bytes (98.63%)**, with two assembly
+At this catalogue's original checkpoint, matching C was
+**197,172 / 199,912 bytes (98.63%)**, with two assembly
 functions and two inherited debug-frame explanations open. Bounded NPC
 profiles remain 40 / 107, compared natural callback types remain five, and
 whole-feature/whole-NPC acceptance remains zero. The export executes no game

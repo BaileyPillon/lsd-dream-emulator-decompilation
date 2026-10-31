@@ -25552,5 +25552,40 @@
     "whole_NPC_encounter_acceptances": 0,
     "new_developer_capability_categories": 0,
     "model_API_calls": 0
+  },
+  "common_screen_prefix_audit": {
+    "reference": "docs/common-screen-prefix-checks.json",
+    "documentation": "docs/COMMON_SCREEN_PREFIX.md",
+    "before": {
+      "callable_common_slots": 2,
+      "opaque_gap_bytes": 60,
+      "common_view_supported_by_inventory": false
+    },
+    "after": {
+      "callable_common_slots": 12,
+      "newly_exposed_shared_callbacks": 10,
+      "opaque_gap_bytes": 0,
+      "common_view_supported_by_inventory": true,
+      "common_view_is_concrete_table": false,
+      "explicit_screen_specific_address_slots": 4,
+      "screen_specific_signatures_accepted": 0,
+      "common_prefix_bytes": 72,
+      "concrete_prefixes": 2,
+      "concrete_callback_bindings": 32,
+      "complete_original_target_functions": 21,
+      "complete_original_target_bytes": 2376
+    },
+    "original_table_entry_profiles": 180,
+    "executed_wrong_slot_controls_rejected": 10,
+    "target_layout_assertions": 44,
+    "matching_C_bytes_before": 199912,
+    "matching_C_bytes_after": 199912,
+    "new_gameplay_features": 0,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "new_developer_capability_categories": 0,
+    "model_API_calls": 0,
+    "original_method_body_instructions_executed": 0,
+    "all_dynamic_dispatch_resolved": false
   }
 }
