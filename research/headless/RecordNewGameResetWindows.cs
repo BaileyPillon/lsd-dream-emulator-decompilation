@@ -49,8 +49,8 @@ internal static class RecordNewGameResetWindows {
         }
     }
     sealed class State {
-        public int frame,flow,dream,session,sessionState,rawMap,map,menu,selection=-1,operation,cardState,year,day,stored,newGame,flash,timer,paused,link,mapState,text,armed,pad;
-        public uint mapVtable,mapDream;
+        public int frame,flow,dream,session,sessionState,rawMap,map,menu,selection=-1,rawCard,operation,cardState,year,day,stored,newGame,flash,timer,paused,link,mapState,text,armed,pad;
+        public uint mapVtable,mapDream,cardVtable;
         public uint buttons,pressed,released;
         public string saveHash="-";
         public bool active {get{return map!=0 && link!=0 && mapState==0;}}
@@ -77,8 +77,8 @@ internal static class RecordNewGameResetWindows {
         if(s.menu!=0) {
             if(Word(ram,s.menu+0xc)!=graphics)throw new Exception("Menu graphics identity changed");
             MainSeen=true;s.selection=(int)Word(ram,s.menu+0x58);int card=Pointer(Word(ram,s.menu+0xac),0x84);
-            if(card!=0) {
-                if(Word(ram,card)!=0x80086dc4)throw new Exception("Card identity changed");
+            s.rawCard=card;if(card!=0)s.cardVtable=Word(ram,card);
+            if(card!=0 && s.cardVtable==0x80086dc4) {
                 s.operation=(int)Word(ram,card+0x24);s.cardState=(int)Word(ram,card+0x28);
                 if(!LoadReturned && s.operation==1 && s.cardState!=0)LoadSeen=true;
                 if(LoadSeen && !LoadReturned && s.operation==0 && s.cardState==0) {
@@ -86,6 +86,9 @@ internal static class RecordNewGameResetWindows {
                 }
             }
         }
+        // Successful Load clears the new-game flag in func_8004E230. A child
+        // pointer can be retired while its parent still carries the old value.
+        if(LoadSeen && !LoadReturned && s.newGame==0 && s.saveHash==ExpectedPayloadHash)LoadReturned=true;
         s.session=Find(ram,0x800865c8,0x38,dream);
         if(s.session!=0) {
             s.sessionState=(int)Word(ram,s.session+0x3c);s.rawMap=Pointer(Word(ram,s.session+0x4c),0x88);
@@ -177,7 +180,7 @@ internal static class RecordNewGameResetWindows {
             Zipped=new GZipStream(File,CompressionLevel.Optimal,true);Writer=new StreamWriter(Zipped,new UTF8Encoding(false));Writer.NewLine="\n";
         }
         public void Begin(int frame,State state) {
-            if(Host==null || SequenceStart<0)return;
+            if(Host==null || (!LoadSeen && SequenceStart<0))return;
             Host.Enter();try {
                 if(!enabled) {
                     if(Reset()!=1)throw new Exception("Observer reset rejected");

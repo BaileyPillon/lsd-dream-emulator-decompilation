@@ -55,7 +55,9 @@ def checks(d,mode,observer=True):
         data=snapshot_object(snap)
         objects[snap['frame']]=data
         if snap['sequence_age']>=0:ages[snap['sequence_age']]=snap
-    expectations={20:(False,0),50:(False,0),110:(True,0),130:(True,1),140:(True,1),150:(True,0),170:(True,0),200:(False,0),230:(True,0),250:(True,1)}
+    # Age140 is inside the release/poll transition; age150 checks its stable
+    # result, and native entries below verify the actual release callback.
+    expectations={20:(False,0),50:(False,0),110:(True,0),130:(True,1),150:(True,0),170:(True,0),200:(False,0),230:(True,0),250:(True,1)}
     require(0 in ages,'Missing pre-input dream context')
     baseline=ages[0]['state']
     require(baseline['year']==0 and baseline['stored']>=1 and baseline['flash']==(mode=='flashback'),'Loaded QA context identity')

@@ -1,5 +1,9 @@
 # Original new-game and reset state
 
+A subsequent [controller comparison](CONTROLLER_NEW_GAME_RESET.md) observes the
+original ordinary and flashback reset routes and resumed gameplay. This page
+retains the earlier isolated-VM and retained-checkpoint profile and its limits.
+
 The original initializer writes **576 of the 1,792 save-block bytes**. It preserves
 the remaining **1,216 bytes**, including inactive mood history and flashback
 records. A new game resets their active counters; it does not erase every old

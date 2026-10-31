@@ -25626,5 +25626,37 @@
     "model_API_calls": 0,
     "natural_reset_event_proved": false,
     "full_feature_F004_accepted": false
+  },
+  "controller_new_game_reset_audit": {
+    "reference": "docs/controller-new-game-reset-checks.json",
+    "documentation": "docs/CONTROLLER_NEW_GAME_RESET.md",
+    "related_feature_groups": [
+      "F004"
+    ],
+    "before": {
+      "natural_controller_reset_routes_qualified_by_this_profile": 0,
+      "paired_frames": 0
+    },
+    "after": {
+      "ordinary_and_flashback_routes": 2,
+      "paired_frames": 14915,
+      "additional_stock_comparison_frames": 14915,
+      "complete_object_pairs": 74,
+      "native_entry_pairs": 947,
+      "stable_guard_contexts": 18,
+      "analysis_record_controls_rejected": 8,
+      "natural_controller_reset_events_observed": true,
+      "flashback_unlock_is_constructed": true
+    },
+    "matching_C_bytes_before": 199912,
+    "matching_C_bytes_after": 199912,
+    "provisional_feature_groups": 40,
+    "original_NPC_callbacks_in_C": 107,
+    "new_gameplay_features": 0,
+    "whole_feature_groups_accepted": 0,
+    "whole_NPC_encounters_accepted": 0,
+    "new_developer_capability_categories": 0,
+    "model_API_calls": 0,
+    "full_feature_F004_accepted": false
   }
 }

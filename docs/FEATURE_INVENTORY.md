@@ -1,5 +1,14 @@
 # LSD feature inventory
 
+The [controller reset pair](CONTROLLER_NEW_GAME_RESET.md) now verifies ordinary
+and flashback reset inputs across 14,915 paired frames, with matching stock-core
+outputs. Complete save blocks preserve the same inactive history bytes. The
+flashback unlock is a separate constructed score fixture. All 55 prior inventory
+nodes remain historical evidence; matching C, provisional feature totals and
+whole-feature/NPC acceptance counts are unchanged. Continue constructor/lifetime
+boundaries, inactive/nonzero map guards, Save/Load after reset and broader natural
+behavior acceptance.
+
 The [natural-year comparison](NATURAL_YEAR_ENDING.md) now passes for the original
 and rebuilt discs: 365 completed days, 7,184,806 frames and a 12,000-frame ending
 window. All 12,345 RAM/GPU/RGB checkpoint pairs, 371 complete-state pairs,

@@ -1,0 +1,516 @@
+{
+  "schema_version": 1,
+  "status": "paired_normal_and_constructed_unlock_flashback_controller_resets_verified",
+  "baseline_commit": "5328ce661c72ca7c75dfd860dfc70c5c6e6d919d",
+  "original_exe_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "cases": {
+    "normal": {
+      "qualified": true,
+      "pair": {
+        "passed": true,
+        "frames": 9975,
+        "windows": 34,
+        "full_native_objects": 37,
+        "PCM_sample_frames": 7352385,
+        "all_framed_RAM_GPU_RGB_PCM_native_controller_hashes_equal": true,
+        "all_complete_save_objects_equal": true,
+        "final_memory_card_equal": true,
+        "serialized_whole_core_or_hardware_state_compared": false,
+        "comparison": "original_vs_rebuilt_same_observer",
+        "audit_producer_sha256": "9e191898fa507fe4aff07ae853482490de818d302a71c9533096186b2f2d06aa"
+      },
+      "stock_core_comparison": {
+        "passed": true,
+        "frames": 9975,
+        "windows": 34,
+        "full_native_objects": 37,
+        "PCM_sample_frames": 7352385,
+        "all_framed_RAM_GPU_RGB_PCM_native_controller_hashes_equal": true,
+        "all_complete_save_objects_equal": true,
+        "final_memory_card_equal": true,
+        "serialized_whole_core_or_hardware_state_compared": false,
+        "comparison": "observer_vs_installed_stock_core",
+        "audit_producer_sha256": "9e191898fa507fe4aff07ae853482490de818d302a71c9533096186b2f2d06aa"
+      },
+      "native_day_before_reset": 2,
+      "native_stored_day_before_reset": 2,
+      "reset_frame": 8851,
+      "sequence_start": 8595,
+      "post_dream_frame": 9794,
+      "post_dream_frames": 180,
+      "stable_guard_snapshots": 9,
+      "unarmed_confirm_calls": 4,
+      "save_bytes_compared": 1792,
+      "reset_write_footprint_from_prior_VM": 576,
+      "preserved_save_bytes": 1216,
+      "nonzero_preserved_save_bytes": 15,
+      "native_entry_counts": {
+        "func_80025D10": 254,
+        "func_80053358": 38,
+        "func_80053458": 3,
+        "func_800541D4": 8,
+        "func_80054200": 3,
+        "func_80054208": 5,
+        "func_8005426C": 0,
+        "func_800542D0": 27,
+        "func_800543FC": 3,
+        "dream_session_on_link_code": 2,
+        "dream_sys_end_day": 1,
+        "dream_sys_init_new_game": 1,
+        "init_nav_challenges_array": 1,
+        "dream_sys_clear_new_game": 0
+      },
+      "observed_target_count": 12,
+      "observed_target_body_bytes": 1980,
+      "actual_instruction_fetch_trace": false,
+      "entry_body_RAM_bytes_checked": true,
+      "analysis_record_controls": [
+        {
+          "kind": "end-mode",
+          "rejected": true,
+          "reason": "Armed link-code13 / end-mode2 arguments differ",
+          "self_consistent_payload_hashes": false
+        },
+        {
+          "kind": "link-code",
+          "rejected": true,
+          "reason": "Armed link-code13 / end-mode2 arguments differ",
+          "self_consistent_payload_hashes": false
+        },
+        {
+          "kind": "window-gap",
+          "rejected": true,
+          "reason": "Missing/overlapping capture frames",
+          "self_consistent_payload_hashes": false
+        },
+        {
+          "kind": "preserved-history-byte",
+          "rejected": true,
+          "reason": "Complete natural reset save-block transformation differs",
+          "self_consistent_payload_hashes": true
+        }
+      ],
+      "streamed_payload_bytes_per_capture": {
+        "MainRAM": 20919091200,
+        "GPURAM": 10459545600,
+        "RGB": 3197657400,
+        "PCM": 29409540,
+        "native": 4219329,
+        "controller": 39900
+      },
+      "source_pose_or_state_injection": false,
+      "card_fixture": "prior QA save",
+      "naturally_earned_flashback_unlock_claimed": false,
+      "producer": {
+        "source_path": "research/headless/RecordNewGameResetWindows.cs",
+        "source_sha256": "fe094945db8fe52bf20de0edc82f68b20fdd32f8e35b7caaf2b2c57c6caac1d1",
+        "git_blob_sha1": "b5b547009a682672b8ab00e8e8308c3f05e3fe88",
+        "host_binary_sha256": "9d24b4f6f89a5a385b8d2146d1b9e482bd8fe770b23d2c4b39fdb729b9bf67b0",
+        "configuration_sha256": "00146088ad19747e601d09dee0ead7bf75b27fccf23e3cf7809a5e7dede129cf",
+        "input_manifest_sha256": "6cd8d5b91ddc737081470de84e78cc556fa833f77281333ba6180b7fa0b1c565",
+        "observer_core_sha256": "40db2458b2c2b54141840b8ca3eb875f6b32c0a7b8c10009a277d3f14705869d",
+        "stock_core_sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126"
+      }
+    },
+    "flashback": {
+      "qualified": true,
+      "pair": {
+        "passed": true,
+        "frames": 4940,
+        "windows": 17,
+        "full_native_objects": 37,
+        "PCM_sample_frames": 3640899,
+        "all_framed_RAM_GPU_RGB_PCM_native_controller_hashes_equal": true,
+        "all_complete_save_objects_equal": true,
+        "final_memory_card_equal": true,
+        "serialized_whole_core_or_hardware_state_compared": false,
+        "comparison": "original_vs_rebuilt_same_observer",
+        "audit_producer_sha256": "d20401641740302f89d462abca28647221f4211c09e444bca60dd46c79237742"
+      },
+      "stock_core_comparison": {
+        "passed": true,
+        "frames": 4940,
+        "windows": 17,
+        "full_native_objects": 37,
+        "PCM_sample_frames": 3640899,
+        "all_framed_RAM_GPU_RGB_PCM_native_controller_hashes_equal": true,
+        "all_complete_save_objects_equal": true,
+        "final_memory_card_equal": true,
+        "serialized_whole_core_or_hardware_state_compared": false,
+        "comparison": "observer_vs_installed_stock_core",
+        "audit_producer_sha256": "d20401641740302f89d462abca28647221f4211c09e444bca60dd46c79237742"
+      },
+      "native_day_before_reset": 0,
+      "native_stored_day_before_reset": 1,
+      "reset_frame": 3784,
+      "sequence_start": 3531,
+      "post_dream_frame": 4759,
+      "post_dream_frames": 180,
+      "stable_guard_snapshots": 9,
+      "unarmed_confirm_calls": 4,
+      "save_bytes_compared": 1792,
+      "reset_write_footprint_from_prior_VM": 576,
+      "preserved_save_bytes": 1216,
+      "nonzero_preserved_save_bytes": 15,
+      "native_entry_counts": {
+        "func_80025D10": 499,
+        "func_80053358": 41,
+        "func_80053458": 3,
+        "func_800541D4": 9,
+        "func_80054200": 3,
+        "func_80054208": 5,
+        "func_8005426C": 0,
+        "func_800542D0": 32,
+        "func_800543FC": 3,
+        "dream_session_on_link_code": 2,
+        "dream_sys_end_day": 1,
+        "dream_sys_init_new_game": 1,
+        "init_nav_challenges_array": 1,
+        "dream_sys_clear_new_game": 1
+      },
+      "observed_target_count": 13,
+      "observed_target_body_bytes": 1988,
+      "actual_instruction_fetch_trace": false,
+      "entry_body_RAM_bytes_checked": true,
+      "analysis_record_controls": [
+        {
+          "kind": "end-mode",
+          "rejected": true,
+          "reason": "Armed link-code13 / end-mode2 arguments differ",
+          "self_consistent_payload_hashes": false
+        },
+        {
+          "kind": "link-code",
+          "rejected": true,
+          "reason": "Armed link-code13 / end-mode2 arguments differ",
+          "self_consistent_payload_hashes": false
+        },
+        {
+          "kind": "window-gap",
+          "rejected": true,
+          "reason": "Missing/overlapping capture frames",
+          "self_consistent_payload_hashes": false
+        },
+        {
+          "kind": "preserved-history-byte",
+          "rejected": true,
+          "reason": "Complete natural reset save-block transformation differs",
+          "self_consistent_payload_hashes": true
+        }
+      ],
+      "streamed_payload_bytes_per_capture": {
+        "MainRAM": 10359930880,
+        "GPURAM": 5179965440,
+        "RGB": 1928797120,
+        "PCM": 14563596,
+        "native": 2215463,
+        "controller": 19760
+      },
+      "source_pose_or_state_injection": false,
+      "card_fixture": "constructed score unlock using unchanged prior QA flashback/history",
+      "naturally_earned_flashback_unlock_claimed": false,
+      "producer": {
+        "source_path": "research/headless/RecordNewGameResetWindows.cs",
+        "source_sha256": "74fd8a60a9c49027eb55cf5dc78cf14392a0269ca72a87d53b91ac1ab7cd743b",
+        "git_blob_sha1": "fddfd0b2f6ee35e5d52ad66a177513edcbb309d5",
+        "host_binary_sha256": "34d04ef7329283bc6e2d69861f9d261818c587a98b083564c7dbacbf65f603fe",
+        "configuration_sha256": "00146088ad19747e601d09dee0ead7bf75b27fccf23e3cf7809a5e7dede129cf",
+        "input_manifest_sha256": "9a4cc0fe5c4950ad5e126b16c58d0ee7b1553c8ede38efba8e5a9fdcab5cc1aa",
+        "observer_core_sha256": "40db2458b2c2b54141840b8ca3eb875f6b32c0a7b8c10009a277d3f14705869d",
+        "stock_core_sha256": "5c6fe90fadd670318ca74993911b171e15b167c7f2e1e88bf66de4661fc24126"
+      }
+    }
+  },
+  "qualified_cold_boots": 6,
+  "paired_original_rebuilt_frames": 14915,
+  "additional_stock_comparison_frames": 14915,
+  "all_qualified_cold_boot_frames": 44745,
+  "paired_windows": 51,
+  "complete_native_object_pairs": 74,
+  "native_entry_pairs": 947,
+  "PCM_sample_frames_per_paired_side": 10993284,
+  "registered_functions": 14,
+  "registered_function_bytes": 2088,
+  "unique_observed_target_functions": 13,
+  "unique_observed_target_function_bytes": 1988,
+  "native_entry_observation_is_whole_body_execution_coverage": false,
+  "complete_state_serialization_or_hardware_compared": false,
+  "source_sha256": {
+    "research/headless/RecordNewGameResetWindows.cs": "74fd8a60a9c49027eb55cf5dc78cf14392a0269ca72a87d53b91ac1ab7cd743b",
+    "research/new_game_reset/controller-functions.json": "4e9d85fcd1ffbd7f5208f1b2937707ec5c436b03560bc543a14b85ec0eeda5c4",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/BoundedSha256Stream.cs": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e",
+    "tools/verify_controller_reset_capture.py": "f817183d52afb552a9ee9ac3db89adf42d03237002ed2d452c97ee9186167dbb",
+    "tests/test_controller_reset_capture.py": "a74a2381ec9496e980859bd090bef29e02c7e10f379f27aee70818beec26e823",
+    "src/sys/pad.c": "ec916a708e64a0ef201e42587fccc48ea69786e8606a43c5bbdea93e11d7aa43",
+    "src/scene/map_scene.c": "d420d380e2f7758f495202851deffe1bf70f2bf6a556ced0f5d30fa301705ad1",
+    "src/scene/map_scene_post.c": "34ed1e0240e53b9a1682af1b083628dd91c4955a3fb6735492ae983faa5a4040",
+    "src/dream/dream_session.c": "78490500b752b0a27cb7b0f5ce0f58f0cd8641b59780949987cc58c5679d69e4",
+    "src/dream/dream_sys.c": "ec93779c5920234f6fee984c200a472c35832eeb71993cfa7695d4d839fbef7a",
+    "src/menu/main_menu_post.c": "1e05aaf348347812ab43c9c81603cbcaa3306efcabf810d52feab26dd14d365b"
+  },
+  "evidence_files": {
+    "normal-original-observer-v2/card-store.json": {
+      "bytes": 594,
+      "sha256": "f89f73c9387408f36233848d7e2ec4e1e3634d3761c2b0b9c153396888779297"
+    },
+    "normal-original-observer-v2/entries.jsonl.gz": {
+      "bytes": 6167,
+      "sha256": "97c5089f78dfbd11d35357053daa945275c3af7e8f654ba02601f0d7eb6a5e98"
+    },
+    "normal-original-observer-v2/final.png": {
+      "bytes": 32483,
+      "sha256": "e048cc73ad38fb6deb91f9550fd5c6af9bf26a226459fb010b62fad73f04a656"
+    },
+    "normal-original-observer-v2/inputs.tsv": {
+      "bytes": 579,
+      "sha256": "ca03be73aa876b24a9d520ed022915ce1d25e795c48283a54dc30e41bf6ca0bf"
+    },
+    "normal-original-observer-v2/report.json": {
+      "bytes": 1740,
+      "sha256": "9c2e2a26cb09bf5ad095d34425483ba0cfc7e907fcd4225bfbb07c56925d1369"
+    },
+    "normal-original-observer-v2/reset.png": {
+      "bytes": 34080,
+      "sha256": "5296ea7a6f5f60d783c3dd2688829128fb55ab436c7780f48aa0f02cb57d3662"
+    },
+    "normal-original-observer-v2/save-blocks.jsonl.gz": {
+      "bytes": 2581,
+      "sha256": "018f9ce112eb1fde4b923f4595b7209333f74b77cdffd6ecbd578be8d8d2deb9"
+    },
+    "normal-original-observer-v2/windows.jsonl": {
+      "bytes": 22804,
+      "sha256": "96eb979c77284f09dd6d1e0ca4eb6b10fdc9fca2360ed879a168837d49153008"
+    },
+    "normal-rebuilt-observer-v2/card-store.json": {
+      "bytes": 594,
+      "sha256": "f89f73c9387408f36233848d7e2ec4e1e3634d3761c2b0b9c153396888779297"
+    },
+    "normal-rebuilt-observer-v2/entries.jsonl.gz": {
+      "bytes": 6167,
+      "sha256": "97c5089f78dfbd11d35357053daa945275c3af7e8f654ba02601f0d7eb6a5e98"
+    },
+    "normal-rebuilt-observer-v2/inputs.tsv": {
+      "bytes": 579,
+      "sha256": "ca03be73aa876b24a9d520ed022915ce1d25e795c48283a54dc30e41bf6ca0bf"
+    },
+    "normal-rebuilt-observer-v2/report.json": {
+      "bytes": 1741,
+      "sha256": "cab2ceae7c778f03843a8ceeb09d2f724f7c42b8f1808b19737cafd7dca55731"
+    },
+    "normal-rebuilt-observer-v2/save-blocks.jsonl.gz": {
+      "bytes": 2581,
+      "sha256": "018f9ce112eb1fde4b923f4595b7209333f74b77cdffd6ecbd578be8d8d2deb9"
+    },
+    "normal-rebuilt-observer-v2/windows.jsonl": {
+      "bytes": 22804,
+      "sha256": "96eb979c77284f09dd6d1e0ca4eb6b10fdc9fca2360ed879a168837d49153008"
+    },
+    "normal-original-stock-v2/card-store.json": {
+      "bytes": 594,
+      "sha256": "f89f73c9387408f36233848d7e2ec4e1e3634d3761c2b0b9c153396888779297"
+    },
+    "normal-original-stock-v2/inputs.tsv": {
+      "bytes": 579,
+      "sha256": "ca03be73aa876b24a9d520ed022915ce1d25e795c48283a54dc30e41bf6ca0bf"
+    },
+    "normal-original-stock-v2/report.json": {
+      "bytes": 1736,
+      "sha256": "fffeefa34eaef3b99680ac3f49e3a4706a545e1ffc10a4bb6524a3530bdb155f"
+    },
+    "normal-original-stock-v2/save-blocks.jsonl.gz": {
+      "bytes": 2581,
+      "sha256": "018f9ce112eb1fde4b923f4595b7209333f74b77cdffd6ecbd578be8d8d2deb9"
+    },
+    "normal-original-stock-v2/windows.jsonl": {
+      "bytes": 22804,
+      "sha256": "96eb979c77284f09dd6d1e0ca4eb6b10fdc9fca2360ed879a168837d49153008"
+    },
+    "flashback-original-observer-v4/card-store.json": {
+      "bytes": 594,
+      "sha256": "d8d63cd677f4a91358712b7cd7d9e179ecef50781ce2ee4c84067b231753892f"
+    },
+    "flashback-original-observer-v4/entries.jsonl.gz": {
+      "bytes": 8779,
+      "sha256": "8ec4ba595684c4513a1508b54d2a36762ef324827a2a85c40f0c8f2edf45abde"
+    },
+    "flashback-original-observer-v4/final.png": {
+      "bytes": 40279,
+      "sha256": "d5fcb65f8f4c46cbed706648a5fc2b53f0d5bf1dca689aef54ea944975c7ffc8"
+    },
+    "flashback-original-observer-v4/inputs.tsv": {
+      "bytes": 551,
+      "sha256": "af9dde20f3e36f7c32730c6c795b040da597ca6ebbcdd5e33a27698742f59f7e"
+    },
+    "flashback-original-observer-v4/report.json": {
+      "bytes": 1769,
+      "sha256": "f66a2b30fecbf8c132559424708a97f819cd0cd47d6b8966303d978065d4e89b"
+    },
+    "flashback-original-observer-v4/reset.png": {
+      "bytes": 3391,
+      "sha256": "bdc681311c9ac4d8bbeabcb53d59669be4c44945dd6731e1c3f81d8dc9f06238"
+    },
+    "flashback-original-observer-v4/save-blocks.jsonl.gz": {
+      "bytes": 2616,
+      "sha256": "62920d16bb2299895d596e83d7f4462fbe58b31b1b3aa5c48eac8a0074f3b32a"
+    },
+    "flashback-original-observer-v4/windows.jsonl": {
+      "bytes": 11400,
+      "sha256": "ba8cd418f017c449992969f91bcf3358db15482b3b67bcb0da25d804cc0e769b"
+    },
+    "flashback-rebuilt-observer-v4/card-store.json": {
+      "bytes": 594,
+      "sha256": "d8d63cd677f4a91358712b7cd7d9e179ecef50781ce2ee4c84067b231753892f"
+    },
+    "flashback-rebuilt-observer-v4/entries.jsonl.gz": {
+      "bytes": 8779,
+      "sha256": "8ec4ba595684c4513a1508b54d2a36762ef324827a2a85c40f0c8f2edf45abde"
+    },
+    "flashback-rebuilt-observer-v4/inputs.tsv": {
+      "bytes": 551,
+      "sha256": "af9dde20f3e36f7c32730c6c795b040da597ca6ebbcdd5e33a27698742f59f7e"
+    },
+    "flashback-rebuilt-observer-v4/report.json": {
+      "bytes": 1770,
+      "sha256": "06b135925411dc346b0e33489e35cf54ad671bd4489fc228f90f9bef32d83555"
+    },
+    "flashback-rebuilt-observer-v4/save-blocks.jsonl.gz": {
+      "bytes": 2616,
+      "sha256": "62920d16bb2299895d596e83d7f4462fbe58b31b1b3aa5c48eac8a0074f3b32a"
+    },
+    "flashback-rebuilt-observer-v4/windows.jsonl": {
+      "bytes": 11400,
+      "sha256": "ba8cd418f017c449992969f91bcf3358db15482b3b67bcb0da25d804cc0e769b"
+    },
+    "flashback-original-stock-v4/card-store.json": {
+      "bytes": 594,
+      "sha256": "d8d63cd677f4a91358712b7cd7d9e179ecef50781ce2ee4c84067b231753892f"
+    },
+    "flashback-original-stock-v4/inputs.tsv": {
+      "bytes": 551,
+      "sha256": "af9dde20f3e36f7c32730c6c795b040da597ca6ebbcdd5e33a27698742f59f7e"
+    },
+    "flashback-original-stock-v4/report.json": {
+      "bytes": 1765,
+      "sha256": "50cef7cd7c29736f3ecd76fbdf532f12e4c115af860d35fe342848e30b425ac9"
+    },
+    "flashback-original-stock-v4/save-blocks.jsonl.gz": {
+      "bytes": 2616,
+      "sha256": "62920d16bb2299895d596e83d7f4462fbe58b31b1b3aa5c48eac8a0074f3b32a"
+    },
+    "flashback-original-stock-v4/windows.jsonl": {
+      "bytes": 11400,
+      "sha256": "ba8cd418f017c449992969f91bcf3358db15482b3b67bcb0da25d804cc0e769b"
+    }
+  },
+  "private_audit_sha256": "18fb87d0303620311f90dc05c72c2fa68fce65780ffdaf1645f938e709a5f60d",
+  "independent_target_qualification_sha256": "23bbf4ceee15abda067751b3df4a43cd0748f13322abffc94e48a8530f9752aa",
+  "target_qualification": "All14 addresses and sizes agree with retained canonical full-link GNU symbols; complete original RAM code ranges checked at every observed entry.",
+  "constructed_unlock": {
+    "total_unlock_score": 10000000,
+    "instance_score": 10000000,
+    "navigation_score": 0,
+    "changed_byte_offsets_in_raw_card": [
+      8716,
+      8717,
+      8718,
+      8724,
+      8725,
+      8726
+    ],
+    "flashback_records_and_history_unchanged": true,
+    "source_QA_card_sha256": "e208a7263da45897ffff758e49687995fe139346b3a8c434245acdda914fd722",
+    "fixture_sha256": "44942745c0e085ff4b974e17a3b5553d098dbade146c567430d4a7b3aff29edf",
+    "naturally_earned_unlock": false
+  },
+  "unqualified_attempts_retained": [
+    {
+      "label": "first normal locator",
+      "exit_code": 2,
+      "reason": "Session child was read before complete map identity existed"
+    },
+    {
+      "label": "locked original QA card flashback",
+      "exit_code": 1,
+      "frames": 18001,
+      "reset": false,
+      "reason": "Original score100000 does not unlock the flashback row"
+    },
+    {
+      "label": "early constructed-card child locator",
+      "exit_code": 2,
+      "reason": "Card pointer could remain visible after child retirement"
+    }
+  ],
+  "original_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0,
+  "provisional_feature_groups": 40,
+  "original_NPC_callbacks_in_C": 107,
+  "matching_C_bytes_before": 199912,
+  "matching_C_bytes_after": 199912,
+  "new_gameplay_features": 0,
+  "new_developer_capability_categories": 0,
+  "model_API_calls": 0,
+  "original_NPC_AI_changed": false,
+  "analysis_tools_scope": "Controller capture and evidence checking; original NPC/gameplay behavior preserved.",
+  "full_feature_F004_accepted": false,
+  "whole_goal_complete": false,
+  "full_objective_retained": true,
+  "remaining_gates": [
+    "Other controller seeds and timing histories",
+    "Inactive-link and nonzero-map-state arming",
+    "Original constructor entry/return and allocation lifetime",
+    "Post-reset Save/Load roundtrip",
+    "Naturally earned unlock progression",
+    "Broader feature/NPC/card/error/movie acceptance",
+    "Hardware and independent whole-game acceptance"
+  ],
+  "load_success_clear_observation": {
+    "frame": 2744,
+    "pc": "8005a33c",
+    "caller": "func_8004E230",
+    "caller_return_pc": "8004e2a0",
+    "receiver": "80091530",
+    "code_bytes": 8,
+    "code_sha256": "d0a1e1c7719dde734e11a93487bd1367d7158866e69f6c033d50e88a23f9ea32"
+  },
+  "synthetic_tests": {
+    "windows": {
+      "tests": 1731,
+      "expected_skips": 16,
+      "exit_code": 0,
+      "log_raw_sha256": "36583009db730a5dce9d902a5a4868a12b2711b5f8cfe76a5a02e02b6814ae77"
+    },
+    "wsl": {
+      "tests": 1728,
+      "expected_skips": 12,
+      "exit_code": 0,
+      "log_raw_sha256": "597bd91124bc62e27951a0d4ae223df6f8c2b0ccca875c29f6ebf344fa48ebd0"
+    }
+  },
+  "current_build": {
+    "objects_found": 306,
+    "objects_expected": 306,
+    "build_current": true,
+    "c_bytes": 199912,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 100.0,
+    "binary_match": "verified",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+  },
+  "source_git_sha256": {
+    "research/headless/RecordNewGameResetWindows.cs": "74fd8a60a9c49027eb55cf5dc78cf14392a0269ca72a87d53b91ac1ab7cd743b",
+    "research/new_game_reset/controller-functions.json": "4e9d85fcd1ffbd7f5208f1b2937707ec5c436b03560bc543a14b85ec0eeda5c4",
+    "research/headless/ReplayColdStart.cs": "c2f4770fcfeafc0abc052eb678d31ad232cbfeaa0b96a67b50f2bdc4bddd00b0",
+    "research/headless/BoundedSha256Stream.cs": "497309d90bddca5cb6161d63a5822b6abd41b9ab845ecb815b246cbd5264220e",
+    "tools/verify_controller_reset_capture.py": "f817183d52afb552a9ee9ac3db89adf42d03237002ed2d452c97ee9186167dbb",
+    "tests/test_controller_reset_capture.py": "a74a2381ec9496e980859bd090bef29e02c7e10f379f27aee70818beec26e823",
+    "src/sys/pad.c": "b99203a7f861dc819fb86b68f1be78d1e2b7a5e2003cdbca92a635d26355e7ae",
+    "src/scene/map_scene.c": "37c9e7d8ddd5c7a87b990bb738aed811e3b021d032e66e2583d8a93ef6361341",
+    "src/scene/map_scene_post.c": "1c0329e8411b0601844d43316e18a64c280d0675befe140fc2df707fca7e1970",
+    "src/dream/dream_session.c": "3727bdcce85c588c9e6c1841f319fcef849da258fa16ff246e68409e1ddfc43d",
+    "src/dream/dream_sys.c": "ec93779c5920234f6fee984c200a472c35832eeb71993cfa7695d4d839fbef7a",
+    "src/menu/main_menu_post.c": "1e05aaf348347812ab43c9c81603cbcaa3306efcabf810d52feab26dd14d365b"
+  },
+  "source_hash_scope": "source_sha256 pins raw executed/current inputs; source_git_sha256 pins Git-normalized source blobs. Earlier untouched C files can retain Windows CRLF."
+}

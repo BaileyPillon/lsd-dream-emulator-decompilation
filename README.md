@@ -17,6 +17,12 @@ objects reproduce the original executable in a clean build, using documented
 compiler-layout compatibility storage. [Evidence and scope](docs/MATCHING_GAME_C.md)
 distinguish this source milestone from the remaining gameplay-verification gates.
 
+The [controller reset comparison](docs/CONTROLLER_NEW_GAME_RESET.md) now follows
+the original pause/Select/Triangle route through ordinary and flashback resets.
+Original, rebuilt and stock-core runs agree across 14,915 frames per comparison.
+Both routes return to the menu loop and resume a fresh dream. The flashback
+unlock uses a documented QA score fixture; full-feature acceptance stays open.
+
 The [model vertex audit](docs/MODEL_PACKET_DECODING.md) compares all 119,458
 polygon packets in 422 model-bearing files with the original PS1 decoder.
 Signed coordinates, enumeration cursors, saved registers and memory guards
