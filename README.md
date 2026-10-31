@@ -637,6 +637,7 @@ For bugs and research findings, use the repository's issue templates.
 - [Roadmap and remaining work](docs/ROADMAP.md)
 - [Original screen resource cleanup](docs/SCREEN_RESOURCE_CLEANUP.md)
 - [Shared menu/chart prefix, original bindings and typed caller checks](docs/COMMON_SCREEN_PREFIX.md)
+- [Original new-game/reset save-block semantics and native checks](docs/NEW_GAME_RESET.md)
 - [Title-menu panel structure and ownership](docs/MENU_PANEL_OWNERSHIP.md)
 - [Natural title-menu construction state and lifetimes](docs/NATURAL_MENU_LIFETIMES.md)
 - [Streaming state hashes and progression resource measurements](docs/STATE_HASH_STREAMING.md)

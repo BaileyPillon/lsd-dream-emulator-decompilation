@@ -1,6 +1,18 @@
 # Preserve the bundled compiler binaries without text conversion.
 tools/gcc263/* binary
 
+# Pin the executed new-game state model, native checker and retained-state reader.
+tools/new_game_state.py text eol=lf
+tools/verify_new_game_reset.py text eol=lf
+tools/inspect_new_game_save.py text eol=lf
+tests/test_new_game_state.py text eol=lf
+tests/test_new_game_reset_profiles.py text eol=lf
+tests/test_inspect_new_game_save.py text eol=lf
+research/new_game_reset/layout.c text eol=lf
+research/new_game_reset/functions.json text eol=lf
+docs/NEW_GAME_RESET.md text eol=lf
+docs/new-game-reset-checks.json text eol=lf
+
 # Keep the executed shared-screen declaration and compiler/entry tools exact.
 tools/inventory_vtables.py text eol=lf
 tools/feature_inventory.py text eol=lf
