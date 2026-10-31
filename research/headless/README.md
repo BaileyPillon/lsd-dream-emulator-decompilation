@@ -17,3 +17,10 @@ reads the native observer's original NPC-entry events. The published
 inputs from observations. See [NPC entry tracing](../../docs/NPC_ENTRY_TRACE.md)
 for the separate observer build, recording commands, comparison modes and
 qualified history. The default cold-start replay remains a separate command.
+
+`RecordMovieWindows.cs` reuses the controller/disc/BIOS helpers and streamed
+state-hash sink to record bounded cold-start movie windows. It hashes complete
+RAM/GPU/RGB/PCM each advanced frame and retains compressed native fields. See
+[cold movie playback and skips](../../docs/COLD_MOVIE_WINDOWS.md) for build
+inputs, argument order, bounds and the independent Python checker. The three
+qualified routes preserve the canonical game and existing player.

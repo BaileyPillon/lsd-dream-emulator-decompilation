@@ -17,6 +17,14 @@ decoded images. It reaches year 1/internal day 0 with the original ending path,
 threshold and pending-to-terminal lifecycle. Complete native ending playback,
 all movie/skip routes, other seeds and whole-feature acceptance remain open.
 
+The [cold movie/skip profile](COLD_MOVIE_WINDOWS.md) now compares normal startup,
+logo skip and opening skip across 14,995 paired frames and 27 complete states.
+It retains complete framed RAM/GPU/RGB/PCM hashes and raw native observations,
+including the original closed-stream-before-pointer-clear transition. One of
+seven openings and two of 39 routed movie payloads are covered. Extend the
+other movie choices, timing/disabled/error branches and ending presentation;
+these three routes accept no whole feature.
+
 The [recovered-C analysis workflow](RECOVERED_C_CONTEXT.md) now supports
 original-range context and function diagnostics after assembly fallbacks reach
 zero. Use it for open type, ownership, content and behavior questions while

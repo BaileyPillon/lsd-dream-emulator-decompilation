@@ -617,6 +617,7 @@ For bugs and research findings, use the repository's issue templates.
 - [Cooperative frame waits and the natural-year verification host](docs/COOPERATIVE_FRAME_WAITS.md)
 - [Ending-field lifecycle validation and the retained 365-day recording](docs/YEAR_ENDING_FIELD_LIFECYCLE.md)
 - [Passing original/rebuilt 365-day and ending-window comparison](docs/NATURAL_YEAR_ENDING.md)
+- [Cold movie playback, native stop lifecycle and controller skips](docs/COLD_MOVIE_WINDOWS.md)
 - [Play the matching game](docs/PLAYING.md)
 - [Model enumeration and callback interfaces](docs/MODEL_ENUMERATION.md)
 - [Feature inventory and before/after measurements](docs/FEATURE_INVENTORY.md)

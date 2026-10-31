@@ -1,5 +1,10 @@
 # Startup movie playback and viewport layout
 
+The later [cold movie/skip profile](COLD_MOVIE_WINDOWS.md) adds normal and skipped
+logo/opening routes, full framed buffer/audio comparisons and 27 complete-state
+pairs. This document retains the earlier shared-state neutral trajectory and
+its original reader contract.
+
 One neutral trajectory now compares the original and rebuilt Japanese-labelled
 discs for **9,000 emulator frames** from the same frozen BIOS state. Both
 captures have **9,001 per-frame observations**, including a SHA-256 of the
