@@ -1,5 +1,14 @@
 # Roadmap
 
+The [controller reset pair](CONTROLLER_NEW_GAME_RESET.md) now verifies ordinary
+and flashback reset inputs across 14,915 paired frames, with matching stock-core
+outputs. Complete save blocks preserve the same inactive history bytes. The
+flashback unlock is a separate constructed score fixture. All 55 prior inventory
+nodes remain historical evidence; matching C, provisional feature totals and
+whole-feature/NPC acceptance counts are unchanged. Continue constructor/lifetime
+boundaries, inactive/nonzero map guards, Save/Load after reset and broader natural
+behavior acceptance.
+
 The [full native movie-buffer pair](FULL_MOVIE_PAYLOADS.md) now compares complete
 encoded inputs, VLC-return RLE ranges and later MDEC input ranges. All 30,374
 buffers and 944,165,108 hashed bytes per side agree. Continue hardware transfer/

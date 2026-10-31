@@ -1,6 +1,14 @@
 # Preserve the bundled compiler binaries without text conversion.
 tools/gcc263/* binary
 
+# Keep the executed controller-reset producer and capture verifier exact.
+research/headless/RecordNewGameResetWindows.cs text eol=lf
+research/new_game_reset/controller-functions.json text eol=lf
+tools/verify_controller_reset_capture.py text eol=lf
+tests/test_controller_reset_capture.py text eol=lf
+docs/CONTROLLER_NEW_GAME_RESET.md text eol=lf
+docs/controller-new-game-reset-checks.json text eol=lf
+
 # Pin the executed new-game state model, native checker and retained-state reader.
 tools/new_game_state.py text eol=lf
 tools/verify_new_game_reset.py text eol=lf
