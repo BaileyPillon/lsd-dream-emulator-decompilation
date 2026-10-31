@@ -38,8 +38,15 @@ The [renderer profiles](docs/TMD_PRIMITIVE_RUNS.md) enter the original drawer in
 mode runs, retaining shared GTE state, cull history and recursive workspaces.
 The earlier 1,147 calls still pass, including all eight subdivision families
 through depth 5. Colors, UVs, transparency, fog and OT links agree; the native
-GTE boundary passes 3,333 cases. Original-model and natural-scene drawing,
-replacement matrices and GPU/hardware acceptance remain open.
+GTE boundary passes 3,333 cases. Natural-scene drawing, replacement matrices
+and GPU/hardware acceptance remain open.
+
+The [original-model draw audit](docs/TMD_CORPUS_RENDERING.md) composes native
+SDK mapping, linking and drawing in 27,254 calls over all 13,627 descriptors
+and 119,458 source polygons. Original pools and packet bytes are preserved;
+the comparison uses two supplied inspection views per object. It retains the
+original drawer's unsupported-format early returns and identifies a specific
+STG04 runtime tracing target. Natural scene and GPU-pixel acceptance remain open.
 
 [Recovered-C analysis context](docs/RECOVERED_C_CONTEXT.md) exports verified
 original instructions and current source without an old private assembly

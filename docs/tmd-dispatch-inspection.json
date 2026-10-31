@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "status": "static_original_draw_dispatch_routes_inspected",
+  "generated_at": "2026-10-31T04:14:39.372216+00:00",
+  "raw_disc_sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61",
+  "inventory_sha256": "02ccc9af91ebcb322323fc8495a612ef05c9c9768341a8e82e3609dd95bfcf63",
+  "canonical_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "source_sha256": {
+    "tools/inspect_tmd_dispatch.py": "5d8ae5a78c6cc1127db36bff580542750e35fc6a1dfa584ffeff36993038f787",
+    "tools/tmd_renderer_model.py": "3be588f0d0860a6834966856c056d75c920ce479678dc83b1db1451c8c260467",
+    "tools/tmd_packets.py": "260fcef209c1378d0a15ae24ca1a1ba52aed4b436d465d7855513c0830dfcfc1",
+    "tools/disc_files.py": "e98b679c3b9f8381da518b97ce0f934d2aa50d40bc67fab29e5994832b154372",
+    "tools/inventory_animations.py": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+    "tools/inventory_model_packets.py": "11fe2063f0d6bd0c121dc05de9cfabfb7a27ecd88a3b792f3f2ff8da2b51c346",
+    "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+    "tools/verify_model_packets.py": "012af2b5135f01ab182cff4ad44dd6ef5ebac8fbe6dbd8ba00e8b8d18d6a18b6"
+  },
+  "counts": {
+    "TMD_tables": 531,
+    "objects": 13627,
+    "source_packets": 119458,
+    "objects_with_unsupported_formats": 8,
+    "unsupported_source_packets": 43,
+    "predicted_unvisited_tail_packets": 85,
+    "grid_unreferenced_objects": 7,
+    "grid_present_record_references": 4,
+    "grid_referenced_objects": 1
+  },
+  "rows": [
+    {
+      "path": "/CDI/STG04/M003.LBD",
+      "source_sha256": "d6fbd9caa5d99deb9d744df320f82181dce6d63f48fbaea07492b457749de834",
+      "kind": "LBD",
+      "tmd": 4868,
+      "object": 25,
+      "grid_present_record_references": 0,
+      "source_packets": 13,
+      "source_formats": {
+        "0x29/0x01": 1,
+        "0x3c/0x00": 4,
+        "0x2d/0x01": 4,
+        "0x2c/0x00": 4
+      },
+      "unsupported_packets": 4,
+      "first_unsupported_ordinal": 1,
+      "predicted_primitive_setup_calls": 1,
+      "predicted_unvisited_tail_packets": 12
+    },
+    {
+      "path": "/CDI/STG04/M010.LBD",
+      "source_sha256": "7935234832c8cdbfb1b551d89e45b4da5ccb1b25bfa3e3937c49496886fd2940",
+      "kind": "LBD",
+      "tmd": 4880,
+      "object": 26,
+      "grid_present_record_references": 0,
+      "source_packets": 13,
+      "source_formats": {
+        "0x29/0x01": 1,
+        "0x3c/0x00": 4,
+        "0x2d/0x01": 4,
+        "0x2c/0x00": 4
+      },
+      "unsupported_packets": 4,
+      "first_unsupported_ordinal": 1,
+      "predicted_primitive_setup_calls": 1,
+      "predicted_unvisited_tail_packets": 12
+    },
+    {
+      "path": "/CDI/STG04/M012.LBD",
+      "source_sha256": "42704f13da655be5f3bc6e92326926f1f6d1c1a78154515763a98de9d74fa287",
+      "kind": "LBD",
+      "tmd": 4844,
+      "object": 17,
+      "grid_present_record_references": 0,
+      "source_packets": 22,
+      "source_formats": {
+        "0x2d/0x01": 6,
+        "0x38/0x00": 8,
+        "0x2c/0x00": 1,
+        "0x25/0x01": 2,
+        "0x24/0x00": 5
+      },
+      "unsupported_packets": 8,
+      "first_unsupported_ordinal": 6,
+      "predicted_primitive_setup_calls": 6,
+      "predicted_unvisited_tail_packets": 16
+    },
+    {
+      "path": "/CDI/STG04/M012.LBD",
+      "source_sha256": "42704f13da655be5f3bc6e92326926f1f6d1c1a78154515763a98de9d74fa287",
+      "kind": "LBD",
+      "tmd": 4844,
+      "object": 18,
+      "grid_present_record_references": 0,
+      "source_packets": 22,
+      "source_formats": {
+        "0x2d/0x01": 6,
+        "0x38/0x00": 8,
+        "0x2c/0x00": 1,
+        "0x24/0x00": 5,
+        "0x25/0x01": 2
+      },
+      "unsupported_packets": 8,
+      "first_unsupported_ordinal": 6,
+      "predicted_primitive_setup_calls": 6,
+      "predicted_unvisited_tail_packets": 16
+    },
+    {
+      "path": "/CDI/STG04/M012.LBD",
+      "source_sha256": "42704f13da655be5f3bc6e92326926f1f6d1c1a78154515763a98de9d74fa287",
+      "kind": "LBD",
+      "tmd": 4844,
+      "object": 19,
+      "grid_present_record_references": 0,
+      "source_packets": 22,
+      "source_formats": {
+        "0x2c/0x00": 2,
+        "0x2d/0x01": 6,
+        "0x38/0x00": 8,
+        "0x24/0x00": 2,
+        "0x25/0x01": 4
+      },
+      "unsupported_packets": 8,
+      "first_unsupported_ordinal": 8,
+      "predicted_primitive_setup_calls": 8,
+      "predicted_unvisited_tail_packets": 14
+    },
+    {
+      "path": "/CDI/STG04/M012.LBD",
+      "source_sha256": "42704f13da655be5f3bc6e92326926f1f6d1c1a78154515763a98de9d74fa287",
+      "kind": "LBD",
+      "tmd": 4844,
+      "object": 20,
+      "grid_present_record_references": 0,
+      "source_packets": 10,
+      "source_formats": {
+        "0x2d/0x01": 4,
+        "0x2c/0x00": 2,
+        "0x38/0x00": 2,
+        "0x25/0x01": 2
+      },
+      "unsupported_packets": 2,
+      "first_unsupported_ordinal": 6,
+      "predicted_primitive_setup_calls": 6,
+      "predicted_unvisited_tail_packets": 4
+    },
+    {
+      "path": "/CDI/STG04/M012.LBD",
+      "source_sha256": "42704f13da655be5f3bc6e92326926f1f6d1c1a78154515763a98de9d74fa287",
+      "kind": "LBD",
+      "tmd": 4844,
+      "object": 21,
+      "grid_present_record_references": 0,
+      "source_packets": 10,
+      "source_formats": {
+        "0x2d/0x01": 4,
+        "0x2c/0x00": 2,
+        "0x38/0x00": 2,
+        "0x25/0x01": 2
+      },
+      "unsupported_packets": 2,
+      "first_unsupported_ordinal": 6,
+      "predicted_primitive_setup_calls": 6,
+      "predicted_unvisited_tail_packets": 4
+    },
+    {
+      "path": "/CDI/STG04/M014.LBD",
+      "source_sha256": "9c74c13b813fb2ea999ab0f565a4ddee6fdd2874c7a4d2e670b02cb2b230aefc",
+      "kind": "LBD",
+      "tmd": 4892,
+      "object": 18,
+      "grid_present_record_references": 4,
+      "source_packets": 14,
+      "source_formats": {
+        "0x39/0x01": 5,
+        "0x31/0x01": 2,
+        "0x38/0x00": 5,
+        "0x30/0x00": 2
+      },
+      "unsupported_packets": 7,
+      "first_unsupported_ordinal": 7,
+      "predicted_primitive_setup_calls": 7,
+      "predicted_unvisited_tail_packets": 7
+    }
+  ],
+  "dispatch_entry": "0x80018464",
+  "dispatch_header_mask": "0xfd07",
+  "reference_scope": "All bounded tag-nonzero records in the native primary LBD tile grid, including additional records.",
+  "original_native_execution_performed": false,
+  "natural_game_draw_routes_verified": false,
+  "unused_or_collision_only_roles_proven": false,
+  "asset_payloads_extracted": false,
+  "original_assets_or_game_source_modified": false,
+  "new_matching_C_bytes": 0,
+  "whole_feature_groups_accepted": 0
+}

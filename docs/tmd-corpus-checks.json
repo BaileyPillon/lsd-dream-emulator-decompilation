@@ -1,0 +1,377 @@
+{
+  "schema_version": 1,
+  "status": "original_TMD_corpus_draw_calls_match",
+  "generated_at": "2026-10-31T04:20:37.569423+00:00",
+  "elapsed_seconds": 1982.362168028,
+  "raw_disc_sha256": "cbf377af3e9207964f11044202eb5ecec2594a3c96e0919f7aa807d328654e61",
+  "inventory_sha256": "02ccc9af91ebcb322323fc8495a612ef05c9c9768341a8e82e3609dd95bfcf63",
+  "original_executable_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d",
+  "backend": {
+    "package_version": "2.1.4",
+    "library_api": [
+      2,
+      1,
+      33621247
+    ],
+    "library_sha256": "ddb196ec82b52e502c18e4a34478bf7b9f61c83c2ebaa95c74d8ded45a95da9c",
+    "binding_entry_sha256": "9ad32123bca674cf205c308fd4d0d2a4db877c9dc2afac4feab7c84c8cf7043b",
+    "binding_sources_sha256": "1c69249859bd4f1d789df6dcb4d8b757c0a1e46b37424b05352c2366f7058507",
+    "binding_source_count": 21
+  },
+  "source_sha256": {
+    "tools/verify_tmd_corpus.py": "bb408e4dd101031b8ad6c120dc9526efca64050aef2085349e4bcb429b66e6e6",
+    "tools/tmd_corpus_model.py": "bcd64f090540a0d48560c2ef7790c70081166c8e4b4a7505f17ea70dc850e1df",
+    "tools/verify_tmd_renderer.py": "dc9e994ca6ddcb8cb00720f8f87a4a5fedcf11206a3c60d40b23451ef918fb74",
+    "tools/tmd_renderer_model.py": "3be588f0d0860a6834966856c056d75c920ce479678dc83b1db1451c8c260467",
+    "tools/tmd_recursive_model.py": "c13037f64869bcace8752395976de01aa4288a4c677c910d739bea36e571f26a",
+    "tools/verify_tmd_projection.py": "cfdf06c4bc2e84af93f9797b9856dfaabefd73caa29a6ffc5e8d765a9e1928f5",
+    "tools/tmd_sdk_model.py": "93569516c8309d675d4d33e8b9fec273d6aad88f10ba7133ef211614dc44d5fe",
+    "tools/verify_tmd_sdk.py": "277c874d2e2411f397176d36199a6c57fde4958bc32aade6fd5b00c3d2ef076c",
+    "tools/gte_state_model.py": "f8f2ca998c341a17d92b5bb86daee5d23cbcf319401a77822d8448803ce5882b",
+    "tools/gte_state_bridge.py": "73251e82ce544d09b33a9680b5523218f8a7454e694916e6c5140f95fefd83b2",
+    "tools/nymashock_gte_state_bridge.cs": "74a8317361c92cc3a62245c6ec3746a64773a1990facf600999962010c10b36d",
+    "tools/tmd_packets.py": "260fcef209c1378d0a15ae24ca1a1ba52aed4b436d465d7855513c0830dfcfc1",
+    "tools/verify_gte_state.py": "3c1de2c5f5c11d177e1e416e5f12ac8ab90cf4a27b9c3f89340834a292401421",
+    "tools/verify_model_packets.py": "012af2b5135f01ab182cff4ad44dd6ef5ebac8fbe6dbd8ba00e8b8d18d6a18b6",
+    "tools/inventory_model_packets.py": "11fe2063f0d6bd0c121dc05de9cfabfb7a27ecd88a3b792f3f2ff8da2b51c346",
+    "tools/disc_files.py": "e98b679c3b9f8381da518b97ce0f934d2aa50d40bc67fab29e5994832b154372",
+    "tools/inventory_animations.py": "0f3273fd18ddecaa6884bed06790249095d87ebefddb0d268749e7c1f9c4f94a",
+    "tools/psx_image.py": "97e54677274f72bf1fdbde68bb7784497964350a7840b2893912910c3e2d34b3",
+    "research/original-functions.json": "6c5a8f8a95c51b2dd5c19a071e62d8a366e1d83609598272e44ef7f3c4aea5fc"
+  },
+  "compiled_bridge_sha256": "8b20af37816e1a7c2e6f6d64bdaabe841c7f2c3d80a7b4f179734270b0db0641",
+  "model_files": 422,
+  "totals": {
+    "objects": 13627,
+    "source_packets": 119458,
+    "draw_calls": 27254,
+    "mode_runs": 56082,
+    "primitive_calls": 238746,
+    "drawer_instructions": 56746669,
+    "SDK_instructions": 22929290,
+    "native_commands": 820982,
+    "native_mapper_calls": 27254,
+    "native_linker_calls": 27254,
+    "unvisited_supplied_packets": 170,
+    "TMD_tables": 531,
+    "unsupported_run_returns": 16
+  },
+  "primitive_outcomes": {
+    "submitted": 117596,
+    "backface_or_degenerate": 121150
+  },
+  "source_formats": {
+    "0x2b/0x01": 198,
+    "0x2f/0x01": 5908,
+    "0x39/0x01": 8746,
+    "0x31/0x01": 5634,
+    "0x29/0x01": 21675,
+    "0x2d/0x01": 59846,
+    "0x25/0x01": 10701,
+    "0x2c/0x00": 4444,
+    "0x21/0x01": 607,
+    "0x3b/0x01": 143,
+    "0x24/0x00": 407,
+    "0x28/0x00": 228,
+    "0x3d/0x01": 36,
+    "0x35/0x01": 13,
+    "0x33/0x01": 36,
+    "0x22/0x00": 39,
+    "0x27/0x01": 515,
+    "0x22/0x04": 4,
+    "0x20/0x00": 75,
+    "0x23/0x01": 128,
+    "0x3c/0x00": 8,
+    "0x38/0x00": 33,
+    "0x30/0x00": 2,
+    "0x2a/0x00": 32
+  },
+  "original_unsupported_run_returns": [
+    {
+      "path": "/CDI/STG04/M003.LBD",
+      "tmd": 4868,
+      "object": 25,
+      "view": 0,
+      "stopped_mode": "0x3c",
+      "stopped_flags": 0,
+      "primitive_calls": 1,
+      "supplied_packets": 13
+    },
+    {
+      "path": "/CDI/STG04/M003.LBD",
+      "tmd": 4868,
+      "object": 25,
+      "view": 1,
+      "stopped_mode": "0x3c",
+      "stopped_flags": 0,
+      "primitive_calls": 1,
+      "supplied_packets": 13
+    },
+    {
+      "path": "/CDI/STG04/M010.LBD",
+      "tmd": 4880,
+      "object": 26,
+      "view": 0,
+      "stopped_mode": "0x3c",
+      "stopped_flags": 0,
+      "primitive_calls": 1,
+      "supplied_packets": 13
+    },
+    {
+      "path": "/CDI/STG04/M010.LBD",
+      "tmd": 4880,
+      "object": 26,
+      "view": 1,
+      "stopped_mode": "0x3c",
+      "stopped_flags": 0,
+      "primitive_calls": 1,
+      "supplied_packets": 13
+    },
+    {
+      "path": "/CDI/STG04/M012.LBD",
+      "tmd": 4844,
+      "object": 17,
+      "view": 0,
+      "stopped_mode": "0x38",
+      "stopped_flags": 0,
+      "primitive_calls": 6,
+      "supplied_packets": 22
+    },
+    {
+      "path": "/CDI/STG04/M012.LBD",
+      "tmd": 4844,
+      "object": 17,
+      "view": 1,
+      "stopped_mode": "0x38",
+      "stopped_flags": 0,
+      "primitive_calls": 6,
+      "supplied_packets": 22
+    },
+    {
+      "path": "/CDI/STG04/M012.LBD",
+      "tmd": 4844,
+      "object": 18,
+      "view": 0,
+      "stopped_mode": "0x38",
+      "stopped_flags": 0,
+      "primitive_calls": 6,
+      "supplied_packets": 22
+    },
+    {
+      "path": "/CDI/STG04/M012.LBD",
+      "tmd": 4844,
+      "object": 18,
+      "view": 1,
+      "stopped_mode": "0x38",
+      "stopped_flags": 0,
+      "primitive_calls": 6,
+      "supplied_packets": 22
+    },
+    {
+      "path": "/CDI/STG04/M012.LBD",
+      "tmd": 4844,
+      "object": 19,
+      "view": 0,
+      "stopped_mode": "0x38",
+      "stopped_flags": 0,
+      "primitive_calls": 8,
+      "supplied_packets": 22
+    },
+    {
+      "path": "/CDI/STG04/M012.LBD",
+      "tmd": 4844,
+      "object": 19,
+      "view": 1,
+      "stopped_mode": "0x38",
+      "stopped_flags": 0,
+      "primitive_calls": 8,
+      "supplied_packets": 22
+    },
+    {
+      "path": "/CDI/STG04/M012.LBD",
+      "tmd": 4844,
+      "object": 20,
+      "view": 0,
+      "stopped_mode": "0x38",
+      "stopped_flags": 0,
+      "primitive_calls": 6,
+      "supplied_packets": 10
+    },
+    {
+      "path": "/CDI/STG04/M012.LBD",
+      "tmd": 4844,
+      "object": 20,
+      "view": 1,
+      "stopped_mode": "0x38",
+      "stopped_flags": 0,
+      "primitive_calls": 6,
+      "supplied_packets": 10
+    },
+    {
+      "path": "/CDI/STG04/M012.LBD",
+      "tmd": 4844,
+      "object": 21,
+      "view": 0,
+      "stopped_mode": "0x38",
+      "stopped_flags": 0,
+      "primitive_calls": 6,
+      "supplied_packets": 10
+    },
+    {
+      "path": "/CDI/STG04/M012.LBD",
+      "tmd": 4844,
+      "object": 21,
+      "view": 1,
+      "stopped_mode": "0x38",
+      "stopped_flags": 0,
+      "primitive_calls": 6,
+      "supplied_packets": 10
+    },
+    {
+      "path": "/CDI/STG04/M014.LBD",
+      "tmd": 4892,
+      "object": 18,
+      "view": 0,
+      "stopped_mode": "0x38",
+      "stopped_flags": 0,
+      "primitive_calls": 7,
+      "supplied_packets": 14
+    },
+    {
+      "path": "/CDI/STG04/M014.LBD",
+      "tmd": 4892,
+      "object": 18,
+      "view": 1,
+      "stopped_mode": "0x38",
+      "stopped_flags": 0,
+      "primitive_calls": 7,
+      "supplied_packets": 14
+    }
+  ],
+  "synthetic": {
+    "constructed_unsupported_run_calls": 32,
+    "original_code_controls": [
+      {
+        "name": "unsupported-mode-routed-to-unlit-shader",
+        "instruction_executions": 1,
+        "detected": true,
+        "clean_original_return": true,
+        "saved_ABI_and_immutable_VM_preserved": true,
+        "differences": {
+          "0x1f800000": [
+            {
+              "offset": "0x14",
+              "expected": "0xa7a7a7a7",
+              "observed": "0xa7a73006"
+            },
+            {
+              "offset": "0x28",
+              "expected": "0xa7a7a7a7",
+              "observed": "0x0"
+            },
+            {
+              "offset": "0x5c",
+              "expected": "0xa7a7a7a7",
+              "observed": "0x0"
+            },
+            {
+              "offset": "0x78",
+              "expected": "0xa7a7a7a7",
+              "observed": "0x0"
+            },
+            {
+              "offset": "0xa4",
+              "expected": "0xa7a7a7a7",
+              "observed": "0x120400"
+            },
+            {
+              "offset": "0xa8",
+              "expected": "0xa7a7a7a7",
+              "observed": "0x120410"
+            },
+            {
+              "offset": "0xac",
+              "expected": "0xa7a7a7a7",
+              "observed": "0x120400"
+            }
+          ],
+          "0x160000": [
+            {
+              "offset": "0x0",
+              "expected": "0xd3d3d3d3",
+              "observed": "0x6d3d3d3"
+            },
+            {
+              "offset": "0x4",
+              "expected": "0xd3d3d3d3",
+              "observed": "0x30d3d3d3"
+            }
+          ]
+        },
+        "GTE_state_equal": false,
+        "native_counters_equal": false,
+        "mode_and_primitive_counts_equal": false
+      },
+      {
+        "name": "normal-pool-replaced-with-vertex-pool",
+        "instruction_executions": 1,
+        "detected": true,
+        "clean_original_return": true,
+        "saved_ABI_and_immutable_VM_preserved": true,
+        "differences": {
+          "0x160000": [
+            {
+              "offset": "0x4",
+              "expected": "0x20591705",
+              "observed": "0x20591104"
+            }
+          ]
+        },
+        "GTE_state_equal": false,
+        "native_counters_equal": true,
+        "mode_and_primitive_counts_equal": true
+      }
+    ]
+  },
+  "native_preparation_functions": {
+    "map": {
+      "address": 2147616072,
+      "bytes": 120,
+      "sha256": "f2ebf166974181360c8d2ef9e5c2188a85a0c01d99a9be4959145a57a4809e41",
+      "frame": 8
+    },
+    "link": {
+      "address": 2147610480,
+      "bytes": 344,
+      "sha256": "6fdd4c9c7f41b05ce3cb2afe03cce52971b77d7020b923a8dba730dc056fbb02",
+      "frame": 56
+    }
+  },
+  "linker_jump_table_sha256": "165fdb60c6fd143866f1abf32f0958dc6a61632e44e4abda2bb07b286acae90c",
+  "journal": {
+    "file": "files.jsonl.xz",
+    "bytes": 27084,
+    "sha256": "55678fa940e3829deb83416318eb86be8a89aa72c59aed2dca48522709ee81bd",
+    "decoded_bytes": 238115,
+    "decoded_sha256": "14103cab72264d1a7729fdf69b58d389c6345a628e04b8ecd1c6803cdd681d61"
+  },
+  "complete_prepared_input_and_draw_output_buffers_compared": true,
+  "all_64_GTE_words_commands_and_native_counters_compared": true,
+  "original_mapper_linker_and_drawer_executed_without_output_stubs": true,
+  "saved_ABI_and_full_VM_outside_declared_mutable_spans_compared": true,
+  "raw_original_pools_indices_and_packet_payloads_preserved": true,
+  "only_original_SDK_mapping_and_link_headers_mutated": true,
+  "camera_policy": "two fitted opposite oblique views, scaled integer rotation, supplied translation and H=512",
+  "camera_is_recovered_game_state": false,
+  "lit_Gouraud_formats_preserve_original_drawer_early_return": true,
+  "other_in_game_draw_routes_for_those_formats_verified": false,
+  "natural_scenes_GPU_pixels_and_hardware_timing_verified": false,
+  "corpus_subdivision_paths_verified": false,
+  "stack_temporary_bytes_independently_predicted": false,
+  "no_asset_payloads_written": true,
+  "original_assets_player_and_year_replay_unchanged": true,
+  "new_matching_C_bytes": 0,
+  "new_gameplay_features": 0,
+  "whole_feature_groups_accepted": 0,
+  "whole_NPC_encounters_accepted": 0
+}
