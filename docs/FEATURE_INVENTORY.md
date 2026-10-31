@@ -1141,3 +1141,19 @@ runs, disc-model rendering, recursive clipping, replacement matrices, GPU
 pixels, natural scenes, PS1 timing or whole encounters. All prior inventory
 values are preserved: this adds zero game C bytes, gameplay features,
 whole-feature acceptances, whole NPC encounters or model API calls.
+
+## Recursive subdivision supplement, 2026-10-30
+
+The [recursive renderer profile](TMD_SUBDIVISION.md) passes 1,147 original draw
+calls, adding 263 recursive fixtures across F3/F4/G3/G4/FT3/FT4/GT3/GT4 and
+limits 1–5. The calls execute 1,977,904 original instructions and 12,356 native
+GTE commands, with 5,215 independently observed recursive entries and 15,648
+emitted subdivision packets. Complete GPU, OT, context and supplied workspace
+buffers agree, including saved return addresses and original rounding/order
+quirks. Nine original-code output controls are detected, five within recursion.
+
+These supplied single-primitive cases leave primitive/mode runs, original-model
+and natural-scene rendering, replacement matrices, GPU pixels, PS1 timing and
+the complete recursive input domain open. Prior inventory values are preserved:
+zero additional game C bytes, gameplay features, whole-feature acceptances,
+whole NPC encounters or model API calls are counted.
