@@ -580,4 +580,3 @@ axis/world, SDK rotation and GTE dependencies for seven of those callbacks in
 - [Saved-state replay boundary and synchronous capture](STATE_REPLAY_BOUNDARY.md)
 - [Optional exploration mods](OPTIONAL_MODS.md)
 - [Local tool setup](LOCAL_TOOLS.md), [tool applicability](TOOL_ASSESSMENT.md) and [provenance](PROVENANCE.md)
-
