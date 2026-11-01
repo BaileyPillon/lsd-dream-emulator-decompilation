@@ -1,0 +1,582 @@
+# Verification and research index
+
+This detailed overview retains the published evidence narrative from the
+repository overview before the 2026-11-01 source presentation pass. Each linked
+report defines its own inputs, date, scope and remaining limits. Historical
+results remain evidence for their recorded scenario; whole-game acceptance
+remains in progress. For setup and current source status, start with the
+[project overview](../README.md) and [matching-C milestone](MATCHING_GAME_C.md).
+
+The [reset/card roundtrip](RESET_CARD_ROUNDTRIP.md) now follows native Save
+after reset, then loads that exact card in a fresh process and resumes a dream.
+Original, rebuilt and stock-core outputs agree across 13,459 frames per
+comparison, including the complete save payload and preserved earlier file.
+Frontend card export is verified; the core virtual-file auto-flush warning
+remains documented separately.
+
+The [controller reset comparison](CONTROLLER_NEW_GAME_RESET.md) now follows
+the original pause/Select/Triangle route through ordinary and flashback resets.
+Original, rebuilt and stock-core runs agree across 14,915 frames per comparison.
+Both routes return to the menu loop and resume a fresh dream. The flashback
+unlock uses a documented QA score fixture; full-feature acceptance stays open.
+
+The [model vertex audit](MODEL_PACKET_DECODING.md) compares all 119,458
+polygon packets in 422 model-bearing files with the original PS1 decoder.
+Signed coordinates, enumeration cursors, saved registers and memory guards
+agree. Rendering, lighting, textures and whole-feature acceptance remain open.
+
+The [SDK mapping and linking audit](MODEL_SDK_MAPPING.md) extends that
+evidence to original pointer relocation and primitive-run construction across
+all 531 TMD tables and 13,627 objects. Complete outputs, cursor walks, reentry,
+saved registers and memory guards agree with independent predictions.
+
+The [TMD projection profile](TMD_PROJECTION.md) executes the original
+projection/culling helper in 438 fixtures through a separately qualified
+stateful GTE boundary qualified in 3,205 native cases. CI covers literal
+arithmetic and synthetic memory guards without game assets. Full drawing,
+natural scenes and PS1 timing remain open.
+
+The [renderer profiles](TMD_PRIMITIVE_RUNS.md) enter the original drawer in
+1,521 constructed calls. The latest 374 calls check 2,122 polygons across 1,159
+mode runs, retaining shared GTE state, cull history and recursive workspaces.
+The earlier 1,147 calls still pass, including all eight subdivision families
+through depth 5. Colors, UVs, transparency, fog and OT links agree; the native
+GTE boundary passes 3,333 cases. Natural-scene drawing, replacement matrices
+and GPU/hardware acceptance remain open.
+
+The [original-model draw audit](TMD_CORPUS_RENDERING.md) composes native
+SDK mapping, linking and drawing in 27,254 calls over all 13,627 descriptors
+and 119,458 source polygons. Original pools and packet bytes are preserved;
+the comparison uses two supplied inspection views per object. It retains the
+original drawer's unsupported-format early returns and identifies a specific
+STG04 runtime tracing target. Natural scene and GPU-pixel acceptance remain open.
+
+The [all-opening attract comparison](OPENING_ATTRACT.md) now completes all
+seven normal opening choices through the original title-menu loop. Its original
+and exact-input rebuilt runs agree on 162,803 paired frames and 272 unmasked
+complete states, with complete framed RAM/GPU/RGB/PCM/native/control hashes.
+Eight of 39 routed movie payloads are observed; the other payloads and remaining
+behavior/hardware acceptance gates stay open.
+
+The [full native movie-buffer comparison](FULL_MOVIE_PAYLOADS.md) extends
+that evidence to complete encoded inputs, completed VLC outputs and later MDEC
+inputs: 30,374 matching buffers and 944,165,108 hashed bytes per side. All 62,530
+frames and 105 unmasked complete states also agree. DMA completion and individual
+encoded-frame presentation remain separate gates.
+
+The [native reel decoder study](NATIVE_REEL_DECODER.md) identifies all
+twenty reel films from actual stream/VLC entries. Original and rebuilt discs agree
+on 30,374 entries, 62,530 frames and 105 unmasked complete states. Nineteen films
+reach all source IDs at VLC and MDEC input entry; the timed final-film cutoff also
+matches. Full native payload hashes and individual frame presentation remain open.
+
+The [history-triggered reel comparison](CARD_REEL_PLAYBACK.md) adds a
+constructed external-card route through native Load, an ordinary dream, the
+four-cell chart event and the reel. All 62,530 paired frames, 105 complete states
+and four decoded images agree. This binds a ninth direct movie start extent;
+all twenty concatenated payloads and naturally earned history remain unverified.
+
+[Recovered-C analysis context](RECOVERED_C_CONTEXT.md) exports verified
+original instructions and current source without an old private assembly
+catalog. Its public function metadata includes SDK routines; candidate changes
+still require a complete canonical executable match.
+
+[Build](../README.md#build-the-matching-executable) · [Play the matching build](PLAYING.md) ·
+[Status and roadmap](ROADMAP.md) · [Headless replay](HEADLESS_REPLAY.md) ·
+[Contribute](../CONTRIBUTING.md)
+
+The [cold-start comparison](COLD_START.md) now exercises the original
+title menu into a playable dream, with recorded turning, walking and audio.
+The published-tool repeat matches all recorded outputs, including save states;
+an earlier pair's emulator-label differences remain documented separately.
+
+The read-only [recorded scene inventory](RUNTIME_SCENE_INVENTORY.md)
+checks object ownership and distinguishes loaded entities from enabled NPC
+behavior contexts in those captured dreams.
+
+The [first-dream replay](COLD_DREAM_CYCLE.md) now extends that route
+through the natural time limit, dream chart and visible `Day 002` menu,
+with 30,000 frames per disc and matching complete PCM. Its eight differing
+emulator-label bytes per state remain visible in the strict result.
+
+An optional [emulator media-initialization patch](EMULATOR_LABEL_INITIALIZATION.md)
+passes that 30,000-frame first-dream profile with all 61 complete-state
+checkpoint pairs equal. The distributed profile retains its recorded failure.
+
+The optional [NPC entry tracer](NPC_ENTRY_TRACE.md) now records 2,700
+natural Buddha callback entries in one fixed controller history. Original and
+rebuilt traces agree; a separate distributed-core comparison checks the
+observer's recorded game outputs. Whole-encounter acceptance remains open.
+
+The [NPC lifetime inspector](NPC_LIFETIME.md) now distinguishes that
+history's last callback, later context shutdown and eventual loss of scene
+reachability. Closer original/rebuilt checkpoints agree, including the
+shutdown boundary at relative frame 22,580.
+
+The [compact engine observer](NPC_LIFETIME.md#engine-entries-and-stop-timer)
+records the original enable/start/stop call chain and explains the unsigned
+2,700-update stop timer. It reuses existing libraries and reference captures.
+A [second engine history](BOATMAN_LIFECYCLE.md) checks Boatman's stop path
+and the disabled contexts observed during Fish initialization.
+
+A second [compared NPC history](NPC_MULTI_INSTANCE.md) now covers seven
+Corpse instances through an original wall link. All 21 instruction entries,
+per-instance clocks, first-tick Y offsets and scene transitions agree between
+original and rebuilt runs; the observer's outputs also match the stock core.
+
+The [Boatman approach history](NPC_BOATMAN.md) adds a third callback type
+with compared natural instruction entries. All 87 entries, stored movement,
+two sound requests and selected lifecycle boundaries agree. Three 9,000-step
+cold boots also agree on recorded GPU, RAM, RGB and complete PCM output.
+Whole-NPC and whole-feature acceptance remain open.
+
+The [original NPC catalogue](NPC_CATALOGUE.md) now exports all 107
+callback PCs, complete function ranges and hashes from a matching symbolic
+link. It supplies checked observer targets and analysis metadata; it adds no
+game behavior or runtime acceptance.
+
+The optional [catalogue observer](NPC_CATALOGUE_TRACE.md) watches that
+complete target set while retaining the independent selected-PC trace. One
+compared route records 2,467 registered dispatches across Boatman, Fish and
+Giant Fish, with five instances and corroborating RAM clocks. Fish and Giant
+Fish bring compared natural histories to five callback types. These remain
+bounded observations of the original game, separate from C recovery and
+whole-encounter acceptance.
+
+The verified local build reproduces the original Japanese executable byte for
+byte. **All counted game-function text now compiles from matching C**, with
+[documented compiler-layout compatibility storage](MATCHING_GAME_C.md).
+Independently reviewed gameplay coverage remains in progress. SDK and startup
+assembly remain explicitly outside the game-C denominator.
+Game discs, executables, extracted assets and PlayStation BIOS files are not
+distributed here.
+
+## Current status
+
+The current C-recovery snapshot is dated October 30, 2026. These are
+separate measures, not a whole-game completion percentage. The initial
+publication and subsequent evidence are retained separately.
+
+The [movie structure audit](MOVIE_INVENTORY.md) checks all 39 routed movies
+and 620 original path/RNG fixtures. The [complete software decode](MOVIE_DECODE.md)
+now validates their 22,382 video frames and 27,921 XA audio packets, with a
+separate raw-byte hashing pass. The [startup comparison](MOVIE_PLAYBACK.md)
+matches 9,001 complete GPU-memory hashes, 32 full-state checkpoints, and complete
+PCM for one neutral replay. Native playback of every movie, hardware cadence,
+skip/error branches, and complete feature acceptance remain open.
+
+| Measure | Verified snapshot |
+| --- | ---: |
+| Matching game-function bytes compiled from C | 199,912 / 199,912 (100%) |
+| Remaining game assembly functions | 0 |
+| Functions with documented layout compatibility storage | 5 |
+| Original NPC/behavior callbacks with C bodies | 107 / 107 |
+| Original callbacks with bounded native comparisons | 44 / 107 |
+| Original callback types with compared natural instruction histories | 5 / 107 |
+| Provisional behavior/system groups with listed core functions in C | 40 / 40 |
+| Entire feature groups independently accepted at runtime | 0 / 40 |
+
+The [natural collision replayer](NATURAL_COLLISION_REPLAY.md) now executes
+the 194 retained hull calls. Full RAM, measured CPU/GTE views and instruction
+counts agree for 174 calls; 20 frame-boundary differences remain in the strict
+result. It reuses existing recordings and adds no matching C or feature acceptance.
+
+The [compiler census](UNUSED_LOCAL_CENSUS.md) corrects the storage
+remainder from two to three: the earlier selected audit missed an inherited
+2 KB CD-reader buffer. The compiled-C figure includes these unresolved
+functions. Three unrelated dead pointer declarations were removed with no
+change to the executable.
+
+The [original return trace](DISPATCH_RETURNS.md) now compares all 176
+recorded CD Open/Read returns and 14 nested synchronous reads. Their complete
+requested buffers match 1,007,616 disc bytes, including trailing data. Broader
+file-driver acceptance remains open.
+
+The [CD declaration repair](CD_DRIVER_DECLARATIONS.md) makes the read
+destination and helper signatures explicit and removes thirteen implicit
+internal declarations. Ordinary compiler warnings in that unit fall from
+64 to three, while a fresh complete build remains canonical.
+
+The [display callback check](DISPLAY_CD_CALLBACK.md) now aligns its type
+with the original CD tick and removes that callback warning. A read-only
+inspector also pairs the retained 98 framed Read entries into 49 queued
+origin/dispatch pairs.
+
+The [SDK completion profile](SDK_READ_COMPLETIONS.md) follows all 49 queued
+pairs to actual successful SDK returns. Its 102 completed reads match 4,593,664
+full-sector RAM bytes against the original disc, using observed Setloc and
+sequential position history. Original/rebuilt SDK records and all recorded game
+outputs agree; the observer also matches the distributed core's game outputs.
+Errors, object lifetime and complete feature acceptance remain open.
+
+The [natural file-lifetime profile](FILE_HEAP_LIFETIMES.md) now extends that
+history through 30,000 frames and the Day 002 menu. It checks the 49 queued
+reads against actual constructor and allocation generations, then observes all
+35 backing allocations being freed. Original/rebuilt and observer/distributed
+recorded outputs agree. Other file routes and whole-feature acceptance remain
+open.
+
+The [CD error/reset profile](CD_ERROR_RESET_RECOVERY.md) exercises five
+actual failed reads through tray inputs, then verifies recovery through the
+original controller reset. It distinguishes failed RAM from 162 completed
+reads and follows all 35 backing allocations for 49 post-reset queued reads
+through their frees. Original/rebuilt and observer/stock recorded outputs agree.
+The retail asynchronous error path reseeks and ends those failed requests
+without reissuing their sector reads; automatic refill is not accepted.
+
+The separate [blocking CD retry profile](BLOCKING_CD_RETRY.md) verifies
+recovery without Reset: the original helper retries the same 76-sector request
+75 times and returns the complete disc-matched buffer at frame 1,163. The
+original/rebuilt and observer/stock output windows agree. Its compact recorder
+reuses existing runtimes and hashes continuous PCM instead of retaining dumps.
+This adds bounded error-path evidence; matching-C coverage and whole-feature
+acceptance are unchanged.
+
+The [ordinal collision checks](COLLISION_ORDINAL_CALLS.md) extend the earlier
+52-call sample to all 643 primitive invocations observed from frames 900–6,000
+of the original opening route. Eleven original/rebuilt recording pairs verify
+206 hits, 437 misses, and complete captured geometry/RAM agreement. Recorded
+game outputs also agree across partitions and with the stock core. Matching C
+for both routines, geometry ownership, other routes, and whole
+collision-feature acceptance remain open.
+
+The [hull return comparison](HULL_CALLS.md) adds all 194 observed hull
+completions in the same route. Four original/rebuilt pairs agree on complete
+sample records and RAM, and the model agrees on returns, masks, contacts, and
+484 nested primitive queries. Another 159 primitive entries occur outside those
+hull intervals. This extends bounded runtime evidence without raising C coverage.
+
+The [serialized-state comparison](SERIALIZED_CORE_STATES.md) verifies every
+raw state byte at 52 checkpoints in the opening route, including a repeated
+original cold start. A run without state capture also agrees on recorded game
+outputs. Earlier eight-byte cold-boot differences are mapped to unused media-label
+storage; their failed records remain preserved. Whole-game parity remains open.
+
+The feature inventory has 40 provisional groups; an official exhaustive
+feature total is unknown. SDK and startup code are excluded from the C-byte
+denominator. Bounded native and emulator comparisons have passed, including
+a 6,000-frame sequence with matching frame, GPU, state and PCM audio output.
+Their scope and remaining gaps are documented in the
+[feature inventory](FEATURE_INVENTORY.md) and [roadmap](ROADMAP.md).
+The [Hanged Woman check](HANGED_WOMAN.md) adds original mood, player-control,
+motion and held-node paths through 30 native routines in 2,514 fixtures and
+1,106 constructed history calls. Bounded callback coverage is 44 / 107;
+natural encounters and whole-feature acceptance remain open.
+The earlier [Shark and Hopscotch Girl checks](SHARK_HOPSCOTCH.md) cover original
+movement, stopping, proximity and frame commands through embedded entity
+contexts and 28 native functions, reaching 43 / 107 at that checkpoint.
+The [Apartment Bear check](APARTMENT_BEAR.md) covers original model-bound
+animation selection, RNG, movement and stopping through 30 native functions.
+The [Astronaut behavior check](ASTRONAUT_BEHAVIOR.md) exercises its
+original mood, proximity and movement chain through 21 native functions and
+the native GTE backend. Natural encounters and complete runtime acceptance
+remain open.
+The [model enumeration interfaces](MODEL_ENUMERATION.md) now explicitly
+forward the original arguments through the object/list/part callback chain.
+The optional [model-data comparison](MODEL_MAPPING.md) checks the complete
+guarded MOM copy through original pointer mapping, primitive batching and
+destruction against independently predicted bytes. It extends the existing
+ownership histories without adding C bytes or accepting whole encounters.
+The optional [model-object comparison](MODEL_OBJECTS.md) also checks every
+allocated model payload at the original factory return, including retained
+allocator residue. The [actor-object comparison](ACTOR_OBJECTS.md) checks
+every live pool allocation at actor-factory return, after the original
+first-frame commands. Later playback and natural encounters remain open.
+The [animation selector check](ACTOR_ANIMATIONS.md) extends that comparison
+to all 122 animation instances, with 1,952 explicit first-frame selections and
+24 completed wrong-output controls. The
+[actor tick checker](ACTOR_PLAYBACK.md) now follows all 4,260 script frames
+through 37,008 original tick calls, including animation pause/resume and looping.
+That constructed profile leaves rendered playback and natural encounters open.
+The later [NPC entry trace](NPC_ENTRY_TRACE.md) separately records one
+natural timed Buddha history with an enabled original callback.
+The [collision query interface](COLLISION_API.md) now declares the original
+pointer roles and output sizes. A compiled C caller passes 12,696 bounded inputs;
+the complete matching executable and source-recovery counts are unchanged.
+The [point-transform interface](POINT_TRANSFORM_API.md) shares one typed
+declaration across the original definition and both callers. Regular and fresh
+complete builds remain canonical; source-recovery counts are unchanged.
+The matching game can be launched with the [play helper](PLAYING.md),
+which verifies local inputs and creates an isolated emulator profile.
+The [NPC state and cycle checks](STATE_CYCLE_SCRIPTS.md) extend the scripted
+suite to 278,115 fixtures across 26 callbacks. All 122,518 earlier inputs remain.
+The suite detects 37 faults and observes every altered instruction executing.
+The earlier [periodic NPC checks](PERIODIC_SCRIPTS.md),
+[Hoop Girl](HOOP_SCRIPTS.md) and
+[Bell Striker and Opera Singer](BELL_OPERA_SCRIPTS.md) checkpoints retain
+their original evidence within this suite. Whole encounters remain open.
+The [populated actor child checks](ACTOR_CHILD_FLAGS.md) extend Fox's
+downstream flag path through the real scene-node and bit-setter methods.
+They verify 16,512 case inputs without output stubs and correct the actor
+virtual declaration while preserving both complete matching builds.
+The [actor construction checker](ACTOR_CHILD_CONSTRUCTION.md) now makes
+the original child allocator and constructors reproducible from a disc
+extraction, with independent complete-buffer comparisons and two memory patterns.
+Supplied descriptors and SDK initialization remain explicit fixture boundaries.
+The optional [child lifetime profile](ACTOR_CHILD_LIFETIMES.md) follows
+those objects through original destruction, repeated cleanup and pool reuse.
+The [model/actor factory checker](ACTOR_FACTORY_OWNERSHIP.md) now creates
+the real model resources and checks three ownership histories against an
+independent allocation/release plan. Its optional
+[actor-object profile](ACTOR_OBJECTS.md) checks complete live allocations
+at successful constructor return; natural encounters remain open.
+The [NPC proximity checks](NPC_PROXIMITY.md) add Bear, Rabbit, Acrobats and
+Ship in 10,408 distinct fixtures through 25 original routines. Real distance,
+trigger-ratio, RNG, movement, event and GTE dependencies execute with no output
+stubs. Natural encounters and whole-callback acceptance remain open.
+The [periodic spatial checks](NPC_PERIODIC_SPATIAL.md) add Minotaur and
+Giant Minotaur and replace Bird's trigger-ratio output contract with the real
+method. All 2,628 distinct initialized inputs pass through original movement
+and native GTE code. These are bounded profiles; no whole encounter is accepted.
+The [Gunman checks](GUNMAN_SCRIPTS.md) add 36,338 fixtures for the two
+Gunman callbacks and 15 scheduled script histories. Actual effect activation,
+color arithmetic, RNG and callback clearing execute under declared allocation,
+attachment, geometry and sound contracts; whole encounters remain open.
+The [locomotive checks](LOCOMOTIVE_SCRIPTS.md) add the Factory, Kyoto and
+Natural callbacks in 70,345 distinct fixtures and 14 scheduled histories.
+Original RNG, mood/color calculation, animation flags and callback resets
+execute under explicit geometry, notification and sound contracts. All three
+callbacks already had matching C bodies; this extends behavior evidence.
+The [expanded source-layout audit](SOURCE_LAYOUT_EXPANDED.md) corrects the
+earlier selected five-function scan. It identifies 28 unused-storage functions
+and withdraws four promotions that added padding. Their readable padding-free
+candidates remain historical research. The later
+[generation lookup recovery](GENERATION_LOOKUP_RECOVERY.md) replaces the
+entry scanner and structure updater with matching C, adding 580 recovered bytes.
+The [menu lookup recovery](MENU_LOOKUP_RECOVERY.md) adds another 1,052
+matching C bytes and resolves all four withdrawn source functions through
+consumed method lifetimes. The later
+[callback storage recovery](CALLBACK_STORAGE_RECOVERY.md) removes five
+inherited unused arrays while retaining every original instruction. The
+[constructor and actor recovery](CONSTRUCTOR_ACTOR_STORAGE.md) explains
+two more. The [accessor recovery](ACCESSOR_STORAGE_RECOVERY.md) explains
+another three. Fourteen identified inherited source explanations and five
+assembly functions remained at that checkpoint. The
+[input storage recovery](INPUT_STORAGE_RECOVERY.md) explains six more,
+leaving eight identified source explanations at that checkpoint. The
+[text and render callback recovery](TEXT_CALLBACK_STORAGE.md) explains
+two further functions, leaving six identified explanations at that checkpoint.
+The [atlas and tile-buffer recovery](ATLAS_TILE_STORAGE.md) explains four
+more, leaving two identified storage explanations at that checkpoint. The
+[matching grid-window recovery](GRID_MATCHING_C.md) now replaces another
+660 bytes of assembly with C, leaving four assembly functions. Ordinary and
+fresh 306-object builds reproduce the complete original executable.
+The later [sprite-scale and bounds recovery](UI_SCALE_BOUNDS_MATCHING_C.md)
+adds 668 matching C bytes from reviewed, attributed source. Both functions and
+the combined ordinary/fresh builds match the original executable, leaving two
+game assembly functions. The original compiler and assembler are unchanged.
+C-byte coverage does not certify original source quality or whole-game parity.
+The [file-driver interface checks](FILE_DRIVER_INTERFACES.md) correct the
+shared/debug Open arguments and Read result while preserving the unsigned
+length. Original methods and slot copying pass 600 bounded cases without
+output stubs. Full disc I/O and the two inherited debug frames remain open.
+The [overlap control-flow study](OVERLAP_CONTROL_FLOW.md) reduces that
+unaccepted candidate's complete-image difference from 148 to 26 bytes. All
+remaining differences are stack displacements; 6,912 existing native graph
+pairs pass. Its assembly fallback and C-recovery counts remain unchanged.
+The [render query record cleanup](RENDER_QUERY_RECORD.md) removes a
+separately identified redundant buffer tail. Actual compiler traces explain
+its allocation, and the complete executable remains identical; the counts
+above are unchanged.
+The [bounds research comparison](BOUNDS_NARROW_COMPARISON.md) publishes
+the retained 19-byte candidate and a confined native checker. It improves the
+research starting point while the matching game retains its assembly fallback.
+The [generation structure checks](GENERATION_STRUCTURES.md) execute eleven
+original routines and compare 1,116 fixtures per original/candidate image,
+including virtual dispatch, position updates and mode 3 sprite RNG/scaling.
+That earlier padding-free candidate agreed on the fixtures and failed the exact
+source gate. The later matching lookup recovery closes this source gate while
+whole-feature acceptance and NPC callback coverage remain unchanged.
+The later [generation effect checks](GENERATION_EFFECTS.md) extend mode 0
+through all eight rate variants and four active child layouts, using fifteen
+original routines, 3,116 fixtures and 40 consecutive-update histories per image.
+Its nine faults are detected with measured changed-instruction execution.
+The [generation entry checks](GENERATION_ENTRIES.md) recover the actual
+ten-byte transform packet and check all 56 original entry records through the
+scanner and real coordinate conversion in 4,116 fixtures per image. The earlier
+[entry method-return candidate](GENERATION_ENTRY_METHOD.md) reduced the
+complete image's differences from twenty to six bytes. The matching lookup
+recovery now resolves the frame, store and call-register differences; natural
+spawning, lifetimes and whole-feature acceptance remain open.
+The earlier [overlap source recovery](OVERLAP_RECOVERY.md) checks a two-point,
+twelve-byte collision candidate in 6,912 native graph pairs with matching caller
+buffers and ordered GTE results. Its 170-byte nonmatch remains historical
+evidence; the later control-flow study above supersedes that candidate. The
+snapshot retained assembly; the current matching-C milestone supersedes its
+source gate. Whole-feature acceptance remains open.
+The [save-title recovery](SAVE_LABEL.md) documents an earlier matching C
+promotion, its native checks and the correction to SDK/game classification.
+The [SDK and sound API audit](SDK_SIGNATURE_AUDIT.md) documents corrected
+volume-function names and an external signature workflow with explicit ambiguity.
+The historical [render-context bounds checks](RENDER_BOUNDS.md) recover
+bounded behavior and retain a then-nonmatching C candidate. Their source gate
+has been superseded by the current matching game C.
+The [bounds source recipe](../research/render_bounds/README.md) reproduces the
+historical 21-byte-different candidate and its explicitly failed matching gate.
+The [stream exclusion recovery](STREAM_EXCLUSION.md) puts the original
+twelve-byte bounds record in matching C and corrects its typed setter. The
+actual cached-position and row-selection path passes 9,252 constructed fixtures
+through ten original routines without output stubs. C function coverage and
+whole-feature acceptance remain unchanged.
+The [render-position query interfaces](RENDER_QUERY_API.md) now share the
+44-byte result record and declare the original pointer arguments and return
+values. Compiler allocation traces explain another redundant buffer tail;
+regular and fresh clean builds preserve the complete original executable.
+The [glyph region cleanup](GLYPH_REGIONS.md) replaces two oversized byte
+buffers with their twelve-byte source region. Compiler observations explain
+the original allocation; C coverage and the 24 unresolved storage functions
+remain unchanged.
+The [glyph character interface](GLYPH_CHARACTER_API.md) corrects the
+virtual getter's unsigned-byte return and both character-method receivers.
+Compiled C callers pass 4,656 native checks through the original methods;
+regular and fresh clean builds retain the complete canonical executable.
+The [save workflow checks](CARD_SAVE.md) exercise the original writer,
+retry wrapper and native string helpers; physical card I/O and the writer's
+exact C recovery remained open at that checkpoint.
+The later [matching writer recovery](CARD_WRITER_RECOVERY.md) promotes
+the complete 960-byte writer to C, with standard and clean builds matching
+the original. Both card groups now have every listed core function in C;
+physical I/O and whole-feature acceptance remain open.
+The [persisted-card round trip](CARD_ROUNDTRIP.md) compares an ordinary
+day-two save and a cold-boot load, including complete card files and restoration
+of the 1,792-byte native save buffer. The replay tools preserve isolated QA
+profiles; source recovery and the remaining card/error routes stay separate.
+The [empty-card Load investigation](EMPTY_CARD_LOAD.md) identifies the
+native not-found dialog and names its operation/state fields in matching C.
+Recorded game buffers agree; eight differing core-state bytes keep its full
+runtime comparison open. The [native accessor checks](NYMASHOCK_STATE.md#empty-card-extension-and-native-accessors)
+locate these bytes in the emulator's unused media-label storage and execute
+the bundled string methods. Raw state comparisons remain unchanged.
+The [card cleanup audit](CARD_CLEANUP.md) checks 501 original/candidate
+fixture pairs with an explicit allocator stub. It verifies dynamic reloads
+and release order while retaining the eight-byte source-layout mismatch.
+The later [native heap composition](CARD_HEAP.md) runs the real allocator
+and lock helpers with zero output stubs, checking 96 allocator sequences and
+180 cleanup layouts per image. The source-layout mismatch remains unresolved.
+The [rendering grid-window checks](RENDER_GRID.md) verify every angle word
+and bounded scalar grid/clamp rules; complete matching C remains unresolved.
+The [grid and streaming composition](RENDER_STREAM.md) checks 45,408 cases
+through the original builder, row splitter and object selector; three position
+and GTE contracts remain.
+The later [world-position composition](RENDER_POSITION.md) executes the
+original lookup chain with zero stubs and integrates it into nine-function
+grid/stream checks. Two GTE contracts remain; scene and timing acceptance are
+still open.
+The later [original SDK rotation audit](RENDER_ROTATION.md) executes
+`RotMatrix` with its canonical table, reducing the ten-function composition
+to one `ApplyMatrixLV` hardware contract. Actual GTE and scene acceptance
+remained open at that checkpoint. The subsequent [native GTE audit](RENDER_GTE.md)
+executes the original matrix helper with checked Nymashock commands in 109,501
+distinct fixtures and composes eleven original functions in 13,230 cases
+without function-output stubs. Its explicit COP2 transfer adapter leaves
+full PS1 CPU timing, natural scenes and whole-feature acceptance open.
+The [collision audit](COLLISION.md) executes the original primitive and
+transform routines through their actual dependencies, with 12,696 primitive
+cases and 6,912 composed graphs. It verifies native cross-product, square and
+square-root behavior, preserves contact-height and expanded-bounds quirks, and
+detects three faults. Both remaining collision functions still need matching C.
+The later [collision recovery research](../research/collision/README.md) publishes
+an unaccepted primitive C fragment whose complete build differs in 22 bytes,
+down from 103. Paired native checks and non-NULL midpoint checks pass; those
+results add bounded evidence without accepting either remaining C function.
+The [fraction and reload study](COLLISION_FRACTIONS.md) makes the candidate's
+fraction operands useful without changing its executable and locates its seven
+reload allocations after the main workspace. Fourteen complete-unit source
+comparisons leave the original bounds lifetime unresolved.
+The [compiler-layout diagnostic](COMPILER_LAYOUT.md) observes actual GCC
+allocator calls and verifies that tracing preserves complete assembly output;
+the primitive's bounds-storage lifetime still needs recovery.
+The later [compiler-lifetime investigation](COMPILER_LIFETIMES.md) measures
+why an address-taken local survives a nested block and verifies reuse after an
+inline helper returns. The native early storage region remains unexplained;
+69 additional source forms produce no exact match.
+The [register-allocation tracer](COMPILER_ALLOCATION.md) records actual
+local/global compiler decisions, verifies priority comparisons and preserves
+complete assembly output. It extends candidate analysis without accepting a
+nonmatching source form or changing original gameplay.
+The [inline-call diagnostic](COMPILER_INLINE_TYPES.md) identifies the
+bundled compiler's aggregate type-identity rejection and includes a standalone
+reproducer. Normal and observed complete assembly must agree; C recovery and
+gameplay acceptance counts remain unchanged.
+The [matching grid-window source](GRID_MATCHING_C.md) now reproduces all
+660 original function bytes, including its 152-byte frame. The signed angle
+test, unsigned normalization and consumed inclusive-endpoint operand resolve
+the earlier scheduling and reload differences. The
+[grid research sources](../research/render_grid/README.md) retain the historical
+eight-byte edge and seven-byte cell-reuse candidates. The
+[cell-ownership study](GRID_CELL_OWNERSHIP.md) repeats 74,832 scalar pairs
+and detects ten faults; both source forms remain outside the matching game.
+The [native candidate comparison](GRID_NATIVE_COMPOSITION.md) extends
+those source forms through actual lookup, SDK/GTE and streaming dependencies
+in 24,780 distinct graph inputs per image, with zero function-output stubs.
+Those comparisons remain bounded evidence; natural-scene acceptance remains open.
+The [grid phase comparison](GRID_PHASES.md) locates the height-copy order
+change in the first scheduling pass, rechecks two complete builds and rules out
+133 further source forms. Its reusable phase reader retains the exact source
+gate and adds no whole-feature acceptance. The later edge-lifetime study
+explains the allocation change and checks the improved C image against all
+74,832 existing scalar fixtures per image, retaining four dependency contracts.
+The [compiler memory-store investigation](COMPILER_MEMORY_STORES.md)
+observes why a consumed math work pair retains two extra stores, checks 50
+further source forms and compares three isolated frontend controls. Its
+reusable tracer preserves complete assembly; exact source recovery remains open.
+The [menu layout checks](MENU_LAYOUT.md) compare 864 constructed histories
+per original and three candidate images through 39 original methods, including
+glyphs, graphics effects, parent lists and the allocator. Two callback declaration
+corrections preserve standard and fresh clean builds; both menu callers still
+need matching C and natural screen/input/render evidence.
+The [sprite scaling audit](UI_SCALE.md) checks 203,472 native cases,
+including overlapping inputs and incoming-register quirks. Its earlier
+12-byte nonmatch and reload observations remain historical research. The later
+[matching C recovery](UI_SCALE_BOUNDS_MATCHING_C.md) replaces that assembly
+function and the bounds predicate while preserving the complete executable.
+The [level-model loader audit](LBD_PIPELINE.md) checks 418 local level
+files through native construction and destruction, including repeated loads.
+The later [matching loader recovery](LBD_RECOVERY.md) promotes its 600-byte
+function to C, with complete standard and clean builds matching the original.
+The [Japanese disc verification](JAPANESE_EDITION.md) compares both asset
+editions and corrects two checksum words to reproduce the complete Japanese
+disc byte for byte. Its replay evidence is recorded separately. The later
+[Nymashock state diagnosis](NYMASHOCK_STATE.md) identifies the eight varying
+cold-boot bytes as unused media-label storage, while retaining every strict
+byte difference and the remaining gameplay acceptance requirements.
+
+The [Japanese movement and controller-poll evidence](MOVEMENT_PARITY.md)
+adds 9,000 paired emulator frames, with observed original controls and native
+pad press/hold/release fields. It corrects the replay's running binding and
+tap duration while preserving the canonical game and whole-feature gates.
+
+
+The [additional original NPC checks](SCRIPTED_EXTENSION.md) cover the
+fish's full 24,000-tick joint command cycle, elephant scale requests and
+airship RNG/link/child decisions. That profile's bounded comparisons cover 16 of
+107 callbacks; natural encounters and whole-feature acceptance remain open.
+The [spatial composition](NPC_SPATIAL.md) executes original transform,
+axis/world, SDK rotation and GTE dependencies for seven of those callbacks in
+26,194 additional composition fixtures. It retains one trigger-ratio contract.
+
+## Further reading
+
+- [Roadmap and remaining work](ROADMAP.md)
+- [Original screen resource cleanup](SCREEN_RESOURCE_CLEANUP.md)
+- [Shared menu/chart prefix, original bindings and typed caller checks](COMMON_SCREEN_PREFIX.md)
+- [Original new-game/reset save-block semantics and native checks](NEW_GAME_RESET.md)
+- [Title-menu panel structure and ownership](MENU_PANEL_OWNERSHIP.md)
+- [Natural title-menu construction state and lifetimes](NATURAL_MENU_LIFETIMES.md)
+- [Streaming state hashes and progression resource measurements](STATE_HASH_STREAMING.md)
+- [Cooperative frame waits and the natural-year verification host](COOPERATIVE_FRAME_WAITS.md)
+- [Ending-field lifecycle validation and the retained 365-day recording](YEAR_ENDING_FIELD_LIFECYCLE.md)
+- [Passing original/rebuilt 365-day and ending-window comparison](NATURAL_YEAR_ENDING.md)
+- [Cold movie playback, native stop lifecycle and controller skips](COLD_MOVIE_WINDOWS.md)
+- [All seven normal opening choices through the attract loop](OPENING_ATTRACT.md)
+- [Play the matching game](PLAYING.md)
+- [Model enumeration and callback interfaces](MODEL_ENUMERATION.md)
+- [Feature inventory and before/after measurements](FEATURE_INVENTORY.md)
+- [Original NPC behavior](NATIVE_AI.md), [native dispatch](NATIVE_DISPATCH.md), [target catalogue](DISPATCH_CATALOGUE.md), [method-entry recording](DISPATCH_ENTRY_TRACE.md), [executed slot loads](DISPATCH_SLOT_FLOW.md), [original returns and read buffers](DISPATCH_RETURNS.md) and [animation structures](NATIVE_ANIMATIONS.md)
+- [Nine additional original scripted callback checks](SCRIPTED_AI.md)
+- [Factory, Kyoto and Natural locomotive checks](LOCOMOTIVE_SCRIPTS.md)
+- [Asset inventory](ASSET_INVENTORY.md) and [runtime comparison](RUNTIME_COMPARISON.md)
+- [Original sound banks, sequence initialization and stage-9 music selection](SOUND_ASSETS.md)
+- [Saved-state replay boundary and synchronous capture](STATE_REPLAY_BOUNDARY.md)
+- [Optional exploration mods](OPTIONAL_MODS.md)
+- [Local tool setup](LOCAL_TOOLS.md), [tool applicability](TOOL_ASSESSMENT.md) and [provenance](PROVENANCE.md)

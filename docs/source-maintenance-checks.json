@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "recorded_date": "2026-11-01",
+  "baseline_commit": "171f74a3b0b5b8c5e2b595c5a75fe155cdb11a38",
+  "scope": "Source readability and project navigation only; original binary retained. No new recovered bytes, gameplay implementation or acceptance.",
+  "function_identifier_refinements": 33,
+  "functions": [
+    "bgm_create",
+    "bgm_construct",
+    "bgm_on_notify",
+    "bgm_handle_event",
+    "seq_open",
+    "seq_set_vol",
+    "bgm_set_sequence",
+    "bgm_set_sound",
+    "seq_file_create",
+    "seq_file_construct",
+    "seq_file_cleanup",
+    "sound_create",
+    "sound_construct",
+    "sound_update_vab_load",
+    "sound_finish_vab_load",
+    "sound_build_program_table",
+    "sound_play_note",
+    "sound_stop_note",
+    "sound_set_volume_offset",
+    "dream_session_cleanup",
+    "dream_session_on_tick",
+    "dream_session_tick",
+    "open_map",
+    "dream_session_noop2",
+    "dream_session_on_link_code",
+    "dream_session_path_advance",
+    "game_flow_create",
+    "run_screen",
+    "game_flow_execute_dream",
+    "get_seeded_random",
+    "get_random_sound_type",
+    "get_random_stage_texture_path",
+    "get_stage_music_path"
+  ],
+  "sound_fields": {
+    "unk19": "m_ToneStorage",
+    "unk20": "m_ProgramTable",
+    "unk21_1": "m_VabId",
+    "unk22_1": "m_VabReady",
+    "unk22_2": "m_TransferPending",
+    "unk23": "m_PathStorage",
+    "unk24": "m_PitchOffset"
+  },
+  "bgm_open_state_offset": "0x1A",
+  "files": [
+    {
+      "path": "src/sound/bgm.c",
+      "before_working_tree_sha256": "3ffdfd45c801b41c13a7a8c0b02092d3c0767587cc5e7d6a6ea76d87592049d5",
+      "before_git_sha256": "e89264472045703917bcb5b02e8c07c011c424310258fff2eb6a0223db10e7dc",
+      "after_sha256": "d9473f650518a1138c33ceec9da5e11d87c41e6e0b88602f761ae0cdff3e54fe"
+    },
+    {
+      "path": "src/sound/bgm.h",
+      "before_working_tree_sha256": "62efb20508fef612a67d190cdd5e80c883bd23c82fc09d3ad65acde414c2f845",
+      "before_git_sha256": "e66b2b89e8c099d16f833044fb1bf411fb1c5cad8d9789b3b20fd76aab5f2950",
+      "after_sha256": "daa78138184608578f4c964429a49b72aceeedde0ddcc49c9dca37dff0ac6df9"
+    },
+    {
+      "path": "src/sound/seq_file.c",
+      "before_working_tree_sha256": "a2629304ccb5ba7ae5bf2b842c6661da920086ff134e8d5a781069f604e8cddf",
+      "before_git_sha256": "44a7166c521525f2682354a571d31ba5f873b60c20c8c647ae5b4f58a6d873f5",
+      "after_sha256": "c6433f2aebdd4f05331c342658c195989a0f716b240723fb71e4e986387ea488"
+    },
+    {
+      "path": "src/sound/seq_file.h",
+      "before_working_tree_sha256": "d17d12dda27b111e644fc70a2722c579151a3063f8ed24670bb6e457ea9278f8",
+      "before_git_sha256": "f5e0777381830ab1acd7b9d4d180bb2739f190d96ffb54f21d9e096d084c2f76",
+      "after_sha256": "6a89e69696d075a30d6afffe0b41f5aa3c672bbca06a45b9ea1d2fbca61c32e6"
+    },
+    {
+      "path": "src/sound/sound.c",
+      "before_working_tree_sha256": "c3174cf04aeb55867cd70fa681edc6146121551a27d9e7ca9ad5b4dd1697dc10",
+      "before_git_sha256": "c3174cf04aeb55867cd70fa681edc6146121551a27d9e7ca9ad5b4dd1697dc10",
+      "after_sha256": "f81eecca44e19ad5fd4545af7e9a5f7d9423a2d8fdcafeec1403c03bc891011d"
+    },
+    {
+      "path": "src/sound/sound.h",
+      "before_working_tree_sha256": "755b7e80331993b3ce9eb167a15e2ed7fd9bfd62202142ab706da645929169fb",
+      "before_git_sha256": "480991e9282e760e25b70b9ae58e2b7bcc1392f8ee77574f15b729fdb11d5a9b",
+      "after_sha256": "33e2dd3ddf839e4bfd567564b9608ff87e8809ded599f6c24c9d6bb339f68776"
+    },
+    {
+      "path": "src/dream/dream_session.c",
+      "before_working_tree_sha256": "78490500b752b0a27cb7b0f5ce0f58f0cd8641b59780949987cc58c5679d69e4",
+      "before_git_sha256": "3727bdcce85c588c9e6c1841f319fcef849da258fa16ff246e68409e1ddfc43d",
+      "after_sha256": "f5df9d52421019a38ff73a3849cbd36a34cb64a7df4e064f137e0d9160c0c112"
+    },
+    {
+      "path": "src/dream/dream_session.h",
+      "before_working_tree_sha256": "58e1cca9028661897b86388307cdf920939628a4838ab43684641239109c0660",
+      "before_git_sha256": "7ab7b0d281dbd751743ce28259253a7fd5c6a5b734f6f0973f5233dd1e9e7e19",
+      "after_sha256": "42bf39b4923de786ab6ba624d827bb77024c924ae5865d0871f2f11ea2ab70db"
+    },
+    {
+      "path": "src/dream/dream_session_path.c",
+      "before_working_tree_sha256": "de7e72a1a8694521ad9243731b3c9c1e39d07873846b75864fc8a032b95ca1d2",
+      "before_git_sha256": "bc2d8fea58c3ca18ad1bbe5f2cb3af50c3663b879fd73d2b545ae4ca0aab7a20",
+      "after_sha256": "4fab434e9406e97223d7c39b987a85c3c46b173d274d70aaf142c9733ce2f955"
+    },
+    {
+      "path": "src/dream/dream_session_path.h",
+      "before_working_tree_sha256": "50fab5b1b1a9338247a88c909118cd00fe235a8c765d6e7d9a6dac1b7580949c",
+      "before_git_sha256": "392d2aced64380fbff75b8c91e12a24d2f05d970ff0eeb44af5fabe8680020ac",
+      "after_sha256": "065cd317085c3792b2f5ddc8bf7d55c5e22e526dbb8bb31baf70f65a91565950"
+    },
+    {
+      "path": "src/game/game_flow.c",
+      "before_working_tree_sha256": "b8412d1d3207da21ae29a5fc1d3293eedbf8c50f6f780b5b191ea330df1ba305",
+      "before_git_sha256": "b8412d1d3207da21ae29a5fc1d3293eedbf8c50f6f780b5b191ea330df1ba305",
+      "after_sha256": "5504c35a75a206923031c5b891f3a92dfff72be37a2d318340d660d55f86cd04"
+    },
+    {
+      "path": "src/base/base.h",
+      "before_working_tree_sha256": "aec74fef6d427a2242f2387894fd7374be4d092d313fed1fc02fa94578e6bfab",
+      "before_git_sha256": "8d6f99479b259072955b0b0ff8527f36039fb2fff2348c8291460c8ad42ac52e",
+      "after_sha256": "e1d99ec278a6165a28a8f5e9998779f802b39c24b85eff3b59bee09c9a039b6d"
+    },
+    {
+      "path": "src/utils/cd_paths.c",
+      "before_working_tree_sha256": "380f325eb63bfcee49f4bfee8fc8917ce04d99bf7121dea427b1f6a6bccb9eae",
+      "before_git_sha256": "b5cab6b884909fcb3e87923d3fcfba00af0afecc2eec3960bc2f0960e8ecd8ea",
+      "after_sha256": "5336870092571b4c9bee1a01d376b95ed68dacd6cd01af465159b6580217c1b9"
+    }
+  ],
+  "build": {
+    "objects_expected": 306,
+    "objects_found": 306,
+    "complete_objects": true,
+    "build_current": true,
+    "c_bytes": 199912,
+    "game_text_bytes": 199912,
+    "c_coverage_percent": 100.0,
+    "sdk_text_bytes": 147880,
+    "handwritten_text_bytes": 188,
+    "binary_match": "verified",
+    "actual_sha1": "76322eeade5ebb22dca57fdeac7d68c30f06308d"
+  },
+  "complete_executable_equal": true,
+  "executable_bytes": 505856,
+  "executable_sha256": "282308ade239ce61b5603651dbbab0476a681b5d3618e82c0d3c3a95316d302f",
+  "clean_build_performed": false,
+  "build_command": [
+    "ninja",
+    "check"
+  ],
+  "progress_command": [
+    "python",
+    "tools/progress.py",
+    "--json"
+  ],
+  "new_c_bytes": 0,
+  "whole_original_feature_groups_accepted_delta": 0,
+  "original_npc_acceptance_delta": 0,
+  "ai_model_calls": 0,
+  "tooling_tests": {
+    "windows": {
+      "tests_run": 1746,
+      "skipped": 17,
+      "result": "passed"
+    },
+    "linux": {
+      "tests_run": 1761,
+      "skipped": 12,
+      "result": "passed"
+    },
+    "scope": "Full local discovery includes preserved, uncommitted observer tests; public CI separately checks the exact committed tree."
+  },
+  "runtime_campaign_performed": false,
+  "remaining_limits": [
+    "Unresolved interface types and address-derived names remain.",
+    "Inherited compiler/linker warnings remain visible.",
+    "Whole-game gameplay acceptance remains open."
+  ],
+  "documentation_links": {
+    "local_links_checked": 254,
+    "original_readme_destinations_retained": 162,
+    "missing": 0
+  }
+}

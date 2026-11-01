@@ -13,7 +13,8 @@
 #include "scene/render_context.h"
 #include "sys/pad.h"
 
-// TODO move?
+/* Shared graphics context passed between game flow, menus and dream scenes.
+ * Address-derived member names remain until their full interfaces are known. */
 typedef struct {
     display_t *display;
     pad_t *cls_16634;
@@ -94,16 +95,16 @@ void dream_session_construct(dream_session_t *This,
                              dream_sys_t *DreamSys,
                              s32 FrameSyncMode);
 void dream_session_cleanup(dream_session_t *This);
-void dream_session_on_tick(dream_session_t *This, void **Unk2, s32 Unk3);
+void dream_session_on_tick(dream_session_t *This, void **Sender, s32 Code);
 void dream_session_reset(dream_session_t *This);
 void dream_session_execute(dream_session_t *This);
 void dream_session_stop(dream_session_t *This);
 void dream_session_start(dream_session_t *This);
 void dream_session_update_actor(dream_session_t *This);
-void dream_session_tick(dream_session_t *This, void *arg1, s32 arg2);
+void dream_session_tick(dream_session_t *This, void *Sender, s32 Code);
 void dream_session_noop(dream_session_t *This);
-void dream_session_noop2(dream_session_t *This, void **Unk2, s32 Unk3);
-void dream_session_on_link_code(dream_session_t *This, s32 Unk2, s32 Unk3);
-void open_map(dream_session_t *This, s32 Unk);
+void dream_session_noop2(dream_session_t *This, void **Sender, s32 Code);
+void dream_session_on_link_code(dream_session_t *This, s32 SenderAddress, s32 Code);
+void open_map(dream_session_t *This, s32 MapIndex);
 
 #endif

@@ -15,6 +15,8 @@
 #include "file/file_buf.h"
 #include "file/tmd_model.h"
 
+/* Top-level screen orchestration. Screen factories, Run results and teardown
+ * order retain the native contracts, including original failure paths. */
 static game_flow_vtable_t g_GAME_FLOW_VTABLE = {
     0x1F60,
     base_class_destructor,
@@ -45,14 +47,15 @@ static game_flow_vtable_t g_GAME_FLOW_VTABLE = {
 };
 
 game_flow_t *game_flow_create(game_config_t *Config) {
-    game_flow_t *cls = ALLOCATE_STRUCT(game_flow_t);
+    game_flow_t *allocated = ALLOCATE_STRUCT(game_flow_t);
 
-    if (cls) {
-        game_flow_get_vtable()->Construct(cls, Config);
-        return cls;
+    if (allocated) {
+        game_flow_get_vtable()->Construct(allocated, Config);
+        return allocated;
     }
 
 #ifdef NON_MATCHING
+    /* The matching factory leaves its failure return register unspecified. */
     return NULL;
 #endif
 }
@@ -167,9 +170,9 @@ s32 game_flow_execute_main_menu(game_flow_t *This) {
 
 // Creates a screen object, runs it (vtable +0x44) with runArg, destroys it (vtable +0x04),
 // and returns the value the screen's Run returned.
-s32 run_screen(game_flow_screen_t *(*create)(s32), s32 createArg, void *runArg) {
-    game_flow_screen_t *screen = create(createArg);
-    s32 run_result = screen->vtable->Run(screen, runArg, 0);
+s32 run_screen(game_flow_screen_t *(*CreateScreen)(s32), s32 CreateArgument, void *RunArgument) {
+    game_flow_screen_t *screen = CreateScreen(CreateArgument);
+    s32 run_result = screen->vtable->Run(screen, RunArgument, 0);
     screen->vtable->Destroy((base_class_t *)screen);
     return run_result;
 }
@@ -194,16 +197,16 @@ void game_flow_menu_unused(void * unused0) {
 }
 
 s32 game_flow_execute_dream(game_flow_t *This) {
-    dream_session_t *dream_ctx;
+    dream_session_t *session;
     s32 dream_result;
     s32 day;
     s32 year;
     s32 result;
 
-    // Start the dream and cleanup
-    dream_ctx = dream_session_create(This->m_GraphicsCtx, This->m_DreamSys, This->m_Config->m_FrameSyncMode);
-    dream_result = dream_ctx->vtable->dream_session_execute(dream_ctx);
-    dream_ctx->vtable->Destroy(dream_ctx);
+    /* Consume the session result before releasing its owned scene resources. */
+    session = dream_session_create(This->m_GraphicsCtx, This->m_DreamSys, This->m_Config->m_FrameSyncMode);
+    dream_result = session->vtable->dream_session_execute(session);
+    session->vtable->Destroy(session);
 
     // Check if dream tells the loop that today is a special day
     switch (dream_result) {

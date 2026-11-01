@@ -73,7 +73,7 @@ void *memory_free_mem(void *Ptr, void *FallbackManager);
 #define MEMORY_MATCH_FREE(ptr)   memory_free_mem((ptr), NULL)
 #endif
 #else
-// We cant do anything about it
+/* Public call sites retain the original single-argument entry convention. */
 void *memory_allocate_mem(u32 Size);
 void *memory_free_mem(void *Ptr);
 #endif

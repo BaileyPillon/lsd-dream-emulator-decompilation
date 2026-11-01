@@ -53,7 +53,7 @@ typedef struct seq_file {
     /* 0x2C */ s32 m_Flag;
 } seq_file_t;
 
-seq_file_t *seq_file_create(u32 Unk1);
+seq_file_t *seq_file_create(u32 PathAddress);
 seq_file_vtable_t *seq_file_get_vtable(void);
 
 #endif

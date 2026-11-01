@@ -4,6 +4,11 @@ Start with [the README](README.md) for setup and [the roadmap](docs/ROADMAP.md)
 for open work. Pull requests should target `main`. Keep original-game recovery,
 developer tooling and optional mods explicit in the change description.
 
+The [source guide](docs/SOURCE_GUIDE.md) maps the main call paths and explains
+the recovered object model, naming conventions, ownership and ABI constraints.
+Follow the surrounding interface style, document evidence-backed names and
+keep source readability changes separate from optional gameplay modifications.
+
 For tooling or documentation work, run `python -m unittest discover -s tests -v`;
 those tests need no original game inputs. Use the issue templates for build
 problems and executable-grounded research findings. Preserve upstream

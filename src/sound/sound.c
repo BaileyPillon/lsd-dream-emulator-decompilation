@@ -5,6 +5,8 @@
 #include "sound/sound.h"
 #include <psx/libspu.h>
 
+/* VAB loading, SDK note dispatch and shared SPU ownership. File-driver phases
+ * and note/voice ordering mirror the original asynchronous implementation. */
 extern sound_vtable_t g_SOUND_VTABLE;
 
 extern s32 g_SoundInstanceCount;
@@ -32,31 +34,31 @@ extern s16 SsUtGetProgAtr(s16, s16, u8 *);
 extern s16 SsUtGetVagAtr(s16, s16, s16, u8 *);
 extern void SsSetMVol(s16, s16);
 
-sound_t *sound_create(u32 Unk1) {
+sound_t *sound_create(u32 PathAddress) {
     sound_t *allocated = ALLOCATE_STRUCT(sound_t);
 
     if (allocated) {
-        sound_get_vtable()->sound_construct(allocated, Unk1);
+        sound_get_vtable()->sound_construct(allocated, PathAddress);
         return allocated;
     }
 
     return NULL;
 }
 
-void sound_construct(sound_t *This, char *path) {
-    char buf[0x20];
-    char *mem;
+void sound_construct(sound_t *This, char *Path) {
+    char path_buffer[0x20];
+    char *owned_path;
 
     (*(void (**)(sound_t *))((s32) get_file_driver() + 8))(This);
     This->vtable = sound_get_vtable();
-    This->unk19 = 0;
-    This->unk20 = 0;
-    This->unk21_1 = 0;
+    This->m_ToneStorage = 0;
+    This->m_ProgramTable = 0;
+    This->m_VabId = 0;
     This->m_IsMuted = 0;
     This->vtable->sound_set_volume_offset(This, 0);
-    This->unk22_1 = 0;
-    This->unk22_2 = 0;
-    This->unk23 = 0;
+    This->m_VabReady = 0;
+    This->m_TransferPending = 0;
+    This->m_PathStorage = 0;
     if (g_SpuInitialized == 0) {
         SpuInit();
         g_SpuInitialized = 1;
@@ -68,14 +70,15 @@ void sound_construct(sound_t *This, char *path) {
         g_SndEngineInitialized = 1;
     }
     g_SoundInstanceCount += 1;
-    if (path != 0) {
-        mem = (char *) memory_allocate_mem(strlen(path) + 1);
-        if (mem != 0) {
-            This->unk23 = (s32) mem;
-            strcpy(mem, path);
-            build_data_path(buf, mem, NULL, g_VabHeaderExt);
+    /* Keep the path alive until the header load schedules the matching body. */
+    if (Path != 0) {
+        owned_path = (char *) memory_allocate_mem(strlen(Path) + 1);
+        if (owned_path != 0) {
+            This->m_PathStorage = (s32) owned_path;
+            strcpy(owned_path, Path);
+            build_data_path(path_buffer, owned_path, NULL, g_VabHeaderExt);
             This->unk10_2 = 1;
-            This->vtable->Unk11(This, buf);
+            This->vtable->Unk11(This, path_buffer);
         }
     }
 }
@@ -83,7 +86,7 @@ void sound_construct(sound_t *This, char *path) {
 void sound_close(sound_t *This) {
     s32 count;
 
-    SsVabClose(This->unk21_1);
+    SsVabClose(This->m_VabId);
     count = g_SoundInstanceCount - 1;
     g_SoundInstanceCount = count;
     if (count < 0) {
@@ -96,51 +99,51 @@ void sound_close(sound_t *This) {
         func_800329D8();
         func_80032A7C();
     }
-    memory_free_mem((void *) This->unk19);
-    memory_free_mem((void *) This->unk20);
-    memory_free_mem((void *) This->unk23);
+    memory_free_mem((void *) This->m_ToneStorage);
+    memory_free_mem((void *) This->m_ProgramTable);
+    memory_free_mem((void *) This->m_PathStorage);
     (*(void (**)(sound_t *))((s32) get_file_driver() + 0xC))(This);
 }
 
 void sound_update_vab_load(sound_t *This) {
-    char buffer[0x20];
-    s32 saved;
+    char path_buffer[0x20];
+    s32 header_address;
     s16 vab_id;
-    s32 mode;
+    s32 load_phase;
 
-    mode = This->unk10_2;
-    if (mode == 1) {
+    load_phase = This->unk10_2;
+    if (load_phase == 1) {
         goto case1;
     }
-    if (mode < 2) {
+    if (load_phase < 2) {
         goto done;
     }
-    if (mode == 6) {
+    if (load_phase == 6) {
         goto case6;
     }
     goto done;
 
 case1:
     if (This->m_FlagsUnk & 0x200) {
-        This->unk21_1 = SsVabOpenHead((unsigned char *) This->unk4, -1);
-        build_data_path(buffer, (char *) This->unk23, NULL, g_VabBodyExt);
-        saved = This->unk4;
+        This->m_VabId = SsVabOpenHead((unsigned char *) This->unk4, -1);
+        build_data_path(path_buffer, (char *) This->m_PathStorage, NULL, g_VabBodyExt);
+        header_address = This->unk4;
         This->unk10_2 = 6;
         This->unk4 = 0;
-        g_VabHeaderPtr = saved;
-        This->vtable->Unk6(This, buffer);
-        if (This->unk23 != 0) {
-            memory_free_mem((void *) This->unk23);
-            This->unk23 = 0;
+        g_VabHeaderPtr = header_address;
+        This->vtable->Unk6(This, path_buffer);
+        if (This->m_PathStorage != 0) {
+            memory_free_mem((void *) This->m_PathStorage);
+            This->m_PathStorage = 0;
         }
     }
     goto done;
 case6:
     if (This->m_FlagsUnk & 0x200) {
-        vab_id = SsVabTransBody((unsigned char *) This->unk4, This->unk21_1);
-        This->unk21_1 = vab_id;
+        vab_id = SsVabTransBody((unsigned char *) This->unk4, This->m_VabId);
+        This->m_VabId = vab_id;
         if (vab_id != -1) {
-            This->unk22_2 = 1;
+            This->m_TransferPending = 1;
             This->vtable->sound_finish_vab_load(This, 1);
         }
     }
@@ -148,15 +151,15 @@ done:
     return;
 }
 
-s32 sound_finish_vab_load(sound_t *This, s32 Unk) {
+s32 sound_finish_vab_load(sound_t *This, s32 WaitForTransfer) {
     s32 return_value = 0;
 
-    if (This->unk22_2) {
+    if (This->m_TransferPending) {
 
-        if (Unk) {
+        if (WaitForTransfer) {
             SsVabTransCompleted(1);
-            This->unk22_2 = 0;
-            This->unk22_1 = 1;
+            This->m_TransferPending = 0;
+            This->m_VabReady = 1;
 
             This->vtable->sound_build_program_table(This);
             return_value = 1;
@@ -167,43 +170,43 @@ s32 sound_finish_vab_load(sound_t *This, s32 Unk) {
 }
 
 void sound_build_program_table(sound_t *This) {
-    u8 attr[0x10];
+    u8 program_attributes[0x10];
     u8 *cursor;
-    u8 *table;
-    u8 *prog;
-    s32 outer;
-    s32 inner;
+    u8 *program_table;
+    u8 *tone_storage;
+    s32 program_index;
+    s32 tone_index;
 
-    if (This->unk22_1 != 0) {
+    if (This->m_VabReady != 0) {
         This->vtable->file_buf_release(This);
         This->unk4 = g_VabHeaderPtr;
-        if (SsUtGetVabHdr(This->unk21_1, (u8 *)This + 0x2C) != -1) {
-            prog = (u8 *)memory_allocate_mem(*(u16 *)((u8 *)This + 0x40) << 5);
-            This->unk19 = (s32)prog;
-            if (prog != 0) {
-                table = (u8 *)memory_allocate_mem(*(u16 *)((u8 *)This + 0x3E) << 2);
-                This->unk20 = (s32)table;
-                if (table != 0) {
-                    cursor = (u8 *)This->unk19;
-                    outer = 0;
-                    if (outer < (s32)*(u16 *)((u8 *)This + 0x3E)) {
+        if (SsUtGetVabHdr(This->m_VabId, (u8 *)This + 0x2C) != -1) {
+            tone_storage = (u8 *)memory_allocate_mem(*(u16 *)((u8 *)This + 0x40) << 5);
+            This->m_ToneStorage = (s32)tone_storage;
+            if (tone_storage != 0) {
+                program_table = (u8 *)memory_allocate_mem(*(u16 *)((u8 *)This + 0x3E) << 2);
+                This->m_ProgramTable = (s32)program_table;
+                if (program_table != 0) {
+                    cursor = (u8 *)This->m_ToneStorage;
+                    program_index = 0;
+                    if (program_index < (s32)*(u16 *)((u8 *)This + 0x3E)) {
                         do {
-                            *(u32 *)(This->unk20 + outer * 4) = (u32)cursor;
-                            if (SsUtGetProgAtr(This->unk21_1, outer, attr) == -1) {
+                            *(u32 *)(This->m_ProgramTable + program_index * 4) = (u32)cursor;
+                            if (SsUtGetProgAtr(This->m_VabId, program_index, program_attributes) == -1) {
                                 return;
                             }
-                            inner = 0;
-                            if (inner < (s32)attr[0]) {
+                            tone_index = 0;
+                            if (tone_index < (s32)program_attributes[0]) {
                                 do {
-                                    if (SsUtGetVagAtr(This->unk21_1, outer, (s16)inner, cursor) == -1) {
+                                    if (SsUtGetVagAtr(This->m_VabId, program_index, (s16)tone_index, cursor) == -1) {
                                         return;
                                     }
-                                    inner++;
+                                    tone_index++;
                                     cursor += 0x20;
-                                } while (inner < (s32)attr[0]);
+                                } while (tone_index < (s32)program_attributes[0]);
                             }
-                            outer++;
-                        } while (outer < *(u16 *)((u8 *)This + 0x3E));
+                            program_index++;
+                        } while (program_index < *(u16 *)((u8 *)This + 0x3E));
                     }
                     if (g_MasterVolumeSet == 0) {
                         func_80032998();
@@ -216,28 +219,31 @@ void sound_build_program_table(sound_t *This) {
     }
 }
 
-s16 sound_play_note(sound_t *This, s32 arg1, s16 arg2, s16 arg3) {
-    s32 vab;
-    u8 *entry;
+s16 sound_play_note(sound_t *This, s32 NoteIndex, s16 Volume, s16 TargetVolume) {
+    s32 program_index;
+    u8 *tone_attributes;
     s16 voice;
 
-    if (arg1 >= 0) {
-        vab = arg1 >> 4;
-        entry = *(u8 **) (This->unk20 + vab * 4);
-        entry += (arg1 - (vab << 4)) * 32;
-        voice = func_80030E90(This->unk21_1, (s16) vab, (s16) (arg1 - (vab << 4)), (s16) (entry[4] + (u16) This->unk24),
-                              entry[5], arg2, arg2);
+    if (NoteIndex >= 0) {
+        program_index = NoteIndex >> 4;
+        tone_attributes = *(u8 **) (This->m_ProgramTable + program_index * 4);
+        tone_attributes += (NoteIndex - (program_index << 4)) * 32;
+        voice = func_80030E90(This->m_VabId,
+                             (s16) program_index,
+                             (s16) (NoteIndex - (program_index << 4)),
+                             (s16) (tone_attributes[4] + (u16) This->m_PitchOffset),
+                             tone_attributes[5], Volume, Volume);
         if (voice >= 0) {
-            SsUtAutoVol(voice, arg2, arg3, 2);
+            SsUtAutoVol(voice, Volume, TargetVolume, 2);
             return voice;
         }
     }
     return -1;
 }
 
-s32 sound_stop_note(void *This, s32 arg1) {
-    if (arg1 < 24) {
-        func_80031890((s16) arg1);
+s32 sound_stop_note(void *This, s32 Voice) {
+    if (Voice < 24) {
+        func_80031890((s16) Voice);
     } else {
         func_80031F3C((s16) 0);
     }
@@ -267,8 +273,9 @@ void sound_nop_2(void) {
 void sound_nop_3(void) {
 }
 
-void sound_set_volume_offset(sound_t *This, s32 Unk) {
-    This->unk24 = 12 * Unk - 24;
+void sound_set_volume_offset(sound_t *This, s32 Octave) {
+    /* The inherited name is misleading: this is a semitone pitch offset. */
+    This->m_PitchOffset = 12 * Octave - 24;
 }
 
 sound_vtable_t *sound_get_vtable(void) {

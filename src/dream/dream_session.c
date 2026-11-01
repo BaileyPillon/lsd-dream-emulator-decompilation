@@ -10,6 +10,8 @@
 #include "sound/bgm.h"
 #include "utils/cd_paths.h"
 
+/* One dream's scene, rendering children and audio/model helpers. Construction
+ * and destruction order are observable through notifications; preserve them. */
 dream_session_vtable_t g_DREAM_SESSION_VTABLE = {
     0x1F230,
     base_class_destructor,
@@ -99,15 +101,15 @@ void dream_session_construct(dream_session_t *This,
 void link_destroy_models(void);
 
 void dream_session_cleanup(dream_session_t *This) {
-    game_graphics_ctx_t *gfx;
+    game_graphics_ctx_t *graphics;
     bgm_t *bgm;
     tmd_model_t *model;
 
-    gfx = This->m_GraphicsCtx;
+    graphics = This->m_GraphicsCtx;
     This->vtable->Detach(This, This->m_DreamSys);
-    gfx->cls_3acc8 = gfx->cls_3acc8->vtable->Destroy(gfx->cls_3acc8);
-    gfx->cls_32c00 = gfx->cls_32c00->vtable->Destroy(gfx->cls_32c00);
-    gfx->cls_3da54 = gfx->cls_3da54->vtable->Destroy(gfx->cls_3da54);
+    graphics->cls_3acc8 = graphics->cls_3acc8->vtable->Destroy(graphics->cls_3acc8);
+    graphics->cls_32c00 = graphics->cls_32c00->vtable->Destroy(graphics->cls_32c00);
+    graphics->cls_3da54 = graphics->cls_3da54->vtable->Destroy(graphics->cls_3da54);
     bgm = (bgm_t *) This->m_Bgm;
     bgm->vtable->Destroy(bgm);
     model = (tmd_model_t *) This->m_Model;
@@ -117,18 +119,19 @@ void dream_session_cleanup(dream_session_t *This) {
     scene_get_vtable()->Cleanup(This);
 }
 
-void dream_session_on_tick(dream_session_t *This, void **Unk2, s32 Unk3) {
-    s32 value;
+void dream_session_on_tick(dream_session_t *This, void **Sender, s32 Code) {
+    s32 sender_type;
 
-    // Unk2 could be either gshelper or 32c00?
+    /* Sender is a native object prefix. Route by its vtable's type word;
+     * these masked IDs do not establish a complete concrete sender type. */
 
-    scene_get_vtable()->OnNotify(This, Unk2, Unk3);
-    value = *(s32 *) *Unk2;
+    scene_get_vtable()->OnNotify(This, Sender, Code);
+    sender_type = *(s32 *) *Sender;
 
-    if ((value & 0xFFFF) == 0x1F34) {
-        This->vtable->dream_session_noop2(This, Unk2, Unk3);
-    } else if ((value & 0xFFFFF) == 0x2F230) {
-        This->vtable->dream_session_on_link_code(This, (s32) Unk2, Unk3);
+    if ((sender_type & 0xFFFF) == 0x1F34) {
+        This->vtable->dream_session_noop2(This, Sender, Code);
+    } else if ((sender_type & 0xFFFFF) == 0x2F230) {
+        This->vtable->dream_session_on_link_code(This, (s32) Sender, Code);
     }
 }
 
@@ -212,17 +215,17 @@ void dream_session_update_actor(dream_session_t *This) {
     actor->vtable->Unk28(actor);
 }
 
-void dream_session_tick(dream_session_t *This, void *arg1, s32 arg2) {
+void dream_session_tick(dream_session_t *This, void *Sender, s32 Code) {
     s32 state;
     s32 result;
-    map_scene_t *mapScene;
+    map_scene_t *map_scene;
 
-    scene_get_vtable()->Unk20(This, arg1, arg2);
-    if (arg2 != 2) {
+    scene_get_vtable()->Unk20(This, Sender, Code);
+    if (Code != 2) {
         return;
     }
     state = This->m_State;
-    if (state == arg2) {
+    if (state == Code) {
         return;
     }
     if (state < 3) {
@@ -242,52 +245,53 @@ state1:
         return;
     }
     This->m_DreamSys->vtable->dream_sys_end_day(This->m_DreamSys, 0);
-    This->m_Result = arg2;
+    This->m_Result = Code;
     This->vtable->scene_finish(This, 3);
     return;
 state3:
-    mapScene = (map_scene_t *) This->m_MapScene;
-    ((void (*)(map_scene_t *)) mapScene->vtable->Unk17)(mapScene);
-    mapScene = (map_scene_t *) This->m_MapScene;
-    mapScene->vtable->Destroy(mapScene);
+    map_scene = (map_scene_t *) This->m_MapScene;
+    ((void (*)(map_scene_t *)) map_scene->vtable->Unk17)(map_scene);
+    map_scene = (map_scene_t *) This->m_MapScene;
+    map_scene->vtable->Destroy(map_scene);
     open_map(This, This->m_DreamSys->vtable->dream_sys_get_current_map(This->m_DreamSys));
 }
 
-void open_map(dream_session_t *This, s32 Unk) {
-    void **obj;
+void open_map(dream_session_t *This, s32 MapIndex) {
+    void **map_scene;
 
     This->m_MapScene =
-        (s32) map_scene_create(This->m_StageArg, This->m_Bgm, (s32) This->m_TextureHelper, This->m_Model, Unk);
+        (s32) map_scene_create(This->m_StageArg, This->m_Bgm, (s32) This->m_TextureHelper, This->m_Model, MapIndex);
     This->vtable->Attach(This, This->m_MapScene);
-    obj = (void **) This->m_MapScene;
-    (*(void (**)(void **, void *, void *))(*(u32 *) obj + 0x44))(obj, This->m_GraphicsCtx, This->m_DreamSys);
+    map_scene = (void **) This->m_MapScene;
+    (*(void (**)(void **, void *, void *))(*(u32 *) map_scene + 0x44))(
+        map_scene, This->m_GraphicsCtx, This->m_DreamSys);
     This->m_State = 2;
 }
 
 void dream_session_noop(dream_session_t *This) {
 }
 
-void dream_session_noop2(dream_session_t *This, void **Unk2, s32 Unk3) {
+void dream_session_noop2(dream_session_t *This, void **Sender, s32 Code) {
 }
 
-void dream_session_on_link_code(dream_session_t *This, s32 Unk2, s32 Unk3) {
-    s32 endDayMode;
-    s32 dayResult;
+void dream_session_on_link_code(dream_session_t *This, s32 SenderAddress, s32 Code) {
+    s32 end_day_mode;
+    s32 day_result;
     s16 cinematic[4];
     dream_sys_t *dream_sys;
     dream_sys_vtable_t *vtable;
 
-    switch (Unk3) {
+    switch (Code) {
         case 4:
-            (*(void (**)(s32, s32))(*(s32 *) This->m_MapScene + 0x48))(This->m_MapScene, Unk2);
+            (*(void (**)(s32, s32))(*(s32 *) This->m_MapScene + 0x48))(This->m_MapScene, SenderAddress);
             (*(void (**)(s32))(*(s32 *) This->m_MapScene + 4))(This->m_MapScene);
             if (This->m_DreamSys->vtable->dream_sys_end_day(This->m_DreamSys, 0) == 0) {
                 This->m_DreamSys->vtable->dream_sys_get_cinematic(cinematic, This->m_DreamSys);
-                dayResult = 2;
+                day_result = 2;
                 if (cinematic[1] < 0) {
-                    dayResult = 1;
+                    day_result = 1;
                 }
-                This->m_Result = dayResult;
+                This->m_Result = day_result;
                 goto block_4_join;
             }
             This->m_Result = 3;
@@ -303,15 +307,15 @@ void dream_session_on_link_code(dream_session_t *This, s32 Unk2, s32 Unk3) {
             break;
         case 12:
         case 13:
-            (*(void (**)(s32, s32))(*(s32 *) This->m_MapScene + 0x48))(This->m_MapScene, Unk2);
+            (*(void (**)(s32, s32))(*(s32 *) This->m_MapScene + 0x48))(This->m_MapScene, SenderAddress);
             (*(void (**)(s32))(*(s32 *) This->m_MapScene + 4))(This->m_MapScene);
             dream_sys = This->m_DreamSys;
             vtable = dream_sys->vtable;
-            endDayMode = 1;
-            if (Unk3 != 12) {
-                endDayMode = 2;
+            end_day_mode = 1;
+            if (Code != 12) {
+                end_day_mode = 2;
             }
-            vtable->dream_sys_end_day(dream_sys, endDayMode);
+            vtable->dream_sys_end_day(dream_sys, end_day_mode);
             This->m_Result = 3;
             This->vtable->scene_finish(This, 3);
             break;

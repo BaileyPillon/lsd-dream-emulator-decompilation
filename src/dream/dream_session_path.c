@@ -3,28 +3,28 @@
 #include "dream/dream_session_path.h"
 
 /* Cursor state for dream_session_path_advance: current step and the half-table
-   count captured on the first (arg0 == 0) call. */
+   count captured on the first (LoadAllOnFirstCall == 0) call. */
 s32 g_DreamPathStep = 0;
 s32 g_DreamPathHalfCount = 0;
 
 const char *get_path_table(s32 *Count);
 s32 file_driver_lookup_path(s32 arg0, s32 arg1);
 
-s32 dream_session_path_advance(s32 arg0) {
+s32 dream_session_path_advance(s32 LoadAllOnFirstCall) {
     s32 count;
     s32 path_table;
-    s32 prev;
+    s32 previous_step;
     s32 step;
     s32 result;
 
     path_table = (s32) get_path_table(&count);
-    prev = g_DreamPathStep;
-    step = prev + 1;
+    previous_step = g_DreamPathStep;
+    step = previous_step + 1;
     g_DreamPathStep = step;
     switch (step) {
         case 1:
-            if (arg0 != 0) {
-                g_DreamPathStep = prev + 2;
+            if (LoadAllOnFirstCall != 0) {
+                g_DreamPathStep = previous_step + 2;
             } else {
                 count = count / 2;
                 g_DreamPathHalfCount = count;

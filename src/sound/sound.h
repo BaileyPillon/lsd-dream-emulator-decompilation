@@ -23,7 +23,7 @@ typedef struct sound_vtable {
     /* 0x038 8006da6c */ void (*OnNotify)(base_class_t *, base_class_t *, s32);
     /* 0x03C 8006da70 */ u32 _pad;
     /* 0x040 8006da74 */ u32 pad2;
-    /* 0x044 8006da78 */ void (*Unk1)(void *);
+    /* 0x044 8006da78 */ void (*PathAddress)(void *);
     /* 0x048 8006da7c */ void (*Unk2)(void *);
     /* 0x04C 8006da80 */ void (*Unk3)(void *);
     /* 0x050 8006da84 */ void (*Unk4)(void *);
@@ -69,17 +69,18 @@ typedef struct sound {
     /* 0x40 */ s32 unk16;
     /* 0x44 */ s32 unk17;
     /* 0x48 */ s32 unk18;
-    /* 0x4C */ s32 unk19;
-    /* 0x50 */ s32 unk20;
-    /* 0x54 */ s16 unk21_1;
+    /* Native addresses retain their recovered 32-bit integer representation. */
+    /* 0x4C */ s32 m_ToneStorage;
+    /* 0x50 */ s32 m_ProgramTable;
+    /* 0x54 */ s16 m_VabId;
     /* 0x56 */ s16 m_IsMuted;
-    /* 0x58 */ u16 unk22_1;
-    /* 0x5A */ u16 unk22_2;
-    /* 0x5C */ s32 unk23;
-    /* 0x60 */ s32 unk24;
+    /* 0x58 */ u16 m_VabReady;
+    /* 0x5A */ u16 m_TransferPending;
+    /* 0x5C */ s32 m_PathStorage;
+    /* 0x60 */ s32 m_PitchOffset;
 } sound_t;
 
-sound_t *sound_create(u32 Unk1);
+sound_t *sound_create(u32 PathAddress);
 sound_vtable_t *sound_get_vtable(void);
 
 #endif
