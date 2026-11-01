@@ -102,13 +102,13 @@
       "path": "src/dream/dream_session_path.c",
       "before_working_tree_sha256": "de7e72a1a8694521ad9243731b3c9c1e39d07873846b75864fc8a032b95ca1d2",
       "before_git_sha256": "bc2d8fea58c3ca18ad1bbe5f2cb3af50c3663b879fd73d2b545ae4ca0aab7a20",
-      "after_sha256": "96a6207893e892cd028419d0021df2f2548b9016092f150b74fec0f9561e84ea"
+      "after_sha256": "4fab434e9406e97223d7c39b987a85c3c46b173d274d70aaf142c9733ce2f955"
     },
     {
       "path": "src/dream/dream_session_path.h",
       "before_working_tree_sha256": "50fab5b1b1a9338247a88c909118cd00fe235a8c765d6e7d9a6dac1b7580949c",
       "before_git_sha256": "392d2aced64380fbff75b8c91e12a24d2f05d970ff0eeb44af5fabe8680020ac",
-      "after_sha256": "805684c01ef92436420496a5f8ba760863fc3a0d9b131ecb2c682985bce92679"
+      "after_sha256": "065cd317085c3792b2f5ddc8bf7d55c5e22e526dbb8bb31baf70f65a91565950"
     },
     {
       "path": "src/game/game_flow.c",
