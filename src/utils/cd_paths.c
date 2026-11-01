@@ -25,7 +25,7 @@ char *get_data_folder(void) {
     return g_CDI_STR;
 }
 
-s32 get_seeded_random(s32 Seed, s32 Unk) {
+s32 get_seeded_random(s32 Seed, s32 Unused) {
     if (Seed != 0) {
         srand(Seed);
     }
@@ -45,7 +45,7 @@ void set_audio_path_override(s32 SoundType, s32 MusicTrack) {
 
 const char *get_path_table(s32 *Count) {
     if (Count != NULL) {
-        // Amount of strings before opening movies?
+        /* Number of fixed-width entries exposed by this path-table view. */
         *Count = 560;
     }
 
@@ -57,20 +57,20 @@ const char **get_sound_types_paths(void) {
 }
 
 const char *get_random_sound_type(s32 *Length) {
-    u32 idx;
+    u32 random_index;
     const char **paths;
     s32 override;
-    s32 off;
+    s32 path_offset;
 
-    idx = (u32) get_seeded_random(0, (s32) Length) % 7u;
+    random_index = (u32) get_seeded_random(0, (s32) Length) % 7u;
     paths = get_sound_types_paths();
     override = g_SoundTypeOverride;
     if (override != 0) {
-        off = (override - 1) * 4;
+        path_offset = (override - 1) * 4;
     } else {
-        off = idx * 4;
+        path_offset = random_index * 4;
     }
-    return *(const char **) ((u8 *) paths + off);
+    return *(const char **) ((u8 *) paths + path_offset);
 }
 
 // Only 1 SE exists in the list
@@ -91,44 +91,44 @@ const char *get_stage_paths_str(s32 Arg) {
     return get_stage_paths(Arg);
 }
 
-const char *get_random_stage_texture_path(s32 arg0, s32 seed_arg, s32 count) {
-    s32 mod;
-    s32 idx;
+const char *get_random_stage_texture_path(s32 Stage, s32 RandomContext, s32 Day) {
+    s32 variant_count;
+    s32 variant_index;
 
-    count = count - 1;
-    count = count % 40;
-    mod = (count / 10) + 1;
-    idx = get_seeded_random(0, seed_arg) % mod;
-    return get_stage_paths_str(arg0) + (idx * 0x1C);
+    Day = Day - 1;
+    Day = Day % 40;
+    variant_count = (Day / 10) + 1;
+    variant_index = get_seeded_random(0, RandomContext) % variant_count;
+    return get_stage_paths_str(Stage) + (variant_index * 0x1C);
 }
 
 const char *get_stage_music_paths(s32 Arg) {
     return get_stage_paths(Arg) + 0x70;
 }
 
-const char *get_stage_music_path(s32 arg0, s32 unused) {
-    u32 idx;
+const char *get_stage_music_path(s32 Stage, s32 Unused) {
+    u32 random_index;
     const char *path;
     s32 override;
-    s32 off;
+    s32 path_offset;
 
-    idx = (u32) get_seeded_random(0, unused) % 5u;
-    if (arg0 == 9) {
-        if (idx == 2) {
-            idx = 3;
+    random_index = (u32) get_seeded_random(0, Unused) % 5u;
+    if (Stage == 9) {
+        if (random_index == 2) {
+            random_index = 3;
         }
         if (g_MusicTrackOverride == 3) {
             g_MusicTrackOverride = 4;
         }
     }
-    path = get_stage_music_paths(arg0);
+    path = get_stage_music_paths(Stage);
     override = g_MusicTrackOverride;
     if (override != 0) {
-        off = (override - 1) * 7;
+        path_offset = (override - 1) * 7;
     } else {
-        off = (s32) idx * 7;
+        path_offset = (s32) random_index * 7;
     }
-    return (const char *) ((u8 *) path + off * 4);
+    return (const char *) ((u8 *) path + path_offset * 4);
 }
 
 const char *get_stage_model_paths(s32 Arg) {

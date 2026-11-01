@@ -6,6 +6,8 @@
 #include "sound/seq_file.h"
 #include "sound/sound.h"
 
+/* Sequence playback and asynchronous file/bank readiness. The original open
+ * path reports success even when SsSeqOpen returns -1; retain that behavior. */
 const char g_SeqOpenErrorFmt[0x2C] = "Seq Open error in WBgmHandleMonitorEvent";
 
 s32 g_BgmActive = 0;
@@ -54,32 +56,32 @@ bgm_vtable_t g_BGM_VTABLE = {
 void *get_display(void);
 void func_8003AE18(s16);
 
-bgm_t *bgm_create(u32 Unk1, u32 Unk2, u32 Unk3) {
+bgm_t *bgm_create(u32 SoundPathAddress, u32 SequencePathAddress, u32 AutoPlay) {
     bgm_t *allocated = ALLOCATE_STRUCT(bgm_t);
 
     if (allocated) {
-        bgm_get_vtable()->bgm_construct(allocated, Unk1, Unk2, Unk3);
+        bgm_get_vtable()->bgm_construct(allocated, SoundPathAddress, SequencePathAddress, AutoPlay);
         return allocated;
     }
 
     return NULL;
 }
 
-void bgm_construct(bgm_t *This, s32 Unk2, s32 Unk3, s32 Unk4) {
+void bgm_construct(bgm_t *This, s32 SoundPathAddress, s32 SequencePathAddress, s32 AutoPlay) {
     base_class_get_vtable()->Construct(This);
     This->vtable = bgm_get_vtable();
 
     This->m_Sound = 0;
     This->m_SeqFile = 0;
     This->m_SeqAccess = 0;
-    *(u16 *) ((u8 *) This + 0x1A) = 0;
+    This->m_OpenState = 0;
     This->m_Paused = 0;
     This->m_Playing = 0;
-    This->m_AutoPlay = Unk4;
+    This->m_AutoPlay = AutoPlay;
 
     g_BgmActive = 1;
-    This->vtable->bgm_set_sequence(This, Unk3);
-    This->vtable->bgm_set_sound(This, Unk2);
+    This->vtable->bgm_set_sequence(This, SequencePathAddress);
+    This->vtable->bgm_set_sound(This, SoundPathAddress);
     This->vtable->Attach(This, get_display());
 }
 
@@ -100,16 +102,16 @@ void bgm_cleanup(bgm_t *This) {
     base_class_get_vtable()->Cleanup(This);
 }
 
-void bgm_on_notify(bgm_t *This, s32 **Unk2, s32 Unk3) {
-    base_class_get_vtable()->OnNotify(This, Unk2, Unk3);
+void bgm_on_notify(bgm_t *This, s32 **Sender, s32 Code) {
+    base_class_get_vtable()->OnNotify(This, Sender, Code);
 
-    if ((**(u32 **) Unk2 & 0xF) == 1) {
-        This->vtable->bgm_handle_event(This, Unk2, Unk3);
+    if ((**(u32 **) Sender & 0xF) == 1) {
+        This->vtable->bgm_handle_event(This, Sender, Code);
     }
 }
 
-void bgm_handle_event(bgm_t *This, s32 Unk2, s32 Unk3) {
-    if (Unk3 == 2 && This->m_IsOpened == 1 && seq_open(This)) {
+void bgm_handle_event(bgm_t *This, s32 SenderAddress, s32 Code) {
+    if (Code == 2 && This->m_OpenState == 1 && seq_open(This)) {
         if (This->m_AutoPlay) {
             This->vtable->seq_play(This);
         }
@@ -117,31 +119,31 @@ void bgm_handle_event(bgm_t *This, s32 Unk2, s32 Unk3) {
 }
 
 s32 seq_open(bgm_t *This) {
-    sound_t *engine;
-    s32 unk3;
-    s16 seq;
+    sound_t *sound;
+    s32 sequence_file_address;
+    s16 sequence_id;
 
-    engine = This->m_Sound;
-    if (engine == NULL) {
+    sound = This->m_Sound;
+    if (sound == NULL) {
         return 0;
     }
-    unk3 = This->m_SeqFile;
-    if (unk3 == 0) {
+    sequence_file_address = This->m_SeqFile;
+    if (sequence_file_address == 0) {
         return 0;
     }
-    if (*(u16 *) ((u8 *) engine + 0x58) == 0) {
+    if (sound->m_VabReady == 0) {
         return 0;
     }
-    if (*(s32 *) (unk3 + 0x2C) == 0) {
+    if (*(s32 *) (sequence_file_address + 0x2C) == 0) {
         return 0;
     }
-    seq = SsSeqOpen(*(u32 *) (unk3 + 0x10), *(s16 *) ((u8 *) engine + 0x54));
-    This->m_SeqAccess = seq;
-    if (seq == -1) {
+    sequence_id = SsSeqOpen(*(u32 *) (sequence_file_address + 0x10), sound->m_VabId);
+    This->m_SeqAccess = sequence_id;
+    if (sequence_id == -1) {
         printf(g_SeqOpenErrorFmt);
     }
     SsSeqSetVol(This->m_SeqAccess, 0x34, 0x34);
-    *(u16 *) ((u8 *) This + 0x1A) = 2;
+    This->m_OpenState = 2;
     return 1;
 }
 
@@ -158,7 +160,7 @@ void seq_stop(bgm_t *This) {
         SsSeqStop(This->m_SeqAccess);
         func_8003AE18(This->m_SeqAccess);
         This->m_Playing = 0;
-        This->m_IsOpened = 0;
+        This->m_OpenState = 0;
     }
 }
 
@@ -176,39 +178,39 @@ void seq_resume(bgm_t *This) {
     }
 }
 
-void seq_set_vol(bgm_t *This, s16 Unk1, s16 Unk2) {
-    SsSeqSetVol(This->m_SeqAccess, Unk1, Unk2);
+void seq_set_vol(bgm_t *This, s16 Left, s16 Right) {
+    SsSeqSetVol(This->m_SeqAccess, Left, Right);
 }
 
 void bgm_set_crescendo(bgm_t *This, s16 Volume, s32 Time) {
     SsSeqSetCrescendo(This->m_SeqAccess, Volume, sound_get_crescendo_time_mod() * Time);
 }
 
-void bgm_set_sequence(bgm_t *This, s32 Unk) {
-    s32 unk;
+void bgm_set_sequence(bgm_t *This, s32 SequencePathAddress) {
+    s32 previous_sequence_address;
 
     if (This->m_Playing) {
         This->vtable->seq_stop(This);
     }
 
-    unk = This->m_SeqFile;
-    if (unk) {
-        (*(void (**)(int))(*(u32 *) unk + 4))(unk);
+    previous_sequence_address = This->m_SeqFile;
+    if (previous_sequence_address) {
+        (*(void (**)(int))(*(u32 *) previous_sequence_address + 4))(previous_sequence_address);
         This->m_SeqFile = 0;
     }
-    if (Unk) {
-        This->m_SeqFile = seq_file_create(Unk);
+    if (SequencePathAddress) {
+        This->m_SeqFile = seq_file_create(SequencePathAddress);
         if (seq_open((int) This)) {
             if (This->m_AutoPlay) {
                 This->vtable->seq_play(This);
             }
-        } else if (!This->m_IsOpened) {
-            This->m_IsOpened = 1;
+        } else if (!This->m_OpenState) {
+            This->m_OpenState = 1;
         }
     }
 }
 
-void bgm_set_sound(bgm_t *This, s32 Unk) {
+void bgm_set_sound(bgm_t *This, s32 SoundPathAddress) {
     if (This->m_Playing) {
         This->vtable->seq_stop(This);
     }
@@ -218,14 +220,14 @@ void bgm_set_sound(bgm_t *This, s32 Unk) {
         This->m_Sound = NULL;
     }
 
-    if (Unk) {
-        This->m_Sound = sound_create(Unk);
+    if (SoundPathAddress) {
+        This->m_Sound = sound_create(SoundPathAddress);
         if (seq_open(This)) {
             if (This->m_AutoPlay) {
                 This->vtable->seq_play(This);
             }
-        } else if (!This->m_IsOpened) {
-            This->m_IsOpened = 1;
+        } else if (!This->m_OpenState) {
+            This->m_OpenState = 1;
         }
     }
 }

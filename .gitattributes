@@ -556,3 +556,22 @@ tools/verify_reset_card_roundtrip.py text eol=lf
 tests/test_reset_card_roundtrip.py text eol=lf
 docs/RESET_CARD_ROUNDTRIP.md text eol=lf
 docs/reset-card-roundtrip-checks.json text eol=lf
+
+# Matching-C source readability and maintenance documentation.
+.editorconfig text eol=lf
+docs/SOURCE_GUIDE.md text eol=lf
+docs/SOURCE_MAINTENANCE.md text eol=lf
+docs/VERIFICATION_INDEX.md text eol=lf
+docs/source-maintenance-checks.json text eol=lf
+src/sound/bgm.c text eol=lf
+src/sound/bgm.h text eol=lf
+src/sound/seq_file.c text eol=lf
+src/sound/seq_file.h text eol=lf
+src/sound/sound.c text eol=lf
+src/sound/sound.h text eol=lf
+src/dream/dream_session.c text eol=lf
+src/dream/dream_session.h text eol=lf
+src/dream/dream_session_path.c text eol=lf
+src/dream/dream_session_path.h text eol=lf
+src/base/base.h text eol=lf
+src/utils/cd_paths.c text eol=lf

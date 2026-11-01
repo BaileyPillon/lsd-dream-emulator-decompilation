@@ -44,7 +44,7 @@ typedef struct bgm {
     /* 0x14 */ s16 m_SeqAccess;
     /* 0x16 */ s16 m_Unk4_2;
     /* 0x18 */ u16 m_Unk5_1;
-    /* 0x20 */ u16 m_IsOpened;
+    /* 0x1A */ u16 m_OpenState; /* 0: reset, 1: awaiting inputs, 2: open attempted. */
     /* 0x1C */ u16 m_Paused;
     /* 0x1E */ u16 m_Playing;
     /* 0x20 */ s32 m_AutoPlay;
